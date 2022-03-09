@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Volkov Labs',
+  tagline: 'An agency specializing in custom plugin development for Grafana',
+  url: 'https://volkovlabs.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'VolkovLabs',
+  projectName: '',
 
   presets: [
     [
@@ -22,15 +22,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          sidebarPath: require.resolve('./sidebars.js')
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -42,24 +34,29 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{name: 'keywords', content: 'grafana, plugins'}],
       navbar: {
-        title: 'My Site',
+        title: 'Volkov Labs',
+        hideOnScroll: true,
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Volkov Labs',
+          src: 'img/logo.png',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            to: '/',
             position: 'right',
+            label: 'Home',
+          },
+          {
+            to: 'about',
+            position: 'right',
+            label: 'About',
+          },
+          {
+            to: 'portfolio',
+            position: 'right',
+            label: 'Portfolio',
           },
         ],
       },
@@ -67,46 +64,71 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Projects',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Grafana Plugins Weekly',
+                href: 'https://volkovlabs.com/grafana-plugins-weekly/home',
+              },
+              {
+                label: 'Demo Server',
+                href: 'https://demo.volkovlabs.io',
+              },
+              {
+                label: 'Mesmerizing Flows NFT',
+                href: 'https://solsea.io/collection/61ce604b558d7a2f0b8ecacc',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Documentation',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Base64 Image/PDF Panel',
+                to: '/docs/image-panel',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'RSS Data Source',
+                to: '/docs/rss-datasource',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Environment Data Source',
+                to: '/docs/env-datasource',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Social',
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                href: 'https://volkovlabs.com',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/volkovlabs',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/VolkovLabs',
+              },
+            ],
+          },
+          {
+            title: 'Contact Us',
+            items: [
+              {
+                label: 'info@volkovlabs.io',
+                href: 'mailto:info@volkovlabs.io',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
