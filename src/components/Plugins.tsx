@@ -1,21 +1,31 @@
 import clsx from 'clsx';
 import React from 'react';
-import { PluginList } from '../../constants';
-import { FeatureItem } from '../../types';
-import styles from '../styles.module.css';
+import { PluginList } from '../constants';
+import styles from '../css/styles.module.css';
+import { FeatureItem } from '../types';
 
 /**
  * Plugin
  */
-export const Plugin = ({ title, subTitle, Png, description }: FeatureItem) => {
+export const Plugin = ({
+  title,
+  subTitle,
+  Svg,
+  Png,
+  description,
+}: FeatureItem) => {
   return (
     <div className={clsx("col col--6")}>
       <div className="text--center">
-        <img className={styles.featurePng} src={Png} alt={title} />
+        {Svg ? (
+          <Svg className={styles.featureSvg} role="img" />
+        ) : (
+          <img className={styles.featurePng} src={Png} alt={title} />
+        )}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
-        <h4>{subTitle}</h4>
+        {subTitle && <h4>{subTitle}</h4>}
         <p>{description}</p>
       </div>
     </div>

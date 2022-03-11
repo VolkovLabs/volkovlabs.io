@@ -49,14 +49,14 @@ const config = {
             label: 'Home',
           },
           {
-            to: 'about',
-            position: 'right',
-            label: 'About',
-          },
-          {
             to: 'portfolio',
             position: 'right',
             label: 'Portfolio',
+          },
+          {
+            to: 'about',
+            position: 'right',
+            label: 'About',
           },
         ],
       },

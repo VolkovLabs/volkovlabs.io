@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
-import { FeatureList } from '../../constants';
-import { FeatureItem } from '../../types';
-import styles from '../styles.module.css';
+import { FeatureList } from '../constants';
+import styles from '../css/styles.module.css';
+import { FeatureItem } from '../types';
 
 /**
  * Feature

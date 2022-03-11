@@ -1,3 +1,6 @@
+/**
+ * Features
+ */
 .features {
   display: flex;
   align-items: center;
@@ -5,12 +8,18 @@
   width: 100%;
 }
 
+/**
+ * SVG
+ */
 .featureSvg {
   height: 200px;
   width: 200px;
 }
 
+/**
+ * PNG
+ */
 .featurePng {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
 }
