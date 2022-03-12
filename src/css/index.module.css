@@ -20,6 +20,7 @@
 .featureItem:hover {
   background-color: var(--ifm-color-primary-lightest);
   color: var(--ifm-color-gray-1000);
+  box-shadow: 3px 3px #dddddd;
 }
 
 .featureItem a,
@@ -36,8 +37,8 @@
  * SVG
  */
 .featureSvg {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   border-radius: 20px;
 }
 
@@ -45,8 +46,8 @@
  * PNG
  */
 .featurePng {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   border-radius: 20px;
 }
 

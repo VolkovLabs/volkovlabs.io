@@ -50,7 +50,7 @@ Grafana supports managing data sources by adding one or more YAML config files i
 
 Example of provisioning the RSS/Atom Data Source for Bitcoin news feed.
 
-```
+```json
 datasources:
   - name: Bitcoin
     type: volkovlabs-rss-datasource
