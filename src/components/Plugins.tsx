@@ -13,6 +13,7 @@ export const Plugin = ({
   Svg,
   Png,
   href,
+  target,
   description,
 }: FeatureItem) => {
   return (
@@ -22,7 +23,7 @@ export const Plugin = ({
         styles.featureItem
       )}
     >
-      <a href={href}>
+      <a href={href} target={target}>
         <div className="text--center">
           {Svg ? (
             <Svg className={styles.featureSvg} role="img" />

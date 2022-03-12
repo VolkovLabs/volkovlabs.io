@@ -28,6 +28,11 @@ export interface FeatureItem {
   description: JSX.Element;
 
   /**
+   * Target
+   */
+  target?: string;
+
+  /**
    * Link
    */
   href: string;

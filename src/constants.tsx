@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeatureItem } from '../types';
+import { FeatureItem } from './types';
 
 /**
  * Plugin List
@@ -14,16 +14,17 @@ export const PluginList: FeatureItem[] = [
         formats.
       </>
     ),
-    href: "plugins/volkovlabs-image-panel",
+    href: "/plugins/volkovlabs-image-panel",
   },
   {
     title: "Mesmerizing Flows NFT",
-    Png: "img/plugins/mesmerizing-flows-nft.png",
+    Png: "/img/plugins/mesmerizing-flows-nft.png",
     description: (
       <>
         Every flow is unique and created using Volkov Labs plugins for Grafana.
       </>
     ),
+    target: "_blank",
     href: "https://solsea.io/collection/61ce604b558d7a2f0b8ecacc",
   },
   {
@@ -36,7 +37,7 @@ export const PluginList: FeatureItem[] = [
         and other panels.
       </>
     ),
-    href: "plugins/volkovlabs-rss-datasource",
+    href: "/plugins/volkovlabs-rss-datasource",
   },
   {
     title: "Environment data source",
@@ -48,6 +49,31 @@ export const PluginList: FeatureItem[] = [
         Variables to retrieve data.
       </>
     ),
-    href: "plugins/volkovlabs-env-datasource",
+    href: "/plugins/volkovlabs-env-datasource",
+  },
+  {
+    title: "Redis Grafana",
+    Png: "/img/plugins/redisgrafana.png",
+    description: (
+      <>
+        The Redis plugins for Grafana let you connect Grafana to Redis to
+        visualize more types of data in more ways than otherwise would be
+        possible.
+      </>
+    ),
+    target: "_blank",
+    href: "https://redisgrafana.github.io",
+  },
+  {
+    title: "Theiascope",
+    Svg: require("@site/static/img/plugins/theiascope.svg").default,
+    description: (
+      <>
+        Augment your scientific image analysis workflows with machine vision at
+        the point-of-acquisition.
+      </>
+    ),
+    target: "_blank",
+    href: "https://www.theiascope.io/",
   },
 ];
