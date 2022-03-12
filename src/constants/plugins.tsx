@@ -14,6 +14,7 @@ export const PluginList: FeatureItem[] = [
         formats.
       </>
     ),
+    href: "plugins/volkovlabs-image-panel",
   },
   {
     title: "Mesmerizing Flows NFT",
@@ -23,6 +24,7 @@ export const PluginList: FeatureItem[] = [
         Every flow is unique and created using Volkov Labs plugins for Grafana.
       </>
     ),
+    href: "https://solsea.io/collection/61ce604b558d7a2f0b8ecacc",
   },
   {
     title: "RSS/Atom data source",
@@ -34,6 +36,7 @@ export const PluginList: FeatureItem[] = [
         and other panels.
       </>
     ),
+    href: "plugins/volkovlabs-rss-datasource",
   },
   {
     title: "Environment data source",
@@ -45,5 +48,6 @@ export const PluginList: FeatureItem[] = [
         Variables to retrieve data.
       </>
     ),
+    href: "plugins/volkovlabs-env-datasource",
   },
 ];

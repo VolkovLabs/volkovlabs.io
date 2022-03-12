@@ -1,0 +1,103 @@
+/**
+ * Features
+ */
+.features {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+/**
+ * Feature Items
+ */
+.featureItem {
+  border: 2px solid var(--ifm-color-primary);
+  border-radius: 10px;
+}
+
+.featureItem:hover {
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-gray-1000);
+}
+
+.featureItem a,
+.featureItem a:hover {
+  color: var(--ifm-color-gray-1000);
+}
+
+[data-theme="dark"] .featureItem a,
+.featureItem a:hover {
+  color: var(--ifm-color-white);
+}
+
+/**
+ * SVG
+ */
+.featureSvg {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+}
+
+/**
+ * PNG
+ */
+.featurePng {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+}
+
+/**
+ * Hero Banner
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionAlt {
+  background-color: var(--ifm-color-emphasis-alpha-05);
+}
+
+.sectionDark {
+  background-color: var(--ifm-color-primary);
+}
+
+.sectionDarkLight {
+  background-color: var(--ifm-color-primary-light);
+}
+
+.sectionDarkTitle {
+  color: var(--ifm-color-white);
+}
+
+.sectionDark a,
+.sectionDark a:hover {
+  color: var(--ifm-color-gray-1000);
+}
+
+/**
+ * Waves
+ */
+.waves {
+  fill: var(--ifm-color-primary);
+  fill-opacity: 1;
+}

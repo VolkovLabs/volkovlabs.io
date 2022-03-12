@@ -26,4 +26,9 @@ export interface FeatureItem {
    * Description
    */
   description: JSX.Element;
+
+  /**
+   * Link
+   */
+  href: string;
 }

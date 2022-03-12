@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Volkov Labs',
-  tagline: 'An agency specializing in custom plugin development for Grafana',
+  tagline: 'Custom plugin development for Grafana',
   url: 'https://volkovlabs.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -15,14 +15,14 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'VolkovLabs',
   projectName: '',
-
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js')
+          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: 'plugins'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -44,19 +44,9 @@ const config = {
         },
         items: [
           {
-            to: '/',
-            position: 'right',
-            label: 'Home',
-          },
-          {
             to: 'portfolio',
             position: 'right',
             label: 'Portfolio',
-          },
-          {
-            to: 'about',
-            position: 'right',
-            label: 'About',
           },
         ],
       },
@@ -81,19 +71,19 @@ const config = {
             ],
           },
           {
-            title: 'Documentation',
+            title: 'Plugins',
             items: [
               {
                 label: 'Base64 Image/PDF Panel',
-                to: '/docs/image-panel',
+                to: '/plugins/volkovlabs-image-panel',
               },
               {
                 label: 'RSS Data Source',
-                to: '/docs/rss-datasource',
+                to: '/plugins/volkovlabs-rss-datasource',
               },
               {
                 label: 'Environment Data Source',
-                to: '/docs/env-datasource',
+                to: '/plugins/volkovlabs-env-datasource',
               },
             ],
           },
