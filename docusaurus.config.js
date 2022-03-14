@@ -24,6 +24,10 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: 'plugins'
         },
+        gtag: {
+          trackingID: 'G-D3HVJTTCBD',
+          anonymizeIP: true,
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -40,7 +44,7 @@ const config = {
         hideOnScroll: true,
         logo: {
           alt: 'Volkov Labs',
-          src: 'img/logo.png',
+          src: 'img/logo.svg',
         },
         items: [
           {
