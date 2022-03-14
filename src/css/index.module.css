@@ -18,9 +18,9 @@
 }
 
 .featureItem:hover {
-  background-color: var(--ifm-color-primary-lightest);
+  background-color: var(--ifm-color-primary-dark);
   color: var(--ifm-color-gray-1000);
-  box-shadow: 3px 3px #dddddd;
+  box-shadow: 3px 3px #aaaaaa;
 }
 
 .featureItem a,
