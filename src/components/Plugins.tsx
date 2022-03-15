@@ -19,7 +19,7 @@ export const Plugin = ({
   return (
     <div
       className={clsx(
-        "col col--5 padding-vert--lg padding-horiz--lg margin-vert--lg margin-horiz--lg",
+        "col padding-vert--lg padding-horiz--lg margin-vert--lg margin-horiz--lg",
         styles.featureItem
       )}
     >
