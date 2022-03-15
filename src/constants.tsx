@@ -17,18 +17,7 @@ export const PluginList: FeatureItem[] = [
     href: "/plugins/volkovlabs-image-panel",
   },
   {
-    title: "Mesmerizing Flows NFT",
-    Png: "/img/plugins/mesmerizing-flows-nft.png",
-    description: (
-      <>
-        Every flow is unique and created using Volkov Labs plugins for Grafana.
-      </>
-    ),
-    target: "_blank",
-    href: "https://solsea.io/collection/61ce604b558d7a2f0b8ecacc",
-  },
-  {
-    title: "RSS/Atom data source",
+    title: "RSS/Atom Data Source",
     Svg: require("@site/static/img/plugins/volkovlabs-rss-datasource.svg")
       .default,
     description: (
@@ -40,7 +29,7 @@ export const PluginList: FeatureItem[] = [
     href: "/plugins/volkovlabs-rss-datasource",
   },
   {
-    title: "Environment data source",
+    title: "Environment Data Source",
     Svg: require("@site/static/img/plugins/volkovlabs-env-datasource.svg")
       .default,
     description: (
@@ -52,7 +41,18 @@ export const PluginList: FeatureItem[] = [
     href: "/plugins/volkovlabs-env-datasource",
   },
   {
-    title: "Redis Grafana",
+    title: "Mesmerizing Flows NFT",
+    Png: "/img/plugins/mesmerizing-flows-nft.png",
+    description: (
+      <>
+        Every flow is unique and created using Volkov Labs plugins for Grafana.
+      </>
+    ),
+    target: "_blank",
+    href: "https://solsea.io/collection/61ce604b558d7a2f0b8ecacc",
+  },
+  {
+    title: "Redis Data Source and Application",
     Png: "/img/plugins/redisgrafana.png",
     description: (
       <>
@@ -63,6 +63,15 @@ export const PluginList: FeatureItem[] = [
     ),
     target: "_blank",
     href: "https://redisgrafana.github.io",
+  },
+  {
+    title: "Molycop",
+    Png: "/img/plugins/molycop.png",
+    description: (
+      <>The Mill Charge Motion Widget to display sensor information.</>
+    ),
+    target: "_blank",
+    href: "https://molycop.com/",
   },
   {
     title: "Theiascope",
