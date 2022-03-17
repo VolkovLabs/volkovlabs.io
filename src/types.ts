@@ -20,7 +20,7 @@ export interface FeatureItem {
   /**
    * PNG
    */
-  Png?: string;
+  png?: string;
 
   /**
    * Description
@@ -36,4 +36,14 @@ export interface FeatureItem {
    * Link
    */
   href: string;
+
+  /**
+   * Badge
+   */
+  badge?: string;
+
+  /**
+   * Badge2
+   */
+  badge2?: string;
 }
