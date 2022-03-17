@@ -11,7 +11,9 @@ export const Plugin = ({
   title,
   subTitle,
   Svg,
-  Png,
+  png,
+  badge,
+  badge2,
   href,
   target,
   description,
@@ -28,13 +30,18 @@ export const Plugin = ({
           {Svg ? (
             <Svg className={styles.featureSvg} role="img" />
           ) : (
-            <img className={styles.featurePng} src={Png} alt={title} />
+            <img className={styles.featurePng} src={png} alt={title} />
           )}
         </div>
         <div className="text--center">
           <h3>{title}</h3>
           {subTitle && <h4>{subTitle}</h4>}
           <p>{description}</p>
+          <p>
+            {badge && <img className={styles.badge} src={badge} />}
+            {badge && badge2 && <br />}
+            {badge2 && <img className={styles.badge} src={badge2} />}
+          </p>
         </div>
       </a>
     </div>
