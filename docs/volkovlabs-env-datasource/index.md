@@ -13,7 +13,7 @@ sidebar_position: 1
 
 The Environment data source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables to retrieve data.
 
-![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-env-datasource/main/src/img/dashboard.png)
+<iframe width="728" height="410" src="https://www.youtube.com/embed/GPzsciOxKdk" title="Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Requirements
 
