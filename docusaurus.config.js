@@ -38,9 +38,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true
+    },
       metadata: [{name: 'keywords', content: 'grafana, plugins'}],
       navbar: {
-        title: 'Volkov Labs',
         hideOnScroll: true,
         logo: {
           alt: 'Volkov Labs',
