@@ -1,14 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="350" height="350" viewBox="0 0 350 350" xml:space="preserve">
-<desc>Created with Fabric.js 1.7.22</desc>
-<defs>
-</defs>
-<g id="icon" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-1.9444444444444287 -1.9444444444444287) scale(3.89 3.89)" >
-	<polyline points="10.05,69.45 1.86,32.46 0,24.05 78.06,6.77 82.49,26.79 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(244,209,66); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
-	<rect x="10.05" y="27.06" rx="0" ry="0" width="79.95" height="56.17" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,222,85); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
-	<rect x="16.88" y="33.52" rx="0" ry="0" width="66.28" height="43.24" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(249,249,249); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
-	<path d="M 75.299 76.762 L 58.251 56.939 c -0.839 -0.976 -2.326 -1.045 -3.252 -0.152 l -8.368 8.07 c -0.935 0.901 -2.441 0.808 -3.258 -0.201 L 34.37 53.524 c -0.816 -1.009 -2.317 -1.115 -3.267 -0.231 l -14.222 13.24 v 10.228 H 75.299 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(170,217,98); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-	<circle cx="69.033" cy="46.623000000000005" r="6.563" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,169,65); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
-</g>
+<svg width="188" height="136" viewBox="0 0 188 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M142.092 13.1415C139.443 14.6713 136.055 13.7635 134.525 11.1138C132.995 8.46415 133.903 5.07605 136.552 3.54627C139.202 2.0165 142.59 2.92434 144.12 5.57399C145.65 8.22364 144.742 11.6117 142.092 13.1415ZM137.578 5.3231C135.91 6.28631 135.338 8.41961 136.302 10.088C137.265 11.7563 139.398 12.3279 141.066 11.3647C142.735 10.4015 143.306 8.26818 142.343 6.59984C141.38 4.9315 139.247 4.35988 137.578 5.3231Z" fill="#111111"/>
+<path d="M174.38 71.6032C171.73 73.133 168.342 72.2251 166.812 69.5755C165.283 66.9258 166.19 63.5377 168.84 62.0079C171.49 60.4782 174.878 61.386 176.408 64.0357C177.937 66.6853 177.03 70.0734 174.38 71.6032ZM169.866 63.7848C168.198 64.748 167.626 66.8813 168.589 68.5496C169.552 70.218 171.686 70.7896 173.354 69.8264C175.022 68.8631 175.594 66.7298 174.631 65.0615C173.668 63.3932 171.534 62.8216 169.866 63.7848Z" fill="#111111"/>
+<rect x="187.406" y="83.0862" width="11.0796" height="3.45801" transform="rotate(150 187.406 83.0862)" fill="#111111"/>
+<rect x="11.918" y="98.8438" width="11.0796" height="3.45801" transform="rotate(150 11.918 98.8438)" fill="#111111"/>
+<rect x="20.147" y="113.097" width="11.0796" height="3.45801" transform="rotate(150 20.147 113.097)" fill="#111111"/>
+<path d="M66.0689 89.708L70.4673 10.673L12.7607 64.7038M66.0689 89.708L12.7607 64.7038M66.0689 89.708L46.3018 130.201M12.7607 64.7038L46.3018 130.201M46.3018 130.201L138.54 134.554M112.131 16.6232L120.567 54.2939M120.567 54.2939L138.54 134.554M120.567 54.2939L66.679 89.9095L138.54 134.554M120.567 54.2939L173.892 19.0501L138.54 134.554M70.3614 10.4229L112.057 16.9574L173.866 18.5307" stroke="black" stroke-width="2"/>
+<rect x="49.8379" y="46.1396" width="86.7975" height="61.1037" fill="#FF5656"/>
+<circle cx="118.501" cy="64.7966" r="9.13037" fill="#F5F6F9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M49.8379 107.243H73.9112L73.9111 107.243H127.632L100.771 77.9618L86.0882 93.9685L65.9509 72.0161L49.8379 89.5816V107.243Z" fill="#111111"/>
 </svg>
