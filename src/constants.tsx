@@ -1,10 +1,10 @@
 import React from 'react';
-import { FeatureItem } from './types';
+import { FeatureItem, PluginItem } from './types';
 
 /**
  * Plugin List
  */
-export const PluginList: FeatureItem[] = [
+export const PluginList: PluginItem[] = [
   {
     title: "Base64 Image/PDF Panel",
     Svg: require("@site/static/img/plugins/volkovlabs-image-panel.svg").default,
@@ -95,5 +95,30 @@ export const PluginList: FeatureItem[] = [
     target: "_blank",
     href: "https://www.theiascope.io/",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+  },
+];
+
+/**
+ * Feature List
+ */
+export const FeatureList: FeatureItem[] = [
+  {
+    Svg: require("@site/static/img/features/feature-1.svg").default,
+    description: <>Build software for your unique needs.</>,
+  },
+  {
+    Svg: require("@site/static/img/features/feature-2.svg").default,
+    description: (
+      <>
+        Specialize in developing custom plugins to visualize your data using
+        Grafana as a Platform.
+      </>
+    ),
+  },
+  {
+    Svg: require("@site/static/img/features/feature-3.svg").default,
+    description: (
+      <>Our solutions are cost-effective, creative, and delivered on time.</>
+    ),
   },
 ];
