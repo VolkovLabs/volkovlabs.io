@@ -15,11 +15,9 @@ function Home() {
         <div className="container">
           <img
             className={clsx(styles.heroBannerLogo, "margin-vert--md")}
-            src={useBaseUrl("img/logo-bw.svg")}
-            width="150px"
+            src={useBaseUrl("img/main.svg")}
           />
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className="hero__title">{siteConfig.tagline}</h1>
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -61,7 +59,7 @@ function Home() {
           </svg>
         </div>
 
-        <p className={clsx("hero", styles.heroBanner)}>
+        <div className={clsx("hero", styles.heroBanner)}>
           <div className="container">
             <h2 className="hero__title">Our focus</h2>
             <p className="hero__subtitle">
@@ -100,7 +98,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </p>
+        </div>
       </main>
     </Layout>
   );
