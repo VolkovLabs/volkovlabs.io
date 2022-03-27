@@ -20,10 +20,13 @@ function Home() {
                 {siteConfig.tagline}
               </h1>
 
-              <p className="hero__subtitle margin-vert--lg">
+              <p className="hero__subtitle margin-vert--md">
                 Volkov Labs is an agency founded by long-time Grafana
-                contributor Mikhail Volkov. We like to find elegant solutions
-                for non-standard tasks.
+                contributor Mikhail Volkov.
+              </p>
+
+              <p className="hero__subtitle">
+                We like to find elegant solutions for non-standard tasks.
               </p>
               <div className="margin-vert--lg">
                 <Link
