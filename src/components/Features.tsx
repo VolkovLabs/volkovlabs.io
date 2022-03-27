@@ -10,10 +10,10 @@ import { FeatureItem } from '../types';
 export const Feature = ({ Svg, description }: FeatureItem) => {
   return (
     <div className="col padding-horiz--lg margin-vert--lg margin-horiz--lg">
-      <div className="text--center">
+      <div>
         <Svg className={styles.featureSvg} role="img" />
       </div>
-      <div className="text--center">
+      <div>
         <p>{description}</p>
       </div>
     </div>
@@ -25,8 +25,8 @@ export const Feature = ({ Svg, description }: FeatureItem) => {
  */
 export const Features = (): JSX.Element => {
   return (
-    <section className={styles.features}>
-      <div className="container">
+    <section>
+      <div className="container text--center">
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

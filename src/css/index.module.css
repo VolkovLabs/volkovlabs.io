@@ -1,14 +1,6 @@
 /**
  * Features
  */
-.features {
-  display: flex;
-  align-items: center;
-  margin: 5px;
-  padding: 2rem 0;
-  width: 100%;
-}
-
 .featureItem {
   border: 2px solid var(--ifm-color-white);
 }
@@ -67,5 +59,5 @@
 
 .header span {
   background: #fff;
-  padding: 0 20px;
+  padding-right: 20px;
 }

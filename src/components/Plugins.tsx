@@ -25,10 +25,10 @@ export const Plugin = ({
       )}
     >
       <a href={href} target={target}>
-        <div className="text--center">
+        <div>
           <Svg className={styles.pluginSvg} role="img" />
         </div>
-        <div className="text--center">
+        <div>
           <h3>{title}</h3>
           {subTitle && <h4>{subTitle}</h4>}
           <p>{description}</p>
@@ -48,8 +48,8 @@ export const Plugin = ({
  */
 export const Plugins = (): JSX.Element => {
   return (
-    <section className={styles.features}>
-      <div className="container">
+    <section>
+      <div className="container text--center">
         <div className="row">
           {PluginList.map((props, idx) => (
             <Plugin key={idx} {...props} />
