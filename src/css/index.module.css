@@ -9,9 +9,6 @@
   width: 100%;
 }
 
-/**
- * Feature Items
- */
 .featureItem:hover {
   border: 2px solid var(--ifm-color-black);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -29,74 +26,46 @@
  * SVG
  */
 .featureSvg {
+  height: 100px;
+  width: 100px;
+}
+
+.pluginSvg {
   height: 150px;
   width: 150px;
-  border-radius: 20px;
 }
 
 /**
- * PNG
+ * Button
  */
-.featurePng {
-  height: 150px;
-  width: 150px;
-  border-radius: 20px;
-}
-
-/**
- * Hero Banner
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .getStarted {
   border-radius: 0px;
   border-color: #ff5656;
   background-color: #ff5656;
 }
 
-.sectionAlt {
-  background-color: var(--ifm-color-emphasis-alpha-05);
+/**
+ * Why inside the Box
+ */
+.whyBox {
+  border: 2px solid var(--ifm-color-black);
+  padding: 0;
 }
 
-.sectionDark {
-  background-color: var(--ifm-color-primary);
-}
-
-.sectionDarkLight {
-  background-color: var(--ifm-color-primary);
-}
-
-.sectionDarkTitle {
-  color: var(--ifm-color-white);
-}
-
-.sectionDark a,
-.sectionDark a:hover {
-  color: var(--ifm-color-gray-1000);
+.whyBox img {
+  height: 100%;
 }
 
 /**
- * Waves
+ * Header with line
  */
-.waves {
-  fill: var(--ifm-color-primary);
-  fill-opacity: 1;
+.header {
+  width: 100%;
+  border-bottom: 2px solid #000;
+  line-height: 0.1em;
+}
+
+.header span {
+  background: #fff;
+  padding: 0 20px;
 }

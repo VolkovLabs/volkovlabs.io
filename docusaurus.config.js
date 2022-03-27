@@ -51,9 +51,24 @@ const config = {
         },
         items: [
           {
-            to: 'portfolio',
+            href: '#What',
             position: 'right',
-            label: 'Portfolio',
+            label: 'What we are doing'
+          },
+          {
+            href: '#Why',
+            position: 'right',
+            label: 'Why work with us'
+          },
+          {
+            href: '#Portfolio',
+            position: 'right',
+            label: 'Portfolio'
+          },
+          {
+            href: '#Team',
+            position: 'right',
+            label: 'Team'
           },
         ],
       },
