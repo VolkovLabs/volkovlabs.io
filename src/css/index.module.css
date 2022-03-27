@@ -12,14 +12,8 @@
 /**
  * Feature Items
  */
-.featureItem {
-  border: 2px solid var(--ifm-color-primary);
-  border-radius: 10px;
-}
-
 .featureItem:hover {
-  background-color: var(--ifm-color-primary-dark);
-  color: var(--ifm-color-gray-1000);
+  border: 2px solid var(--ifm-color-black);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
@@ -29,11 +23,6 @@
 .featureItem a,
 .featureItem a:hover {
   color: var(--ifm-color-gray-1000);
-}
-
-[data-theme="dark"] .featureItem a,
-.featureItem a:hover {
-  color: var(--ifm-color-white);
 }
 
 /**
@@ -77,6 +66,12 @@
   justify-content: center;
 }
 
+.getStarted {
+  border-radius: 0px;
+  border-color: #ff5656;
+  background-color: #ff5656;
+}
+
 .sectionAlt {
   background-color: var(--ifm-color-emphasis-alpha-05);
 }
@@ -86,7 +81,7 @@
 }
 
 .sectionDarkLight {
-  background-color: var(--ifm-color-primary-light);
+  background-color: var(--ifm-color-primary);
 }
 
 .sectionDarkTitle {
