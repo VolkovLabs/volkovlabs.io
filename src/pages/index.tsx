@@ -62,7 +62,7 @@ function Home() {
             <div className="col col--1">
               <h2 className={clsx(styles.header, "hero__title")}></h2>
             </div>
-            <div className="col col--9">
+            <div className="col col--9 hero__subtitle">
               Big companies offer one-size fit all applications. We have time to
               understand your existing processes and challenges which allows us
               to come up with solutions to not only satisfy your needs but also
