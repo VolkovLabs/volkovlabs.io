@@ -1,7 +1,7 @@
 /**
- * Feature Item
+ * Plugin Item
  */
-export interface FeatureItem {
+export interface PluginItem {
   /**
    * Title
    */
@@ -16,11 +16,6 @@ export interface FeatureItem {
    * SVG
    */
   Svg?: React.ComponentType<React.ComponentProps<"svg">>;
-
-  /**
-   * PNG
-   */
-  png?: string;
 
   /**
    * Description
@@ -46,4 +41,19 @@ export interface FeatureItem {
    * Badge2
    */
   badge2?: string;
+}
+
+/**
+ * Feature Item
+ */
+export interface FeatureItem {
+  /**
+   * Description
+   */
+  description: JSX.Element;
+
+  /**
+   * SVG
+   */
+  Svg?: React.ComponentType<React.ComponentProps<"svg">>;
 }

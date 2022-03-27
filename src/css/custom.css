@@ -6,24 +6,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary-lightest: #9a7df2;
-  --ifm-color-primary-lighter: #7c57ef;
-  --ifm-color-primary-light: #724aed;
-  --ifm-color-primary: #5e30eb;
-  --ifm-color-primary-dark: #4a16e8;
-  --ifm-color-primary-darker: #4615db;
-  --ifm-color-primary-darkest: #3a11b5;
-}
-
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary-lightest: #9a7df2;
-  --ifm-color-primary-lighter: #7c57ef;
-  --ifm-color-primary-light: #724aed;
-  --ifm-color-primary: #5e30eb;
-  --ifm-color-primary-dark: #4a16e8;
-  --ifm-color-primary-darker: #4615db;
-  --ifm-color-primary-darkest: #3a11b5;
+  --ifm-color-primary-lightest: #e4d8fd;
+  --ifm-color-primary-lighter: #c1a4fb;
+  --ifm-color-primary-light: #b593fa;
+  --ifm-color-primary: #9d70f9;
+  --ifm-color-primary-dark: #854df8;
+  --ifm-color-primary-darker: #793cf7;
+  --ifm-color-primary-darkest: #560af3;
 }
 
 .docusaurus-highlight-code-line {
@@ -33,6 +22,33 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+body {
+  font-family: "Urbanist";
+  font-style: normal;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/urbanist/v7/L0xjDF02iFML4hGCyOCpRdycFsGxSrqDyx4vH5msacG1Koy1cIU.woff)
+    format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/urbanist/v7/L0xjDF02iFML4hGCyOCpRdycFsGxSrqDyx4vEZmsacG1Koy1.woff)
+    format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+:root {
+  --ifm-font-family-base: "Urbanist";
 }

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { PluginList } from '../constants';
 import styles from '../css/index.module.css';
-import { FeatureItem } from '../types';
+import { PluginItem } from '../types';
 
 /**
  * Plugin
@@ -11,29 +11,24 @@ export const Plugin = ({
   title,
   subTitle,
   Svg,
-  png,
   badge,
   badge2,
   href,
   target,
   description,
-}: FeatureItem) => {
+}: PluginItem) => {
   return (
     <div
       className={clsx(
-        "col padding-vert--lg padding-horiz--lg margin-vert--lg margin-horiz--lg",
+        "col padding-horiz--lg margin-vert--lg margin-horiz--lg",
         styles.featureItem
       )}
     >
       <a href={href} target={target}>
-        <div className="text--center">
-          {Svg ? (
-            <Svg className={styles.featureSvg} role="img" />
-          ) : (
-            <img className={styles.featurePng} src={png} alt={title} />
-          )}
+        <div>
+          <Svg className={styles.pluginSvg} role="img" />
         </div>
-        <div className="text--center">
+        <div>
           <h3>{title}</h3>
           {subTitle && <h4>{subTitle}</h4>}
           <p>{description}</p>
@@ -53,8 +48,8 @@ export const Plugin = ({
  */
 export const Plugins = (): JSX.Element => {
   return (
-    <section className={styles.features}>
-      <div className="container">
+    <section>
+      <div className="container text--center">
         <div className="row">
           {PluginList.map((props, idx) => (
             <Plugin key={idx} {...props} />

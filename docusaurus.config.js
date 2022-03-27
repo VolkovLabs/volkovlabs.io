@@ -38,9 +38,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true
+    },
       metadata: [{name: 'keywords', content: 'grafana, plugins'}],
       navbar: {
-        title: 'Volkov Labs',
         hideOnScroll: true,
         logo: {
           alt: 'Volkov Labs',
@@ -48,9 +51,24 @@ const config = {
         },
         items: [
           {
-            to: 'portfolio',
+            href: '#What',
             position: 'right',
-            label: 'Portfolio',
+            label: 'What we are doing'
+          },
+          {
+            href: '#Why',
+            position: 'right',
+            label: 'Why work with us'
+          },
+          {
+            href: '#Portfolio',
+            position: 'right',
+            label: 'Portfolio'
+          },
+          {
+            href: '#Team',
+            position: 'right',
+            label: 'Team'
           },
         ],
       },
