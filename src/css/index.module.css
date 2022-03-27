@@ -41,6 +41,7 @@
  */
 .whyBox {
   border: 2px solid var(--ifm-color-black);
+  background-color: white;
   padding: 0;
 }
 
@@ -51,13 +52,19 @@
 /**
  * Header with line
  */
-.header {
+.header,
+.headerWhite {
   width: 100%;
   border-bottom: 2px solid #000;
   line-height: 0.1em;
 }
 
 .header span {
+  background: #f5f6f9;
+  padding-right: 20px;
+}
+
+.headerWhite span {
   background: #fff;
   padding-right: 20px;
 }

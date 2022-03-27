@@ -26,7 +26,7 @@ function Home() {
               </p>
 
               <p className="hero__subtitle">
-                We like to find elegant solutions for non-standard tasks.
+                We find elegant solutions for non-standard tasks.
               </p>
               <div className="margin-vert--lg">
                 <Link
@@ -109,7 +109,7 @@ function Home() {
         </div>
 
         <div id="Team" className="container margin-vert--lg">
-          <h2 className={clsx(styles.header, "hero__title")}>
+          <h2 className={clsx(styles.headerWhite, "hero__title")}>
             <span>Team</span>
           </h2>
 
@@ -135,7 +135,7 @@ function Home() {
               <div className="avatar__intro padding-vert--md">
                 <div className="avatar__name">Daria Volkova</div>
                 <p className="avatar__subtitle">
-                  Daria translates ideas to elegant solutions and beautify them.
+                  Daria translates ideas to elegant solutions.
                 </p>
               </div>
             </div>
