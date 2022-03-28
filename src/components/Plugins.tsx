@@ -15,6 +15,7 @@ export const Plugin = ({
   badge2,
   href,
   target,
+  trade,
   description,
 }: PluginItem) => {
   return (
@@ -29,7 +30,10 @@ export const Plugin = ({
           <Svg className={styles.pluginSvg} role="img" />
         </div>
         <div>
-          <h3>{title}</h3>
+          <h3>
+            {title}
+            {trade && "™"}
+          </h3>
           {subTitle && <h4>{subTitle}</h4>}
           <p>{description}</p>
           <p>

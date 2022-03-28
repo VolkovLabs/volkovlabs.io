@@ -64,7 +64,7 @@ function Home() {
             </div>
             <div className="col col--9 hero__subtitle">
               Big companies offer one-size fit all applications. We have time to
-              understand your existing processes and challenges which allows us
+              understand your existing processes and challenges, which allows us
               to come up with solutions to not only satisfy your needs but also
               improve productivity, effectiveness, and performance.
             </div>
