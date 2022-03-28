@@ -28,6 +28,11 @@ export interface PluginItem {
   target?: string;
 
   /**
+   * Trademark
+   */
+  trade?: boolean;
+
+  /**
    * Link
    */
   href: string;

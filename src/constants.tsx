@@ -85,6 +85,7 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Theiascope",
+    trade: true,
     Svg: require("@site/static/img/plugins/theiascope.svg").default,
     description: (
       <>
@@ -111,7 +112,7 @@ export const FeatureList: FeatureItem[] = [
     description: (
       <>
         Specialize in developing custom plugins to visualize your data using
-        Grafana as a Platform.
+        Grafana as a platform.
       </>
     ),
   },
