@@ -81,11 +81,9 @@ function Home() {
               <img src={useBaseUrl("img/why-1.svg")} />
             </div>
             <div className="col col--6 text--center">
-              <h2 className="margin-vert--lg">&nbsp;</h2>
-
               <h2 className="hero__title margin-vert--lg">Why work with us</h2>
 
-              <p className="margin-vert--lg">
+              <p className="margin-vert--lg hero__subtitle">
                 We are proud of how fast we can deliver working solutions. Our
                 meetings are straight to the point. You save time and money
                 while getting what you need.
