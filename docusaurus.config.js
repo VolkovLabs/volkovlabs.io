@@ -73,7 +73,11 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        logo: {
+          alt: 'Volkov Labs',
+          src: 'img/logo.svg',
+        },
+        style: 'light',
         links: [
           {
             title: 'Projects',
