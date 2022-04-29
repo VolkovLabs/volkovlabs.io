@@ -12,11 +12,11 @@ function Home() {
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      <header>
+      <header className="main-wrapper__intro intro intro_view_default">
         <div className="container margin-vert--lg">
           <div className="row">
             <div className="col col--7 margin-vert--lg">
-              <h1 className="hero__title margin-vert--lg">
+              <h1 className="text text_size_headline-xxl text_weight_900">
                 {siteConfig.tagline}
               </h1>
 
