@@ -1,0 +1,26 @@
+:root {
+  --text-headline-xxl-font-size: 24px;
+  --text-headline-xxl-line-height: calc(28 / 24);
+  --text-headline-xxl-letter-spacing: -0.02em;
+
+  --text-headline-xl-font-size: 22px;
+  --text-headline-xl-line-height: calc(26 / 22);
+  --text-headline-xl-letter-spacing: -0.02em;
+
+  --text-headline-l-font-size: 20px;
+  --text-headline-l-line-height: calc(22 / 20);
+  --text-headline-l-letter-spacing: -0.02em;
+
+  --text-headline-m-font-size: 18px;
+  --text-headline-m-line-height: calc(20 / 18);
+  --text-headline-m-letter-spacing: -0.02em;
+
+  --text-headline-s-font-size: 16px;
+  --text-headline-s-line-height: calc(18 / 16);
+  --text-headline-s-letter-spacing: -0.02em;
+
+  /* in design no styles for h6, so do in my way */
+  --text-headline-xs-font-size: 14px;
+  --text-headline-xs-line-height: calc(16 / 14);
+  --text-headline-xs-letter-spacing: -0.02em;
+}
