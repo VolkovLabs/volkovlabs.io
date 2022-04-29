@@ -1,0 +1,5 @@
+.text_size_headline-xl {
+  font-size: var(--text-headline-xl-font-size);
+  line-height: var(--text-headline-xl-line-height);
+  letter-spacing: var(--text-headline-xl-letter-spacing);
+}

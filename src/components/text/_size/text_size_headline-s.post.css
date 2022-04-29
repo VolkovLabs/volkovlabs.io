@@ -1,0 +1,5 @@
+.text_size_headline-s {
+  font-size: var(--text-headline-s-font-size);
+  line-height: var(--text-headline-s-line-height);
+  letter-spacing: var(--text-headline-s-letter-spacing);
+}

@@ -1,0 +1,16 @@
+import './text.post.css';
+import './_size/text_size_headline-xxl.post.css';
+import './_size/text_size_headline-xl.post.css';
+import './_size/text_size_headline-l.post.css';
+import './_size/text_size_headline-m.post.css';
+import './_size/text_size_headline-s.post.css';
+import './_size/text_size_headline-xs.post.css';
+import './_weight/text_weight_100.post.css';
+import './_weight/text_weight_200.post.css';
+import './_weight/text_weight_300.post.css';
+import './_weight/text_weight_400.post.css';
+import './_weight/text_weight_500.post.css';
+import './_weight/text_weight_600.post.css';
+import './_weight/text_weight_700.post.css';
+import './_weight/text_weight_800.post.css';
+import './_weight/text_weight_900.post.css';
