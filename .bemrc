@@ -1,0 +1,21 @@
+module.exports = {
+  root: true,
+  modules: {
+    'bem-tools': {
+      plugins: {
+        create: {
+          templates: {
+            'post.css': '.bem/templates/css.js',
+            'node.js': '.bem/templates/node.js.js'
+          },
+          techs: ['post.css'],
+          levels: {
+            'src/components': {
+              default: true
+            }
+          }
+        }
+      }
+    }
+  }
+}

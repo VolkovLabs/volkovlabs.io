@@ -29,10 +29,14 @@ const config = {
           anonymizeIP: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.css')
         },
       }),
     ],
+  ],
+
+  plugins: [
+    require.resolve('./docusaurus-plugin/postcss/index.js')
   ],
 
   themeConfig:
