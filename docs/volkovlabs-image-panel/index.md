@@ -1,12 +1,8 @@
----
-sidebar_position: 1
----
-
 # Base64 Image/PDF panel
 
-[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange?style=for-the-badge)](https://www.grafana.com)
-[![Base64 Image](https://img.shields.io/badge/dynamic/json?color=blue&label=Base64%20Image%20Panel&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fvolkovlabs-image-panel&style=for-the-badge)](https://grafana.com/grafana/plugins/volkovlabs-image-panel)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-image-panel.svg?logo=lgtm&logoWidth=18&style=for-the-badge)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-image-panel/context:javascript)
+[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange)](https://www.grafana.com)
+[![Base64 Image](https://img.shields.io/badge/dynamic/json?color=blue&label=Base64%20Image%20Panel&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fvolkovlabs-image-panel)](https://grafana.com/grafana/plugins/volkovlabs-image-panel)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-image-panel.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-image-panel/context:javascript)
 ![CI](https://github.com/volkovlabs/volkovlabs-image-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-image-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-image-panel)
 
@@ -18,9 +14,7 @@ The Base64 Image/PDF Panel is a plugin for Grafana that displays raw and Base64 
 
 ### Demo
 
-Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io):
-
-- [Analyzing camera feed with AI dashboard](https://demo.volkovlabs.io/d/DtsbVE3Mk/analyzing-camera-feed-with-ai?orgId=1).
+Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io).
 
 ### Requirements
 
