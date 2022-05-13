@@ -1,10 +1,22 @@
 {
   "versions": [
     {
-      "version": "2.5.0",
       "arch": {
         "any": {}
-      }
+      },
+      "version": "2.4.0"
+    },
+    {
+      "arch": {
+        "any": {}
+      },
+      "version": "2.5.0"
+    },
+    {
+      "arch": {
+        "any": {}
+      },
+      "version": "2.6.0"
     }
   ]
 }
