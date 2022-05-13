@@ -104,6 +104,10 @@ const config = {
                 to: '/plugins/volkovlabs-image-panel',
               },
               {
+                label: 'Custom Form Panel',
+                to: '/plugins/volkovlabs-form-panel',
+              },
+              {
                 label: 'RSS Data Source',
                 to: '/plugins/volkovlabs-rss-datasource',
               },
