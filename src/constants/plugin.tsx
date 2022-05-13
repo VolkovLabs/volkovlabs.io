@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeatureItem, PluginItem } from './types';
+import { FeatureItem, PluginItem } from '../types';
 
 /**
  * Plugin List
@@ -43,6 +43,19 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-env-datasource",
+    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
+    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+  },
+  {
+    title: "Custom Form Panel",
+    Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
+    description: (
+      <>
+        Allows to create customizable forms to update application data and
+        configuration.
+      </>
+    ),
+    href: "/plugins/volkovlabs-form-panel",
     badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
@@ -96,30 +109,5 @@ export const PluginList: PluginItem[] = [
     target: "_blank",
     href: "https://www.theiascope.io/",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
-  },
-];
-
-/**
- * Feature List
- */
-export const FeatureList: FeatureItem[] = [
-  {
-    Svg: require("@site/static/img/features/feature-1.svg").default,
-    description: <>Build software for your unique needs.</>,
-  },
-  {
-    Svg: require("@site/static/img/features/feature-2.svg").default,
-    description: (
-      <>
-        Specialize in developing custom plugins to visualize your data using
-        Grafana as a platform.
-      </>
-    ),
-  },
-  {
-    Svg: require("@site/static/img/features/feature-3.svg").default,
-    description: (
-      <>Our solutions are cost-effective, creative, and delivered on time.</>
-    ),
   },
 ];
