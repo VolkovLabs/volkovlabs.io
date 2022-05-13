@@ -17,13 +17,13 @@ const config = {
   projectName: '',
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: 'plugins'
         },
+        blog: false,
         gtag: {
           trackingID: 'G-D3HVJTTCBD',
           anonymizeIP: true,
@@ -108,12 +108,12 @@ const config = {
                 to: '/plugins/volkovlabs-form-panel',
               },
               {
-                label: 'RSS Data Source',
-                to: '/plugins/volkovlabs-rss-datasource',
-              },
-              {
                 label: 'Environment Data Source',
                 to: '/plugins/volkovlabs-env-datasource',
+              },
+              {
+                label: 'RSS Data Source',
+                to: '/plugins/volkovlabs-rss-datasource',
               },
             ],
           },
