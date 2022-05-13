@@ -1,11 +1,7 @@
----
-sidebar_position: 1
----
+# Custom Form panel
 
-# Custom Form panel plugin for Grafana
-
-[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange?style=for-the-badge)](https://www.grafana.com)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-form-panel.svg?logo=lgtm&logoWidth=18&style=for-the-badge)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-form-panel/context:javascript)
+[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange)](https://www.grafana.com)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-form-panel.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-form-panel/context:javascript)
 ![CI](https://github.com/volkovlabs/volkovlabs-form-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel)
 
