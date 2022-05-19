@@ -104,7 +104,7 @@ const config = {
                 to: '/plugins/volkovlabs-image-panel',
               },
               {
-                label: 'Custom Form Panel',
+                label: 'Data Manipulation Form Panel',
                 to: '/plugins/volkovlabs-form-panel',
               },
               {
