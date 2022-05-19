@@ -47,13 +47,10 @@ export const PluginList: PluginItem[] = [
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
   {
-    title: "Custom Form Panel",
+    title: "Data Manipulation Form Panel",
     Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
     description: (
-      <>
-        Allows to create customizable forms to update application data and
-        configuration.
-      </>
+      <>Allows to insert, update application data, and modify configuration.</>
     ),
     href: "/plugins/volkovlabs-form-panel",
     badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
