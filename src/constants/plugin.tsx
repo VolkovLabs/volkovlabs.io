@@ -64,8 +64,7 @@ export const PluginList: PluginItem[] = [
         Every flow is unique and created using Volkov Labs plugins for Grafana.
       </>
     ),
-    target: "_blank",
-    href: "https://solsea.io/collection/61ce604b558d7a2f0b8ecacc",
+    href: "/plugins/mesmerizing-flows",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
   {
@@ -103,8 +102,7 @@ export const PluginList: PluginItem[] = [
         the point-of-acquisition.
       </>
     ),
-    target: "_blank",
-    href: "https://www.theiascope.io/",
+    href: "/plugins/theiascope",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
 ];

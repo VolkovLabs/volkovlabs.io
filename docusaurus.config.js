@@ -92,7 +92,7 @@ const config = {
               },
               {
                 label: 'Mesmerizing Flows NFT',
-                href: 'https://solsea.io/collection/61ce604b558d7a2f0b8ecacc',
+                href: '/plugins/mesmerizing-flows',
               },
             ],
           },

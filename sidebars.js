@@ -18,6 +18,14 @@ const sidebars = {
         'volkovlabs-rss-datasource/index',
           ],
     },
+    {
+      type: 'category',
+      label: 'Projects',
+      items: [    
+        'mesmerizing-flows/index',
+        'theiascope/index',
+          ],
+    },
   ],
 };
 
