@@ -83,6 +83,10 @@ const config = {
             title: 'Projects',
             items: [
               {
+                label: 'Private Repository',
+                href: '/plugins',
+              },
+              {
                 label: 'Grafana Plugins Weekly',
                 href: 'https://volkovlabs.com/grafana-plugins-weekly/home',
               },
