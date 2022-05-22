@@ -11,9 +11,9 @@ We are constantly updating and improving our Grafana plugins. A private reposito
 ```bash
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
 id: volkovlabs-env-datasource version: 1.2.0
-id: volkovlabs-rss-datasource version: 1.6.2
+id: volkovlabs-rss-datasource version: 1.7.0
 id: volkovlabs-image-panel version: 2.6.0
-id: volkovlabs-form-panel version: 1.1.0
+id: volkovlabs-form-panel version: 1.3.0
 ```
 
 ## Install plugin
