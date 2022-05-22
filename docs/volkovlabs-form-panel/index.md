@@ -26,8 +26,9 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-form
 ## Features
 
 - Provides functionality to create customizable forms with elements:
+  - Code Editor
   - Date and Time
-  - Disabled
+  - Read-only (Disabled)
   - Number Input
   - Number Slider
   - Password Input
@@ -36,9 +37,10 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-form
   - Select with Custom options
   - String Input
   - Text Area
-- Supports the Custom Code after Initial and Update requests.
+- Supports the Custom Code for Initial and Update requests.
 - Allows to specify GET request to get initial values and POST, PUT, PATCH request to send values updated in the form.
 - Allows to add Header fields to Initial and Update requests.
 - Allows to customize Submit, Reset buttons and form layout.
+- Allows to split form elements into sections.
 
 ![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/form-api.png)
