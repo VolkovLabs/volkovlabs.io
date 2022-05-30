@@ -9,7 +9,7 @@
 
 The Data Manipulation Form Panel is a plugin for Grafana that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
 
-![API](/img/plugins/volkovlabs-form-panel.png)
+<iframe width="728" height="410" src="https://www.youtube.com/embed/DXALVG8GijM" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Requirements
 
@@ -42,5 +42,6 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-form
 - Allows to add Header fields to Initial and Update requests.
 - Allows to customize Submit, Reset buttons and form layout.
 - Allows to split form elements into sections.
+- Allows to request confirmation before update request.
 
 ![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/form-api.png)

@@ -2,10 +2,6 @@
 
 We are constantly updating and improving our Grafana plugins. A private repository has become a part of our workflow to verify and test plugins on our demo server and projects. Read more in the blog [Installing Grafana plugins from a Private repository](https://volkovlabs.com/installing-grafana-plugins-from-a-private-repository-805b54a1add3)
 
-## How to Install Grafana
-
-<iframe width="728" height="410" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## List plugins
 
 ```bash
@@ -13,7 +9,7 @@ $ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
 id: volkovlabs-env-datasource version: 1.2.0
 id: volkovlabs-rss-datasource version: 1.7.0
 id: volkovlabs-image-panel version: 2.6.0
-id: volkovlabs-form-panel version: 1.3.0
+id: volkovlabs-form-panel version: 1.4.0
 ```
 
 ## Install plugin

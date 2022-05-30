@@ -9,6 +9,11 @@ const sidebars = {
       label: 'Intro',
     },
     {
+      type: 'doc',
+      id: 'grafana', 
+      label: 'Grafana',
+    },
+    {
       type: 'category',
       label: 'Plugins',
       items: [    
