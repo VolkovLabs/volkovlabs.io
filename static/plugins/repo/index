@@ -6,7 +6,7 @@
       "url": "https://github.com/VolkovLabs/volkovlabs-env-datasource",
       "versions": [
         {
-          "version": "1.2.0"
+          "version": "2.0.0"
         }
       ]
     },
@@ -16,7 +16,7 @@
       "url": "https://github.com/VolkovLabs/volkovlabs-rss-datasource",
       "versions": [
         {
-          "version": "1.7.0"
+          "version": "2.0.0"
         }
       ]
     },
@@ -26,7 +26,7 @@
       "url": "https://github.com/VolkovLabs/volkovlabs-image-panel",
       "versions": [
         {
-          "version": "2.6.0"
+          "version": "3.0.0"
         }
       ]
     },
@@ -36,7 +36,7 @@
       "url": "https://github.com/VolkovLabs/volkovlabs-form-panel",
       "versions": [
         {
-          "version": "1.4.0"
+          "version": "2.0.0"
         }
       ]
     }
