@@ -31,6 +31,15 @@ const sidebars = {
         'theiascope/index',
           ],
     },
+    {
+      type: 'category',
+      label: 'Development Templates',
+      items: [    
+        'volkovlabs-abc-panel/index',
+        'volkovlabs-abc-datasource/index',
+        'volkovlabs-abc-app/index',
+          ],
+    },
   ],
 };
 
