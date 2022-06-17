@@ -6,8 +6,8 @@ We are constantly updating and improving our Grafana plugins. A private reposito
 
 ```bash
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
-id: volkovlabs-env-datasource version: 1.2.0
-id: volkovlabs-rss-datasource version: 1.7.0
+id: volkovlabs-env-datasource version: 2.0.0
+id: volkovlabs-rss-datasource version: 2.0.0
 id: volkovlabs-image-panel version: 3.0.0
 id: volkovlabs-form-panel version: 1.4.0
 ```
@@ -16,7 +16,7 @@ id: volkovlabs-form-panel version: 1.4.0
 
 ```bash
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
-✔ Downloaded volkovlabs-env-datasource v1.1.0 zip successfully
+✔ Downloaded volkovlabs-env-datasource v2.0.0 zip successfully
 
 Please restart Grafana after installing plugins. Refer to Grafana documentation for instructions if necessary.
 ```
@@ -27,8 +27,8 @@ Please restart Grafana after installing plugins. Refer to Grafana documentation 
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins upgrade-all
 Updating volkovlabs-rss-datasource
 Removing plugin: volkovlabs-rss-datasource
-installing volkovlabs-rss-datasource @ 1.6.0
-from: https://volkovlabs.io/plugins/volkovlabs-rss-datasource/versions/1.6.0/download
+installing volkovlabs-rss-datasource @ 2.0.0
+from: https://volkovlabs.io/plugins/volkovlabs-rss-datasource/versions/2.0.0/download
 into: /var/lib/grafana/plugins
 
 ✔ Installed volkovlabs-rss-datasource successfully

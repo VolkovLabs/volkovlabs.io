@@ -1,10 +1,10 @@
-# RSS/Atom data source
+# RSS/Atom Data Source
 
-[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9-orange)](https://www.grafana.com)
 [![RSS/Atom](https://img.shields.io/badge/dynamic/json?color=blue&label=RSS%2FAtom%20Data%20Source&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fvolkovlabs-rss-datasource)](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-rss-datasource.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-rss-datasource/context:javascript)
 ![CI](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-rss-datasource.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-rss-datasource/context:javascript)
 
 ## Introduction
 
@@ -18,7 +18,8 @@ Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io).
 
 ### Requirements
 
-Grafana 8.0 is required.
+- **Grafana 8.5+**, **Grafana 9.0+** is required for version 2.X.
+- **Grafana 8.0+** is required for version 1.X.
 
 ## Getting Started
 
@@ -46,7 +47,7 @@ Grafana supports managing data sources by adding one or more YAML config files i
 
 Example of provisioning the RSS/Atom Data Source for Bitcoin news feed.
 
-```json
+```yaml
 datasources:
   - name: Bitcoin
     type: volkovlabs-rss-datasource
@@ -57,4 +58,12 @@ datasources:
     editable: true
     jsonData:
       feed: https://news.bitcoin.com/feed/
+```
+
+## Disable Sanitize HTML
+
+To display HTML returned from feeds please disable sanitize HTML parameter. For Docker:
+
+```bash
+GF_PANELS_DISABLE_SANITIZE_HTML=true
 ```
