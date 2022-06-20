@@ -101,8 +101,12 @@ const config = {
             ],
           },
           {
-            title: 'Plugins',
+            title: 'Portfolio',
             items: [
+              {
+                label: 'Apache ECharts Panel',
+                to: '/plugins/volkovlabs-echarts-panel',
+              },
               {
                 label: 'Base64 Image/PDF Panel',
                 to: '/plugins/volkovlabs-image-panel',
@@ -116,7 +120,7 @@ const config = {
                 to: '/plugins/volkovlabs-env-datasource',
               },
               {
-                label: 'RSS Data Source',
+                label: 'RSS/Atom Data Source',
                 to: '/plugins/volkovlabs-rss-datasource',
               },
             ],

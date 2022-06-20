@@ -1,6 +1,8 @@
-# Intro
+# Private Repository
 
-We are constantly updating and improving our Grafana plugins. A private repository has become a part of our workflow to verify and test plugins on our demo server and projects. Read more in the blog [Installing Grafana plugins from a Private repository](https://volkovlabs.com/installing-grafana-plugins-from-a-private-repository-805b54a1add3)
+We are constantly updating and improving our Grafana plugins. A private repository has become a part of our workflow to verify and test plugins on our demo server and projects.
+
+Read more in the blog [Installing Grafana plugins from a Private repository](https://volkovlabs.com/installing-grafana-plugins-from-a-private-repository-805b54a1add3)
 
 ## List plugins
 
@@ -23,7 +25,7 @@ Please restart Grafana after installing plugins. Refer to Grafana documentation 
 
 ## Upgrade plugins
 
-```
+```bash
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins upgrade-all
 Updating volkovlabs-rss-datasource
 Removing plugin: volkovlabs-rss-datasource

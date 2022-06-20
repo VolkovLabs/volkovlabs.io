@@ -57,6 +57,17 @@ export const PluginList: PluginItem[] = [
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
   {
+    title: "Apache ECharts Panel",
+    Svg: require("@site/static/img/plugins/volkovlabs-echarts-panel.svg")
+      .default,
+    description: (
+      <>Adds powerful charting and visualization library Apache ECharts.</>
+    ),
+    href: "/plugins/volkovlabs-echarts-panel",
+    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
+    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+  },
+  {
     title: "Mesmerizing Flows NFT",
     Svg: require("@site/static/img/plugins/mesmerizing-flows.svg").default,
     description: (
@@ -66,21 +77,6 @@ export const PluginList: PluginItem[] = [
     ),
     href: "/plugins/mesmerizing-flows",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
-  },
-  {
-    title: "Redis Data Source and Application",
-    Svg: require("@site/static/img/plugins/redisgrafana.svg").default,
-    description: (
-      <>
-        The Redis plugins for Grafana let you connect Grafana to Redis to
-        visualize more types of data in more ways than otherwise would be
-        possible.
-      </>
-    ),
-    target: "_blank",
-    href: "https://redisgrafana.github.io",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2: "https://img.shields.io/badge/community-9d70f9?style=for-the-badge",
   },
   {
     title: "Molycop",

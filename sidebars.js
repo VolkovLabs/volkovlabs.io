@@ -6,17 +6,18 @@ const sidebars = {
     {
       type: 'doc',
       id: 'index', 
-      label: 'Intro',
+      label: 'Private Repository',
     },
     {
       type: 'doc',
       id: 'grafana', 
-      label: 'Grafana',
+      label: 'Grafana Tutorials',
     },
     {
       type: 'category',
-      label: 'Plugins',
+      label: 'Portfolio',
       items: [    
+        'volkovlabs-echarts-panel/index',
         'volkovlabs-image-panel/index',
         'volkovlabs-form-panel/index',
         'volkovlabs-env-datasource/index',
