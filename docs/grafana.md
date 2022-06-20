@@ -1,4 +1,4 @@
-# Intro
+# Grafana Tutorials
 
 ## How to Install Grafana
 

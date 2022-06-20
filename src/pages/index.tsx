@@ -81,6 +81,7 @@ function Home() {
               <img src={useBaseUrl("img/why-1.svg")} />
             </div>
             <div className="col col--6 text--center">
+              <br />
               <h2 className="hero__title margin-vert--lg">Why work with us</h2>
 
               <p className="margin-vert--lg hero__subtitle">
