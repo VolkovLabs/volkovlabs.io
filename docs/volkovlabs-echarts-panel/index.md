@@ -31,3 +31,14 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-echa
 - Based on the ECharts 5.3.3.
 - Supports Light and Dark mode synchronized with Grafana Theme.
 - Supports SVG and Canvas renderer.
+
+## Feedback
+
+We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Star the repository to show your support.
+
+## License
+
+- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-echarts-panel/blob/main/LICENSE).
