@@ -1,7 +1,5 @@
 # Balena Application
 
-# Balena Application plugin for Grafana
-
 ![Application](https://raw.githubusercontent.com/volkovlabs/volkovlabs-balena-app/main/src/img/app.png)
 
 [![Grafana 9](https://img.shields.io/badge/Grafana-9-orange)](https://www.grafana.com)
