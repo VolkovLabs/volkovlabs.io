@@ -68,6 +68,19 @@ export const PluginList: PluginItem[] = [
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
   {
+    title: "Balena Application",
+    Svg: require("@site/static/img/plugins/volkovlabs-balena-app.svg").default,
+    description: (
+      <>
+        Allows to display device information and manage services using Balena
+        Supervisor API.
+      </>
+    ),
+    href: "/plugins/volkovlabs-balena-app",
+    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
+    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+  },
+  {
     title: "Mesmerizing Flows NFT",
     Svg: require("@site/static/img/plugins/mesmerizing-flows.svg").default,
     description: (
@@ -76,16 +89,6 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/mesmerizing-flows",
-    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
-  },
-  {
-    title: "Molycop",
-    Svg: require("@site/static/img/plugins/molycop.svg").default,
-    description: (
-      <>The Mill Charge Motion Widget to display sensor information.</>
-    ),
-    target: "_blank",
-    href: "https://molycop.com/",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
   {

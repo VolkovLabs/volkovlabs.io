@@ -46,3 +46,14 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-form
 - Allows to request confirmation before update request.
 
 ![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/form-api.png)
+
+## Feedback
+
+We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Star the repository to show your support.
+
+## License
+
+- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-form-panel/blob/main/LICENSE).

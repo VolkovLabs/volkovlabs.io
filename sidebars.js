@@ -18,6 +18,7 @@ const sidebars = {
       label: 'Portfolio',
       items: [    
         'volkovlabs-echarts-panel/index',
+        'volkovlabs-balena-app/index',
         'volkovlabs-image-panel/index',
         'volkovlabs-form-panel/index',
         'volkovlabs-env-datasource/index',

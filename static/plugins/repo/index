@@ -49,6 +49,16 @@
           "version": "3.0.0"
         }
       ]
+    },
+    {
+      "id": "volkovlabs-balena-app",
+      "type": "application",
+      "url": "https://github.com/VolkovLabs/volkovlabs-balena-app",
+      "versions": [
+        {
+          "version": "1.0.0"
+        }
+      ]
     }
   ]
 }

@@ -49,3 +49,14 @@ yarn run start
 - Provides unit test configuration.
 - Based on the latest version of Grafana.
 - Includes GitHub Actions for CI and Release.
+
+## Feedback
+
+We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-abc-datasource/issues/new/choose).
+- Star the repository to show your support.
+
+## License
+
+- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-abc-datasource/blob/main/LICENSE).

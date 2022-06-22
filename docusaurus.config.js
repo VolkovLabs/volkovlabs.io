@@ -108,6 +108,10 @@ const config = {
                 to: '/plugins/volkovlabs-echarts-panel',
               },
               {
+                label: 'Balena Application',
+                to: '/plugins/volkovlabs-balena-app',
+              },
+              {
                 label: 'Base64 Image/PDF Panel',
                 to: '/plugins/volkovlabs-image-panel',
               },
