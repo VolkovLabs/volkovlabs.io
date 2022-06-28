@@ -66,6 +66,11 @@ const config = {
             label: 'Portfolio'
           },
           {
+            href: '#Projects',
+            position: 'right',
+            label: 'Projects'
+          },
+          {
             href: '#Team',
             position: 'right',
             label: 'Team'
@@ -87,16 +92,20 @@ const config = {
                 href: '/plugins',
               },
               {
-                label: 'Grafana Plugins Weekly',
-                href: 'https://volkovlabs.com/grafana-plugins-weekly/home',
+                label: 'Mesmerizing Flows NFT',
+                href: '/plugins/mesmerizing-flows',
+              },
+              {
+                label: 'Theiascope™',
+                href: '/plugins/theiascope',
               },
               {
                 label: 'Demo Server',
                 href: 'https://demo.volkovlabs.io',
               },
               {
-                label: 'Mesmerizing Flows NFT',
-                href: '/plugins/mesmerizing-flows',
+                label: 'Grafana Plugins Weekly',
+                href: 'https://volkovlabs.com/grafana-plugins-weekly/home',
               },
             ],
           },
