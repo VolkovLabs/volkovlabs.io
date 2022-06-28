@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { Features, Plugins } from '../components';
+import { Features, Plugins, Projects } from '../components';
 import styles from '../css/index.module.css';
 
 function Home() {
@@ -105,6 +105,14 @@ function Home() {
           </h2>
 
           <Plugins />
+        </div>
+
+        <div id="Projects" className="container margin-vert--lg">
+          <h2 className={clsx(styles.headerWhite, "hero__title")}>
+            <span>Projects</span>
+          </h2>
+
+          <Projects />
         </div>
 
         <div id="Team" className="container margin-vert--lg">

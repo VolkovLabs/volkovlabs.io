@@ -80,28 +80,4 @@ export const PluginList: PluginItem[] = [
     badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
     badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
   },
-  {
-    title: "Mesmerizing Flows NFT",
-    Svg: require("@site/static/img/plugins/mesmerizing-flows.svg").default,
-    description: (
-      <>
-        Every flow is unique and created using Volkov Labs plugins for Grafana.
-      </>
-    ),
-    href: "/plugins/mesmerizing-flows",
-    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
-  },
-  {
-    title: "Theiascope",
-    trade: true,
-    Svg: require("@site/static/img/plugins/theiascope.svg").default,
-    description: (
-      <>
-        Augment your scientific image analysis workflows with machine vision at
-        the point-of-acquisition.
-      </>
-    ),
-    href: "/plugins/theiascope",
-    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
-  },
 ];
