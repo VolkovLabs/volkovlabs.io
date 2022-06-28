@@ -1,16 +1,16 @@
 import React from 'react';
-import { PluginList } from '../constants';
+import { ProjectList } from '../constants';
 import { Plugin } from './Plugin';
 
 /**
- * Plugins
+ * Projects
  */
-export const Plugins = (): JSX.Element => {
+export const Projects = (): JSX.Element => {
   return (
     <section>
       <div className="container text--center">
         <div className="row">
-          {PluginList.map((props, idx) => (
+          {ProjectList.map((props, idx) => (
             <Plugin key={idx} {...props} />
           ))}
         </div>
@@ -19,4 +19,4 @@ export const Plugins = (): JSX.Element => {
   );
 };
 
-export default Plugins;
+export default Projects;
