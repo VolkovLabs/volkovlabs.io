@@ -6,12 +6,12 @@ import { FeatureItem, PluginItem } from '../types';
  */
 export const PluginList: PluginItem[] = [
   {
-    title: "Base64 Image/PDF Panel",
+    title: "Base64 Image/Video/Audio/PDF Panel",
     Svg: require("@site/static/img/plugins/volkovlabs-image-panel.svg").default,
     description: (
       <>
-        Allows displaying raw and Base64 encoded files in PNG, JPG, GIF, and PDF
-        formats.
+        Allows displaying Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3,
+        OGG, PDF formats.
       </>
     ),
     href: "/plugins/volkovlabs-image-panel",
@@ -44,7 +44,8 @@ export const PluginList: PluginItem[] = [
     ),
     href: "/plugins/volkovlabs-env-datasource",
     badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+    badge2:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
   },
   {
     title: "Data Manipulation Form Panel",
@@ -54,7 +55,8 @@ export const PluginList: PluginItem[] = [
     ),
     href: "/plugins/volkovlabs-form-panel",
     badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+    badge2:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
   },
   {
     title: "Apache ECharts Panel",
@@ -65,7 +67,8 @@ export const PluginList: PluginItem[] = [
     ),
     href: "/plugins/volkovlabs-echarts-panel",
     badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+    badge2:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
   },
   {
     title: "Balena Application",
@@ -78,6 +81,7 @@ export const PluginList: PluginItem[] = [
     ),
     href: "/plugins/volkovlabs-balena-app",
     badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2: "https://img.shields.io/badge/private-ff5656?style=for-the-badge",
+    badge2:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
   },
 ];
