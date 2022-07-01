@@ -9,9 +9,11 @@ Read more in the blog [Installing Grafana plugins from a Private repository](htt
 ```bash
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
 id: volkovlabs-env-datasource version: 2.0.0
-id: volkovlabs-rss-datasource version: 2.0.0
+id: volkovlabs-rss-datasource version: 2.1.0
 id: volkovlabs-image-panel version: 3.0.0
 id: volkovlabs-form-panel version: 2.0.0
+id: volkovlabs-echarts-panel version: 3.0.0
+id: volkovlabs-balena-app version: 1.0.0
 ```
 
 ## Install plugin
@@ -29,8 +31,8 @@ Please restart Grafana after installing plugins. Refer to Grafana documentation 
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins upgrade-all
 Updating volkovlabs-rss-datasource
 Removing plugin: volkovlabs-rss-datasource
-installing volkovlabs-rss-datasource @ 2.0.0
-from: https://volkovlabs.io/plugins/volkovlabs-rss-datasource/versions/2.0.0/download
+installing volkovlabs-rss-datasource @ 2.1.0
+from: https://volkovlabs.io/plugins/volkovlabs-rss-datasource/versions/2.1.0/download
 into: /var/lib/grafana/plugins
 
 ✔ Installed volkovlabs-rss-datasource successfully

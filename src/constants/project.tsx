@@ -8,8 +8,14 @@ export const ProjectList: PluginItem[] = [
   {
     title: "Demo Server",
     Svg: require("@site/static/img/plugins/demo.svg").default,
-    description: <>All our Plugins in one place to expirience them.</>,
+    description: <>Experience our Plugins in one place.</>,
     href: "https://demo.volkovlabs.io",
+  },
+  {
+    title: "Private Repository",
+    Svg: require("@site/static/img/repository.svg").default,
+    description: <>Download our plugins to test the latest features.</>,
+    href: "/plugins",
   },
   {
     title: "Mesmerizing Flows NFT",
@@ -20,7 +26,7 @@ export const ProjectList: PluginItem[] = [
       </>
     ),
     href: "/plugins/mesmerizing-flows",
-    badge2: "https://img.shields.io/badge/Solana-NFT-black?style=for-the-badge",
+    badge: "https://img.shields.io/badge/Solana-NFT-black?style=for-the-badge",
   },
   {
     title: "Theiascope",
@@ -32,6 +38,6 @@ export const ProjectList: PluginItem[] = [
       </>
     ),
     href: "/plugins/theiascope",
-    badge2: "https://img.shields.io/badge/commercial-black?style=for-the-badge",
+    badge: "https://img.shields.io/badge/Commercial-black?style=for-the-badge",
   },
 ];
