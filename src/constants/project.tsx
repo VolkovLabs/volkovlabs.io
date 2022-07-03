@@ -18,6 +18,17 @@ export const ProjectList: PluginItem[] = [
     href: "/plugins",
   },
   {
+    title: "Balena NFS Project",
+    Svg: require("@site/static/img/balena/balena-nfs.svg").default,
+    description: (
+      <>Demonstrate how to deploy NFS Server and Client in balenaCloud.</>
+    ),
+    href: "/plugins/balena-nfs",
+    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
+    badge2:
+      "https://img.shields.io/static/v1?label=balenaHub&message=project&labelColor=9d70f9&color=black&style=for-the-badge",
+  },
+  {
     title: "Mesmerizing Flows NFT",
     Svg: require("@site/static/img/plugins/mesmerizing-flows.svg").default,
     description: (

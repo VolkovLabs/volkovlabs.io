@@ -29,6 +29,7 @@ const sidebars = {
       type: 'category',
       label: 'Projects',
       items: [    
+        'balena-nfs/index',
         'mesmerizing-flows/index',
         'theiascope/index',
           ],

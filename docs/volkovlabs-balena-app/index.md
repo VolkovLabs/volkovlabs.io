@@ -4,6 +4,7 @@
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-balena-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-balena-app/context:javascript)
 ![CI](https://github.com/volkovlabs/volkovlabs-balena-app/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app)
+[![Balena](https://github.com/volkovlabs/volkovlabs-balena-app/actions/workflows/balena.yml/badge.svg)](https://github.com/volkovlabs/volkovlabs-balena-app/actions/workflows/balena.yml)
 
 ## Introduction
 
@@ -23,10 +24,48 @@ The Balena application is under development and not included in the Grafana Mark
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-balena-app
 ```
 
+## balenaCloud
+
+Our custom Grafana build with the Balena Application plugin can be deployed directly to balenaCloud:
+
+[![Deploy with balena](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/volkovlabs-balena-app)
+
+We recommend to add it to your `docker-compose.yml` together with NGINX reverse proxy (example configuration in the repository):
+
+```yaml
+version: "2.1"
+
+services:
+  grafana:
+    image: ghcr.io/volkovlabs/balena-app:latest
+    network_mode: host
+    restart: always
+    labels:
+      io.balena.features.supervisor-api: "1"
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    network_mode: host
+    restart: always
+    depends_on:
+      - grafana
+
+volumes:
+  grafana-data:
+```
+
+Default Grafana username and password is **admin/admin**.
+
+You can learn more about balena Labels in the [Documentation](https://www.balena.io/docs/reference/supervisor/docker-compose/#labels).
+
 ## Features
 
 - Allows to display device, release information and service logs using Balena Supervisor API.
-- Provides Services Management panel to start, stop, restart Containers.
+- Provides Services Panel to start, stop, restart Containers.
 - Allows to filter Logs using Regex pattern.
 - Requires Confirmation to restart all Services and reboot the device.
 
