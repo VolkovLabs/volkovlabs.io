@@ -105,6 +105,21 @@ function Home() {
           </h2>
 
           <Plugins />
+
+          <div className="row">
+            <div className="col col--1">
+              <h2 className={clsx(styles.header, "hero__title")}></h2>
+            </div>
+            <div className="col col--9 hero__subtitle">
+              All our Grafana plugins are open-source and we update them
+              constantly. If you enjoy using our plugins please consider{" "}
+              <a href="https://github.com/sponsors/VolkovLabs">
+                sponsoring our work on GitHub
+              </a>
+              .
+            </div>
+            <div className="col col--2"></div>
+          </div>
         </div>
 
         <div id="Projects" className="container margin-vert--lg">
