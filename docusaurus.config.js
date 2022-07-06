@@ -88,8 +88,20 @@ const config = {
             title: 'Projects',
             items: [
               {
+                label: 'Demo Server',
+                href: 'https://demo.volkovlabs.io',
+              },
+              {
                 label: 'Private Repository',
                 href: '/plugins',
+              },
+              {
+                label: 'Grafana Plugins Weekly',
+                href: 'https://volkovlabs.com/grafana-plugins-weekly/home',
+              },
+              {
+                label: 'Balena NFS',
+                href: '/plugins/balena-nfs',
               },
               {
                 label: 'Mesmerizing Flows NFT',
@@ -98,14 +110,6 @@ const config = {
               {
                 label: 'Theiascope™',
                 href: '/plugins/theiascope',
-              },
-              {
-                label: 'Demo Server',
-                href: 'https://demo.volkovlabs.io',
-              },
-              {
-                label: 'Grafana Plugins Weekly',
-                href: 'https://volkovlabs.com/grafana-plugins-weekly/home',
               },
             ],
           },

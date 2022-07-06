@@ -15,8 +15,8 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-image-panel",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2: "https://img.shields.io/badge/community-9d70f9?style=for-the-badge",
+    badge:
+      "https://img.shields.io/static/v1?label=grafana&message=marketplace&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
     title: "RSS/Atom Data Source",
@@ -29,8 +29,8 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-rss-datasource",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2: "https://img.shields.io/badge/community-9d70f9?style=for-the-badge",
+    badge:
+      "https://img.shields.io/static/v1?label=grafana&message=marketplace&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
     title: "Environment Data Source",
@@ -43,9 +43,8 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-env-datasource",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
+    badge:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Data Manipulation Form Panel",
@@ -54,9 +53,8 @@ export const PluginList: PluginItem[] = [
       <>Allows to insert, update application data, and modify configuration.</>
     ),
     href: "/plugins/volkovlabs-form-panel",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
+    badge:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Apache ECharts Panel",
@@ -66,9 +64,8 @@ export const PluginList: PluginItem[] = [
       <>Adds powerful charting and visualization library Apache ECharts.</>
     ),
     href: "/plugins/volkovlabs-echarts-panel",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
+    badge:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Balena Application",
@@ -80,8 +77,7 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-balena-app",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=ff5656&color=black&style=for-the-badge",
+    badge:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
   },
 ];

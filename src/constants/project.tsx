@@ -18,14 +18,24 @@ export const ProjectList: PluginItem[] = [
     href: "/plugins",
   },
   {
-    title: "Balena NFS Project",
+    title: "Grafana Plugins Weekly",
+    Svg: require("@site/static/img/weekly.svg").default,
+    description: (
+      <>
+        Review of the most popular and updated plugins to make it easier to keep
+        up.
+      </>
+    ),
+    href: "https://volkovlabs.com/grafana-plugins-weekly/home",
+  },
+  {
+    title: "Balena NFS",
     Svg: require("@site/static/img/balena/balena-nfs.svg").default,
     description: (
       <>Demonstrate how to deploy NFS Server and Client in balenaCloud.</>
     ),
     href: "/plugins/balena-nfs",
-    badge: "https://img.shields.io/badge/open-source-black?style=for-the-badge",
-    badge2:
+    badge:
       "https://img.shields.io/static/v1?label=balenaHub&message=project&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
