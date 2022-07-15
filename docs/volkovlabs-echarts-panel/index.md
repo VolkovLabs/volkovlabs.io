@@ -19,7 +19,7 @@ Apache ECharts is a free, powerful charting and visualization library offering a
 
 ## Getting Started
 
-ECharts panel is under development and not included in the Grafana Marketplace yet. It can be installed manually from our private repository or downloaded directly from the GitHub repository:
+Apache ECharts panel is not included in the Grafana Marketplace. It can be installed manually from our Private Repository or downloaded directly from the GitHub repository:
 
 ```bash
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-echarts-panel
@@ -27,11 +27,14 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-echa
 
 ## Features
 
-- Allows to visualize Apache ECharts using Monaco Code Editor.
+- Allows to visualize Apache ECharts using Monaco Code Editor with Auto formatting.
 - Use setOption() function to set configuration and data.
 - Based on the ECharts 5.3.3.
 - Supports Light and Dark mode synchronized with Grafana Theme.
 - Supports SVG and Canvas renderer.
+- Includes USA and World maps. Allows to add custom Map files in the `maps` folder.
+- Supports variables and location service to make Charts interactive.
+- Includes [Liquid Fill Chart](https://github.com/ecomfe/echarts-liquidfill).
 
 ## setOption() Function
 
@@ -40,15 +43,24 @@ Available Parameters:
 
 - `data` - Grafana's `data` object.
 - `theme` - Grafana's `theme` object.
-- `echartsInstance` - Instance of the Echarts.
-- `echarts` - Echarts library.
+- `echartsInstance` - Instance of the ECharts.
+- `echarts` - ECharts library.
+- `replaceVariables` - the `replaceVariables()` function to interpolate variables.
+- `locationService` - Grafana's `locationService` to work with browser location and history.
 
 ![Panel](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/panel.png)
 
 To learn more about parameters you can log them in the Browser Console:
 
 ```javascript
-console.log(data, theme, echartsInstance, echarts);
+console.log(
+  data,
+  theme,
+  echartsInstance,
+  echarts,
+  replaceVariables,
+  locationService
+);
 ```
 
 ## Feedback
