@@ -16,6 +16,8 @@ export const ProjectList: PluginItem[] = [
     Svg: require("@site/static/img/repository.svg").default,
     description: <>Download our plugins to test the latest features.</>,
     href: "/plugins",
+    badge:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Grafana Plugins Weekly",
