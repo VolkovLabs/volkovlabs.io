@@ -12,10 +12,6 @@ The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds a
 
 <iframe width="728" height="410" src="https://www.youtube.com/embed/RAxqS2hpWkg" title="RSS/Atom data source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-### Demo
-
-Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io).
-
 ### Requirements
 
 - **Grafana 8.5+**, **Grafana 9.0+** is required for version 2.X.

@@ -12,10 +12,6 @@ The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Bas
 
 <iframe width="728" height="410" src="https://www.youtube.com/embed/1_bgLSehjhg" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-### Demo
-
-Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io).
-
 ### Requirements
 
 - **Grafana 8.5+**, **Grafana 9.0+** is required for version 3.X.
