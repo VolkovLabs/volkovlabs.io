@@ -6,10 +6,10 @@ import { FeatureItem, PluginItem } from '../types';
  */
 export const ProjectList: PluginItem[] = [
   {
-    title: "Demo Server",
-    Svg: require("@site/static/img/plugins/demo.svg").default,
-    description: <>Experience our Plugins in one place.</>,
-    href: "https://demo.volkovlabs.io",
+    title: "Live Server",
+    Svg: require("@site/static/img/plugins/live.svg").default,
+    description: <>Everything we have done as directed graph.</>,
+    href: "https://live.volkovlabs.io",
   },
   {
     title: "Private Repository",
@@ -18,6 +18,12 @@ export const ProjectList: PluginItem[] = [
     href: "/plugins",
     badge:
       "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
+  },
+  {
+    title: "Demo Server",
+    Svg: require("@site/static/img/plugins/demo.svg").default,
+    description: <>Experience our Plugins in one place.</>,
+    href: "https://demo.volkovlabs.io",
   },
   {
     title: "Grafana Plugins Weekly",

@@ -63,6 +63,14 @@ console.log(
 );
 ```
 
+## Tutorial
+
+Data visualizations can and should be done in style. In two parts video tutorial Daria explained how we built and visualized directed graph in Grafana using Apache ECharts panel.
+
+<iframe width="728" height="410" src="https://www.youtube.com/embed/e3VHgpuzEF0" title="Build directional graph in Grafana using Apache ECharts | Tutorial part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="728" height="410" src="https://www.youtube.com/embed/oM7XAVlsOio" title="Build directional graph in Grafana using Apache ECharts | Tutorial part 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Feedback
 
 We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
