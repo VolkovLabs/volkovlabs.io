@@ -88,8 +88,8 @@ const config = {
             title: 'Projects',
             items: [
               {
-                label: 'Demo Server',
-                href: 'https://demo.volkovlabs.io',
+                label: 'Live Server',
+                href: 'https://live.volkovlabs.io',
               },
               {
                 label: 'Private Repository',
