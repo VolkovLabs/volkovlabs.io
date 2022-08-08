@@ -6,10 +6,11 @@ Watch this video to learn how to customize the fundamental graphical elements in
 
 <iframe width="728" height="410" src="https://www.youtube.com/embed/3GRoa8TzIxY" title="How to customize Grafana interface | Change titles, icons, footer, default dashboard | Grafana 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+All customization is done in the [Dockerfile](https://github.com/VolkovLabs/volkovlabs-balena-app/blob/main/Dockerfile) and it can be easily replicated for host installation.
+
 ### Requirements
 
 - Grafana 9.0.3.
-- All customization is done in the [Dockerfile](https://github.com/VolkovLabs/volkovlabs-balena-app/blob/main/Dockerfile) and it can be easily replicated for host installation.
 - SVG (Scalable Vector Graphics) images for scaling.
 - Some commands require `root` permissions.
 
@@ -33,6 +34,33 @@ COPY dashboards/home.json /usr/share/grafana/public/dashboards/default.json
 
 ```
 ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/plugins/volkovlabs-balena-app/dashboards/supervisor.json
+```
+
+## Disable Alerting and Explore
+
+If your project does not require Explore and/or Alerting, they can be disabled.
+
+```
+ENV GF_EXPLORE_ENABLED=false
+ENV GF_ALERTING_ENABLED=false
+ENV GF_UNIFIED_ALERTING_ENABLED=false
+```
+
+## Sanitize HTML
+
+Disable HTML sanitizing in panels.
+
+```
+ENV GF_PANELS_DISABLE_SANITIZE_HTML=true
+```
+
+## Anonymous Autentication
+
+Allows Anonymous access.
+
+```
+ENV GF_AUTH_ANONYMOUS_ENABLED=true
+ENV GF_AUTH_BASIC_ENABLED=false
 ```
 
 ## Bookmark Icon (Favicon)
