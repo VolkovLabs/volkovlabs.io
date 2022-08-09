@@ -12,11 +12,11 @@ While troubleshooting the panel plugin, we often played with Vector Field shapes
 
 NFT can be built on Etherium, Solana, and other blockchains. We choose to release our NFT collection on Solana because of the technology, ease of use, and fees. According to the recent JPMorgan report, Etherium is losing NFT market share to Solana, confirming our choice.
 
-![Mesmerizing Flows NFT #17](/img/mesmerizing-flows/17.gif)
+![Mesmerizing Flows NFT #17](https://demo.volkovlabs.io/static/17.gif)
 
 Vector fields are mathematically beautiful and visually appealing.
 
-![Mesmerizing Flows NFT #6](/img/mesmerizing-flows/6.gif)
+![Mesmerizing Flows NFT #6](https://demo.volkovlabs.io/static/6.gif)
 
 Read more in the Blog post [Mesmerizing Flows NFT collection was created using a custom panel plugin for Grafana](https://volkovlabs.com/mesmerizing-flows-nft-collection-was-created-using-a-custom-panel-plugin-for-grafana-221e0ad16778).
 
