@@ -54,7 +54,7 @@ Disable HTML sanitizing in panels.
 ENV GF_PANELS_DISABLE_SANITIZE_HTML=true
 ```
 
-## Anonymous Autentication
+## Anonymous Authentication
 
 Allows Anonymous access.
 
