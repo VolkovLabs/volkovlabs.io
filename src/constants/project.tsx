@@ -22,12 +22,6 @@ export const ProjectList: PluginItem[] = [
       "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
   },
   {
-    title: "Demo Server",
-    Svg: require("@site/static/img/plugins/demo.svg").default,
-    description: <>Experience our Plugins in one place.</>,
-    href: "https://demo.volkovlabs.io",
-  },
-  {
     title: "Grafana Plugins Weekly",
     Svg: require("@site/static/img/weekly.svg").default,
     description: <>Review of the most popular and updated plugins.</>,
