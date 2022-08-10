@@ -13,12 +13,12 @@ The Data Manipulation Form Panel is a plugin for Grafana that can be used to ins
 
 ### Requirements
 
-- **Grafana 8.3+**, **Grafana 9.0+** is required for version 3.X.
-- **Grafana 8.0+** is required for version 2.X.
+- **Grafana 8.5+**, **Grafana 9.0+** is required for version 2.X.
+- **Grafana 8.0+** is required for version 1.X.
 
 ## Getting Started
 
-Data Manipulation panel is under development and not included in the Grafana Marketplace yet. It can be installed manually from our private repository or downloaded directly from the GitHub repository:
+Data Manipulation panel is not included in the Grafana Marketplace. It can be installed manually from our Private Repository or downloaded directly from the GitHub repository:
 
 ```bash
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-form-panel
@@ -53,12 +53,13 @@ The custom code has access to the Panel options, the response from the REST API 
 
 Available Parameters:
 
-- `options` - Panels's options.
+- `options` - Panels' options.
 - `data` - Result set of panel queries.
 - `response` - Request's response.
 - `elements` - Form Elements.
 - `locationService` - Grafana's `locationService` to work with browser location and history.
 - `templateService` - Grafana's `templateService` provides access to variables and allows to up Time Range.
+- `onOptionsChange` - Panel options Change handler.
 
 ![Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/request.png)
 
@@ -75,12 +76,79 @@ console.log(
 );
 ```
 
-For example, to reload location after update request do:
+### Reload page after update request
 
 ```
 console.log(response);
 if (response && response.ok) {
   location.reload();
+}
+```
+
+### Clear elements' values after Submit or on Reset button click
+
+```
+elements.map((element) => {
+   if (element.id === 'name') {
+     element.value = '';
+   };
+})
+```
+
+## Dynamic form elements
+
+Using the custom code you can update elements or element's value and options from any data source.
+
+[![Static and dynamic interface elements of Data Manipulation plugin | DML using data source in Grafana](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/elements.png)](https://youtu.be/RSVH1bSBNl8)
+
+### Fill options of the `icon` element from series `icons` with `icon_id` and `title` columns
+
+```
+const icons = data.series.find((serie) => serie.refId === 'icons');
+const iconSelect = elements.find((element) => element.id === 'icon');
+
+if (icons?.fields.length) {
+  const ids = icons.fields.find((f) => f.name === 'icon_id').values.buffer;
+  const titles = icons.fields.find((f) => f.name === 'title').values.buffer;
+
+  iconSelect.options = titles.map((value, index) => { return { label: value, value: ids[index] } });
+}
+```
+
+### Update all form elements from data sources
+
+```
+const feedback = data.series.find((serie) => serie.refId === 'Feedback');
+const typeOptions = data.series.find((serie) => serie.refId === 'Types');
+
+if (feedback?.fields.length) {
+  const ids = feedback.fields.find((f) => f.name === 'id').values.buffer;
+  const titles = feedback.fields.find((f) => f.name === 'title').values.buffer;
+  const types = feedback.fields.find((f) => f.name === 'type').values.buffer;
+
+  /**
+   * Set Elements
+   */
+  elements = ids.map((id, index) => { return { id, title: titles[index], type: types[index] } });
+
+  /**
+   * Find Type element
+   */
+  const typeSelect = elements.find((element) => element.id === 'type');
+  if (typeSelect && typeOptions?.fields.length) {
+    const labels = typeOptions.fields.find((f) => f.name === 'label').values.buffer;
+    const values = typeOptions.fields.find((f) => f.name === 'value').values.buffer;
+
+    /**
+     * Update Types
+     */
+    typeSelect.options = labels.map((label, index) => { return { label, value: values[index] } });
+  }
+
+  /**
+   * Update Panel Options
+   */
+  onOptionsChange({ ...options, elements });
 }
 ```
 
@@ -90,7 +158,7 @@ We recommend running Grafana behind NGINX reverse proxy for an additional securi
 
 ![NGINX](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/form-nginx-api.png)
 
-Read more in [How to connect the Data Manipulation plugin for Grafana to API Server](https://volkovlabs.com/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904)
+Read more in [How to connect the Data Manipulation plugin for Grafana to API Server](https://volkovlabs.com/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904).
 
 ## Feedback
 
