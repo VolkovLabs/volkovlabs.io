@@ -11,7 +11,7 @@ export const ProjectList: PluginItem[] = [
     description: <>Everything we have done as directed graph.</>,
     href: "https://live.volkovlabs.io",
     badge:
-      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=ff5656&color=black&style=for-the-badge",
+      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Private Repository",
@@ -19,7 +19,7 @@ export const ProjectList: PluginItem[] = [
     description: <>Download our plugins to test the latest features.</>,
     href: "/plugins",
     badge:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=gray&color=black&style=for-the-badge",
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
     title: "Grafana Plugins Weekly",
@@ -37,7 +37,7 @@ export const ProjectList: PluginItem[] = [
     ),
     href: "/plugins/balena-nfs",
     badge:
-      "https://img.shields.io/static/v1?label=balenaHub&message=project&labelColor=9d70f9&color=black&style=for-the-badge",
+      "https://img.shields.io/static/v1?label=balenaHub&message=project&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Mesmerizing Flows NFT",
