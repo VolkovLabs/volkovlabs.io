@@ -1,6 +1,6 @@
 # Environment Data Source
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.0.0-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.0.7-orange)](https://www.grafana.com)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-env-datasource.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-env-datasource/context:javascript)
 ![CI](https://github.com/volkovlabs/volkovlabs-env-datasource/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-env-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-env-datasource)
@@ -9,7 +9,7 @@
 
 The Environment data source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables to retrieve data.
 
-<iframe width="728" height="410" src="https://www.youtube.com/embed/GPzsciOxKdk" title="Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/GPzsciOxKdk" title="Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Requirements
 

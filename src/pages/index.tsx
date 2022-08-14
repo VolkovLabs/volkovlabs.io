@@ -51,7 +51,7 @@ function Home() {
       </header>
 
       <main>
-        <div id="What" className="container margin-vert--lg padding-vert--xl">
+        <div id="What" className="container margin-vert--lg padding-vert--lg">
           <h2 className={clsx(styles.header, "hero__title")}>
             <span>What we are doing</span>
           </h2>
@@ -74,7 +74,7 @@ function Home() {
 
         <div
           id="Why"
-          className={clsx(styles.whyBox, "container margin-vert--xl")}
+          className={clsx(styles.whyBox, "container margin-vert--lg")}
         >
           <div className="row">
             <div className="col col--3">
@@ -139,19 +139,6 @@ function Home() {
             <div className="col col--6 avatar">
               <img
                 className="avatar__photo avatar__photo--xl"
-                src="/img/peoples/mikhail.png"
-              />
-              <div className="avatar__intro padding-vert--md">
-                <div className="avatar__name">Mikhail Volkov</div>
-                <p className="avatar__subtitle">
-                  Mikhail loves to work on innovative projects.
-                </p>
-              </div>
-            </div>
-
-            <div className="col col--6 avatar">
-              <img
-                className="avatar__photo avatar__photo--xl"
                 src="/img/peoples/daria.png"
               />
               <div className="avatar__intro padding-vert--md">
@@ -161,7 +148,30 @@ function Home() {
                 </p>
               </div>
             </div>
+
+            <div className="col col--6 avatar">
+              <img
+                className="avatar__photo avatar__photo--xl"
+                src="/img/peoples/mikhail.png"
+              />
+              <div className="avatar__intro padding-vert--md">
+                <div className="avatar__name">Mikhail Volkov</div>
+                <p className="avatar__subtitle">
+                  Mikhail loves to work on innovative projects.
+                </p>
+              </div>
+            </div>
           </div>
+
+          <iframe
+            width="100%"
+            height="640"
+            src="https://www.youtube.com/embed/qZfnhmaUllU"
+            title="Meet the Founder | Achievements and plans | Volkov Labs in Q2 2022"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div className={clsx(styles.whyBox, "container margin-vert--xl")}>

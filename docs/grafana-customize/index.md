@@ -4,7 +4,7 @@
 
 Watch this video to learn how to customize the fundamental graphical elements in Grafana.
 
-<iframe width="728" height="410" src="https://www.youtube.com/embed/3GRoa8TzIxY" title="How to customize Grafana interface | Change titles, icons, footer, default dashboard | Grafana 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/3GRoa8TzIxY" title="How to customize Grafana interface | Change titles, icons, footer, default dashboard | Grafana 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 All customization is done in the [Dockerfile](https://github.com/VolkovLabs/volkovlabs-balena-app/blob/main/Dockerfile) and it can be easily replicated for host installation.
 
