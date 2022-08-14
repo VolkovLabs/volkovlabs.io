@@ -6,7 +6,7 @@ Theia Scientific (experts in edge computing architectures for scientific instrum
 
 The application was initially prototyped as a standalone web application with tight integration between a simple website and REST API. It used a separate Grafana instance used for visualization and plotting. Constantly switching between two separate applications while doing experiments was inconvenient, so Theia Scientific migrated the AI model management and image acquisition interface into Grafana for a single interface with a better user experience (UX).
 
-<iframe width="728" height="410" src="https://www.youtube.com/embed/VfAC7Mf3O_4" title="Scientific microscope image recognition in Grafana | Volkov Labs and Theia Scientific Collaboration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/VfAC7Mf3O_4" title="Scientific microscope image recognition in Grafana | Volkov Labs and Theia Scientific Collaboration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## GrafanaCONline 2022
 
@@ -14,7 +14,7 @@ In this session, Theia’s production team demonstrated deployment of machine le
 
 In this presentation, you’ll learn about the challenges and solutions to using Grafana for ML-based image analysis in resource- and network-constrained environments through a demonstration and application walkthrough.
 
-<iframe width="728" height="410" src="https://www.youtube.com/embed/WRPnTFBX4rg" title="Using Grafana and machine learning for real time microscopy image analysis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/WRPnTFBX4rg" title="Using Grafana and machine learning for real time microscopy image analysis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Architecture
 

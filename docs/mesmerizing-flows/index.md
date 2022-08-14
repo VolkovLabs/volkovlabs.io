@@ -6,7 +6,7 @@ While developing the custom panel for our client, we were tasked to create Vecto
 
 While troubleshooting the panel plugin, we often played with Vector Field shapes and forms, which led to the Mesmerizing flows NFT collection.
 
-<iframe width="728" height="410" src="https://www.youtube.com/embed/ekzJBQ1LRbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/ekzJBQ1LRbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Showcase
 

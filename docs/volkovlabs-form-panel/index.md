@@ -9,7 +9,7 @@
 
 The Data Manipulation Form Panel is a plugin for Grafana that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
 
-<iframe width="728" height="410" src="https://www.youtube.com/embed/DXALVG8GijM" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/DXALVG8GijM" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Requirements
 
@@ -99,7 +99,7 @@ elements.map((element) => {
 
 Using the custom code you can update elements or element's value and options from any data source.
 
-<iframe width="728" height="410" src="https://www.youtube.com/embed/RSVH1bSBNl8" title="Static and dynamic interface elements of Data Manipulation plugin | DML using data source in Grafana" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/RSVH1bSBNl8" title="Static and dynamic interface elements of Data Manipulation plugin | DML using data source in Grafana" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Fill options of the `icon` element from series `icons` with `icon_id` and `title` columns
 
