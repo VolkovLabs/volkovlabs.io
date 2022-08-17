@@ -1,5 +1,11 @@
 # Getting Started
 
+## Grafana 101 — What, Why, Who?
+
+The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads towards it.
+
+<a href='https://volkovlabs.com/grafana-101-what-why-who-6b25f0d0fd11'><img src='https://miro.medium.com/max/1400/1*VkvAE1b_WBQ7OyT8RcvbtQ.png'/></a>
+
 ## How to Install Grafana
 
 This video is for anyone who just started with Grafana and wondering what the installation process looks like.

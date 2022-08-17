@@ -42,7 +42,7 @@ const config = {
       defaultMode: 'light',
       disableSwitch: true
     },
-      metadata: [{name: 'keywords', content: 'grafana, plugins'}],
+      metadata: [{name: 'keywords', content: 'grafana, plugins, volkovlabs'}],
       navbar: {
         hideOnScroll: true,
         logo: {
