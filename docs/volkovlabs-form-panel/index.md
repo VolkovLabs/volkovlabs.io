@@ -92,7 +92,11 @@ elements.map((element) => {
     element.value = "";
   }
 });
+
+onOptionsChange(options);
 ```
+
+`onOptionsChange` handler is required to update the panel.
 
 ## Dashboard Variables
 
@@ -124,6 +128,8 @@ if (icons?.fields.length) {
     return { label: value, value: ids[index] };
   });
 }
+
+onOptionsChange(options);
 ```
 
 ### Update all form elements from data sources
