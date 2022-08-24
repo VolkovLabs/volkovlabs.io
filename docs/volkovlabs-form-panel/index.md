@@ -1,6 +1,6 @@
 # Data Manipulation Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.0.6-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.1-orange)](https://www.grafana.com)
 ![CI](https://github.com/volkovlabs/volkovlabs-form-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-form-panel.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-form-panel/context:javascript)
@@ -49,7 +49,7 @@ grafana-cli plugins install volkovlabs-form-panel
 
 ## Custom Code
 
-The custom code has access to the Panel options, the response from the REST API call, form elements, various Grafana services and will be executed after the Initial and Update requests. Dashboard variables will be replaced automatically.
+The custom code has access to the Panel options, the response from the REST API call, form elements, various Grafana services and will be executed after the Initial and Update requests.
 
 Available Parameters:
 
@@ -78,8 +78,7 @@ console.log(
 
 ### Reload page after update request
 
-```
-console.log(response);
+```javascript
 if (response && response.ok) {
   location.reload();
 }
@@ -87,13 +86,27 @@ if (response && response.ok) {
 
 ### Clear elements' values after Submit or on Reset button click
 
-```
+```javascript
 elements.map((element) => {
-   if (element.id === 'name') {
-     element.value = '';
-   };
-})
+  if (element.id === "name") {
+    element.value = "";
+  }
+});
+
+onOptionsChange(options);
 ```
+
+`onOptionsChange` handler is required to update the panel.
+
+## Dashboard Variables
+
+Dashboard and Global variables will be replaced automatically in:
+
+- URL for Initial and Update requests
+- Header Parameters' values
+- Request body, which contains elements' values
+
+You can find [global built-in variables](https://grafana.com/docs/grafana/latest/variables/variable-types/global-variables/) in the Grafana documentation.
 
 ## Dynamic form elements
 
@@ -103,46 +116,56 @@ Using the custom code you can update elements or element's value and options fro
 
 ### Fill options of the `icon` element from series `icons` with `icon_id` and `title` columns
 
-```
-const icons = data.series.find((serie) => serie.refId === 'icons');
-const iconSelect = elements.find((element) => element.id === 'icon');
+```javascript
+const icons = data.series.find((serie) => serie.refId === "icons");
+const iconSelect = elements.find((element) => element.id === "icon");
 
 if (icons?.fields.length) {
-  const ids = icons.fields.find((f) => f.name === 'icon_id').values.buffer;
-  const titles = icons.fields.find((f) => f.name === 'title').values.buffer;
+  const ids = icons.fields.find((f) => f.name === "icon_id").values.buffer;
+  const titles = icons.fields.find((f) => f.name === "title").values.buffer;
 
-  iconSelect.options = titles.map((value, index) => { return { label: value, value: ids[index] } });
+  iconSelect.options = titles.map((value, index) => {
+    return { label: value, value: ids[index] };
+  });
 }
+
+onOptionsChange(options);
 ```
 
 ### Update all form elements from data sources
 
-```
-const feedback = data.series.find((serie) => serie.refId === 'Feedback');
-const typeOptions = data.series.find((serie) => serie.refId === 'Types');
+```javascript
+const feedback = data.series.find((serie) => serie.refId === "Feedback");
+const typeOptions = data.series.find((serie) => serie.refId === "Types");
 
 if (feedback?.fields.length) {
-  const ids = feedback.fields.find((f) => f.name === 'id').values.buffer;
-  const titles = feedback.fields.find((f) => f.name === 'title').values.buffer;
-  const types = feedback.fields.find((f) => f.name === 'type').values.buffer;
+  const ids = feedback.fields.find((f) => f.name === "id").values.buffer;
+  const titles = feedback.fields.find((f) => f.name === "title").values.buffer;
+  const types = feedback.fields.find((f) => f.name === "type").values.buffer;
 
   /**
    * Set Elements
    */
-  elements = ids.map((id, index) => { return { id, title: titles[index], type: types[index] } });
+  elements = ids.map((id, index) => {
+    return { id, title: titles[index], type: types[index] };
+  });
 
   /**
    * Find Type element
    */
-  const typeSelect = elements.find((element) => element.id === 'type');
+  const typeSelect = elements.find((element) => element.id === "type");
   if (typeSelect && typeOptions?.fields.length) {
-    const labels = typeOptions.fields.find((f) => f.name === 'label').values.buffer;
-    const values = typeOptions.fields.find((f) => f.name === 'value').values.buffer;
+    const labels = typeOptions.fields.find((f) => f.name === "label").values
+      .buffer;
+    const values = typeOptions.fields.find((f) => f.name === "value").values
+      .buffer;
 
     /**
      * Update Types
      */
-    typeSelect.options = labels.map((label, index) => { return { label, value: values[index] } });
+    typeSelect.options = labels.map((label, index) => {
+      return { label, value: values[index] };
+    });
   }
 
   /**
