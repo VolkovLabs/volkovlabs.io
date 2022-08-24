@@ -10,7 +10,9 @@
 
 The Balena Application plugin for Grafana allows to display device information and manage services using Balena Supervisor API.
 
-![Application](https://raw.githubusercontent.com/volkovlabs/volkovlabs-balena-app/main/src/img/app.png)
+Working in a productive alliance, Balena, Grafana, and the Balena Application plugin simplify managing a network of non-homogenous IoT devices. If needed, a device could be made accessible directly, which means internet access is not required.
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/5NfrVdOX0s8" title="Balena Application plugin for Grafana | Connect to your IoT devices directly from Grafana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Requirements
 
