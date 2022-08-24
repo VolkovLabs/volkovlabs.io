@@ -111,10 +111,9 @@ function Home() {
               <h2 className={clsx(styles.header, "hero__title")}></h2>
             </div>
             <div className="col col--9 hero__subtitle">
-              Our Grafana plugins are open-source and we update them constantly.
-              If you are using our plugins please consider{" "}
+              Our Grafana plugins are open-source and we update them constantly.{" "}
               <a href="https://github.com/sponsors/VolkovLabs">
-                sponsoring our work on GitHub
+                Become our sponsor on GitHub
               </a>
               .
             </div>
