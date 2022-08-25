@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install docs tools
+        run: yarn
+
+      - name: Build docs
+        run: yarn build
+
+      - name: Zip Folder
+        run: zip -r build.zip build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build.zip
+          path: build.zip
