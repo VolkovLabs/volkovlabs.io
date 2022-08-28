@@ -16,4 +16,4 @@ We constantly update our Docker builds based on the latest version of Grafana.
 
 You can learn more in the blog post [How to customize the Grafana user interface](https://volkovlabs.com/how-to-customize-the-grafana-user-interface-8d70a42dc2b6).
 
-<a href='https://volkovlabs.com/how-to-customize-the-grafana-user-interface-8d70a42dc2b6'><img src='https://miro.medium.com/max/700/1*pumUK9a3LLUtGCyiEgNF-g.png'/></a>
+<a href='https://volkovlabs.com/how-to-customize-the-grafana-user-interface-8d70a42dc2b6'><img width="100%" src='https://miro.medium.com/max/700/1*pumUK9a3LLUtGCyiEgNF-g.png'/></a>

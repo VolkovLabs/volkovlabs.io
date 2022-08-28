@@ -57,19 +57,6 @@ function Home() {
           </h2>
 
           <Features />
-
-          <div className="row">
-            <div className="col col--1">
-              <h2 className={clsx(styles.header, "hero__title")}></h2>
-            </div>
-            <div className="col col--9 hero__subtitle">
-              Big companies offer one-size fit all applications. We have time to
-              understand your existing processes and challenges, which allows us
-              to come up with solutions to not only satisfy your needs but also
-              improve productivity, effectiveness, and performance.
-            </div>
-            <div className="col col--2"></div>
-          </div>
         </div>
 
         <div
@@ -111,7 +98,8 @@ function Home() {
               <h2 className={clsx(styles.header, "hero__title")}></h2>
             </div>
             <div className="col col--9 hero__subtitle">
-              Our Grafana plugins are open-source and we update them constantly.{" "}
+              Our Grafana plugins are open-source and we update them constantly.
+              <br />
               <a href="https://github.com/sponsors/VolkovLabs">
                 Become our sponsor on GitHub
               </a>

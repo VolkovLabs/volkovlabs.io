@@ -56,11 +56,6 @@ const config = {
             label: 'What we are doing'
           },
           {
-            href: '#Why',
-            position: 'right',
-            label: 'Why work with us'
-          },
-          {
             href: '#Portfolio',
             position: 'right',
             label: 'Portfolio'
@@ -150,16 +145,16 @@ const config = {
                 href: 'https://volkovlabs.com',
               },
               {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g',
+                label: 'GitHub',
+                href: 'https://github.com/VolkovLabs',
               },
               {
                 label: 'LinkedIn',
                 href: 'https://www.linkedin.com/company/volkovlabs',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/VolkovLabs',
+                label: 'YouTube',
+                href: 'https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g',
               },
             ],
           },
