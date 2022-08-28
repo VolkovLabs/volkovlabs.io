@@ -22,7 +22,7 @@ Vector fields are mathematically beautiful and visually appealing.
 
 Read more in the Blog post [Mesmerizing Flows NFT collection was created using a custom panel plugin for Grafana](https://volkovlabs.com/mesmerizing-flows-nft-collection-was-created-using-a-custom-panel-plugin-for-grafana-221e0ad16778).
 
-<a href='https://volkovlabs.com/mesmerizing-flows-nft-collection-was-created-using-a-custom-panel-plugin-for-grafana-221e0ad16778'><img src='https://miro.medium.com/max/1400/1*zhbBpyRMEK_Il_p5qaPPUw.png'/></a>
+<a href='https://volkovlabs.com/mesmerizing-flows-nft-collection-was-created-using-a-custom-panel-plugin-for-grafana-221e0ad16778'><img width="100%" src='https://miro.medium.com/max/1400/1*zhbBpyRMEK_Il_p5qaPPUw.png'/></a>
 
 ## Solsea Marketplace
 

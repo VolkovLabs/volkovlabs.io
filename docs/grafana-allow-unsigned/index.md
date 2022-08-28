@@ -18,4 +18,6 @@ GF_ALLOW_LOADING_UNSIGNED_PLUGINS=XXX
 allow_loading_unsigned_plugins=XXX
 ```
 
-_Plugins with modified signatures are never loaded. Delete `MANIFEST.txt` file if exists._
+## Manifest file
+
+Plugins with modified signatures are never loaded. Delete `MANIFEST.txt` file if exists and don't match your Grafana's URL.

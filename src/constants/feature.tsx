@@ -20,8 +20,6 @@ export const FeatureList: FeatureItem[] = [
   },
   {
     Svg: require("@site/static/img/features/feature-3.svg").default,
-    description: (
-      <>Our solutions are cost-effective, creative, and delivered on time.</>
-    ),
+    description: <>Our solutions are creative and delivered on time.</>,
   },
 ];
