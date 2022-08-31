@@ -45,6 +45,12 @@ grafana-cli plugins install volkovlabs-form-panel
 - Allows to split form elements into sections.
 - Allows to request confirmation before update request.
 
+## Architecture
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/SHN2S-dRIEM" title="How to Manipulate Data using Grafana dashboard | API Node.js Server and Deno Deploy Project" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+### Diagram
+
 ![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/form-api.png)
 
 ## Custom Code
@@ -76,11 +82,13 @@ console.log(
 );
 ```
 
-### Reload page after update request
+### Reload page after update request or show error
 
 ```javascript
 if (response && response.ok) {
   location.reload();
+} else {
+  alert(`Error: ${response.status}`);
 }
 ```
 
@@ -173,6 +181,43 @@ if (feedback?.fields.length) {
    */
   onOptionsChange({ ...options, elements });
 }
+```
+
+## Custom Update Request
+
+Data Manipulation panel allows to create your own update request using Custom Code. Select Update Request to `-` and set Custom Code:
+
+```javascript
+/**
+ * Set body
+ */
+const body = {};
+options.elements.forEach((element) => {
+  body[element.id] = element.value;
+});
+
+/**
+ * Set URL
+ */
+const url = `http://localhost:3001/${body["name"]}`;
+
+/**
+ * Fetch
+ */
+const resp = fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "PRIVATE-TOKEN": "$token",
+  },
+  body: JSON.stringify(body),
+})
+  .catch((error) => {
+    console.error(error);
+  })
+  .then((resp) => {
+    console.log(resp);
+  });
 ```
 
 ## NGINX
