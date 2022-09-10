@@ -51,22 +51,22 @@ const config = {
         },
         items: [
           {
-            href: "#What",
+            href: "/#What",
             position: "right",
             label: "What we are doing",
           },
           {
-            href: "#Portfolio",
+            href: "/#Portfolio",
             position: "right",
             label: "Portfolio",
           },
           {
-            href: "#Projects",
+            href: "/#Projects",
             position: "right",
             label: "Projects",
           },
           {
-            href: "#Team",
+            href: "/#Team",
             position: "right",
             label: "Team",
           },
