@@ -10,7 +10,7 @@ export const PluginList: PluginItem[] = [
     Svg: require("@site/static/img/plugins/volkovlabs-echarts-panel.svg")
       .default,
     description: (
-      <>Adds powerful charting and visualization library Apache ECharts.</>
+      <>Powerful charting and visualization library Apache ECharts.</>
     ),
     href: "/plugins/volkovlabs-echarts-panel",
     badge:
@@ -20,7 +20,7 @@ export const PluginList: PluginItem[] = [
     title: "Data Manipulation Form Panel",
     Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
     description: (
-      <>Allows to insert, update application data, and modify configuration.</>
+      <>Insert, update application data, and modify configuration.</>
     ),
     href: "/plugins/volkovlabs-form-panel",
     badge:
@@ -31,8 +31,8 @@ export const PluginList: PluginItem[] = [
     Svg: require("@site/static/img/plugins/volkovlabs-image-panel.svg").default,
     description: (
       <>
-        Allows displaying Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3,
-        OGG, PDF formats.
+        Display Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF
+        formats.
       </>
     ),
     href: "/plugins/volkovlabs-image-panel",
@@ -45,8 +45,8 @@ export const PluginList: PluginItem[] = [
       .default,
     description: (
       <>
-        Retrieves RSS/Atom feeds and allows to visualize them using Dynamic Text
-        and other panels.
+        Retrieve RSS/Atom feeds and visualize them using Dynamic Text and other
+        panels.
       </>
     ),
     href: "/plugins/volkovlabs-rss-datasource",
@@ -59,8 +59,8 @@ export const PluginList: PluginItem[] = [
       .default,
     description: (
       <>
-        Returns environment variables to display on your dashboard or use as
-        Variables to retrieve data.
+        Display Environment variables on your dashboard or use as variables to
+        retrieve data.
       </>
     ),
     href: "/plugins/volkovlabs-env-datasource",
@@ -72,8 +72,8 @@ export const PluginList: PluginItem[] = [
     Svg: require("@site/static/img/plugins/volkovlabs-balena-app.svg").default,
     description: (
       <>
-        Allows to display device information and manage services using Balena
-        Supervisor API.
+        Display device information and manage services using Balena Supervisor
+        API.
       </>
     ),
     href: "/plugins/volkovlabs-balena-app",
