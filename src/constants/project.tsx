@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeatureItem, PluginItem } from '../types';
+import { PluginItem } from '../types';
 
 /**
  * Project List
@@ -40,17 +40,6 @@ export const ProjectList: PluginItem[] = [
       "https://img.shields.io/static/v1?label=balenaHub&message=project&labelColor=gray&color=black&style=for-the-badge",
   },
   {
-    title: "Mesmerizing Flows NFT",
-    Svg: require("@site/static/img/plugins/mesmerizing-flows.svg").default,
-    description: (
-      <>
-        Every flow is unique and created using Volkov Labs plugins for Grafana.
-      </>
-    ),
-    href: "/plugins/mesmerizing-flows",
-    badge: "https://img.shields.io/badge/Solana-NFT-black?style=for-the-badge",
-  },
-  {
     title: "Theiascope",
     Svg: require("@site/static/img/plugins/theiascope.svg").default,
     description: (
@@ -60,6 +49,7 @@ export const ProjectList: PluginItem[] = [
       </>
     ),
     href: "/plugins/theiascope",
-    badge: "https://img.shields.io/badge/Commercial-black?style=for-the-badge",
+    badge:
+      "https://img.shields.io/badge/Collaboration-black?style=for-the-badge",
   },
 ];

@@ -20,11 +20,8 @@ jobs:
       - name: Build docs
         run: yarn build
 
-      - name: Zip Folder
-        run: zip -r build.zip build
-
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: build.zip
-          path: build.zip
+          path: build
