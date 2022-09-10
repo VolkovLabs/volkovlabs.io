@@ -1,6 +1,4 @@
-# Getting Started
-
-## Grafana 101 — What, Why, Who?
+# What, Why, Who?
 
 The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads towards it.
 
@@ -19,8 +17,8 @@ In this video Daria explained how to create your first Grafana dashboard with de
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/HNCKbGfAU0Q" title="How to create your Business Grafana dashboard | Step by step for analysts | Grafana Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Grafana Marketplace
+## Dashboard, Global and Environment Variables
 
-We often reference Grafana Marketplace as the best place to install Grafana plugins and many people reached out asking where it can actually be found. This quick video shows the exact location.
+The topic of variables in Grafana has generated a myriad of questions lately. We created this video to bring some structure to the subject and speed up the learning curve for Grafana enthusiasts.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/T5yFeb-KvBg" title="Where Is Grafana Marketplace | Best ways to discover plugins for Grafana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
