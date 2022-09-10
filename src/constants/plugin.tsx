@@ -45,7 +45,7 @@ export const PluginList: PluginItem[] = [
       .default,
     description: (
       <>
-        Retrieve RSS/Atom feeds and visualize them using Dynamic Text and other
+        Retrieve RSS/Atom feeds and visualize using Dynamic Text and other
         panels.
       </>
     ),

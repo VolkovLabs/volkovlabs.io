@@ -18,7 +18,7 @@ const sidebars = {
         "grafana-customize/index",
         "grafana-allow-unsigned/index",
       ],
-      label: "Grafana Tutorials",
+      label: "Grafana",
       type: "category",
     },
     {
