@@ -1,6 +1,6 @@
 # Data Manipulation Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.1-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.4-orange)](https://www.grafana.com)
 ![CI](https://github.com/volkovlabs/volkovlabs-form-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-form-panel.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-form-panel/context:javascript)
@@ -62,10 +62,12 @@ Available Parameters:
 - `options` - Panels' options.
 - `data` - Result set of panel queries.
 - `response` - Request's response.
+- `json` - Parsed JSON from the Initial Request.
 - `elements` - Form Elements.
 - `locationService` - Grafana's `locationService` to work with browser location and history.
-- `templateService` - Grafana's `templateService` provides access to variables and allows to up Time Range.
-- `onOptionsChange` - Panel options Change handler.
+- `templateService` - Grafana's `templateService` provides access to variables and allows to update Time Range.
+- `onOptionsChange()` - Panel options Change handler to refresh panel.
+- `initialRequest()` - Perform the Initial Request to reload panel.
 
 ![Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/request.png)
 
@@ -87,6 +89,16 @@ console.log(
 ```javascript
 if (response && response.ok) {
   location.reload();
+} else {
+  alert(`Error: ${response.status}`);
+}
+```
+
+### Perform Initial Request after update request or show error
+
+```javascript
+if (response && response.ok) {
+  initialRequest();
 } else {
   alert(`Error: ${response.status}`);
 }
@@ -183,9 +195,49 @@ if (feedback?.fields.length) {
 }
 ```
 
-## Custom Update Request
+## Custom Requests
 
-Data Manipulation panel allows to create your own update request using Custom Code. Select Update Request to `-` and set Custom Code:
+Data Manipulation panel allows to create your own Initial and Update requests using Custom Code.
+
+### Initial Request
+
+Select Initial Request as `-` and set Custom Code:
+
+```javascript
+const bucketsSelect = elements.find((element) => element.id === "buckets");
+
+/**
+ * Set URL
+ */
+const url = `http://localhost:3001/test`;
+
+/**
+ * Fetch
+ */
+const resp = fetch(url, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    "PRIVATE-TOKEN": "$token",
+  },
+})
+  .catch((error) => {
+    console.error(error);
+  })
+  .then(async (resp) => {
+    const body = await resp.json();
+
+    bucketsSelect.options = body.buckets.map((value) => {
+      return { label: value, value };
+    });
+
+    onOptionsChange(options);
+  });
+```
+
+### Update Request
+
+Select Update Request as `-` and set Custom Code:
 
 ```javascript
 /**
