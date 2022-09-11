@@ -34,7 +34,7 @@ const sidebars = {
       type: "category",
     },
     {
-      items: ["balena-nfs/index", "theiascope/index"],
+      items: ["balena-nfs/index", "theiascope/index", "volkovlabs-app/index"],
       label: "Projects",
       type: "category",
     },
