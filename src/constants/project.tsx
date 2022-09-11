@@ -22,6 +22,14 @@ export const ProjectList: PluginItem[] = [
       "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
+    title: "Volkov Labs Application",
+    Svg: require("@site/static/img/plugins/volkovlabs-app.svg").default,
+    description: <>Discover our Grafana plugins.</>,
+    href: "/plugins/volkovlabs-app",
+    badge:
+      "https://img.shields.io/static/v1?label=docker&message=image&labelColor=9d70f9&color=black&style=for-the-badge",
+  },
+  {
     title: "Grafana Plugins Weekly",
     Svg: require("@site/static/img/weekly.svg").default,
     description: <>Review of the most popular and updated plugins.</>,

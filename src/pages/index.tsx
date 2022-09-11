@@ -72,9 +72,13 @@ function Home() {
               <h2 className="hero__title margin-vert--lg">Why work with us</h2>
 
               <p className="margin-vert--lg hero__subtitle">
-                We are proud of how fast we can deliver working solutions. Our
-                meetings are straight to the point. You save time and money
-                while getting what you need.
+                "Volkov Labs' custom plugin development service is amazing.{" "}
+                <br /> It is a rocket ship for transitioning an idea to
+                reality."
+              </p>
+
+              <p className="margin-vert--md">
+                Christopher Field, President, Theia Scientific
               </p>
             </div>
             <div className="col col--3">
@@ -159,23 +163,8 @@ function Home() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
 
-        <div className={clsx(styles.whyBox, "container margin-vert--xl")}>
-          <div className="row why-box">
-            <div className="col col--2"></div>
-            <div className="col col--8 text--center">
-              <h3 className="hero__subtitle margin-vert--lg">
-                "Volkov Labs' custom plugin development service is amazing. It
-                is a rocket ship for transitioning an idea to reality."
-              </h3>
-
-              <p className="margin-vert--md">
-                Christopher Field, President, Theia Scientific
-              </p>
-            </div>
-            <div className="col col--2"></div>
-          </div>
+          <div className="col col--2"></div>
         </div>
       </main>
     </Layout>
