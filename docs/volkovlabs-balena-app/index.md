@@ -1,6 +1,6 @@
 # Balena Application
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.0-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.4-orange)](https://www.grafana.com)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-balena-app.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-balena-app/context:javascript)
 ![CI](https://github.com/volkovlabs/volkovlabs-balena-app/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app)
@@ -16,7 +16,7 @@ Working in a productive alliance, Balena, Grafana, and the Balena Application pl
 
 ### Requirements
 
-- Grafana 9.0+ is required.
+- Grafana 8.5+, Grafana 9.0+ is required.
 
 ## Getting Started
 
