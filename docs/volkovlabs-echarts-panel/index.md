@@ -1,6 +1,6 @@
 # Apache ECharts Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.0.6-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.4-orange)](https://www.grafana.com)
 ![CI](https://github.com/volkovlabs/volkovlabs-echarts-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-echarts-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-echarts-panel)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-echarts-panel.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-echarts-panel/context:javascript)
@@ -38,10 +38,10 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 ## setOption() Function
 
-Configuration item, data, universal interface, all parameters and data can all be modified through setOption() function in the plugin's options.
-Available Parameters:
+Configuration item, data, universal interface, all parameters and data can all be modified through `setOption()` function in the plugin's options.
+Available parameters:
 
-- `data` - Grafana's `data` object.
+- `data` - Grafana's `data` object with time range, series and request information.
 - `theme` - Grafana's `theme` object.
 - `echartsInstance` - Instance of the ECharts.
 - `echarts` - ECharts library.
@@ -63,13 +63,33 @@ console.log(
 );
 ```
 
+## Dashboard and Global Variables
+
+Use `replaceVariables()` function to replace Dashboard and Global variables.
+
+```javascript
+const email = replaceVariables("${__user.email}");
+```
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+You can find [global built-in variables](https://grafana.com/docs/grafana/latest/variables/variable-types/global-variables/) in the Grafana documentation.
+
 ## Tutorial
+
+### Directed Graph
 
 Data visualizations can and should be done in style. In two parts video tutorial Daria explained how we built and visualized directed graph in Grafana using Apache ECharts panel.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/e3VHgpuzEF0" title="Build directional graph in Grafana using Apache ECharts | Tutorial part 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/oM7XAVlsOio" title="Build directional graph in Grafana using Apache ECharts | Tutorial part 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### PNG and SVG images
+
+A quick guide for using images in Apache ECharts shows each type's prefixes.
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/ygFDhmbPU-Y" title="Apache ECharts supports base64 PNG and SVG (vector) images | Prefixes for various types of pictures" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Feedback
 
