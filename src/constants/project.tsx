@@ -11,15 +11,13 @@ export const ProjectList: PluginItem[] = [
     description: <>Everything we have done as directed graph.</>,
     href: "https://live.volkovlabs.io",
     badge:
-      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=gray&color=black&style=for-the-badge",
+      "https://img.shields.io/static/v1?label=Grafana&message=Dashboard&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Private Repository",
     Svg: require("@site/static/img/repository.svg").default,
     description: <>Download our plugins to test the latest features.</>,
     href: "/plugins",
-    badge:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
     title: "Volkov Labs Application",

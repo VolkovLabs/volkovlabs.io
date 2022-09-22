@@ -20,7 +20,7 @@ The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Bas
 
 ## Getting Started
 
-Base64 Image/Video/PDF panel can be installed from the Grafana Marketplace or use the `grafana-cli` tool to install from the command line:
+Base64 Image/Video/PDF panel can be installed from the Grafana repository or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install volkovlabs-image-panel
