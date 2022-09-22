@@ -56,9 +56,9 @@ const config = {
             label: "What we are doing",
           },
           {
-            href: "/#Portfolio",
+            href: "/#OpenSource",
             position: "right",
-            label: "Portfolio",
+            label: "Open Source",
           },
           {
             href: "/#Projects",
@@ -80,32 +80,7 @@ const config = {
         style: "light",
         links: [
           {
-            title: "Projects",
-            items: [
-              {
-                label: "Live Server",
-                href: "https://live.volkovlabs.io",
-              },
-              {
-                label: "Private Repository",
-                href: "/plugins",
-              },
-              {
-                label: "Grafana Plugins Weekly",
-                href: "https://volkovlabs.com/grafana-plugins-weekly/home",
-              },
-              {
-                label: "Balena NFS",
-                href: "/plugins/balena-nfs",
-              },
-              {
-                label: "Theiascope™",
-                href: "/plugins/theiascope",
-              },
-            ],
-          },
-          {
-            title: "Portfolio",
+            title: "Open Source",
             items: [
               {
                 label: "Apache ECharts Panel",
@@ -130,6 +105,31 @@ const config = {
               {
                 label: "RSS/Atom Data Source",
                 to: "/plugins/volkovlabs-rss-datasource",
+              },
+            ],
+          },
+          {
+            title: "Projects",
+            items: [
+              {
+                label: "Balena NFS",
+                href: "/plugins/balena-nfs",
+              },
+              {
+                label: "Grafana Plugins Weekly",
+                href: "https://volkovlabs.com/grafana-plugins-weekly/home",
+              },
+              {
+                label: "Live Server",
+                href: "https://live.volkovlabs.io",
+              },
+              {
+                label: "Private Repository",
+                href: "/plugins",
+              },
+              {
+                label: "Theiascope™",
+                href: "/plugins/theiascope",
               },
             ],
           },

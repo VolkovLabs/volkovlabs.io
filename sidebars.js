@@ -30,7 +30,7 @@ const sidebars = {
         "volkovlabs-env-datasource/index",
         "volkovlabs-rss-datasource/index",
       ],
-      label: "Portfolio",
+      label: "Open Source",
       type: "category",
     },
     {

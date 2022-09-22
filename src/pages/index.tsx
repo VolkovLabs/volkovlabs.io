@@ -34,9 +34,9 @@ function Home() {
                     "button button--primary button--lg",
                     styles.getStarted
                   )}
-                  to={useBaseUrl("#Portfolio")}
+                  to={useBaseUrl("#OpenSource")}
                 >
-                  Portfolio&nbsp;&nbsp;→
+                  Open Source plugins&nbsp;&nbsp;→
                 </Link>
               </div>
             </div>
@@ -88,11 +88,11 @@ function Home() {
         </div>
 
         <div
-          id="Portfolio"
+          id="OpenSource"
           className="container margin-vert--lg padding-vert--xl"
         >
           <h2 className={clsx(styles.header, "hero__title")}>
-            <span>Portfolio</span>
+            <span>Open Source</span>
           </h2>
 
           <Plugins />
@@ -102,7 +102,7 @@ function Home() {
               <h2 className={clsx(styles.header, "hero__title")}></h2>
             </div>
             <div className="col col--9 hero__subtitle">
-              Our Grafana plugins are open-source and we update them constantly.
+              Our Grafana plugins are open source and we update them constantly.
               <br />
               <a href="https://github.com/sponsors/VolkovLabs">
                 Become our sponsor on GitHub
