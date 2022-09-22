@@ -19,7 +19,7 @@ The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds a
 
 ## Getting Started
 
-RSS/Atom data source can be installed from the Grafana Marketplace or use the `grafana-cli` tool to install from the command line:
+RSS/Atom data source can be installed from the Grafana repository or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install volkovlabs-rss-datasource

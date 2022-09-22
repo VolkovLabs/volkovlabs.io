@@ -19,7 +19,7 @@ The Environment Data Source is a plugin for Grafana that returns environment var
 
 ## Getting Started
 
-Environment Data Source is not included in the Grafana Marketplace. It can be installed manually from our Private Repository or downloaded directly from the GitHub:
+Environment Data Source is not included in the Grafana repository. It can be installed manually from our Private Repository or downloaded directly from the GitHub:
 
 ```bash
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource

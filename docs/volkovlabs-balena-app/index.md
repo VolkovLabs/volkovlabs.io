@@ -21,7 +21,7 @@ Working in a productive alliance, Balena, Grafana, and the Balena Application pl
 
 ## Getting Started
 
-The Balena application is not included in the Grafana Marketplace. It can be installed manually from our Private Repository or downloaded directly from the GitHub repository:
+The Balena application is not included in the Grafana repository. It can be installed manually from our Private Repository or downloaded directly from the GitHub repository:
 
 ```bash
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-balena-app
