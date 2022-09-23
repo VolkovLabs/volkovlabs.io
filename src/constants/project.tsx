@@ -10,8 +10,6 @@ export const ProjectList: PluginItem[] = [
     Svg: require("@site/static/img/plugins/live.svg").default,
     description: <>Everything we have done as directed graph.</>,
     href: "https://live.volkovlabs.io",
-    badge:
-      "https://img.shields.io/static/v1?label=Grafana&message=Dashboard&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Private Repository",
@@ -22,18 +20,14 @@ export const ProjectList: PluginItem[] = [
   {
     title: "Volkov Labs Application",
     Svg: require("@site/static/img/plugins/volkovlabs-app.svg").default,
-    description: <>Discover our Grafana plugins.</>,
+    description: <>Custom build Docker image with Grafana.</>,
     href: "/plugins/volkovlabs-app",
-    badge:
-      "https://img.shields.io/static/v1?label=docker&message=image&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
     title: "Grafana Plugins Weekly",
     Svg: require("@site/static/img/weekly.svg").default,
     description: <>Review of the most popular and updated plugins.</>,
     href: "https://volkovlabs.com/grafana-plugins-weekly/home",
-    badge:
-      "https://img.shields.io/static/v1?label=Medium&message=Articles&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Balena NFS",
