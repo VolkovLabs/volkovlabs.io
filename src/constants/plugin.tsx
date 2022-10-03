@@ -15,12 +15,17 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-echarts-panel",
   },
   {
-    title: "Data Manipulation Form Panel",
-    Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
+    title: "Balena Application",
+    Svg: require("@site/static/img/plugins/volkovlabs-balena-app.svg").default,
     description: (
-      <>Insert, update application data, and modify configuration.</>
+      <>
+        Display device information and manage services using Balena Supervisor
+        API.
+      </>
     ),
-    href: "/plugins/volkovlabs-form-panel",
+    href: "/plugins/volkovlabs-balena-app",
+    badge:
+      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
     title: "Base64 Image/Video/Audio/PDF Panel",
@@ -34,16 +39,19 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-image-panel",
   },
   {
-    title: "RSS/Atom Data Source",
-    Svg: require("@site/static/img/plugins/volkovlabs-rss-datasource.svg")
+    title: "Calendar Panel",
+    Svg: require("@site/static/img/plugins/volkovlabs-calendar-panel.svg")
       .default,
+    description: <>Display calendar events and change time range.</>,
+    href: "/plugins/volkovlabs-calendar-panel",
+  },
+  {
+    title: "Data Manipulation Form Panel",
+    Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
     description: (
-      <>
-        Retrieve RSS/Atom feeds and visualize using Dynamic Text and other
-        panels.
-      </>
+      <>Insert, update application data, and modify configuration.</>
     ),
-    href: "/plugins/volkovlabs-rss-datasource",
+    href: "/plugins/volkovlabs-form-panel",
   },
   {
     title: "Environment Data Source",
@@ -60,16 +68,15 @@ export const PluginList: PluginItem[] = [
       "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
   },
   {
-    title: "Balena Application",
-    Svg: require("@site/static/img/plugins/volkovlabs-balena-app.svg").default,
+    title: "RSS/Atom Data Source",
+    Svg: require("@site/static/img/plugins/volkovlabs-rss-datasource.svg")
+      .default,
     description: (
       <>
-        Display device information and manage services using Balena Supervisor
-        API.
+        Retrieve RSS/Atom feeds and visualize using Dynamic Text and other
+        panels.
       </>
     ),
-    href: "/plugins/volkovlabs-balena-app",
-    badge:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
+    href: "/plugins/volkovlabs-rss-datasource",
   },
 ];
