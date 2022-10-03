@@ -41,6 +41,16 @@
       ]
     },
     {
+      "id": "marcusolsson-calendar-panel",
+      "type": "panel",
+      "url": "https://github.com/VolkovLabs/volkovlabs-calendar-panel",
+      "versions": [
+        {
+          "version": "1.0.0"
+        }
+      ]
+    },
+    {
       "id": "volkovlabs-echarts-panel",
       "type": "panel",
       "url": "https://github.com/VolkovLabs/volkovlabs-echarts-panel",

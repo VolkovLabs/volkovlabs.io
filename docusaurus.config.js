@@ -95,6 +95,10 @@ const config = {
                 to: "/plugins/volkovlabs-image-panel",
               },
               {
+                label: "Calendar Panel",
+                to: "/plugins/volkovlabs-calendar-panel",
+              },
+              {
                 label: "Data Manipulation Panel",
                 to: "/plugins/volkovlabs-form-panel",
               },
