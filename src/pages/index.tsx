@@ -119,6 +119,16 @@ function Home() {
           </h2>
 
           <Projects />
+
+          <iframe
+            width="100%"
+            height="640"
+            src="https://www.youtube.com/embed/zf98C3lux54"
+            title="IoT Framework based on balena and Grafana | Open source Grafana plugins"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div id="Team" className="container margin-vert--lg">
@@ -154,16 +164,6 @@ function Home() {
               </div>
             </div>
           </div>
-
-          <iframe
-            width="100%"
-            height="640"
-            src="https://www.youtube.com/embed/qZfnhmaUllU"
-            title="Meet the Founder | Achievements and plans | Volkov Labs in Q2 2022"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
 
           <div className="col col--2"></div>
         </div>
