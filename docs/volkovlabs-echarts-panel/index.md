@@ -128,6 +128,12 @@ A quick guide for using images in Apache ECharts shows each type's prefixes.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/ygFDhmbPU-Y" title="Apache ECharts supports base64 PNG and SVG (vector) images | Prefixes for various types of pictures" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Examples
+
+Collection of [Examples](https://github.com/volkovlabs/volkovlabs-echarts-panel/blob/main/examples) (partially contributed by users) shows off the possibilities and provides a starting point for further exploration.
+
+If you have setup a cool looking graph, please share your example. Take a look at the existing examples and send a pull-request with yours.
+
 ## Feedback
 
 We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:

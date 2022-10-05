@@ -6,10 +6,6 @@ import { FeatureItem } from '../types';
  */
 export const FeatureList: FeatureItem[] = [
   {
-    Svg: require("@site/static/img/features/feature-1.svg").default,
-    description: <>Build software for your unique needs.</>,
-  },
-  {
     Svg: require("@site/static/img/features/feature-2.svg").default,
     description: (
       <>
@@ -21,5 +17,9 @@ export const FeatureList: FeatureItem[] = [
   {
     Svg: require("@site/static/img/features/feature-3.svg").default,
     description: <>Our solutions are creative and delivered on time.</>,
+  },
+  {
+    Svg: require("@site/static/img/features/feature-1.svg").default,
+    description: <>Trusted by the Community.</>,
   },
 ];
