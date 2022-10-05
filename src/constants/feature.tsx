@@ -8,10 +8,7 @@ export const FeatureList: FeatureItem[] = [
   {
     Svg: require("@site/static/img/features/feature-2.svg").default,
     description: (
-      <>
-        Specialize in developing plugins to visualize your data using Grafana as
-        a platform.
-      </>
+      <>Specialize in developing plugins to use Grafana as a platform.</>
     ),
   },
   {
