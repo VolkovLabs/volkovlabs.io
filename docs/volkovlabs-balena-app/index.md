@@ -1,6 +1,6 @@
 # Balena Application
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.7-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmRdzBPeQ16cwM7ZvPbXfyHv)
 ![CI](https://github.com/volkovlabs/volkovlabs-balena-app/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app)
@@ -20,7 +20,7 @@ Working in a productive alliance, Balena, Grafana, and the Balena Application pl
 
 ## Getting Started
 
-The Balena application is not included in the Grafana repository. It can be installed manually from our Private Repository or downloaded directly from the GitHub repository:
+The Balena application is not included in the Grafana Catalog. It can be installed manually from our Private Repository or downloaded directly from the GitHub repository:
 
 ```bash
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-balena-app
@@ -71,6 +71,12 @@ You can learn more about balena Labels in the [Documentation](https://www.balena
 - Allows to filter Logs using Regex pattern.
 - Requires Confirmation to restart all Services and reboot the device.
 - Environment Variables sanitized from Target State.
+
+## IoT Framework
+
+This video highlights just one example of many possible solutions when you can combine balena for IoT networking and Grafana with open-source one-click away features on top.
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/zf98C3lux54" title="IoT Framework based on balena and Grafana | Open source Grafana plugins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Balena Supervisor
 
