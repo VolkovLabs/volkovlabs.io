@@ -99,6 +99,10 @@ const config = {
                 to: "/plugins/volkovlabs-calendar-panel",
               },
               {
+                label: "Dynamic Text Panel",
+                to: "/plugins/volkovlabs-dynamictext-panel",
+              },
+              {
                 label: "Data Manipulation Panel",
                 to: "/plugins/volkovlabs-form-panel",
               },

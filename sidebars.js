@@ -9,14 +9,14 @@ const sidebars = {
   mySidebar: [
     {
       id: "index",
-      label: "Private Repository",
+      label: "Our Work",
       type: "doc",
     },
     {
       items: [
-        "grafana",
-        "grafana-customize/index",
         "grafana-allow-unsigned/index",
+        "grafana-customize/index",
+        "grafana",
       ],
       label: "Grafana",
       type: "category",
@@ -27,6 +27,7 @@ const sidebars = {
         "volkovlabs-balena-app/index",
         "volkovlabs-image-panel/index",
         "volkovlabs-calendar-panel/index",
+        "volkovlabs-dynamictext-panel/index",
         "volkovlabs-form-panel/index",
         "volkovlabs-env-datasource/index",
         "volkovlabs-rss-datasource/index",
