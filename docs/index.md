@@ -1,4 +1,10 @@
-# Private Repository
+# Our Work
+
+Our plugins for Grafana represents three categories: Manage, Operate, and Visualize.
+
+<img src="/img/plugins.svg" />
+
+## Private Repository
 
 We are constantly updating and improving our Grafana plugins. A private repository has become a part of our workflow to verify and test plugins on our demo server and projects.
 
