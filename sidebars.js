@@ -27,7 +27,14 @@ const sidebars = {
         "volkovlabs-balena-app/index",
         "volkovlabs-image-panel/index",
         "volkovlabs-calendar-panel/index",
-        "volkovlabs-dynamictext-panel/index",
+        {
+          items: [
+            "volkovlabs-dynamictext-panel/index",
+            "volkovlabs-dynamictext-panel/helpers",
+          ],
+          label: "Dynamic Text Panel",
+          type: "category",
+        },
         "volkovlabs-form-panel/index",
         "volkovlabs-env-datasource/index",
         "volkovlabs-rss-datasource/index",
