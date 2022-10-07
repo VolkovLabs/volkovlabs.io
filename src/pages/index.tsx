@@ -89,7 +89,7 @@ function Home() {
 
         <div
           id="OpenSource"
-          className="container margin-vert--lg padding-vert--xl"
+          className="container margin-vert--lg padding-vert--lg"
         >
           <h2 className={clsx(styles.header, "hero__title")}>
             <span>Open Source</span>
@@ -97,7 +97,7 @@ function Home() {
 
           <Plugins />
 
-          <div className="row">
+          <div className="row margin-vert--lg">
             <div className="col col--1">
               <h2 className={clsx(styles.header, "hero__title")}></h2>
             </div>
@@ -111,14 +111,6 @@ function Home() {
             </div>
             <div className="col col--2"></div>
           </div>
-        </div>
-
-        <div id="Projects" className="container margin-vert--lg">
-          <h2 className={clsx(styles.headerWhite, "hero__title")}>
-            <span>Projects</span>
-          </h2>
-
-          <Projects />
 
           <iframe
             width="100%"
@@ -129,6 +121,14 @@ function Home() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+        </div>
+
+        <div id="Projects" className="container margin-vert--lg">
+          <h2 className={clsx(styles.headerWhite, "hero__title")}>
+            <span>Projects</span>
+          </h2>
+
+          <Projects />
         </div>
 
         <div id="Team" className="container margin-vert--lg">

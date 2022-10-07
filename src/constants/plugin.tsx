@@ -46,6 +46,13 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-calendar-panel",
   },
   {
+    title: "Dynamic Text Panel",
+    Svg: require("@site/static/img/plugins/volkovlabs-dynamictext-panel.svg")
+      .default,
+    description: <>Dynamic, data-driven text.</>,
+    href: "/plugins/volkovlabs-dynamictext-panel",
+  },
+  {
     title: "Data Manipulation Form Panel",
     Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
     description: (
@@ -57,12 +64,7 @@ export const PluginList: PluginItem[] = [
     title: "Environment Data Source",
     Svg: require("@site/static/img/plugins/volkovlabs-env-datasource.svg")
       .default,
-    description: (
-      <>
-        Display Environment variables on your dashboard or use as variables to
-        retrieve data.
-      </>
-    ),
+    description: <>Environment variables on your dashboard.</>,
     href: "/plugins/volkovlabs-env-datasource",
     badge:
       "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
@@ -71,12 +73,7 @@ export const PluginList: PluginItem[] = [
     title: "RSS/Atom Data Source",
     Svg: require("@site/static/img/plugins/volkovlabs-rss-datasource.svg")
       .default,
-    description: (
-      <>
-        Retrieve RSS/Atom feeds and visualize using Dynamic Text and other
-        panels.
-      </>
-    ),
+    description: <>Visualize RSS/Atom feeds using Dynamic Text.</>,
     href: "/plugins/volkovlabs-rss-datasource",
   },
 ];
