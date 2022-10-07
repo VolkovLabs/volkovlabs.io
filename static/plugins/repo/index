@@ -41,16 +41,6 @@
       ]
     },
     {
-      "id": "marcusolsson-calendar-panel",
-      "type": "panel",
-      "url": "https://github.com/VolkovLabs/volkovlabs-calendar-panel",
-      "versions": [
-        {
-          "version": "1.0.0"
-        }
-      ]
-    },
-    {
       "id": "volkovlabs-echarts-panel",
       "type": "panel",
       "url": "https://github.com/VolkovLabs/volkovlabs-echarts-panel",
@@ -67,6 +57,26 @@
       "versions": [
         {
           "version": "1.4.0"
+        }
+      ]
+    },
+    {
+      "id": "marcusolsson-calendar-panel",
+      "type": "panel",
+      "url": "https://github.com/VolkovLabs/volkovlabs-calendar-panel",
+      "versions": [
+        {
+          "version": "1.0.0"
+        }
+      ]
+    },
+    {
+      "id": "marcusolsson-dynamictext-panel",
+      "type": "panel",
+      "url": "https://github.com/VolkovLabs/volkovlabs-dynamictext-panel",
+      "versions": [
+        {
+          "version": "1.9.0"
         }
       ]
     }
