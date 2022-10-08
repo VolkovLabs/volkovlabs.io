@@ -31,6 +31,7 @@ const sidebars = {
           items: [
             "volkovlabs-dynamictext-panel/index",
             "volkovlabs-dynamictext-panel/helpers",
+            "volkovlabs-dynamictext-panel/recipes",
           ],
           label: "Dynamic Text Panel",
           type: "category",

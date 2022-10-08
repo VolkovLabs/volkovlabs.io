@@ -78,6 +78,11 @@ https://{{cluster}}.example.com/{{app}}
 
 The panel renders Handlebars → Markdown → HTML and displays the final result.
 
+For more examples, take a look at
+
+- [Helpers](helpers) - functions that let you perform basic text transformation within your template.
+- [Recipes](recipes) - useful snippets that you can use in your templates.
+
 ## Feedback
 
 We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
