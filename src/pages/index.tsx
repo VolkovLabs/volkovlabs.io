@@ -11,11 +11,7 @@ function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout
-      title={siteConfig.title}
-      description={siteConfig.tagline}
-      wrapperClassName={styles.bodyImage}
-    >
+    <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <header>
         <div className="container margin-vert--lg">
           <div className="row">
@@ -113,12 +109,11 @@ function Home() {
               </a>
               .
             </div>
-            <div className="col col--2"></div>
           </div>
         </div>
 
         <div id="Projects" className="container margin-vert--lg">
-          <h2 className={clsx(styles.headerWhite, "hero__title")}>
+          <h2 className={clsx(styles.header, "hero__title")}>
             <span>Projects</span>
           </h2>
 
@@ -136,7 +131,7 @@ function Home() {
         </div>
 
         <div id="Team" className="container margin-vert--lg padding-vert--lg">
-          <h2 className={clsx(styles.headerWhite, "hero__title")}>
+          <h2 className={clsx(styles.header, "hero__title")}>
             <span>Team</span>
           </h2>
 
