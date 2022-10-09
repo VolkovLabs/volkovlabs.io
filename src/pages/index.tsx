@@ -11,7 +11,11 @@ function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+    <Layout
+      title={siteConfig.title}
+      description={siteConfig.tagline}
+      wrapperClassName={styles.bodyImage}
+    >
       <header>
         <div className="container margin-vert--lg">
           <div className="row">
@@ -50,7 +54,7 @@ function Home() {
         </div>
       </header>
 
-      <main>
+      <main className={styles.bodyImage}>
         <div id="What" className="container margin-vert--lg padding-vert--lg">
           <h2 className={clsx(styles.header, "hero__title")}>
             <span>What we are doing</span>

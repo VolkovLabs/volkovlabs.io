@@ -25,9 +25,6 @@
 body {
   font-family: "Urbanist";
   font-style: normal;
-  background-image: url(/static/img/bg.svg);
-  background-repeat: no-repeat;
-  background-position-y: 25rem;
   width: 100%;
 }
 
