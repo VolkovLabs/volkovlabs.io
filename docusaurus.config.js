@@ -124,10 +124,6 @@ const config = {
                 href: "/plugins/balena-nfs",
               },
               {
-                label: "Grafana Plugins Weekly",
-                href: "https://volkovlabs.com/grafana-plugins-weekly/home",
-              },
-              {
                 label: "Live Server",
                 href: "https://live.volkovlabs.io",
               },
@@ -138,6 +134,10 @@ const config = {
               {
                 label: "Theiascope™",
                 href: "/plugins/theiascope",
+              },
+              {
+                label: "Volkov Lobs Application",
+                href: "plugins/volkovlabs-app",
               },
             ],
           },

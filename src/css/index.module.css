@@ -68,3 +68,9 @@
   background: #fff;
   padding-right: 20px;
 }
+
+.bodyImage {
+  background-image: url(/static/img/bg.svg);
+  background-repeat: no-repeat;
+  background-position-y: 25rem;
+}

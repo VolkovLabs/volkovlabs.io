@@ -11,7 +11,11 @@ function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+    <Layout
+      title={siteConfig.title}
+      description={siteConfig.tagline}
+      wrapperClassName={styles.bodyImage}
+    >
       <header>
         <div className="container margin-vert--lg">
           <div className="row">
@@ -111,6 +115,14 @@ function Home() {
             </div>
             <div className="col col--2"></div>
           </div>
+        </div>
+
+        <div id="Projects" className="container margin-vert--lg">
+          <h2 className={clsx(styles.headerWhite, "hero__title")}>
+            <span>Projects</span>
+          </h2>
+
+          <Projects />
 
           <iframe
             width="100%"
@@ -123,15 +135,7 @@ function Home() {
           ></iframe>
         </div>
 
-        <div id="Projects" className="container margin-vert--lg">
-          <h2 className={clsx(styles.headerWhite, "hero__title")}>
-            <span>Projects</span>
-          </h2>
-
-          <Projects />
-        </div>
-
-        <div id="Team" className="container margin-vert--lg">
+        <div id="Team" className="container margin-vert--lg padding-vert--lg">
           <h2 className={clsx(styles.headerWhite, "hero__title")}>
             <span>Team</span>
           </h2>
