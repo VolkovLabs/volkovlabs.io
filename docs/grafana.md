@@ -22,3 +22,9 @@ In this video Daria explained how to create your first Grafana dashboard with de
 The topic of variables in Grafana has generated a myriad of questions lately. We created this video to bring some structure to the subject and speed up the learning curve for Grafana enthusiasts.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## IoT Framework based on balena and Grafana
+
+Combining Grafana plugins, you can build that unique application you are longing for with zero unused features. This video highlights just one example of many possible solutions when you can combine balena for IoT networking and Grafana with open-source one-click away features on top.
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/zf98C3lux54" title="IoT Framework based on balena and Grafana | Open source Grafana plugins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
