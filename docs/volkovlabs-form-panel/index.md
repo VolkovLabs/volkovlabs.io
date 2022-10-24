@@ -18,7 +18,7 @@ The Data Manipulation Form Panel is a plugin for Grafana that can be used to ins
 
 ## Getting Started
 
-Data Manipulation panel can be installed from the Grafana repository or use the `grafana-cli` tool to install from the command line:
+Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install volkovlabs-form-panel
@@ -68,6 +68,7 @@ Available Parameters:
 - `templateService` - Grafana's `templateService` provides access to variables and allows to update Time Range.
 - `onOptionsChange()` - Panel options Change handler to refresh panel.
 - `initialRequest()` - Perform the Initial Request to reload panel.
+- `setInitial({})` - Allows to specify the initial values for Custom Initial Requests to `Highlight changed values` and `Require Confirmation`.
 
 ![Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/request.png)
 
@@ -91,6 +92,16 @@ if (response && response.ok) {
   location.reload();
 } else {
   alert(`Error: ${response.status}`);
+}
+```
+
+### Update variable after update request to interact with other panels
+
+```javascript
+if (response && response.ok) {
+  response.json().then((resp) => {
+    locationService.partial({ "var-name": resp["name"] }, true);
+  });
 }
 ```
 
@@ -235,6 +246,12 @@ const resp = fetch(url, {
   });
 ```
 
+To support `Highlight changed values` and `Require Confirmation` the Custom Code should use `setInitial({})` function to update `initial` values:
+
+```
+  setInitial({value: 99, name: 'Test'})
+```
+
 ### Update Request
 
 Select Update Request as `-` and set Custom Code:
@@ -285,6 +302,7 @@ Read more in [How to connect the Data Manipulation plugin for Grafana to API Ser
 We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 - Star the repository to show your support.
 
 ## License
