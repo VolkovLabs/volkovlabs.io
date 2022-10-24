@@ -18,7 +18,7 @@ id: marcusolsson-calendar-panel version: 1.0.0
 id: volkovlabs-env-datasource version: 2.1.0
 id: volkovlabs-rss-datasource version: 2.2.0
 id: volkovlabs-image-panel version: 3.1.0
-id: volkovlabs-form-panel version: 2.5.0
+id: volkovlabs-form-panel version: 2.6.0
 id: volkovlabs-echarts-panel version: 3.5.0
 id: volkovlabs-balena-app version: 1.3.0
 ```
