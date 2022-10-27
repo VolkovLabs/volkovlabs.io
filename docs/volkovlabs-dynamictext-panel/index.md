@@ -8,11 +8,12 @@ A panel plugin for Grafana for dynamic, data-driven text.
 
 While the built-in Text panel in Grafana does support variables, that's about as dynamic it gets. This panel lets you define a text template using the data from your data source query.
 
-![Text](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/raw/main/src/img/screenshot.png)
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/MpNZ4Yl-p0U" title="Dynamic Text Plugin for Grafana | Markdown, HTML and Handlebars to transform data visualizations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Requirements
 
-- Grafana 7.0+ is required for version 1.X.
+- **Grafana 8.5+**, **Grafana 9.0+** is required for version 2.X.
+- **Grafana 7.0+** is required for version 1.X.
 
 ## Getting Started
 
@@ -60,9 +61,11 @@ Handlebars provides a [builtin-helper](https://handlebarsjs.com/guide/builtin-he
 
 Let's say that your data source returns the following data:
 
+```md
 | app  | description                  | cluster | tier     |
 | ---- | ---------------------------- | ------- | -------- |
 | auth | Handles user authentication. | prod    | frontend |
+```
 
 You can then write Markdown with placeholders for the data you want to use. The value inside each double brace expression refers to a field in the query result.
 
