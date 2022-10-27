@@ -118,16 +118,6 @@ function Home() {
           </h2>
 
           <Projects />
-
-          <iframe
-            width="100%"
-            height="640"
-            src="https://www.youtube.com/embed/zf98C3lux54"
-            title="IoT Framework based on balena and Grafana | Open source Grafana plugins"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
         </div>
 
         <div id="Team" className="container margin-vert--lg padding-vert--lg">
