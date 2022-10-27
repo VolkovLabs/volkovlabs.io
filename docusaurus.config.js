@@ -163,11 +163,15 @@ const config = {
             ],
           },
           {
-            title: "Contact Us",
+            title: "Get in touch",
             items: [
               {
-                label: "info@volkovlabs.io",
+                label: "Contact",
                 href: "mailto:info@volkovlabs.io",
+              },
+              {
+                label: "Sponsor",
+                href: "https://github.com/sponsors/VolkovLabs",
               },
             ],
           },
