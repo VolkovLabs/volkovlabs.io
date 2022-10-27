@@ -158,11 +158,11 @@ const config = {
               },
               {
                 label: "LinkedIn",
-                href: "https://www.linkedin.com/company/volkovlabs",
+                href: "https://linkedin.com/company/volkovlabs",
               },
               {
                 label: "YouTube",
-                href: "https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g",
+                href: "https://youtube.com/@volkovlabs",
               },
             ],
           },
