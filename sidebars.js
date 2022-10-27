@@ -9,7 +9,7 @@ const sidebars = {
   mySidebar: [
     {
       id: "index",
-      label: "Our Work",
+      label: "Our Plugins",
       type: "doc",
     },
     {
