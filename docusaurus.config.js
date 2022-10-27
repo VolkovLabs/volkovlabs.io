@@ -114,6 +114,10 @@ const config = {
                 label: "RSS/Atom Data Source",
                 to: "/plugins/volkovlabs-rss-datasource",
               },
+              {
+                label: "Static Data Source",
+                to: "/plugins/volkovlabs-static-datasource",
+              },
             ],
           },
           {
