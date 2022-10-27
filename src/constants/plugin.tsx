@@ -76,4 +76,11 @@ export const PluginList: PluginItem[] = [
     description: <>Visualize RSS/Atom feeds using Dynamic Text.</>,
     href: "/plugins/volkovlabs-rss-datasource",
   },
+  {
+    title: "Static Data Source",
+    Svg: require("@site/static/img/plugins/volkovlabs-static-datasource.svg")
+      .default,
+    description: <>Emulate your data to test and develop panels.</>,
+    href: "/plugins/volkovlabs-static-datasource",
+  },
 ];

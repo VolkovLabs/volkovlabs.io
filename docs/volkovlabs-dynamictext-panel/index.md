@@ -17,7 +17,7 @@ While the built-in Text panel in Grafana does support variables, that's about as
 
 ## Getting Started
 
-The Dynamic Text panel can be installed from the Grafana Catalog or use the `grafana-cli` tool to install from the command line:
+The Dynamic Text panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install marcusolsson-dynamictext-panel

@@ -39,6 +39,7 @@ const sidebars = {
         "volkovlabs-form-panel/index",
         "volkovlabs-env-datasource/index",
         "volkovlabs-rss-datasource/index",
+        "volkovlabs-static-datasource/index",
       ],
       label: "Open Source",
       type: "category",
