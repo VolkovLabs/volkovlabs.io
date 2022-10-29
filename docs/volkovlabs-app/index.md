@@ -1,6 +1,6 @@
 # Volkov Labs Application
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmTm_zY_PYqJtRYpMPpZglYC)
 ![CI](https://github.com/volkovlabs/volkovlabs-app/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-app)
@@ -17,7 +17,7 @@ The Volkov Labs Application includes Docker image and Application plugin with in
 
 ## Docker image
 
-We use the custom build Docker image for all our projects and keep it up-to-date with the latest version of Grafana.
+We use custom build Docker image for all our projects and keep it up-to-date with the latest version of Grafana.
 
 ```bash
 docker pull ghcr.io/volkovlabs/app:latest
@@ -28,7 +28,7 @@ docker pull ghcr.io/volkovlabs/app:latest
 Application plugin includes:
 
 - [RSS/Atom data source](https://github.com/volkovlabs/volkovlabs-rss-datasource)
-- [Dynamic text panel](https://github.com/marcusolsson/grafana-dynamictext-panel)
+- [Dynamic text panel](https://github.com/volkovlabs/volkovlabs-dynamictext-panel)
 
 ## Feedback
 
