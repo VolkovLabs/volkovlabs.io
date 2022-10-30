@@ -1,10 +1,10 @@
 ---
 description: We are constantly updating and improving our Grafana plugins.
 tags:
-  - grafana
-  - plugins
-  - development
-  - private repository
+  - Grafana
+  - Plugins
+  - Development
+  - Private repository
 ---
 
 # Our Plugins

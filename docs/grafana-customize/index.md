@@ -1,10 +1,9 @@
 ---
 description: Customize Grafana interface
 tags:
-  - grafana
-  - customize
-  - logo
-  - docker
+  - Grafana
+  - Customize
+  - Docker
 ---
 
 # Customize Grafana interface

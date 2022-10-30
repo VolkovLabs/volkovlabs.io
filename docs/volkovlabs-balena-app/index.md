@@ -3,10 +3,10 @@ title: Introduction
 description: The Balena Application plugin for Grafana allows to display device information and manage services using Balena Supervisor API.
 tags:
   - balena
-  - cloud
-  - application
-  - datasource
-  - private repository
+  - Cloud
+  - Application
+  - Datasource
+  - Private repository
   - IoT
 ---
 

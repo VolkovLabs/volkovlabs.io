@@ -1,9 +1,9 @@
 ---
 description: Allow Unsigned Plugins.
 tags:
-  - grafana
-  - plugins
-  - unsigned
+  - Grafana
+  - Plugins
+  - Unsigned
 ---
 
 # Allow Unsigned Plugins

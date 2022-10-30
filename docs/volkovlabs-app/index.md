@@ -1,3 +1,11 @@
+---
+description: The Volkov Labs Application includes Docker image and Application plugin with information about Volkov Labs supported Grafana plugins.
+tags:
+  - Grafana
+  - Application
+  - Docker
+---
+
 # Volkov Labs Application
 
 [![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)

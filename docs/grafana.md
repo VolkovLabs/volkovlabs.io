@@ -1,11 +1,11 @@
 ---
 description: The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool.
 tags:
-  - grafana
-  - installation
-  - business
-  - dashboard
-  - environment variables
+  - Grafana
+  - Installation
+  - Business
+  - Dashboard
+  - Environment variables
   - IoT
 ---
 
