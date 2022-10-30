@@ -1,3 +1,10 @@
+---
+description: Useful snippets that you can use in your templates.
+tags:
+  - dynamic text
+  - panel
+---
+
 # Recipes
 
 Useful snippets that you can use in your templates.

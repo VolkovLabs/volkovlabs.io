@@ -1,3 +1,10 @@
+---
+description: Helpers are functions that let you perform basic text transformation within your template.
+tags:
+  - dynamic text
+  - panel
+---
+
 # Helpers
 
 Helpers are functions that let you perform basic text transformation within your template.
