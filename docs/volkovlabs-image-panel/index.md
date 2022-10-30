@@ -1,6 +1,18 @@
+---
+description: The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats.
+tags:
+  - Grafana
+  - Panel
+  - Image
+  - PNG
+  - PDF
+  - MP4
+  - Base64
+---
+
 # Base64 Image/Video/Audio/PDF Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.7-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmQjZ19D7wKHc_6VG3dCjkwo)
 ![CI](https://github.com/volkovlabs/volkovlabs-image-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-image-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-image-panel)
@@ -19,7 +31,7 @@ The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Bas
 
 ## Getting Started
 
-Base64 Image/Video/PDF panel can be installed from the Grafana Catalog or use the `grafana-cli` tool to install from the command line:
+Base64 Image/Video/PDF panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install volkovlabs-image-panel
@@ -32,9 +44,11 @@ grafana-cli plugins install volkovlabs-image-panel
 - If the data source returns more than one field with type `string`, you can select the **Field Name** in the panel's display options.
 - If the data source returns multiple rows, the panel will display the image from the last row.
 - Image height and width can be auto-adjusted to panel's size, kept original or customized base on the field's value or display's panel options.
-- Allows to add URL with title to navigate to other dashboard when clicking on the image.
+- Allows to add URL with title to navigate to other dashboard when clicking on the image. URL supports dashboard variables.
 - Support MP4, WEBM video files with definition (`data:video/mp4;base64,XXX` and `data:video/webm;base64,XXX`)
 - Support MP3, OGG audio files with definition (`data:audio/mp3;base64,XXX` and `data:audio/ogg;base64,XXX`)
+
+![Image Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-image-panel/main/src/img/image-panel.png)
 
 ## Feedback
 

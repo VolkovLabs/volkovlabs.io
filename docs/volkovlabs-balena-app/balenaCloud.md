@@ -3,7 +3,7 @@ description: Our custom Grafana build with the Balena Application plugin can be 
 tags:
   - balena
   - balenaCloud
-  - cloud
+  - Cloud
   - IoT
 ---
 

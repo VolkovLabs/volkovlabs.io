@@ -2,8 +2,8 @@
 title: Introduction
 description: A panel plugin for Grafana for dynamic, data-driven text.
 tags:
-  - dynamic text
-  - panel
+  - Dynamic text
+  - Panel
 ---
 
 # Dynamic Text Panel

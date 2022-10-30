@@ -3,8 +3,8 @@ title: Introduction
 description: The Balena NFS project demonstrates how to deploy the NFS Server and Client in balenaCloud.
 tags:
   - balena
-  - cloud
-  - nfs
+  - Cloud
+  - NFS
   - IoT
 ---
 

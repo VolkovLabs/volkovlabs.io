@@ -3,9 +3,9 @@ description: The Balena NFS block can be deployed directly to balenaCloud.
 tags:
   - balena
   - balenaCloud
-  - environment variables
-  - cloud
-  - nfs
+  - Environment variables
+  - Cloud
+  - NFS
   - IoT
 ---
 
