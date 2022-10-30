@@ -1,3 +1,12 @@
+---
+description: We are constantly updating and improving our Grafana plugins.
+tags:
+  - grafana
+  - plugins
+  - development
+  - private repository
+---
+
 # Our Plugins
 
 Our plugins for Grafana represents three categories: Manage, Operate, and Visualize.

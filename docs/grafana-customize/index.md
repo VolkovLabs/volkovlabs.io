@@ -1,6 +1,13 @@
-# Customize Grafana interface
+---
+description: Customize Grafana interface
+tags:
+  - grafana
+  - customize
+  - logo
+  - docker
+---
 
-## Introduction
+# Customize Grafana interface
 
 Watch this video to learn how to customize the fundamental graphical elements in Grafana.
 
