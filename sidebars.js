@@ -24,7 +24,14 @@ const sidebars = {
     {
       items: [
         "volkovlabs-echarts-panel/index",
-        "volkovlabs-balena-app/index",
+        {
+          items: [
+            "volkovlabs-balena-app/index",
+            "volkovlabs-balena-app/balenaCloud",
+          ],
+          label: "Balena Application",
+          type: "category",
+        },
         "volkovlabs-image-panel/index",
         "volkovlabs-calendar-panel/index",
         {
