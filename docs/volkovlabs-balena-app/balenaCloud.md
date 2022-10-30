@@ -1,4 +1,5 @@
 ---
+description: Our custom Grafana build with the Balena Application plugin can be deployed directly to balenaCloud.
 tags:
   - balena
   - balenaCloud

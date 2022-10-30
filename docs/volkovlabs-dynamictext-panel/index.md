@@ -1,8 +1,18 @@
-# Introduction
+---
+title: Introduction
+description: A panel plugin for Grafana for dynamic, data-driven text.
+tags:
+  - dynamic text
+  - panel
+---
+
+# Dynamic Text Panel
 
 [![Grafana 8](https://img.shields.io/badge/Grafana-8.2.7-orange)](https://www.grafana.com)
 ![CI](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-dynamictext-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-dynamictext-panel)
+
+## Introduction
 
 A panel plugin for Grafana for dynamic, data-driven text.
 
