@@ -52,7 +52,15 @@ const sidebars = {
       type: "category",
     },
     {
-      items: ["balena-nfs/index", "theiascope/index", "volkovlabs-app/index"],
+      items: [
+        {
+          items: ["balena-nfs/index", "balena-nfs/balenaCloud"],
+          label: "Balena NFS",
+          type: "category",
+        },
+        "theiascope/index",
+        "volkovlabs-app/index",
+      ],
       label: "Projects",
       type: "category",
     },

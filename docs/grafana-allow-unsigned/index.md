@@ -1,6 +1,12 @@
-# Allow Unsigned Plugins
+---
+description: Allow Unsigned Plugins.
+tags:
+  - grafana
+  - plugins
+  - unsigned
+---
 
-## Introduction
+# Allow Unsigned Plugins
 
 If you are not familiar with Plugin Management in Grafana, please take a look at the [Plugin management](https://grafana.com/docs/grafana/latest/administration/plugin-management/) in the documentation.
 

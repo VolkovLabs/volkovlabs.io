@@ -1,0 +1,46 @@
+---
+description: The Balena NFS block can be deployed directly to balenaCloud.
+tags:
+  - balena
+  - balenaCloud
+  - environment variables
+  - cloud
+  - nfs
+  - IoT
+---
+
+# balenaCloud
+
+The Balena NFS block can be deployed directly to balenaCloud:
+
+[![Deploy with balena](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/balena-nfs)
+
+Default Grafana username and password is **admin/admin**.
+
+## Environment Variables
+
+| Environment Variable | Value                     | Description                                                      |
+| -------------------- | ------------------------- | ---------------------------------------------------------------- |
+| STORAGE_LABEL        | storage                   | External Storage ID, if not found `tmpfs` will be used instead.  |
+| STORAGE_MOUNT_POINT  | /mnt/nvme                 | Local mount point to mount Storage or `tmpfs`.                   |
+| POSTGRES_PASSWORD    | postgres                  | Password for the PostgreSQL database.                            |
+| PGDATA               | /mnt/nvme/postgresql/data | PostgreSQL path on the Storage or `tmpfs` mount point.           |
+| NFS_HOST             | localhost                 | NFS host, should be `localhost` for the local container.         |
+| NFS_HOST_MOUNT       | /                         | NFS exported mount. Set full path `/mnt/nvme` for NFS version 3. |
+| NFS_MOUNT_POINT      | /mnt/nvme                 | Mount point to mount NFS export.                                 |
+| NFS_SYNC_MODE        | async                     | Async or Sync mode.                                              |
+| NFS_VERSION          | nfs                       | Set `nfs4` to force use NFS version 4.                           |
+
+### NFS version 3
+
+To support NFS version 3 please update Environment Variables:
+
+![NFS3](https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/env-nfsv3.png)
+
+## Balena Application
+
+The [Balena Application](../volkovlabs-balena-app) for Grafana allows to display device information and manage services using Balena Supervisor API.
+
+Working in a productive alliance, Balena, Grafana, and the Balena Application plugin simplify managing a network of non-homogenous IoT devices.
+
+![Balena Application](https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/balena-app.png)
