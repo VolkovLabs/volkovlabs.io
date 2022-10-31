@@ -27,6 +27,8 @@ grafana-cli plugins install marcusolsson-calendar-panel
 - Allows to change time range by selecting the days in the calendar.
 - Query calendar events from any data source.
 
+![Calendar](https://github.com/VolkovLabs/volkovlabs-calendar-panel/raw/main/src/img/screenshot.png)
+
 ## Panel options
 
 | Option             | Description                                               |
