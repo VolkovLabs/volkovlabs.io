@@ -23,7 +23,15 @@ const sidebars = {
     },
     {
       items: [
-        "volkovlabs-echarts-panel/index",
+        {
+          items: [
+            "volkovlabs-echarts-panel/index",
+            "volkovlabs-echarts-panel/options",
+            "volkovlabs-echarts-panel/tutorial",
+          ],
+          label: "Apache ECharts Panel",
+          type: "category",
+        },
         {
           items: [
             "volkovlabs-balena-app/index",
