@@ -1,3 +1,12 @@
+---
+description: The ABC Application is a template to create a new application plugin for Grafana.
+tags:
+  - Grafana
+  - Application
+  - Development
+  - ABC
+---
+
 # Application
 
 [![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)

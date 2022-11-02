@@ -25,6 +25,7 @@ Read more in the blog [Installing Grafana plugins from a Private repository](htt
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
 id: marcusolsson-calendar-panel version: 1.0.0
 id: marcusolsson-dynamictext-panel version: 1.9.0
+id: marcusolsson-static-datasource version: 2.0.0
 id: volkovlabs-env-datasource version: 2.1.0
 id: volkovlabs-rss-datasource version: 2.2.0
 id: volkovlabs-image-panel version: 3.1.0
