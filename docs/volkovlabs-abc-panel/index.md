@@ -1,3 +1,12 @@
+---
+description: The ABC Panel is a template to create a new panel plugin for Grafana.
+tags:
+  - Grafana
+  - Panel
+  - Development
+  - ABC
+---
+
 # Panel
 
 [![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
