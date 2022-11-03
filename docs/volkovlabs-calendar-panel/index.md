@@ -1,3 +1,10 @@
+---
+description: The Calendar panel plugin for Grafana to display calendar events from data sources.
+tags:
+  - Calendar
+  - Panel
+---
+
 # Calendar Panel
 
 [![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
