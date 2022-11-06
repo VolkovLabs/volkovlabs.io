@@ -1,6 +1,14 @@
+---
+description: The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables to retrieve data.
+tags:
+  - Data Source
+  - Environment Variables
+  - IoT
+---
+
 # Environment Data Source
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.4-orange)](https://www.grafana.com)
+[![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmRCTyV2W5ghK2_5jLLsyGLc)
 ![CI](https://github.com/volkovlabs/volkovlabs-env-datasource/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-env-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-env-datasource)
@@ -18,7 +26,7 @@ The Environment Data Source is a plugin for Grafana that returns environment var
 
 ## Getting Started
 
-Environment Data Source is not included in the Grafana repository. It can be installed manually from our Private Repository or downloaded directly from the GitHub:
+Environment Data Source is not included in the Grafana Catalog. It can be installed manually from our Private Repository or downloaded directly from the GitHub:
 
 ```bash
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
@@ -30,6 +38,8 @@ Plugin is signed for Grafana running on `http://localhost:3000`. if you are usin
 
 - Returns Environment Variables.
 - Allows to filter unnecessary or secured variables using Regex.
+
+![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-env-datasource/main/src/img/dashboard.png)
 
 ## Provisioning
 
