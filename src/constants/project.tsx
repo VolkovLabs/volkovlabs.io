@@ -32,7 +32,7 @@ export const ProjectList: PluginItem[] = [
         the point-of-acquisition.
       </>
     ),
-    href: "/plugins/theiascope",
+    href: "https://www.theiascientific.com/",
     badge:
       "https://img.shields.io/badge/Collaboration-black?style=for-the-badge",
   },

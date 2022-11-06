@@ -66,7 +66,6 @@ const sidebars = {
           label: "Balena NFS",
           type: "category",
         },
-        "theiascope/index",
         "volkovlabs-app/index",
       ],
       label: "Projects",

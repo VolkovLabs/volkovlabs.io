@@ -21,8 +21,8 @@ Generate from Template: [https://github.com/VolkovLabs/volkovlabs-abc-panel/gene
 
 ### Requirements
 
-- Grafana 8.5+, Grafana 9.0+ is required for version 2.X.
-- Grafana 8.0+ is required for version 1.X.
+- **Grafana 8.5+, Grafana 9.0+** is required for version 2.X.
+- **Grafana 8.0+** is required for version 1.X.
 
 ## Getting Started
 
