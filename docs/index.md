@@ -13,6 +13,10 @@ Our plugins for Grafana represents three categories: Manage, Operate, and Visual
 
 <img src="/img/plugins.svg" />
 
+## Grafana Catalog
+
+Most of our plugins are available in the [Grafana Catalog](https://grafana.com/grafana/plugins/) and can be installed in Cloud and On-Premises.
+
 ## Private Repository
 
 We are constantly updating and improving our Grafana plugins. A private repository has become a part of our workflow to verify and test plugins on our demo server and projects.
