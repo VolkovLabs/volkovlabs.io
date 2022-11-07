@@ -5,7 +5,7 @@ tags:
   - balena
   - Cloud
   - Application
-  - Datasource
+  - Data Source
   - Private repository
   - IoT
 ---

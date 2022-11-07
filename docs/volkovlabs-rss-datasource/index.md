@@ -1,6 +1,15 @@
+---
+description: The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows to visualize them using Dynamic Text and other panels.
+tags:
+  - Data Source
+  - RSS
+  - Atom
+  - News feed
+---
+
 # RSS/Atom Data Source
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.4-orange)](https://www.grafana.com)
+[![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmSGfvGdXriFE-LVuS4Glg7w)
 ![CI](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource)
@@ -18,7 +27,7 @@ The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds a
 
 ## Getting Started
 
-RSS/Atom data source can be installed from the Grafana repository or use the `grafana-cli` tool to install from the command line:
+RSS/Atom data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install volkovlabs-rss-datasource
@@ -34,6 +43,8 @@ grafana-cli plugins install volkovlabs-rss-datasource
   - H4 and Image from the Encoded content.
   - Media:Group for YouTube.
 - Filter items/entries based on the selected Time Range.
+
+![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
 
 ## Provisioning
 
