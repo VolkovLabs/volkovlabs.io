@@ -39,6 +39,8 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - Uses [markdown-it](https://github.com/markdown-it/markdown-it) for rendering Markdown to HTML.
 - HTML inside templates is sanitized using [XSS](https://jsxss.com/en/index.html) through `textUtil`.
 
+![Text](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/raw/main/src/img/screenshot.png)
+
 ## Panel Options
 
 ### Content
