@@ -20,6 +20,7 @@ export const ProjectList: PluginItem[] = [
     Svg: require("@site/static/img/plugins/live.svg").default,
     description: <>Everything we have done as directed graph.</>,
     href: "https://live.volkovlabs.io",
+    target: "_blank",
     badge:
       "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=gray&color=black&style=for-the-badge",
   },
@@ -32,7 +33,8 @@ export const ProjectList: PluginItem[] = [
         the point-of-acquisition.
       </>
     ),
-    href: "https://www.theiascientific.com/",
+    href: "https://theiascientific.com/",
+    target: "_blank",
     badge:
       "https://img.shields.io/badge/Collaboration-black?style=for-the-badge",
   },

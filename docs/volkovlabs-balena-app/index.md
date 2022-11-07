@@ -46,6 +46,8 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-bale
 - Requires Confirmation to restart all Services and reboot the device.
 - Environment Variables sanitized from Target State.
 
+![Application](https://raw.githubusercontent.com/volkovlabs/volkovlabs-balena-app/main/src/img/app.png)
+
 ## Balena Supervisor
 
 The balena Supervisor is balena's agent that runs on devices. Its main role is to ensure your app is running, and keep communications with the balenaCloud API server.
