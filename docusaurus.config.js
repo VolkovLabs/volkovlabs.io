@@ -136,10 +136,6 @@ const config = {
                 href: "/plugins",
               },
               {
-                label: "Theiascope™",
-                href: "/plugins/theiascope",
-              },
-              {
                 label: "Volkov Labs Application",
                 href: "plugins/volkovlabs-app",
               },
