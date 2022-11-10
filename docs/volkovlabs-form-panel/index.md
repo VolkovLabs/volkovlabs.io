@@ -9,7 +9,7 @@ tags:
 
 # Data Manipulation Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
+[![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmRXSNBxyw0sFnnvNRY_CsSA)
 ![CI](https://github.com/volkovlabs/volkovlabs-form-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel)
@@ -53,6 +53,9 @@ grafana-cli plugins install volkovlabs-form-panel
 - Allows to customize Submit, Reset buttons and form layout.
 - Allows to split form elements into sections.
 - Allows to request confirmation before update request.
+- Allows to send all or only updated elements in the Payload.
+- Allows to display Success and Error notifications from the Custom Code.
+- Supports Code Editor suggestions for Available Parameters.
 
 ![Form Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/panel.png)
 
