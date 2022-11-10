@@ -53,7 +53,7 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-dynamictext-panel",
   },
   {
-    title: "Data Manipulation Form Panel",
+    title: "Data Manipulation Panel",
     Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
     description: (
       <>Insert, update application data, and modify configuration.</>
