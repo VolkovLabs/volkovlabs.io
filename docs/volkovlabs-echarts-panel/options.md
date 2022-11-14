@@ -9,15 +9,19 @@ tags:
 
 # setOption() Function
 
-Configuration item, data, universal interface, all parameters and data can all be modified through `setOption()` function in the plugin's options.
-Available parameters:
+Configuration item, data, universal interface, all parameters and data can be modified through `setOption()` function in the plugin's options.
+
+## Available parameters
 
 - `data` - Grafana's `data` object with time range, series and request information.
 - `theme` - Grafana's `theme` object.
 - `echartsInstance` - Instance of the ECharts.
 - `echarts` - ECharts library.
+- `ecStat` - A statistical and data mining tool for Apache ECharts.
 - `replaceVariables` - the `replaceVariables()` function to interpolate variables.
 - `locationService` - Grafana's `locationService` to work with browser location and history.
+- `notifySuccess(['Header', 'Message'])` - Display successful notification.
+- `notifyError(['Header', 'Error Message'])` - Display error notification.
 
 ![Panel](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/panel.png)
 
@@ -70,7 +74,7 @@ Merge elements into array:
 
 - get values for each field
 - combine in an array of arrays
-- use as `sData[0]` to access first query
+- use as `series[0]` to access first query
 
 ```javascript
 const series = data.series.map((s) => {
@@ -80,4 +84,35 @@ const series = data.series.map((s) => {
 
   return rates.map((d, i) => [d, calls[i], names[i]]);
 });
+```
+
+## Events Handling
+
+To react on Mouse and other events use `echartsInstance` to get an instance of EChart:
+
+```
+/**
+ * On Mouse Click
+ */
+echartsInstance.on('click', (params) => {
+  ...
+  echartsInstance.resize(); // to redraw visualization
+});
+
+/**
+ * On Double Click
+ */
+echartsInstance.on('dblclick', (params) => {
+  ...
+  echartsInstance.resize();
+});
+```
+
+## Notifications
+
+Success and Error notifications can be triggered on events handling:
+
+```
+notifySuccess(['Update', 'Values updated successfully.']);
+notifyError(['Update', `An error occured updating values.`]);
 ```

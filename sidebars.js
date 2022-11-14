@@ -28,6 +28,7 @@ const sidebars = {
             "volkovlabs-echarts-panel/index",
             "volkovlabs-echarts-panel/options",
             "volkovlabs-echarts-panel/tutorial",
+            "volkovlabs-echarts-panel/baidu",
           ],
           label: "Apache ECharts Panel",
           type: "category",
