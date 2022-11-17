@@ -13,7 +13,7 @@ export const FeatureList: FeatureItem[] = [
   },
   {
     Svg: require("@site/static/img/features/feature-3.svg").default,
-    description: <>Our solutions are creative and delivered on time.</>,
+    description: <>Find solutions where others give up.</>,
   },
   {
     Svg: require("@site/static/img/features/feature-1.svg").default,
