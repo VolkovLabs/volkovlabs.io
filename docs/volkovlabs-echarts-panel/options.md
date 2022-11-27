@@ -86,15 +86,16 @@ const series = data.series.map((s) => {
 });
 ```
 
-## Events Handling
+## Event Handling
 
-To react on Mouse and other events use `echartsInstance` to get an instance of EChart:
+Users can trigger corresponding events by their operation. To react on Mouse and other events use `echartsInstance`:
 
 ```
 /**
  * On Mouse Click
  */
 echartsInstance.on('click', (params) => {
+  notifySuccess(['Event', 'On Click']);
   ...
   echartsInstance.resize(); // to redraw visualization
 });
@@ -108,6 +109,8 @@ echartsInstance.on('dblclick', (params) => {
 });
 ```
 
+Take a look at the official documentation [Event and Action](https://apache.github.io/echarts-handbook/en/concepts/event/) to learn more.
+
 ## Notifications
 
 Success and Error notifications can be triggered on events handling:
@@ -116,3 +119,20 @@ Success and Error notifications can be triggered on events handling:
 notifySuccess(['Update', 'Values updated successfully.']);
 notifyError(['Update', `An error occured updating values.`]);
 ```
+
+## Scale when resize
+
+To scale the content when panel resized use `echartsInstance` methods to retrieve width and height of the panel.
+
+```
+  graphic: {
+    type: "image",
+    style: {
+      image: `data:image/svg+xml;utf8,${SVG}`,
+      width: echartsInstance.getWidth(),
+      height: echartsInstance.getHeight(),
+    },
+  },
+```
+
+Take a look at the official documentation [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) to see all available methods.

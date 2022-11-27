@@ -31,6 +31,12 @@ The topic of variables in Grafana has generated a myriad of questions lately. We
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Replicate and reuse panels in Grafana
+
+The Library panels feature was introduced in Grafana 8 and updated in Grafana 9. We loved it so much that decided to create a whole video about it. 
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/kCFH15QeIRY" title="Library panels in Grafana 9 | Replicate and reuse panels in Grafana | Step by step tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## IoT Framework based on balena and Grafana
 
 Combining Grafana plugins, you can build that unique application you are longing for with zero unused features. This video highlights just one example of many possible solutions when you can combine balena for IoT networking and Grafana with open-source one-click away features on top.

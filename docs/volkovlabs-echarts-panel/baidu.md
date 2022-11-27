@@ -12,7 +12,7 @@ tags:
 
 :::caution
 
-Baidu Maps supported since Apache ECharts Panel 3.6.0.
+Supported since Apache ECharts Panel 3.6.0.
 
 :::
 
