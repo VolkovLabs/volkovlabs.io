@@ -51,24 +51,26 @@ const config = {
         },
         items: [
           {
-            href: "/#What",
+            label: "Company",
             position: "right",
-            label: "What we are doing",
-          },
-          {
-            href: "/#OpenSource",
-            position: "right",
-            label: "Open Source",
-          },
-          {
-            href: "/#Projects",
-            position: "right",
-            label: "Projects",
-          },
-          {
-            href: "/#Team",
-            position: "right",
-            label: "Team",
+            items: [
+              {
+                href: "/#What",
+                label: "What we are doing",
+              },
+              {
+                href: "/#OpenSource",
+                label: "Open Source",
+              },
+              {
+                href: "/#Projects",
+                label: "Projects",
+              },
+              {
+                href: "/#Team",
+                label: "Team",
+              },
+            ],
           },
           {
             href: "/plugins",
