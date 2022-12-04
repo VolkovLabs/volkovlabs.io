@@ -153,8 +153,6 @@ function Home() {
               </div>
             </div>
           </div>
-
-          <div className="col col--2"></div>
         </div>
       </main>
     </Layout>

@@ -8,12 +8,19 @@ export const ProjectList: PluginItem[] = [
   {
     title: "Balena NFS",
     Svg: require("@site/static/img/balena/balena-nfs.svg").default,
-    description: (
-      <>Demonstrate how to deploy NFS Server and Client in balenaCloud.</>
-    ),
+    description: <>Deploy NFS Server and Client in balenaCloud.</>,
     href: "/plugins/balena-nfs",
     badge:
-      "https://img.shields.io/static/v1?label=balenaHub&message=project&labelColor=gray&color=black&style=for-the-badge",
+      "https://img.shields.io/static/v1?label=balena&message=Hub&labelColor=gray&color=black&style=for-the-badge",
+  },
+  {
+    title: "ECharts Examples",
+    Svg: require("@site/static/img/plugins/echarts.svg").default,
+    description: <>100+ visualizations in Grafana.</>,
+    href: "https://echarts.volkovlabs.io",
+    target: "_blank",
+    badge:
+      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=gray&color=black&style=for-the-badge",
   },
   {
     title: "Live Server",
@@ -27,12 +34,7 @@ export const ProjectList: PluginItem[] = [
   {
     title: "Theiascope",
     Svg: require("@site/static/img/plugins/theiascope.svg").default,
-    description: (
-      <>
-        Augment your scientific image analysis workflows with machine vision at
-        the point-of-acquisition.
-      </>
-    ),
+    description: <>Augment your scientific image analysis workflows.</>,
     href: "https://theiascientific.com/",
     target: "_blank",
     badge:
