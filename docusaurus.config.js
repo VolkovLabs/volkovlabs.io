@@ -51,24 +51,31 @@ const config = {
         },
         items: [
           {
-            href: "/#What",
+            label: "Company",
             position: "right",
-            label: "What we are doing",
+            items: [
+              {
+                href: "/#What",
+                label: "What we are doing",
+              },
+              {
+                href: "/#OpenSource",
+                label: "Open Source",
+              },
+              {
+                href: "/#Projects",
+                label: "Projects",
+              },
+              {
+                href: "/#Team",
+                label: "Team",
+              },
+            ],
           },
           {
-            href: "/#OpenSource",
+            href: "/plugins",
             position: "right",
-            label: "Open Source",
-          },
-          {
-            href: "/#Projects",
-            position: "right",
-            label: "Projects",
-          },
-          {
-            href: "/#Team",
-            position: "right",
-            label: "Team",
+            label: "Documentation",
           },
         ],
       },
@@ -128,6 +135,10 @@ const config = {
                 href: "/plugins/balena-nfs",
               },
               {
+                label: "ECharts Examples",
+                href: "https://echarts.volkovlabs.io",
+              },
+              {
                 label: "Live Server",
                 href: "https://live.volkovlabs.io",
               },
@@ -161,7 +172,7 @@ const config = {
                 href: "https://linkedin.com/company/volkovlabs",
               },
               {
-                label: "YouTube",
+                label: "YouTube Channel",
                 href: "https://youtube.com/@volkovlabs",
               },
             ],
@@ -176,6 +187,10 @@ const config = {
               {
                 label: "Sponsor",
                 href: "https://github.com/sponsors/VolkovLabs",
+              },
+              {
+                label: "YouTube Community",
+                href: "https://youtube.com/@volkovlabs/community",
               },
             ],
           },

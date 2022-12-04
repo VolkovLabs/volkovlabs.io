@@ -9,7 +9,7 @@ import { FeatureItem } from '../types';
  */
 export const Feature = ({ Svg, description }: FeatureItem) => {
   return (
-    <div className="col padding-horiz--lg margin-vert--lg margin-horiz--lg">
+    <div className="col margin-vert--lg margin-horiz--lg">
       <div>
         <Svg className={styles.featureSvg} role="img" />
       </div>
