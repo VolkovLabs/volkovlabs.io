@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProjectList } from '../constants';
-import { Plugin } from './Plugin';
+import { Plugin } from './Plugins';
 
 /**
  * Projects

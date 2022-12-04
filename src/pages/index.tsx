@@ -134,8 +134,8 @@ function Home() {
               <div className="avatar__intro padding-vert--md">
                 <div className="avatar__name">Daria Volkova</div>
                 <p className="avatar__subtitle">
-                  Daria translates ideas to elegant solutions and YouTube
-                  tutorials.
+                  Daria translates ideas to elegant solutions and produce
+                  YouTube tutorials.
                 </p>
               </div>
             </div>

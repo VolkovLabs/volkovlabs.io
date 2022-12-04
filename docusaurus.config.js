@@ -70,6 +70,11 @@ const config = {
             position: "right",
             label: "Team",
           },
+          {
+            href: "/plugins",
+            position: "right",
+            label: "Documentation",
+          },
         ],
       },
       footer: {
@@ -128,6 +133,10 @@ const config = {
                 href: "/plugins/balena-nfs",
               },
               {
+                label: "ECharts Examples",
+                href: "https://echarts.volkovlabs.io",
+              },
+              {
                 label: "Live Server",
                 href: "https://live.volkovlabs.io",
               },
@@ -161,7 +170,7 @@ const config = {
                 href: "https://linkedin.com/company/volkovlabs",
               },
               {
-                label: "YouTube",
+                label: "YouTube Channel",
                 href: "https://youtube.com/@volkovlabs",
               },
             ],
@@ -176,6 +185,10 @@ const config = {
               {
                 label: "Sponsor",
                 href: "https://github.com/sponsors/VolkovLabs",
+              },
+              {
+                label: "YouTube Community",
+                href: "https://youtube.com/@volkovlabs/community",
               },
             ],
           },
