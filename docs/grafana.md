@@ -9,7 +9,7 @@ tags:
   - IoT
 ---
 
-# What, Why, Who?
+# Introduction
 
 The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads towards it.
 

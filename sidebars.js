@@ -9,14 +9,14 @@ const sidebars = {
   mySidebar: [
     {
       id: "index",
-      label: "Our Plugins",
+      label: "Home",
       type: "doc",
     },
     {
       items: [
+        "grafana",
         "grafana-allow-unsigned/index",
         "grafana-customize/index",
-        "grafana",
       ],
       label: "Grafana",
       type: "category",
@@ -67,8 +67,9 @@ const sidebars = {
         "volkovlabs-rss-datasource/index",
         "volkovlabs-static-datasource/index",
       ],
-      label: "Open Source",
+      label: "Plugins",
       type: "category",
+      collapsible: false,
     },
     {
       items: [
