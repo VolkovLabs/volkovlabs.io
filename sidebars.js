@@ -47,6 +47,7 @@ const sidebars = {
           items: [
             "volkovlabs-balena-app/index",
             "volkovlabs-balena-app/balenaCloud",
+            "volkovlabs-balena-app/release",
           ],
           label: "Balena Application",
           type: "category",
@@ -58,6 +59,7 @@ const sidebars = {
             "volkovlabs-dynamictext-panel/index",
             "volkovlabs-dynamictext-panel/helpers",
             "volkovlabs-dynamictext-panel/recipes",
+            "volkovlabs-dynamictext-panel/release",
           ],
           label: "Dynamic Text Panel",
           type: "category",
@@ -69,6 +71,7 @@ const sidebars = {
             "volkovlabs-form-panel/code",
             "volkovlabs-form-panel/request",
             "volkovlabs-form-panel/dynamic",
+            "volkovlabs-form-panel/release",
           ],
           label: "Data Manipulation Panel",
           type: "category",
