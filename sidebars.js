@@ -35,7 +35,6 @@ const sidebars = {
                 "volkovlabs-echarts-panel/maps/gaode",
                 "volkovlabs-echarts-panel/maps/google",
               ],
-              collapsed: false,
               label: "Maps",
               type: "category",
             },

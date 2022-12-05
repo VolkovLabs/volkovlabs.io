@@ -9,7 +9,9 @@ tags:
 
 # Examples
 
-Collection of [Examples](https://github.com/volkovlabs/volkovlabs-echarts-panel/blob/main/examples) shows off the possibilities and provides a starting point for further exploration.
+More than 100 visualizations are available at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).
+
+![Examples](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png)
 
 :::info
 
