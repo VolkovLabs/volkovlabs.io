@@ -12,10 +12,6 @@ export const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    Svg: require("@site/static/img/features/feature-3.svg").default,
-    description: <>Find solutions where others give up.</>,
-  },
-  {
     Svg: require("@site/static/img/features/feature-1.svg").default,
     description: <>Trusted by the Community.</>,
   },

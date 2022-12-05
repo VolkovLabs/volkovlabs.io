@@ -47,6 +47,7 @@ const sidebars = {
           items: [
             "volkovlabs-balena-app/index",
             "volkovlabs-balena-app/balenaCloud",
+            "volkovlabs-balena-app/release",
           ],
           label: "Balena Application",
           type: "category",
