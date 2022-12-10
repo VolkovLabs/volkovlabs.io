@@ -95,11 +95,19 @@ const sidebars = {
     {
       items: [
         {
-          items: ["balena-nfs/index", "balena-nfs/balenaCloud"],
+          items: [
+            "balena-nfs/index",
+            "balena-nfs/balenaCloud",
+            "balena-nfs/release",
+          ],
           label: "Balena NFS",
           type: "category",
         },
-        "volkovlabs-app/index",
+        {
+          items: ["volkovlabs-app/index", "volkovlabs-app/release"],
+          label: "Volkov Labs Application",
+          type: "category",
+        },
       ],
       label: "Projects",
       type: "category",

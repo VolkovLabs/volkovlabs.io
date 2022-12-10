@@ -68,7 +68,7 @@ function Home() {
             <div className="col col--9 hero__subtitle">
               Our Grafana plugins are open source and we update them constantly.
               <br />
-              <a href="https://github.com/sponsors/VolkovLabs">
+              <a href="https://github.com/sponsors/VolkovLabs" target="_blank">
                 Become our sponsor on GitHub
               </a>
               .

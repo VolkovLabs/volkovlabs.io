@@ -24,8 +24,7 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-balena-app",
-    badge:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
+    badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
   },
   {
     title: "Base64 Image/Video/Audio/PDF Panel",
@@ -66,8 +65,7 @@ export const PluginList: PluginItem[] = [
       .default,
     description: <>Environment variables on your dashboard.</>,
     href: "/plugins/volkovlabs-env-datasource",
-    badge:
-      "https://img.shields.io/static/v1?label=private&message=repository&labelColor=9d70f9&color=black&style=for-the-badge",
+    badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
   },
   {
     title: "RSS/Atom Data Source",
