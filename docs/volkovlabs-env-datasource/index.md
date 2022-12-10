@@ -1,4 +1,5 @@
 ---
+title: Introduction
 description: The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables to retrieve data.
 tags:
   - Data Source

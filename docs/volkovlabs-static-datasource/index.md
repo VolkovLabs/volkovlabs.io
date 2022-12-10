@@ -1,4 +1,5 @@
 ---
+title: Introduction
 description: The Static Data Source is a plugin for Grafana that allows to emulate your data to test and develop panels.
 tags:
   - Grafana
