@@ -55,10 +55,6 @@ const config = {
             position: "right",
             items: [
               {
-                href: "/#What",
-                label: "What we are doing",
-              },
-              {
                 href: "/#OpenSource",
                 label: "Open Source",
               },
@@ -141,10 +137,6 @@ const config = {
               {
                 label: "Live Server",
                 href: "https://live.volkovlabs.io",
-              },
-              {
-                label: "Private Repository",
-                href: "/plugins",
               },
               {
                 label: "Theiascope™",

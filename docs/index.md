@@ -9,13 +9,9 @@ tags:
 
 # Our Plugins
 
-Our plugins for Grafana represents three categories: Manage, Operate, and Visualize.
+Our plugins for Grafana represents three categories: Manage, Operate, and Visualize. Most of them are available in the [Grafana Catalog](https://grafana.com/grafana/plugins/) and can be installed in Cloud and On-Premises.
 
 <img src="/img/plugins.svg" />
-
-## Grafana Catalog
-
-Most of our plugins are available in the [Grafana Catalog](https://grafana.com/grafana/plugins/) and can be installed in Cloud and On-Premises.
 
 ## Private Repository
 

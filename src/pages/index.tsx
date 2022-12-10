@@ -34,9 +34,9 @@ function Home() {
                     "button button--primary button--lg",
                     styles.getStarted
                   )}
-                  to={useBaseUrl("#OpenSource")}
+                  to={useBaseUrl("/plugins")}
                 >
-                  Open Source plugins&nbsp;&nbsp;→
+                  Documentation&nbsp;&nbsp;→
                 </Link>
               </div>
             </div>
@@ -51,42 +51,6 @@ function Home() {
       </header>
 
       <main>
-        <div id="What" className="container margin-vert--lg padding-vert--lg">
-          <h2 className={clsx(styles.header, "hero__title")}>
-            <span>What we are doing</span>
-          </h2>
-
-          <Features />
-        </div>
-
-        <div
-          id="Why"
-          className={clsx(styles.whyBox, "container margin-vert--lg")}
-        >
-          <div className="row">
-            <div className="col col--3">
-              <img src={useBaseUrl("img/why-1.svg")} />
-            </div>
-            <div className="col col--6 text--center">
-              <br />
-              <h2 className="hero__title margin-vert--lg">Why work with us</h2>
-
-              <p className="margin-vert--lg hero__subtitle">
-                "Volkov Labs' custom plugin development service is amazing.{" "}
-                <br /> It is a rocket ship for transitioning an idea to
-                reality."
-              </p>
-
-              <p className="margin-vert--md">
-                Christopher Field, President, Theia Scientific
-              </p>
-            </div>
-            <div className="col col--3">
-              <img src={useBaseUrl("img/why-2.svg")} />
-            </div>
-          </div>
-        </div>
-
         <div
           id="OpenSource"
           className="container margin-vert--lg padding-vert--lg"
@@ -120,7 +84,7 @@ function Home() {
           <Projects />
         </div>
 
-        <div id="Team" className="container margin-vert--lg padding-vert--lg">
+        <div id="Team" className="container margin-vert--md">
           <h2 className={clsx(styles.header, "hero__title")}>
             <span>Team</span>
           </h2>
@@ -151,6 +115,34 @@ function Home() {
                   Mikhail loves to work on innovative projects.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="Why"
+          className={clsx(styles.whyBox, "container margin-vert--xl")}
+        >
+          <div className="row">
+            <div className="col col--3">
+              <img src={useBaseUrl("img/why-1.svg")} />
+            </div>
+            <div className="col col--6 text--center">
+              <br />
+              <h2 className="hero__title margin-vert--lg">Why work with us</h2>
+
+              <p className="margin-vert--lg hero__subtitle">
+                "Volkov Labs' custom plugin development service is amazing.{" "}
+                <br /> It is a rocket ship for transitioning an idea to
+                reality."
+              </p>
+
+              <p className="margin-vert--md">
+                Christopher Field, President, Theia Scientific
+              </p>
+            </div>
+            <div className="col col--3">
+              <img src={useBaseUrl("img/why-2.svg")} />
             </div>
           </div>
         </div>
