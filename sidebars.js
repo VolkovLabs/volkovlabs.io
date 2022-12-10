@@ -53,7 +53,14 @@ const sidebars = {
           label: "Balena Application",
           type: "category",
         },
-        "volkovlabs-image-panel/index",
+        {
+          items: [
+            "volkovlabs-image-panel/index",
+            "volkovlabs-image-panel/release",
+          ],
+          label: "Base64 Image/PDF Panel",
+          type: "category",
+        },
         {
           items: [
             "volkovlabs-calendar-panel/index",
@@ -84,9 +91,30 @@ const sidebars = {
           label: "Data Manipulation Panel",
           type: "category",
         },
-        "volkovlabs-env-datasource/index",
-        "volkovlabs-rss-datasource/index",
-        "volkovlabs-static-datasource/index",
+        {
+          items: [
+            "volkovlabs-env-datasource/index",
+            "volkovlabs-env-datasource/release",
+          ],
+          label: "Environment Data Source",
+          type: "category",
+        },
+        {
+          items: [
+            "volkovlabs-rss-datasource/index",
+            "volkovlabs-rss-datasource/release",
+          ],
+          label: "RSS/Atom Data Source",
+          type: "category",
+        },
+        {
+          items: [
+            "volkovlabs-static-datasource/index",
+            "volkovlabs-static-datasource/release",
+          ],
+          label: "Static Data Source",
+          type: "category",
+        },
       ],
       label: "Plugins",
       type: "category",
@@ -95,11 +123,19 @@ const sidebars = {
     {
       items: [
         {
-          items: ["balena-nfs/index", "balena-nfs/balenaCloud"],
+          items: [
+            "balena-nfs/index",
+            "balena-nfs/balenaCloud",
+            "balena-nfs/release",
+          ],
           label: "Balena NFS",
           type: "category",
         },
-        "volkovlabs-app/index",
+        {
+          items: ["volkovlabs-app/index", "volkovlabs-app/release"],
+          label: "Volkov Labs Application",
+          type: "category",
+        },
       ],
       label: "Projects",
       type: "category",

@@ -1,4 +1,5 @@
 ---
+title: Introduction
 description: The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows to visualize them using Dynamic Text and other panels.
 tags:
   - Data Source

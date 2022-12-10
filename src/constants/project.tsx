@@ -20,7 +20,7 @@ export const ProjectList: PluginItem[] = [
     href: "https://echarts.volkovlabs.io",
     target: "_blank",
     badge:
-      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=gray&color=black&style=for-the-badge",
+      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=ff5656&color=black&style=for-the-badge",
   },
   {
     title: "Live Server",
@@ -29,7 +29,7 @@ export const ProjectList: PluginItem[] = [
     href: "https://live.volkovlabs.io",
     target: "_blank",
     badge:
-      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=gray&color=black&style=for-the-badge",
+      "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=ff5656&color=black&style=for-the-badge",
   },
   {
     title: "Theiascope",
