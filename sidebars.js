@@ -14,9 +14,10 @@ const sidebars = {
     },
     {
       items: [
-        "grafana",
-        "grafana-allow-unsigned/index",
-        "grafana-customize/index",
+        "grafana/index",
+        "grafana/business",
+        "grafana/allow-unsigned",
+        "grafana/customize",
       ],
       label: "Grafana",
       type: "category",
@@ -53,7 +54,14 @@ const sidebars = {
           type: "category",
         },
         "volkovlabs-image-panel/index",
-        "volkovlabs-calendar-panel/index",
+        {
+          items: [
+            "volkovlabs-calendar-panel/index",
+            "volkovlabs-calendar-panel/release",
+          ],
+          label: "Calendar Panel",
+          type: "category",
+        },
         {
           items: [
             "volkovlabs-dynamictext-panel/index",
