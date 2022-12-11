@@ -9,8 +9,9 @@ tags:
 
 # Apache ECharts Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
+[![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmQHGWFqksEf3LebUfhqBfFu)
+[![Examples](https://img.shields.io/badge/ECharts-Examples-blue)](https://echarts.volkovlabs.io)
 ![CI](https://github.com/volkovlabs/volkovlabs-echarts-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-echarts-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-echarts-panel)
 [![CodeQL](https://github.com/VolkovLabs/volkovlabs-echarts-panel/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/actions/workflows/codeql-analysis.yml)
@@ -42,14 +43,15 @@ grafana-cli plugins install volkovlabs-echarts-panel
 - Based on the ECharts 5.4.0.
 - Supports Light and Dark mode synchronized with Grafana Theme.
 - Supports SVG and Canvas renderer.
-- Includes USA and World maps. Allows to add custom Map files in the `maps` folder.
+- Includes USA and World GeoJSON maps. Allows to add custom Map files in the `maps` folder.
 - Supports variables and location service to make Charts interactive.
 - Includes [Liquid Fill Chart](https://github.com/ecomfe/echarts-liquidfill), which is usually used to represent data in percentage.
 - Includes [ECharts-GL](https://github.com/ecomfe/echarts-gl), which providing 3D plots, globe visualization and WebGL acceleration.
 - Includes [ecStat](https://github.com/ecomfe/echarts-stat), a statistical and data mining tool.
 - Supports Code Editor suggestions for Available Parameters.
 - Allows to display Success and Error notifications.
-- Supports Baidu maps loaded using APIv3.
+- Supports Baidu, Gaode, Google maps using API. Requires to provide access key.
+- 100+ examples are available at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).
 
 ![ECharts](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/dashboard.png)
 

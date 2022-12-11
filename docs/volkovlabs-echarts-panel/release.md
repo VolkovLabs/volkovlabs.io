@@ -9,6 +9,27 @@ tags:
 
 # Release Notes
 
+## 3.8.0 (2022-12-10)
+
+### Breaking changes
+
+- World and USA GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
+
+### Features / Enhancements
+
+- Update documentation for Event Handling (#80)
+- Add Histograms, Clustering, Regression tutorial (#83)
+- Add Provisioning dashboards for ECharts Examples on https://echarts.volkovlabs.io (#91)
+- Add Gaode map support (#95)
+- Update to Grafana 9.3.1 (#97)
+- Add Google map support (#98)
+- Refactor Maps support (#99)
+- Update to Apache ECharts 5.4.1 (#101) 
+
+### Bug fixes
+
+- Fix Disabled Format options (#88)
+
 ## 3.7.0 (2022-11-16)
 
 ### Features / Enhancements
