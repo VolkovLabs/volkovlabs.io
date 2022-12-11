@@ -23,7 +23,7 @@ Baidu Maps are loaded using API v3 and require Access Key. You can get it from [
 - Callback function `bmapReady` will be executed on load. Name can be changed in the Panel options.
 - While loading, animation can be displayed using following code.
 
-```
+```javascript
 /**
  * Baidu Maps
  */

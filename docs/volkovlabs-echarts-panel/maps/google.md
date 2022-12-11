@@ -23,7 +23,7 @@ Google Maps are loaded using Maps API and require Access Key. You can get it fro
 - Callback function `gmapReady` will be executed on load. Name can be changed in the Panel options.
 - While loading, animation can be displayed using following code.
 
-```
+```javascript
 const gmap = {
   gmap: {
     /**
