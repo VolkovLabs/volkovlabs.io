@@ -29,7 +29,11 @@ const sidebars = {
             "volkovlabs-echarts-panel/index",
             "volkovlabs-echarts-panel/options",
             "volkovlabs-echarts-panel/tutorial",
-            "volkovlabs-echarts-panel/examples",
+            {
+              type: "link",
+              label: "Examples",
+              href: "https://echarts.volkovlabs.io",
+            },
             {
               items: [
                 "volkovlabs-echarts-panel/maps/baidu",
@@ -130,6 +134,16 @@ const sidebars = {
           ],
           label: "Balena NFS",
           type: "category",
+        },
+        {
+          type: "link",
+          label: "Demo Server",
+          href: "https://demo.volkovlabs.io",
+        },
+        {
+          type: "link",
+          label: "Live Server",
+          href: "https://live.volkovlabs.io",
         },
         {
           items: ["volkovlabs-app/index", "volkovlabs-app/release"],

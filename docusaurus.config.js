@@ -73,6 +73,11 @@ const config = {
             position: "right",
             label: "Documentation",
           },
+          {
+            href: "https://www.youtube.com/@volkovlabs/community",
+            position: "right",
+            label: "YouTube Community",
+          },
         ],
       },
       footer: {
