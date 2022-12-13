@@ -8,6 +8,26 @@ tags:
 
 # Release Notes
 
+## 1.1.0 (2022-12-12)
+
+### Breaking changes
+
+Refactoring may introduce breaking changes. Please test before upgrading in Production.
+
+### Features / Enhancements
+
+- Update Panel options in README (#53)
+- Add Youtube tutorial for Calendar with JSON API datasource (#54)
+- Update CI to Node 16 and Synchronize with Release workflow (#56)
+- Update to Grafana 9.2.2 (#57)
+- Code Refactoring (#58)
+- Update to Grafana 9.3.1 (#59)
+- Update CI to upload signed artifacts (#60)
+- Refactor panel options and increase test coverage (#61)
+- Add annotation support (#8)
+- Refactoring and Removing legacy code (#62)
+- Refactor Panel Options and add Annotations options (#63)
+
 ## 1.0.0 (2022-10-02)
 
 ### Features / Enhancements
