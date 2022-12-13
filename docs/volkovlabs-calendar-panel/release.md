@@ -2,6 +2,7 @@
 description: The Calendar panel plugin for Grafana to display calendar events from data sources.
 tags:
   - Calendar
+  - Events
   - Panel
   - Release Notes
 ---

@@ -68,6 +68,7 @@ const sidebars = {
         {
           items: [
             "volkovlabs-calendar-panel/index",
+            "volkovlabs-calendar-panel/events",
             "volkovlabs-calendar-panel/release",
           ],
           label: "Calendar Panel",

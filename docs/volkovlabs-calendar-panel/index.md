@@ -3,6 +3,7 @@ title: Introduction
 description: The Calendar panel plugin for Grafana to display calendar events from data sources.
 tags:
   - Calendar
+  - Events
   - Panel
 ---
 
@@ -40,23 +41,7 @@ grafana-cli plugins install marcusolsson-calendar-panel
 - Supports automatically scroll to the end of the Time Range.
 - Allows to open data link instead of sidebar when clicking an event.
 
-[![Calendar plugin for Grafana tutorial | Step by step | JSON API plugin example](https://raw.githubusercontent.com/volkovlabs/volkovlabs-calendar-panel/main/img/video.png)](https://youtu.be/iPJ122x0oos)
-
-## Events
-
-| Option        | Description                                                         |
-| ------------- | ------------------------------------------------------------------- |
-| Text          | Field to use as event text. Defaults to the first text field.       |
-| Description   | Field to use as event description.                                  |
-| Start time    | Field to use as event start time. Defaults to the first time field. |
-| End time      | Field to use as event end time.                                     |
-| Labels        | Fields to use as event labels.                                      |
-
-### Duration
-
-- If event has only Start time configured, events are considered instantaneous.
-- If event has Start and End time, events are considered to have a duration.
-- Any events that are missing an End time are considered ongoing.
+![Calendar](https://github.com/VolkovLabs/volkovlabs-calendar-panel/raw/main/src/img/screenshot.png)
 
 ## Feedback
 
