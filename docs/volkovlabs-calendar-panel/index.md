@@ -3,14 +3,16 @@ title: Introduction
 description: The Calendar panel plugin for Grafana to display calendar events from data sources.
 tags:
   - Calendar
+  - Events
   - Panel
 ---
 
 # Calendar Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.1-orange)](https://www.grafana.com)
 ![CI](https://github.com/volkovlabs/volkovlabs-calendar-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-calendar-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-calendar-panel)
+[![CodeQL](https://github.com/VolkovLabs/volkovlabs-calendar-panel/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-calendar-panel/actions/workflows/codeql-analysis.yml)
 
 ## Introduction
 
@@ -24,7 +26,7 @@ The Calendar panel plugin for Grafana to display calendar events from data sourc
 
 ## Getting Started
 
-Calendar panel can be installed from the Grafana Catalog or use the `grafana-cli` tool to install from the command line:
+Calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install marcusolsson-calendar-panel
@@ -32,31 +34,14 @@ grafana-cli plugins install marcusolsson-calendar-panel
 
 ## Features
 
-- Allows to change time range by selecting the days in the calendar.
+- Displays events in Weekly or Daily layout depends on the selected Time Range.
+- Allows to change Time Range by selecting the days in the calendar.
 - Query calendar events from any data source.
+- Allows to display Annotations across all dashboards for the selected Time Range.
+- Supports automatically scroll to the end of the Time Range.
+- Allows to open data link instead of sidebar when clicking an event.
 
 ![Calendar](https://github.com/VolkovLabs/volkovlabs-calendar-panel/raw/main/src/img/screenshot.png)
-
-## Panel options
-
-| Option             | Description                                               |
-| ------------------ | --------------------------------------------------------- |
-| _Scroll to bottom_ | Automatically scroll to the end of the time range.        |
-| _Quick links_      | Open data link instead of sidebar when clicking an event. |
-
-### Dimensions
-
-| Option        | Description                                                         |
-| ------------- | ------------------------------------------------------------------- |
-| _Text_        | Field to use as event text. Defaults to the first text field.       |
-| _Description_ | Field to use as event description.                                  |
-| _Start time_  | Field to use as event start time. Defaults to the first time field. |
-| _End time_    | Field to use as event end time.                                     |
-| _Labels_      | Fields to use as event labels.                                      |
-
-If only **Start** is configured, events are considered instantaneous.
-
-If **End** are configured, events are considered to have a duration. Any events that are missing an end time are considered ongoing.
 
 ## Feedback
 
