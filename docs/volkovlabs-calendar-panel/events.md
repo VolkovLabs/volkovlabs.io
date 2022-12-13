@@ -8,7 +8,7 @@ tags:
 
 # Events
 
-Calendar panel allows to display events from any data source. Fiels are defined in the panel's options.
+Calendar panel allows to display events from any data source. Fields are defined in the panel's options.
 
 | Option        | Description                                                         |
 | ------------- | ------------------------------------------------------------------- |
