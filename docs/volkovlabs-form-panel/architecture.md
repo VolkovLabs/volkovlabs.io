@@ -8,7 +8,7 @@ tags:
 
 # Architecture
 
-The Data Manipulation panel can request (GET) and update (POST/PUT) data and configuration using REST API.
+The Data Manipulation panel can request (GET) and update (DELETE, PATCH, POST, PUT) data and configuration using REST API.
 
 ![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/form-api.png)
 

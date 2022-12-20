@@ -96,6 +96,7 @@ const sidebars = {
             "volkovlabs-form-panel/code",
             "volkovlabs-form-panel/request",
             "volkovlabs-form-panel/dynamic",
+            "volkovlabs-form-panel/variables",
             "volkovlabs-form-panel/release",
           ],
           label: "Data Manipulation Panel",
