@@ -15,7 +15,7 @@ Data Manipulation panel allows to create your own Initial and Update requests us
 Select Initial Request as `-` and set Custom Code:
 
 ```javascript
-const bucketsSelect = elements.find((element) => element.id === "buckets");
+const bucketsSelect = elements.find((element) => element.id === 'buckets');
 
 /**
  * Set URL
@@ -26,10 +26,10 @@ const url = `http://localhost:3001/test`;
  * Fetch
  */
 const resp = fetch(url, {
-  method: "GET",
+  method: 'GET',
   headers: {
-    "Content-Type": "application/json",
-    "PRIVATE-TOKEN": "$token",
+    'Content-Type': 'application/json',
+    'PRIVATE-TOKEN': '$token',
   },
 })
   .catch((error) => {
@@ -48,13 +48,13 @@ const resp = fetch(url, {
 
 To support `Highlight changed values` and `Require Confirmation` the Custom Code should use `setInitial({})` function to update `initial` values:
 
-```
+```javascript
   setInitial({value: 99, name: 'Test'})
 ```
 
 ## Update Request
 
-Select Update Request as `-` and set Custom Code:
+Select Update Request as `-` and set Custom Code. Depends on the selected Payload options it will add all or only updated values.
 
 ```javascript
 /**
@@ -62,22 +62,34 @@ Select Update Request as `-` and set Custom Code:
  */
 const body = {};
 options.elements.forEach((element) => {
+  if (!options.update.updatedOnly) {
+    body[element.id] = element.value;
+    return;
+  }
+
+  /**
+   * Skip not updated elements
+   */
+  if (element.value === initial[element.id]) {
+    return;
+  }
+
   body[element.id] = element.value;
 });
 
 /**
  * Set URL
  */
-const url = `http://localhost:3001/${body["name"]}`;
+const url = `http://localhost:3001/${body['name']}`;
 
 /**
  * Fetch
  */
 const resp = fetch(url, {
-  method: "POST",
+  method: 'POST',
   headers: {
-    "Content-Type": "application/json",
-    "PRIVATE-TOKEN": "$token",
+    'Content-Type': 'application/json',
+    'PRIVATE-TOKEN': '$token',
   },
   body: JSON.stringify(body),
 })
