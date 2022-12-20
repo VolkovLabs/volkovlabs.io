@@ -11,7 +11,7 @@ tags:
 
 Our plugins for Grafana represents three categories: Manage, Operate, and Visualize. Most of them are available in the [Grafana Catalog](https://grafana.com/grafana/plugins/) and can be installed in Cloud and On-Premises.
 
-<img src="/img/plugins.svg" />
+<a href='https://live.volkovlabs.io'><img src="/img/plugins.svg" /></a>
 
 ## Private Repository
 
@@ -21,16 +21,16 @@ Read more in the blog [Installing Grafana plugins from a Private repository](htt
 
 ### List plugins
 
-```sh
+```bash
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
-id: marcusolsson-calendar-panel version: 1.0.0
-id: marcusolsson-dynamictext-panel version: 1.9.0
+id: marcusolsson-calendar-panel version: 1.1.0
+id: marcusolsson-dynamictext-panel version: 2.1.0
 id: marcusolsson-static-datasource version: 2.0.0
 id: volkovlabs-env-datasource version: 2.2.0
 id: volkovlabs-rss-datasource version: 2.2.0
 id: volkovlabs-image-panel version: 3.1.0
 id: volkovlabs-form-panel version: 2.7.0
-id: volkovlabs-echarts-panel version: 3.5.0
+id: volkovlabs-echarts-panel version: 4.0.0
 id: volkovlabs-balena-app version: 1.3.0
 ```
 

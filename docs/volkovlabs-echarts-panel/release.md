@@ -9,11 +9,23 @@ tags:
 
 # Release Notes
 
-## [3.8.0 (2022-12-10)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.8.0)
+## [4.0.0 (2022-12-20)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v4.0.0)
 
 ### Breaking changes
 
 - World and USA GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
+
+### Features / Enhancements
+
+- Update ECharts Examples on https://echarts.volkovlabs.io (#103)
+- Add Calendar Examples on https://echarts.volkovlabs.io (#105)
+- Update README and move Documentation to docs.volkovlabs.io (#107)
+
+### Bug fixes
+
+- Fix javascript code in documentation (#102)
+
+## [3.8.0 (2022-12-10)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.8.0)
 
 ### Features / Enhancements
 
