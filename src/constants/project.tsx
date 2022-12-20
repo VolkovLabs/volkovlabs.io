@@ -40,12 +40,4 @@ export const ProjectList: PluginItem[] = [
     badge:
       "https://img.shields.io/badge/Collaboration-black?style=for-the-badge",
   },
-  {
-    title: "Volkov Labs Application",
-    Svg: require("@site/static/img/plugins/volkovlabs-app.svg").default,
-    description: <>Custom build Docker image with Grafana.</>,
-    href: "/plugins/volkovlabs-app",
-    badge:
-      "https://img.shields.io/static/v1?label=Docker&message=Image&labelColor=gray&color=black&style=for-the-badge",
-  },
 ];

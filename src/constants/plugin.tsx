@@ -81,4 +81,12 @@ export const PluginList: PluginItem[] = [
     description: <>Emulate your data to test and develop panels.</>,
     href: "/plugins/volkovlabs-static-datasource",
   },
+  {
+    title: "Volkov Labs Application",
+    Svg: require("@site/static/img/plugins/volkovlabs-app.svg").default,
+    description: <>Custom Docker image with Grafana.</>,
+    href: "/plugins/volkovlabs-app",
+    badge:
+      "https://img.shields.io/static/v1?label=Docker&message=Image&labelColor=gray&color=black&style=for-the-badge",
+  },
 ];

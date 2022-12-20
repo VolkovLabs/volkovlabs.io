@@ -52,6 +52,11 @@ const sidebars = {
           items: [
             "volkovlabs-balena-app/index",
             "volkovlabs-balena-app/balenaCloud",
+            {
+              type: "link",
+              label: "balenaHub",
+              href: "https://hub.balena.io/organizations/volkovlabs/apps/balena-app",
+            },
             "volkovlabs-balena-app/release",
           ],
           label: "Balena Application",
@@ -120,6 +125,11 @@ const sidebars = {
           label: "Static Data Source",
           type: "category",
         },
+        {
+          items: ["volkovlabs-app/index", "volkovlabs-app/release"],
+          label: "Volkov Labs Application",
+          type: "category",
+        },
       ],
       label: "Plugins",
       type: "category",
@@ -131,6 +141,11 @@ const sidebars = {
           items: [
             "balena-nfs/index",
             "balena-nfs/balenaCloud",
+            {
+              type: "link",
+              label: "balenaHub",
+              href: "https://hub.balena.io/organizations/volkovlabs/apps/balena-nfs",
+            },
             "balena-nfs/release",
           ],
           label: "Balena NFS",
@@ -145,11 +160,6 @@ const sidebars = {
           type: "link",
           label: "Live Server",
           href: "https://live.volkovlabs.io",
-        },
-        {
-          items: ["volkovlabs-app/index", "volkovlabs-app/release"],
-          label: "Volkov Labs Application",
-          type: "category",
         },
       ],
       label: "Projects",
