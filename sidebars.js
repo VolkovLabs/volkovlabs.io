@@ -28,7 +28,7 @@ const sidebars = {
           items: [
             "volkovlabs-echarts-panel/index",
             "volkovlabs-echarts-panel/options",
-            "volkovlabs-echarts-panel/tutorial",
+            "volkovlabs-echarts-panel/datasources",
             {
               type: "link",
               label: "Examples",
@@ -43,6 +43,8 @@ const sidebars = {
               label: "Maps",
               type: "category",
             },
+            "volkovlabs-echarts-panel/tutorial",
+            "volkovlabs-echarts-panel/variables",
             "volkovlabs-echarts-panel/release",
           ],
           label: "Apache ECharts Panel",

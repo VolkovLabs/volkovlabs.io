@@ -40,7 +40,7 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 - Allows to visualize Apache ECharts using Monaco Code Editor with Auto formatting.
 - Use setOption() function to set configuration and data.
-- Based on the ECharts 5.4.0.
+- Based on the ECharts 5.4.1.
 - Supports Light and Dark mode synchronized with Grafana Theme.
 - Supports SVG and Canvas renderer.
 - Includes USA and World GeoJSON maps. Allows to add custom Map files in the `maps` folder.
@@ -48,7 +48,7 @@ grafana-cli plugins install volkovlabs-echarts-panel
 - Includes [Liquid Fill Chart](https://github.com/ecomfe/echarts-liquidfill), which is usually used to represent data in percentage.
 - Includes [ECharts-GL](https://github.com/ecomfe/echarts-gl), which providing 3D plots, globe visualization and WebGL acceleration.
 - Includes [ecStat](https://github.com/ecomfe/echarts-stat), a statistical and data mining tool.
-- Supports Code Editor suggestions for Available Parameters.
+- Supports Code Editor suggestions for Parameters and variables.
 - Allows to display Success and Error notifications.
 - Supports Baidu, Gaode, Google maps using API. Requires to provide access key.
 - 100+ examples are available at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).

@@ -7,7 +7,7 @@ tags:
   - Tutorial
 ---
 
-# Tutorial
+# Tutorials
 
 ## Directed Graph
 
