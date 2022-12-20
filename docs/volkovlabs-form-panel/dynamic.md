@@ -3,6 +3,7 @@ description: Using the custom code you can update elements or element's value an
 tags:
   - Data Manipulation
   - Custom Forms
+  - JSON
   - Panel
 ---
 
@@ -15,12 +16,12 @@ Using the custom code you can update elements or element's value and options fro
 ## Fill options of the `icon` element from series `icons` with `icon_id` and `title` columns
 
 ```javascript
-const icons = data.series.find((serie) => serie.refId === "icons");
-const iconSelect = elements.find((element) => element.id === "icon");
+const icons = data.series.find((serie) => serie.refId === 'icons');
+const iconSelect = elements.find((element) => element.id === 'icon');
 
 if (icons?.fields.length) {
-  const ids = icons.fields.find((f) => f.name === "icon_id").values.buffer;
-  const titles = icons.fields.find((f) => f.name === "title").values.buffer;
+  const ids = icons.fields.find((f) => f.name === 'icon_id').values.buffer;
+  const titles = icons.fields.find((f) => f.name === 'title').values.buffer;
 
   iconSelect.options = titles.map((value, index) => {
     return { label: value, value: ids[index] };
@@ -33,13 +34,13 @@ onOptionsChange(options);
 ## Update all form elements from data sources
 
 ```javascript
-const feedback = data.series.find((serie) => serie.refId === "Feedback");
-const typeOptions = data.series.find((serie) => serie.refId === "Types");
+const feedback = data.series.find((serie) => serie.refId === 'Feedback');
+const typeOptions = data.series.find((serie) => serie.refId === 'Types');
 
 if (feedback?.fields.length) {
-  const ids = feedback.fields.find((f) => f.name === "id").values.buffer;
-  const titles = feedback.fields.find((f) => f.name === "title").values.buffer;
-  const types = feedback.fields.find((f) => f.name === "type").values.buffer;
+  const ids = feedback.fields.find((f) => f.name === 'id').values.buffer;
+  const titles = feedback.fields.find((f) => f.name === 'title').values.buffer;
+  const types = feedback.fields.find((f) => f.name === 'type').values.buffer;
 
   /**
    * Set Elements
@@ -51,12 +52,10 @@ if (feedback?.fields.length) {
   /**
    * Find Type element
    */
-  const typeSelect = elements.find((element) => element.id === "type");
+  const typeSelect = elements.find((element) => element.id === 'type');
   if (typeSelect && typeOptions?.fields.length) {
-    const labels = typeOptions.fields.find((f) => f.name === "label").values
-      .buffer;
-    const values = typeOptions.fields.find((f) => f.name === "value").values
-      .buffer;
+    const labels = typeOptions.fields.find((f) => f.name === 'label').values.buffer;
+    const values = typeOptions.fields.find((f) => f.name === 'value').values.buffer;
 
     /**
      * Update Types

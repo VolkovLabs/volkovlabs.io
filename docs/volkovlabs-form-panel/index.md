@@ -4,15 +4,17 @@ description: The Data Manipulation Form Panel is a plugin for Grafana that can b
 tags:
   - Data Manipulation
   - Custom Forms
+  - JSON
   - Panel
 ---
 
 # Data Manipulation Panel
 
-[![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
-[![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmRXSNBxyw0sFnnvNRY_CsSA)
+[![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)](https://www.grafana.com)
+[![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://www.youtube.com/playlist?list=PLPow72ygztmRXSNBxyw0sFnnvNRY_CsSA)
 ![CI](https://github.com/volkovlabs/volkovlabs-form-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-form-panel)
+[![CodeQL](https://github.com/VolkovLabs/volkovlabs-form-panel/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-form-panel/actions/workflows/codeql-analysis.yml)
 
 ## Introduction
 
@@ -38,7 +40,7 @@ grafana-cli plugins install volkovlabs-form-panel
 - Provides functionality to create customizable forms with elements:
   - Code Editor
   - Date and Time
-  - Read-only (Disabled)
+  - Read-only (Disabled) with support for lookup
   - Number Input
   - Number Slider
   - Password Input
@@ -48,7 +50,7 @@ grafana-cli plugins install volkovlabs-form-panel
   - String Input
   - Text Area
 - Supports the Custom Code for Initial and Update requests.
-- Allows to specify GET request to get initial values and POST, PUT, PATCH request to send values updated in the form.
+- Allows to specify GET request to get initial values and DELETE, PATCH, POST, PUT request to send values updated in the form.
 - Allows to add Header fields to Initial and Update requests.
 - Allows to customize Submit, Reset buttons and form layout.
 - Allows to split form elements into sections.
@@ -58,16 +60,6 @@ grafana-cli plugins install volkovlabs-form-panel
 - Supports Code Editor suggestions for Available Parameters.
 
 ![Form Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/panel.png)
-
-## Dashboard Variables
-
-Dashboard and Global variables will be replaced automatically in:
-
-- URL for Initial and Update requests
-- Header Parameters' values
-- Request body, which contains elements' values
-
-You can find [global built-in variables](https://grafana.com/docs/grafana/latest/variables/variable-types/global-variables/) in the Grafana documentation.
 
 ## Feedback
 

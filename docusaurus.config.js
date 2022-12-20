@@ -126,6 +126,10 @@ const config = {
                 label: "Static Data Source",
                 to: "/plugins/volkovlabs-static-datasource",
               },
+              {
+                label: "Volkov Labs Application",
+                href: "plugins/volkovlabs-app",
+              },
             ],
           },
           {
@@ -146,10 +150,6 @@ const config = {
               {
                 label: "Theiascope™",
                 href: "https://theiascientific.com/",
-              },
-              {
-                label: "Volkov Labs Application",
-                href: "plugins/volkovlabs-app",
               },
             ],
           },
