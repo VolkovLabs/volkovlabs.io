@@ -94,6 +94,7 @@ const sidebars = {
             "volkovlabs-form-panel/index",
             "volkovlabs-form-panel/architecture",
             "volkovlabs-form-panel/code",
+            "volkovlabs-form-panel/control",
             "volkovlabs-form-panel/request",
             "volkovlabs-form-panel/dynamic",
             "volkovlabs-form-panel/variables",
