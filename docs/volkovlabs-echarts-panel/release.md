@@ -9,7 +9,7 @@ tags:
 
 # Release Notes
 
-## 3.8.0 (2022-12-10)
+## [3.8.0 (2022-12-10)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.8.0)
 
 ### Breaking changes
 
@@ -30,13 +30,13 @@ tags:
 
 - Fix Disabled Format options (#88)
 
-## 3.7.0 (2022-11-16)
+## [3.7.0 (2022-11-16)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.7.0)
 
 ### Features / Enhancements
 
 - Limit the URL for loading the Baidu map (#76)
 
-## 3.6.0 (2022-11-13)
+## [3.6.0 (2022-11-13)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.6.0)
 
 ### Features / Enhancements
 
@@ -52,7 +52,7 @@ tags:
 - Add Baidu map support (#64)
 - Add Tutorial on how to load and use Baidu maps (#75)
 
-## 3.5.0 (2022-10-04)
+## [3.5.0 (2022-10-04)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.5.0)
 
 ### Features / Enhancements
 
@@ -60,7 +60,7 @@ tags:
 - Add Stacked Bar Graph (InfluxDB) Example (#55)
 - Add Examples to README and update links in Plugin.json (#56)
 
-## 3.4.0 (2022-09-21)
+## [3.4.0 (2022-09-21)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.4.0)
 
 ### Features / Enhancements
 
@@ -74,7 +74,7 @@ tags:
 - Update to Grafana 9.1.6 (#50)
 - Add ECharts-GL extension, which provides 3D plots, globe visualization and WebGL acceleration (#51)
 
-## 3.3.0 (2022-08-12)
+## [3.3.0 (2022-08-12)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.3.0)
 
 ### Breaking changes
 
@@ -84,7 +84,7 @@ tags:
 
 - Update to be included in the Grafana Marketplace (#35)
 
-## 3.2.0 (2022-08-09)
+## [3.2.0 (2022-08-09)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.2.0)
 
 ### Features / Enhancements
 
@@ -92,7 +92,7 @@ tags:
 - Add YouTube Tutorial (#31)
 - Update to Grafana 9.0.6 (#34)
 
-## 3.1.0 (2022-07-11)
+## [3.1.0 (2022-07-11)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.1.0)
 
 ### Features / Enhancements
 
@@ -109,7 +109,7 @@ tags:
 
 - Reset zoom will destroy the chart (#13)
 
-## 3.0.0 (2022-06-19)
+## [3.0.0 (2022-06-19)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.0.0)
 
 ### Breaking changes
 
