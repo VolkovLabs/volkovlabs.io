@@ -46,6 +46,8 @@ const resp = fetch(url, {
   });
 ```
 
+### Initial values
+
 To support `Highlight changed values` and `Require Confirmation` the Custom Code should use `setInitial({})` function to update `initial` values:
 
 ```javascript

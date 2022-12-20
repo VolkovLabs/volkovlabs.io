@@ -9,7 +9,7 @@ tags:
 
 # Release Notes
 
-## 2.7.0 (2022-11-10)
+## [2.7.0 (2022-11-10)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.7.0)
 
 ### Features / Enhancements
 
@@ -20,7 +20,7 @@ tags:
 - Add Status notification after submit form (#98)
 - Add Monaco Code Editor suggestions for available parameters (#88)
 
-## 2.6.0 (2022-10-23)
+## [2.6.0 (2022-10-23)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.6.0)
 
 ### Features / Enhancements
 
@@ -35,7 +35,7 @@ tags:
 
 - Initial GET request date time formatting (#99)
 
-## 2.5.0 (2022-09-10)
+## [2.5.0 (2022-09-10)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.5.0)
 
 ### Features / Enhancements
 
@@ -44,7 +44,7 @@ tags:
 - Set `json` as response data from Initial Request (#90)
 - Update to Grafana 9.1.4 (#91)
 
-## 2.4.0 (2022-08-31)
+## [2.4.0 (2022-08-31)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.4.0)
 
 ### Features / Enhancements
 
@@ -59,7 +59,7 @@ tags:
 - Avoid showing confirmation for disabled elements (#77)
 - Improve Test Coverage (#21)
 
-## 2.3.0 (2022-08-11)
+## [2.3.0 (2022-08-11)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.3.0)
 
 ### Breaking changes
 
@@ -70,7 +70,7 @@ tags:
 - Update Sample code in README (#67)
 - Updated to be included in the Grafana Marketplace (#68)
 
-## 2.2.0 (2022-08-09)
+## [2.2.0 (2022-08-09)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.2.0)
 
 ### Features / Enhancements
 
@@ -82,7 +82,7 @@ tags:
 
 - Number Slider is not updated properly (#18)
 
-## 2.1.0 (2022-07-17)
+## [2.1.0 (2022-07-17)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.1.0)
 
 ### Features / Enhancements
 
@@ -91,7 +91,7 @@ tags:
 - Explain Custom code in Readme (#60)
 - Update YouTube link with tutorial in README #61
 
-## 2.0.0 (2022-06-17)
+## [2.0.0 (2022-06-17)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.0.0)
 
 ### Breaking changes
 
@@ -101,7 +101,7 @@ tags:
 
 - Rebuild based on 9.0.0 (#53)
 
-## 1.4.0 (2022-05-30)
+## [1.4.0 (2022-05-30)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v1.4.0)
 
 ### Features / Enhancements
 
@@ -109,7 +109,7 @@ tags:
 - Add Highlight for changed values (#51)
 - Add Confirmation before Submit (#52)
 
-## 1.3.0 (2022-05-22)
+## [1.3.0 (2022-05-22)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v1.3.0)
 
 ### Features / Enhancements
 
@@ -119,7 +119,7 @@ tags:
 - Add None Request for Initial and Update requests (#48)
 - Add Code Editor Element for Configuration Forms (#23)
 
-## 1.2.0 (2022-05-19)
+## [1.2.0 (2022-05-19)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v1.2.0)
 
 ### Features / Enhancements
 
@@ -127,7 +127,7 @@ tags:
 - Add Server API with Postgres for Feedback Dashboard (#36)
 - Update Input Parameters to Form Elements (#41)
 
-## 1.1.0 (2022-05-12)
+## [1.1.0 (2022-05-12)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v1.1.0)
 
 ### Features / Enhancements
 
@@ -141,7 +141,7 @@ tags:
 - Added Password Input (#33)
 - Subscribed to Refresh Events (#30)
 
-## 1.0.0 (2022-05-11)
+## [1.0.0 (2022-05-11)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v1.0.0)
 
 ### Features / Enhancements
 
