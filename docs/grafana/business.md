@@ -19,3 +19,7 @@ In this video Daria explained how to create your first Grafana dashboard with de
 There are multiple data sources to work with JSON files in Grafana. We compared three most popular ones and outlined use cases for each.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/h1Mx4UvtKGY" title="JSON Data Sources for Grafana | JSON API, Infinity, Simpod compared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The most comprehensive video about displaying API datasets on Grafana Dashboard has arrived! No questions were left unanswered.
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/B4Uj1n4Cr88" title="JSON API and Infinity tutorial for Grafana | How to display unemployment rate on your dashboard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
