@@ -23,7 +23,7 @@ export const ProjectList: PluginItem[] = [
       "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=ff5656&color=black&style=for-the-badge",
   },
   {
-    title: "Live Server",
+    title: "Live Updates",
     Svg: require("@site/static/img/plugins/live.svg").default,
     description: <>Everything we have done as directed graph.</>,
     href: "https://live.volkovlabs.io",
