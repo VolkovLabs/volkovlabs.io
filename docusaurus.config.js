@@ -140,11 +140,15 @@ const config = {
                 href: "/plugins/balena-nfs",
               },
               {
+                label: "Demo Server",
+                href: "https://demo.volkovlabs.io",
+              },
+              {
                 label: "ECharts Examples",
                 href: "https://echarts.volkovlabs.io",
               },
               {
-                label: "Live Server",
+                label: "Live Updates",
                 href: "https://live.volkovlabs.io",
               },
               {

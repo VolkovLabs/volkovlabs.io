@@ -1,12 +1,14 @@
 ---
-description: Business Use Case.
+description: Business Dashboard
 tags:
   - Grafana
   - Business
   - Dashboard
 ---
 
-# Business Use Case
+# Business Dashboard
+
+25% of the 10 million Grafana user base uses it for business intelligence, sensor data, and the Internet of Things process control. To integrate with various systems, Grafana relies on Community plugins.
 
 ## How to create your Business Grafana dashboard
 

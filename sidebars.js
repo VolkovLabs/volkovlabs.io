@@ -16,6 +16,7 @@ const sidebars = {
       items: [
         "grafana/index",
         "grafana/business",
+        "grafana/iot",
         "grafana/allow-unsigned",
         "grafana/customize",
       ],
@@ -162,7 +163,12 @@ const sidebars = {
         },
         {
           type: "link",
-          label: "Live Server",
+          label: "ECharts Examples",
+          href: "https://echarts.volkovlabs.io",
+        },
+        {
+          type: "link",
+          label: "Live Updates",
           href: "https://live.volkovlabs.io",
         },
       ],
