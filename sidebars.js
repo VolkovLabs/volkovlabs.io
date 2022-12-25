@@ -68,6 +68,9 @@ const sidebars = {
         {
           items: [
             "volkovlabs-image-panel/index",
+            "volkovlabs-image-panel/datasources",
+            "volkovlabs-image-panel/formats",
+            "volkovlabs-image-panel/variables",
             "volkovlabs-image-panel/release",
           ],
           label: "Base64 Image/PDF Panel",
