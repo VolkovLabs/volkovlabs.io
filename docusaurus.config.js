@@ -55,8 +55,8 @@ const config = {
             position: "right",
             items: [
               {
-                href: "/#OpenSource",
-                label: "Open Source",
+                href: "/#Plugins",
+                label: "Grafana Plugins",
               },
               {
                 href: "/#Projects",
@@ -88,7 +88,7 @@ const config = {
         style: "light",
         links: [
           {
-            title: "Open Source",
+            title: "Grafana Plugins",
             items: [
               {
                 label: "Apache ECharts Panel",
