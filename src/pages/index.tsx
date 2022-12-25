@@ -52,11 +52,11 @@ function Home() {
 
       <main>
         <div
-          id="OpenSource"
+          id="Plugins"
           className="container margin-vert--lg padding-vert--lg"
         >
           <h2 className={clsx(styles.header, "hero__title")}>
-            <span>Open Source</span>
+            <span>Grafana Plugins</span>
           </h2>
 
           <Plugins />
