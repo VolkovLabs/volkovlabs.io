@@ -9,7 +9,7 @@ tags:
 
 # Volkov Labs Application
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.1-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmTm_zY_PYqJtRYpMPpZglYC)
 ![CI](https://github.com/volkovlabs/volkovlabs-app/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-app)
@@ -37,8 +37,8 @@ docker pull ghcr.io/volkovlabs/app:latest
 
 Application plugin includes:
 
-- [RSS/Atom data source](https://github.com/volkovlabs/volkovlabs-rss-datasource)
-- [Dynamic text panel](https://github.com/volkovlabs/volkovlabs-dynamictext-panel)
+- [RSS/Atom data source](/plugins/volkovlabs-rss-datasource)
+- [Dynamic text panel](/plugins/volkovlabs-dynamictext-panel)
 
 ## Feedback
 

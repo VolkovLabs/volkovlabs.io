@@ -9,7 +9,15 @@ tags:
 
 # Release Notes
 
-## 1.5.0 (2022-12-02)
+## [2.0.0 (2022-12-25)](https://github.com/VolkovLabs/volkovlabs-app/releases/tag/v2.0.0)
+
+### Features / Enhancements
+
+- Update default org Main Org to Volkov Labs (#38)
+- Update to Grafana 9.3.2 (#38)
+- Update Plugins descriptions and screenshot (#38)
+
+## [1.5.0 (2022-12-02)](https://github.com/VolkovLabs/volkovlabs-app/releases/tag/v1.5.0)
 
 ### Features / Enhancements
 
@@ -20,7 +28,7 @@ tags:
 - Update to Grafana 9.3.1 (#36)
 - Update Dynamic Text Panel 2.1.0 and RSS/Atom Data Source 2.3.0 (#37)
 
-## 1.4.0 (2022-10-29)
+## [1.4.0 (2022-10-29)](https://github.com/VolkovLabs/volkovlabs-app/releases/tag/v1.4.0)
 
 ### Features / Enhancements
 
@@ -31,7 +39,7 @@ tags:
 - Update CI to Node 16 and Synchronize with Release workflow (#30)
 - Add Dynamic Text, Static Data Source (#31)
 
-## 1.3.0 (2022-09-10)
+## [1.3.0 (2022-09-10)](https://github.com/VolkovLabs/volkovlabs-app/releases/tag/v1.3.0)
 
 ### Features / Enhancements
 
@@ -43,14 +51,14 @@ tags:
 - Update YouTube playlists (#22)
 - Update RSS Data Source 2.2.0 (#23)
 
-## 1.2.0 (2022-08-05)
+## [1.2.0 (2022-08-05)](https://github.com/VolkovLabs/volkovlabs-app/releases/tag/v1.2.0)
 
 ### Features / Enhancements
 
 - Upgrade to Grafana 9.0.3 (#16)
 - Upgrade to Grafana 9.0.6 (#17)
 
-## 1.1.0 (2022-07-04)
+## [1.1.0 (2022-07-04)](https://github.com/VolkovLabs/volkovlabs-app/releases/tag/v1.1.0)
 
 ### Features / Enhancements
 
@@ -64,7 +72,7 @@ tags:
 - Update ECharts and Balena Plugins (#14)
 - Upgrade to Grafana 9.0.2 (#15)
 
-## 1.0.0 (2022-06-18)
+## [1.0.0 (2022-06-18)](https://github.com/VolkovLabs/volkovlabs-app/releases/tag/v1.0.0)
 
 ### Features / Enhancements
 
