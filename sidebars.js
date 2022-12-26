@@ -137,6 +137,8 @@ const sidebars = {
         {
           items: [
             "volkovlabs-static-datasource/index",
+            "volkovlabs-static-datasource/provisioning",
+            "volkovlabs-static-datasource/variables",
             "volkovlabs-static-datasource/release",
           ],
           label: "Static Data Source",

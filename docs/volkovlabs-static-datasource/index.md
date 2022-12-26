@@ -15,6 +15,7 @@ tags:
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmSOuCRtS85zolztwDMpCsIV)
 ![CI](https://github.com/volkovlabs/volkovlabs-static-datasource/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-static-datasource/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-static-datasource)
+[![CodeQL](https://github.com/VolkovLabs/volkovlabs-static-datasource/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-static-datasource/actions/workflows/codeql-analysis.yml)
 
 ## Introduction
 
@@ -40,25 +41,9 @@ grafana-cli plugins install marcusolsson-static-datasource
 - Create static visualizations that don't depend on a specific data source.
 - Build custom query responses for testing or developing panel plugins.
 - Store data and images directly in the dashboard.
+- Supports variables in the text fields.
 
 ![Screenshot](https://github.com/volkovlabs/volkovlabs-static-datasource/raw/main/src/img/dark.png)
-
-## Provisioning
-
-Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
-
-Example of provisioning the Static Data Source.
-
-```yaml
-datasources:
-  - name: Static
-    type: marcusolsson-static-datasource
-    access: proxy
-    isDefault: true
-    orgId: 1
-    version: 1
-    editable: true
-```
 
 ## Feedback
 
