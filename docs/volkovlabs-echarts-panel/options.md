@@ -7,25 +7,35 @@ tags:
   - Data Source
 ---
 
-# setOption() Function
+# setOption() function
 
-Configuration item, data, universal interface, all parameters and data can be modified through `setOption()` function in the plugin's options.
+![setOptions Schema](/img/plugins/volkovlabs-echarts-panel/function_schema.png)
+
+ `setOption()` as the main Apache ECharts <u>libraries</u> function. This function is called to build any chart. It has one mandatory parameter - `option` which is a chart configuraion in a JSON format.
+
+ You specify the `option` in the Apache ECharts visualization panel in the Monaco Code editor located on the right-hand side. 
+
+![setOptions Function](/img/plugins/volkovlabs-echarts-panel/function.png)
+
+ This whole text area is basically a body of the function that you write for the execution.
+ This function takes in many parameters from Grafana. See the full list in the table below. The only one parameter that is passed from this function to the `setOption()` is `option`.
+ See the 'return' statement on the picture above.
+ 
 
 ## Parameters
 
 | Parameter | Description |
 | -- | -- |
-| `data` | Grafana's `data` object with time range, series and request information. |
+| `data` | Grafana's `data` object with time range, series and request information. See the example on the picture above |
 | `theme` | Grafana's `theme` object. |
-| `echartsInstance` | Instance of the ECharts. |
+| `echartsInstance` | Instance of the ECharts. See the example on the picture above. To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.|
 | `echarts` | ECharts library. |
-| `ecStat` | A statistical and data mining tool for Apache ECharts. |
+| `ecStat` | A statistical and data mining tool for Apache ECharts. One example is here [![ECharts](/img/plugins/volkovlabs-echarts-panel/ecStat_example.png)](https://echarts.volkovlabs.io/d/U332C4K4z/scatter?orgId=1&editPanel=10)|
 | `replaceVariables` | the `replaceVariables()` function to interpolate variables. |
 | `locationService` | Grafana's `locationService` to work with browser location and history. |
 | `notifySuccess(['Header', 'Message'])` | Display successful notification. |
 | `notifyError(['Header', 'Error Message'])` | Display error notification. |
 
-![Panel](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/panel.png)
 
 To learn more about parameters you can log them in the Browser Console:
 
@@ -56,7 +66,7 @@ echartsInstance.on('dblclick', (params) => {
 });
 ```
 
-Take a look at the official documentation [Event and Action](https://apache.github.io/echarts-handbook/en/concepts/event/) to learn more.
+For more examples and details, take a look at the official documentation [Event and Action](https://apache.github.io/echarts-handbook/en/concepts/event/).
 
 ## Notifications
 
@@ -82,4 +92,4 @@ To scale the content when panel resized use `echartsInstance` methods to retriev
   },
 ```
 
-Take a look at the official documentation [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) to see all available methods.
+To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.
