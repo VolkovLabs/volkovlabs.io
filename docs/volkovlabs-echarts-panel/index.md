@@ -17,11 +17,17 @@ tags:
 
 ## Introduction
 
-The ECharts Panel is a plugin for Grafana that allows to visualize Apache ECharts on your Grafana dashboard.
+The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate popular Apache ECharts libraries into your Grafana dashboard.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/DxqCrBEmrQw" title="Apache Echarts panel for Grafana | How to create modern dashboards in Grafana | Echarts Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Apache ECharts](https://echarts.apache.org/en/index.html) is a free, powerful charting and visualization library offering an easy way of adding intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender, which is a whole new lightweight canvas library.
+[Apache ECharts libraries](https://echarts.apache.org/en/index.html) is a free, powerful charting and visualization  library with statistical capabilities. It is written in pure JavaScript and based on zrender, which is a whole new lightweight canvas library.
+
+Apache ECharts panel offers an easy way of adding intuitive, interactive, and highly customizable charts into your Grafana dashobard. 
+
+Simply put and to avoid confusion, 
+ - Apache ECharts <u>libraries</u> is the charting library.
+ - Apache ECharts <u>plugin</u> (which is the same as Apache ECharts <u>visualization panel</u>) brings the Apache ECharts <u>libraries</u> into Grafana dashboard.
 
 ### Requirements
 
@@ -29,7 +35,7 @@ The ECharts Panel is a plugin for Grafana that allows to visualize Apache EChart
 
 ## Getting Started
 
-Apache ECharts panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or use the `grafana-cli` tool to install from the command line:
+Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing Grafana command line tool. For the latter use he following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-echarts-panel
@@ -37,26 +43,38 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 ## Features
 
-- Allows to visualize Apache ECharts using Monaco Code Editor with Auto formatting.
-- Use setOption() function to set configuration and data.
+- Provides Monaco Code Editor for:
+   - Working with Grafana data frames (JavaScript), 
+   - Entering chart configurations in JSON format. 
+- Supports Code Auto formatting.
+- Executes the setOption() function using Monaco Code Editor content.
+- Supports variables and location service to make Charts interactive.
 - Based on the ECharts 5.4.1.
 - Supports Light and Dark mode synchronized with Grafana Theme.
 - Supports SVG and Canvas renderer.
 - Includes USA and World GeoJSON maps. Allows to add custom Map files in the `maps` folder.
-- Supports variables and location service to make Charts interactive.
 - Includes [Liquid Fill Chart](https://github.com/ecomfe/echarts-liquidfill), which is usually used to represent data in percentage.
 - Includes [ECharts-GL](https://github.com/ecomfe/echarts-gl), which providing 3D plots, globe visualization and WebGL acceleration.
 - Includes [ecStat](https://github.com/ecomfe/echarts-stat), a statistical and data mining tool.
 - Supports Code Editor suggestions for Parameters and variables.
 - Allows to display Success and Error notifications.
 - Supports Baidu, Gaode, Google maps using API. Requires to provide access key.
-- 100+ examples are available at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).
+- Has 100+ ready-as-is examples at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).
 
 [![ECharts](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png)](https://echarts.volkovlabs.io)
 
+## Examples
+
+ - Open the [echarts.volkovlabs.io](https://echarts.volkovlabs.io) with examples.
+ - Find the chart that looks closest to what you need to build.
+ - Open the chart of interest in the 'Edit' mode.
+ - Copy the code from the right-hand side.
+ - Paste the copied code into your Apache ECharts visualization panel on Grafana dashboard.
+ - You should see the working chart right away.
+
 ## Feedback
 
-We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+We love to hear from you. These are various ways to get in touch:
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).

@@ -1,5 +1,5 @@
 ---
-description: To use Apache ECharts with data from data sources get each field in a array.
+description: To use Apache ECharts with data from data sources get each field in an array.
 tags:
   - ECharts
   - Panel
@@ -9,7 +9,9 @@ tags:
 
 # Data Sources
 
-To use Apache ECharts with data from data sources get each field in a array:
+Below is one way of how you can retrieve data from your data source to use in the Apache ECharts visualization panel.
+First, read it into one-dimentional arrays, transform later into more dimentional arrays if needed.
+`refId` is the name of the query retrieving data from the data source. By default, the names are 'A', 'B' and so forth.
 
 ```javascript
 data.series.map((s) => {
@@ -25,7 +27,7 @@ data.series.map((s) => {
 });
 ```
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/K5YNMSIm9AM" title="How to use Data Source in Apache ECharts in 90 seconds | Grafana Data attribute" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Array of Arrays
 
@@ -42,5 +44,5 @@ const series = data.series.map((s) => {
   const names = s.fields.find((f) => f.name === 'Name').values.buffer;
 
   return rates.map((d, i) => [d, calls[i], names[i]]);
-});
+})[0];
 ```
