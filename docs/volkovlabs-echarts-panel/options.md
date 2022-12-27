@@ -9,17 +9,17 @@ tags:
 
 # setOption() function
 
+`setOption(options)` is the main Apache ECharts <u>library</u> function. This function is called to build any chart. It has one mandatory parameter - `options` which is a chart configuraion in a JSON format.
+
 ![setOptions Schema](/img/plugins/volkovlabs-echarts-panel/function_schema.png)
 
- `setOption(options)` is the main Apache ECharts <u>library</u> function. This function is called to build any chart. It has one mandatory parameter - `options` which is a chart configuraion in a JSON format.
-
- You specify the `options` in the Apache ECharts visualization panel in the Monaco Code editor located on the right-hand side. 
+You specify the `options` in the Apache ECharts visualization panel in the Monaco Code editor located on the right-hand side. 
 
 ![setOptions Function](/img/plugins/volkovlabs-echarts-panel/function.png)
 
- This whole text area is basically a body of the function that you write for the execution.
- This function takes in many parameters from Grafana. See the full list in the table below. The only one parameter that is passed from this function to the `setOption()` is `options`.
- See the 'return' statement on the picture above.
+This whole text area is basically a body of the function that you write for the execution.
+This function takes in many parameters from Grafana. See the full list in the table below. The only one parameter that is passed from this function to the `setOption()` is `options`.
+See the 'return' statement on the picture above.
  
 
 ## Parameters
@@ -27,14 +27,14 @@ tags:
 | Parameter | Description |
 | -- | -- |
 | `data` | Grafana's `data` object with time range, series and request information. See the example on the picture above. |
-| `theme` | Grafana's `theme` object. |
-| `echartsInstance` | Instance of the ECharts. See the example on the picture above. To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.|
 | `echarts` | ECharts library. |
-| `ecStat` | A statistical and data mining tool for Apache ECharts. One example is here [![ECharts](/img/plugins/volkovlabs-echarts-panel/ecStat_example.png)](https://echarts.volkovlabs.io/d/U332C4K4z/scatter?orgId=1&editPanel=10)|
-| `replaceVariables` | the `replaceVariables()` function to interpolate variables. |
+| `echartsInstance` | Instance of the ECharts. See the example on the picture above. To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.|
+| `ecStat` | A statistical and data mining tool for Apache ECharts. More information in the [ecStat](ecstat) section. |
 | `locationService` | Grafana's `locationService` to work with browser location and history. |
-| `notifySuccess(['Header', 'Message'])` | Display successful notification. |
 | `notifyError(['Header', 'Error Message'])` | Display error notification. |
+| `notifySuccess(['Header', 'Message'])` | Display successful notification. |
+| `replaceVariables` | The `replaceVariables()` function to interpolate variables. |
+| `theme` | Grafana's `theme` object. |
 
 
 To learn more about parameters you can log them in the Browser Console:

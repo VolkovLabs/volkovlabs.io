@@ -44,6 +44,7 @@ const sidebars = {
               label: "Examples",
               href: "https://echarts.volkovlabs.io",
             },
+            "volkovlabs-echarts-panel/ecstat",
             {
               items: [
                 "volkovlabs-echarts-panel/maps/baidu",

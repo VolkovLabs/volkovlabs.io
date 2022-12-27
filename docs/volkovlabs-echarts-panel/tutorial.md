@@ -22,15 +22,3 @@ Data visualizations can and should be done in style. In two parts video tutorial
 A quick guide for using images in Apache ECharts shows each type's prefixes.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/ygFDhmbPU-Y" title="Apache ECharts supports base64 PNG and SVG (vector) images | Prefixes for various types of pictures" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-### Histograms, Clustering, Regression
-
-:::caution
-
-Supported since Apache ECharts Panel 3.7.0.
-
-:::
-
-Mathematical and statistical functions to your extended visualization arsenal. 
-
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/qfDrAW8-Mh8" title="Histograms, Clustering. Regression in Apache ECharts panel for Grafana | ecStat math, stat library" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
