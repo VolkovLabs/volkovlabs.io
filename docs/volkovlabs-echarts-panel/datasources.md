@@ -11,7 +11,7 @@ tags:
 
 Below is a code snippet demonstrating how you can retrieve data from your data source to use in the Apache ECharts visualization panel. 
 - You can use `.map()` and `.find()` JavaScript functions,
-- `refId` is the name of the query retrieving data from the data source. By default, the names are 'A', 'B' and so forth. The code below works with three queries - `logo`,`connections`,`nodes`.
+- `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code below works with three queries - `logo`,`connections`, and `nodes`.
 - `name` is the data frame column name. The code below references `body`,`source`,`target`,`title`,and `description` columns.
 
 ```javascript
