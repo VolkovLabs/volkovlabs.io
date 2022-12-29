@@ -11,9 +11,9 @@ tags:
 
 # Google Maps
 
-:::caution
+:::info
 
-Supported since Apache ECharts Panel 3.8.0.
+Supported since Apache ECharts visualization panel 3.8.0.
 
 :::
 

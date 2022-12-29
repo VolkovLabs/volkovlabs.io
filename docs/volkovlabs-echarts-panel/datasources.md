@@ -9,9 +9,10 @@ tags:
 
 # Data Sources
 
-Below is one way of how you can retrieve data from your data source to use in the Apache ECharts visualization panel.
-First, read it into one-dimentional arrays, transform later into more dimentional arrays if needed.
-`refId` is the name of the query retrieving data from the data source. By default, the names are 'A', 'B' and so forth.
+Below is a code snippet demonstrating how you can retrieve data from your data source to use in the Apache ECharts visualization panel. 
+- You can use `.map()` and `.find()` JavaScript functions,
+- `refId` is the name of the query retrieving data from the data source. By default, the names are 'A', 'B' and so forth. The code below works with three queries - `logo`,`connections`,`nodes`.
+- `name` is the data frame column name. The code below references `body`,`source`,`target`,`title`,and `description` columns.
 
 ```javascript
 data.series.map((s) => {
@@ -31,11 +32,11 @@ data.series.map((s) => {
 
 ## Array of Arrays
 
-Merge fields together:
+Convert one-dimensional arrays into many-dimensional arrays if needed:
 
 - get values for each field
 - combine in an array of arrays
-- use as `series[0]` to access first query
+- use as `series[0]` to access first query, `series[1]` to access second query, etc.
 
 ```javascript
 const series = data.series.map((s) => {
