@@ -11,7 +11,7 @@ tags:
 
 # Variables
 
-The Static Data Source supports dashboard and global variables in the string fields.
+The Static Data Source supports dashboard and global variables in the String fields.
 
 ## Global Variables
 

@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: The Static Data Source is a plugin for Grafana that allows to emulate your data to test and develop panels.
+description: The Static Data Source is a plugin for Grafana that allows to store and emulate your data.
 tags:
   - Grafana
   - Static
@@ -11,7 +11,7 @@ tags:
 
 # Static Data Source
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmSOuCRtS85zolztwDMpCsIV)
 ![CI](https://github.com/volkovlabs/volkovlabs-static-datasource/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-static-datasource/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-static-datasource)
@@ -19,7 +19,7 @@ tags:
 
 ## Introduction
 
-The Static Data Source is a plugin for Grafana that allows to emulate your data to test and develop panels. It is a handy little tool that leads complex tasks to successful completion.
+The Static Data Source is a plugin for Grafana that allows to store and emulate your data.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/QOV8ECOUjWs" title="Static data source for Grafana | Mimic any data source | Tutorial and examples" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
@@ -42,12 +42,15 @@ grafana-cli plugins install marcusolsson-static-datasource
 - Build custom query responses for testing or developing panel plugins.
 - Store data and images directly in the dashboard.
 - Supports variables in the text fields.
+- Uses Number input for Number, Date Time Picker for Time fields.
+- Uses Text Area for String inputs with more than 100 symbols.
+- Allows to temporary hide values for specific fields.
 
 ![Screenshot](https://github.com/volkovlabs/volkovlabs-static-datasource/raw/main/src/img/dark.png)
 
 ## Feedback
 
-We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+We love to hear from you. These are various ways to get in touch with us:
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-static-datasource/issues/new/choose).
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
