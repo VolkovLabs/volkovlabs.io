@@ -17,11 +17,10 @@ You specify the `options` in the Apache ECharts visualization panel in the Monac
 
 ![setOptions Function](/img/plugins/volkovlabs-echarts-panel/function.png)
 
-This whole text area is basically a body of the function that you write for the execution.
-This function takes in many parameters from Grafana. See the full list in the table below. The only one parameter that is passed from this function to the `setOption()` is `options`.
-See the 'return' statement on the picture above.
- 
+This whole text area is basically a body of the function that you write for the execution. This function takes in many parameters from Grafana. See the full list in the table below.
 
+The only one parameter that is passed from this function to the `setOption()` is `options`. See the 'return' statement on the picture above.
+ 
 ## Parameters
 
 | Parameter | Description |
