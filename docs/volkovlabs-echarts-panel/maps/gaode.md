@@ -24,6 +24,8 @@ Gaode Maps are loaded using API v1.4.15 and require Access Key. You can get it f
 - While loading, animation can be displayed using the code below.
 - Additional plugins can be loaded using panel's options.
 
+## Function
+
 ```javascript
 const amap = {
   backgroundColor: 'transparent',
