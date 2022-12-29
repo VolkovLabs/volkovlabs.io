@@ -11,11 +11,11 @@ tags:
 
 `setOption(options)` is the main Apache ECharts <u>library</u> function. This function is called to build any chart. It has one mandatory parameter - `options` which is a chart configuraion in a JSON format.
 
-![setOptions Schema](/img/plugins/volkovlabs-echarts-panel/setfunction_schema.png)
+![setOptions Schema](/img/plugins/volkovlabs-echarts-panel/schema.png)
 
 You specify the `options` in the Apache ECharts visualization panel in the Monaco Code editor located on the right-hand side. 
 
-![setOptions Function](/img/plugins/volkovlabs-echarts-panel/setfunction_picture.png)
+![setOptions Function](/img/plugins/volkovlabs-echarts-panel/function.png)
 
 This whole text area is basically a body of the function that you write for the execution.
 This function takes in many parameters from Grafana. See the full list in the table below. The only one parameter that is passed from this function to the `setOption()` is `options`.

@@ -19,7 +19,7 @@ ecStat is supported by Apache ECharts visualization panel starting from version 
 
 An example of using is on [echarts.volkovlabs.io](https://echarts.volkovlabs.io/d/U332C4K4z/scatter?orgId=1&editPanel=10). You can copy the code and use it as-is in your Grafana dashboard. 
 
-[![ECharts](/img/plugins/volkovlabs-echarts-panel/ecStat_example_with_comments.png)](https://echarts.volkovlabs.io/d/U332C4K4z/scatter?orgId=1&editPanel=10)
+[![ECharts](/img/plugins/volkovlabs-echarts-panel/ecstat.png)](https://echarts.volkovlabs.io/d/U332C4K4z/scatter?orgId=1&editPanel=10)
 
 Watch the video for detailed tutorial on three data mining ecStat functions
  - Regression
