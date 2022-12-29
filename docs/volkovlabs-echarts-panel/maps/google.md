@@ -11,9 +11,9 @@ tags:
 
 # Google Maps
 
-:::caution
+:::info
 
-Supported since Apache ECharts Panel 3.8.0.
+Supported since Apache ECharts visualization panel 3.8.0.
 
 :::
 
@@ -22,6 +22,8 @@ Google Maps are loaded using Maps API and require Access Key. You can get it fro
 - Loading Google Maps takes ~1-2 seconds.
 - Callback function `gmapReady` will be executed on load. Name can be changed in the Panel options.
 - While loading, animation can be displayed using following code.
+
+## Function
 
 ```javascript
 const gmap = {

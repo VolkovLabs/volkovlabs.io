@@ -11,9 +11,9 @@ tags:
 
 # Gaode Maps
 
-:::caution
+:::info
 
-Supported since Apache ECharts Panel 3.8.0.
+Supported since Apache ECharts visualization panel 3.8.0.
 
 :::
 
@@ -21,8 +21,10 @@ Gaode Maps are loaded using API v1.4.15 and require Access Key. You can get it f
 
 - Loading Gaode Maps takes ~2-3 seconds.
 - There is no Callback function and status should be checked using timeout.
-- While loading, animation can be displayed using following code.
+- While loading, animation can be displayed using the code below.
 - Additional plugins can be loaded using panel's options.
+
+## Function
 
 ```javascript
 const amap = {
