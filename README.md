@@ -1,8 +1,14 @@
 # Volkov Labs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+## Introduction
 
-### Installation
+Volkov Labs is an agency founded by long-time Grafana contributor Mikhail Volkov. We find elegant solutions for non-standard tasks.
+
+## Documentation
+
+This documentation is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+
+## Installation
 
 ```
 yarn
@@ -10,16 +16,20 @@ yarn
 
 ### Local Development
 
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
 ```
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Feedback
 
-### Build
+We love to hear from you. There are various ways to get in touch with us:
 
-```
-yarn build
-```
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs.io/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## License
+
+- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs.io/blob/main/LICENSE).

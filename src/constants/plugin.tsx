@@ -78,7 +78,7 @@ export const PluginList: PluginItem[] = [
     title: "Static Data Source",
     Svg: require("@site/static/img/plugins/volkovlabs-static-datasource.svg")
       .default,
-    description: <>Emulate your data to test and develop panels.</>,
+    description: <>Store and emulate your data.</>,
     href: "/plugins/volkovlabs-static-datasource",
   },
   {
