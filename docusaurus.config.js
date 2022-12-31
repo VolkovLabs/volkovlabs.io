@@ -1,6 +1,4 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -40,7 +38,8 @@ const config = {
     ({
       colorMode: {
         defaultMode: "light",
-        disableSwitch: true,
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
       metadata: [{ name: "keywords", content: "grafana, plugins, volkovlabs" }],
       navbar: {
@@ -48,6 +47,7 @@ const config = {
         logo: {
           alt: "Volkov Labs",
           src: "img/logo.svg",
+          srcDark: "img/logo.dark.svg",
         },
         items: [
           {
@@ -84,6 +84,7 @@ const config = {
         logo: {
           alt: "Volkov Labs",
           src: "img/logo.svg",
+          srcDark: "img/logo.dark.svg",
         },
         style: "light",
         links: [
