@@ -11,17 +11,17 @@ tags:
 
 # Supported formats
 
-  The most common file formats are supported by the panel.
+The Base64 Image/Video/Audio/PDF visualization panel supports most of the common file formats.
   
-:::note
+:::tip
 
-Please open an issue in the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-image-panel/issues) to request support for additional formats.
+To request the support of additional formats, feel free to open an issue in the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-image-panel/issues).
 
 :::
 
 ## Images
 
-The file type is determined automatically based on the first Base64 symbol if definition is not provided:
+The file type is determined automatically based on the first Base64 symbol if a definition is not provided:
   - JPEG
   - GIF
   - PNG

@@ -1,4 +1,5 @@
 ---
+title: Panel
 description: The ABC Panel is a template to create a new panel plugin for Grafana.
 tags:
   - Grafana
@@ -7,7 +8,7 @@ tags:
   - ABC
 ---
 
-# Panel
+# Panel template
 
 [![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
 ![CI](https://github.com/volkovlabs/volkovlabs-abc-panel/workflows/CI/badge.svg)
@@ -15,9 +16,9 @@ tags:
 
 ## Introduction
 
-The ABC Panel is a template to create a new panel plugin for Grafana.
+We have created many Grafana panels to this moment. To make the creation process efficient, starting with a well-constructed template is always easier. The ABC panel is a template we created to streamline our development process and gladly share with the Grafana community.
 
-Generate from Template: [https://github.com/VolkovLabs/volkovlabs-abc-panel/generate](https://github.com/VolkovLabs/volkovlabs-abc-panel/generate)
+Generate a panel template: [https://github.com/VolkovLabs/volkovlabs-abc-panel/generate](https://github.com/VolkovLabs/volkovlabs-abc-panel/generate)
 
 ### Requirements
 
@@ -60,7 +61,7 @@ yarn run start
 
 ## Feedback
 
-We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+We love to hear from you. These are various ways to get in touch with us:
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-abc-panel/issues/new/choose).
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).

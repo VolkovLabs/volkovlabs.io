@@ -10,21 +10,22 @@ tags:
 
 # Data Sources
 
-Data sources should be used to provide data to the Base64 Image/Video/Audio/PDF Panel.
+The Base64 Image/Video/Audio/PDF visualization panel takes data from the connected data source.
+You can use any suitable data source that can retrieve the data in the Base64 format. The quickest option to start is to use the Static data source. PostgreSQL is a great option as well. 
 
 ## Static Data Source
 
-The Static Data Source allows to store data inside the dashboard and can be used to display limited size Base64 encoded media files.
+You can use the Static data source to store any supported formats in Base64 on your Grafana dashboard.
 
-:::caution
+:::info
 
-Grafana restricts size of the dashboard and you may see `413 Request Entity Too Long` error if limit reached. In this case, consider using database/storage data source.
+Static Data Source is an excellent solution for not huge sizes. If you get a `413 Request Entity Too Long` error, the Grafana limit is reached. In this case, consider using a database/storage data source. PostgreSQL is a good choice.
 
 :::
 
 ## PostgreSQL
 
-  Data source should return encoded file content and may return format definition `data:video/mp4;base64,XXX` for media files:
+The data source should return encoded file content and may return format definition `data:video/mp4;base64,XXX` for media files:
 
 ```
 SELECT
@@ -38,11 +39,18 @@ where
   name = 'flow';
 ```
 
-![Video file](/img/plugins/volkovlabs-image-panel/video.png)
+![Video file](/img/plugins/volkovlabs-image-panel/video-comments.png)
 
-### Load media files into database
+### Load media files into the database
 
-For example, you can load PDF, PNG, MP4, MP3, etc. files into database using Node.js script:
+PostgreSQL database has built-in functions to work with the Base64 format. 
+
+```sql
+SELECT CONVERT_FROM (DECODE('SGVsbG8gV29ybGQh', 'BASE64'), 'UTF-8');
+SELECT ENCODE (CONVERT_TO('Hello World!', 'UTF-8'), 'BASE64');
+```
+
+Alternatively, you can load PDF, PNG, MP4, MP3, etc. files into a database using Node.js script:
 
 ```javascript
 const fs = require('fs');

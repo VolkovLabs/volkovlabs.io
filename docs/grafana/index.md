@@ -10,17 +10,20 @@ tags:
 
 # Getting Started
 
-The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads towards it.
+The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads toward it.
 
 ## How to Install Grafana
 
-This video is for anyone who just started with Grafana and wondering what the installation process looks like.
+This video is for anyone who just started with Grafana and wondering what the installation process looks like. The most efficient and cleanest option is to use Grafana in a docker container. 
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Dashboard, Global and Environment Variables
 
-The topic of variables in Grafana has generated a myriad of questions lately. We created this video to bring some structure to the subject and speed up the learning curve for Grafana enthusiasts.
+The topic of variables in Grafana has generated a myriad of questions lately. We created this video to structure the subject and speed up the learning curve for Grafana enthusiasts. In short, there are three types of variables. 
+ - `Dashboard` variables capture the values within one dashboard. They are usually used for filter functionality. 
+ - `Global` variables are Grafana settings you can retrieve and use on your dashboards. You can find [global built-in variables](https://grafana.com/docs/grafana/latest/variables/variable-types/global-variables/) in the Grafana documentation.
+ - `Environment` variables are the variables from the Grafana environment (operating system and/or device) where Grafana is installed. Conventionally those variables are off-limits, but with <i>the environment data source</i> plugin, access to the environment variables is possible! 
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
