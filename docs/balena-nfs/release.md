@@ -10,7 +10,7 @@ tags:
 
 # Release Notes
 
-## 1.3.0 (2022-10-30)
+## [1.3.0 (2022-10-30)](https://github.com/VolkovLabs/balena-nfs/releases/tag/v1.3.0)
 
 ### Features / Enhancements
 
@@ -22,7 +22,7 @@ tags:
 - Tested and updated to use Nvidia Jetson AGX Orin Devkit as default (#19)
 - Add Balena Application screenshot (#20)
 
-## 1.2.0 (2022-08-28)
+## [1.2.0 (2022-08-28)](https://github.com/VolkovLabs/balena-nfs/releases/tag/v1.2.0)
 
 ### Features / Enhancements
 
@@ -31,7 +31,7 @@ tags:
 - Add YouTube video "Using Network File System (NFS) in Balena | Share external storage between containers" (#14)
 - Add Video to Balena App (#15)
 
-## 1.1.0 (2022-07-08)
+## [1.1.0 (2022-07-08)](https://github.com/VolkovLabs/balena-nfs/releases/tag/v1.1.0)
 
 ### Breaking Changes
 
@@ -46,7 +46,7 @@ tags:
 - Update NFS validation to use new Environment Variable (#10)
 - Update README for version 1.1.0 (#11)
 
-## 1.0.0 (2022-07-03)
+## [1.0.0 (2022-07-03)](https://github.com/VolkovLabs/balena-nfs/releases/tag/v1.0.0)
 
 ### Features / Enhancements
 
