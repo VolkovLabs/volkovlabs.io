@@ -1,4 +1,5 @@
 ---
+title: Application
 description: The ABC Application is a template to create a new application plugin for Grafana.
 tags:
   - Grafana
