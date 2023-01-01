@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
 import { PluginList } from '../constants';
 import styles from '../css/index.module.css';
 import { PluginItem } from '../types';
@@ -10,7 +12,7 @@ import { PluginItem } from '../types';
 export const Plugin = ({
   title,
   subTitle,
-  Svg,
+  name,
   badge,
   badge2,
   href,
@@ -18,16 +20,15 @@ export const Plugin = ({
   description,
 }: PluginItem) => {
   return (
-    <div
-      className={clsx(
-        "col margin-vert--lg margin-horiz--lg",
-        styles.featureItem
-      )}
-    >
+    <div className={clsx("col col--3", styles.featureItem)}>
       <a href={href} target={target}>
-        <div>
-          <Svg className={styles.pluginSvg} role="img" />
-        </div>
+        <ThemedImage
+          role="img"
+          sources={{
+            light: useBaseUrl(`/img/plugins/${name}.svg`),
+            dark: useBaseUrl(`/img/plugins/${name}.dark.svg`),
+          }}
+        />
         <div>
           <h3>{title}</h3>
           {subTitle && <h4>{subTitle}</h4>}

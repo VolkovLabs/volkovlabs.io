@@ -26,7 +26,7 @@ The Calendar visualization panel is a Grafana plugin created to display calendar
 
 ## Getting Started
 
-The Calendar visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
+The calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or use the `grafana-cli` tool to install from the command line:
 
 ```bash
 grafana-cli plugins install marcusolsson-calendar-panel

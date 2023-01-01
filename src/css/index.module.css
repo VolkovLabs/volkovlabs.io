@@ -1,27 +1,35 @@
 /**
  * Features
  */
-.featureItem {
+[data-theme='light'] .featureItem {
   border: 2px solid var(--ifm-color-white);
 }
 
-.featureItem:hover {
+[data-theme='dark'] .featureItem {
+  border: 2px solid var(--ifm-background-color);
+}
+
+[data-theme='light'] .featureItem:hover {
   border: 2px solid var(--ifm-color-black);
 }
 
-.featureItem a,
-.featureItem a:hover {
+[data-theme='dark'] .featureItem:hover {
+  border: 2px solid var(--ifm-color-white);
+}
+
+[data-theme='light'] .featureItem a,
+[data-theme='light'] .featureItem a:hover {
   color: var(--ifm-color-gray-1000);
+}
+
+[data-theme='dark'] .featureItem a,
+[data-theme='dark'] .featureItem a:hover {
+  color: var(--ifm-color-gray-100);
 }
 
 /**
  * SVG
  */
-.featureSvg {
-  height: 100px;
-  width: 100px;
-}
-
 .pluginSvg {
   height: 150px;
   width: 150px;
@@ -39,9 +47,13 @@
 /**
  * Why inside the Box
  */
-.whyBox {
+[data-theme='light'] .whyBox {
   border: 2px solid var(--ifm-color-black);
-  background-color: white;
+  padding: 0;
+}
+
+[data-theme='dark'] .whyBox {
+  border: 2px solid var(--ifm-color-white);
   padding: 0;
 }
 
@@ -52,19 +64,24 @@
 /**
  * Header with line
  */
-.header {
+ [data-theme='light'] .header {
   width: 100%;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--ifm-color-black);
   line-height: 0.1em;
 }
 
-.header span {
-  background: #fff;
+[data-theme='dark'] .header {
+  width: 100%;
+  border-bottom: 2px solid var(--ifm-color-white);
+  line-height: 0.1em;
+}
+
+[data-theme='light'] .header span {
+  background: var(--ifm-color-white);
   padding-right: 20px;
 }
 
-.bodyImage {
-  background-image: url(/static/img/bg.svg);
-  background-repeat: no-repeat;
-  background-position-y: 25rem;
+[data-theme='dark'] .header span {
+  background: var(--ifm-background-color);
+  padding-right: 20px;
 }
