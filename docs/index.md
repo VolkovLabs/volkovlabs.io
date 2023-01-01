@@ -4,56 +4,95 @@ tags:
   - Grafana
   - Plugins
   - Development
-  - Private repository
 ---
 
-# Manage, Operate, and Visualize
+# What’s new
 
-Our plugins for Grafana represent three categories: Manage, Operate, and Visualize. Most of them are available in the [Grafana Catalog](https://grafana.com/grafana/plugins/) and can be installed in Cloud and On-Premises.
+:::info
 
-<a href='https://live.volkovlabs.io'><img src="/img/plugins.svg" /></a>
+Our Grafana plugins are open source and we update them constantly. [Become our sponsor on GitHub](https://github.com/sponsors/VolkovLabs).
 
-## Private Repository
+:::
 
-We are constantly updating and improving our Grafana plugins. A private repository has become a part of our workflow to verify and test plugins on our demo server and projects.
 
-Read more in the blog [Installing Grafana plugins from a Private repository](https://volkovlabs.com/installing-grafana-plugins-from-a-private-repository-805b54a1add3).
+## [Static Data Source 2.1.0 (2022-12-29)](https://github.com/VolkovLabs/volkovlabs-static-datasource/releases/tag/v2.1.0)
 
-### List plugins
+### Breaking changes
 
-```bash
-$ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
-id: marcusolsson-calendar-panel version: 1.1.0
-id: marcusolsson-dynamictext-panel version: 2.1.0
-id: marcusolsson-static-datasource version: 2.1.0
-id: volkovlabs-env-datasource version: 2.2.0
-id: volkovlabs-rss-datasource version: 2.2.0
-id: volkovlabs-image-panel version: 3.1.0
-id: volkovlabs-form-panel version: 2.7.0
-id: volkovlabs-echarts-panel version: 4.0.0
-id: volkovlabs-balena-app version: 1.3.0
-```
+Refactoring may introduce breaking changes. Please test before upgrading in Production.
 
-### Install plugin
+### Features / Enhancements
 
-```bash
-$ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
-✔ Downloaded volkovlabs-env-datasource v2.2.0 zip successfully
+- Update CI to upload signed artifacts (#23)
+- Add the "Static data source for Grafana | Mimic any data source | Tutorial and examples" video in README (#23)
+- Update to Grafana 9.3.2 (#24)
+- Refactoring and improving Test Coverage for the data source (#25)
+- Update Field and Values Editors to labels and fields structure (#27)
+- Remove Frame Reducer to simplify code (#28)
+- Refactoring frame, field utilities (#29)
+- Add Date Time Picker, Number, and Text Area Inputs (#30)
 
-Please restart Grafana after installing plugins.
-Refer to Grafana documentation for instructions if necessary.
-```
+## [Apache ECharts Panel 4.0.0 (2022-12-20)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v4.0.0)
 
-### Upgrade plugins
+### Breaking changes
 
-```bash
-$ grafana-cli --repo https://volkovlabs.io/plugins plugins upgrade-all
-Updating volkovlabs-rss-datasource
-Removing plugin: volkovlabs-rss-datasource
-installing volkovlabs-rss-datasource @ 2.2.0
-from: https://volkovlabs.io/plugins/volkovlabs-rss-datasource/versions/2.2.0/download
-into: /var/lib/grafana/plugins
+- World and USA GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
 
-✔ Installed volkovlabs-rss-datasource successfully
-Please restart Grafana after installing plugins.
-```
+### Features / Enhancements
+
+- Update ECharts Examples on https://echarts.volkovlabs.io (#103)
+- Add Calendar Examples on https://echarts.volkovlabs.io (#105)
+- Update README and move Documentation to docs.volkovlabs.io (#)
+
+### Bug fixes
+
+- Fix javascript code in documentation (#102)
+
+## [Calendar Panel 1.1.0 (2022-12-12)](https://github.com/VolkovLabs/volkovlabs-calendar-panel/releases/tag/v1.1.0)
+
+### Breaking changes
+
+Refactoring may introduce breaking changes. Please test before upgrading in Production.
+
+### Features / Enhancements
+
+- Update Panel options in README (#53)
+- Add Youtube tutorial for Calendar with JSON API data source (#54)
+- Update CI to Node 16 and Synchronize with Release workflow (#56)
+- Update to Grafana 9.2.2 (#57)
+- Code Refactoring (#58)
+- Update to Grafana 9.3.1 (#59)
+- Update CI to upload signed artifacts (#60)
+- Refactor panel options and increase test coverage (#61)
+- Add annotation support (#8)
+- Refactoring and Removing legacy code (#62)
+- Refactor Panel Options and add Annotations options (#63)
+
+## [Dynamic Text Panel 2.1.0 (2022-11-27)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.1.0)
+
+### Breaking changes
+
+Refactoring may introduce breaking changes. Please test before upgrading in Production.
+
+### Features / Enhancements
+
+- Fix broken link in README (#111)
+- Update CI to upload signed artifacts (#113)
+- Add feature of parsing time formatting syntax (#86)
+- Fix data rendering when using transformations (#98)
+- Update Panel Options to Monaco Code Editor (#114)
+- Increase Test Coverage (#114)
+- Refactor and update images (#116)
+- Refactor Alert Message and Text Options (#117)
+- Add Support for Disable Sanitize HTML configuration (#118)
+
+## [Data Manipulation Panel 2.7.0 (2022-11-10)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.7.0)
+
+### Features / Enhancements
+
+- Update to Grafana 9.2.2 (#113)
+- Update CI to upload signed artifacts (#116)
+- Allow to send all or updated only values in Payload (#116)
+- Add Initial values parameter to Update Request parameters (#117)
+- Add Status notification after submit form (#98)
+- Add Monaco Code Editor suggestions for available parameters (#88)

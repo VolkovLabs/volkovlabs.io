@@ -9,7 +9,7 @@ const sidebars = {
   mySidebar: [
     {
       id: "index",
-      label: "Home",
+      label: "What's new",
       type: "doc",
     },
     {
@@ -34,6 +34,10 @@ const sidebars = {
     },
     {
       items: [
+        {
+          id: "intro",
+          type: "doc",
+        },
         {
           items: [
             "volkovlabs-echarts-panel/index",
