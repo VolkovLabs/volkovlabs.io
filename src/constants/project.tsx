@@ -7,7 +7,7 @@ import { PluginItem } from '../types';
 export const ProjectList: PluginItem[] = [
   {
     title: "Balena NFS",
-    Svg: require("@site/static/img/balena/balena-nfs.svg").default,
+    name: "balena-nfs",
     description: <>Deploy NFS Server and Client in balenaCloud.</>,
     href: "/plugins/balena-nfs",
     badge:
@@ -15,7 +15,7 @@ export const ProjectList: PluginItem[] = [
   },
   {
     title: "ECharts Examples",
-    Svg: require("@site/static/img/plugins/echarts.svg").default,
+    name: "echarts",
     description: <>100+ visualizations in Grafana.</>,
     href: "https://echarts.volkovlabs.io",
     target: "_blank",
@@ -24,7 +24,7 @@ export const ProjectList: PluginItem[] = [
   },
   {
     title: "Live Updates",
-    Svg: require("@site/static/img/plugins/live.svg").default,
+    name: "live",
     description: <>Everything we have done as directed graph.</>,
     href: "https://live.volkovlabs.io",
     target: "_blank",
@@ -33,7 +33,7 @@ export const ProjectList: PluginItem[] = [
   },
   {
     title: "Theiascope",
-    Svg: require("@site/static/img/plugins/theiascope.svg").default,
+    name: "theiascope",
     description: <>Augment your scientific image analysis workflows.</>,
     href: "https://theiascientific.com/",
     target: "_blank",

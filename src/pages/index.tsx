@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import React from 'react';
 import Link from '@docusaurus/Link';
-import { useColorMode } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import ThemedImage from '@theme/ThemedImage';
 import { Plugins, Projects } from '../components';
 import styles from '../css/index.module.css';
 
@@ -12,8 +12,6 @@ import styles from '../css/index.module.css';
  * Header
  */
 const Header = (siteConfig) => {
-  const { isDarkTheme } = useColorMode();
-
   return (
     <header>
       <div className="container margin-vert--lg">
@@ -44,11 +42,12 @@ const Header = (siteConfig) => {
             </div>
           </div>
           <div className="col col--5">
-            <img
+            <ThemedImage
               className={clsx(styles.heroBannerLogo, "margin-vert--md")}
-              src={useBaseUrl(
-                isDarkTheme ? "img/main.dark.svg" : "img/main.svg"
-              )}
+              sources={{
+                light: useBaseUrl("/img/main.svg"),
+                dark: useBaseUrl("/img/main.dark.svg"),
+              }}
             />
           </div>
         </div>
@@ -61,8 +60,6 @@ const Header = (siteConfig) => {
  * Main
  */
 const Main = (siteConfig) => {
-  const { isDarkTheme } = useColorMode();
-
   return (
     <main>
       <div id="Plugins" className="container margin-vert--lg padding-vert--lg">
@@ -70,7 +67,9 @@ const Main = (siteConfig) => {
           <span>Grafana Plugins</span>
         </h2>
 
-        <Plugins />
+        <div className="container margin-vert--lg padding-vert--lg">
+          <Plugins />
+        </div>
 
         <div className="row margin-vert--lg">
           <div className="col col--1">
@@ -92,7 +91,9 @@ const Main = (siteConfig) => {
           <span>Projects</span>
         </h2>
 
-        <Projects />
+        <div className="container margin-vert--lg padding-vert--lg">
+          <Projects />
+        </div>
       </div>
 
       <div id="Team" className="container margin-vert--md">
@@ -136,12 +137,11 @@ const Main = (siteConfig) => {
       >
         <div className="row">
           <div className="col col--3">
-            <img
-              src={
-                isDarkTheme
-                  ? useBaseUrl("img/why-1.dark.svg")
-                  : useBaseUrl("img/why-1.svg")
-              }
+            <ThemedImage
+              sources={{
+                light: useBaseUrl("/img/why-1.svg"),
+                dark: useBaseUrl("/img/why-1.dark.svg"),
+              }}
             />
           </div>
           <div className="col col--6 text--center">
@@ -158,12 +158,11 @@ const Main = (siteConfig) => {
             </p>
           </div>
           <div className="col col--3">
-            <img
-              src={
-                isDarkTheme
-                  ? useBaseUrl("img/why-2.dark.svg")
-                  : useBaseUrl("img/why-2.svg")
-              }
+            <ThemedImage
+              sources={{
+                light: useBaseUrl("/img/why-2.svg"),
+                dark: useBaseUrl("/img/why-2.dark.svg"),
+              }}
             />
           </div>
         </div>

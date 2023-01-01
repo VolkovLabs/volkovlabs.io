@@ -7,8 +7,7 @@ import { FeatureItem, PluginItem } from '../types';
 export const PluginList: PluginItem[] = [
   {
     title: "Apache ECharts Panel",
-    Svg: require("@site/static/img/plugins/volkovlabs-echarts-panel.svg")
-      .default,
+    name: "volkovlabs-echarts-panel",
     description: (
       <>Powerful charting and visualization library Apache ECharts.</>
     ),
@@ -16,7 +15,7 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Balena Application",
-    Svg: require("@site/static/img/plugins/volkovlabs-balena-app.svg").default,
+    name: "volkovlabs-balena-app",
     description: (
       <>
         Display device information and manage services using Balena Supervisor
@@ -28,7 +27,7 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Base64 Image/Video/Audio/PDF Panel",
-    Svg: require("@site/static/img/plugins/volkovlabs-image-panel.svg").default,
+    name: "volkovlabs-image-panel",
     description: (
       <>
         Display Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF
@@ -39,21 +38,19 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Calendar Panel",
-    Svg: require("@site/static/img/plugins/volkovlabs-calendar-panel.svg")
-      .default,
+    name: "volkovlabs-calendar-panel",
     description: <>Display calendar events and change time range.</>,
     href: "/plugins/volkovlabs-calendar-panel",
   },
   {
     title: "Dynamic Text Panel",
-    Svg: require("@site/static/img/plugins/volkovlabs-dynamictext-panel.svg")
-      .default,
+    name: "volkovlabs-dynamictext-panel",
     description: <>Dynamic, data-driven text.</>,
     href: "/plugins/volkovlabs-dynamictext-panel",
   },
   {
     title: "Data Manipulation Panel",
-    Svg: require("@site/static/img/plugins/volkovlabs-form-panel.svg").default,
+    name: "volkovlabs-form-panel",
     description: (
       <>Insert, update application data, and modify configuration.</>
     ),
@@ -61,29 +58,26 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Environment Data Source",
-    Svg: require("@site/static/img/plugins/volkovlabs-env-datasource.svg")
-      .default,
+    name: "volkovlabs-env-datasource",
     description: <>Environment variables on your dashboard.</>,
     href: "/plugins/volkovlabs-env-datasource",
     badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
   },
   {
     title: "RSS/Atom Data Source",
-    Svg: require("@site/static/img/plugins/volkovlabs-rss-datasource.svg")
-      .default,
+    name: "volkovlabs-rss-datasource",
     description: <>Visualize RSS/Atom feeds using Dynamic Text.</>,
     href: "/plugins/volkovlabs-rss-datasource",
   },
   {
     title: "Static Data Source",
-    Svg: require("@site/static/img/plugins/volkovlabs-static-datasource.svg")
-      .default,
+    name: "volkovlabs-static-datasource",
     description: <>Store and emulate your data.</>,
     href: "/plugins/volkovlabs-static-datasource",
   },
   {
     title: "Volkov Labs Application",
-    Svg: require("@site/static/img/plugins/volkovlabs-app.svg").default,
+    name: "volkovlabs-app",
     description: <>Custom Docker image with Grafana.</>,
     href: "/plugins/volkovlabs-app",
     badge:

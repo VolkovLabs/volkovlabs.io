@@ -13,9 +13,9 @@ export interface PluginItem {
   subTitle?: string;
 
   /**
-   * SVG
+   * Name
    */
-  Svg?: React.ComponentType<React.ComponentProps<"svg">>;
+  name: string;
 
   /**
    * Description
