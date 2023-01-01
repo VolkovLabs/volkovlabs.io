@@ -1,4 +1,5 @@
 ---
+title: Data Source
 description: The ABC Data Source is a template to create a new data source plugin for Grafana.
 tags:
   - Grafana
