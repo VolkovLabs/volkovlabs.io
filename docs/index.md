@@ -8,8 +8,6 @@ tags:
 
 # What’s new
 
-We are constantly updating and improving our Grafana plugins.
-
 :::info
 
 Our Grafana plugins are open source and we update them constantly. [Become our sponsor on GitHub](https://github.com/sponsors/VolkovLabs).
