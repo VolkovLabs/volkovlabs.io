@@ -11,7 +11,7 @@ tags:
 
 # Release Notes
 
-## 1.5.0 (2022-10-29)
+## [1.5.0 (2022-10-29)](https://github.com/VolkovLabs/volkovlabs-balena-app/releases/tag/v1.5.0)
 
 ### Features / Enhancements
 
@@ -20,7 +20,7 @@ tags:
 - Update Video thumbnails and balena description (#49)
 - Update plugin version and Supervisor dashboard (#50)
 
-## 1.4.0 (2022-10-06)
+## [1.4.0 (2022-10-06)](https://github.com/VolkovLabs/volkovlabs-balena-app/releases/tag/v1.4.0)
 
 ### Features / Enhancements
 
@@ -32,14 +32,14 @@ tags:
 - Add IoT Framework video (#45)
 - Upgrade to Grafana 9.1.7 (#46)
 
-## 1.3.0 (2022-08-18)
+## [1.3.0 (2022-08-18)](https://github.com/VolkovLabs/volkovlabs-balena-app/releases/tag/v1.3.0)
 
 ### Features / Enhancements
 
 - Upgrade to Grafana 9.1.0 (#39)
 - Sanitize Environment from Target State (#40)
 
-## 1.2.0 (2022-08-07)
+## [1.2.0 (2022-08-07)](https://github.com/VolkovLabs/volkovlabs-balena-app/releases/tag/v1.2.0)
 
 ### Features / Enhancements
 
@@ -54,7 +54,7 @@ tags:
 
 - Balena Dashboard is not loading (#32)
 
-## 1.1.0 (2022-07-02)
+## [1.1.0 (2022-07-02)](https://github.com/VolkovLabs/volkovlabs-balena-app/releases/tag/v1.1.0)
 
 ### Features / Enhancements
 
@@ -70,7 +70,7 @@ tags:
 - Add Balena Workflow (#24)
 - Update Block to Project (Application) (#25)
 
-## 1.0.0 (2022-06-22)
+## [1.0.0 (2022-06-22)](https://github.com/VolkovLabs/volkovlabs-balena-app/releases/tag/v1.0.0)
 
 ### Features / Enhancements
 

@@ -8,7 +8,7 @@ tags:
 
 # Release Notes
 
-## 2.1.0 (2022-11-27)
+## [2.1.0 (2022-11-27)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.1.0)
 
 ### Breaking changes
 
@@ -26,7 +26,7 @@ Refactoring may introduce breaking changes. Please test before upgrading in Prod
 - Refactor Alert Message and Text Options (#117)
 - Add Support for Disable Sanitize HTML configuration (#118)
 
-## 2.0.0 (2022-11-02)
+## [2.0.0 (2022-11-02)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.0.0)
 
 ### Breaking changes
 
@@ -42,7 +42,7 @@ This release bumps the minimum required Grafana to >=8.5.
 - Update to Grafana 9.2.2 (#108)
 - Update screenshot and provisioning (#109)
 
-## 1.9.0 (2022-01-09)
+## [1.9.0 (2022-01-09)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.9.0)
 
 ### Features / Enhancements
 
@@ -52,59 +52,59 @@ This release bumps the minimum required Grafana to >=8.5.
 
 - The dropdown for selecting between multiple frames wasn't visible due to overflow. (#65)
 
-## 1.8.0 (2021-11-19)
+## [1.8.0 (2021-11-19)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.8.0)
 
 ### Features / Enhancements
 
 - Add `contains` helper (#48)
 - Upgrade dependencies
 
-## 1.7.2 (2021-06-21)
+## [1.7.2 (2021-06-21)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.7.2)
 
 ### Features / Enhancements
 
 - Improve error handling. Avoids having to refresh the dashboard on template errors.
 
-## 1.7.1 (2021-06-15)
+## [1.7.1 (2021-06-15)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.7.1)
 
 ### Features / Enhancements
 
 - Update docs and metadata
 - Upgrade dependencies
 
-## 1.7.0 (2021-03-08)
+## [1.7.0 (2021-03-08)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.7.0)
 
 ### Features / Enhancements
 
 - Add options for default content for empty query results (#15)
 
-## 1.6.0 (2021-03-04)
+## [1.6.0 (2021-03-04)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.6.0)
 
 ### Features / Enhancements
 
 - Improved error handling
 
-## 1.5.0 (2021-02-16)
+## [1.5.0 (2021-02-16)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.5.0)
 
 ### Features / Enhancements
 
 - Avoid recompiling templates on every render
 
-## 1.4.0 (2021-01-08)
+## [1.4.0 (2021-01-08)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.4.0)
 
 ### Features / Enhancements
 
 - Update @grafana/\* packages
 - Improved styling for tables and blockquotes
 
-## 1.3.0 (2021-01-08)
+## [1.3.0 (2021-01-08)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.3.0)
 
 ### Features / Enhancements
 
 - Support for HTML tags in templates (#4)
 - Add additional conditional operator (#3)
 
-## 1.2.1 (2020-11-27)
+## [1.2.1 (2020-11-27)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v1.2.1)
 
 ### Features / Enhancements
 
