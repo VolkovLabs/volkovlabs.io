@@ -8,7 +8,7 @@ tags:
 
 # Events
 
-Calendar panel allows to display events from any data source. Fields are defined in the panel's options.
+The Calendar visualization panel allows displaying events from any data source. You can define fields in the panel's options.
 
 | Option        | Description                                                         |
 | ------------- | ------------------------------------------------------------------- |

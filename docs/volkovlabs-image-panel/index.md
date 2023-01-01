@@ -20,7 +20,7 @@ tags:
 
 ## Introduction
 
-The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats.
+The Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/1_bgLSehjhg" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
@@ -32,7 +32,7 @@ The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Bas
 
 ## Getting Started
 
-Base64 Image/Video/PDF panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or use the `grafana-cli` tool to install from the command line:
+Base64 Image/Video/Audio/PDF visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-image-panel
@@ -49,11 +49,15 @@ grafana-cli plugins install volkovlabs-image-panel
 - Support MP4, WEBM video files with definition (`data:video/mp4;base64,XXX` and `data:video/webm;base64,XXX`)
 - Support MP3, OGG audio files with definition (`data:audio/mp3;base64,XXX` and `data:audio/ogg;base64,XXX`)
 
-![Image Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-image-panel/main/src/img/image-panel.png)
+## Quick start
+
+You can use the Static data source to store any supported formats in Base64 on your Grafana dashboard. 
+
+![Image Panel](/img/plugins/volkovlabs-image-panel/image.png)
 
 ## Feedback
 
-We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+We love to hear from you. These are various ways to get in touch with us:
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues/new/choose).
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).

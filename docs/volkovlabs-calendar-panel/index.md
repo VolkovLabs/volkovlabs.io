@@ -16,7 +16,7 @@ tags:
 
 ## Introduction
 
-The Calendar panel plugin for Grafana to display calendar events from data sources.
+The Calendar visualization panel is a Grafana plugin created to display calendar events from data sources.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/iPJ122x0oos" title="Calendar plugin for Grafana tutorial | Step by step | JSON API plugin example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -26,7 +26,7 @@ The Calendar panel plugin for Grafana to display calendar events from data sourc
 
 ## Getting Started
 
-Calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or use the `grafana-cli` tool to install from the command line:
+The Calendar visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
 
 ```bash
 grafana-cli plugins install marcusolsson-calendar-panel
@@ -34,18 +34,18 @@ grafana-cli plugins install marcusolsson-calendar-panel
 
 ## Features
 
-- Displays events in Weekly or Daily layout depends on the selected Time Range.
-- Allows to change Time Range by selecting the days in the calendar.
+- Displays events in a Weekly or Daily layout depending on the selected `Time Range`.
+- Allows changing `Time Range` by clicking days in the calendar.
 - Query calendar events from any data source.
-- Allows to display Annotations across all dashboards for the selected Time Range.
-- Supports automatically scroll to the end of the Time Range.
-- Allows to open data link instead of sidebar when clicking an event.
+- Allows displaying `Annotations` across all dashboards for the selected `Time Range`.
+- Supports auto-scrolling to the end of the `Time Range`.
+- Allows opening data link instead of a sidebar when clicking an event.
 
 ![Calendar](https://github.com/VolkovLabs/volkovlabs-calendar-panel/raw/main/src/img/screenshot.png)
 
 ## Feedback
 
-We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
+We love to hear from you. These are various ways to get in touch with us:
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
