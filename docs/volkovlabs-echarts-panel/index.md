@@ -35,7 +35,7 @@ Simply put and to avoid confusion,
 
 ## Getting Started
 
-Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing Grafana command line tool. For the latter use he following command:
+Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-echarts-panel

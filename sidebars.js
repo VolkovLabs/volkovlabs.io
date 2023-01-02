@@ -102,6 +102,7 @@ const sidebars = {
         {
           items: [
             "volkovlabs-dynamictext-panel/index",
+            "volkovlabs-dynamictext-panel/content",
             "volkovlabs-dynamictext-panel/helpers",
             "volkovlabs-dynamictext-panel/recipes",
             "volkovlabs-dynamictext-panel/release",
