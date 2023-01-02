@@ -40,14 +40,14 @@ Read more in the Balena blog post, "[Using NFS Server to share external storage 
 
 ## Tested
 
-- Nvidia Jetson AGX Orin Devkit (jetson-agx-orin-devkit)
-- Raspberry Pi4-64 (raspberrypi4-64)
-- Jetson Xavier (jetson-xavier)
-- x86-64 (genericx86-64-ext)
+- Nvidia Jetson AGX Orin Devkit (`jetson-agx-orin-devkit`)
+- Raspberry Pi4-64 (`raspberrypi4-64`)
+- Jetson Xavier (`jetson-xavier`)
+- x86-64 (`genericx86-64-ext`)
 
 ## Feedback
 
-We love to hear from users, developers, and the whole community interested in this project. These are various ways to get in touch with us:
+We love to hear from you. There are various ways to get in touch with us:
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/balena-nfs/issues/new/choose).
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
@@ -55,4 +55,4 @@ We love to hear from users, developers, and the whole community interested in th
 
 ## License
 
-- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/balena-nfs/blob/main/LICENSE).
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/balena-nfs/blob/main/LICENSE).

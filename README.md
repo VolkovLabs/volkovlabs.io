@@ -32,4 +32,4 @@ We love to hear from you. There are various ways to get in touch with us:
 
 ## License
 
-- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs.io/blob/main/LICENSE).
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs.io/blob/main/LICENSE).
