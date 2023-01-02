@@ -10,9 +10,6 @@ tags:
 # Data Sources
 
 Below is a code snippet demonstrating how you can retrieve data from your data source to use in the Apache ECharts visualization panel. 
-- You can use `.map()` and `.find()` JavaScript functions,
-- `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code below works with three queries - `logo`,`connections`, and `nodes`.
-- `name` is the data frame column name. The code below references `body`,`source`,`target`,`title`,and `description` columns.
 
 ```javascript
 data.series.map((s) => {
@@ -27,6 +24,9 @@ data.series.map((s) => {
   }
 });
 ```
+- You can use `.map()` and `.find()` JavaScript functions,
+- `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries - `logo`,`connections`, and `nodes`.
+- `name` is the data frame column name. The code above references `body`,`source`,`target`,`title`,and `description` columns.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/K5YNMSIm9AM" title="How to use Data Source in Apache ECharts in 90 seconds | Grafana Data attribute" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
