@@ -29,7 +29,7 @@ This is the auth app.
 
 ## Render HTML from data
 
-If you'd like to render HTML returned by the data source, you need to use three-brace expressions, `{{{htmlValue}}}`, otherwise Handlebars escapes the HTML content.
+If you would like to render HTML returned by the data source, you need to use three-brace expressions, `{{{htmlValue}}}`, otherwise Handlebars escape the HTML content.
 
 ```md
 <ul>
@@ -66,7 +66,7 @@ For the following query result:
 | Dune  | Frank Herbert | 1965 |
 | 1984  | George Orwell | 1949 |
 
-Given that the **Every Row** switch is turned off, the following template renders a table from the query result:
+Given that the **All Rows** switch is turned on, the following template renders a table from the query result:
 
 ```md
 | Title | Author | Year |
