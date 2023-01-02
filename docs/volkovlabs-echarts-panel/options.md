@@ -28,7 +28,7 @@ The only one parameter that is passed from this function to the `setOption()` is
 | `data` | Grafana's `data` object with time range, series and request information. See the example on the picture above. |
 | `echarts` | ECharts library. |
 | `echartsInstance` | Instance of the ECharts. See the example on the picture above. To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.|
-| `ecStat` | A statistical and data mining tool for Apache ECharts. More information in the [ecStat](ecstat) section. |
+| `ecStat` | A statistical and data mining tool for Apache ECharts. More information in the [ecStat](tutorials/ecstat) section. |
 | `locationService` | Grafana's `locationService` to work with browser location and history. |
 | `notifyError(['Header', 'Error Message'])` | Display error notification. |
 | `notifySuccess(['Header', 'Message'])` | Display successful notification. |
