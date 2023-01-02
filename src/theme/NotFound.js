@@ -1,15 +1,10 @@
 import React from "react";
-import NotFound from "@theme-original/NotFound";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import { Redirect } from "@docusaurus/router";
 
 /**
  * Not Found
  */
 export default function NotFoundWrapper(props) {
-  window.location.replace("/plugins");
-
-  return (
-    <>
-      <NotFound {...props} />
-    </>
-  );
+  return <Redirect to={useBaseUrl("/plugins")} />;
 }
