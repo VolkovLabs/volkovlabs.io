@@ -20,6 +20,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "plugins",
+          editUrl: "https://github.com/VolkovLabs/volkovlabs.io/tree/main",
         },
         blog: false,
         gtag: {
