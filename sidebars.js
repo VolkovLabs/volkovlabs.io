@@ -43,12 +43,7 @@ const sidebars = {
             "volkovlabs-echarts-panel/index",
             "volkovlabs-echarts-panel/options",
             "volkovlabs-echarts-panel/datasources",
-            {
-              type: "link",
-              label: "Examples",
-              href: "https://echarts.volkovlabs.io",
-            },
-            "volkovlabs-echarts-panel/ecstat",
+            "volkovlabs-echarts-panel/examples",
             {
               items: [
                 "volkovlabs-echarts-panel/maps/baidu",
@@ -58,7 +53,15 @@ const sidebars = {
               label: "Maps",
               type: "category",
             },
-            "volkovlabs-echarts-panel/tutorial",
+            {
+              items: [
+                "volkovlabs-echarts-panel/tutorials/graph",
+                "volkovlabs-echarts-panel/tutorials/images",
+                "volkovlabs-echarts-panel/tutorials/ecstat",
+              ],
+              label: "Tutorials",
+              type: "category",
+            },
             "volkovlabs-echarts-panel/variables",
             "volkovlabs-echarts-panel/release",
           ],
