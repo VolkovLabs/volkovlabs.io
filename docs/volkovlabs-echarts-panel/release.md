@@ -1,5 +1,5 @@
 ---
-description: The ECharts Panel is a plugin for Grafana that allows to visualize Apache ECharts on your Grafana dashboard.
+description: The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate popular Apache ECharts libraries into your Grafana dashboard.
 tags:
   - ECharts
   - Panel

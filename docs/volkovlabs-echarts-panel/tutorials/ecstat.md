@@ -4,12 +4,13 @@ tags:
   - ECharts
   - Panel
   - Visualization
+  - Tutorial
   - ecStat
 ---
 
-# ecStat
+# Statistical and Data Mining
 
-ecStat is a separate library created to bring statistical and data mining abilities to the charting process in the Apache ECharts library.
+The `ecStat` is a separate library created to bring statistical and data mining abilities to the charting process in the Apache ECharts library.
 
 :::info
 

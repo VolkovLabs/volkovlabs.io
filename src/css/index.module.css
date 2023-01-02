@@ -40,6 +40,7 @@
  */
 .getStarted {
   border-radius: 0px;
+  color: var(--ifm-color-white);
   border-color: #ff5656;
   background-color: #ff5656;
 }

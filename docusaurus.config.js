@@ -9,7 +9,7 @@ const config = {
   url: "https://volkovlabs.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenMarkdownLinks: "throw",
   favicon: "img/favicon.ico",
   organizationName: "VolkovLabs",
   projectName: "",
