@@ -12,7 +12,7 @@ tags:
 
 # Streaming
 
-Streaming allows real-time data updates using **streaming** Data Sources and Grafana Live.
+Streaming allows real-time data updates using streaming Data Sources and Grafana Live.
 
 :::info
 
@@ -34,7 +34,6 @@ const series = data.series.map((s) => {
   const sTime = s.fields.find((f) => f.type === 'time').values.buffer;
 
   return {
-    name: s.refId,
     type: 'line',
     name: 'Live',
     showSymbol: false,
@@ -78,13 +77,15 @@ return {
 };
 ```
 
-## WebSocket
-
-![Streaming](/img/plugins/volkovlabs-echarts-panel/streaming.png)
+## WebSocket API
 
 To stream real-time data, we used the [WebSocket Data Source for Grafana](https://grafana.com/grafana/plugins/golioth-websocket-datasource/).
 
+![Streaming](/img/plugins/volkovlabs-echarts-panel/websocket.png)
+
 ### Server 
+
+Example of Node.js WebSocket Server implementation:
 
 ```javascript
 const ws = require('ws');
@@ -124,6 +125,8 @@ server.on('connection', (socket) => {
 ```
 
 ### Provisioning
+
+WebSocket API Data Source can be provisioned using configuration files:
 
 ```yaml
 apiVersion: 1
