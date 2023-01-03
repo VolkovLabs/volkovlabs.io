@@ -19,17 +19,17 @@ The YouTube version of this article is on our channel.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-## Dashboard variables
+## Dashboard variables. Introduction
 
 As the name implies, they are created for a dashboard. Only users with **edit** permissions or higher can maintain them. The dashboard variables configuration menu is located in the Dashboard settings, Variables menu.
 
 ![How to access the Variables management panel in Grafana. Edit permission is required](menu.png)
 
-Once a variable is created, it is displayed on the top of your dashboard as a drop-down list unless you made it hidden. Multiselection and Select All are optional and effortlessly configurable in the Variable management panel.
+Once a variable is created, it is displayed on the top of your dashboard as a drop-down list unless you made it hidden. `Multiselection` and `Select All` are optional and configurable in the Variable management panel.
 
 ![The dashboard variable is displayed as a drop-down list on the top of your dashboard](dropdown.png)
 
-To reference a dashboard variable in the queries and panels' code, add a $ (dollar sign) as a prefix.
+To reference a dashboard variable in the queries and panels' code, add a `$` (dollar sign) as a prefix.
 
 ![Add a dollar sign when referencing a dashboard variable in a panel's code](prefix.png)
 
@@ -37,13 +37,15 @@ Most of the time a dashboard variable plays a filter role to limit the displayed
 
 ![Types of Grafana dashboard variables](edit.png)
 
+## Dashboard variables. Types
+
 Any dashboard variable is a one-dimensional array of data elements. They could be:
 
 ### Hard-coded
 
 Meaning setup when you create a variable. The types for these are:
-- Constant. It is one value. Example: 1.
-- Custom. It is many values. Example: 1, 2, 3, 56.
+- Constant. It is one value. Example: `1`.
+- Custom. It is many values. Example: `1, 2, 3, 56`.
 - Interval. It is a built-in Grafana type designed to use as a time interval parameter. Examples are `500ms`, `30m`, `1h`, `6h`, `1d`, `14d`, etc.
 
 ### Text box
@@ -54,7 +56,7 @@ One concerning issue with that it is not a foolproof concept. A dashboard creato
 
 The other concerning detail, this type also might give a wrong impression that the entered value can be stored in the data source. It is not true.
 
-The time span of the entered value is limited until the next dashboard refresh. The text box is just plainly what it is, the values are not stored anywhere, and the user can not reuse them without entering them again, nor could they be sent down the pipeline for processing.
+The time span of the entered value is limited until the next dashboard refresh. The text box is just plainly what it is, the values are not stored anywhere, and the user can not reuse the entered values without typing them again, nor could they be sent down the pipeline for processing.
 
 ### Query
 This is my favorite type of dashboard variable. They are populated from any connected data source according to your query.
@@ -67,7 +69,7 @@ You can find the complete list of all global variables in the [Grafana Documenta
 
 ## Container/Host environment variables
 
-Grafana could either be installed in a Docker container or directly on the operating system. YouTube video demonstrating two types of Grafana installation - in a Docker container and Windows/Mac.
+Grafana could be installed in a Docker container or directly on the operating system. If you need more details, watch the following YouTube video demonstrating two types of Grafana installation: in a Docker container and on Windows/Mac.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -75,9 +77,9 @@ In both types of installation, an environment variable is a key-value parameter 
 
 ## Environment Data Source
 
-To stay out of trouble, Grafana core chose not to support environment variables at this time. Yet, many industrial cases require the ability to display environment variables, for instance, in cases where the goal is to manage numerous remote devices.
+To stay out of trouble, Grafana core chose not to support environment variables at this time. Yet, many industrial cases require the ability to display environment variables, for instance, in cases where the goal is to manage numerous remote devices (ex, IoT networks).
 
-Following the community demand, the Environment data source was created to supplement that ability. Employing the Environment data source allows you to display the environment variables of all your devices in one spot, the Grafana dashboard.
+Following the community demand, we created the Environment data source to supplement that ability. Employing the Environment data source allows you to display the environment variables of all your devices in one spot, the Grafana dashboard.
 
 The way to install the Environment data source is to use Grafana CLI and run the following command.
 

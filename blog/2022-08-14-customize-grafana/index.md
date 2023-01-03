@@ -7,7 +7,7 @@ keywords: [Business, Grafana, Visualization, Customization, Docker]
 
 # How to customize the Grafana user interface
 
-In this article, we collected various valuable commands to help you play with the Grafana in your style.
+This article collects various commands to help you play with the Grafana in your style.
 
 If you are here, you probably know what Grafana is and have already been playing with it for quite some time. And you are already quite aware that Grafana is a remarkable open-source tool for observability.
 
@@ -17,7 +17,7 @@ The installation of Grafana directly on the operating system takes a minute or t
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Once installed, Grafana delivers a broad spectrum of inbuilt visualization panels and data sources. You most likely know that if the out-of-the-box features do not yet endure your use case, the friendly community has plenty of add-ons in the shape of plugins you can download from the Grafana Catalog.
+Once installed, Grafana delivers a broad spectrum of built-in visualization panels and data sources. You most likely know that if the out-of-the-box features do not yet endure your use case, the friendly community has plenty of add-ons in the shape of plugins you can download from the Grafana Catalog.
 
 Starting from Grafana 8, access to Grafana Catalog was made a click away when the Plugins section was added under the Configuration menu. Following that path, you can find and install the extra functionality on top of the standard features in a blink of an eye.
 
@@ -37,11 +37,11 @@ First and foremost, we recommend working with Grafana in a Docker container. Onc
 
 ## Default theme​
 
-There are two types of people in this world: people with the Light theme preference or the Dark one. Grafana started with dark colors, initially designed to provide for observability demand.
+There are two types of people in this world: people with the `Light` theme preference and the `Dark` one. Grafana started with dark colors, initially designed to provide for observability demand.
 
 ![You can set the default theme to be either Light or Dark](theme.png)
 
-The Light option was introduced in version 7 and became equally famous as the Dark one. This is the only setting that is configurable in a user profile. You can, however, make the UI style coherent by specifying the default theme for the whole Docker container by clearly assigning a value to the following environment variable:
+The `Light` option was introduced in version 7 and became equally famous as the Dark one. This is the only setting that is configurable in a user profile. You can, however, make the UI style coherent by specifying the default theme for the whole Docker container by clearly assigning a value to the following environment variable:
 
 ```docker
 ENV GF_USERS_DEFAULT_THEME=light
