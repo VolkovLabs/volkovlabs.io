@@ -48,25 +48,6 @@ grafana-cli plugins install volkovlabs-rss-datasource
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
 
-## Provisioning
-
-Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
-
-Example of provisioning the RSS/Atom Data Source for Bitcoin news feed.
-
-```yaml
-datasources:
-  - name: Bitcoin
-    type: volkovlabs-rss-datasource
-    access: proxy
-    orgId: 1
-    uid: rZAdZdf7k
-    version: 1
-    editable: true
-    jsonData:
-      feed: https://news.bitcoin.com/feed/
-```
-
 ## Disable Sanitize HTML
 
 To display HTML returned from feeds, please disable the Sanitize HTML parameter. For Docker:

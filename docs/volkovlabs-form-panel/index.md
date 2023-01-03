@@ -18,7 +18,7 @@ tags:
 
 ## Introduction
 
-The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as  well as modifing configuration directly from your Grafana dashboard.
+The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/DXALVG8GijM" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
@@ -48,7 +48,7 @@ grafana-cli plugins install volkovlabs-form-panel
   - Read-only (Disabled) with support for lookup
   - Password Input
   - Text Area
-  - Code Editor (not on the picture)
+  - Code Editor
 - Supports the Custom Code for the `Initial` and `Update` requests.
 - Allows specifying `GET` request to get initial values and `DELETE`, `PATCH`, `POST`, and `PUT` requests to send values updated in the form.
 - Allows adding `Header` fields to the `Initial` and `Update` requests.
