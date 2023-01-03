@@ -41,7 +41,7 @@ yarn build
 
 3. Sign the plugins if required
 
-```
+```bash
 export GRAFANA_API_KEY=erXXXX==
 yarn sign
 ```

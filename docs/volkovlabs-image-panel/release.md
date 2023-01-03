@@ -37,7 +37,7 @@ tags:
 - Update README and Provisioning dashboards (#43)
 - Add YouTube video in README (#44)
 - Rebuild based on 9.0.7 (#45)
-- Update Grafana Marketplace image (#46)
+- Update Grafana Catalog image (#46)
 
 ## [3.0.0 (2022-06-16)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.0.0)
 
@@ -67,7 +67,7 @@ tags:
 
 ### Features / Enhancements
 
-- Update README to add Grafana Marketplace (#29)
+- Update README to add Grafana Catalog (#29)
 - Rebuild using 8.3.4 (#28)
 
 ## [2.4.0 (2021-12-16)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.4.0)
