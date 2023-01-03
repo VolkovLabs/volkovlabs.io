@@ -45,7 +45,7 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 - Provides Monaco Code Editor for:
    - Working with Grafana data frames (JavaScript),
-   - Entering chart configurations in JSON format.
+   - Updating chart configurations in JSON format.
 - Supports Code Auto formatting.
 - Executes the `setOption()` function using Monaco Code Editor content.
 - Supports variables and location service to make Charts interactive.
@@ -59,6 +59,7 @@ grafana-cli plugins install volkovlabs-echarts-panel
 - Supports Code Editor suggestions for Parameters and variables.
 - Allows displaying Success and Error notifications.
 - Supports Baidu, Gaode, Google maps using API. Requires to provide access key.
+- Supports real-time data updates using streaming Data Sources and Grafana Live.
 - Has 100+ ready-as-is examples at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).
 
 ## Feedback
