@@ -11,7 +11,7 @@ tags:
 # Data Sources
 
 The Base64 Image/Video/Audio/PDF visualization panel takes data from the connected data source.
-You can use any suitable data source that can retrieve the data in the Base64 format. The quickest option to start is to use the Static data source. PostgreSQL is a great option as well. 
+You can use any suitable data source to retrieve the data in the Base64 format. The quickest option to start is to use the Static data source. PostgreSQL is a great option as well. 
 
 ## Static Data Source
 
@@ -41,8 +41,6 @@ where
 
 ![Video file](/img/plugins/volkovlabs-image-panel/video-comments.png)
 
-### Load media files into the database
-
 PostgreSQL database has built-in functions to work with the Base64 format. 
 
 ```sql
@@ -50,7 +48,17 @@ SELECT CONVERT_FROM (DECODE('SGVsbG8gV29ybGQh', 'BASE64'), 'UTF-8');
 SELECT ENCODE (CONVERT_TO('Hello World!', 'UTF-8'), 'BASE64');
 ```
 
-Alternatively, you can load PDF, PNG, MP4, MP3, etc. files into a database using Node.js script:
+### Load media files into the database
+
+Create tables to store images, video, and audio files:
+
+```sql
+CREATE TABLE images (name text, img bytea, UNIQUE(name));
+CREATE TABLE videos (name text, video bytea, UNIQUE(name));
+CREATE TABLE audios (name text, audio bytea, UNIQUE(name));
+```
+
+Load PDF, PNG, MP4, MP3, etc. files into a database using Node.js script:
 
 ```javascript
 const fs = require('fs');
@@ -109,5 +117,4 @@ async function loadFile() {
 }
 
 loadFile();
-
 ```
