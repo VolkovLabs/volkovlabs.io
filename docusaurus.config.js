@@ -22,7 +22,10 @@ const config = {
           routeBasePath: "plugins",
           editUrl: "https://github.com/VolkovLabs/volkovlabs.io/tree/main",
         },
-        blog: false,
+        blog: {
+          postsPerPage: "ALL",
+          blogSidebarCount: 0,
+        },
         gtag: {
           trackingID: "G-D3HVJTTCBD",
           anonymizeIP: true,
@@ -164,7 +167,7 @@ const config = {
             items: [
               {
                 label: "Blog",
-                href: "https://volkovlabs.com",
+                href: "/blog",
               },
               {
                 label: "GitHub",
