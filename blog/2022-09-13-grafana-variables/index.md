@@ -102,7 +102,3 @@ One more exciting thing to point out. Any environment variable your dashboard ge
 For that, when you create a dashboard variable, select the Environment data source.
 
 ![How to use the environment variable as a dashboard variable.](variable.png)
-
-## Conclusion
-
-Dashboard, Global, and Environment Variable are valuable instruments to make your dashboard interactive.
