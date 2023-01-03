@@ -18,7 +18,7 @@ tags:
 
 ## Introduction
 
-The Data Manipulation Form Panel is a plugin for Grafana that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
+The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/DXALVG8GijM" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
@@ -29,7 +29,7 @@ The Data Manipulation Form Panel is a plugin for Grafana that can be used to ins
 
 ## Getting Started
 
-Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or use the `grafana-cli` tool to install from the command line:
+Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-form-panel
@@ -37,28 +37,29 @@ grafana-cli plugins install volkovlabs-form-panel
 
 ## Features
 
-- Provides functionality to create customizable forms with elements:
-  - Code Editor
-  - Date and Time
-  - Read-only (Disabled) with support for lookup
+- Provides functionality to create customizable forms with elements (see the picture below):
   - Number Input
-  - Number Slider
-  - Password Input
   - Radio Group with Boolean options
-  - Radio Group with Custom options
-  - Select with Custom options
   - String Input
+  - Number Slider
+  - Select with Custom options
+  - Date and Time
+  - Radio Group with Custom options
+  - Read-only (Disabled) with support for lookup
+  - Password Input
   - Text Area
-- Supports the Custom Code for Initial and Update requests.
-- Allows to specify GET request to get initial values and DELETE, PATCH, POST, PUT request to send values updated in the form.
-- Allows to add Header fields to Initial and Update requests.
-- Allows to customize Submit, Reset buttons and form layout.
-- Allows to split form elements into sections.
-- Allows to request confirmation before update request.
-- Allows to send all or only updated elements in the Payload.
-- Allows to display Success and Error notifications from the Custom Code.
-- Supports Code Editor suggestions for Available Parameters.
+  - Code Editor
+- Supports the Custom Code for the `Initial` and `Update` requests.
+- Allows specifying `GET` request to get initial values and `DELETE`, `PATCH`, `POST`, and `PUT` requests to send values updated in the form.
+- Allows adding `Header` fields to the `Initial` and `Update` requests.
+- Allows customizing `Submit`, `Reset` buttons, and form layout.
+- Allows splitting form elements into sections.
+- Allows requesting confirmation before `Update` request.
+- Allows sending all or only updated elements in the `Payload`.
+- Allows displaying `Success` and `Error` notifications from the **Custom Code**.
+- Supports Code Editor suggestions for available parameters.
 
+All available elements are:
 ![Form Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/panel.png)
 
 ## Feedback

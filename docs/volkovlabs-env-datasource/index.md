@@ -16,7 +16,7 @@ tags:
 
 ## Introduction
 
-The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables to retrieve data.
+The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables in your code.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
@@ -38,28 +38,9 @@ Plugin is signed for Grafana running on `http://localhost:3000`. if you are usin
 ## Features
 
 - Returns Environment Variables.
-- Allows to filter unnecessary or secured variables using Regex.
+- Allows filtering unnecessary or secured variables using Regex.
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-env-datasource/main/src/img/dashboard.png)
-
-## Provisioning
-
-Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
-
-Example of provisioning the Environment Data Source with a filter `GF_` to return only Grafana related variables.
-
-```yaml
-datasources:
-  - name: Environment
-    type: volkovlabs-env-datasource
-    access: proxy
-    isDefault: true
-    orgId: 1
-    version: 1
-    editable: true
-    jsonData:
-      filter: GF_
-```
 
 ## Feedback
 

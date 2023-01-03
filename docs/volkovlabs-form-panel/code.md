@@ -9,7 +9,7 @@ tags:
 
 # Custom Code
 
-The custom code has access to the Panel options, the response from the REST API call, form elements, various Grafana services and will be executed after the Initial and Update requests.
+The custom code has access to the **Panel options**, the response from the REST API call, form elements, and various Grafana services. The **Custom code** is executed after the `Initial` and `Update` requests.
 
 ## Parameters
 

@@ -131,6 +131,7 @@ const sidebars = {
         {
           items: [
             "volkovlabs-env-datasource/index",
+            "volkovlabs-env-datasource/provisioning",
             "volkovlabs-env-datasource/release",
           ],
           label: "Environment Data Source",
@@ -139,6 +140,7 @@ const sidebars = {
         {
           items: [
             "volkovlabs-rss-datasource/index",
+            "volkovlabs-rss-datasource/provisioning",
             "volkovlabs-rss-datasource/release",
           ],
           label: "RSS/Atom Data Source",

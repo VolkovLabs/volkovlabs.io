@@ -38,7 +38,7 @@ grafana-cli plugins install volkovlabs-rss-datasource
 ## Features
 
 - Supports RSS 2.0, RSS 1.0 and Atom.
-- Works great with Dynamic Text panel by Marcus Olsson (marcusolsson-dynamictext-panel).
+- Works great with Dynamic Text visualization panel.
 - Returns Channel (Feed) data, Items (Entries) or both as separate data frames.
 - Extract and parse as additional fields:
   - Image from Meta.
@@ -47,25 +47,6 @@ grafana-cli plugins install volkovlabs-rss-datasource
 - Filter items/entries based on the selected Time Range.
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
-
-## Provisioning
-
-Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
-
-Example of provisioning the RSS/Atom Data Source for Bitcoin news feed.
-
-```yaml
-datasources:
-  - name: Bitcoin
-    type: volkovlabs-rss-datasource
-    access: proxy
-    orgId: 1
-    uid: rZAdZdf7k
-    version: 1
-    editable: true
-    jsonData:
-      feed: https://news.bitcoin.com/feed/
-```
 
 ## Disable Sanitize HTML
 
