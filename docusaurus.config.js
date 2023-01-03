@@ -22,7 +22,11 @@ const config = {
           routeBasePath: "plugins",
           editUrl: "https://github.com/VolkovLabs/volkovlabs.io/tree/main",
         },
-        blog: false,
+        blog: {
+          blogTitle: "Volkov Labs blog!",
+          blogDescription: "Plugin development for Grafana",
+          postsPerPage: "ALL",
+        },
         gtag: {
           trackingID: "G-D3HVJTTCBD",
           anonymizeIP: true,
