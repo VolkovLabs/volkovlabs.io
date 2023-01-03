@@ -23,9 +23,8 @@ const config = {
           editUrl: "https://github.com/VolkovLabs/volkovlabs.io/tree/main",
         },
         blog: {
-          blogTitle: "Volkov Labs blog!",
-          blogDescription: "Plugin development for Grafana",
           postsPerPage: "ALL",
+          blogSidebarCount: 0,
         },
         gtag: {
           trackingID: "G-D3HVJTTCBD",
@@ -168,7 +167,7 @@ const config = {
             items: [
               {
                 label: "Blog",
-                href: "https://volkovlabs.com",
+                href: "/blog",
               },
               {
                 label: "GitHub",
