@@ -16,7 +16,7 @@ tags:
 
 ## Introduction
 
-The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables to retrieve data.
+The Environment Data Source visualization panel is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables in your code.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
