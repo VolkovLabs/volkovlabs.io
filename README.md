@@ -1,4 +1,4 @@
-# Documentation for Volkov Labs's plugins and projects
+# Documentation for Volkov Labs plugins and projects
 
 ## Introduction
 

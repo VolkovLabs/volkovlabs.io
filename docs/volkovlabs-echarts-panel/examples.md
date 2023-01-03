@@ -14,6 +14,6 @@ tags:
  - Open the chart of interest in the 'Edit' mode.
  - Copy the code from the right-hand side.
  - Paste the copied code into your Apache ECharts visualization panel on the Grafana dashboard.
- - You should see the working chart right away.
+ - You should see the working chart right away. You might need to `refresh` the chart.
 
 [![ECharts](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png)](https://echarts.volkovlabs.io)
