@@ -14,7 +14,7 @@ The `ecStat` is a separate library created to bring statistical and data mining 
 
 :::info
 
-ecStat is supported by Apache ECharts visualization panel starting from version 3.7.0.
+The `ecStat` is supported by the Apache ECharts visualization panel starting from version 3.7.0.
 
 :::
 

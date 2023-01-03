@@ -62,6 +62,7 @@ const sidebars = {
               label: "Tutorials",
               type: "category",
             },
+            "volkovlabs-echarts-panel/streaming",
             "volkovlabs-echarts-panel/variables",
             "volkovlabs-echarts-panel/release",
           ],
