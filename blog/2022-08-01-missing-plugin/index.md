@@ -76,8 +76,8 @@ The picture below displays all our GitHub project. When this picture was taken, 
  - [Static data source](https://live.volkovlabs.io/d/heM1lTN4z/static-data-source?orgId=1),
  - [Calendar visualization panel](https://live.volkovlabs.io/d/0fgJcb4Vz/calendar-panel?orgId=1),
  - [RSS-Atom data source](https://live.volkovlabs.io/d/zUDs5zRVk/rss-atom-data-source?orgId=1),
- - [Data Manipulation panel](https://live.volkovlabs.io/d/h5IJk66nk/data-manipulation-panel?orgId=1) 
- - [Plugin templates (combined into [Volkov Labs Company](https://live.volkovlabs.io/d/i0FxjZg4z/volkov-labs?orgId=1) group).
+ - [Data Manipulation panel](https://live.volkovlabs.io/d/h5IJk66nk/data-manipulation-panel?orgId=1), 
+ - [Plugin templates](https://live.volkovlabs.io/d/i0FxjZg4z/volkov-labs?orgId=1).
 
 You can see all releases we published for each project. 
 
