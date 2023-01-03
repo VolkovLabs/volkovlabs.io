@@ -56,8 +56,13 @@ const config = {
         },
         items: [
           {
+            href: "/blog",
+            position: "left",
+            label: "Blog",
+          },
+          {
             label: "Company",
-            position: "right",
+            position: "left",
             items: [
               {
                 href: "/#Plugins",
