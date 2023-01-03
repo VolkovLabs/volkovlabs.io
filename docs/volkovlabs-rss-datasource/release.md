@@ -104,7 +104,7 @@ tags:
 
 ### Features / Enhancements
 
-- Update README with link to the Grafana Marketplace (#8)
+- Update README with link to the Grafana Catalog (#8)
 - Rebuild using 8.3.4 (#6)
 
 ## [1.2.0 (2022-01-11)](https://github.com/VolkovLabs/volkovlabs-rss-datasource/releases/tag/v1.2.0)

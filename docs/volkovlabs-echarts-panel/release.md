@@ -94,7 +94,7 @@ tags:
 
 ### Features / Enhancements
 
-- Update to be included in the Grafana Marketplace (#35)
+- Update to be included in the Grafana Catalog (#35)
 
 ## [3.2.0 (2022-08-09)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v3.2.0)
 

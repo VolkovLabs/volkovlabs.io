@@ -68,7 +68,7 @@ tags:
 ### Features / Enhancements
 
 - Update Sample code in README (#67)
-- Updated to be included in the Grafana Marketplace (#68)
+- Updated to be included in the Grafana Catalog (#68)
 
 ## [2.2.0 (2022-08-09)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.2.0)
 

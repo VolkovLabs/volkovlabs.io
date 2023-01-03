@@ -13,6 +13,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "VolkovLabs",
   projectName: "",
+  themes: ["@saucelabs/theme-github-codeblock"],
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -206,6 +207,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ["docker"],
       },
     }),
 };
