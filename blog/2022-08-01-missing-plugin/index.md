@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: the-missing-plugin-to-create-business-and-industrial-charts-in-grafana-1d8f7304229f
-tags: [ECharts]
+tags: [Apache ECharts]
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
 ---
 
@@ -9,11 +9,11 @@ keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
 
 Grafana is a de-facto observability visualization tool with various chart panels and many community plugins like Plotly. Still, no none of them can compare with Apache ECharts flexibility.
 
-<!--truncate-->
-
 Apache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender, a new lightweight canvas library.
 
 [![ECharts](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png)](https://echarts.volkovlabs.io)
+
+<!--truncate-->
 
 The Apache ECharts panel is a plugin for Grafana that allows you to use the Apache ECharts library on the Grafana dashboard. The original plugin was developed for Grafana 6.3/7.0 and ECharts 4.9.0. It has not been maintained since then.
 

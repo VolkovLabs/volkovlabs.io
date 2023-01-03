@@ -9,11 +9,11 @@ keywords: [Variables, Grafana, Visualization]
 
 After a brief acquaintance with Grafana in sandboxes, production application developers come to the need to work with variables serving different architectural levels. This article outlines three logical levels with corresponding variables and their purposes.
 
-<!--truncate-->
-
 Let's start with the schema below. It provides a fantastic summary of the subject. Dashboard variables serve the analytical dashboards, and global Grafana variables rule in the Grafana instance. Environment variables help in configuring system processes where Grafana is installed.
 
 ![Three logical layers and their corresponding variable](schema.png)
+
+<!--truncate-->
 
 The YouTube version of this article is on our channel.
 
