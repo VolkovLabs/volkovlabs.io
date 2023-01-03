@@ -32,7 +32,7 @@ You can enhance all of the above visual components with your images. There are m
  - URI as an XML file. Use `image://data:image/svg+xml;utf8` prefix. 
  - URI as a PNG(raster) image, use `image://data:image;base64` prefix,
  
- You can copy the below code and run it in the Apache ECharts visualization panel on your Grafana dashboard. 
+You can copy the below code and run it in the Apache ECharts visualization panel on your Grafana dashboard. 
 
 ```javascript
  return {
