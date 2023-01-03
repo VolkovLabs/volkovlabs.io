@@ -1,5 +1,5 @@
 ---
-authors: [daria]
+authors: [mikhail]
 slug: the-missing-plugin-to-create-business-and-industrial-charts-in-grafana-1d8f7304229f
 tags: [Apache ECharts]
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
@@ -63,6 +63,6 @@ You are welcome to take a look and learn about our [Grafana plugins at Live Upda
 
 ## Conclusion
 
-Since we adapted and [released a [new version](/plugins/volkovlabs-echarts-panel/release) of the Apache ECharts plugin, we have received overwhelming feedback from the community and helped customers migrate from an older version.
+Since we adapted and [released a new version](/plugins/volkovlabs-echarts-panel/release) of the Apache ECharts plugin, we have received overwhelming feedback from the community and helped customers migrate from an older version.
 
 Volkov Labs just finished a project migrating industrial dashboards based on Plotly to Apache ECharts. It also allowed us to add features like a custom toolbox button to dynamically change the charts and support the multiple Y-axis the customer was looking for.
