@@ -4,7 +4,7 @@ authors:
       url: https://github.com/Sineos
       image_url: https://github.com/Sineos.png
     - mikhail
-tags: [Apache ECharts, Guest]
+tags: [Apache ECharts, Guest post]
 keywords: [Apache ECharts, Grafana, Visualization]
 ---
 
@@ -15,7 +15,7 @@ keywords: [Apache ECharts, Grafana, Visualization]
 <!--truncate-->
 
 The issue was successfully resolved, and Sineos created this example and attached
-- Apache ECharts functions
+- Apache ECharts function
 - InfluxDB queries to retrieve data
 - Ready-to-go Dashboard using the Static Data Source.
 
