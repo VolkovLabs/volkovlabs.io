@@ -10,13 +10,14 @@ keywords: [Apache ECharts, Grafana, Visualization]
 
 # Create Stacked Bars using the Apache ECharts visualization panel
 
-After a brief acquaintance with Grafana in sandboxes, production application developers come to the need to work with variables serving different architectural levels. This article outlines three logical levels with corresponding variables and their purposes.
+[Sineos](https://github.com/Sineos) opened at [issue in the Apache ECharts repository](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/47) asking for help with Stacked Bar Graph: "I have three queries returning aggregated monthly values, which I would like to display as Stacked bar graph. Turning it into a simple bar graph works but dividing the data too differently styled bars just ends up with errors."
 
 <!--truncate-->
 
-# Stacked Bar Graph
-
-Example for a stacked bar graph with an InfluxDB flux-query as data source
+The issue was successfully resolved, and Sineos created this example and attached
+- Apache ECharts functions
+- InfluxDB queries to retrieve data
+- Ready-to-go Dashboard using the Static Data Source.
 
 ![Panel](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/examples/img/stacked_bar_graph_influxdb.png)
 
@@ -202,7 +203,9 @@ return {
 
 ## Dashboard to Try
 
-Attached dashboard is a ready-to-go example that can be imported into a Grafana Panel as JSON. It requires the [Static data source for Grafana](/plugins/volkovlabs-static-datasource/) and Apache ECharts visualization panel plugin.
+Following dashboard is a ready-to-go example that can be imported into a Grafana Panel as JSON. It requires the [Static data source for Grafana](/plugins/volkovlabs-static-datasource/) and Apache ECharts visualization panel plugin.
+
+![Dashboard](dashboard.png)
 
 <details>
   <summary>Dashboard</summary>
