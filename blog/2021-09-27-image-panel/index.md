@@ -7,7 +7,7 @@ keywords: [Image, PDF, Base64, Visualization]
 
 # Display Base64 encoded images from any data source on your Grafana dashboard
 
-Base64 Image/PDF custom panel plugin was recently upgraded in the Grafana marketplace and had everything you need to display images from any data source on your dashboards.
+Base64 Image/PDF custom panel plugin was recently upgraded in the Grafana Catalog and had everything you need to display images from any data source on your dashboards.
 
 <!--truncate-->
 
@@ -29,9 +29,9 @@ You can use the `grafana-cli` tool to install from the command line for standalo
 grafana-cli plugins install volkovlabs-image-panel
 ```
 
-In the latest version of Grafana 8.1 standalone plugin can also be installed using the Marketplace application:
+In the latest version of Grafana 8.1 standalone plugin can also be installed using the Grafana Catalog application:
 
-![Grafana Marketplace allows installing plugins directly from the Grafana dashboard without restarting the application](installation.png)
+![Grafana Catalog allows installing plugins directly from the Grafana dashboard without restarting the application](installation.png)
 
 ## Panel Features
 
