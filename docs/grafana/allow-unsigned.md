@@ -15,13 +15,13 @@ To allow unsigned plugins, enter a comma-separated list of plugin identifiers to
 - Update environment variable in Docker container
 
 ```docker
-GF_ALLOW_LOADING_UNSIGNED_PLUGINS=XXX
+GF_ALLOW_LOADING_UNSIGNED_PLUGINS=PLUGIN-ID
 ```
 
 - Update `grafana.ini` for Host installation
 
 ```sh
-allow_loading_unsigned_plugins=XXX
+allow_loading_unsigned_plugins=PLUGIN-ID
 ```
 
 ## Manifest file

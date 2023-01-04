@@ -25,7 +25,7 @@ Static Data Source is an excellent solution for not huge sizes. If you get a `41
 
 ## PostgreSQL
 
-The data source should return encoded file content and may return format definition `data:video/mp4;base64,XXX` for media files:
+The data source should return encoded file content and may return format definition `data:video/mp4;base64,ENCODED-CONTENT` for media files:
 
 ```
 SELECT
