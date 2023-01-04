@@ -10,7 +10,7 @@ keywords: [Apache ECharts, Grafana, Visualization]
 
 # Create Stacked Bars using the Apache ECharts visualization panel
 
-[Sineos](https://github.com/Sineos) opened at [issue in the Apache ECharts repository](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/47) asking for help with Stacked Bar Graph:
+[Sineos](https://github.com/Sineos) opened an [issue in the Apache ECharts repository](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/47) asking for help with Stacked Bar Graph:
 > "I have three queries returning aggregated monthly values, which I would like to display as Stacked bar graph. Turning it into a simple bar graph works but dividing the data too differently styled bars just ends up with errors."
 
 <!--truncate-->
@@ -23,7 +23,6 @@ The issue was successfully resolved, and Sineos created this example and attache
 ![Panel](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/examples/img/stacked_bar_graph_influxdb.png)
 
 ## InfluxDB Data Source
-
 
 - `createEmpty: true` makes sure that the data of the individual bar segments stays aligned when data is missing in the series.
 - `set(key: "Source", value: "Self Consumption")` manipulates the field used for naming the series.
@@ -58,7 +57,6 @@ from(bucket: "home")
   |>  aggregateWindow(every: 1d, fn: sum, createEmpty: true)
   |>  set(key: "Source",  value: "Self Consumption")
 ```
-
 
 ## Apache ECharts visualization panel function
 
@@ -206,10 +204,10 @@ return {
 ## Dashboard to Try
 
 Following dashboard is a ready-to-go example that can be imported into Grafana as JSON. It requires the [Static data source](/plugins/volkovlabs-static-datasource/) and Apache ECharts visualization panel plugin.
+
 Make sure to install Static data source via the ``Administration -> Plugins`` menu and then add it via the ``Administration -> Data Sources`` menu. 
 
 Once the Static data source is installed and added and the Apache ECharts visualization panel is installed, go to the `Dashboard` menu and select `Import`.
-
 
 ![Import menu](import.png)
 
@@ -220,7 +218,6 @@ In the **Import dashboard** window, insert the JSON code into the **Import via p
 Specify the dashboard name and Static data source, click **Import**. You should see the visualization working right away.
 
 ![Import menu](import-dashboard-step2.png)
-
 
 ![Dashboard](dashboard.png)
 
