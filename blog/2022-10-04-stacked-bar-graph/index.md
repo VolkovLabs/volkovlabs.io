@@ -3,6 +3,7 @@ authors:
     - name: Sineos
       url: https://github.com/Sineos
       image_url: https://github.com/Sineos.png
+slug: stacked-bar-graph-20221004
 tags: [Apache ECharts, Guest post]
 keywords: [Apache ECharts, Grafana, Visualization]
 ---
