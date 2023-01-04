@@ -40,14 +40,14 @@ grafana-cli plugins install volkovlabs-image-panel
 
 ## Features
 
-- The returned value can contain base64 with or without definition (`data:image/jpg;base64,XXX` or `data:application/pdf;base64,XXX`).
+- The returned value can contain base64 with or without definition (`data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`).
 - The file type is determined automatically based on the first Base64 symbol if definition is not provided.
 - If the data source returns more than one field with type `string`, you can select the **Field Name** in the panel's display options.
 - If the data source returns multiple rows, the panel will display the image from the last row.
 - Image height and width can be auto-adjusted to panel's size, kept original or customized base on the field's value or display's panel options.
 - Allows to add URL with title to navigate to other dashboard when clicking on the image. URL supports dashboard variables.
-- Support MP4, WEBM video files with definition (`data:video/mp4;base64,XXX` and `data:video/webm;base64,XXX`)
-- Support MP3, OGG audio files with definition (`data:audio/mp3;base64,XXX` and `data:audio/ogg;base64,XXX`)
+- Support MP4, WEBM video files with definition (`data:video/mp4;base64,ENCODED-CONTENT` and `data:video/webm;base64,ENCODED-CONTENT`)
+- Support MP3, OGG audio files with definition (`data:audio/mp3;base64,ENCODED-CONTENT` and `data:audio/ogg;base64,ENCODED-CONTENT`)
 
 ## Quick start
 

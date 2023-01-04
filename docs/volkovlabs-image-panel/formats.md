@@ -28,21 +28,21 @@ The file type is determined automatically based on the first Base64 symbol if a 
   - PDF
   - HEIC
 
-Any image formats supported by your browser should be displayed with provided definition `data:image/jpg;base64,XXX`.
+Any image formats supported by your browser should be displayed with provided definition `data:image/jpg;base64,ENCODED-CONTENT`.
 
 ## PDF
 
-  PDF files are supported with definition `data:application/pdf;base64,XXX` or without.
+  PDF files are supported with definition `data:application/pdf;base64,ENCODED-CONTENT` or without.
 
 ## Video
 
 Supports following formats with provided definition: 
- - MP4 `data:video/mp4;base64,XXX`
- - WEBM `data:video/webm;base64,XXX`
+ - MP4 `data:video/mp4;base64,ENCODED-CONTENT`
+ - WEBM `data:video/webm;base64,ENCODED-CONTENT`
 
 ## Audio
 
 Supports following formats with provided definition: 
 
- - MP3 `data:audio/mp3;base64,XXX`
- - OGG `data:audio/ogg;base64,XXX`
+ - MP3 `data:audio/mp3;base64,ENCODED-CONTENT`
+ - OGG `data:audio/ogg;base64,ENCODED-CONTENT`
