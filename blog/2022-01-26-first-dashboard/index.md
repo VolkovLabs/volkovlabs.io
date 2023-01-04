@@ -57,7 +57,7 @@ For the first Grafana Dashboard, I recommend using one of the standard data sour
 
 My idea was to perform as few steps as possible. Therefore, I chose the PostgreSQL database as a backend storage technology. It already has a data source embedded into the Grafana Platform, free and easy to use. It sounded like a good fit.
 
-Before I continue, I have to mention something important. While preparing this article, I utilized Docker containers technology which essentially imitates multiple environments in one host. I used PostgreSQL in the Docker container, which means I have not directly installed it into my machine. It is unnecessary, but I am fond of the Docker since it keeps my workstation clean.
+Before I continue, I have to mention something important. While preparing this article, I utilized Docker containers technology which essentially imitates multiple environments in one host. I used PostgreSQL in a Docker container, which means I have not directly installed it on my machine. The Docker approach is optional, I am fond of Docker since it keeps my workstation clean.
 
 The question is open if I should write a Docker 101 article with all key concepts. Let me know if that interests you, and I will jot it down for you real quick. You do not have to use Docker, the good old ways of installing everything on your local machine directly also work just fine for this experiment.
 
@@ -111,28 +111,28 @@ Step 3 is complete when you can open Grafana on local port 3000.
 
 ## Create a Geomap visualization
 
-I will provide waterless instructions to make them easier to follow for this step. On the left-hand side, I saw the main menu, hovered the plus sign, and selected Create Dashboard. Next, I chose to **add a new panel**. Below is the window where I arrived at that moment.
+I will provide concise instructions to make it easier to follow. On the left-hand side, I saw the main menu, hovered the plus sign, and selected **Create Dashboard**. Next, I chose to **add a new panel**. Below is the window where I arrived at that moment.
 
 ![Navigate to Query Editor and update SQL to visualize data in the panel](new-panel.png)
 
 The screen looked overwhelming, but the more time I spent playing around with different options, the more comfortable I got. My usual preference is to write my SQL queries from scratch. I do not favor any helpers since I am a SQL champ and always "know better."
 
-For that reason, I clicked **Edit SQL** and entered the simple SELECT statement that would be needed. I also changed Format As to Table. Another thing to point out is limit 5 in my query. Since I was learning, I wanted to limit the volume of the fetched data. Once I had everything set up, I removed the limit.
+For that reason, I clicked **Edit SQL** and entered the simple ``SELECT`` statement that would be needed. I also changed **Format As** to **Table**. Another thing to point out is ``limit 5`` in my query. Since I was learning, I wanted to limit the volume of the fetched data. Once I had everything set up, I removed the limit.
 
 ![Query Editor with final SQL statement to retrieve data for Geomap](sql.png)
 
-Finally, the time came to the fun part. On the right-hand side, under the 'Search for' element, there are three tabs, and one is called Visualization. Yes! That was it. I chose it and reviewed the list of all available visualizations.
+Finally, the time came for the fun part. On the right-hand side, under the **Search for** element, there are three tabs, and one is called **Visualization**. Yes! That was it. I chose it and reviewed the list of all available visualizations.
 
 ![I chose it and reviewed the list of all available visualizations](panels.png)
 
-You bet I hit the Geomap one.
-Every Grafana visualization has many properties to modify optionally. I did the bare minimum to complete this project swiftly. Here is what I altered. I chose "North America" for a Map View.
+You bet I hit the **Geomap** one.
+Every Grafana visualization has many properties to modify optionally. I did the bare minimum to complete this project swiftly. Here is what I altered. I chose *North America* for a **Map View**.
 
 ![I chose "North America" for a Map View](map-view.png)
 
-The little cherry on top was a filter by facility type. That is done via variables. I went to the gear icon for Dashboard Settings on the top right corner and then into the Variables menu.
+The little cherry on top was a filter by facility type. That is done via ``variables``. I went to the gear icon for **Dashboard Settings** on the top right corner and then into the **Variables** menu.
 
-Below is the picture showing how I set it up. Following the naming convention best practice, I used the v_ prefix since it was a variable name. The label is how the filter is called on the dashboard. Query determines what the values for the filter are going to be. Sort is to make sure the values are sorted in the filter.
+Below is the picture showing how I set it up. Following the naming convention best practice, I used the ``v_`` prefix since it was a variable name. The **label** is how the filter is called on the dashboard. **Query** determines what values for the filter are going to be. **Sort** is to make sure the values are sorted in the filter.
 
 ![Add variables to filter data by State and facility type](variables.png)
 
@@ -146,11 +146,11 @@ Step 4 is complete when you have a working dashboard on your local machine.
 That step might be tricky, depending on how hard it is for you to access the user-facing server. It is likely you might need help from your Network teammates to help with setting this up. Web Servers are far beyond the scope of this article. I only can tell that I am lucky enough to have my Grafana Servers where I can experiment as I please.
 
 However, there is one trick that I would like to share with you. It is pretty easy to transfer the dashboard from one Grafana application to other. In my case, from my local Grafana to the Grafana running on Google Cloud and powering our demo server.
-I clicked on the Share icon. It can be found in the View mode to the right of the Dashboard title.
+I clicked on the **Share** icon. It can be found in the **View** mode to the right of the Dashboard title.
 
 ![Click on the Share icon to export the dashboard](share.png)
 
-Then I went to Export, next to the View JSON. I copied the JSON file from my local Grafana and pasted it into the Grafana on the demo server. That's all. BOOM! I did not have to recreate a new dashboard from scratch. I just copied the description file.
+Then I went to **Export**, next to the **View JSON**. I copied the JSON file from my local Grafana and pasted it into the Grafana on the demo server. That's all. BOOM! I did not have to recreate a new dashboard from scratch. I just copied the description file.
 
 Here how the dashboard looks like.
 
