@@ -22,9 +22,3 @@ jobs:
 
       - name: Build docs
         run: yarn build
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: build.zip
-          path: build
