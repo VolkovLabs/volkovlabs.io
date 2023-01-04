@@ -37,11 +37,7 @@ If your server is publicly available or in a private network, the simplest and e
 
 The disadvantage of this method is that API requests are exposed to the end-users. The REST API server should allow Cross-Origin Resource Sharing (CORS).
 
-:::note
-
-Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
-
-:::
+> Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
 
 We already explained how to configure the panel in the video mentioned above. If this method works for your use case, you can find server code examples in the plugin's GitHub repository:
 
@@ -91,11 +87,7 @@ This option is CORS-ready as an endpoint is a part of the same domain, and API c
 
 The last method is to use a custom Data Source with HTTP Proxy, which you can create following the Grafana tutorial [Add authentication for data source plugins](https://grafana.com/docs/grafana/latest/developers/plugins/add-authentication-for-data-source-plugins/#add-a-dynamic-proxy-route-to-your-plugin) and [our data source template](https://github.com/volkovlabs/volkovlabs-abc-datasource).
 
-:::note
-
-Grafana sends the proxy route to the server, where the data source proxy decrypts any sensitive data and interpolates the template variables with the decrypted data before making the request.
-
-:::
+> Grafana sends the proxy route to the server, where the data source proxy decrypts any sensitive data and interpolates the template variables with the decrypted data before making the request.
 
 Data sources with HTTP Proxy keep authentication information hidden from end-user performing server-side requests. To retrieve and update data using HTTP Proxy, the required endpoint should be defined in the `routes` section of the `plugin.json` configuration file.
 
