@@ -3,7 +3,6 @@ authors:
     - name: Sineos
       url: https://github.com/Sineos
       image_url: https://github.com/Sineos.png
-    - mikhail
 tags: [Apache ECharts, Guest post]
 keywords: [Apache ECharts, Grafana, Visualization]
 ---
@@ -28,7 +27,7 @@ The issue was successfully resolved, and Sineos created this example and attache
 - `set(key: "Source", value: "Self Consumption")` manipulates the field used for naming the series.
 
 ### Query A
-```sql title="Series A"
+```sql
 from(bucket: "home")
   |>  range(start: v.timeRangeStart, stop: v.timeRangeStop)
   |>  filter(fn: (r)  => r["_measurement"] == "vzlogger")
@@ -38,7 +37,7 @@ from(bucket: "home")
   |>  set(key: "Source",  value: "Grid Feed")
 ```
 ### Query B
-```sql title="Series B"
+```sql
 from(bucket: "home")
   |>  range(start: v.timeRangeStart, stop: v.timeRangeStop)
   |>  filter(fn: (r)  => r["_measurement"] == "vzlogger")
@@ -48,7 +47,7 @@ from(bucket: "home")
   |>  set(key: "Source",  value: "Grid Consumption")
 ```
 ### Query C
-```sql title="Series C"
+```sql
 from(bucket: "home")
   |>  range(start: v.timeRangeStart, stop: v.timeRangeStop)
   |>  filter(fn: (r)  => r["_measurement"] == "vzlogger")
@@ -207,17 +206,15 @@ Following dashboard is a ready-to-go example that can be imported into Grafana a
 
 Make sure to install Static data source via the ``Administration -> Plugins`` menu and then add it via the ``Administration -> Data Sources`` menu. 
 
-Once the Static data source is installed and added and the Apache ECharts visualization panel is installed, go to the `Dashboard` menu and select `Import`.
-
-![Import menu](import.png)
-
-In the **Import dashboard** window, insert the JSON code into the **Import via panel json** field (copy the JSON code from below).
+Once the Static data source is installed and added and the Apache ECharts visualization panel is installed, go to the `Dashboard` menu and select `Import`. In the **Import dashboard** window, insert the JSON code into the **Import via panel json** field (copy the JSON code from below).
 
 ![Import menu](import-dashboard.png)
 
-Specify the dashboard name and Static data source, click **Import**. You should see the visualization working right away.
+Specify the dashboard name and Static data source, click **Import**.
 
 ![Import menu](import-dashboard-step2.png)
+
+You should see the visualization working right away.
 
 ![Dashboard](dashboard.png)
 
