@@ -20,7 +20,7 @@ The issue was successfully resolved, and Sineos created this example and attache
 - InfluxDB queries to retrieve data,
 - Ready-to-go Dashboard using the Static Data Source.
 
-![Panel](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/examples/img/stacked_bar_graph_influxdb.png)
+![Panel](panel.png)
 
 ## InfluxDB Data Source
 
