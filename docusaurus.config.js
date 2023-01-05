@@ -173,7 +173,7 @@ const config = {
             items: [
               {
                 label: "Blog",
-                href: "/blog",
+                href: "/blog/archive",
               },
               {
                 label: "GitHub",
@@ -212,7 +212,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["docker"],
+        additionalLanguages: ["docker", "nginx"],
       },
     }),
 };
