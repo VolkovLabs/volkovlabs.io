@@ -21,13 +21,13 @@ We maintain the [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel), whi
 
 RSS data source was created based on the recently released [data source plugin template](/plugins/volkovlabs-abc-datasource). This template is similar to the panel plugin template introduced in the previous articles. RSS/Atom data source retrieves feed and returns data frames to display news using Dynamic Text or other custom panels.
 
-> RSS/Atom data source was added to the Grafana Marketplace on Jan, 12 2022.
+> RSS/Atom data source was added to the Grafana Catalog on Jan, 12 2022.
 
 ## What is the data source plugin, and how to create one?
 
 > Data source plugins communicate with external sources of data and return the data in a format that Grafana understands. By adding a data source plugin, you can immediately use the data in any of your existing dashboards.
 
-There are 120 data source plugins available in the Grafana Marketplace; 22 were added this year. When considering creating a new data source plugin, there are multiple questions you have to answer:
+There are 120 data source plugins available in the Grafana Catalog; 22 were added this year. When considering creating a new data source plugin, there are multiple questions you have to answer:
 
 - Can the data be retrieved using the HTTP(S) protocol?
 - Does the standard HTTP(S) backend fit your needs and provide all required authentication options?

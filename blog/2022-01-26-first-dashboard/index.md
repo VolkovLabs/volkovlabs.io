@@ -17,7 +17,7 @@ Let's get started. After reading my article and following along, I hope you will
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/HNCKbGfAU0Q" title="How to create your Business Grafana dashboard | Step by step for analysts | Grafana Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Suppose your brain works like mine and requires a high-level picture first, then before proceeding, I recommend you to take a look at my previous article. It talks about what Grafana is, what components it consists of, and how they interact. That article also lays out all key Grafana concepts.
+Suppose your brain works like mine and requires a high-level picture first, then before proceeding, I recommend you to take a look at [my previous article](grafana-101-what-why-who-6b25f0d0fd11). It talks about what Grafana is, what components it consists of, and how they interact. That article also lays out all key Grafana concepts.
 
 If you can not wait any longer, let's get to it!
 
