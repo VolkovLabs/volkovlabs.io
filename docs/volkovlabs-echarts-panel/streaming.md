@@ -24,7 +24,7 @@ Streaming is supported by the Apache ECharts visualization panel starting from v
 
 Grafana Live is a real-time messaging engine introduced in Grafana v8.0. With [Grafana Live](https://grafana.com/docs/grafana/latest/setup-grafana/set-up-grafana-live/), you can push event data to a frontend as soon as an event occurs.
 
-![Live](/img/plugins/volkovlabs-echarts-panel/live.png)
+![Live](img/live.png)
 
 ### Function
 
@@ -81,7 +81,7 @@ return {
 
 To stream real-time data, we used the [WebSocket Data Source for Grafana](https://grafana.com/grafana/plugins/golioth-websocket-datasource/).
 
-![Streaming](/img/plugins/volkovlabs-echarts-panel/websocket.png)
+![Streaming](img/websocket.png)
 
 ### Server 
 
