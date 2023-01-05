@@ -43,7 +43,7 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - Allows to display Time global variables (`__to` and `__from`) as seconds, ISO, and formatted using `dayjs`.
 - Supports disable Sanitizing using Grafana configuration `disable_sanitize_html`.
 
-![Dynamic Text Panel](/img/plugins/volkovlabs-dynamictext-panel/screenshot.png)
+![Dynamic Text Panel](img/screenshot.png)
 
 ## Feedback
 

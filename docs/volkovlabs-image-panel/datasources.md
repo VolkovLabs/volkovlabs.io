@@ -39,7 +39,7 @@ where
   name = 'flow';
 ```
 
-![Video file](/img/plugins/volkovlabs-image-panel/video-comments.png)
+![Video file](img/video-comments.png)
 
 PostgreSQL database has built-in functions to work with the Base64 format. 
 

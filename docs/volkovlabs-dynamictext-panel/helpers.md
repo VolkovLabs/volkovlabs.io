@@ -15,7 +15,7 @@ Formats the timestamp in a given field using a date format. Uses [helper-date](h
 
 The field value must be a Unix timestamp or any of the formats supported by [date.js](https://date.js.org/).
 
-```md
+```handlebars
 <!-- Time: 1598791377556 -->
 
 {{date Time "YYYY-MM-DD"}}
@@ -27,7 +27,7 @@ The field value must be a Unix timestamp or any of the formats supported by [dat
 
 Compares two strings for equality.
 
-```md
+```handlebars
 <!-- app: foo -->
 
 {{#if (eq app "foo")}}
@@ -41,7 +41,7 @@ Success!
 
 Join all elements of array into a string using a given separator.
 
-```md
+```handlebars
 <!-- array: ['a', 'b', 'c'] -->
 
 {{join array "-"}}
@@ -53,7 +53,7 @@ Join all elements of array into a string using a given separator.
 
 Checks if given value exists within an array
 
-```md
+```handlebars
 <!-- array: ['a', 'b', 'c'] -->
 
 {{#if (contains array "a")}}
@@ -67,7 +67,7 @@ Success!
 
 Formats the given number using fixed-point notation.
 
-```md
+```handlebars
 <!-- Value: 1.1234 -->
 
 {{toFixed Value 2}}
@@ -79,7 +79,7 @@ Formats the given number using fixed-point notation.
 
 Returns a string array of the currently selected values for a certain [variable](https://grafana.com/docs/grafana/latest/dashboards/variables/).
 
-```md
+```handlebars
 {{variable "hostname"}}
 
 <!-- results in: ['server1', 'server2', 'server3']  -->

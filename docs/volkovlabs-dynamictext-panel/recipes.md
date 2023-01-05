@@ -11,7 +11,7 @@ Useful snippets that you can use in your templates.
 
 ## Markdown list from variable
 
-```md
+```handlebars
 {{#each (variable "hostname")}}
 
 - {{this}}
@@ -21,7 +21,7 @@ Useful snippets that you can use in your templates.
 
 ## Conditional content
 
-```md
+```handlebars
 {{#if app "auth"}}
 This is the auth app.
 {{/if}}
@@ -31,7 +31,7 @@ This is the auth app.
 
 If you would like to render HTML returned by the data source, you need to use three-brace expressions, `{{{htmlValue}}}`, otherwise Handlebars escape the HTML content.
 
-```md
+```handlebars
 <ul>
 {{{htmlValue}}}
 </ul>
@@ -50,12 +50,12 @@ Use the `lookup` helper function to create dynamic templates based on dashboard 
 
 The following template creates a key-value pair from every selected value in the `myvar` dashboard variable.
 
-    ```yml
-    book:
-    {{#each (variable "props")}}
-      {{this}}: {{lookup @root this}}
-    {{/each}}
-    ```
+```handlebars
+book:
+{{#each (variable "props")}}
+  {{this}}: {{lookup @root this}}
+{{/each}}
+```
 
 ## Render a single template
 
@@ -68,7 +68,7 @@ For the following query result:
 
 Given that the **All Rows** switch is turned on, the following template renders a table from the query result:
 
-```md
+```handlebars
 | Title | Author | Year |
 | ----- | ------ | ---- |
 
