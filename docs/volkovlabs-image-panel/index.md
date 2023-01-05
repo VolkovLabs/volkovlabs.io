@@ -53,7 +53,7 @@ grafana-cli plugins install volkovlabs-image-panel
 
 You can use the Static data source to store any supported formats in Base64 on your Grafana dashboard. 
 
-![Image Panel](/img/plugins/volkovlabs-image-panel/image.png)
+![Image Panel](img/image.png)
 
 ## Feedback
 

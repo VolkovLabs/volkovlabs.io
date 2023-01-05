@@ -57,7 +57,7 @@ For instance, if your data source returns the following 4 columns of data:
 
 you can iterate using the following handlebars commands:
 
-```md
+```handlebars
 {{#each (variable "hostname")}}
 
 - {{app}}
