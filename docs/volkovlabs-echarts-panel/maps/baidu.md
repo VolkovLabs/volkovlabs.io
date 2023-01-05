@@ -25,7 +25,7 @@ Baidu Maps are loaded using API v3 and require Access Key. You can get it from [
 
 Animation examples.
 
-![Loading Option 1](/img/plugins/volkovlabs-echarts-panel/waiting-1.gif) ![Loading Option 2](/img/plugins/volkovlabs-echarts-panel/waiting-2.gif)
+![Loading Option 1](../img/waiting-1.gif) ![Loading Option 2](../img/waiting-2.gif)
 
 ## Function
 

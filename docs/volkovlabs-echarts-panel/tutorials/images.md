@@ -59,4 +59,4 @@ You can copy the below code and run it in the Apache ECharts visualization panel
 
 You should see the following visualization:
 
-![Images examples](/img/plugins/volkovlabs-echarts-panel/image-types.png)
+![Images examples](../img/image-types.png)
