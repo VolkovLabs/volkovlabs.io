@@ -173,7 +173,7 @@ const config = {
             items: [
               {
                 label: "Blog",
-                href: "/blog",
+                href: "/blog/archive",
               },
               {
                 label: "GitHub",
