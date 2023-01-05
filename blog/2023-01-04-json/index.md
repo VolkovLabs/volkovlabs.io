@@ -7,7 +7,7 @@ keywords: [JSON, API, Data Source]
 
 # JSON API Data sources in Grafana
 
-Grafana is a visualization tool with all blows and whistles you can think of. Yet, by definition, Grafana never stands alone. Grafana <u>displays</u>, it does not generate, it does not store (with some exceptions, a.k.a. [Static data source, storage function](https://volkovlabs.io/plugins/volkovlabs-static-datasource/)). It always has to interact with another artifact: the data storage, whatever that storage is. 
+Grafana is a visualization tool with all blows and whistles you can think of. Yet, by definition, Grafana never stands alone. Grafana <u>displays</u>, it does not generate, it does not store (with some exceptions, a.k.a. [Static data source, storage function](/plugins/volkovlabs-static-datasource)). It always has to interact with another artifact: the data storage, whatever that storage is. 
 
 Access via API is one possible approach a visualization tool can use to connect to data storage. This article will share my analysis of the existing API Grafana data source.
 
