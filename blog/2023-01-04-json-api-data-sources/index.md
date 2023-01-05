@@ -1,15 +1,15 @@
 ---
 authors: [daria]
-slug: json-20230104
-tags: [JSON, API, Data Source, Infinity, Simpod, Grafana]
-keywords: [JSON, API, Data Source]
+slug: json-api-data-sources-in-grafana-20230104
+tags: [API, Data Source, JSON]
+keywords: [JSON, API, Data Source, Infinity, Simpod, Grafana]
 ---
 
 # JSON API Data sources in Grafana
 
-Grafana is a visualization tool with all blows and whistles you can think of. Yet, by definition, Grafana never stands alone. Grafana <u>displays</u>, it does not generate, it does not store (with some exceptions, a.k.a. [Static data source, storage function](/plugins/volkovlabs-static-datasource)). It always has to interact with another artifact: the data storage, whatever that storage is. 
+Grafana is a visualization tool with all blows and whistles you can think of. Yet, by definition, Grafana never stands alone. Grafana **displays**, it does not generate, it does not store (with some exceptions, a.k.a. [Static data source, storage function](/plugins/volkovlabs-static-datasource)). It always has to interact with another artifact: the data storage, whatever that storage is. 
 
-Access via API is one possible approach a visualization tool can use to connect to data storage. This article will share my analysis of the existing API Grafana data source.
+Access via API is one possible approach a visualization tool can use to connect to data storage. This article will share my analysis of the existing API Grafana data sources.
 
 <!--truncate-->
 
@@ -32,7 +32,6 @@ All that above brings me to the API data source definition.
 > **API data source** in Grafana is a plugin that downloads a file via provided link and then, following the given instructions, reads the file and converts it into a **Grafana data frame**.
 
 Boom! That was your API 101 crash course. 
-
 
 ![API Concept](API-concept.png)
 
@@ -59,7 +58,7 @@ There are many open datasets available to everybody interested in their free dat
 - [American Economic Association](https://www.aeaweb.org/),
 - [NASA Open Data Portal](https://data.nasa.gov/).
 
-#### History lesson
+#### Author
 
 Marcus Olsson has created the plugin. Now  Grafana Labs has taken over and fully maintains it.
 
@@ -91,15 +90,16 @@ You can look for a rejection error in your browser's ``Console`` mode. Unfortuna
 
 ![API Concept](cors.png)
 
-#### History lesson
+#### Author
+
 Sriramajeyam Sugumaran has created this plugin. He maintains and supports it to this moment.
 
-
-## [SimPod API data source](https://grafana.com/grafana/plugins/simpod-json-datasource/)
+### [SimPod API data source](https://grafana.com/grafana/plugins/simpod-json-datasource/)
 
 This API data source is for advanced users. This data source is tightly coupled with Grafana core functionality, like tags, variables, range filters, etc. For all that to work, SimPod expects a specific data format. That means you will have to create your own API server to interact with external resources. That server will retrieve data in the original layout and convert it into SimPod format.
 
-#### History lesson
+#### Author
+
 Šimon Podlipský has created this plugin. He maintains and supports it to this moment.
 
 ## Summary schema
@@ -108,24 +108,23 @@ The schema below summarizes the comparative analysis. It shows four data sources
 
 Colors highlight scenarios for each data source.
 
-<u>Red</u> highlights the JSON API data source scenario. It shows that this data source is awesome for beginners, works in no CORS restrictions environment, supports only one format (JSON), and is great for interacting with open datasets. 
+**Red** highlights the JSON API data source scenario. It shows that this data source is awesome for beginners, works in no CORS restrictions environment, supports only one format (JSON), and is great for interacting with open datasets. 
 
-<u>Yellow</u> highlights the Infinity data source scenario, showing that Infinity can work with CORS and no CORS environments (since it could access the data domains from ``frontend`` and ``backend``), supports various formats and is great to work with both open and corporate datasets. 
+**Yellow** highlights the Infinity data source scenario, showing that Infinity can work with CORS and no CORS environments (since it could access the data domains from ``frontend`` and ``backend``), supports various formats and is great to work with both open and corporate datasets. 
 
-Simpod in <u>green</u> color adds extra functionality on top of the core Grafana dashboard for the price of your own API server to provide a specific data format (I called it ``JSON+simpod`` format in my schema).
+Simpod in **green** color adds extra functionality on top of the core Grafana dashboard for the price of your own API server to provide a specific data format (I called it ``JSON+simpod`` format in my schema).
 
-In <u>purple</u> color, the schema has all corporate scenarios where ``direct`` access to the database is permitted. 
+In **purple** color, the schema has all corporate scenarios where ``direct`` access to the database is permitted. 
 ![JSON API Data Sources schema](JSON-API-schema.png)
 
 ## Our YouTube channel's relevant videos
 
-- I go over the schema in the following video:
+I go over the schema in the following video "JSON Data Sources for Grafana".
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/h1Mx4UvtKGY" title="JSON Data Sources for Grafana | JSON API, Infinity, Simpod compared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- Watch the other video to get a detailed tutorial on displaying data on your Grafana dashboard using JSON API and Infinity data sources.
+Watch the other video to get a detailed tutorial on displaying data on your Grafana dashboard using JSON API and Infinity data sources.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/B4Uj1n4Cr88" title="JSON Data Sources for Grafana | JSON API, Infinity, Simpod compared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Any feedback and comments are welcome. Feel free to challenge us with your questions. It helps us to stay sharp!
-
