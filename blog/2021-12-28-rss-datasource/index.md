@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: do-you-want-to-be-on-top-of-the-latest-news-staying-in-grafana-9abb064ed449
-tags: [RSS]
+tags: [RSS, Dynamic Text]
 keywords: [Image, PDF, Base64, Visualization]
 ---
 
