@@ -33,7 +33,7 @@ All that above brings me to the API data source definition.
 
 Boom! That was your API 101 crash course. 
 
-![API Concept](API-concept.png)
+![API Concept](api-concept.png)
 
 ## What are the most popular API data sources in Grafana
 
@@ -115,7 +115,7 @@ Colors highlight scenarios for each data source.
 Simpod in **green** color adds extra functionality on top of the core Grafana dashboard for the price of your own API server to provide a specific data format (I called it ``JSON+simpod`` format in my schema).
 
 In **purple** color, the schema has all corporate scenarios where ``direct`` access to the database is permitted. 
-![JSON API Data Sources schema](JSON-API-schema.png)
+![JSON API Data Sources schema](json-api-schema.png)
 
 ## Our YouTube channel's relevant videos
 
