@@ -7,7 +7,7 @@ keywords: [Image, PDF, Base64, Visualization]
 
 # Using Grafana to display Large PDF documents? We've got you covered
 
-We discussed the benefits of using Docker containers and initial Provisioning in [the recent article](display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e) on creating our panel plugin template for Grafana. While working on the current feature request for the Base64 image/PDF panel, this technique helped us quickly deliver solutions and improve the long-term support for the panel.
+We discussed the benefits of using Docker containers and initial Provisioning in [the recent article](/blog/display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e) on creating our panel plugin template for Grafana. While working on the current feature request for the Base64 image/PDF panel, this technique helped us quickly deliver solutions and improve the long-term support for the panel.
 
 <!--truncate-->
 
