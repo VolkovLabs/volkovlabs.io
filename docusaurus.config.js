@@ -172,7 +172,7 @@ const config = {
             title: "Social",
             items: [
               {
-                label: "Blog",
+                label: "Blog Archive",
                 href: "/blog/archive",
               },
               {
