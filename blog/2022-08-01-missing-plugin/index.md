@@ -15,7 +15,7 @@ Apache ECharts is a free, powerful charting and visualization libraries offering
 
 [![ECharts](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png)](https://echarts.volkovlabs.io)
 
-The Apache ECharts <u>visualization panel</u> is a plugin for Grafana that allows you to incorporate the Apache ECharts libraries into your Grafana dashboard. The original plugin was developed for Grafana 6.3/7.0 and Apache ECharts libraries 4.9.0. It has not been maintained since then.
+The Apache ECharts visualization panel is a plugin for Grafana that allows you to incorporate the Apache ECharts libraries into your Grafana dashboard. The original plugin was developed for Grafana 6.3/7.0 and Apache ECharts libraries 4.9.0. It has not been maintained since then.
 
 Volkov Labs adapted and updated it based on the latest Grafana 9 with Apache ECharts libraries 5.3.3, introducing new features like Monaco Code Editor and supporting SVG and Canvas renderer.
 

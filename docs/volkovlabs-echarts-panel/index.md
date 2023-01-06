@@ -26,8 +26,8 @@ The Apache ECharts plugin is a visualization panel for Grafana that allows you t
 Apache ECharts visualization panel offers an easy way of adding intuitive, interactive, and highly customizable charts into your Grafana dashboard. 
 
 Simply put, and to avoid confusion, 
- - Apache ECharts <u>libraries</u> is the charting library.
- - Apache ECharts <u>plugin</u> (which is the same as Apache ECharts <u>visualization panel</u>) brings the Apache ECharts <u>libraries</u> into the Grafana dashboard.
+ - Apache ECharts libraries is the charting library.
+ - Apache ECharts plugin (which is the same as the Apache ECharts visualization panel) brings the Apache ECharts libraries into the Grafana dashboard.
 
 ### Requirements
 

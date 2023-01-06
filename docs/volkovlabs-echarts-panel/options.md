@@ -9,7 +9,7 @@ tags:
 
 # setOption() function
 
-`setOption(options)` is the main Apache ECharts <u>library</u> function. This function is called to build any chart. It has one mandatory parameter - `options` which is a chart configuraion in a JSON format.
+`setOption(options)` is the main Apache ECharts library function. This function is called to build any chart. It has one mandatory parameter - `options` which is a chart configuration in a JSON format.
 
 ![setOptions Schema](img/schema.png)
 

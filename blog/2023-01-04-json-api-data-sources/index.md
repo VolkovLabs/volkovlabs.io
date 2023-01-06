@@ -78,7 +78,7 @@ Like JSON API data source, Infinity can seamlessly work with open data sets (the
 
 To better understand CORS, I start with
 
-> ``Same-origin policy`` is a policy allowing to interact resources <u>ONLY</u> from the same domain, host and port.
+> ``Same-origin policy`` is a policy allowing to interact resources **ONLY** from the same domain, host and port.
 For instance, **abc.com** can retrieve data from **abc.com/page1**, but is not permitted to access **anyotherdomain.com**.
 
 > ``Cross Origin Resource Sharing (CORS)`` policy is more flexible. It was created to allow different domains to interact. 
