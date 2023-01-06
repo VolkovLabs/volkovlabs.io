@@ -8,7 +8,7 @@ tags:
 
 # Dynamic Text Panel
 
-[![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
+[![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)](https://www.grafana.com)
 ![CI](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-dynamictext-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-dynamictext-panel)
 [![CodeQL](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/actions/workflows/codeql-analysis.yml)
@@ -17,7 +17,7 @@ tags:
 
 A Dynamic Text visualization panel is a Grafana plugin that transforms monotone text/table data into vibrant, easy-to-read information cards. The panel supports variables, Markdown and Handlebars.
 
-The built-in Text panel in Grafana does support variables but does not support any styling features. The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/MpNZ4Yl-p0U" title="Dynamic Text Plugin for Grafana | Markdown, HTML and Handlebars to transform data visualizations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -42,6 +42,7 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - HTML inside templates is sanitized using [XSS](https://jsxss.com/en/index.html) through `textUtil`.
 - Allows to display Time global variables (`__to` and `__from`) as seconds, ISO, and formatted using `dayjs`.
 - Supports disable Sanitizing using Grafana configuration `disable_sanitize_html`.
+- Allows to display nested objects using `{{json object}}` Handlebars helper.
 
 ![Dynamic Text Panel](img/screenshot.png)
 
