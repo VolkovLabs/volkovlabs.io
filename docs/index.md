@@ -48,7 +48,7 @@ Refactoring may introduce breaking changes. Please test before upgrading in Prod
 
 - Fix javascript code in documentation (#102)
 
-## [Calendar Panel 1.1.0 (2022-12-12)](https://github.com/VolkovLabs/volkovlabs-calendar-panel/releases/tag/v1.1.0)
+## [Calendar Panel 1.1.0 (2022-12-12)](/blog/calendar-panel-1.1.0-20221212)
 
 ### Breaking changes
 
