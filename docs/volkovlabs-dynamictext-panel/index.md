@@ -19,7 +19,7 @@ A Dynamic Text visualization panel is a Grafana plugin that transforms monotone 
 
 The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/MpNZ4Yl-p0U" title="Dynamic Text Plugin for Grafana | Markdown, HTML and Handlebars to transform data visualizations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/MpNZ4Yl-p0U" title="Dynamic Text Plugin for Grafana | Markdown, HTML and Handlebars to transform data visualizations" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Requirements
 

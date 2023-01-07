@@ -78,7 +78,7 @@ The ECharts panel is a plugin for Grafana that allows visualizing Apache ECharts
 
 The original plugin was developed for Grafana 6.3/7.0 and ECharts 4.9.0. It has not been maintained since then. Volkov Labs adapted and updated it based on the Grafana 9 with ECharts 5.3.3, introducing new features like Monaco Code Editor and supporting SVG and Canvas renderer.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/DxqCrBEmrQw" title="Apache Echarts panel for Grafana | How to create modern dashboards in Grafana | Echarts Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/DxqCrBEmrQw" title="Apache Echarts panel for Grafana | How to create modern dashboards in Grafana | Echarts Tutorial" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 The Apache ECharts panel was recently submitted to the Grafana Catalog. Meanwhile, it can be installed manually from our private repository or downloaded directly from GitHub:
 

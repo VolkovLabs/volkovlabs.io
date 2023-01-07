@@ -19,7 +19,7 @@ The Balena NFS project demonstrates how to deploy the NFS Server and Client in b
 
 Read more in the Balena blog post, "[Using NFS Server to share external storage between containers](https://www.balena.io/blog/using-nfs-server-to-share-external-storage-between-containers-balena/)".
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/_kyNSLeAT84" title="Using Network File System (NFS) in Balena | Share external storage between containers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/_kyNSLeAT84" title="Using Network File System (NFS) in Balena | Share external storage between containers" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Requirements
 

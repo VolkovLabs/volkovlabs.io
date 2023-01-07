@@ -15,7 +15,7 @@ The satisfying AHA moment, a.k.a. 'Now I get it' moment sparks up just after you
 
 Let's get started. After reading my article and following along, I hope you will arrive at the same results as I did. Please, feel free to ask questions. I will be thrilled to help you solve your issues as I consider myself a Grafana expert and appreciate a good challenge once in a while to prove it.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/HNCKbGfAU0Q" title="How to create your Business Grafana dashboard | Step by step for analysts | Grafana Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/HNCKbGfAU0Q" title="How to create your Business Grafana dashboard | Step by step for analysts | Grafana Tutorial" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 Suppose your brain works like mine and requires a high-level picture first, then before proceeding, I recommend you to take a look at [my previous article](/blog/grafana-101-what-why-who-6b25f0d0fd11). It talks about what Grafana is, what components it consists of, and how they interact. That article also lays out all key Grafana concepts.
 
@@ -94,7 +94,7 @@ Step 2 is complete when you have loaded your data file into the PostgreSQL datab
 
 Like PostgreSQL, you can install it directly on your machine or use Grafana in the Docker container. Either way works. The latter is cleaner to my taste. You can download both from [grafana.com](https://grafana.com).
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 Download the Grafana Installation package of your choice. It could be Linux, Windows, Mac, or a Docker Container.
 

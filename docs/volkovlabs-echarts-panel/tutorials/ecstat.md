@@ -29,4 +29,4 @@ Watch the video for detailed tutorial on three data mining ecStat functions
  
 In addition to the above ecStat also provides basic statistical tools like deviation, quantile, min, max, mean, and median.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/qfDrAW8-Mh8" title="Histograms, Clustering. Regression in Apache ECharts panel for Grafana | ecStat math, stat library" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/qfDrAW8-Mh8" title="Histograms, Clustering. Regression in Apache ECharts panel for Grafana | ecStat math, stat library" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

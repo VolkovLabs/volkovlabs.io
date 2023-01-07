@@ -15,7 +15,7 @@ If you are here, you probably know what Grafana is and have already been playing
 
 The installation of Grafana directly on the operating system takes a minute or two. However, working with [Grafana in a Docker container](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/) is more advantageous.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 Once installed, Grafana delivers a broad spectrum of built-in visualization panels and data sources. You most likely know that if the out-of-the-box features do not yet endure your use case, the friendly community has plenty of add-ons in the shape of plugins you can download from the Grafana Catalog.
 
@@ -25,7 +25,7 @@ So, here you are, at the point of knowing that Grafana architecture and function
 
 The truth is the fundamental UI components are pre-defined. There is no straightforward way to adjust them.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/3GRoa8TzIxY" title="How to customize Grafana interface | Change titles, icons, footer, default dashboard | Grafana 9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/3GRoa8TzIxY" title="How to customize Grafana interface | Change titles, icons, footer, default dashboard | Grafana 9" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 In this article, we collected all commands that will help you to play with UI in style. Let's go!
 

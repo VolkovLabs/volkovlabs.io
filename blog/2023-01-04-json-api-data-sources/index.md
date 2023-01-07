@@ -121,10 +121,10 @@ In **purple** color, the schema has all corporate scenarios where ``direct`` acc
 
 I go over the schema in the following video "JSON Data Sources for Grafana".
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/h1Mx4UvtKGY" title="JSON Data Sources for Grafana | JSON API, Infinity, Simpod compared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/h1Mx4UvtKGY" title="JSON Data Sources for Grafana | JSON API, Infinity, Simpod compared" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 Watch the other video to get a detailed tutorial on displaying data on your Grafana dashboard using JSON API and Infinity data sources.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/B4Uj1n4Cr88" title="JSON Data Sources for Grafana | JSON API, Infinity, Simpod compared" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/B4Uj1n4Cr88" title="JSON Data Sources for Grafana | JSON API, Infinity, Simpod compared" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 Any feedback and comments are welcome. Feel free to challenge us with your questions. It helps us to stay sharp!

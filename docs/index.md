@@ -8,13 +8,6 @@ tags:
 
 # What’s new
 
-:::info
-
-Our Grafana plugins are open source and we update them constantly. [Become our sponsor on GitHub](https://github.com/sponsors/VolkovLabs).
-
-:::
-
-
 ## [Static Data Source 2.1.0 (2022-12-29)](/blog/static-datasource-2.1.0-20221229)
 
 ### Breaking changes

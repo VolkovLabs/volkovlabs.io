@@ -71,7 +71,7 @@ You can find the complete list of all global variables in the [Grafana Documenta
 
 Grafana could be installed in a Docker container or directly on the operating system. If you need more details, watch the following YouTube video demonstrating two types of Grafana installation: in a Docker container and on Windows/Mac.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 In both types of installation, an environment variable is a key-value parameter that is designed to either capture a descriptive system element or value to impact the running process. In other words, those variables can keep the system configuration secrets and statuses. That imposes the need for extra caution while working with them.
 
