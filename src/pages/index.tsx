@@ -149,8 +149,8 @@ const Main = (siteConfig) => {
             <h2 className="hero__title margin-vert--lg">Why work with us</h2>
 
             <p className="margin-vert--lg hero__subtitle">
-              "Volkov Labs' custom plugin development service is amazing. <br />{" "}
-              It is a rocket ship for transitioning an idea to reality."
+              "Volkov Labs' plugin development service is amazing. <br /> It is
+              a rocket ship for transitioning an idea to reality."
             </p>
 
             <p className="margin-vert--md">

@@ -15,7 +15,7 @@ Our Grafana plugins are open source and we update them constantly. [Become our s
 :::
 
 
-## [Static Data Source 2.1.0 (2022-12-29)](https://github.com/VolkovLabs/volkovlabs-static-datasource/releases/tag/v2.1.0)
+## [Static Data Source 2.1.0 (2022-12-29)](/blog/static-datasource-2.1.0-20221229)
 
 ### Breaking changes
 
@@ -32,7 +32,7 @@ Refactoring may introduce breaking changes. Please test before upgrading in Prod
 - Refactoring frame, field utilities (#29)
 - Add Date Time Picker, Number, and Text Area Inputs (#30)
 
-## [Apache ECharts Panel 4.0.0 (2022-12-20)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v4.0.0)
+## [Apache ECharts Panel 4.0.0 (2022-12-20)](/blog/echarts-panel-4.0.0-20221220)
 
 ### Breaking changes
 
@@ -48,7 +48,7 @@ Refactoring may introduce breaking changes. Please test before upgrading in Prod
 
 - Fix javascript code in documentation (#102)
 
-## [Calendar Panel 1.1.0 (2022-12-12)](https://github.com/VolkovLabs/volkovlabs-calendar-panel/releases/tag/v1.1.0)
+## [Calendar Panel 1.1.0 (2022-12-12)](/blog/calendar-panel-1.1.0-20221212)
 
 ### Breaking changes
 
