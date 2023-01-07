@@ -17,9 +17,9 @@ You specify the `options` in the Apache ECharts visualization panel in the Monac
 
 ![setOptions Function](img/function.png)
 
-This whole text area is basically a body of the function that you write for the execution. This function takes in many parameters from Grafana. See the full list in the table below.
+This whole text area is basically a body of the function that you write for the execution. This function takes in many parameters from Grafana. See the complete list in the table below.
 
-The only one parameter that is passed from this function to the `setOption()` is `options`. See the 'return' statement on the picture above.
+The only parameter that is passed from this function to the `setOption()` is `options`. See the 'return' statement in the picture above.
  
 ## Parameters
 
@@ -36,7 +36,7 @@ The only one parameter that is passed from this function to the `setOption()` is
 | `theme` | Grafana's `theme` object. |
 
 
-To learn more about parameters you can log them in the Browser Console:
+To learn more about parameters, you can log them in the Browser Console:
 
 ```javascript
 console.log(data, theme, echartsInstance, echarts, replaceVariables, locationService);
@@ -44,7 +44,7 @@ console.log(data, theme, echartsInstance, echarts, replaceVariables, locationSer
 
 ## Event Handling
 
-Users can trigger corresponding events by their operation. To react on Mouse and other events use `echartsInstance`:
+Users can trigger related events through their operation. To react on Mouse and other events, use `echartsInstance``:
 
 ```javascript
 /**
@@ -76,9 +76,9 @@ notifySuccess(['Update', 'Values updated successfully.']);
 notifyError(['Update', `An error occured updating values.`]);
 ```
 
-## Scale when resize
+## Scale when resizing
 
-To scale the content when panel resized use `echartsInstance` methods to retrieve width and height of the panel.
+To scale the content when panel is resized use `echartsInstance` methods to retrieve the width and height of the panel.
 
 ```javascript
   graphic: {
@@ -92,3 +92,89 @@ To scale the content when panel resized use `echartsInstance` methods to retriev
 ```
 
 To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.
+
+## Data Zoom to update Time Range
+
+Data Zoom feature allows to select the time range on the chart. When time range selected the event can trigger updating dashboard's time range using `locationService` parameter similar to Grafana behaviour.
+
+![Data Zoom feature for Random Walk](img/data-zoom.png)
+
+```javascript
+const series = data.series.map((s) => {
+  const sData = s.fields.find((f) => f.type === 'number').values.buffer;
+  const sTime = s.fields.find((f) => f.type === 'time').values.buffer;
+
+  return {
+    name: s.refId,
+    type: 'line',
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
+  };
+});
+
+/**
+ * Enable Data Zoom by default
+ */
+setTimeout(() => echartsInstance.dispatchAction({
+  type: 'takeGlobalCursor',
+  key: 'dataZoomSelect',
+  dataZoomSelectActive: true,
+}), 500);
+
+/**
+ * Update Time Range on Zoom
+ */
+echartsInstance.on('datazoom', function (params) {
+  const startValue = params.batch[0]?.startValue;
+  const endValue = params.batch[0]?.endValue;
+  locationService.partial({ from: startValue, to: endValue });
+});
+
+return {
+  backgroundColor: 'transparent',
+  tooltip: {
+    trigger: 'axis',
+  },
+  legend: {
+    left: '0',
+    bottom: '0',
+    data: data.series.map((s) => s.refId),
+    textStyle: {
+      color: 'rgba(128, 128, 128, .9)',
+    },
+  },
+  toolbox: {
+    feature: {
+      dataZoom: {
+        yAxisIndex: 'none',
+        icon: {
+          zoom: 'path://',
+          back: 'path://',
+        },
+      },
+      saveAsImage: {},
+    }
+  },
+  xAxis: {
+    type: 'time',
+  },
+  yAxis: {
+    type: 'value',
+    min: 'dataMin',
+  },
+  grid: {
+    left: '2%',
+    right: '2%',
+    top: '2%',
+    bottom: 24,
+    containLabel: true,
+  },
+  series,
+};
+```
