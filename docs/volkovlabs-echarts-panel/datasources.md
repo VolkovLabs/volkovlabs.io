@@ -28,7 +28,7 @@ data.series.map((s) => {
 - `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries - `logo`,`connections`, and `nodes`.
 - `name` is the data frame column name. The code above references `body`,`source`,`target`,`title`,and `description` columns.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/K5YNMSIm9AM" title="How to use Data Source in Apache ECharts in 90 seconds | Grafana Data attribute" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/K5YNMSIm9AM" title="How to use Data Source in Apache ECharts in 90 seconds | Grafana Data attribute" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Array of Arrays
 

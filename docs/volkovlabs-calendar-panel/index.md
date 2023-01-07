@@ -18,7 +18,7 @@ tags:
 
 The Calendar visualization panel is a Grafana plugin created to display calendar events from data sources.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/iPJ122x0oos" title="Calendar plugin for Grafana tutorial | Step by step | JSON API plugin example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/iPJ122x0oos" title="Calendar plugin for Grafana tutorial | Step by step | JSON API plugin example" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ### Requirements
 

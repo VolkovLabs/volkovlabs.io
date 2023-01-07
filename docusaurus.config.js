@@ -21,7 +21,6 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "plugins",
-          editUrl: "https://github.com/VolkovLabs/volkovlabs.io/tree/main",
         },
         blog: {
           postsPerPage: "ALL",
@@ -169,7 +168,7 @@ const config = {
             ],
           },
           {
-            title: "Social",
+            title: "Discover",
             items: [
               {
                 label: "Blog Archive",

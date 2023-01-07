@@ -49,4 +49,4 @@ You can learn more about balena Labels in the [Documentation](https://www.balena
 
 This video highlights just one example of many possible solutions when you can combine balena for IoT networking and Grafana with open-source one-click away features on top.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/zf98C3lux54" title="IoT Framework based on balena and Grafana | Open source Grafana plugins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/zf98C3lux54" title="IoT Framework based on balena and Grafana | Open source Grafana plugins" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

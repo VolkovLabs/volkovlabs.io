@@ -23,6 +23,7 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "start": "docusaurus start",
+    "swizzle": "docusaurus swizzle",
     "upgrade": "yarn upgrade --latest"
   },
   "version": "3.1.0"

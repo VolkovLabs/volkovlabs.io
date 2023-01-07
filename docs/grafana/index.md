@@ -16,7 +16,7 @@ The Grafana community is constantly growing, and we are happy to welcome new pro
 
 This video is for anyone who just started with Grafana and wondering what the installation process looks like. The most efficient and cleanest option is to use Grafana in a docker container. 
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Dashboard, Global and Environment Variables
 
@@ -25,10 +25,10 @@ The topic of variables in Grafana has generated a myriad of questions lately. We
  - `Global` variables are Grafana settings you can retrieve and use on your dashboards. You can find [global built-in variables](https://grafana.com/docs/grafana/latest/variables/variable-types/global-variables/) in the Grafana documentation.
  - `Environment` variables are the variables from the Grafana environment (operating system and/or device) where Grafana is installed. Conventionally those variables are off-limits, but with <i>the environment data source</i> plugin, access to the environment variables is possible! 
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 ## Replicate and reuse panels in Grafana
 
 The Library panels feature was introduced in Grafana 8 and updated in Grafana 9. We loved it so much that decided to create a whole video about it. 
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/kCFH15QeIRY" title="Library panels in Grafana 9 | Replicate and reuse panels in Grafana | Step by step tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/kCFH15QeIRY" title="Library panels in Grafana 9 | Replicate and reuse panels in Grafana | Step by step tutorial" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
