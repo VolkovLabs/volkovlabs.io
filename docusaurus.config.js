@@ -55,11 +55,6 @@ const config = {
         },
         items: [
           {
-            href: "/blog",
-            position: "left",
-            label: "Blog",
-          },
-          {
             label: "Company",
             position: "left",
             items: [
@@ -78,14 +73,20 @@ const config = {
             ],
           },
           {
+            href: "/blog",
+            position: "right",
+            label: "Blog",
+          },
+          {
             href: "/plugins",
             position: "right",
             label: "Documentation",
           },
           {
-            href: "https://www.youtube.com/@volkovlabs/community",
+            href: "https://www.youtube.com/@volkovlabs",
             position: "right",
-            label: "YouTube Community",
+            className: "header-youtube-link",
+            "aria-label": "YouTube Channel",
           },
         ],
       },
