@@ -23,7 +23,7 @@ Static Data Source is an excellent solution for not huge sizes. If you get a `41
 
 :::
 
-![Image Panel](img/image.png)
+![Image Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-image-panel/main/src/img/image-panel.png)
 
 ## PostgreSQL
 
