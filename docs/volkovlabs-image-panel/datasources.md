@@ -23,6 +23,8 @@ Static Data Source is an excellent solution for not huge sizes. If you get a `41
 
 :::
 
+![Image Panel](img/image.png)
+
 ## PostgreSQL
 
 The data source should return encoded file content and may return format definition `data:video/mp4;base64,ENCODED-CONTENT` for media files:

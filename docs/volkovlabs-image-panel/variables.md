@@ -10,8 +10,7 @@ tags:
 
 # Variables
 
-To learn about three types of variables, watch the following video.
-[Three types of Grafana's variables](/plugins/grafana/#dashboard-global-and-environment-variables)
+To learn about three types of variables, watch the following video: [Three types of Grafana's variables](/plugins/grafana/#dashboard-global-and-environment-variables)
 
 The Base64 Image/Video/Audio/PDF visualization panel supports `dashboard` and `global` variables in the panel option `Image URL`.
 
