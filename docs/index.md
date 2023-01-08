@@ -61,7 +61,7 @@ Refactoring may introduce breaking changes. Please test before upgrading in Prod
 - Refactoring and Removing legacy code (#62)
 - Refactor Panel Options and add Annotations options (#63)
 
-## [Dynamic Text Panel 2.1.0 (2022-11-27)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.1.0)
+## [Dynamic Text Panel 2.1.0 (2022-11-27)](/blog/dynamictext-panel-2.1.0-20221127)
 
 ### Breaking changes
 
@@ -79,7 +79,7 @@ Refactoring may introduce breaking changes. Please test before upgrading in Prod
 - Refactor Alert Message and Text Options (#117)
 - Add Support for Disable Sanitize HTML configuration (#118)
 
-## [Data Manipulation Panel 2.7.0 (2022-11-10)](https://github.com/VolkovLabs/volkovlabs-form-panel/releases/tag/v2.7.0)
+## [Data Manipulation Panel 2.7.0 (2022-11-10)](/blog/form-panel-2.7.0-20221110)
 
 ### Features / Enhancements
 
