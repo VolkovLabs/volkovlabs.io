@@ -11,6 +11,8 @@ Useful snippets that you can use in your templates.
 
 ## Iterate through all fields in each record
 
+**All Rows** should be selected in the Panel options.
+
 ```handlebars
 {{#each data}}
   {{#each this}} {{@key}}: {{this}} {{/each}}
