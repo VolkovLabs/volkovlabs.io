@@ -8,6 +8,15 @@ tags:
 
 # What’s new
 
+## [Base64 Image/Video/Audio/PDF Panel 3.4.0 (2022-01-08)](/blog/image-panel-3.4.0-20230108)
+
+### Features / Enhancements
+
+- Update to Grafana 9.3.2 (#60)
+- Add Documentation links (#61)
+- Update README and documentation (#62)
+- "New Year" edition
+
 ## [Static Data Source 2.1.0 (2022-12-29)](/blog/static-datasource-2.1.0-20221229)
 
 ### Breaking changes

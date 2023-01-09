@@ -7,7 +7,7 @@ keywords: [Data Source, Static, Storage, Grafana]
 
 # Static Data Source 2.1.0
 
-We released a new version of **Static Data Source 2.1.0**. In this version, we
+We released a new version of Static Data Source 2.1.0. In this version, we
 - finished refactoring
 - updated to the latest Grafana toolkit 9.3.2
 - introduced new features for `Time`, `Number`, and `String` fields.

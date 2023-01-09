@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: json-api-data-sources-in-grafana-20230104
-tags: [API, Data Source, JSON]
+tags: [API, Data Source, JSON, Business]
 keywords: [JSON, API, Data Source, Infinity, Simpod, Grafana]
 ---
 
