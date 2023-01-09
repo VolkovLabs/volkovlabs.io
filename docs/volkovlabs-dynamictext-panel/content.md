@@ -35,6 +35,12 @@ where `htmlValue` is
 <li>bar</li>
 ```
 
+## Field name with spaces
+
+Field names with spaces should be displayed as `{{[Field Name]}}` or `{{'Field Name'}}`
+
+![Fields](img/fields.png)
+
 ## Default content
 
 The default content is displayed if the connected data source returns nothing. Use it to give users instructions on what to do or who to contact when the query returns an empty result.

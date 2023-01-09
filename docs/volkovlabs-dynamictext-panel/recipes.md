@@ -9,13 +9,11 @@ tags:
 
 Useful snippets that you can use in your templates.
 
-## Markdown list from variable
+## Iterate through all fields in each record
 
 ```handlebars
-{{#each (variable "hostname")}}
-
-- {{this}}
-
+{{#each data}}
+  {{#each this}} {{@key}}: {{this}} {{/each}}
 {{/each}}
 ```
 
@@ -27,6 +25,14 @@ Useful snippets that you can use in your templates.
 {{else}}
   This is not an auth app.
 {{/if}}
+```
+
+## Markdown list from variable
+
+```handlebars
+{{#each (variable "hostname")}}
+- {{this}}
+{{/each}}
 ```
 
 ## Dynamic templates using dashboard variables
@@ -69,9 +75,3 @@ or use Handlebars variables:
   {{/if}}
 {{/each}}
 ```
-
-## Field name with spaces
-
-Field names with spaces should be displayed as `{{[Field Name]}}` or `{{'Field Name'}}`
-
-![Fields](img/fields.png)
