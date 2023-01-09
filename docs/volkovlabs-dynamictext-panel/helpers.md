@@ -71,7 +71,7 @@ Join all elements of array into a string using a given separator.
 
 :::info
 
-Supported since Dynamic Text panel 3.1.0.
+Supported since Dynamic Text panel 3.2.0.
 
 :::
 
@@ -89,7 +89,7 @@ Present object (JSON) or array as string.
 
 :::info
 
-Supported since Dynamic Text panel 3.1.0.
+Supported since Dynamic Text panel 3.2.0.
 
 :::
 
