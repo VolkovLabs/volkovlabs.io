@@ -126,3 +126,13 @@ Returns a string array of the currently selected values for a certain [variable]
 
 <!-- result: ['server1', 'server2', 'server3']  -->
 ```
+
+Check if variable `my_var` contains value "1":
+
+```handlebars
+{{#if (contains (variable "my_var") "1")}}
+Variable contains 1
+{{else}}
+Variable does not contain 1
+{{/if}}
+```
