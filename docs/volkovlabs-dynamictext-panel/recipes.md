@@ -22,8 +22,10 @@ Useful snippets that you can use in your templates.
 ## Conditional content
 
 ```handlebars
-{{#if app "auth"}}
-This is the auth app.
+{{#if (eq app "auth")}}
+  This is the auth app.
+{{else}}
+  This is not a auth app.
 {{/if}}
 ```
 
@@ -59,3 +61,13 @@ Given that the **All Rows** switch is turned on, the following template renders 
 | {{title}} | {{author}} | {{year}} |
 {{/each}}
 ```
+
+## Display initial context.
+
+Display the Initial context with which the template was executed.
+
+```handlebars
+{{json @root}}
+```
+
+Take a look at the [Documentation](https://handlebarsjs.com/api-reference/data-variables.html#root) for Handlebar variables.
