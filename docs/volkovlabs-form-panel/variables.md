@@ -10,6 +10,8 @@ tags:
 
 # Variables
 
+To learn about three types of variables, watch the following video: [Three types of Grafana's variables](/plugins/grafana/#dashboard-global-and-environment-variables)
+
 Dashboard and Global variables will be replaced automatically in:
 
 - URL for Initial and Update requests
