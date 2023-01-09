@@ -9,6 +9,20 @@ tags:
 
 Helpers are functions that let you perform basic text transformation within your template.
 
+## `{{contains}}`
+
+Checks if given value exists within an array
+
+```handlebars
+<!-- array: ['a', 'b', 'c'] -->
+
+{{#if (contains array "a")}}
+Success!
+{{/if}}
+
+<!-- results in: 'Success!'  -->
+```
+
 ## `{{date}}`
 
 Formats the timestamp in a given field using a date format. Uses [helper-date](https://github.com/helpers/helper-date).
@@ -47,20 +61,6 @@ Join all elements of array into a string using a given separator.
 {{join array "-"}}
 
 <!-- results in: 'a-b-c'  -->
-```
-
-## `{{contains}}`
-
-Checks if given value exists within an array
-
-```handlebars
-<!-- array: ['a', 'b', 'c'] -->
-
-{{#if (contains array "a")}}
-Success!
-{{/if}}
-
-<!-- results in: 'Success!'  -->
 ```
 
 ## `{{toFixed}}`

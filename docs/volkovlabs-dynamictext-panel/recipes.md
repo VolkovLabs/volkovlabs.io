@@ -27,23 +27,6 @@ This is the auth app.
 {{/if}}
 ```
 
-## Render HTML from data
-
-If you would like to render HTML returned by the data source, you need to use three-brace expressions, `{{{htmlValue}}}`, otherwise Handlebars escape the HTML content.
-
-```handlebars
-<ul>
-{{{htmlValue}}}
-</ul>
-```
-
-where `htmlValue` is
-
-```html
-<li>foo</li>
-<li>bar</li>
-```
-
 ## Dynamic templates using dashboard variables
 
 Use the `lookup` helper function to create dynamic templates based on dashboard variables.
