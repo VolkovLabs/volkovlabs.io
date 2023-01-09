@@ -53,7 +53,7 @@ datasources:
     version: 1
     editable: true
     jsonData:
-      feed: https://volkovlabs.com/feed
+      feed: https://volkovlabs.io/blog/rss.xml
   - name: AWS CloudFront RSS
     type: volkovlabs-rss-datasource
     access: proxy

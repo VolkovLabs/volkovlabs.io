@@ -17,7 +17,7 @@ Our plugins for Grafana represent three categories: Manage, Operate, and Visuali
 
 We are constantly updating and improving our Grafana plugins. A private repository has become a part of our workflow to verify and test plugins on our demo server and projects.
 
-Read more in the blog [Installing Grafana plugins from a Private repository](https://volkovlabs.com/installing-grafana-plugins-from-a-private-repository-805b54a1add3).
+Read more in the blog [Installing Grafana plugins from a Private repository](/blog/installing-grafana-plugins-from-a-private-repository-805b54a1add3).
 
 ### List plugins
 

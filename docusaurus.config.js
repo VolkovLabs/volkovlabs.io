@@ -55,22 +55,9 @@ const config = {
         },
         items: [
           {
-            label: "Company",
+            label: "Grafana Plugins",
             position: "left",
-            items: [
-              {
-                href: "/#Plugins",
-                label: "Grafana Plugins",
-              },
-              {
-                href: "/#Projects",
-                label: "Projects",
-              },
-              {
-                href: "/#Team",
-                label: "Team",
-              },
-            ],
+            href: "/#Plugins",
           },
           {
             href: "/blog",

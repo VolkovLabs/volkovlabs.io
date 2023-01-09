@@ -15,18 +15,18 @@ The custom code has access to the **Panel options**, the response from the REST 
 
 | Parameter | Description |
 | -- | -- |
-| `options` | Panels' options. |
 | `data` | Result set of panel queries. |
-| `response` | Request's response. |
-| `initial` | Parsed values from the Initial Request. |
 | `elements` | Form Elements. |
-| `locationService` | Grafana's `locationService` to work with browser location and history. |
-| `templateService` | Grafana's `templateService` provides access to variables and allows to update Time Range. |
-| `onOptionsChange()` | Change handler to refresh panel. |
+| `initial` | Parsed values from the Initial Request. |
 | `initialRequest()` | Perform the Initial Request to reload panel. |
-| `setInitial({})` | Allows to specify the initial values for Custom Initial Requests to Highlight changed values and Require Confirmation. |
-| `notifySuccess(['Header', 'Message'])` | Display successful notification. |
+| `locationService` | Grafana's `locationService` to work with browser location and history. |
 | `notifyError(['Header', 'Error Message'])` | Display error notification. |
+| `notifySuccess(['Header', 'Message'])` | Display successful notification. |
+| `onOptionsChange()` | Change handler to refresh panel. |
+| `options` | Panels' options. |
+| `response` | Request's response. |
+| `setInitial({})` | Allows to specify the initial values for Custom Initial Requests to Highlight changed values and Require Confirmation. |
+| `templateService` | Grafana's `templateService` provides access to variables and allows to update Time Range. |
 
 ![Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/request.png)
 

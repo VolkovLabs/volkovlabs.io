@@ -59,7 +59,6 @@ grafana-cli plugins install volkovlabs-form-panel
 - Allows displaying `Success` and `Error` notifications from the **Custom Code**.
 - Supports Code Editor suggestions for available parameters.
 
-All available elements are:
 ![Form Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/panel.png)
 
 ## Feedback
