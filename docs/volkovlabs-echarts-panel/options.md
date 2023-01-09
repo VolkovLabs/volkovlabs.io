@@ -35,7 +35,6 @@ The only parameter that is passed from this function to the `setOption()` is `op
 | `replaceVariables` | The `replaceVariables()` function to interpolate variables. |
 | `theme` | Grafana's `theme` object. |
 
-
 To learn more about parameters, you can log them in the Browser Console:
 
 ```javascript
