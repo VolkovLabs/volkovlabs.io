@@ -110,7 +110,7 @@ const Main = (siteConfig) => {
             <div className="avatar__intro padding-vert--md">
               <div className="avatar__name">Daria Volkova</div>
               <p className="avatar__subtitle">
-                Daria translates ideas to elegant solutions and produce YouTube
+                Daria translates ideas to elegant solutions and produces YouTube
                 tutorials.
               </p>
             </div>

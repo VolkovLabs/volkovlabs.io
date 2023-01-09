@@ -17,10 +17,12 @@ Checks if given value exists within an array
 <!-- array: ['a', 'b', 'c'] -->
 
 {{#if (contains array "a")}}
-Success!
+  Success!
+{{else}}
+  Not Found!
 {{/if}}
 
-<!-- results in: 'Success!'  -->
+<!-- result: 'Success!'  -->
 ```
 
 ## `{{date}}`
@@ -34,7 +36,7 @@ The field value must be a Unix timestamp or any of the formats supported by [dat
 
 {{date Time "YYYY-MM-DD"}}
 
-<!-- results in: '2020-08-30'  -->
+<!-- result: '2020-08-30'  -->
 ```
 
 ## `{{eq}}`
@@ -44,11 +46,13 @@ Compares two strings for equality.
 ```handlebars
 <!-- app: foo -->
 
-{{#if (eq app "foo")}}
-Success!
+{{#if (eq app "auth")}}
+  This is the auth app.
+{{else}}
+  This is not an auth app.
 {{/if}}
 
-<!-- results in: 'Success!'  -->
+<!-- result: 'Success!'  -->
 ```
 
 ## `{{join}}`
@@ -60,8 +64,46 @@ Join all elements of array into a string using a given separator.
 
 {{join array "-"}}
 
-<!-- results in: 'a-b-c'  -->
+<!-- result: 'a-b-c'  -->
 ```
+
+## `{{json}}`
+
+:::info
+
+Supported since Dynamic Text panel 3.2.0.
+
+:::
+
+Present object (JSON) or array as string.
+
+```handlebars
+<!-- object or array -->
+
+{{json obj}}
+
+<!-- result: as string  -->
+```
+
+## `{{split}}`
+
+:::info
+
+Supported since Dynamic Text panel 3.2.0.
+
+:::
+
+Split a string into array using a given separator.
+
+```handlebars
+<!-- string: 'a,b,c,d' -->
+
+{{split str ","}}
+
+<!-- result: ['a','b','c']  -->
+```
+
+![Split](img/split.png)
 
 ## `{{toFixed}}`
 
@@ -72,7 +114,7 @@ Formats the given number using fixed-point notation.
 
 {{toFixed Value 2}}
 
-<!-- results in: '1.12' -->
+<!-- result: '1.12' -->
 ```
 
 ## `{{variable}}`
@@ -82,5 +124,5 @@ Returns a string array of the currently selected values for a certain [variable]
 ```handlebars
 {{variable "hostname"}}
 
-<!-- results in: ['server1', 'server2', 'server3']  -->
+<!-- result: ['server1', 'server2', 'server3']  -->
 ```
