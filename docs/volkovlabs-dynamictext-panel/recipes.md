@@ -42,7 +42,7 @@ book:
 {{/each}}
 ```
 
-## Initial context.
+## Initial context
 
 Display the Initial context with which the template was executed.
 
