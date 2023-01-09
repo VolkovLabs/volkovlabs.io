@@ -49,7 +49,7 @@ Compares two strings for equality.
 {{#if (eq app "auth")}}
   This is the auth app.
 {{else}}
-  This is not a auth app.
+  This is not an auth app.
 {{/if}}
 
 <!-- result: 'Success!'  -->

@@ -25,7 +25,7 @@ Useful snippets that you can use in your templates.
 {{#if (eq app "auth")}}
   This is the auth app.
 {{else}}
-  This is not a auth app.
+  This is not an auth app.
 {{/if}}
 ```
 
