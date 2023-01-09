@@ -131,8 +131,8 @@ Check if variable `my_var` contains value "1":
 
 ```handlebars
 {{#if (contains (variable "my_var") "1")}}
-Variable contains 1
+  Variable contains 1
 {{else}}
-Variable does not contain 1
+  Variable does not contain 1
 {{/if}}
 ```
