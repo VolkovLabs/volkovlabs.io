@@ -43,15 +43,7 @@ Even though there are no data from the data source, you can still use the availa
 
 ## The rendering order
 
-The panel renders Handlebars → Markdown → Sanitized HTML, unless disabled, and displays the final result.
-
-## Every row and All rows
-
-You can choose how the retrieved data is passed into the Dynamic Text Panel.
- - `Every row` means that the **content** template is applied to every retrieved row.
- - `All rows`, the query results are passed entirely as the `data` field to the template.
- 
-In order to work with the query results as a whole, you can use [builtin-helpers](https://handlebarsjs.com/guide/builtin-helpers.html#each) to iterate over the records.
+The panel renders Handlebars → Markdown → Sanitized HTML (unless disabled) and displays the final result.
 
 ## Example
 

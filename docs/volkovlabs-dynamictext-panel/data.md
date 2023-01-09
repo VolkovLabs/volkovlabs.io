@@ -1,0 +1,37 @@
+---
+description: Create a visualization template for your data.
+tags:
+  - Dynamic text
+  - Panel
+  - Content
+  - Data
+---
+
+# Data
+
+You can choose how the retrieved data is passed into the Dynamic Text Panel.
+ - `Every row` means that the **content** template is applied to every retrieved row.
+ - `All rows`, the query results are passed entirely as the `data` field to the template.
+ 
+In order to work with the query results as a whole, you can use [#each builtin helper](https://handlebarsjs.com/guide/builtin-helpers.html#each) to iterate over the records.
+
+## Render a single template (All rows)
+
+For the following query result:
+
+| title | author        | year |
+| ----- | ------------- | ---- |
+| Dune  | Frank Herbert | 1965 |
+| 1984  | George Orwell | 1949 |
+
+Given that the **All Rows** switch is turned on, the following template renders a table from the query result:
+
+```handlebars
+| Title | Author | Year |
+| ----- | ------ | ---- |
+{{#each data}}
+| {{title}} | {{author}} | {{year}} |
+{{/each}}
+```
+
+![Data](img/data.png)
