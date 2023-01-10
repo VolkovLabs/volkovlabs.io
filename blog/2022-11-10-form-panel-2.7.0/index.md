@@ -1,15 +1,16 @@
 ---
 authors: [mikhail]
 slug: form-panel-2.7.0-20221110
-tags: [Data Manipulation, Form Panel]
+tags: [Data Manipulation, Release]
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
 # Data Manipulation Panel 2.7.0
 
 We released a new version of the Data Manipulation Panel 2.7.0. This version includes
-- community-requested updates for Payload,
-- Update Request parameters,
+
+- Community-requested updates for Payload.
+- Update Request parameters.
 - Grafana-style success/error notifications.
 - The code editor for Initial and Update requests was improved with suggestions for variables and parameters.
 

@@ -1,15 +1,16 @@
 ---
 authors: [mikhail]
 slug: image-panel-3.4.0-20230108
-tags: [Base64, Image, Panel]
+tags: [Base64, Release]
 keywords: [Base64, Panel, PDF, Images, Video, Audio]
 ---
 
 # Base64 Image/Video/Audio/PDF Panel 3.4.0
 
-We released a new version of Base64 Image/Video/Audio/PDF Panel 3.4.0. In this version, we
-- updated to the latest Grafana toolkit 9.3.2
-- updated README and [documentation](/plugins/volkovlabs-image-panel) to explain how to use the panel with data sources and supported formats
+We released a new version of Base64 Image/Video/Audio/PDF Panel 3.4.0. In this maintenance version
+
+- Updated to the latest Grafana toolkit 9.3.2.
+- Updated README and [documentation](/plugins/volkovlabs-image-panel) to explain how to use the panel with data sources and supported formats.
 - "New Year" edition.
 
 <!--truncate-->
