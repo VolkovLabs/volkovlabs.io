@@ -1,16 +1,17 @@
 ---
 authors: [mikhail]
 slug: calendar-panel-1.1.0-20221212
-tags: [Calendar, Panel]
+tags: [Calendar, Release]
 keywords: [Calendar, Panel, Events, Grafana]
 ---
 
 # Calendar Panel 1.1.0
 
-A new maintenance release of the Calendar panel 1.1.0 was released today. In this version:
-- updated to the latest Grafana toolkit 9.3.1
-- added Annotations support
-- refactored legacy code, and increased test coverage.
+A new maintenance release of the Calendar panel 1.1.0 was released today. In this version
+
+- Updated to the latest Grafana toolkit 9.3.1.
+- Added Annotations support.
+- Refactored legacy code, and increased test coverage.
 
 <!--truncate-->
 

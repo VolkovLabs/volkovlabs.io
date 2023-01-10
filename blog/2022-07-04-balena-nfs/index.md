@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: balena-nfs-server-and-client-project-5d5de6dd47ca
-tags: [Balena, NFS]
+tags: [Balena, NFS, IoT]
 keywords: [Balena, NFS, IoT]
 ---
 

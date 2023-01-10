@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904
-tags: [Data Manipulation]
+tags: [Data Manipulation, API]
 keywords: [Grafana, Data Manipulation, Forms]
 ---
 

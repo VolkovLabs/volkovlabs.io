@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: our-plugins-are-ready-for-grafana-9-2bc257db92eb
-tags: [Grafana, Plugins]
+tags: [Grafana]
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
 ---
 

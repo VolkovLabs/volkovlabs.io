@@ -1,16 +1,17 @@
 ---
 authors: [mikhail]
 slug: dynamictext-panel-2.1.0-20221127
-tags: [Dynamic Text, Panel]
+tags: [Dynamic Text, Release]
 keywords: [Dynamic Text, Panel, Data, Grafana]
 ---
 
 # Dynamic Text Panel 2.1.0
 
-We released a new version of Dynamic Text Panel 2.1.0 with
-- community-submitted PRs and features,
-- Monaco Code Editor,
-- major refactoring and increased test coverage to continue improving the plugin with the requested functionality.
+We released a new version of Dynamic Text Panel 2.1.0. In this feature version
+
+- Community-submitted PRs and features.
+- Added Monaco Code Editor.
+- Major refactoring and increased test coverage to continue improving the plugin with the requested functionality.
 
 <!--truncate-->
 

@@ -1,15 +1,16 @@
 ---
 authors: [mikhail]
 slug: echarts-panel-4.0.0-20221220
-tags: [Apache ECharts, Panel]
+tags: [Apache ECharts, Release]
 keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
 ---
 
 # Apache ECharts Panel 4.0.0
 
-We released a major release of the Apache ECharts Panel 4.0.0 for Grafana.
+We released a major release of the Apache ECharts Panel 4.0.0 for Grafana. This version
 
-It introduced breaking changes with loading GeoJSON maps, which are disabled by default. Documentation and examples were updated and moved to https://docs.volkovlabs.io and https://echarts.volkovlabs.io.
+- Introduced breaking changes with loading GeoJSON maps, which are disabled by default.
+- Documentation and examples were updated and moved to https://docs.volkovlabs.io and https://echarts.volkovlabs.io.
 
 <!--truncate-->
 

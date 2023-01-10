@@ -8,6 +8,20 @@ tags:
 
 # Release Notes
 
+## [2.2.0 (2022-01-09)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.2.0)
+
+### Features / Enhancements
+
+- Add JSON helper to show objects and arrays (#121)
+- Update to Grafana 9.3.1 (#122)
+- Update Documentation links (#130, #131)
+- Add Split Helper (#132)
+- Refactor Text Component and Styles (#133)
+- Add JavaScript Code to add Handlebars helpers and Event handlers (#134)
+- Update default Content to `{{json @root}}` and Code Editor height to `200px` (#134)
+- Update CSS to fit images to screen (#135)
+- Add `getLocale()` parameter to JavaScript Code (#137)
+
 ## [2.1.0 (2022-11-27)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.1.0)
 
 ### Breaking changes
