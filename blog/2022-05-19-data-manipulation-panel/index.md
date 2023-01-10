@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: data-manipulation-panel-plugin-for-grafana-97f9af2c67e0
-tags: [Data Manipulation]
+tags: [Data Manipulation, API]
 keywords: [Grafana, Data Manipulation, Forms]
 ---
 
