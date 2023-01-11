@@ -16,7 +16,7 @@ In this Feature release
 - Finished refactoring of internal components.
 - Migrate Styles to Grafana Theme v2.
 - Added `{{json @root}}` and `{{split String ','}}` helpers.
-- Updateed CSS to fit images to screen.
+- Updated CSS to fit images to screen.
 - Supported Internationalization using [custom helpers](/plugins/volkovlabs-dynamictext-panel/code).
 
 ## [Base64 Image/Video/Audio/PDF Panel 3.4.0 (2023-01-08)](/blog/image-panel-3.4.0-20230108)
