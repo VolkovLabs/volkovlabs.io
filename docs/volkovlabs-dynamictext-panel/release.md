@@ -8,7 +8,7 @@ tags:
 
 # Release Notes
 
-## [2.2.0 (2022-01-09)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.2.0)
+## [2.2.0 (2023-01-09)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/releases/tag/v2.2.0)
 
 ### Features / Enhancements
 
