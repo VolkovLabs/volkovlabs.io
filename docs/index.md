@@ -8,7 +8,7 @@ tags:
 
 # What’s new
 
-## [Dynamic Text Panel 2.2.0 (2022-01-09)](/blog/dynamictext-panel-2.2.0-20230110)
+## [Dynamic Text Panel 2.2.0 (2023-01-09)](/blog/dynamictext-panel-2.2.0-20230110)
 
 In this Feature release
 
@@ -19,7 +19,7 @@ In this Feature release
 - Updateed CSS to fit images to screen.
 - Supported Internationalization using [custom helpers](/plugins/volkovlabs-dynamictext-panel/code).
 
-## [Base64 Image/Video/Audio/PDF Panel 3.4.0 (2022-01-08)](/blog/image-panel-3.4.0-20230108)
+## [Base64 Image/Video/Audio/PDF Panel 3.4.0 (2023-01-08)](/blog/image-panel-3.4.0-20230108)
 
 In this Maintenance release
 

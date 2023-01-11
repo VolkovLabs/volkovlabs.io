@@ -13,7 +13,7 @@ tags:
 
 # Release Notes
 
-## [3.4.0 (2022-01-08) "New Year" edition](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.4.0)
+## [3.4.0 (2023-01-08) "New Year" edition](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.4.0)
 
 ### Features / Enhancements
 
