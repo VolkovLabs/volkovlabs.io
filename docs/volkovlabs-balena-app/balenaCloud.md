@@ -15,30 +15,8 @@ Our custom Grafana build with the Balena Application plugin can be deployed dire
 
 We recommend to add it to your `docker-compose.yml` together with NGINX reverse proxy (example configuration in the repository):
 
-```yaml
-version: "2.1"
-
-services:
-  grafana:
-    image: ghcr.io/volkovlabs/balena-app:latest
-    network_mode: host
-    restart: always
-    labels:
-      io.balena.features.supervisor-api: "1"
-    volumes:
-      - grafana-data:/var/lib/grafana
-
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    network_mode: host
-    restart: always
-    depends_on:
-      - grafana
-
-volumes:
-  grafana-data:
+```yaml reference
+https://github.com/VolkovLabs/volkovlabs-balena-app/blob/main/docker-compose.yml
 ```
 
 Default Grafana username and password is **admin/admin**.

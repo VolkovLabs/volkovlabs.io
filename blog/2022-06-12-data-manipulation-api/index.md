@@ -21,7 +21,7 @@ Before continuing to read, look at the introduction article to get familiar with
 
 Data Manipulation panel options allow you to specify the URL for `GET` requests to receive initial values and `POST`, `PUT`, or `PATCH` requests to update values sent as a JSON.
 
-![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/form-api.png)
+![API](../../docs/volkovlabs-form-panel/img/form-api.png)
 
 There are three methods to connect the panel to the API Server:
 
@@ -42,14 +42,14 @@ The disadvantage of this method is that API requests are exposed to the end-user
 We already explained how to configure the panel in the video mentioned above. If this method works for your use case, you can find server code examples in the plugin's GitHub repository:
 
 ```javascript reference
-https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server/server.ts
+https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-json/server.ts
 ```
 
 ## Use NGINX reverse proxy
 
 We recommend running Grafana behind NGINX reverse proxy for an additional security layer. The reverse proxy also allows us to expose additional API endpoints and static files in the same domain, which makes it CORS-ready.
 
-![Grafana and Server API behind NGINX reverse proxy](nginx.png)
+![Grafana and Server API behind NGINX reverse proxy](../../docs/volkovlabs-form-panel/img/form-nginx-api.png)
 
 To learn how to configure Grafana to run behind a reverse proxy, take a look at the Grafana tutorial [Run Grafana behind a reverse proxy](https://grafana.com/tutorials/run-grafana-behind-a-proxy/).
 
