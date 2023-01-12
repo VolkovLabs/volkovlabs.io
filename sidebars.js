@@ -78,6 +78,7 @@ const sidebars = {
               label: "balenaHub",
               href: "https://hub.balena.io/organizations/volkovlabs/apps/balena-app",
             },
+            "volkovlabs-balena-app/provisioning",
             "volkovlabs-balena-app/release",
           ],
           label: "Balena Application",

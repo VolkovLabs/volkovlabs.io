@@ -12,11 +12,12 @@ tags:
 
 # Balena Application
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)](https://www.grafana.com)
 [![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmRdzBPeQ16cwM7ZvPbXfyHv)
 ![CI](https://github.com/volkovlabs/volkovlabs-balena-app/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app)
 [![Balena](https://github.com/volkovlabs/volkovlabs-balena-app/actions/workflows/balena.yml/badge.svg)](https://github.com/volkovlabs/volkovlabs-balena-app/actions/workflows/balena.yml)
+[![CodeQL](https://github.com/VolkovLabs/volkovlabs-balena-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-balena-app/actions/workflows/codeql-analysis.yml)
 
 ## Introduction
 
@@ -40,9 +41,9 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-bale
 
 ## Features
 
-- Allows to display device, release information and service logs using Balena Supervisor API.
-- Provides Services Panel to start, stop, restart Containers.
-- Allows to filter Logs using Regex pattern.
+- Allows to display device, release information, and service logs using Balena Supervisor API.
+- Provides Services Panel to start, stop, and restart Containers.
+- Allows to filter Logs using a Regex pattern.
 - Requires Confirmation to restart all Services and reboot the device.
 - Environment Variables sanitized from Target State.
 
@@ -53,23 +54,6 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-bale
 The balena Supervisor is balena's agent that runs on devices. Its main role is to ensure your app is running, and keep communications with the balenaCloud API server.
 
 The Supervisor has its own [set of APIs](https://www.balena.io/docs/reference/supervisor/supervisor-api/) providing means for services to communicate and execute some special actions that affect the host OS or the services itself.
-
-## Provisioning
-
-Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
-
-Example of provisioning the Balena Supervisor Data Source.
-
-```yaml
-datasources:
-  - name: API
-    type: volkovlabs-balenasupervisor-datasource
-    uid: P9E471951A1B4106C
-    jsonData:
-      url: ${BALENA_SUPERVISOR_ADDRESS}
-    secureJsonData:
-      apiKey: ${BALENA_SUPERVISOR_API_KEY}
-```
 
 ## Feedback
 
