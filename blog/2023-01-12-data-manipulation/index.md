@@ -63,7 +63,7 @@ https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-pg/server.t
 If you use [Deno](https://deno.land), this is an excellent example of how to connect it with a panel.
 
 ```javascript reference
-https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/deno/server.ts
+https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-deno/server.ts
 ```
 
 In the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel), you can find more examples of PostgreSQL and MySQL databases.

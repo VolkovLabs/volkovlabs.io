@@ -42,7 +42,7 @@ The disadvantage of this method is that API requests are exposed to the end-user
 We already explained how to configure the panel in the video mentioned above. If this method works for your use case, you can find server code examples in the plugin's GitHub repository:
 
 ```javascript reference
-https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server/server.ts
+https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-json/server.ts
 ```
 
 ## Use NGINX reverse proxy
