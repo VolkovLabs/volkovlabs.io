@@ -21,7 +21,7 @@ The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the 
 
 Panel options allow you to specify the URL for GET requests to receive initial values and POST, PUT, or PATCH requests to update values sent as a JSON. Header parameters can be added to secure your REST API calls.
 
-![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/form-api.png)
+![API](../../docs/volkovlabs-form-panel/img/form-api.png)
 
 The plugin supports dashboard variables in the URL and header parameters. For example, `http://localhost:3001/${var}`, where `${var}` is a dashboard variable.
 

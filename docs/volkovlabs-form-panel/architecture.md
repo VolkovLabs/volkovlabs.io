@@ -10,7 +10,7 @@ tags:
 
 The Data Manipulation panel can request (GET) and update (DELETE, PATCH, POST, PUT) data and configuration using REST API.
 
-![API](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/img/form-api.png)
+![API](img/form-api.png)
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/SHN2S-dRIEM" title="How to Manipulate Data using Grafana dashboard | API Node.js Server and Deno Deploy Project" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 

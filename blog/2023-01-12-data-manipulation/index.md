@@ -46,7 +46,11 @@ The Data Manipulation plugin allows you to insert and update data along with con
 
 ## API Server
 
-The Data Manipulation plugin requires the API server to be installed on the database server. The API server is an excellent way to ensure only the approved data manipulation is allowed.
+The Data Manipulation plugin requires the API server to be installed on the database server.
+
+![API](../../docs/volkovlabs-form-panel/img/form-api.png)
+
+The API server is an excellent way to ensure only the approved data manipulation is allowed.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/SHN2S-dRIEM" title="How to Manipulate Data using Grafana dashboard | API Node.js Server and Deno Deploy Project" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
