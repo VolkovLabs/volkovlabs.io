@@ -54,10 +54,10 @@ The API server is an excellent way to ensure only the approved data manipulation
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/SHN2S-dRIEM" title="How to Manipulate Data using Grafana dashboard | API Node.js Server and Deno Deploy Project" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-Look at a simple API server, which returns the same JSON in `GET` request as was updated in `POST`.
+Look at a simple API server, which returns submitted feedback from the PostgreSQL database.
 
 ```javascript reference
-https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server/server.ts
+https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-pg/server.ts
 ```
 
 If you use [Deno](https://deno.land), this is an excellent example of how to connect it with a panel.
