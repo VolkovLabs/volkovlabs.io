@@ -34,7 +34,7 @@ Initially, Grafana inventors did not include such functionality on the roadmap. 
 
 Following the community demand, the [Data Manipulation plugin](/blog/data-manipulation-panel-plugin-for-grafana-97f9af2c67e0) was developed earlier this year in May-June. It is open source under [Apache License Version 2.0](https://github.com/volkovlabs/volkovlabs-form-panel/blob/main/LICENSE).
 
-## Installation
+## Data Manipulation plugin
 
 There are various ways to install it. The easiest one is to use the Configuration -> Plugins menu when you are in the Grafana Catalog with admin permissions. The plugin can also be downloaded from the Grafana website or [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel).
 
@@ -68,7 +68,7 @@ We recommend running Grafana behind NGINX reverse proxy for a further security l
 
 ## Static and Dynamic interface elements
 
-Following the Grafana lead, the Data Manipulation plugin was designed to embrace flexibility. You can start with static forms and end up with dynamic ones. A static form is hard-coded and created once and for all. A dynamic one allows creating a form on the fly from a data source (such as a database or a CSV file) per rules and configurations.
+Following the Grafana lead, the Data Manipulation plugin was designed to embrace [flexibility](/plugins/volkovlabs-form-panel/code). You can start with static forms and end up with dynamic ones. A static form is hard-coded and created once and for all. A dynamic one allows creating a form on the fly from a data source (such as a database or a CSV file) per rules and configurations.
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/RSVH1bSBNl8" title="Static and dynamic interface elements of Data Manipulation plugin | DML using data source in Grafana" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
