@@ -8,9 +8,17 @@ tags:
 
 # What’s new
 
+## [Apache ECharts Panel 4.1.0 (2023-01-12)](/blog/echarts-panel-4.1.0-20230113)
+
+In this **Feature** release
+
+- Added Streaming Support for WebSockets and Grafana Live.
+- Added Data Zoom feature updating Time Range similar to TimeSeries panel to the initial options.
+- Updated Documentation answering community questions.
+
 ## [Dynamic Text Panel 2.2.0 (2023-01-09)](/blog/dynamictext-panel-2.2.0-20230110)
 
-In this Feature release
+In this **Feature** release
 
 - Added JavaScript Code Editor to add Handlebars helpers and Event handlers.
 - Finished refactoring of internal components.
@@ -21,7 +29,7 @@ In this Feature release
 
 ## [Base64 Image/Video/Audio/PDF Panel 3.4.0 (2023-01-08)](/blog/image-panel-3.4.0-20230108)
 
-In this Maintenance release
+In this **Maintenance** release
 
 - Updated to the latest Grafana toolkit 9.3.2.
 - Updated README and documentation to explain how to use the panel with [data sources](/plugins/volkovlabs-image-panel/datasources) and [supported formats](/plugins/volkovlabs-image-panel/formats).
@@ -29,7 +37,7 @@ In this Maintenance release
 
 ## [Static Data Source 2.1.0 (2022-12-29)](/blog/static-datasource-2.1.0-20221229)
 
-In this Feature release
+In this **Feature** release
 
 - Finished refactoring.
 - Updated to the latest Grafana toolkit 9.3.2.
@@ -38,14 +46,14 @@ In this Feature release
 
 ## [Apache ECharts Panel 4.0.0 (2022-12-20)](/blog/echarts-panel-4.0.0-20221220)
 
-In this Major release
+In this **Major** release
 
 - Introduced **breaking changes** with loading GeoJSON maps, which are disabled by default.
 - Documentation and examples were updated and moved to https://docs.volkovlabs.io and https://echarts.volkovlabs.io.
 
 ## [Calendar Panel 1.1.0 (2022-12-12)](/blog/calendar-panel-1.1.0-20221212)
 
-In this Maintenance release
+In this **Maintenance** release
 
 - Updated to the latest Grafana toolkit 9.3.1.
 - Added Annotations support.
@@ -53,7 +61,7 @@ In this Maintenance release
 
 ## [Dynamic Text Panel 2.1.0 (2022-11-27)](/blog/dynamictext-panel-2.1.0-20221127)
 
-In this Feature release
+In this **Feature** release
 
 - Community-submitted PRs and features.
 - Added Monaco Code Editor.
@@ -62,7 +70,7 @@ In this Feature release
 
 ## [Data Manipulation Panel 2.7.0 (2022-11-10)](/blog/form-panel-2.7.0-20221110)
 
-In this Feature release
+In this **Feature** release
 
 - Community-requested updates for Payload.
 - Update Request parameters.

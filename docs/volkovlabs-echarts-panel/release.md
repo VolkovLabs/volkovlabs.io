@@ -9,6 +9,16 @@ tags:
 
 # Release Notes
 
+## [4.1.0 (2023-01-12)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v4.1.0)
+
+### Features / Enhancements
+
+- Synchronize the README file with Documentation (#111)
+- Add Streaming Support for WebSockets and Grafana Live (#113)
+- Move InfluxDB Example to the Guest Blog post (#115)
+- Update Documentation and Tutorials in README (#116)
+- Add Data Zoom to default Line Example (#117)
+
 ## [4.0.0 (2022-12-20)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/releases/tag/v4.0.0)
 
 ### Breaking changes
