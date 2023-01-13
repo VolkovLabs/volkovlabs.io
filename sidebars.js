@@ -43,6 +43,7 @@ const sidebars = {
             "volkovlabs-echarts-panel/index",
             "volkovlabs-echarts-panel/options",
             "volkovlabs-echarts-panel/datasources",
+            "volkovlabs-echarts-panel/events",
             "volkovlabs-echarts-panel/examples",
             {
               items: [
