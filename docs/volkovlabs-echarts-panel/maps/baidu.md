@@ -1,6 +1,5 @@
 ---
 description: Baidu Maps supported in the latest version of the Apache ECharts Panel.
-title: Baidu
 tags:
   - ECharts
   - Panel

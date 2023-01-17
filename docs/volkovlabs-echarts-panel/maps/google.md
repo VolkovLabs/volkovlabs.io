@@ -1,6 +1,5 @@
 ---
 description: Google Maps supported in the latest version of the Apache ECharts Panel.
-title: Google
 tags:
   - ECharts
   - Panel

@@ -1,6 +1,5 @@
 ---
 description: Gaode Maps supported in the latest version of the Apache ECharts Panel.
-title: Gaode
 tags:
   - ECharts
   - Panel

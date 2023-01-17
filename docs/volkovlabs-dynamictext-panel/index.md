@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: A panel plugin for Grafana for dynamic, data-driven text.
 tags:
   - Dynamic text
