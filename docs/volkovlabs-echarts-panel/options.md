@@ -67,7 +67,7 @@ To scale the content when panel is resized use `echartsInstance` methods to retr
 
 To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.
 
-## Add Button to DOM (Document Object Model)
+## Create DOM (Document Object Model) Elements
 
 It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using `echartsInstance`. For example, you can add a button with an event handler.
 
