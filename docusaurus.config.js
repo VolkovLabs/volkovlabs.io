@@ -14,6 +14,7 @@ const config = {
   organizationName: "VolkovLabs",
   projectName: "",
   themes: ["@saucelabs/theme-github-codeblock"],
+  plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
   presets: [
     [
       "@docusaurus/preset-classic",
