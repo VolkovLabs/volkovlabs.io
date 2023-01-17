@@ -188,11 +188,6 @@ const sidebars = {
         },
         {
           type: "link",
-          label: "Demo Server",
-          href: "https://demo.volkovlabs.io",
-        },
-        {
-          type: "link",
           label: "ECharts Examples",
           href: "https://echarts.volkovlabs.io",
         },

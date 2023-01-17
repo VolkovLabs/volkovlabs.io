@@ -11,11 +11,9 @@ tags:
 
 # balenaCloud
 
-The Balena NFS block can be deployed directly to balenaCloud:
+The Balena NFS block can be [deployed directly to balenaCloud](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/balena-nfs).
 
-[![Deploy with balena](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/balena-nfs)
-
-Default Grafana username and password is **admin/admin**.
+The default Grafana username and password is **admin/admin**.
 
 ## Environment Variables
 
