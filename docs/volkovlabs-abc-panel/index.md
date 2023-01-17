@@ -10,9 +10,9 @@ tags:
 
 # Panel template
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
+![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-abc-panel/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-panel)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-panel/branch/main/graph/badge.svg)
 
 ## Introduction
 
