@@ -62,6 +62,23 @@ grafana-cli plugins install volkovlabs-echarts-panel
 - Supports real-time data updates using streaming Data Sources and Grafana Live.
 - Has 100+ ready-as-is examples at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).
 
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [setOption() Function](options) | Explains how to configure the main Apache ECharts library function. |
+| [Data Sources](datasources) | Demonstrates how to retrieve data from data sources. |
+| [Event Handling](events) | Demonstrates how to react on the triggered events. |
+| [Examples](examples) | Explains how to get started with ECharts Examples. |
+| [Streaming](streaming) | Explains how to configure Apache ECharts for real-time data updates using streaming Data Sources and Grafana Live. |
+| [Variables](variables) | Demonstrated how to replace Dashboard and Global variables. |
+| [Directed Graph](tutorials/graph) | Explains how to build and visualize directed graphs. |
+| [PNG and SVG images](tutorials/images) | Explains how to use images in various formats. |
+| [Statistical and Data Mining](tutorials/ecstat) | Explains how to use statistical and data mining library. |
+| [Baidu Maps](maps/baidu) | Demonstrates how to work with Baidu Maps. |
+| [Gaode Maps](maps/gaode) | Demonstrates how to work with Gaode Maps.|
+| [Google Maps](maps/google)| Demonstrates how to work with Google Maps. |
+
 ## Feedback
 
 We love to hear from you. There are various ways to get in touch with us:
