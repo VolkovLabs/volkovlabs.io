@@ -20,9 +20,11 @@ Supported since Apache ECharts visualization panel 3.8.0.
 Gaode Maps are loaded using API v1.4.15 and require Access Key. You can get it from [https://console.amap.com/dev/key/app](https://console.amap.com/dev/key/app).
 
 - Loading Gaode Maps takes ~2-3 seconds.
-- There is no Callback function and status should be checked using timeout.
+- There is no Callback function. The status should be checked using timeout.
 - While loading, animation can be displayed using the code below.
-- Additional plugins can be loaded using panel's options.
+- Additional plugins can be loaded using panel options.
+
+![Gaode Maps](../img/gaode.png)
 
 ## Function
 
