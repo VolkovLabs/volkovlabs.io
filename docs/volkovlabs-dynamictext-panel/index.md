@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: A panel plugin for Grafana for dynamic, data-driven text.
 tags:
   - Dynamic text
@@ -48,6 +47,17 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - Supports Internationalization using custom helpers.
 
 ![Dynamic Text Panel](img/screenshot.png)
+
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [Content](content) | Explains how to create a visualization template for your data. |
+| [Data](data) | Demonstrates how to use Every Row and All Rows option. |
+| [JavaScript Code](code) | Demonstrates how to add a Handlebars helpers and Event handlers. |
+| [Helpers](helpers) | Helpers are functions that let you perform basic text transformation within your template. |
+| [Recipes](recipes) | Useful snippets that you can use in your templates. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
 
 ## Feedback
 

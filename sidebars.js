@@ -21,9 +21,21 @@ const sidebars = {
         "grafana/customize",
         {
           items: [
-            "volkovlabs-abc-app/index",
-            "volkovlabs-abc-datasource/index",
-            "volkovlabs-abc-panel/index",
+            {
+              type: "doc",
+              id: "volkovlabs-abc-app/index",
+              label: "Application",
+            },
+            {
+              type: "doc",
+              id: "volkovlabs-abc-datasource/index",
+              label: "Data Source",
+            },
+            {
+              type: "doc",
+              id: "volkovlabs-abc-panel/index",
+              label: "Panel",
+            },
           ],
           label: "Templates for Development",
           type: "category",
@@ -40,7 +52,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-echarts-panel/index",
+            {
+              type: "doc",
+              id: "volkovlabs-echarts-panel/index",
+              label: "Introduction",
+            },
             "volkovlabs-echarts-panel/options",
             "volkovlabs-echarts-panel/datasources",
             "volkovlabs-echarts-panel/events",
@@ -72,7 +88,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-balena-app/index",
+            {
+              type: "doc",
+              id: "volkovlabs-balena-app/index",
+              label: "Introduction",
+            },
             "volkovlabs-balena-app/balenaCloud",
             {
               type: "link",
@@ -87,7 +107,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-image-panel/index",
+            {
+              type: "doc",
+              id: "volkovlabs-image-panel/index",
+              label: "Introduction",
+            },
             "volkovlabs-image-panel/datasources",
             "volkovlabs-image-panel/formats",
             "volkovlabs-image-panel/variables",
@@ -98,7 +122,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-calendar-panel/index",
+            {
+              type: "doc",
+              id: "volkovlabs-calendar-panel/index",
+              label: "Introduction",
+            },
             "volkovlabs-calendar-panel/events",
             "volkovlabs-calendar-panel/release",
           ],
@@ -107,7 +135,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-dynamictext-panel/index",
+            {
+              type: "doc",
+              id: "volkovlabs-dynamictext-panel/index",
+              label: "Introduction",
+            },
             "volkovlabs-dynamictext-panel/content",
             "volkovlabs-dynamictext-panel/data",
             "volkovlabs-dynamictext-panel/code",
@@ -120,7 +152,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-form-panel/index",
+            {
+              type: "doc",
+              id: "volkovlabs-form-panel/index",
+              label: "Introduction",
+            },
             "volkovlabs-form-panel/architecture",
             "volkovlabs-form-panel/code",
             "volkovlabs-form-panel/control",
@@ -134,7 +170,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-env-datasource/index",
+            {
+              type: "doc",
+              id: "volkovlabs-env-datasource/index",
+              label: "Introduction",
+            },
             "volkovlabs-env-datasource/provisioning",
             "volkovlabs-env-datasource/release",
           ],
@@ -143,7 +183,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-rss-datasource/index",
+            {
+              type: "doc",
+              id: "volkovlabs-rss-datasource/index",
+              label: "Introduction",
+            },
             "volkovlabs-rss-datasource/provisioning",
             "volkovlabs-rss-datasource/release",
           ],
@@ -152,7 +196,11 @@ const sidebars = {
         },
         {
           items: [
-            "volkovlabs-static-datasource/index",
+            {
+              type: "doc",
+              id: "volkovlabs-static-datasource/index",
+              label: "Introduction",
+            },
             "volkovlabs-static-datasource/provisioning",
             "volkovlabs-static-datasource/variables",
             "volkovlabs-static-datasource/release",
@@ -161,7 +209,14 @@ const sidebars = {
           type: "category",
         },
         {
-          items: ["volkovlabs-app/index", "volkovlabs-app/release"],
+          items: [
+            {
+              type: "doc",
+              id: "volkovlabs-app/index",
+              label: "Introduction",
+            },
+            "volkovlabs-app/release",
+          ],
           label: "Volkov Labs Application",
           type: "category",
         },
@@ -174,7 +229,11 @@ const sidebars = {
       items: [
         {
           items: [
-            "balena-nfs/index",
+            {
+              type: "doc",
+              id: "balena-nfs/index",
+              label: "Introduction",
+            },
             "balena-nfs/balenaCloud",
             {
               type: "link",

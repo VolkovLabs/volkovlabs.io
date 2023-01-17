@@ -1,6 +1,5 @@
 ---
 description: The Volkov Labs Application includes Docker image and Application plugin with information about Volkov Labs supported Grafana plugins.
-title: Introduction
 tags:
   - Grafana
   - Application

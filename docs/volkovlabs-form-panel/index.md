@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Data Manipulation Form Panel is a plugin for Grafana that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
 tags:
   - Data Manipulation
@@ -59,6 +58,18 @@ grafana-cli plugins install volkovlabs-form-panel
 - Supports Code Editor suggestions for available parameters.
 
 ![Form Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-form-panel/main/src/img/panel.png)
+
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [Architecture](architecture) | Explains the Architecture and how to use Grafana and API behind NGINX. |
+| [Custom Code](code) | Demonstrates how to access panel options, API responses, form elements, Grafana services. |
+| [Control Panel](control) | Explains how to create Control Panels with multiple sections and same Id. |
+| [Custom Requests](request) | Demonstrates how to create your own Initial and Update requests using Custom Code. |
+| [Dynamic form elements](dynamic) | Demonstrates how to update element's values and options from any data source. |
+| [Variables](variables) | Explains how to replace Dashboard and Global variables. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
 
 ## Feedback
 

@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate popular Apache ECharts libraries into your Grafana dashboard.
 tags:
   - ECharts
@@ -77,6 +76,7 @@ grafana-cli plugins install volkovlabs-echarts-panel
 | [Baidu Maps](maps/baidu) | Demonstrates how to work with Baidu Maps. |
 | [Gaode Maps](maps/gaode) | Demonstrates how to work with Gaode Maps.|
 | [Google Maps](maps/google)| Demonstrates how to work with Google Maps. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
 
 ## Feedback
 
