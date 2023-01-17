@@ -49,6 +49,15 @@ grafana-cli plugins install volkovlabs-image-panel
 - Support MP4, WEBM video files with definition (`data:video/mp4;base64,ENCODED-CONTENT` and `data:video/webm;base64,ENCODED-CONTENT`)
 - Support MP3, OGG audio files with definition (`data:audio/mp3;base64,ENCODED-CONTENT` and `data:audio/ogg;base64,ENCODED-CONTENT`)
 
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [Data Sources](datasources) | Demonstrates how to retrieve data from data sources. |
+| [Supported formats](formats) | Explains what formats are supported and how to display media files. |
+| [Variables](variables) | Explains how to use Dashboard and Global variables. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
+
 ## Feedback
 
 We love to hear from you. There are various ways to get in touch with us:

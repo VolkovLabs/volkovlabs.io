@@ -54,6 +54,14 @@ The balena Supervisor is balena's agent that runs on devices. Its main role is t
 
 The Supervisor has its own [set of APIs](https://www.balena.io/docs/reference/supervisor/supervisor-api/) providing means for services to communicate and execute some special actions that affect the host OS or the services itself.
 
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [balenaCloud](balenaCloud) | Explains how to use balena Application in balenaCloud. |
+| [Provisioning](provisioning) | Demonstrates how to automatically provision balenaSupervisor Data Source. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
+
 ## Feedback
 
 We love to hear from you. There are various ways to get in touch with us:

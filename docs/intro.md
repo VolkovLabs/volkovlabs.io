@@ -11,7 +11,7 @@ tags:
 
 Our plugins for Grafana represent three categories: Manage, Operate, and Visualize. Most of them are available in the [Grafana Catalog](https://grafana.com/grafana/plugins/) and can be installed in Cloud and On-Premises.
 
-<a href='https://live.volkovlabs.io'><img src="/img/plugins.svg" /></a>
+![Plugins](/img/plugins.svg)
 
 ## Private Repository
 
