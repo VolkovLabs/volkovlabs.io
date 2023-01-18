@@ -7,9 +7,13 @@ keywords: [PostgreSQL, Configuration, Overview]
 
 # Grafana configuration overview
 
-You landed at the right article if you wonder what database to choose for your commercial Grafana-based web application. I will share my thoughts on when it should be PostgreSQL, and you can decide if your use case is any close.
+I did not find much-organized information about Grafana configuration from the management point of view. There is this famous **default setup**, but it is not clear what its limits are. Also, for those who would want to take the next step to an actual application, what direction should it be, or in other words, what should be modified in the default Grafana installation package to convert it into real deal.
+
+This article consists of the notes I took during the research. I share them to save much time and effort for the reader. 
 
 <!--truncate-->
+
+## Three levels of Grafana setup
 
 Let me start with the three different Grafana setups. In any setup, Grafana can be installed directly on the host (computer) or in a docker container. That's why on the diagram below, every rectangle representing Grafana has the docker slash host symbol. 
 
