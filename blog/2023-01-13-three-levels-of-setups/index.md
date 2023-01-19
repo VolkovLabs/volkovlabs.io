@@ -25,7 +25,7 @@ Let's review every level and who can benefit on each.
 
 ## Default setup
 
-You get the **default setup**  when you [download Grafana](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1) and follow the simple installation steps.
+You get the **default setup** when you [download Grafana](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1) and follow the simple installation steps.
 
 *Grafana configuration* is a set of parameters describing its dashboards: data sources, visualization panels, variables, permissions, etcetera. *Grafana configuration* is stored in a database. In the **default setup** Grafana is bundled with the `sqlite3` database.
 
