@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats.
 tags:
   - Grafana
@@ -13,11 +12,10 @@ tags:
 
 # Base64 Image/Video/Audio/PDF Panel
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)](https://www.grafana.com)
-[![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmQjZ19D7wKHc_6VG3dCjkwo)
+![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-image-panel/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-image-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-image-panel)
-[![CodeQL](https://github.com/VolkovLabs/volkovlabs-image-panel/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-image-panel/actions/workflows/codeql-analysis.yml)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-image-panel/branch/main/graph/badge.svg)
+![CodeQL](https://github.com/VolkovLabs/volkovlabs-image-panel/actions/workflows/codeql-analysis.yml/badge.svg)
 
 ## Introduction
 
@@ -49,6 +47,15 @@ grafana-cli plugins install volkovlabs-image-panel
 - Allows to add URL with title to navigate to other dashboard when clicking on the image. URL supports dashboard variables.
 - Support MP4, WEBM video files with definition (`data:video/mp4;base64,ENCODED-CONTENT` and `data:video/webm;base64,ENCODED-CONTENT`)
 - Support MP3, OGG audio files with definition (`data:audio/mp3;base64,ENCODED-CONTENT` and `data:audio/ogg;base64,ENCODED-CONTENT`)
+
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [Data Sources](datasources) | Demonstrates how to retrieve data from data sources. |
+| [Supported formats](formats) | Explains what formats are supported and how to display media files. |
+| [Variables](variables) | Explains how to use Dashboard and Global variables. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
 
 ## Feedback
 

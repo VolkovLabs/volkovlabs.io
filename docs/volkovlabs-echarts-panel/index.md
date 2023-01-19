@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate popular Apache ECharts libraries into your Grafana dashboard.
 tags:
   - ECharts
@@ -9,11 +8,10 @@ tags:
 
 # Apache ECharts Panel
 
-[![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)](https://www.grafana.com)
-[![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmQHGWFqksEf3LebUfhqBfFu)
+![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-echarts-panel/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-echarts-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-echarts-panel)
-[![CodeQL](https://github.com/VolkovLabs/volkovlabs-echarts-panel/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-echarts-panel/actions/workflows/codeql-analysis.yml)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-echarts-panel/branch/main/graph/badge.svg)
+![CodeQL](https://github.com/VolkovLabs/volkovlabs-echarts-panel/actions/workflows/codeql-analysis.yml/badge.svg)
 
 ## Introduction
 
@@ -61,6 +59,24 @@ grafana-cli plugins install volkovlabs-echarts-panel
 - Supports Baidu, Gaode, Google maps using API. Requires to provide access key.
 - Supports real-time data updates using streaming Data Sources and Grafana Live.
 - Has 100+ ready-as-is examples at [echarts.volkovlabs.io](https://echarts.volkovlabs.io).
+
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [setOption() Function](options) | Explains how to configure the main Apache ECharts library function. |
+| [Data Sources](datasources) | Demonstrates how to retrieve data from data sources. |
+| [Event Handling](events) | Demonstrates how to react on the triggered events. |
+| [Examples](examples) | Explains how to get started with ECharts Examples. |
+| [Streaming](streaming) | Explains how to configure Apache ECharts for real-time data updates using streaming Data Sources and Grafana Live. |
+| [Variables](variables) | Demonstrated how to replace Dashboard and Global variables. |
+| [Directed Graph](tutorials/graph) | Explains how to build and visualize directed graphs. |
+| [PNG and SVG images](tutorials/images) | Explains how to use images in various formats. |
+| [Statistical and Data Mining](tutorials/ecstat) | Explains how to use statistical and data mining library. |
+| [Baidu Maps](maps/baidu) | Demonstrates how to work with Baidu Maps. |
+| [Gaode Maps](maps/gaode) | Demonstrates how to work with Gaode Maps.|
+| [Google Maps](maps/google)| Demonstrates how to work with Google Maps. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
 
 ## Feedback
 

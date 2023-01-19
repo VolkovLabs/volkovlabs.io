@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables to retrieve data.
 tags:
   - Data Source
@@ -9,10 +8,9 @@ tags:
 
 # Environment Data Source
 
-[![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
-[![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmRCTyV2W5ghK2_5jLLsyGLc)
+![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-env-datasource/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-env-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-env-datasource)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-env-datasource/branch/main/graph/badge.svg)
 
 ## Introduction
 

@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: A panel plugin for Grafana for dynamic, data-driven text.
 tags:
   - Dynamic text
@@ -8,10 +7,10 @@ tags:
 
 # Dynamic Text Panel
 
-[![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)](https://www.grafana.com)
+![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-dynamictext-panel/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-dynamictext-panel)
-[![CodeQL](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/actions/workflows/codeql-analysis.yml)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-dynamictext-panel/branch/main/graph/badge.svg)
+![CodeQL](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/actions/workflows/codeql-analysis.yml/badge.svg)
 
 ## Introduction
 
@@ -48,6 +47,17 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - Supports Internationalization using custom helpers.
 
 ![Dynamic Text Panel](img/screenshot.png)
+
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [Content](content) | Explains how to create a visualization template for your data. |
+| [Data](data) | Demonstrates how to use Every Row and All Rows option. |
+| [JavaScript Code](code) | Demonstrates how to add a Handlebars helpers and Event handlers. |
+| [Helpers](helpers) | Helpers are functions that let you perform basic text transformation within your template. |
+| [Recipes](recipes) | Useful snippets that you can use in your templates. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
 
 ## Feedback
 

@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Balena NFS project demonstrates how to deploy the NFS Server and Client in balenaCloud.
 tags:
   - balena
@@ -10,8 +9,8 @@ tags:
 
 # Balena NFS
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)](https://www.grafana.com)
-[![Balena](https://github.com/volkovlabs/balena-nfs/actions/workflows/balena.yml/badge.svg)](https://github.com/volkovlabs/balena-nfs/actions/workflows/balena.yml)
+![Grafana 9](https://img.shields.io/badge/Grafana-9.2.2-orange)
+![Balena](https://github.com/volkovlabs/balena-nfs/actions/workflows/balena.yml/badge.svg)
 
 ## Introduction
 
