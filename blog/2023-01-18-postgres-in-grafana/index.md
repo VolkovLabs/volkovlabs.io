@@ -3,9 +3,10 @@ authors: [daria]
 slug: grafana-postgresql-20230118
 tags: [PostgreSQL, Configuration Overview]
 keywords: [PostgreSQL, Configuration, Overview]
+draft: true
 ---
 
-# PostgreSQL in Grafana
+# PostgreSQL with Timescale is the ultimate storage partner for Grafana
 
 You landed at the right article if you wonder what database to choose for your commercial Grafana-based web application. I will share my thoughts on when it should be PostgreSQL, and you can decide if your use case is any close.
 
@@ -15,7 +16,7 @@ This article is written to supplement the YouTube video we recently published on
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/SbjIWnrMIgk" title="Ultimate storage partner for Grafana | PostgreSQL with Timescale" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-## PostgreSQL is excellent choice for storing Grafana configuration
+## PostgreSQL is an excellent choice for storing Grafana configuration
 
 Grafana store its configuration (connected data sources, employed visualizations, variables, etc.) in the configuration storage. You end up with `SQLite` database after downloading and installing the [default Grafana package](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1).
 

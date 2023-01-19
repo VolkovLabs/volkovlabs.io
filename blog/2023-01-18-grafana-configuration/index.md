@@ -1,31 +1,31 @@
 ---
 authors: [daria]
-slug: grafana-configuration-overview-20230113
-tags: [PostgreSQL, Configuration Overview]
-keywords: [PostgreSQL, Configuration, Overview]
+slug: grafana-configuration-20230118
+tags: [PostgreSQL, Configuration, Grafana]
+keywords: [PostgreSQL, Configuration, Grafana]
 ---
 
-# Grafana configuration overview
+# From default Grafana configuration to real deal
 
 I did not find much-organized information about Grafana configuration from the management point of view. There is this famous **default setup**, but it is not clear what its limits are. Also, for those who would want to take the next step to an actual application, what direction should it be, or in other words, what should be modified in the default Grafana installation package to convert it into real deal.
 
-This article consists of the notes I took during the research. I share them to save much time and effort for the reader. 
-
 <!--truncate-->
+
+This article consists of the notes I took during the research. I share them to save time and effort for the reader. 
 
 ## Three levels of Grafana setup
 
 Let me start with the three different Grafana setups. In any setup, Grafana can be installed directly on the host (computer) or in a docker container. That's why on the diagram below, every rectangle representing Grafana has the docker slash host symbol. 
 
-![docker-host-symbol](container-host-ico.png)
+![docker-host-symbol](container-host.png)
 
-Let's review every level and who can benefit on each.
+Let's review every level and who can benefit from each.
 
-![Default-NextLevel-HA](default-nextlevel-ha-setup.png)
+![Default-NextLevel-HA](setup.png)
 
 ## Default setup
 
-You get the **default setup** when you [download Grafana](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1) and follow the simple installation steps.
+You get the **default setup**  when you [download Grafana](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1) and follow the simple installation steps.
 
 *Grafana configuration* is a set of parameters describing its dashboards: data sources, visualization panels, variables, permissions, etcetera. *Grafana configuration* is stored in a database. In the **default setup** Grafana is bundled with the `sqlite3` database.
 
