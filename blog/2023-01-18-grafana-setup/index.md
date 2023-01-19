@@ -1,17 +1,17 @@
 ---
 authors: [daria]
-slug: grafana-configuration-20230118
-tags: [PostgreSQL, Configuration, Grafana]
-keywords: [PostgreSQL, Configuration, Grafana]
+slug: grafana-setup-20230118
+tags: [PostgreSQL, Setup, Grafana]
+keywords: [PostgreSQL, Setup, Grafana]
 ---
 
-# From default Grafana configuration to real deal
+# From default Grafana setup to real deal
 
 I did not find much-organized information about Grafana configuration from the management point of view. There is this famous **default setup**, but it is not clear what its limits are. Also, for those who would want to take the next step to an actual application, what direction should it be, or in other words, what should be modified in the default Grafana installation package to convert it into real deal.
 
 <!--truncate-->
 
-This article consists of the notes I took during the research. I share them to save time and effort for the reader. 
+This article consists of the notes I took during my research. I share them to save time and effort for the reader. 
 
 ## Three levels of Grafana setup
 
