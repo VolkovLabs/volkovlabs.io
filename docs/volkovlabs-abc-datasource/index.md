@@ -1,5 +1,4 @@
 ---
-title: Data Source
 description: The ABC Data Source is a template to create a new data source plugin for Grafana.
 tags:
   - Grafana
@@ -10,9 +9,9 @@ tags:
 
 # Data Source template
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)](https://www.grafana.com)
+![Grafana 9](https://img.shields.io/badge/Grafana-9.1.6-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-abc-datasource/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-datasource)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-datasource/branch/main/graph/badge.svg)
 
 ## Introduction
 

@@ -9,9 +9,7 @@ tags:
 
 # balenaCloud
 
-Our custom Grafana build with the Balena Application plugin can be deployed directly to balenaCloud:
-
-[![Deploy with balena](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/volkovlabs-balena-app)
+Our custom Grafana build with the Balena Application plugin can be [deployed directly to balenaCloud](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/volkovlabs-balena-app).
 
 We recommend to add it to your `docker-compose.yml` together with NGINX reverse proxy (example configuration in the repository):
 

@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Static Data Source is a plugin for Grafana that allows to store and emulate your data.
 tags:
   - Grafana
@@ -11,11 +10,10 @@ tags:
 
 # Static Data Source
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)](https://www.grafana.com)
-[![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmSOuCRtS85zolztwDMpCsIV)
+![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-static-datasource/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-static-datasource/branch/main/graph/badge.svg?token=0m6f0ktUar)](https://codecov.io/gh/VolkovLabs/volkovlabs-static-datasource)
-[![CodeQL](https://github.com/VolkovLabs/volkovlabs-static-datasource/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-static-datasource/actions/workflows/codeql-analysis.yml)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-static-datasource/branch/main/graph/badge.svg)
+![CodeQL](https://github.com/VolkovLabs/volkovlabs-static-datasource/actions/workflows/codeql-analysis.yml/badge.svg)
 
 ## Introduction
 

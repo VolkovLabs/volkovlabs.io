@@ -1,5 +1,4 @@
 ---
-title: Introduction
 description: The Balena Application plugin for Grafana allows to display device information and manage services using Balena Supervisor API.
 tags:
   - balena
@@ -12,12 +11,11 @@ tags:
 
 # Balena Application
 
-[![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)](https://www.grafana.com)
-[![YouTube](https://img.shields.io/badge/YouTube-Playlist-red)](https://youtube.com/playlist?list=PLPow72ygztmRdzBPeQ16cwM7ZvPbXfyHv)
+![Grafana 9](https://img.shields.io/badge/Grafana-9.3.2-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-balena-app/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app)
-[![Balena](https://github.com/volkovlabs/volkovlabs-balena-app/actions/workflows/balena.yml/badge.svg)](https://github.com/volkovlabs/volkovlabs-balena-app/actions/workflows/balena.yml)
-[![CodeQL](https://github.com/VolkovLabs/volkovlabs-balena-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-balena-app/actions/workflows/codeql-analysis.yml)
+![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-balena-app/branch/main/graph/badge.svg)
+![Balena](https://github.com/volkovlabs/volkovlabs-balena-app/actions/workflows/balena.yml/badge.svg)
+![CodeQL](https://github.com/VolkovLabs/volkovlabs-balena-app/actions/workflows/codeql-analysis.yml/badge.svg)
 
 ## Introduction
 
@@ -54,6 +52,14 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-bale
 The balena Supervisor is balena's agent that runs on devices. Its main role is to ensure your app is running, and keep communications with the balenaCloud API server.
 
 The Supervisor has its own [set of APIs](https://www.balena.io/docs/reference/supervisor/supervisor-api/) providing means for services to communicate and execute some special actions that affect the host OS or the services itself.
+
+## Documentation
+
+| Section | Description |
+| -- | -- |
+| [balenaCloud](balenaCloud) | Explains how to use balena Application in balenaCloud. |
+| [Provisioning](provisioning) | Demonstrates how to automatically provision balenaSupervisor Data Source. |
+| [Release Notes](release) | Stay up to date with the latest features and updates. |
 
 ## Feedback
 

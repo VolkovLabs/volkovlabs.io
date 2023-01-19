@@ -27,8 +27,9 @@ The only parameter that is passed from this function to the `setOption()` is `op
 | -- | -- |
 | `data` | Grafana's `data` object with time range, series and request information. See the example on the picture above. |
 | `echarts` | ECharts library. |
-| `echartsInstance` | Instance of the ECharts. See the example on the picture above. To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.|
+| `echartsInstance` | Instance of the ECharts. See the example on the picture above. To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation. |
 | `ecStat` | A statistical and data mining tool for Apache ECharts. More information in the [ecStat](tutorials/ecstat) section. |
+| `eventBus` | Grafana's `eventBus` to publish and subsribe to application events. |
 | `locationService` | Grafana's `locationService` to work with browser location and history. |
 | `notifyError(['Header', 'Error Message'])` | Display error notification. |
 | `notifySuccess(['Header', 'Message'])` | Display successful notification. |
@@ -66,3 +67,41 @@ To scale the content when panel is resized use `echartsInstance` methods to retr
 ```
 
 To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.
+
+## Create DOM (Document Object Model) Elements
+
+It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using `echartsInstance`. For example, you can add a button with an event handler.
+
+```javascript
+const myFunction = () => {
+  alert('myFunction() called!');
+}
+
+//Get the DOM for the panel
+let dom = echartsInstance.getDom();
+
+//Get the child nodes
+let nodeList = dom.childNodes;
+
+//If we haven't added our controls to the DOM yet
+if (nodeList.length < 2) {
+  //Create a new button
+  const btn = document.createElement("button");
+
+  //Establish button name
+  const textnode = document.createTextNode("My Button");
+  btn.appendChild(textnode);
+
+  //Add click event handler
+  btn.addEventListener("click", myFunction);
+
+  //Create a new <div>
+  const div = document.createElement("div");
+
+  //Add button to <div>
+  div.appendChild(btn);
+
+  //Insert new <div> ahead of existing chart div
+  dom.insertBefore(div, dom.firstChild);
+}
+```

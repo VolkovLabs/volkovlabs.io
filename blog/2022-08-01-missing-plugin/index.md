@@ -13,7 +13,7 @@ Grafana is a de-facto one of the best observability visualization tools with var
 
 Apache ECharts is a free, powerful charting and visualization libraries offering easy ways to add intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender, a new lightweight canvas library.
 
-[![ECharts](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png)](https://echarts.volkovlabs.io)
+![ECharts](https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png)
 
 The Apache ECharts visualization panel is a plugin for Grafana that allows you to incorporate the Apache ECharts libraries into your Grafana dashboard. The original plugin was developed for Grafana 6.3/7.0 and Apache ECharts libraries 4.9.0. It has not been maintained since then.
 

@@ -1,6 +1,5 @@
 ---
 description: Baidu Maps supported in the latest version of the Apache ECharts Panel.
-title: Baidu
 tags:
   - ECharts
   - Panel
@@ -20,12 +19,10 @@ Supported since Apache ECharts visualization panel 3.6.0.
 Baidu Maps are loaded using API v3 and require Access Key. You can get it from [https://lbsyun.baidu.com/apiconsole/key#/home](https://lbsyun.baidu.com/apiconsole/key#/home).
 
 - Loading Baidu Maps takes 2-3 seconds.
-- Callback function `bmapReady` will be executed on load. Name can be changed in the Panel options.
+- The callback function `bmapReady` will be executed on load. The name can be changed in the Panel options.
 - While loading, animation can be displayed using the code below.
 
-Animation examples.
-
-![Loading Option 1](../img/waiting-1.gif) ![Loading Option 2](../img/waiting-2.gif)
+![Baidu Maps](../img/baidu.png)
 
 ## Function
 

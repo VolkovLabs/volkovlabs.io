@@ -62,3 +62,13 @@ return {
   ]
 };
 ```
+
+## Update Dashboard Variables
+
+Dashboard variables can be updated in the [Event Handlers](events).
+
+```js
+echartsInstance.on('click', (params) => {
+  locationService.partial({ 'var-name': value }, true);
+});
+```
