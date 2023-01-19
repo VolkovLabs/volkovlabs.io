@@ -87,6 +87,8 @@ Present object (JSON) or array as formatted string.
 
 ![JSON](img/json.png)
 
+### Transformation
+
 JSON helper expects an object or array to display it as formatted string. If the data source returns string it should be transformed to JSON object using Transformation `Convert field type`.
 
 ![JSON Transformation](img/json-transformation.png)
