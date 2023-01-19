@@ -85,6 +85,8 @@ Present object (JSON) or array as string.
 <!-- result: as string  -->
 ```
 
+![JSON](img/json.png)
+
 ## `{{split}}`
 
 :::info
