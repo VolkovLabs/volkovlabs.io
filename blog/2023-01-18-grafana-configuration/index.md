@@ -17,11 +17,11 @@ This article consists of the notes I took during the research. I share them to s
 
 Let me start with the three different Grafana setups. In any setup, Grafana can be installed directly on the host (computer) or in a docker container. That's why on the diagram below, every rectangle representing Grafana has the docker slash host symbol. 
 
-![docker-host-symbol](container-host.png)
+![Docker and Host icon](container-host.png)
 
 Let's review every level and who can benefit from each.
 
-![Default-NextLevel-HA](setup.png)
+![Default, Next Level and High Availability setup](setup.png)
 
 ## Default setup
 

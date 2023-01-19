@@ -1,6 +1,6 @@
 ---
 authors: [daria]
-slug: grafana-postgresql-20230118
+slug: grafana-postgresql-20230119
 tags: [PostgreSQL, Configuration Overview]
 keywords: [PostgreSQL, Configuration, Overview]
 draft: true
@@ -324,7 +324,7 @@ insert into stock_image (stock_symbol, stock_name, scaleX, scaleY, image_svgxml)
 }
 ```
 
-### How to import dashboard described in JSON format into Grafana
+### How to import the dashboard described in JSON format into Grafana
 
 ## Summary
 
@@ -335,5 +335,5 @@ PostgreSQL combines the three most required storage needs:
 
  We 
 
-![Grafana-Management-Basics](grafana-management-basics.png)
+![Grafana Management Basics](basics.png)
 
