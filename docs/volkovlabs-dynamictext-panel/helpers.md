@@ -75,7 +75,7 @@ Supported since Dynamic Text panel 3.2.0.
 
 :::
 
-Present object (JSON) or array as string.
+Present object (JSON) or array as formatted string.
 
 ```handlebars
 <!-- object or array -->
@@ -86,6 +86,12 @@ Present object (JSON) or array as string.
 ```
 
 ![JSON](img/json.png)
+
+### Transformation
+
+JSON helper expects an object or array to display it as formatted string. If the data source returns string it should be transformed to JSON object using Transformation `Convert field type`.
+
+![JSON Transformation](img/json-transformation.png)
 
 ## `{{split}}`
 
