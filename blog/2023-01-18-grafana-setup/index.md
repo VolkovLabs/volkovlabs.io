@@ -11,7 +11,7 @@ I did not find much-organized information about Grafana configuration from the m
 
 <!--truncate-->
 
-This article consists of the notes I took during my research. I share them to save time and effort for the reader.
+This article consists of the notes I took during my research. I share them to save the reader's time and effort.
 
 In any setup, Grafana can be installed directly on the host (computer) or in a docker container. That's why on the diagram below, every rectangle representing Grafana has the docker slash host symbol. 
 
