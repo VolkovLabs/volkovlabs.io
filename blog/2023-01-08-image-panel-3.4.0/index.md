@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: image-panel-3.4.0-20230108
 tags: [Base64, Release]
+image: /img/blog/2023-01-08-image-panel-3.4.0/banner.png
 keywords: [Base64, Panel, PDF, Images, Video, Audio]
 ---
 

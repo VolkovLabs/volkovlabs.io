@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: dynamictext-panel-2.2.0-20230110
 tags: [Dynamic Text, Release]
+image: /img/blog/2023-01-10-dynamictext-panel-2.2.0/banner.png
 keywords: [Dynamic Text, Panel, Data, Grafana]
 ---
 
