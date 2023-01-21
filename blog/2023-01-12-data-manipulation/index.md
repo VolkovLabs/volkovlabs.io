@@ -2,6 +2,7 @@
 authors: [daria, mikhail]
 slug: data-manipulation-grafana-20230112
 tags: [Data Manipulation, API]
+image: /img/blog/2023-01-12-data-manipulation/banner.png
 keywords: [Data Manipulation, API, Grafana]
 ---
 
