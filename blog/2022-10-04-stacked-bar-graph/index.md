@@ -4,7 +4,7 @@ authors:
       url: https://github.com/Sineos
       image_url: https://github.com/Sineos.png
 slug: stacked-bar-graph-20221004
-tags: [Apache ECharts, Guest post]
+tags: [Apache ECharts, Community]
 image: /img/blog/2022-10-04-stacked-bar-graph/banner.png
 keywords: [Apache ECharts, Grafana, Visualization]
 ---
