@@ -6,9 +6,12 @@ image: /img/blog/2022-11-10-form-panel-2.7.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Data Manipulation Panel 2.7.0
 
-We released a new version of the Data Manipulation Panel 2.7.0. This version includes
+We released a new version of the Data Manipulation Panel 2.7.0. In this feature release
 
 - Community-requested updates for Payload.
 - Update Request parameters.
@@ -19,7 +22,10 @@ We released a new version of the Data Manipulation Panel 2.7.0. This version inc
 
 We are impressed with the increasing number of use cases from the community and looking forward to the feedback to continue improving it.
 
-![Panel](panel.png)
+<Image
+  title="Data Manipulation panel allows to input and edit all kinds of data."
+  src="/img/blog/2022-11-10-form-panel-2.7.0/panel.png"
+/>
 
 ## Getting Started
 
@@ -33,7 +39,10 @@ grafana-cli plugins install volkovlabs-form-panel
 
 The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/DXALVG8GijM" title="Data Manipulation Plugin for Grafana | Manual data entering and User input into Dashboard" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/DXALVG8GijM"
+  title="Data Manipulation Plugin for Grafana."
+/>
 
 ## Release Notes
 
@@ -41,7 +50,7 @@ The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the 
 
 - Update to Grafana 9.2.2 (#113)
 - Update CI to upload signed artifacts (#116)
-- Allow to send all or updated only values in Payload (#116)
+- Allow sending all or updated only values in Payload (#116)
 - Add Initial values parameter to Update Request parameters (#117)
 - Add Status notification after submitting the form (#98)
 - Add Monaco Code Editor suggestions for available parameters (#88)
