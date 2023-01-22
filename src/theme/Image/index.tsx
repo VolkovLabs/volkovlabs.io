@@ -12,9 +12,9 @@ type Props = {
 };
 
 /**
- * Screenshot
+ * Image
  */
-const Screenshot = ({ height, src, title, width }: Props) => (
+const Image = ({ height, src, title, width }: Props) => (
   <figure>
     <img
       alt={title}
@@ -29,4 +29,4 @@ const Screenshot = ({ height, src, title, width }: Props) => (
   </figure>
 );
 
-export default Screenshot;
+export default Image;
