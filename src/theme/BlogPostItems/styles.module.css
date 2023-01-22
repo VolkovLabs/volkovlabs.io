@@ -1,3 +1,8 @@
+.root {
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+
 .posts {
   --cols: 1;
   --gap: 2rem;
@@ -5,8 +10,7 @@
   grid-template-columns: 1fr;
   grid-template-columns: repeat(var(--cols), 1fr);
   gap: var(--gap);
-  margin-bottom: 5rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 550px) {

@@ -6,46 +6,55 @@ import styles from './styles.module.css';
 
 const BlogPostItems = ({ items }) => {
   return (
-    <div className={styles.posts}>
-      {items.map(({ content: BlogPostContent }) => {
-        const { permalink, title, formattedDate, frontMatter, tags, authors } =
-          BlogPostContent.metadata;
-        const author = authors[0];
-        const tag = tags[0];
+    <div className={styles.root}>
+      <h1>Blog Posts</h1>
+      <div className={styles.posts}>
+        {items.map(({ content: BlogPostContent }) => {
+          const {
+            permalink,
+            title,
+            formattedDate,
+            frontMatter,
+            tags,
+            authors,
+          } = BlogPostContent.metadata;
+          const author = authors[0];
+          const tag = tags[0];
 
-        return (
-          <BlogPostProvider
-            key={BlogPostContent.metadata.permalink}
-            content={BlogPostContent}
-          >
-            <div className={styles.post}>
-              <div className={styles.imageBox}>
-                <Link to={permalink} className={styles.image}>
-                  <img loading="lazy" src={frontMatter.image} alt={title} />
-                </Link>
-              </div>
-
-              <div className={styles.content}>
-                <div className={styles.tags}>
-                  <Chip
-                    label={tag.label}
-                    permalink={tag.permalink}
-                    skin="secondary"
-                  />
+          return (
+            <BlogPostProvider
+              key={BlogPostContent.metadata.permalink}
+              content={BlogPostContent}
+            >
+              <div className={styles.post}>
+                <div className={styles.imageBox}>
+                  <Link to={permalink} className={styles.image}>
+                    <img loading="lazy" src={frontMatter.image} alt={title} />
+                  </Link>
                 </div>
 
-                <h3 className={styles.title}>
-                  <Link to={permalink}>{title}</Link>
-                </h3>
+                <div className={styles.content}>
+                  <div className={styles.tags}>
+                    <Chip
+                      label={tag.label}
+                      permalink={tag.permalink}
+                      skin="secondary"
+                    />
+                  </div>
 
-                <div className={styles.author}>
-                  by <b>{author.name}</b> on {formattedDate}
+                  <h3 className={styles.title}>
+                    <Link to={permalink}>{title}</Link>
+                  </h3>
+
+                  <div className={styles.author}>
+                    by <b>{author.name}</b> on {formattedDate}
+                  </div>
                 </div>
               </div>
-            </div>
-          </BlogPostProvider>
-        );
-      })}
+            </BlogPostProvider>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -6,9 +6,12 @@ image: /img/blog/2023-01-08-image-panel-3.4.0/banner.png
 keywords: [Base64, Panel, PDF, Images, Video, Audio]
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Base64 Image/Video/Audio/PDF Panel 3.4.0
 
-We released a new version of Base64 Image/Video/Audio/PDF Panel 3.4.0. In this maintenance version
+We released a new version of Base64 Image/Video/Audio/PDF Panel 3.4.0. In this maintenance release
 
 - Updated to the latest Grafana toolkit 9.3.2.
 - Updated README and [documentation](/plugins/volkovlabs-image-panel) to explain how to use the panel with data sources and supported formats.
@@ -16,7 +19,10 @@ We released a new version of Base64 Image/Video/Audio/PDF Panel 3.4.0. In this m
 
 <!--truncate-->
 
-![Image Panel](image.png)
+<Image
+  title="How to use Base64 Panel to display Base64 PNG image."
+  src="/img/blog/2023-01-08-image-panel-3.4.0/image.png"
+/>
 
 ## Getting Started
 
@@ -30,7 +36,10 @@ grafana-cli plugins install volkovlabs-image-panel
 
 The Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/1_bgLSehjhg" title="Base64 Image/PDF panel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/1_bgLSehjhg"
+  title="Base64 Image/PDF panel for Grafana."
+/>
 
 ## Release Notes
 
