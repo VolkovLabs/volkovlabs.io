@@ -2,6 +2,7 @@
 authors: [daria]
 slug: grafana-variables-at-a-glance-environment-data-source-explained-102b8e05e1a5
 tags: [Variables, Environment Data Source]
+image: /img/blog/2022-09-13-grafana-variables/banner.png
 keywords: [Variables, Grafana, Visualization]
 ---
 
