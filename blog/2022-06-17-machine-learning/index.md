@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: using-grafana-and-machine-learning-for-real-time-microscopy-image-analysis-9e78e210cddb
 tags: [Machine Learning]
+image: /img/blog/2022-06-17-machine-learning/banner.png
 keywords: [Machine Learning, Industrial, Charts, Grafana, Visualization]
 ---
 
