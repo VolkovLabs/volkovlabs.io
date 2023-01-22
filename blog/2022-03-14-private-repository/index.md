@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: installing-grafana-plugins-from-a-private-repository-805b54a1add3
 tags: [Grafana, Private Repository]
+image: /img/blog/2022-03-14-private-repository/banner.png
 keywords: [Grafana, Private Repository, Plugins]
 ---
 
