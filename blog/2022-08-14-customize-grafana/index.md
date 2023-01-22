@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: how-to-customize-the-grafana-user-interface-8d70a42dc2b6
-tags: [Customization, Docker]
+tags: [Grafana, Docker]
 image: /img/blog/2022-08-14-customize-grafana/banner.png
 keywords: [Business, Grafana, Visualization, Customization, Docker]
 ---
