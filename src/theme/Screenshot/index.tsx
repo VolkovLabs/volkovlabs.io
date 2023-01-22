@@ -5,7 +5,6 @@ import styles from './styles.module.css';
  * Properties
  */
 type Props = {
-  alt: string;
   height?: number;
   src: string;
   title?: string;
@@ -15,10 +14,10 @@ type Props = {
 /**
  * Screenshot
  */
-const Screenshot = ({ alt, height, src, title, width }: Props) => (
+const Screenshot = ({ height, src, title, width }: Props) => (
   <figure>
     <img
-      alt={alt}
+      alt={title}
       className={styles.image}
       height={height}
       src={src}
