@@ -1,17 +1,16 @@
-.image {
+.video {
   display: block;
-  height: auto;
   margin: 0 auto;
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-radius: 10px;
 }
 
-[data-theme='light'] .image {
+[data-theme='light'] .video {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
 }
 
-[data-theme='dark'] .image {
+[data-theme='dark'] .video {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
 }
 
