@@ -39,8 +39,7 @@ const BlogPostItems = ({ items }) => {
                 </h3>
 
                 <div className={styles.author}>
-                  by <Link to={author.url}>{author.name}</Link> on{" "}
-                  {formattedDate}
+                  by <b>{author.name}</b> on {formattedDate}
                 </div>
               </div>
             </div>
