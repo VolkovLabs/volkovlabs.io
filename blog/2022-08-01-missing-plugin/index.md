@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: the-missing-plugin-to-create-business-and-industrial-charts-in-grafana-1d8f7304229f
 tags: [Apache ECharts, Business, IoT]
+image: /img/blog/2022-08-01-missing-plugin/banner.png
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
 ---
 
