@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: form-panel-2.7.0-20221110
 tags: [Data Manipulation, Release]
+image: /img/blog/2022-11-10-form-panel-2.7.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
