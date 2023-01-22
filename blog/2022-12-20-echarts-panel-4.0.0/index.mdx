@@ -6,9 +6,12 @@ image: /img/blog/2022-12-20-echarts-panel-4.0.0/banner.png
 keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Apache ECharts Panel 4.0.0
 
-We released a major release of the Apache ECharts Panel 4.0.0 for Grafana. This version
+We released a new version of the Apache ECharts Panel 4.0.0 for Grafana. In this major release
 
 - Introduced breaking changes with loading GeoJSON maps, which are disabled by default.
 - Documentation and examples were updated and moved to https://docs.volkovlabs.io and https://echarts.volkovlabs.io.
@@ -17,7 +20,10 @@ We released a major release of the Apache ECharts Panel 4.0.0 for Grafana. This 
 
 We are enthusiastic about the new release and will continue improving the panel introducing support for Annotations and custom themes in the upcoming versions.
 
-![Pie Chart](pie-chart.png)
+<Image
+  title="Apache ECharts visualizes Pie Chart from the Static Data Source."
+  src="/img/blog/2022-12-20-echarts-panel-4.0.0/pie-chart.png"
+/>
 
 ## Getting Started
 
@@ -31,7 +37,10 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate popular Apache ECharts libraries into your Grafana dashboard.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/DxqCrBEmrQw" title="Apache Echarts panel for Grafana | How to create modern dashboards in Grafana | Echarts Tutorial" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/DxqCrBEmrQw"
+  title="Apache Echarts panel for Grafana | How to create modern dashboards in Grafana | Echarts Tutorial"
+/>
 
 ## Release Notes
 
