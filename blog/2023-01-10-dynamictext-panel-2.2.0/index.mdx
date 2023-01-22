@@ -6,6 +6,9 @@ image: /img/blog/2023-01-10-dynamictext-panel-2.2.0/banner.png
 keywords: [Dynamic Text, Panel, Data, Grafana]
 ---
 
+import Screenshot from "@theme/Screenshot";
+import Video from "@theme/Video";
+
 # Dynamic Text Panel 2.2.0
 
 We released a new version of Dynamic Text Panel 2.2.0. In this version
@@ -34,11 +37,15 @@ A custom handlebars helper can be added to replace the field's value using a pat
 JavaScript Code:
 
 ```js
-handlebars.registerHelper('replace',
-  (context, pattern, replacement) => context.replace(pattern, replacement));
+handlebars.registerHelper("replace", (context, pattern, replacement) =>
+  context.replace(pattern, replacement)
+);
 ```
 
-![Replace Helper](../../docs/volkovlabs-dynamictext-panel/img/replace.png)
+<Screenshot
+  title="Demonstrate how to create a replace helper to replace text in the returned data."
+  src="/img/blog/2023-01-10-dynamictext-panel-2.2.0/replace.png"
+/>
 
 ### Add Internationalization
 
@@ -60,22 +67,24 @@ JavaScript Code:
 
 ```js
 const messages = {
-  "Hello": {
-    'en': 'Hello',
-    'fr': 'Salut',
-    'es': 'Hola'
+  Hello: {
+    en: "Hello",
+    fr: "Salut",
+    es: "Hola",
   },
-  "Default": {
-    'en': "The query didn't return any results.",
-    'fr': "La requête n'a renvoyé aucun résultat.",
-    'es': "La consulta no arrojó ningún resultado."
+  Default: {
+    en: "The query didn't return any results.",
+    fr: "La requête n'a renvoyé aucun résultat.",
+    es: "La consulta no arrojó ningún resultado.",
   },
-}
+};
 
 const locale = getLocale();
 
-handlebars.registerHelper('translate',
-  (message) => messages[message][locale] ?? messages[message]['en']);
+handlebars.registerHelper(
+  "translate",
+  (message) => messages[message][locale] ?? messages[message]["en"]
+);
 ```
 
 ## Getting Started
@@ -90,7 +99,10 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 
 The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/MpNZ4Yl-p0U" title="Dynamic Text Plugin for Grafana | Markdown, HTML and Handlebars to transform data visualizations" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Dynamic Text Plugin for Grafana."
+/>
 
 ## Release Notes
 
