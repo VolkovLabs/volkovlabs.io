@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: using-environment-variables-for-configuration-provisioning-and-dashboards-in-grafana-279661733416
 tags: [Variables, Environment Data Source]
+image: /img/blog/2022-02-20-environment-datasource/banner.png
 keywords: [Variables, Grafana, Visualization]
 ---
 

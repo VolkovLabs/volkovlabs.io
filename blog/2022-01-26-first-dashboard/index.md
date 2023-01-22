@@ -2,6 +2,7 @@
 authors: [daria]
 slug: how-to-create-your-first-grafana-dashboard-bd0f68d631bd
 tags: [Business, Dashboard]
+image: /img/blog/2022-01-26-first-dashboard/banner.png
 keywords: [Business, Charts, Grafana, Visualization]
 ---
 
