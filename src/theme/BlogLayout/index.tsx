@@ -14,6 +14,7 @@ const BlogLayout = (props) => {
           <main className="col" itemScope itemType="http://schema.org/Blog">
             {children}
           </main>
+          {toc && <div className="col col--2">{toc}</div>}
         </div>
       </div>
     </Layout>
