@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: we-created-our-own-panel-plugin-template-for-grafana-665f7e6760d1
-tags: [Grafana Template, Development]
+tags: [Development]
 image: /img/blog/2021-12-10-panel-template/banner.png
 keywords: [Template, Panel, Grafana, Visualization]
 ---

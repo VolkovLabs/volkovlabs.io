@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: grafana-101-what-why-who-6b25f0d0fd11
-tags: [Grafana, Dashboard]
+tags: [Getting Started, Dashboard]
 image: /img/blog/2022-01-21-grafana-101/banner.png
 keywords: [Business, Charts, Grafana, Visualization]
 ---
