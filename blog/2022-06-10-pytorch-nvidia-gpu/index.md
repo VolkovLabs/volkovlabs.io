@@ -1,7 +1,8 @@
 ---
 authors: [mikhail]
 slug: we-tried-pytorch-in-docker-container-with-nvidia-gpu-support-on-google-cloud-5e30c49d9864
-tags: [PyTorch, GPU]
+tags: [Machine Learning]
+image: /img/blog/2022-06-10-pytorch-nvidia-gpu/banner.png
 keywords: [PyTorch, GPU]
 ---
 

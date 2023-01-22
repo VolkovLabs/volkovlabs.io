@@ -2,6 +2,7 @@
 authors: [mikhail]
 slug: echarts-panel-4.0.0-20221220
 tags: [Apache ECharts, Release]
+image: /img/blog/2022-12-20-echarts-panel-4.0.0/banner.png
 keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
 ---
 

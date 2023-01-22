@@ -1,7 +1,8 @@
 ---
 authors: [mikhail]
 slug: using-grafana-to-display-large-pdf-documents-weve-got-you-covered-4e654e8d4bce
-tags: [Base64, PDF]
+tags: [Base64]
+image: /img/blog/2021-12-17-display-large-pdf/banner.png
 keywords: [Image, PDF, Base64, Visualization]
 ---
 
