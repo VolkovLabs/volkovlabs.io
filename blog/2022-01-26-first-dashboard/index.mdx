@@ -6,6 +6,8 @@ image: /img/blog/2022-01-26-first-dashboard/banner.png
 keywords: [Business, Charts, Grafana, Visualization]
 ---
 
+import Video from "@theme/Video";
+
 # How to create your first Grafana Dashboard
 
 We all heard that to get a better grasp of something. It is better to see it once than to hear about it a thousand times. Could anything be better than seeing? Creating it yourself!
@@ -16,7 +18,10 @@ The satisfying AHA moment, a.k.a. 'Now I get it' moment sparks up just after you
 
 Let's get started. After reading my article and following along, I hope you will arrive at the same results as I did. Please, feel free to ask questions. I will be thrilled to help you solve your issues as I consider myself a Grafana expert and appreciate a good challenge once in a while to prove it.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/HNCKbGfAU0Q" title="How to create your Business Grafana dashboard | Step by step for analysts | Grafana Tutorial" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/HNCKbGfAU0Q"
+  title="How to create your Business Grafana dashboard."
+/>
 
 Suppose your brain works like mine and requires a high-level picture first, then before proceeding, I recommend you to take a look at [my previous article](/blog/grafana-101-what-why-who-6b25f0d0fd11). It talks about what Grafana is, what components it consists of, and how they interact. That article also lays out all key Grafana concepts.
 
@@ -52,7 +57,7 @@ Longitude
 
 Step 1 is complete if you have your dataset ready. In my case, I had an `ev_locations.csv` file with 13 above columns and the header row removed.
 
-## Choose a data storage
+## Choose a data storage
 
 For the first Grafana Dashboard, I recommend using one of the standard data sources, meaning those already a part of the Grafana Platform and are installed automatically with the Grafana installation package. The [CSV data source](https://grafana.com/grafana/plugins/marcusolsson-csv-datasource/) is not yet there and does require a couple of extra steps in setting it up. You are indeed welcome to explore that route.
 
@@ -95,12 +100,14 @@ Step 2 is complete when you have loaded your data file into the PostgreSQL datab
 
 Like PostgreSQL, you can install it directly on your machine or use Grafana in the Docker container. Either way works. The latter is cleaner to my taste. You can download both from [grafana.com](https://grafana.com).
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/xTQpV7B700w"
+  title="How to Install Grafana for Data Analysts and Data Scientists."
+/>
 
 Download the Grafana Installation package of your choice. It could be Linux, Windows, Mac, or a Docker Container.
 
 ![Grafana can be installed on Linux, Windows, Mac, Docker, and ARM platforms](download.png)
-
 
 Once Grafana is installed, go to your browser and enter the following URL. That should open the Grafana web application with full functionality.
 
@@ -118,7 +125,7 @@ I will provide concise instructions to make it easier to follow. On the left-han
 
 The screen looked overwhelming, but the more time I spent playing around with different options, the more comfortable I got. My usual preference is to write my SQL queries from scratch. I do not favor any helpers since I am a SQL champ and always "know better."
 
-For that reason, I clicked **Edit SQL** and entered the simple ``SELECT`` statement that would be needed. I also changed **Format As** to **Table**. Another thing to point out is ``limit 5`` in my query. Since I was learning, I wanted to limit the volume of the fetched data. Once I had everything set up, I removed the limit.
+For that reason, I clicked **Edit SQL** and entered the simple `SELECT` statement that would be needed. I also changed **Format As** to **Table**. Another thing to point out is `limit 5` in my query. Since I was learning, I wanted to limit the volume of the fetched data. Once I had everything set up, I removed the limit.
 
 ![Query Editor with final SQL statement to retrieve data for Geomap](sql.png)
 
@@ -127,13 +134,13 @@ Finally, the time came for the fun part. On the right-hand side, under the **Sea
 ![I chose it and reviewed the list of all available visualizations](panels.png)
 
 You bet I hit the **Geomap** one.
-Every Grafana visualization has many properties to modify optionally. I did the bare minimum to complete this project swiftly. Here is what I altered. I chose *North America* for a **Map View**.
+Every Grafana visualization has many properties to modify optionally. I did the bare minimum to complete this project swiftly. Here is what I altered. I chose _North America_ for a **Map View**.
 
 ![I chose "North America" for a Map View](map-view.png)
 
-The little cherry on top was a filter by facility type. That is done via ``variables``. I went to the gear icon for **Dashboard Settings** on the top right corner and then into the **Variables** menu.
+The little cherry on top was a filter by facility type. That is done via `variables`. I went to the gear icon for **Dashboard Settings** on the top right corner and then into the **Variables** menu.
 
-Below is the picture showing how I set it up. Following the naming convention best practice, I used the ``v_`` prefix since it was a variable name. The **label** is how the filter is called on the dashboard. **Query** determines what values for the filter are going to be. **Sort** is to make sure the values are sorted in the filter.
+Below is the picture showing how I set it up. Following the naming convention best practice, I used the `v_` prefix since it was a variable name. The **label** is how the filter is called on the dashboard. **Query** determines what values for the filter are going to be. **Sort** is to make sure the values are sorted in the filter.
 
 ![Add variables to filter data by State and facility type](variables.png)
 
@@ -156,3 +163,5 @@ Then I went to **Export**, next to the **View JSON**. I copied the JSON file fro
 Here how the dashboard looks like.
 
 ![Geomap visualization for Electric Vehicle Charging Station](final.png)
+
+Any feedback and comments are welcome. Feel free to challenge us with your questions. It helps us to stay sharp!
