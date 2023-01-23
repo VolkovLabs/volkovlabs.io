@@ -6,6 +6,8 @@ image: /img/blog/2022-02-20-environment-datasource/banner.png
 keywords: [Variables, Grafana, Visualization]
 ---
 
+import Video from "@theme/Video";
+
 # Using Environment Variables for Configuration, Provisioning, and Dashboards in Grafana
 
 The number of use cases operating Grafana as a platform to build modern applications is increasing. Compared to a single central Grafana instance, we are looking at multiple distributed installations with new data sources.
@@ -16,13 +18,17 @@ One example is the Environment Data Source, which we created for our customer, w
 
 Watch this video to learn more about the dashboard, global, and environment variables in Grafana.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/sczRq2lI3e4"
+  title="Dashboard, Global and Environment variables."
+/>
 
 Before looking at the Environment Data Source, let's examine how you can utilize environment variables in Grafana.
 
 ## System Configuration
 
 Grafana has default and custom configuration files. You can customize your Grafana instance by modifying the configuration file or using environment variables. To override an option, use a predefined pattern `GF_<SectionName>_<KeyName>` to name exported variables:
+
 ```sh
 export GF_DEFAULT_INSTANCE_NAME=my-instance
 export GF_SECURITY_ADMIN_USER=owner
@@ -99,3 +105,5 @@ Because of the security risk, the Environment data source can not be included in
 ```sh
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
 ```
+
+Any feedback and comments are welcome. Feel free to challenge us with your questions. It helps us to stay sharp!
