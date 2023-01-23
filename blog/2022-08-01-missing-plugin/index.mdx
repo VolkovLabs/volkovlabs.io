@@ -6,7 +6,10 @@ image: /img/blog/2022-08-01-missing-plugin/banner.png
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
 ---
 
-# The missing plugin to create business and industrial charts in Grafana
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# The missing plugin to create business and industrial charts in Grafana
 
 Grafana is a de-facto one of the best observability visualization tools with various chart panels and many community plugins like Plotly. Still, no none of them can compare with Apache ECharts flexibility.
 
@@ -28,7 +31,10 @@ Apache ECharts libraries is a mighty tool. You do not need a senior Javascript d
 
 The Apache ECharts visualization panel for Grafana is a bridge that has been missing and finally arrived. You can use the benefits of two great open-source products (Grafana and Apache ECharts) in one solution tailored to your needs.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/DxqCrBEmrQw" title="Apache Echarts panel for Grafana | How to create modern dashboards in Grafana | ECharts Tutorial" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/DxqCrBEmrQw"
+  title="How to create modern dashboards in Grafana."
+/>
 
 According to the [press release](https://www.globenewswire.com/fr/news-release/2021/01/26/2164391/17401/en/The-Apache-Software-Foundation-Announces-Apache-ECharts-as-a-Top-Level-Project.html), "Apache ECharts is in use at Alibaba, Amazon, Baidu, GitLab, Intel, and Tencent, among others, as well as solutions such as Apache Superset data visualization software."
 
@@ -36,51 +42,61 @@ The project continues to grow in popularity, with more than 50,000 stars on GitH
 
 ## Wind Speed
 
-Wind speed visualization is one of many exciting examples of what Apache ECharts libraries can do. 
-Every data element is displayed using the custom arrow. The arrow color signifies the speed. The direction where the arrow points - shows the wind direction. 
+Wind speed visualization is one of many exciting examples of what Apache ECharts libraries can do.
+Every data element is displayed using the custom arrow. The arrow color signifies the speed. The direction where the arrow points - shows the wind direction.
 So much information is geniusly packed in a single display.
 
 ![Visualizing Wind Speed using custom Arrows on the Grafana dashboard](wind-speed.png)
 
-## Directed Graph 
+## Directed Graph
 
 We at Volkov Labs spent some time researching the options for displaying directed graphs. The Apache ECharts satisfied every single requirement we had in mind effortlessly. The video below demonstrates the Apache ECharts directed/undirected graphs capabilities.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/BcW7iyTadWE" title="Can Apache ECharts render a directed graph? | Graph customization" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/BcW7iyTadWE"
+  title="Can Apache ECharts render a directed graph?"
+/>
 
 ## Directed Graph Tutorial
 
-The launch of the [LIVE project](https://live.volkovlabs.io/) triggered many *how-to* questions. To answer them all by explaining how we created this project, the following 2 part tutorial was put together. 
-In the LIVE project we employed the Apache ECharts directed graph to track company activities across Medium, GitHub, YouTube, and various external resources. 
+The launch of the [LIVE project](https://live.volkovlabs.io/) triggered many _how-to_ questions. To answer them all by explaining how we created this project, the following 2 part tutorial was put together.
+In the LIVE project we employed the Apache ECharts directed graph to track company activities across Medium, GitHub, YouTube, and various external resources.
 
 ### Part 1
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/e3VHgpuzEF0" title="Build directional graph in Grafana using Apache ECharts | Tutorial part 1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/e3VHgpuzEF0"
+  title="Build directional graph in Grafana using Apache ECharts | Tutorial part 1."
+/>
 
 ### Part 2
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/oM7XAVlsOio" title="Build directional graph in Grafana using Apache ECharts | Tutorial part 2" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/oM7XAVlsOio"
+  title="Build directional graph in Grafana using Apache ECharts | Tutorial part 2."
+/>
 
 ## The [LIVE](https://live.volkovlabs.io) project is ALIVE
 
-The directed graphs are built dynamically. We daily update the underlying data, so, at any point in time, the visualization gives the freshest possible update on our articles, releases, videos and other activities. 
+The directed graphs are built dynamically. We daily update the underlying data, so, at any point in time, the visualization gives the freshest possible update on our articles, releases, videos and other activities.
 
 Directed graphs use the `force` layout to adjust nodes' location automatically. In addition, nodes have different icons/styling depending on their type. Clicking on the elements allows you to open an external URL or take a closer look at the subgraphs.
 
 The tutorial above gives a complete picture of the achieved functionality.
 
 The picture below displays all our GitHub project. When this picture was taken, we had the following projects:
- - [Volkov Labs Application](https://live.volkovlabs.io/d/i0FxjZg4z/volkov-labs?orgId=1),
- - [Apache ECharts visualization panel](https://live.volkovlabs.io/d/tXQ9_367z/apache-echarts-panel?orgId=1),
- - [Dynamic Text visualization panel](https://live.volkovlabs.io/d/2L2sYjVVz/dynamic-text-panel?orgId=1),
- - [Environment data source](https://live.volkovlabs.io/d/B0kLhzR4k/environment-data-source?orgId=1), 
- - [Static data source](https://live.volkovlabs.io/d/heM1lTN4z/static-data-source?orgId=1),
- - [Calendar visualization panel](https://live.volkovlabs.io/d/0fgJcb4Vz/calendar-panel?orgId=1),
- - [RSS-Atom data source](https://live.volkovlabs.io/d/zUDs5zRVk/rss-atom-data-source?orgId=1),
- - [Data Manipulation panel](https://live.volkovlabs.io/d/h5IJk66nk/data-manipulation-panel?orgId=1), 
- - [Plugin templates](https://live.volkovlabs.io/d/i0FxjZg4z/volkov-labs?orgId=1).
 
-You can see all releases we published for each project. 
+- [Volkov Labs Application](https://live.volkovlabs.io/d/i0FxjZg4z/volkov-labs?orgId=1),
+- [Apache ECharts visualization panel](https://live.volkovlabs.io/d/tXQ9_367z/apache-echarts-panel?orgId=1),
+- [Dynamic Text visualization panel](https://live.volkovlabs.io/d/2L2sYjVVz/dynamic-text-panel?orgId=1),
+- [Environment data source](https://live.volkovlabs.io/d/B0kLhzR4k/environment-data-source?orgId=1),
+- [Static data source](https://live.volkovlabs.io/d/heM1lTN4z/static-data-source?orgId=1),
+- [Calendar visualization panel](https://live.volkovlabs.io/d/0fgJcb4Vz/calendar-panel?orgId=1),
+- [RSS-Atom data source](https://live.volkovlabs.io/d/zUDs5zRVk/rss-atom-data-source?orgId=1),
+- [Data Manipulation panel](https://live.volkovlabs.io/d/h5IJk66nk/data-manipulation-panel?orgId=1),
+- [Plugin templates](https://live.volkovlabs.io/d/i0FxjZg4z/volkov-labs?orgId=1).
+
+You can see all releases we published for each project.
 
 ![Directed Graph for GitHub displays all major and minor releases for our Grafana plugins](github.png)
 

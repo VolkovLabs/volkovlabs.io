@@ -6,9 +6,12 @@ image: /img/blog/2022-08-14-customize-grafana/banner.png
 keywords: [Business, Grafana, Visualization, Customization, Docker]
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # How to customize the Grafana user interface
 
-This article collects various commands to help you play with the Grafana in your style.
+This article collects various commands to help you play with the Grafana in your style.
 
 If you are here, you probably know what Grafana is and have already been playing with it for quite some time. And you are already quite aware that Grafana is a remarkable open-source tool for observability.
 
@@ -16,7 +19,10 @@ If you are here, you probably know what Grafana is and have already been playing
 
 The installation of Grafana directly on the operating system takes a minute or two. However, working with [Grafana in a Docker container](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/) is more advantageous.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/xTQpV7B700w" title="How to Install Grafana for Data Analysts and Data Scientists" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/xTQpV7B700w"
+  title="How to Install Grafana for Data Analysts and Data Scientists."
+/>
 
 Once installed, Grafana delivers a broad spectrum of built-in visualization panels and data sources. You most likely know that if the out-of-the-box features do not yet endure your use case, the friendly community has plenty of add-ons in the shape of plugins you can download from the Grafana Catalog.
 
@@ -26,7 +32,10 @@ So, here you are, at the point of knowing that Grafana architecture and function
 
 The truth is the fundamental UI components are pre-defined. There is no straightforward way to adjust them.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/3GRoa8TzIxY" title="How to customize Grafana interface | Change titles, icons, footer, default dashboard | Grafana 9" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/3GRoa8TzIxY"
+  title="Change titles, icons, footer, default dashboard in Grafana 9."
+/>
 
 In this article, we collected all commands that will help you to play with UI in style. Let's go!
 
@@ -36,11 +45,11 @@ First and foremost, we recommend working with Grafana in a Docker container. Onc
 
 :::
 
-## Default theme​
+## Default theme
 
 There are two types of people in this world: people with the `Light` theme preference and the `Dark` one. Grafana started with dark colors, initially designed to provide for observability demand.
 
-![You can set the default theme to be either Light or Dark](theme.png)
+![You can set the default theme to be either Light or Dark](theme.png)
 
 The `Light` option was introduced in version 7 and became equally famous as the Dark one. This is the only setting that is configurable in a user profile. You can, however, make the UI style coherent by specifying the default theme for the whole Docker container by clearly assigning a value to the following environment variable:
 
@@ -48,9 +57,9 @@ The `Light` option was introduced in version 7 and became equally famous as the 
 ENV GF_USERS_DEFAULT_THEME=light
 ```
 
-## Home Dashboard​
+## Home Dashboard
 
-![Custom Home dashboard in Grafana.](home.png)
+![Custom Home dashboard in Grafana.](home.png)
 
 In order to set the dashboard of your choice as a Home dashboard, you would need to replace the `default.json` file located in `../usr/share/grafana/public/dashboards/default.json` with the file containing your code.
 
@@ -66,7 +75,7 @@ If the dashboard is ever modified, the Docker container has to be rebuilt with a
 ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/plugins/volkovlabs-balena-app/dashboards/supervisor.json
 ```
 
-## Disable Alerting and Explore​
+## Disable Alerting and Explore​
 
 More and more applications are being built to utilize Grafana as a platform for data visualization. Those applications do not require Alerting nor Explore components. To simplify your Grafana interface, consider disabling those features by including the following environment variables:
 
@@ -76,7 +85,7 @@ ENV GF_ALERTING_ENABLED=false
 ENV GF_UNIFIED_ALERTING_ENABLED=false
 ```
 
-## Sanitize HTML​
+## Sanitize HTML
 
 HTML sanitizing is enabled by default. If you need to use the HTML tags in the panels, this command is for you:
 
@@ -84,7 +93,7 @@ HTML sanitizing is enabled by default. If you need to use the HTML tags in the p
 ENV GF_PANELS_DISABLE_SANITIZE_HTML=true
 ```
 
-## Anonymous Authentication​
+## Anonymous Authentication
 
 In some cases, you might need to remove the login page completely and make a dashboard available for the public. For that, you would need to allow Anonymous access.
 
@@ -93,7 +102,7 @@ ENV GF_AUTH_ANONYMOUS_ENABLED=true
 ENV GF_AUTH_BASIC_ENABLED=false
 ```
 
-## Bookmark Icon (Favicon)​
+## Bookmark Icon (Favicon)
 
 The favicon is the icon next to the application title on the browser tab.
 
@@ -106,7 +115,7 @@ COPY img/fav32.png /usr/share/grafana/public/img/fav32.png
 COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 ```
 
-## Logo​
+## Logo
 
 The logo on the Login page is the first graphical element that users want to change.
 
@@ -116,9 +125,9 @@ The big Grafana icon, the first image that draws users' attention when they open
 COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg
 ```
 
-## Login Background​
+## Login Background
 
-![The background image is configurable for Light and Dark themes.](background.png)
+![The background image is configurable for Light and Dark themes.](background.png)
 
 When customizing the background image, replace images for both themes. You can go with the same picture, but both files need to be replaced.
 
@@ -127,13 +136,13 @@ COPY img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
 COPY img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 ```
 
-## Javascript​
+## Javascript
 
 The application title (the name that appears on the browser tab), login page title, and bottom-page links are trickier than others. The files keeping those settings are scattered in various locations depending on the Grafana version.
 
 To simplify customization, we use a Regex pattern to find all occurrences and alter them accordingly.
 
-### Application Title​
+### Application Title
 
 ![Application title (the name that appears in the browser tab)](application-title.png)
 
@@ -149,7 +158,7 @@ RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|o(l,"AppTit
 ​RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|o(l,"LoginTitle","Welcome to Grafana")|o(l,"LoginTitle","Welcome to Star Application")|g' {} \;
 ```
 
-### Login Footer​
+### Login Footer
 
 ![The bottom-placed links are configurable (names/URLs). You as well can remove them altogether.](footer.png)
 
