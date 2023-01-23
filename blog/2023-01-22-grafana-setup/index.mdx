@@ -1,9 +1,9 @@
 ---
 authors: [daria]
-slug: grafana-setup-20230123
-tags: [PostgreSQL, Setup, Grafana]
-image: /img/blog/2023-01-23-grafana-setup/banner.png
-keywords: [PostgreSQL, Setup, Grafana]
+slug: grafana-setup-20230122
+tags: [Configuration]
+image: /img/blog/2023-01-22-grafana-setup/banner.png
+keywords: [PostgreSQL, Setup, Grafana, High-Availability]
 ---
 
 import Image from "@theme/Image";
@@ -11,15 +11,18 @@ import Video from "@theme/Video";
 
 # From default Grafana setup to the real deal
 
-I did not find much-organized information about Grafana configuration from the management point of view. There is this famous **default setup**, but it is not clear what its limits are. Also, for those who would want to take the next step to an actual application, what direction should it be, or in other words, what should be modified in the default Grafana installation package to convert it into real deal.
+I did not find much-organized information about Grafana configuration from the management point of view. There is this famous default setup, but it is not clear what its limits are. Also, for those who would want to take the next step to an actual application, what direction should it be, or in other words, what should be modified in the default Grafana installation package to convert it into the real deal?
 
 <!--truncate-->
 
 This article consists of the notes I took during my research. I share them to save the reader's time and effort.
 
-In any setup, Grafana can be installed directly on the host (computer) or in a docker container. That's why on the diagram below, every rectangle representing Grafana has the docker slash host symbol.
+In any setup, Grafana can be installed directly on the host or in a Docker container. That's why every rectangle representing Grafana has the docker slash host symbol on the diagram below.
 
-![Docker and Host icon](container-host.png)
+<Image
+  title="The Default, Next level and High Availability setups side-by-side."
+  src="/img/blog/2023-01-22-grafana-setup/setup.png"
+/>
 
 Let's review every level and who can benefit from each.
 
@@ -27,7 +30,10 @@ Let's review every level and who can benefit from each.
 
 You get the default setup when you [download Grafana](https://grafana.com/grafana/download) and follow the simple installation steps.
 
-![Default setup](default.png)
+<Image
+  title="In the default setup, Grafana is bundled with the SQLite database."
+  src="/img/blog/2023-01-22-grafana-setup/default.png"
+/>
 
 Grafana configuration is a set of parameters describing:
 
@@ -35,13 +41,15 @@ Grafana configuration is a set of parameters describing:
 - data sources,
 - installed plugins,
 - variables,
-- permissions, etc.
+- users and permissions, etc.
 
-Grafana configuration is stored in a database. In the default setup Grafana is bundled with the `sqlite3` database.
+Grafana configuration is stored in a database. In the default setup, Grafana is bundled with the SQLite database.
 
 ### Provisioning
 
-Provisioning is a mechanism to push dashboards and data source configuration using `JSON` files into Grafana UI. This mechanism is a simplified way to create applications with embedded/preset data sources, plugins, and dashboards. Users cannot introduce any changes to provisioned modifications. They see them as core functionality.
+[Provisioning](https://grafana.com/docs/grafana/latest/administration/provisioning/) is a mechanism to push dashboards and data source configuration using `JSON` files into Grafana UI. This mechanism is a simplified way to create applications with embedded/preset data sources, plugins, and dashboards.
+
+Users cannot introduce changes to the provisioned dashboard and data sources unless it's allowed in the configuration.
 
 ### SQLite database
 
@@ -49,14 +57,7 @@ SQLite is designed explicitly for small applications and is widely employed in m
 
 The database is so tiny and fast that some people do not even realize it exists side by side with their favorite applications on the phone or computer. The code of SQLite is open for anyone to use for any purpose.
 
-The default setup (Grafana plus `sqlite3`) suits beginners well since it eliminates the maintenance needs allowing them to start exploring Grafana instantly, literally in minutes after they learned about Grafana's existence.
-
-We discussed how to update Grafana environment variables to use PostgresSQL database for configuration in our recent video.
-
-<Video
-  src="https://www.youtube.com/embed/SbjIWnrMIgk"
-  title="PostgreSQL with Timescale is the ultimate storage partner for Grafana."
-/>
+The default setup suits beginners well since it eliminates the maintenance needs allowing them to start exploring Grafana instantly, literally minutes after they learned about Grafana's existence.
 
 ### Skills level
 
@@ -66,7 +67,10 @@ The skill level required for this setup is relatively minimal. An inquisitive be
 
 The next level setup is the lowest level you must be on for any commercial and industrial applications.
 
-![Next level setup](next-level.png)
+<Image
+  title="Next level setup."
+  src="/img/blog/2023-01-22-grafana-setup/next-level.png"
+/>
 
 On that setup, the Grafana UI and the configuration storage (which is NOT the same as application data storage) are separated and dwell in two segregated containers and/or hosts.
 When Grafana users make any changes (for instance, adding data sources and visualizations), these changes go into a separate entity, namely, configuration storage.
@@ -79,6 +83,13 @@ The segregated setup (the next level setup):
 - Requires to maintain only one configuration database instance, regardless of the Grafana UI number.
 - Permits employing provisioning.
 
+We discussed how to update Grafana environment variables to use PostgresSQL database for configuration in our recent video.
+
+<Video
+  src="https://www.youtube.com/embed/SbjIWnrMIgk"
+  title="PostgreSQL with Timescale is the ultimate storage partner for Grafana."
+/>
+
 ### Skill level
 
 Your best bet is someone who knows Grafana deeply and is capable of following changes from one version to another.
@@ -88,7 +99,10 @@ The applications on that level are light and functional. The Grafana architectur
 
 Logically, this architecture should have at least two separate Grafana UI.
 
-![High Availability setup](high-availability.png)
+<Image
+  title="High Availability setup."
+  src="/img/blog/2023-01-22-grafana-setup/high-availability.png"
+/>
 
 It is everything what the next level is, plus a load balancer. A load balancer will redirect the traffic between multiple Grafana UI depends on the load or other parameters.
 
