@@ -16,7 +16,7 @@ const BlogPostCard = ({ post }) => {
     <div className={styles.post}>
       <div className={styles.imageBox}>
         <Link to={permalink} className={styles.image}>
-          <img loading="lazy" src={frontMatter.image} alt={title} />
+          <img src={frontMatter.image} alt={title} />
         </Link>
       </div>
 
