@@ -55,7 +55,6 @@
 .imageBox {
   position: relative;
   margin-bottom: 1.5rem;
-  height: 220px;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
 }
