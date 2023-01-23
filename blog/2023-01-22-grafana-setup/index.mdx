@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: grafana-setup-20230122
-tags: [Configuration]
+tags: [Configuration, PostgreSQL]
 image: /img/blog/2023-01-22-grafana-setup/banner.png
 keywords: [PostgreSQL, Setup, Grafana, High-Availability]
 ---
@@ -41,13 +41,13 @@ Grafana configuration is a set of parameters describing
 - Data sources.
 - Installed plugins.
 - Variables.
-- Vsers and permissions, etc.
+- Users and permissions, etc.
 
 Grafana configuration is stored in a database. In the default setup, Grafana is bundled with the SQLite database.
 
 ### Provisioning
 
-[Provisioning](https://grafana.com/docs/grafana/latest/administration/provisioning/) is a mechanism to push dashboards and data source configuration using `JSON` files into Grafana UI. This mechanism is a simplified way to create applications with embedded/preset data sources, plugins, and dashboards.
+[Provisioning](https://grafana.com/docs/grafana/latest/administration/provisioning/) is a mechanism to push dashboards and data source configuration using JSON files into Grafana UI. This mechanism is a simplified way to create applications with embedded/preset data sources, plugins, and dashboards.
 
 Users cannot introduce changes to the provisioned dashboard and data sources unless it's allowed in the configuration.
 
@@ -63,7 +63,7 @@ The default setup suits beginners well since it eliminates the maintenance needs
 
 The skill level required for this setup is relatively minimal. An inquisitive beginner-to-intermediate developer or analyst can tackle the task with ease.
 
-## Next Level setup
+## Next Level
 
 The next level setup is the lowest level you must be on for any commercial and industrial applications.
 
@@ -79,7 +79,7 @@ On the next level, you can choose between databases
 - PostgreSQL.
 - MySQL.
 
-We discussed how to update Grafana environment variables to use PostgresSQL database for configuration in our recent video.
+We discussed how to update Grafana environment variables to use PostgresSQL database in our recent video.
 
 <Video
   src="https://www.youtube.com/embed/SbjIWnrMIgk"
@@ -92,7 +92,7 @@ This architecture allows to solve any challenging problems as long as developers
 
 Your best bet is someone who knows Grafana deeply and is capable of following changes from one version to another.
 
-## High Availability (HA) setup
+## High Availability
 
 Logically, this architecture should have at least two separate Grafana UI.
 
