@@ -33,6 +33,7 @@ You get the default setup when you [download Grafana](https://grafana.com/grafan
 <Image
   title="In the default setup, Grafana is bundled with the SQLite database."
   src="/img/blog/2023-01-22-grafana-setup/default.png"
+  height="400px"
 />
 
 Grafana configuration is a set of parameters describing
@@ -70,6 +71,7 @@ The next level setup is the lowest level you must be on for any commercial and i
 <Image
   title="In the Next level setup, Grafana UI connects to the external database storage."
   src="/img/blog/2023-01-22-grafana-setup/next-level.png"
+  height="600px"
 />
 
 On that setup, the Grafana UI and the configuration storage (which is NOT the same as application data storage) are separated and dwell in two segregated containers and/or hosts. When Grafana users make any changes (for instance, adding data sources and visualizations), these changes go into a separate entity, namely, configuration storage.
@@ -99,6 +101,7 @@ Logically, this architecture should have at least two separate Grafana UI.
 <Image
   title="High Availability setup."
   src="/img/blog/2023-01-22-grafana-setup/high-availability.png"
+  height="600px"
 />
 
 It is everything that the next level is, plus a load balancer. A load balancer will redirect the traffic between multiple Grafana UI depends on the load or other parameters.
