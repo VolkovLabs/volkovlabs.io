@@ -6,6 +6,9 @@ image: /img/blog/2022-07-04-balena-nfs/banner.png
 keywords: [Balena, NFS, IoT]
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Balena NFS Server Project
 
 A week ago, Volkov Labs and Theia Scientific published a [blog post about using NFS (Network File System) Server](https://www.balena.io/blog/using-nfs-server-to-share-external-storage-between-containers-balena/) as a solution to share external storage between containers on balenaCloud. This problem is long-standing, and this article demonstrates a solution.
@@ -16,7 +19,10 @@ Let's set the stage, aka the problem.
 
 > Following containerization best practices, the Theiascope™ platform is separated into containers deployed in host network mode and interacts with each other using TCP and/or UDP ports. The Theia web application running on the Theiascope™ hardware powered by balenaOS deals with massive data, where exporting results can reach gigabytes in size. To prevent caching and delay in transferring files between containers, each container should have access to the same storage.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/_kyNSLeAT84" title="Using Network File System (NFS) in Balena | Share external storage between containers" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/_kyNSLeAT84"
+  title="Share external storage between containers."
+/>
 
 The blog post described `Dockerfile` with the `Entrypoint` scripts we used to build containers for the NFS Server. We also explained how NFS clients indefinitely try to mount NFS exports to ensure that NFS storage is available before the application starts.
 
@@ -30,7 +36,10 @@ This article will showcase the Project registered in the [balenaHub](https://hub
 
 Balena created a [balenaHub](https://hub.balena.io) a couple of years ago to make life easier for everyone working with IoT, edge, and physical computing. If you have never worked with balena before, please look at the video from Ayan Pahwa, Developer Advocate for balena.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/1B2gyBSuvlE" title="Getting started with balena - add your first device to balenaCloud" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/1B2gyBSuvlE"
+  title="Getting started with balena - add your first device to balenaCloud."
+/>
 
 balenaHub provides plenty of community fleets for you to add your device for testing and experimenting. Some fleets are not joinable and are called Projects. You can easily fork them and start exploring as other fleets.
 
@@ -38,7 +47,7 @@ balenaHub provides plenty of community fleets for you to add your device for tes
 
 Balena NFS Server and client project consists of three containers and can be forked from the [balenaHub project's page](https://hub.balena.io/organizations/volkovlabs/projects/balena-nfs).
 
-![PostgreSQL container has NFS Server. NGINX container utilizes NFS Client to connect and access files on the NFS drive](https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/balena-nfs.png)
+![PostgreSQL container has NFS Server. NGINX container utilizes NFS Client to connect and access files on the NFS drive](https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/balena-nfs.png)
 
 First, the project includes an NFS Server built on top of the PostgreSQL Alpine image. It uses OpenRC (dependency-based init system) to manage NFS services, which is the recommended way to start NFS service for Alpine Linux.
 
@@ -55,7 +64,7 @@ The project supports various environment variables to specify storage labels and
 
 When you fork the project, you will have a chance to update all environment variables.
 
-![You can override provided environment variables according to your setup](fleet.png)
+![You can override provided environment variables according to your setup](fleet.png)
 
 ## Grafana Dashboard
 
