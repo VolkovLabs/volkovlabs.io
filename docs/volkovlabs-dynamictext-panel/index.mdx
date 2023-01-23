@@ -5,6 +5,9 @@ tags:
   - Panel
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Dynamic Text Panel
 
 ![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)
@@ -18,7 +21,10 @@ A Dynamic Text visualization panel is a Grafana plugin that transforms monotone 
 
 The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/MpNZ4Yl-p0U" title="Dynamic Text Plugin for Grafana | Markdown, HTML and Handlebars to transform data visualizations" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML and Handlebars to transform data visualizations."
+/>
 
 ### Requirements
 
@@ -39,8 +45,8 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - Supports [Markdown](https://commonmark.org/help/) and [Handlebars](https://handlebarsjs.com/guide/expressions.html#basic-usage).
 - Uses [markdown-it](https://github.com/markdown-it/markdown-it) for rendering Markdown to HTML.
 - Sanitizing
-    - HTML inside templates is sanitized using [XSS](https://jsxss.com/en/index.html).
-    - Can be disabled using Grafana configuration `disable_sanitize_html`.
+  - HTML inside templates is sanitized using [XSS](https://jsxss.com/en/index.html).
+  - Can be disabled using Grafana configuration `disable_sanitize_html`.
 - Allows to display nested objects using `{{json object}}` Handlebars helper.
 - Allows to display Time global variables (`__to` and `__from`) as seconds, ISO, and formatted using `dayjs`.
 - Allows to add Handlebars helpers and Event handlers.
@@ -50,14 +56,14 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 
 ## Documentation
 
-| Section | Description |
-| -- | -- |
-| [Content](content) | Explains how to create a visualization template for your data. |
-| [Data](data) | Demonstrates how to use Every Row and All Rows option. |
-| [JavaScript Code](code) | Demonstrates how to add a Handlebars helpers and Event handlers. |
-| [Helpers](helpers) | Helpers are functions that let you perform basic text transformation within your template. |
-| [Recipes](recipes) | Useful snippets that you can use in your templates. |
-| [Release Notes](release) | Stay up to date with the latest features and updates. |
+| Section                  | Description                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------ |
+| [Content](content)       | Explains how to create a visualization template for your data.                             |
+| [Data](data)             | Demonstrates how to use Every Row and All Rows option.                                     |
+| [JavaScript Code](code)  | Demonstrates how to add a Handlebars helpers and Event handlers.                           |
+| [Helpers](helpers)       | Helpers are functions that let you perform basic text transformation within your template. |
+| [Recipes](recipes)       | Useful snippets that you can use in your templates.                                        |
+| [Release Notes](release) | Stay up to date with the latest features and updates.                                      |
 
 ## Feedback
 

@@ -6,6 +6,9 @@ tags:
   - IoT
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Environment Data Source
 
 ![Grafana](https://img.shields.io/badge/Grafana-9.2.2-orange)
@@ -16,7 +19,10 @@ tags:
 
 The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables in your code.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/sczRq2lI3e4" title="Grafana variables | Dashboard, Global and Environment variables | Environment Data Source" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/sczRq2lI3e4"
+  title="Dashboard, Global and Environment variables."
+/>
 
 ### Requirements
 
@@ -31,7 +37,7 @@ Environment Data Source is not included in the Grafana Catalog. It can be instal
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
 ```
 
-Plugin is signed for Grafana running on `http://localhost:3000`. if you are using different URL, take a look at [Allow Unsigned Plugins](https://volkovlabs.io/plugins/grafana-allow-unsigned/).
+The plugin is signed for Grafana running on `http://localhost:3000`. if you are using different URL, take a look at [Allow Unsigned Plugins](https://volkovlabs.io/plugins/grafana-allow-unsigned/).
 
 ## Features
 
