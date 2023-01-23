@@ -7,6 +7,9 @@ tags:
   - Panel
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Data Manipulation Panel
 
 ![Grafana](https://img.shields.io/badge/Grafana-9.3.1-orange)
@@ -18,7 +21,10 @@ tags:
 
 The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
 
-<iframe width="100%" height="500" src="https://www.youtube.com/embed/DXALVG8GijM" title="Data Manipulation Plugin for Grafana | Manual data entering and User input into Dashboard" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<Video
+  src="https://www.youtube.com/embed/DXALVG8GijM"
+  title="Manual data entering and User input into Dashboard."
+/>
 
 ### Requirements
 
@@ -27,7 +33,7 @@ The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the 
 
 ## Getting Started
 
-Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
+The Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-form-panel
@@ -61,15 +67,15 @@ grafana-cli plugins install volkovlabs-form-panel
 
 ## Documentation
 
-| Section | Description |
-| -- | -- |
-| [Architecture](architecture) | Explains the Architecture and how to use Grafana and API behind NGINX. |
-| [Custom Code](code) | Demonstrates how to access panel options, API responses, form elements, Grafana services. |
-| [Control Panel](control) | Explains how to create Control Panels with multiple sections and same Id. |
-| [Custom Requests](request) | Demonstrates how to create your own Initial and Update requests using Custom Code. |
-| [Dynamic form elements](dynamic) | Demonstrates how to update element's values and options from any data source. |
-| [Variables](variables) | Explains how to replace Dashboard and Global variables. |
-| [Release Notes](release) | Stay up to date with the latest features and updates. |
+| Section                          | Description                                                                               |
+| -------------------------------- | ----------------------------------------------------------------------------------------- |
+| [Architecture](architecture)     | Explains the Architecture and how to use Grafana and API behind NGINX.                    |
+| [Custom Code](code)              | Demonstrates how to access panel options, API responses, form elements, Grafana services. |
+| [Control Panel](control)         | Explains how to create Control Panels with multiple sections and same Id.                 |
+| [Custom Requests](request)       | Demonstrates how to create your own Initial and Update requests using Custom Code.        |
+| [Dynamic form elements](dynamic) | Demonstrates how to update element's values and options from any data source.             |
+| [Variables](variables)           | Explains how to replace Dashboard and Global variables.                                   |
+| [Release Notes](release)         | Stay up to date with the latest features and updates.                                     |
 
 ## Feedback
 
