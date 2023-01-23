@@ -5,17 +5,14 @@ import styles from './styles.module.css';
  * Properties
  */
 type Props = {
-  alt: string;
-  height?: number;
   src: string;
   title?: string;
-  width?: number;
 };
 
 /**
  * Video
  */
-const Video = ({ alt, height, src, title, width }: Props) => (
+const Video = ({ src, title }: Props) => (
   <figure>
     <iframe
       width="100%"
@@ -26,6 +23,7 @@ const Video = ({ alt, height, src, title, width }: Props) => (
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     ></iframe>
+
     {title != null && (
       <figcaption className={styles.caption}>{title}</figcaption>
     )}
