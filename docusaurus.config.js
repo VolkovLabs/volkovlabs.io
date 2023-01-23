@@ -150,10 +150,6 @@ const config = {
                 href: "/plugins/balena-nfs",
               },
               {
-                label: "Demo Server",
-                href: "https://demo.volkovlabs.io",
-              },
-              {
                 label: "ECharts Examples",
                 href: "https://echarts.volkovlabs.io",
               },
@@ -171,8 +167,8 @@ const config = {
             title: "Discover",
             items: [
               {
-                label: "Blog Archive",
-                href: "/blog/archive",
+                label: "Blog",
+                href: "/blog",
               },
               {
                 label: "GitHub",

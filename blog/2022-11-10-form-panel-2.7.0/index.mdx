@@ -1,0 +1,64 @@
+---
+authors: [mikhail]
+slug: form-panel-2.7.0-20221110
+tags: [Data Manipulation, Release]
+image: /img/blog/2022-11-10-form-panel-2.7.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Data Manipulation Panel 2.7.0
+
+We released a new version of the Data Manipulation Panel 2.7.0. In this feature release
+
+- Community-requested updates for Payload.
+- Update Request parameters.
+- Grafana-style success/error notifications.
+- The code editor for Initial and Update requests was improved with suggestions for variables and parameters.
+
+<!--truncate-->
+
+We are impressed with the increasing number of use cases from the community and looking forward to the feedback to continue improving it.
+
+<Image
+  title="Data Manipulation panel allows to input and edit all kinds of data."
+  src="/img/blog/2022-11-10-form-panel-2.7.0/panel.png"
+/>
+
+## Getting Started
+
+Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool. For the latter, use the following command:
+
+```bash
+grafana-cli plugins install volkovlabs-form-panel
+```
+
+## YouTube Tutorial
+
+The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/DXALVG8GijM"
+  title="Data Manipulation Plugin for Grafana."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update to Grafana 9.2.2 (#113)
+- Update CI to upload signed artifacts (#116)
+- Allow sending all or updated only values in Payload (#116)
+- Add Initial values parameter to Update Request parameters (#117)
+- Add Status notification after submitting the form (#98)
+- Add Monaco Code Editor suggestions for available parameters (#88)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us:
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
