@@ -19,7 +19,7 @@ const Image = ({ height, src, title, width }: Props) => (
     <img
       alt={title}
       className={styles.image}
-      height={height}
+      height={height ? height : "auto"}
       src={src}
       width={width}
     />
