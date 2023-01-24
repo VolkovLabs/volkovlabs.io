@@ -26,8 +26,8 @@ export const Project = ({
         <ThemedImage
           role="img"
           sources={{
-            light: useBaseUrl(`/img/projects/${name}.svg`),
-            dark: useBaseUrl(`/img/projects/${name}.dark.svg`),
+            light: useBaseUrl(`/img/projects/${name}/logo.svg`),
+            dark: useBaseUrl(`/img/projects/${name}/logo.dark.svg`),
           }}
         />
         <div>
