@@ -73,12 +73,12 @@ const config = {
           },
           {
             href: "/blog",
-            position: "right",
+            position: "left",
             label: "Blog",
           },
           {
             href: "/plugins",
-            position: "right",
+            position: "left",
             label: "Documentation",
           },
           {
