@@ -23,41 +23,41 @@ This article is written to supplement the YouTube video we recently published on
   title="Ultimate storage partner for Grafana."
 />
 
-## PostgreSQL
+## Grafana configuration
 
 Grafana store its configuration (connected data sources, employed visualizations, variables, etc.) in the configuration storage. You end up with SQLite database after downloading and installing the [default Grafana package](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1).
 
-The [default setup is excellent for discovering Grafana](/blog/2023-01-22-grafana-setup), but for the Next level (when you design the actual application) you would need to switch to either PostgreSQL or MySQL. PostgreSQL is an excellent choice for capturing Grafana configuration.
+The [default setup is excellent for discovering Grafana](/blog/grafana-setup-20230122), but for the Next level (when you design the actual application) you would need to switch to either PostgreSQL or MySQL. PostgreSQL is an excellent choice for capturing Grafana configuration.
 
 <Image
   title="Grafana management basics."
   src="/img/blog/2023-01-23-postgres-in-grafana/basics.png"
 />
 
-Both databases are open-source, and both are supported by Grafana. Configuration in a separate container (or host) makes your application design flexible and manageable, with a more straightforward backup/restoration process. The separated configuration storage does not get lost when the Grafana UI container is acting up. You also can use it for as many UI instances as needed.
+Both databases are open-source, and both are supported by Grafana.
 
-### How to redirect Grafana UI to a PostgreSQL database
+Configuration in a separate container (or host) makes your application design flexible and manageable, with a more straightforward backup/restoration process. The separated configuration storage does not get lost when the Grafana UI container is acting up. You also can use it for as many UI instances as needed when switching to the High-Availability setup.
+
+## PostgreSQL
 
 In the video above, I demonstrated how to redirect Grafana UI to a PostgreSQL database.
 Below I leave the same instructions.
 
-#### Step 1
-
 Make sure you have a dedicated PostgreSQL database created. You can surely use the one that is already part of your application ecosystem. But creating a brand new PostgreSQL instance is preferable to keep things clean and organized.
 
-Start the container with `PostgreSQL`
+Start the PostgreSQL container with TimescaleDB:
 
-```bash
-docker start timescaledb
+```sh
+docker run -d --name timescaledb -p 5432:5432 -e POSTGRES_PASSWORD=password timescale/timescaledb-ha:pg14-latest
 ```
 
-Launch the `psql`
+Launch the `psql`:
 
-```bash
+```sh
 docker exec -it timescaledb psql -h localhost -p 5432 -U postgres -w
 ```
 
-create a new database to store Grafana UI configuration
+Create a new database to store Grafana UI configuration
 
 ```sql
 create database grafana_configuration_database;
@@ -67,26 +67,43 @@ Verify the database is created. It should appear in the output listing.
 
 ```sql
 \l
+
+                                        List of databases
+              Name              |  Owner   | Encoding | Collate |  Ctype  |   Access privileges
+--------------------------------+----------+----------+---------+---------+-----------------------
+ grafana_configuration_database | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ postgres                       | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ template0                      | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                                |          |          |         |         | postgres=CTc/postgres
+ template1                      | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                                |          |          |         |         | postgres=CTc/postgres
+(4 rows)
 ```
 
-Make the new database current
+Make the new database current:
 
 ```sql
-\c grafana
+\c grafana_configuration_database
+
+You are now connected to database "grafana_configuration_database" as user "postgres".
 ```
 
 Review the list of existing relations. It should be none.
 
 ```sql
 \d
-```
 
-#### Step 2
+Did not find any relations.
+```
 
 Next, run your Grafana UI container and point it to the PostgreSQL database.
 
 ```Bash-style
-docker run -p 3017:3000 -e GF_DATABASE_TYPE=postgres -e GF_DATABASE_HOST=host.docker.internal:5432 -e GF_DATABASE_NAME=learning_config_grafana -e GF_DATABASE_USER=postgres -e GF_DATABASE_PASSWORD=password ghcr.io/volkovlabs/app:latest
+docker run --network=host -e GF_DATABASE_TYPE=postgres \
+ -e GF_DATABASE_HOST=localhost:5432 \
+ -e GF_DATABASE_NAME=grafana_configuration_database \
+ -e GF_DATABASE_USER=postgres \
+ -e GF_DATABASE_PASSWORD=password ghcr.io/volkovlabs/app:latest
 ```
 
 You need to reassign five environment variables. Ensure to prefix each with `-e`. Do not forget all environment variables' names should be in upper case.
@@ -95,6 +112,17 @@ Now, if you switch back to the `psql` and run the command to list all relations,
 
 ```sql
 \d
+
+                       List of relations
+ Schema |              Name               |   Type   |  Owner
+--------+---------------------------------+----------+----------
+ public | alert                           | table    | postgres
+ public | alert_configuration             | table    | postgres
+ public | alert_configuration_id_seq      | sequence | postgres
+ public | alert_id_seq                    | sequence | postgres
+ public | alert_instance                  | table    | postgres
+ public | alert_notification              | table    | postgres
+ ....
 ```
 
 That's it. Your Grafana UI will now work with the PostgreSQL database. Go ahead, make some changes in Grafana and find them in the database.
