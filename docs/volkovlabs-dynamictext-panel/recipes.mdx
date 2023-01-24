@@ -31,9 +31,9 @@ Useful snippets that you can use in your templates.
 
 ## Markdown list from variable
 
-```handlebars
+```
 {{#each (variable "hostname")}}
-- {{this}}
+  - {{this}}
 {{/each}}
 ```
 
@@ -43,7 +43,7 @@ Use the `lookup` helper function to create dynamic templates based on dashboard 
 
 The following template creates a key-value pair from every selected value in the `myvar` dashboard variable.
 
-```handlebars
+```
 book:
 {{#each (variable "props")}}
   {{this}}: {{lookup @root this}}

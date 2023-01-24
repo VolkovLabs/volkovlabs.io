@@ -5,6 +5,9 @@ tags:
   - Panel
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Helpers
 
 Helpers are functions that let you perform basic text transformation within your template.
@@ -85,13 +88,19 @@ Present object (JSON) or array as formatted string.
 <!-- result: as string  -->
 ```
 
-![JSON](img/json.png)
+<Image
+  title="Visualize formatted JSON object."
+  src="/img/plugins/volkovlabs-dynamictext-panel/json.png"
+/>
 
 ### Transformation
 
 JSON helper expects an object or array to display it as formatted string. If the data source returns string it should be transformed to JSON object using Transformation `Convert field type`.
 
-![JSON Transformation](img/json-transformation.png)
+<Image
+  title="Transform JSON string to object."
+  src="/img/plugins/volkovlabs-dynamictext-panel/json-transformation.png"
+/>
 
 ## `{{split}}`
 
@@ -111,7 +120,10 @@ Split a string into array using a given separator.
 <!-- result: ['a','b','c']  -->
 ```
 
-![Split](img/split.png)
+<Image
+  title="Examples of splitting string into array."
+  src="/img/plugins/volkovlabs-dynamictext-panel/split.png"
+/>
 
 ## `{{toFixed}}`
 
