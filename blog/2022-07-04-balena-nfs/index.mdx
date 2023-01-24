@@ -47,7 +47,10 @@ balenaHub provides plenty of community fleets for you to add your device for tes
 
 Balena NFS Server and client project consists of three containers and can be forked from the [balenaHub project's page](https://hub.balena.io/organizations/volkovlabs/projects/balena-nfs).
 
-![PostgreSQL container has NFS Server. NGINX container utilizes NFS Client to connect and access files on the NFS drive](https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/balena-nfs.png)
+<Image
+  title="PostgreSQL container has NFS Server. NGINX container utilizes NFS Client to connect and access files on the NFS drive."
+  src="https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/balena-nfs.png"
+/>
 
 First, the project includes an NFS Server built on top of the PostgreSQL Alpine image. It uses OpenRC (dependency-based init system) to manage NFS services, which is the recommended way to start NFS service for Alpine Linux.
 
@@ -64,7 +67,10 @@ The project supports various environment variables to specify storage labels and
 
 When you fork the project, you will have a chance to update all environment variables.
 
-![You can override provided environment variables according to your setup](fleet.png)
+<Image
+  title="You can override provided environment variables according to your setup."
+  src="/img/blog/2022-07-04-balena-nfs/fleet.png"
+/>
 
 ## Grafana Dashboard
 
@@ -72,6 +78,9 @@ To manage running services and display device configuration, we added Grafana wi
 
 It's comparable to the functionality of the balenaCloud UI and can be extremely valuable in a network-constrained environment when the device is not connected to the Internet.
 
-![Grafana dashboard allows managing running services and displaying device configuration](dashboard.png)
+<Image
+  title="Grafana dashboard allows managing running services and displaying device configuration."
+  src="/img/blog/2022-07-04-balena-nfs/dashboard.png"
+/>
 
 You can access Grafana from the local network or public URL if it's enabled in the device configuration. You can learn more about the Balena Application plugin in the [Documentation](/plugins/volkovlabs-balena-app).

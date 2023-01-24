@@ -10,7 +10,7 @@ tags:
 
 :::info
 
-Supported since Dynamic Text panel 3.2.0.
+Supported since Dynamic Text panel 2.2.0.
 
 :::
 

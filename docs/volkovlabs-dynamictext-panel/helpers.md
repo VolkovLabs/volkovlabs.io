@@ -71,7 +71,7 @@ Join all elements of array into a string using a given separator.
 
 :::info
 
-Supported since Dynamic Text panel 3.2.0.
+Supported since Dynamic Text panel 2.2.0.
 
 :::
 
@@ -97,7 +97,7 @@ JSON helper expects an object or array to display it as formatted string. If the
 
 :::info
 
-Supported since Dynamic Text panel 3.2.0.
+Supported since Dynamic Text panel 2.2.0.
 
 :::
 
