@@ -6,6 +6,9 @@ image: /img/blog/2022-06-10-pytorch-nvidia-gpu/banner.png
 keywords: [PyTorch, GPU]
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # PyTorch in Ray Docker container with NVIDIA GPU support on Google Cloud
 
 One of the commercial projects we are working on is based on Ray and uses PyTorch to process data using AI models. To create a development environment for the Grafana Application plugin, we built Docker images for the Backend. One of the requirements was to support PyTorch with CPU and NVIDIA GPU in the same image.
@@ -18,7 +21,7 @@ This article will share our weekend experience building Docker images with [Ray]
 
 [PyTorch](https://pytorch.org/) is an open-source machine learning framework that accelerates the path from research prototyping to production deployment.
 
-## Google Cloud instances with GPU support
+## Google Cloud instances with GPU support
 
 If you have never used Google Cloud instances with GPU support in your organization, you will need to increase the quota to start any instances. The default quota for GPU instances is 0. You can learn more about GPU quota and how to increase it in the [Documentation](https://cloud.google.com/compute/resource-usage#gpu_quota).
 
@@ -29,11 +32,15 @@ Different regions and zones provide various NVIDIA GPU models, and some of them 
 - Type N1-Standard-1 with one vCPU and 3.75Gb memory, which we can upgrade at any time for performance testing up to 8 vCPU.
 - Ubuntu 20.04 LTS with 30Gb Size.
 
-![Creating a new Google Cloud instance with NVIDIA Tesla K80 GPU](configuration.png)
+<Image
+  title="Creating a new Google Cloud instance with NVIDIA Tesla K80 GPU."
+  src="/img/blog/2022-06-10-pytorch-nvidia-gpu/configuration.png"
+/>
 
 We followed the [Google Cloud documentation](https://cloud.google.com/compute/docs/gpus/install-drivers-gpu#verify-windows) for installing GPU drives. Installation using automated scripts took a while, and drivers could not load after a restart. Also, most of the installed packages are not required for our deployment. We use Docker containers and have no plans to run applications on the host machine.
 
 Instead of using provided scripts, we installed the latest version of NVIDIA Drivers for Tesla K80 from the repository:
+
 ```sh
 sudo apt update
 sudo apt install nvidia-driver-470
@@ -41,9 +48,12 @@ sudo apt install nvidia-driver-470
 
 After the installation was completed, the command `nvidia-smi` displayed information about the GPU:
 
-![Command `nvidia-smi` can locate NVIDIA GPU after NVIDIA drivers installation](nvidia-smi.png)
+<Image
+  title="Command `nvidia-smi` can locate NVIDIA GPU after NVIDIA drivers installation."
+  src="/img/blog/2022-06-10-pytorch-nvidia-gpu/nvidia-smi.png"
+/>
 
-## Support GPU in Docker
+## Support GPU in Docker
 
 After NVIDIA drivers are installed on the host and the command `nvidia-smi` was able to locate GPU, we could move forward to install Docker, Docker Compose, and NVIDIA Toolkit:
 
@@ -65,11 +75,14 @@ At this point, a working setup could be tested by running a base CUDA container 
 docker run --rm --runtime=nvidia nvidia/cuda:11.0-base nvidia-smi
 ```
 
-![Running the `nvidia-smi` command in the Docker container](docker.png)
+<Image
+  title="Running the `nvidia-smi` command in the Docker container."
+  src="/img/blog/2022-06-10-pytorch-nvidia-gpu/docker.png"
+/>
 
 You can learn more about the NVIDIA Container toolkit installation in the [Documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).
 
-## Using Docker Compose with GPU support
+## Using Docker Compose with GPU support
 
 The Docker-compose version 1.25 does not support NVIDIA runtime configuration and should be upgraded to version 1.27 or later. The latest version of Docker Compose can be downloaded from GitHub:
 
