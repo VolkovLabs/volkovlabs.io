@@ -28,11 +28,17 @@ The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the 
 
 Panel options allow you to specify the URL for GET requests to receive initial values and POST, PUT, or PATCH requests to update values sent as a JSON. Header parameters can be added to secure your REST API calls.
 
-![API](../../docs/volkovlabs-form-panel/img/form-api.png)
+<Image
+  title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
+  src="/img/blog/2022-05-19-data-manipulation-panel/form-api.png"
+/>
 
 The plugin supports dashboard variables in the URL and header parameters. For example, `http://localhost:3001/${var}`, where `${var}` is a dashboard variable.
 
-![Panel options allow specifying URL, header parameters, and Custom code](panel.png)
+<Image
+  title="Panel options allow specifying URL, header parameters, and Custom code."
+  src="/img/blog/2022-05-19-data-manipulation-panel/panel.png"
+/>
 
 You can add the custom Typescript code, which will be executed after the browser's various requests, e.g. `GET`, `POST`, `PUT`, and `PATCH`. For example, we added the browser's location reload in the provided screenshot after a successful `POST` request. Here is the part of the plugin that executes the custom code:
 
@@ -64,7 +70,10 @@ The Data Manipulation Form panel is actively improving and already supports:
 - String Input - to enter any alphanumeric values.
 - Text Area - a multiline text area with an adjustable number of rows for comments and descriptions.
 
-![Form elements can be moved up and down and provide individual options](elements.png)
+<Image
+  title="Form elements can be moved up and down and provide individual options."
+  src="/img/blog/2022-05-19-data-manipulation-panel/elements.png"
+/>
 
 We plan to include Code Editor, File, and Image Upload elements in upcoming versions. If you are interested in additional elements, please [open an issue in the repository](https://github.com/volkovlabs/volkovlabs-form-panel).
 
@@ -72,7 +81,10 @@ We plan to include Code Editor, File, and Image Upload elements in upcoming vers
 
 The form provides **Submit** and **Reset** buttons which can be customized to use theme-specific sizes, types, icons, and a flexible combination of background and foreground colors.
 
-![Submit and Reset buttons can be customized to use theme-specific types and icons](buttons.png)
+<Image
+  title="Submit and Reset buttons can be customized to use theme-specific types and icons."
+  src="/img/blog/2022-05-19-data-manipulation-panel/buttons.png"
+/>
 
 Form options can be displayed in a single column or split into multiple columns, and each element can be assigned to a specific column. This feature will be available in an upcoming version. The current version allows splitting editable and disabled elements only.
 
@@ -80,7 +92,10 @@ Form options can be displayed in a single column or split into multiple columns,
 
 Let's take a look at the example of using the Data Manipulation panel to submit comments, issues, and feature requests integrated into the Application plugin for Theia Scientific.
 
-![Feedback Submissions dashboard for the Theia Application plugin](feedback.png)
+<Image
+  title="Feedback Submissions dashboard for the Theia Application plugin."
+  src="/img/blog/2022-05-19-data-manipulation-panel/feedback.png"
+/>
 
 The Theia Application was designed to be deployed on edge computing devices in a network-constrained environment and was recently presented in a [Grafana blog post](https://grafana.com/blog/2022/04/29/how-theia-scientific-and-volkov-labs-use-grafana-and-ai-to-analyze-scientific-images/).
 

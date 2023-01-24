@@ -98,10 +98,10 @@ Grafana CLI will request a file `/plugins/repo/volkovlabs-env-datasource` and di
   "versions": [
     {
       "version": "1.1.0",
-        "arch": {
-          "any": {}
-        }
-     }
+      "arch": {
+        "any": {}
+      }
+    }
   ]
 }
 ```
@@ -126,7 +126,7 @@ To update all plugins at once, execute:
 $ grafana-cli --repo https://volkovlabs.io/plugins plugins update-all
 ```
 
-## Environment Data Source Plugin
+## Environment Data Source Plugin
 
 If not used correctly, the Environment Data Source plugin might expose environment variables with restricted information (password, access token, etc.). That limits it from being a part of the official Grafana repository.
 
