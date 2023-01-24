@@ -139,8 +139,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/why-1.svg"),
-                dark: useBaseUrl("/img/why-1.dark.svg"),
+                light: useBaseUrl("/img/why/left.svg"),
+                dark: useBaseUrl("/img/why/left.dark.svg"),
               }}
             />
           </div>
@@ -160,8 +160,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/why-2.svg"),
-                dark: useBaseUrl("/img/why-2.dark.svg"),
+                light: useBaseUrl("/img/why/right.svg"),
+                dark: useBaseUrl("/img/why/right.dark.svg"),
               }}
             />
           </div>
