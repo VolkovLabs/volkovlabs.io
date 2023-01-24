@@ -13,7 +13,10 @@ import Video from "@theme/Video";
 
 The Data Manipulation panel can request (GET) and update (DELETE, PATCH, POST, PUT) data and configuration using REST API.
 
-![API](img/form-api.png)
+<Image
+  title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
+  src="/img/plugins/volkovlabs-form-panel/form-api.png"
+/>
 
 <Video
   src="https://www.youtube.com/embed/SHN2S-dRIEM"
@@ -24,6 +27,9 @@ The Data Manipulation panel can request (GET) and update (DELETE, PATCH, POST, P
 
 We recommend running Grafana behind NGINX reverse proxy for an additional security layer. The reverse proxy also allows us to expose additional API endpoints and static files in the same domain, which makes it CORS-ready.
 
-![NGINX](img/form-nginx-api.png)
+<Image
+  title="Grafana and Server API behind NGINX reverse proxy."
+  src="/img/plugins/volkovlabs-form-panel/form-nginx-api.png"
+/>
 
 Read more in [How to connect the Data Manipulation plugin for Grafana to API Server](/blog/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904).
