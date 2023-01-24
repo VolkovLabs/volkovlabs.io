@@ -9,6 +9,9 @@ tags:
   - IoT
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # balenaCloud
 
 The Balena NFS block can be [deployed directly to balenaCloud](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/balena-nfs).
@@ -33,7 +36,10 @@ The default Grafana username and password is **admin/admin**.
 
 To support NFS version 3 please update Environment Variables:
 
-![NFS3](https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/env-nfsv3.png)
+<Image
+  title="The Environment Variables can be adjusted in the balenaCloud administrator interface."
+  src="https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/env-nfsv3.png"
+/>
 
 ## Balena Application
 
@@ -41,4 +47,7 @@ The [Balena Application](../volkovlabs-balena-app) for Grafana allows to display
 
 Working in a productive alliance, Balena, Grafana, and the Balena Application plugin simplify managing a network of non-homogenous IoT devices.
 
-![Balena Application](https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/balena-app.png)
+<Image
+  title="Balena Application Dashboard in Grafana."
+  src="https://raw.githubusercontent.com/volkovlabs/balena-nfs/main/img/balena-app.png"
+/>
