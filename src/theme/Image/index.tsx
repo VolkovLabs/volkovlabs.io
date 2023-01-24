@@ -18,6 +18,7 @@ const Image = ({ height, src, title, width }: Props) => (
   <figure>
     <img
       alt={title}
+      loading="lazy"
       className={styles.image}
       height={height ? height : "auto"}
       src={src}
