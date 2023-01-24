@@ -25,8 +25,8 @@ export const Plugin = ({
         <ThemedImage
           role="img"
           sources={{
-            light: useBaseUrl(`/img/plugins/${name}.svg`),
-            dark: useBaseUrl(`/img/plugins/${name}.dark.svg`),
+            light: useBaseUrl(`/img/plugins/${name}/logo.svg`),
+            dark: useBaseUrl(`/img/plugins/${name}/logo.dark.svg`),
           }}
         />
         <div>
