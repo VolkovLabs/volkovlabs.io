@@ -6,6 +6,7 @@ image: /img/blog/2022-01-26-first-dashboard/banner.png
 keywords: [Business, Charts, Grafana, Visualization]
 ---
 
+import Image from "@theme/Image";
 import Video from "@theme/Video";
 
 # How to create your first Grafana Dashboard
@@ -27,33 +28,34 @@ Suppose your brain works like mine and requires a high-level picture first, then
 
 If you can not wait any longer, let's get to it!
 
-## Choose a dataset
+## Choose a dataset
 
 Start with deciding what exactly you will display on your first Grafana Dashboard. That question ventured me to the [Kaggle.com](https://kaggle.com) website. It is the largest online community for data scientists, which also provides a ton of datasets for free download.
 
 I was intrigued by the electric vehicle charging station locations dataset as I immediately imagined using the Geomap Grafana visualization. It takes latitude and longitude as parameters to draw data points on the world map. The dataset set has more than 50K entries and promises to look impressive on the map.
 
-![Geomap Visualization in Grafana dropdown selection](geomap.png)
+<Image
+  title="Geomap Visualization in Grafana dropdown selection."
+  src="/img/blog/2022-01-26-first-dashboard/geomap.png"
+/>
 
 The Geomap visualization is currently in the Beta version. Should that have been a concern? Maybe for shy and hesitant, but I felt lucky that day! Adventure is my middle name, as they say.
 
 After I downloaded and eyeballed the dataset, I realized it might have had too many columns for a quick experiment. I went ahead and removed the columns that did seem unnecessary. It does not mean that the ones I kept are all important. The absolute must are only two of them: Latitude and Longitude. The rest are up to you. The list of what I kept is below.
 
-```
-Fuel Type Code,
-Station Name,
-Street Address,
-City,
-State,
-ZIP,
-Plus4,
-Status Code,
-Groups With Access Code,
-Access Days Time,
-Latitude,
-Facility Type,
-Longitude
-```
+- Fuel Type Code,
+- Station Name,
+- Street Address,
+- City,
+- State,
+- ZIP,
+- Plus4,
+- Status Code,
+- Groups With Access Code,
+- Access Days Time,
+- Latitude,
+- Facility Type,
+- Longitude
 
 Step 1 is complete if you have your dataset ready. In my case, I had an `ev_locations.csv` file with 13 above columns and the header row removed.
 
@@ -96,7 +98,7 @@ copy ev_locations from '/tmp/ev_locations.csv' delimiter',' CSV header;
 
 Step 2 is complete when you have loaded your data file into the PostgreSQL database.
 
-## Install Grafana
+## Install Grafana
 
 Like PostgreSQL, you can install it directly on your machine or use Grafana in the Docker container. Either way works. The latter is cleaner to my taste. You can download both from [grafana.com](https://grafana.com).
 
@@ -107,7 +109,10 @@ Like PostgreSQL, you can install it directly on your machine or use Grafana in t
 
 Download the Grafana Installation package of your choice. It could be Linux, Windows, Mac, or a Docker Container.
 
-![Grafana can be installed on Linux, Windows, Mac, Docker, and ARM platforms](download.png)
+<Image
+  title="Grafana can be installed on Linux, Windows, Mac, Docker, and ARM platforms."
+  src="/img/blog/2022-01-26-first-dashboard/download.png"
+/>
 
 Once Grafana is installed, go to your browser and enter the following URL. That should open the Grafana web application with full functionality.
 
@@ -121,28 +126,43 @@ Step 3 is complete when you can open Grafana on local port 3000.
 
 I will provide concise instructions to make it easier to follow. On the left-hand side, I saw the main menu, hovered the plus sign, and selected **Create Dashboard**. Next, I chose to **add a new panel**. Below is the window where I arrived at that moment.
 
-![Navigate to Query Editor and update SQL to visualize data in the panel](new-panel.png)
+<Image
+  title="Navigate to Query Editor and update SQL to visualize data in the panel."
+  src="/img/blog/2022-01-26-first-dashboard/new-panel.png"
+/>
 
 The screen looked overwhelming, but the more time I spent playing around with different options, the more comfortable I got. My usual preference is to write my SQL queries from scratch. I do not favor any helpers since I am a SQL champ and always "know better."
 
 For that reason, I clicked **Edit SQL** and entered the simple `SELECT` statement that would be needed. I also changed **Format As** to **Table**. Another thing to point out is `limit 5` in my query. Since I was learning, I wanted to limit the volume of the fetched data. Once I had everything set up, I removed the limit.
 
-![Query Editor with final SQL statement to retrieve data for Geomap](sql.png)
+<Image
+  title="Query Editor with final SQL statement to retrieve data for Geomap."
+  src="/img/blog/2022-01-26-first-dashboard/sql.png"
+/>
 
 Finally, the time came for the fun part. On the right-hand side, under the **Search for** element, there are three tabs, and one is called **Visualization**. Yes! That was it. I chose it and reviewed the list of all available visualizations.
 
-![I chose it and reviewed the list of all available visualizations](panels.png)
+<Image
+  title="I chose it and reviewed the list of all available visualizations."
+  src="/img/blog/2022-01-26-first-dashboard/panels.png"
+/>
 
 You bet I hit the **Geomap** one.
 Every Grafana visualization has many properties to modify optionally. I did the bare minimum to complete this project swiftly. Here is what I altered. I chose _North America_ for a **Map View**.
 
-![I chose "North America" for a Map View](map-view.png)
+<Image
+  title="I chose 'North America' for a Map View."
+  src="/img/blog/2022-01-26-first-dashboard/map-view.png"
+/>
 
 The little cherry on top was a filter by facility type. That is done via `variables`. I went to the gear icon for **Dashboard Settings** on the top right corner and then into the **Variables** menu.
 
 Below is the picture showing how I set it up. Following the naming convention best practice, I used the `v_` prefix since it was a variable name. The **label** is how the filter is called on the dashboard. **Query** determines what values for the filter are going to be. **Sort** is to make sure the values are sorted in the filter.
 
-![Add variables to filter data by State and facility type](variables.png)
+<Image
+  title="Add variables to filter data by State and facility type."
+  src="/img/blog/2022-01-26-first-dashboard/variables.png"
+/>
 
 The last step is to save the Dashboard by clicking the **Save** button in the upper right corner.
 Vuala. The dashboard is ready.
@@ -156,12 +176,18 @@ That step might be tricky, depending on how hard it is for you to access the use
 However, there is one trick that I would like to share with you. It is pretty easy to transfer the dashboard from one Grafana application to other. In my case, from my local Grafana to the Grafana running on Google Cloud and powering our demo server.
 I clicked on the **Share** icon. It can be found in the **View** mode to the right of the Dashboard title.
 
-![Click on the Share icon to export the dashboard](share.png)
+<Image
+  title="Click on the Share icon to export the dashboard."
+  src="/img/blog/2022-01-26-first-dashboard/share.png"
+/>
 
 Then I went to **Export**, next to the **View JSON**. I copied the JSON file from my local Grafana and pasted it into the Grafana on the demo server. That's all. BOOM! I did not have to recreate a new dashboard from scratch. I just copied the description file.
 
 Here how the dashboard looks like.
 
-![Geomap visualization for Electric Vehicle Charging Station](final.png)
+<Image
+  title="Geomap visualization for Electric Vehicle Charging Station."
+  src="/img/blog/2022-01-26-first-dashboard/final.png"
+/>
 
 Any feedback and comments are welcome. Feel free to challenge us with your questions. It helps us to stay sharp!
