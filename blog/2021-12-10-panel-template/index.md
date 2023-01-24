@@ -6,7 +6,7 @@ image: /img/blog/2021-12-10-panel-template/banner.png
 keywords: [Template, Panel, Grafana, Visualization]
 ---
 
-# We created our own panel plugin template for Grafana
+# Our own panel plugin template for Grafana
 
 Grafana has excellent tutorials on building panel plugins, but we found ourselves repeating the same steps when creating custom plugins for our customers.
 

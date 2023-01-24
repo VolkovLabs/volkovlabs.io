@@ -105,7 +105,7 @@ const Main = (siteConfig) => {
           <div className="col col--6 avatar">
             <img
               className="avatar__photo avatar__photo--xl"
-              src="/img/peoples/daria.png"
+              src="/img/team/daria.png"
             />
             <div className="avatar__intro padding-vert--md">
               <div className="avatar__name">Daria Volkova</div>
@@ -119,7 +119,7 @@ const Main = (siteConfig) => {
           <div className="col col--6 avatar">
             <img
               className="avatar__photo avatar__photo--xl"
-              src="/img/peoples/mikhail.png"
+              src="/img/team/mikhail.png"
             />
             <div className="avatar__intro padding-vert--md">
               <div className="avatar__name">Mikhail Volkov</div>
