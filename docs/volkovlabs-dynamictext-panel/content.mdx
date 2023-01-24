@@ -6,6 +6,9 @@ tags:
   - Content
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Content
 
 It is the code editor where you can place the parsing commands or, in other words, create a visualization template for your data. To reference the data elements in your template, use double and triple braces.
@@ -24,7 +27,7 @@ If you would like to render HTML returned by the data source, you need to use th
 
 ```handlebars
 <ul>
-{{{htmlValue}}}
+  {{{htmlValue}}}
 </ul>
 ```
 
@@ -39,7 +42,10 @@ where `htmlValue` is
 
 Field names with spaces should be displayed as `{{[Field Name]}}` or `{{'Field Name'}}`
 
-![Fields](img/fields.png)
+<Image
+  title="Display fields with spaces."
+  src="/img/plugins/volkovlabs-dynamictext-panel/fields.png"
+/>
 
 ## Default content
 
@@ -63,17 +69,20 @@ If your data source returns the following four columns of data:
 
 you can display it using the following template:
 
-```handlebars
+```md
 # {{app}}
 
-{{description}}
+> {{description}}
 
 {{#if (eq tier "frontend")}}
-Link: <a href='https://{{cluster}}.example.com/{{app}}'>https://{{cluster}}.example.com/{{app}}</a>
+Link: <a href="https://{{cluster}}.example.com/{{app}}"> https://{{cluster}}.example.com/{{app}}</a>
 {{/if}}
 ```
 
-![Application](img/application.png)
+<Image
+  title="Display application data using Handlebars, Markdown and HTML."
+  src="/img/plugins/volkovlabs-dynamictext-panel/application.png"
+/>
 
 ## Sanitizing
 

@@ -33,7 +33,8 @@ Useful snippets that you can use in your templates.
 
 ```handlebars
 {{#each (variable "hostname")}}
-- {{this}}
+  -
+  {{this}}
 {{/each}}
 ```
 
@@ -46,7 +47,8 @@ The following template creates a key-value pair from every selected value in the
 ```handlebars
 book:
 {{#each (variable "props")}}
-  {{this}}: {{lookup @root this}}
+  {{this}}:
+  {{lookup @root this}}
 {{/each}}
 ```
 
