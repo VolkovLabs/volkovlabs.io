@@ -45,8 +45,8 @@ const Header = (siteConfig) => {
             <ThemedImage
               className={clsx(styles.heroBannerLogo, "margin-vert--md")}
               sources={{
-                light: useBaseUrl("/img/main.svg"),
-                dark: useBaseUrl("/img/main.dark.svg"),
+                light: useBaseUrl("/img/index/main.svg"),
+                dark: useBaseUrl("/img/index/main.dark.svg"),
               }}
             />
           </div>
