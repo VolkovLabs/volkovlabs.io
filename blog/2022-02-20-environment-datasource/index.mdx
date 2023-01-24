@@ -6,9 +6,10 @@ image: /img/blog/2022-02-20-environment-datasource/banner.png
 keywords: [Variables, Grafana, Visualization]
 ---
 
+import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Using Environment Variables for Configuration, Provisioning, and Dashboards in Grafana
+# Environment Variables for Configuration, Provisioning, and Dashboards in Grafana
 
 The number of use cases operating Grafana as a platform to build modern applications is increasing. Compared to a single central Grafana instance, we are looking at multiple distributed installations with new data sources.
 
@@ -72,11 +73,17 @@ datasources:
 
 Surprisingly, we could not find a solution and decided to create a backend data source plugin that retrieves environment variables exposed to the Grafana instance.
 
-![The Environment Data Source allows retrieving environment variables exposed to the Grafana instance](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-env-datasource/main/src/img/dashboard.png)
+<Image
+  title="The Environment Data Source allows retrieving environment variables exposed to the Grafana instance."
+  src="https://raw.githubusercontent.com/VolkovLabs/volkovlabs-env-datasource/main/src/img/dashboard.png"
+/>
 
 In Settings, the data source has the Filter option to avoid exposing unnecessary or secured variables:
 
-![The Data Source can filter out unnecessary or secured variables.](configuration.png)
+<Image
+  title="The Data Source can filter out unnecessary or secured variables."
+  src="/img/blog/2022-02-20-environment-datasource/configuration.png"
+/>
 
 ## Dashboard Variables
 
@@ -84,7 +91,10 @@ Dashboard variables allow you to create more interactive and dynamic dashboards.
 
 The Environment Data Source supports querying environment variables and returns its value to retrieve metric queries or display them on the dashboard.
 
-![The Environment Data Source supports querying environment variables](variables.png)
+<Image
+  title="The Environment Data Source supports querying environment variables."
+  src="/img/blog/2022-02-20-environment-datasource/variables.png"
+/>
 
 ## Balena Cloud
 
@@ -92,11 +102,17 @@ Balena is a complete set of tools for building, deploying, and managing fleets o
 
 Variables can be added to the device and assigned to a specific service or all services running on the device. You can use environment variables to store secrets and other sensitive values out of your codebase and configure them when needed.
 
-![In Balena Cloud, variables can be added to the device or fleet-wide](balena-cloud.png)
+<Image
+  title="In Balena Cloud, variables can be added to the device or fleet-wide."
+  src="/img/blog/2022-02-20-environment-datasource/balena-cloud.png"
+/>
 
 Employing the Environment Data Source, we can retrieve custom and generic environment variables exposed to the IoT device and display them on Grafana's Home page and improve other dashboards.
 
-![Balena's environment variables are exposed to the IoT device and displayed in Grafana](balena-variables.png)
+<Image
+  title="Balena's environment variables are exposed to the IoT device and displayed in Grafana."
+  src="/img/blog/2022-02-20-environment-datasource/balena-variables.png"
+/>
 
 ## Grafana Catalog
 
