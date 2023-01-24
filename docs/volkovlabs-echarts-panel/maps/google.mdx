@@ -8,6 +8,9 @@ tags:
   - Maps
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Google Maps
 
 :::info
@@ -22,7 +25,10 @@ Google Maps are loaded using Maps API and require Access Key. You can get it fro
 - The callback function `gmapReady` will be executed on load. The name can be changed in the Panel options.
 - While loading, animation can be displayed using the following code.
 
-![Google Maps](../img/google.png)
+<Image
+  title="Google Maps."
+  src="/img/plugins/volkovlabs-echarts-panel/google.png"
+/>
 
 ## Function
 
@@ -42,18 +48,18 @@ const gmap = {
   },
   series: [
     {
-      type: 'scatter',
-      coordinateSystem: 'gmap',
+      type: "scatter",
+      coordinateSystem: "gmap",
       // data items [[lng, lat, value], [lng, lat, value], ...]
       data: [[-81.76, 27.99, 100]],
       encode: {
         // encode the third element of data item as the `value` dimension
         value: 2,
         lng: 0,
-        lat: 1
-      }
-    }
-  ]
+        lat: 1,
+      },
+    },
+  ],
 };
 
 /**
@@ -63,20 +69,20 @@ const loading = {
   graphic: {
     elements: [
       {
-        type: 'group',
-        left: 'center',
-        top: 'center',
+        type: "group",
+        left: "center",
+        top: "center",
         children: new Array(7).fill(0).map((val, i) => ({
-          type: 'rect',
+          type: "rect",
           x: i * 20,
           shape: {
             x: 0,
             y: -40,
             width: 10,
-            height: 80
+            height: 80,
           },
           style: {
-            fill: '#5470c6'
+            fill: "#5470c6",
           },
           keyframeAnimation: {
             duration: 1000,
@@ -86,28 +92,30 @@ const loading = {
               {
                 percent: 0.5,
                 scaleY: 0.3,
-                easing: 'cubicIn'
+                easing: "cubicIn",
               },
               {
                 percent: 1,
                 scaleY: 1,
-                easing: 'cubicOut'
-              }
-            ]
-          }
-        }))
-      }
-    ]
-  }
-}
+                easing: "cubicOut",
+              },
+            ],
+          },
+        })),
+      },
+    ],
+  },
+};
 
 /**
  * Maps are Ready
  */
 window.gmapReady = () => {
-  notifySuccess(['Google Maps', 'Loaded...']);
-  echartsInstance.setOption(gmap, notmerge = true);
-}
+  notifySuccess(["Google Maps", "Loaded..."]);
+  echartsInstance.setOption(gmap, (notmerge = true));
+};
 
-return typeof google === 'object' && typeof google.maps === 'object' ? gmap : loading;
+return typeof google === "object" && typeof google.maps === "object"
+  ? gmap
+  : loading;
 ```

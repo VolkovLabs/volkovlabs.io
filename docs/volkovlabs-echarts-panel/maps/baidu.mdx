@@ -8,6 +8,9 @@ tags:
   - Maps
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Baidu Maps
 
 :::info
@@ -22,7 +25,10 @@ Baidu Maps are loaded using API v3 and require Access Key. You can get it from [
 - The callback function `bmapReady` will be executed on load. The name can be changed in the Panel options.
 - While loading, animation can be displayed using the code below.
 
-![Baidu Maps](../img/baidu.png)
+<Image
+  title="Baidu Maps."
+  src="/img/plugins/volkovlabs-echarts-panel/baidu.png"
+/>
 
 ## Function
 
@@ -47,20 +53,20 @@ const loading = {
   graphic: {
     elements: [
       {
-        type: 'group',
-        left: 'center',
-        top: 'center',
+        type: "group",
+        left: "center",
+        top: "center",
         children: new Array(7).fill(0).map((val, i) => ({
-          type: 'rect',
+          type: "rect",
           x: i * 20,
           shape: {
             x: 0,
             y: -40,
             width: 10,
-            height: 80
+            height: 80,
           },
           style: {
-            fill: '#5470c6'
+            fill: "#5470c6",
           },
           keyframeAnimation: {
             duration: 1000,
@@ -70,28 +76,28 @@ const loading = {
               {
                 percent: 0.5,
                 scaleY: 0.3,
-                easing: 'cubicIn'
+                easing: "cubicIn",
               },
               {
                 percent: 1,
                 scaleY: 1,
-                easing: 'cubicOut'
-              }
-            ]
-          }
-        }))
-      }
-    ]
-  }
-}
+                easing: "cubicOut",
+              },
+            ],
+          },
+        })),
+      },
+    ],
+  },
+};
 
 /**
  * Maps are Ready
  */
 window.bmapReady = () => {
-  notifySuccess(['Baidu Maps', 'Loaded...']);
-  echartsInstance.setOption(bmap, notmerge = true);
-}
+  notifySuccess(["Baidu Maps", "Loaded..."]);
+  echartsInstance.setOption(bmap, (notmerge = true));
+};
 
 return window.BMap ? bmap : loading;
 ```

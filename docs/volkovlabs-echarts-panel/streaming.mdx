@@ -10,6 +10,9 @@ tags:
   - Live
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Streaming
 
 Streaming allows real-time data updates using streaming Data Sources and Grafana Live.
@@ -24,18 +27,21 @@ Streaming is supported by the Apache ECharts visualization panel starting from v
 
 Grafana Live is a real-time messaging engine introduced in Grafana v8.0. With [Grafana Live](https://grafana.com/docs/grafana/latest/setup-grafana/set-up-grafana-live/), you can push event data to a frontend as soon as an event occurs.
 
-![Live](img/live.png)
+<Image
+  title="Apache ECharts allows displaying messages from Grafana Live real-time engine."
+  src="/img/plugins/volkovlabs-echarts-panel/live.png"
+/>
 
 ### Function
 
 ```javascript
 const series = data.series.map((s) => {
-  const sData = s.fields.find((f) => f.type === 'number').values.buffer;
-  const sTime = s.fields.find((f) => f.type === 'time').values.buffer;
+  const sData = s.fields.find((f) => f.type === "number").values.buffer;
+  const sTime = s.fields.find((f) => f.type === "time").values.buffer;
 
   return {
-    type: 'line',
-    name: 'Live',
+    type: "line",
+    name: "Live",
     showSymbol: false,
     areaStyle: {
       opacity: 0.1,
@@ -48,28 +54,28 @@ const series = data.series.map((s) => {
 });
 
 return {
-  backgroundColor: 'transparent',
+  backgroundColor: "transparent",
   tooltip: {
-    trigger: 'axis',
+    trigger: "axis",
   },
   legend: {
-    left: '0',
-    bottom: '0',
+    left: "0",
+    bottom: "0",
     textStyle: {
-      color: 'rgba(128, 128, 128, .9)',
+      color: "rgba(128, 128, 128, .9)",
     },
   },
   xAxis: {
-    type: 'time',
+    type: "time",
   },
   yAxis: {
-    type: 'value',
-    min: 'dataMin',
+    type: "value",
+    min: "dataMin",
   },
   grid: {
-    left: '2%',
-    right: '2%',
-    top: '2%',
+    left: "2%",
+    right: "2%",
+    top: "2%",
     bottom: 24,
     containLabel: true,
   },
@@ -81,9 +87,12 @@ return {
 
 To stream real-time data, we used the [WebSocket Data Source for Grafana](https://grafana.com/grafana/plugins/golioth-websocket-datasource/).
 
-![Streaming](img/websocket.png)
+<Image
+  title="Streaming real-time events from Websocket Data source."
+  src="/img/plugins/volkovlabs-echarts-panel/websocket.png"
+/>
 
-### Server 
+### Server
 
 Example of Node.js WebSocket Server implementation:
 
@@ -113,12 +122,12 @@ datasources:
 ### Function
 
 ```javascript
-const values = {}
+const values = {};
 const series = data.series.map((s) => {
-  names = s.fields.find((f) => f.name === 'name').values.buffer;
-  amounts = s.fields.find((f) => f.name === 'amount').values.buffer;
+  names = s.fields.find((f) => f.name === "name").values.buffer;
+  amounts = s.fields.find((f) => f.name === "amount").values.buffer;
 
-  names.forEach((d, i) => values[d] = amounts[i]);
+  names.forEach((d, i) => (values[d] = amounts[i]));
 });
 
 return {
@@ -131,15 +140,15 @@ return {
   },
   tooltip: {},
   xAxis: {
-    data: Object.keys(values)
+    data: Object.keys(values),
   },
   yAxis: {},
   series: [
     {
-      name: 'Streaming',
-      type: 'bar',
-      data: Object.values(values)
-    }
-  ]
+      name: "Streaming",
+      type: "bar",
+      data: Object.values(values),
+    },
+  ],
 };
 ```
