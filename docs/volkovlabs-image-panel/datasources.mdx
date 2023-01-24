@@ -8,10 +8,13 @@ tags:
   - Data Source
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Data Sources
 
 The Base64 Image/Video/Audio/PDF visualization panel takes data from the connected data source.
-You can use any suitable data source to retrieve the data in the Base64 format. The quickest option to start is to use the Static data source. PostgreSQL is a great option as well. 
+You can use any suitable data source to retrieve the data in the Base64 format. The quickest option to start is to use the Static data source. PostgreSQL is a great option as well.
 
 ## Static Data Source
 
@@ -23,7 +26,10 @@ Static Data Source is an excellent solution for not huge sizes. If you get a `41
 
 :::
 
-![Image Panel](https://raw.githubusercontent.com/volkovlabs/volkovlabs-image-panel/main/src/img/image-panel.png)
+<Image
+  title="Base64 panel allows to display images on Grafana dashboard."
+  src="https://raw.githubusercontent.com/volkovlabs/volkovlabs-image-panel/main/src/img/image-panel.png"
+/>
 
 ## PostgreSQL
 
@@ -41,9 +47,12 @@ where
   name = 'flow';
 ```
 
-![Video file](img/video-comments.png)
+<Image
+  title="Base64 panel allows to display media files on Grafana dashboard."
+  src="/img/plugins/volkovlabs-image-panel/video-comments.png"
+/>
 
-PostgreSQL database has built-in functions to work with the Base64 format. 
+PostgreSQL database has built-in functions to work with the Base64 format.
 
 ```sql
 SELECT CONVERT_FROM (DECODE('SGVsbG8gV29ybGQh', 'BASE64'), 'UTF-8');
