@@ -87,6 +87,12 @@ const config = {
             className: "header-youtube-link",
             "aria-label": "YouTube Channel",
           },
+          {
+            href: "https://github.com/VolkovLabs",
+            position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub Organization",
+          },
         ],
       },
       footer: {
