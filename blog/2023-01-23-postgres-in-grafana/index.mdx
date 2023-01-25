@@ -47,7 +47,9 @@ Make sure you have a dedicated PostgreSQL database created. You can surely use t
 Start the PostgreSQL container with TimescaleDB:
 
 ```sh
-docker run -d --name timescaledb -p 5432:5432 -e POSTGRES_PASSWORD=password timescale/timescaledb-ha:pg14-latest
+docker run -d --name timescaledb -p 5432:5432 \
+  -e POSTGRES_PASSWORD=password \
+  timescale/timescaledb-ha:pg14-latest
 ```
 
 Launch the `psql`:
@@ -107,7 +109,7 @@ docker run --network=host -e GF_DATABASE_TYPE=postgres \
 
 You need to reassign five environment variables. Ensure to prefix each with `-e`. Do not forget all environment variables' names should be in upper case.
 
-Now, if you switch back to the `psql` and run the command to list all relations, you should see 114 objects (in Grafana v9.3.1).
+Now, if you switch back to the `psql` and run the command to list all relations, you should see ~114 objects (in Grafana v9.3.X).
 
 ```sql
 \d
@@ -180,7 +182,7 @@ create table stocks (
 Load stock data from a file into the `stocks` table.
 
 ```sql
-COPY stocks_stg FROM '/boot/time_series-TSLA-5min.csv' (DELIMITER(';'), HEADER TRUE, FORMAT CSV);
+COPY stocks FROM '/tmp/time_series-TSLA-5min.csv' (DELIMITER(';'), HEADER TRUE, FORMAT CSV);
 update tesla_stocks set stock_symbol = 'TSLA';
 ```
 
