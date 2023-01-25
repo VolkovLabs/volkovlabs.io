@@ -20,3 +20,7 @@
   font-style: italic;
   font-size: 17px;
 }
+
+[data-rmiz-modal-overlay="visible"] {
+  background-color: var(--ifm-footer-background-color);
+}

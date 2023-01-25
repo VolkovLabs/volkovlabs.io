@@ -14,10 +14,7 @@ const config = {
   organizationName: "VolkovLabs",
   projectName: "",
   themes: ["@saucelabs/theme-github-codeblock"],
-  plugins: [
-    require.resolve("@cmfcmf/docusaurus-search-local"),
-    require.resolve("docusaurus-plugin-image-zoom"),
-  ],
+  plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -50,14 +47,6 @@ const config = {
         respectPrefersColorScheme: true,
       },
       metadata: [{ name: "keywords", content: "grafana, plugins, volkovlabs" }],
-      zoom: {
-        selector: ".markdown :not(em) > img",
-        background: {
-          light: "rgb(255, 255, 255)",
-          dark: "rgb(25, 25, 25)",
-        },
-        config: {},
-      },
       navbar: {
         hideOnScroll: true,
         logo: {
