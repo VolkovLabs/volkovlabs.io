@@ -11,22 +11,31 @@ import Video from "@theme/Video";
 
 # Website Analytics based on Nginx, Loki, Promtail, and Grafana.
 
-We use Google Analytics to track activities on our web-site with blog and documentation. Everytime when I open it, I want to close it. Why? Interface is too cluttered with compaigns, revenue, retention, channels, etc. Real-time capabilities allows to see only last 30 minutes. You can spend extra time configuring custom dashboards and reports, but still I got a feeling that we are missing user activities.
-
-One of the reasons to miss activities, Google Analytics request may get blocked on firewalls, security devices, VPN and requests won't be reported to the servers.
-
 <!--truncate-->
 
-This is how the weekend project started to configured Nginx, Loki, Promtail and Grafana to work together and show the big picture. In this project we are interested in Business metrics rather than Technical on how many log files were parsed, size, etc.
+In this weekend project we are interested in Business metrics, who, what and from where requested content from our blog and documentation rather than Technical on how many log files were parsed, size, etc. To accomplish our goal we configured Nginx, Loki, Promtail to work together and show all required business metrics on a Grafana dashboard.
 
 <Image
   title="Website Analytics based on NGINX, Loki and Grafana."
   src="/img/blog/2023-01-29-nginx-loki-grafana/dashboard.png"
 />
 
-You may google around and found various dashboards, outdated GitHub repositories, and other pieces of information covering some steps. I was not able to find straightforward and up-to-date resource which describes what I wanted to accomplished.
+You may google around and find various dashboards, outdated GitHub repositories, and other pieces of information covering some steps. I could not find a straightforward and up-to-date resource describing what I wanted to accomplish.
 
-Let's take a closer look at each component one-by-one.
+## Google Analytics
+
+We use Google Analytics to track activities on our web-site with blog and documentation. Everytime when I open it, I want to close it. Why? Interface is too cluttered with compaigns, revenue, retention, channels, etc.
+
+You can spend extra time configuring custom dashboards and reports, but still I got a feeling that we are missing user activities blocked on firewalls, security devices, and VPN.
+
+## Log flow
+
+Let's take a closer look at each component one-by-one:
+
+- Nginx serves website and produce log files.
+- Loki aggregates log files.
+- Promtail collected and processes log file from Nginx and push to Loki.
+- Grafana displays business and technical metrics from Loki using Loki data source.
 
 ## Nginx
 
