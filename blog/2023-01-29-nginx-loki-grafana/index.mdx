@@ -11,7 +11,7 @@ import Video from "@theme/Video";
 
 # Website Analytics based on Nginx, Loki, Promtail, and Grafana
 
-In this weekend' project, we are interested in Content metrics - Who, What, and from Where requested content from blog and documentation on our website, rather than Technical - how many log files were parsed, size, error requests, etc. To achieve this goal, we configured Nginx, Loki, Promtail to work together and show all required metrics on a Grafana dashboard.
+In this weekend' project, we are interested in content metrics - Who, What, and from Where requested content from blog and documentation on our website, rather than technical - how many log files were parsed, size, error requests, etc. To achieve this goal, we configured Nginx, Loki, Promtail to work together and show all required metrics on a Grafana dashboard.
 
 <!--truncate-->
 
@@ -26,20 +26,20 @@ You may google around and find various dashboards, outdated GitHub repositories,
 
 We use Google Analytics to track activities on our website. Every time when I open it, I want to close it. Why? The interface is too cluttered with campaigns, revenue, retention, and channels.
 
-You can spend extra time configuring custom dashboards and reports, but I still feel we are missing user activities. One of the reason, reporting requests are blocked on firewalls, security devices, and VPN devices. Collecting user activities directly from web server will help to avoid connectivity issues.
+You can spend extra time configuring custom dashboards and reports, but I still feel we are missing user activities. One of the reason, reporting requests are blocked on firewalls, security, and VPN devices. Collecting user activities directly from the web server will help to avoid losing data.
 
 ## Log flow
 
-Let's examine each component functions and take a closer look at each component one-by-one.
+Let's examine each component's functions and take a closer look at each of them one-by-one.
 
 - Nginx serves website and produce log files.
 - Loki aggregates log files.
-- Promtail collected and processes log file from Nginx and push to Loki.
+- Promtail collects, processes log file from Nginx and pushes to Loki.
 - Grafana displays content and technical metrics from Loki using Loki data source.
 
 ## Nginx
 
-Nginx is a web server that can also be used as a reverse proxy, load balancer, and cache. We use it in front of all our projects, running in Docker, and it's installed on the host for optimal performance.
+Nginx is a web server that can also be used as a reverse proxy, load balancer, and cache. We use it in front of all our projects and it's installed on the host for optimal performance.
 
 When you configure format of the log files produced by Nginx, you can collect everything and then decided what do you need or may need in future. Other option is to choose what you really need and keep it short. For this project we selected:
 
@@ -55,11 +55,11 @@ When you configure format of the log files produced by Nginx, you can collect ev
 | `request_time`       | Request processing time in seconds with msec resolution. |
 | `geoip_country_code` | Geo location based on client IP.                         |
 
-We also added additional configuration to the main configuration file `nginx.conf` to get as clean input data as possible and avoid additional processing in Promtail and Grafana:
+We also added additional configuration to the main configuration file `nginx.conf` to get as clean input data as possible and avoid further processing in Promtail and Grafana.
 
 - Replace empty values in `http_referer` with `(direct)` similar to Google Analytics.
 - Replace empty values in `http_user_agent` with `Unknown`.
-- Replace empty values in `geoip_country_code` with `Unknown`, which we display with the pirate flag on our dashboard similar to other countries.
+- Replace empty values in `geoip_country_code` with `Unknown`.
 - Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
 - Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
 
@@ -96,7 +96,7 @@ http {
 }
 ```
 
-A JSON record from the log file looks like this
+A produced JSON record from the log file looks like this.
 
 ```json title=analytics.log
 {
