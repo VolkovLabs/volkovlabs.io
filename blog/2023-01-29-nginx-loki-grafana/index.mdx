@@ -11,7 +11,7 @@ import Video from "@theme/Video";
 
 # Website Analytics based on Nginx, Loki, Promtail, and Grafana
 
-In this weekend' project, we are interested in content metrics - Who, What, and from Where requested content from blog and documentation on our website, rather than technical - how many log files were parsed, size, error requests, etc. To achieve this goal, we configured Nginx, Loki, Promtail to work together and show all required metrics on a Grafana dashboard.
+In this weekend's project, we are interested in the content metrics for our website. Who, What, and from Where requested resources from blog and documentation. To achieve this goal, we configured Nginx, Loki, Promtail to work together and show all required metrics on a Grafana dashboard.
 
 <!--truncate-->
 
@@ -57,12 +57,6 @@ When you configure format of the log files produced by Nginx, you can collect ev
 
 We also added additional configuration to the main configuration file `nginx.conf` to get as clean input data as possible and avoid further processing in Promtail and Grafana.
 
-- Replace empty values in `http_referer` with `(direct)` similar to Google Analytics.
-- Replace empty values in `http_user_agent` with `Unknown`.
-- Replace empty values in `geoip_country_code` with `Unknown`.
-- Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
-- Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
-
 ```nginx title=nginx.conf
 http {
   map $http_referer $httpReferer {
@@ -95,6 +89,12 @@ http {
     '}';
 }
 ```
+
+- Replace empty values in `http_referer` with `(direct)` similar to Google Analytics.
+- Replace empty values in `http_user_agent` with `Unknown`.
+- Replace empty values in `geoip_country_code` with `Unknown`.
+- Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
+- Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
 
 A produced JSON record from the log file looks like this.
 
@@ -129,13 +129,13 @@ Modern [GeoIP2 database](https://www.maxmind.com/en/geoip2-databases) can be use
 
 - Setup an account.
 - Additional configuration for daily updates.
-- Compile Nginx with additional module on our version of LinuxOS.
+- Compile Nginx with additional module supporting GeoIP2.
 
 You can easily find instructions on how to do it and go this route if required.
 
 ### Server configuration
 
-When using the Nginx web server, server blocks can be used to encapsulate configuration details and host more than one domain on a single server. In the configuration file for the website we added additional logging file `analytics.log` using described JSON format.
+Server blocks in Nginx can be used to encapsulate configuration details and host more than one domain on a single server. In the configuration file for the website we added additional logging in the file `analytics.log` using discussed JSON format.
 
 ```nginx
 server {
@@ -145,7 +145,7 @@ server {
 
 ## Loki
 
-Loki is a horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus. It does not index the contents of the logs, but rather a set of labels for each log stream. It is designed to be very cost effective and easy to operate.
+Loki is a horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus. It does not index the contents of the logs, but rather a set of labels for each log stream.
 
 In our environment we are running Loki in Docker container orchestrated using `docker-compose`.
 
@@ -159,15 +159,15 @@ In our environment we are running Loki in Docker container orchestrated using `d
       - ./loki/loki.yml:/etc/loki/local-config.yaml
 ```
 
-- The data folder `/loki` stored in the volume folder on local drive.
+- The data folder `/loki` stored in the volume folder on a local drive.
 - Configuration file `/etc/loki/local-config.yaml` stored in the `loki` folder next to the data.
 - Uses the latest stable version `2.7.1`.
 
-Loki, Promtail, and Grafana containers are distributed on separete hosts, and we run them in the network host mode.
+Loki, Promtail, and Grafana containers are distributed on separate hosts, and we run them in the network host mode.
 
 ### Configuration
 
-The configuration file is based on the default file shipped with `2.7.1` release with additional configuration to increase the number of maximum outstanding requests to accommodate the Grafana dashboard.
+The configuration file is based on the default file shipped with `2.7.1` release. We updated configuration to increase the number of maximum outstanding requests to accommodate the Grafana dashboard.
 
 ```yaml title=./loki/loki.yml
 auth_enabled: false
@@ -227,9 +227,9 @@ Similar to Loki we are running Promtail in Docker container orchestrated with `d
 
 ### Configuration
 
-Configuration file is based on the default file shipped with `2.7.1` release with additional configuration for Nginx analytics log files to add labels `job`, `host`, `agent` and watch only described `analytics.log` files.
+Configuration file is based on the default file shipped with `2.7.1` release. We updated configuration for Nginx analytics log files to add labels `job`, `host`, `agent` and watch for `analytics.log` files.
 
-Promtail push logs to the Loki specified in the configuration file `http://LOKI-IP:3100/loki/api/v1/push`.
+Promtail push logs to the Loki specified in the configuration file `http://LOKI-IP:3100/loki/api/v1/push`, which is located on a separate host in our configuration.
 
 ```yaml title=./loki/promtail.yml
 server:
@@ -275,14 +275,14 @@ We added Pipeline stages to drop records we are not interested in.
 
 - Requests from Googlebot, inspectors, test, network devices and RSS collectors.
 - Requests for images and assets (Javascript, CSS) in the special folders.
-- Requests for special files for browsers and indexing engines.
+- Requests for particular files for browsers and indexing engines.
 - Malicious request from scanners to find PHP and XML files.
 
 The [Pipelines](https://grafana.com/docs/loki/latest/clients/promtail/pipelines/) can be changed and updated based on your requirements.
 
 ## Grafana
 
-We love Grafana and use it for all our projects. We have it already installed on our servers and Daria covered the process in the video.
+We love Grafana and use it for all our projects. We covered installation process in the video.
 
 <Video
   src="https://www.youtube.com/embed/xTQpV7B700w"
@@ -298,16 +298,16 @@ In another video, Daria explained how to create your first Grafana dashboard wit
 
 ### Loki data source
 
-A Loki data source is preinstalled in Grafana. We used default configuration with URL `http://localhost:3100` to connect to the private Loki instance.
+A Loki data source is preinstalled in Grafana. We used URL `http://localhost:3100` to connect to the private Loki instance without authorization.
 
 <Image
   title="Loki data source configuration in Grafana."
   src="/img/blog/2023-01-29-nginx-loki-grafana/loki.png"
 />
 
-### Dashboard
+## Analytics Dashboard
 
-Website Analytics dashboard was inspired by [Grafana Loki Dashboard for NGINX Service Mesh](https://grafana.com/grafana/dashboards/12559-grafana-loki-dashboard-for-nginx-service-mesh/?pg=dashboards&plcmt=featured-main), one of the most interesting and updated dashboard we can find.
+Website Analytics dashboard was inspired by [Grafana Loki Dashboard for NGINX Service Mesh](https://grafana.com/grafana/dashboards/12559-grafana-loki-dashboard-for-nginx-service-mesh/?pg=dashboards&plcmt=featured-main), one of the most interesting and updated dashboard we can find for Nginx.
 
 Each panel and query was updated according to our styling guidelines and requirements.
 
@@ -318,18 +318,18 @@ Each panel and query was updated according to our styling guidelines and require
 
 ### Content metrics
 
-The first part of the dashboard provides Content metrics - Who, What, and from Where requested content.
+The first part of the dashboard provides content metrics - Who, What, and from Where requested resources.
 
 <Image
   title="Processing."
   src="/img/blog/2023-01-29-nginx-loki-grafana/content.png"
 />
 
-- Geomap displays number of request for each Geo location, except empty values replaced with `Unknown`.
-- Requests panel displays total number of requests.
+- Geomap displays number of request for each Geo location, except unrecognized countries replaced with `Unknown`.
+- Requests panel displays total number of requests in the selected Time Range.
 - Visitors per Hours displays number of unique remote IP addresses per hour.
-- A list of contries presented as sorted table with values mapping. List of countries can be updated if required.
-- Referers sorted table displays the location from where requested resources are being used.
+- A list of countries as sorted table with values mapping. List of countries can be updated if required.
+- Referers displays the location from where requested resources are being used.
 - Successfully Requested Pages displays the most frequently requested resources.
 
 ### Technical metrics
