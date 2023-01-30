@@ -260,7 +260,7 @@ scrape_configs:
             request_uri:
       - drop:
           source: http_user_agent
-          expression: "(bot|Bot|RSS|Inspect|test)"
+          expression: "(bot|Bot|RSS|Crawler|Inspect|test)"
       - drop:
           source: request_uri
           expression: "/(assets|img)/"
