@@ -321,7 +321,7 @@ Each panel and query was updated according to our styling guidelines and require
 The first part of the dashboard provides content metrics - Who, What, and from Where requested resources.
 
 <Image
-  title="Processing."
+  title="Content metrics for the content requests."
   src="/img/blog/2023-01-29-nginx-loki-grafana/content.png"
 />
 
@@ -337,7 +337,7 @@ The first part of the dashboard provides content metrics - Who, What, and from W
 The second part of the dashboard contains technical information.
 
 <Image
-  title="Processing."
+  title="Technical metrics for the content requests."
   src="/img/blog/2023-01-29-nginx-loki-grafana/technical.png"
 />
 
@@ -345,6 +345,18 @@ The second part of the dashboard contains technical information.
 - Status of the HTTP requests in 5 minutes blocks displayed as bars.
 - The most frequently used User Agents with information about browser and platform.
 - Logs to display raw logging information and verify that we are collecting only required fields and records.
+
+### Heatmap
+
+The third part of the dashboard contains heatmaps, which helps to understand when and from where resources were requested in the selected Time Range.
+
+<Image
+  title="Heatmap of the content requests."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/heatmap.png"
+/>
+
+- Country displays requests per country.
+- Requested pages displays requests per resource.
 
 ### Import
 
@@ -385,6 +397,12 @@ For the dashboard to function correctly, you must have the Loki data source inst
       "id": "grafana",
       "name": "Grafana",
       "version": "9.3.6"
+    },
+    {
+      "type": "panel",
+      "id": "heatmap",
+      "name": "Heatmap",
+      "version": ""
     },
     {
       "type": "panel",
@@ -586,11 +604,9 @@ For the dashboard to function correctly, you must have the Loki data source inst
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum by(geoip_country_code) (count_over_time({host=~\"$host\"} | json | geoip_country_code != `` [$__interval]))",
-          "instant": false,
+          "expr": "sum by (geoip_country_code) (count_over_time({host=~\"$host\"} | json [$__interval]))",
           "legendFormat": "{{geoip_country_code}}",
           "queryType": "range",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -749,8 +765,8 @@ For the dashboard to function correctly, you must have the Loki data source inst
     },
     {
       "datasource": {
-        "type": "loki",
-        "uid": "${DS_LOKI}"
+        "type": "datasource",
+        "uid": "-- Dashboard --"
       },
       "description": "",
       "fieldConfig": {
@@ -779,212 +795,280 @@ For the dashboard to function correctly, you must have the Loki data source inst
                   "index": 3,
                   "text": "🇦🇫 Afghanistan"
                 },
-                "AR": {
+                "AP": {
                   "index": 4,
+                  "text": "Asia/Pacific Region"
+                },
+                "AR": {
+                  "index": 5,
                   "text": "🇦🇷 Argentina"
                 },
                 "AT": {
-                  "index": 5,
+                  "index": 6,
                   "text": "🇦🇹 Austria"
                 },
                 "AU": {
-                  "index": 6,
+                  "index": 7,
                   "text": "🇦🇺 Australia"
                 },
                 "BE": {
-                  "index": 7,
+                  "index": 8,
                   "text": "🇧🇪 Belgium"
                 },
                 "BG": {
-                  "index": 8,
+                  "index": 9,
                   "text": "🇧🇬 Bulgaria"
                 },
                 "BR": {
-                  "index": 9,
+                  "index": 10,
                   "text": "🇧🇷 Brazil"
                 },
                 "BT": {
-                  "index": 10,
+                  "index": 11,
                   "text": "🇧🇹 Bhutan"
                 },
                 "CA": {
-                  "index": 11,
+                  "index": 12,
                   "text": "🇨🇦 Canada"
                 },
                 "CH": {
-                  "index": 12,
+                  "index": 13,
                   "text": "🇨🇭 Switzerland"
                 },
                 "CM": {
-                  "index": 13,
+                  "index": 14,
                   "text": "🇨🇲 Cameroon"
                 },
                 "CN": {
-                  "index": 14,
+                  "index": 15,
                   "text": "🇨🇳 China"
                 },
+                "CO": {
+                  "index": 16,
+                  "text": "🇨🇴 Colombia"
+                },
+                "CY": {
+                  "index": 17,
+                  "text": "🇨🇾 Cyprus"
+                },
                 "CZ": {
-                  "index": 15,
+                  "index": 18,
                   "text": "🇨🇿 Czech Republic"
                 },
                 "DE": {
-                  "index": 16,
+                  "index": 19,
                   "text": "🇩🇪 Germany"
                 },
+                "DK": {
+                  "index": 20,
+                  "text": "🇩🇰 Denmark"
+                },
                 "ES": {
-                  "index": 17,
+                  "index": 21,
                   "text": "🇪🇸 Spain"
                 },
+                "EU": {
+                  "index": 22,
+                  "text": "European Union"
+                },
+                "FI": {
+                  "index": 23,
+                  "text": "🇫🇮 Finland"
+                },
                 "FR": {
-                  "index": 18,
+                  "index": 24,
                   "text": "🇫🇷 France"
                 },
                 "GB": {
-                  "index": 19,
+                  "index": 25,
                   "text": "🇬🇧 United Kingdom"
                 },
+                "GE": {
+                  "index": 26,
+                  "text": "🇬🇪 Georgia"
+                },
                 "GR": {
-                  "index": 20,
+                  "index": 27,
                   "text": "🇬🇷 Greece"
                 },
+                "HK": {
+                  "index": 29,
+                  "text": "🇭🇰 Hong Kong"
+                },
                 "HN": {
-                  "index": 22,
+                  "index": 30,
                   "text": "🇭🇳 Honduras"
                 },
                 "HR": {
-                  "index": 23,
+                  "index": 31,
                   "text": "🇭🇷 Croatia"
                 },
                 "HU": {
-                  "index": 21,
+                  "index": 28,
                   "text": "🇭🇺 Hungary"
                 },
                 "ID": {
-                  "index": 24,
+                  "index": 32,
                   "text": "🇮🇩 Indonesia"
                 },
                 "IL": {
-                  "index": 25,
+                  "index": 33,
                   "text": "🇮🇱 Israel"
                 },
                 "IN": {
-                  "index": 26,
+                  "index": 34,
                   "text": "🇮🇳 India"
                 },
                 "IR": {
-                  "index": 27,
+                  "index": 35,
                   "text": "🇮🇷 Iran"
                 },
+                "IS": {
+                  "index": 37,
+                  "text": "🇮🇸 Iceland"
+                },
                 "IT": {
-                  "index": 28,
+                  "index": 36,
                   "text": "🇮🇹 Italy"
                 },
                 "JO": {
-                  "index": 29,
+                  "index": 38,
                   "text": "🇯🇴 Jordan"
                 },
                 "JP": {
-                  "index": 30,
+                  "index": 39,
                   "text": "🇯🇵 Japan"
                 },
+                "KH": {
+                  "index": 40,
+                  "text": "🇰🇭 Cambodia"
+                },
+                "KR": {
+                  "index": 41,
+                  "text": "🇰🇷 South Korea"
+                },
                 "KZ": {
-                  "index": 31,
+                  "index": 42,
                   "text": "🇰🇿 Kazakhstan"
                 },
                 "LK": {
-                  "index": 32,
+                  "index": 43,
                   "text": "🇱🇰 Sri Lanka"
                 },
                 "LT": {
-                  "index": 33,
+                  "index": 44,
                   "text": "🇱🇹 Lithuania"
                 },
+                "LU": {
+                  "index": 45,
+                  "text": "🇱🇺 Luxembourg"
+                },
+                "LV": {
+                  "index": 46,
+                  "text": "🇱🇻 Latvia"
+                },
                 "MD": {
-                  "index": 34,
+                  "index": 47,
                   "text": "🇲🇩 Moldova"
                 },
                 "MX": {
-                  "index": 35,
+                  "index": 48,
                   "text": "🇲🇽 Mexico"
                 },
                 "MY": {
-                  "index": 36,
+                  "index": 49,
                   "text": "🇲🇾 Malaysia"
                 },
+                "NA": {
+                  "index": 50,
+                  "text": "🇳🇦 Namibia"
+                },
                 "NL": {
-                  "index": 37,
+                  "index": 51,
                   "text": "🇳🇱 Netherlands"
                 },
                 "NO": {
-                  "index": 39,
+                  "index": 53,
                   "text": "🇳🇴 Norway"
                 },
                 "NP": {
-                  "index": 38,
+                  "index": 52,
                   "text": "🇳🇵 Nepal"
                 },
                 "NZ": {
-                  "index": 40,
+                  "index": 54,
                   "text": "🇳🇿 New Zealand"
                 },
+                "OM": {
+                  "index": 55,
+                  "text": "🇴🇲 Oman"
+                },
                 "PL": {
-                  "index": 41,
+                  "index": 56,
                   "text": "🇵🇱 Poland"
                 },
                 "PT": {
-                  "index": 42,
+                  "index": 57,
                   "text": "🇵🇹 Portugal"
                 },
+                "RO": {
+                  "index": 58,
+                  "text": "🇷🇴 Romania"
+                },
                 "RU": {
-                  "index": 43,
+                  "index": 59,
                   "text": "🇷🇺 Russia"
                 },
                 "SC": {
-                  "index": 44,
+                  "index": 60,
                   "text": "🇸🇨 Seychelles"
                 },
                 "SE": {
-                  "index": 45,
+                  "index": 61,
                   "text": "🇸🇪 Sweden"
                 },
                 "SG": {
-                  "index": 47,
+                  "index": 63,
                   "text": "🇸🇬 Singapore"
                 },
                 "SK": {
-                  "index": 46,
+                  "index": 62,
                   "text": "🇸🇰 Slovakia"
                 },
                 "TH": {
-                  "index": 48,
+                  "index": 64,
                   "text": "🇹🇭 Thailand"
                 },
                 "TN": {
-                  "index": 49,
+                  "index": 65,
                   "text": "🇹🇳 Tunisia"
                 },
                 "TR": {
-                  "index": 50,
+                  "index": 66,
                   "text": "🇹🇷 Turkey"
                 },
                 "TW": {
-                  "index": 51,
+                  "index": 67,
                   "text": "🇹🇼 Taiwan"
                 },
                 "UA": {
-                  "index": 52,
+                  "index": 68,
                   "text": "🇺🇦 Ukraine"
                 },
                 "US": {
-                  "index": 53,
+                  "index": 69,
                   "text": "🇺🇸 United States"
                 },
                 "Unknown": {
                   "index": 0,
                   "text": "🏴‍☠️ Unknown"
                 },
+                "VN": {
+                  "index": 70,
+                  "text": "🇻🇳 Viet Nam"
+                },
                 "ZA": {
-                  "index": 54,
+                  "index": 71,
                   "text": "🇿🇦 South Africa"
                 }
               },
@@ -1054,15 +1138,10 @@ For the dashboard to function correctly, you must have the Loki data source inst
       "targets": [
         {
           "datasource": {
-            "type": "loki",
-            "uid": "${DS_LOKI}"
+            "type": "datasource",
+            "uid": "-- Dashboard --"
           },
-          "editorMode": "code",
-          "expr": "sum by (geoip_country_code) (count_over_time({host=~\"$host\"} | json [$__interval]))",
-          "instant": true,
-          "legendFormat": "{{geoip_country_code}}",
-          "queryType": "range",
-          "range": false,
+          "panelId": 14,
           "refId": "A"
         }
       ],
@@ -1293,10 +1372,8 @@ For the dashboard to function correctly, you must have the Loki data source inst
           },
           "editorMode": "code",
           "expr": "sum by (request_uri) (count_over_time({host=~\"$host\"} | json | status = 200 [$__interval]))",
-          "instant": true,
           "legendFormat": "{{request_uri}}",
           "queryType": "range",
-          "range": false,
           "refId": "A"
         }
       ],
@@ -1831,9 +1908,179 @@ For the dashboard to function correctly, you must have the Loki data source inst
       ],
       "title": "Logs",
       "type": "logs"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
+      "id": 32,
+      "panels": [],
+      "title": "Heatmap",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 24,
+        "x": 0,
+        "y": 50
+      },
+      "id": 30,
+      "interval": "5m",
+      "options": {
+        "calculate": false,
+        "cellGap": 0,
+        "color": {
+          "exponent": 0.5,
+          "fill": "#9d70f9",
+          "mode": "scheme",
+          "reverse": false,
+          "scale": "exponential",
+          "scheme": "Rainbow",
+          "steps": 64
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 0
+        },
+        "legend": {
+          "show": true
+        },
+        "rowsFrame": {
+          "layout": "auto",
+          "value": "Requests"
+        },
+        "tooltip": {
+          "show": true,
+          "yHistogram": false
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "reverse": true,
+          "unit": "short"
+        }
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 14,
+          "refId": "A"
+        }
+      ],
+      "title": "Country",
+      "transformations": [],
+      "type": "heatmap"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 24,
+        "x": 0,
+        "y": 66
+      },
+      "id": 29,
+      "interval": "5m",
+      "options": {
+        "calculate": false,
+        "cellGap": 1,
+        "color": {
+          "exponent": 0.1,
+          "fill": "#9d70f9",
+          "mode": "scheme",
+          "reverse": false,
+          "scale": "exponential",
+          "scheme": "Rainbow",
+          "steps": 128
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 1e-9
+        },
+        "legend": {
+          "show": true
+        },
+        "rowsFrame": {
+          "layout": "auto"
+        },
+        "tooltip": {
+          "show": true,
+          "yHistogram": false
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "reverse": true,
+          "unit": "short"
+        }
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 24,
+          "refId": "A"
+        }
+      ],
+      "title": "Requested Pages",
+      "transformations": [],
+      "type": "heatmap"
     }
   ],
-  "refresh": "30s",
+  "refresh": "1m",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
@@ -1870,7 +2117,7 @@ For the dashboard to function correctly, you must have the Loki data source inst
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -1889,7 +2136,7 @@ For the dashboard to function correctly, you must have the Loki data source inst
   "timezone": "",
   "title": "Website Analytics",
   "uid": "Nz6kKgtGj",
-  "version": 225,
+  "version": 254,
   "weekStart": ""
 }
 ```
