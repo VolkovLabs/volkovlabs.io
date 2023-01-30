@@ -321,7 +321,7 @@ Each panel and query was updated according to our styling guidelines and require
 The first part of the dashboard provides content metrics - Who, What, and from Where requested resources.
 
 <Image
-  title="Processing."
+  title="Content metrics for the content requests."
   src="/img/blog/2023-01-29-nginx-loki-grafana/content.png"
 />
 
@@ -337,7 +337,7 @@ The first part of the dashboard provides content metrics - Who, What, and from W
 The second part of the dashboard contains technical information.
 
 <Image
-  title="Processing."
+  title="Technical metrics for the content requests."
   src="/img/blog/2023-01-29-nginx-loki-grafana/technical.png"
 />
 
@@ -345,6 +345,18 @@ The second part of the dashboard contains technical information.
 - Status of the HTTP requests in 5 minutes blocks displayed as bars.
 - The most frequently used User Agents with information about browser and platform.
 - Logs to display raw logging information and verify that we are collecting only required fields and records.
+
+### Heatmap
+
+The third part of the dashboard contains heatmaps, which helps to understand when and from where resources were requested in the selected Time Range.
+
+<Image
+  title="Heatmap of the content requests."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/heatmap.png"
+/>
+
+- Country displays requests per country.
+- Requested pages displays requests per resource.
 
 ### Import
 
