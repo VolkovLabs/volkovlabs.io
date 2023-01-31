@@ -6,5 +6,5 @@ import { Redirect } from "@docusaurus/router";
  * Not Found
  */
 export default function NotFoundWrapper(props) {
-  return <Redirect to={useBaseUrl("/plugins")} />;
+  return <Redirect to={useBaseUrl("/")} />;
 }

@@ -11,6 +11,7 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   favicon: "img/favicon.ico",
+  trailingSlash: true,
   organizationName: "VolkovLabs",
   projectName: "",
   themes: ["@saucelabs/theme-github-codeblock"],
