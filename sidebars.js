@@ -63,6 +63,7 @@ const sidebars = {
             "volkovlabs-echarts-panel/examples",
             {
               items: [
+                "volkovlabs-echarts-panel/maps/geojson",
                 "volkovlabs-echarts-panel/maps/baidu",
                 "volkovlabs-echarts-panel/maps/gaode",
                 "volkovlabs-echarts-panel/maps/google",
