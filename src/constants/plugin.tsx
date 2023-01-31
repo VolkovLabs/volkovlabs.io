@@ -60,7 +60,7 @@ export const PluginList: PluginItem[] = [
     title: "Environment Data Source",
     name: "volkovlabs-env-datasource",
     description: <>Environment variables on your dashboard.</>,
-    href: "/plugins/volkovlabs-env-datasource",
+    href: "/plugins/volkovlabs-env-datasource/",
     badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
   },
   {
