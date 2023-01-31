@@ -9,7 +9,7 @@ export const ProjectList: PluginItem[] = [
     title: "Balena NFS",
     name: "balena-nfs",
     description: <>Deploy NFS Server and Client in balenaCloud.</>,
-    href: "/plugins/balena-nfs",
+    href: "/plugins/balena-nfs/",
     badge:
       "https://img.shields.io/static/v1?label=balena&message=Hub&labelColor=gray&color=black&style=for-the-badge",
   },

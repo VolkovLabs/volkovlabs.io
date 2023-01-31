@@ -98,43 +98,43 @@ const config = {
             items: [
               {
                 label: "Apache ECharts Panel",
-                to: "/plugins/volkovlabs-echarts-panel",
+                to: "/plugins/volkovlabs-echarts-panel/",
               },
               {
                 label: "Balena Application",
-                to: "/plugins/volkovlabs-balena-app",
+                to: "/plugins/volkovlabs-balena-app/",
               },
               {
                 label: "Base64 Image/PDF Panel",
-                to: "/plugins/volkovlabs-image-panel",
+                to: "/plugins/volkovlabs-image-panel/",
               },
               {
                 label: "Calendar Panel",
-                to: "/plugins/volkovlabs-calendar-panel",
+                to: "/plugins/volkovlabs-calendar-panel/",
               },
               {
                 label: "Dynamic Text Panel",
-                to: "/plugins/volkovlabs-dynamictext-panel",
+                to: "/plugins/volkovlabs-dynamictext-panel/",
               },
               {
                 label: "Data Manipulation Panel",
-                to: "/plugins/volkovlabs-form-panel",
+                to: "/plugins/volkovlabs-form-panel/",
               },
               {
                 label: "Environment Data Source",
-                to: "/plugins/volkovlabs-env-datasource",
+                to: "/plugins/volkovlabs-env-datasource/",
               },
               {
                 label: "RSS/Atom Data Source",
-                to: "/plugins/volkovlabs-rss-datasource",
+                to: "/plugins/volkovlabs-rss-datasource/",
               },
               {
                 label: "Static Data Source",
-                to: "/plugins/volkovlabs-static-datasource",
+                to: "/plugins/volkovlabs-static-datasource/",
               },
               {
                 label: "Volkov Labs Application",
-                href: "plugins/volkovlabs-app",
+                href: "/plugins/volkovlabs-app/",
               },
             ],
           },
@@ -143,7 +143,7 @@ const config = {
             items: [
               {
                 label: "Balena NFS",
-                href: "/plugins/balena-nfs",
+                href: "/plugins/balena-nfs/",
               },
               {
                 label: "ECharts Examples",
