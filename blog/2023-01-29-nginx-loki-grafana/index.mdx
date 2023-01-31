@@ -32,6 +32,11 @@ You can spend extra time configuring custom dashboards and reports, but I still 
 
 Let's examine each component's functions and take a closer look at each of them one-by-one.
 
+<Image
+  title="System architecture where tailored metrics lead to decisions making."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/flow.png"
+/>
+
 - Nginx serves website and produce log files.
 - Loki aggregates log files.
 - Promtail collects, processes log file from Nginx and pushes to Loki.
