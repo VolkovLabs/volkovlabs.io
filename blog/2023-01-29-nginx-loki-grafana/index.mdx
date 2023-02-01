@@ -158,6 +158,10 @@ Loki is a horizontally scalable, highly available, multi-tenant log aggregation 
 
 In our environment we are running Loki in Docker container orchestrated using `docker-compose`.
 
+- The data folder `/loki` stored in the volume folder on a local drive.
+- Configuration file `/etc/loki/local-config.yaml` stored in the `loki` folder next to the data.
+- Uses the latest stable version `2.7.1`.
+
 ```docker title=docker-compose.yml
   loki:
     container_name: loki
@@ -167,10 +171,6 @@ In our environment we are running Loki in Docker container orchestrated using `d
       - ./loki/data:/loki
       - ./loki/loki.yml:/etc/loki/local-config.yaml
 ```
-
-- The data folder `/loki` stored in the volume folder on a local drive.
-- Configuration file `/etc/loki/local-config.yaml` stored in the `loki` folder next to the data.
-- Uses the latest stable version `2.7.1`.
 
 Loki, Promtail, and Grafana containers are distributed on separate hosts, and we run them in the network host mode.
 
@@ -221,6 +221,10 @@ Promtail is an agent which ships the contents of local logs to a private Grafana
 
 Similar to Loki we are running Promtail in Docker container orchestrated with `docker-compose`.
 
+- Configuration file `/etc/promtail/config.yml` stored in the `loki` folder.
+- The Nginx log folder `/var/log/nginx` added to the container.
+- Uses the latest stable version `2.7.1`.
+
 ```docker title=docker-compose.yml
   promtail:
     image: grafana/promtail:2.7.1
@@ -231,15 +235,18 @@ Similar to Loki we are running Promtail in Docker container orchestrated with `d
       - /var/log/nginx:/var/log/nginx
 ```
 
-- Configuration file `/etc/promtail/config.yml` stored in the `loki` folder.
-- The Nginx log folder `/var/log/nginx` added to the container.
-- Uses the latest stable version `2.7.1`.
-
 ### Configuration
 
 Configuration file is based on the default file shipped with `2.7.1` release. We updated configuration for Nginx analytics log files to add labels `job`, `host`, `agent` and watch for `analytics.log` files.
 
 Promtail push logs to the Loki specified in the configuration file `http://LOKI-IP:3100/loki/api/v1/push`, which is located on a separate host in our configuration.
+
+We added Pipeline stages to drop records we are not interested in.
+
+- Requests from Googlebot, inspectors, test, network devices and RSS collectors.
+- Requests for images and assets (Javascript, CSS) in the special folders.
+- Requests for particular files for browsers and indexing engines.
+- Malicious request from scanners to find PHP and XML files.
 
 ```yaml title=./loki/promtail.yml
 server:
@@ -280,13 +287,6 @@ scrape_configs:
           source: request_uri
           expression: "(.php|.xml)$"
 ```
-
-We added Pipeline stages to drop records we are not interested in.
-
-- Requests from Googlebot, inspectors, test, network devices and RSS collectors.
-- Requests for images and assets (Javascript, CSS) in the special folders.
-- Requests for particular files for browsers and indexing engines.
-- Malicious request from scanners to find PHP and XML files.
 
 The [Pipelines](https://grafana.com/docs/loki/latest/clients/promtail/pipelines/) can be changed and updated based on your requirements.
 
@@ -330,11 +330,6 @@ Each panel and query was updated according to our styling guidelines and require
 
 The first part of the dashboard provides content metrics - Who, What, and from Where requested resources.
 
-<Image
-  title="Content metrics for the content requests."
-  src="/img/blog/2023-01-29-nginx-loki-grafana/content.png"
-/>
-
 - Geomap displays number of request for each Geo location, except unrecognized countries replaced with `Unknown`.
 - Requests panel displays total number of requests in the selected Time Range.
 - Visitors per Hours displays number of unique remote IP addresses per hour.
@@ -342,31 +337,36 @@ The first part of the dashboard provides content metrics - Who, What, and from W
 - Referers displays the location from where requested resources are being used.
 - Successfully Requested Pages displays the most frequently requested resources.
 
+<Image
+  title="Content metrics for the content requests."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/content.png"
+/>
+
 ### Technical metrics
 
 The second part of the dashboard contains technical information.
-
-<Image
-  title="Technical metrics for the content requests."
-  src="/img/blog/2023-01-29-nginx-loki-grafana/technical.png"
-/>
 
 - Processing Time (95th Percentile and Max latency) to diagnose for any technical issues with delivering content.
 - Status of the HTTP requests in 5 minutes blocks displayed as bars.
 - The most frequently used User Agents with information about browser and platform.
 - Logs to display raw logging information and verify that we are collecting only required fields and records.
 
+<Image
+  title="Technical metrics for the content requests."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/technical.png"
+/>
+
 ### Heatmap
 
 The third part of the dashboard contains heatmaps, which helps to understand when and from where resources were requested in the selected Time Range.
+
+- Country displays requests per country.
+- Requested pages displays requests per resource.
 
 <Image
   title="Heatmap of the content requests."
   src="/img/blog/2023-01-29-nginx-loki-grafana/heatmap.png"
 />
-
-- Country displays requests per country.
-- Requested pages displays requests per resource.
 
 ### Import
 
