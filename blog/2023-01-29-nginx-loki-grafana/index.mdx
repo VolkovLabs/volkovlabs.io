@@ -11,7 +11,9 @@ import Video from "@theme/Video";
 
 # Website Analytics based on Nginx, Loki, Promtail, and Grafana
 
-In this weekend's project, we collected and visualized the content metrics for our website. Who, What, and from Where requested resources from the blog and documentation. To achieve this goal, we configured Nginx, Loki, Promtail to work together and show all required metrics on a Grafana dashboard.
+In this weekend's project, we found a way to collect and visualize the content metrics for our website. 
+Who, What, and from Where requested our resources, like our blog and documentation.
+To achieve this goal, we assembled Nginx, Loki, and Promtail into a pipeline to work together, showing all required metrics on a Grafana dashboard.
 
 <!--truncate-->
 
@@ -20,33 +22,43 @@ In this weekend's project, we collected and visualized the content metrics for o
   src="/img/blog/2023-01-29-nginx-loki-grafana/dashboard.png"
 />
 
-You may google around and find various dashboards, outdated GitHub repositories, and other pieces of information covering some steps. I could not find a straightforward and up-to-date resource describing what I wanted to accomplish.
+If you google the content metrics, you most likely will find various dashboards, outdated GitHub repositories, 
+and other fragments of information. None of them represent a solution as a whole, covering all steps from collecting to visualizing. None of them gets any close in reaching all goals I had in mind for this project.
 
 ## Google Analytics
 
-We use Google Analytics to track activities on our website. Every time when I open it, I want to close it. Why? The interface is too cluttered with campaigns, revenue, retention, and channels.
+Initially, we used Google Analytics to track activities on our website. Whenever I opened it, I wanted to close it. Why? The interface is too cluttered with campaigns, revenue, retention, and channels.
+I am forced to dig through a pile of distracting information to find a single useful tidbit. 
+Yet, even after spending time configuring existing custom dashboards and reports, one vital piece was still missing: user activities. 
 
-You can spend extra time configuring custom dashboards and reports, but I still feel we are missing user activities. One of the reason, reporting requests are blocked on firewalls, security, and VPN devices. Collecting user activities directly from the web server will help to avoid losing data.
+The one that actually set me on this endeavor of creating story-telling analytics, to begin with. User activities are often blocked on firewalls, security, and VPN devices. 
+All that made me look elsewhere, surfacing a simple idea of collecting user activities directly from the web server. That approach will help to keep the essential data.
+
 
 ## Log flow
 
-Let's examine each component's functions and take a closer look at each of them one-by-one.
+Below is the schema of the system we came up with. It illustrates what pieces come together in our puzzle and the data flow.
+
+Let's examine each component's functions and take a closer look at each one.
 
 <Image
   title="System architecture where tailored metrics lead to decisions making."
   src="/img/blog/2023-01-29-nginx-loki-grafana/flow.png"
 />
 
-- Nginx serves website and produce log files.
-- Loki aggregates log files.
+- Nginx serves the website and produces log files.
 - Promtail collects, processes log file from Nginx and pushes to Loki.
-- Grafana displays content and technical metrics from Loki using Loki data source.
+- Loki aggregates log files.
+- Grafana displays content metrics along with some technical details. The data comes from Loki via Loki data source.
 
 ## Nginx
 
-Nginx is a web server that can also be used as a reverse proxy, load balancer, and cache. We use it in front of all our projects and it's installed on the host for optimal performance.
+Nginx is a web server that can be a reverse proxy, load balancer, and cache. We use it in front of all our projects. For optimal performance, we chose to install it on the host.
 
-When you configure format of the log files produced by Nginx, you can collect everything and then decided what do you need or may need in future. Other option is to choose what you really need and keep it short. For this project we selected:
+Nginx configuration allows you to choose the data elements you want to store. You can keep everything and gift yourself a pass to think later about what you will do with all that data. On the downside of this, the volume of data snowballs. Are you willing to take on the extra task of keeping everything up and running? 
+
+From the beginning of this project, I had a clear vision of what data elements are required. Therefore, our minimalist set of cherry-picked variables are:
+
 
 | Variable             | Description                                              |
 | -------------------- | -------------------------------------------------------- |
@@ -61,6 +73,12 @@ When you configure format of the log files produced by Nginx, you can collect ev
 | `geoip_country_code` | Geo location based on client IP.                         |
 
 We also added additional configuration to the main configuration file `nginx.conf` to get as clean input data as possible and avoid further processing in Promtail and Grafana.
+- Replace empty values in `http_referer` with `(direct)` similar to Google Analytics.
+- Replace empty values in `http_user_agent` with `Unknown`.
+- Replace empty values in `geoip_country_code` with `Unknown`.
+- Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
+- Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
+
 
 ```nginx title=nginx.conf
 http {
@@ -94,12 +112,6 @@ http {
     '}';
 }
 ```
-
-- Replace empty values in `http_referer` with `(direct)` similar to Google Analytics.
-- Replace empty values in `http_user_agent` with `Unknown`.
-- Replace empty values in `geoip_country_code` with `Unknown`.
-- Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
-- Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
 
 A produced JSON record from the log file looks like this.
 
