@@ -67,42 +67,13 @@ From the beginning of this project, I had a clear vision of what data elements a
 We also added additional configuration to the main configuration file `nginx.conf` to get as clean input data as possible and avoid further processing in Promtail and Grafana.
 
 - Replace empty values in `http_referer` with `(direct)` similar to Google Analytics.
-- Replace empty values in `http_user_agent` with `Unknown`.
+- Replace empty values in `http_user_agent` with `Unknown` and Mozilla compatible clients with `Mozilla compatible`.
 - Replace empty values in `geoip_country_code` with `Unknown`.
 - Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
 - Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
 
-```nginx title=nginx.conf
-http {
-  map $http_referer $httpReferer {
-    default "$http_referer";
-    ""      "(direct)";
-  }
-
-  map $http_user_agent $httpAgent {
-    default "$http_user_agent";
-    ""      "Unknown";
-  }
-
-  map $geoip_country_code $geoIP {
-    default "$geoip_country_code";
-    ""      "Unknown";
-  }
-
-  geoip_country /usr/share/GeoIP/GeoIP.dat;
-
-  log_format json_analytics escape=json '{'
-    '"time_local": "$time_local", '
-    '"remote_addr": "$remote_addr", '
-    '"request_uri": "$request_uri", '
-    '"status": "$status", '
-    '"http_referer": "$httpReferer", '
-    '"http_user_agent": "$httpAgent", '
-    '"server_name": "$server_name", '
-    '"request_time": "$request_time", '
-    '"geoip_country_code": "$geoIP"'
-    '}';
-}
+```nginx reference
+https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/nginx.conf
 ```
 
 A produced JSON record from the log file looks like this.
@@ -178,39 +149,8 @@ Loki, Promtail, and Grafana containers are distributed on separate hosts, and we
 
 The configuration file is based on the default file shipped with `2.7.1` release. We updated the configuration to increase the number of maximum outstanding requests to accommodate the Grafana dashboard.
 
-```yaml title=./loki/loki.yml
-auth_enabled: false
-
-server:
-  http_listen_port: 3100
-  log_level: warn
-
-common:
-  path_prefix: /loki
-  storage:
-    filesystem:
-      chunks_directory: /loki/chunks
-      rules_directory: /loki/rules
-  replication_factor: 1
-  ring:
-    kvstore:
-      store: inmemory
-
-schema_config:
-  configs:
-    - from: 2020-10-24
-      store: boltdb-shipper
-      object_store: filesystem
-      schema: v11
-      index:
-        prefix: index_
-        period: 24h
-
-ruler:
-  alertmanager_url: http://localhost:9093
-
-query_scheduler:
-  max_outstanding_requests_per_tenant: 10000
+```jaml reference
+https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/loki.yml
 ```
 
 You can learn more about Loki configuration in the [Documentation](https://grafana.com/docs/loki/latest/configuration/).
@@ -248,44 +188,8 @@ We added Pipeline stages to drop records we are not interested in.
 - Requests for particular files for browsers and indexing engines.
 - Malicious request from scanners to find PHP and XML files.
 
-```yaml title=./loki/promtail.yml
-server:
-  http_listen_port: 9080
-  grpc_listen_port: 0
-
-positions:
-  filename: /tmp/positions.yaml
-
-clients:
-  - url: http://LOKI-IP:3100/loki/api/v1/push
-
-scrape_configs:
-  - job_name: nginx
-    static_configs:
-      - targets:
-          - localhost
-        labels:
-          job: nginx
-          host: volkovlabs.io
-          agent: promtail
-          __path__: /var/log/nginx/analytics*log
-    pipeline_stages:
-      - json:
-          expressions:
-            http_user_agent:
-            request_uri:
-      - drop:
-          source: http_user_agent
-          expression: "(bot|Bot|RSS|Crawler|Inspect|test)"
-      - drop:
-          source: request_uri
-          expression: "/(assets|img)/"
-      - drop:
-          source: request_uri
-          expression: "/(robots.txt|favicon.ico)"
-      - drop:
-          source: request_uri
-          expression: "(.php|.xml)$"
+```jaml reference
+https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/promtail.yml
 ```
 
 The [Pipelines](https://grafana.com/docs/loki/latest/clients/promtail/pipelines/) can be changed and updated based on your requirements.
@@ -328,7 +232,7 @@ Each panel and query was updated according to our styling guidelines and require
 
 ### Content metrics
 
-The first part of the dashboard provides content metrics - Who, What, and from Where requested resources.
+The first part of the dashboard provides content metrics - Who, What and from Where requested resources.
 
 - Geomap displays a number of requests for each Geo location, except unrecognized countries replaced with `Unknown`.
 - Requests panel displays the total number of requests in the selected Time Range.
@@ -403,6 +307,6 @@ Country Heatmap is not supported in the GeoMap, and we used the [Apache ECharts 
 
 The proposed solution beat our expectations, and we are looking forward to updating the Grafana dashboard based on the collected data in the upcoming weeks.
 
-Eliminating unnecessary data allows to laser focus on the metrics we are looking for. The created dashboard is clean without unnecessary clutter — an excellent example of pure elegance.
+Eliminating unnecessary data allows us to laser focus on the metrics we are looking for. The created dashboard is clean without unnecessary clutter — an excellent example of pure elegance.
 
 Stay tuned for the video tutorial on how to create and configure the Grafana dashboard in detail on our [YouTube channel](https://www.youtube.com/@volkovlabs).
