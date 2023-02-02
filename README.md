@@ -1,4 +1,4 @@
-# Documentation for Volkov Labs plugins and projects
+# Blog and Documentation for Volkov Labs plugins and projects
 
 ## Introduction
 
