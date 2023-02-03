@@ -1,5 +1,6 @@
-const navbar = require(require.resolve("./navbar.js"));
+const algolia = require(require.resolve("./algolia.js"));
 const footer = require(require.resolve("./footer.js"));
+const navbar = require(require.resolve("./navbar.js"));
 
 /**
  * Themes
@@ -13,6 +14,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
  * @type {import('@docusaurus/preset-classic').ThemeConfig}
  */
 const themeConfig = {
+  algolia,
   colorMode: {
     defaultMode: "light",
     disableSwitch: false,

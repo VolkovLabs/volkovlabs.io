@@ -8,7 +8,6 @@ const presets = [
       docs: {
         sidebarPath: require.resolve("./sidebars.js"),
         routeBasePath: "plugins",
-        showLastUpdateTime: true,
       },
       blog: {
         postsPerPage: "ALL",
