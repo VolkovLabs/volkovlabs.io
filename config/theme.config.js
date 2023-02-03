@@ -20,6 +20,11 @@ const themeConfig = {
     disableSwitch: false,
     respectPrefersColorScheme: true,
   },
+  docs: {
+    sidebar: {
+      autoCollapseCategories: true,
+    },
+  },
   metadata: [
     {
       name: "keywords",
