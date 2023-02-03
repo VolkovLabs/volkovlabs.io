@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@cmfcmf/docusaurus-search-local": "^0.11.0",
     "@docusaurus/core": "2.3.0",
     "@docusaurus/module-type-aliases": "2.3.0",
     "@docusaurus/plugin-google-gtag": "^2.3.0",

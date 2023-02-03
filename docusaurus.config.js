@@ -7,20 +7,20 @@ const themeConfig = require(require.resolve("./config/theme.config.js"));
  * @type {import('@docusaurus/types').Config}
  */
 const config = {
-  title: "Volkov Labs",
-  tagline: "Plugin development for Grafana",
-  url: "https://volkovlabs.io",
   baseUrl: "/",
+  favicon: "img/favicon.ico",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
-  favicon: "img/favicon.ico",
-  trailingSlash: true,
   organizationName: "VolkovLabs",
-  projectName: "volkovlabs.io",
-  themes: ["@saucelabs/theme-github-codeblock"],
-  plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
+  plugins: [],
   presets,
+  projectName: "volkovlabs.io",
+  tagline: "Plugin development for Grafana",
   themeConfig,
+  themes: ["@saucelabs/theme-github-codeblock"],
+  title: "Volkov Labs",
+  trailingSlash: true,
+  url: "https://volkovlabs.io",
 };
 
 module.exports = config;
