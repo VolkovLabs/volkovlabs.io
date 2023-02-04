@@ -36,7 +36,7 @@ const sizes: { [key in Size]: string } = {
 };
 
 /**
- * Chip
+ * Display a Tag for Blog and Documentation
  */
 export const Chip = ({
   label,
