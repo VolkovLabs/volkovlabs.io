@@ -25,7 +25,7 @@ scrape_configs:
             request_uri:
       - drop:
           source: http_user_agent
-          expression: "(bot|Bot|RSS|Producer|Expanse|Crawler|Inspect|test)"
+          expression: "(bot|Bot|RSS|Producer|Expanse|crawler|Crawler|Inspect|test)"
       - drop:
           source: request_uri
           expression: "/(assets|img)/"
