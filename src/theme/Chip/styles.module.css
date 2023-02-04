@@ -17,9 +17,13 @@
   
   .skinPrimary {
     color: var(--color);
-    background: var(--palette-rock);
+    background: var(--ifm-color-gray-200);
   }
-  
+
+  [data-theme='dark'] .skinPrimary {
+    background: var(--ifm-color-gray-800);
+  }
+
   .skinSecondary {
     color: var(--color);
     background: #33333D;
