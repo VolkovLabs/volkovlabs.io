@@ -11,7 +11,7 @@ import Video from "@theme/Video";
 
 # Apache ECharts Panel 4.1.0
 
-We released a new version of the Apache ECharts Panel 4.1.0 for Grafana. In this feature release
+We released a new version of the Apache ECharts Panel 4.1.0 for Grafana. This feature release
 
 - Added Streaming Support for WebSockets and Grafana Live.
 - Added Data Zoom feature updating Time Range similar to TimeSeries panel.
@@ -25,7 +25,7 @@ Streaming allows real-time data updates using streaming Data Sources and Grafana
 
 ### Grafana Live
 
-Grafana Live is a real-time messaging engine introduced in Grafana v8.0. With [Grafana Live](https://grafana.com/docs/grafana/latest/setup-grafana/set-up-grafana-live/), you can push event data to a frontend as soon as an event occurs.
+Grafana Live is a real-time messaging engine introduced in Grafana 8. With [Grafana Live](https://grafana.com/docs/grafana/latest/setup-grafana/set-up-grafana-live/), you can push event data to a frontend as soon as an event occurs.
 
 <Image
   title="Apache ECharts allows displaying messages from Grafana Live real-time engine."
@@ -37,13 +37,13 @@ Grafana Live is a real-time messaging engine introduced in Grafana v8.0. With [G
 To stream real-time data, we used the [WebSocket Data Source for Grafana](https://grafana.com/grafana/plugins/golioth-websocket-datasource/).
 
 <Image
-  title="Streaming real-time events from Websocket Data source."
+  title="Streaming real-time events from WebSocket data source."
   src="/img/blog/2023-01-13-echarts-panel-4.1.0/websocket.png"
 />
 
-## Data Zoom feature updating Time Range
+## Data Zoom feature
 
-The data Zoom feature allows selecting the time range on the chart. When the time range selected the event can trigger updating dashboard's time range using `locationService` parameter similar to Grafana behaviour.
+The data zoom feature allows selecting the time range on the chart. When the time range is selected the event can trigger updating the dashboard's time range using the `locationService` parameter similar to Grafana behavior.
 
 <Image
   title="Data Zoom feature for Random Walk allows updating Time Range for the selected range."
