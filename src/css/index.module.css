@@ -4,7 +4,6 @@
  .featureItem {
   border-radius: 10px 10px 10px 10px;
   padding: 1rem;
-
  }
 
  [data-theme='light'] .featureItem {
