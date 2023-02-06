@@ -21,7 +21,6 @@
   "scripts": {
     "build": "docusaurus build",
     "clear": "docusaurus clear",
-    "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "start": "docusaurus start --help",
     "start:3100": "docusaurus start -p 3100",
