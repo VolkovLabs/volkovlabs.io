@@ -25,7 +25,12 @@ const BlogPostPaginator = (props) => {
    * Choose random to at least 3 posts
    */
   while (posts.length < 3) {
-    posts.push(BlogPosts[Math.floor(Math.random() * BlogPosts.length)]);
+    const idx = Math.floor(Math.random() * BlogPosts.length);
+    if (BlogPosts[idx].metadata.permalink === post.metadata.permalink) {
+      continue;
+    }
+
+    posts.push(BlogPosts[idx]);
   }
 
   return (
