@@ -815,7 +815,7 @@ export const BlogPosts = [
           permalink: "/blog/tags/apache-e-charts",
         },
         {
-          label: "Internet Of Things",
+          label: "Internet of Things",
           permalink: "/blog/tags/internet-of-things",
         },
         {
