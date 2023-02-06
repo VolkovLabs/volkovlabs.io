@@ -11,14 +11,28 @@ type Props = {
   src: string;
   title?: string;
   width?: number;
+  zoom: boolean;
 };
 
 /**
  * Image
  */
-const Image = ({ height, src, title, width }: Props) => (
+const Image = ({ height, src, title, width, zoom = true }: Props) => (
   <figure>
-    <Zoom>
+    {zoom && (
+      <Zoom>
+        <img
+          alt={title}
+          loading="lazy"
+          className={styles.image}
+          height={height ? height : "auto"}
+          src={src}
+          width={width}
+        />
+      </Zoom>
+    )}
+
+    {!zoom && (
       <img
         alt={title}
         loading="lazy"
@@ -27,7 +41,8 @@ const Image = ({ height, src, title, width }: Props) => (
         src={src}
         width={width}
       />
-    </Zoom>
+    )}
+
     {title != null && (
       <figcaption className={styles.caption}>{title}</figcaption>
     )}
