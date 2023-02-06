@@ -2,10 +2,9 @@ import clsx from 'clsx';
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
-import { PluginList, ProjectList } from '../constants';
+import { ProjectList } from '../constants';
 import styles from '../css/index.module.css';
 import { PluginItem } from '../types';
-import { Plugin } from './Plugins';
 
 /**
  * Project

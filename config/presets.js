@@ -12,6 +12,7 @@ const presets = [
       blog: {
         postsPerPage: "ALL",
         blogSidebarCount: 0,
+        showReadingTime: false,
       },
       gtag: {
         trackingID: process.env.GTAG ?? "G-",
