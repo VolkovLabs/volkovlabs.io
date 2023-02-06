@@ -15,8 +15,10 @@ const BlogPostPaginator = (props) => {
    * Add posts with the same tags
    */
   const posts = BlogPosts.filter(
-    (post) =>
-      post.metadata.tags.filter((tag) => tag.label == postTag.label).length > 0
+    (related) =>
+      related.metadata.permalink !== post.metadata.permalink &&
+      related.metadata.tags.filter((tag) => tag.label == postTag.label).length >
+        0
   ).splice(0, 3);
 
   /**
@@ -32,10 +34,10 @@ const BlogPostPaginator = (props) => {
       <h1>Related posts</h1>
 
       <div className={styles.posts}>
-        {posts.map((post) => (
+        {posts.map((related) => (
           <BlogPostCard
-            key={post.metadata?.permalink}
-            post={post}
+            key={related.metadata?.permalink}
+            post={related}
             size={"small"}
           />
         ))}
