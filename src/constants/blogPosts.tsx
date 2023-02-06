@@ -11,8 +11,8 @@ export const BlogPosts = [
       formattedDate: "January 29, 2023",
       tags: [
         {
-          label: "Weekend Project",
-          permalink: "/blog/tags/weekend-project",
+          label: "Analytics",
+          permalink: "/blog/tags/analytics",
         },
         {
           label: "Loki",
@@ -35,7 +35,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "nginx-loki-grafana-20230129/",
-        tags: ["Weekend Project", "Loki", "Nginx"],
+        tags: ["Analytics", "Loki", "Nginx"],
         image: "/img/blog/2023-01-29-nginx-loki-grafana/banner.png",
         keywords: ["NGINX", "Loki", "Grafana", "Analytics"],
       },
@@ -355,6 +355,10 @@ export const BlogPosts = [
           permalink: "/blog/tags/getting-started",
         },
         {
+          label: "Analytics",
+          permalink: "/blog/tags/analytics",
+        },
+        {
           label: "API",
           permalink: "/blog/tags/api",
         },
@@ -372,7 +376,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["daria"],
         slug: "json-api-data-sources-in-grafana-20230104/",
-        tags: ["Getting Started", "API"],
+        tags: ["Getting Started", "Analytics", "API"],
         image: "/img/blog/2023-01-04-json-api-data-sources/banner.png",
         keywords: [
           "JSON",
@@ -1073,10 +1077,6 @@ export const BlogPosts = [
           label: "Machine Learning",
           permalink: "/blog/tags/machine-learning",
         },
-        {
-          label: "Weekend Project",
-          permalink: "/blog/tags/weekend-project",
-        },
       ],
       hasTruncateMarker: true,
       authors: [
@@ -1090,7 +1090,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "we-tried-pytorch-in-docker-container-with-nvidia-gpu-support-on-google-cloud-5e30c49d9864/",
-        tags: ["Machine Learning", "Weekend Project"],
+        tags: ["Machine Learning"],
         image: "/img/blog/2022-06-10-pytorch-nvidia-gpu/banner.png",
         keywords: ["PyTorch", "GPU"],
       },
@@ -1173,10 +1173,6 @@ export const BlogPosts = [
           label: "Configuration",
           permalink: "/blog/tags/configuration",
         },
-        {
-          label: "Weekend Project",
-          permalink: "/blog/tags/weekend-project",
-        },
       ],
       hasTruncateMarker: true,
       authors: [
@@ -1190,7 +1186,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "installing-grafana-plugins-from-a-private-repository-805b54a1add3/",
-        tags: ["Configuration", "Weekend Project"],
+        tags: ["Configuration"],
         image: "/img/blog/2022-03-14-private-repository/banner.png",
         keywords: ["Grafana", "Private Repository", "Plugins"],
       },
@@ -1274,6 +1270,10 @@ export const BlogPosts = [
           permalink: "/blog/tags/getting-started",
         },
         {
+          label: "Analytics",
+          permalink: "/blog/tags/analytics",
+        },
+        {
           label: "Dashboard",
           permalink: "/blog/tags/dashboard",
         },
@@ -1291,7 +1291,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["daria"],
         slug: "how-to-create-your-first-grafana-dashboard-bd0f68d631bd/",
-        tags: ["Getting Started", "Dashboard"],
+        tags: ["Getting Started", "Analytics", "Dashboard"],
         image: "/img/blog/2022-01-26-first-dashboard/banner.png",
         keywords: ["Business", "Charts", "Grafana", "Visualization"],
       },
