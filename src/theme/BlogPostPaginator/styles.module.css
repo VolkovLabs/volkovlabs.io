@@ -1,0 +1,26 @@
+.root {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.posts {
+  --cols: 1;
+  --gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap);
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 550px) {
+  .posts {
+    --cols: 2;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .posts {
+    --cols: 3;
+  }
+}

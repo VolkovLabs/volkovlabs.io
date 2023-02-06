@@ -6,7 +6,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import ThemedImage from '@theme/ThemedImage';
 import { Plugins, Projects } from '../components';
+import Blogs from '../components/Blogs';
 import styles from '../css/index.module.css';
+import Image from '../theme/Image';
 
 /**
  * Header
@@ -86,6 +88,16 @@ const Main = (siteConfig) => {
         </div>
       </div>
 
+      <div id="Blogs" className="container margin-vert--lg padding-vert--lg">
+        <h2 className={clsx(styles.header, "hero__title")}>
+          <span>Blog Posts</span>
+        </h2>
+
+        <div className="container margin-vert--lg padding-vert--lg">
+          <Blogs />
+        </div>
+      </div>
+
       <div id="Projects" className="container margin-vert--lg">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Projects</span>
@@ -101,32 +113,20 @@ const Main = (siteConfig) => {
           <span>Team</span>
         </h2>
 
-        <div className="row margin-vert--xl padding-horiz--lg">
-          <div className="col col--6 avatar">
-            <img
-              className="avatar__photo avatar__photo--xl"
-              src="/img/team/daria.png"
-            />
-            <div className="avatar__intro padding-vert--md">
-              <div className="avatar__name">Daria Volkova</div>
-              <p className="avatar__subtitle">
-                Daria translates ideas to elegant solutions and produces YouTube
-                tutorials.
-              </p>
-            </div>
+        <div className="row margin-vert--lg padding-horiz--lg">
+          <div className="col col--6 text--center">
+            <Image src="/img/team/daria.png" zoom={false} />
+            <h3>Daria Volkova</h3>
+            <p>
+              Daria translates ideas to elegant solutions and produces YouTube
+              tutorials.
+            </p>
           </div>
 
-          <div className="col col--6 avatar">
-            <img
-              className="avatar__photo avatar__photo--xl"
-              src="/img/team/mikhail.png"
-            />
-            <div className="avatar__intro padding-vert--md">
-              <div className="avatar__name">Mikhail Volkov</div>
-              <p className="avatar__subtitle">
-                Mikhail loves to work on innovative projects.
-              </p>
-            </div>
+          <div className="col col--6 text--center">
+            <Image src="/img/team/mikhail.png" zoom={false} />
+            <h3>Mikhail Volkov</h3>
+            <p>Mikhail loves to work on innovative projects.</p>
           </div>
         </div>
       </div>

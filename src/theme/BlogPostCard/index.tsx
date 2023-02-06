@@ -3,18 +3,32 @@ import Link from '@docusaurus/Link';
 import { Chip } from '../Chip';
 import styles from './styles.module.css';
 
+type Size = "small" | "medium";
+
+/**
+ * Properties
+ */
+type Props = {
+  post: any;
+  size?: Size;
+};
+
 /**
  * Blog Card
  */
-const BlogPostCard = ({ post }) => {
+const BlogPostCard = ({ post, size = "medium" }: Props) => {
   const { permalink, title, formattedDate, frontMatter, tags, authors } =
     post.metadata;
-  const author = authors[0];
-  const tag = tags[0];
+  const author = authors ? authors[0] : "";
+  const tag = tags ? tags[0] : "";
 
   return (
     <div className={styles.post}>
-      <div className={styles.imageBox}>
+      <div
+        className={
+          size == "medium" ? styles.imageBoxMedium : styles.imageBoxSmall
+        }
+      >
         <Link to={permalink} className={styles.image}>
           <img loading="lazy" src={frontMatter.image} alt={title} />
         </Link>
@@ -29,9 +43,11 @@ const BlogPostCard = ({ post }) => {
           <Link to={permalink}>{title}</Link>
         </h3>
 
-        <div className={styles.author}>
-          by <b>{author.name}</b> on {formattedDate}
-        </div>
+        {author && formattedDate && size === "medium" && (
+          <div className={styles.author}>
+            by <b>{author.name}</b> on {formattedDate}
+          </div>
+        )}
       </div>
     </div>
   );

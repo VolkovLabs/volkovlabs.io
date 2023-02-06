@@ -4,7 +4,7 @@ import { Details as DetailsGeneric } from '@docusaurus/theme-common/Details';
 import styles from './styles.module.css';
 
 /**
- * Details
+ * Summary Details
  */
 const Details = ({ ...props }) => {
   return (
