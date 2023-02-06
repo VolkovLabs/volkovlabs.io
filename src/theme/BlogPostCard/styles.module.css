@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  text-align: center;
 }
 
 [data-theme='light'] .post {
@@ -25,7 +26,15 @@
   background: var(--ifm-color-gray-800);
 }
 
-.imageBox {
+.imageBoxSmall {
+  position: relative;
+  margin-bottom: 1rem;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.imageBoxMedium {
   position: relative;
   margin-bottom: 1.5rem;
   height: 220px;
@@ -61,8 +70,8 @@
 .title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  height: 100px;
+  -webkit-line-clamp: 4;
+  height: 120px;
   overflow: hidden;
   margin: 0;
   padding: 0 var(--content-padding) 1rem;
