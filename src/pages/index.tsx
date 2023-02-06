@@ -64,20 +64,20 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Plugins" className="container margin-vert--lg padding-vert--lg">
+      <div id="Plugins" className="container margin-vert--md padding-vert--lg">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Grafana Plugins</span>
         </h2>
 
-        <div className="container margin-vert--lg padding-vert--lg">
+        <div className="container margin-vert--md padding-vert--lg">
           <Plugins />
         </div>
 
-        <div className="row margin-vert--lg">
+        <div className="row margin-vert--md">
           <div className="col col--1">
             <h2 className={clsx(styles.header, "hero__title")}></h2>
           </div>
-          <div className="col col--9 hero__subtitle">
+          <div className="col col--11 hero__subtitle">
             Our Grafana plugins are open source and we update them constantly.
             <br />
             <a href="https://github.com/sponsors/VolkovLabs" target="_blank">
@@ -88,17 +88,17 @@ const Main = (siteConfig) => {
         </div>
       </div>
 
-      <div id="Blogs" className="container margin-vert--lg padding-vert--lg">
+      <div id="Blogs" className="container margin-vert--md padding-vert--lg">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Blog Posts</span>
         </h2>
 
-        <div className="container margin-vert--lg padding-vert--lg">
+        <div className="container margin-vert--md padding-vert--lg">
           <Blogs />
         </div>
       </div>
 
-      <div id="Projects" className="container margin-vert--lg">
+      <div id="Projects" className="container margin-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Projects</span>
         </h2>
@@ -114,19 +114,25 @@ const Main = (siteConfig) => {
         </h2>
 
         <div className="row margin-vert--lg padding-horiz--lg">
-          <div className="col col--6 text--center">
+          <div className="col col--4 text--center">
             <Image src="/img/team/daria.png" zoom={false} />
-            <h3>Daria Volkova</h3>
+            <h3>Daria</h3>
             <p>
-              Daria translates ideas to elegant solutions and produces YouTube
+              Translates ideas to elegant solutions and produces YouTube
               tutorials.
             </p>
           </div>
 
-          <div className="col col--6 text--center">
+          <div className="col col--4 text--center">
             <Image src="/img/team/mikhail.png" zoom={false} />
-            <h3>Mikhail Volkov</h3>
-            <p>Mikhail loves to work on innovative projects.</p>
+            <h3>Mikhail</h3>
+            <p>Loves to work on innovative projects.</p>
+          </div>
+
+          <div className="col col--4 text--center">
+            <Image src="/img/team/ralph.png" zoom={false} />
+            <h3>Ralph</h3>
+            <p>Helps Daria with YouTube production.</p>
           </div>
         </div>
       </div>
