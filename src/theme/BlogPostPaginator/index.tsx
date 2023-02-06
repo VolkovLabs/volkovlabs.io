@@ -9,28 +9,29 @@ import styles from './styles.module.css';
  */
 const BlogPostPaginator = (props) => {
   const post = useBlogPost();
-  const postTag = post.metadata.tags ? post.metadata.tags[0] : "";
+  const posts = [];
 
   /**
    * Add posts with the same tags
    */
-  const posts = BlogPosts.filter(
-    (related) =>
-      related.metadata.permalink !== post.metadata.permalink &&
-      related.metadata.tags.filter((tag) => tag.label == postTag.label).length >
-        0
-  ).splice(0, 3);
+  post.metadata.tags.forEach((postTag) =>
+    BlogPosts.filter((related) => {
+      if (related.metadata.permalink === post.metadata.permalink) {
+        return;
+      }
 
-  /**
-   * Choose random to at least 3 posts
-   */
-  while (posts.length < 3) {
-    const idx = Math.floor(Math.random() * BlogPosts.length);
-    if (BlogPosts[idx].metadata.permalink === post.metadata.permalink) {
-      continue;
-    }
+      const tags = related.metadata.tags.filter(
+        (tag) => tag.label === postTag.label
+      );
 
-    posts.push(BlogPosts[idx]);
+      if (tags.length) {
+        posts.push(related);
+      }
+    })
+  );
+
+  if (!posts.length) {
+    return <></>;
   }
 
   return (
@@ -39,7 +40,7 @@ const BlogPostPaginator = (props) => {
       <h1>Related posts</h1>
 
       <div className={styles.posts}>
-        {posts.map((related) => (
+        {posts.splice(0, 3).map((related) => (
           <BlogPostCard
             key={related.metadata?.permalink}
             post={related}
