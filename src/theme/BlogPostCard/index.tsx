@@ -30,7 +30,7 @@ const BlogPostCard = ({ post, size = "medium" }: Props) => {
         }
       >
         <Link to={permalink} className={styles.image}>
-          <img loading="lazy" src={frontMatter.image} alt={title} />
+          <img src={frontMatter.image} alt={title} />
         </Link>
       </div>
 
