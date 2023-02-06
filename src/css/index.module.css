@@ -1,7 +1,13 @@
 /**
  * Features
  */
-[data-theme='light'] .featureItem {
+ .featureItem {
+  border-radius: 10px 10px 10px 10px;
+  padding: 1rem;
+
+ }
+
+ [data-theme='light'] .featureItem {
   border: 2px solid var(--ifm-color-white);
 }
 
@@ -40,6 +46,7 @@
  */
 .getStarted {
   border-radius: 0px;
+  border-radius: 10px 10px 10px 10px;
   color: var(--ifm-color-white);
   border-color: #ff5656;
   background-color: #ff5656;
@@ -48,14 +55,17 @@
 /**
  * Why inside the Box
  */
-[data-theme='light'] .whyBox {
-  border: 2px solid var(--ifm-color-black);
+ .whyBox {
   padding: 0;
-}
+  border-radius: 10px 10px 10px 10px;
+ }
+ 
+ [data-theme='light'] .whyBox {
+  border: 2px solid var(--ifm-color-black);
+ } 
 
 [data-theme='dark'] .whyBox {
   border: 2px solid var(--ifm-color-white);
-  padding: 0;
 }
 
 .whyBox img {
