@@ -24,8 +24,8 @@ const Header = (siteConfig) => {
             </h1>
 
             <p className="hero__subtitle margin-vert--md">
-              Volkov Labs is an agency founded by long-time Grafana contributor
-              Mikhail Volkov.
+              Volkov Labs specializes in developing plugins to visualize your
+              data using Grafana as a Platform.
             </p>
 
             <p className="hero__subtitle">
@@ -184,7 +184,7 @@ const Home = () => {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+    <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>
     </Layout>
