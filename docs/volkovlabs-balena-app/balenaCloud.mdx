@@ -1,10 +1,7 @@
 ---
-description: Our custom Grafana build with the Balena Application plugin can be deployed directly to balenaCloud.
 tags:
-  - balena
+  - balena Application
   - balenaCloud
-  - Cloud
-  - IoT
 ---
 
 import Video from "@theme/Video";
@@ -13,15 +10,15 @@ import Video from "@theme/Video";
 
 Our custom Grafana build with the Balena Application plugin can be [deployed directly to balenaCloud](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/volkovlabs/volkovlabs-balena-app).
 
-We recommend to add it to your `docker-compose.yml` together with NGINX reverse proxy (example configuration in the repository):
+We recommend adding it to your `docker-compose.yml` together with NGINX reverse proxy (example configuration in the repository):
 
 ```yaml reference
 https://github.com/VolkovLabs/volkovlabs-balena-app/blob/main/docker-compose.yml
 ```
 
-Default Grafana username and password is **admin/admin**.
+The default Grafana username and password is **admin/admin**.
 
-You can learn more about balena Labels in the [Documentation](https://www.balena.io/docs/reference/supervisor/docker-compose/#labels).
+You can learn more about balena labels in the [Documentation](https://www.balena.io/docs/reference/supervisor/docker-compose/#labels).
 
 ## IoT Framework
 
