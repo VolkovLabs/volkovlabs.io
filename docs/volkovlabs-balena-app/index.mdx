@@ -1,12 +1,8 @@
 ---
-description: The Balena Application plugin for Grafana allows to display device information and manage services using Balena Supervisor API.
 tags:
-  - balena
-  - Cloud
-  - Application
-  - Data Source
+  - balena Application
   - Private repository
-  - IoT
+  - Internet of Things
 ---
 
 import Image from "@theme/Image";
@@ -14,7 +10,7 @@ import Video from "@theme/Video";
 
 # Balena Application
 
-The Balena Application plugin for Grafana allows to display device information and manage services using Balena Supervisor API.
+The Balena Application plugin for Grafana allows to display of device information and manage services using Balena Supervisor API.
 
 Working in a productive alliance, Balena, Grafana, and the Balena Application plugin simplify managing a network of non-homogenous IoT devices. If needed, a device could be made accessible directly, which means internet access is not required.
 
@@ -37,9 +33,9 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-bale
 
 ## Features
 
-- Allows to display device, release information, and service logs using Balena Supervisor API.
+- Allows displaying device, release information, and service logs using Balena Supervisor API.
 - Provides Services Panel to start, stop, and restart Containers.
-- Allows to filter Logs using a Regex pattern.
+- Allows filtering Logs using a Regex pattern.
 - Requires Confirmation to restart all Services and reboot the device.
 - Environment Variables sanitized from Target State.
 
@@ -52,7 +48,7 @@ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-bale
 
 The balena Supervisor is balena's agent that runs on devices. Its main role is to ensure your app is running, and keep communications with the balenaCloud API server.
 
-The Supervisor has its own [set of APIs](https://www.balena.io/docs/reference/supervisor/supervisor-api/) providing means for services to communicate and execute some special actions that affect the host OS or the services itself.
+The Supervisor has its own [set of APIs](https://www.balena.io/docs/reference/supervisor/supervisor-api/) providing means for services to communicate and execute some special actions that affect the host OS or the services themselves.
 
 ## Documentation
 
