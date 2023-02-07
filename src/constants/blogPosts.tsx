@@ -158,8 +158,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/apache-e-charts",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -174,7 +174,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "echarts-panel-4.1.0-20230113/",
-        tags: ["Apache ECharts", "Release"],
+        tags: ["Apache ECharts", "Release Notes"],
         image: "/img/blog/2023-01-13-echarts-panel-4.1.0/banner.png",
         keywords: [
           "Apache ECharts",
@@ -263,8 +263,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/dynamic-text",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -279,7 +279,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "dynamictext-panel-2.2.0-20230110/",
-        tags: ["Dynamic Text", "Release"],
+        tags: ["Dynamic Text", "Release Notes"],
         image: "/img/blog/2023-01-10-dynamictext-panel-2.2.0/banner.png",
         keywords: ["Dynamic Text", "Panel", "Data", "Grafana"],
       },
@@ -300,17 +300,17 @@ export const BlogPosts = [
       source: "@site/blog/2023-01-08-image-panel-3.4.0/index.mdx",
       title: "Base64 Image/Video/Audio/PDF Panel 3.4.0",
       description:
-        "We released a new version of Base64 Image/Video/Audio/PDF Panel 3.4.0. In this maintenance release",
+        "We released a new version of Base64 Image/Video/Audio/PDF Panel 3.4.0. This maintenance release",
       date: "2023-01-08T00:00:00.000Z",
       formattedDate: "January 8, 2023",
       tags: [
         {
-          label: "Base64",
-          permalink: "/blog/tags/base-64",
+          label: "Base64 Image/Video/Audio/PDF",
+          permalink: "/blog/tags/base-64-image-video-audio-pdf",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -325,7 +325,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "image-panel-3.4.0-20230108/",
-        tags: ["Base64", "Release"],
+        tags: ["Base64 Image/Video/Audio/PDF", "Release Notes"],
         image: "/img/blog/2023-01-08-image-panel-3.4.0/banner.png",
         keywords: ["Base64", "Panel", "PDF", "Images", "Video", "Audio"],
       },
@@ -404,7 +404,7 @@ export const BlogPosts = [
       source: "@site/blog/2022-12-29-static-datasource-2.1.0/index.mdx",
       title: "Static Data Source 2.1.0",
       description:
-        "We released a new version of Static Data Source 2.1.0. In this feature release",
+        "We released a new version of Static Data Source 2.1.0. This feature release",
       date: "2022-12-29T00:00:00.000Z",
       formattedDate: "December 29, 2022",
       tags: [
@@ -413,8 +413,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/static-data-source",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -429,7 +429,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "static-datasource-2.1.0-20221229/",
-        tags: ["Static Data Source", "Release"],
+        tags: ["Static Data Source", "Release Notes"],
         image: "/img/blog/2022-12-29-static-datasource-2.1.0/banner.png",
         keywords: ["Data Source", "Static", "Storage", "Grafana"],
       },
@@ -450,7 +450,7 @@ export const BlogPosts = [
       source: "@site/blog/2022-12-20-echarts-panel-4.0.0/index.mdx",
       title: "Apache ECharts Panel 4.0.0",
       description:
-        "We released a new version of the Apache ECharts Panel 4.0.0 for Grafana. In this major release",
+        "We released a new version of the Apache ECharts Panel 4.0.0 for Grafana. This major release",
       date: "2022-12-20T00:00:00.000Z",
       formattedDate: "December 20, 2022",
       tags: [
@@ -459,8 +459,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/apache-e-charts",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -475,7 +475,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "echarts-panel-4.0.0-20221220/",
-        tags: ["Apache ECharts", "Release"],
+        tags: ["Apache ECharts", "Release Notes"],
         image: "/img/blog/2022-12-20-echarts-panel-4.0.0/banner.png",
         keywords: [
           "Apache ECharts",
@@ -502,7 +502,7 @@ export const BlogPosts = [
       source: "@site/blog/2022-12-12-calendar-panel-1.1.0/index.mdx",
       title: "Calendar Panel 1.1.0",
       description:
-        "A new maintenance release of the Calendar panel 1.1.0 was released today. In this version",
+        "A new version of the Calendar panel 1.1.0 was released today. This maintenance release",
       date: "2022-12-12T00:00:00.000Z",
       formattedDate: "December 12, 2022",
       tags: [
@@ -511,8 +511,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/calendar",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -527,7 +527,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "calendar-panel-1.1.0-20221212/",
-        tags: ["Calendar", "Release"],
+        tags: ["Calendar", "Release Notes"],
         image: "/img/blog/2022-12-12-calendar-panel-1.1.0/banner.png",
         keywords: ["Calendar", "Panel", "Events", "Grafana"],
       },
@@ -548,7 +548,7 @@ export const BlogPosts = [
       source: "@site/blog/2022-11-27-dynamictext-panel-2.1.0/index.mdx",
       title: "Dynamic Text Panel 2.1.0",
       description:
-        "We released a new version of Dynamic Text Panel 2.1.0. In this feature release",
+        "We released a new version of Dynamic Text Panel 2.1.0. This feature release",
       date: "2022-11-27T00:00:00.000Z",
       formattedDate: "November 27, 2022",
       tags: [
@@ -557,8 +557,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/dynamic-text",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -573,7 +573,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "dynamictext-panel-2.1.0-20221127/",
-        tags: ["Dynamic Text", "Release"],
+        tags: ["Dynamic Text", "Release Notes"],
         image: "/img/blog/2022-11-27-dynamictext-panel-2.1.0/banner.png",
         keywords: ["Dynamic Text", "Panel", "Data", "Grafana"],
       },
@@ -594,7 +594,7 @@ export const BlogPosts = [
       source: "@site/blog/2022-11-10-form-panel-2.7.0/index.mdx",
       title: "Data Manipulation Panel 2.7.0",
       description:
-        "We released a new version of the Data Manipulation Panel 2.7.0. In this feature release",
+        "We released a new version of the Data Manipulation Panel 2.7.0. This feature release",
       date: "2022-11-10T00:00:00.000Z",
       formattedDate: "November 10, 2022",
       tags: [
@@ -603,8 +603,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/data-manipulation",
         },
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -619,7 +619,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "form-panel-2.7.0-20221110/",
-        tags: ["Data Manipulation", "Release"],
+        tags: ["Data Manipulation", "Release Notes"],
         image: "/img/blog/2022-11-10-form-panel-2.7.0/banner.png",
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
       },
@@ -835,7 +835,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "the-missing-plugin-to-create-business-and-industrial-charts-in-grafana-1d8f7304229f/",
-        tags: ["Apache ECharts", "Internet Of Things", "Dashboard"],
+        tags: ["Apache ECharts", "Internet of Things", "Dashboard"],
         image: "/img/blog/2022-08-01-missing-plugin/banner.png",
         keywords: [
           "ECharts",
@@ -913,8 +913,8 @@ export const BlogPosts = [
       formattedDate: "June 20, 2022",
       tags: [
         {
-          label: "Release",
-          permalink: "/blog/tags/release",
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
         },
       ],
       hasTruncateMarker: true,
@@ -929,7 +929,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "our-plugins-are-ready-for-grafana-9-2bc257db92eb/",
-        tags: ["Release"],
+        tags: ["Release Notes"],
         image: "/img/blog/2022-06-20-grafana-9/banner.png",
         keywords: [
           "ECharts",
@@ -1371,8 +1371,8 @@ export const BlogPosts = [
       formattedDate: "December 28, 2021",
       tags: [
         {
-          label: "RSS Data Source",
-          permalink: "/blog/tags/rss-data-source",
+          label: "RSS/Atom Data Source",
+          permalink: "/blog/tags/rss-atom-data-source",
         },
         {
           label: "Dynamic Text",
@@ -1391,7 +1391,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "do-you-want-to-be-on-top-of-the-latest-news-staying-in-grafana-9abb064ed449/",
-        tags: ["RSS Data Source", "Dynamic Text"],
+        tags: ["RSS/Atom Data Source", "Dynamic Text"],
         image: "/img/blog/2021-12-28-rss-datasource/banner.png",
         keywords: ["Image", "PDF", "Base64", "Visualization"],
       },
@@ -1421,8 +1421,8 @@ export const BlogPosts = [
       formattedDate: "December 17, 2021",
       tags: [
         {
-          label: "Base64",
-          permalink: "/blog/tags/base-64",
+          label: "Base64 Image/Video/Audio/PDF",
+          permalink: "/blog/tags/base-64-image-video-audio-pdf",
         },
       ],
       hasTruncateMarker: true,
@@ -1437,7 +1437,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["mikhail"],
         slug: "using-grafana-to-display-large-pdf-documents-weve-got-you-covered-4e654e8d4bce/",
-        tags: ["Base64"],
+        tags: ["Base64 Image/Video/Audio/PDF"],
         image: "/img/blog/2021-12-17-display-large-pdf/banner.png",
         keywords: ["Image", "PDF", "Base64", "Visualization"],
       },
@@ -1515,8 +1515,8 @@ export const BlogPosts = [
       formattedDate: "September 27, 2021",
       tags: [
         {
-          label: "Base64",
-          permalink: "/blog/tags/base-64",
+          label: "Base64 Image/Video/Audio/PDF",
+          permalink: "/blog/tags/base-64-image-video-audio-pdf",
         },
       ],
       hasTruncateMarker: true,
@@ -1533,7 +1533,7 @@ export const BlogPosts = [
         slug: "display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e/",
         description:
           "Base64 Image/PDF panel plugin was recently upgraded and has everything you need to display images from any data source on your dashboards.",
-        tags: ["Base64"],
+        tags: ["Base64 Image/Video/Audio/PDF"],
         image: "/img/blog/2021-09-27-image-panel/banner.png",
         keywords: ["Image", "PDF", "Base64", "Visualization"],
       },
