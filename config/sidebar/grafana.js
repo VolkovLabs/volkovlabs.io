@@ -5,9 +5,9 @@ const grafana = {
   items: [
     "grafana/index",
     "grafana/business",
+    "grafana/customize",
     "grafana/iot",
     "grafana/allow-unsigned",
-    "grafana/customize",
     {
       items: [
         {
