@@ -99,3 +99,8 @@ body {
   --docsearch-hit-background: var(--ifm-color-emphasis-100);
   --docsearch-footer-background: var(--ifm-background-surface-color);
 }
+
+table {
+  display: table;
+  width: 100%;
+}

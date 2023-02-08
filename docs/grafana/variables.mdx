@@ -1,0 +1,83 @@
+---
+tags:
+  - Getting Started
+  - Variables
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variables
+
+The topic of variables in Grafana has generated a myriad of questions lately. In short, there are three types of variables:
+
+- Dashboard
+- Global
+- Environment
+
+<Image
+  title="Three logical layers and their corresponding variable."
+  src="/img/plugins/grafana/variables.png"
+/>
+
+We created this video to structure the subject and speed up the learning curve for Grafana enthusiasts.
+
+<Video
+  src="https://www.youtube.com/embed/sczRq2lI3e4"
+  title="Dashboard, Global and Environment variables."
+/>
+
+## Dashboard
+
+Dashboard variables capture the values within one dashboard. They are usually used for filter functionality.
+
+<Image
+  title="Types of Grafana dashboard variables."
+  src="/img/plugins/grafana/variables-edit.png"
+/>
+
+## Global
+
+Global variables are Grafana settings you can retrieve and use on your dashboards.
+
+| Variable          | Description                               |
+| ----------------- | ----------------------------------------- |
+| `${__dashboard}`  | Name of the current dashboard.            |
+| `${__from}`       | From of Time Range in epoch milliseconds. |
+| `${__interval`    | Parameter to group by time.               |
+| `${__org.name}`   | Name of the current organization.         |
+| `${__org}`        | Id of the current organization.           |
+| `${__to}`         | To of Time Range in epoch milliseconds.   |
+| `${__user.email}` | Email for the current user.               |
+| `${__user.id}`    | Id of the current user.                   |
+| `${__user.login}` | Login handle of the current user.         |
+
+You can find [all the global built-in variables](https://grafana.com/docs/grafana/latest/variables/variable-types/global-variables/) in the Grafana documentation.
+
+## Environment
+
+Environment variables are the variables from the Grafana environment (operating system and/or device) where Grafana is installed.
+
+Conventionally those variables are off-limits, but with the [Environment data source](/plugins/volkovlabs-env-datasource), access to the environment variables is possible!
+
+<a href="/blog/using-environment-variables-for-configuration-provisioning-and-dashboards-in-grafana-279661733416/">
+  <Image
+    title="Environment Variables for Configuration, Provisioning, and Dashboards in Grafana."
+    src="/img/blog/2022-02-20-environment-datasource/banner.png"
+    zoom={false}
+    height="400px"
+  />
+</a>
+
+## Summary
+
+We published a blog post to provide more information for each type of variable with examples.
+
+<a href="/blog/grafana-variables-at-a-glance-environment-data-source-explained-102b8e05e1a5/">
+  <Image
+    title="Grafana variables at a glance, Environment data source explained."
+    src="/img/blog/2022-09-13-grafana-variables/banner.png"
+    zoom={false}
+    height="400px"
+  />
+</a>

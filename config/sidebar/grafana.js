@@ -4,8 +4,9 @@
 const grafana = {
   items: [
     "grafana/index",
-    "grafana/business",
     "grafana/customize",
+    "grafana/variables",
+    "grafana/business",
     "grafana/iot",
     "grafana/allow-unsigned",
     {
