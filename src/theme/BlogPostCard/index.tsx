@@ -40,7 +40,7 @@ const BlogPostCard = ({ post, size = "medium" }: Props) => {
         </div>
 
         <h3 className={styles.title}>
-          <Link to={permalink}>{title}</Link>
+          <a href={permalink}>{title}</a>
         </h3>
 
         {author && formattedDate && size === "medium" && (
