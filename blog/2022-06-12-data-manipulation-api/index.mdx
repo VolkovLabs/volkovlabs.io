@@ -4,6 +4,7 @@ slug: how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe
 tags: [Data Manipulation, API, Nginx]
 image: /img/blog/2022-06-12-data-manipulation-api/banner.png
 keywords: [Grafana, Data Manipulation, Forms]
+updated: 2023-02-05
 ---
 
 import Image from "@theme/Image";
@@ -11,7 +12,7 @@ import Video from "@theme/Video";
 
 # How to connect the Data Manipulation plugin for Grafana to API Server
 
-We understand the risk of data manipulation and take security concerns seriously. This article explores three secure ways to connect the Data Manipulation panel to the API Server.
+We understand the risk of data manipulation and take security concerns seriously. This article explores three secure ways to connect the Data Manipulation panel to the API Server.
 
 <!--truncate-->
 
@@ -45,9 +46,9 @@ Let's take a look at each of them closely.
 
 If your server is publicly available or in a private network, the simplest and easiest way is to connect to the API Server directly. Header parameters can be added to secure your REST API calls.
 
-The disadvantage of this method is that API requests are exposed to the end-users. The REST API server should allow Cross-Origin Resource Sharing (CORS).
+The disadvantage of this method is that API requests are exposed to the end users. The REST API server should allow Cross-Origin Resource Sharing (CORS).
 
-> Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+> Cross-Origin Resource Sharing (CORS) is an HTTP-header-based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
 
 We already explained how to configure the panel in the video mentioned above. If this method works for your use case, you can find server code examples in the plugin's GitHub repository:
 
@@ -66,7 +67,7 @@ We recommend running Grafana behind NGINX reverse proxy for an additional securi
 
 To learn how to configure Grafana to run behind a reverse proxy, take a look at the Grafana tutorial [Run Grafana behind a reverse proxy](https://grafana.com/tutorials/run-grafana-behind-a-proxy/).
 
-You can add a section to redirect requests /api/data-form to the docker container or server process in the NGINX configuration file. The rest of the requests should be redirected to Grafana. The API server operates on the specific IP address and port accessible by NGINX, and end-users have no direct access to it.
+You can add a section to redirect requests `/api/data-form` to the docker container or server process in the NGINX configuration file. The rest of the requests should be redirected to Grafana. The API server operates on the specific IP address and port accessible by NGINX, and end-users have no direct access to it.
 
 ```nginx
 server {
