@@ -1,15 +1,20 @@
-import clsx from 'clsx';
-import React from 'react';
-import Link from '@docusaurus/Link';
-import { HtmlClassNameProvider, PageMetadata, ThemeClassNames, usePluralForm } from '@docusaurus/theme-common';
-import Translate, { translate } from '@docusaurus/Translate';
-import Layout from '@theme/Layout';
-import SearchMetadata from '@theme/SearchMetadata';
-import DocCard from '../DocCard';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import React from "react";
+import Link from "@docusaurus/Link";
+import {
+  HtmlClassNameProvider,
+  PageMetadata,
+  ThemeClassNames,
+  usePluralForm,
+} from "@docusaurus/theme-common";
+import Translate, { translate } from "@docusaurus/Translate";
+import Layout from "@theme/Layout";
+import SearchMetadata from "@theme/SearchMetadata";
+import DocCard from "../DocCard";
+import styles from "./styles.module.css";
 
 // Very simple pluralization: probably good enough for now
-function useNDocsTaggedPlural() {
+const useNDocsTaggedPlural = () => {
   const { selectMessage } = usePluralForm();
 
   return (count) =>
@@ -25,7 +30,7 @@ function useNDocsTaggedPlural() {
         { count }
       )
     );
-}
+};
 
 /**
  * Documents tagged page
@@ -58,14 +63,7 @@ const DocTagDocListPage = ({ tag }) => {
             <main className="col col--12">
               <header className="margin-bottom--xl">
                 <h1>{title}</h1>
-                <Link href={tag.allTagsPath}>
-                  <Translate
-                    id="theme.tags.tagsPageLink"
-                    description="The label of the link targeting the tag list page"
-                  >
-                    View All Tags
-                  </Translate>
-                </Link>
+                <a href={tag.allTagsPath}>View All Tags</a>
               </header>
 
               <div className={styles.root}>

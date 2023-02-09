@@ -1,7 +1,7 @@
-import clsx from 'clsx';
-import React from 'react';
-import Link from '@docusaurus/Link';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import React from "react";
+import Link from "@docusaurus/Link";
+import styles from "./styles.module.css";
 
 type Skin = "primary" | "secondary";
 type Size = "small" | "medium" | "large";
@@ -46,12 +46,12 @@ export const Chip = ({
   size = "small",
   active,
 }: Props) => (
-  <Link
+  <a
     className={clsx(styles.root, className, skins[skin], sizes[size], {
       [styles.active]: active,
     })}
-    to={permalink}
+    href={permalink}
   >
     {label}
-  </Link>
+  </a>
 );

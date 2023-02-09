@@ -1,14 +1,14 @@
-import clsx from 'clsx';
-import React from 'react';
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import ThemedImage from '@theme/ThemedImage';
-import { Plugins, Projects } from '../components';
-import Blogs from '../components/Blogs';
-import styles from '../css/index.module.css';
-import Image from '../theme/Image';
+import clsx from "clsx";
+import React from "react";
+import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import ThemedImage from "@theme/ThemedImage";
+import { Plugins, Projects } from "../components";
+import Blogs from "../components/Blogs";
+import styles from "../css/index.module.css";
+import Image from "../theme/Image";
 
 /**
  * Header
@@ -32,15 +32,15 @@ const Header = (siteConfig) => {
               We find elegant solutions for non-standard tasks.
             </p>
             <div className="margin-vert--lg">
-              <Link
+              <a
                 className={clsx(
                   "button button--primary button--lg",
                   styles.getStarted
                 )}
-                to={useBaseUrl("/plugins")}
+                href={useBaseUrl("/plugins")}
               >
                 Documentation&nbsp;&nbsp;→
-              </Link>
+              </a>
             </div>
           </div>
           <div className="col col--5">
