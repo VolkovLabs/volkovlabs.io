@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
-import { Chip } from '../Chip';
-import styles from './styles.module.css';
+import React from "react";
+import Link from "@docusaurus/Link";
+import { Chip } from "../Chip";
+import styles from "./styles.module.css";
 
 type Size = "small" | "medium";
 
@@ -29,9 +29,9 @@ const BlogPostCard = ({ post, size = "medium" }: Props) => {
           size == "medium" ? styles.imageBoxMedium : styles.imageBoxSmall
         }
       >
-        <Link to={permalink} className={styles.image}>
+        <a href={permalink} className={styles.image}>
           <img src={frontMatter.image} alt={title} />
-        </Link>
+        </a>
       </div>
 
       <div className={styles.content}>
