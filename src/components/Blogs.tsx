@@ -1,7 +1,6 @@
-import clsx from 'clsx';
-import React from 'react';
-import { BlogPosts } from '../constants';
-import BlogPostCard from '../theme/BlogPostCard';
+import React from "react";
+import { BlogPosts } from "../constants";
+import BlogPostCard from "../theme/BlogPostCard";
 
 /**
  * Blogs
@@ -11,9 +10,9 @@ export const Blogs = (): JSX.Element => {
     <section>
       <div className="container">
         <div className="row">
-          {BlogPosts.splice(0, 6).map((post) => (
+          {BlogPosts.splice(0, 6).map((post, idx) => (
             <div className="col col--4 margin-vert--lg">
-              <BlogPostCard key={post.metadata?.permalink} post={post} />
+              <BlogPostCard key={idx} post={post} />
             </div>
           ))}
         </div>

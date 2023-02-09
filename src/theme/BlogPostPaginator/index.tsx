@@ -1,8 +1,8 @@
-import React from 'react';
-import { useBlogPost } from '@docusaurus/theme-common/internal';
-import { BlogPosts } from '../../constants/blogPosts';
-import BlogPostCard from '../BlogPostCard';
-import styles from './styles.module.css';
+import React from "react";
+import { useBlogPost } from "@docusaurus/theme-common/internal";
+import { BlogPosts } from "../../constants/blogPosts";
+import BlogPostCard from "../BlogPostCard";
+import styles from "./styles.module.css";
 
 /**
  * Related posts as Paginator
@@ -40,12 +40,8 @@ const BlogPostPaginator = (props) => {
       <h1>Related posts</h1>
 
       <div className={styles.posts}>
-        {posts.splice(0, 3).map((related) => (
-          <BlogPostCard
-            key={related.metadata?.permalink}
-            post={related}
-            size={"small"}
-          />
+        {posts.splice(0, 3).map((related, idx) => (
+          <BlogPostCard key={idx} post={related} size={"small"} />
         ))}
       </div>
     </div>
