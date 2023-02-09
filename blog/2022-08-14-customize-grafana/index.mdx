@@ -4,6 +4,7 @@ slug: how-to-customize-the-grafana-user-interface-8d70a42dc2b6/
 tags: [Configuration]
 image: /img/blog/2022-08-14-customize-grafana/banner.png
 keywords: [Business, Grafana, Visualization, Customization, Docker]
+updated: 2023-02-09
 ---
 
 import Image from "@theme/Image";
@@ -47,14 +48,14 @@ First and foremost, we recommend working with Grafana in a Docker container. Onc
 
 ## Default theme
 
-There are two types of people in this world: people with the `Light` theme preference and the `Dark` one. Grafana started with dark colors, initially designed to provide for observability demand.
+There are two types of people in this world: people with the Light theme preference and the Dark one. Grafana started with dark colors, initially designed to provide for observability demand.
 
 <Image
   title="You can set the default theme to be either Light or Dark."
   src="/img/blog/2022-08-14-customize-grafana/theme.png"
 />
 
-The `Light` option was introduced in version 7 and became equally famous as the Dark one. This is the only setting that is configurable in a user profile. You can, however, make the UI style coherent by specifying the default theme for the whole Docker container by clearly assigning a value to the following environment variable:
+The Light option was introduced in version 7 and became equally famous as the Dark one. This is the only setting that is configurable in a user profile. You can, however, make the UI style coherent by specifying the default theme for the whole Docker container by clearly assigning a value to the following environment variable.
 
 ```docker
 ENV GF_USERS_DEFAULT_THEME=light
@@ -63,13 +64,13 @@ ENV GF_USERS_DEFAULT_THEME=light
 ## Home Dashboard
 
 <Image
-  title="Custom Home dashboard in Grafana."
+  title="Balena application Home dashboard in Grafana."
   src="/img/blog/2022-08-14-customize-grafana/home.png"
 />
 
-In order to set the dashboard of your choice as a Home dashboard, you would need to replace the `default.json` file located in `../usr/share/grafana/public/dashboards/default.json` with the file containing your code.
+To set the dashboard of your choice as a Home dashboard, you would need to replace the `default.json` file located in `../usr/share/grafana/public/dashboards/default.json` with the file containing your JSON code.
 
-You can do so by running the following command:
+You can do so by running the following command.
 
 ```docker
 COPY dashboards/home.json /usr/share/grafana/public/dashboards/default.json
@@ -81,9 +82,11 @@ If the dashboard is ever modified, the Docker container has to be rebuilt with a
 ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/plugins/volkovlabs-balena-app/dashboards/supervisor.json
 ```
 
-## Disable Alerting and Explore​
+## Disable Alerting and Explore
 
-More and more applications are being built to utilize Grafana as a platform for data visualization. Those applications do not require Alerting nor Explore components. To simplify your Grafana interface, consider disabling those features by including the following environment variables:
+More and more applications are being built to utilize Grafana as a platform for data visualization. Those applications do not require Alerting nor Explore components.
+
+To simplify your Grafana interface, consider disabling those features by including the following environment variables.
 
 ```docker
 ENV GF_EXPLORE_ENABLED=false
@@ -93,7 +96,7 @@ ENV GF_UNIFIED_ALERTING_ENABLED=false
 
 ## Sanitize HTML
 
-HTML sanitizing is enabled by default. If you need to use the HTML tags in the panels, this command is for you:
+HTML sanitizing is enabled by default. If you need to use the HTML tags in the panels, this command is for you.
 
 ```docker
 ENV GF_PANELS_DISABLE_SANITIZE_HTML=true
@@ -117,7 +120,9 @@ The favicon is the icon next to the application title on the browser tab.
   src="/img/blog/2022-08-14-customize-grafana/favicon.png"
 />
 
-In order to have your own, you can replace `fav32.png` and `apple-touch-icon.png` with the images of your choice. Use the following command for that:
+To have your own, you can replace `fav32.png` and `apple-touch-icon.png` with the images of your choice.
+
+Use the following command for that.
 
 ```docker
 COPY img/fav32.png /usr/share/grafana/public/img/fav32.png
@@ -128,7 +133,7 @@ COPY img/fav32.png /usr/share/grafana/public/img/apple-touch-icon.png
 
 The logo on the Login page is the first graphical element that users want to change.
 
-The big Grafana icon, the first image that draws users' attention when they open the application, can be customized by substituting the `grafana_icon.svg` file located in `../usr/share/grafana/public/img/`.
+The big Grafana icon, the first image that draws users' attention when they open the application, can be customized by substituting the `grafana_icon.svg` file located in `../usr/share/grafana/public/img/`.
 
 ```docker
 COPY img/logo.svg /usr/share/grafana/public/img/grafana_icon.svg

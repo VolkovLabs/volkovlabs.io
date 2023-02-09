@@ -8,6 +8,9 @@ const themeConfig = require(require.resolve("./config/theme.config.js"));
  */
 const config = {
   baseUrl: "/",
+  customFields: {
+    updated: "",
+  },
   favicon: "img/favicon.ico",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
