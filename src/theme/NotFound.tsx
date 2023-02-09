@@ -1,11 +1,11 @@
-import React from 'react';
-import { PageMetadata } from '@docusaurus/theme-common';
-import Layout from '@theme/Layout';
-import { BlogPosts } from '../constants/blogPosts';
-import BlogPostItems from './BlogPostItems';
+import React from "react";
+import { PageMetadata } from "@docusaurus/theme-common";
+import Layout from "@theme/Layout";
+import { BlogPosts } from "../constants/blogPosts";
+import BlogPostItems from "./BlogPostItems";
 
 const NotFound = () => {
-  const items = BlogPosts.splice(0, 6).map((post) => {
+  const items = BlogPosts.slice(0, 6).map((post) => {
     return {
       content: post,
     };

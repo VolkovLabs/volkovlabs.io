@@ -40,8 +40,8 @@ const BlogPostPaginator = (props) => {
       <h1>Related posts</h1>
 
       <div className={styles.posts}>
-        {posts.splice(0, 3).map((related, idx) => (
-          <BlogPostCard key={idx} post={related} size={"small"} />
+        {posts.slice(0, 3).map((related) => (
+          <BlogPostCard key={related.id} post={related} size={"small"} />
         ))}
       </div>
     </div>
