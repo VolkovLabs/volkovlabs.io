@@ -1,14 +1,15 @@
-import clsx from "clsx";
-import React from "react";
-import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
-import ThemedImage from "@theme/ThemedImage";
-import { Plugins, Projects } from "../components";
-import Blogs from "../components/Blogs";
-import styles from "../css/index.module.css";
-import Image from "../theme/Image";
+import clsx from 'clsx';
+import React from 'react';
+import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import ThemedImage from '@theme/ThemedImage';
+import { Plugins, Projects } from '../components';
+import Blogs from '../components/Blogs';
+import styles from '../css/index.module.css';
+import Image from '../theme/Image';
 
 /**
  * Header
@@ -185,6 +186,9 @@ const Home = () => {
 
   return (
     <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
+      <Head>
+        <meta property="og:image" content="/img/volkovlabs.png" />
+      </Head>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>
     </Layout>

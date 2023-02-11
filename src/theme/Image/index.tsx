@@ -1,4 +1,5 @@
 import 'react-medium-image-zoom/dist/styles.css';
+import { clsx } from 'clsx';
 import React from 'react';
 import Zoom from 'react-medium-image-zoom';
 import styles from './styles.module.css';
@@ -36,7 +37,7 @@ const Image = ({ height, src, title, width, zoom = true }: Props) => (
       <img
         alt={title}
         loading="lazy"
-        className={styles.image}
+        className={clsx(styles.image, styles.blog)}
         height={height ? height : "auto"}
         src={src}
         width={width}
