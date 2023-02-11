@@ -8,9 +8,11 @@ image: /img/plugins/volkovlabs-echarts-panel/schema.png
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# setOption() function
+# ECharts Function
 
-`setOption(options)` is the main Apache ECharts library function. This function is called to build any chart. It has one mandatory parameter `options` which is a chart configuration in a JSON format.
+`setOption(options)` is the main Apache ECharts library function. This function is called to build any chart.
+
+It has one mandatory parameter `options` which is a chart configuration in a JSON format.
 
 <Image
   title="setOptions Schema."
@@ -62,32 +64,5 @@ Success and Error notifications can be triggered on events handling.
 
 ```javascript
 notifySuccess(["Update", "Values updated successfully."]);
-notifyError(["Update", `An error occured updating values.`]);
-```
-
-## Scale when resizing
-
-To scale the content when the panel is resized use `echartsInstance` method to retrieve the width and height of the panel.
-
-```javascript
-  graphic: {
-    type: "image",
-    style: {
-      image: `data:image/svg+xml;utf8,${SVG}`,
-      width: echartsInstance.getWidth(),
-      height: echartsInstance.getHeight(),
-    },
-  },
-```
-
-To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.
-
-## Create DOM elements
-
-It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using `echartsInstance`.
-
-For example, you can add a button with an event handler.
-
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/dom.js
+notifyError(["Update", `An error occurred updating values.`]);
 ```

@@ -15,9 +15,18 @@ const plugins = {
           label: "Introduction",
         },
         "volkovlabs-echarts-panel/options",
-        "volkovlabs-echarts-panel/datasources",
-        "volkovlabs-echarts-panel/events",
         "volkovlabs-echarts-panel/examples",
+        {
+          items: [
+            "volkovlabs-echarts-panel/datasources",
+            "volkovlabs-echarts-panel/events",
+            "volkovlabs-echarts-panel/instance",
+            "volkovlabs-echarts-panel/streaming",
+            "volkovlabs-echarts-panel/variables",
+          ],
+          label: "Features",
+          type: "category",
+        },
         {
           items: [
             "volkovlabs-echarts-panel/maps/geojson",
@@ -37,8 +46,6 @@ const plugins = {
           label: "Tutorials",
           type: "category",
         },
-        "volkovlabs-echarts-panel/streaming",
-        "volkovlabs-echarts-panel/variables",
         "volkovlabs-echarts-panel/release",
       ],
       label: "Apache ECharts Panel",
