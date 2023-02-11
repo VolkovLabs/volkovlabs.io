@@ -4,6 +4,11 @@
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-radius: 10px;
+  max-width: 900px;
+}
+
+.blog {
+  max-height: 400px;
 }
 
 [data-theme='light'] .image {
