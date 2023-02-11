@@ -3,6 +3,7 @@ hide_table_of_contents: true
 tags:
   - Apache ECharts
   - Data Source
+image: /img/plugins/volkovlabs-echarts-panel/pie-chart.png
 ---
 
 import Image from "@theme/Image";
@@ -27,8 +28,8 @@ data.series.map((s) => {
 ```
 
 - You can use `.map()` and `.find()` JavaScript functions,
-- `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries - `logo`,`connections`, and `nodes`.
-- `name` is the data frame column name. The code above references `body`,`source`,`target`,`title`,and `description` columns.
+- `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries the `logo`, `connections`, and `nodes`.
+- `name` is the data frame column name. The code above references the `body`, `source`, `target`, `title`, and `description` columns.
 
 <Video
   src="https://www.youtube.com/embed/K5YNMSIm9AM"
@@ -37,7 +38,7 @@ data.series.map((s) => {
 
 ## Array of Arrays
 
-Convert one-dimensional arrays into many-dimensional arrays if needed:
+Convert one-dimensional arrays into many-dimensional arrays if needed.
 
 - get values for each field
 - combine in an array of arrays
@@ -53,60 +54,15 @@ const series = data.series.map((s) => {
 })[0];
 ```
 
-## Display Pie Chart using Data Source
+## Display Pie Chart using Static Data Source
 
 <Image
   title="Visualize Pie Chart using Data Source."
   src="/img/plugins/volkovlabs-echarts-panel/pie-chart.png"
 />
 
-Visualization panel's function:
+Visualization panel's function.
 
-```js
-const pieData = data.series.map((s) => {
-  const models = s.fields.find((f) => f.name === "Model").values.buffer;
-  const values = s.fields.find((f) => f.name === "Value").values.buffer;
-
-  return values.map((d, i) => {
-    return { name: models[i], value: d };
-  });
-})[0];
-
-return {
-  tooltip: {
-    trigger: "item",
-  },
-  legend: {
-    top: "5%",
-    left: "center",
-  },
-  series: [
-    {
-      name: "Pie Chart",
-      type: "pie",
-      radius: ["40%", "70%"],
-      avoidLabelOverlap: false,
-      itemStyle: {
-        borderRadius: 10,
-        borderColor: "#fff",
-        borderWidth: 2,
-      },
-      label: {
-        show: false,
-        position: "center",
-      },
-      emphasis: {
-        label: {
-          show: true,
-          fontSize: "40",
-          fontWeight: "bold",
-        },
-      },
-      labelLine: {
-        show: false,
-      },
-      data: pieData,
-    },
-  ],
-};
+```javascript reference
+https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/pie.js
 ```
