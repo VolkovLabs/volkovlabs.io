@@ -4,6 +4,7 @@ tags:
   - balenaCloud
 ---
 
+import Code from "@theme/Code";
 import Video from "@theme/Video";
 
 # balenaCloud
@@ -12,9 +13,10 @@ Our custom Grafana build with the Balena Application plugin can be [deployed dir
 
 We recommend adding it to your `docker-compose.yml` together with NGINX reverse proxy (example configuration in the repository):
 
-```yaml reference
-https://github.com/VolkovLabs/volkovlabs-balena-app/blob/main/docker-compose.yml
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-balena-app/blob/main/docker-compose.yml"
+  language="yaml"
+/>
 
 The default Grafana username and password is **admin/admin**.
 
