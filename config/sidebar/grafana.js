@@ -5,10 +5,18 @@ const grafana = {
   items: [
     "grafana/index",
     "grafana/customize",
-    "grafana/variables",
-    "grafana/business",
-    "grafana/iot",
     "grafana/allow-unsigned",
+    "grafana/variables",
+    {
+      items: ["grafana/business", "grafana/iot"],
+      label: "Use Cases",
+      type: "category",
+    },
+    {
+      items: ["grafana/datasources/json"],
+      label: "Data Sources",
+      type: "category",
+    },
     {
       items: [
         {

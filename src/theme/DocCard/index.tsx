@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "@docusaurus/Link";
-import { Chip } from "../Chip";
-import styles from "./styles.module.css";
+import React from 'react';
+import Link from '@docusaurus/Link';
+import { Chip } from '../Chip';
+import styles from './styles.module.css';
 
 /**
  * Properties
@@ -20,7 +20,7 @@ const DocCard = ({ doc }: Props) => {
     <div className={styles.post}>
       <div className={styles.content}>
         <h3 className={styles.title}>
-          <a href={permalink}>{title}</a>
+          <Link to={permalink}>{title}</Link>
         </h3>
         {description && <div className={styles.description}>{description}</div>}
       </div>
