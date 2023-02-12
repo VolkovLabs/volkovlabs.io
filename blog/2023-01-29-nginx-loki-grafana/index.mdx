@@ -4,9 +4,10 @@ slug: nginx-loki-grafana-20230129/
 tags: [Analytics, Loki, Nginx]
 image: /img/blog/2023-01-29-nginx-loki-grafana/banner.png
 keywords: [NGINX, Loki, Grafana, Analytics]
-updated: 2023-02-09
+updated: 2023-02-12
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -41,7 +42,7 @@ Let's examine each component's functions and take a closer look at each one.
 - Grafana displays content metrics along with some technical details. The data comes from Loki via the Loki data source.
 
 <Image
-  title="System architecture where tailored metrics lead to decisions making."
+  title="System architecture where tailored metrics lead to decision making."
   src="/img/blog/2023-01-29-nginx-loki-grafana/flow.png"
 />
 
@@ -150,9 +151,10 @@ Loki, Promtail, and Grafana containers are distributed on separate hosts, and we
 
 The configuration file is based on the default file shipped with the `2.7.1` release. We updated the configuration to increase the number of maximum outstanding requests to accommodate the Grafana dashboard.
 
-```jaml reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/loki.yml
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/loki.yml"
+  language="yaml"
+/>
 
 You can learn more about Loki configuration in the [Documentation](https://grafana.com/docs/loki/latest/configuration/).
 

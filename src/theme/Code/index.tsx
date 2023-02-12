@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import CodeBlock from '@theme-init/CodeBlock';
+import CodeBlock from '@theme/CodeBlock';
 import { codeReducer, fetchCode, initialFetchResultState } from './utils';
 
 /**
