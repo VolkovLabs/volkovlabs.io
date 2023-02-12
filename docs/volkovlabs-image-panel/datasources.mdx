@@ -4,6 +4,7 @@ tags:
   - Data Source
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -59,12 +60,14 @@ SELECT ENCODE (CONVERT_TO('Hello World!', 'UTF-8'), 'BASE64');
 
 Create tables to store images, video, and audio files:
 
-```sql reference
-https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/data.sql
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/data.sql"
+  language="sql"
+/>
 
 Load PDF, PNG, MP4, MP3, etc. files into a database using Node.js script:
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/load.ts
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/load.ts"
+  language="js"
+/>
