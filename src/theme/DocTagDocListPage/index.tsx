@@ -1,17 +1,12 @@
-import clsx from "clsx";
-import React from "react";
-import Link from "@docusaurus/Link";
-import {
-  HtmlClassNameProvider,
-  PageMetadata,
-  ThemeClassNames,
-  usePluralForm,
-} from "@docusaurus/theme-common";
-import Translate, { translate } from "@docusaurus/Translate";
-import Layout from "@theme/Layout";
-import SearchMetadata from "@theme/SearchMetadata";
-import DocCard from "../DocCard";
-import styles from "./styles.module.css";
+import clsx from 'clsx';
+import React from 'react';
+import Link from '@docusaurus/Link';
+import { HtmlClassNameProvider, PageMetadata, ThemeClassNames, usePluralForm } from '@docusaurus/theme-common';
+import Translate, { translate } from '@docusaurus/Translate';
+import Layout from '@theme/Layout';
+import SearchMetadata from '@theme/SearchMetadata';
+import DocCard from '../DocCard';
+import styles from './styles.module.css';
 
 // Very simple pluralization: probably good enough for now
 const useNDocsTaggedPlural = () => {
@@ -63,7 +58,7 @@ const DocTagDocListPage = ({ tag }) => {
             <main className="col col--12">
               <header className="margin-bottom--xl">
                 <h1>{title}</h1>
-                <a href={tag.allTagsPath}>View All Tags</a>
+                <Link to={tag.allTagsPath}>View All Tags</Link>
               </header>
 
               <div className={styles.root}>
