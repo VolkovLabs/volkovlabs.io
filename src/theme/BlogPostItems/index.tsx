@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const BlogPostItems = ({ items }) => {
   return (
     <div className={styles.root}>
-      <h1>Blog Posts</h1>
+      <h2>Blog Posts</h2>
 
       <div className={styles.posts}>
         {items.map(({ content: BlogPostContent }) => (

@@ -62,7 +62,7 @@ const DocTagDocListPage = ({ tag }) => {
               </header>
 
               <div className={styles.root}>
-                <h1>Pages</h1>
+                <h2>Pages</h2>
 
                 <div className={styles.posts}>
                   {tag.items.map((doc) => (

@@ -51,6 +51,7 @@ const Header = (siteConfig) => {
                 light: useBaseUrl("/img/index/main.svg"),
                 dark: useBaseUrl("/img/index/main.dark.svg"),
               }}
+              alt={siteConfig.tagline}
             />
           </div>
         </div>
@@ -146,8 +147,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/why/left.svg"),
-                dark: useBaseUrl("/img/why/left.dark.svg"),
+                light: useBaseUrl("/img/index/left.svg"),
+                dark: useBaseUrl("/img/index/left.dark.svg"),
               }}
             />
           </div>
@@ -167,8 +168,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/why/right.svg"),
-                dark: useBaseUrl("/img/why/right.dark.svg"),
+                light: useBaseUrl("/img/index/right.svg"),
+                dark: useBaseUrl("/img/index/right.dark.svg"),
               }}
             />
           </div>
