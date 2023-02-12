@@ -16,13 +16,13 @@ const TagsListByLetter = ({ tags }) => {
           <h2>{letterEntry.letter}</h2>
 
           {letterEntry.tags.map((tag) => (
-            <span className={styles.tag}>
-              <Chip
-                label={`${tag.label} (${tag.count})`}
-                permalink={tag.permalink}
-                skin="primary"
-              />
-            </span>
+            <Chip
+              key={tag.permalink}
+              className={styles.tag}
+              label={`${tag.label} (${tag.count})`}
+              permalink={tag.permalink}
+              skin="primary"
+            />
           ))}
           <hr />
         </article>

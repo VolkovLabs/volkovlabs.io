@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { HtmlClassNameProvider, PageMetadata, ThemeClassNames, usePluralForm } from '@docusaurus/theme-common';
 import Translate, { translate } from '@docusaurus/Translate';
@@ -50,6 +51,9 @@ const DocTagDocListPage = ({ tag }) => {
       )}
     >
       <PageMetadata title={title} />
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       <SearchMetadata tag="doc_tag_doc_list" />
 
       <Layout>
