@@ -16,7 +16,7 @@ What is the first panel you see when opening Grafana? It's probably the News pan
 
 <!--truncate-->
 
-Looking around, we found multiple discussions and issues opened regarding updating the News panel or creating an RSS and Atom data source. The question is, how to display data from such data sources? Timeseries or Table panels won't be the perfect candidates to demonstrate news with a custom layout.
+Looking around, we found multiple discussions and issues opened regarding updating the News panel or creating an RSS and Atom data source. The question is, how to display data from such data sources? Time series or Table panels won't be the perfect candidates to demonstrate news with a custom layout.
 
 The video version of this article is available on our YouTube channel.
 
@@ -31,7 +31,7 @@ RSS data source was created based on the recently released [data source plugin t
 
 > RSS/Atom data source was added to the Grafana Catalog on Jan, 12 2022.
 
-## What is the data source plugin, and how to create one?
+## What is the data source plugin, and how to create one?
 
 > Data source plugins communicate with external sources of data and return the data in a format that Grafana understands. By adding a data source plugin, you can immediately use the data in any of your existing dashboards.
 
@@ -43,9 +43,9 @@ There are 120 data source plugins available in the Grafana Catalog; 22 were adde
 
 RSS and Atom feed can be accessed using HTTP(S) protocol and, in most cases, do not require authentication at all. Authentication can be added in the future version, and default authentication options in the HTTP(S) backend should be sufficient.
 
-We decided to create an RSS/Atom data source based on [our data source plugin template](/plugins/volkovlabs-abc-datasource) without a backend. This template is similar to the panel plugin template and provides Docker Compose, Initial Provisioning, Continuous Integration with test coverage configuration out of the box.
+We decided to create an RSS/Atom data source based on [our data source plugin template](/plugins/volkovlabs-abc-datasource) without a backend. This template is similar to the panel plugin template and provides Docker Compose, Initial Provisioning, and Continuous Integration with test coverage configuration out of the box.
 
-## Custom Grafana News Panel
+## Custom Grafana News Panel
 
 Let's add a new RSS data source for the Grafana blog and create a panel to display the latest news similar to the News Panel. RSS/Atom data source can be added manually using the Configuration -> Data Sources menu or provisioned using configuration files.
 
@@ -116,11 +116,11 @@ Here is the panel's content to achieve a look similar to the News panel:
 
 You can read more about the Dynamic Text panel and various helpers you can use in the [Documentation](/plugins/volkovlabs-dynamictext-panel).
 
-## What other feeds can be displayed using the RSS/Atom data source?
+## What other feeds can be displayed using the RSS/Atom data source?
 
 The goal of creating an RSS data source was to support the Medium feed for Volkov Labs, which has CORS (Cross-Origin Resource Sharing) enabled and can't be displayed using the News panel. Medium returns images and descriptions embedded in the `content:encoded` field, not supported in the News panel.
 
-The data source takes care of extracting additional information from the `meta`, `guid `, `content:embeded`, and other fields. The final layout for the Volkov Labs newsfeed looks very similar to the Medium links you can see in this article.
+The data source takes care of extracting additional information from the `meta`, `guid`, `content:embeded`, and other fields. The final layout for the Volkov Labs newsfeed looks very similar to the Medium links you can see in this article.
 
 <Image
   title="Volkov Lab's newsfeeds from the Medium publication."
