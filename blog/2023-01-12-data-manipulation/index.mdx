@@ -4,7 +4,7 @@ slug: data-manipulation-grafana-20230112/
 tags: [Data Manipulation, API]
 image: /img/blog/2023-01-12-data-manipulation/banner.png
 keywords: [Data Manipulation, API, Grafana, Observability]
-updated: 2023-02-12
+updated: 2023-02-13
 ---
 
 import Code from "@theme/Code";
@@ -45,7 +45,7 @@ Following the community demand, the [Data Manipulation plugin](/blog/data-manipu
 
 ## Data Manipulation plugin
 
-There are various ways to install it. The easiest one is to use the Configuration -> Plugins menu when you are in the Grafana Catalog with admin permissions. The plugin can also be downloaded from the Grafana website or [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel).
+There are various ways to install it. The easiest one is to use the Plugins Configuration menu when you are in the Grafana Catalog with admin permissions. The plugin can also be downloaded from the Grafana website or [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel).
 
 <Video
   src="https://www.youtube.com/embed/DXALVG8GijM"
@@ -61,7 +61,7 @@ The Data Manipulation plugin allows you to insert and update data along with con
 The Data Manipulation plugin requires the API server to be installed on the database server or a separate host.
 
 <Image
-  title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
+  title="Data Manipulation panel uses GET, POST/PUT requests to interact with API Server."
   src="/img/blog/2023-01-12-data-manipulation/form-api.png"
 />
 
@@ -72,6 +72,8 @@ The API server is an excellent way to ensure only the approved data manipulation
   title="API Node.js server and Deno Deploy."
 />
 
+### PostgreSQL
+
 Look at a simple API server, which returns submitted feedback from the PostgreSQL database.
 
 <Code
@@ -79,7 +81,9 @@ Look at a simple API server, which returns submitted feedback from the PostgreSQ
   language="js"
 />
 
-If you use [Deno](https://deno.land), this is an excellent example of how to connect it with a panel.
+### Deno
+
+If you use Deno (The easiest, most secure JavaScript runtime), this is an excellent example of how to connect it with a panel.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-deno/server.ts"
@@ -90,9 +94,12 @@ In the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel),
 
 We recommend running Grafana behind NGINX reverse proxy for a further security layer. The reverse proxy also allows you to expose additional API endpoints and static files in the same domain, which makes it CORS-ready. You can read about it in [How to connect the Data Manipulation plugin for Grafana to API Server](/blog/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904).
 
-## Static and Dynamic elements
+## Static and Dynamic forms
 
-Following the Grafana lead, the Data Manipulation plugin was designed to embrace [flexibility](/plugins/volkovlabs-form-panel/code). You can start with static forms and end up with dynamic ones. A static form is hard-coded and created once and for all. A dynamic one allows creating a form on the fly from a data source (such as a database or a CSV file) per rules and configurations.
+Following the Grafana lead, the Data Manipulation plugin was designed to embrace [flexibility](/plugins/volkovlabs-form-panel/code). You can start with static forms and end up with dynamic ones.
+
+- A static form is hard-coded and created once and for all.
+- A dynamic one allows creating a form on the fly from a data source (such as a database or a CSV file) per rules and configurations.
 
 <Video
   src="https://www.youtube.com/embed/RSVH1bSBNl8"
