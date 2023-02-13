@@ -1013,7 +1013,7 @@ export const BlogPosts = [
       title:
         "How to connect the Data Manipulation plugin for Grafana to API Server",
       description:
-        "We understand the risk of data manipulation and take security concerns seriously. This article explores three secure ways to connect the Data Manipulation panel to the API Server.",
+        "We understand the risk of data manipulation and take security concerns seriously. This article explores three secure ways to connect the Data Manipulation panel to the API Server.",
       date: "2022-06-12T00:00:00.000Z",
       formattedDate: "June 12, 2022",
       tags: [
@@ -1165,7 +1165,7 @@ export const BlogPosts = [
       source: "@site/blog/2022-03-14-private-repository/index.mdx",
       title: "Installing Grafana plugins from a Private repository",
       description:
-        "The Grafana Catalog application is one of our favorite features introduced in Grafana 8. It allows installing registered plugins from the official Grafana repository when connected to the Internet, but how do you upgrade and manage Grafana plugins without access to the external network?",
+        "The Grafana Catalog application is one of our favorite features introduced in Grafana 8. It allows installing registered plugins from the official Grafana repository when connected to the Internet, but how do you upgrade and manage Grafana plugins without access to the external network?",
       date: "2022-03-14T00:00:00.000Z",
       formattedDate: "March 14, 2022",
       tags: [
@@ -1212,7 +1212,7 @@ export const BlogPosts = [
       title:
         "Environment Variables for Configuration, Provisioning, and Dashboards in Grafana",
       description:
-        "The number of use cases operating Grafana as a platform to build modern applications is increasing. Compared to a single central Grafana instance, we are looking at multiple distributed installations with new data sources.",
+        "The number of use cases operating Grafana as a platform to build modern applications is increasing. Compared to a single central Grafana instance, we are looking at multiple distributed installations with new data sources.",
       date: "2022-02-20T00:00:00.000Z",
       formattedDate: "February 20, 2022",
       tags: [
@@ -1314,7 +1314,7 @@ export const BlogPosts = [
       source: "@site/blog/2022-01-21-grafana-101/index.mdx",
       title: "Grafana 101 - What, Why, Who?",
       description:
-        "The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads towards it.",
+        "The Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads towards it.",
       date: "2022-01-21T00:00:00.000Z",
       formattedDate: "January 21, 2022",
       tags: [
@@ -1416,7 +1416,7 @@ export const BlogPosts = [
       title:
         "Using Grafana to display Large PDF documents? We've got you covered",
       description:
-        "We discussed the benefits of using Docker containers and initial Provisioning in the recent article on creating our panel plugin template for Grafana. While working on the current feature request for the Base64 image/PDF panel, this technique helped us quickly deliver solutions and improve the long-term support for the panel.",
+        "We discussed the benefits of using Docker containers and initial Provisioning in the recent article on creating our panel plugin template for Grafana. While working on the current feature request for the Base64 image/PDF panel, this technique helped us quickly deliver solutions and improve the long-term support for the panel.",
       date: "2021-12-17T00:00:00.000Z",
       formattedDate: "December 17, 2021",
       tags: [
