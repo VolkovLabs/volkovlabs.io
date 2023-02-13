@@ -7,7 +7,7 @@ slug: stacked-bar-graph-20221004/
 tags: [Apache ECharts, Community]
 image: /img/blog/2022-10-04-stacked-bar-graph/banner.png
 keywords: [Apache ECharts, Grafana, Visualization]
-updated: 2023-02-12
+updated: 2023-02-13
 ---
 
 import Code from "@theme/Code";
@@ -34,7 +34,7 @@ The issue was successfully resolved, and Sineos created this example and attache
 
 ## InfluxDB Data Source
 
-- `createEmpty: true` makes sure that the data of the individual bar segments stays aligned when data is missing in the series.
+- `createEmpty: true` makes sure that the data of the individual bar segments stay aligned when data is missing in the series.
 - `set(key: "Source", value: "Self Consumption")` manipulates the field used for naming the series.
 
 ### Query A
@@ -73,7 +73,7 @@ from(bucket: "home")
   |>  set(key: "Source",  value: "Self Consumption")
 ```
 
-## Apache ECharts visualization panel function
+## Apache ECharts function
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2022-10-04-stacked-bar-graph/panel.js"
@@ -82,18 +82,25 @@ from(bucket: "home")
 
 ## Dashboard to Try
 
-The following dashboard is a ready-to-go example that can be imported into Grafana as JSON. It requires the [Static data source](/plugins/volkovlabs-static-datasource/) and Apache ECharts visualization panel plugin.
+The following dashboard is a ready-to-go example that can be imported into Grafana as JSON. It requires
 
-Make sure to install Static data source via the `Administration -> Plugins` menu and then add it via the `Administration -> Data Sources` menu.
+- [Static data source](/plugins/volkovlabs-static-datasource/)
+- Apache ECharts visualization panel plugin.
 
-Once the Static data source is installed and added and the Apache ECharts visualization panel is installed, go to the `Dashboard` menu and select `Import`. In the **Import dashboard** window, insert the JSON code into the **Import via panel json** field (copy the JSON code from below).
+Make sure to install the Static data source via the Plugins Configuration and then add it to the Data Sources.
+
+### Import dashboard
+
+Once the Static data source is installed and added and the Apache ECharts visualization panel is installed, go to the Dashboard menu and select Import.
+
+In the Import dashboard window, insert the JSON code into the Import via the panel JSON field. Copy the JSON code from below.
 
 <Image
   title="Import dashboard window."
   src="/img/blog/2022-10-04-stacked-bar-graph/import-dashboard.png"
 />
 
-Specify the dashboard name and Static data source, click **Import**.
+Specify the dashboard name and Static data source, and click Import.
 
 <Image
   title="Provide Name and datasource in the import menu window."
