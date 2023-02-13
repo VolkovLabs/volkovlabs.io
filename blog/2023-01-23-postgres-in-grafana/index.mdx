@@ -4,9 +4,10 @@ slug: grafana-postgresql-20230123/
 tags: [Configuration, PostgreSQL]
 image: /img/blog/2023-01-23-postgres-in-grafana/banner.png
 keywords: [PostgreSQL, Timescale, Configuration, Storage]
-updated: 2023-02-04
+updated: 2023-02-12
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -212,9 +213,10 @@ Note, I replaced the symbol `#` with `%23` in the `fill` attribute.
 `fill="#f90"` change to `fill="%23f90"`
 :::
 
-```sql reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-23-postgres-in-grafana/image.sql
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-23-postgres-in-grafana/image.sql"
+  language="sql"
+/>
 
 ## Grafana dashboard
 
@@ -230,9 +232,10 @@ For the code to function correctly, you will need to have the PostgreSQL data so
 <details>
   <summary>Grafana dashboard source code from the video</summary>
 
-```json reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-23-postgres-in-grafana/dashboard.json
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-23-postgres-in-grafana/dashboard.json"
+  language="json"
+/>
 
 </details>
 

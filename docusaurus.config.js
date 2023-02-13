@@ -20,7 +20,7 @@ const config = {
   projectName: "volkovlabs.io",
   tagline: "Plugin development for Grafana",
   themeConfig,
-  themes: ["@saucelabs/theme-github-codeblock"],
+  themes: [],
   title: "Volkov Labs",
   trailingSlash: true,
   url: "https://volkovlabs.io",

@@ -4,9 +4,10 @@ slug: data-manipulation-grafana-20230112/
 tags: [Data Manipulation, API]
 image: /img/blog/2023-01-12-data-manipulation/banner.png
 keywords: [Data Manipulation, API, Grafana, Observability]
-updated: 2023-02-04
+updated: 2023-02-12
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -73,15 +74,17 @@ The API server is an excellent way to ensure only the approved data manipulation
 
 Look at a simple API server, which returns submitted feedback from the PostgreSQL database.
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-pg/server.ts
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-pg/server.ts"
+  language="js"
+/>
 
 If you use [Deno](https://deno.land), this is an excellent example of how to connect it with a panel.
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-deno/server.ts
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-deno/server.ts"
+  language="js"
+/>
 
 In the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel), you can find more examples of PostgreSQL and MySQL databases.
 
@@ -98,9 +101,10 @@ Following the Grafana lead, the Data Manipulation plugin was designed to embrace
 
 For instance, your application might display different forms depending on the logged user, time of the day, IP address, etc.
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/dynamic-elements.js
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/dynamic-elements.js"
+  language="js"
+/>
 
 The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard. You can read more about it in the [Documentation](/plugins/volkovlabs-form-panel).
 

@@ -4,9 +4,10 @@ slug: how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe
 tags: [Data Manipulation, API, Nginx]
 image: /img/blog/2022-06-12-data-manipulation-api/banner.png
 keywords: [Grafana, Data Manipulation, Forms]
-updated: 2023-02-05
+updated: 2023-02-12
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -52,9 +53,10 @@ The disadvantage of this method is that API requests are exposed to the end user
 
 We already explained how to configure the panel in the video mentioned above. If this method works for your use case, you can find server code examples in the plugin's GitHub repository:
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-json/server.ts
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-json/server.ts"
+  language="js"
+/>
 
 ## Use NGINX reverse proxy
 

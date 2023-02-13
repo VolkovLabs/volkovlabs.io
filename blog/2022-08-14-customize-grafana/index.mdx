@@ -4,9 +4,10 @@ slug: how-to-customize-the-grafana-user-interface-8d70a42dc2b6/
 tags: [Configuration]
 image: /img/blog/2022-08-14-customize-grafana/banner.png
 keywords: [Business, Grafana, Visualization, Customization, Docker]
-updated: 2023-02-09
+updated: 2023-02-12
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -199,8 +200,9 @@ RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|{id:"update
 
 If you did not find the configuration you need, please, check our docker file on GitHub.
 
-```docker reference
-https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile"
+  language="docker"
+/>
 
 We constantly update it with all the latest configuration commands we were able to identify.

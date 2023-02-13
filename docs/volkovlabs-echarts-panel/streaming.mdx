@@ -6,6 +6,7 @@ tags:
 image: /img/plugins/volkovlabs-echarts-panel/live.png
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -30,9 +31,10 @@ Grafana Live is a real-time messaging engine introduced in Grafana v8.0. With [G
 
 ### Function
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/live.js
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/live.js"
+  language="js"
+/>
 
 ## WebSocket API
 
@@ -47,31 +49,23 @@ To stream real-time data, we used the [WebSocket Data Source for Grafana](https:
 
 Example of Node.js WebSocket Server implementation.
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs-echarts-panel/blob/main/websocket/server.js
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-echarts-panel/blob/main/websocket/server.js"
+  language="js"
+/>
 
 ### Provisioning
 
 WebSocket API Data Source can be provisioned using configuration files or in the Grafana UI.
 
-```yaml
-apiVersion: 1
-
-datasources:
-  - name: Websocket
-    type: golioth-websocket-datasource
-    uid: LWj8ert4k
-    access: proxy
-    orgId: 1
-    version: 1
-    editable: true
-    jsonData:
-      host: ws://WebSocker-Server:8080
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/websocket.yml"
+  language="yaml"
+/>
 
 ### Function
 
-```javascript reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/streaming.js
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/streaming.js"
+  language="js"
+/>

@@ -4,9 +4,10 @@ slug: nginx-loki-grafana-20230129/
 tags: [Analytics, Loki, Nginx]
 image: /img/blog/2023-01-29-nginx-loki-grafana/banner.png
 keywords: [NGINX, Loki, Grafana, Analytics]
-updated: 2023-02-09
+updated: 2023-02-12
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -41,7 +42,7 @@ Let's examine each component's functions and take a closer look at each one.
 - Grafana displays content metrics along with some technical details. The data comes from Loki via the Loki data source.
 
 <Image
-  title="System architecture where tailored metrics lead to decisions making."
+  title="System architecture where tailored metrics lead to decision making."
   src="/img/blog/2023-01-29-nginx-loki-grafana/flow.png"
 />
 
@@ -73,9 +74,10 @@ We also added additional configuration to the main configuration file `nginx.con
 - Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
 - Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
 
-```nginx reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/nginx.conf
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/nginx.conf"
+  language="nginx"
+/>
 
 A produced JSON record from the log file looks like this.
 
@@ -150,9 +152,10 @@ Loki, Promtail, and Grafana containers are distributed on separate hosts, and we
 
 The configuration file is based on the default file shipped with the `2.7.1` release. We updated the configuration to increase the number of maximum outstanding requests to accommodate the Grafana dashboard.
 
-```jaml reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/loki.yml
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/loki.yml"
+  language="yaml"
+/>
 
 You can learn more about Loki configuration in the [Documentation](https://grafana.com/docs/loki/latest/configuration/).
 
@@ -189,9 +192,10 @@ We added Pipeline stages to drop records we are not interested in.
 - Requests for particular files for browsers and indexing engines.
 - Malicious request from scanners to find PHP and XML files.
 
-```jaml reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/promtail.yml
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/promtail.yml"
+  language="yaml"
+/>
 
 The [Pipelines](https://grafana.com/docs/loki/latest/clients/promtail/pipelines/) can be changed and updated based on your requirements.
 
@@ -280,9 +284,10 @@ For the dashboard to function correctly, you must have the Loki data source inst
 <details>
   <summary>Grafana dashboard source code</summary>
 
-```json reference
-https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/dashboard.json
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-29-nginx-loki-grafana/dashboard.json"
+  language="json"
+/>
 
 </details>
 
