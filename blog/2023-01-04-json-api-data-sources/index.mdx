@@ -1,10 +1,10 @@
 ---
 authors: [daria]
 slug: json-api-data-sources-in-grafana-20230104/
-tags: [Getting Started, Analytics, API]
+tags: [Getting Started, Analytics, API, Apache ECharts]
 image: /img/blog/2023-01-04-json-api-data-sources/banner.png
 keywords: [JSON, API, Data Source, Infinity, Simpod, Grafana]
-updated: 2023-02-11
+updated: 2023-02-13
 ---
 
 import Image from "@theme/Image";
@@ -56,15 +56,15 @@ Let's crack them one by one.
 Yeah, this is its name. Something more distinctive would make things easier. Arugula is a good name for a data source, so why not. But no, we have two super-overused words combined. Brilliant. It surely does not help with Internet searches. Anyways.
 
 <Image
-  title="A data source plugin for loading JSON APIs into Grafana using JSONPath."
+  title="A JSON API data source plugin for loading JSON APIs into Grafana using JSONPath."
   src="/img/blog/2023-01-04-json-api-data-sources/json-api.png"
 />
 
-Marcus Olsson has created the plugin. Now Grafana Labs has taken over and fully maintains it.
+Marcus Olsson has created the plugin. Now Grafana Labs has taken over and maintains it. Unfortunately, no new features are expected.
 
 ### Supported formats
 
-JSON API data source works with one format (JSON). So, the system you want to retrieve this file from must create a JSON file for you, with no exceptions.
+JSON API data source works with JSON format only. So, the system you want to retrieve this file from must create a JSON file for you, with no exceptions.
 
 ### Access
 
@@ -81,6 +81,11 @@ There are many open datasets available to everybody interested in their free dat
 ## [Infinity API data source](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/)
 
 The name is outstanding. It is unique, memorable, and has a good meaning.
+
+<Image
+  title="An Infinity data source plugin for loading JSON APIs into Grafana."
+  src="/img/blog/2023-01-04-json-api-data-sources/infinity.png"
+/>
 
 Sriramajeyam Sugumaran has created this plugin. He maintains and supports it to this moment.
 
@@ -139,7 +144,7 @@ The schema below summarizes the comparative analysis. It shows four data sources
 - Supports various formats.
 - Great to work with both open and corporate datasets.
 
-Simpod in **Green** color adds extra functionality on top of the core Grafana dashboard for the price of your API server to provide a specific data format (I called it the `JSON+simpod` format in my schema).
+SimPod in **Green** color adds extra functionality on top of the core Grafana dashboard for the price of your API server to provide a specific data format (I called it the `JSON+simpod` format in my schema).
 
 In the **Purple** color, the schema has all corporate scenarios where direct access to the database is permitted.
 
