@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from '@docusaurus/Head';
 import { listTagsByLetters } from '@docusaurus/theme-common';
 import { Chip } from '../Chip';
 import styles from './styles.module.css';
@@ -11,6 +12,9 @@ const TagsListByLetter = ({ tags }) => {
 
   return (
     <section className="margin-vert--lg">
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       {letterList.map((letterEntry) => (
         <article key={letterEntry.letter}>
           <h2>{letterEntry.letter}</h2>

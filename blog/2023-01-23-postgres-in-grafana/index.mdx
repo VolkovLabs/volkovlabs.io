@@ -26,7 +26,7 @@ This article is written to supplement the YouTube video we recently published on
 
 ## Grafana configuration
 
-Grafana stores its configuration (connected data sources, employed visualizations, variables, etc.) in the configuration storage. You end up with an SQLite database after downloading and installing the [default Grafana package](https://grafana.com/grafana/download?pg=get&plcmt=selfmanaged-box1-cta1).
+Grafana stores its configuration (connected data sources, employed visualizations, variables, etc.) in the configuration storage. You end up with an SQLite database after downloading and installing the default Grafana package.
 
 The [default setup is excellent for discovering Grafana](/blog/grafana-setup-20230122), but for the Next level (when you design the actual application) you would need to switch to either PostgreSQL or MySQL. PostgreSQL is an excellent choice for capturing Grafana configuration.
 
@@ -35,15 +35,17 @@ The [default setup is excellent for discovering Grafana](/blog/grafana-setup-202
   src="/img/blog/2023-01-23-postgres-in-grafana/basics.png"
 />
 
-Both databases are open-source, and both are supported by Grafana.
+Both databases are open-source, and both are supported by Grafana. The benefits are.
 
-Configuration in a separate container (or host) makes your application design flexible and manageable, with a more straightforward backup/restoration process. The separated configuration storage does not get lost when the Grafana UI container is acting up. You also can use it for as many UI instances as needed when switching to the High-Availability setup.
+- Configuration in a separate container (or host) makes your application design flexible and manageable, with a more straightforward backup/restoration process.
+- The separated configuration storage does not get lost when the Grafana UI container is acting up.
+- You also can use it for as many UI instances as needed when switching to the High-Availability setup.
 
 ## PostgreSQL
 
 In the video above, I demonstrated how to redirect Grafana UI to a PostgreSQL database. Below I leave the same instructions.
 
-Make sure you have a dedicated PostgreSQL database created. You can surely use the one that is already part of your application ecosystem. But creating a brand new PostgreSQL database is preferable to keep things clean and organized.
+Make sure you have a dedicated PostgreSQL database created. You can surely use the one that is already part of your application ecosystem. Creating a brand new PostgreSQL database is preferable to keep things clean and organized.
 
 Start the PostgreSQL container with TimescaleDB.
 
@@ -220,7 +222,7 @@ Note, I replaced the symbol `#` with `%23` in the `fill` attribute.
 
 ## Grafana dashboard
 
-To import the dashboard, find the `Import` menu. The location might differ depending on your installed Grafana version, but that menu should always be somewhere.
+To import the dashboard, find the Import menu. The location might differ depending on your installed Grafana version, but that menu should always be somewhere.
 
 <Image
   title="Import dashboard file into Grafana."
