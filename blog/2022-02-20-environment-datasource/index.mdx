@@ -4,7 +4,7 @@ slug: using-environment-variables-for-configuration-provisioning-and-dashboards-
 tags: [Getting Started, Environment Data Source, Variables]
 image: /img/blog/2022-02-20-environment-datasource/banner.png
 keywords: [Variables, Grafana, Visualization]
-updated: 2023-02-09
+updated: 2023-02-14
 ---
 
 import Image from "@theme/Image";
@@ -16,7 +16,9 @@ The number of use cases operating Grafana as a platform to build modern applicat
 
 <!--truncate-->
 
-One example is the Environment Data Source, which we created for our customer, who uses Balena Cloud, the container-based platform for deploying Internet of Things (IoT) fleets of connected Linux devices. Each IoT device is independent of its own Grafana instance, and each device can be uniquely identified by environment variables exposed within the project.
+One example is the Environment Data Source, which we created for our customer, who uses balenaCloud, the container-based platform for deploying Internet of Things (IoT) fleets of connected Linux devices.
+
+In balenaCloud each IoT device is independent of its own Grafana instance, and each device can be uniquely identified by environment variables exposed within the project.
 
 Watch this video to learn more about the dashboard, global, and environment variables in Grafana.
 
@@ -31,7 +33,7 @@ Before looking at the Environment Data Source, let's examine how you can utilize
 
 Grafana has default and custom configuration files. You can customize your Grafana instance by modifying the configuration file or using environment variables.
 
-To override an option, use a predefined pattern `GF_<SectionName>_<KeyName>` to name exported variables:
+To override an option, use a predefined pattern `GF_<SectionName>_<KeyName>` to name exported variables.
 
 ```sh
 export GF_DEFAULT_INSTANCE_NAME=my-instance
@@ -39,7 +41,9 @@ export GF_SECURITY_ADMIN_USER=owner
 export GF_AUTH_GOOGLE_CLIENT_SECRET=newS3cretKey
 ```
 
-If you are using Docker and Docker Compose, then environment variables can be set in the command line or the `docker-compose.yml` file:
+### Docker
+
+If you are using Docker and Docker Compose, then environment variables can be set in the command line or the `docker-compose.yml` file.
 
 ```docker
 grafana:
@@ -59,9 +63,11 @@ You can find all available configuration options in the [Documentation](https://
 
 ## Provisioning
 
-It is possible to use environment variable interpolation in all three provisioning configuration types. The allowed syntax is either `$ENV_VAR_NAME` or `${ENV_VAR_NAME}` and can be used only for values. It is not available in the dashboard's definition files, just the dashboard provisioning configuration.
+It is possible to use environment variable interpolation in all three provisioning configuration types. The allowed syntax is either `$ENV_VAR_NAME` or `${ENV_VAR_NAME}` and can be used only for values.
 
-Example of using environment variables for data source provisioning:
+Dashboard's definition files does not support environment variables, just in the dashboard provisioning configuration.
+
+Example of using environment variables for data source provisioning.
 
 ```yaml
 datasources:
@@ -81,7 +87,9 @@ Surprisingly, we could not find a solution on how to display environment variabl
   src="/img/blog/2022-02-20-environment-datasource/dashboard.png"
 />
 
-In Settings, the data source has the Filter option to avoid exposing unnecessary or secured variables:
+### Configuration
+
+In Settings, the data source has the Filter option to avoid exposing unnecessary or secured variables.
 
 <Image
   title="The Data Source can filter out unnecessary or secured variables."
@@ -99,21 +107,21 @@ The Environment Data Source supports querying environment variables and returns 
   src="/img/blog/2022-02-20-environment-datasource/variables.png"
 />
 
-## Balena Cloud
+## balenaCloud
 
 Balena is a complete set of tools for building, deploying and managing fleets of connected Linux devices. As we mentioned, each IoT device in our project provides Grafana with a custom application plugin for end-users.
 
 Variables can be added to the device and assigned to a specific service or all services running on the device. You can use environment variables to store secrets and other sensitive values out of your codebase and configure them when needed.
 
 <Image
-  title="In Balena Cloud, variables can be added to the device or fleet-wide."
+  title="In balenaCloud, variables can be added to the device or fleet-wide."
   src="/img/blog/2022-02-20-environment-datasource/balena-cloud.png"
 />
 
-Employing the Environment Data Source, you can retrieve custom and generic environment variables exposed to the IoT device and display them on Grafana's Home page and improve other dashboards.
+Employing the Environment Data Source, you can retrieve custom and generic environment variables configured for the IoT device and display them on Grafana's Home page and improve other dashboards.
 
 <Image
-  title="Balena's environment variables are exposed to the IoT device and displayed in Grafana."
+  title="Balena's environment variables configured for the IoT device and displayed in Grafana."
   src="/img/blog/2022-02-20-environment-datasource/balena-variables.png"
 />
 
@@ -121,7 +129,7 @@ Employing the Environment Data Source, you can retrieve custom and generic envir
 
 Because of the security risk, the Environment data source can not be included in the Grafana Catalog.
 
-It can be installed manually from our Private Repository or downloaded directly from [GitHub](https://github.com/volkovlabs/volkovlabs-env-datasource):
+It can be installed manually from our Private Repository or downloaded directly from [GitHub](https://github.com/volkovlabs/volkovlabs-env-datasource).
 
 ```sh
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
