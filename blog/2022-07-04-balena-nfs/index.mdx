@@ -1,10 +1,10 @@
 ---
 authors: [mikhail]
 slug: balena-nfs-server-and-client-project-5d5de6dd47ca/
-tags: [Internet of Things]
+tags: [Balena Application]
 image: /img/blog/2022-07-04-balena-nfs/banner.png
 keywords: [Balena, NFS, IoT]
-updated: 2023-02-06
+updated: 2023-02-14
 ---
 
 import Image from "@theme/Image";
@@ -22,10 +22,10 @@ Let's set the stage, aka the problem.
 
 <Video
   src="https://www.youtube.com/embed/_kyNSLeAT84"
-  title="Share external storage between containers."
+  title="Share external storage between containers in balenaCloud."
 />
 
-The blog post described `Dockerfile` with the `Entrypoint` scripts we used to build containers for the NFS Server. We also explained how NFS clients indefinitely try to mount NFS exports to ensure that NFS storage is available before the application starts.
+The blog post described a docker file with the entry point scripts we used to build containers for the NFS Server. We also explained how NFS clients indefinitely try to mount NFS exports to ensure that NFS storage is available before the application starts.
 
 We encourage you to read the article before continuing.
 
@@ -39,12 +39,12 @@ Balena created a [balenaHub](https://hub.balena.io) a couple of years ago to mak
 
 <Video
   src="https://www.youtube.com/embed/1B2gyBSuvlE"
-  title="Getting started with balena - add your first device to balenaCloud."
+  title="Getting started with balena. Add your first device to balenaCloud."
 />
 
 balenaHub provides plenty of community fleets for you to add your device for testing and experimenting. Some fleets are not joinable and are called Projects. You can easily fork them and start exploring as other fleets.
 
-## NFS Project architecture
+## Architecture
 
 Balena NFS Server and client project consists of three containers and can be forked from the [balenaHub project's page](https://hub.balena.io/organizations/volkovlabs/projects/balena-nfs).
 
@@ -55,16 +55,23 @@ Balena NFS Server and client project consists of three containers and can be for
 
 First, the project includes an NFS Server built on top of the PostgreSQL Alpine image. It uses OpenRC (dependency-based init system) to manage NFS services, which is the recommended way to start NFS service for Alpine Linux.
 
-Second, it includes NFS Client build on top of the NGINX Alpine image with a custom Entrypoint script to mount NFS export and provide direct access to the files on the storage.
+Second, it includes NFS Client build on top of the NGINX Alpine image with a custom entry point script to mount NFS export and provide direct access to the files on the storage.
+
+## Environment variables
 
 The project supports various environment variables to specify storage labels and mount points that are defined in the `balena.yml` configuration file:
 
-- STORAGE_LABEL (`storage`) - External storage Id, if not found, `tmpfs` will be used instead.
-- STORAGE_MOUNT_POINT (`/mnt/nvme`) - Local Mount Point to mount storage.
-- POSTGRES_PASSWORD (`postgres`) - Password for the PostgreSQL.
-- PGDATA (`/mnt/nvme/postgresql/data`) - PostgreSQL path on the storage.
-- NFS_MOUNT_POINT (`/mnt/nvme`) - NFS mount point to mount NFS drive in the NGINX container.
-- NFS_HOST (`localhost`) - NFS host should be `localhost` for the local container in the NGINX container.
+| Environment Variable | Value                     | Description                                                      |
+| -------------------- | ------------------------- | ---------------------------------------------------------------- |
+| STORAGE_LABEL        | storage                   | External Storage ID, if not found `tmpfs` will be used instead.  |
+| STORAGE_MOUNT_POINT  | /mnt/nvme                 | Local mount point to mount Storage or `tmpfs`.                   |
+| POSTGRES_PASSWORD    | postgres                  | Password for the PostgreSQL database.                            |
+| PGDATA               | /mnt/nvme/postgresql/data | PostgreSQL path on the Storage or `tmpfs` mount point.           |
+| NFS_HOST             | localhost                 | NFS host, should be `localhost` for the local container.         |
+| NFS_HOST_MOUNT       | /                         | NFS exported mount. Set full path `/mnt/nvme` for NFS version 3. |
+| NFS_MOUNT_POINT      | /mnt/nvme                 | Mount point to mount NFS export.                                 |
+| NFS_SYNC_MODE        | async                     | Async or Sync mode.                                              |
+| NFS_VERSION          | nfs                       | Set `nfs4` to force use NFS version 4.                           |
 
 When you fork the project, you will have a chance to update all environment variables.
 
@@ -84,4 +91,6 @@ It's comparable to the functionality of the balenaCloud UI and can be extremely 
   src="/img/blog/2022-07-04-balena-nfs/dashboard.png"
 />
 
-You can access Grafana from the local network or public URL if it's enabled in the device configuration. You can learn more about the Balena Application plugin in the [Documentation](/plugins/volkovlabs-balena-app).
+You can access Grafana from the local network or public URL if it's enabled in the device configuration.
+
+Learn more about the Balena Application plugin in the [Documentation](/plugins/volkovlabs-balena-app).
