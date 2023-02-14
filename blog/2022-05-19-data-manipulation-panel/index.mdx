@@ -4,7 +4,7 @@ slug: data-manipulation-panel-plugin-for-grafana-97f9af2c67e0/
 tags: [Data Manipulation, API]
 image: /img/blog/2022-05-19-data-manipulation-panel/banner.png
 keywords: [Grafana, Data Manipulation, Forms]
-updated: 2023-02-05
+updated: 2023-02-14
 ---
 
 import Image from "@theme/Image";
@@ -16,7 +16,7 @@ Working on a commercial project, we created a Data Manipulation panel plugin tha
 
 <!--truncate-->
 
-The Data Manipulation panel has been requested by the community multiple times. We decided to open-source it and submit it for review to the Grafana team to include in [the Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/).
+The Data Manipulation panel has been requested by the community multiple times. We decided to open-source it and submit it for review to the Grafana team to include in the Grafana Catalog.
 
 The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
 
@@ -34,53 +34,65 @@ Panel options allow you to specify the URL for GET requests to receive initial v
   src="/img/blog/2022-05-19-data-manipulation-panel/form-api.png"
 />
 
-The plugin supports dashboard variables in the URL and header parameters. For example, `http://localhost:3001/${var}`, where `${var}` is a dashboard variable.
+The plugin supports dashboard variables in the URL and header parameters.
+
+For example, `http://localhost:3001/${var}`, where `${var}` is a dashboard variable.
 
 <Image
   title="Panel options allow specifying URL, header parameters, and Custom code."
   src="/img/blog/2022-05-19-data-manipulation-panel/panel.png"
 />
 
-You can add the custom Typescript code, which will be executed after the browser's various requests, e.g. `GET`, `POST`, `PUT`, and `PATCH`. For example, we added the browser's location reload in the provided screenshot after a successful `POST` request. Here is the part of the plugin that executes the custom code:
+## Javascript Code
 
-```javascript
-const f = new Function( 'options', 'response', 'elements',
-'locationService', 'templateService', replaceVariables(code));
-try {
-  f(options, response, options.elements, locationService, templateSrv);
-} catch (error: any) {
-  console.error(error);
-  setError(error.toString());
-}
-```
+You can add the custom Javascript code, which will be executed after the browser's various requests, e.g. `GET`, `POST`, `PUT`, and `PATCH`.
 
-The custom code has access to the Panel options, the response from the REST API call, form elements, and various Grafana services. You can use dashboard variables.
+For example, we added the browser's location reload in the provided screenshot after a successful `POST` request.
+
+The custom code has access to
+
+- Panel options.
+- Response from the REST API call.
+- Form elements.
+- Grafana services.
+- Variables are replaced automatically.
+
+Check out the [documentation](/plugins/volkovlabs-form-panel/code) for all parameters.
 
 ## Form Elements
 
-The Data Manipulation Form panel is actively improving and already supports:
+The Data Manipulation Form panel is actively improving and already supports this.
 
-- Date and Time - drop-down to set and adjust date and time.
-- Disabled Input - to display values that can't be changed.
-- Number Input - to enter numbers with minimum and maximum options.
-- Number Slider - Slider element with minimum, maximum, and step options.
-- Password Input - to enter sensitive information.
-- Radio Group with Boolean options - to select `True` or `False`.
-- Radio Group with Custom options - to provide your own options.
-- Select with Custom options - similar to Radio Group visualized as drop-down.
-- String Input - to enter any alphanumeric values.
-- Text Area - a multiline text area with an adjustable number of rows for comments and descriptions.
+| Element                          | Description                                                                          |
+| -------------------------------- | ------------------------------------------------------------------------------------ |
+| Date and Time                    | Drop-down to set and adjust date and time.                                           |
+| Disabled                         | Display values that can't be changed.                                                |
+| Number Input                     | Enter numbers with minimum and maximum options.                                      |
+| Number Slider                    | Slider element with minimum, maximum, and step options.                              |
+| Password Input                   | Enter sensitive information.                                                         |
+| Radio Group with Boolean options | Select `True` or `False`.                                                            |
+| Radio Group with Custom options  | Provide custom options.                                                              |
+| Select with Custom options       | Similar to Radio Group visualized as drop-down.                                      |
+| String Input                     | Enter any alphanumeric values.                                                       |
+| Text Area                        | Multiline text area with an adjustable number of rows for comments and descriptions. |
 
 <Image
   title="Form elements can be moved up and down and provide individual options."
   src="/img/blog/2022-05-19-data-manipulation-panel/elements.png"
 />
 
-We plan to include Code Editor, File, and Image Upload elements in upcoming versions. If you are interested in additional elements, please [open an issue in the repository](https://github.com/volkovlabs/volkovlabs-form-panel).
+We plan to include Code Editor, File, and Image Upload elements in upcoming versions.
+
+If you are interested in additional elements, please [open an issue in the repository](https://github.com/volkovlabs/volkovlabs-form-panel).
 
 ## Customization
 
-The form provides **Submit** and **Reset** buttons which can be customized to use theme-specific sizes, types, icons, and a flexible combination of background and foreground colors.
+The form provides Submit and Reset buttons which can be customized to use
+
+- Theme-specific sizes.
+- Types.
+- Icons.
+- Flexible combination of background and foreground colors.
 
 <Image
   title="Submit and Reset buttons can be customized to use theme-specific types and icons."
@@ -89,15 +101,13 @@ The form provides **Submit** and **Reset** buttons which can be customized to us
 
 Form options can be displayed in a single column or split into multiple columns, and each element can be assigned to a specific column. This feature will be available in an upcoming version. The current version allows splitting editable and disabled elements only.
 
-## Feedback submissions
+## Feedback dashboard
 
-Let's take a look at the example of using the Data Manipulation panel to submit comments, issues, and feature requests integrated into the Application plugin for Theia Scientific.
+Let's take a look at the example of using the Data Manipulation panel to submit comments, issues, and feature requests integrated into the Application plugin.
 
 <Image
-  title="Feedback Submissions dashboard for the Theia Application plugin."
+  title="Feedback dashboard with Data Manipulation panel and native Grafana visualizations."
   src="/img/blog/2022-05-19-data-manipulation-panel/feedback.png"
 />
 
-The Theia Application was designed to be deployed on edge computing devices in a network-constrained environment and was recently presented in a [Grafana blog post](https://grafana.com/blog/2022/04/29/how-theia-scientific-and-volkov-labs-use-grafana-and-ai-to-analyze-scientific-images/).
-
-For a seamless user experience, the feedback submissions form allows users to provide us with valuable feedback for the application. All submissions are stored in the database and sent out using various communication channels.
+For a seamless user experience, the feedback form allows users to provide us with valuable feedback for the application. All submissions are stored in the database and sent out using various communication channels.
