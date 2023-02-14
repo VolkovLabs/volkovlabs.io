@@ -1,10 +1,10 @@
 ---
 authors: [mikhail]
 slug: our-plugins-are-ready-for-grafana-9-2bc257db92eb/
-tags: [Release Notes]
+tags: [Release Notes, Volkov Labs]
 image: /img/blog/2022-06-20-grafana-9/banner.png
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
-updated: 2023-02-07
+updated: 2023-02-14
 ---
 
 import Image from "@theme/Image";
@@ -21,7 +21,7 @@ One of the topics I heard from the Grafana community it's the hesitation to use 
 - Community plugins are not updated constantly and stopped being maintained after a while.
 - It is better not to use them and stick to the plugins supported by the Grafana team.
 
-Volkov Labs [regularly updates](/plugins) our open-source, commercial plugins and templates based on the latest version of Grafana to stay up-to-date. With every significant Grafana release, we increase the major number in the plugin's version.
+Volkov Labs regularly updates our open-source, commercial plugins and templates based on the latest version of Grafana to stay up-to-date. With every significant Grafana release, we increase the major number in the plugin's version.
 
 Below I want to highlight the latest updates with tutorials on how to hit the ground running.
 
@@ -29,7 +29,7 @@ Below I want to highlight the latest updates with tutorials on how to hit the gr
 
 The Base64 Image/Video/Audio/PDF Panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats.
 
-The popular plugin was recently updated to support Video and Audio files in modern formats. You can learn more about this plugin through the newly revamped video on our YouTube channel:
+The popular plugin was recently updated to support Video and Audio files in modern formats. You can learn more about this plugin through the newly revamped video on our YouTube channel.
 
 <Video
   src="https://www.youtube.com/embed/1_bgLSehjhg"
@@ -40,14 +40,16 @@ The [Base64 panel version 3.0.0](/plugins/volkovlabs-image-panel/release) is upd
 
 ## RSS/Atom Data Source
 
-Created to display a Blog news feed on our demo server, the RSS/Atom data source became popular when Grafana removed proxy support in the News panel. The data source supports different RSS and Atom formats with logic to extract various fields making it the most straightforward plugin to visualize news and updates.
+Created to display a Blog news feed on our demo server, the RSS/Atom data source became popular when Grafana removed proxy support in the News panel.
+
+The data source supports different RSS and Atom formats with logic to extract various fields making it the most straightforward plugin to visualize news and updates.
 
 <Video
   src="https://www.youtube.com/embed/RAxqS2hpWkg"
   title="News feed tutorial for Grafana Dashboard."
 />
 
-The [RSS/Atom Data Source 2.0.0](/plugins/volkovlabs-rss-datasource/release) is updated in the Grafana Catalog and supports Grafana 8.5+. For older versions of Grafana, please use version 1.7.
+The [RSS/Atom Data Source 2.0.0](/plugins/volkovlabs-rss-datasource/release) is updated in the Grafana Catalog and supports Grafana 8.5+. For older versions of Grafana, please use version 1.7.0.
 
 ## Environment Data Source
 
@@ -58,17 +60,19 @@ The Environment data source is a plugin for Grafana that returns environment var
   title="Dashboard, Global and Environment variables."
 />
 
-Because of security reasons, the Environment Data Source can not be included in the Grafana Catalog. It can be installed manually from our private repository or downloaded directly from GitHub:
+Because of security reasons, the Environment Data Source can not be included in the Grafana Catalog.
+
+It can be installed manually from our private repository or downloaded directly from GitHub.
 
 ```sh
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
 ```
 
-The [Environment Data Source 2.0.0](/plugins/volkovlabs-env-datasource/release) supports Grafana 8.5+. For older versions of Grafana, please use version 1.2.
+The [Environment Data Source 2.0.0](/plugins/volkovlabs-env-datasource/release) supports Grafana 8.5+. For older versions of Grafana, please use version 1.2.0.
 
 ## Data Manipulation Panel
 
-The Data Manipulation Form Panel is a plugin for Grafana that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
+The Data Manipulation Panel is a plugin for Grafana that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
 
 <Video
   src="https://www.youtube.com/embed/DXALVG8GijM"
@@ -77,7 +81,7 @@ The Data Manipulation Form Panel is a plugin for Grafana that can be used to ins
 
 We understand the risk of data manipulation and take security concerns seriously. We recently published an [article exploring three secure ways](/blog/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904) to connect the Data Manipulation panel to the API Server.
 
-The Data Manipulation panel is under Grafana's review and not included in the Grafana Catalog. It can be installed manually from our Private Repository or downloaded directly from GitHub:
+The Data Manipulation panel is under Grafana team review and not included in the Grafana Catalog. It can be installed manually from our Private Repository or downloaded directly from GitHub.
 
 ```sh
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-form-panel
@@ -87,7 +91,7 @@ Please let us know if you have any questions or feature requests for this plugin
 
 ## Apache ECharts Panel
 
-Apache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender, which is a new lightweight canvas library.
+Apache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender.
 
 The ECharts panel is a plugin for Grafana that allows visualizing Apache ECharts on your Grafana dashboard.
 
@@ -103,7 +107,7 @@ The original plugin was developed for Grafana 6.3/7.0 and ECharts 4.9.0. It has 
   title="How to create modern dashboards in Grafana."
 />
 
-The Apache ECharts panel was recently submitted to the Grafana Catalog. Meanwhile, it can be installed manually from our private repository or downloaded directly from GitHub:
+The Apache ECharts panel was recently submitted to the Grafana Catalog. Meanwhile, it can be installed manually from our private repository or downloaded directly from GitHub.
 
 ```sh
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-echarts-panel
