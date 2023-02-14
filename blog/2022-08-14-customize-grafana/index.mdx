@@ -159,12 +159,27 @@ COPY img/background.svg /usr/share/grafana/public/img/g8_login_dark.svg
 COPY img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 ```
 
-## Main Organization
+## Grafana Server
 
-To update the name of the Main Organization, update the binary file `grafana-server`. It's compiled file and the new name should be exactly 9 letters to avoid memory overflow issues.
+### Main Organization
+
+To update the name of the Main Organization, update the binary file `grafana-server`. The new name should be exactly 9 letters to avoid memory issues.
 
 ```docker
 RUN sed -i 's|Main Org.|VolkovLab|g' /usr/share/grafana/bin/grafana-server
+```
+
+### Help menu
+
+Application name and version are hard-coded in the `grafana-server` and hard to replace in the Docker container. It can be replaced in JavaScript when rendering.
+
+```js
+RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
+    s|window.grafanaBootData = {| \
+    let nav = [[.NavTree]]; \
+    nav[nav.length -1]['subTitle'] = 'Custom name version'; \
+    window.grafanaBootData = {|g" \
+    /usr/share/grafana/public/views/index.html
 ```
 
 ## Javascript
