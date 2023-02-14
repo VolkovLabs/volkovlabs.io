@@ -173,7 +173,7 @@ RUN sed -i 's|Main Org.|VolkovLab|g' /usr/share/grafana/bin/grafana-server
 
 Application name and version are hard-coded in the `grafana-server` and hard to replace in the Docker container. It can be replaced in JavaScript when rendering.
 
-```js
+```docker
 RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     s|window.grafanaBootData = {| \
     let nav = [[.NavTree]]; \
