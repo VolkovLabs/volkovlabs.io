@@ -1,98 +1,105 @@
 ---
-authors: [mikhail]
+authors: [daria, mikhail]
 slug: documentation-updates-20230214/
 tags: [Volkov Labs]
 image: /img/volkovlabs.png
 keywords: [Documentation, Grafana, Analytics]
-draft: true
 ---
 
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Romance of our documentation and blog produced a story-telling analytical dashboard
+# Romance of our documentation and blog produced a story-telling analytics
 
-I am sure you can tell this post was written on February 14.
-Anyways. 
-
-When Volkov Labs initiated multiple online channels to share our Grafana experience, we could not even think our documentation would be in such grand demand.
-
-I personally never liked what documentation is in its classic flavor. And I am not alone. No one from the problem-solving gang wants to 'learn Grafana'; people who get things done need specific answers to particular questions.
-
-That's why in December, we realized it was time to shake up the standard approach to documentation. 
-
-Little did we know two months later, we got 25 successful requests per hour from 135X countries.
+When Volkov Labs initiated multiple online channels to share our Grafana experience, we could not even think our documentation and blog would be in such grand demand.
 
 <!--truncate-->
 
-All that time for face-lifting and organizing various READMEs, existing doc files, and blog posts paid off with worthwhile dividends. 
+I personally never liked what documentation is in its classic flavor. And I am not alone. No one from the problem-solving gang wants to "Learn Grafana". People who get things done need specific answers to particular questions.
 
-Now we have structured educational materials with meticulously tuned web analytics on top. We can move toward new projects while still having a firm grasp on the current web resources state, simuletiusly getting little hints on what to work on next. 
-
-## Blog
-
-A year ago, we started with the idea that having a technical blog describing personal experience and development thought processes could be a viable way of telling the world who we are. 
-
-At the time, my company did not have its own platform and, indeed, outsourcing was invented by good Gods.
-
-We chose Medium, an excellent platform for technological (mostly) blogging. It served us well until we studied Google Analytics and Search tools to realize that Medium competes with our flimsy (back then) documentation instead of helping. Moreover, the obligation to follow the stylistic requirements prevents us from having one recognizable visual appearance. 
-
-Medium is a great platform. We have been and will be using it as readers to educate ourselves and stay tuned to the ever-changing technological world. 
-
-However, business wit whispers to post all our materials in one place, volkovlabs.io, where we have complete control over all aspects from style to analytics and bla-bla.
-
-## Documentation
-
-Moving forward, we plan to combine documentation and blog posts and host them side-by-side. 
-They are two sides of one platform, ideally complementing each other.
-Documentation is a quick WHAT and HOWTO, while blog posts range from entry-level step-by-step tutorials to groundbreaking use cases, from release notes to big announcements and more other things. 
-
-Both our blog and documentation are living things. We improve them almost every day following requests and questions from the community. 
-
-<Image
-  title="Our fully remodeled blog, collecting helpful use cases, tutorials, new release notes, big announcements and more"
-  src="/img/blog/2023-02-14-documentation-updates/blog.png"
-/>
-
-## Analytics Dashboard
-
-This analytics dashboard is on our main office display. A quick glance tells us many things:
- - How many users are reading us right now, 
- - What countries they are from,
- - If there are any delays in our responses (are we still online and responsive), 
- - If anyone is trying to break in.
- - What is the topic that people are interested in the most? 
+That's why in December, we realized it was time to shake up the standard approach to documentation. Little did we know two months later, when we got visitors from 100+ countries.
 
 <Image
   title="Users' feedback has immense potential when collected and analyzed right."
   src="/img/blog/2023-02-14-documentation-updates/analytics.png"
 />
 
-In the following video, Daria guides you through the visual panels configuration. 
-Please be aware Daria's dashboard is a little different from the one we use in our production. 
-The video providing a step by step tutorial for the one you see on the picture is in the oven now and should be ready shortly.
+All that time for face-lifting and organizing various READMEs, existing doc files, issues, examples and blog posts paid off with worthwhile dividends. Now we have structured educational materials with meticulously tuned web analytics on top.
+
+We can move toward new projects while still having a firm grasp on the current web resources state, simultaneously getting little hints on what to work on next.
+
+## Blog
+
+A year ago, we started with the idea that having a technical blog describing personal experience and development thought processes could be a viable way of telling the world who we are.
+
+At the time, Volkov Labs did not have its platform and, indeed, outsourcing was invented by good Gods.
+
+We chose Medium, an excellent platform for mostly technological blogging. It served us well until we studied Google Analytics and Search tools to realize that Medium competes with our flimsy (back then) documentation instead of helping.
+
+Moreover, the obligation to follow the stylistic requirements prevents us from having one recognizable visual appearance.
+
+<Image
+  title="Our fully remodeled blog, collecting helpful use cases, tutorials, new release notes, big announcements and more."
+  src="/img/blog/2023-02-14-documentation-updates/blog.png"
+/>
+
+Medium is a great platform. We have been and will be using it as readers to educate ourselves and stay tuned to the ever-changing technological world.
+
+However, business wit whispers to post all our materials in one place, where we have complete control over all aspects from style to analytics.
+
+## Documentation
+
+Documentation and blog are two sides of one platform, ideally complementing each other.
+
+<Image
+  title="We collected answers to questions from the community in one place."
+  src="/img/blog/2023-02-14-documentation-updates/docs.png"
+/>
+
+Documentation is a quick WHAT and HOWTO, while blog posts range from entry-level step-by-step tutorials to groundbreaking use cases, from release notes to big announcements and other projects we are working on.
+
+Both our blog and documentation are living things. We improve them daily following requests and questions from the community.
+
+## Analytics Dashboard
+
+The [analytics dashboard](/blog/nginx-loki-grafana-20230129/) is on our main office display. A quick glance tells us many things.
+
+- How many users are reading us right now.
+- What countries they are from.
+- If there are any delays in our responses (are we still online and responsive).
+- If anyone is trying to break in.
+- What is the topic that people are interested in the most?
+
+<Image
+  title="We collected answers to questions from the community in one place."
+  src="/img/blog/2023-02-14-documentation-updates/tv.jpg"
+/>
+
+In the following video, Daria guides you through the visual panel configuration. Please be aware demonstrated dashboard is a little different from the one we use in our production.
 
 <Video
   src="https://www.youtube.com/embed/cgu3wMOo03w"
   title="Tutorial on how to create a website analytics dashboard in Grafana."
 />
 
+The video providing a step-by-step tutorial for the one you see in the picture is in the oven now and should be ready in the coming weeks.
+
 ## Search
 
-Search should not be painful! We implemented Algolia Search for our Blog and Documentation and couldn't be happier with the outcome.
+Search should not be painful and sometimes we got lost ourselves. We implemented Algolia Search for our Blog and Documentation and couldn't be happier with the outcome.
 
 <Image
   title="Searching for PostgreSQL across documentation and blog posts."
   src="/img/blog/2023-02-14-documentation-updates/search.png"
 />
 
-The Algolia Crawler helped us to fix multiple internal issues and was easy to configure with an intuitive UI.
+During installation, the Algolia Crawler helped us to fix multiple internal issues and was easy to configure with an intuitive UI. Algolia Search provides us with valuable information on what visitors are looking for and having a hard time finding.
 
 ## Summary
 
-Documentation is a skeleton, blog posts are the meat. The documentation is an outline, and blog posts are coloring. 
-They complement each other: when one gives direction, the other explains why. 
-We believe that both are equally important. That is why we improve them daily.
+Documentation is a skeleton, blog posts are the meat. The documentation is an outline, and blog posts are coloring. They complement each other.
+
+When one gives direction, the other explains why. We believe that both are equally important. That is why we improve them daily.
 
 The analytical dashboard is our web heart rate monitor that helps us to maneuver in the sea of questions and requests.
