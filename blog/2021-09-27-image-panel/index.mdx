@@ -5,13 +5,13 @@ description: Base64 Image/PDF panel plugin was recently upgraded and has everyth
 tags: [Base64 Image/Video/Audio/PDF]
 image: /img/blog/2021-09-27-image-panel/banner.png
 keywords: [Image, PDF, Base64, Visualization]
-updated: 2023-02-05
+updated: 2023-02-15
 ---
 
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Display Base64 encoded images from any data source on your Grafana dashboard
+# Display Base64 images from any data source
 
 Base64 Image/PDF panel plugin was recently upgraded in the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) and has everything you need to display images from any data source on your dashboards.
 
@@ -24,14 +24,14 @@ The initial version of the Base64 Image/PDF panel for Grafana was created for th
   src="/img/blog/2021-09-27-image-panel/bat-camera.png"
 />
 
+## Updates
+
 Since the original version, the Base64 panel was
 
 - Upgraded to support Grafana 8.
 - Downloaded more than 45,000 times.
 - Featured in the [Grafana Community Plugin Showcase (August 2021)](https://grafana.com/blog/2021/08/10/grafana-community-plugin-showcase-august-2021/).
 - Used for various projects like security camera monitoring.
-
-The video version of this article is available on our [YouTube channel](https://youtube.com/@volkovlabs).
 
 <Video
   src="https://www.youtube.com/embed/1_bgLSehjhg"
@@ -60,10 +60,12 @@ The values returned from the data source can be Base64 encoded with or without d
 If the definition is not provided, the file type is determined automatically based on the first Base64 symbol.
 
 <Image
-  title="Base64 Image/PDF panel displays an image using the Static data source with custom height and width parameters."
+  title="Base64 Image/PDF panel displays an image using the Static data source."
   src="/img/blog/2021-09-27-image-panel/panel.png"
 />
 
-If the data source returns more than one field with `string` type, you can select the Field Name in the panel's display options, and if the data source returns multiple rows, the panel will display the image from the last row.
+If the data source returns more than one field with `string` type, you can select the Field Name in the panel's display options. If the data source returns multiple rows, the panel will display the image from the last row.
 
 The height and width of the image can be auto-adjusted to the panel's size, kept original, or customized based on the field's value, or panel options.
+
+Take a look at [the repository](https://github.com/VolkovLabs/volkovlabs-image-panel) and let us know if you have any questions or future requests.
