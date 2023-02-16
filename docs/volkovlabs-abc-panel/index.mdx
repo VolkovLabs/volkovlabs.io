@@ -1,16 +1,23 @@
 ---
-description: The ABC Panel is a template to create a new panel plugin for Grafana.
 tags:
   - Development
 ---
 
-# Panel template
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Abc Panel template
+
+The Abc panel is a template we created to streamline our development process and gladly share it with the Grafana community.
 
 We created many Grafana panels to this moment. To make the creation process efficient, starting with a well-constructed template is always easier.
 
-The ABC panel is a template we created to streamline our development process and gladly share it with the Grafana community.
+<Image
+  title="The Abc panel uses Static Data Source to display value from the field."
+  src="/img/plugins/volkovlabs-abc-panel/dashboard.png"
+/>
 
-To generate a panel template: [https://github.com/VolkovLabs/volkovlabs-abc-panel/generate](https://github.com/VolkovLabs/volkovlabs-abc-panel/generate).
+Generate an application template with [https://github.com/VolkovLabs/volkovlabs-abc-panel/generate](https://github.com/VolkovLabs/volkovlabs-abc-panel/generate).
 
 ## Requirements
 
@@ -50,6 +57,7 @@ yarn run start
 - Provides unit test configuration.
 - Based on the latest version of Grafana.
 - Includes GitHub Actions for CI and Release.
+- Includes Static Data Source to emulate any data.
 
 ## Feedback
 
