@@ -1,5 +1,56 @@
 export const BlogPosts = [
   {
+    id: "development-templates-2.2.0-20230216/",
+    metadata: {
+      permalink: "/blog/development-templates-2.2.0-20230216/",
+      source: "@site/blog/2023-02-16-development-templates-2.2.0/index.mdx",
+      title: "Grafana Development Templates 2.2.0",
+      description:
+        "We released a new version of Grafana Development Templates (Panel, Data Source and Application) 2.2.0. This maintenance release",
+      date: "2023-02-16T00:00:00.000Z",
+      formattedDate: "February 16, 2023",
+      tags: [
+        {
+          label: "Development",
+          permalink: "/blog/tags/development",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: true,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Loves to work on innovative projects.",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "development-templates-2.2.0-20230216/",
+        tags: ["Development", "Release Notes"],
+        image: "/img/blog/2023-02-16-development-templates-2.2.0/banner.png",
+        keywords: [
+          "Panel",
+          "Data Source",
+          "Application",
+          "Grafana",
+          "Development",
+        ],
+      },
+      nextItem: {
+        title:
+          "Romance of documentation and blog produced a story-telling analytics",
+        permalink: "/blog/documentation-updates-20230214/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Grafana Development Templates (Panel, Data Source and Application) 2.2.0. This maintenance release\n\n- Updated to the latest Grafana toolkit 9.3.6.\n- Updated CI and Release workflows.\n- Updated README, and configuration.\n- Added screenshots and updated plugin JSON file.\n\n<!--truncate-->\n\n<Image\n  title="The Abc panel uses Static Data Source to display value from the field."\n  src="/img/blog/2023-02-16-development-templates-2.2.0/dashboard.png"\n/>\n\n## Grafana Plugin Tools\n\nGrafana recently released `@grafana/create-plugin@1.0.0`, which will eventually replace the plugin development parts of `@grafana/toolkit`. There is no timeline for when it happens.\n\nIt supposed to be\n\n- Easy to Use.\n- Focus on What Matters.\n- Provides Transparency.\n\nWe tried to create a new plugin and migrate the existing one. I don\'t see any reason to migrate from the toolkit yet considering\n\n- Project is not well maintained with legacy issues still open.\n- Project has separate [documentation](https://grafana.github.io/plugin-tools/) from the Grafana docs.\n- Released version is based on an older version of libraries when the toolkit is built on 9.3.6.\n\nUntil we have a clear direction, we will continue using the toolkit in our templates.\n\n## GitHub Actions\n\nIn our Continuous Integration (CI) and Release GitHub Actions we used `Is Compatible` and custom `plugin-validator` steps, which were removed.\n\nBoth of them we consider as works in progress and use on-demand when required.\n\n- `Is Compatible` GitHub Action is outdated based on Node 12 and set-output commands, which will stop working soon. The open issue to migrate has not been fixed since October.\n- Plugin Validator requires setup of Golang environment and we have not seen any valuable feedback from it using our templates.\n\n## Getting Started\n\nWe created many Grafana panels, data sources and applications to this moment. To make the creation process efficient, starting with a well-constructed template is always easier.\n\n- Application [https://github.com/VolkovLabs/volkovlabs-abc-panel/generate](https://github.com/VolkovLabs/volkovlabs-abc-panel/generate).\n- Data source [https://github.com/VolkovLabs/volkovlabs-abc-datasource/generate](https://github.com/VolkovLabs/volkovlabs-abc-datasource/generate).\n- Panel [https://github.com/VolkovLabs/volkovlabs-abc-panel/generate](https://github.com/VolkovLabs/volkovlabs-abc-panel/generate).\n\n## Requirements\n\n- **Grafana 8.5+, Grafana 9.0+** is required for version 2.X.\n- **Grafana 8.0+** is required for version 1.X.\n\n## Documentation\n\n- [Abc Application template](/plugins/volkovlabs-abc-app/)\n- [Abc Data Source template](/plugins/volkovlabs-abc-datasource/)\n- [Abc Panel template](/plugins/volkovlabs-abc-panel/)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "documentation-updates-20230214/",
     metadata: {
       permalink: "/blog/documentation-updates-20230214/",
@@ -38,6 +89,10 @@ export const BlogPosts = [
         tags: ["Volkov Labs"],
         image: "/img/blog/2023-02-14-documentation-updates/banner.png",
         keywords: ["Documentation", "Grafana", "Analytics"],
+      },
+      prevItem: {
+        title: "Grafana Development Templates 2.2.0",
+        permalink: "/blog/development-templates-2.2.0-20230216/",
       },
       nextItem: {
         title: "Website Analytics based on Nginx, Loki, Promtail, and Grafana",
