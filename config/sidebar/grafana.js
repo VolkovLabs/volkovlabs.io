@@ -4,12 +4,13 @@
 const grafana = {
   items: [
     "grafana/index",
-    "grafana/customize",
-    "grafana/allow-unsigned",
-    "grafana/variables",
     {
-      items: ["grafana/business", "grafana/iot"],
-      label: "Use Cases",
+      items: [
+        "grafana/allow-unsigned",
+        "grafana/customize",
+        "grafana/variables",
+      ],
+      label: "Features",
       type: "category",
     },
     {
@@ -18,29 +19,14 @@ const grafana = {
       type: "category",
     },
     {
-      items: [
-        {
-          type: "doc",
-          id: "volkovlabs-abc-app/index",
-          label: "Application",
-        },
-        {
-          type: "doc",
-          id: "volkovlabs-abc-datasource/index",
-          label: "Data Source",
-        },
-        {
-          type: "doc",
-          id: "volkovlabs-abc-panel/index",
-          label: "Panel",
-        },
-      ],
-      label: "Templates for Development",
+      items: ["grafana/business", "grafana/iot"],
+      label: "Use Cases",
       type: "category",
     },
   ],
   label: "Grafana",
   type: "category",
+  collapsible: false,
 };
 
 module.exports = grafana;

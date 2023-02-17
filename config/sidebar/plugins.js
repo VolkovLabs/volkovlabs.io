@@ -4,10 +4,6 @@
 const plugins = {
   items: [
     {
-      id: "intro",
-      type: "doc",
-    },
-    {
       items: [
         {
           type: "doc",

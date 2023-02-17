@@ -22,6 +22,27 @@ const projects = {
       type: "category",
     },
     {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-abc-app/index",
+          label: "Application",
+        },
+        {
+          type: "doc",
+          id: "volkovlabs-abc-datasource/index",
+          label: "Data Source",
+        },
+        {
+          type: "doc",
+          id: "volkovlabs-abc-panel/index",
+          label: "Panel",
+        },
+      ],
+      label: "Grafana Development Templates",
+      type: "category",
+    },
+    {
       type: "link",
       label: "ECharts Examples",
       href: "https://echarts.volkovlabs.io",
@@ -34,6 +55,7 @@ const projects = {
   ],
   label: "Projects",
   type: "category",
+  collapsible: false,
 };
 
 module.exports = projects;
