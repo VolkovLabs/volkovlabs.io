@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import React from 'react';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import ThemedImage from '@theme/ThemedImage';
-import { ProjectList } from '../constants';
-import styles from '../css/index.module.css';
-import { PluginItem } from '../types';
+import clsx from "clsx";
+import React from "react";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import ThemedImage from "@theme/ThemedImage";
+import { ProjectList } from "../constants";
+import styles from "../css/index.module.css";
+import { PluginItem } from "../types";
 
 /**
  * Project
@@ -20,7 +20,7 @@ export const Project = ({
   description,
 }: PluginItem) => {
   return (
-    <div className={clsx("col col--3", styles.featureItem)}>
+    <div className={clsx("col col--4", styles.featureItem)}>
       <a href={href} target={target}>
         <ThemedImage
           role="img"
