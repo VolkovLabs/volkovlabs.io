@@ -12,7 +12,7 @@ Helpers are functions that let you perform basic text transformations within you
 
 ## `{{contains}}`
 
-Checks if a given value exists within an array
+Checks if a given value exists within an array.
 
 ```handlebars
 <!-- array: ['a', 'b', 'c'] -->
@@ -76,7 +76,7 @@ Supported since Dynamic Text panel 2.2.0.
 
 :::
 
-Present object (JSON) or array as formatted string.
+Present object (JSON) or array as a formatted string.
 
 ```handlebars
 <!-- object or array -->
@@ -108,7 +108,7 @@ Supported since Dynamic Text panel 2.2.0.
 
 :::
 
-Split a string into array using a given separator.
+Split a string into an array using a given separator.
 
 ```handlebars
 <!-- string: 'a,b,c,d' -->
@@ -145,7 +145,7 @@ Returns a string array of the currently selected values for a certain [variable]
 <!-- result: ['server1', 'server2', 'server3']  -->
 ```
 
-Check if variable `my_var` contains value "1":
+Check if variable `my_var` contains value "1".
 
 ```handlebars
 {{#if (contains (variable "my_var") "1")}}
