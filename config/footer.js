@@ -62,16 +62,16 @@ const footer = {
           href: "/plugins/balena-nfs/",
         },
         {
+          label: "Grafana Dev Templates",
+          href: "/blog/development-templates-2.2.0-20230216/",
+        },
+        {
           label: "ECharts Examples",
           href: "https://echarts.volkovlabs.io",
         },
         {
           label: "Live Updates",
           href: "https://live.volkovlabs.io",
-        },
-        {
-          label: "Theiascope™",
-          href: "https://theiascientific.com/",
         },
       ],
     },

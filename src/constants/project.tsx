@@ -1,5 +1,5 @@
-import React from 'react';
-import { PluginItem } from '../types';
+import React from "react";
+import { PluginItem } from "../types";
 
 /**
  * Project List
@@ -32,12 +32,9 @@ export const ProjectList: PluginItem[] = [
       "https://img.shields.io/static/v1?label=Apache&message=ECharts&labelColor=ff5656&color=black&style=for-the-badge",
   },
   {
-    title: "Theiascope",
-    name: "theiascope",
-    description: <>Augment your scientific image analysis workflows.</>,
-    href: "https://theiascientific.com/",
-    target: "_blank",
-    badge:
-      "https://img.shields.io/badge/Collaboration-black?style=for-the-badge",
+    title: "Grafana Development Templates",
+    name: "template",
+    description: <>Start from well-constructed template.</>,
+    href: "/blog/development-templates-2.2.0-20230216/",
   },
 ];

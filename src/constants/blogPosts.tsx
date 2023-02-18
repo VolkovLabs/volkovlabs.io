@@ -66,6 +66,10 @@ export const BlogPosts = [
           label: "Volkov Labs",
           permalink: "/blog/tags/volkov-labs",
         },
+        {
+          label: "Analytics",
+          permalink: "/blog/tags/analytics",
+        },
       ],
       hasTruncateMarker: true,
       authors: [
@@ -86,7 +90,7 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["daria", "mikhail"],
         slug: "documentation-updates-20230214/",
-        tags: ["Volkov Labs"],
+        tags: ["Volkov Labs", "Analytics"],
         image: "/img/blog/2023-02-14-documentation-updates/banner.png",
         keywords: ["Documentation", "Grafana", "Analytics"],
       },
