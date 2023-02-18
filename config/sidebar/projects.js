@@ -43,6 +43,18 @@ const projects = {
       type: "category",
     },
     {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-app/index",
+          label: "Introduction",
+        },
+        "volkovlabs-app/release",
+      ],
+      label: "Volkov Labs Application",
+      type: "category",
+    },
+    {
       type: "link",
       label: "ECharts Examples",
       href: "https://echarts.volkovlabs.io",

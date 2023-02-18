@@ -48,10 +48,6 @@ const footer = {
           label: "Static Data Source",
           to: "/plugins/volkovlabs-static-datasource/",
         },
-        {
-          label: "Volkov Labs Application",
-          href: "/plugins/volkovlabs-app/",
-        },
       ],
     },
     {
@@ -64,6 +60,10 @@ const footer = {
         {
           label: "Grafana Dev Templates",
           href: "/blog/development-templates-2.2.0-20230216/",
+        },
+        {
+          label: "Volkov Labs Application",
+          href: "/plugins/volkovlabs-app/",
         },
         {
           label: "ECharts Examples",

@@ -169,18 +169,6 @@ const plugins = {
       label: "Static Data Source",
       type: "category",
     },
-    {
-      items: [
-        {
-          type: "doc",
-          id: "volkovlabs-app/index",
-          label: "Introduction",
-        },
-        "volkovlabs-app/release",
-      ],
-      label: "Volkov Labs Application",
-      type: "category",
-    },
   ],
   label: "Grafana Plugins",
   type: "category",
