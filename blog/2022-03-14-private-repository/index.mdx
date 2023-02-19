@@ -49,7 +49,7 @@ You can learn more about all those options in the [Documentation](https://grafan
 
 ### Update from URL
 
-Installing a plugin by overriding the location of the plugin's archive is the most effortless way, which requires copying the plugin's archive to the HTTP(S) server reachable from the Grafana instance and repeating the same step to upgrade in the future:
+Installing a plugin by overriding the location of the plugin's archive is the most effortless way, which requires copying the plugin's archive to the HTTP(S) server reachable from the Grafana instance and repeating the same step to upgrade in the future.
 
 ```sh
 grafana-cli --insecure --pluginUrl https://company.com/plugins/<plugin-id>-<plugin-version>.zip plugins install <plugin-id>
@@ -67,7 +67,7 @@ grafana-cli --repo "https://example.com/plugins" plugins install <plugin-id>
 
 ## Private Repository
 
-Looking around, we couldn't find any information on creating a Private repository and decided to share this information with the community.
+Looking around, we couldn't find any information on creating a Private repository so decided to share this information with the community.
 
 Grafana CLI looks for the `/plugins/repo` subfolder when setting a repository location. If plugins are found, it will display their names with the latest versions.
 
