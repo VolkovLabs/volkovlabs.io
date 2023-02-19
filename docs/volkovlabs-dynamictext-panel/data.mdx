@@ -16,6 +16,33 @@ You can choose how the retrieved data is passed into the Dynamic Text Panel.
 
 To work with the query results as a whole, you can use [#each builtin helper](https://handlebarsjs.com/guide/builtin-helpers.html#each) to iterate over the records.
 
+## Every row
+
+If your data source returns the following four columns of data.
+
+```md
+| app  | description                  | cluster | tier     |
+| ---- | ---------------------------- | ------- | -------- |
+| auth | Handles user authentication. | prod    | frontend |
+```
+
+Display it using the following template for each row.
+
+```md
+# {{app}}
+
+> {{description}}
+
+{{#if (eq tier "frontend")}}
+Link: <a href="https://{{cluster}}.example.com/{{app}}">https://{{cluster}}.example.com/{{app}}</a>
+{{/if}}
+```
+
+<Image
+  title="Display application data using Handlebars, Markdown and HTML."
+  src="/img/plugins/volkovlabs-dynamictext-panel/application.png"
+/>
+
 ## Render a single template (All rows)
 
 For the following query result.
@@ -25,7 +52,7 @@ For the following query result.
 | Dune  | Frank Herbert | 1965 |
 | 1984  | George Orwell | 1949 |
 
-Given that the **All Rows** switch is turned on, the following template renders a table from the query result.
+Given that All Rows is selected, the following template renders a table from the query result.
 
 ```
 | Title | Author | Year |

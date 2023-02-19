@@ -31,7 +31,7 @@ Supported since Dynamic Text panel 2.2.0.
 | `getLocale()` | Returns user's locale: 'en', 'fr', 'es', etc.                                                                            |
 | `handlebars`  | Handlebars library.                                                                                                      |
 
-## Define Custom Handlebars helper
+## Custom Handlebars helper
 
 A custom handlebars helper can be added to replace the field's value using a pattern.
 
@@ -39,7 +39,7 @@ A custom handlebars helper can be added to replace the field's value using a pat
 {{replace Test "Pattern" "Replaced"}}
 ```
 
-JavaScript Code:
+JavaScript Code to register `replace` helper.
 
 ```js
 handlebars.registerHelper("replace", (context, pattern, replacement) =>
@@ -52,7 +52,7 @@ handlebars.registerHelper("replace", (context, pattern, replacement) =>
   src="/img/plugins/volkovlabs-dynamictext-panel/replace.png"
 />
 
-## Add Event Handler
+## Event Handler
 
 A custom event handler can be added to react to a button click.
 
@@ -60,7 +60,7 @@ A custom event handler can be added to react to a button click.
 <button onclick="myFunc()">{{test}}</button>
 ```
 
-JavaScript Code:
+JavaScript Code.
 
 ```js
 myFunc = () => {
@@ -68,23 +68,25 @@ myFunc = () => {
 };
 ```
 
-## Add Internationalization
+## Internationalization
 
-Grafana 9 supports Internationalization, which is not fully provided to plugins yet. Meanwhile, we can use `getLocale()` method to get a value for the selected locale and show phrases from a defined dictionary.
+Grafana 9 supports Internationalization, which is not fully provided to plugins yet.
 
-Content:
+Meanwhile, we can use `getLocale()` method to get a value for the selected locale and show phrases from a defined dictionary.
+
+Content.
 
 ```handlebars
 {{translate "Hello"}}
 ```
 
-Default Content:
+Default Content.
 
 ```handlebars
 {{translate "Default"}}
 ```
 
-JavaScript Code:
+JavaScript Code.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/translate.js"

@@ -37,6 +37,7 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - Uses Monaco Code Editor with Auto formatting to update Templates, JavaScript Code and Styles.
 - Supports [Markdown](https://commonmark.org/help/) and [Handlebars](https://handlebarsjs.com/guide/expressions.html#basic-usage).
 - Uses [markdown-it](https://github.com/markdown-it/markdown-it) for rendering Markdown to HTML.
+  - Supports Code syntax highlight using a11y styles.
 - Sanitizing
   - HTML inside templates is sanitized using [XSS](https://jsxss.com/en/index.html).
   - Can be disabled using Grafana configuration `disable_sanitize_html`.
@@ -56,6 +57,7 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 | Section                  | Description                                                    |
 | ------------------------ | -------------------------------------------------------------- |
 | [Content](content)       | Explains how to create a visualization template for your data. |
+| [Recipes](recipes)       | Useful snippets that you can use in your templates.            |
 | [Release Notes](release) | Stay up to date with the latest features and updates.          |
 
 ### Features
@@ -64,8 +66,9 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 | ----------------------- | ------------------------------------------------------------------------------------------ |
 | [Data](data)            | Demonstrates how to use the Every Row and All Rows options.                                |
 | [JavaScript Code](code) | Demonstrates how to add Handlebars helpers and Event handlers.                             |
+| [Styles](styles)        | Demonstrates how to add CSS styles.                                                        |
 | [Helpers](helpers)      | Helpers are functions that let you perform basic text transformation within your template. |
-| [Recipes](recipes)      | Useful snippets that you can use in your templates.                                        |
+| [Variables](variables)  | Demonstrates how to use variables.                                                         |
 
 ## Feedback
 
