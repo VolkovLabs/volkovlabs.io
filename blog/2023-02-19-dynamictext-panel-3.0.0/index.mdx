@@ -33,20 +33,30 @@ If you changed the value of Default Content or already using the JavaScript Code
   src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/select.png"
 />
 
-In most cases, you won't need to update the Default Content or use JavaScript Code and Styles. We love the minimalistic design with only the Content editor displayed and I hope you will love it.
+In many cases, you don't need to update the Default Content or use JavaScript Code and Styles. We love the minimalistic design with only the Content editor displayed and I hope you will too.
 
 ## Styles editor
 
-You can add custom styles or override the defaults using the dedicated code editor with CSS syntax highlight.
+You can add custom styles or override the default using the dedicated code editor with CSS syntax highlight.
 
 <Image
   title="Add custom styles for table cells and bold text."
   src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/styles.png"
 />
 
+<details>
+  <summary>Default styles</summary>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/blob/main/src/styles.ts"
+  language="js"
+/>
+
+</details>
+
 ## Code Syntax Highlight
 
-The code syntax highlighting is based on the `highlight.js` library, which supports major languages.
+The code syntax highlight is based on the `highlight.js` library, which supports major languages.
 
 <Image
   title="Random Walk data displayed with highlight and no margins or paddings."
@@ -105,7 +115,7 @@ To display required editors, including the new Styles, they should be selected i
 - Update CI and Release workflows (#147)
 - Update README to include JavaScript tutorial (#148)
 - Add custom styles (#149)
-- Add option to display required editors (#149)
+- Add option to display optional editors (#149)
 - Remove Panel Padding (#150)
 - Add Code Syntax Highlight (#151)
 
