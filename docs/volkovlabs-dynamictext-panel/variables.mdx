@@ -1,0 +1,59 @@
+---
+tags:
+  - Dynamic Text
+  - Variables
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variables
+
+The Dynamic Text panel provides helpers to support variables.
+
+To learn about three types of variables take a look at [Variables](/plugins/grafana/variables).
+
+## Helper `{{variable}}`
+
+Returns a string array of the currently selected values for a certain [variable](https://grafana.com/docs/grafana/latest/dashboards/variables/).
+
+```handlebars
+{{variable "hostname"}}
+
+<!-- result: ['server1', 'server2', 'server3']  -->
+```
+
+## Check if a user is an admin
+
+To access nested variables, use curly brackets.
+
+```handlebars
+{{#if (contains (variable "{__user.login}") "admin")}}
+  User is an admin
+{{else}}
+  User is not an admin
+{{/if}}
+```
+
+## Markdown list from variable
+
+Create a list from the multi select variable.
+
+```
+{{#each (variable "hostname")}}
+  - {{this}}
+{{/each}}
+```
+
+## Dynamic templates using dashboard variables
+
+Use the `lookup` helper function to create dynamic templates based on dashboard variables.
+
+The following template creates a key-value pair from every selected value in the `props` dashboard variable.
+
+```
+book:
+{{#each (variable "props")}}
+  {{this}}: {{lookup @root this}}
+{{/each}}
+```
