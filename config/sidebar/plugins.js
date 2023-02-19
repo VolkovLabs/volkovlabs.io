@@ -102,12 +102,14 @@ const plugins = {
           label: "Introduction",
         },
         "volkovlabs-dynamictext-panel/content",
+        "volkovlabs-dynamictext-panel/recipes",
         {
           items: [
             "volkovlabs-dynamictext-panel/data",
             "volkovlabs-dynamictext-panel/code",
             "volkovlabs-dynamictext-panel/helpers",
-            "volkovlabs-dynamictext-panel/recipes",
+            "volkovlabs-dynamictext-panel/styles",
+            "volkovlabs-dynamictext-panel/variables",
           ],
           label: "Features",
           type: "category",

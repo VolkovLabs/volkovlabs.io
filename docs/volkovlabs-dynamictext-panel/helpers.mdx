@@ -76,15 +76,17 @@ Supported since Dynamic Text panel 2.2.0.
 
 :::
 
-Present object (JSON) or array as a formatted string.
+Present object (JSON) or array as a formatted string. Markdown supports syntax highlight.
 
-```handlebars
+````handlebars
 <!-- object or array -->
 
+```json
 {{json obj}}
+```
 
 <!-- result: as string  -->
-```
+````
 
 <Image
   title="Visualize formatted JSON object."
@@ -93,7 +95,7 @@ Present object (JSON) or array as a formatted string.
 
 ### Transformation
 
-JSON helper expects an object or array to display it as formatted string. If the data source returns string it should be transformed to JSON object using Transformation `Convert field type`.
+JSON helper expects an object or array to display it as a formatted string. If the data source returns a string it should be transformed to a JSON object using Transformation `Convert field type`.
 
 <Image
   title="Transform JSON string to object."
@@ -133,24 +135,4 @@ Formats the given number using fixed-point notation.
 {{toFixed Value 2}}
 
 <!-- result: '1.12' -->
-```
-
-## `{{variable}}`
-
-Returns a string array of the currently selected values for a certain [variable](https://grafana.com/docs/grafana/latest/dashboards/variables/).
-
-```handlebars
-{{variable "hostname"}}
-
-<!-- result: ['server1', 'server2', 'server3']  -->
-```
-
-Check if variable `my_var` contains value "1".
-
-```handlebars
-{{#if (contains (variable "my_var") "1")}}
-  Variable contains 1
-{{else}}
-  Variable does not contain 1
-{{/if}}
 ```

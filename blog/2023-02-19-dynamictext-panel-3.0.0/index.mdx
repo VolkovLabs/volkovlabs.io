@@ -1,0 +1,150 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-3.0.0-20230219/
+tags: [Dynamic Text, Release Notes]
+image: /img/blog/2023-02-19-dynamictext-panel-3.0.0/banner.png
+keywords: [Dynamic Text, Panel, Data, Code, Highlight, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Dynamic Text Panel 3.0.0
+
+We released a new version of Dynamic Text Panel 3.0.0. This major release
+
+- Added Styles editor.
+- Added Code Syntax Highlight.
+- Allows selecting optional editors to display, which are hidden by default. Editors with updated values are always displayed.
+- Removed panel padding. Padding can be added using the Styles editor.
+- Updated to the latest Grafana 9.3.6 toolkit and workflows.
+
+<!--truncate-->
+
+## Select Editor to display
+
+To simplify panel options we decided to hide Default Content, JavaScript Code and Styles editors by default.
+
+If you changed the value of Default Content or already using the JavaScript Code, then editors will be displayed even if not selected.
+
+<Image
+  title="Select optional editors for Default Content and JavaScript Code to display."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/select.png"
+/>
+
+In many cases, you don't need to update the Default Content or use JavaScript Code and Styles. We love the minimalistic design with only the Content editor displayed and I hope you will too.
+
+## Styles editor
+
+You can add custom styles or override the default using the dedicated code editor with CSS syntax highlight.
+
+<Image
+  title="Add custom styles for table cells and bold text."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/styles.png"
+/>
+
+<details>
+  <summary>Default styles</summary>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/blob/main/src/styles.ts"
+  language="js"
+/>
+
+</details>
+
+### Padding and margins
+
+To display content without padding and margins override the parent CSS style.
+
+```css
+& {
+  padding: 0;
+  margin: 0;
+}
+```
+
+## Code Syntax Highlight
+
+The code syntax highlight is based on the `highlight.js` library, which supports major languages.
+
+<Image
+  title="Random Walk data displayed with highlight and no margins or paddings."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/highlight.png"
+/>
+
+### Styling
+
+We included the Accessibility (a11y) syntax highlight style for light and dark themes. You can override it in the Styles editor by copying one of the styles from the [project source files](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
+
+<details>
+  <summary>a11y Light</summary>
+
+<Code
+  url="https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-light.css"
+  language="css"
+/>
+
+</details>
+
+<details>
+  <summary>a11y Dark</summary>
+
+<Code
+  url="https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css"
+  language="css"
+/>
+
+</details>
+
+## Getting Started
+
+The Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML and Handlebars to transform data visualizations."
+/>
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in the Dynamic text panel."
+/>
+
+## Release Notes
+
+### Breaking changes
+
+The default Content and JavaScript editors are not displayed by default unless values were modified.
+To display required editors, including the new Styles, they should be selected in the list.
+
+### Features / Enhancements
+
+- Update README features with new JavaScript Code Editor (#141)
+- Update to Grafana 9.3.6 (#147)
+- Update CI and Release workflows (#147)
+- Update README to include JavaScript tutorial (#148)
+- Add custom styles (#149)
+- Add option to display optional editors (#149)
+- Remove Panel Padding (#150)
+- Add Code Syntax Highlight (#151)
+- Add Breaking Changes for displaying optional editors (#152)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
