@@ -19,7 +19,7 @@ The Dynamic Text visualization panel lets you define a text template using the d
 
 ## Requirements
 
-- **Grafana 8.5+**, **Grafana 9.0+** is required for major version 2 and 3.
+- **Grafana 8.5+**, **Grafana 9.0+** is required for major versions 2 and 3.
 - **Grafana 7.0+** is required for major version 1.
 
 ## Getting Started
@@ -34,7 +34,7 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 
 ## Features
 
-- Uses Monaco Code Editor with Auto formatting to update Templates and JavaScript Code Editor.
+- Uses Monaco Code Editor with Auto formatting to update Templates, JavaScript Code and Styles.
 - Supports [Markdown](https://commonmark.org/help/) and [Handlebars](https://handlebarsjs.com/guide/expressions.html#basic-usage).
 - Uses [markdown-it](https://github.com/markdown-it/markdown-it) for rendering Markdown to HTML.
 - Sanitizing
@@ -43,6 +43,7 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 - Allows to display nested objects using `{{json object}}` Handlebars helper.
 - Allows displaying Time global variables (`__to` and `__from`) as seconds, ISO, and formatted using `dayjs`.
 - Allows adding Handlebars helpers and Event handlers.
+- Allows adding CSS styles.
 - Supports Internationalization using custom helpers.
 
 <Image
