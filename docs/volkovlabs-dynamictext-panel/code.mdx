@@ -39,7 +39,7 @@ A custom handlebars helper can be added to replace the field's value using a pat
 {{replace Test "Pattern" "Replaced"}}
 ```
 
-JavaScript Code to register `replace` helper.
+### JavaScript Code
 
 ```js
 handlebars.registerHelper("replace", (context, pattern, replacement) =>
@@ -60,7 +60,7 @@ A custom event handler can be added to react to a button click.
 <button onclick="myFunc()">{{test}}</button>
 ```
 
-JavaScript Code.
+### JavaScript Code
 
 ```js
 myFunc = () => {
@@ -74,19 +74,19 @@ Grafana 9 supports Internationalization, which is not fully provided to plugins 
 
 Meanwhile, we can use `getLocale()` method to get a value for the selected locale and show phrases from a defined dictionary.
 
-Content.
+### Content
 
 ```handlebars
 {{translate "Hello"}}
 ```
 
-Default Content.
+### Default Content
 
 ```handlebars
 {{translate "Default"}}
 ```
 
-JavaScript Code.
+### JavaScript Code
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/translate.js"
