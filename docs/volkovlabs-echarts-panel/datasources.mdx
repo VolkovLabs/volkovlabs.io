@@ -1,5 +1,4 @@
 ---
-hide_table_of_contents: true
 tags:
   - Apache ECharts
   - Data Source
@@ -32,6 +31,8 @@ data.series.map((s) => {
 - `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries the `logo`, `connections`, and `nodes`.
 - `name` is the data frame column name. The code above references the `body`, `source`, `target`, `title`, and `description` columns.
 
+## Tutorial
+
 <Video
   src="https://www.youtube.com/embed/K5YNMSIm9AM"
   title="How to use Data Source in Apache ECharts in 90 seconds."
@@ -55,16 +56,38 @@ const series = data.series.map((s) => {
 })[0];
 ```
 
-## Display Pie Chart using Static Data Source
+## Pie Chart
+
+We are using the [Static Data Source](/plugins/volkovlabs-static-datasource) for this example.
 
 <Image
   title="Visualize Pie Chart using Data Source."
   src="/img/plugins/volkovlabs-echarts-panel/pie-chart.png"
 />
 
-Visualization panel's function.
+### Example
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/pie.js"
+  language="js"
+/>
+
+## Wind Speed
+
+Wind speed visualization is one of many exciting examples of what the Apache ECharts library can do.
+
+- Every data element is displayed using the custom arrow.
+- The arrow color signifies the speed.
+- The direction where the arrow points - shows the wind direction.
+
+<Image
+  title="Visualizing Wind Speed using custom Arrows on the Grafana dashboard."
+  src="/img/plugins/volkovlabs-echarts-panel/wind-speed.png"
+/>
+
+### Example
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/wind.js"
   language="js"
 />
