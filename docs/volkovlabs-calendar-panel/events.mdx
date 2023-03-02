@@ -14,14 +14,14 @@ The Calendar visualization panel allows displaying events from any data source.
 
 To visualize data select fields in the panel's options.
 
-| Field       | Description                                         |
-| ----------- | --------------------------------------------------- |
-| Text        | Event text. Defaults to the first text field.       |
-| Description | Event description.                                  |
-| Start time  | Event start time. Defaults to the first-time field. |
-| End time    | Event end time.                                     |
-| Labels      | Event labels.                                       |
-| Color       | Event color.                                        |
+| Field       | Required | Description                                         |
+| ----------- | -------- | --------------------------------------------------- |
+| Text        | Yes      | Event text. Defaults to the first text field.       |
+| Start time  | Yes      | Event start time. Defaults to the first-time field. |
+| Description | No       | Event description.                                  |
+| End time    | No       | Event end time.                                     |
+| Labels      | No       | Event labels.                                       |
+| Color       | No       | Event color.                                        |
 
 <Image
   title="Updated plugins in the Grafana Catalog in the last 30 days."
@@ -30,9 +30,9 @@ To visualize data select fields in the panel's options.
 
 ## Duration
 
-- If the event has only the Start time configured, events are considered instantaneous.
-- If the event has Start and End time, events are considered to have a duration.
-- Any events that are missing an End time are considered ongoing.
+- If the event has only the Start time field configured, events are considered instantaneous.
+- If the event has Start and End time fields configured, events are considered to have a duration.
+- Any events that have an End time field configured and equal NULL are considered ongoing.
 
 <Image
   title="Events with different start and end times set using Static Data Source."

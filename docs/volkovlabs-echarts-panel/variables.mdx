@@ -1,5 +1,4 @@
 ---
-hide_table_of_contents: true
 tags:
   - Apache ECharts
   - Variables
@@ -20,7 +19,7 @@ const email = replaceVariables("${__user.email}");
 
 To learn about three types of variables take a look at [Variables](/plugins/grafana/variables).
 
-## Replace Dashboard Variables
+## Replace Variables
 
 In the following example, we replaced the series's name with a value from the variable.
 
@@ -29,14 +28,14 @@ In the following example, we replaced the series's name with a value from the va
   src="/img/plugins/volkovlabs-echarts-panel/variables.png"
 />
 
-Visualization panel's function.
+### Example
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/replace.js"
   language="js"
 />
 
-## Update Dashboard Variables
+## Update Variables
 
 Dashboard variables can be updated in the [Event Handlers](/plugins/volkovlabs-echarts-panel/events), where
 
