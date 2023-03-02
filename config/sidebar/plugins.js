@@ -51,25 +51,6 @@ const plugins = {
       items: [
         {
           type: "doc",
-          id: "volkovlabs-balena-app/index",
-          label: "Introduction",
-        },
-        "volkovlabs-balena-app/balenaCloud",
-        {
-          type: "link",
-          label: "balenaHub",
-          href: "https://hub.balena.io/organizations/volkovlabs/apps/balena-app",
-        },
-        "volkovlabs-balena-app/provisioning",
-        "volkovlabs-balena-app/release",
-      ],
-      label: "Balena Application",
-      type: "category",
-    },
-    {
-      items: [
-        {
-          type: "doc",
           id: "volkovlabs-image-panel/index",
           label: "Introduction",
         },
@@ -160,7 +141,7 @@ const plugins = {
         "volkovlabs-grapi-datasource/provisioning",
         "volkovlabs-grapi-datasource/release",
       ],
-      label: "Grafana HTTP API Data Source",
+      label: "Grafana API Data Source",
       type: "category",
     },
     {

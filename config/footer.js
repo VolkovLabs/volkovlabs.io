@@ -17,10 +17,6 @@ const footer = {
           to: "/plugins/volkovlabs-echarts-panel/",
         },
         {
-          label: "Balena Application",
-          to: "/plugins/volkovlabs-balena-app/",
-        },
-        {
           label: "Base64 Image/PDF Panel",
           to: "/plugins/volkovlabs-image-panel/",
         },
@@ -41,6 +37,10 @@ const footer = {
           to: "/plugins/volkovlabs-env-datasource/",
         },
         {
+          label: "Grafana API Data Source",
+          to: "/plugins/volkovlabs-grapi-datasource/",
+        },
+        {
           label: "RSS/Atom Data Source",
           to: "/plugins/volkovlabs-rss-datasource/",
         },
@@ -53,6 +53,10 @@ const footer = {
     {
       title: "Projects",
       items: [
+        {
+          label: "Balena Application",
+          to: "/plugins/volkovlabs-balena-app/",
+        },
         {
           label: "Balena NFS",
           href: "/plugins/balena-nfs/",
