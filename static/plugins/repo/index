@@ -11,6 +11,16 @@
       ]
     },
     {
+      "id": "volkovlabs-grapi-datasource",
+      "type": "datasource",
+      "url": "https://github.com/VolkovLabs/volkovlabs-grapi-datasource",
+      "versions": [
+        {
+          "version": "1.0.0"
+        }
+      ]
+    },
+    {
       "id": "volkovlabs-rss-datasource",
       "type": "datasource",
       "url": "https://github.com/VolkovLabs/volkovlabs-rss-datasource",
