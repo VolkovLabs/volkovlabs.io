@@ -154,6 +154,19 @@ const plugins = {
       items: [
         {
           type: "doc",
+          id: "volkovlabs-grapi-datasource/index",
+          label: "Introduction",
+        },
+        "volkovlabs-grapi-datasource/provisioning",
+        "volkovlabs-grapi-datasource/release",
+      ],
+      label: "Grafana HTTP API Data Source",
+      type: "category",
+    },
+    {
+      items: [
+        {
+          type: "doc",
           id: "volkovlabs-rss-datasource/index",
           label: "Introduction",
         },
