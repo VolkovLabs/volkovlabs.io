@@ -7,6 +7,25 @@ const projects = {
       items: [
         {
           type: "doc",
+          id: "volkovlabs-balena-app/index",
+          label: "Introduction",
+        },
+        "volkovlabs-balena-app/balenaCloud",
+        {
+          type: "link",
+          label: "balenaHub",
+          href: "https://hub.balena.io/organizations/volkovlabs/apps/balena-app",
+        },
+        "volkovlabs-balena-app/provisioning",
+        "volkovlabs-balena-app/release",
+      ],
+      label: "Balena Application",
+      type: "category",
+    },
+    {
+      items: [
+        {
+          type: "doc",
           id: "balena-nfs/index",
           label: "Introduction",
         },
@@ -39,7 +58,7 @@ const projects = {
           label: "Panel",
         },
       ],
-      label: "Grafana Development Templates",
+      label: "Grafana Dev Templates",
       type: "category",
     },
     {

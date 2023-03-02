@@ -14,18 +14,6 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-echarts-panel/",
   },
   {
-    title: "Balena Application",
-    name: "volkovlabs-balena-app",
-    description: (
-      <>
-        Display device information and manage services using Balena Supervisor
-        API.
-      </>
-    ),
-    href: "/plugins/volkovlabs-balena-app/",
-    badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
-  },
-  {
     title: "Base64 Image/Video/Audio/PDF Panel",
     name: "volkovlabs-image-panel",
     description: (
