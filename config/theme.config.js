@@ -28,7 +28,7 @@ const themeConfig = {
   metadata: [
     {
       name: "keywords",
-      content: "grafana, plugins, volkovlabs, visualization",
+      content: "grafana,plugins,volkovlabs,visualization",
     },
   ],
   navbar,

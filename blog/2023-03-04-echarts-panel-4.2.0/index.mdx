@@ -1,0 +1,103 @@
+---
+authors: [mikhail]
+slug: echarts-panel-4.2.0-20230304/
+tags: [Apache ECharts, Release Notes]
+image: /img/blog/2023-03-04-echarts-panel-4.2.0/banner.png
+keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Apache ECharts Panel 4.2.0
+
+We released a new version of the Apache ECharts Panel 4.2.0 for Grafana. This maintenace release
+
+- Added `EventBus` parameter to publish events.
+- Removed panel padding allowing to use of panel's space corner to corner.
+- Updated default background to `transparent` for Light and Dark themes.
+- Updated to the latest Grafana 9.4.3 toolkit and workflows.
+
+:::info
+The plugin was submitted to the Grafana team for review.
+:::
+
+<!--truncate-->
+
+## No Padding
+
+Removed panel padding allows using of the panel space from corner to corner and displays charts, maps, and graphics in the full width and height of the panel.
+
+<Image
+  title="GeoJSON Map displays requests from users around the world."
+  src="/img/blog/2023-03-04-echarts-panel-4.2.0/map.png"
+/>
+
+## Community Use case
+
+We are impressed with the everyday creations from the community using the latest features in the Apache ECharts panel for Grafana.
+
+One of the interesting use cases is displaying complex ECharts objects like a sunburst with the toolbox, strongly dynamic and dependent on many variables.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/dynamic.js"
+  language="js"
+/>
+
+## DOM
+
+The data zoom feature allows selecting the time range on the chart. When the time range is selected the event can trigger updating the dashboard's time range using the `locationService` parameter similar to Grafana behavior.
+
+<Image
+  title="Data Zoom feature for Random Walk allows updating Time Range for the selected range."
+  src="/img/blog/2023-01-13-echarts-panel-4.1.0/data-zoom.png"
+/>
+
+You can find the code in the [Event Handling](/plugins/volkovlabs-echarts-panel/events) section.
+
+## Getting Started
+
+Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-echarts-panel
+```
+
+## YouTube Tutorial
+
+The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/DxqCrBEmrQw"
+  title="How to create modern dashboards in Grafana."
+/>
+
+Apache ECharts is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+
+<Video
+  src="https://www.youtube.com/embed/wPr4gZYzUVA"
+  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add `EventBus` to the available parameters to publish events (#122)
+- Update to Grafana 9.3.6 (#132)
+- Update CI and Release workflows (#134)
+- Add NoPadding to remove extra padding around (#138)
+- Set Background color to Transparent by default (#139)
+- Add Magic (JavaScript) Trio tutorial (#141)
+- Update to Grafana 9.4.3 (#142)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
