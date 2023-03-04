@@ -30,6 +30,8 @@ Supported since Dynamic Text panel 2.2.0.
 | `data`        | Data from data sources. Depends on the selected **Every Row** and **All Rows** option consists of one or many rows data. |
 | `getLocale()` | Returns user's locale: 'en', 'fr', 'es', etc.                                                                            |
 | `handlebars`  | Handlebars library.                                                                                                      |
+| `timeRange`   | Time range of the current dashboard. Added in 3.1.0.                                                                     |
+| `timeZone`    | Time zone of the current dashboard. Added in 3.1.0.                                                                      |
 
 ## Custom Handlebars helper
 
@@ -92,3 +94,24 @@ Meanwhile, we can use `getLocale()` method to get a value for the selected local
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/translate.js"
   language="js"
 />
+
+## Time Zone and Range
+
+Display the selected time zone and range in Grafana if it's different from the Browser.
+
+### Content
+
+````
+<h1>{{tz}}</h1>
+
+```json
+{{{json (range)}}}
+```
+````
+
+### JavaScript Code
+
+```
+handlebars.registerHelper('tz', () => timeZone);
+handlebars.registerHelper('range', () => timeRange);
+```
