@@ -34,27 +34,53 @@ Removed panel padding allows using of the panel space from corner to corner and 
   src="/img/blog/2023-03-04-echarts-panel-4.2.0/map.png"
 />
 
-## Community Use case
+## Community Use cases
 
 We are impressed with the everyday creations from the community using the latest features in the Apache ECharts panel for Grafana.
 
-One of the interesting use cases is displaying complex ECharts objects like a sunburst with the toolbox, strongly dynamic and dependent on many variables.
+### Dynamic toolbox
+
+One of the interesting use cases is displaying complex ECharts objects like a sunburst with the toolbox, strongly dynamic and dependent on many variables by [ftasso](https://github.com/ftasso).
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/dynamic.js"
   language="js"
 />
 
-## DOM
+### Preserve Visual Map selected range
 
-The data zoom feature allows selecting the time range on the chart. When the time range is selected the event can trigger updating the dashboard's time range using the `locationService` parameter similar to Grafana behavior.
+Saving the `visualMap` range slider settings across Dashboard refreshes by [Barryetter](https://github.com/Barryetter).
 
-<Image
-  title="Data Zoom feature for Random Walk allows updating Time Range for the selected range."
-  src="/img/blog/2023-01-13-echarts-panel-4.1.0/data-zoom.png"
+1. Create two dashboard variables. Constants are fine, and they should be hidden from the user. Name them `datarangeStart` and `datarangeEnd` and set them to some initial values.
+2. In the EChart panel code editor (before the return), add an event handler for the `datarangeselected` event. Remove any event handler to prevent creating duplicate handlers.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/range.js"
+  language="js"
 />
 
-You can find the code in the [Event Handling](/plugins/volkovlabs-echarts-panel/events) section.
+3. In the `visualMap` definition, set the `range` property to the Dashboard variables using the `replaceVariables` method as described in the [documentation](/plugins/volkovlabs-echarts-panel/variables).
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/visual-map.js"
+  language="js"
+/>
+
+## Create DOM (Document Object Model) Elements
+
+It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using `echartsInstance` by [Lroy](https://github.com/Lroy).
+
+<Image
+  title="Add a button to add Events on the Apache ECharts container."
+  src="/img/blog/2023-03-04-echarts-panel-4.2.0/dom.png"
+/>
+
+For example, you can add a button with an event handler.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/dom.js"
+  language="js"
+/>
 
 ## Getting Started
 
