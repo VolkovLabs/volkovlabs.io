@@ -97,12 +97,13 @@ Meanwhile, we can use `getLocale()` method to get a value for the selected local
 
 ## Time Zone and Range
 
-Display the selected time zone and range in Grafana if it's different from the Browser.
+Display the selected dashboard, browser time zone and range in Grafana.
 
 ### Content
 
 ````
-<h1>{{tz}}</h1>
+<h2>Dashboard {{tz}}</h1>
+<h2>Browser {{browser}}</h1>
 
 ```json
 {{{json (range)}}}
@@ -114,4 +115,10 @@ Display the selected time zone and range in Grafana if it's different from the B
 ```
 handlebars.registerHelper('tz', () => timeZone);
 handlebars.registerHelper('range', () => timeRange);
+handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions().timeZone);
 ```
+
+<Image
+  title="Dynamic Text allows displaying updated time zone and range in Grafana."
+  src="/img/plugins/volkovlabs-dynamictext-panel/time.png"
+/>
