@@ -1,0 +1,58 @@
+---
+tags:
+  - Environment Data Source
+  - Private repository
+  - Variables
+  - Internet of Things
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Environment Data Source
+
+The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables in your code.
+
+<Video
+  src="https://www.youtube.com/embed/sczRq2lI3e4"
+  title="Dashboard, Global and Environment variables."
+/>
+
+## Requirements
+
+- **Grafana 8.5+**, **Grafana 9.0+** is required for major version 2.
+- **Grafana 8.0+** is required for major version 1.
+
+## Getting Started
+
+Environment Data Source is not included in the Grafana Catalog. It can be installed manually from our Private Repository or downloaded directly from GitHub.
+
+```bash
+grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
+```
+
+The plugin is signed for Grafana running on `http://localhost:3000`.
+
+If you are using a different URL, take a look at [Allow Unsigned Plugins](/plugins/grafana/allow-unsigned/).
+
+## Features
+
+- Returns Environment Variables.
+- Allows filtering unnecessary or secured variables using Regex.
+
+<Image
+  title="Environment Variables displayed on the Grafana dashboard."
+  src="/img/plugins/volkovlabs-env-datasource/dashboard.png"
+/>
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-env-datasource/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-env-datasource/blob/main/LICENSE).

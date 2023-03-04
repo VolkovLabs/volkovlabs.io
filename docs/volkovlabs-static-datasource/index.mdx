@@ -1,0 +1,59 @@
+---
+tags:
+  - Static Data Source
+  - Development
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Static Data Source
+
+The Static Data Source is a plugin for Grafana that allows storing and emulating your data.
+
+<Video
+  src="https://www.youtube.com/embed/QOV8ECOUjWs"
+  title="Tutorial and examples how to mimic any data source."
+/>
+
+## Requirements
+
+- **Grafana 8.5+**, **Grafana 9.0+** is required for major version 2.
+- **Grafana 7.3+** is required for major version 1.
+
+## Getting Started
+
+The Static Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-static-datasource/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-static-datasource
+```
+
+## Features
+
+- Create static visualizations that don't depend on a specific data source.
+- Build custom query responses for testing or developing panel plugins.
+- Store data and images directly in the dashboard.
+- Supports variables in the text fields.
+- Uses Number input for Number, Date Time Picker for Time fields.
+- Uses Text Area for String inputs with more than 100 symbols.
+- Allows to temporarily hide values for specific fields.
+
+<Image
+  title="Visualize wind speed with direction based on the data from the Static data source."
+  src="https://github.com/volkovlabs/volkovlabs-static-datasource/raw/main/src/img/dark.png"
+/>
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-static-datasource/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-static-datasource/blob/main/LICENSE).

@@ -1,0 +1,47 @@
+---
+description: Baidu Maps is supported in the latest version of the Apache ECharts Panel.
+tags:
+  - Apache ECharts
+  - Maps
+image: /img/plugins/volkovlabs-echarts-panel/baidu.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Baidu Maps
+
+:::info
+
+Supported since Apache ECharts visualization panel 3.6.0.
+
+:::
+
+Baidu Maps are loaded using API v3 and require Access Key.
+
+## Access Key
+
+You can get the access key from [https://lbsyun.baidu.com/apiconsole/key#/home](https://lbsyun.baidu.com/apiconsole/key#/home).
+
+## Demo
+
+Try the panel with [ECharts Examples dashboard in edit mode](https://echarts.volkovlabs.io/d/X1mkMIFVz/geo-map?orgId=1&editPanel=15).
+
+## Features
+
+- Loading Baidu Maps takes 2-3 seconds.
+- The callback function `bmapReady` will be executed on load. The name can be changed in the Panel options.
+- While loading, animation can be displayed using the code below.
+
+<Image
+  title="Baidu Maps is supported in the latest version of the Apache ECharts Panel."
+  src="/img/plugins/volkovlabs-echarts-panel/baidu.png"
+/>
+
+## Example
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/maps/baidu.js"
+  language="js"
+/>

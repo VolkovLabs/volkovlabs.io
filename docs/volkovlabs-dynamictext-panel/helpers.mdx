@@ -1,0 +1,138 @@
+---
+tags:
+  - Dynamic Text
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Helpers
+
+Helpers are functions that let you perform basic text transformations within your template.
+
+## `{{contains}}`
+
+Checks if a given value exists within an array.
+
+```handlebars
+<!-- array: ['a', 'b', 'c'] -->
+
+{{#if (contains array "a")}}
+  Success!
+{{else}}
+  Not Found!
+{{/if}}
+
+<!-- result: 'Success!'  -->
+```
+
+## `{{date}}`
+
+Formats the timestamp in a given field using a date format. Uses [helper-date](https://github.com/helpers/helper-date).
+
+The field value must be a Unix timestamp or any of the formats supported by [date.js](https://date.js.org/).
+
+```handlebars
+<!-- Time: 1598791377556 -->
+
+{{date Time "YYYY-MM-DD"}}
+
+<!-- result: '2020-08-30'  -->
+```
+
+## `{{eq}}`
+
+Compares two strings for equality.
+
+```handlebars
+<!-- app: foo -->
+
+{{#if (eq app "auth")}}
+  This is the auth app.
+{{else}}
+  This is not an auth app.
+{{/if}}
+
+<!-- result: 'Success!'  -->
+```
+
+## `{{join}}`
+
+Join all elements of array into a string using a given separator.
+
+```handlebars
+<!-- array: ['a', 'b', 'c'] -->
+
+{{join array "-"}}
+
+<!-- result: 'a-b-c'  -->
+```
+
+## `{{json}}`
+
+:::info
+
+Supported since Dynamic Text panel 2.2.0.
+
+:::
+
+Present object (JSON) or array as a formatted string. Markdown supports syntax highlight.
+
+````handlebars
+<!-- object or array -->
+
+```json
+{{json obj}}
+```
+
+<!-- result: as string  -->
+````
+
+<Image
+  title="Visualize formatted JSON object."
+  src="/img/plugins/volkovlabs-dynamictext-panel/json.png"
+/>
+
+### Transformation
+
+JSON helper expects an object or array to display it as a formatted string. If the data source returns a string it should be transformed to a JSON object using Transformation `Convert field type`.
+
+<Image
+  title="Transform JSON string to object."
+  src="/img/plugins/volkovlabs-dynamictext-panel/json-transformation.png"
+/>
+
+## `{{split}}`
+
+:::info
+
+Supported since Dynamic Text panel 2.2.0.
+
+:::
+
+Split a string into an array using a given separator.
+
+```handlebars
+<!-- string: 'a,b,c,d' -->
+
+{{split str ","}}
+
+<!-- result: ['a','b','c']  -->
+```
+
+<Image
+  title="Examples of splitting string into array."
+  src="/img/plugins/volkovlabs-dynamictext-panel/split.png"
+/>
+
+## `{{toFixed}}`
+
+Formats the given number using fixed-point notation.
+
+```handlebars
+<!-- Value: 1.1234 -->
+
+{{toFixed Value 2}}
+
+<!-- result: '1.12' -->
+```

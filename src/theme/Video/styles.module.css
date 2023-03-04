@@ -1,0 +1,23 @@
+.video {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  max-width: 900px;
+}
+
+[data-theme='light'] .video {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
+}
+
+[data-theme='dark'] .video {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
+}
+
+.caption {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-style: italic;
+  font-size: 17px;
+}

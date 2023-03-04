@@ -1,0 +1,67 @@
+---
+tags:
+  - RSS/Atom Data Source
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# RSS/Atom Data Source
+
+The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Dynamic Text and other panels.
+
+<Video
+  src="https://www.youtube.com/embed/RAxqS2hpWkg"
+  title="News feed tutorial for Grafana Dashboard."
+/>
+
+## Requirements
+
+- **Grafana 8.5+**, **Grafana 9.0+** is required for major version 2.
+- **Grafana 8.0+** is required for major version 1.
+
+## Getting Started
+
+RSS/Atom data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-rss-datasource
+```
+
+## Features
+
+- Supports RSS 2.0, RSS 1.0 and Atom.
+- Works great with Dynamic Text visualization panel.
+- Returns Channel (Feed) data, Items (Entries) or both as separate data frames.
+- Extract and parse as additional fields:
+  - Image from Meta.
+  - H4 and Image from the Encoded content.
+  - Media:Group for YouTube.
+- Filter items/entries based on the selected Time Range.
+
+<Image
+  title="RSS Data source allows to visualize RSS/Atom feeds on Grafana dashboard."
+  src="/img/plugins/volkovlabs-rss-datasource/dashboard.png"
+/>
+
+## Disable Sanitize HTML
+
+To display HTML returned from feeds, please disable the Sanitize HTML parameter. For Docker:
+
+```bash
+GF_PANELS_DISABLE_SANITIZE_HTML=true
+```
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-rss-datasource/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-rss-datasource/blob/main/LICENSE).

@@ -1,0 +1,127 @@
+---
+authors:
+  - name: Sineos
+    image_url: https://github.com/Sineos.png
+    title: Community member.
+slug: stacked-bar-graph-20221004/
+tags: [Apache ECharts, Community]
+image: /img/blog/2022-10-04-stacked-bar-graph/banner.png
+keywords: [Apache ECharts, Grafana, Visualization]
+updated: 2023-02-13
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+
+# Create Stacked Bars using the Apache ECharts visualization panel
+
+[Sineos](https://github.com/Sineos) opened an [issue in the Apache ECharts repository](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/47) asking for help with Stacked Bar Graph:
+
+> "I have three queries returning aggregated monthly values, which I would like to display as a Stacked bar graph. Turning it into a simple bar graph works but dividing the data too differently styled bars just ends up with errors."
+
+<!--truncate-->
+
+The issue was successfully resolved, and Sineos created this example and attached
+
+- Apache ECharts function,
+- InfluxDB queries to retrieve data,
+- Ready-to-go Dashboard using the Static Data Source.
+
+<Image
+  title="Energy balance visualized in Apache ECharts panel for Grafana."
+  src="/img/blog/2022-10-04-stacked-bar-graph/panel.png"
+/>
+
+## InfluxDB Data Source
+
+- `createEmpty: true` makes sure that the data of the individual bar segments stay aligned when data is missing in the series.
+- `set(key: "Source", value: "Self Consumption")` manipulates the field used for naming the series.
+
+### Query A
+
+```sql
+from(bucket: "home")
+  |>  range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |>  filter(fn: (r)  => r["_measurement"] == "vzlogger")
+  |>  filter(fn: (r)  => r["Source"] == "SML_Energy_Out")
+  |>  filter(fn: (r)  => r["_field"] == "Energy")
+  |>  aggregateWindow(every: 1d, fn: sum, createEmpty: true)
+  |>  set(key: "Source",  value: "Grid Feed")
+```
+
+### Query B
+
+```sql
+from(bucket: "home")
+  |>  range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |>  filter(fn: (r)  => r["_measurement"] == "vzlogger")
+  |>  filter(fn: (r)  => r["Source"] == "SML_Energy_In")
+  |>  filter(fn: (r)  => r["_field"] == "Energy")
+  |>  aggregateWindow(every: 1d, fn: sum, createEmpty: true)
+  |>  set(key: "Source",  value: "Grid Consumption")
+```
+
+### Query C
+
+```sql
+from(bucket: "home")
+  |>  range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |>  filter(fn: (r)  => r["_measurement"] == "vzlogger")
+  |>  filter(fn: (r)  => r["Source"] == "SelfConsumption")
+  |>  filter(fn: (r)  => r["_field"] == "Energy")
+  |>  aggregateWindow(every: 1d, fn: sum, createEmpty: true)
+  |>  set(key: "Source",  value: "Self Consumption")
+```
+
+## Apache ECharts function
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2022-10-04-stacked-bar-graph/panel.js"
+  language="js"
+/>
+
+## Dashboard to Try
+
+The following dashboard is a ready-to-go example that can be imported into Grafana as JSON. It requires
+
+- [Static data source](/plugins/volkovlabs-static-datasource/)
+- Apache ECharts visualization panel plugin.
+
+Make sure to install the Static data source via the Plugins Configuration and then add it to the Data Sources.
+
+### Import dashboard
+
+Once the Static data source is installed and added and the Apache ECharts visualization panel is installed, go to the Dashboard menu and select Import.
+
+In the Import dashboard window, insert the JSON code into the Import via the panel JSON field. Copy the JSON code from below.
+
+<Image
+  title="Import dashboard window."
+  src="/img/blog/2022-10-04-stacked-bar-graph/import-dashboard.png"
+/>
+
+Specify the dashboard name and Static data source, and click Import.
+
+<Image
+  title="Provide Name and datasource in the import menu window."
+  src="/img/blog/2022-10-04-stacked-bar-graph/import-dashboard-step2.png"
+/>
+
+You should see the visualization working right away.
+
+<Image
+  title="Apache ECharts and data sources configuration."
+  src="/img/blog/2022-10-04-stacked-bar-graph/dashboard.png"
+/>
+
+<details>
+  <summary>Dashboard</summary>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2022-10-04-stacked-bar-graph/dashboard.json"
+  language="json"
+/>
+
+</details>
+
+Any feedback and comments are welcome. Feel free to challenge us with your questions. It helps us to stay sharp!

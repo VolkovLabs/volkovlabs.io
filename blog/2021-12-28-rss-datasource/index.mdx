@@ -1,0 +1,106 @@
+---
+authors: [mikhail]
+slug: do-you-want-to-be-on-top-of-the-latest-news-staying-in-grafana-9abb064ed449/
+tags: [RSS/Atom Data Source, Dynamic Text]
+image: /img/blog/2021-12-28-rss-datasource/banner.png
+keywords: [Image, PDF, Base64, Visualization]
+updated: 2023-02-14
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Be on top of the latest news while staying in Grafana
+
+What is the first panel you see when opening Grafana? It's probably the News panel on the Home dashboard with the latest blog posts from the Grafana team and community. The News panel fetches the RSS feed directly in the browser, and while it works for some feeds, it has manifold limitations.
+
+<!--truncate-->
+
+Looking around, we found multiple discussions and issues opened regarding updating the News panel or creating an RSS and Atom data source. The question is, how to display data from such data sources? Time series or Table panels won't be the perfect candidates to demonstrate news with a custom layout.
+
+The video version of this article is available on our YouTube channel.
+
+<Video
+  src="https://www.youtube.com/embed/RAxqS2hpWkg"
+  title="News feed tutorial for Grafana Dashboard."
+/>
+
+We maintain the [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel), which can display data frames using a custom layout based on Markdown, HTML, and Handlebars.
+
+RSS data source was created based on the recently released [data source plugin template](/plugins/volkovlabs-abc-datasource). This template is similar to the panel plugin template introduced in the previous articles. RSS/Atom data source retrieves feed and returns data frames to display news using Dynamic Text or other custom panels.
+
+## Data source plugin
+
+> Data source plugins communicate with external sources of data and return the data in a format that Grafana understands. By adding a data source plugin, you can immediately use the data in any of your existing dashboards.
+
+There are 120 data source plugins available in the Grafana Catalog; 22 were added this year. When considering creating a new data source plugin, there are multiple questions you have to answer:
+
+- Can the data be retrieved using the HTTP(S) protocol?
+- Does the standard HTTP(S) backend fit your needs and provide all required authentication options?
+- Does the data source require Alerting support?
+
+RSS and Atom feed can be accessed using HTTP(S) protocol and, in most cases, do not require authentication at all. Authentication can be added in the future version, and default authentication options in the HTTP(S) backend should be sufficient.
+
+We decided to create an RSS/Atom data source based on [our data source plugin template](/plugins/volkovlabs-abc-datasource) without a backend. This template is similar to the panel plugin template and provides Docker Compose, Initial Provisioning, and Continuous Integration with test coverage configuration out of the box.
+
+## Add Data Source
+
+Let's add a new RSS data source for the Grafana blog and create a panel to display the latest news similar to the News Panel.
+
+The RSS/Atom data source can be added manually using the Data Sources Configuration menu or provisioned using configuration files.
+
+<Image
+  title="We are adding an RSS/Atom data source for Grafana Newsfeed."
+  src="/img/blog/2021-12-28-rss-datasource/datasource.png"
+/>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2021-12-28-rss-datasource/provisioning.yml"
+  language="yaml"
+/>
+
+## Dynamic Text panel
+
+The next step is to add a Dynamic Text panel on the dashboard and set content with Markdown, HTML, and Handlebars.
+
+<Image
+  title="Adding a new Dynamic Text panel on the Dashboard for Grafana newsfeed."
+  src="/img/blog/2021-12-28-rss-datasource/dashboard.png"
+/>
+
+To correctly display the date, it should have the type `Time`. All fields returned by the data source have a type `String` and can be transformed by converting field type with a specified input format to `Time` or `Number`.
+
+<Image
+  title="Convert field type transformation for the pubDate field as Time."
+  src="/img/blog/2021-12-28-rss-datasource/transformation.png"
+/>
+
+Here is the panel's content to achieve a look similar to the News panel:
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2021-12-28-rss-datasource/table.html"
+  language="html"
+/>
+
+You can read more about the Dynamic Text panel and various helpers you can use in the [Documentation](/plugins/volkovlabs-dynamictext-panel).
+
+## AWS feed
+
+When AWS has another outage, you can track the status directly on the Grafana dashboard.
+
+<Image
+  title="AWS CloudFront Service Status on the Grafana dashboard."
+  src="/img/blog/2021-12-28-rss-datasource/aws.png"
+/>
+
+## Redis Status page
+
+The Redis Status page is based on the Atom format and can be displayed using this data source.
+
+<Image
+  title="Redis Status page based on the Atom format feed."
+  src="/img/blog/2021-12-28-rss-datasource/redis.png"
+/>
+
+Using the RSS/Atom data source, you can combine your system and application metrics with newsfeeds from AWS, Redis, and other providers to be presently informed if they have any issues on their side.

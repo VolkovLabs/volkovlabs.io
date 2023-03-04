@@ -1,11 +1,10 @@
-import clsx from 'clsx';
-import React from 'react';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import ThemedImage from '@theme/ThemedImage';
-import { PluginList, ProjectList } from '../constants';
-import styles from '../css/index.module.css';
-import { PluginItem } from '../types';
-import { Plugin } from './Plugins';
+import clsx from "clsx";
+import React from "react";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import ThemedImage from "@theme/ThemedImage";
+import { ProjectList } from "../constants";
+import styles from "../css/index.module.css";
+import { PluginItem } from "../types";
 
 /**
  * Project
@@ -21,13 +20,13 @@ export const Project = ({
   description,
 }: PluginItem) => {
   return (
-    <div className={clsx("col col--3", styles.featureItem)}>
+    <div className={clsx("col col--4", styles.featureItem)}>
       <a href={href} target={target}>
         <ThemedImage
           role="img"
           sources={{
-            light: useBaseUrl(`/img/projects/${name}.svg`),
-            dark: useBaseUrl(`/img/projects/${name}.dark.svg`),
+            light: useBaseUrl(`/img/projects/${name}/logo.svg`),
+            dark: useBaseUrl(`/img/projects/${name}/logo.dark.svg`),
           }}
         />
         <div>

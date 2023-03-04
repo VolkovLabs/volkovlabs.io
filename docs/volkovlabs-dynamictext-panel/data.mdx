@@ -1,0 +1,71 @@
+---
+tags:
+  - Dynamic Text
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Data
+
+You can choose how the retrieved data is passed into the Dynamic Text Panel.
+
+- `Every row` means that the **Content** template is applied to every retrieved row.
+- `All rows`, the query results are passed entirely as the `data` field to the template.
+
+To work with the query results as a whole, you can use [#each builtin helper](https://handlebarsjs.com/guide/builtin-helpers.html#each) to iterate over the records.
+
+## Every row
+
+If your data source returns the following four columns of data.
+
+```md
+| app  | description                  | cluster | tier     |
+| ---- | ---------------------------- | ------- | -------- |
+| auth | Handles user authentication. | prod    | frontend |
+```
+
+### Template
+
+Display it using the following template for each row.
+
+```md
+# {{app}}
+
+> {{description}}
+
+{{#if (eq tier "frontend")}}
+Link: <a href="https://{{cluster}}.example.com/{{app}}">https://{{cluster}}.example.com/{{app}}</a>
+{{/if}}
+```
+
+<Image
+  title="Display application data using Handlebars, Markdown and HTML."
+  src="/img/plugins/volkovlabs-dynamictext-panel/application.png"
+/>
+
+## Render a single template (All rows)
+
+For the following query result.
+
+| title | author        | year |
+| ----- | ------------- | ---- |
+| Dune  | Frank Herbert | 1965 |
+| 1984  | George Orwell | 1949 |
+
+### Template
+
+Given that All Rows is selected, the following template renders a table from the query result.
+
+```
+| Title | Author | Year |
+| ----- | ------ | ---- |
+{{#each data}}
+| {{title}} | {{author}} | {{year}} |
+{{/each}}
+```
+
+<Image
+  title="Visualize returned data as a table."
+  src="/img/plugins/volkovlabs-dynamictext-panel/data.png"
+/>

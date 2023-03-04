@@ -1,219 +1,29 @@
-// @ts-check
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const presets = require(require.resolve("./config/presets.js"));
+const themeConfig = require(require.resolve("./config/theme.config.js"));
 
-/** @type {import('@docusaurus/types').Config} */
+/**
+ * Config
+ *
+ * @type {import('@docusaurus/types').Config}
+ */
 const config = {
-  title: "Volkov Labs",
-  tagline: "Plugin development for Grafana",
-  url: "https://volkovlabs.io",
   baseUrl: "/",
+  customFields: {
+    updated: "",
+  },
+  favicon: "img/favicon.ico",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
-  favicon: "img/favicon.ico",
   organizationName: "VolkovLabs",
-  projectName: "",
-  themes: ["@saucelabs/theme-github-codeblock"],
-  plugins: [
-    require.resolve("@cmfcmf/docusaurus-search-local"),
-    require.resolve("docusaurus-plugin-image-zoom"),
-  ],
-  presets: [
-    [
-      "@docusaurus/preset-classic",
-      {
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "plugins",
-        },
-        blog: {
-          postsPerPage: "ALL",
-          blogSidebarCount: 0,
-        },
-        gtag: {
-          trackingID: "G-D3HVJTTCBD",
-          anonymizeIP: true,
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
-      },
-    ],
-  ],
-
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      colorMode: {
-        defaultMode: "light",
-        disableSwitch: false,
-        respectPrefersColorScheme: true,
-      },
-      metadata: [{ name: "keywords", content: "grafana, plugins, volkovlabs" }],
-      zoom: {
-        selector: ".markdown :not(em) > img",
-        background: {
-          light: "rgb(255, 255, 255)",
-          dark: "rgb(50, 50, 50)",
-        },
-        config: {},
-      },
-      navbar: {
-        hideOnScroll: true,
-        logo: {
-          alt: "Volkov Labs",
-          src: "img/logo.svg",
-          srcDark: "img/logo.dark.svg",
-        },
-        items: [
-          {
-            label: "Grafana Plugins",
-            position: "left",
-            href: "/#Plugins",
-          },
-          {
-            href: "/blog",
-            position: "right",
-            label: "Blog",
-          },
-          {
-            href: "/plugins",
-            position: "right",
-            label: "Documentation",
-          },
-          {
-            href: "https://www.youtube.com/@volkovlabs",
-            position: "right",
-            className: "header-youtube-link",
-            "aria-label": "YouTube Channel",
-          },
-        ],
-      },
-      footer: {
-        logo: {
-          alt: "Volkov Labs",
-          src: "img/logo.svg",
-          srcDark: "img/logo.dark.svg",
-        },
-        style: "light",
-        links: [
-          {
-            title: "Grafana Plugins",
-            items: [
-              {
-                label: "Apache ECharts Panel",
-                to: "/plugins/volkovlabs-echarts-panel",
-              },
-              {
-                label: "Balena Application",
-                to: "/plugins/volkovlabs-balena-app",
-              },
-              {
-                label: "Base64 Image/PDF Panel",
-                to: "/plugins/volkovlabs-image-panel",
-              },
-              {
-                label: "Calendar Panel",
-                to: "/plugins/volkovlabs-calendar-panel",
-              },
-              {
-                label: "Dynamic Text Panel",
-                to: "/plugins/volkovlabs-dynamictext-panel",
-              },
-              {
-                label: "Data Manipulation Panel",
-                to: "/plugins/volkovlabs-form-panel",
-              },
-              {
-                label: "Environment Data Source",
-                to: "/plugins/volkovlabs-env-datasource",
-              },
-              {
-                label: "RSS/Atom Data Source",
-                to: "/plugins/volkovlabs-rss-datasource",
-              },
-              {
-                label: "Static Data Source",
-                to: "/plugins/volkovlabs-static-datasource",
-              },
-              {
-                label: "Volkov Labs Application",
-                href: "plugins/volkovlabs-app",
-              },
-            ],
-          },
-          {
-            title: "Projects",
-            items: [
-              {
-                label: "Balena NFS",
-                href: "/plugins/balena-nfs",
-              },
-              {
-                label: "Demo Server",
-                href: "https://demo.volkovlabs.io",
-              },
-              {
-                label: "ECharts Examples",
-                href: "https://echarts.volkovlabs.io",
-              },
-              {
-                label: "Live Updates",
-                href: "https://live.volkovlabs.io",
-              },
-              {
-                label: "Theiascope™",
-                href: "https://theiascientific.com/",
-              },
-            ],
-          },
-          {
-            title: "Discover",
-            items: [
-              {
-                label: "Blog Archive",
-                href: "/blog/archive",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/VolkovLabs",
-              },
-              {
-                label: "LinkedIn",
-                href: "https://linkedin.com/company/volkovlabs",
-              },
-              {
-                label: "YouTube Channel",
-                href: "https://youtube.com/@volkovlabs",
-              },
-            ],
-          },
-          {
-            title: "Get in touch",
-            items: [
-              {
-                label: "Contact",
-                href: "mailto:info@volkovlabs.io",
-              },
-              {
-                label: "Sponsor",
-                href: "https://github.com/sponsors/VolkovLabs",
-              },
-              {
-                label: "YouTube Community",
-                href: "https://youtube.com/@volkovlabs/community",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs. All rights reserved.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ["docker", "nginx"],
-      },
-    }),
+  plugins: [],
+  presets,
+  projectName: "volkovlabs.io",
+  tagline: "Plugin development for Grafana",
+  themeConfig,
+  themes: [],
+  title: "Volkov Labs",
+  trailingSlash: true,
+  url: "https://volkovlabs.io",
 };
 
 module.exports = config;

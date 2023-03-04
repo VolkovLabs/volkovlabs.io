@@ -1,0 +1,119 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-2.2.0-20230110/
+tags: [Dynamic Text, Release Notes]
+image: /img/blog/2023-01-10-dynamictext-panel-2.2.0/banner.png
+keywords: [Dynamic Text, Panel, Data, Grafana]
+updated: 2023-02-12
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Dynamic Text Panel 2.2.0
+
+We released a new version of Dynamic Text Panel 2.2.0. This feature release
+
+- Added JavaScript Code Editor to add Handlebars helpers and Event handlers.
+- Finished refactoring of internal components.
+- Migrate Styles to Grafana Theme v2.
+- Added `{{json @root}}` and `{{split String ','}}` helpers.
+- Updated CSS to fit images to the screen.
+- Supported Internationalization using custom helpers.
+
+<!--truncate-->
+
+## JavaScript Code
+
+Community asked - we delivered JavaScript Code Editor to add Handlebars helpers and Event handlers. Take a look at the [documentation](/plugins/volkovlabs-dynamictext-panel/code) for examples.
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in the Dynamic text panel."
+/>
+
+### Define Custom Handlebars helper
+
+A custom handlebars helper can be added to replace the field's value using a pattern.
+
+```handlebars
+{{replace Test "Pattern" "Replaced"}}
+```
+
+JavaScript Code:
+
+```js
+handlebars.registerHelper("replace", (context, pattern, replacement) =>
+  context.replace(pattern, replacement)
+);
+```
+
+<Image
+  title="How to create a helper to replace text in the returned data."
+  src="/img/blog/2023-01-10-dynamictext-panel-2.2.0/replace.png"
+/>
+
+### Add Internationalization
+
+Grafana 9 added Internationalization, which is not provided to plugins yet. Meanwhile, we can use the `getLocale()` method to get a value for the selected locale and show messages from a defined dictionary.
+
+Content:
+
+```handlebars
+{{translate "Hello"}}
+```
+
+Default Content:
+
+```handlebars
+{{translate "Default"}}
+```
+
+JavaScript Code:
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/translate.js"
+  language="js"
+/>
+
+## Getting Started
+
+The Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML and Handlebars to transform data visualizations."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add JSON helper to show objects and arrays (#121)
+- Update to Grafana 9.3.1 (#122)
+- Update Documentation links (#130, #131)
+- Add Split Helper (#132)
+- Refactor Text Component and Styles (#133)
+- Add JavaScript Code to add Handlebars helpers and Event handlers (#134)
+- Update default Content to `{{json @root}}` and Code Editor height to `200px` (#134)
+- Update CSS to fit images to screen (#135)
+- Add `getLocale()` parameter to JavaScript Code (#137)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.

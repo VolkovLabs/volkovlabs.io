@@ -1,0 +1,12 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 var(--content-padding);
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.tag {
+  margin: 0 0.5rem 0.5rem 0;
+  display: inline-block;
+}

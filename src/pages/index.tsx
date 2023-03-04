@@ -1,12 +1,15 @@
 import clsx from 'clsx';
 import React from 'react';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import ThemedImage from '@theme/ThemedImage';
 import { Plugins, Projects } from '../components';
+import Blogs from '../components/Blogs';
 import styles from '../css/index.module.css';
+import Image from '../theme/Image';
 
 /**
  * Header
@@ -22,32 +25,33 @@ const Header = (siteConfig) => {
             </h1>
 
             <p className="hero__subtitle margin-vert--md">
-              Volkov Labs is an agency founded by long-time Grafana contributor
-              Mikhail Volkov.
+              Volkov Labs specializes in developing plugins to visualize your
+              data using Grafana as a Platform.
             </p>
 
             <p className="hero__subtitle">
               We find elegant solutions for non-standard tasks.
             </p>
             <div className="margin-vert--lg">
-              <Link
+              <a
                 className={clsx(
                   "button button--primary button--lg",
                   styles.getStarted
                 )}
-                to={useBaseUrl("/plugins")}
+                href={useBaseUrl("/plugins")}
               >
                 Documentation&nbsp;&nbsp;→
-              </Link>
+              </a>
             </div>
           </div>
           <div className="col col--5">
             <ThemedImage
               className={clsx(styles.heroBannerLogo, "margin-vert--md")}
               sources={{
-                light: useBaseUrl("/img/main.svg"),
-                dark: useBaseUrl("/img/main.dark.svg"),
+                light: useBaseUrl("/img/index/main.svg"),
+                dark: useBaseUrl("/img/index/main.dark.svg"),
               }}
+              alt={siteConfig.tagline}
             />
           </div>
         </div>
@@ -62,20 +66,20 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Plugins" className="container margin-vert--lg padding-vert--lg">
+      <div id="Plugins" className="container margin-vert--md padding-vert--lg">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Grafana Plugins</span>
         </h2>
 
-        <div className="container margin-vert--lg padding-vert--lg">
+        <div className="container margin-vert--md padding-vert--lg">
           <Plugins />
         </div>
 
-        <div className="row margin-vert--lg">
+        <div className="row margin-vert--md">
           <div className="col col--1">
             <h2 className={clsx(styles.header, "hero__title")}></h2>
           </div>
-          <div className="col col--9 hero__subtitle">
+          <div className="col col--11 hero__subtitle">
             Our Grafana plugins are open source and we update them constantly.
             <br />
             <a href="https://github.com/sponsors/VolkovLabs" target="_blank">
@@ -86,7 +90,17 @@ const Main = (siteConfig) => {
         </div>
       </div>
 
-      <div id="Projects" className="container margin-vert--lg">
+      <div id="Blogs" className="container margin-vert--md padding-vert--lg">
+        <h2 className={clsx(styles.header, "hero__title")}>
+          <span>Blog Posts</span>
+        </h2>
+
+        <div className="container margin-vert--md padding-vert--lg">
+          <Blogs />
+        </div>
+      </div>
+
+      <div id="Projects" className="container margin-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Projects</span>
         </h2>
@@ -101,32 +115,26 @@ const Main = (siteConfig) => {
           <span>Team</span>
         </h2>
 
-        <div className="row margin-vert--xl padding-horiz--lg">
-          <div className="col col--6 avatar">
-            <img
-              className="avatar__photo avatar__photo--xl"
-              src="/img/peoples/daria.png"
-            />
-            <div className="avatar__intro padding-vert--md">
-              <div className="avatar__name">Daria Volkova</div>
-              <p className="avatar__subtitle">
-                Daria translates ideas to elegant solutions and produces YouTube
-                tutorials.
-              </p>
-            </div>
+        <div className="row margin-vert--lg padding-horiz--lg">
+          <div className="col col--4 text--center">
+            <Image src="/img/team/daria.png" zoom={false} />
+            <h3>Daria</h3>
+            <p>
+              Translates ideas to elegant solutions and produces YouTube
+              tutorials.
+            </p>
           </div>
 
-          <div className="col col--6 avatar">
-            <img
-              className="avatar__photo avatar__photo--xl"
-              src="/img/peoples/mikhail.png"
-            />
-            <div className="avatar__intro padding-vert--md">
-              <div className="avatar__name">Mikhail Volkov</div>
-              <p className="avatar__subtitle">
-                Mikhail loves to work on innovative projects.
-              </p>
-            </div>
+          <div className="col col--4 text--center">
+            <Image src="/img/team/mikhail.png" zoom={false} />
+            <h3>Mikhail</h3>
+            <p>Loves to work on innovative projects.</p>
+          </div>
+
+          <div className="col col--4 text--center">
+            <Image src="/img/team/ralph.png" zoom={false} />
+            <h3>Ralph</h3>
+            <p>Helps Daria with YouTube production.</p>
           </div>
         </div>
       </div>
@@ -139,8 +147,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/why-1.svg"),
-                dark: useBaseUrl("/img/why-1.dark.svg"),
+                light: useBaseUrl("/img/index/left.svg"),
+                dark: useBaseUrl("/img/index/left.dark.svg"),
               }}
             />
           </div>
@@ -160,8 +168,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/why-2.svg"),
-                dark: useBaseUrl("/img/why-2.dark.svg"),
+                light: useBaseUrl("/img/index/right.svg"),
+                dark: useBaseUrl("/img/index/right.dark.svg"),
               }}
             />
           </div>
@@ -178,7 +186,10 @@ const Home = () => {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+    <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
+      <Head>
+        <meta property="og:image" content="/img/volkovlabs.png" />
+      </Head>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>
     </Layout>

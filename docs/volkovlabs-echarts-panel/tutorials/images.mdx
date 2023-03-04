@@ -1,0 +1,54 @@
+---
+hide_table_of_contents: true
+tags:
+  - Apache ECharts
+  - Tutorial
+image: /img/plugins/volkovlabs-echarts-panel/image-types.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Raster and Vector images
+
+A quick guide for using images in Apache ECharts shows each type's prefixes.
+
+<Video
+  src="https://www.youtube.com/embed/ygFDhmbPU-Y"
+  title="Apache ECharts supports base64 PNG and SVG (vector) images."
+/>
+
+As Daria mentioned in the video, most cases where you might need to use images include:
+
+- Data points,
+- Simple labels,
+- Loaded labels,
+- Tooltips,
+- Axis labels,
+- Axis data labels,
+- Legend,
+- Background.
+
+You can enhance all of the above visual components with your images. There are multiple ways to reference images in the Apache ECharts configuration.
+
+## Reference images
+
+- URL using `image://` prefix.
+- Path using `path://` prefix.
+- XML file using `image://data:image/svg+xml;utf8` prefix.
+- PNG(raster) image using `image://data:image;base64` prefix.
+
+You can copy the below code and run it in the Apache ECharts visualization panel on your Grafana dashboard.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/tutorials/images.js"
+  language="js"
+/>
+
+You should see the following visualization.
+
+<Image
+  title="Display images using URL, Path, XML SVG and Base64 PNG."
+  src="/img/plugins/volkovlabs-echarts-panel/image-types.png"
+/>

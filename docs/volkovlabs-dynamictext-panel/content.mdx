@@ -1,0 +1,72 @@
+---
+tags:
+  - Dynamic Text
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Content
+
+It is the code editor where you can place the parsing commands or, in other words, create a visualization template for your data. To reference the data elements in your template, use double and triple braces.
+
+To display a value from the `app` field.
+
+```handlebars
+{{app}}
+```
+
+Depending on the `All rows/Every row` toggle, the template is applied to either every row or to the entire query results.
+
+## Render HTML from data
+
+If you would like to render HTML returned by the data source, you need to use three-brace expressions, `{{{htmlValue}}}`, otherwise Handlebars escape the HTML content.
+
+```handlebars
+<ul>
+  {{{htmlValue}}}
+</ul>
+```
+
+where `htmlValue` is
+
+```html
+<li>foo</li>
+<li>bar</li>
+```
+
+## Field name with spaces
+
+Field names with spaces should be displayed as `{{[Field Name]}}` or `{{'Field Name'}}`
+
+<Image
+  title="Display fields with spaces."
+  src="/img/plugins/volkovlabs-dynamictext-panel/fields.png"
+/>
+
+## Default content
+
+The default content is displayed if the connected data source returns nothing. Use it to give users instructions on what to do or who to contact when the query returns an empty result.
+
+Even though there are no data from the data source, you can still use the available [helpers](/plugins/volkovlabs-dynamictext-panel/helpers).
+
+## The rendering order
+
+The panel renders Handlebars → Markdown → Sanitized HTML (unless disabled) and displays the final result.
+
+<Image
+  title="Dynamic Text rendering order."
+  src="/img/plugins/volkovlabs-dynamictext-panel/rendering-schema.png"
+/>
+
+## Sanitizing
+
+Sanitizing is enabled by default, which makes some elements like `<button>` unavailable in the Content panel option.
+
+To disable sanitizing, use the Grafana configuration option [`disable_sanitize_html`](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#disable_sanitize_html).
+
+For Docker container and Docker Compose, use as.
+
+```bash
+- GF_PANELS_DISABLE_SANITIZE_HTML=true
+```

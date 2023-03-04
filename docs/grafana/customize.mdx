@@ -1,0 +1,45 @@
+---
+tags:
+  - Getting Started
+  - Docker
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Customize Grafana interface
+
+To make the Grafana dashboard look more like your native application, you can customize the fundamental graphical elements like the login page, background, application icon, etc.
+
+## Tutorial
+
+Watch this video for more details.
+
+<Video
+  src="https://www.youtube.com/embed/3GRoa8TzIxY"
+  title="Change titles, icons, footer, default dashboard in Grafana 9."
+/>
+
+## Blog
+
+The blog post collects various commands to help you play with Grafana in your style.
+
+<a href="/blog/how-to-customize-the-grafana-user-interface-8d70a42dc2b6">
+  <Image
+    title="How to customize the Grafana user interface."
+    src="/img/blog/2022-08-14-customize-grafana/banner.png"
+    zoom={false}
+  />
+</a>
+
+## Dockerfile
+
+Our customization is done in the Dockerfile and it can be easily replicated for host installation.
+
+We constantly update our Docker builds based on the latest version of Grafana.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile"
+  language="docker"
+/>

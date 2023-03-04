@@ -1,0 +1,47 @@
+---
+description: Google Maps is supported in the latest version of the Apache ECharts Panel.
+tags:
+  - Apache ECharts
+  - Maps
+image: /img/plugins/volkovlabs-echarts-panel/google.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Google Maps
+
+:::info
+
+Supported since Apache ECharts visualization panel 3.8.0.
+
+:::
+
+Google Maps are loaded using Maps API and require Access Key.
+
+## Access Key
+
+You can get the access key from [https://console.cloud.google.com/apis/credentials](https://console.cloud.google.com/apis/credentials).
+
+## Demo
+
+Try the panel with [ECharts Examples dashboard in edit mode](https://echarts.volkovlabs.io/d/X1mkMIFVz/geo-map?orgId=1&editPanel=13).
+
+## Features
+
+- Loading Google Maps takes ~1-2 seconds.
+- The callback function `gmapReady` will be executed on load. The name can be changed in the Panel options.
+- While loading, animation can be displayed using the following code.
+
+<Image
+  title="Google Maps is supported in the latest version of the Apache ECharts Panel."
+  src="/img/plugins/volkovlabs-echarts-panel/google.png"
+/>
+
+## Example
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/maps/google.js"
+  language="js"
+/>

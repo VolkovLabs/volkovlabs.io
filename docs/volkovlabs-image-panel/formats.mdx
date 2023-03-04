@@ -1,0 +1,62 @@
+---
+tags:
+  - Base64 Image/Video/Audio/PDF
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Supported formats
+
+The Base64 Image/Video/Audio/PDF visualization panel supports most of the common file formats.
+
+:::info
+
+To request the support of additional formats, feel free to open an issue in the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-image-panel/issues).
+
+:::
+
+## Images
+
+The file type is determined automatically based on the first Base64 symbol if a definition is not provided:
+
+- JPEG
+- GIF
+- PNG
+- PDF
+- HEIC
+
+Any image formats supported by your browser should be supported with provided definition `data:image/IMAGE-FORMAT;base64,ENCODED-CONTENT`.
+
+<Image
+  title="Base64 panel allows to display images on Grafana dashboard."
+  src="/img/plugins/volkovlabs-image-panel/panel.png"
+/>
+
+## PDF
+
+PDF files are supported with definition `data:application/pdf;base64,ENCODED-CONTENT` or without.
+
+<Image
+  title="Base64 panel allows to PDF on Grafana dashboard."
+  src="/img/plugins/volkovlabs-image-panel/pdf.png"
+/>
+
+## Video
+
+Supports the following formats with a provided definition:
+
+- MP4 `data:video/mp4;base64,ENCODED-CONTENT`
+- WEBM `data:video/webm;base64,ENCODED-CONTENT`
+
+<Image
+  title="Base64 panel allows to display media files on Grafana dashboard."
+  src="/img/plugins/volkovlabs-image-panel/video-comments.png"
+/>
+
+## Audio
+
+Supports the following formats with a provided definition:
+
+- MP3 `data:audio/mp3;base64,ENCODED-CONTENT`
+- OGG `data:audio/ogg;base64,ENCODED-CONTENT`

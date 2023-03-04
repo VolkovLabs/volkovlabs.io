@@ -1,0 +1,93 @@
+---
+tags:
+  - Apache ECharts
+  - Data Source
+image: /img/plugins/volkovlabs-echarts-panel/pie-chart.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Data Sources
+
+Below is a code snippet demonstrating how you can retrieve data from your data source to use in the Apache ECharts visualization panel.
+
+```javascript
+data.series.map((s) => {
+  if (s.refId === "logo") {
+    images = s.fields.find((f) => f.name === "body").values.buffer;
+  } else if (s.refId === "connections") {
+    sources = s.fields.find((f) => f.name === "source").values.buffer;
+    targets = s.fields.find((f) => f.name === "target").values.buffer;
+  } else if (s.refId === "nodes") {
+    titles = s.fields.find((f) => f.name === "title").values.buffer;
+    descriptions = s.fields.find((f) => f.name === "description").values.buffer;
+  }
+});
+```
+
+- You can use `.map()` and `.find()` JavaScript functions,
+- `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries the `logo`, `connections`, and `nodes`.
+- `name` is the data frame column name. The code above references the `body`, `source`, `target`, `title`, and `description` columns.
+
+## Tutorial
+
+<Video
+  src="https://www.youtube.com/embed/K5YNMSIm9AM"
+  title="How to use Data Source in Apache ECharts in 90 seconds."
+/>
+
+## Array of Arrays
+
+Convert one-dimensional arrays into many-dimensional arrays if needed.
+
+- get values for each field
+- combine in an array of arrays
+- use as `series[0]` to access first query, `series[1]` to access second query, etc.
+
+```javascript
+const series = data.series.map((s) => {
+  const rates = s.fields.find((f) => f.name === "Rate").values.buffer;
+  const calls = s.fields.find((f) => f.name === "Calls").values.buffer;
+  const names = s.fields.find((f) => f.name === "Name").values.buffer;
+
+  return rates.map((d, i) => [d, calls[i], names[i]]);
+})[0];
+```
+
+## Pie Chart
+
+We are using the [Static Data Source](/plugins/volkovlabs-static-datasource) for this example.
+
+<Image
+  title="Visualize Pie Chart using Data Source."
+  src="/img/plugins/volkovlabs-echarts-panel/pie-chart.png"
+/>
+
+### Example
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/pie.js"
+  language="js"
+/>
+
+## Wind Speed
+
+Wind speed visualization is one of many exciting examples of what the Apache ECharts library can do.
+
+- Every data element is displayed using the custom arrow.
+- The arrow color signifies the speed.
+- The direction where the arrow points - shows the wind direction.
+
+<Image
+  title="Visualizing Wind Speed using custom Arrows on the Grafana dashboard."
+  src="/img/plugins/volkovlabs-echarts-panel/wind-speed.png"
+/>
+
+### Example
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/wind.js"
+  language="js"
+/>

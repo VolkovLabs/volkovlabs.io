@@ -1,0 +1,98 @@
+---
+tags:
+  - Dynamic Text
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Styles
+
+The Styles editor allows adding new CSS styles and overrides the default using the dedicated code editor with CSS syntax highlight.
+
+:::info
+
+Supported since Dynamic Text panel 3.0.0.
+
+:::
+
+## Add new styles
+
+You can define your styles and use them in the template.
+
+### Styles
+
+```css
+td.name {
+  border: 0;
+  background-color: #5d3fc4;
+  color: white;
+}
+
+b.name {
+  font-family: silom;
+  font-size: 20px;
+}
+```
+
+### Template
+
+```html
+<td class="name">
+  <p><b class="name">{{first_name}} {{last_name}}</b></p>
+</td>
+```
+
+<Image
+  title="Add custom styles for table cells and bold text."
+  src="/img/plugins/volkovlabs-dynamictext-panel/styles.png"
+/>
+
+## Override
+
+You can see all defined styles in the source code.
+
+<details>
+  <summary>Default styles</summary>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/blob/main/src/styles.ts"
+  language="js"
+/>
+
+</details>
+
+### Padding and margins
+
+To display content without padding and margins override the parent CSS style.
+
+```css
+& {
+  padding: 0;
+  margin: 0;
+}
+```
+
+## Code Syntax Highlight
+
+The code syntax highlight is based on the `highlight.js` library, which supports major languages.
+
+<Image
+  title="Random Walk data displayed with highlight and no margins or paddings."
+  src="/img/plugins/volkovlabs-dynamictext-panel/json.png"
+/>
+
+### Styling
+
+We included the Accessibility (a11y) syntax highlight style for light and dark themes. You can override it in the Styles editor by copying one of the styles from the [project source files](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
+
+<details>
+  <summary>a11y Light</summary>
+
+<Code
+  url="https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-light.css"
+  language="css"
+/>
+
+</details>

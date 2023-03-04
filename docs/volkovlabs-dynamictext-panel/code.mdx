@@ -1,0 +1,124 @@
+---
+tags:
+  - Dynamic Text
+  - JavaScript Code
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# JavaScript Code
+
+JavaScript Code allows adding Handlebars helpers and Event handlers.
+
+:::info
+
+Supported since Dynamic Text panel 2.2.0.
+
+:::
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in the Dynamic text panel."
+/>
+
+## Parameters
+
+| Parameter     | Description                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `data`        | Data from data sources. Depends on the selected **Every Row** and **All Rows** option consists of one or many rows data. |
+| `getLocale()` | Returns user's locale: 'en', 'fr', 'es', etc.                                                                            |
+| `handlebars`  | Handlebars library.                                                                                                      |
+| `timeRange`   | Time range of the current dashboard. Added in 3.1.0.                                                                     |
+| `timeZone`    | Time zone of the current dashboard. Added in 3.1.0.                                                                      |
+
+## Custom Handlebars helper
+
+A custom handlebars helper can be added to replace the field's value using a pattern.
+
+```handlebars
+{{replace Test "Pattern" "Replaced"}}
+```
+
+### JavaScript Code
+
+```js
+handlebars.registerHelper("replace", (context, pattern, replacement) =>
+  context.replace(pattern, replacement)
+);
+```
+
+<Image
+  title="A custom Helper to replace data in the returned data."
+  src="/img/plugins/volkovlabs-dynamictext-panel/replace.png"
+/>
+
+## Event Handler
+
+A custom event handler can be added to react to a button click.
+
+```html
+<button onclick="myFunc()">{{test}}</button>
+```
+
+### JavaScript Code
+
+```js
+myFunc = () => {
+  alert("Bonjour!");
+};
+```
+
+## Internationalization
+
+Grafana 9 supports Internationalization, which is not fully provided to plugins yet.
+
+Meanwhile, we can use `getLocale()` method to get a value for the selected locale and show phrases from a defined dictionary.
+
+### Content
+
+```handlebars
+{{translate "Hello"}}
+```
+
+### Default Content
+
+```handlebars
+{{translate "Default"}}
+```
+
+### JavaScript Code
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/translate.js"
+  language="js"
+/>
+
+## Time Zone and Range
+
+Display the selected dashboard, browser time zone and range in Grafana.
+
+### Content
+
+````
+<h2>Dashboard {{tz}}</h1>
+<h2>Browser {{browser}}</h1>
+
+```json
+{{{json (range)}}}
+```
+````
+
+### JavaScript Code
+
+```
+handlebars.registerHelper('tz', () => timeZone);
+handlebars.registerHelper('range', () => timeRange);
+handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions().timeZone);
+```
+
+<Image
+  title="Dynamic Text allows displaying updated time zone and range in Grafana."
+  src="/img/plugins/volkovlabs-dynamictext-panel/time.png"
+/>

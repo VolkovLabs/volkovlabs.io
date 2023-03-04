@@ -1,0 +1,70 @@
+---
+authors: [mikhail]
+slug: echarts-panel-4.0.0-20221220/
+tags: [Apache ECharts, Release Notes]
+image: /img/blog/2022-12-20-echarts-panel-4.0.0/banner.png
+keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
+updated: 2023-02-07
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Apache ECharts Panel 4.0.0
+
+We released a new version of the Apache ECharts Panel 4.0.0 for Grafana. This major release
+
+- Introduced breaking changes with loading GeoJSON maps, which are disabled by default.
+- Documentation and examples were updated and moved to https://docs.volkovlabs.io and https://echarts.volkovlabs.io.
+
+<!--truncate-->
+
+We are enthusiastic about the new release and will continue improving the panel introducing support for Annotations and custom themes in the upcoming versions.
+
+<Image
+  title="Apache ECharts visualizes Pie Chart from the Static Data Source."
+  src="/img/blog/2022-12-20-echarts-panel-4.0.0/pie-chart.png"
+/>
+
+## Getting Started
+
+Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-echarts-panel
+```
+
+## YouTube Tutorial
+
+The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate popular Apache ECharts library into your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/DxqCrBEmrQw"
+  title="How to create modern dashboards in Grafana."
+/>
+
+## Release Notes
+
+### Breaking changes
+
+- World and USA GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
+
+### Features / Enhancements
+
+- Update ECharts Examples on https://echarts.volkovlabs.io (#103)
+- Add Calendar Examples on https://echarts.volkovlabs.io (#105)
+- Update README and move Documentation to https://docs.volkovlabs.io (#107)
+
+### Bug fixes
+
+- Fix javascript code in documentation (#102)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.

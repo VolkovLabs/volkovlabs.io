@@ -1,0 +1,69 @@
+---
+hide_table_of_contents: true
+tags:
+  - Apache ECharts
+  - JavaScript Code
+image: /img/plugins/volkovlabs-echarts-panel/schema.png
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# ECharts Function
+
+`setOption(options)` is the main Apache ECharts library function. This function is called to build any chart.
+
+It has one mandatory parameter `options` which is a chart configuration in a JSON format.
+
+<Image
+  title="setOptions Schema."
+  src="/img/plugins/volkovlabs-echarts-panel/schema.png"
+/>
+
+You specify the `options` in the Apache ECharts visualization panel in the Monaco Code editor located on the right-hand side.
+
+<Image
+  title="setOptions Function."
+  src="/img/plugins/volkovlabs-echarts-panel/function.png"
+/>
+
+This whole text area is a body of the function that you write for the execution. This function takes in many parameters from Grafana. See the complete list in the table below.
+
+The only parameter that is passed from this function to the `setOption()` is `options`. See the `return` statement in the picture above.
+
+## Parameters
+
+| Parameter                                  | Description                                                          |
+| ------------------------------------------ | -------------------------------------------------------------------- |
+| `data`                                     | The `data` object with a time range, series and request information. |
+| `echarts`                                  | ECharts library.                                                     |
+| `echartsInstance`                          | Instance of the ECharts. See the example in the picture above.       |
+| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.               |
+| `eventBus`                                 | The `eventBus` to publish and subscribe to application events.       |
+| `locationService`                          | The `locationService` works with browser location and history.       |
+| `notifyError(['Header', 'Error Message'])` | Display error notification.                                          |
+| `notifySuccess(['Header', 'Message'])`     | Display successful notification.                                     |
+| `replaceVariables`                         | The `replaceVariables()` function to interpolate variables.          |
+| `theme`                                    | The `theme` object.                                                  |
+
+To learn more about parameters, you can log them in the Browser Console.
+
+```javascript
+console.log(
+  data,
+  theme,
+  echartsInstance,
+  echarts,
+  replaceVariables,
+  locationService
+);
+```
+
+## Notifications
+
+Success and Error notifications can be triggered on events handling.
+
+```javascript
+notifySuccess(["Update", "Values updated successfully."]);
+notifyError(["Update", `An error occurred updating values.`]);
+```

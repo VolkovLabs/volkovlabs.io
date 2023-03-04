@@ -1,0 +1,53 @@
+---
+hide_table_of_contents: true
+tags:
+  - Apache ECharts
+image: /img/plugins/volkovlabs-echarts-panel/dom.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# ECharts Instance
+
+`echartsInstance` is the created instance (container) of the Apache ECharts. It allows to
+
+- Get the width and height of the ECharts container.
+- Get the DOM (Document Object Model) to add additional elements.
+- Resize.
+- Handle Events.
+- Update options, etc.
+
+To learn more about [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) take a look at the official documentation.
+
+## Scale when resizing
+
+To scale the content when the panel is resized using the instance methods to retrieve the width and height of the panel.
+
+```javascript
+  graphic: {
+    type: "image",
+    style: {
+      image: `data:image/svg+xml;utf8,${SVG}`,
+      width: echartsInstance.getWidth(),
+      height: echartsInstance.getHeight(),
+    },
+  },
+```
+
+## Create DOM elements
+
+It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using the instance.
+
+<Image
+  title="Add a button to add Events on the Apache ECharts container."
+  src="/img/plugins/volkovlabs-echarts-panel/dom.png"
+/>
+
+For example, you can add a button with an event handler.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/dom.js"
+  language="js"
+/>

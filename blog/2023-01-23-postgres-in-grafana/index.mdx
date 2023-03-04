@@ -1,0 +1,254 @@
+---
+authors: [daria]
+slug: grafana-postgresql-20230123/
+tags: [Configuration, PostgreSQL]
+image: /img/blog/2023-01-23-postgres-in-grafana/banner.png
+keywords: [PostgreSQL, Timescale, Configuration, Storage]
+updated: 2023-02-12
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# PostgreSQL with Timescale is the ultimate storage partner for Grafana
+
+You landed at the right article if you wonder what database to choose for your commercial Grafana-based web application. I will share my thoughts on when it should be PostgreSQL, and you can decide if your use case is any close.
+
+<!--truncate-->
+
+This article is written to supplement the YouTube video we recently published on our channel. I will add source code to all my examples below.
+
+<Video
+  src="https://www.youtube.com/embed/SbjIWnrMIgk"
+  title="Ultimate storage partner for Grafana."
+/>
+
+## Grafana configuration
+
+Grafana stores its configuration (connected data sources, employed visualizations, variables, etc.) in the configuration storage. You end up with an SQLite database after downloading and installing the default Grafana package.
+
+The [default setup is excellent for discovering Grafana](/blog/grafana-setup-20230122), but for the Next level (when you design the actual application) you would need to switch to either PostgreSQL or MySQL. PostgreSQL is an excellent choice for capturing Grafana configuration.
+
+<Image
+  title="Grafana management basics: Configuration, Provisioning and Data storage."
+  src="/img/blog/2023-01-23-postgres-in-grafana/basics.png"
+/>
+
+Both databases are open-source, and both are supported by Grafana. The benefits are.
+
+- Configuration in a separate container (or host) makes your application design flexible and manageable, with a more straightforward backup/restoration process.
+- The separated configuration storage does not get lost when the Grafana UI container is acting up.
+- You also can use it for as many UI instances as needed when switching to the High-Availability setup.
+
+## PostgreSQL
+
+In the video above, I demonstrated how to redirect Grafana UI to a PostgreSQL database. Below I leave the same instructions.
+
+Make sure you have a dedicated PostgreSQL database created. You can surely use the one that is already part of your application ecosystem. Creating a brand new PostgreSQL database is preferable to keep things clean and organized.
+
+Start the PostgreSQL container with TimescaleDB.
+
+```sh
+docker run -d --name timescaledb -p 5432:5432 \
+  -e POSTGRES_PASSWORD=password \
+  timescale/timescaledb:latest-pg14
+```
+
+Start the `psql` to connect to the database.
+
+```sh
+docker exec -it timescaledb psql -h localhost -p 5432 -U postgres -w
+```
+
+### Create database
+
+Create a new database to store Grafana UI configuration.
+
+```sql
+create database grafana_configuration_database;
+```
+
+Verify the database is created. It should appear in the output listing.
+
+```sql
+\l
+
+                                        List of databases
+              Name              |  Owner   | Encoding | Collate |  Ctype  |   Access privileges
+--------------------------------+----------+----------+---------+---------+-----------------------
+ grafana_configuration_database | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ postgres                       | postgres | UTF8     | C.UTF-8 | C.UTF-8 |
+ template0                      | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                                |          |          |         |         | postgres=CTc/postgres
+ template1                      | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                                |          |          |         |         | postgres=CTc/postgres
+(4 rows)
+```
+
+Make the new database current.
+
+```sql
+\c grafana_configuration_database
+
+You are now connected to database "grafana_configuration_database" as user "postgres".
+```
+
+Review the list of existing relations. It should be none.
+
+```sql
+\d
+
+Did not find any relations.
+```
+
+### Start Grafana
+
+Next, run your Grafana UI container and point it to the PostgreSQL database.
+
+```sh
+docker run --network=host -e GF_DATABASE_TYPE=postgres \
+ -e GF_DATABASE_HOST=localhost:5432 \
+ -e GF_DATABASE_NAME=grafana_configuration_database \
+ -e GF_DATABASE_USER=postgres \
+ -e GF_DATABASE_PASSWORD=password grafana/grafana:latest
+```
+
+You need to reassign five environment variables. Ensure to prefix each with `-e`. Do not forget all environment variables' names should be in upper case.
+
+Now, if you switch back to the `psql` and run the command to list all relations, you should see ~114 objects (in Grafana v9.3.X).
+
+```sql
+\d
+
+                       List of relations
+ Schema |              Name               |   Type   |  Owner
+--------+---------------------------------+----------+----------
+ public | alert                           | table    | postgres
+ public | alert_configuration             | table    | postgres
+ public | alert_configuration_id_seq      | sequence | postgres
+ public | alert_id_seq                    | sequence | postgres
+ public | alert_instance                  | table    | postgres
+ public | alert_notification              | table    | postgres
+ ....
+```
+
+That's it. Your Grafana UI will now work with the PostgreSQL database. Go ahead, make some changes in Grafana and find them in the database.
+
+## TimescaleDB is a PostgreSQL extension
+
+The second reason to love PostgreSQL is its particular extension for time-series data Timescale. The huge Timescale advantage is its SQL support. You are free to mix two data formats, relational and time-series, in the same instance and query both via familiar and dearly loved SQL.
+
+All time-series-specific functions are designed in a way to fit into SQL clauses. Combining two very needed formats is simply genius and, honestly, satisfying.
+
+### Aggregation
+
+In the video above, I briefly explain one possible data aggregation. My original table has 5-minute stock ticks. The data comes from the [twelvedata](https://twelvedata.com) website via API calls.
+
+Timescale does aggregations by creating Materialized views. You need to specify which field from your original table is `time` and convert it into `bucket`. The materialized view will be updated on any original table data changes without slowing down anything.
+
+In my example, I chose to aggregate 5-minute ticks into 1-hour ticks.
+
+```sql
+CREATE MATERIALIZED VIEW one_hour_candle
+WITH (timescaledb.continuous) AS
+    SELECT
+        time_bucket('1 hour', datetime) AS bucket,
+        stock_symbol,
+        FIRST(open, datetime) AS "open",
+        MAX(high) AS high,
+        MIN(low) AS low,
+        LAST(close, datetime) AS "close",
+        LAST(volume, datetime) AS volume
+    FROM stocks
+    GROUP BY bucket, stock_symbol;
+```
+
+### Hypertable
+
+The table `stocks` to capture stock data is a hyper table. I created it as a regular and converted it into a hyper table. The first parameter is a table name to convert, and the second is a column name with a timestamp.
+
+```sql
+create table stocks (
+  datetime timestamptz,
+  open real,
+  high real,
+  low real,
+  close real,
+  volume integer,
+  stock_symbol text
+);
+
+SELECT create_hypertable('stocks', 'datetime');
+```
+
+## Relational data
+
+And the third reason we love PostgreSQL is that it is the world's most advanced open-source relational database.
+
+This fact, along with time-series ability and using PostgreSQL for configuration storage, makes it an ultimate choice for Grafana. Working with one database for all your needs is more accessible than with many different kinds.
+
+Load stock data from a file into the `stocks` table.
+
+```sql
+COPY stocks FROM '/tmp/time_series-TSLA-5min.csv' (DELIMITER(';'), HEADER TRUE, FORMAT CSV);
+update tesla_stocks set stock_symbol = 'TSLA';
+```
+
+Create a table to capture descriptive information along with logo images.
+
+```sql
+create table stock_image (
+  stock_symbol text,
+  stock_name text,
+  scaleX real,
+  scaleY real,
+  image_svgxml text
+);
+```
+
+Populate the `stock_image` table.
+
+:::info
+Note, I replaced the symbol `#` with `%23` in the `fill` attribute.
+
+`fill="#f90"` change to `fill="%23f90"`
+:::
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-23-postgres-in-grafana/image.sql"
+  language="sql"
+/>
+
+## Grafana dashboard
+
+To import the dashboard, find the Import menu. The location might differ depending on your installed Grafana version, but that menu should always be somewhere.
+
+<Image
+  title="Import dashboard file into Grafana."
+  src="/img/blog/2023-01-23-postgres-in-grafana/import-menu.png"
+/>
+
+For the code to function correctly, you will need to have the PostgreSQL data source setup and have the same tables and materialized view in your database.
+
+<details>
+  <summary>Grafana dashboard source code from the video</summary>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-01-23-postgres-in-grafana/dashboard.json"
+  language="json"
+/>
+
+</details>
+
+Feel free to ask questions and let me know if I forgot any steps. I will gladly alter the instructions accordingly.
+
+## Summary
+
+PostgreSQL combines the three most required storage needs:
+
+- Configuration,
+- Time-series,
+- Relational.
+
+Those are the three primary storage needs for our commercial applications. PostgreSQL was an easy and obvious choice.
