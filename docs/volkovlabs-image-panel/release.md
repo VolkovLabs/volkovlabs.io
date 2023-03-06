@@ -7,7 +7,7 @@ tags:
 
 # Release Notes
 
-## [3.4.0 (2023-01-08) "New Year" edition](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.4.0)
+## [3.4.0 (2023-01-08) "New Year" edition](/blog/image-panel-3.4.0-20230108/)
 
 ### Features / Enhancements
 
@@ -15,7 +15,7 @@ tags:
 - Add Documentation links (#61)
 - Update README and documentation (#62)
 
-## [3.3.0 (2022-10-30) "Halloween" edition](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.3.0)
+## 3.3.0 (2022-10-30) "Halloween" edition
 
 ### Features / Enhancements
 
@@ -23,7 +23,7 @@ tags:
 - Update CI to Node 16 and Synchronize with Release workflow (#55)
 - Update to Grafana 9.2.2 (#56)
 
-## [3.2.0 (2022-10-05)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.2.0)
+## 3.2.0 (2022-10-05)
 
 ### Features / Enhancements
 
@@ -32,7 +32,7 @@ tags:
 - Add option to disable PDF Toolbar (#50)
 - Update to Grafana 9.1.7 (#51)
 
-## [3.1.0 (2022-08-13)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.1.0)
+## 3.1.0 (2022-08-13)
 
 ### Features / Enhancements
 
@@ -41,7 +41,7 @@ tags:
 - Rebuild based on 9.0.7 (#45)
 - Update Grafana Catalog image (#46)
 
-## [3.0.0 (2022-06-16)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v3.0.0)
+## 3.0.0 (2022-06-16)
 
 ### Breaking changes
 
@@ -56,7 +56,7 @@ tags:
 - Add Options for Video/Audio Controls and Auto Play (#41)
 - Rebuild based on 9.0.0 (#42)
 
-## [2.6.0 (2022-04-26)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.6.0)
+## 2.6.0 (2022-04-26)
 
 ### Features / Enhancements
 
@@ -65,14 +65,14 @@ tags:
 - Rebuild using 8.4.3 (#34)
 - Based on Grafana 8.5.0 (#35)
 
-## [2.5.0 (2022-01-24)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.5.0)
+## 2.5.0 (2022-01-24)
 
 ### Features / Enhancements
 
 - Update README to add Grafana Catalog (#29)
 - Rebuild using 8.3.4 (#28)
 
-## [2.4.0 (2021-12-16)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.4.0)
+## 2.4.0 (2021-12-16)
 
 ### Features / Enhancements
 
@@ -82,20 +82,20 @@ tags:
 - Update Components naming (#25)
 - Supporting PDF documents more than 2Mb size (#26)
 
-## [2.3.1 (2021-11-09)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.3.1)
+## 2.3.1 (2021-11-09)
 
 ### Features / Enhancements
 
 - Add `display:block` to display href properly [https://github.com/grafana/grafana/issues/41445] (#21)
 
-## [2.3.0 (2021-11-08)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.3.0)
+## 2.3.0 (2021-11-08)
 
 ### Features / Enhancements
 
 - Navigate to another dashboard from image click (#19)
 - Upgrade to Grafana 8.2.3 (#20)
 
-## [2.2.0 (2021-11-02)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.2.0)
+## 2.2.0 (2021-11-02)
 
 ### Features / Enhancements
 
@@ -103,13 +103,13 @@ tags:
 - Upgrade to Grafana 8.2.0 (#17)
 - Upgrade to Grafana 8.2.2 (#18)
 
-## [2.1.1 (2021-08-18)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.1.1)
+## 2.1.1 (2021-08-18)
 
 ### Features / Enhancements
 
 - Add Radio to select Image Size modes (#14)
 
-## [2.1.0 (2021-08-12)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.1.0)
+## 2.1.0 (2021-08-12)
 
 ### Features / Enhancements
 
@@ -117,7 +117,7 @@ tags:
 - Upgrade to Grafana 8.1.1 (#12)
 - Add Options and Fields to resize an image (#13)
 
-## [2.0.0 (2021-06-19)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v2.0.0)
+## 2.0.0 (2021-06-19)
 
 ### Breaking changes
 
@@ -127,7 +127,7 @@ tags:
 
 - Based on Grafana 8.0.2 (#9)
 
-## [1.1.0 (2021-06-19)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v1.1.0)
+## 1.1.0 (2021-06-19)
 
 ### Features / Enhancements
 
@@ -135,13 +135,13 @@ tags:
 - Display base64 Image from InfluxDB (#6)
 - Increase tests coverage (#4)
 
-## [1.0.1 (2021-06-07)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v1.0.1)
+## 1.0.1 (2021-06-07)
 
 ### Features / Enhancements
 
 - Add screenshots for Static and Redis data sources (#5)
 
-## [1.0.0 (2021-06-07)](https://github.com/VolkovLabs/volkovlabs-image-panel/releases/tag/v1.0.0)
+## 1.0.0 (2021-06-07)
 
 ### Features / Enhancements
 
