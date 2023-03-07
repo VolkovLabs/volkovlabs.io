@@ -7,6 +7,14 @@ tags:
 
 # Release Notes
 
+## 3.5.0 (2023-03-07)
+
+### Features / Enhancements
+
+- Update CI and Release workflows (#64)
+- Update to Grafana 9.4.3 (#65)
+- Set NoPadding to use panel corner to corner (#66)
+
 ## [3.4.0 (2023-01-08) "New Year" edition](/blog/image-panel-3.4.0-20230108/)
 
 ### Features / Enhancements

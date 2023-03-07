@@ -54,9 +54,16 @@ const plugins = {
           id: "volkovlabs-image-panel/index",
           label: "Introduction",
         },
-        "volkovlabs-image-panel/datasources",
         "volkovlabs-image-panel/formats",
-        "volkovlabs-image-panel/variables",
+        {
+          items: [
+            "volkovlabs-image-panel/datasources",
+            "volkovlabs-image-panel/variables",
+          ],
+          label: "Features",
+          type: "category",
+        },
+
         "volkovlabs-image-panel/release",
       ],
       label: "Base64 Image/PDF Panel",
