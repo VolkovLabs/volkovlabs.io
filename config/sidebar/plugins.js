@@ -138,6 +138,7 @@ const plugins = {
           id: "volkovlabs-grapi-datasource/index",
           label: "Introduction",
         },
+        "volkovlabs-grapi-datasource/configuration",
         "volkovlabs-grapi-datasource/provisioning",
         "volkovlabs-grapi-datasource/release",
       ],
