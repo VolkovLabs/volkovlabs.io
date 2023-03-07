@@ -7,7 +7,7 @@ tags:
 
 # Release Notes
 
-## 3.5.0 (2023-03-07)
+## [3.5.0 (2023-03-07)](/blog/image-panel-3.5.0-20230307)
 
 ### Features / Enhancements
 
