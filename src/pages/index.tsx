@@ -134,7 +134,7 @@ const Main = (siteConfig) => {
           <div className="col col--4 text--center">
             <Image src="/img/team/ralph.png" zoom={false} />
             <h3>Ralph</h3>
-            <p>Helps Daria with YouTube production.</p>
+            <p>Jack of all trades.</p>
           </div>
         </div>
       </div>
