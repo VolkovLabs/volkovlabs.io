@@ -40,7 +40,7 @@ const Header = (siteConfig) => {
                 )}
                 href={useBaseUrl("/plugins")}
               >
-                Documentation&nbsp;&nbsp;→
+                What's new&nbsp;&nbsp;→
               </a>
             </div>
           </div>
@@ -115,8 +115,8 @@ const Main = (siteConfig) => {
           <span>Team</span>
         </h2>
 
-        <div className="row margin-vert--lg">
-          <div className="col col--4 text--center">
+        <div className="row margin-vert--lg text--center">
+          <div className="col col--4">
             <Image src="/img/team/daria.png" zoom={false} />
             <h3>Daria</h3>
             <p>
@@ -125,13 +125,13 @@ const Main = (siteConfig) => {
             </p>
           </div>
 
-          <div className="col col--4 text--center">
+          <div className="col col--4">
             <Image src="/img/team/mikhail.png" zoom={false} />
             <h3>Mikhail</h3>
             <p>Loves to work on innovative projects.</p>
           </div>
 
-          <div className="col col--4 text--center">
+          <div className="col col--4">
             <Image src="/img/team/ralph.png" zoom={false} />
             <h3>Ralph</h3>
             <p>Jack of all trades.</p>
