@@ -14,14 +14,14 @@ The Calendar visualization panel allows displaying events from any data source.
 
 Select required and optional fields to visualize data in the panel's options.
 
-| Field       | Required | Description                                         |
-| ----------- | -------- | --------------------------------------------------- |
-| Text        | Yes      | Event text. Defaults to the first text field.       |
-| Start time  | Yes      | Event start time. Defaults to the first-time field. |
-| Description | No       | Event description.                                  |
-| End time    | No       | Event end time.                                     |
-| Labels      | No       | Event labels.                                       |
-| Color       | No       | Event color.                                        |
+| Field       | Required | Description                                            |
+| ----------- | -------- | ------------------------------------------------------ |
+| Text        | Yes      | Event text. Defaults to the first text field.          |
+| Start time  | Yes      | Event start time. Defaults to the first-time field.    |
+| Description | No       | Event description.                                     |
+| End time    | No       | Event end time.                                        |
+| Labels      | No       | Event labels. Support split of comma-separated values. |
+| Color       | No       | Event color.                                           |
 
 <Video
   src="https://www.youtube.com/embed/6WGmm5y4fs4"
@@ -29,6 +29,8 @@ Select required and optional fields to visualize data in the panel's options.
 />
 
 ## Duration
+
+Events can be instantaneous, has duration, multi-day and ongoing.
 
 - If the event has only the Start time field configured, events are considered instantaneous.
 - If the event has Start and End time fields configured, events are considered to have a duration.
@@ -46,4 +48,17 @@ Select required and optional fields to visualize data in the panel's options.
 
 ## Color
 
-The background color of the event uses the threshold configuration for the selected field.
+Events can be colored based on
+
+- Color field.
+- Frame Id.
+- Event id.
+
+For the selected color field the color of the event uses the threshold configuration.
+
+You can also choose a Color scheme in the Standard options.
+
+<Image
+  title="Releases colored based on event id using the Classic palette."
+  src="/img/plugins/volkovlabs-calendar-panel/colors.png"
+/>
