@@ -34,9 +34,24 @@ Our latest video tutorial explains how to configure the Calendar plugin in Grafa
   title="How to display events from PostgreSQL."
 />
 
+### Events Duration
+
+Events can be instantaneous, has duration, multi-day and ongoing.
+
+- If the event has only the Start time field configured, events are considered instantaneous.
+- If the event has Start and End time fields configured, events are considered to have a duration.
+- Any events that have an End time field configured and equal NULL are considered ongoing.
+
+<Image
+  title="Schema explains how events will look like depends on the end time field."
+  src="/img/blog/2023-03-11-calendar-panel-1.3.0/schema.png"
+/>
+
 ## Multi-day events
 
-We improved aligning of multi-day events. Events are aligned weekly, which helps avoid gaps between events. The oldest events are always on the top.
+We improved aligning of multi-day events. In the latest version events are aligned weekly, which helps avoid gaps in-between for events longer than a week.
+
+The oldest events are always on the top.
 
 <Image
   title="Release Management dashboard using the Calendar panel for Grafana."
