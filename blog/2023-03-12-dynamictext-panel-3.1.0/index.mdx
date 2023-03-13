@@ -1,0 +1,126 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-3.1.0-20230312/
+tags: [Dynamic Text, Release Notes]
+image: /img/blog/2023-03-12-dynamictext-panel-3.1.0/banner.png
+keywords: [Dynamic Text, Panel, Data, Code, Highlight, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Dynamic Text Panel 3.1.0
+
+We released a new version of Dynamic Text Panel 3.1.0. This feature release
+
+- Added Time Zone and Range parameters for JavaScript Code.
+- Added Replace variables and Location service parameters for Javascript Code.
+- Updated replace variables with scoped function. Variables in repeat panels are supported.
+- Updated to the latest Grafana 9.4.3.
+
+:::info
+The plugin was updated in Grafana Catalog on March 13, 2023.
+:::
+
+<!--truncate-->
+
+## Time Range and Zone
+
+Added Time Zone and Range parameters allow displaying selected time zone using custom handlers.
+
+Here is an example of how to display the selected dashboard, browser time zone and range in Grafana.
+
+### Content
+
+````
+<h2>Dashboard {{tz}}</h1>
+<h2>Browser {{browser}}</h1>
+
+```json
+{{{json (range)}}}
+```
+````
+
+### JavaScript Code
+
+```
+handlebars.registerHelper('tz', () => timeZone);
+handlebars.registerHelper('range', () => timeRange);
+handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions().timeZone);
+```
+
+<Image
+  title="Dynamic Text allows displaying updated time zone and range in Grafana."
+  src="/img/blog/2023-03-12-dynamictext-panel-3.1.0/time.png"
+/>
+
+## Replace Variables
+
+Replace variables functionality was updated to use the scoped function and support repeat panels.
+
+Dynamic text panel provides a helper `{{variable}}` to work with the dashboard and global variables. Alternatively, you can create a custom Handlebars helper to introduce additional logic and formats.
+
+### Content
+
+```md
+- Native helper **{{variable "test"}}**
+- Custom helper **{{myVariable "test"}}**
+```
+
+### JavaScript Code
+
+```js
+handlebars.registerHelper("myVariable", (name) => replaceVariables(`$${name}`));
+```
+
+## Magic (JavaScript) Trio
+
+Dynamic Text is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+
+<Video
+  src="https://www.youtube.com/embed/wPr4gZYzUVA"
+  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
+/>
+
+## Getting Started
+
+The Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML and Handlebars to transform data visualizations."
+/>
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in the Dynamic text panel."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add Time Zone and Range parameters for Javascript Code (#155)
+- Update to Grafana 9.4.3 (#156)
+- Add Magic (JavaScript) Trio tutorial in README (#157)
+- Update replace variables with scoped function (#160)
+- Add Replace variables and Location service parameters for Javascript Code (#160)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.

@@ -1,5 +1,56 @@
 export const BlogPosts = [
   {
+    id: "dynamictext-panel-3.1.0-20230312/",
+    metadata: {
+      permalink: "/blog/dynamictext-panel-3.1.0-20230312/",
+      source: "@site/blog/2023-03-12-dynamictext-panel-3.1.0/index.mdx",
+      title: "Dynamic Text Panel 3.1.0",
+      description:
+        "We released a new version of Dynamic Text Panel 3.1.0. This feature release",
+      date: "2023-03-12T00:00:00.000Z",
+      formattedDate: "March 12, 2023",
+      tags: [
+        {
+          label: "Dynamic Text",
+          permalink: "/blog/tags/dynamic-text",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: true,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Loves to work on innovative projects.",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "dynamictext-panel-3.1.0-20230312/",
+        tags: ["Dynamic Text", "Release Notes"],
+        image: "/img/blog/2023-03-12-dynamictext-panel-3.1.0/banner.png",
+        keywords: [
+          "Dynamic Text",
+          "Panel",
+          "Data",
+          "Code",
+          "Highlight",
+          "Grafana",
+        ],
+      },
+      nextItem: {
+        title: "Calendar Panel 1.3.0",
+        permalink: "/blog/calendar-panel-1.3.0-20230311/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Dynamic Text Panel 3.1.0. This feature release\n\n- Added Time Zone and Range parameters for JavaScript Code.\n- Added Replace variables and Location service parameters for Javascript Code.\n- Updated replace variables with scoped function. Dashboard variables now work with repeat panels.\n- Updated to the latest Grafana 9.4.3.\n\n:::info\nThe plugin was updated in Grafana Catalog on March 13, 2023.\n:::\n\n<!--truncate-->\n\n## Time Range and Zone\n\nAdded Time Zone and Range parameters allow displaying selected time zone using custom handlers.\n\nHere is an example of how to display the selected dashboard, browser time zone and range in Grafana.\n\n### Content\n\n````\n<h2>Dashboard {{tz}}</h1>\n<h2>Browser {{browser}}</h1>\n\n```json\n{{{json (range)}}}\n```\n````\n\n### JavaScript Code\n\n```\nhandlebars.registerHelper(\'tz\', () => timeZone);\nhandlebars.registerHelper(\'range\', () => timeRange);\nhandlebars.registerHelper(\'browser\', () => Intl.DateTimeFormat().resolvedOptions().timeZone);\n```\n\n<Image\n  title="Dynamic Text allows displaying updated time zone and range in Grafana."\n  src="/img/blog/2023-03-12-dynamictext-panel-3.1.0/time.png"\n/>\n\n## Replace Variables\n\nReplace variables functionality was updated to use scoped functions to support repeat panels.\n\nDynamic text panel provides a helper `{{variable}}` to work with the dashboard and global variables. Alternatively, you can create a custom Handlebars helper to introduce additional logic and formats.\n\n### Content\n\n```handlebars\n- Native helper **{{variable "test"}}**</h1>\n- Custom helper **{{myVariable "test"}}**\n```\n\n### JavaScript Code\n\n```js\nhandlebars.registerHelper("myVariable", (name) => replaceVariables(`$${name}`));\n```\n\n## Magic (JavaScript) Trio\n\nDynamic Text is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.\n\n<Video\n  src="https://www.youtube.com/embed/wPr4gZYzUVA"\n  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."\n/>\n\n## Getting Started\n\nThe Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-dynamictext-panel\n```\n\n## YouTube Tutorial\n\nThe Dynamic Text visualization panel lets you define a text template using the data from your data source query.\n\n<Video\n  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"\n  title="Markdown, HTML and Handlebars to transform data visualizations."\n/>\n\n<Video\n  src="https://www.youtube.com/embed/lJqk5Gobec4"\n  title="JavaScript code in the Dynamic text panel."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Add Time Zone and Range parameters for Javascript Code (#155)\n- Update to Grafana 9.4.3 (#156)\n- Add Magic (JavaScript) Trio tutorial in README (#157)\n- Update replace variables with scoped function (#160)\n- Add Replace variables and Location service parameters for Javascript Code (#160)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "calendar-panel-1.3.0-20230311/",
     metadata: {
       permalink: "/blog/calendar-panel-1.3.0-20230311/",
@@ -34,6 +85,11 @@ export const BlogPosts = [
         tags: ["Calendar", "Release Notes"],
         image: "/img/blog/2023-03-11-calendar-panel-1.3.0/banner.png",
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
+        updated: "2023-03-13T00:00:00.000Z",
+      },
+      prevItem: {
+        title: "Dynamic Text Panel 3.1.0",
+        permalink: "/blog/dynamictext-panel-3.1.0-20230312/",
       },
       nextItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 3.5.0",
@@ -41,7 +97,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nA new version of the Calendar panel 1.3.0 was released today. This feature release\n\n- Added option to display colors based on Event or Frame id if the Color field is not specified.\n- Added support for Color schemes.\n- Added labels split to display in the drawer.\n- Added Annotation tags as labels.\n- Updated multi-day intervals to auto-align events weekly.\n\n:::info\nThe plugin is under the Grafana team review.\n:::\n\n<!--truncate-->\n\n## Configuration\n\nOur latest video tutorial explains how to configure the Calendar plugin in Grafana. We keep our events in the PostgreSQL database, but you can use any storage!\n\n<Video\n  src="https://www.youtube.com/embed/6WGmm5y4fs4"\n  title="How to display events from PostgreSQL."\n/>\n\n## Multi-day events\n\nWe improved aligning of multi-day events. Events are aligned weekly, which helps avoid gaps between events. The oldest events are always on the top.\n\n<Image\n  title="Release Management dashboard using the Calendar panel for Grafana."\n  src="/img/blog/2023-03-11-calendar-panel-1.3.0/release.png"\n/>\n\n## Event colors\n\nWe improved color options for the events. If the color field is not specific events can be colored based on the Frame or Events id.\n\nYou can also choose a Color scheme in the Standard options.\n\n<Image\n  title="Releases colored based on event id using the Classic palette."\n  src="/img/blog/2023-03-11-calendar-panel-1.3.0/colors.png"\n/>\n\n## Event details\n\nEvents details were improved to split comma-separated values in the labels field. The description values support HTML elements for formatting.\n\n<Image\n  title="Event details with HTML-formatted description and labels."\n  src="/img/blog/2023-03-11-calendar-panel-1.3.0/drawer.png"\n/>\n\nAnnotation tags will be displayed as labels as well.\n\n## Getting Started\n\nThe calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-calendar-panel\n```\n\n## YouTube Tutorial\n\nThe Calendar visualization panel is a Grafana plugin created to display calendar events from data sources.\n\n<Video\n  src="https://www.youtube.com/embed/iPJ122x0oos"\n  title="Display events from JSON API data source."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Rebuild using Grafana 9.4.3 (#87)\n- Add labels split to display in the drawer (#88)\n- Add annotation tags as labels (#88)\n- Refactor multi-day interval (#89)\n- Add display colors based on Event or Frame id if the Color field is not specified (#90)\n- Add support for Color schemes (#91)\n- Add video configuration tutorial (#92)\n\n### Bug fixes\n\n- Fix scrollable content in the Day drawer (#93)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nA new version of the Calendar panel 1.3.0 was released today. This feature release\n\n- Added option to display colors based on Event or Frame id if the Color field is not specified.\n- Added support for Color schemes.\n- Added labels split to display in the drawer.\n- Added Annotation tags as labels.\n- Updated multi-day intervals to auto-align events weekly.\n\n:::info\nThe plugin was updated in Grafana Catalog on March 13, 2023.\n:::\n\n<!--truncate-->\n\n## Configuration\n\nOur latest video tutorial explains how to configure the Calendar plugin in Grafana. We keep our events in the PostgreSQL database, but you can use any storage!\n\n<Video\n  src="https://www.youtube.com/embed/6WGmm5y4fs4"\n  title="How to display events from PostgreSQL."\n/>\n\n### Events Duration\n\nEvents can be instantaneous, has duration, multi-day and ongoing.\n\n- If the event has only the Start time field configured, events are considered instantaneous.\n- If the event has Start and End time fields configured, events are considered to have a duration.\n- Any events that have an End time field configured and equal NULL are considered ongoing.\n\n<Image\n  title="Schema explains how events will look like depends on the end time field."\n  src="/img/blog/2023-03-11-calendar-panel-1.3.0/schema.png"\n/>\n\n## Multi-day events\n\nWe improved aligning of multi-day events. In the latest version events are aligned weekly, which helps avoid gaps in-between for events longer than a week.\n\nThe oldest events are always on the top.\n\n<Image\n  title="Release Management dashboard using the Calendar panel for Grafana."\n  src="/img/blog/2023-03-11-calendar-panel-1.3.0/release.png"\n/>\n\n## Event colors\n\nWe improved color options for the events. If the color field is not specific events can be colored based on the Frame or Events id.\n\nYou can also choose a Color scheme in the Standard options.\n\n<Image\n  title="Releases colored based on event id using the Classic palette."\n  src="/img/blog/2023-03-11-calendar-panel-1.3.0/colors.png"\n/>\n\n## Event details\n\nEvents details were improved to split comma-separated values in the labels field. The description values support HTML elements for formatting.\n\n<Image\n  title="Event details with HTML-formatted description and labels."\n  src="/img/blog/2023-03-11-calendar-panel-1.3.0/drawer.png"\n/>\n\nAnnotation tags will be displayed as labels as well.\n\n## Getting Started\n\nThe calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-calendar-panel\n```\n\n## YouTube Tutorial\n\nThe Calendar visualization panel is a Grafana plugin created to display calendar events from data sources.\n\n<Video\n  src="https://www.youtube.com/embed/iPJ122x0oos"\n  title="Display events from JSON API data source."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Rebuild using Grafana 9.4.3 (#87)\n- Add labels split to display in the drawer (#88)\n- Add annotation tags as labels (#88)\n- Refactor multi-day interval (#89)\n- Add display colors based on Event or Frame id if the Color field is not specified (#90)\n- Add support for Color schemes (#91)\n- Add video configuration tutorial (#92)\n\n### Bug fixes\n\n- Fix scrollable content in the Day drawer (#93)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
   },
   {
     id: "image-panel-3.5.0-20230307/",
