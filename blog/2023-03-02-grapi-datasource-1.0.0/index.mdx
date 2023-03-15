@@ -3,7 +3,8 @@ authors: [mikhail]
 slug: grapi-datasource-1.0.0-20230302/
 tags: [Grafana HTTP API Data Source, Release Notes]
 image: /img/blog/2023-03-02-grapi-datasource-1.0.0/banner.png
-keywords: [Grafana, HTTP API, DataSource, Annotations]
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+updated: 2023-03-15
 ---
 
 import Image from "@theme/Image";
@@ -50,9 +51,9 @@ Grafana HTTP API requires API Key or Token to access local and remote instances.
 
 The first release can retrieve
 
-- Health information
-- List of Data Sources
-- Annotations and Alarms with filter capabilities
+- Health information.
+- List of Data Sources.
+- Annotations and Alarms with filter capabilities.
 
 <Image
   title="Dashboard displays Data sources, annotations and health information of the Grafana instance."
@@ -80,13 +81,17 @@ Grafana HTTP API Data Source supports Dashboard annotations to display filtered 
 
 ## Getting Started
 
-Grafana HTTP API Data Source is under development and not included in the Grafana Catalog. It can be downloaded directly from GitHub.
+The Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.
 
-The plugin is signed for Grafana running on `http://localhost:3000`.
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-grapi-datasource
+```
 
 ## YouTube Tutorial
 
-Will be available for the upcoming version.
+Will be available end of March.
 
 ## Release Notes
 
@@ -107,7 +112,7 @@ Will be available for the upcoming version.
 
 ## Feedback
 
-We love to hear from you. There are various ways to get in touch with us:
+We love to hear from you. There are various ways to get in touch with us.
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues/new/choose).
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
