@@ -32,6 +32,23 @@ We recommend running Grafana behind NGINX reverse proxy for an additional securi
   src="/img/plugins/volkovlabs-form-panel/form-nginx-api.png"
 />
 
+## CORS
+
+The Data Manipulation panel may be blocked by CORS policy to access API Server. You can look for a rejection error in your browser Console window.
+
+<Image
+  title="Rejection error in the browser's Console."
+  src="/img/plugins/volkovlabs-form-panel/cors.png"
+/>
+
+Unfortunately, Grafana will not be explicit. Nothing will notify you about a CORS restrictions error.
+
+### Policies
+
+**Same-Origin** is a policy allowing interaction with resources ONLY from the same domain, host and port. For instance, `abc.com` can retrieve data from `abc.com/page1`, but is not permitted to access `anyotherdomain.com`.
+
+**Cross-Origin Resource Sharing (CORS)** policy is more flexible. It was created to allow different domains to interact. If CORS restrictions are off, any domain is allowed to request data. If CORS restrictions are ON, only whitelisted domains are permitted.
+
 ## Connect to API Server
 
 We understand the risk of data manipulation and take security concerns seriously. This blog post explores three secure ways to connect the Data Manipulation panel to the API Server.
