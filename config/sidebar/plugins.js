@@ -115,9 +115,9 @@ const plugins = {
           label: "Introduction",
         },
         "volkovlabs-form-panel/architecture",
+        "volkovlabs-form-panel/code",
         {
           items: [
-            "volkovlabs-form-panel/code",
             "volkovlabs-form-panel/control",
             "volkovlabs-form-panel/request",
             "volkovlabs-form-panel/dynamic",
