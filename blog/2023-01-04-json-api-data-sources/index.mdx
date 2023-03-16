@@ -4,7 +4,7 @@ slug: json-api-data-sources-in-grafana-20230104/
 tags: [Getting Started, Analytics, API, Apache ECharts]
 image: /img/blog/2023-01-04-json-api-data-sources/banner.png
 keywords: [JSON, API, Data Source, Infinity, Simpod, Grafana]
-updated: 2023-02-13
+updated: 2023-03-16
 ---
 
 import Image from "@theme/Image";
@@ -101,13 +101,13 @@ Like JSON API data source, Infinity can seamlessly work with open data sets (the
 
 To better understand CORS, I start with
 
-**Same-Origin policy** is a policy allowing interaction with resources ONLY from the same domain, host and port. For instance, `abc.com` can retrieve data from `abc.com/page1`, but is not permitted to access `anyotherdomain.com`.
+**Same-Origin** is a policy allowing interaction with resources ONLY from the same domain, host and port. For instance, `abc.com` can retrieve data from `abc.com/page1`, but is not permitted to access `anyotherdomain.com`.
 
 **Cross-Origin Resource Sharing (CORS)** policy is more flexible. It was created to allow different domains to interact. If CORS restrictions are off, any domain is allowed to request data. If CORS restrictions are ON, only whitelisted domains are permitted.
 
 The Infinity data source might bypass that rule since CORS exists on the frontend layer, the layer of browsers. The Infinity data source can access other domains via the backend.
 
-You can look for a rejection error in your browser's Console window.
+You can look for a rejection error in your browser Console window.
 
 <Image
   title="Rejection error in the browser's Console."
