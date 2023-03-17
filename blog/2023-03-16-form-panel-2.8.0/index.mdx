@@ -1,0 +1,89 @@
+---
+authors: [mikhail]
+slug: form-panel-2.8.0-20230316/
+tags: [Data Manipulation, Release Notes]
+image: /img/blog/2023-03-16-form-panel-2.8.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Data Manipulation Panel 2.8.0
+
+We released a new version of the Data Manipulation Panel 2.8.0. This feature release
+
+- Added String, Number Type selection for Select and Radio options.
+- Added Lookup options for Disabled elements.
+- Added support for DELETE requests.
+- Added "Buttons only" Layout to do GET/POST/DELETE requests.
+- Added panel padding configuration to allow using of panel's space corner to corner.
+- Refactored documentation and API Servers examples for MySQL, PostgreSQL, and Deno.
+- Updated to the latest Grafana 9.4.3 toolkit and workflows.
+
+<!--truncate-->
+
+We are overwhelmed with the community feedback and continue improving the panel to support more use cases.
+
+<Image
+  title="Data Manipulation panel allows to input and edit all kinds of data."
+  src="/img/blog/2023-03-16-form-panel-2.8.0/panel.png"
+/>
+
+## Magic (JavaScript) Trio
+
+Data Manipulation is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+
+<Video
+  src="https://www.youtube.com/embed/wPr4gZYzUVA"
+  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
+/>
+
+## Getting Started
+
+The Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-form-panel
+```
+
+## YouTube Tutorial
+
+The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/DXALVG8GijM"
+  title="Manual data entering and User input into Dashboard."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add String, Number Type for Select and Radio options (#120)
+- Add Lookup options for Disabled element (#121)
+- Add Server API with MYSQL for Feedback Dashboard (#125)
+- Update to Grafana 9.3.1 (#129)
+- Add Option for DELETE request (#130)
+- Add "Buttons only" Layout to do GET/POST/DELETE requests (#131)
+- Update README and move Documentation to docs.volkovlabs.io (#132)
+- Update README and Documentation (#134)
+- Refactor API Servers (#128)
+- Update CI and Release workflows (#145)
+- Update to Grafana 9.4.3 (#146)
+- Add NoPadding to remove extra padding around and make it configurable (#146)
+- Update README and Documentation (#147)
+
+### Bug fixes
+
+- Fix Password and Boolean elements confirmation (#120)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
