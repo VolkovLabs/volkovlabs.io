@@ -153,6 +153,11 @@ const plugins = {
         },
         "volkovlabs-grapi-datasource/configuration",
         "volkovlabs-grapi-datasource/provisioning",
+        {
+          items: ["volkovlabs-grapi-datasource/annotations"],
+          label: "Features",
+          type: "category",
+        },
         "volkovlabs-grapi-datasource/release",
       ],
       label: "Grafana API Data Source",
