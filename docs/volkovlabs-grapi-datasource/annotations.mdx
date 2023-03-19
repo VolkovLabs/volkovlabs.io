@@ -8,7 +8,9 @@ import Image from "@theme/Image";
 
 # Annotations
 
-Grafana HTTP API Data Source supports Dashboard annotations to display filtered annotations and alerts from local and remote Grafana instances.
+Grafana HTTP API Data Source supports retrieving annotations to display filtered annotations and alerts from local and remote Grafana instances.
+
+## Options
 
 | Filter       | Options                                     |
 | ------------ | ------------------------------------------- |
@@ -20,7 +22,15 @@ Grafana HTTP API Data Source supports Dashboard annotations to display filtered 
 | Text Pattern | Supports Regular expressions and variables. |
 | Max Limit    | Maximum number of annotations to retrieve.  |
 
+## Dashboard Annotations
+
 <Image
   title="Dashboard annotations use Grafana HTTP API Data Source to retrieve Alerting annotations filtered with text pattern."
   src="/img/plugins/volkovlabs-grapi-datasource/annotations.png"
 />
+
+## Annotation list
+
+The Annotation panel does not show Alerts since it's filtering annotations with a specific type.
+
+The Grafana HTTP API data source allows retrieving annotations and alerts to display them using any available panel in your style.
