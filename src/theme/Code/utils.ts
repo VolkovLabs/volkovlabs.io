@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 /**
  * GitHub Reference
@@ -41,12 +41,15 @@ export const fetchCode = async (
   try {
     res = await fetch(url);
   } catch (err) {
-    return fetchResultStateDispatcher({ type: "error", value: err });
+    return fetchResultStateDispatcher({ type: "error", value: String(err) });
   }
 
   if (res.status !== 200) {
     const error = await res.text();
-    return fetchResultStateDispatcher({ type: "error", value: error });
+    return fetchResultStateDispatcher({
+      type: "error",
+      value: error.toString(),
+    });
   }
 
   const body = (await res.text()).split("\n");
