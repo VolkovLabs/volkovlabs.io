@@ -128,12 +128,12 @@ const plugins = {
         },
         {
           items: [
-            "volkovlabs-form-panel/server/deno",
-            "volkovlabs-form-panel/server/json",
-            "volkovlabs-form-panel/server/mysql",
-            "volkovlabs-form-panel/server/postgresql",
+            "volkovlabs-form-panel/servers/deno",
+            "volkovlabs-form-panel/servers/json",
+            "volkovlabs-form-panel/servers/mysql",
+            "volkovlabs-form-panel/servers/postgresql",
           ],
-          label: "Server",
+          label: "Servers",
           type: "category",
         },
         "volkovlabs-form-panel/release",
