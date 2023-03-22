@@ -126,6 +126,16 @@ const plugins = {
           label: "Features",
           type: "category",
         },
+        {
+          items: [
+            "volkovlabs-form-panel/servers/deno",
+            "volkovlabs-form-panel/servers/json",
+            "volkovlabs-form-panel/servers/mysql",
+            "volkovlabs-form-panel/servers/postgresql",
+          ],
+          label: "Servers",
+          type: "category",
+        },
         "volkovlabs-form-panel/release",
       ],
       label: "Data Manipulation Panel",

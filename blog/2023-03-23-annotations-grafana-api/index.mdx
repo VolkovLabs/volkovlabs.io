@@ -1,0 +1,91 @@
+---
+authors: [mikhail]
+slug: annotations-grafana-api-20230323/
+tags: [Grafana HTTP API Data Source, Annotations, Data Manipulation]
+image: /img/blog/2023-03-23-annotations-grafana-api/banner.png
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+draft: true
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Annotations, Alerts and Data Manipulations in Grafana
+
+The time series graph in Grafana is a one-dimensional data, which displays collected values from the device. In real-world situations based on that data personnel can add their manual annotations, and alerts can be triggered when values go above and beyond thresholds.
+
+Personnel can also do Data Manipulation which can affect collected values and we would like to see all of them on the same chart.
+
+<!--truncate-->
+
+<Image
+  title="Time Series panels with Annotations, Data Manipulations and Alerts"
+  src="/img/blog/2023-03-23-annotations-grafana-api/panel.png"
+/>
+
+Another mystery we want to solve is when an alert is configured for a particular dashboard and panel with a variable. It will display broken heart emoji for the panel which does not depend on the variable.
+
+## Annotations
+
+What are annotations? There are two types of annotations: Manual and Alerts.
+
+### Manual Annotations
+
+Manual annotations are added manually by Editors and Administrators and reflect various situations.
+
+<Image
+  title="Editors and Administrator can add annotations."
+  src="/img/blog/2023-03-23-annotations-grafana-api/manual.png"
+/>
+
+### Alerts
+
+Alerts are created automatically when alerting rules are triggered.
+
+<Image
+  title="Alerting rules are periodically evaluated and can fire if thresholds is not met."
+  src="/img/blog/2023-03-23-annotations-grafana-api/alerting.png"
+/>
+
+## Dashboard Variables
+
+Watch this video to learn more about the dashboard, global, and environment variables in Grafana.
+
+<Video
+  src="https://www.youtube.com/embed/sczRq2lI3e4"
+  title="Dashboard, Global and Environment variables."
+/>
+
+If the Alerting rule has Dashboard and Panel Ids set, then the Time Series panel will display broken heart emoji. It's understandable behavior for particular graphs which don't depend on the Dashboard variables.
+
+For example, if you have a dashboard that displays device information using Dashboard variables, then when one of the devices triggers an alert you don't necessarily want to see alerting notification for all devices. Same for the Manual Annotations.
+
+## Data Manipulation
+
+By introducing the Data Manipulation panel you can update device settings which may trigger alerting rules. So, it's necessary to see annotations, alerts and data manipulation to get a big picture.
+
+<Video
+  src="https://www.youtube.com/embed/DXALVG8GijM"
+  title="Manual data entering and User input into Dashboard."
+/>
+
+## Grafana HTTP API Data Source
+
+To display Annotations and other information from local and remote Grafana instances we introduced Grafana HTTP API Data Source. It uses API Keys or tokens to request information and visualize in panels or use in annotations.
+
+<Image
+  title="Display annotation using Grafana HTTP API Data Source for the selected dashboard variable."
+  src="/img/blog/2023-03-23-annotations-grafana-api/annotations.png"
+/>
+
+## Annotations for Data Manipulations
+
+<Image
+  title="Data Manipulation Annotations created using SELECT statement from Timescale database."
+  src="/img/blog/2023-03-23-annotations-grafana-api/data-manipulations.png"
+/>
+
+## Summary
+
+Visualizing annotations, alerts, data manipulations and time series on a graph allows one to see the big picture and react to the changes quickly.
