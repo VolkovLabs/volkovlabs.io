@@ -15,7 +15,7 @@ import Video from "@theme/Video";
 It has one mandatory parameter `options` which is a chart configuration in a JSON format.
 
 <Image
-  title="setOptions Schema."
+  title="Apache ECharts panel uses Apache ECharts library and parameters to produce charts."
   src="/img/plugins/volkovlabs-echarts-panel/schema.png"
 />
 
@@ -24,7 +24,7 @@ It has one mandatory parameter `options` which is a chart configuration in a JSO
 You specify the `options` in the Apache ECharts visualization panel in the Monaco Code editor located on the right-hand side.
 
 <Image
-  title="setOptions Function."
+  title="Apache ECharts panel provides an editor to create ECharts functions."
   src="/img/plugins/volkovlabs-echarts-panel/function.png"
 />
 
@@ -34,23 +34,24 @@ The only parameter that is passed from this function to the `setOption()` is `op
 
 ## Parameters
 
-| Parameter                                  | Description                                                          |
-| ------------------------------------------ | -------------------------------------------------------------------- |
-| `data`                                     | The `data` object with a time range, series and request information. |
-| `echarts`                                  | ECharts library.                                                     |
-| `echartsInstance`                          | Instance of the ECharts. See the example in the picture above.       |
-| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.               |
-| `eventBus`                                 | The `eventBus` to publish and subscribe to application events.       |
-| `locationService`                          | The `locationService` works with browser location and history.       |
-| `notifyError(['Header', 'Error Message'])` | Display error notification.                                          |
-| `notifySuccess(['Header', 'Message'])`     | Display successful notification.                                     |
-| `replaceVariables`                         | The `replaceVariables()` function to interpolate variables.          |
-| `theme`                                    | The `theme` object.                                                  |
+| Parameter                                  | Description                                                    |
+| ------------------------------------------ | -------------------------------------------------------------- |
+| `data`                                     | Object with a time range, series and request information.      |
+| `echarts`                                  | ECharts library.                                               |
+| `echartsInstance`                          | Instance of the ECharts. See the example in the picture above. |
+| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.         |
+| `eventBus`                                 | Publish and subscribe to application events.                   |
+| `getDataSourceSrv`                         | Retrieve the entry point to data sources. Added in 4.3.0.      |
+| `locationService`                          | Works with browser location and history.                       |
+| `notifyError(['Header', 'Error Message'])` | Display error notification.                                    |
+| `notifySuccess(['Header', 'Message'])`     | Display successful notification.                               |
+| `replaceVariables`                         | Function to interpolate variables.                             |
+| `theme`                                    | Theming object.                                                |
 
 To learn more about parameters, you can log them in the Browser Console.
 
 ```javascript
-console.log(
+console.error(
   data,
   theme,
   echartsInstance,
