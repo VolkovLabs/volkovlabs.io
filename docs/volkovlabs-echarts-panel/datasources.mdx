@@ -107,3 +107,23 @@ We are using the [Static Data Source](/plugins/volkovlabs-static-datasource) for
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/graph.js"
   language="js"
 />
+
+## Entry point to data sources
+
+:::info Version
+
+Supported since Apache ECharts panel 4.3.0.
+
+:::
+
+Apache ECharts panel allows retrieving the entry point to data sources. With the data source instance, you can execute any methods provided by the data source.
+
+```js
+async () => {
+  const targets = data.request?.targets;
+  if (targets.length && targets[0].datasource) {
+    const datasource = await getDataSourceSrv().get(targets[0].datasource);
+    notifySuccess(["PostgreSQL Version", await datasource.getVersion()]);
+  }
+};
+```
