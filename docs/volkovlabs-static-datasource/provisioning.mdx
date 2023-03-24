@@ -1,13 +1,17 @@
 ---
-hide_table_of_contents: true
 tags:
   - Static Data Source
   - Provisioning
 ---
 
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
 # Provisioning
 
 Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
+
+## Example
 
 Example of provisioning the Static Data Source.
 
@@ -21,3 +25,12 @@ datasources:
     version: 1
     editable: true
 ```
+
+## Data Sources
+
+When provisioned, the Static data source should be available in the data sources list.
+
+<Image
+  title="Static Data source does not require any configuration."
+  src="/img/plugins/volkovlabs-static-datasource/datasource.png"
+/>

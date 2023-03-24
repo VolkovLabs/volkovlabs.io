@@ -1,5 +1,4 @@
 ---
-hide_table_of_contents: true
 tags:
   - Grafana HTTP API Data Source
   - Provisioning
@@ -10,6 +9,8 @@ import Image from "@theme/Image";
 # Provisioning
 
 Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
+
+## Example
 
 Example of provisioning the Grafana HTTP API Data Source for the remote Grafana instance.
 
@@ -25,6 +26,8 @@ datasources:
     jsonData:
       url: https://live.volkovlabs.io
 ```
+
+## Data Sources
 
 When provisioned, the data source should be available in the Data sources lists.
 

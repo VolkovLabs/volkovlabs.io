@@ -1,5 +1,4 @@
 ---
-hide_table_of_contents: true
 tags:
   - Apache ECharts
 image: /img/plugins/volkovlabs-echarts-panel/data-zoom.png
@@ -11,30 +10,32 @@ import Video from "@theme/Video";
 
 # Event Handling
 
-Users can trigger related events through their operation. To react on Mouse and other events, use `echartsInstance`:
+Users can trigger related events through their operation. To react on Mouse and other events, use `echartsInstance`.
 
-```javascript
+For more examples and details, take a look at the official documentation [Event and Action](https://apache.github.io/echarts-handbook/en/concepts/event/).
+
+## Mouse Click
+
+```js
 /**
  * On Mouse Click
  */
-echartsInstance.on('click', (params) => {
-  notifySuccess(['Event', 'On Click']);
-  ...
+echartsInstance.on("click", (params) => {
+  notifySuccess(["Event", "On Click"]);
   echartsInstance.resize(); // to redraw visualization
 });
+```
 
+```js
 /**
  * On Double Click
  */
-echartsInstance.on('dblclick', (params) => {
-  ...
+echartsInstance.on("dblclick", (params) => {
   echartsInstance.resize();
 });
 ```
 
-For more examples and details, take a look at the official documentation [Event and Action](https://apache.github.io/echarts-handbook/en/concepts/event/).
-
-## Data Zoom to update Time Range
+## Update Time Range
 
 The data Zoom feature allows selecting the time range on the chart. When the time range is selected the event can trigger updating the dashboard's time range using the `locationService` parameter similar to Grafana native functionality.
 
@@ -42,6 +43,8 @@ The data Zoom feature allows selecting the time range on the chart. When the tim
   title="Data Zoom feature for Random Walk."
   src="/img/plugins/volkovlabs-echarts-panel/data-zoom.png"
 />
+
+### Example
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/data-zoom.js"
