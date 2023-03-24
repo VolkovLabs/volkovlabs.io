@@ -91,8 +91,8 @@ const footer = {
           href: "https://github.com/VolkovLabs",
         },
         {
-          label: "LinkedIn",
-          href: "https://linkedin.com/company/volkovlabs",
+          label: "Release Dashboard",
+          href: "https://release.volkovlabs.io",
         },
         {
           label: "YouTube Channel",
@@ -104,11 +104,11 @@ const footer = {
       title: "Get in touch",
       items: [
         {
-          label: "Contact",
-          href: "mailto:info@volkovlabs.io",
+          label: "LinkedIn",
+          href: "https://linkedin.com/company/volkovlabs",
         },
         {
-          label: "Sponsor",
+          label: "GitHub Sponsor",
           href: "https://github.com/sponsors/VolkovLabs",
         },
         {

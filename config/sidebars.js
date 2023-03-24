@@ -14,6 +14,11 @@ const mySidebar = [
   grafana,
   plugins,
   projects,
+  {
+    type: "link",
+    label: "Release Dashboard",
+    href: "https://release.volkovlabs.io",
+  },
 ];
 
 /**
