@@ -12,15 +12,15 @@ Grafana HTTP API Data Source supports retrieving annotations to display filtered
 
 ## Options
 
-| Filter       | Options                                     |
-| ------------ | ------------------------------------------- |
-| Type         | All, Annotation, or Alert.                  |
-| Dashboards   | All or This.                                |
-| Time Range   | None or Selected in the dashboard.          |
-| Prev State   | All, Normal, Pending, or Alerting.          |
-| Next State   | All, Normal, Pending, or Alerting.          |
-| Text Pattern | Supports Regular expressions and variables. |
-| Max Limit    | Maximum number of annotations to retrieve.  |
+| Filter       | Options                                                 |
+| ------------ | ------------------------------------------------------- |
+| Type         | All, Annotation, or Alert.                              |
+| Dashboards   | All or This.                                            |
+| Time Range   | None or Selected in the dashboard.                      |
+| Prev State   | All, Normal, Pending, or Alerting.                      |
+| Next State   | All, Normal, Pending, or Alerting.                      |
+| Text Pattern | Supports Regular expressions and variables.             |
+| Max Limit    | Maximum number of annotations to retrieve. Default 100. |
 
 ## Dashboard Annotations
 
@@ -29,9 +29,13 @@ Grafana HTTP API Data Source supports retrieving annotations to display filtered
   src="/img/plugins/volkovlabs-grapi-datasource/annotations.png"
 />
 
-## Annotation list
+## Alerts
 
-The Annotation panel does not show Alerts since it's filtering annotations with a specific type.
+:::info Annotation List
+
+The native Annotation List panel does not show Alerts since it's filtering annotations with a specific type.
+
+:::
 
 The Grafana HTTP API data source allows retrieving annotations and alerts to display them using any available panel in your style.
 
