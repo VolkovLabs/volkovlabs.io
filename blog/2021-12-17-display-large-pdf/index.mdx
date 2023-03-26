@@ -15,8 +15,6 @@ import Video from "@theme/Video";
 
 We discussed the benefits of using Docker containers and initial Provisioning in [the recent article](/blog/display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e) about creating our panel plugin template for Grafana. While working on the current feature request for the Base64 image/PDF panel, this technique helped us quickly deliver solutions and improve the long-term support for the panel.
 
-<!--truncate-->
-
 When we created a Base64 image/PDF panel to display images for one of our projects, support for PDF documents was added as a feature. I am glad the panel is being used to display PDF documents stored in the databases like PostgreSQL.
 
 You can learn more about the plugin in the video on our YouTube channel.
@@ -52,6 +50,7 @@ From Grafana's point of view, all data sources are the same while they return da
 <Image
   title="Large PDF document retrieved from the PostgreSQL database and displayed in Grafana."
   src="/img/blog/2021-12-17-display-large-pdf/panel.png"
+  lazy={false}
 />
 
 To install PostgreSQL, we added a container with the latest version of the image `postgres`. We specified a volume for the folder `/docker-entrypoint-initdb.d`, which takes care of creating necessary tables and permissions when starting.

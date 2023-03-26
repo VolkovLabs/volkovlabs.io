@@ -15,8 +15,6 @@ import Video from "@theme/Video";
 
 What is the first panel you see when opening Grafana? It's probably the News panel on the Home dashboard with the latest blog posts from the Grafana team and community. The News panel fetches the RSS feed directly in the browser, and while it works for some feeds, it has manifold limitations.
 
-<!--truncate-->
-
 Looking around, we found multiple discussions and issues opened regarding updating the News panel or creating an RSS and Atom data source. The question is, how to display data from such data sources? Time series or Table panels won't be the perfect candidates to demonstrate news with a custom layout.
 
 The video version of this article is available on our YouTube channel.
@@ -53,6 +51,7 @@ The RSS/Atom data source can be added manually using the Data Sources Configurat
 <Image
   title="We are adding an RSS/Atom data source for Grafana Newsfeed."
   src="/img/blog/2021-12-28-rss-datasource/datasource.png"
+  lazy={false}
 />
 
 <Code

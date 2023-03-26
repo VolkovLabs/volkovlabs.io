@@ -14,8 +14,6 @@ import Video from "@theme/Video";
 
 The number of use cases operating Grafana as a platform to build modern applications is increasing. Compared to a single central Grafana instance, we are looking at multiple distributed installations with new data sources.
 
-<!--truncate-->
-
 One example is the Environment Data Source, which we created for our customer, who uses balenaCloud, the container-based platform for deploying Internet of Things (IoT) fleets of connected Linux devices.
 
 In balenaCloud each IoT device is independent of its own Grafana instance, and each device can be uniquely identified by environment variables exposed within the project.
@@ -85,6 +83,7 @@ Surprisingly, we could not find a solution on how to display environment variabl
 <Image
   title="The Environment Data Source allows retrieving environment variables exposed to the Grafana instance."
   src="/img/blog/2022-02-20-environment-datasource/dashboard.png"
+  lazy={false}
 />
 
 ### Configuration

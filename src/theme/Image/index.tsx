@@ -4,6 +4,12 @@ import React from "react";
 import Zoom from "react-medium-image-zoom";
 import styles from "./styles.module.css";
 
+declare module "react" {
+  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+    // extends React's HTMLAttributes
+    fetchPriority?: string;
+  }
+}
 /**
  * Properties
  */
@@ -13,16 +19,26 @@ type Props = {
   title?: string;
   width?: number;
   zoom: boolean;
+  lazy: boolean;
 };
 
 /**
  * Image
  */
-const Image = ({ height, src, title, width, zoom = true }: Props) => (
+const Image = ({
+  height,
+  src,
+  title,
+  width,
+  zoom = true,
+  lazy = true,
+}: Props) => (
   <figure>
-    {zoom && (
+    {zoom ? (
       <Zoom>
         <img
+          loading={lazy ? "lazy" : "eager"}
+          fetchPriority={lazy ? "auto" : "high"}
           alt={title}
           className={styles.image}
           height={height ? height : "auto"}
@@ -30,10 +46,10 @@ const Image = ({ height, src, title, width, zoom = true }: Props) => (
           width={width}
         />
       </Zoom>
-    )}
-
-    {!zoom && (
+    ) : (
       <img
+        loading={lazy ? "lazy" : "eager"}
+        fetchPriority={lazy ? "auto" : "high"}
         alt={title}
         className={clsx(styles.image, styles.blog)}
         height={height ? height : "auto"}

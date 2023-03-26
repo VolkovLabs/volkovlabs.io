@@ -14,8 +14,6 @@ import Video from "@theme/Video";
 
 I did not find much-organized information about Grafana configuration from the management point of view. There is this famous default setup, but it is not clear what its limits are. Also, for those who would want to take the next step to an actual application, what direction should it be, or in other words, what should be modified in the default Grafana installation package to convert it into the real deal?
 
-<!--truncate-->
-
 This article consists of the notes I took during my research. I share them to save the reader's time and effort.
 
 In any setup, Grafana can be installed directly on the host or in a Docker container. That's why every rectangle representing Grafana has the docker slash host symbol on the diagram below.
@@ -23,6 +21,7 @@ In any setup, Grafana can be installed directly on the host or in a Docker conta
 <Image
   title="The Default, Next level and High Availability setups side-by-side."
   src="/img/blog/2023-01-22-grafana-setup/setup.png"
+  lazy={false}
 />
 
 Let's review every level and who can benefit from each.

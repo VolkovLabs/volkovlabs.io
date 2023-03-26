@@ -14,8 +14,6 @@ import Video from "@theme/Video";
 
 A week ago, Volkov Labs and Theia Scientific published a [blog post about using NFS (Network File System) Server](https://www.balena.io/blog/using-nfs-server-to-share-external-storage-between-containers-balena/) as a solution to share external storage between containers on balenaCloud. This problem is long-standing, and this article demonstrates a solution.
 
-<!--truncate-->
-
 Let's set the stage, aka the problem.
 
 > Following containerization best practices, the Theiascope™ platform is separated into containers deployed in host network mode and interacts with each other using TCP and/or UDP ports. The Theia web application running on the Theiascope™ hardware powered by balenaOS deals with massive data, where exporting results can reach gigabytes in size. To prevent caching and delay in transferring files between containers, each container should have access to the same storage.
@@ -51,6 +49,7 @@ Balena NFS Server and client project consists of three containers and can be for
 <Image
   title="PostgreSQL container has NFS Server. NGINX container utilizes NFS Client to connect and access files on the NFS drive."
   src="/img/blog/2022-07-04-balena-nfs/balena-nfs.png"
+  lazy={false}
 />
 
 First, the project includes an NFS Server built on top of the PostgreSQL Alpine image. It uses OpenRC (dependency-based init system) to manage NFS services, which is the recommended way to start NFS service for Alpine Linux.

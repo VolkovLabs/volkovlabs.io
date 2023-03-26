@@ -14,8 +14,6 @@ import Video from "@theme/Video";
 
 Working on a commercial project, we created a Data Manipulation panel plugin that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
 
-<!--truncate-->
-
 The Data Manipulation panel has been requested by the community multiple times. We decided to open-source it and submit it for review to the Grafana team to include in the Grafana Catalog.
 
 The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
@@ -32,6 +30,7 @@ Panel options allow you to specify the URL for GET requests to receive initial v
 <Image
   title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
   src="/img/blog/2022-05-19-data-manipulation-panel/form-api.png"
+  lazy={false}
 />
 
 The plugin supports dashboard variables in the URL and header parameters.

@@ -15,11 +15,10 @@ import Video from "@theme/Video";
 
 In this weekend's project, we found a way to collect and visualize the content metrics for our website. Who, What, and from Where requested our resources, like our blog and documentation. To achieve this goal, we assembled Nginx, Loki, and Promtail into a pipeline to work together, showing all required metrics on a Grafana dashboard.
 
-<!--truncate-->
-
 <Image
   title="Website Analytics based on NGINX, Loki and Grafana."
   src="/img/blog/2023-01-29-nginx-loki-grafana/dashboard.png"
+  lazy={false}
 />
 
 If you google how to collect Nginx logs using Promtail and Loki, you most likely will find various dashboards, outdated GitHub repositories, and other fragments of information. None of them represent a solution as a whole, covering all steps from collecting to visualizing.

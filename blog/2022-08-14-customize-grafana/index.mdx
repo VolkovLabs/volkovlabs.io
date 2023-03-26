@@ -17,8 +17,6 @@ This article collects various commands to help you play with the Grafana in your
 
 If you are here, you probably know what Grafana is and have already been playing with it for quite some time. And you are already quite aware that Grafana is a remarkable open-source tool for observability.
 
-<!--truncate-->
-
 The installation of Grafana directly on the operating system takes a minute or two. However, working with Grafana in a Docker container is more advantageous.
 
 <Video
@@ -54,6 +52,7 @@ There are two types of people in this world: people with the Light theme prefere
 <Image
   title="You can set the default theme to be either Light or Dark."
   src="/img/blog/2022-08-14-customize-grafana/theme.png"
+  lazy={false}
 />
 
 The Light option was introduced in version 7 and became equally famous as the Dark one. This is the only setting that is configurable in a user profile. You can, however, make the UI style coherent by specifying the default theme for the whole Docker container by clearly assigning a value to the following environment variable.
