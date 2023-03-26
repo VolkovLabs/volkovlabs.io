@@ -4,7 +4,7 @@ slug: development-templates-2.2.0-20230216/
 tags: [Development, Release Notes]
 image: /img/blog/2023-02-16-development-templates-2.2.0/banner.png
 keywords: [Panel, Data Source, Application, Grafana, Development]
-updated: 2023-02-19
+updated: 2023-03-26
 ---
 
 import Image from "@theme/Image";
@@ -19,14 +19,19 @@ We released a new version of Grafana Development Templates (Panel, Data Source a
 - Updated README, and configuration.
 - Added screenshots and updated plugin JSON file.
 
-<!--truncate-->
-
 <Image
   title="The Abc panel uses Static Data Source to display value from the field."
   src="/img/blog/2023-02-16-development-templates-2.2.0/dashboard.png"
+  lazy={false}
 />
 
 ## Grafana Plugin Tools
+
+:::info Improvements
+Grafana Team did some improvements in the tools and added deprecated messaging to the Grafana Toolkit.
+
+We will migrate our plugins to Grafana tools for Grafana 10 release.
+:::
 
 Grafana recently released `@grafana/create-plugin@1.0.0`, which will eventually replace the plugin development parts of `@grafana/toolkit`. There is no timeline for when it happens.
 

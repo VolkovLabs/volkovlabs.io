@@ -15,8 +15,6 @@ import Video from "@theme/Video";
 
 We understand the risk of data manipulation and take security concerns seriously. This article explores three secure ways to connect the Data Manipulation panel to the API Server.
 
-<!--truncate-->
-
 The [recent article](/blog/data-manipulation-panel-plugin-for-grafana-97f9af2c67e0) and Youtube video showcased various use cases to bring your Grafana Dashboard game to the next level using the Data Manipulation plugin. This panel can insert, update application data, and modify configuration directly from your Grafana dashboard.
 
 <Video
@@ -33,6 +31,7 @@ Data Manipulation panel options allow you to specify the URL for `GET` requests 
 <Image
   title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
   src="/img/blog/2022-06-12-data-manipulation-api/form-api.png"
+  lazy={false}
 />
 
 There are three methods to connect the panel to the API Server:

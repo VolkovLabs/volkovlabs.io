@@ -15,8 +15,6 @@ import Video from "@theme/Video";
 
 Grafana has excellent tutorials on building panel plugins, but we found ourselves repeating the same steps when creating custom plugins for our customers. Eventually, we decided to create our template for a panel plugin, which I hope can be helpful for the community.
 
-<!--truncate-->
-
 Grafana's tutorial [Build a panel plugin](https://grafana.com/tutorials/build-a-panel-plugin/) provides information on setting up the environment, creating a new plugin, and explaining the basics of a panel development using data frames and options control. It's a great starting point, and we recommend reading it before continuing with this article.
 
 As I mentioned before, we wanted to have a template, which can be used as a base for a new panel with everything in place and updated to the latest version of Grafana. We called it the [Abc panel](https://github.com/VolkovLabs/volkovlabs-abc-panel).
@@ -28,6 +26,7 @@ Panels allow visualizing of data received from data sources. While Grafana has s
 <Image
   title="Panel plugins are registered in the Grafana Catalog and provide many visualization options and features."
   src="/img/blog/2021-12-10-panel-template/panels.png"
+  lazy={false}
 />
 
 There are a lot of use cases that require custom visualization with additional logic implemented on the front end, which goes beyond standard and available panels.
