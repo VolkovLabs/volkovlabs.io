@@ -37,9 +37,6 @@ const BlogPostPageWrapper = (props) => {
 
   return (
     <>
-      <script type="application/ld+json">
-        {JSON.stringify(breadcrumbStructuredData)}
-      </script>
       <BlogPostPage {...props} />
     </>
   );
