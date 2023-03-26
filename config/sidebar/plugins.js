@@ -63,7 +63,6 @@ const plugins = {
           label: "Features",
           type: "category",
         },
-
         "volkovlabs-image-panel/release",
       ],
       label: "Base64 Image/PDF Panel",
@@ -195,6 +194,16 @@ const plugins = {
         },
         "volkovlabs-static-datasource/provisioning",
         "volkovlabs-static-datasource/variables",
+        {
+          items: [
+            "volkovlabs-static-datasource/panels/image",
+            "volkovlabs-static-datasource/panels/logs",
+            "volkovlabs-static-datasource/panels/graph",
+            "volkovlabs-static-datasource/panels/pie",
+          ],
+          label: "Panels",
+          type: "category",
+        },
         "volkovlabs-static-datasource/release",
       ],
       label: "Static Data Source",
