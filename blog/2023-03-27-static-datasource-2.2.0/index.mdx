@@ -1,0 +1,83 @@
+---
+authors: [mikhail]
+slug: static-datasource-2.2.0-20230327/
+tags: [Static Data Source, Release Notes]
+image: /img/blog/2023-03-27-static-datasource-2.2.0/banner.png
+keywords: [Data Source, Static, Storage, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Static Data Source 2.2.0
+
+We released a new version of Static Data Source 2.2.0. This maintenance release
+
+- Added examples for Node Graph, Base64, Pie Chart, and Logs panels in Documentation.
+- Updated Variable replacement to support Scoped Variables.
+- Updated to the latest Grafana 9.4.7 toolkit and workflows.
+
+:::info Grafana Catalog
+The plugin is under review by the Grafana team.
+:::
+
+## Half a Million downloads
+
+The Static Data Source was downloaded more than half a million times. We plan exciting new features for the upcoming release to get it to a million and become a go-to data source for JavaScript enthusiasts.
+
+<Image
+  title="More than half a million downloads in 2 years."
+  src="/img/blog/2023-03-27-static-datasource-2.2.0/downloads.png"
+  lazy={false}
+/>
+
+## Examples
+
+We added various examples in the [Documentation](/plugins/volkovlabs-static-datasource/) to get started with Static Data Source.
+
+<Image
+  title="Pie Chart panel visualized data from the Static Data Source."
+  src="/img/blog/2023-03-27-static-datasource-2.2.0/pie.png"
+/>
+
+## Variables
+
+The Static Data Source supports dashboard and global variables in the String fields. In this release, we added support for the Scoped variables used when repeating panels based on multi-select variables.
+
+To learn about three types of variables take a look at [Variables](/plugins/grafana/variables).
+
+## Getting Started
+
+The Static Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-static-datasource/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-static-datasource
+```
+
+## YouTube Tutorial
+
+The Static Data Source is a plugin for Grafana that allows you to store and emulate any data.
+
+<Video
+  src="https://www.youtube.com/embed/QOV8ECOUjWs"
+  title="Mimic any data with Static data source."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update CI and Release workflows (#33)
+- Update to Grafana 9.4.7 (#34)
+- Update README with Documentation (#35)
+- Add Scoped Variables for Variables replacement (#35)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-static-datasource/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
