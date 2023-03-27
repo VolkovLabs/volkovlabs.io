@@ -4,7 +4,7 @@ slug: nginx-loki-grafana-20230129/
 tags: [Analytics, Loki, Nginx]
 image: /img/blog/2023-01-29-nginx-loki-grafana/banner.png
 keywords: [NGINX, Loki, Grafana, Analytics]
-updated: 2023-03-02
+updated: 2023-03-26
 ---
 
 import Code from "@theme/Code";
@@ -139,6 +139,7 @@ In our environment we are running Loki in a Docker container orchestrated using 
   loki:
     container_name: loki
     image: grafana/loki:2.7.1
+    restart: always
     network_mode: host
     volumes:
       - ./loki/data:/loki
@@ -171,6 +172,7 @@ Similar to Loki we are running Promtail in a Docker container orchestrated with 
 ```docker title=docker-compose.yml
   promtail:
     image: grafana/promtail:2.7.1
+    restart: always
     container_name: promtail
     network_mode: host
     volumes:
