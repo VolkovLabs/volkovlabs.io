@@ -95,6 +95,7 @@ const plugins = {
             "volkovlabs-dynamictext-panel/data",
             "volkovlabs-dynamictext-panel/code",
             "volkovlabs-dynamictext-panel/helpers",
+            "volkovlabs-dynamictext-panel/diagram",
             "volkovlabs-dynamictext-panel/styles",
             "volkovlabs-dynamictext-panel/variables",
           ],
