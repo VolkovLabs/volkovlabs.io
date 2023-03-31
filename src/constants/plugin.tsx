@@ -56,7 +56,6 @@ export const PluginList: PluginItem[] = [
     name: "volkovlabs-grapi-datasource",
     description: <>Connect to Local and Remote Grafana instances.</>,
     href: "/plugins/volkovlabs-grapi-datasource/",
-    badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
   },
   {
     title: "RSS/Atom Data Source",
