@@ -7,6 +7,7 @@ const grafana = {
     {
       items: [
         "grafana/allow-unsigned",
+        "grafana/annotations",
         "grafana/customize",
         "grafana/variables",
       ],
