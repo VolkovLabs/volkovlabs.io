@@ -1,0 +1,105 @@
+---
+authors: [mikhail]
+slug: grapi-datasource-1.2.0-20230331/
+tags: [Grafana HTTP API Data Source, Release Notes]
+image: /img/blog/2023-03-31-grapi-datasource-1.2.0/banner.png
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Grafana HTTP API Data Source 1.2.0
+
+We released a new version of Grafana HTTP API Data Source 1.2.0. This feature release
+
+- Added formatted Annotation labels for Alerts.
+- Added Alert Rules and Alert UID field for Alert Annotations.
+- Added Variables support.
+- Updated Scoped Variables for Annotations.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on March 31, 2023.
+:::
+
+## Alert labels
+
+We added formatted Alert labels in the `labels` field, which can be parsed using `Extract field` transformation to sort, filter, and display by values.
+
+<Image
+  title="Grafana HTTP API Data Source used to display Alerting History."
+  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/history.png"
+  lazy={false}
+/>
+
+## Alert Rules and UID
+
+Based on the alert rules Annotations will return the Alert name and UID fields. Alert UID can be used for data links to quickly direct to the rules configuration.
+
+<Image
+  title="Alert Name and UID displayed for each Alert annotation."
+  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/alerts.png"
+/>
+
+## Annotations
+
+Annotations might seem different from the Alerts, but under the hood, they are very similar. With a little help from the Grafana HTTP API data source, you can easily work with both.
+
+This is an introductory video for anyone interested in Grafana Alerts and Annotations.
+
+<Video
+  src="https://www.youtube.com/embed/4asWJ_Dhcmw"
+  title="Annotations, Alerts, and Annotation queries in Grafana explained."
+/>
+
+## Variables support
+
+We added initial Variables support to the data source. You can select Alert Rules, Data Sources, and Annotations by UID or text fields.
+
+<Image
+  title="Grafana HTTP API Data Source can be used for Dashboard Variables."
+  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/variables.png"
+/>
+
+## Calendar
+
+The Grafana HTTP API Data Source can be used together with [Calendar panel](/plugins/volkovlabs-calendar-panel) to visualize alerts that happened in a week or month.
+
+<Image
+  title="Alerts for this week displayed using Calendar panel."
+  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/calendar.png"
+/>
+
+## Getting Started
+
+The Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-grapi-datasource
+```
+
+## YouTube Tutorial
+
+Will be available soon.
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add formatted Annotation labels for Alerts (#19)
+- Update Annotation Limit to 100 by default (#19)
+- Add Alert Rules and UID for Alerts Annotations (#20)
+- Update Scoped Variables for Annotations (#21)
+- Add Variable Support (#25)
+- Update provisioning for testing Alerts (#26, #28)
+- Add Annotations Tutorial (#29)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
