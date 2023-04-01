@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "grapi-datasource-1.2.0-20230331/",
+    metadata: {
+      permalink: "/blog/grapi-datasource-1.2.0-20230331/",
+      source: "@site/blog/2023-03-31-grapi-datasource-1.2.0/index.mdx",
+      title: "Grafana HTTP API Data Source 1.2.0",
+      description:
+        "We released a new version of Grafana HTTP API Data Source 1.2.0. This feature release",
+      date: "2023-03-31T00:00:00.000Z",
+      formattedDate: "March 31, 2023",
+      tags: [
+        {
+          label: "Grafana HTTP API Data Source",
+          permalink: "/blog/tags/grafana-http-api-data-source",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Loves to work on innovative projects.",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "grapi-datasource-1.2.0-20230331/",
+        tags: ["Grafana HTTP API Data Source", "Release Notes"],
+        image: "/img/blog/2023-03-31-grapi-datasource-1.2.0/banner.png",
+        keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
+      },
+      nextItem: {
+        title: "Static Data Source 2.2.0",
+        permalink: "/blog/static-datasource-2.2.0-20230327/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Grafana HTTP API Data Source 1.2.0. This feature release\n\n- Added formatted Annotation labels for Alerts.\n- Added Alert Rules and Alert UID field to Alert Annotations.\n- Added Variables support.\n- Updated Scoped Variables for Annotations.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on March 31, 2023.\n:::\n\n## Alert labels\n\nWe added formatted Alert labels in the `labels` field, which can be parsed using `Extract field` transformation to sort, filter, and display by values.\n\n<Image\n  title="Grafana HTTP API Data Source used to display Alerting History."\n  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/history.png"\n  lazy={false}\n/>\n\n## Alert Rules and UID\n\nBased on the alert rules Annotations will return the Alert name and UID fields. Alert UID can be used for data links to quickly direct to the rules configuration.\n\n<Image\n  title="Alert Name and UID displayed for each Alert annotation."\n  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/alerts.png"\n/>\n\n## Annotations\n\nAnnotations might seem different from the Alerts, but under the hood, they are very similar. With a little help from the Grafana HTTP API data source, you can easily work with both.\n\nThis is an introductory video for anyone interested in Grafana Alerts and Annotations.\n\n<Video\n  src="https://www.youtube.com/embed/4asWJ_Dhcmw"\n  title="Annotations, Alerts, and Annotation queries in Grafana explained."\n/>\n\n## Variables support\n\nWe added initial Variables support to the data source. You can select Alert Rules, Data Sources, and Annotations by UID or text fields.\n\n<Image\n  title="Grafana HTTP API Data Source can be used for Dashboard Variables."\n  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/variables.png"\n/>\n\n## Calendar\n\nThe Grafana HTTP API Data Source can be used together with [Calendar panel](/plugins/volkovlabs-calendar-panel) to visualize alerts that happened in a week or month.\n\n<Image\n  title="Alerts for this week displayed using Calendar panel."\n  src="/img/blog/2023-03-31-grapi-datasource-1.2.0/calendar.png"\n/>\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available soon.\n\n## Release Notes\n\n### Features / Enhancements\n\n- Add formatted Annotation labels for Alerts (#19)\n- Update Annotation Limit to 100 by default (#19)\n- Add Alert Rules and UID for Alerts Annotations (#20)\n- Update Scoped Variables for Annotations (#21)\n- Add Variable Support (#25)\n- Update provisioning for testing Alerts (#26, #28)\n- Add Annotations Tutorial (#29)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "static-datasource-2.2.0-20230327/",
     metadata: {
       permalink: "/blog/static-datasource-2.2.0-20230327/",
@@ -35,6 +80,11 @@ export const BlogPosts = [
         tags: ["Static Data Source", "Release Notes"],
         image: "/img/blog/2023-03-27-static-datasource-2.2.0/banner.png",
         keywords: ["Data Source", "Static", "Storage", "Grafana"],
+        updated: "2023-03-30T00:00:00.000Z",
+      },
+      prevItem: {
+        title: "Grafana HTTP API Data Source 1.2.0",
+        permalink: "/blog/grapi-datasource-1.2.0-20230331/",
       },
       nextItem: {
         title: "Data Manipulation Panel 2.8.0",
@@ -42,7 +92,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Static Data Source 2.2.0. This maintenance release\n\n- Added examples for Node Graph, Base64, Pie Chart, and Logs panels in Documentation.\n- Updated Variable replacement to support Scoped Variables.\n- Updated to the latest Grafana 9.4.7 toolkit and workflows.\n\n:::info Grafana Catalog\nThe plugin is under review by the Grafana team.\n:::\n\n## Half a Million downloads\n\nThe Static Data Source was downloaded more than half a million times. We plan exciting new features for the upcoming release to get it to a million and become a go-to data source for JavaScript enthusiasts.\n\n<Image\n  title="More than half a million downloads in 2 years."\n  src="/img/blog/2023-03-27-static-datasource-2.2.0/downloads.png"\n  lazy={false}\n/>\n\n## Examples\n\nWe added various examples in the [Documentation](/plugins/volkovlabs-static-datasource/) to get started with Static Data Source.\n\n<Image\n  title="Pie Chart panel visualized data from the Static Data Source."\n  src="/img/blog/2023-03-27-static-datasource-2.2.0/pie.png"\n/>\n\n## Variables\n\nThe Static Data Source supports dashboard and global variables in the String fields. In this release, we added support for the Scoped variables used when repeating panels based on multi-select variables.\n\nTo learn about three types of variables take a look at [Variables](/plugins/grafana/variables).\n\n## Getting Started\n\nThe Static Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-static-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-static-datasource\n```\n\n## YouTube Tutorial\n\nThe Static Data Source is a plugin for Grafana that allows you to store and emulate any data.\n\n<Video\n  src="https://www.youtube.com/embed/QOV8ECOUjWs"\n  title="Mimic any data with Static data source."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update CI and Release workflows (#33)\n- Update to Grafana 9.4.7 (#34)\n- Update README with Documentation (#35)\n- Add Scoped Variables for Variables replacement (#35)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-static-datasource/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Static Data Source 2.2.0. This maintenance release\n\n- Added examples for Node Graph, Base64, Pie Chart, and Logs panels in Documentation.\n- Updated Variable replacement to support Scoped Variables.\n- Updated to the latest Grafana 9.4.7 toolkit and workflows.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on March 29, 2023.\n:::\n\n## Half a Million downloads\n\nThe Static Data Source was downloaded more than half a million times. We plan exciting new features for the upcoming release to get it to a million and become a go-to data source for JavaScript enthusiasts.\n\n<Image\n  title="More than half a million downloads in 2 years."\n  src="/img/blog/2023-03-27-static-datasource-2.2.0/downloads.png"\n  lazy={false}\n/>\n\n## Examples\n\nWe added various examples in the [Documentation](/plugins/volkovlabs-static-datasource/) to get started with Static Data Source.\n\n<Image\n  title="Pie Chart panel visualized data from the Static Data Source."\n  src="/img/blog/2023-03-27-static-datasource-2.2.0/pie.png"\n/>\n\n## Variables\n\nThe Static Data Source supports dashboard and global variables in the String fields. In this release, we added support for the Scoped variables used when repeating panels based on multi-select variables.\n\nTo learn about three types of variables take a look at [Variables](/plugins/grafana/variables).\n\n## Getting Started\n\nThe Static Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-static-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-static-datasource\n```\n\n## YouTube Tutorial\n\nThe Static Data Source is a plugin for Grafana that allows you to store and emulate any data.\n\n<Video\n  src="https://www.youtube.com/embed/QOV8ECOUjWs"\n  title="Mimic any data with Static data source."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update CI and Release workflows (#33)\n- Update to Grafana 9.4.7 (#34)\n- Update README with Documentation (#35)\n- Add Scoped Variables for Variables replacement (#35)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-static-datasource/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
   },
   {
     id: "form-panel-2.8.0-20230316/",
@@ -141,7 +191,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Grafana HTTP API Data Source 1.1.0. This maintenance release\n\n- Signed as a community plugin and available in Grafana Cloud and On-Premises.\n- Updated Plugin configuration, types and README.\n- Updated to the latest Grafana 9.4.3 toolkit.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on March 15, 2023.\n:::\n\n## We just started\n\nThe first release can retrieve\n\n- Health information.\n- List of Data Sources.\n- Annotations and Alarms with filter capabilities.\n\n<Image\n  title="Dashboard displays Data sources, annotations and health information of the Grafana instance."\n  src="/img/blog/2023-03-15-grapi-datasource-1.1.0/dashboard.png"\n  lazy={false}\n/>\n\n## Roadmap\n\nWe are planning to add most of the HTTP API endpoints for Dashboards, Users management, and Configuration. You are welcome to open feature requests in the repository.\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available end of March.\n\n## Release Notes\n\n- Update to Grafana 9.4.3 (#13)\n- Update Bearer token plugin configuration (#13)\n- Signed as community plugin (#14)\n- Update Grafana types and description (#15)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Grafana HTTP API Data Source 1.1.0. This maintenance release\n\n- Signed as a community plugin and available in Grafana Cloud and On-Premises.\n- Updated Plugin configuration, types and README.\n- Updated to the latest Grafana 9.4.3 toolkit.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on March 15, 2023.\n:::\n\n## We just started\n\nThe first release can retrieve\n\n- Health information.\n- List of Data Sources.\n- Annotations and Alarms with filter capabilities.\n\n<Image\n  title="Dashboard displays Data sources, annotations and health information of the Grafana instance."\n  src="/img/blog/2023-03-15-grapi-datasource-1.1.0/dashboard.png"\n  lazy={false}\n/>\n\n## Roadmap\n\nWe are planning to add most of the HTTP API endpoints for Dashboards, Users management, and Configuration. You are welcome to open feature requests in the repository.\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available end of March.\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update to Grafana 9.4.3 (#13)\n- Update Bearer token plugin configuration (#13)\n- Signed as community plugin (#14)\n- Update Grafana types and description (#15)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
   },
   {
     id: "dynamictext-panel-3.1.0-20230312/",
