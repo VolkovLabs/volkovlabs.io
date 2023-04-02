@@ -15,11 +15,12 @@ import Video from "@theme/Video";
 
 Grafana's time series visualization is designed to display one-dimensional data arrays. In most cases that we have come across, a time series panel shows data points collected from a device.
 
-Out of the box, Grafana allows adding native annotations, alert rules for your time series, and visualize annotation queries.
+Out of the box, Grafana allows adding native annotations, alert rules for your time series, and visualizing annotation queries.
 
 ## Native Annotations
 
 Native annotation is a simple commentary on a data point. Users with at least Editor privileges can add a native annotation manually by clicking on the data point of interest, typing a description, and specifying tags.
+
 Alternatively, you can create HTTP API calls to automate the entry process.
 
 <Image
@@ -32,8 +33,7 @@ Alternatively, you can create HTTP API calls to automate the entry process.
 
 Alerts might seem like a different kind of animal, but under the hood, alerts are very similar to native annotations.
 
-Alerts are created by the Grafana alert manager according to the alert rules you put in place.
-Here is an example of an alert rule:
+Alerts are created by the Grafana alert manager according to the alert rules you put in place. Here is an example of an alert rule:
 
 :::note Alert Rule
 
@@ -50,8 +50,7 @@ The rule means to capture three values (30 seconds/10 seconds).
 
 ## Alerts vs Native annotations
 
-Native annotations serve well for non-time-critical comments, while alerts work best for vigilant data monitoring. The alert manager creates alerts according to the rules you put in place.
-Alerts immediately signal if something is off (the value is outside of the expected range).
+Native annotations serve well for non-time-critical comments, while alerts work best for vigilant data monitoring. The alert manager creates alerts according to the rules you put in place. Alerts immediately signal if something is off (the value is outside of the expected range).
 
 People tend to reference both alerts and native annotations simply as annotations. This, unfortunately, confuses things a little further.
 
@@ -71,7 +70,7 @@ This introductory video highlights the differences and similarities between Graf
 
 Both alerts and native annotations are stored in the Grafana configuration database. Please, refer to another blog post where I explained in detail what that is.
 
-In short, every Grafana needs a configuration database to capture its settings (including native annotations and alerts). If you do not configure otherwise, you will end up with sqlite3 as your configuration database. The other choices are PostgreSQL and MySQL.
+In short, every Grafana needs a configuration database to capture its settings, including native annotations and alerts. If you do not configure otherwise, you will end up with sqlite3 as your configuration database. The other choices are PostgreSQL and MySQL.
 
 <a href="/blog/grafana-setup-20230122/">
   <Image
@@ -93,7 +92,7 @@ To access the configuration menu for alerts and native annotation use the 'Annot
 To work with alert rules, go under the Alerting menu.
 
 <Image
-  title="Alerting rules are periodically evaluated and fire if the threshold unmet."
+  title="Alerting rules are periodically evaluated and fired if the threshold is reached."
   src="/img/blog/2023-04-01-annotations-grafana-api/alerting.png"
 />
 
@@ -101,7 +100,7 @@ To work with alert rules, go under the Alerting menu.
 
 Annotation queries are an advanced way to work with annotation records. You can store annotation records in a database like PostgreSQL or any other storage of your choice and access them using a corresponding data source.
 
-Alternatively, you can go with a configuration database to capture your annotations. In that event, annotations queries could be divided into two types, built-in and user-defined.
+Annotation queries could be divided into two types, built-in and user-defined.
 
 <Image
   title="Get access to built-in and user-defined annotation queries in the Annotations menu "
@@ -110,7 +109,11 @@ Alternatively, you can go with a configuration database to capture your annotati
 
 ### Annotations & Alerts (Built-in)
 
-The built-in Annotation Query does not provide features like filters and support for dashboard variables.
+The built-in Annotation Query, is used to display native annotations, and does not provide features like filters and support for dashboard variables.
+
+:::info Time Series
+Time Series do not rely on built-in Annotations and use internal API calls to get Alert Annotations with the same limitations as built-in annotations query.
+:::
 
 ### User-defined
 
@@ -120,9 +123,8 @@ To overcome the mentioned limitations for the built-in annotation query, we crea
 
 The [Grafana HTTP API Data Source](/plugins/volkovlabs-grapi-datasource) allows:
 
-- Connect to the Grafana configuration database.
 - Work with local and remote Grafana instances.
-- Use API Keys or tokens to request information and visualize in panels or use in annotations.
+- Use API Keys or Tokens to request information from the configuration database and visualize in panels or use in annotations.
 - Work with user-defined annotation types.
 - Work with dashboard variables and utilize them as panel filters.
 - Avoid the broken heart emoji, which is usually shown if at least one alert rule has been triggered.
@@ -144,4 +146,6 @@ The query options where you specify which annotations to display using Grafana H
 
 As you know, if an alerting rule has a Dashboard and Panel Ids set, the Time Series panel will display the broken heart emoji. It is expected behavior for particular graphs which do not depend on the Dashboard variables.
 
-However, when you display data points from multiple devices with user-defined annotations queries, the broken heart emoji might be a misleading overkill. The broken heart emoji will not be displayed if you use Grafana HTTP API Data Source and configure dashboard filters.
+However, when you display data points from multiple devices the broken heart emoji might be a misleading overkill. The broken heart emoji will not be displayed, but your alerts and annotations will if you use Grafana HTTP API Data Source and configure dashboard filters.
+
+## Summary table
