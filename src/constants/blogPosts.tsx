@@ -1,5 +1,52 @@
 export const BlogPosts = [
   {
+    id: "annotations-grafana-api-20230401/",
+    metadata: {
+      permalink: "/blog/annotations-grafana-api-20230401/",
+      source: "@site/blog/2023-04-01-annotations-grafana-api/index.mdx",
+      title: "Annotations, Alerts and Annotation Queries in Grafana",
+      description:
+        "Grafana's time series visualization is designed to display one-dimensional data arrays. In most cases that we have come across, a time series panel shows data points collected from a device.",
+      date: "2023-04-01T00:00:00.000Z",
+      formattedDate: "April 1, 2023",
+      tags: [
+        {
+          label: "Grafana HTTP API Data Source",
+          permalink: "/blog/tags/grafana-http-api-data-source",
+        },
+        {
+          label: "Annotations",
+          permalink: "/blog/tags/annotations",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Daria Volkova",
+          title:
+            "Translates ideas to elegant solutions and produce YouTube tutorials.",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
+        },
+      ],
+      frontMatter: {
+        authors: ["daria"],
+        slug: "annotations-grafana-api-20230401/",
+        tags: ["Grafana HTTP API Data Source", "Annotations"],
+        image: "/img/blog/2023-04-01-annotations-grafana-api/banner.png",
+        keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
+        draft: true,
+      },
+      nextItem: {
+        title: "Grafana HTTP API Data Source 1.2.0",
+        permalink: "/blog/grapi-datasource-1.2.0-20230331/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nGrafana\'s time series visualization is designed to display one-dimensional data arrays. In most cases that we have come across, a time series panel shows data points collected from a device.\n\nOut of the box, Grafana allows adding native annotations, alert rules for your time series, and visualizing annotation queries.\n\n## Native Annotations\n\nNative annotation is a simple commentary on a data point. Users with at least Editor privileges can add a native annotation manually by clicking on the data point of interest, typing a description, and specifying tags.\n\nAlternatively, you can create HTTP API calls to automate the entry process.\n\n<Image\n  title="Editors and Administrator can add native annotations."\n  src="/img/blog/2023-04-01-annotations-grafana-api/native.png"\n  lazy={false}\n/>\n\n## Alerts\n\nAlerts might seem like a different kind of animal, but under the hood, alerts are very similar to native annotations.\n\nAlerts are created by the Grafana alert manager according to the alert rules you put in place. Here is an example of an alert rule:\n\n:::note Alert Rule\n\nWatch the Value column from the Metric table, PostgreSQL data source. Evaluate\nevery 10 seconds for 30 seconds for the condition greater than 100.\n\n:::\n\nThe rule means to capture three values (30 seconds/10 seconds).\n\n- If all three are above 100, then fire an alert.\n- In addition to generating an annotation, fire (or create) an alert means to send a notification via the configured channels.\n  Your options are Email, Slack messenger, and OnCall.\n\n## Alerts vs Native annotations\n\nNative annotations serve well for non-time-critical comments, while alerts work best for vigilant data monitoring. The alert manager creates alerts according to the rules you put in place. Alerts immediately signal if something is off (the value is outside of the expected range).\n\nPeople tend to reference both alerts and native annotations simply as annotations. This, unfortunately, confuses things a little further.\n\n<Image\n  title="Annotations, Alerts, and Annotation queries in Grafana."\n  src="/img/plugins/grafana/annotations.png"\n/>\n\nThis introductory video highlights the differences and similarities between Grafana alerts, annotations, and annotation queries.\n\n<Video\n  src="https://www.youtube.com/embed/4asWJ_Dhcmw"\n  title="Annotations, Alerts, and Annotation queries in Grafana explained."\n/>\n\n## Grafana configuration database\n\nBoth alerts and native annotations are stored in the Grafana configuration database. Please, refer to another blog post where I explained in detail what that is.\n\nIn short, every Grafana needs a configuration database to capture its settings, including native annotations and alerts. If you do not configure otherwise, you will end up with sqlite3 as your configuration database. The other choices are PostgreSQL and MySQL.\n\n<a href="/blog/grafana-setup-20230122/">\n  <Image\n    title="Blog post about Grafana configuration database."\n    src="/img/blog/2023-01-22-grafana-setup/banner.png"\n    zoom={false}\n  />\n</a>\n\n## Configuration Menu\n\nTo access the configuration menu for alerts and native annotation use the \'Annotations\' section of the dashboard setting menu.\n\n<Image\n  title="Example of what you see under Annotations menu."\n  src="/img/blog/2023-04-01-annotations-grafana-api/annotation-menu.png"\n/>\n\nTo work with alert rules, go under the Alerting menu.\n\n<Image\n  title="Alerting rules are periodically evaluated and fired if the threshold is reached."\n  src="/img/blog/2023-04-01-annotations-grafana-api/alerting.png"\n/>\n\n## Annotations queries\n\nAnnotation queries are an advanced way to work with annotation records. You can store annotation records in a database like PostgreSQL or any other storage of your choice and access them using a corresponding data source.\n\nAnnotation queries could be divided into two types, built-in and user-defined.\n\n<Image\n  title="Get access to built-in and user-defined annotation queries in the Annotations menu "\n  src="/img/blog/2023-04-01-annotations-grafana-api/built-in.png"\n/>\n\n### Annotations & Alerts (Built-in)\n\nThe built-in Annotation Query, is used to display native annotations, and does not provide features like filters and support for dashboard variables.\n\n:::info Time Series\nTime Series do not rely on built-in Annotations and use internal API calls to get Alert Annotations with the same limitations as built-in annotations query.\n:::\n\n### User-defined\n\nTo overcome the mentioned limitations for the built-in annotation query, we created the Grafana HTTP API Data Source.\n\n## Grafana HTTP API Data Source\n\nThe [Grafana HTTP API Data Source](/plugins/volkovlabs-grapi-datasource) allows:\n\n- Work with local and remote Grafana instances.\n- Use API Keys or Tokens to request information from the configuration database and visualize in panels or use in annotations.\n- Work with user-defined annotation types.\n- Work with dashboard variables and utilize them as panel filters.\n- Avoid the broken heart emoji, which is usually shown if at least one alert rule has been triggered.\n\n<Image\n  title="Grafana HTTP API Data Source works with Grafana configuration database."\n  src="/img/blog/2023-04-01-annotations-grafana-api/schema-around-config.png"\n  lazy={false}\n/>\n\nThe query options where you specify which annotations to display using Grafana HTTP API Data source look like this.\n\n<Image\n  title="Display annotation using Grafana HTTP API Data Source for the selected dashboard variable."\n  src="/img/blog/2023-04-01-annotations-grafana-api/annotations.png"\n/>\n\n## We healed a broken heart\n\nAs you know, if an alerting rule has a Dashboard and Panel Ids set, the Time Series panel will display the broken heart emoji. It is expected behavior for particular graphs which do not depend on the Dashboard variables.\n\nHowever, when you display data points from multiple devices the broken heart emoji might be a misleading overkill. The broken heart emoji will not be displayed, but your alerts and annotations will if you use Grafana HTTP API Data Source and configure dashboard filters.\n\n## Alerting History\n\nThe Grafana HTTP API Data Source can be used with any native or community plugin. Our community member sent us a screenshot of his alerting history for Timescale Linux memory usage over time.\n\n<Image\n  title="Grafana HTTP API Data Source used to display Alerting History."\n  src="/img/blog/2023-04-01-annotations-grafana-api/history.png"\n/>\n\nWe are looking forward to seeing what you can do with it.',
+  },
+  {
     id: "grapi-datasource-1.2.0-20230331/",
     metadata: {
       permalink: "/blog/grapi-datasource-1.2.0-20230331/",
@@ -35,6 +82,10 @@ export const BlogPosts = [
         tags: ["Grafana HTTP API Data Source", "Release Notes"],
         image: "/img/blog/2023-03-31-grapi-datasource-1.2.0/banner.png",
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
+      },
+      prevItem: {
+        title: "Annotations, Alerts and Annotation Queries in Grafana",
+        permalink: "/blog/annotations-grafana-api-20230401/",
       },
       nextItem: {
         title: "Static Data Source 2.2.0",
