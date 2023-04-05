@@ -1,0 +1,50 @@
+---
+tags:
+  - Environment Data Source
+  - Deployment
+---
+
+import Image from "@theme/Image";
+import Code from "@theme/Code";
+
+# Deployment
+
+:::info Private Plugin
+
+Plugin can't be accepted to Grafana Catalog and was signed as a Private plugin using the default domain `http://localhost:3000`.
+
+:::
+
+If you are using a custom domain URL, there are various options depending on your deployment.
+
+## NGINX Reverse proxy
+
+We recommend using NGINX in front of the Grafana for an extra level of protection. It allows keeping the default domain and redirecting requests.
+
+Here is an example of Docker Compose. You can find NGINX configuration files in the [repository](https://github.com/VolkovLabs/volkovlabs-env-datasource).
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-env-datasource/blob/main/docker-compose-nginx.yml"
+  language="yaml"
+/>
+
+## Unsigned plugin
+
+Take a look at [Allow Unsigned Plugins](/plugins/grafana/allow-unsigned/) section in the documentation.
+
+## Build plugin and sign
+
+:::info Requirements
+
+Go 1.19 and Node.js version 18.
+
+:::
+
+You can build and sign the plugin manually following instructions.
+
+```
+yarn install
+yarn build
+yarn build:backend
+grafana-toolkit plugin:sign --rootUrls http://CUSTOM-DOMAIN-URL/
+```
