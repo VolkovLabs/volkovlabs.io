@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "env-datasource-2.3.0-20230405/",
+    metadata: {
+      permalink: "/blog/env-datasource-2.3.0-20230405/",
+      source: "@site/blog/2023-04-05-env-datasource-2.3.0/index.mdx",
+      title: "Environment Data Source 2.3.0",
+      description:
+        "We released a new version of Environment Data Source 2.3.0. This maintenance release",
+      date: "2023-04-05T00:00:00.000Z",
+      formattedDate: "April 5, 2023",
+      tags: [
+        {
+          label: "Environment Data Source",
+          permalink: "/blog/tags/environment-data-source",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Loves to work on innovative projects.",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "env-datasource-2.3.0-20230405/",
+        tags: ["Environment Data Source", "Release Notes"],
+        image: "/img/blog/2023-04-05-env-datasource-2.3.0/banner.png",
+        keywords: ["Data Source", "Static", "Storage", "Grafana"],
+      },
+      nextItem: {
+        title: "Annotations, Alerts and Annotation Queries in Grafana",
+        permalink: "/blog/annotations-grafana-api-20230401/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Environment Data Source 2.3.0. This maintenance release\n\n- Added deployment options to Documentation and NGINX examples.\n- Updated to Go 1.19 and the latest Go SDK.\n- Updated to the latest Grafana 9.4.7 toolkit and workflows.\n\n:::info Grafana Catalog\nEnvironment Data Source is not included in the Grafana Catalog.\n:::\n\n<Image\n  title="Environment Variables displayed on the Grafana dashboard."\n  src="/img/blog/2023-04-05-env-datasource-2.3.0/dashboard.png"\n  lazy={false}\n/>\n\n## Getting Started\n\nThe Environment Data Source can be installed manually from our Private Repository or downloaded directly from GitHub.\n\n```bash\ngrafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource\n```\n\n## YouTube Tutorial\n\nThe Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables in your code.\n\n<Video\n  src="https://www.youtube.com/embed/sczRq2lI3e4"\n  title="Dashboard, Global and Environment variables."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update README to explain how to use data source for a custom domain (#18)\n- Add NGINX configuration example (#18)\n- Update to Grafana 9.3.6 (#19)\n- Update to Grafana 9.4.7 (#20)\n- Update backend and workflows to Go 1.19 (#21)\n- Update Documentation (#22)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-env-datasource/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "annotations-grafana-api-20230401/",
     metadata: {
       permalink: "/blog/annotations-grafana-api-20230401/",
@@ -36,7 +81,10 @@ export const BlogPosts = [
         tags: ["Grafana HTTP API Data Source", "Annotations"],
         image: "/img/blog/2023-04-01-annotations-grafana-api/banner.png",
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
-        draft: true,
+      },
+      prevItem: {
+        title: "Environment Data Source 2.3.0",
+        permalink: "/blog/env-datasource-2.3.0-20230405/",
       },
       nextItem: {
         title: "Grafana HTTP API Data Source 1.2.0",
