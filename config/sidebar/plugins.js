@@ -148,7 +148,13 @@ const plugins = {
           id: "volkovlabs-env-datasource/index",
           label: "Introduction",
         },
+        "volkovlabs-env-datasource/deployment",
         "volkovlabs-env-datasource/provisioning",
+        {
+          items: ["volkovlabs-env-datasource/variables"],
+          label: "Features",
+          type: "category",
+        },
         "volkovlabs-env-datasource/release",
       ],
       label: "Environment Data Source",

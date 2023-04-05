@@ -13,7 +13,7 @@ const BlogPostPageWrapper = (props) => {
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    name: "Blog Archive breadcrumb",
+    name: "Blog breadcrumb",
     itemListElement: [
       {
         "@type": "ListItem",
@@ -24,8 +24,8 @@ const BlogPostPageWrapper = (props) => {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Blog Archive",
-        item: `${siteConfig.url}/blog/archive`,
+        name: "Blog",
+        item: `${siteConfig.url}/blog`,
       },
       {
         "@type": "ListItem",
