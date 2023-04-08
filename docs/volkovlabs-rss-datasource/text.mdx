@@ -1,0 +1,47 @@
+---
+tags:
+  - RSS/Atom Data Source
+  - Dynamic Text
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Dynamic Text
+
+The [Dynamic Text visualization panel](/plugins/volkovlabs-dynamictext-panel) is a perfect companion to RSS/Atom Data Source.
+
+<Image
+  title="Dynamic Text panel visualized RSS feed from YouTube channel."
+  src="/img/plugins/volkovlabs-rss-datasource/dynamic-text.png"
+/>
+
+## Disable Sanitize HTML
+
+To display HTML returned from feeds, disable the Sanitize HTML parameter.
+
+### Docker
+
+```bash
+GF_PANELS_DISABLE_SANITIZE_HTML=true
+```
+
+## Example
+
+To display the YouTube feed with the latest videos we used HTML and Handlebars template for data fields.
+
+| Handlebar value                       | Description                          |
+| ------------------------------------- | ------------------------------------ |
+| `{{link}}`                            | URL.                                 |
+| `{{title}}`                           | Title.                               |
+| `{{media:group:media:thumbnail:url}}` | Thumbnail URL.                       |
+| `{{date updated 'MMM, DD YYYY'}}`     | Updated date in the specific format. |
+| `{{author}}`                          | Author.                              |
+
+Template (Content) was displayed for each row as defined in the options.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-rss-datasource/text.html"
+  language="html"
+/>
