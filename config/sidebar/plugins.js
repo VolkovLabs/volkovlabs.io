@@ -186,6 +186,7 @@ const plugins = {
           id: "volkovlabs-rss-datasource/index",
           label: "Introduction",
         },
+        "volkovlabs-rss-datasource/text",
         "volkovlabs-rss-datasource/provisioning",
         "volkovlabs-rss-datasource/release",
       ],
