@@ -1,0 +1,75 @@
+---
+authors: [mikhail]
+slug: rss-datasource-2.4.0-20230408/
+tags: [RSS/Atom Data Source, Release Notes]
+image: /img/blog/2023-04-08-rss-datasource-2.4.0/banner.png
+keywords: [Data Source, RSS, Atom, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# RSS/Atom Data Source 2.4.0
+
+We released a new version of RSS/Atom Data Source 2.4.0. This feature release
+
+- Added URL parameters with dashboard variables support.
+- Updated to the latest Grafana 9.4.7 toolkit and workflows.
+
+:::info Grafana Catalog
+The data Source was submitted to the Grafana team for review.
+:::
+
+<Image
+  title="RSS/Atom Data Source allows displaying any News Feeds on your dashboard."
+  src="/img/blog/2023-04-08-rss-datasource-2.4.0/dashboard.png"
+  lazy={false}
+/>
+
+## URL parameters
+
+URL parameters allow reusing the data source for news feeds with the same URL.
+
+For example, a data source can be set to YouTube. You can display specific or multiple news feeds using a dashboard variable.
+
+<Image
+  title="Dashboard variables can be used in URL parameters."
+  src="/img/blog/2023-04-08-rss-datasource-2.4.0/parameters.png"
+  lazy={false}
+/>
+
+## Getting Started
+
+RSS/Atom data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-rss-datasource
+```
+
+## YouTube Tutorial
+
+The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Dynamic Text and other panels.
+
+<Video
+  src="https://www.youtube.com/embed/RAxqS2hpWkg"
+  title="News feed tutorial for Grafana Dashboard."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update to Grafana 9.4.7 (#44)
+- Update CI and Release workflows (#45)
+- Update Documentation, Provisioning (#46)
+- Add URL parameters with variables support (#47, #48)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-rss-datasource/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
