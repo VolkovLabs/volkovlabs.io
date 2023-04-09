@@ -74,7 +74,7 @@ const footer = {
           href: "https://echarts.volkovlabs.io",
         },
         {
-          label: "Live Updates",
+          label: "Live Project",
           href: "https://live.volkovlabs.io",
         },
       ],

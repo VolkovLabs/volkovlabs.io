@@ -80,7 +80,7 @@ const projects = {
     },
     {
       type: "link",
-      label: "Live Updates",
+      label: "Live Project",
       href: "https://live.volkovlabs.io",
     },
   ],
