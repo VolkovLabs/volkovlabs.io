@@ -66,7 +66,7 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Plugins" className="container margin-vert--md padding-vert--lg">
+      <div id="Plugins" className="container margin-vert--md padding-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Grafana Plugins</span>
         </h2>
@@ -74,23 +74,9 @@ const Main = (siteConfig) => {
         <div className="container margin-vert--md padding-vert--lg">
           <Plugins />
         </div>
-
-        <div className="row margin-vert--md">
-          <div className="col col--1">
-            <h2 className={clsx(styles.header, "hero__title")}></h2>
-          </div>
-          <div className="col col--11 hero__subtitle">
-            Our Grafana plugins are open source and we update them constantly.
-            <br />
-            <a href="https://github.com/sponsors/VolkovLabs" target="_blank">
-              Become our sponsor on GitHub
-            </a>
-            .
-          </div>
-        </div>
       </div>
 
-      <div id="Blogs" className="container margin-vert--md padding-vert--lg">
+      <div id="Blogs" className="container margin-vert--md padding-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Blog Posts</span>
         </h2>
@@ -117,7 +103,7 @@ const Main = (siteConfig) => {
 
         <div className="row margin-vert--lg text--center">
           <div className="col col--4">
-            <Image src="/img/team/daria.png" zoom={false} />
+            <Image src="/img/team/daria.png" zoom={false} lazy={true} />
             <h3>Daria</h3>
             <p>
               Translates ideas to elegant solutions and produces YouTube
@@ -126,13 +112,13 @@ const Main = (siteConfig) => {
           </div>
 
           <div className="col col--4">
-            <Image src="/img/team/mikhail.png" zoom={false} />
+            <Image src="/img/team/mikhail.png" zoom={false} lazy={true} />
             <h3>Mikhail</h3>
             <p>Loves to work on innovative projects.</p>
           </div>
 
           <div className="col col--4">
-            <Image src="/img/team/ralph.png" zoom={false} />
+            <Image src="/img/team/ralph.png" zoom={false} lazy={true} />
             <h3>Ralph</h3>
             <p>Jack of all trades.</p>
           </div>
