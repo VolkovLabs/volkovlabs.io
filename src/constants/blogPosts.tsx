@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "rss-datasource-2.4.0-20230408/",
+    metadata: {
+      permalink: "/blog/rss-datasource-2.4.0-20230408/",
+      source: "@site/blog/2023-04-08-rss-datasource-2.4.0/index.mdx",
+      title: "RSS/Atom Data Source 2.4.0",
+      description:
+        "We released a new version of RSS/Atom Data Source 2.4.0. This feature release",
+      date: "2023-04-08T00:00:00.000Z",
+      formattedDate: "April 8, 2023",
+      tags: [
+        {
+          label: "RSS/Atom Data Source",
+          permalink: "/blog/tags/rss-atom-data-source",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Loves to work on innovative projects.",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "rss-datasource-2.4.0-20230408/",
+        tags: ["RSS/Atom Data Source", "Release Notes"],
+        image: "/img/blog/2023-04-08-rss-datasource-2.4.0/banner.png",
+        keywords: ["Data Source", "RSS", "Atom", "Grafana"],
+      },
+      nextItem: {
+        title: "Environment Data Source 2.3.0",
+        permalink: "/blog/env-datasource-2.3.0-20230405/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of RSS/Atom Data Source 2.4.0. This feature release\n\n- Added URL parameters with dashboard variables support.\n- Updated to the latest Grafana 9.4.7 toolkit and workflows.\n\n:::info Grafana Catalog\nThe data Source was submitted to the Grafana team for review.\n:::\n\n<Image\n  title="RSS/Atom Data Source allows displaying any News Feeds on your dashboard."\n  src="/img/blog/2023-04-08-rss-datasource-2.4.0/dashboard.png"\n  lazy={false}\n/>\n\n## URL parameters\n\nURL parameters allow reusing the data source for news feeds with the same URL.\n\nFor example, a data source can be set to YouTube. You can display specific or multiple news feeds using a dashboard variable.\n\n<Image\n  title="Dashboard variables can be used in URL parameters."\n  src="/img/blog/2023-04-08-rss-datasource-2.4.0/parameters.png"\n  lazy={false}\n/>\n\n## Getting Started\n\nRSS/Atom data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-rss-datasource\n```\n\n## YouTube Tutorial\n\nThe RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Dynamic Text and other panels.\n\n<Video\n  src="https://www.youtube.com/embed/RAxqS2hpWkg"\n  title="News feed tutorial for Grafana Dashboard."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update to Grafana 9.4.7 (#44)\n- Update CI and Release workflows (#45)\n- Update Documentation, Provisioning (#46)\n- Add URL parameters with variables support (#47, #48)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-rss-datasource/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "env-datasource-2.3.0-20230405/",
     metadata: {
       permalink: "/blog/env-datasource-2.3.0-20230405/",
@@ -34,7 +79,11 @@ export const BlogPosts = [
         slug: "env-datasource-2.3.0-20230405/",
         tags: ["Environment Data Source", "Release Notes"],
         image: "/img/blog/2023-04-05-env-datasource-2.3.0/banner.png",
-        keywords: ["Data Source", "Static", "Storage", "Grafana"],
+        keywords: ["Data Source", "Environment", "Grafana"],
+      },
+      prevItem: {
+        title: "RSS/Atom Data Source 2.4.0",
+        permalink: "/blog/rss-datasource-2.4.0-20230408/",
       },
       nextItem: {
         title: "Annotations, Alerts and Annotation Queries in Grafana",
@@ -60,8 +109,8 @@ export const BlogPosts = [
           permalink: "/blog/tags/grafana-http-api-data-source",
         },
         {
-          label: "Annotations",
-          permalink: "/blog/tags/annotations",
+          label: "Getting Started",
+          permalink: "/blog/tags/getting-started",
         },
       ],
       hasTruncateMarker: false,
@@ -78,9 +127,10 @@ export const BlogPosts = [
       frontMatter: {
         authors: ["daria"],
         slug: "annotations-grafana-api-20230401/",
-        tags: ["Grafana HTTP API Data Source", "Annotations"],
+        tags: ["Grafana HTTP API Data Source", "Getting Started"],
         image: "/img/blog/2023-04-01-annotations-grafana-api/banner.png",
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
+        updated: "2023-04-08T00:00:00.000Z",
       },
       prevItem: {
         title: "Environment Data Source 2.3.0",
