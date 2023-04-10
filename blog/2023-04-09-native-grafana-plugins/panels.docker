@@ -1,7 +1,3 @@
-##################################################################
-## Remove Native Panels
-##################################################################
-
 ## Alert list
 RUN rm -rf /usr/share/grafana/public/app/plugins/panel/alertlist
 

@@ -1,7 +1,3 @@
-##################################################################
-## Remove Native Data Sources
-##################################################################
-
 ## Time series databases / Elasticsearch
 RUN rm -rf /usr/share/grafana/public/app/plugins/datasource/elasticsearch
 RUN rm -rf /usr/share/grafana/public/build/elasticsearch*
