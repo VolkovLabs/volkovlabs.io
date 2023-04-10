@@ -69,14 +69,6 @@ const footer = {
           label: "Volkov Labs Application",
           href: "/plugins/volkovlabs-app/",
         },
-        {
-          label: "ECharts Examples",
-          href: "https://echarts.volkovlabs.io",
-        },
-        {
-          label: "Live Project",
-          href: "https://live.volkovlabs.io",
-        },
       ],
     },
     {
@@ -89,6 +81,14 @@ const footer = {
         {
           label: "GitHub",
           href: "https://github.com/VolkovLabs",
+        },
+        {
+          label: "ECharts Examples",
+          href: "https://echarts.volkovlabs.io",
+        },
+        {
+          label: "Live Dashboard",
+          href: "https://live.volkovlabs.io",
         },
         {
           label: "Release Dashboard",
