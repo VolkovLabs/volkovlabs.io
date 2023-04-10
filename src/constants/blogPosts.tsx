@@ -1,5 +1,47 @@
 export const BlogPosts = [
   {
+    id: "native-grafana-plugins-20230409/",
+    metadata: {
+      permalink: "/blog/native-grafana-plugins-20230409/",
+      source: "@site/blog/2023-04-09-native-grafana-plugins/index.mdx",
+      title: "Hey, it is time for spring cleaning your Grafana",
+      description:
+        "In this article, I explain how to remove unnecessary native Grafana plugins from your build. It is an easy way to avoid clutter in the Grafana UI. Moreover, as a tempting bonus for keeping only operating parts, you will end up with a lighter package attuned to your needs only.",
+      date: "2023-04-09T00:00:00.000Z",
+      formattedDate: "April 9, 2023",
+      tags: [
+        {
+          label: "Configuration",
+          permalink: "/blog/tags/configuration",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Loves to work on innovative projects.",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "native-grafana-plugins-20230409/",
+        tags: ["Configuration"],
+        image: "/img/blog/2023-04-09-native-grafana-plugins/banner.png",
+        keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
+        draft: true,
+      },
+      nextItem: {
+        title: "RSS/Atom Data Source 2.4.0",
+        permalink: "/blog/rss-datasource-2.4.0-20230408/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nIn this article, I explain how to remove unnecessary native Grafana plugins from your build. It is an easy way to avoid clutter in the Grafana UI. Moreover, as a tempting bonus for keeping only operating parts, you will end up with a lighter package attuned to your needs only.\n\n:::info Less is More.\nThis approach involves stripping a design down to its bare essentials and casting aside any elements that do not contribute to the pure beauty or function of an object or space.\n\n:::\n\nThe default Grafana package includes many data sources and visualizations panels, such as Timeseries, Logging, Traces, etc. Having it all installed at the beginning of the Grafana journey is no doubt impressive and convenient.\n\nScrolling through a long list of available plugins is a simple way to discover what is within immediate reach.\nHowever, the list of essential plugins is relatively laconic for functioning applications. Searching for that one plugin in the list should not be a hefty task worthy of blocking your calendar.\n\nThe obvious question for any production environment is:\n\n- How to remove unused native plugins from the Grafana installation package and, therefore, get rid of unwanted weight?\n\n## Grafana Customization\n\nThe customization topic is among the most frequently looked at and asked questions on the Grafana Forum.\n\nIn July last year, we produced a short video sharing our experience with customization using Docker containers. It explains the basics in 90 seconds.\n\n<Video\n  src="https://www.youtube.com/embed/3GRoa8TzIxY"\n  title="Change titles, icons, footer, default dashboard in Grafana 9."\n/>\n\nIn addition, we published a blog post with similar material [How to customize the Grafana user interface](/blog/how-to-customize-the-grafana-user-interface-8d70a42dc2b6/).\n\n## Native Data Sources\n\nTo add a new data source, go to Administration -> Data Sources and click "+ Add a new data source". Then scroll through the list, hoping to spot what you need.\n\nAs we mentioned, it is beneficial to limit the selection when you already know your environment. The list could go down to as few as 3-4 native data sources, plus some from the community. The result might look like a concise one-pager.\n\n<Image\n  title="Concise one-pager with only data sources that are needed for the project."\n  src="/img/blog/2023-04-09-native-grafana-plugins/datasources.png"\n/>\n\n:::note Downside\nThe downside to this approach is that deleted data sources can\'t be installed, and a new Docker image is required.\n:::\n\nHere is the example from our Dockerfile, which removes all native data sources except Prometheus, Loki and PostgreSQL we use in our environment. Also, it drops Cloud and Enterprise hardcoded groups.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-04-09-native-grafana-plugins/datasources.docker"\n  language="docker"\n/>\n\n## Native Panels\n\nIn some of our projects, we do not use Annotation List, Dashboard List, News, Candlestick, Node Graph, and Traces.\nNarrowing down the selection to work with is a simple and elegant idea.\n\n<Image\n  title="Smaller number of panels helps to concentrate on the dashboard."\n  src="/img/blog/2023-04-09-native-grafana-plugins/panels.png"\n/>\n\nYou can pick and choose native panels using the same concepts.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-04-09-native-grafana-plugins/panels.docker"\n  language="docker"\n/>\n\n## Docker file\n\nThe docker file below includes all Grafana customization instructions as they exist now. That means all we mentioned in the previous blog post and the 90 seconds video are included below.\n\nYou can find our collection of various customizations in the Docker file on GitHub. Thank you to the community for sharing ideas and helping us to improve the list.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile"\n  language="docker"\n/>\n\nRest assured that we constantly update the list with all the latest configuration commands we can identify.',
+  },
+  {
     id: "rss-datasource-2.4.0-20230408/",
     metadata: {
       permalink: "/blog/rss-datasource-2.4.0-20230408/",
@@ -35,6 +77,10 @@ export const BlogPosts = [
         tags: ["RSS/Atom Data Source", "Release Notes"],
         image: "/img/blog/2023-04-08-rss-datasource-2.4.0/banner.png",
         keywords: ["Data Source", "RSS", "Atom", "Grafana"],
+      },
+      prevItem: {
+        title: "Hey, it is time for spring cleaning your Grafana",
+        permalink: "/blog/native-grafana-plugins-20230409/",
       },
       nextItem: {
         title: "Environment Data Source 2.3.0",
@@ -118,8 +164,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -794,8 +840,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -909,8 +955,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -960,8 +1006,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -1068,8 +1114,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -1234,8 +1280,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -1612,8 +1658,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -1662,8 +1708,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -1743,7 +1789,7 @@ export const BlogPosts = [
           "Grafana",
           "Visualization",
         ],
-        updated: "2023-02-18T00:00:00.000Z",
+        updated: "2023-04-09T00:00:00.000Z",
       },
       prevItem: {
         title: "How to customize the Grafana user interface",
@@ -1756,7 +1802,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nGrafana is a de-facto one of the best observability visualization tools with various chart panels and many community plugins like Plotly. Still, no none of them can compare with Apache ECharts\' flexibility.\n\nApache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender.\n\n<Image\n  title="Apache ECharts Examples Grafana instance."\n  src="https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png"\n  lazy={false}\n/>\n\nThe Apache ECharts visualization panel is a plugin for Grafana that allows you to incorporate the Apache ECharts library into your Grafana dashboard. The original plugin was developed for Grafana 6.3/7.0 and Apache ECharts library 4.9.0. It has not been maintained since then.\n\nVolkov Labs adapted and updated it based on the latest Grafana 9 with Apache ECharts library 5.3.3, introducing new features like Monaco Code Editor and supporting SVG and Canvas renderer.\n\nThe Apache ECharts visualization panel can be installed from the Grafana Catalog (Plugins Configuration menu). Alternatively, you can install it manually [downloading from GitHub](https://github.com/volkovlabs/volkovlabs-echarts-panel).\n\n## Apache ECharts\n\nApache ECharts library is a mighty tool. You do not need a senior Javascript developer to start displaying modern-looking animated visualizations. And if your use case is unique, Apache ECharts provides an excellent venue to develop visualizations of any complexity.\n\nThe Apache ECharts visualization panel for Grafana is a bridge that has been missing and finally arrived. You can use the benefits of two great open-source products Grafana and Apache ECharts in one solution tailored to your needs.\n\n<Video\n  src="https://www.youtube.com/embed/DxqCrBEmrQw"\n  title="How to create modern dashboards in Grafana."\n/>\n\nAccording to the [press release](https://www.globenewswire.com/fr/news-release/2021/01/26/2164391/17401/en/The-Apache-Software-Foundation-Announces-Apache-ECharts-as-a-Top-Level-Project.html)\n\n> "Apache ECharts is in use at Alibaba, Amazon, Baidu, GitLab, Intel, and Tencent, among others, as well as solutions such as Apache Superset data visualization software."\n\nThe project continues to grow in popularity, with more than 50,000 stars on GitHub and 450,000 weekly downloads on [npm](https://www.npmjs.com/package/echarts).\n\n## Wind Speed\n\nWind speed visualization is one of many exciting examples of what the Apache ECharts library can do.\n\n- Every data element is displayed using the custom arrow.\n- The arrow color signifies the speed.\n- The direction where the arrow points - shows the wind direction.\n\nSo much information is geniusly packed in a single display.\n\n<Image\n  title="Visualizing Wind Speed using custom Arrows on the Grafana dashboard."\n  src="/img/blog/2022-08-01-missing-plugin/wind-speed.png"\n/>\n\n## Directed Graph\n\nWe at Volkov Labs spent some time researching the options for displaying directed graphs. The Apache ECharts satisfied every single requirement we had in mind effortlessly.\n\nThe video below demonstrates the Apache ECharts directed/undirected graphs capabilities.\n\n<Video\n  src="https://www.youtube.com/embed/BcW7iyTadWE"\n  title="Can Apache ECharts render a directed graph?"\n/>\n\n### Tutorial\n\nThe launch of the [Live Updates project](https://live.volkovlabs.io/) triggered many how-to questions. To answer them all by explaining how we created this project, the following two parts tutorial was put together.\n\nIn this project, we employed directed graph visualization to track company activities across Blog (Medium), GitHub, YouTube, and various external resources.\n\n<Video\n  src="https://www.youtube.com/embed/e3VHgpuzEF0"\n  title="Build directional graph in Grafana using Apache ECharts. Tutorial part 1."\n/>\n\n<Video\n  src="https://www.youtube.com/embed/oM7XAVlsOio"\n  title="Build directional graph in Grafana using Apache ECharts. Tutorial part 2."\n/>\n\n## Live Updates\n\nThe [Live Updates](https://live.volkovlabs.io) project is ALIVE. The directed graphs are built dynamically. We daily update the underlying data, so, at any point in time, the visualization gives the freshest possible update on our articles, releases, videos and other activities.\n\n<Image\n  title="Live Updated project helps us to track our activities across all mediums."\n  src="/img/blog/2022-08-01-missing-plugin/live.png"\n/>\n\nDirected graphs use the force layout to adjust nodes\' location automatically. In addition, nodes have different icons/styling depending on their type. Clicking on the elements allows you to open an external URL or take a closer look at the subgraphs.\n\nThe tutorial above gives a complete picture of the achieved functionality.\n\nThe picture below displays all our GitHub projects. When this picture was taken, we had the following projects.\n\n- [Apache ECharts panel](https://live.volkovlabs.io/d/tXQ9_367z/apache-echarts-panel?orgId=1)\n- [Calendar panel](https://live.volkovlabs.io/d/0fgJcb4Vz/calendar-panel?orgId=1)\n- [Dynamic Text panel](https://live.volkovlabs.io/d/2L2sYjVVz/dynamic-text-panel?orgId=1)\n- [Data Manipulation panel](https://live.volkovlabs.io/d/h5IJk66nk/data-manipulation-panel?orgId=1)\n- [Environment data source](https://live.volkovlabs.io/d/B0kLhzR4k/environment-data-source?orgId=1)\n- [RSS-Atom data source](https://live.volkovlabs.io/d/zUDs5zRVk/rss-atom-data-source?orgId=1)\n- [Static data source](https://live.volkovlabs.io/d/heM1lTN4z/static-data-source?orgId=1)\n\nYou can see all releases we published for each project.\n\n<Image\n  title="The directed Graph for GitHub displays all major and minor releases for our Grafana plugins."\n  src="/img/blog/2022-08-01-missing-plugin/github.png"\n/>\n\nYou are welcome to take a look and learn about our [Grafana plugins at Live Updates](https://live.volkovlabs.io/d/mbCp3qenz/github-organization?orgId=1).\n\n## Apache ECharts visualization panel in the wild\n\nSince we adopted and improved the Apache ECharts visualization panel, we have received great positive feedback from the community. Thank you!\n\nOur clients gladly accepted our help in upgrading from an older version of the library.\n\nIn addition, Volkov Labs migrated industrial Plotly dashboards to Apache ECharts. We were able to keep all existing functionality and as well added all desired extra features like a custom toolbox button (to dynamically change the charts) and support of the multiple Y-axis.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nGrafana is a de-facto one of the best observability visualization tools with various chart panels and many community plugins like Plotly. Still, no none of them can compare with Apache ECharts\' flexibility.\n\nApache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender.\n\n<Image\n  title="Apache ECharts Examples Grafana instance."\n  src="https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png"\n  lazy={false}\n/>\n\nThe Apache ECharts visualization panel is a plugin for Grafana that allows you to incorporate the Apache ECharts library into your Grafana dashboard. The original plugin was developed for Grafana 6.3/7.0 and Apache ECharts library 4.9.0. It has not been maintained since then.\n\nVolkov Labs adapted and updated it based on the latest Grafana 9 with Apache ECharts library 5.3.3, introducing new features like Monaco Code Editor and supporting SVG and Canvas renderer.\n\nThe Apache ECharts visualization panel can be installed from the Grafana Catalog (Plugins Configuration menu). Alternatively, you can install it manually [downloading from GitHub](https://github.com/volkovlabs/volkovlabs-echarts-panel).\n\n## Apache ECharts\n\nApache ECharts library is a mighty tool. You do not need a senior Javascript developer to start displaying modern-looking animated visualizations. And if your use case is unique, Apache ECharts provides an excellent venue to develop visualizations of any complexity.\n\nThe Apache ECharts visualization panel for Grafana is a bridge that has been missing and finally arrived. You can use the benefits of two great open-source products Grafana and Apache ECharts in one solution tailored to your needs.\n\n<Video\n  src="https://www.youtube.com/embed/DxqCrBEmrQw"\n  title="How to create modern dashboards in Grafana."\n/>\n\nAccording to the [press release](https://www.globenewswire.com/fr/news-release/2021/01/26/2164391/17401/en/The-Apache-Software-Foundation-Announces-Apache-ECharts-as-a-Top-Level-Project.html)\n\n> "Apache ECharts is in use at Alibaba, Amazon, Baidu, GitLab, Intel, and Tencent, among others, as well as solutions such as Apache Superset data visualization software."\n\nThe project continues to grow in popularity, with more than 50,000 stars on GitHub and 450,000 weekly downloads on [npm](https://www.npmjs.com/package/echarts).\n\n## Wind Speed\n\nWind speed visualization is one of many exciting examples of what the Apache ECharts library can do.\n\n- Every data element is displayed using the custom arrow.\n- The arrow color signifies the speed.\n- The direction where the arrow points - shows the wind direction.\n\nSo much information is geniusly packed in a single display.\n\n<Image\n  title="Visualizing Wind Speed using custom Arrows on the Grafana dashboard."\n  src="/img/blog/2022-08-01-missing-plugin/wind-speed.png"\n/>\n\n## Directed Graph\n\nWe at Volkov Labs spent some time researching the options for displaying directed graphs. The Apache ECharts satisfied every single requirement we had in mind effortlessly.\n\nThe video below demonstrates the Apache ECharts directed/undirected graphs capabilities.\n\n<Video\n  src="https://www.youtube.com/embed/BcW7iyTadWE"\n  title="Can Apache ECharts render a directed graph?"\n/>\n\n### Tutorial\n\nThe launch of the [Live Project](https://live.volkovlabs.io/) triggered many how-to questions. To answer them all by explaining how we created this project, the following two parts tutorial was put together.\n\nIn this project, we employed directed graph visualization to track company activities across Blog (Medium), GitHub, YouTube, and various external resources.\n\n<Video\n  src="https://www.youtube.com/embed/e3VHgpuzEF0"\n  title="Build directional graph in Grafana using Apache ECharts. Tutorial part 1."\n/>\n\n<Video\n  src="https://www.youtube.com/embed/oM7XAVlsOio"\n  title="Build directional graph in Grafana using Apache ECharts. Tutorial part 2."\n/>\n\n## Live Project\n\nThe [Live Project](https://live.volkovlabs.io) is ALIVE. The directed graphs are built dynamically. We daily update the underlying data, so, at any point in time, the visualization gives the freshest possible update on our articles, releases, videos and other activities.\n\n<Image\n  title="Live Updated project helps us to track our activities across all mediums."\n  src="/img/blog/2022-08-01-missing-plugin/live.png"\n/>\n\nDirected graphs use the force layout to adjust nodes\' location automatically. In addition, nodes have different icons/styling depending on their type. Clicking on the elements allows you to open an external URL or take a closer look at the subgraphs.\n\nThe tutorial above gives a complete picture of the achieved functionality.\n\nThe picture below displays all our GitHub projects. When this picture was taken, we had the following projects.\n\n- [Apache ECharts panel](https://live.volkovlabs.io/d/tXQ9_367z/apache-echarts-panel?orgId=1)\n- [Calendar panel](https://live.volkovlabs.io/d/0fgJcb4Vz/calendar-panel?orgId=1)\n- [Dynamic Text panel](https://live.volkovlabs.io/d/2L2sYjVVz/dynamic-text-panel?orgId=1)\n- [Data Manipulation panel](https://live.volkovlabs.io/d/h5IJk66nk/data-manipulation-panel?orgId=1)\n- [Environment data source](https://live.volkovlabs.io/d/B0kLhzR4k/environment-data-source?orgId=1)\n- [RSS-Atom data source](https://live.volkovlabs.io/d/zUDs5zRVk/rss-atom-data-source?orgId=1)\n- [Static data source](https://live.volkovlabs.io/d/heM1lTN4z/static-data-source?orgId=1)\n\nYou can see all releases we published for each project.\n\n<Image\n  title="The directed Graph for GitHub displays all major and minor releases for our Grafana plugins."\n  src="/img/blog/2022-08-01-missing-plugin/github.png"\n/>\n\nYou are welcome to take a look and learn about our [Grafana plugins at Live Project](https://live.volkovlabs.io).\n\n## Apache ECharts visualization panel in the wild\n\nSince we adopted and improved the Apache ECharts visualization panel, we have received great positive feedback from the community. Thank you!\n\nOur clients gladly accepted our help in upgrading from an older version of the library.\n\nIn addition, Volkov Labs migrated industrial Plotly dashboards to Apache ECharts. We were able to keep all existing functionality and as well added all desired extra features like a custom toolbox button (to dynamically change the charts) and support of the multiple Y-axis.',
   },
   {
     id: "balena-nfs-server-and-client-project-5d5de6dd47ca/",
@@ -2225,8 +2271,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -2274,8 +2320,8 @@ export const BlogPosts = [
         {
           name: "Daria Volkova",
           title:
-            "Translates ideas to elegant solutions and produce YouTube tutorials.",
-          url: "https://github.com/VolkovLabs",
+            "Translates ideas to elegant solutions and produces YouTube tutorials.",
+          url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
@@ -2286,7 +2332,7 @@ export const BlogPosts = [
         tags: ["Getting Started"],
         image: "/img/blog/2022-01-21-grafana-101/banner.png",
         keywords: ["Business", "Charts", "Grafana", "Visualization"],
-        updated: "2023-02-14T00:00:00.000Z",
+        updated: "2023-04-09T00:00:00.000Z",
       },
       prevItem: {
         title: "How to create your first Grafana Dashboard",
@@ -2300,7 +2346,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nThe Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads toward it.\n\nThis article answers basic questions about Grafana and is designed to be the first step in your from zero to hero Grafana adventure. Let\'s discover together what made Grafana to be installed over 700.000 times across the world.\n\nWhat is Grafana? After researching publications, and documentation, and picking the brains of the renowned Grafana experts, it turned out it was a million-dollar question. This tool has so many facets that there is no one definite straightforward answer in the community. I took some liberty and came up with my definition and the basic explanations of Grafana architecture.\n\n## All key concepts to know\n\nGrafana is open-source software that allows you to combine many different data sources converting your data into graphical visualizations for observability. Observability is a new buzzword that means visualizations to help with answering ambiguously defined questions, providing enough analysis to make critical decisions quickly.\n\nIn its nutshell, Grafana consists of 3 logical components or layers\n\n- Grafana Platform\n- Data Source\n- Visualization\n\nData Sources and Visualizations are also widely called plugins. You can have Data Sources and Visualizations forged together into one plugin. In that case, it is called an Application plugin.\n\n### Grafana Platform\n\nThe Grafana Platform takes care of user authentication, authorization, and deployment on various operations systems and provides you with a venue where any number of plugins can be installed, managed, and shared with users according to your security policies.\n\n### Data Source\n\nData Source allows the Grafana Platform to talk with your data storage. For example, the PostgreSQL plugin allows the Grafana Platform to retrieve data from the PostgreSQL database and send it to Visualization components.\n\nWatch the video where I explain why PostgreSQL is the ultimate storage partner for Grafana.\n\n<Video\n  src="https://www.youtube.com/embed/SbjIWnrMIgk"\n  title="PostgreSQL with Timescale is the ultimate storage partner for Grafana."\n/>\n\nSupported Data Sources can be categorized:\n\n- Time-series: Prometheus, Graphite, OpenTSDB, InfluxDB\n- Logging & Document: Loki, Elasticsearch\n- Distributed Tracing: Jaeger, Zipkin, Tempo\n- SQL: MySQL, PostgreSQL, Microsoft SQL Server\n- Cloud: AWS CloudWatch, Azure Monitor, Google Cloud Monitoring\n\n### Visualizations\n\nVisualizations convert retrieved data frames into dynamic graphical representations such as histograms, geo maps, bars, and candlestick charts, to name a few.\n\n<Image\n  title="Website analytics using Apache ECharts, Bar chart, stats panels in Grafana."\n  src="/img/blog/2022-01-21-grafana-101/visualization.png"\n  lazy={false}\n/>\n\nTwo more key Grafana concepts are Panels and Dashboards. To me, they are the easiest of all. A Grafana Panel is a working visualization connected to your data source. A Grafana Dashboard is a combination of panels.\n\n## Plugins Dashboard\n\nEnthusiasts of the Grafana Community create new Data Sources and Visualizations every day. We at Volkov Labs created [an information dashboard](https://demo.volkovlabs.io) with the number of downloads for all Grafana plugins.\n\n<Image\n  title="The information dashboard with the number of downloads for all Grafana plugins."\n  src="/img/blog/2022-01-21-grafana-101/dashboard.png"\n/>\n\nIt is a one-stop listing to simplify your Grafana plugin search. Such a simple solution made a big difference, especially given that there are no equivalents out there.\n\nYou can download any plugin as a code from GitHub or install it from the Grafana Catalog and easily mount it on top of the preinstalled Grafana. All plugins have been verified and went through rigorous peer review. This dashboard updates in real time.\n\n## How to get started with Grafana\n\nIf we sum up all key concepts in one workflow, here is what we get. You install the Grafana Platform and add the Grafana plugins for your data storage if it is not yet installed by default.\n\nNext, you create a Dashboard, add a Panel, connect it to the Data Source, choose a Visualization, configure it by composing your queries, adjust visuals (colors, sizes, title, etc.), save it and share the link with your peers. Boom! You can get as creative as humanely possible. This is the outstanding beauty of Grafana.\n\n## Quick facts to complete the picture\n\n- Super light-weighted software.\n- Presently, Grafana is primarily a read-only tool. Yet, that might change in the future. Check out the [Data Manipulation](/plugins/volkovlabs-form-panel) panel.\n- The visualizations could be refreshed as often as every 100 milliseconds. That, in particular, makes Grafana the ideal tool for monitoring any processes in real time.\n- Grafana does not store any data. Instead, it provides a secure path from your database and data storage to the visualization directly.\n- Grafana allows the dashboard creators to utilize the languages they are already familiar with. The queries that are used by the Grafana dashboards are transmitted to the databases in their native semantics.\n\n## Grafana Use Cases\n\nGrafana dashboards could be placed:\n\n- Locally. For instance, that could be a screen attached to a wall in the office or laboratory.\n- In Intranet. For internal use of the company\'s employees to display important KPIs like performance metrics, the progress of the current sprint, and real-time sales volumes for the just-launched merchandise.\n- On the Internet. To provide analytical services to the company\'s clients or share real-time analytics with fellow researchers in scientific communities.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nThe Grafana community is constantly growing, and we are happy to welcome new professionals onboard this flexible and powerful tool. Grafana has been of interest to deep technology experts in the recent past. Although, lately, more and more people from different backgrounds and skill sets are turning heads toward it.\n\nThis article answers basic questions about Grafana and is designed to be the first step in your from zero to hero Grafana adventure. Let\'s discover together what made Grafana to be installed over 700.000 times across the world.\n\nWhat is Grafana? After researching publications, and documentation, and picking the brains of the renowned Grafana experts, it turned out it was a million-dollar question. This tool has so many facets that there is no one definite straightforward answer in the community. I took some liberty and came up with my definition and the basic explanations of Grafana architecture.\n\n## All key concepts to know\n\nGrafana is open-source software that allows you to combine many different data sources converting your data into graphical visualizations for observability. Observability is a new buzzword that means visualizations to help with answering ambiguously defined questions, providing enough analysis to make critical decisions quickly.\n\nIn its nutshell, Grafana consists of 3 logical components or layers\n\n- Grafana Platform\n- Data Source\n- Visualization\n\nData Sources and Visualizations are also widely called plugins. You can have Data Sources and Visualizations forged together into one plugin. In that case, it is called an Application plugin.\n\n### Grafana Platform\n\nThe Grafana Platform takes care of user authentication, authorization, and deployment on various operations systems and provides you with a venue where any number of plugins can be installed, managed, and shared with users according to your security policies.\n\n### Data Source\n\nData Source allows the Grafana Platform to talk with your data storage. For example, the PostgreSQL plugin allows the Grafana Platform to retrieve data from the PostgreSQL database and send it to Visualization components.\n\nWatch the video where I explain why PostgreSQL is the ultimate storage partner for Grafana.\n\n<Video\n  src="https://www.youtube.com/embed/SbjIWnrMIgk"\n  title="PostgreSQL with Timescale is the ultimate storage partner for Grafana."\n/>\n\nSupported Data Sources can be categorized:\n\n- Time-series: Prometheus, Graphite, OpenTSDB, InfluxDB\n- Logging & Document: Loki, Elasticsearch\n- Distributed Tracing: Jaeger, Zipkin, Tempo\n- SQL: MySQL, PostgreSQL, Microsoft SQL Server\n- Cloud: AWS CloudWatch, Azure Monitor, Google Cloud Monitoring\n\n### Visualizations\n\nVisualizations convert retrieved data frames into dynamic graphical representations such as histograms, geo maps, bars, and candlestick charts, to name a few.\n\n<Image\n  title="Website analytics using Apache ECharts, Bar chart, stats panels in Grafana."\n  src="/img/blog/2022-01-21-grafana-101/visualization.png"\n  lazy={false}\n/>\n\nTwo more key Grafana concepts are Panels and Dashboards. To me, they are the easiest of all. A Grafana Panel is a working visualization connected to your data source. A Grafana Dashboard is a combination of panels.\n\n## Plugins Dashboard\n\nEnthusiasts of the Grafana Community create new Data Sources and Visualizations every day. We at Volkov Labs created [an information dashboard](https://release.volkovlabs.io/d/hHK1qmpnk/grafana-catalog?orgId=1) with the number of downloads for all Grafana plugins.\n\n<Image\n  title="The information dashboard with the number of downloads for all Grafana plugins."\n  src="/img/blog/2022-01-21-grafana-101/dashboard.png"\n/>\n\nIt is a one-stop listing to simplify your Grafana plugin search. Such a simple solution made a big difference, especially given that there are no equivalents out there.\n\nYou can download any plugin as a code from GitHub or install it from the Grafana Catalog and easily mount it on top of the preinstalled Grafana. All plugins have been verified and went through rigorous peer review. This dashboard updates in real time.\n\n## How to get started with Grafana\n\nIf we sum up all key concepts in one workflow, here is what we get. You install the Grafana Platform and add the Grafana plugins for your data storage if it is not yet installed by default.\n\nNext, you create a Dashboard, add a Panel, connect it to the Data Source, choose a Visualization, configure it by composing your queries, adjust visuals (colors, sizes, title, etc.), save it and share the link with your peers. Boom! You can get as creative as humanely possible. This is the outstanding beauty of Grafana.\n\n## Quick facts to complete the picture\n\n- Super light-weighted software.\n- Presently, Grafana is primarily a read-only tool. Yet, that might change in the future. Check out the [Data Manipulation](/plugins/volkovlabs-form-panel) panel.\n- The visualizations could be refreshed as often as every 100 milliseconds. That, in particular, makes Grafana the ideal tool for monitoring any processes in real time.\n- Grafana does not store any data. Instead, it provides a secure path from your database and data storage to the visualization directly.\n- Grafana allows the dashboard creators to utilize the languages they are already familiar with. The queries that are used by the Grafana dashboards are transmitted to the databases in their native semantics.\n\n## Grafana Use Cases\n\nGrafana dashboards could be placed:\n\n- Locally. For instance, that could be a screen attached to a wall in the office or laboratory.\n- In Intranet. For internal use of the company\'s employees to display important KPIs like performance metrics, the progress of the current sprint, and real-time sales volumes for the just-launched merchandise.\n- On the Internet. To provide analytical services to the company\'s clients or share real-time analytics with fellow researchers in scientific communities.',
   },
   {
     id: "do-you-want-to-be-on-top-of-the-latest-news-staying-in-grafana-9abb064ed449/",
