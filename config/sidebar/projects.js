@@ -73,16 +73,6 @@ const projects = {
       label: "Volkov Labs Application",
       type: "category",
     },
-    {
-      type: "link",
-      label: "ECharts Examples",
-      href: "https://echarts.volkovlabs.io",
-    },
-    {
-      type: "link",
-      label: "Live Project",
-      href: "https://live.volkovlabs.io",
-    },
   ],
   label: "Projects",
   type: "category",
