@@ -1,0 +1,91 @@
+---
+authors: [mikhail]
+slug: native-grafana-plugins-20230409/
+tags: [Configuration]
+image: /img/blog/2023-04-09-native-grafana-plugins/banner.png
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+draft: true
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# How to remove native Grafana plugins
+
+:::info Less is More.
+This approach involves stripping a design down to its bare essentials and casting aside any elements that do not contribute to the pure beauty or function of an object or space.
+
+:::
+
+Grafana in the default package includes Timeseries, Logging, Traces and many other data sources. It is great for getting started with Grafana and quickly creating enlightening dashboards integrating data from databases and storage.
+
+On the other hand, if you already using Grafana for years and keeping your environment tight, using a limited number of databases and tools, you don't need that many.
+
+How to remove some of the native plugins and easily find the data sources and panels you are looking for? How not confuse your users with a variety of plugins they don't need and concentrate on the job done?
+
+## Grafana Customization
+
+The customization topic is among the most frequently looked at and asked questions on the Grafana Forum.
+
+We produced a short video in July last year covering our experience with customization using Docker containers. It explains the basics and you are welcome to dive deeper in the blog post [How to customize the Grafana user interface](/blog/how-to-customize-the-grafana-user-interface-8d70a42dc2b6/).
+
+<Video
+  src="https://www.youtube.com/embed/3GRoa8TzIxY"
+  title="Change titles, icons, footer, default dashboard in Grafana 9."
+/>
+
+## Native Data Sources
+
+To add a new data source go to Administration -> Data Sources and click "+ Add a new data source". Then scroll through the list looking for the required data source.
+
+<Image
+  title="Grafana included all native data sources in the default package."
+  src="/img/blog/2023-04-09-native-grafana-plugins/datasources-all.png"
+  lazy={false}
+/>
+
+As we mentioned if you already know your environment, you can limit the selection to one-pager with 3-4 native data sources plus community.
+
+<Image
+  title="All unused data sources were removed from our Grafana image."
+  src="/img/blog/2023-04-09-native-grafana-plugins/datasources.png"
+  lazy={false}
+/>
+
+Here is the example from our Dockerfile, which removed all native data sources except Prometheus, Loki and PostgreSQL we use in our environment. Also, it removes Cloud and Enterprise hardcoded groups.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-04-09-native-grafana-plugins/datasources.docker"
+  language="docker"
+/>
+
+The downside to this approach is that deleted data sources can't be installed, and a new Docker image is required.
+
+## Native Panels
+
+We don't use an Annotation List, Dashboard List, News, Candlestick, Node Graph, and Traces in our environment and can easily remove them to narrow down the selection to the panels we are working with.
+
+<Image
+  title="All unused data sources were removed from our Grafana image."
+  src="/img/blog/2023-04-09-native-grafana-plugins/panels.png"
+  lazy={false}
+/>
+
+You can pick and choose native panels using the same concepts.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-04-09-native-grafana-plugins/panels.docker"
+  language="docker"
+/>
+
+## Docker file
+
+We collected various customizations in the Docker file on GitHub. Thank you to the community for sharing ideas and continue improving the list.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile"
+  language="docker"
+/>
+
+We constantly update it with all the latest configuration commands we were able to identify.
