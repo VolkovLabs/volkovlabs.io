@@ -51,6 +51,14 @@
   background-color: #ff5656;
 }
 
+.goPremium {
+  border-radius: 0px;
+  border-radius: 10px 10px 10px 10px;
+  color: var(--ifm-color-white);
+  border-color: #888888;
+  background-color: #888888;
+}
+
 /**
  * Why inside the Box
  */

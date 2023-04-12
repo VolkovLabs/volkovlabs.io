@@ -25,6 +25,11 @@ const navbar = {
       label: "Documentation",
     },
     {
+      href: "/support/",
+      position: "left",
+      label: "Support",
+    },
+    {
       href: "https://www.youtube.com/@volkovlabs",
       position: "right",
       className: "header-youtube-link",
