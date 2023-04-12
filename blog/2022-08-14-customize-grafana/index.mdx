@@ -4,7 +4,7 @@ slug: how-to-customize-the-grafana-user-interface-8d70a42dc2b6/
 tags: [Configuration]
 image: /img/blog/2022-08-14-customize-grafana/banner.png
 keywords: [Business, Grafana, Visualization, Customization, Docker]
-updated: 2023-03-19
+updated: 2023-04-11
 ---
 
 import Code from "@theme/Code";
@@ -223,6 +223,18 @@ RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|{target:"_b
 RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|{target:"_blank",id:"version",text:`v${e.version} (${e.commit})`,url:i?"https://github.com/grafana/grafana/blob/main/CHANGELOG.md":void 0}||g' {} \;
 RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|{target:"_blank",id:"updateVersion",text:"New version available!",icon:"download-alt",url:"https://grafana.com/grafana/download?utm_source=grafana_footer"}||g' {} \;
 ```
+
+## Native plugins
+
+In the following article, we explained how to remove unnecessary native Grafana plugins from your build. It is an easy way to avoid clutter in the Grafana UI. Moreover, as a tempting bonus for keeping only operating parts, you will end up with a lighter package attuned to your needs only.
+
+<a href="/blog/native-grafana-plugins-20230409/">
+  <Image
+    title="Spring cleaning in Grafana."
+    src="/img/blog/2023-04-09-native-grafana-plugins/banner.png"
+    zoom={false}
+  />
+</a>
 
 ## Docker file
 

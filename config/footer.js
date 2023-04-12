@@ -58,10 +58,6 @@ const footer = {
           to: "/plugins/volkovlabs-balena-app/",
         },
         {
-          label: "Balena NFS",
-          href: "/plugins/balena-nfs/",
-        },
-        {
           label: "Grafana Dev Templates",
           href: "/blog/development-templates-2.2.0-20230216/",
         },

@@ -723,10 +723,6 @@
                   "index": 12,
                   "text": "Plugins"
                 },
-                "/plugins/balena-nfs/": {
-                  "index": 52,
-                  "text": "Balena NFS"
-                },
                 "/plugins/grafana/": {
                   "index": 55,
                   "text": "Getting Started"
@@ -2194,7 +2190,6 @@
               "/blog/we-created-our-own-panel-plugin-template-for-grafana-665f7e6760d1/": "Our own panel plugin template for Grafana",
               "/blog/we-tried-pytorch-in-docker-container-with-nvidia-gpu-support-on-google-cloud-5e30c49d9864/": "PyTorch in Ray Docker container with NVIDIA GPU support on Google Cloud",
               "/plugins/": "Plugins",
-              "/plugins/balena-nfs/": "Balena NFS",
               "/plugins/grafana/": "Getting Started",
               "/plugins/grafana/customize/": "How to customize the Grafana user interface",
               "/plugins/volkovlabs-app/": "Volkov Labs Application",
