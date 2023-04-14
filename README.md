@@ -1,17 +1,17 @@
-# Blog and Documentation for Volkov Labs plugins and projects
+# Blog and Documentation for maintained plugins and projects
 
 ## Introduction
 
-Volkov Labs is an agency founded by long-time Grafana contributor Mikhail Volkov. We find elegant solutions for non-standard tasks.
+Volkov Labs specializes in developing plugins to visualize your data using Grafana as a Platform.
 
 ## Documentation
 
 This documentation is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-## Installation
+### Installation
 
 ```sh
-yarn
+yarn install
 ```
 
 ### Local Development
