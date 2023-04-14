@@ -4,7 +4,7 @@ slug: nginx-loki-grafana-20230129/
 tags: [Analytics, Loki, Nginx]
 image: /img/blog/2023-01-29-nginx-loki-grafana/banner.png
 keywords: [NGINX, Loki, Grafana, Analytics]
-updated: 2023-03-26
+updated: 2023-04-14
 ---
 
 import Code from "@theme/Code";
@@ -133,12 +133,12 @@ In our environment we are running Loki in a Docker container orchestrated using 
 
 - The data folder `/loki` stored in the volume folder on a local drive.
 - Configuration file `/etc/loki/local-config.yaml` stored in the `loki` folder next to the data.
-- Uses the latest stable version `2.7.1`.
+- Uses the latest stable version `2.8.0`.
 
 ```docker title=docker-compose.yml
   loki:
     container_name: loki
-    image: grafana/loki:2.7.1
+    image: grafana/loki:2.8.0
     restart: always
     network_mode: host
     volumes:
@@ -167,11 +167,11 @@ Similar to Loki we are running Promtail in a Docker container orchestrated with 
 
 - Configuration file `/etc/promtail/config.yml` stored in the `loki` folder.
 - The Nginx log folder `/var/log/nginx` was added to the container.
-- Uses the latest stable version `2.7.1`.
+- Uses the latest stable version `2.8.0`.
 
 ```docker title=docker-compose.yml
   promtail:
-    image: grafana/promtail:2.7.1
+    image: grafana/promtail:2.8.0
     restart: always
     container_name: promtail
     network_mode: host

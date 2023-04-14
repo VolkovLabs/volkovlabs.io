@@ -24,6 +24,7 @@ export const Project = ({
       <a href={href} target={target}>
         <ThemedImage
           role="img"
+          height="160px"
           sources={{
             light: useBaseUrl(`/img/projects/${name}/logo.svg`),
             dark: useBaseUrl(`/img/projects/${name}/logo.dark.svg`),
