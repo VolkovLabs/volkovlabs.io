@@ -4,7 +4,7 @@ slug: annotations-grafana-api-20230401/
 tags: [Grafana HTTP API Data Source, Getting Started]
 image: /img/blog/2023-04-01-annotations-grafana-api/banner.png
 keywords: [Grafana, HTTP API, Data Source, Annotations]
-updated: 2023-04-08
+updated: 2023-04-15
 ---
 
 import Code from "@theme/Code";
@@ -147,6 +147,11 @@ The query options where you specify which annotations to display using Grafana H
 As you know, if an alerting rule has a Dashboard and Panel Ids set, the Time Series panel will display the broken heart emoji. It is expected behavior for particular graphs which do not depend on the Dashboard variables.
 
 However, when you display data points from multiple devices the broken heart emoji might be a misleading overkill. The broken heart emoji will not be displayed, but your alerts and annotations will if you use Grafana HTTP API Data Source and configure dashboard filters.
+
+<Video
+  src="https://www.youtube.com/embed/bmOkirtC65w"
+  title="Annotations and Alerts tutorial for Grafana with Timescale."
+/>
 
 ## Alerting History
 
