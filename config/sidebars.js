@@ -1,4 +1,3 @@
-const dashboards = require(require.resolve("./sidebar/dashboards"));
 const grafana = require(require.resolve("./sidebar/grafana.js"));
 const plugins = require(require.resolve("./sidebar/plugins.js"));
 const development = require(require.resolve("./sidebar/development.js"));
@@ -6,7 +5,7 @@ const development = require(require.resolve("./sidebar/development.js"));
 /**
  * Sidebar
  */
-const mySidebar = [plugins, grafana, dashboards, development];
+const mySidebar = [plugins, grafana, development];
 
 /**
  * Sidebars
