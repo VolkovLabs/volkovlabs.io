@@ -10,24 +10,22 @@ const navbar = {
   },
   items: [
     {
-      label: "Grafana Plugins",
-      position: "left",
-      href: "/#Plugins",
-    },
-    {
       href: "/blog/",
       position: "left",
       label: "Blog",
+      "aria-label": "Blog",
     },
     {
       href: "/plugins/",
       position: "left",
       label: "Documentation",
+      "aria-label": "Documentation",
     },
     {
       href: "/support/",
       position: "left",
       label: "Support",
+      "aria-label": "Support",
     },
     {
       href: "https://www.youtube.com/@volkovlabs",

@@ -6,17 +6,7 @@ const development = require(require.resolve("./sidebar/development.js"));
 /**
  * Sidebar
  */
-const mySidebar = [
-  {
-    id: "index",
-    label: "What's new",
-    type: "doc",
-  },
-  grafana,
-  plugins,
-  dashboards,
-  development,
-];
+const mySidebar = [plugins, grafana, dashboards, development];
 
 /**
  * Sidebars
