@@ -21,7 +21,6 @@ const dashboards = {
   ],
   label: "Dashboards",
   type: "category",
-  collapsible: false,
 };
 
 module.exports = dashboards;

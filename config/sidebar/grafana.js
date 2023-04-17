@@ -27,6 +27,11 @@ const grafana = {
   ],
   label: "Grafana",
   type: "category",
+  description: "The open observability platform.",
+  link: {
+    type: "doc",
+    id: "grafana/index",
+  },
   collapsible: false,
 };
 

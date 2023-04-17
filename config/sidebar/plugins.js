@@ -47,6 +47,12 @@ const plugins = {
       ],
       label: "Apache ECharts Panel",
       type: "category",
+      description:
+        "Powerful charting and visualization library Apache ECharts.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-echarts-panel/index",
+      },
     },
     {
       items: [
@@ -68,6 +74,12 @@ const plugins = {
       ],
       label: "Base64 Image/PDF Panel",
       type: "category",
+      description:
+        "Display Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-image-panel/index",
+      },
     },
     {
       items: [
@@ -81,6 +93,11 @@ const plugins = {
       ],
       label: "Calendar Panel",
       type: "category",
+      description: "Display calendar events and change time range.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-calendar-panel/index",
+      },
     },
     {
       items: [
@@ -107,6 +124,11 @@ const plugins = {
       ],
       label: "Dynamic Text Panel",
       type: "category",
+      description: "Dynamic, data-driven text.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-dynamictext-panel/index",
+      },
     },
     {
       items: [
@@ -141,6 +163,11 @@ const plugins = {
       ],
       label: "Data Manipulation Panel",
       type: "category",
+      description: "Insert, update application data, and modify configuration.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-form-panel/index",
+      },
     },
     {
       items: [
@@ -160,6 +187,11 @@ const plugins = {
       ],
       label: "Environment Data Source",
       type: "category",
+      description: "Environment variables on your dashboard.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-env-datasource/index",
+      },
     },
     {
       items: [
@@ -179,6 +211,11 @@ const plugins = {
       ],
       label: "Grafana API Data Source",
       type: "category",
+      description: "Connect to Local and Remote Grafana instances.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-grapi-datasource/index",
+      },
     },
     {
       items: [
@@ -193,6 +230,11 @@ const plugins = {
       ],
       label: "RSS/Atom Data Source",
       type: "category",
+      description: "Visualize RSS/Atom feeds using Dynamic Text.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-rss-datasource/index",
+      },
     },
     {
       items: [
@@ -217,10 +259,16 @@ const plugins = {
       ],
       label: "Static Data Source",
       type: "category",
+      description: "Store and emulate your data.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-static-datasource/index",
+      },
     },
   ],
   label: "Grafana Plugins",
   type: "category",
+  description: "Our plugins are open-source and we update them constantly.",
   collapsible: false,
 };
 
