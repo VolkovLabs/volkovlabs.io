@@ -4,6 +4,11 @@
 const plugins = {
   items: [
     {
+      id: "index",
+      label: "What's new",
+      type: "doc",
+    },
+    {
       items: [
         {
           type: "doc",
@@ -269,6 +274,10 @@ const plugins = {
   label: "Grafana Plugins",
   type: "category",
   description: "Our plugins are open-source and we update them constantly.",
+  link: {
+    type: "doc",
+    id: "index",
+  },
   collapsible: false,
 };
 
