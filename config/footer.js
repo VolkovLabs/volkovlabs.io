@@ -108,10 +108,6 @@ const footer = {
           href: "https://linkedin.com/company/volkovlabs",
         },
         {
-          label: "GitHub Sponsor",
-          href: "https://github.com/sponsors/VolkovLabs",
-        },
-        {
           label: "YouTube Community",
           href: "https://youtube.com/@volkovlabs/community",
         },
