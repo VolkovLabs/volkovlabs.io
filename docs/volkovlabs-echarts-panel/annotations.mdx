@@ -1,0 +1,43 @@
+---
+description: Annotations are supported by the Apache ECharts visualization panel starting from version 4.3.0.
+tags:
+  - Apache ECharts
+  - Annotations
+image: /img/plugins/volkovlabs-echarts-panel/annotations.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Annotations
+
+:::info Version
+
+Annotations are supported by the Apache ECharts visualization panel starting from version 4.3.0.
+
+:::
+
+Annotations is an umbrella term that includes many Grafana artifacts.
+
+- Native Annotations
+- Alerts
+- Annotations Queries
+
+We explained the differences and created a how-to tutorial in [Annotations](/plugins/grafana/annotations).
+
+## Mark Lines
+
+Annotations in Apache ECharts are displayed using mark lines. Data for mark lines should be retrieved from the `data`.
+
+<Image
+  title="Annotations in Apache EChart looks similar to Time Series panels."
+  src="/img/plugins/volkovlabs-echarts-panel/annotations.png"
+/>
+
+## Example
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/annotations.js"
+  language="js"
+/>

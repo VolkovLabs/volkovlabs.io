@@ -14,6 +14,7 @@ const plugins = {
         "volkovlabs-echarts-panel/examples",
         {
           items: [
+            "volkovlabs-echarts-panel/annotations",
             "volkovlabs-echarts-panel/datasources",
             "volkovlabs-echarts-panel/events",
             "volkovlabs-echarts-panel/instance",
