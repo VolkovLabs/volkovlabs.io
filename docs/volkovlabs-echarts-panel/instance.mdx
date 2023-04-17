@@ -10,7 +10,7 @@ import Video from "@theme/Video";
 
 # ECharts Instance
 
-`echartsInstance` is the created instance (container) of the Apache ECharts. It allows to
+The `echartsInstance` is the created instance (container) of the Apache ECharts. It allows to
 
 - Get the width and height of the ECharts container.
 - Get the DOM (Document Object Model) to add additional elements.
@@ -39,16 +39,30 @@ To scale the content when the panel is resized using the instance methods to ret
 
 It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using the instance.
 
+### Button
+
+Add a button with an on-click event handler on top of the Apache ECharts.
+
 <Image
   title="Add a button to add Events on the Apache ECharts container."
   src="/img/plugins/volkovlabs-echarts-panel/dom.png"
 />
 
-### Example
-
-For example, you can add a button with an event handler.
-
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/dom.js"
+  language="js"
+/>
+
+### Select
+
+Add a select list with an on-change event handler.
+
+<Image
+  title="Add a select list to select an option and update Apache EChart options."
+  src="/img/plugins/volkovlabs-echarts-panel/select.png"
+/>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/select.js"
   language="js"
 />
