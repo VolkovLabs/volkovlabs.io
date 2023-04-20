@@ -32,6 +32,7 @@ const grafana = {
     type: "doc",
     id: "grafana/index",
   },
+  collapsible: false,
 };
 
 module.exports = grafana;

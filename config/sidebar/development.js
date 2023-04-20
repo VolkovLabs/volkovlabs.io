@@ -64,6 +64,7 @@ const development = {
   ],
   label: "Development",
   type: "category",
+  collapsible: false,
 };
 
 module.exports = development;

@@ -1,12 +1,12 @@
-import clsx from 'clsx';
-import React from 'react';
-import Head from '@docusaurus/Head';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import ThemedImage from '@theme/ThemedImage';
-import styles from '../css/index.module.css';
-import Image from '../theme/Image';
+import clsx from "clsx";
+import React from "react";
+import Head from "@docusaurus/Head";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import ThemedImage from "@theme/ThemedImage";
+import styles from "../css/index.module.css";
+import Image from "../theme/Image";
 
 /**
  * Header
@@ -35,11 +35,11 @@ const Header = (siteConfig) => {
               <a
                 className={clsx(
                   "button button--primary button--lg",
-                  styles.goPremium
+                  styles.getStarted
                 )}
                 href="https://github.com/sponsors/VolkovLabs"
               >
-                Go Premium (coming soon)&nbsp;&nbsp;→
+                Go Premium &nbsp;&nbsp;→
               </a>
             </div>
           </div>
