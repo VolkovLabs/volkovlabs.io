@@ -8,7 +8,7 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# InfluxDB using the API
+# InfluxDB API
 
 :::info InfluxDB v2 API
 
@@ -46,8 +46,9 @@ The generated payload of the HTTP post consists of:
 - `body.element_id1` and `body.element_id2` are the values for the fields to be used in InfluxDB.
 - `Date.now()` is a piece of code just for generating the timestamp (is in ms).
 
-The body's elements are coming from the plugin's form, that's why is inside the `${}` - `body.element_id1` is getting the `element_id1`
-from the body object.
+The body's elements are coming from the plugin's form, that's why is inside the `${}`.
+
+- `body.element_id1` is getting the `element_id1` value from the `body` object.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/servers/influx-write.js"
