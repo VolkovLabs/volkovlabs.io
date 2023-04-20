@@ -6,10 +6,10 @@ const grafana = {
     "grafana/index",
     {
       items: [
-        "grafana/allow-unsigned",
         "grafana/annotations",
         "grafana/customize",
         "grafana/variables",
+        "grafana/allow-unsigned",
       ],
       label: "Features",
       type: "category",
@@ -32,6 +32,7 @@ const grafana = {
     type: "doc",
     id: "grafana/index",
   },
+  collapsible: false,
 };
 
 module.exports = grafana;

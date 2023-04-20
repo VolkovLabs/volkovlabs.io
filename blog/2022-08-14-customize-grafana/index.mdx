@@ -17,6 +17,8 @@ This article collects various commands to help you play with the Grafana in your
 
 If you are here, you probably know what Grafana is and have already been playing with it for quite some time. And you are already quite aware that Grafana is a remarkable open-source tool for observability.
 
+## Installation
+
 The installation of Grafana directly on the operating system takes a minute or two. However, working with Grafana in a Docker container is more advantageous.
 
 <Video
@@ -28,7 +30,15 @@ Once installed, Grafana delivers a broad spectrum of built-in visualization pane
 
 Starting from Grafana 8, access to Grafana Catalog was made a click away when the Plugins section was added under the Configuration menu. Following that path, you can find and install the extra functionality on top of the standard features in a blink of an eye.
 
+## Customization
+
 So, here you are, at the point of knowing that Grafana architecture and functionality suit your needs and realizing the necessity to adjust the basic graphical elements to make your application look more like your own.
+
+<Image
+  title="Configuration, cleaning, visual and hands-on categories to Customize Grafana."
+  src="/img/blog/2022-08-14-customize-grafana/customization.png"
+  lazy={false}
+/>
 
 The truth is the fundamental UI components are pre-defined. There is no straightforward way to adjust them.
 
@@ -165,7 +175,7 @@ COPY img/background.svg /usr/share/grafana/public/img/g8_login_light.svg
 To update the name of the Main Organization, update the binary file `grafana-server`. The new name should be exactly 9 letters to avoid memory issues.
 
 ```docker
-RUN sed -i 's|Main Org.|VolkovLab|g' /usr/share/grafana/bin/grafana-server
+RUN sed -i 's|Main Org.|AwsomeOrg|g' /usr/share/grafana/bin/grafana-server
 ```
 
 ### Help menu
