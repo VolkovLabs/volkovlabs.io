@@ -11,5 +11,13 @@ Dashboard and Global variables will be replaced automatically in
 - URL for Initial and Update requests.
 - Header Parameters' values.
 - Payload of the Update Request.
+- JavaScript code.
 
 To learn about three types of variables take a look at [Variables](/plugins/grafana/variables).
+
+## JavaScript code
+
+```js
+const formIcon = elements.find((element) => element.id === "icon");
+formIcon.value = "$IconVar";
+```
