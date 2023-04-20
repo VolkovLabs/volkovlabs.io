@@ -1,0 +1,55 @@
+---
+tags:
+  - Data Manipulation
+  - API Server
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# InfluxDB using the API
+
+:::info InfluxDB v2 API
+
+Consult with the [InfluxDB v2 API reference](https://docs.influxdata.com/influxdb/cloud/reference/api/) for details about API endpoints.
+
+:::
+
+InfluxDB API can be used to retrieve and update data via the Data Manipulation panel.
+
+Thanks to community user [fercasjr](https://github.com/fercasjr) for examples.
+
+## Query data
+
+Update according to your environment:
+
+- IP address or name of the server (`localhost` in the example)
+- InfluxDB org
+- Token
+- Query could be any valid query you already have to test.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/servers/influx-query.js"
+  language="js"
+/>
+
+To write data to InfluxDB you can use `experimental.to()`, `wide.to()` or `to()` functions in the flux language or use the API.
+
+## Write data
+
+The generated payload of the HTTP post consists of:
+
+- `measurement_name` will be the name of the measurement to be used in InfluxDB (in this example is hardcoded).
+- `tag1` is the name of the tag to be used in InfluxDB (also hardcoded).
+- `field1` and `field2` will be the names of the fields to be used in InfluxDB (also hardcoded).
+- `body.element_id1` and `body.element_id2` are the values for the fields to be used in InfluxDB.
+- `Date.now()` is a piece of code just for generating the timestamp (is in ms).
+
+The body's elements are coming from the plugin's form, that's why is inside the `${}` - `body.element_id1` is getting the `element_id1`
+from the body object.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/servers/influx-write.js"
+  language="js"
+/>
