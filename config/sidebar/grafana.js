@@ -6,10 +6,10 @@ const grafana = {
     "grafana/index",
     {
       items: [
-        "grafana/allow-unsigned",
         "grafana/annotations",
         "grafana/customize",
         "grafana/variables",
+        "grafana/allow-unsigned",
       ],
       label: "Features",
       type: "category",
