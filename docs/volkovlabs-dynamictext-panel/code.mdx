@@ -76,7 +76,7 @@ myFunc = () => {
 
 Grafana 9 supports Internationalization, which is not fully provided to plugins yet.
 
-Meanwhile, we can use `getLocale()` method to get a value for the selected locale and show phrases from a defined dictionary.
+Meanwhile, we can use the `getLocale()` method to get a value for the selected locale and show phrases from a defined dictionary.
 
 ### Content
 
@@ -123,4 +123,39 @@ handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions
 <Image
   title="Dynamic Text allows displaying updated time zone and range in Grafana."
   src="/img/plugins/volkovlabs-dynamictext-panel/time.png"
+/>
+
+## Auto scroll
+
+If the table does not fit in the panel it can be auto scrolled using JavaScript with adjustable intervals.
+
+<Image
+  title="Autoscroll table using Dynamic Text panel."
+  src="/img/plugins/volkovlabs-dynamictext-panel/scroll.gif"
+/>
+
+### Content
+
+```html
+<table id="dataTable" width="100%">
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Category</th>
+  </tr>
+  {{#each data}}
+  <tr>
+    <td>{{title}}</td>
+    <td>{{date pubDate 'MMM, DD YYYY'}}</td>
+    <td>{{category}}</td>
+  </tr>
+  {{/each}}
+</table>
+```
+
+### JavaScript Code
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/scroll.js"
+  language="js"
 />
