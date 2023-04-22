@@ -97,6 +97,7 @@ const series = data.series.map((s) => {
 
 During the Grafana teams review this functionality was removed due to security reasons in v4.3.1.
 
+We are experimenting with a safe approach in the Data Manipulation plugin and will look into implementing it for the Apache ECharts.
 :::
 
 Apache ECharts panel allows retrieving the entry point to data sources. With the data source instance, you can execute any methods provided by the data source.
@@ -162,7 +163,7 @@ Apache ECharts is one of the three plugins that make Grafana complete. Dynamic T
 
 ## Release Notes
 
-### Breaking changes
+### Breaking changes in 4.3.1
 
 - Due to security reasons getDataSourceSrv parameter was removed (#156)
 
