@@ -4,6 +4,11 @@
 const development = {
   items: [
     {
+      type: "doc",
+      id: "development/index",
+      label: "What do we do?",
+    },
+    {
       items: [
         {
           type: "doc",
@@ -24,7 +29,16 @@ const development = {
       },
     },
     {
+      link: {
+        type: "doc",
+        id: "templates/index",
+      },
       items: [
+        {
+          type: "doc",
+          id: "templates/index",
+          label: "Introduction",
+        },
         {
           type: "doc",
           id: "volkovlabs-abc-app/index",
@@ -40,6 +54,7 @@ const development = {
           id: "volkovlabs-abc-panel/index",
           label: "Panel",
         },
+        "templates/release",
       ],
       label: "Plugin Templates",
       type: "category",
@@ -64,6 +79,10 @@ const development = {
   ],
   label: "Development",
   type: "category",
+  link: {
+    type: "doc",
+    id: "development/index",
+  },
   collapsible: false,
 };
 
