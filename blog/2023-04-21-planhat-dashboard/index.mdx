@@ -74,6 +74,8 @@ The primary data entity for each of the views is Planhat Opportunity.
 
 Besides basic properties, such as Company Name, ARR, Renewal Start Date, Close Date, etc. we calculate the probability of the renewal, which is the primary element of forecasting and will be presented below.
 
+### Time picker
+
 But first - Grafana time picker. With just a few clicks, you can focus your visualization on exactly the period you're interested in (a feature missing in Planhat dashboards). But that's not all. The Grafana time picker also allows you to choose the Fiscal quarter and year as your time range (obviously, you can set up the beginning of the Fiscal Year for your organization)!
 
 <Image
@@ -81,9 +83,9 @@ But first - Grafana time picker. With just a few clicks, you can focus your visu
   src="/img/blog/2023-04-21-planhat-dashboard/timerange.png"
 />
 
-### ARR Won and ARR Lost panels
+### ARR Won and ARR Lost
 
-They just return the respective amount of ARR already successfully closed or lost since the beginning of the renewal period until now. I'd like to highlight: it uses the new Grafana transformation “Config from query results” to dynamically calculate target ARR to proper display thresholds on gauges.
+These panels just return the respective amount of ARR already successfully closed or lost since the beginning of the renewal period until now. I'd like to highlight: it uses the new Grafana transformation “Config from query results” to dynamically calculate target ARR to proper display thresholds on gauges.
 
 <Image
   title="Transformation Config from query results allows to dynamically calculate target ARR."
@@ -92,7 +94,7 @@ They just return the respective amount of ARR already successfully closed or los
 
 ### ARR Won/Lost Forecast
 
-They look very similar to gauges with already closed renewals, but there are two queries in the background of each of them:
+These panels look very similar to gauges with already closed renewals, but there are two queries in the background of each of them:
 
 - how much ARR is already closed
 - how much ARR is forecasted to be closed or lost, correspondingly.
