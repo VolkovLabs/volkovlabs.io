@@ -51,15 +51,15 @@ const footer = {
       ],
     },
     {
-      title: "Projects",
+      title: "Development",
       items: [
         {
           label: "Balena Application",
           to: "/plugins/volkovlabs-balena-app/",
         },
         {
-          label: "Grafana Dev Templates",
-          href: "/blog/development-templates-2.2.0-20230216/",
+          label: "Plugin Templates",
+          href: "/plugins/templates/",
         },
         {
           label: "Volkov Labs Application",
@@ -73,10 +73,6 @@ const footer = {
         {
           label: "Blog",
           href: "/blog/",
-        },
-        {
-          label: "GitHub",
-          href: "https://github.com/VolkovLabs",
         },
         {
           label: "ECharts Examples",
@@ -102,6 +98,10 @@ const footer = {
         {
           label: "Support",
           href: "/support/",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/VolkovLabs",
         },
         {
           label: "LinkedIn",

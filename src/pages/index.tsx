@@ -74,9 +74,9 @@ const Main = (siteConfig) => {
         </div>
       </div>
 
-      <div id="Projects" className="container margin-vert--md">
+      <div id="Development" className="container margin-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Projects</span>
+          <span>Development</span>
         </h2>
 
         <div className="container margin-vert--lg padding-vert--lg">
