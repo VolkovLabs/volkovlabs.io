@@ -27,7 +27,7 @@ const Header = (siteConfig) => {
             </p>
 
             <p className="hero__subtitle">
-              The Premium Tier includes GitHub Discussions and access to Private
+              The Premium Tier includes GitHub Discussions and access to Premium
               repositories.
             </p>
 
