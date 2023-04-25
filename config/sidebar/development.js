@@ -12,6 +12,23 @@ const development = {
       items: [
         {
           type: "doc",
+          id: "volkovlabs-echarts-lite/index",
+          label: "Introduction",
+        },
+        "volkovlabs-echarts-lite/release",
+      ],
+      label: "Apache ECharts Lite Panel",
+      type: "category",
+      description: "Apache ECharts Core functionality, no extras.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-echarts-lite/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
           id: "volkovlabs-balena-app/index",
           label: "Introduction",
         },
@@ -26,6 +43,30 @@ const development = {
       link: {
         type: "doc",
         id: "volkovlabs-balena-app/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-env-datasource/index",
+          label: "Introduction",
+        },
+        "volkovlabs-env-datasource/deployment",
+        "volkovlabs-env-datasource/provisioning",
+        {
+          items: ["volkovlabs-env-datasource/variables"],
+          label: "Features",
+          type: "category",
+        },
+        "volkovlabs-env-datasource/release",
+      ],
+      label: "Environment Data Source",
+      type: "category",
+      description: "Environment variables on your dashboard.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-env-datasource/index",
       },
     },
     {

@@ -66,7 +66,7 @@ const Main = (siteConfig) => {
     <main>
       <div id="Plugins" className="container margin-vert--md padding-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Grafana Plugins</span>
+          <span>Community Plugins</span>
         </h2>
 
         <div className="container margin-vert--md padding-vert--lg">

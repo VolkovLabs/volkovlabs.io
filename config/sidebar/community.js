@@ -1,13 +1,8 @@
 /**
- * Plugins
+ * Community
  */
-const plugins = {
+const community = {
   items: [
-    {
-      id: "index",
-      label: "What's new",
-      type: "doc",
-    },
     {
       items: [
         {
@@ -179,30 +174,6 @@ const plugins = {
       items: [
         {
           type: "doc",
-          id: "volkovlabs-env-datasource/index",
-          label: "Introduction",
-        },
-        "volkovlabs-env-datasource/deployment",
-        "volkovlabs-env-datasource/provisioning",
-        {
-          items: ["volkovlabs-env-datasource/variables"],
-          label: "Features",
-          type: "category",
-        },
-        "volkovlabs-env-datasource/release",
-      ],
-      label: "Environment Data Source",
-      type: "category",
-      description: "Environment variables on your dashboard.",
-      link: {
-        type: "doc",
-        id: "volkovlabs-env-datasource/index",
-      },
-    },
-    {
-      items: [
-        {
-          type: "doc",
           id: "volkovlabs-grapi-datasource/index",
           label: "Introduction",
         },
@@ -272,14 +243,10 @@ const plugins = {
       },
     },
   ],
-  label: "Grafana Plugins",
+  label: "Community Plugins",
   type: "category",
   description: "Our plugins are open-source and we update them constantly.",
-  link: {
-    type: "doc",
-    id: "index",
-  },
   collapsible: false,
 };
 
-module.exports = plugins;
+module.exports = community;

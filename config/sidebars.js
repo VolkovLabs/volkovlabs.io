@@ -1,11 +1,20 @@
 const grafana = require(require.resolve("./sidebar/grafana.js"));
-const plugins = require(require.resolve("./sidebar/plugins.js"));
+const commmunity = require(require.resolve("./sidebar/community.js"));
 const development = require(require.resolve("./sidebar/development.js"));
 
 /**
  * Sidebar
  */
-const mySidebar = [plugins, grafana, development];
+const mySidebar = [
+  {
+    id: "index",
+    label: "What's new",
+    type: "doc",
+  },
+  commmunity,
+  grafana,
+  development,
+];
 
 /**
  * Sidebars

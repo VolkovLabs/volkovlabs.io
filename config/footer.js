@@ -33,10 +33,6 @@ const footer = {
           to: "/plugins/volkovlabs-form-panel/",
         },
         {
-          label: "Environment Data Source",
-          to: "/plugins/volkovlabs-env-datasource/",
-        },
-        {
           label: "Grafana API Data Source",
           to: "/plugins/volkovlabs-grapi-datasource/",
         },
@@ -54,8 +50,16 @@ const footer = {
       title: "Development",
       items: [
         {
+          label: "Apache ECharts Lite Panel",
+          to: "/plugins/volkovlabs-echarts-lite/",
+        },
+        {
           label: "Balena Application",
           to: "/plugins/volkovlabs-balena-app/",
+        },
+        {
+          label: "Environment Data Source",
+          to: "/plugins/volkovlabs-env-datasource/",
         },
         {
           label: "Plugin Templates",

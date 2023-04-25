@@ -6,6 +6,13 @@ import { PluginItem } from "../types";
  */
 export const ProjectList: PluginItem[] = [
   {
+    title: "Apache ECharts Lite Panel",
+    name: "volkovlabs-echarts-lite",
+    description: <>Apache ECharts Core functionality, no extras.</>,
+    href: "/plugins/volkovlabs-echarts-lite/",
+    badge: "https://img.shields.io/badge/Premium-9D70F9?style=for-the-badge",
+  },
+  {
     title: "Balena Application",
     name: "volkovlabs-balena-app",
     description: (
@@ -15,6 +22,13 @@ export const ProjectList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-balena-app/",
+  },
+  {
+    title: "Environment Data Source",
+    name: "volkovlabs-env-datasource",
+    description: <>Environment variables on your dashboard.</>,
+    href: "/plugins/volkovlabs-env-datasource/",
+    badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
   },
   {
     title: "Plugin Templates",
