@@ -12,6 +12,23 @@ const development = {
       items: [
         {
           type: "doc",
+          id: "volkovlabs-echarts-lite/index",
+          label: "Introduction",
+        },
+        "volkovlabs-echarts-lite/release",
+      ],
+      label: "Apache ECharts Lite Panel",
+      type: "category",
+      description: "Apache ECharts Core functionality, no extras.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-echarts-lite/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
           id: "volkovlabs-balena-app/index",
           label: "Introduction",
         },
