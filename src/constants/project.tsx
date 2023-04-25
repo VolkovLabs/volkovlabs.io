@@ -24,6 +24,13 @@ export const ProjectList: PluginItem[] = [
     href: "/plugins/volkovlabs-balena-app/",
   },
   {
+    title: "Environment Data Source",
+    name: "volkovlabs-env-datasource",
+    description: <>Environment variables on your dashboard.</>,
+    href: "/plugins/volkovlabs-env-datasource/",
+    badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
+  },
+  {
     title: "Plugin Templates",
     name: "template",
     description: <>Start from well-constructed template.</>,
