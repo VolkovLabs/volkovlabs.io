@@ -10,7 +10,7 @@ const footer = {
   style: "light",
   links: [
     {
-      title: "Grafana Plugins",
+      title: "Community Plugins",
       items: [
         {
           label: "Apache ECharts Panel",
