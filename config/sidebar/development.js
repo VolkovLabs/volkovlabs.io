@@ -111,7 +111,7 @@ const development = {
       ],
       label: "Volkov Labs Application",
       type: "category",
-      description: "Custom Docker image with Grafana.",
+      description: "Docker image with customized Grafana.",
       link: {
         type: "doc",
         id: "volkovlabs-app/index",

@@ -4,6 +4,7 @@ slug: native-grafana-plugins-20230409/
 tags: [Configuration]
 image: /img/blog/2023-04-09-native-grafana-plugins/banner.png
 keywords: [Grafana, Data Source, Panels, Cleanup]
+updated: 2023-04-30
 ---
 
 import Code from "@theme/Code";
@@ -89,9 +90,31 @@ You can pick and choose native panels using the same concepts.
   language="docker"
 />
 
+## Connections
+
+Grafana 9.5.0 introduced Connections as a new and easier way to install and add Data Sources.
+
+It's an interesting feature to explore various data sources, but we already know what we need and disable it in the configuration file.
+
+<Image
+  title="Connections is a new and easier way to install and add Data Sources."
+  src="/img/blog/2023-04-09-native-grafana-plugins/connections.png"
+/>
+
+```docker
+# Disable Connections
+RUN sed -i 's|# feature2 = false|dataConnectionsConsole = false|g' /usr/share/grafana/conf/defaults.ini
+```
+
 ## Docker file
 
 The docker file below includes all Grafana customization instructions as they exist now. That means all we mentioned in the previous blog post and the 90 seconds video are included below.
+
+:::info Grafana 9.5.1
+
+Dockerfile was updated to Grafana 9.5.1 on Apr 30, 2023.
+
+:::
 
 You can find our collection of various customizations in the Docker file on GitHub. Thank you to the community for sharing ideas and helping us to improve the list.
 

@@ -28,7 +28,6 @@ export const ProjectList: PluginItem[] = [
     name: "volkovlabs-env-datasource",
     description: <>Environment variables on your dashboard.</>,
     href: "/plugins/volkovlabs-env-datasource/",
-    badge: "https://img.shields.io/badge/Private-black?style=for-the-badge",
   },
   {
     title: "Plugin Templates",
@@ -39,7 +38,7 @@ export const ProjectList: PluginItem[] = [
   {
     title: "Volkov Labs Application",
     name: "volkovlabs-app",
-    description: <>Custom Docker image with Grafana.</>,
+    description: <>Docker image with customized Grafana.</>,
     href: "/plugins/volkovlabs-app/",
   },
 ];
