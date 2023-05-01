@@ -1,0 +1,79 @@
+---
+authors: [mikhail]
+slug: volkovlabs-app-2.4.0-20230430/
+tags: [Development]
+image: /img/blog/2023-04-30-volkovlabs-app-2.4.0/banner.png
+keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Volkov Labs Application 2.4.0
+
+We released a new version of the Volkov Labs Application 2.4.0 with a customized Grafana docker image. This maintenance release
+
+- Updated to Grafana 9.5.1 toolkit.
+- Updated to Grafana docker image 9.5.1.
+- Updated the Application page and Home dashboard with an auto-scroll table.
+
+:::info Grafana Catalog
+
+Volkov Labs Application is for internal use and is not included in the Grafana Catalog.
+
+:::
+
+We share the project with the community as an example of how to deploy [a customized Docker image with included Application plugin and provisioning](https://github.com/volkovlabs/volkovlabs-app).
+
+## Grafana 9.5.1
+
+Grafana 9.5.0/9.5.1 introduced Connections as a new and easier way to install and add Data Sources. It's an interesting feature to explore various data sources, but we already know what we need and disabled it.
+
+<Image
+  title="Connections is a new and easier way to install and add Data Sources."
+  src="/img/blog/2023-04-09-native-grafana-plugins/connections.png"
+/>
+
+Other notable changes in the [Docker file](https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile):
+
+- Top navigation and Chrome UI features are enabled by default and were removed.
+- Commands to replace JavaScripts were updated according to the latest changes.
+
+## Customization
+
+Months of work bundled with deep expertise nicely wrapped into a 7-minute long video revealing simple steps to customize Grafana. In this tutorial, we answered all community questions we collected to this moment.
+
+<Video
+  src="https://www.youtube.com/embed/ChI78v4UZc0"
+  title="How to customize Grafana 9.4. A cheat-sheet for Docker container and Windows."
+/>
+
+## Home Dashboard
+
+The home dashboard, which we provisioned with data sources, displays the latest videos from our YouTube channel and blog posts. It is based on the [RSS/Atom Data Source](/plugins/volkovlabs-rss-datasource) and improved [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel).
+
+<Image
+  title="Home dashboard with RSS feeds from YouTube channel and blog."
+  src="/img/blog/2023-04-30-volkovlabs-app-2.4.0/home.png"
+/>
+
+The table with blog posts has auto-scroll capabilities, which we explained in the documentation
+[JavaScript code to auto-scroll news](/plugins/volkovlabs-dynamictext-panel/code/#auto-scroll).
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update to Grafana 9.5.1 (#63)
+- Update Docker image 9.5.1 (#64)
+- Add Customization tutorial (#66)
+- Update Home Page and Plugins (#67)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us:
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-app/issues/new/choose).
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
