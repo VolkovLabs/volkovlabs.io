@@ -8,15 +8,11 @@ const grafana = {
       items: [
         "grafana/annotations",
         "grafana/customize",
+        "grafana/datasources/json",
         "grafana/variables",
         "grafana/allow-unsigned",
       ],
-      label: "Features",
-      type: "category",
-    },
-    {
-      items: ["grafana/datasources/json"],
-      label: "Data Sources",
+      label: "Tutorials",
       type: "category",
     },
     {
