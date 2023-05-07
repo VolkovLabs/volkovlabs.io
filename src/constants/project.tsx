@@ -1,5 +1,5 @@
-import React from "react";
-import { PluginItem } from "../types";
+import React from 'react';
+import { PluginItem } from '../types';
 
 /**
  * Project List
@@ -10,7 +10,6 @@ export const ProjectList: PluginItem[] = [
     name: "volkovlabs-echarts-lite",
     description: <>Apache ECharts Core functionality, no extras.</>,
     href: "/plugins/volkovlabs-echarts-lite/",
-    badge: "https://img.shields.io/badge/Premium-9D70F9?style=for-the-badge",
   },
   {
     title: "Balena Application",
