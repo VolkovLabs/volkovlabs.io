@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "echarts-lite-1.1.0-20230508/",
+    metadata: {
+      permalink: "/blog/echarts-lite-1.1.0-20230508/",
+      source: "@site/blog/2023-05-08-echarts-lite-1.1.0/index.mdx",
+      title: "Apache ECharts Lite Panel 1.1.0",
+      description:
+        "We released a new version of the Apache ECharts Lite Panel 1.1.0 for Grafana. This maintenance release",
+      date: "2023-05-08T00:00:00.000Z",
+      formattedDate: "May 8, 2023",
+      tags: [
+        {
+          label: "Apache ECharts",
+          permalink: "/blog/tags/apache-e-charts",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Loves to work on innovative projects.",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "echarts-lite-1.1.0-20230508/",
+        tags: ["Apache ECharts", "Release Notes"],
+        image: "/img/blog/2023-05-08-echarts-lite-1.1.0/banner.png",
+        keywords: ["Apache ECharts", "Chart", "Visualization", "Grafana"],
+      },
+      nextItem: {
+        title: "Volkov Labs Application 2.4.0",
+        permalink: "/blog/volkovlabs-app-2.4.0-20230430/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of the Apache ECharts Lite Panel 1.1.0 for Grafana. This maintenance release\n\n- Updated to the latest Grafana 9.5.1 toolkit.\n- Updated plugin Id `volkovlabs-echarts-lite-panel`.\n- Based on Apache ECharts 5.4.2.\n\n:::info Fork\n\nThe Apache ECharts Lite plugin is a fork of the Apache ECharts panel that provides only Core functionality without maps and extensions. It\'s designed to use in Application plugins and IoT projects.\n\nThe Apache ECharts panel is a Community plugin available in the Grafana Catalog.\n:::\n\n<Image\n  title="Apache ECharts offers an easy way of adding intuitive, interactive, and highly customizable charts."\n  src="/img/blog/2023-05-08-echarts-lite-1.1.0/dashboard.png"\n  lazy={false}\n/>\n\n## Compare to Apache ECharts panel\n\n| Features    | Apache ECharts | Apache ECharts Lite |\n| ----------- | -------------- | ------------------- |\n| 3D          | Yes            | No                  |\n| Liquid Fill | Yes            | No                  |\n| Maps        | Yes            | No                  |\n| Statistics  | Yes            | No                  |\n| Module Size | 2 megabytes    | 1 megabyte          |\n\n## YouTube Tutorial\n\nThe Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.\n\n<Video\n  src="https://www.youtube.com/embed/DxqCrBEmrQw"\n  title="How to create modern dashboards in Grafana."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Upgrade to Grafana 9.5.1 toolkit (#3)\n- Update plugin id to `volkovlabs-echarts-lite-panel` (#3)\n\n## Support\n\nWe provide GitHub Discussions and Premium tier support for the development and private plugins available via [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).',
+  },
+  {
     id: "volkovlabs-app-2.4.0-20230430/",
     metadata: {
       permalink: "/blog/volkovlabs-app-2.4.0-20230430/",
@@ -37,6 +82,11 @@ export const BlogPosts = [
           "Visualization",
           "Grafana",
         ],
+        updated: "2023-05-08T00:00:00.000Z",
+      },
+      prevItem: {
+        title: "Apache ECharts Lite Panel 1.1.0",
+        permalink: "/blog/echarts-lite-1.1.0-20230508/",
       },
       nextItem: {
         title:
@@ -45,7 +95,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of the Volkov Labs Application 2.4.0 with a customized Grafana docker image. This maintenance release\n\n- Updated to Grafana 9.5.1 toolkit.\n- Updated to Grafana docker image 9.5.1.\n- Updated the Application page and Home dashboard with an auto-scroll table.\n\n:::info Grafana Catalog\n\nVolkov Labs Application is for internal use and is not included in the Grafana Catalog.\n\n:::\n\nWe share the project with the community as an example of how to deploy [a customized Docker image with included Application plugin and provisioning](https://github.com/volkovlabs/volkovlabs-app).\n\n## Grafana 9.5.1\n\nGrafana 9.5.0/9.5.1 introduced Connections as a new and easier way to install and add Data Sources. It\'s an interesting feature to explore various data sources, but we already know what we need and disabled it.\n\n<Image\n  title="Connections is a new and easier way to install and add Data Sources."\n  src="/img/blog/2023-04-09-native-grafana-plugins/connections.png"\n/>\n\nOther notable changes in the [Docker file](https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile):\n\n- Top navigation and Chrome UI features are enabled by default and were removed.\n- Commands to replace JavaScripts were updated according to the latest changes.\n\n## Customization\n\nMonths of work bundled with deep expertise nicely wrapped into a 7-minute long video revealing simple steps to customize Grafana. In this tutorial, we answered all community questions we collected to this moment.\n\n<Video\n  src="https://www.youtube.com/embed/ChI78v4UZc0"\n  title="How to customize Grafana 9.4. A cheat-sheet for Docker container and Windows."\n/>\n\n## Home Dashboard\n\nThe home dashboard, which we provisioned with data sources, displays the latest videos from our YouTube channel and blog posts. It is based on the [RSS/Atom Data Source](/plugins/volkovlabs-rss-datasource) and improved [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel).\n\n<Image\n  title="Home dashboard with RSS feeds from YouTube channel and blog."\n  src="/img/blog/2023-04-30-volkovlabs-app-2.4.0/home.png"\n/>\n\nThe table with blog posts has auto-scroll capabilities, which we explained in the documentation\n[JavaScript code to auto-scroll news](/plugins/volkovlabs-dynamictext-panel/code/#auto-scroll).\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update to Grafana 9.5.1 (#63)\n- Update Docker image 9.5.1 (#64)\n- Add Customization tutorial (#66)\n- Update Home Page and Plugins (#67)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-app/issues/new/choose).\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of the Volkov Labs Application 2.4.0 with a customized Grafana docker image. This maintenance release\n\n- Updated to Grafana 9.5.1 toolkit.\n- Updated to Grafana docker image 9.5.1.\n- Updated the Application page and Home dashboard with an auto-scroll table.\n\n:::info Grafana Catalog\n\nVolkov Labs Application is for internal use and is not included in the Grafana Catalog.\n\n:::\n\nWe share the project with the community as an example of how to deploy [a customized Docker image with included Application plugin and provisioning](https://github.com/volkovlabs/volkovlabs-app).\n\n## Grafana 9.5.1\n\nGrafana 9.5.0/9.5.1 introduced Connections as a new and easier way to install and add Data Sources. It\'s an interesting feature to explore various data sources, but we already know what we need and disabled it.\n\n<Image\n  title="Connections is a new and easier way to install and add Data Sources."\n  src="/img/blog/2023-04-09-native-grafana-plugins/connections.png"\n  lazy={false}\n/>\n\nOther notable changes in the [Docker file](https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile):\n\n- Top navigation and Chrome UI features are enabled by default and were removed.\n- Commands to replace JavaScripts were updated according to the latest changes.\n\n## Customization\n\nMonths of work bundled with deep expertise nicely wrapped into a 7-minute long video revealing simple steps to customize Grafana. In this tutorial, we answered all community questions we collected to this moment.\n\n<Video\n  src="https://www.youtube.com/embed/ChI78v4UZc0"\n  title="How to customize Grafana 9.4. A cheat-sheet for Docker container and Windows."\n/>\n\n## Home Dashboard\n\nThe home dashboard, which we provisioned with data sources, displays the latest videos from our YouTube channel and blog posts. It is based on the [RSS/Atom Data Source](/plugins/volkovlabs-rss-datasource) and improved [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel).\n\n<Image\n  title="Home dashboard with RSS feeds from YouTube channel and blog."\n  src="/img/blog/2023-04-30-volkovlabs-app-2.4.0/home.png"\n/>\n\nThe table with blog posts has auto-scroll capabilities, which we explained in the documentation\n[JavaScript code to auto-scroll news](/plugins/volkovlabs-dynamictext-panel/code/#auto-scroll).\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update to Grafana 9.5.1 (#63)\n- Update Docker image 9.5.1 (#64)\n- Add Customization tutorial (#66)\n- Update Home Page and Plugins (#67)\n\n## Support\n\nWe provide GitHub Discussions and Premium tier support for the development and private plugins available via [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).',
   },
   {
     id: "planhat-dashboard-20230421/",
