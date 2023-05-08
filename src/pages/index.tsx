@@ -1,13 +1,13 @@
-import clsx from "clsx";
-import React from "react";
-import Head from "@docusaurus/Head";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
-import ThemedImage from "@theme/ThemedImage";
-import { Plugins, Projects } from "../components";
-import Blogs from "../components/Blogs";
-import styles from "../css/index.module.css";
+import clsx from 'clsx';
+import React from 'react';
+import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import ThemedImage from '@theme/ThemedImage';
+import { Plugins, Projects } from '../components';
+import Blogs from '../components/Blogs';
+import styles from '../css/index.module.css';
 
 /**
  * Header
@@ -23,12 +23,13 @@ const Header = (siteConfig) => {
             </h1>
 
             <p className="hero__subtitle margin-vert--md">
-              Volkov Labs specializes in developing plugins to visualize your
-              data using Grafana as a Platform.
+              We specialize in creating plugins that enable you to visualize
+              your data on the Grafana platform.
             </p>
 
             <p className="hero__subtitle">
-              Our JavaScript-enriched plugins provide unbeatable customization.
+              Our plugins are enriched with JavaScript, providing you with
+              unparalleled customization options.
             </p>
             <div className="margin-vert--lg">
               <a

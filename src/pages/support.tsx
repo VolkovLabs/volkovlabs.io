@@ -20,17 +20,15 @@ const Header = (siteConfig) => {
             <h1 className="hero__title margin-vert--lg">
               {siteConfig.tagline}
             </h1>
-
             <p className="hero__subtitle margin-vert--md">
-              Volkov Labs provides Standard (free) and Premium tier support for
-              maintained Grafana Community plugins.
+              At Volkov Labs, we offer two tiers of support for maintained
+              Grafana Community plugins: Standard (which is free) and Premium.
             </p>
 
             <p className="hero__subtitle">
-              The Premium Tier includes GitHub Discussions and support for
-              Private plugins.
+              The Premium Tier provides additional benefits such as GitHub
+              Discussions and support for Private plugins.
             </p>
-
             <div className="margin-vert--lg">
               <a
                 className={clsx(
@@ -75,16 +73,13 @@ const Main = (siteConfig) => {
           <div className="col col--6">
             <Image src="/img/team/daria.png" zoom={false} lazy={true} />
             <h3>Daria</h3>
-            <p>
-              Translates ideas to elegant solutions and produces YouTube
-              tutorials.
-            </p>
+            <p>COO, Volkov Labs.</p>
           </div>
 
           <div className="col col--6">
             <Image src="/img/team/mikhail.png" zoom={false} lazy={true} />
             <h3>Mikhail</h3>
-            <p>Loves to work on innovative projects.</p>
+            <p>Founder, Volkov Labs.</p>
           </div>
         </div>
       </div>
