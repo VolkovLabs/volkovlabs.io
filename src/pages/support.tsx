@@ -23,12 +23,12 @@ const Header = (siteConfig) => {
 
             <p className="hero__subtitle margin-vert--md">
               Volkov Labs provides Standard (free) and Premium tier support for
-              maintained Grafana plugins.
+              maintained Grafana Community plugins.
             </p>
 
             <p className="hero__subtitle">
-              The Premium Tier includes GitHub Discussions and access to Premium
-              repositories.
+              The Premium Tier includes GitHub Discussions and support for
+              Private plugins.
             </p>
 
             <div className="margin-vert--lg">
