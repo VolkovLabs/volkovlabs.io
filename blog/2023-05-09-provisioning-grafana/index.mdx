@@ -43,6 +43,13 @@ In most cases, provisioning is used to update production environments to subsequ
 
 After restarting all involved in the upgrade production Grafana instances, all changes are in place. If you need to get back to the previous state(version), remove the new files and use the old ones instead. Version control is one of the provisioning advantages.
 
+Below is the link to my YouTube video, where I explain provisioning and demonstrate some examples.
+
+<Video
+  title="Basics, pitfalls, file examples in Windows and Docker Demo."
+  src="https://www.youtube.com/embed/sGHKY0VmbLw"
+/>
+
 ## Alternatives
 
 ### Grafana UI
@@ -121,8 +128,6 @@ This not-so-exciting fact leads to a sorrowful conclusion. There is no one solid
   language="yaml"
 />
 
-`Add GitHub`
-
 For all others, go into the 'Inspect' menu of your browser and then look at the Network tab. If nothing is shown, try to refresh the page.
 
 <Image
@@ -139,15 +144,6 @@ The export process has no parameters, and the file name is always the same - `ex
 ## Examples
 
 If you are like me, you prefer examples to theoretical templates. In that case, you are welcome to our [GitHub organization](https://github.com/VolkovLabs), where you can find many sound actual provisioning files. We use them for developing and testing our maintained plugins.
-
-## Tutorial
-
-Below is the link to my YouTube video, where I explain provisioning and demonstrate some examples.
-
-<Video
-  title="Basics, pitfalls, file examples in Windows and Docker Demo."
-  src="https://www.youtube.com/embed/sGHKY0VmbLw"
-/>
 
 The concept of Provisioning allows isolating the core Grafana from the numerous features that could be added and configured separately.
 
