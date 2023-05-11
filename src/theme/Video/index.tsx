@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './styles.module.css';
+import React from "react";
+import styles from "./styles.module.css";
 
 /**
  * Properties
@@ -7,17 +7,18 @@ import styles from './styles.module.css';
 type Props = {
   src: string;
   title?: string;
+  height: number;
 };
 
 /**
  * Video
  */
-const Video = ({ src, title }: Props) => (
+const Video = ({ src, title, height = 500 }: Props) => (
   <figure>
     <iframe
       width="100%"
       className={styles.video}
-      height="500"
+      height={height}
       src={src}
       title={title}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

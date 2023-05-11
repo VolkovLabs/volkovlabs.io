@@ -1,5 +1,46 @@
 export const BlogPosts = [
   {
+    id: "youtube-one-year-20230510/",
+    metadata: {
+      permalink: "/blog/youtube-one-year-20230510/",
+      source: "@site/blog/2023-05-10-youtube-one-year/index.mdx",
+      title: "Celebrate with us! Our YouTube Channel is 1 year!",
+      description:
+        "After one year, we are proud to look back and descry what we have accomplished.",
+      date: "2023-05-10T00:00:00.000Z",
+      formattedDate: "May 10, 2023",
+      tags: [
+        {
+          label: "Volkov Labs",
+          permalink: "/blog/tags/volkov-labs",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Daria Volkova",
+          title: "Creative Director, Volkov Labs",
+          url: "https://youtube.com/@VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
+        },
+      ],
+      frontMatter: {
+        authors: ["daria"],
+        slug: "youtube-one-year-20230510/",
+        tags: ["Volkov Labs"],
+        image: "/img/blog/2023-05-10-youtube-one-year/banner.png",
+        keywords: ["Grafana", "YouTube", "Getting Started"],
+      },
+      nextItem: {
+        title: "Provisioning in Grafana",
+        permalink: "/blog/provisioning-grafana-20230509/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nAfter one year, we are proud to look back and descry what we have accomplished.\n\nStarting with zero Youtube experience, we called the artistic side of our brain to come up with a recognizable format that would be engaging with a touch of a good friend sharing an intriguing gossip. We focused on topics meaningful for many and carefully picked use cases that would illustrate the most of the topic.\n\nThe pouring questions from the community gave us directions and flowing gratitude fueled us with energy. We were excited to be able to address the most commonly asked questions that are not easily accessible elsewhere.\n\nFollowing our zeal, we created a platform for spreading technical knowledge and earning a trustworthy reputation.\n\n## Our Platform\n\n<Image\n  title="Volkov Labs platform where YouTube has its honorable spot."\n  src="/img/blog/2023-05-10-youtube-one-year/volkovlabs-platform.png"\n  width="50%"\n  lazy={false}\n/>\n\nOur platform consists of six resources.\n\n| Resource                                           | Description                                                                                                                                                                                                                             |\n| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| [YouTube Channel](https://youtube.com/@volkovlabs) | As they say, it is better to see something once than to hear about it a thousand times.                                                                                                                                                 |\n| [Documentation](https://docs.volkovlabs.io)        | We constantly improve documentation by ensuring to include the latest helpful findings and listening to community feedback.                                                                                                             |\n| [Blog](https://blog.volkovlabs.io)                 | Our blog is another medium to have your questions answered. We share our experience and provide a lot of code snippets and guidance to solve various tasks.                                                                             |\n| [GitHub](https://github.com/VolkovLabs)            | Feel free to learn by browsing our code and get inspired with ideas and simple elegant solutions.                                                                                                                                       |\n| [Live Dashboard](https://live.volkovlabs.io)       | Originally we built this project for internal use. However, the project turned out worthy of sharing with the world. We depicted our digital footprint using Grafana dashboards and made all that we do transparent and easy to follow. |\n| [Release dashboard](https://release.volkovlabs.io) | It is the best way to follow the release calendar for our open-source Grafana plugins. When was the last release? How many open issues exist at the time? Those and other questions are taken care of there.                            |\n\n### YouTube Community\n\nWe are on the lookout for the best ways to interact with the community and our followers. For the daily updates and quick surveys, we favor the [YouTube Community](https://youtube.com/@volkovlabs/community) at this time.\n\nIn the latest post, many people reacted to the post about a new panel idea. A panel to provide movable real estate for displaying variables. That hints us to move the creation of this panel up in our to-do list and possibly consider a video or at least an article with a sound use case.\n\nEven though we are completely focused on the technical side of things, many people like our behind the scene photographs. That is honestly a surprising observation, but we take it too.\n\nAfter being Grafana story-tellers for that long, we came up with three areas that we are particularly good at and would like to grow more towards:\n\n- Concepts\n- Tutorials\n- Use cases\n\n## Concept\n\nBefore diving into a new topic and creating a step-by-step tutorial, I like to look at the system architecture from up high and understand how all parts interact and coexist with each other. As a result, most of the time, we come up with an astonishing schema that explains far from trivial processes.\n\nAs a nice bonus, our schemas are great memory refreshers when you go back to the subject after being focused on something else.\n\n<table>\n  <tr style={{ border: "none" }}>\n    <td width="50%" style={{ border: "none" }}>\n      <Image\n        title="How JSON data sources work at a glance"\n        src="/img/blog/2023-05-10-youtube-one-year/json-schema.png"\n        width="100%"\n      />\n    </td>\n    <td width="*" style={{ border: "none" }}>\n      <Image\n        title="Alerts, Annotations and Annotation queries"\n        src="/img/blog/2023-05-10-youtube-one-year/alerts-schema.png"\n        width="100%"\n      />\n    </td>\n  </tr>\n</table>\n\n<Image\n  title="System architecture where tailored metrics lead to decision making."\n  src="/img/blog/2023-05-10-youtube-one-year/website-analytics.png"\n  width="80%"\n/>\n\n## Tutorials and use cases\n\nTutorials are the backbone of our channel. Those videos get the most views and questions. We always try to find relevant to many scenarios and ensure anyone can follow along and learn the topic as they go.\n\n<table>\n  <tr style={{ border: "none" }}>\n    <td width="50%" style={{ border: "none" }}>\n      <Video\n        title="Create your Business Grafana dashboard. Step-by-step tutorial for analysts."\n        src="https://www.youtube.com/embed/HNCKbGfAU0Q"\n        height={250}\n      />\n    </td>\n    <td width="*" style={{ border: "none" }}>\n      <Video\n        title="Apache ECharts panel for Grafana. How to create modern dashboards in Grafana."\n        src="https://www.youtube.com/embed/DxqCrBEmrQw"\n        height={250}\n      />\n    </td>\n  </tr>\n</table>\n\nSome tutorials are best when done on solid use cases. Anything that we explain you can easily recreate on your side. A lot of pieces can be downloaded from our GitHub organization. And be certain, all your questions are going to be answered!\n\n<table>\n  <tr style={{ border: "none" }}>\n    <td width="50%" style={{ border: "none" }}>\n      <Video\n        title="Build a Website Analytics Dashboard in Grafana."\n        src="https://www.youtube.com/embed/cgu3wMOo03w"\n        height={250}\n      />\n    </td>\n    <td width="*" style={{ border: "none" }}>\n      <Video\n        title="How to display the unemployment rate."\n        src="https://www.youtube.com/embed/B4Uj1n4Cr88"\n        height={250}\n      />\n    </td>\n  </tr>\n</table>\n\nWe are thankful to be part of a growing, vibrant Grafana community. We wholeheartedly believe in Grafana and its vast potential.\n\nIt amazes us almost every time to hear another use case solved. A variety of industries and the number of countries that share our praises for Grafana are off the charts. We are at the right place and time, no stopping, just moving forward! Charge!!!!',
+  },
+  {
     id: "provisioning-grafana-20230509/",
     metadata: {
       permalink: "/blog/provisioning-grafana-20230509/",
@@ -19,7 +60,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -32,13 +73,17 @@ export const BlogPosts = [
         image: "/img/blog/2023-05-09-provisioning-grafana/banner.png",
         keywords: ["Grafana", "Provisioning", "Data Source"],
       },
+      prevItem: {
+        title: "Celebrate with us! Our YouTube Channel is 1 year!",
+        permalink: "/blog/youtube-one-year-20230510/",
+      },
       nextItem: {
         title: "Apache ECharts Lite Panel 1.1.0",
         permalink: "/blog/echarts-lite-1.1.0-20230508/",
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nProvisioning is one step up from the primary Grafana mindset. It is optional, but I recommend investing some time in researching this topic since harnessing it will bring you smooth and speedy deployments.\n\n## What is provisioning\n\nSimply put, provisioning is when you push configuration via JSON, YAML, and other files into a Grafana instance. In Grafana 9.5.1, you can push configuration for:\n\n- RBAC (role-based access control)\n- Alerting rules\n- Dashboards\n- Data sources\n- Alert notifies\n- Plugins (applications)\n\nSince Grafana comprises many independent parts, what components can be provisioned might be confusing. The general rule of thumb is you can provision configurations. You must install all data sources and visualization panels outside the provisioning processes.\n\n<Image\n  title="Provisioning in grand schema Grafana things."\n  src="/img/blog/2023-05-09-provisioning-grafana/basics.png"\n  lazy={false}\n/>\n\n## Explained in a nutshell\n\nIn most cases, provisioning is used to update production environments to subsequent versions.\n\n- You make all necessary changes in the development environment.\n- Prepare provision files based on changes.\n- Place updated configuration into the corresponding folders.\n\nAfter restarting all involved in the upgrade production Grafana instances, all changes are in place. If you need to get back to the previous state(version), remove the new files and use the old ones instead. Version control is one of the provisioning advantages.\n\nBelow is the link to my YouTube video, where I explain provisioning and demonstrate some examples.\n\n<Video\n  title="Basics, pitfalls, file examples in Windows and Docker Demo."\n  src="https://www.youtube.com/embed/sGHKY0VmbLw"\n/>\n\n## Alternatives\n\n### Grafana UI\n\nThere are two alternatives to provisioning. You can log in to every Grafana instance that needs to be updated and perform all modifications using UI. That does not sound productive, and I agree. This method is slow, prone to errors, and not scalable.\nConsider this method in the early stages of adopting Grafana.\n\n### HTTP API\n\nThe other method includes using HTTP API endpoints. Grafana provides a variety of API functions to work with its configuration. This method is the only choice in environments without access to the file system (for example, cloud).\n\n<Image\n  title="Provisioning is one of the ways to move changes from Development to Production environment."\n  src="/img/blog/2023-05-09-provisioning-grafana/provisioning-6-parts.png"\n/>\n\n## Getting started\n\nTo get a good first glimpse of provisioning, find the `provisioning` folder under the `conf` directory. Grafana 9.5.1 contains six subfolders, each representing a Grafana component you can provision.\n\n<Image\n  title="Every subfolder represents a component you can provision in Grafana."\n  src="/img/blog/2023-05-09-provisioning-grafana/provisioning-folder.png"\n/>\n\nYou can find a `sample.yaml` file in every subfolder, except for alerting. The files are provided as a starter, but I find them too generic and semi-useful. I hope your more profound experience leaves you with an opposite impression.\n\nDo not let the file name \'sample\' mislead you. Grafana checks for all YAML files regardless of their names.\n\n<Image\n  title="File sample.yaml is located in the dashboard subfolder."\n  src="/img/blog/2023-05-09-provisioning-grafana/yaml-dash.png"\n/>\n\nBy default, the provisioned dashboards are protected from any modifications made by users in UI. You can change that by using the `allowUpdates` parameter being set to true.\n\n### Dashboard\n\nFor provisioning a dashboard at minimum expect to have two files. One with the `yaml` extension and the other one with `json` extension.\n\n<Image\n  title="File sample.yaml is an example of how to provision dashboards."\n  src="/img/blog/2023-05-09-provisioning-grafana/sample-yaml.png"\n/>\n\nThe `path` option is where Grafana will look for dashboard JSON file descriptions. The `folder` is the corresponding folder in the Grafana UI.\n\n#### Export\n\nThe easiest way to have a dashboard in a JSON file is to create a dashboard in one of the Grafana instances and then use the \'Export\' functionality.\n\nYou can export for sharing externally with either YES or NO. The difference is for the external export all unique identifiers are going to be replaced with a variable. Those JSON files are good when you use Import functionality in UI.\n\nFor provisioning leave the default value for Export for sharing externally unchecked.\n\n<Image\n  title="How to export Grafana dashboard in a JSON format for further provisioning."\n  src="/img/blog/2023-05-09-provisioning-grafana/share-export.png"\n/>\n\n### Data sources\n\nYou only can provision a data source if it already has been installed as a plugin.\n\n<Image\n  title="Plugin installation should be done by other means not as part of provisioning."\n  src="/img/blog/2023-05-09-provisioning-grafana/plugin-datasource.png"\n/>\n\nUnfortunately and surprisingly, there is no UI functionality for exporting a data source configuration. You must create a YAML file for your data source from scratch.\n\nThis not-so-exciting fact leads to a sorrowful conclusion. There is no one solid approach to having such a file. I can share what we use for the PostgreSQL data source.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-grapi-datasource/blob/main/provisioning/datasources/datasources.yaml"\n  language="yaml"\n/>\n\nFor all others, go into the \'Inspect\' menu of your browser and then look at the Network tab. If nothing is shown, try to refresh the page.\n\n<Image\n  title="Where to find some data source attributes to create your YAML file from scratch."\n  src="/img/blog/2023-05-09-provisioning-grafana/inspect.png"\n/>\n\n### Alert rule\n\nProvisioning an alert rule should feel like a warm, gentle breeze if you are resourceful and persistent enough to get through the provisioning of a data source puzzle. After you create an alert rule, simply use the export button.\n\nThe export process has no parameters, and the file name is always the same - `export.yaml`. In case of multiple rules, you must rename each file according to your logic. That is the only hurdle in your provision of an alert path.\n\n## Examples\n\nIf you are like me, you prefer examples to theoretical templates. In that case, you are welcome to our [GitHub organization](https://github.com/VolkovLabs), where you can find many sound actual provisioning files. We use them for developing and testing our maintained plugins.\n\nThe concept of Provisioning allows isolating the core Grafana from the numerous features that could be added and configured separately.\n\nThe particular beauty of such architecture shines in a robust version control process. However, there is no one industry-accepted best way of performing Provisioning. You will have to make many decisions on your own, conduct research and explore the try-and-error route.',
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nProvisioning is one step up from the primary Grafana mindset. It is optional, but I recommend investing some time in researching this topic since harnessing it will bring you smooth and speedy deployments.\n\n## What is provisioning\n\nSimply put, provisioning is when you push configuration via JSON, YAML, and other files into a Grafana instance. In Grafana 9.5.1, you can push configuration for:\n\n- RBAC (role-based access control)\n- Alerting rules\n- Dashboards\n- Data sources\n- Alert notifies\n- Plugins (applications)\n\nSince Grafana comprises many independent parts, what components can be provisioned might be confusing. The general rule of thumb is you can provision configurations. You must install all data sources and visualization panels outside the provisioning processes.\n\n<Image\n  title="Provisioning in grand schema Grafana things."\n  src="/img/blog/2023-05-09-provisioning-grafana/basics.png"\n  lazy={false}\n  width="80%"\n/>\n\n## Explained in a nutshell\n\nIn most cases, provisioning is used to update production environments to subsequent versions.\n\n- You make all necessary changes in the development environment.\n- Prepare provision files based on changes.\n- Place updated configuration into the corresponding folders.\n\nAfter restarting all involved in the upgrade production Grafana instances, all changes are in place. If you need to get back to the previous state(version), remove the new files and use the old ones instead. Version control is one of the provisioning advantages.\n\nBelow is the link to my YouTube video, where I explain provisioning and demonstrate some examples.\n\n<Video\n  title="Basics, pitfalls, file examples in Windows and Docker Demo."\n  src="https://www.youtube.com/embed/sGHKY0VmbLw"\n/>\n\n## Alternatives\n\n### Grafana UI\n\nThere are two alternatives to provisioning. You can log in to every Grafana instance that needs to be updated and perform all modifications using UI. That does not sound productive, and I agree. This method is slow, prone to errors, and not scalable.\nConsider this method in the early stages of adopting Grafana.\n\n### HTTP API\n\nThe other method includes using HTTP API endpoints. Grafana provides a variety of API functions to work with its configuration. This method is the only choice in environments without access to the file system (for example, cloud).\n\n<Image\n  title="Provisioning is one of the ways to move changes from Development to Production environment."\n  src="/img/blog/2023-05-09-provisioning-grafana/provisioning-6-parts.png"\n/>\n\n## Getting started\n\nTo get a good first glimpse of provisioning, find the `provisioning` folder under the `conf` directory. Grafana 9.5.1 contains six subfolders, each representing a Grafana component you can provision.\n\n<Image\n  title="Every subfolder represents a component you can provision in Grafana."\n  src="/img/blog/2023-05-09-provisioning-grafana/provisioning-folder.png"\n/>\n\nYou can find a `sample.yaml` file in every subfolder, except for alerting. The files are provided as a starter, but I find them too generic and semi-useful. I hope your more profound experience leaves you with an opposite impression.\n\nDo not let the file name \'sample\' mislead you. Grafana checks for all YAML files regardless of their names.\n\n<Image\n  title="File sample.yaml is located in the dashboard subfolder."\n  src="/img/blog/2023-05-09-provisioning-grafana/yaml-dash.png"\n/>\n\nBy default, the provisioned dashboards are protected from any modifications made by users in UI. You can change that by using the `allowUpdates` parameter being set to true.\n\n### Dashboard\n\nFor provisioning a dashboard at minimum expect to have two files. One with the `yaml` extension and the other one with `json` extension.\n\n<Image\n  title="File sample.yaml is an example of how to provision dashboards."\n  src="/img/blog/2023-05-09-provisioning-grafana/sample-yaml.png"\n/>\n\nThe `path` option is where Grafana will look for dashboard JSON file descriptions. The `folder` is the corresponding folder in the Grafana UI.\n\n#### Export\n\nThe easiest way to have a dashboard in a JSON file is to create a dashboard in one of the Grafana instances and then use the \'Export\' functionality.\n\nYou can export for sharing externally with either YES or NO. The difference is for the external export all unique identifiers are going to be replaced with a variable. Those JSON files are good when you use Import functionality in UI.\n\nFor provisioning leave the default value for Export for sharing externally unchecked.\n\n<Image\n  title="How to export Grafana dashboard in a JSON format for further provisioning."\n  src="/img/blog/2023-05-09-provisioning-grafana/share-export.png"\n/>\n\n### Data sources\n\nYou only can provision a data source if it already has been installed as a plugin.\n\n<Image\n  title="Plugin installation should be done by other means not as part of provisioning."\n  src="/img/blog/2023-05-09-provisioning-grafana/plugin-datasource.png"\n/>\n\nUnfortunately and surprisingly, there is no UI functionality for exporting a data source configuration. You must create a YAML file for your data source from scratch.\n\nThis not-so-exciting fact leads to a sorrowful conclusion. There is no one solid approach to having such a file. I can share what we use for the PostgreSQL data source.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-grapi-datasource/blob/main/provisioning/datasources/datasources.yaml"\n  language="yaml"\n/>\n\nFor all others, go into the \'Inspect\' menu of your browser and then look at the Network tab. If nothing is shown, try to refresh the page.\n\n<Image\n  title="Where to find some data source attributes to create your YAML file from scratch."\n  src="/img/blog/2023-05-09-provisioning-grafana/inspect.png"\n/>\n\n### Alert rule\n\nProvisioning an alert rule should feel like a warm, gentle breeze if you are resourceful and persistent enough to get through the provisioning of a data source puzzle. After you create an alert rule, simply use the export button.\n\nThe export process has no parameters, and the file name is always the same - `export.yaml`. In case of multiple rules, you must rename each file according to your logic. That is the only hurdle in your provision of an alert path.\n\n## Examples\n\nIf you are like me, you prefer examples to theoretical templates. In that case, you are welcome to our [GitHub organization](https://github.com/VolkovLabs), where you can find many sound actual provisioning files. We use them for developing and testing our maintained plugins.\n\nThe concept of Provisioning allows isolating the core Grafana from the numerous features that could be added and configured separately.\n\nThe particular beauty of such architecture shines in a robust version control process. However, there is no one industry-accepted best way of performing Provisioning. You will have to make many decisions on your own, conduct research and explore the try-and-error route.',
   },
   {
     id: "echarts-lite-1.1.0-20230508/",
@@ -428,7 +473,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1104,7 +1149,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1218,7 +1263,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1268,7 +1313,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1375,7 +1420,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1540,7 +1585,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1917,7 +1962,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1966,7 +2011,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2528,7 +2573,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2576,7 +2621,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "COO, Volkov Labs",
+          title: "Creative Director, Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",

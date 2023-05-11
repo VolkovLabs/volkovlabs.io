@@ -1,12 +1,12 @@
-import clsx from 'clsx';
-import React from 'react';
-import Head from '@docusaurus/Head';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import ThemedImage from '@theme/ThemedImage';
-import styles from '../css/index.module.css';
-import Image from '../theme/Image';
+import clsx from "clsx";
+import React from "react";
+import Head from "@docusaurus/Head";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import ThemedImage from "@theme/ThemedImage";
+import styles from "../css/index.module.css";
+import Image from "../theme/Image";
 
 /**
  * Header
@@ -73,7 +73,7 @@ const Main = (siteConfig) => {
           <div className="col col--6">
             <Image src="/img/team/daria.png" zoom={false} lazy={true} />
             <h3>Daria</h3>
-            <p>COO, Volkov Labs.</p>
+            <p>Creative Director, Volkov Labs.</p>
           </div>
 
           <div className="col col--6">
