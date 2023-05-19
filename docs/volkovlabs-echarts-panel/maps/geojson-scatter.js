@@ -25,7 +25,7 @@ const series = latitudes.map((latitude, i) => {
     coordinateSystem: "geo",
     data: [[longitudes[i], latitude, values[i]]],
     encode: {
-      value: values[i],
+      value: 2,
       lng: 0,
       lat: 1,
     },
