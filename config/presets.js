@@ -6,8 +6,8 @@ const presets = [
     "@docusaurus/preset-classic",
     {
       docs: {
-        sidebarPath: require.resolve("./sidebars.js"),
         routeBasePath: "plugins",
+        sidebarPath: require.resolve("./sidebar/plugins.js"),
       },
       blog: {
         postsPerPage: "ALL",

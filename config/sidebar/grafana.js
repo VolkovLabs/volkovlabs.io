@@ -1,34 +1,35 @@
 /**
- * Grafana
+ * Sidebar
  */
-const grafana = {
-  items: [
-    "grafana/index",
-    {
-      items: [
-        "grafana/annotations",
-        "grafana/customize",
-        "grafana/datasources/json",
-        "grafana/variables",
-        "grafana/allow-unsigned",
-      ],
-      label: "Tutorials",
-      type: "category",
-    },
-    {
-      items: ["grafana/business", "grafana/iot"],
-      label: "Use Cases",
-      type: "category",
-    },
-  ],
-  label: "Grafana",
-  type: "category",
-  description: "The open observability platform.",
-  link: {
-    type: "doc",
-    id: "grafana/index",
+const mySidebar = [
+  "index",
+  {
+    items: [
+      "annotations",
+      "customize",
+      "datasources/json",
+      "variables",
+      "allow-unsigned",
+    ],
+    label: "Tutorials",
+    type: "category",
+    collapsible: false,
   },
-  collapsible: false,
+  {
+    items: ["business", "iot"],
+    label: "Use Cases",
+    type: "category",
+    collapsible: false,
+  },
+];
+
+/**
+ * Sidebars
+ *
+ * @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
+ */
+const sidebars = {
+  mySidebar,
 };
 
-module.exports = grafana;
+module.exports = sidebars;

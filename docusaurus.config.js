@@ -1,4 +1,5 @@
 const presets = require(require.resolve("./config/presets.js"));
+const plugins = require(require.resolve("./config/plugins.js"));
 const themeConfig = require(require.resolve("./config/theme.config.js"));
 
 /**
@@ -15,7 +16,7 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   organizationName: "VolkovLabs",
-  plugins: [],
+  plugins,
   presets,
   projectName: "volkovlabs.io",
   tagline: "Plugin development for Grafana",
