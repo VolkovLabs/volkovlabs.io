@@ -22,6 +22,12 @@ const navbar = {
       "aria-label": "Documentation",
     },
     {
+      href: "/grafana/",
+      position: "left",
+      label: "Grafana",
+      "aria-label": "Grafana",
+    },
+    {
       href: "/support/",
       position: "left",
       label: "Support",

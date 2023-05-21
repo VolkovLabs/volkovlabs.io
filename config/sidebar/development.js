@@ -3,11 +3,7 @@
  */
 const development = {
   items: [
-    {
-      type: "doc",
-      id: "development/index",
-      label: "What do we do?",
-    },
+    "development/index",
     {
       items: [
         {
