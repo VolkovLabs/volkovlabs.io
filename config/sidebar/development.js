@@ -3,7 +3,6 @@
  */
 const development = {
   items: [
-    "development/index",
     {
       items: [
         {
@@ -116,10 +115,6 @@ const development = {
   ],
   label: "Development",
   type: "category",
-  link: {
-    type: "doc",
-    id: "development/index",
-  },
   collapsible: false,
 };
 

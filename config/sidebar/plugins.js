@@ -4,7 +4,7 @@ const development = require(require.resolve("./development.js"));
 /**
  * Sidebar
  */
-const mySidebar = ["index", commmunity, development];
+const mySidebar = ["index", "news", commmunity, development];
 
 /**
  * Sidebars
