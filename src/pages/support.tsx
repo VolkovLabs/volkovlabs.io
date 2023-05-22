@@ -27,7 +27,7 @@ const Header = (siteConfig) => {
 
             <p className="hero__subtitle">
               The Premium Tier provides additional benefits such as GitHub
-              Discussions and support for Private plugins.
+              Discussions and support for Development plugins.
             </p>
             <div className="margin-vert--lg">
               <a
