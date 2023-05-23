@@ -1,0 +1,34 @@
+---
+tags:
+  - Apache ECharts
+  - Transformations
+image: /img/plugins/volkovlabs-echarts-panel/transformations.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Transformations
+
+Transformations can modify the returned data frames and may require code updates to retrieve values from `data`.
+
+## Sort by
+
+Transformation "Sort by" modify the structure of the returned data frames and requires:
+
+- Set array with order identifiers.
+- Set array with values.
+- Get ordered values for each array.
+
+<Image
+  title="Transformation Sort by requires updating Apache ECharts function to retrieve values."
+  src="/img/plugins/volkovlabs-echarts-panel/transformations.png"
+/>
+
+### Example
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/transformations.js"
+  language="js"
+/>
