@@ -6,18 +6,18 @@ const mySidebar = [
   {
     items: [
       "annotations",
+      "business",
       "customize",
-      "datasources/json",
       "variables",
       "allow-unsigned",
     ],
-    label: "Tutorials",
+    label: "Getting Started",
     type: "category",
     collapsible: false,
   },
   {
-    items: ["business", "iot"],
-    label: "Use Cases",
+    items: ["datasources/json", "storage", "iot"],
+    label: "Expert",
     type: "category",
     collapsible: false,
   },
