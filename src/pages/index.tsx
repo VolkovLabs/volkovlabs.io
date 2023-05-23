@@ -39,7 +39,7 @@ const Header = (siteConfig) => {
                 )}
                 href={useBaseUrl("/plugins")}
               >
-                Our Services&nbsp;&nbsp;→
+                About us&nbsp;&nbsp;→
               </a>
             </div>
           </div>
