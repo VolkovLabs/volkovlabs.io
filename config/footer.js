@@ -79,6 +79,10 @@ const footer = {
           href: "/blog/",
         },
         {
+          label: "Grafana Crash Course",
+          href: "/grafana/",
+        },
+        {
           label: "ECharts Examples",
           href: "https://echarts.volkovlabs.io",
         },
