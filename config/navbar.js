@@ -24,7 +24,7 @@ const navbar = {
     {
       href: "/grafana/",
       position: "left",
-      label: "Grafana Tutorials",
+      label: "Grafana Crash Course",
       "aria-label": "Grafana",
     },
     {

@@ -4,7 +4,7 @@ slug: our-plugins-are-ready-for-grafana-9-2bc257db92eb/
 tags: [Release Notes, Volkov Labs]
 image: /img/blog/2022-06-20-grafana-9/banner.png
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
-updated: 2023-02-14
+updated: 2023-05-23
 ---
 
 import Image from "@theme/Image";
@@ -60,7 +60,7 @@ The Environment data source is a plugin for Grafana that returns environment var
 
 Because of security reasons, the Environment Data Source can not be included in the Grafana Catalog.
 
-It can be installed manually from our private repository or downloaded directly from GitHub.
+It can be installed from our private repository or downloaded directly from GitHub.
 
 ```sh
 grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
@@ -79,11 +79,7 @@ The Data Manipulation Panel is a plugin for Grafana that can be used to insert, 
 
 We understand the risk of data manipulation and take security concerns seriously. We recently published an [article exploring three secure ways](/blog/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904) to connect the Data Manipulation panel to the API Server.
 
-The Data Manipulation panel is under Grafana team review and not included in the Grafana Catalog. It can be installed manually from our Private Repository or downloaded directly from GitHub.
-
-```sh
-grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-form-panel
-```
+The Data Manipulation panel is available in the Grafana Catalog.
 
 Please let us know if you have any questions or feature requests for this plugin in the [GitHub Issues](https://github.com/VolkovLabs/volkovlabs-form-panel/issues).
 
@@ -106,8 +102,4 @@ The original plugin was developed for Grafana 6.3/7.0 and ECharts 4.9.0. It has 
   title="How to create modern dashboards in Grafana."
 />
 
-The Apache ECharts panel was recently submitted to the Grafana Catalog. Meanwhile, it can be installed manually from our private repository or downloaded directly from GitHub.
-
-```sh
-grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-echarts-panel
-```
+The Apache ECharts panel is available in the Grafana Catalog.
