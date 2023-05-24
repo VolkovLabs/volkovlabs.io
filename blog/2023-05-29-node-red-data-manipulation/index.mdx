@@ -1,0 +1,66 @@
+---
+authors:
+  - name: Alejandro Guida
+    title: Your title
+slug: node-red-data-manipulation-20230529/
+tags: [Data Manipulation]
+image: /img/blog/2023-05-29-node-red-data-manipulation/banner.png
+keywords: [Grafana, Data Manipulation, Node-RED]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# How to use the Data Manipulation panel with Node-RED
+
+I think Node-RED is a good companion for Data Manipulation Plugin, to add features “from the outside”, for the people like me that are not developers, because is simple and is really "visual".
+
+## My Stack
+
+Mainly, I'm using these products:
+
+- Grafana
+- Grafana Plugins
+  - Apache ECharts
+  - Dynamic Text Panel
+  - Data Manipulation Plugins
+  - Infinity Plugin
+- Keycloak
+- Apache APISIX
+- Node-RED
+
+## Use Cases
+
+Use cases of Node-RED related to Data Manipulation Plugin:
+
+- Manage the authentication (get and renew the token) for API Services that require OAuth2 authentication. Doing something like “API inside API”, because Data Manipulation Plugin cannot manage that kind of authentication.
+- API Gateway, sometimes for “relax” CORS restrictions (Access-Control-Allow-Origin header), because Node-RED default response includes `Access-Control-Allow-Origin: *` header.
+- Manage authentication over all the destination databases and APIs to use single authentication for all the services of a customer on Grafana's Data Manipulation Plugin side.
+
+In my case, right now I'm using only API services as destinations, and to manage authentication. I'm using Apache APISIX as an API Gateway (with this I manage CORS and API cache too), and Keycloak for SSO between Grafana and the API Services, to not expose the credentials/tokens in the Web Browser Console.
+
+I still have a problem with CORS here with Keycloak. This is only working using a Web Browser like Chrome/Chromium with `--disable-web-security` flag from the command line, to disable CORS control, because Keycloak is not sending the `Access-Control-Allow-Origin: *` header.
+
+## API Server
+
+Creating an API Server with Node-RED is simple, and maybe you can use it for all the use cases that you proposed in the documentation as API Servers (MySQL, PostgreSQL, InfluxDB, etc.).
+
+For example:
+
+<Image
+  title="Node-RED workflow to implement GET and POST endpoints for multiple databases."
+  src="/img/blog/2023-05-29-node-red-data-manipulation/node-red.png"
+  lazy={false}
+/>
+
+In this case, you can manage from the same workflow the GET and POST (you can add PUT/PATCH/DELETE in the same way) that you do from Data Manipulation Plugin, and you can have multiple destinations of databases and APIs, based on the query that you add in the URL, managed by a function:
+
+<Image
+  title="Request types."
+  src="/img/blog/2023-05-29-node-red-data-manipulation/types.png"
+/>
+
+You can manage the authentication options with Node-RED too, with specific nodes that are available for that, but I'm not using authentication in this example, to stay simple.
+
+After you retrieve or insert information from databases and APIs, you can use the Response Node to answer with a 200/404 to the plugin, based on the answer that you get from the different databases and APIs nodes.
