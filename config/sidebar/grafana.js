@@ -17,7 +17,7 @@ const mySidebar = [
   },
   {
     items: ["datasources/json", "storage", "iot"],
-    label: "Expert",
+    label: "Advanced",
     type: "category",
     collapsible: false,
   },
