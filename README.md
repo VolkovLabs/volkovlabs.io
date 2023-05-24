@@ -1,10 +1,6 @@
-# Blog and Documentation for maintained plugins and projects
+# Blog, Documentation, and Grafana Crash Course
 
 ## Introduction
-
-Volkov Labs specializes in developing plugins to visualize your data using Grafana as a Platform.
-
-## Documentation
 
 This documentation is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
