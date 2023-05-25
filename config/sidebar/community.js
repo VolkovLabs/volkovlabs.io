@@ -156,6 +156,7 @@ const community = {
             "volkovlabs-form-panel/servers/influx",
             "volkovlabs-form-panel/servers/json",
             "volkovlabs-form-panel/servers/mysql",
+            "volkovlabs-form-panel/servers/nodered",
             "volkovlabs-form-panel/servers/postgresql",
           ],
           label: "Servers",
