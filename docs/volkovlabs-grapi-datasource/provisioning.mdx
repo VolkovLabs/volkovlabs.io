@@ -4,30 +4,21 @@ tags:
   - Provisioning
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 
 # Provisioning
 
 Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
 
-## Example
+## Configuration
 
 Example of provisioning the Grafana HTTP API Data Source for the remote Grafana instance.
 
-```yaml
-datasources:
-  - name: Live
-    type: volkovlabs-grapi-datasource
-    access: proxy
-    uid: live
-    orgId: 1
-    version: 1
-    editable: true
-    jsonData:
-      url: https://GRAFANA-URL
-    secureJsonData:
-      token: API-KEY
-```
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-grapi-datasource/provisioning.yaml"
+  language="yaml"
+/>
 
 ## Data Sources
 
@@ -36,4 +27,13 @@ When provisioned, the data source should be available in the Data sources lists.
 <Image
   title="Grafana HTTP API Data Source configured for the local Grafana instance."
   src="/img/plugins/volkovlabs-grapi-datasource/configuration.png"
+/>
+
+## Set Token
+
+To complete the provisioning you need to set the token using UI or HTTP API:
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-grapi-datasource/token.sh"
+  language="sh"
 />
