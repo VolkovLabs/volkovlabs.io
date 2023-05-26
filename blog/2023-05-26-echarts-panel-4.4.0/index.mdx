@@ -1,0 +1,124 @@
+---
+authors: [mikhail]
+slug: echarts-panel-4.4.0-20230526/
+tags: [Apache ECharts, Release Notes]
+image: /img/blog/2023-05-26-echarts-panel-4.4.0/banner.png
+keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Apache ECharts Panel 4.4.0
+
+We released a new version of the Apache ECharts Panel 4.4.0 for Grafana. This feature release
+
+- Added Theme Editor to use custom-generated themes from the Theme Builder.
+- Updated Google Maps Extension to the latest release 1.6.0.
+- Increased Test coverage to 90% and added end-to-end test workflow.
+- Updated to the latest Grafana 9.5.2 toolkit.
+
+:::info Grafana Catalog
+The plugin was submitted to the Grafana team for review.
+:::
+
+## Jack of all trades
+
+Apache ECharts panel can solve any visualization challenges from the community. When native plugins are lack functionality or data source not able to return or transform data in the required format Apache ECharts is always up to the challenge.
+
+We resolved most of the opened issues in the GitHub repository and with an increasing number of daily downloads on our way to 200k downloads from Grafana Catalog.
+
+<Image
+  title="Live Dashboard for the Apache ECharts panel resources."
+  src="/img/blog/2023-05-26-echarts-panel-4.4.0/live.png"
+  lazy={false}
+/>
+
+## Theme Editor
+
+Theme Editor allows using custom themes generated with the [Theme Builder](https://echarts.apache.org/en/theme-builder.html).
+
+<Image
+  title="Apache ECharts visualization panel supports custom theme from Theme Builder."
+  src="/img/blog/2023-05-26-echarts-panel-4.4.0/theme.png"
+/>
+
+### Theme Builder
+
+The Theme Builder created by the Apache ECharts team provides many options to create fully customizable themes. Configuration is saved in the JSON file, which can be downloaded and pasted into the Theme Editor.
+
+<Image
+  title="Theme Builder allows creating a custom theme for Apache ECharts."
+  src="/img/blog/2023-05-26-echarts-panel-4.4.0/theme-builder.png"
+/>
+
+## ECharts Lite
+
+The [Apache ECharts Lite](/plugins/volkovlabs-echarts-lite) plugin is a fork of the Apache ECharts panel that provides only Core functionality without maps and extensions. It's designed to use in Application plugins and IoT projects.
+
+| Features    | Apache ECharts panel | Apache ECharts Lite panel |
+| ----------- | -------------------- | ------------------------- |
+| 3D          | Yes                  | No                        |
+| Liquid Fill | Yes                  | No                        |
+| Maps        | Yes                  | No                        |
+| Statistics  | Yes                  | No                        |
+| Module Size | 2 megabytes          | 1 megabyte                |
+| Signed      | Community            | Private                   |
+
+## Documentation
+
+Answering questions from the community we continue improving our documentation. Recently we added and updated:
+
+| Section                                                              | Description                                    |
+| -------------------------------------------------------------------- | ---------------------------------------------- |
+| [Annotations](/plugins/volkovlabs-echarts-panel/annotations)         | Demonstrates how to use annotations.           |
+| [Theme Editor](/plugins/volkovlabs-echarts-panel/theme)              | Demonstrates how to use the theme editor.      |
+| [Transformations](/plugins/volkovlabs-echarts-panel/transformations) | Demonstrates how to work with transformations. |
+| [GeoJSON](/plugins/volkovlabs-echarts-panel/maps/geojson)            | Demonstrates how to work with GeoJSON Maps.    |
+
+## Getting Started
+
+Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-echarts-panel
+```
+
+## YouTube Tutorial
+
+The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/DxqCrBEmrQw"
+  title="How to create modern dashboards in Grafana."
+/>
+
+Apache ECharts is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+
+<Video
+  src="https://www.youtube.com/embed/wPr4gZYzUVA"
+  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Increase Test Coverage and update test library (#163)
+- Update to Grafana 9.5.2 (#164)
+- Update Google Maps Extension to 1.6.0 (#164)
+- Add E2E Cypress testing (#165)
+- Add Theme Editor to allow custom themes (#167)
+- Update documentation (#166, #168)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.

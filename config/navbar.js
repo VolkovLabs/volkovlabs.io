@@ -10,25 +10,25 @@ const navbar = {
   },
   items: [
     {
-      href: "/blog/",
+      to: "/blog/",
       position: "left",
       label: "Blog",
       "aria-label": "Blog",
     },
     {
-      href: "/plugins/",
+      to: "/plugins/",
       position: "left",
       label: "Documentation",
       "aria-label": "Documentation",
     },
     {
-      href: "/grafana/",
+      to: "/grafana/",
       position: "left",
       label: "Grafana Crash Course",
       "aria-label": "Grafana",
     },
     {
-      href: "/support/",
+      to: "/support/",
       position: "left",
       label: "Support",
       "aria-label": "Support",
