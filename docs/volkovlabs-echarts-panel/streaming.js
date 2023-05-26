@@ -14,6 +14,7 @@ return {
     right: "4%",
     top: "4%",
   },
+  animation: false,
   tooltip: {},
   xAxis: {
     data: Object.keys(values),
