@@ -21,6 +21,12 @@ const mySidebar = [
     type: "category",
     collapsible: false,
   },
+  {
+    items: ["developer/panel"],
+    label: "Developer",
+    type: "category",
+    collapsible: false,
+  },
 ];
 
 /**
