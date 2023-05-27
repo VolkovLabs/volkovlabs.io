@@ -77,17 +77,17 @@ const development = {
         },
         {
           type: "doc",
-          id: "volkovlabs-abc-app/index",
+          id: "templates/application",
           label: "Application",
         },
         {
           type: "doc",
-          id: "volkovlabs-abc-datasource/index",
+          id: "templates/datasource",
           label: "Data Source",
         },
         {
           type: "doc",
-          id: "volkovlabs-abc-panel/index",
+          id: "templates/panel",
           label: "Panel",
         },
         "templates/release",
