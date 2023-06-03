@@ -2,9 +2,15 @@ const feedback = data.series.find((serie) => serie.refId === "Feedback");
 const typeOptions = data.series.find((serie) => serie.refId === "Types");
 
 if (feedback?.fields.length) {
-  const ids = feedback.fields.find((f) => f.name === "id").values.buffer;
-  const titles = feedback.fields.find((f) => f.name === "title").values.buffer;
-  const types = feedback.fields.find((f) => f.name === "type").values.buffer;
+  const ids =
+    feedback.fields.find((f) => f.name === "id").values.buffer ||
+    feedback.fields.find((f) => f.name === "id").values;
+  const titles =
+    feedback.fields.find((f) => f.name === "title").values.buffer ||
+    feedback.fields.find((f) => f.name === "title").values;
+  const types =
+    feedback.fields.find((f) => f.name === "type").values.buffer ||
+    feedback.fields.find((f) => f.name === "type").values;
 
   /**
    * Set Elements
@@ -18,10 +24,12 @@ if (feedback?.fields.length) {
    */
   const typeSelect = elements.find((element) => element.id === "type");
   if (typeSelect && typeOptions?.fields.length) {
-    const labels = typeOptions.fields.find((f) => f.name === "label").values
-      .buffer;
-    const values = typeOptions.fields.find((f) => f.name === "value").values
-      .buffer;
+    const labels =
+      typeOptions.fields.find((f) => f.name === "label").values.buffer ||
+      typeOptions.fields.find((f) => f.name === "label").values;
+    const values =
+      typeOptions.fields.find((f) => f.name === "value").values.buffer ||
+      typeOptions.fields.find((f) => f.name === "value").values;
 
     /**
      * Update Types

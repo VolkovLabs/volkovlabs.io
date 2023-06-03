@@ -1,6 +1,10 @@
 const pieData = data.series.map((s) => {
-  const models = s.fields.find((f) => f.name === "Model").values.buffer;
-  const values = s.fields.find((f) => f.name === "Value").values.buffer;
+  const models =
+    s.fields.find((f) => f.name === "Model").values.buffer ||
+    s.fields.find((f) => f.name === "Model").values;
+  const values =
+    s.fields.find((f) => f.name === "Value").values.buffer ||
+    s.fields.find((f) => f.name === "Value").values;
 
   return values.map((d, i) => {
     return { name: models[i], value: d };

@@ -1,8 +1,12 @@
 let names = [];
 let amounts = [];
 data.series.map((s) => {
-  names = s.fields.find((f) => f.name === "Name").values.buffer;
-  amounts = s.fields.find((f) => f.name === "Amount").values.buffer;
+  names =
+    s.fields.find((f) => f.name === "Name").values.buffer ||
+    s.fields.find((f) => f.name === "Name").values;
+  amounts =
+    s.fields.find((f) => f.name === "Amount").values.buffer ||
+    s.fields.find((f) => f.name === "Amount").values;
 });
 
 return {

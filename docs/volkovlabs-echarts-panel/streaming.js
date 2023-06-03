@@ -1,7 +1,11 @@
 const values = {};
 const series = data.series.map((s) => {
-  names = s.fields.find((f) => f.name === "name").values.buffer;
-  amounts = s.fields.find((f) => f.name === "amount").values.buffer;
+  names =
+    s.fields.find((f) => f.name === "name").values.buffer ||
+    s.fields.find((f) => f.name === "name").values;
+  amounts =
+    s.fields.find((f) => f.name === "amount").values.buffer ||
+    s.fields.find((f) => f.name === "amount").values;
 
   names.forEach((d, i) => (values[d] = amounts[i]));
 });

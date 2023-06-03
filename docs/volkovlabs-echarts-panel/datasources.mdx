@@ -16,13 +16,23 @@ Below is a code snippet demonstrating how you can retrieve data from your data s
 ```javascript
 data.series.map((s) => {
   if (s.refId === "logo") {
-    images = s.fields.find((f) => f.name === "body").values.buffer;
+    images =
+      s.fields.find((f) => f.name === "body").values.buffer ||
+      s.fields.find((f) => f.name === "body").values;
   } else if (s.refId === "connections") {
-    sources = s.fields.find((f) => f.name === "source").values.buffer;
-    targets = s.fields.find((f) => f.name === "target").values.buffer;
+    sources =
+      s.fields.find((f) => f.name === "source").values.buffer ||
+      s.fields.find((f) => f.name === "source").values;
+    targets =
+      s.fields.find((f) => f.name === "target").values.buffer ||
+      s.fields.find((f) => f.name === "target").values;
   } else if (s.refId === "nodes") {
-    titles = s.fields.find((f) => f.name === "title").values.buffer;
-    descriptions = s.fields.find((f) => f.name === "description").values.buffer;
+    titles =
+      s.fields.find((f) => f.name === "title").values.buffer ||
+      s.fields.find((f) => f.name === "title").values;
+    descriptions =
+      s.fields.find((f) => f.name === "description").values.buffer ||
+      s.fields.find((f) => f.name === "description").values;
   }
 });
 ```
@@ -30,6 +40,7 @@ data.series.map((s) => {
 - You can use `.map()` and `.find()` JavaScript functions,
 - `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries the `logo`, `connections`, and `nodes`.
 - `name` is the data frame column name. The code above references the `body`, `source`, `target`, `title`, and `description` columns.
+- Supports Grafana 10 and older with `values` and `values.buffer`.
 
 ## Tutorial
 
@@ -42,15 +53,22 @@ data.series.map((s) => {
 
 Convert one-dimensional arrays into many-dimensional arrays if needed.
 
-- get values for each field
-- combine in an array of arrays
-- use as `series[0]` to access first query, `series[1]` to access second query, etc.
+- Get values for each field.
+- Combine in an array of arrays.
+- Use as `series[0]` to access first query, `series[1]` to access second query, etc.
+- Supports Grafana 10 and older with `values` and `values.buffer`.
 
 ```javascript
 const series = data.series.map((s) => {
-  const rates = s.fields.find((f) => f.name === "Rate").values.buffer;
-  const calls = s.fields.find((f) => f.name === "Calls").values.buffer;
-  const names = s.fields.find((f) => f.name === "Name").values.buffer;
+  const rates =
+    s.fields.find((f) => f.name === "Rate").values.buffer ||
+    s.fields.find((f) => f.name === "Rate").values;
+  const calls =
+    s.fields.find((f) => f.name === "Calls").values.buffer ||
+    s.fields.find((f) => f.name === "Calls").values;
+  const names =
+    s.fields.find((f) => f.name === "Name").values.buffer ||
+    s.fields.find((f) => f.name === "Name").values;
 
   return rates.map((d, i) => [d, calls[i], names[i]]);
 })[0];

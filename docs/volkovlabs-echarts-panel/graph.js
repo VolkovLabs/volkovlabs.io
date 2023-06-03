@@ -4,9 +4,15 @@ let nodes, links;
  */
 data.series.map((s) => {
   if (s.refId === "nodes") {
-    var titles = s.fields.find((f) => f.name === "sIp").values.buffer;
-    var symbolSizes = s.fields.find((f) => f.name === "bytes").values.buffer;
-    var categories = s.fields.find((f) => f.name === "Count").values.buffer;
+    var titles =
+      s.fields.find((f) => f.name === "sIp").values.buffer ||
+      s.fields.find((f) => f.name === "sIp").values;
+    var symbolSizes =
+      s.fields.find((f) => f.name === "bytes").values.buffer ||
+      s.fields.find((f) => f.name === "bytes").values;
+    var categories =
+      s.fields.find((f) => f.name === "Count").values.buffer ||
+      s.fields.find((f) => f.name === "Count").values;
 
     nodes = titles.map((title, i) => ({
       name: title,
@@ -20,8 +26,12 @@ data.series.map((s) => {
   }
 
   if (s.refId === "links") {
-    var sources = s.fields.find((f) => f.name === "sIp").values.buffer;
-    var targets = s.fields.find((f) => f.name === "dIp").values.buffer;
+    var sources =
+      s.fields.find((f) => f.name === "sIp").values.buffer ||
+      s.fields.find((f) => f.name === "sIp").values;
+    var targets =
+      s.fields.find((f) => f.name === "dIp").values.buffer ||
+      s.fields.find((f) => f.name === "dIp").values;
 
     links = sources.map((source, i) => ({
       source: source,
