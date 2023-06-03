@@ -1,9 +1,13 @@
 let names = [];
 let amounts = [];
 data.series.map((s) => {
-  names = s.fields.find((f) => f.name === "Name").values.source.buffer;
+  names =
+    s.fields.find((f) => f.name === "Name").values.source.buffer ||
+    s.fields.find((f) => f.name === "Name").values.source;
   namesOrder = s.fields.find((f) => f.name === "Name").values.order;
-  amounts = s.fields.find((f) => f.name === "Amount").values.source.buffer;
+  amounts =
+    s.fields.find((f) => f.name === "Amount").values.source.buffer ||
+    s.fields.find((f) => f.name === "Amount").values.source;
   amountsOrder = s.fields.find((f) => f.name === "Amount").values.order;
 });
 

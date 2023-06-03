@@ -1,8 +1,14 @@
 let wind;
 data.series.map((s) => {
-  const time = s.fields.find((f) => f.name === "Time").values.buffer;
-  const value = s.fields.find((f) => f.name === "Speed").values.buffer;
-  const rotate = s.fields.find((f) => f.name === "Direction").values.buffer;
+  const time =
+    s.fields.find((f) => f.name === "Time").values.buffer ||
+    s.fields.find((f) => f.name === "Time").values;
+  const value =
+    s.fields.find((f) => f.name === "Speed").values.buffer ||
+    s.fields.find((f) => f.name === "Speed").values;
+  const rotate =
+    s.fields.find((f) => f.name === "Direction").values.buffer ||
+    s.fields.find((f) => f.name === "Direction").values;
 
   /**
   Set Wind from 3 arrays

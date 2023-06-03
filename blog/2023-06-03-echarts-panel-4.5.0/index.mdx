@@ -1,0 +1,84 @@
+---
+authors: [mikhail]
+slug: echarts-panel-4.5.0-20230603/
+tags: [Apache ECharts, Release Notes]
+image: /img/blog/2023-06-03-echarts-panel-4.5.0/banner.png
+keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Apache ECharts Panel 4.5.0 supports Grafana 10
+
+We released a new version of the Apache ECharts Panel 4.5.0 for Grafana. This maintenance release
+
+- Tested with Grafana 10 Preview.
+- Example function was updated to support Grafana 10.
+- Added an alert for custom theme parsing errors.
+- Migrated to Plugin Tools 1.5.2 with Node 18 and npm.
+
+:::info Grafana Catalog
+The plugin was submitted to the Grafana team for review.
+:::
+
+## Changes in Grafana 10
+
+Some data sources in Grafana 10 return field values as `values` instead of `values.buffer` as in Grafana 9 and before. We updated the example function to work in Grafana 9 and Grafana 10:
+
+```
+  const sData = s.fields.find((f) => f.type === 'number').values.buffer || s.fields.find((f) => f.type === 'number').values;
+  const sTime = s.fields.find((f) => f.type === 'time').values.buffer || s.fields.find((f) => f.type === 'time').values;
+```
+
+You can remove the `||` statement and choose the correct expression for your Grafana version.
+
+## Custom Theme
+
+We added an alert for theme parsing errors. JSON errors can be hard to spot and the theme won't be applied until all errors are fixed.
+
+A new alert makes the troubleshooting process effortless.
+
+<Image
+  title="Apache ECharts visualization panel supports custom theme from Theme Builder."
+  src="/img/blog/2023-06-03-echarts-panel-4.5.0/theme.png"
+/>
+
+## Getting Started
+
+Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-echarts-panel
+```
+
+## YouTube Tutorial
+
+The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/DxqCrBEmrQw"
+  title="How to create modern dashboards in Grafana."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Migrate to Plugin Tools 1.5.2 (#171, #176)
+- Update to Node 18 and npm (#172, #173)
+- Add an alert for theme parsing error (#175)
+- Update Default Function to support Grafana 10 (#178)
+- Tested with Grafana 10 Preview (#179)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.

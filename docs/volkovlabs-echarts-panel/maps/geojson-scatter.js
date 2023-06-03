@@ -6,9 +6,15 @@ let values = [];
  * Data Source
  */
 data.series.map((s) => {
-  latitudes = s.fields.find((f) => f.name === "latitude").values.buffer;
-  longitudes = s.fields.find((f) => f.name === "longitude").values.buffer;
-  values = s.fields.find((f) => f.name === "value").values.buffer;
+  latitudes =
+    s.fields.find((f) => f.name === "latitude").values.buffer ||
+    s.fields.find((f) => f.name === "latitude").values;
+  longitudes =
+    s.fields.find((f) => f.name === "longitude").values.buffer ||
+    s.fields.find((f) => f.name === "longitude").values;
+  values =
+    s.fields.find((f) => f.name === "value").values.buffer ||
+    s.fields.find((f) => f.name === "value").values;
 });
 
 /**

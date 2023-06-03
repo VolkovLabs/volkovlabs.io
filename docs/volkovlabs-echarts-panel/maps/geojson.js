@@ -1,6 +1,10 @@
 const requests = data.series.map((s) => {
-  const names = s.fields.find((f) => f.name === "Metric").values.buffer;
-  const values = s.fields.find((f) => f.name === "Value (sum)").values.buffer;
+  const names =
+    s.fields.find((f) => f.name === "Metric").values.buffer ||
+    s.fields.find((f) => f.name === "Metric").values;
+  const values =
+    s.fields.find((f) => f.name === "Value (sum)").values.buffer ||
+    s.fields.find((f) => f.name === "Value (sum)").values;
 
   return names.map((name, i) => {
     return { name: name, value: values[i] };
