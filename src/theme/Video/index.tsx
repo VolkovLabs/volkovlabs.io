@@ -8,15 +8,16 @@ type Props = {
   src: string;
   title?: string;
   height: number;
+  width: string;
 };
 
 /**
  * Video
  */
-const Video = ({ src, title, height = 500 }: Props) => (
+const Video = ({ src, title, height = 400, width = "100%" }: Props) => (
   <figure>
     <iframe
-      width="100%"
+      width={width}
       className={styles.video}
       height={height}
       src={src}
