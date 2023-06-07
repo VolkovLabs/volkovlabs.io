@@ -4,9 +4,10 @@ slug: annotations-grafana-api-20230401/
 tags: [Grafana HTTP API Data Source, Getting Started]
 image: /img/blog/2023-04-01-annotations-grafana-api/banner.png
 keywords: [Grafana, HTTP API, Data Source, Annotations]
-updated: 2023-04-15
+updated: 2023-06-06
 ---
 
+import BlogPost from "@theme/BlogPost";
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
@@ -72,13 +73,11 @@ Both alerts and native annotations are stored in the Grafana configuration datab
 
 In short, every Grafana needs a configuration database to capture its settings, including native annotations and alerts. If you do not configure otherwise, you will end up with sqlite3 as your configuration database. The other choices are PostgreSQL and MySQL.
 
-<a href="/blog/grafana-setup-20230122/">
-  <Image
-    title="Blog post about Grafana configuration database."
-    src="/img/blog/2023-01-22-grafana-setup/banner.png"
-    zoom={false}
-  />
-</a>
+<BlogPost
+  href="/blog/grafana-setup-20230122/"
+  title="Blog post about Grafana configuration database."
+  src="/img/blog/2023-01-22-grafana-setup/banner.png"
+/>
 
 ## Configuration Menu
 

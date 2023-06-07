@@ -5,6 +5,7 @@ const mySidebar = [
   "index",
   {
     items: [
+      "installation",
       "annotations",
       "business",
       "customize",
