@@ -9,6 +9,8 @@ const mySidebar = [
       "annotations",
       "business",
       "customize",
+      "provisioning",
+      "transformations",
       "variables",
       "allow-unsigned",
     ],
