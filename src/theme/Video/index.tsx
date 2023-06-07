@@ -14,7 +14,7 @@ type Props = {
 /**
  * Video
  */
-const Video = ({ src, title, height = 420, width = "100%" }: Props) => (
+const Video = ({ src, title, height = 420, width = "90%" }: Props) => (
   <figure>
     <iframe
       width={width}

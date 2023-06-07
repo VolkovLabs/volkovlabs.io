@@ -29,7 +29,7 @@ const Image = ({
   height,
   src,
   title,
-  width,
+  width = "90%",
   zoom = true,
   lazy = true,
 }: Props) => (
