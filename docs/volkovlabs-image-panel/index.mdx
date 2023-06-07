@@ -34,8 +34,8 @@ grafana-cli plugins install volkovlabs-image-panel
 ## Highlights
 
 - The returned value can contain base64 with or without definition (`data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`).
-- The file type is determined automatically based on the first Base64 symbol if definition is not provided.
-- If the data source returns more than one field with type `string`, you can select the **Field Name** in the panel's display options.
+- The file type is determined automatically based on the first Base64 symbol if the definition is not provided.
+- If the data source returns more than one field with a type `string`, you can select the **Field Name** in the panel's display options.
 - If the data source returns multiple rows, the panel will display the image from the last row.
 - Image height and width can be auto-adjusted to the panel's size, kept original or customized base on the field's value.
 - Allows adding URL with title to navigate to other dashboards when clicking on the image. URL supports dashboard variables.

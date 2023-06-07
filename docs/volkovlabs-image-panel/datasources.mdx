@@ -24,14 +24,9 @@ Static Data Source is an excellent solution for not huge sizes. If you get a `41
 
 :::
 
-<Image
-  title="Base64 panel allows to display images on Grafana dashboard."
-  src="/img/plugins/volkovlabs-image-panel/panel.png"
-/>
-
 ## PostgreSQL
 
-The data source should return encoded file content and may return the format definition `data:video/mp4;base64,ENCODED-CONTENT` for media files.
+The data source should return encoded file content and may return the format definition like `data:video/mp4;base64,ENCODED-CONTENT` for media files.
 
 ```
 SELECT
