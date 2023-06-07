@@ -3,15 +3,16 @@ tags:
   - Getting Started
 ---
 
+import BlogPost from "@theme/BlogPost";
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
 # Customization
 
-If you ever wondered how to use your own icons and other style elements in the Grafana application, you came to the right corner of the Internet to find answers. 
+If you ever wondered how to use your icons and other style elements in the Grafana application, you came to the right corner of the Internet to find answers.
 
-To make the Grafana dashboard look more like your homegrown application, you can use one or all of the commands from our customization collection. 
+To make the Grafana dashboard look more like your homegrown application, you can use one or all of the commands from our customization collection.
 
 Over three years, we were able to determine so many ways to customize Grafana that we have to categorize them. Our four categories are outlined in the schema below.
 
@@ -21,60 +22,47 @@ Over three years, we were able to determine so many ways to customize Grafana th
   lazy={false}
 />
 
-The next important piece of information is the list of actual commands. Just scroll down a bit to find a Docker file. 
-We keep it up to date with our latest findings. 
+The next important piece of information is the list of actual commands. Just scroll down a bit to find a Docker file. We keep it up to date with our latest findings.
 
 ## Tutorial
 
 If the cheat-sheet above and the actual Dockerfile are not enough, you can watch the video below. I go over the topic in greater detail and demonstrate what elements exactly are customizable.
 
-<table>
-  <tr style={{ border: "none" }}>
-    <td width="*" style={{ border: "none" }}>
-    </td>
-    <td width="70%" style={{ border: "none" }}>
-      <Video
-     src="https://www.youtube.com/embed/ChI78v4UZc0"
+<Video
+  src="https://www.youtube.com/embed/ChI78v4UZc0"
   title="How to customize Grafana 9.4. A cheat-sheet for Docker container and Windows."
-      height={250}
-      />
-    </td>
-      <td width="*" style={{ border: "none" }}>
-    </td>
-  </tr>
-</table>
+/>
 
 ## Related blog posts
 
-At this moment we have two related blog posts. The first one was written last summer and updated following the video above. In the "Spring cleaning" we go into details of the 'Cleaning' category. The idea that unnesesary parts can be removed from the Grafana instalaltion package seemed worthy a separate article.
+At this moment we have two related blog posts. The first one was written last summer and updated following the video above. In the "Spring cleaning" we go into details of the 'Cleaning' category. The idea that unnecessary parts can be removed from the Grafana installation package seemed worthy of a separate article.
 
 <table>
   <tr style={{ border: "none" }}>
     <td width="50%" style={{ border: "none" }}>
-    <a href="/blog/how-to-customize-the-grafana-user-interface-8d70a42dc2b6/">
-  <Image
-    title="How to customize the Grafana user interface."
-    src="/img/blog/2022-08-14-customize-grafana/banner.png"
-    zoom={false}
-  />
-</a>
+      <BlogPost
+        href="/blog/how-to-customize-the-grafana-user-interface-8d70a42dc2b6/"
+        title="How to customize the Grafana user interface."
+        src="/img/blog/2022-08-14-customize-grafana/banner.png"
+        width="100%"
+      />
     </td>
     <td width="*" style={{ border: "none" }}>
- <a href="/blog/native-grafana-plugins-20230409/">
-  <Image
-    title="Spring cleaning in Grafana."
-    src="/img/blog/2023-04-09-native-grafana-plugins/banner.png"
-    zoom={false}
-  />
-</a>
+      <BlogPost
+        href="/blog/native-grafana-plugins-20230409/"
+        title="Spring cleaning in Grafana."
+        src="/img/blog/2023-04-09-native-grafana-plugins/banner.png"
+        width="100%"
+      />
     </td>
   </tr>
 </table>
 
 ## Docker file
 
-Our customization is done in the Docker file and it can be easily replicated for host installation. Tough, as I explain in the video, it will not be as easy as a walk in the park. 
-If you ever collect commands for the Windows host installation, feel free to share them with us and we add this list to the crash course. You will have full credit for it. 
+Our customization is done in the Docker file and it can be easily replicated for host installation. Tough, as I explain in the video, it will not be as easy as a walk in the park.
+
+If you ever collect commands for the Windows host installation, feel free to share them with us and we add this list to the crash course. You will have full credit for it.
 
 We constantly update our Docker builds based on the latest version of Grafana.
 
