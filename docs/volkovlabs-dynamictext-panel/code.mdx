@@ -159,3 +159,19 @@ If the table does not fit in the panel it can be auto scrolled using JavaScript 
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/scroll.js"
   language="js"
 />
+
+## Unique values
+
+Return unique values from `data` using Handlebars helper `unique` by community member `goncalobsantos`.
+
+```html
+<div>{{#each (unique data "hostname.keyword")}}{{this}}; {{/each}}</div>
+```
+
+### JavaScript Code
+
+```js
+handlebars.registerHelper("unique", (context, key) => {
+  return [...new Set(context.map((item) => item[key]))];
+});
+```
