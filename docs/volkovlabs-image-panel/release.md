@@ -7,6 +7,18 @@ tags:
 
 # Release Notes
 
+## [3.6.0 (2023-06-06)](/blog/image-panel-3.6.0-20230606)
+
+### Features / Enhancements
+
+- Update to Grafana 9.5.2 (#70)
+- Add E2E Cypress testing (#71)
+- Migrate to Plugin Tools 1.5.2 (#72, #73)
+- Update to Node 18 (#72)
+- Increase Test Coverage (#72)
+- Tested with Grafana 10 Preview (#74)
+- Add Toolbar to Download, Zoom and Navigation between images (#75, #76, #77)
+
 ## [3.5.0 (2023-03-07)](/blog/image-panel-3.5.0-20230307)
 
 ### Features / Enhancements
