@@ -250,6 +250,10 @@ const community = {
   type: "category",
   description: "Our plugins are open-source and we update them constantly.",
   collapsible: false,
+  link: {
+    type: "doc",
+    id: "community",
+  },
 };
 
 module.exports = community;
