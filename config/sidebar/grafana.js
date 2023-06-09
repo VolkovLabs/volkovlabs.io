@@ -33,9 +33,7 @@ const mySidebar = [
     },
   },
   {
-    items: [
-      "developer/index",
-      "developer/panel"],
+    items: ["developer/panel"],
     label: "Developer",
     type: "category",
     collapsible: false,
@@ -43,7 +41,7 @@ const mySidebar = [
       type: "doc",
       id: "developer/index",
     },
-},
+  },
 ];
 
 /**
