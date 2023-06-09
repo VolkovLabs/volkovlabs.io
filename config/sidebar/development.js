@@ -72,11 +72,6 @@ const development = {
       items: [
         {
           type: "doc",
-          id: "templates/index",
-          label: "Introduction",
-        },
-        {
-          type: "doc",
           id: "templates/application",
           label: "Application",
         },
@@ -116,6 +111,10 @@ const development = {
   label: "Development",
   type: "category",
   collapsible: false,
+  link: {
+    type: "doc",
+    id: "development",
+  },
 };
 
 module.exports = development;
