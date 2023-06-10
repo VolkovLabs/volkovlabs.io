@@ -25,6 +25,10 @@ const community = {
           ],
           label: "Features",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-echarts-panel/features",
+          },
         },
         {
           items: [
@@ -35,6 +39,10 @@ const community = {
           ],
           label: "Maps",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-echarts-panel/maps/index",
+          },
         },
         {
           items: [
@@ -44,6 +52,10 @@ const community = {
           ],
           label: "Tutorials",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-echarts-panel/tutorials/index",
+          },
         },
         "volkovlabs-echarts-panel/release",
       ],
@@ -72,6 +84,10 @@ const community = {
           ],
           label: "Features",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-image-panel/features",
+          },
         },
         "volkovlabs-image-panel/release",
       ],
