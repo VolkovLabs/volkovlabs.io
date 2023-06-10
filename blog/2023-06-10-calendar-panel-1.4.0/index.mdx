@@ -1,0 +1,69 @@
+---
+authors: [mikhail]
+slug: calendar-panel-1.4.0-20230610/
+tags: [Calendar, Release Notes]
+image: /img/blog/2023-06-10-calendar-panel-1.4.0/banner.png
+keywords: [Calendar, Panel, Events, Time Range, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Calendar Panel 1.4.0 supports Grafana 10
+
+A new version of the Calendar panel 1.4.0 was released today. This maintenance release
+
+- Tested with Grafana 10 Preview.
+- Added Text Formatting, Mappings and Overrides.
+- Removed unused Standard Options.
+- Increase event spacing to prevent overflow.
+- Increased Test coverage and added end-to-end test workflow.
+- Migrated to Plugin Tools 1.5.2 with Node 18 and npm.
+
+:::info Grafana Catalog
+The plugin was submitted to the Grafana team for review.
+:::
+
+## Getting Started
+
+The calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-calendar-panel
+```
+
+## YouTube Tutorial
+
+The Calendar visualization panel is a Grafana plugin created to display events from data sources.
+
+<Video
+  src="https://www.youtube.com/embed/iPJ122x0oos"
+  title="Display events from JSON API data source."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Rebuild using Grafana 9.5.2 (#96, #101)
+- Add Text Formatting, Mappings and Overrides (#97)
+- Remove unused Standard Options (#97)
+- Increase Test Coverage and update testing library (#100, #103)
+- Migrate to Plugin Tools 1.5.2 (#101)
+- Update to Node 18 (#101)
+- Add E2E Cypress testing (#102)
+
+### Bug fixes
+
+- Increase event spacing to prevent overflow (#96)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
