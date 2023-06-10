@@ -72,6 +72,10 @@ const community = {
           ],
           label: "Features",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-image-panel/features",
+          },
         },
         "volkovlabs-image-panel/release",
       ],
