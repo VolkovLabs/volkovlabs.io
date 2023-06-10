@@ -67,6 +67,7 @@ const community = {
         {
           items: [
             "volkovlabs-image-panel/datasources",
+            "volkovlabs-image-panel/toolbar",
             "volkovlabs-image-panel/variables",
           ],
           label: "Features",
