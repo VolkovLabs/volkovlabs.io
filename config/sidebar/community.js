@@ -112,7 +112,7 @@ const community = {
       ],
       label: "Calendar Panel",
       type: "category",
-      description: "Display calendar events and change time range.",
+      description: "Display events and change time range.",
       link: {
         type: "doc",
         id: "volkovlabs-calendar-panel/index",
