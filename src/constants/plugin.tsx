@@ -27,7 +27,7 @@ export const PluginList: PluginItem[] = [
   {
     title: "Calendar Panel",
     name: "volkovlabs-calendar-panel",
-    description: <>Display calendar events and change time range.</>,
+    description: <>Display events and change time range.</>,
     href: "/plugins/volkovlabs-calendar-panel/",
   },
   {
