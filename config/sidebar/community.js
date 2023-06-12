@@ -203,6 +203,10 @@ const community = {
           items: ["volkovlabs-grapi-datasource/annotations"],
           label: "Features",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-grapi-datasource/features",
+          },
         },
         "volkovlabs-grapi-datasource/release",
       ],
