@@ -1,62 +1,65 @@
+---
+tags:
+  - Developer
+---
+
 import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Overview
+# Grafana Plugins Overview
 
-Grafana architecture allows you to create one of the following plugins:
- - visualization panel
- - data source
- - application
+Grafana architecture allows you to create the following plugins:
+
+- Visualization panel
+- Data source
+- Application
 
 <Image
-  title="You can develop three types of Grafana plugins"
+  title="You can build three types of Grafana plugins."
   src="/img/grafana/plugin-types.png"
 />
 
-The  materials in this section cover:
- - All plugin types code composition,
- - ``Grafana Plugin Tools``,
- - Where to get basic and real-world examples.
+The materials in this section cover:
+
+- All plugin types code composition.
+- Grafana Plugin Tools.
+- Where to get basic and real-world examples.
 
 ## Visualization panel code composition
 
-From a developer's POV, a panel plugin consists of two major parts. One is the actual visualization. Take it and make it completely your own. 
-The other one is the Panel Options. It is where Grafana has your user's voice heard.
+From a developer's point of view, a panel plugin consists of two major parts:
+
+- One is the actual visualization. Take it and make it completely your own.
+- The other one is the Panel Options. It is where Grafana has your user's voice heard.
 
 <Image
-  title="Visualization panel parts"
+  title="Visualization panel parts."
   src="/img/grafana/details-panel.png"
 />
 
-### Panel Options
+## Panel Options
 
-Panel options are the parameters that you, as a developer, let users configure for your visualization panel. For better organization, they could be split into sections. 
+Panel options are the parameters that you, as a developer, let users configure for your visualization panel. For better organization, they could be split into sections.
 
 :::info
-There might be some confusion related to the "Panel Options" name. 
-From the developer's POV (in the code) all sections are called "Panel options".
-Whereas on Grafana UI only one section has this name. 
+There might be some confusion related to the "Panel Options" name. From the developer's point of view (in the code) all sections are called "Panel options". Whereas on Grafana UI only one section has this name.
 
-I like to think of the "Panel Options" section as **general** options (options given by default to any panel) and all other sections are **specific** to the panel. 
-Where **specific** means declared by a developer. 
+I like to think of the "Panel Options" section as general options (options given by default to any panel) and all other sections are specific to the panel. Where specific means declared by a developer.
 :::
 
-Every section can include any number of parameters.
-Usually, the parameters are a simple text value. You have a choice of many data entering types like text box, drop-down box, toggle, etcetera. All of those play a role in helping your user to choose one value or the array(s) of values as your panel options. 
+Every section can include any number of parameters. Usually, the parameters are a simple text value. You have a choice of many data entering types like text box, drop-down box, toggle, etc. All of those play a role in helping your user to choose one value or the array(s) of values as your panel options.
 
-Another alternative is a Monaco code editor. There your user can specify the panel configuration in a JSON format. 
-
-Lastly, you can incorporate a JavaScript box and allow your users to place JavaScript scripts right into the parameter section. 
+Another alternative is a Monaco code editor. It can be used to specify the panel configuration in a JSON format or incorporate a JavaScript box and allow your users to place JavaScript scripts right into the parameter section.
 
 <Image
-  title="Examples of all three panel option types in the Dynamic Text panel."
+  title="Examples of panel option types in the Dynamic Text panel."
   src="/img/grafana/details-dt.png"
 />
 
-### Panel Options Examples
+### Examples
 
-It is always better to see with your own eyes rather than read someone's description, right? 
+It is always better to see with your own eyes rather than read someone's description, right?
 
 Panel Options on the Dynamic Text visualization panel contain all three types.
 This plugin is signed by Grafana, which means you can install it in one click from the Grafana catalog, then select it from the visualization panel drop-down box to check out the Panel Option section firsthand.
@@ -68,31 +71,22 @@ By default, the JavaScript box parameter is not turned on. Specify 'JavaScript C
   src="/img/grafana/javascriptbox.png"
 />
 
-## Data source code composition
+## Data Source code composition
 
-<Image
-  title="Data source parts - coming soon"
-  src="/img/grafana/details-ds-non.png"
-/>
+Coming soon.
 
 ## Application code composition
-coming soon
+
+Coming soon.
 
 ### Application examples
-coming soon
+
+Coming soon.
 
 ## Grafana Plugin Tools
 
-[Grafana Plugin Tools](https://grafana.github.io/plugin-tools/) is the toolkit that the Grafana Team put together as a blow of strong wind in your development sail.
+[Grafana Plugin Tools](https://grafana.github.io/plugin-tools/) consists of two packages that the Grafana Team put together as a blow of strong wind in your development sail.
 
-The essential function of the Grafana Plugin Tools is to download the folder structure along with some basic and minimally required configuration files. 
+The essential function of the Grafana Plugin Tools is to create the folder structure along with some basic and minimally required configuration files. In the [Build a panel plugin](../../developer/panel/) section, I share my video with a detailed step-by-step demo of using Grafana Plugin Tools.
 
-In the [Build a panel](../../developer/panel/) section, I share my video with a detailed step-by-step demo of using Grafana Plugin Tools.
-
-You can also take a look at the tool's [GitHub Repository](https://github.com/grafana/plugin-tools) for some generic examples.
-
-
-
-
-
-
+You can also take a look at the tool's [GitHub Repository](https://github.com/grafana/grafana-plugin-examples) for some generic examples.
