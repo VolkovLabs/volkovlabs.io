@@ -7,7 +7,7 @@ This documentation is built using [Docusaurus 2](https://docusaurus.io/), a mode
 ### Installation
 
 ```sh
-yarn install
+npm install
 ```
 
 ### Local Development
@@ -15,7 +15,7 @@ yarn install
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ```sh
-yarn start
+npm start
 ```
 
 ## Feedback

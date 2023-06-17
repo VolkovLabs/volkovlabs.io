@@ -1,8 +1,8 @@
-import clsx from 'clsx';
-import React from 'react';
-import { useBlogPost } from '@docusaurus/theme-common/internal';
-import i18n from '@generated/i18n';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import React from "react";
+import { useBlogPost } from "@docusaurus/theme-common/internal";
+import i18n from "@generated/i18n";
+import styles from "./styles.module.css";
 
 /**
  * Format updated date
@@ -40,7 +40,7 @@ const BlogPostItemHeaderInfo = ({ className }) => {
       <time dateTime={date} itemProp="datePublished">
         {formattedDate}
       </time>
-      <UpdatedDate updated={frontMatter.updated} />
+      {frontMatter.updated && <UpdatedDate updated={frontMatter.updated} />}
     </div>
   );
 };
