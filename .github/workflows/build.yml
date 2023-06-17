@@ -21,4 +21,4 @@ jobs:
         run: npm install
 
       - name: Build docs
-        run: npm build
+        run: npm run build
