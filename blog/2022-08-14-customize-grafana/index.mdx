@@ -4,7 +4,7 @@ slug: how-to-customize-the-grafana-user-interface-8d70a42dc2b6/
 tags: [Configuration]
 image: /img/blog/2022-08-14-customize-grafana/banner.png
 keywords: [Business, Grafana, Visualization, Customization, Docker]
-updated: 2023-06-06
+updated: 2023-06-17
 ---
 
 import BlogPost from "@theme/BlogPost";
@@ -187,6 +187,25 @@ RUN sed -i "s|\[\[.NavTree\]\],|nav,|g; \
     /usr/share/grafana/public/views/index.html
 ```
 
+### Update Navigation (Mega) Menu
+
+The mega menu is the left-side menu added in Grafana 9.5. It's hard-coded and there is no way to update it in the UI.
+
+<Image
+  title="The mega menu updated with the new dashboard link."
+  src="/img/blog/2022-08-14-customize-grafana/menu.png"
+/>
+
+The menu elements can be added using JavaScript when rendering.
+
+```docker
+## Add News to the Mega Menu
+RUN sed -i "s|window.grafanaBootData = {| \
+    nav.push({\"id\":\"my-dashboard\",\"text\":\"Volkov Labs News\",\"icon\":\"play\",\"url\":\"/d/O4tc_E6Gz\",\"sortWeight\":-2000}); \
+    window.grafanaBootData = {|g" \
+    /usr/share/grafana/public/views/index.html
+```
+
 ## Javascript
 
 The application title (the name that appears on the browser tab), login page title, and bottom-page links are trickier than others. The files keeping those settings are scattered in various locations depending on the Grafana version.
@@ -244,7 +263,7 @@ In the following article, we explained how to remove unnecessary native Grafana 
 
 :::info Grafana Version
 
-The docker file was updated to Grafana 9.5.2 on June 5, 2023.
+The docker file was updated to Grafana 10.0.0 on June 17, 2023.
 
 :::
 
