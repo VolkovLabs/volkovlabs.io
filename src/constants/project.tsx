@@ -1,5 +1,5 @@
-import React from 'react';
-import { PluginItem } from '../types';
+import React from "react";
+import { PluginItem } from "../types";
 
 /**
  * Project List
@@ -35,7 +35,7 @@ export const ProjectList: PluginItem[] = [
     href: "/plugins/templates/",
   },
   {
-    title: "Volkov Labs Application",
+    title: "Volkov Labs App",
     name: "volkovlabs-app",
     description: <>Docker image with customized Grafana.</>,
     href: "/plugins/volkovlabs-app/",

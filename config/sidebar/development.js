@@ -99,7 +99,7 @@ const development = {
         },
         "volkovlabs-app/release",
       ],
-      label: "Volkov Labs Application",
+      label: "Volkov Labs App",
       type: "category",
       description: "Docker image with customized Grafana.",
       link: {
