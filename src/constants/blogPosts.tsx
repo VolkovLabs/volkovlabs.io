@@ -4,7 +4,7 @@ export const BlogPosts = [
     metadata: {
       permalink: "/blog/volkovlabs-app-2.5.0-20230617/",
       source: "@site/blog/2023-06-17-volkovlabs-app-2.5.0/index.mdx",
-      title: "Volkov Labs App 2.5.0 support Grafana 10",
+      title: "Volkov Labs App 2.5.0 supports Grafana 10",
       description:
         "We released a new version of the Volkov Labs App 2.5.0 with a customized Grafana docker image. This feature release",
       date: "2023-06-17T00:00:00.000Z",
@@ -82,7 +82,7 @@ export const BlogPosts = [
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
       },
       prevItem: {
-        title: "Volkov Labs App 2.5.0 support Grafana 10",
+        title: "Volkov Labs App 2.5.0 supports Grafana 10",
         permalink: "/blog/volkovlabs-app-2.5.0-20230617/",
       },
       nextItem: {
