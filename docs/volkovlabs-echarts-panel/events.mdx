@@ -16,10 +16,13 @@ For more examples and details, take a look at the ECharts documentation [Event a
 
 ## Mouse Click
 
+To prevent executing events multiple times, all previous event handlers may be disabled.
+
 ```js
 /**
  * On Mouse Click
  */
+echartsInstance.off("click");
 echartsInstance.on("click", (params) => {
   notifySuccess(["Event", "On Click"]);
   echartsInstance.resize(); // to redraw visualization
@@ -30,6 +33,7 @@ echartsInstance.on("click", (params) => {
 /**
  * On Double Click
  */
+echartsInstance.off("dblclick");
 echartsInstance.on("dblclick", (params) => {
   echartsInstance.resize();
 });

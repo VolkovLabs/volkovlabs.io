@@ -18,6 +18,7 @@ const community = {
             "volkovlabs-echarts-panel/datasources",
             "volkovlabs-echarts-panel/events",
             "volkovlabs-echarts-panel/instance",
+            "volkovlabs-echarts-panel/eventbus",
             "volkovlabs-echarts-panel/streaming",
             "volkovlabs-echarts-panel/theme",
             "volkovlabs-echarts-panel/transformations",
