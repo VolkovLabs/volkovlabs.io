@@ -33,7 +33,12 @@ const mySidebar = [
     },
   },
   {
-    items: ["developer/overview", "developer/thinkbig", "developer/panel"],
+    items: [
+      "developer/overview",
+      "developer/thinkbig",
+      "developer/panel",
+      "developer/eventbus",
+    ],
     label: "Developer",
     type: "category",
     collapsible: false,
