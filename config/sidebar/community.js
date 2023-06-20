@@ -267,6 +267,23 @@ const community = {
         id: "volkovlabs-static-datasource/index",
       },
     },
+    {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-variable-panel/index",
+          label: "Introduction",
+        },
+        "volkovlabs-variable-panel/release",
+      ],
+      label: "Variable Panel",
+      type: "category",
+      description: "Update dashboard variables.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-variable-panel/index",
+      },
+    },
   ],
   label: "Community Plugins",
   type: "category",

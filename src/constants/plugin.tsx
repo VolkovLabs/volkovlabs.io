@@ -62,4 +62,10 @@ export const PluginList: PluginItem[] = [
     description: <>Store and emulate your data.</>,
     href: "/plugins/volkovlabs-static-datasource/",
   },
+  {
+    title: "Variable Panel",
+    name: "volkovlabs-variable-panel",
+    description: <>Update dashboard variables.</>,
+    href: "/plugins/volkovlabs-variable-panel/",
+  },
 ];
