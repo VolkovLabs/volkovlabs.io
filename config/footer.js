@@ -44,6 +44,10 @@ const footer = {
           label: "Static Data Source",
           to: "/plugins/volkovlabs-static-datasource/",
         },
+        {
+          label: "Variable Panel",
+          to: "/plugins/volkovlabs-variable-panel/",
+        },
       ],
     },
     {
