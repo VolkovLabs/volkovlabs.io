@@ -31,34 +31,34 @@ Generate a data source template with [https://github.com/VolkovLabs/volkovlabs-a
 1. Install packages
 
 ```bash
-yarn install
+npm install
 ```
 
 2. Build the plugin
 
 ```bash
-yarn build
+npm run build
 ```
 
 3. Sign the plugins if required
 
 ```bash
 export GRAFANA_API_KEY=erfdfsgfs==
-yarn sign
+npm run sign
 ```
 
 4. Start the Docker container
 
 ```bash
-yarn run start
+npm run start
 ```
 
 ## Highlights
 
-- Use `docker-compose` to start the development environment with provisioned panels and a dashboard.
-- Provides unit test configuration.
-- Based on the latest version of Grafana.
-- Includes GitHub Actions for CI and Release.
+- Use `docker-compose` to start the development environment with provisioned data source and a dashboard.
+- Provides unit and E2E test configuration.
+- Based on the latest version of Grafana and Grafana Tools.
+- Includes GitHub Actions for CI, E2E and Release.
 
 ## Support
 
