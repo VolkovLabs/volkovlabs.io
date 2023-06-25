@@ -53,6 +53,10 @@ const development = {
           items: ["volkovlabs-env-datasource/variables"],
           label: "Features",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-env-datasource/features",
+          },
         },
         "volkovlabs-env-datasource/release",
       ],
