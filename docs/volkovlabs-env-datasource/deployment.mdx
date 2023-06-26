@@ -43,8 +43,8 @@ Go 1.20 and Node.js version 18.
 You can build and sign the plugin manually following instructions.
 
 ```
-yarn install
-yarn build
-yarn build:backend
-grafana-toolkit plugin:sign --rootUrls http://CUSTOM-DOMAIN-URL/
+npm install
+npm run build
+npm run build:backend
+npx --yes @grafana/sign-plugin@latest --rootUrls http://CUSTOM-DOMAIN-URL/
 ```
