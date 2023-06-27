@@ -13,9 +13,9 @@ We are not here to lecture you on the basics of programming. If you are already 
 
 We thought that the "follow-me, step-by-step tutorial" format, where Daria demonstrates the steps, might be the fastest to get you up to speed.
 
-To this day, we have created two parts of the tutorial. If you like our format, please indicate that by liking the videos on YouTube and leaving a comment.
+To this day, we have created three parts of the tutorial. If you like our format, please indicate that by liking the videos on YouTube and leaving a comment.
 
-We need to know if our effort helps and third part would bring value.
+We need to know if our effort helps and next(fourth) part would bring value.
 
 ## Part 1
 
@@ -63,21 +63,66 @@ Daria walks you through the following 10 steps:
 
 ## Part 3
 
-We plan to cover the following:
+This part is a heavy-loaded one with insights and guidance. Daria covers the unit and end-to-end tests, demonstrates how GitHub actions work, and walks you through the plugin signing process with further submission for review.
 
-- Step 21. Unit tests.
+- Step 21. Unit tests and GitHub Continuous Integration
 - Step 22. End-to-end tests.
-- Step 23. Signing a plugin to make it a part of the Grafana catalog.
+- Step 23. Signing a plugin.
 - Step 24. Release Workflow.
 - Step 25. Submit Plugin for Review.
 - Step 26. Change a private plugin to a community plugin.
 
 <Video
-  src="https://www.youtube.com/embed/NWNjRZyUZtc"
+  src="https://www.youtube.com/embed/ga5Ik32vqIw"
   title="Part 3. Build a panel plugin tutorial for Grafana."
 />
 
+Here are some highlights of the video. 
+
+### Unit tests
+
+<Image
+  title="Some developers praise unit tests, others consider them worthless."
+  src="/img/grafana/unit-y-n.png"
+/>
+
+We use Unit tests in our projects and strive to achieve a least 90% of coverage. 
+
+Grafana tools provide two ready-to-use test scripts.
+One is called test and the other one is test:ci. 
+
+The two schemas below highlight the difference. 
+
+<table>
+  <tr style={{ border: "none" }}>
+    <td width="50%" style={{ border: "none" }}>
+ <Image
+  title="Conceptual View of the Test Script."
+  src="/img/grafana/test.png"
+/>
+    </td>
+    <td width="*" style={{ border: "none" }}>
+      <Image
+  title="Conceptual View of the Test CI(continuous integration) Script."
+  src="/img/grafana/testci.png"
+/>
+    </td>
+  </tr>
+</table>
+
+
+### E2E test, end-to-end tests
+
+End-to-end tests offer to QA your application as if it is done by a human. There are a lot of challenges and false positive alarms, yet, we consider e2e being helpful and recommend utilizing them for your plugin development needs.
+
+<Image
+  title="How I explain E2E to my 6-year-old."
+  src="/img/grafana/e2e-overview.png"
+/>
+
 ## Part 4 (bonus)
+
+Coming soon if there is interest from the Community. Leave a comment and like our video to express your interest. We carefully follow all Community activities and are always on top of the latest trends. 
 
 - Step 27. Dashboard Variables.
 - Step 28. Adding a custom editor in the panel options.
