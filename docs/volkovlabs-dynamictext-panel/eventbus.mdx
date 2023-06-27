@@ -1,0 +1,38 @@
+---
+tags:
+  - Dynamic Text
+  - EventBus
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Grafana Events
+
+:::info Version
+
+The event bus is supported by the Dynamic Text panel starting from version 4.0.0.
+
+:::
+
+Grafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.
+
+## Predefined Events
+
+A full list of events is available in the [Grafana Crash Course](/grafana/developer/eventbus).
+
+## Subscribe to events
+
+To subscribe and unsubscribe from events:
+
+```
+const subscription = eventBus.subscribe({ type: 'data-hover' }, () => {
+  console.log('React to Data Hover')
+})
+
+return () => {
+  subscription.unsubscribe();
+  console.log('Unsubscribed');
+}
+```
