@@ -261,6 +261,10 @@ const community = {
           ],
           label: "Panels",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-static-datasource/panels",
+          },
         },
         "volkovlabs-static-datasource/release",
       ],
