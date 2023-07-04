@@ -1,0 +1,93 @@
+---
+tags:
+  - Variable
+image: /img/plugins/volkovlabs-variable-panel/flow-var-panel.png
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Layout
+
+The Variable Panel works with your dashboard variables to make them more user-friendly. The Variable Panel displays your dashboard variable directly on your dashboard, you can place it anywhere and even enable the Sticky option to ensure the Variable Panel is always in sight for the user and never gets scrolled over.
+
+## Regular visualization panel versus variable panel
+
+Below are two schemas for comparison. One highlights the data flow for any regular Grafana visualization panel. Usually, a panel requires a data source that would fetch the data for further display by the panel.
+
+<Image
+  title="Data flow when working with a regular Grafana visualization panel."
+  src="/img/plugins/volkovlabs-variable-panel/flow-reg-panel.png"
+  width="70%"
+/>
+
+The Variable Panel does not require a data source. The Variable Panel works with your dashboard variable which already is a set of values. So, in a way, the Variable Panel uses your dashboard variable as a data source.
+
+However, optionally, the data source can be used for two purposes:
+
+- First, if you would like to have a color status next to your variable, you would need a numeric value to evaluate using thresholds.
+- Second, if you like to display your variable in the Tree View format, ensure to provide node relation via the connected data source.
+
+<Image
+  title="Data flow when working with the Variable panel."
+  src="/img/plugins/volkovlabs-variable-panel/flow-var-panel.png"
+  width="70%"
+/>
+
+Below we provide some examples of what the panel might look like along with the configuration you would need to set in Edit mode.
+
+## Basic View
+
+### Single variable
+
+With the minimum configuration effort, your Variable Panel might look like a simple list to select from. Whether or not multiple selections are allowed depends on the settings you choose in the variable configuration menu. In my example below, I allowed multiple selections and Inclide All option.
+
+<Image
+  title="Basic Variable panel View."
+  src="/img/plugins/volkovlabs-variable-panel/basic.png"
+/>
+
+<Image
+  title="How to set up the Basic Variable panel View."
+  src="/img/plugins/volkovlabs-variable-panel/basic-edit.png"
+/>
+
+### Single variable plus statuses
+
+If you like to add a status circle, then in addition to the basic setup steps:
+
+1. Connect the data source with a query where you select a variable name and a numeric value.
+2. Configure the threshold by specifying the color to data ranges.
+
+<Image
+  title="Basic Variable panel View plus circle statuses."
+  src="/img/plugins/volkovlabs-variable-panel/basic-plus.png"
+/>
+
+<Image
+  title="How to set up the Basic Variable panel View plus circle statuses."
+  src="/img/plugins/volkovlabs-variable-panel/basic-plus-edit.png"
+/>
+
+## Multiple variables View
+
+This configuration is identical to the previous one. The only difference is that for every dashboard variable, you add a separate variable panel.
+
+<Image
+  title="Multi variables view plus circle statuses."
+  src="/img/plugins/volkovlabs-variable-panel/multiple.png"
+/>
+
+## Tree View
+
+For the Tree View, you need a query returning parent-child connections. In that query, ensure the column aliases are identical to the variable names.
+
+<Image
+  title="Tree View plus circle statuses."
+  src="/img/plugins/volkovlabs-variable-panel/treeview.png"
+/>
+
+<Image
+  title="How to set up the Tree View plus circle statuses."
+  src="/img/plugins/volkovlabs-variable-panel/treeview-edit.png"
+/>

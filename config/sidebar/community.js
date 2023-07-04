@@ -283,7 +283,7 @@ const community = {
           id: "volkovlabs-variable-panel/index",
           label: "Introduction",
         },
-        "volkovlabs-variable-panel/hierarchy",
+        "volkovlabs-variable-panel/layout",
         "volkovlabs-variable-panel/release",
       ],
       label: "Variable Panel",
