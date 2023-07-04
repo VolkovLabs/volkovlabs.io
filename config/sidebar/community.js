@@ -173,6 +173,10 @@ const community = {
           ],
           label: "Features",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-form-panel/features",
+          },
         },
         {
           items: [
@@ -185,6 +189,10 @@ const community = {
           ],
           label: "Servers",
           type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-form-panel/servers/index",
+          },
         },
         "volkovlabs-form-panel/release",
       ],
