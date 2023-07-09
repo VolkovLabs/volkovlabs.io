@@ -1,0 +1,138 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-4.0.0-20230709/
+tags: [Dynamic Text, Release Notes]
+image: /img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png
+keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Dynamic Text Panel 4.0.0
+
+We released a new version of Dynamic Text Panel 4.0.0. This major release
+
+- Requires Grafana 9 and Grafana 10.
+- Added Event Bus object to JavaScript function.
+- Added dashboard variables support in CSS style.
+- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on June 28, 2023.
+:::
+
+## 3 million downloads
+
+In February we celebrated 2 million downloads. Since then we have seen an accelerated adaptation of the panel.
+
+JavaScript code, CSS style editor, and supporting Grafana events provide unique capabilities, you can't find in native and community plugins.
+
+<Image
+  title="Dynamic Text panel was downloaded more than three million times."
+  src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"
+  lazy={false}
+/>
+
+## Dashboard variables
+
+The Dynamic Text panel provides helpers to support variables. Variables can also be used in the JavaScript code and CSS styles.
+
+### JavaScript code
+
+Use `replaceVariables` to replace dashboard variables in the JavaScript Code.
+
+```
+const bonjour = replaceVariables("${variable}");
+console.log(bonjour.toUpperCase())
+```
+
+### Styles
+
+Dashboard variables are replaced automatically in the CSS styles.
+
+### Content
+
+Returns a string array of the currently selected values for a certain variable.
+
+```handlebars
+{{variable "hostname"}}
+
+<!-- result: ['server1', 'server2', 'server3']  -->
+```
+
+More examples are in the [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).
+
+## Event Bus
+
+Grafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.
+
+### Predefined Events
+
+A full list of events is available in the [Grafana Crash Course](/grafana/developer/eventbus).
+
+### Subscribe to events
+
+To avoid memory leaks all events must be unsubscribed.
+
+```
+const subscription = eventBus.subscribe({ type: 'data-hover' }, () => {
+  console.log('React to Data Hover')
+})
+
+return () => {
+  subscription.unsubscribe();
+  console.log('Unsubscribed');
+}
+```
+
+## Getting Started
+
+The Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML and Handlebars to transform data visualizations."
+/>
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in the Dynamic text panel."
+/>
+
+## Release Notes
+
+### Breaking changes
+
+- Requires Grafana 9 and Grafana 10
+
+### Features / Enhancements
+
+- Increase Test Coverage and update to testing-library/react (#177)
+- Add Event Bus object to JavaScript function (#179)
+- Migrate to Plugin Tools 1.5.2 (#183)
+- Update to Grafana 10.0.0 (#166, #178, #183)
+- Update to Node 18 and npm (#183)
+- Remove Grafana 8.5 support (#183)
+- Add E2E Cypress testing (#184)
+- Support Variables in CSS styles editor (#185)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
