@@ -1,0 +1,104 @@
+---
+authors: [mikhail]
+slug: variable-panel-1.4.0-20230708/
+tags: [Variables, Release Notes]
+image: /img/blog/2023-07-08-variable-panel-1.4.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variable Panel 1.4.0 available in Grafana Catalog
+
+We released the first community-signed version of Variable Panel 1.4.0. This feature release
+
+- Added a Favorite icon to filter selected favorites.
+- Added Tree View groups to provide location, configuration, manufacturer, etc. selections in the same panel.
+- Added auto-scroll to the selected value when the panel loads.
+- Added an option to display the variable name in front of the value.
+- Updated Sticky scrollbar to support Grafana 9.
+- Increased Test coverage to 99%.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on July 7, 2023.
+:::
+
+## Favorites
+
+The variable panel allows selecting values as favorites, which are stored in the Web browser's storage and are unique for each user.
+
+The new favorite icon in the header allows you to filter all selected favorites for quick navigation and selection.
+
+<Image
+  title="Selected values are unique for each user and stored in the Web browser's storage."
+  src="/img/blog/2023-07-08-variable-panel-1.4.0/favorites.png"
+  lazy={false}
+/>
+
+## Tree View groups
+
+Multiple tree view groups allow selecting variables based on location, configuration, manufacturer, etc.
+
+Each group has its level configuration and is based on the data from the data frames. Levels from the data frame should have the same name as the variable.
+
+An additional option to display the variable name in front of the value can be enabled to provide additional context for the users.
+
+<Image
+  title="Groups consist of levels with the same names as variables."
+  src="/img/blog/2023-07-08-variable-panel-1.4.0/groups.png"
+/>
+
+## Test Coverage
+
+For developing our plugins we use continuous integration with 80+% test coverage to make sure that any changes won't break existing functionality. We talked about it in [our developing panel plugins series](https://www.youtube.com/watch?v=ga5Ik32vqIw).
+
+<Image
+  title="The variable panel has 99% test coverage."
+  src="/img/blog/2023-07-08-variable-panel-1.4.0/codecov.png"
+/>
+
+## Getting Started
+
+The Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-variable-panel
+```
+
+## YouTube Tutorial
+
+The Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+
+The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+
+<Video
+  src="https://www.youtube.com/embed/mYYtMW9qiPA"
+  title="Demonstrates the Variable panel functionality."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add Tutorial (#21)
+- Update adding new Level to last (#22)
+- Hide unselectable items (#24)
+- Use the main view scroll element to support Grafana 9 (#26)
+- Add a Favorite icon to filter selected favorites (#25)
+- Add Tree View groups. Requires to update Tree View configuration. (#20)
+- Add an option to display the variable name in front of the value (#30)
+- Increase tests coverage (#31)
+- Add auto scroll to the selected value (#32)
+- Community signed release (#37)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us:
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
