@@ -292,6 +292,18 @@ const community = {
           label: "Introduction",
         },
         "volkovlabs-variable-panel/layout",
+        {
+          items: [
+            "volkovlabs-variable-panel/favorites",
+            "volkovlabs-variable-panel/groups",
+          ],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-variable-panel/features",
+          },
+        },
         "volkovlabs-variable-panel/release",
       ],
       label: "Variable Panel",
