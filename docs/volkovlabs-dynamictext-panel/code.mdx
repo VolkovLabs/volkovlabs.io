@@ -2,6 +2,7 @@
 tags:
   - Dynamic Text
   - JavaScript Code
+image: /img/plugins/volkovlabs-dynamictext-panel/replace.png
 ---
 
 import Code from "@theme/Code";
@@ -177,4 +178,13 @@ Return unique values from `data` using Handlebars helper `unique` by community m
 handlebars.registerHelper("unique", (context, key) => {
   return [...new Set(context.map((item) => item[key]))];
 });
+```
+
+## Dashboard Variables
+
+Use `replaceVariables` to replace dashboard variables in the JavaScript Code.
+
+```
+const bonjour = replaceVariables("${variable}");
+console.log(bonjour.toUpperCase())
 ```
