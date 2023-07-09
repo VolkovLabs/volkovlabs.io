@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "image-panel-4.0.0-20230709/",
+    metadata: {
+      permalink: "/blog/image-panel-4.0.0-20230709/",
+      source: "@site/blog/2023-07-09-image-panel-4.0.0/index.mdx",
+      title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
+      description:
+        "We released a new version of Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release",
+      date: "2023-07-09T00:00:00.000Z",
+      formattedDate: "July 9, 2023",
+      tags: [
+        {
+          label: "Base64 Image/Video/Audio/PDF",
+          permalink: "/blog/tags/base-64-image-video-audio-pdf",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder, Volkov Labs",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "image-panel-4.0.0-20230709/",
+        tags: ["Base64 Image/Video/Audio/PDF", "Release Notes"],
+        image: "/img/blog/2023-07-09-image-panel-4.0.0/banner.png",
+        keywords: ["Base64", "Panel", "Zoom", "Label", "Images"],
+      },
+      nextItem: {
+        title: "Variable Panel 1.4.0 available in Grafana Catalog",
+        permalink: "/blog/variable-panel-1.4.0-20230708/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release\n\n- Requires Grafana 9 and Grafana 10.\n- Added pan and pinch zoom in addition to the full-screen zoom, introduced in 3.6.0.\n- Added description labels for images and media files.\n- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on June 28, 2023.\n:::\n\n## Pan and pinch-zoom\n\nThe pan and pinch zoom allows you to zoom in, and out and reset while working with high-resolution images.\n\nWhen selecting the Zoom button to display on the toolbar you can choose between Full Screen and Pan and Pinch modes.\n\n<Image\n  title="Tokyo image analyzed with YOLO model and zoomed in to see details."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/zoom.png"\n  lazy={false}\n/>\n\n## Description\n\nWe added an option to specify a description field to add a label to the selected image. Label displayed on the bottom.\n\nThe image is auto-scaled when using Panel\'s height option. If you are using the original height, then the panel should be adjusted manually.\n\n<Image\n  title="Tokyo image analyzed with YOLO model and zoomed in to see details."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/description.png"\n  lazy={false}\n/>\n\n## Getting Started\n\nBase64 Image/Video/Audio/PDF visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-image-panel\n```\n\n## YouTube Tutorial\n\nThe Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats.\n\n<Video\n  src="https://www.youtube.com/embed/1_bgLSehjhg"\n  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements\n\n- Add pan and pinch zooming option (#78)\n- Move pan pinch buttons to the toolbar (#79)\n- Update to Grafana 10.0.0 (#80)\n- Add description label (#82)\n- Remove Grafana 8.5 support (#83)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "variable-panel-1.4.0-20230708/",
     metadata: {
       permalink: "/blog/variable-panel-1.4.0-20230708/",
@@ -35,6 +80,10 @@ export const BlogPosts = [
         tags: ["Variables", "Release Notes"],
         image: "/img/blog/2023-07-08-variable-panel-1.4.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
+      },
+      prevItem: {
+        title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
+        permalink: "/blog/image-panel-4.0.0-20230709/",
       },
       nextItem: {
         title: "Volkov Labs App 2.5.0 supports Grafana 10",
