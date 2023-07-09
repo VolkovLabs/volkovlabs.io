@@ -9,13 +9,13 @@ import Video from "@theme/Video";
 
 # Variables
 
-The Dynamic Text panel provides helpers to support variables.
+The Dynamic Text panel provides helpers to support variables. Variables can be also used in the JavaScript code and CSS styles.
 
 Three types of variables are discussed in the [Grafana Crash Course](/grafana/variables).
 
 ## Helper `{{variable}}`
 
-Returns a string array of the currently selected values for a certain [variable](https://grafana.com/docs/grafana/latest/dashboards/variables/).
+Returns a string array of the currently selected values for a certain variable.
 
 ```handlebars
 {{variable "hostname"}}
@@ -57,3 +57,16 @@ book:
   {{this}}: {{lookup @root this}}
 {{/each}}
 ```
+
+## JavaScript code
+
+Use `replaceVariables` to replace dashboard variables in the JavaScript Code.
+
+```
+const bonjour = replaceVariables("${variable}");
+console.log(bonjour.toUpperCase())
+```
+
+## CSS styles
+
+Dashboard variables are replaced automatically in the CSS styles.
