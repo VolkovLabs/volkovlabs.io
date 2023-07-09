@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "variable-panel-1.4.0-20230708/",
+    metadata: {
+      permalink: "/blog/variable-panel-1.4.0-20230708/",
+      source: "@site/blog/2023-07-08-variable-panel-1.4.0/index.mdx",
+      title: "Variable Panel 1.4.0 available in Grafana Catalog",
+      description:
+        "We released the first community-signed version of Variable Panel 1.4.0. This feature release",
+      date: "2023-07-08T00:00:00.000Z",
+      formattedDate: "July 8, 2023",
+      tags: [
+        {
+          label: "Variables",
+          permalink: "/blog/tags/variables",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder, Volkov Labs",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "variable-panel-1.4.0-20230708/",
+        tags: ["Variables", "Release Notes"],
+        image: "/img/blog/2023-07-08-variable-panel-1.4.0/banner.png",
+        keywords: ["Variable", "Panel", "Status"],
+      },
+      nextItem: {
+        title: "Volkov Labs App 2.5.0 supports Grafana 10",
+        permalink: "/blog/volkovlabs-app-2.5.0-20230617/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released the first community-signed version of Variable Panel 1.4.0. This feature release\n\n- Added a Favorite icon to filter selected favorites.\n- Added Tree View groups to provide location, configuration, manufacturer, etc. selections in the same panel.\n- Added auto-scroll to the selected value when the panel loads.\n- Added an option to display the variable name in front of the value.\n- Updated Sticky scrollbar to support Grafana 9.\n- Increased Test coverage to 99%.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 7, 2023.\n:::\n\n## Favorites\n\nThe variable panel allows selecting values as favorites, which are stored in the Web browser\'s storage and are unique for each user.\n\nThe new favorite icon in the header allows you to filter all selected favorites for quick navigation and selection.\n\n<Image\n  title="Selected values are unique for each user and stored in the Web browser\'s storage."\n  src="/img/blog/2023-07-08-variable-panel-1.4.0/favorites.png"\n  lazy={false}\n/>\n\n## Tree View groups\n\nMultiple tree view groups allow selecting variables based on location, configuration, manufacturer, etc.\n\nEach group has its level configuration and is based on the data from the data frames. Levels from the data frame should have the same name as the variable.\n\nAn additional option to display the variable name in front of the value can be enabled to provide additional context for the users.\n\n<Image\n  title="Groups consist of levels with the same names as variables."\n  src="/img/blog/2023-07-08-variable-panel-1.4.0/groups.png"\n/>\n\n## Test Coverage\n\nFor developing our plugins we use continuous integration with 80+% test coverage to make sure that any changes won\'t break existing functionality. We talked about it in [our developing panel plugins series](https://www.youtube.com/watch?v=ga5Ik32vqIw).\n\n<Image\n  title="The variable panel has 99% test coverage."\n  src="/img/blog/2023-07-08-variable-panel-1.4.0/codecov.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Add Tutorial (#21)\n- Update adding new Level to last (#22)\n- Hide unselectable items (#24)\n- Use the main view scroll element to support Grafana 9 (#26)\n- Add a Favorite icon to filter selected favorites (#25)\n- Add Tree View groups. Requires to update Tree View configuration. (#20)\n- Add an option to display the variable name in front of the value (#30)\n- Increase tests coverage (#31)\n- Add auto scroll to the selected value (#32)\n- Community signed release (#37)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "volkovlabs-app-2.5.0-20230617/",
     metadata: {
       permalink: "/blog/volkovlabs-app-2.5.0-20230617/",
@@ -35,6 +80,10 @@ export const BlogPosts = [
         tags: ["Development", "Release Notes"],
         image: "/img/blog/2023-06-17-volkovlabs-app-2.5.0/banner.png",
         keywords: ["Volkov Labs App", "Development", "Grafana"],
+      },
+      prevItem: {
+        title: "Variable Panel 1.4.0 available in Grafana Catalog",
+        permalink: "/blog/variable-panel-1.4.0-20230708/",
       },
       nextItem: {
         title: "Calendar Panel 1.4.0 supports Grafana 10",
