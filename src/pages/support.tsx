@@ -26,8 +26,7 @@ const Header = (siteConfig) => {
             </p>
 
             <p className="hero__subtitle">
-              The Premium provides additional benefits such as GitHub
-              Discussions and support for Development plugins.
+              The Premium also includes support for Development plugins.
             </p>
             <div className="margin-vert--lg">
               <a
