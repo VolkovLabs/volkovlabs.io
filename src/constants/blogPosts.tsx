@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "variable-panel-1.5.0-20230711/",
+    metadata: {
+      permalink: "/blog/variable-panel-1.5.0-20230711/",
+      source: "@site/blog/2023-07-11-variable-panel-1.5.0/index.mdx",
+      title: "Variable Panel 1.5.0",
+      description:
+        "We released the new version of Variable Panel 1.5.0. This feature release",
+      date: "2023-07-11T00:00:00.000Z",
+      formattedDate: "July 11, 2023",
+      tags: [
+        {
+          label: "Variables",
+          permalink: "/blog/tags/variables",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder, Volkov Labs",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "variable-panel-1.5.0-20230711/",
+        tags: ["Variables", "Release Notes"],
+        image: "/img/blog/2023-07-11-variable-panel-1.5.0/banner.png",
+        keywords: ["Variable", "Panel", "Status"],
+      },
+      nextItem: {
+        title: "Dynamic Text Panel 4.0.0",
+        permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released the new version of Variable Panel 1.5.0. This feature release\n\n- Added sticky header.\n- Added auto-scroll for multi-group selection.\n- Added drag and drop for tree view groups.\n- Added expand and collapse all in the header.\n\n:::info Grafana Catalog\nThe plugin was submitted to the Grafana team for review.\n:::\n\nWe appreciate the feedback and interest in the Variable panel plugin. Provided functionality was requested by the community many times and we gladly contributed.\n\n## Demo\n\nInterested to try the panel? Take a look at [Grafana plugins registered in the Grafana Catalog](https://release.volkovlabs.io/d/O73WAt27z/plugin-info?orgId=1&var-slug=volkovlabs-variable-panel).\n\nOne of my favorite features in this release is the sticky header, which allows you to filter values and select favorites. Statuses indicate when the plugin was updated:\n\n- Green less than 365 days.\n- Yellow for more than 365 days.\n- Red for more than 730 days.\n\n<Image\n  title="Plugins dashboard helps us to learn about new plugins in the Grafana Catalog."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/demo.png"\n  lazy={false}\n/>\n\n## Single value table\n\nThe single value table was updated to support the `All` option and allows to select a single value by clicking on it.\n\n<Image\n  title="To select a single value, choose the value from the list."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/single.png"\n/>\n\n## Collapse and expand all\n\nWe added a new collapse and expand all button next to the variable title in the header. It\'s a must-have feature to expand and collapse all branches at the same time for 5+ levels.\n\n<Image\n  title="Expand and collapse all feature allows to quickly switch between branches."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/collapse.png"\n/>\n\n## Tree View groups\n\nA new feature allows to drag and drop configured Tree View groups to rearrange how they will be displayed on the panel.\n\n<Image\n  title="Groups and Levels support drag and drop functionality."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/groups.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update single select variable with All enabled (#41)\n- Add sticky header and auto scroll on multi-group selection (#38)\n- Add drag and drop for Groups (#42)\n- Add expand and collapse all in the header (#46)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "dynamictext-panel-4.0.0-20230709/",
     metadata: {
       permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
@@ -35,6 +80,10 @@ export const BlogPosts = [
         tags: ["Dynamic Text", "Release Notes"],
         image: "/img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png",
         keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
+      },
+      prevItem: {
+        title: "Variable Panel 1.5.0",
+        permalink: "/blog/variable-panel-1.5.0-20230711/",
       },
       nextItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
