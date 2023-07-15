@@ -8,6 +8,32 @@ image: /img/volkovlabs.png
 
 # Release Notes
 
+## 3.0.0 (2023-07-15)
+
+## Breaking changes
+
+- Requires Grafana 9 and Grafana 10.
+- Form Elements are kept in the local state and not saved in the dashboard by default.
+- Local states and elements refactoring may introduce breaking changes. Please test before using it in Production.
+
+### Features / Enhancements
+
+- Update Documentation for API Servers (#149)
+- Update to Grafana 10.0.0 (#165, #172, #184, #200)
+- Add Hidden option to String element (#171)
+- Add E2E Cypress testing (#180)
+- Increase Test Coverage and update Test library (#181, #183, #185)
+- Update Form Elements to delay save changes with auto-save (#186)
+- Migrate to Plugin Tools 1.5.2 (#187, #192)
+- Update to Node 18 (#188)
+- Update constants and E2E tests (#190)
+- Update Form elements to use local state (#191)
+- Add notifyWarning() function (#201)
+- Add drag and drop for elements editor (#202)
+- Remove Grafana 8.5 support (#203)
+- Add running initial request on initial updates (#205)
+- Add vertical layout orientation (#206)
+
 ## [2.8.0 (2023-03-16)](/blog/form-panel-2.8.0-20230316/)
 
 ### Features / Enhancements
