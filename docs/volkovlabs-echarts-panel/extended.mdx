@@ -1,0 +1,72 @@
+---
+tags:
+  - Apache ECharts
+  - Events
+image: /img/plugins/volkovlabs-echarts-panel/function.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Extended Result
+
+:::info Version
+
+The extended result object is supported by the Apache ECharts visualization panel starting from version 5.0.0.
+
+:::
+
+The extended result object allows to return configuration, options and unsubscribe functions.
+
+```json
+return {
+  version: 2,
+  config: { notMerge: true },
+  option: {
+    tooltip: {
+      formatter: '{a} <br/>{b} : {c}%'
+    },
+    series: [
+      {
+        name: 'Pressure',
+        type: 'gauge',
+        detail: {
+          formatter: '{value}'
+        },
+        data: [
+          {
+            value: 50,
+            name: 'SCORE'
+          }
+        ]
+      }
+    ]
+  },
+  unsubscribe: () => {
+    console.log('unsubscribeFunction')
+  }
+};
+```
+
+## Version
+
+The version is reserved for future improvements. The current and only supported version is 2.
+
+## Configuration
+
+| Option       | Description                              | Default |
+| ------------ | ---------------------------------------- | ------- |
+| `notMerge`   | Don't merge options.                     | `true`  |
+| `lazyUpdate` | Useful when updating options frequently. | `false` |
+| `silent`     | Whether trigger events.                  | `false` |
+
+## Option
+
+The option is the chart configuration in a JSON format described in [ECharts Function](../options).
+
+## Unsubscribe
+
+The unsubscribe section allows adding JavaScript code which will be executed before the object destroyed.
+
+One of the use cases are unsubscribe from [Grafana events using Event Bus](../eventbus).
