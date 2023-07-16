@@ -315,7 +315,7 @@ const community = {
       },
     },
   ],
-  label: "Community Plugins",
+  label: "Community",
   type: "category",
   description: "Our plugins are open-source and we update them constantly.",
   collapsible: false,

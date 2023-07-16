@@ -10,7 +10,7 @@ const footer = {
   style: "light",
   links: [
     {
-      title: "Community Plugins",
+      title: "Community",
       items: [
         {
           label: "Apache ECharts Panel",
