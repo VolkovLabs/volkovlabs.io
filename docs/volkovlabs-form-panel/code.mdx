@@ -3,6 +3,7 @@ tags:
   - Data Manipulation
   - Custom Forms
   - JavaScript Code
+image: /img/plugins/volkovlabs-form-panel/request.png
 ---
 
 import Image from "@theme/Image";
@@ -10,7 +11,9 @@ import Video from "@theme/Video";
 
 # Custom Code
 
-The custom code has access to the Panel options, the response from the REST API call, form elements, and various Grafana services. The Custom code is executed after the `Initial` and `Update` requests.
+The custom code has access to the Panel options, the response from the REST API call, form elements, and various Grafana services.
+
+The Custom code is executed after the `Initial` and `Update` requests.
 
 ## Parameters
 
@@ -23,6 +26,7 @@ The custom code has access to the Panel options, the response from the REST API 
 | `locationService`                          | Grafana's `locationService` to work with browser location and history.                                                 |
 | `notifyError(['Header', 'Error Message'])` | Display error notification.                                                                                            |
 | `notifySuccess(['Header', 'Message'])`     | Display successful notification.                                                                                       |
+| `notifyWarning(['Header', 'Message'])`     | Display warning notification.                                                                                          |
 | `onOptionsChange()`                        | Change handler to refresh panel.                                                                                       |
 | `options`                                  | Panels' options.                                                                                                       |
 | `response`                                 | Request's response.                                                                                                    |
@@ -56,7 +60,7 @@ if (response && response.ok) {
 } else {
   notifyError([
     "Error",
-    `An error occured updating values: ${response.status}`,
+    `An error occurred updating values: ${response.status}`,
   ]);
 }
 ```
@@ -85,7 +89,7 @@ if (response && response.ok) {
 }
 ```
 
-## Clear elements' values after Submit or on Reset button click
+## Clear elements' values after Submit or on the Reset button click
 
 ```javascript
 elements.map((element) => {
