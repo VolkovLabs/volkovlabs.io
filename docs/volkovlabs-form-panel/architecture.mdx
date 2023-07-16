@@ -9,7 +9,7 @@ import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Architecture
+# REST API
 
 The Data Manipulation panel can request (GET) and update (DELETE, PATCH, POST, PUT) data and configuration using REST API.
 
@@ -17,6 +17,24 @@ The Data Manipulation panel can request (GET) and update (DELETE, PATCH, POST, P
   title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
   src="/img/plugins/volkovlabs-form-panel/form-api.png"
 />
+
+## JSON Payload
+
+Elements defined in the panel options are used to parse the Initial and sent in the Update requests.
+
+<Image
+  title="Elements defined in the Data Manipulation panel."
+  src="/img/plugins/volkovlabs-form-panel/elements.png"
+  width="80%"
+/>
+
+The JSON response of the initial request consists of the element's ids and values. The response will be parsed and update the initial values of the form.
+
+```json
+{ "name": "Name", "amount": 30, "updated": false, "step": 4 }
+```
+
+After values are updated, all form elements will create a similar payload for the Update request.
 
 ## Tutorial
 
