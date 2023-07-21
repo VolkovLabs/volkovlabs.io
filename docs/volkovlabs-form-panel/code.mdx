@@ -92,13 +92,12 @@ if (response && response.ok) {
 ## Clear elements' values after Submit or on the Reset button click
 
 ```javascript
-elements.map((element) => {
-  if (element.id === "name") {
-    element.value = "";
-  }
+onOptionsChange({
+  ...options,
+  elements: options.elements.map((element) => {
+    return element.id === "name" ? { ...element, value: "test" } : element;
+  }),
 });
-
-onOptionsChange(options);
 ```
 
 The `onOptionsChange` handler is required to update the panel.
