@@ -12,27 +12,35 @@ import Video from "@theme/Video";
 
 # Pizzeria Observability on Grafana Canvas panel
 
-Grafana 10 was released in June 2023 and it's the best Grafana release yet. In the latest release, the canvas panel becomes generally available. It's mature enough to be used in the production environment. We saw the presentation of the house's energy with metrics and animated wind turbines and were excited to try it ourselves.
+Can you smell it? The aroma of the baked pizza? Do you feel it? The increasing heartbeat rate when you look at the countdown timer where only 30 seconds left? How about joy mixed with pride when watching the number of completed orders increase and your revenue of the day bloom? 
 
-We know that Grafana can be used for the Observability of K8s clusters, monitoring logs and traces. Is it possible to utilize Grafana for observing the operations of a pizzeria and do it in style?
+All that is possible now with Grafana 10 and the canvas panel, which becomes generally available in the latest Grafana 10 release. It saw the light of dawn in June 2023, and no doubt it could be called the best Grafana release yet. 
+
+The canvas panel is far from being complete but mature enough for a production environment. The breathtaking presentation featuring the house's energy with metrics and animated wind turbines gave many of us the itch to drop everything and try to build something with it.
+
+As proved many times, Grafana is a champion in the observability of K8s clusters, monitoring logs,and traces. 
+
+However, we at Volkov Labs find it delightful to explore other Grafana possibilities. Time after time, we uncovered it being effective in areas yet to be considered. This time our love for pizza and the news about the Canvas panel being released as part of the core begged us to challenge ourselves with the pizzeria observability dashboard. 
+
+The results are in and look pleasing. Keep reading to learn what we were able to come up with.
 
 ## Mockup
 
-We started by designing the layout of the panel in Figma. Canvas panel requires background to be a raster image, custom elements are based on vector SVG graphics. Figma can do both at the same time!
+We started by designing the layout of the panel in Figma. The canvas panel requires the background to be a raster image, and custom elements are based on vector SVG graphics. Figma can do both at the same time!
 
 We selected the most important metrics to track in the pizzeria observability journey:
 
 - Number of online and walk-in orders.
-- How many order was completed today.
+- How many orders were completed today.
 - Revenue based on the completed orders.
 - Waiting time for walk-in customers.
-- Monitor the status of the ovens and see the progress of pizza cooking.
+- Status of the ovens and progress of pizza baking.
 
 The pizza oven includes:
 
-- Timer to display how much time is left.
-- Lights, fire and knob lights to indicate that the oven is working.
-- Pizza opacity indicates how well the pizza is cooked.
+- Timer to display time left.
+- Smoke, lights, fire and knob lights to indicate that the oven is working.
+- Pizza opacity to immitate the baking process. The fully cooked pizza has 100%.
 
 <Image
   title="We used Figma to create an SVG mockup with observability metrics."
