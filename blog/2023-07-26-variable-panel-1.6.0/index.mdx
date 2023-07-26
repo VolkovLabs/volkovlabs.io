@@ -1,0 +1,106 @@
+---
+authors: [mikhail]
+slug: variable-panel-1.6.0-20230726/
+tags: [Variables, Release Notes]
+image: /img/blog/2023-07-26-variable-panel-1.6.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variable Panel 1.6.0
+
+We released a new version of the Variable Panel 1.6.0. This feature release
+
+- Added status sort button.
+- Added minimized mode similar to the native select for Query and Custom variables.
+- Added input for Text box variable.
+- Updated ESLint configuration.
+
+:::info Grafana Catalog
+The plugin was submitted to the Grafana team for review.
+:::
+
+## 1,000 downloads
+
+We hit the first milestone of 1,000 downloads and appreciate the feedback from the community.
+
+<Image
+  title="The variable panel was downloaded 1,000 times from the Grafana Catalog."
+  src="/img/blog/2023-07-26-variable-panel-1.6.0/downloads.png"
+  lazy={false}
+/>
+
+## Status sort button
+
+The status sort button allows filtering values in ascending and descending directions based on the status field from the data source. Status fields with variable and status values should be specified.
+
+<Image
+  title="Sort button allows to sort values by status field in both directions."
+  src="/img/blog/2023-07-26-variable-panel-1.6.0/sort.png"
+  width="60%"
+/>
+
+## Minimized mode
+
+The minimized mode is similar to the native select and works for Query and Custom variables. Select the minimize display mode and padding around the select element in the panel options.
+
+Depending on the variable options user allow to select a single or multi-value in the multi-lines select element.
+
+<Image
+  title="Multi-line select element allows to select and deselect multiple values."
+  src="/img/blog/2023-07-26-variable-panel-1.6.0/minimize.png"
+  width="60%"
+/>
+
+## Input text box
+
+We added a community-requested feature allowing input value for the Text box variables.
+
+The input text box is supported in the table and minimized display modes. If you select the table and enable the feature, the input can be sticky and follow used when scrolling the dashboard.
+
+<Image
+  title="New input feature for the Text box variables."
+  src="/img/blog/2023-07-26-variable-panel-1.6.0/input.png"
+  width="60%"
+/>
+
+## Getting Started
+
+The Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-variable-panel
+```
+
+## YouTube Tutorial
+
+The Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+
+The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+
+<Video
+  src="https://www.youtube.com/embed/mYYtMW9qiPA"
+  title="Demonstrates the Variable panel functionality."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update ESLint configuration (#47)
+- Add status sort button (#49, #51)
+- Add minimize mode similar to the native select for Query and Custom (#50)
+- Add input for text box variable (#53)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us:
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
