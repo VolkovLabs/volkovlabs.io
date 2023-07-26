@@ -27,6 +27,7 @@ The Custom code is executed after the `Initial` and `Update` requests.
 | `notifyError(['Header', 'Error Message'])` | Display error notification.                                                                                            |
 | `notifySuccess(['Header', 'Message'])`     | Display successful notification.                                                                                       |
 | `notifyWarning(['Header', 'Message'])`     | Display warning notification.                                                                                          |
+| `onChange()`                               | Update elements in local state. Added in v3.1.0.                                                                       |
 | `onOptionsChange()`                        | Change handler to refresh panel.                                                                                       |
 | `options`                                  | Panels' options.                                                                                                       |
 | `response`                                 | Request's response.                                                                                                    |
@@ -101,3 +102,13 @@ onOptionsChange({
 ```
 
 The `onOptionsChange` handler is required to update the panel.
+
+### Update local state in v3.1.0
+
+```
+onChange(elements.map((element) => {
+  return element.id === 'name' ? { ...element, value: 'test' } : element
+});
+```
+
+The `onChange` is required to update the values in the local state.
