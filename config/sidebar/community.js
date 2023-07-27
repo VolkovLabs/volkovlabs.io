@@ -296,6 +296,7 @@ const community = {
         {
           items: [
             "volkovlabs-variable-panel/favorites",
+            "volkovlabs-variable-panel/select",
             "volkovlabs-variable-panel/groups",
           ],
           label: "Features",
