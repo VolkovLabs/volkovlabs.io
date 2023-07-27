@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "variable-panel-1.6.0-20230726/",
+    metadata: {
+      permalink: "/blog/variable-panel-1.6.0-20230726/",
+      source: "@site/blog/2023-07-26-variable-panel-1.6.0/index.mdx",
+      title: "Variable Panel 1.6.0",
+      description:
+        "We released a new version of the Variable Panel 1.6.0. This feature release",
+      date: "2023-07-26T00:00:00.000Z",
+      formattedDate: "July 26, 2023",
+      tags: [
+        {
+          label: "Variables",
+          permalink: "/blog/tags/variables",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder, Volkov Labs",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "variable-panel-1.6.0-20230726/",
+        tags: ["Variables", "Release Notes"],
+        image: "/img/blog/2023-07-26-variable-panel-1.6.0/banner.png",
+        keywords: ["Variable", "Panel", "Status"],
+      },
+      nextItem: {
+        title: "Pizzeria observability on Grafana Canvas panel",
+        permalink: "/blog/pizzeria-canvas-20230723/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of the Variable Panel 1.6.0. This feature release\n\n- Added status sort button.\n- Added minimized mode similar to the native select for Query and Custom variables.\n- Added input for Text box variable.\n- Updated ESLint configuration.\n\n:::info Grafana Catalog\nThe plugin was submitted to the Grafana team for review.\n:::\n\n## 1,000 downloads\n\nWe hit the first milestone of 1,000 downloads and appreciate the feedback from the community.\n\n<Image\n  title="The variable panel was downloaded 1,000 times from the Grafana Catalog."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/downloads.png"\n  lazy={false}\n/>\n\n## Status sort button\n\nThe status sort button allows filtering values in ascending and descending directions based on the status field from the data source. Status fields with variable and status values should be specified.\n\n<Image\n  title="Sort button allows to sort values by status field in both directions."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/sort.png"\n  width="60%"\n/>\n\n## Minimized mode\n\nThe minimized mode is similar to the native select and works for Query and Custom variables. Select the minimize display mode and padding around the select element in the panel options.\n\nDepending on the variable options user allow to select a single or multi-value in the multi-lines select element.\n\n<Image\n  title="Multi-line select element allows to select and deselect multiple values."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/minimize.png"\n  width="60%"\n/>\n\n## Input text box\n\nWe added a community-requested feature allowing input value for the Text box variables.\n\nThe input text box is supported in the table and minimized display modes. If you select the table and enable the feature, the input can be sticky and follow used when scrolling the dashboard.\n\n<Image\n  title="New input feature for the Text box variables."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/input.png"\n  width="60%"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update ESLint configuration (#47)\n- Add status sort button (#49, #51)\n- Add minimize mode similar to the native select for Query and Custom (#50)\n- Add input for text box variable (#53)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "pizzeria-canvas-20230723/",
     metadata: {
       permalink: "/blog/pizzeria-canvas-20230723/",
@@ -31,6 +76,10 @@ export const BlogPosts = [
         tags: ["Analytics"],
         image: "/img/blog/2023-07-23-pizzeria-canvas/banner.png",
         keywords: ["Pizzeria", "Canvas", "Data", "Grafana"],
+      },
+      prevItem: {
+        title: "Variable Panel 1.6.0",
+        permalink: "/blog/variable-panel-1.6.0-20230726/",
       },
       nextItem: {
         title: "Data Manipulation Panel 3.0.0",
