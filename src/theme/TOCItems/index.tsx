@@ -52,7 +52,7 @@ const TOCItems = ({
         {...props}
       />
       <div className="questionsDiv">
-        <a href="https://www.youtube.com/@volkovlabs">
+        <a href="https://www.youtube.com/@volkovlabs" target='_blank'>
           <img src="/img/youtube.png" className="questions" />
         </a>
       </div>
