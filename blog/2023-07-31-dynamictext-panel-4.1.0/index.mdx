@@ -47,11 +47,19 @@ The new `statusColor` variable can be used to set the background or foreground c
   src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/status.png"
 />
 
-## Sophisticated solutions
+### Example
 
-The Dynamic Text panel allows creating of the most sophisticated solutions without building additional panels.
+```handlebars
+<div style="background-color: {{statusColor}}">
+  {{A-series}}
+</div>
+```
 
-Register a Handlebars helper `aggr_val` to aggregate values.
+## Sophisticated solution from the community
+
+The Dynamic Text panel allows the creation of the most sophisticated solutions without building additional panels.
+
+Register a Handlebars helper `aggr_val` to aggregate returned data source values.
 
 ```js
 handlebars.registerHelper(
@@ -156,7 +164,7 @@ sum:
 
 ## Code Coverage
 
-Our plugins are used in thousands of Grafana installations. To avoid any unexpected changes in the future we increased the test coverage of the Dynamic Text panel to 99% and refactored legacy components.
+Our plugins are used in thousands of Grafana installations. To avoid any unexpected changes we increased the test coverage of the Dynamic Text panel to 99% and refactored legacy components.
 
 <Image
   title="We aim for more than 90% test coverage for all our Grafana plugins."
