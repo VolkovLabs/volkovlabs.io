@@ -45,7 +45,7 @@ const DocItemLayout = ({ children }) => {
 
   return (
     <div className="row">
-      <div className={clsx("col", !docTOC.hidden && styles.docItemCol + 1)}>
+      <div className={clsx("col", !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
           <article>
@@ -58,7 +58,7 @@ const DocItemLayout = ({ children }) => {
           <DocItemPaginator />
         </div>
       </div>
-      {docTOC.desktop && <div className="col col--2">{docTOC.desktop}</div>}
+      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
     </div>
   );
 }

@@ -75,6 +75,12 @@ table {
   width: 100%;
 }
 
+.questionsDiv {
+  margin-top: 20px;
+  text-align: center;
+}
+
 .questions {
   border-radius: 5px;
+  max-width: 80%;
 }

@@ -51,10 +51,11 @@ const TOCItems = ({
         linkClassName={linkClassName}
         {...props}
       />
-      <br />
-      <a href="https://www.youtube.com/@volkovlabs">
-        <img src="/img/youtube.png" className="questions" />
-      </a>
+      <div className="questionsDiv">
+        <a href="https://www.youtube.com/@volkovlabs">
+          <img src="/img/youtube.png" className="questions" />
+        </a>
+      </div>
     </>
   );
 }
