@@ -24,14 +24,144 @@ The plugin was updated in Grafana Catalog on July 18, 2023.
 
 ## External JavaScript and CSS resources
 
-Grafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.
+The dynamic text panel allows the loading of additional JavaScript and CSS Resources using external URLs like CDN (Content Delivery Network). You can store CSS/JS files on your Grafana instance, in the public folder to prevent loading 3rd party URLs.
+
+:::note Sanitizing
+Sanitizing configuration should be disabled to see External Resources in the Panel Options.
+:::
 
 <Image
-  title="The variable panel was downloaded 1,000 times from the Grafana Catalog."
-  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/banner.png"
+  title="Loading Google Material CSS and JS files from external resource."
+  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/external.png"
   lazy={false}
 />
 
+External CSS/JS files can be used to add additional visual elements, and JavaScript functions to execute from the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+
+## Status field
+
+The new `statusColor` variable can be used to set the background or foreground colors of any HTML element based on the thresholds for the selected status field.
+
+<Image
+  title="Status field allows to dynamically set background or foreground color."
+  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/status.png"
+/>
+
+## Sophisticated solutions
+
+The Dynamic Text panel allows creating of the most sophisticated solutions without building additional panels.
+
+Register a Handlebars helper `aggr_val` to aggregate values.
+
+```js
+handlebars.registerHelper(
+  "aggr_val",
+  (
+    data = my_data,
+    key_value,
+    aggr,
+    key_to_filter1,
+    val_to_filter1,
+    key_to_filter2,
+    val_to_filter2
+  ) =>
+    ((numbers) => {
+      const result =
+        numbers.length === 0
+          ? 0
+          : aggr === "sum"
+          ? numbers.reduce((total, num) => total + num, 0)
+          : aggr === "avg"
+          ? numbers.reduce(
+              (total, num, _, { length }) => total + num / length,
+              0
+            )
+          : aggr === "min"
+          ? numbers.reduce((min, num) => (num < min ? num : min), numbers[0])
+          : aggr === "max"
+          ? numbers.reduce((max, num) => (num > max ? num : max), numbers[0])
+          : aggr === "first"
+          ? numbers[0]
+          : aggr === "last"
+          ? numbers[numbers.length - 1]
+          : (() => {
+              throw new Error(
+                "Invalid aggr. Supported aggr are: sum, avg, min, max, first, last"
+              );
+            })();
+      return Number.isInteger(result) ? result : result.toFixed(2);
+    })(
+      data
+        .filter(
+          (item) =>
+            item[key_to_filter1] === val_to_filter1 &&
+            item[key_to_filter2] === val_to_filter2
+        )
+        .map((item) => item[key_value])
+    )
+);
+
+handlebars.registerHelper(
+  "sel_val",
+  (
+    data = my_data,
+    key_value,
+    key_to_filter1,
+    val_to_filter1,
+    key_to_filter2,
+    val_to_filter2
+  ) => {
+    return data
+      .filter(
+        (item) =>
+          item[key_to_filter1] === val_to_filter1 &&
+          item[key_to_filter2] === val_to_filter2
+      )
+      .map((item) => item[key_value]);
+  }
+);
+```
+
+Display aggregated values using any rules, something that native Grafana transformation does not allow.
+
+```handlebars
+# ### sel_val data "value"
+{{sel_val data "value"}}
+- sum:
+{{aggr_val data "value" "sum"}}, avg:
+{{aggr_val data "value" "avg"}}, min:
+{{aggr_val data "value" "min"}}, max:
+{{aggr_val data "value" "max"}}, first:
+{{aggr_val data "value" "first"}}, last:
+{{aggr_val data "value" "last"}}, # ### sel_val data "value" "category" "A"
+{{sel_val data "value" "category" "A"}}
+- sum:
+{{aggr_val data "value" "sum" "category" "A"}}, avg:
+{{aggr_val data "value" "avg" "category" "A"}}, min:
+{{aggr_val data "value" "min" "category" "A"}}, max:
+{{aggr_val data "value" "max" "category" "A"}}, first:
+{{aggr_val data "value" "first" "category" "A"}}, last:
+{{aggr_val data "value" "last" "category" "A"}}, # ### sel_val data "value"
+"category" "A" "type" "T1"
+{{sel_val data "value" "category" "A" "type" "T1"}}
+
+sum:
+{{aggr_val data "value" "sum" "category" "A" "type" "T1"}}, avg:
+{{aggr_val data "value" "avg" "category" "A" "type" "T1"}}, min:
+{{aggr_val data "value" "min" "category" "A" "type" "T1"}}, max:
+{{aggr_val data "value" "max" "category" "A" "type" "T1"}}, first:
+{{aggr_val data "value" "first" "category" "A" "type" "T1"}}, last:
+{{aggr_val data "value" "last" "category" "A" "type" "T1"}},
+```
+
+## Code Coverage
+
+Our plugins are used in thousands of Grafana installations. To avoid any unexpected changes in the future we increased the test coverage of the Dynamic Text panel to 99% and refactored legacy components.
+
+<Image
+  title="We aim for more than 90% test coverage for all our Grafana plugins."
+  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/codecov.png"
+/>
 
 ## Getting Started
 

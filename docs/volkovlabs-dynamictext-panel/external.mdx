@@ -1,0 +1,36 @@
+---
+tags:
+  - Dynamic Text
+  - Events
+image: /img/plugins/volkovlabs-dynamictext-panel/external.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# External JS and CSS
+
+:::info Version
+
+The external resources are supported by the Dynamic Text panel starting from version 4.1.0.
+
+:::
+
+The dynamic text panel allows the loading of additional JavaScript and CSS Resources using external URLs like CDN (Content Delivery Network).
+
+You can store CSS/JS files on your Grafana instance, in the public folder to prevent loading 3rd party URLs.
+
+<Image
+  title="Loading Google Material CSS and JS files from external resource."
+  src="/img/plugins/volkovlabs-dynamictext-panel/external.png"
+  lazy={false}
+/>
+
+## Sanitizing
+
+Sanitizing configuration should be disabled to see External Resources in the Panel Options.
+
+## JavaScript Code
+
+External CSS/JS files can be used to add additional visual elements, JavaScript functions to execute from the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
