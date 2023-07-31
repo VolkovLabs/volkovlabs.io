@@ -74,3 +74,7 @@ table {
   display: table;
   width: 100%;
 }
+
+.questions {
+  border-radius: 5px;
+}

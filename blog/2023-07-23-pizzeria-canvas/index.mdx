@@ -4,6 +4,7 @@ slug: pizzeria-canvas-20230723/
 tags: [Analytics]
 image: /img/blog/2023-07-23-pizzeria-canvas/banner.png
 keywords: [Pizzeria, Canvas, Data, Grafana]
+updated: 2023-07-31
 ---
 
 import Code from "@theme/Code";
@@ -18,9 +19,14 @@ All that is possible now with Grafana 10 and the canvas panel, which becomes gen
 
 The canvas panel is far from being complete but mature enough for a production environment. The breathtaking presentation featuring the house's energy with metrics and animated wind turbines gave many of us the itch to drop everything and try to build something with it.
 
-As proved many times, Grafana is a champion in the observability of K8s clusters, monitoring logs,and traces.
+As proved many times, Grafana is a champion in the observability of K8s clusters, monitoring logs, and traces.
 
 However, we at Volkov Labs find it delightful to explore other Grafana possibilities. Time after time, we uncovered it being effective in areas yet to be considered. This time our love for pizza and the news about the Canvas panel being released as part of the core begged us to challenge ourselves with the pizzeria observability dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/ZIjUOr_HYFQ"
+  title="Canvas panel for Grafana | Advanced animated SVG element."
+/>
 
 The results are in and look pleasing. Keep reading to learn what we were able to come up with.
 
@@ -82,7 +88,7 @@ Created oven's layers consist of text, vector, and ellipse elements with added f
 
 ## Advanced canvas element
 
-The advanced canvas element consist of:
+The advanced canvas element consists of:
 
 - Definition with id, name, and description.
 - Options with default parameters for background, and placement.
@@ -244,7 +250,7 @@ insert into orders values(nextval('seq_orders'), now(), 'Ella', '132-461-782', '
 
 ## The canvas panel is awesome
 
-The canvas panel can be used for a variety of use cases, pizzeria included. We started working on a YouTube tutorial on how we configured the data source, prepared data, and configured the canvas panel. Subscribe to our [YouTube channel](https://www.youtube.com/@volkovlabs) not to miss it and add a comment to ask questions.
+The canvas panel can be used for a variety of use cases, pizzeria included.
 
 <Image
   title="Configured canvas panel with custom pizza oven elements based on the data source data."
