@@ -1,0 +1,79 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-4.1.0-20230731/
+tags: [Dynamic Text, Release Notes]
+image: /img/blog/2023-07-31-dynamictext-panel-4.1.0/banner.png
+keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Dynamic Text Panel 4.1.0
+
+We released a new version of Dynamic Text Panel 4.1.0. This feature release
+
+- Added external JavaScript and CSS resources.
+- Added status field to display color background.
+- Increased test coverage to 99%.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on July 18, 2023.
+:::
+
+## External JavaScript and CSS resources
+
+Grafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.
+
+<Image
+  title="The variable panel was downloaded 1,000 times from the Grafana Catalog."
+  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/banner.png"
+  lazy={false}
+/>
+
+
+## Getting Started
+
+The Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+A Dynamic Text visualization panel is a Grafana plugin that transforms monotone text/table data into vibrant, easy-to-read information cards. The panel supports variables, Markdown and Handlebars.
+
+The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML and Handlebars to transform data visualizations."
+/>
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in the Dynamic text panel."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update ESLint configuration (#192)
+- Increase Tests Coverage (#194)
+- Add status field (#196)
+- Add External JavaScript, CSS Resources (#197)
+- Update to Grafana 10.0.2 dependencies (#201)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
