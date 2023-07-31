@@ -1,0 +1,217 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-4.1.0-20230731/
+tags: [Dynamic Text, Release Notes]
+image: /img/blog/2023-07-31-dynamictext-panel-4.1.0/banner.png
+keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Dynamic Text Panel 4.1.0
+
+We released a new version of Dynamic Text Panel 4.1.0. This feature release
+
+- Added external JavaScript and CSS resources.
+- Added status field to display color background.
+- Increased test coverage to 99%.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on July 18, 2023.
+:::
+
+## External JavaScript and CSS resources
+
+The dynamic text panel allows the loading of additional JavaScript and CSS Resources using external URLs like CDN (Content Delivery Network). You can store CSS/JS files on your Grafana instance, in the public folder to prevent loading 3rd party URLs.
+
+:::note Sanitizing
+Sanitizing configuration should be disabled to see External Resources in the Panel Options.
+:::
+
+<Image
+  title="Loading Google Material CSS and JS files from external resource."
+  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/external.png"
+  lazy={false}
+/>
+
+External CSS/JS files can be used to include additional visual elements, and JavaScript functions to execute from the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+
+## Status field
+
+The new `statusColor` variable can be used to set the background or foreground colors of any HTML element based on the thresholds for the selected status field.
+
+<Image
+  title="Status field allows to dynamically set background or foreground color."
+  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/status.png"
+/>
+
+### Example
+
+```handlebars
+<div style="background-color: {{statusColor}}">
+  {{A-series}}
+</div>
+```
+
+## Sophisticated solution from the community
+
+The Dynamic Text panel allows the creation of the most sophisticated solutions without building additional panels.
+
+Register a Handlebars helper `aggr_val` to aggregate returned data source values.
+
+```js
+handlebars.registerHelper(
+  "aggr_val",
+  (
+    data = my_data,
+    key_value,
+    aggr,
+    key_to_filter1,
+    val_to_filter1,
+    key_to_filter2,
+    val_to_filter2
+  ) =>
+    ((numbers) => {
+      const result =
+        numbers.length === 0
+          ? 0
+          : aggr === "sum"
+          ? numbers.reduce((total, num) => total + num, 0)
+          : aggr === "avg"
+          ? numbers.reduce(
+              (total, num, _, { length }) => total + num / length,
+              0
+            )
+          : aggr === "min"
+          ? numbers.reduce((min, num) => (num < min ? num : min), numbers[0])
+          : aggr === "max"
+          ? numbers.reduce((max, num) => (num > max ? num : max), numbers[0])
+          : aggr === "first"
+          ? numbers[0]
+          : aggr === "last"
+          ? numbers[numbers.length - 1]
+          : (() => {
+              throw new Error(
+                "Invalid aggr. Supported aggr are: sum, avg, min, max, first, last"
+              );
+            })();
+      return Number.isInteger(result) ? result : result.toFixed(2);
+    })(
+      data
+        .filter(
+          (item) =>
+            item[key_to_filter1] === val_to_filter1 &&
+            item[key_to_filter2] === val_to_filter2
+        )
+        .map((item) => item[key_value])
+    )
+);
+
+handlebars.registerHelper(
+  "sel_val",
+  (
+    data = my_data,
+    key_value,
+    key_to_filter1,
+    val_to_filter1,
+    key_to_filter2,
+    val_to_filter2
+  ) => {
+    return data
+      .filter(
+        (item) =>
+          item[key_to_filter1] === val_to_filter1 &&
+          item[key_to_filter2] === val_to_filter2
+      )
+      .map((item) => item[key_value]);
+  }
+);
+```
+
+Display aggregated values using any rules, something that native Grafana transformation does not allow.
+
+```handlebars
+# ### sel_val data "value"
+{{sel_val data "value"}}
+- sum:
+{{aggr_val data "value" "sum"}}, avg:
+{{aggr_val data "value" "avg"}}, min:
+{{aggr_val data "value" "min"}}, max:
+{{aggr_val data "value" "max"}}, first:
+{{aggr_val data "value" "first"}}, last:
+{{aggr_val data "value" "last"}}, # ### sel_val data "value" "category" "A"
+{{sel_val data "value" "category" "A"}}
+- sum:
+{{aggr_val data "value" "sum" "category" "A"}}, avg:
+{{aggr_val data "value" "avg" "category" "A"}}, min:
+{{aggr_val data "value" "min" "category" "A"}}, max:
+{{aggr_val data "value" "max" "category" "A"}}, first:
+{{aggr_val data "value" "first" "category" "A"}}, last:
+{{aggr_val data "value" "last" "category" "A"}}, # ### sel_val data "value"
+"category" "A" "type" "T1"
+{{sel_val data "value" "category" "A" "type" "T1"}}
+
+sum:
+{{aggr_val data "value" "sum" "category" "A" "type" "T1"}}, avg:
+{{aggr_val data "value" "avg" "category" "A" "type" "T1"}}, min:
+{{aggr_val data "value" "min" "category" "A" "type" "T1"}}, max:
+{{aggr_val data "value" "max" "category" "A" "type" "T1"}}, first:
+{{aggr_val data "value" "first" "category" "A" "type" "T1"}}, last:
+{{aggr_val data "value" "last" "category" "A" "type" "T1"}},
+```
+
+## Code Coverage
+
+Our plugins are used in thousands of Grafana installations. To avoid any unexpected changes we increased the test coverage of the Dynamic Text panel to 99% and refactored legacy components.
+
+<Image
+  title="We aim for more than 90% test coverage for all our Grafana plugins."
+  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/codecov.png"
+/>
+
+## Getting Started
+
+The Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+A Dynamic Text visualization panel is a Grafana plugin that transforms monotone text/table data into vibrant, easy-to-read information cards. The panel supports variables, Markdown and Handlebars.
+
+The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML and Handlebars to transform data visualizations."
+/>
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in the Dynamic text panel."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update ESLint configuration (#192)
+- Increase Tests Coverage (#194)
+- Add status field (#196)
+- Add External JavaScript, CSS Resources (#197)
+- Update to Grafana 10.0.2 dependencies (#201)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
