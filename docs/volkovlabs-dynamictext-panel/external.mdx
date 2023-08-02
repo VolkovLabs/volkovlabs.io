@@ -34,3 +34,56 @@ Sanitizing configuration should be disabled to see External Resources in the Pan
 ## JavaScript Code
 
 External CSS/JS files can be used to include additional visual elements, and JavaScript functions to execute from the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+
+## Plotly 3D Mesh
+
+It's possible to visualize Plotly 3D Mesh by loading the external JS library `https://cdn.plot.ly/plotly-2.24.1.min.js` and adding a JavaScript Code.
+
+<Image
+  title="Loading Google Material CSS and JS files from external resource."
+  src="/img/plugins/volkovlabs-dynamictext-panel/external-plotly.png"
+  lazy={false}
+  width="60%"
+/>
+
+Grafana's Edit Mode may prevent displaying the Plotly chart in the Edit Mode. Save and check the result on the dashboard.
+
+### Content
+
+```html
+<body>
+  <div id="addisAbeba">
+    <!-- Plotly chart will be drawn inside this DIV -->
+  </div>
+</body>
+```
+
+### JavaScript Code
+
+```js
+$(() => {
+  const a = [];
+  const b = [];
+  const c = [];
+  for (i = 0; i < 50; i++) {
+    var a_ = Math.random();
+    a.push(a_);
+    var b_ = Math.random();
+    b.push(b_);
+    var c_ = Math.random();
+    c.push(c_);
+  }
+  // Plotting the mesh
+  var data = [
+    {
+      opacity: 0.8,
+      color: "rgb(300,100,200)",
+      type: "mesh3d",
+      x: a,
+      y: b,
+      z: c,
+    },
+  ];
+  Plotly.newPlot("addisAbeba", data);
+});
+```
