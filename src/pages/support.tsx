@@ -72,13 +72,13 @@ const Main = (siteConfig) => {
           <div className="col col--6">
             <Image src="/img/team/daria.png" zoom={false} lazy={true} />
             <h3>Daria</h3>
-            <p>Creative Director</p>
+            <p>Creative Director / COO</p>
           </div>
 
           <div className="col col--6">
             <Image src="/img/team/mikhail.png" zoom={false} lazy={true} />
             <h3>Mikhail</h3>
-            <p>Founder</p>
+            <p>Founder / CEO</p>
           </div>
         </div>
       </div>
