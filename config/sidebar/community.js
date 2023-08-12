@@ -110,6 +110,19 @@ const community = {
           label: "Introduction",
         },
         "volkovlabs-calendar-panel/events",
+        {
+          items: [
+            "volkovlabs-calendar-panel/big",
+            "volkovlabs-calendar-panel/legacy",
+            "volkovlabs-calendar-panel/color",
+          ],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-calendar-panel/features",
+          },
+        },
         "volkovlabs-calendar-panel/release",
       ],
       label: "Calendar Panel",
