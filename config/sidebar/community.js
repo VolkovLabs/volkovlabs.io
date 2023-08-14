@@ -112,6 +112,7 @@ const community = {
         "volkovlabs-calendar-panel/events",
         {
           items: [
+            "volkovlabs-calendar-panel/annotations",
             "volkovlabs-calendar-panel/big",
             "volkovlabs-calendar-panel/legacy",
             "volkovlabs-calendar-panel/color",
