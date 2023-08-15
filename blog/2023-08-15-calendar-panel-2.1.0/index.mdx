@@ -1,0 +1,130 @@
+---
+authors: [mikhail]
+slug: calendar-panel-2.1.0-20230815/
+tags: [Calendar, Release Notes]
+image: /img/blog/2023-08-15-calendar-panel-2.1.0/banner.png
+keywords: [Calendar, Panel, Events, Time Range, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Calendar Panel 2.1.0
+
+A new version of the Calendar panel 2.1.0 was released. This major release
+
+- Added the React Big Calendar with Monthly, Weekly and Daily views.
+- Added multi-language support for Big Calendar: Spanish, French, German and simplified Chinese.
+- Added Annotations filtering by type and maximum limit.
+- Requires Grafana 9.2+ and Grafana 10.
+- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on Aug 15, 2023.
+:::
+
+## Big Calendar
+
+The Big Calendar is a new implementation of the calendar panel based on the powerful React library.
+
+It introduces a multi-language toolbar that allows to:
+
+1. Switch between Month, Week and Day views.
+2. Get back to Today.
+3. Display events from the previous and next selected time range.
+
+<Image
+  title="Volkov Labs releases in July 2023 displayed with Calendar plugin."
+  src="/img/blog/2023-08-15-calendar-panel-2.1.0/big.png"
+/>
+
+## Legacy Calendar
+
+The Legacy Calendar is a native implementation of the calendar panel based on the custom components. Compare to the Big Calendar it does not provide a toolbar and has limited support of week and day views.
+
+The legacy Calendar allows you to display multi months of events by scrolling.
+
+<Image
+  title="Grafana plugins updated in July 2023 displayed with Legacy Calendar."
+  src="/img/blog/2023-08-15-calendar-panel-2.1.0/legacy.png"
+/>
+
+## Multi-language support
+
+The Big Calendar supports native Grafana languages (Spanish, French, German and simplified Chinese) in dates and toolbar.
+
+<Image
+  title="Grafana plugins updated in July 2023 displayed with Big Calendar."
+  src="/img/blog/2023-08-15-calendar-panel-2.1.0/spanish.png"
+/>
+
+## Annotations
+
+The Calendar panel allows to display and filter Grafana annotations.
+
+Filter allows to
+
+- Select types: Any, Alerts and manual Annotations only.
+- Set a maximum limit of returned annotations.
+
+<Image
+  title="Annotations options to select annotation type and set the limit."
+  src="/img/blog/2023-08-15-calendar-panel-2.1.0/annotations.png"
+/>
+
+## Getting Started
+
+The calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install marcusolsson-calendar-panel
+```
+
+## YouTube Tutorial
+
+The Calendar visualization panel is a Grafana plugin created to display events from data sources.
+
+<Video
+  src="https://www.youtube.com/embed/iPJ122x0oos"
+  title="Display events from JSON API data source."
+/>
+
+## Release Notes
+
+### Features / Enhancements in 2.1.0
+
+- Add Annotations type and limit (#121)
+- Update to Grafana 10.0.3 (#122)
+- Add Big Calendar Language Messages (#123)
+
+### Bugfixes in 2.0.1
+
+- Fix display annotations options (#119)
+
+### Breaking changes in 2.0.0
+
+- Requires Grafana 9.2 and Grafana 10
+
+### Features / Enhancements in 2.0.0
+
+- Increase tests coverage (#105)
+- Add Big Calendar component for rendering calendar (#106)
+- Update ESLint configuration (#106)
+- Remove Grafana 8.5 support (#110)
+- Update to Grafana 10.0 (#110)
+- Update events overlap when the start date equals the end date in Big Calendar (#112)
+- Add quick links for Big Calendar (#113)
+- Update back/next button for weekly and daily views in Big Calendar (#114)
+- Update button styles for Big Calendar (#115)
+- Update calendar resizing for Big Calendar (#116)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
