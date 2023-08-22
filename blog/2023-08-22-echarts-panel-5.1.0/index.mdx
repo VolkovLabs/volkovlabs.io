@@ -26,6 +26,11 @@ We released a new version of the Apache ECharts Panel 5.1.0 for Grafana. This ma
 The plugin was updated in Grafana Catalog on August 11, 2023.
 :::
 
+<Video
+  src="https://www.youtube.com/embed/bEBA5Q8PNCE"
+  title="Apache ECharts panel 5.1.0 for Grafana."
+/>
+
 ## Result v2 with unsubscribe function
 
 The extended result object allows to return configuration, options and unsubscribe functions to avoid memory leaks. Ideal for subscribing and publishing events to [Event Bus](/grafana/developer/eventbus/).
@@ -81,7 +86,7 @@ Apache ECharts version 5.0.0 fixed the re-render issue for live data.
 
 <Image
   title="Display gauge with the live data in real-time."
-  src="/img/plugins/volkovlabs-echarts-panel/gauge.png"
+  src="/img/blog/2023-08-22-echarts-panel-5.1.0/gauge.png"
 />
 
 Take a look at the [Streaming examples](/plugins/volkovlabs-echarts-panel/extended/) in the documentation for details.
@@ -114,6 +119,114 @@ We keep the plugin updated with the latest version of the Apache ECharts library
 - [Fix] [i18n] Fix the abbr of "March" for the DE language ("Mar" -> "Mrz"). #18387 (Stebeber)
 - [Fix] [type] Fix wrong type for data item value of the parallel series. #18425 (ManishDait)
 - [Fix] [type] Allow passing null to the parameters of init function. #18575 (zhuscat)
+
+## Wind Speed
+
+A graph showing both wind speed & direction by community member [tkurki](https://gist.github.com/tkurki):
+
+<Image
+  title="Showing both wind speed & direction on the same chart using Apache ECharts."
+  src="/img/blog/2023-08-22-echarts-panel-5.1.0/0wind.png"
+/>
+
+```js
+const ecData = [];
+
+if (data.series.length === 0) {
+  return {};
+}
+
+const time = data.series[0].fields[0].values;
+const direction = data.series[0].fields[1].values;
+const speed = data.series[1].fields[1].values;
+
+for (let i = 0; i < data.series[0].length; i++) {
+  ecData.push({
+    value: [time.get(i), Number(speed.get(i)).toFixed(2)],
+    symbolRotate: (direction.get(i) / Math.PI) * 180 - 90,
+  });
+}
+
+const series = {
+  name: data.series[0].refId,
+  type: "line",
+  showSymbol: true,
+  symbol:
+    "path://m13.022 14.999v3.251c0 .412.335.75.752.75.188 0 .375-.071.518-.206 1.775-1.685 4.945-4.692 6.396-6.069.2-.189.312-.452.312-.725 0-.274-.112-.536-.312-.725-1.451-1.377-4.621-4.385-6.396-6.068-.143-.136-.33-.207-.518-.207-.417 0-.752.337-.752.75v3.251h-9.02c-.531 0-1.002.47-1.002 1v3.998c0 .53.471 1 1.002 1z",
+  symbolSize: 15,
+  areaStyle: {
+    opacity: 0.1,
+  },
+  lineStyle: {
+    width: 1,
+  },
+  data: ecData,
+};
+
+/**
+ * Enable Data Zoom by default
+ */
+setTimeout(
+  () =>
+    echartsInstance.dispatchAction({
+      type: "takeGlobalCursor",
+      key: "dataZoomSelect",
+      dataZoomSelectActive: true,
+    }),
+  500
+);
+
+/**
+ * Update Time Range on Zoom
+ */
+echartsInstance.on("datazoom", function (params) {
+  const startValue = params.batch[0]?.startValue;
+  const endValue = params.batch[0]?.endValue;
+  locationService.partial({ from: startValue, to: endValue });
+});
+
+return {
+  backgroundColor: "transparent",
+  tooltip: {
+    trigger: "axis",
+  },
+  legend: {
+    left: "0",
+    bottom: "0",
+    data: ["Wind Speed & Angle"],
+    textStyle: {
+      color: "rgba(128, 128, 128, .9)",
+    },
+  },
+  toolbox: {
+    feature: {
+      dataZoom: {
+        yAxisIndex: "none",
+        icon: {
+          zoom: "path://",
+          back: "path://",
+        },
+      },
+      saveAsImage: {},
+    },
+  },
+  xAxis: {
+    type: "time",
+  },
+  yAxis: {
+    type: "value",
+    min: "dataMin",
+  },
+  grid: {
+    left: "2%",
+    right: "2%",
+    top: "2%",
+    bottom: 24,
+    containLabel: true,
+  },
+  series,
+};
+```
 
 ## Getting Started
 
