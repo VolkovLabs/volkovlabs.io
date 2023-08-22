@@ -1,5 +1,56 @@
 export const BlogPosts = [
   {
+    id: "echarts-panel-5.1.0-20230822/",
+    metadata: {
+      permalink: "/blog/echarts-panel-5.1.0-20230822/",
+      source: "@site/blog/2023-08-22-echarts-panel-5.1.0/index.mdx",
+      title: "Apache ECharts Panel 5.1.0",
+      description:
+        "We released a new version of the Apache ECharts Panel 5.1.0 for Grafana. This major release",
+      date: "2023-08-22T00:00:00.000Z",
+      formattedDate: "August 22, 2023",
+      tags: [
+        {
+          label: "Apache ECharts",
+          permalink: "/blog/tags/apache-e-charts",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder at Volkov Labs, Grafana Champion",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "echarts-panel-5.1.0-20230822/",
+        tags: ["Apache ECharts", "Release Notes"],
+        image: "/img/blog/2023-08-22-echarts-panel-5.1.0/banner.png",
+        keywords: [
+          "Apache ECharts",
+          "Panel",
+          "Chart",
+          "Visualization",
+          "Grafana",
+        ],
+      },
+      nextItem: {
+        title: "Calendar Panel 2.1.0",
+        permalink: "/blog/calendar-panel-2.1.0-20230815/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of the Apache ECharts Panel 5.1.0 for Grafana. This major release\n\n- Added Result v2 with unsubscribe function.\n- Added Wordcloud Extension to visualize tag cloud presentation.\n- Updated Streaming functionality to redraw charts without clearing.\n- Fixed Memory Leak on resubscribing to restore event.\n- Updated to Apache ECharts 5.4.3.\n- Requires Grafana 9.0+ and Grafana 10.\n- Updated to Grafana 10.0.3 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on August 11, 2023.\n:::\n\n<Video\n  src="https://www.youtube.com/embed/bEBA5Q8PNCE"\n  title="Calendar panel 2.1.0 for Grafana."\n/>\n\n## Result v2 with unsubscribe function\n\nThe extended result object allows to return configuration, options and unsubscribe functions to avoid memory leaks. Ideal for subscribing and publishing events to [Event Bus](/grafana/developer/eventbus/).\n\n```json\nreturn {\n  version: 2,\n  config: { notMerge: true },\n  option: {\n    tooltip: {\n      formatter: \'{a} <br/>{b} : {c}%\'\n    },\n    series: [\n      {\n        name: \'Pressure\',\n        type: \'gauge\',\n        detail: {\n          formatter: \'{value}\'\n        },\n        data: [\n          {\n            value: 50,\n            name: \'SCORE\'\n          }\n        ]\n      }\n    ]\n  },\n  unsubscribe: () => {\n    console.log(\'unsubscribeFunction\')\n  }\n};\n```\n\nTake a look at the [Extended Result](/plugins/volkovlabs-echarts-panel/extended/) in the documentation for details.\n\n## Wordcloud Extension\n\nWordcloud extension allows the creation of a tag cloud presentation on 2D canvas.\n\n<Image\n  title="A tag cloud/Wordle presentation on 2D canvas using Apache ECharts panel."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/wordcloud.png"\n/>\n\nCheck out the documentation for the [Wordcloud Extension](https://github.com/ecomfe/echarts-wordcloud).\n\n## Streaming\n\nStreaming allows real-time data updates using streaming Data Sources and Grafana Live. Streaming is supported by the Apache ECharts visualization panel starting from version 4.1.0.\n\nApache ECharts version 5.0.0 fixed the re-render issue for live data.\n\n<Image\n  title="Display gauge with the live data in real-time."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/gauge.png"\n/>\n\nTake a look at the [Streaming examples](/plugins/volkovlabs-echarts-panel/extended/) in the documentation for details.\n\n## Memory Leak\n\nWe fixed the memory leak on resubscribing to restore the event. Thank you to community member [sergiomonteroselma](https://github.com/sergiomonteroselma) for reporting it and helping us to troubleshoot.\n\nWe recommend updating the Apache ECharts panel to the latest version 5.1.0 to avoid Out Of Memory error after constantly refreshing dashboard for a longer period of time.\n\n## Apache ECharts 5.4.3\n\nWe keep the plugin updated with the latest version of the Apache ECharts library and recently updated to 5.4.3:\n\n- [Feature] [axisPointer] Add triggerEmphasis option to disable emphasis. #18524 (juliepagano)\n- [Feature] [sankey] Support trajectory for emphasis state. #17451 (ElayGelbart)\n- [Fix] [sankey] Fix sankey line color \'target\'/\'source\'/\'gradient\' doesn\'t work in non-normal state. #18834 (linghaoSu)\n- [Fix] [sankey] Fix value is undefined in label/edgeLabel formatter. #18733 (plainheart)\n- [Fix] [sunburst] Fix sunburst label may rotate when labelLayout.hideOverlap is enabled. #18808 (linghaoSu)\n- [Fix] [graph] Fix graph chart can\'t be hidden by legend due to edgeLabel NPE. #18624 (plainheart)\n- [Fix] [state] Fix focus self doesn\'t work when item emphasis by other component. #18511 (linghaoSu)\n- [Fix] [axis] Fix last tick doesn\'t show for single data. #18469 (Ovilia)\n- [Fix] [pie] Fix incorrect response area of pie piece when selectedOffset is enabled and animation is disabled. #1011 (plainheart)\n- [Fix] [custom] Fix user-defined info property was not available in the event handler. #18400 (sobolewsk)\n- [Fix] [legend] Inherit legend rich text color from legend\'s options. #18260 (ChepteaCatalin)\n- [Fix] [label] Fix ellipsis was not working. #18525 (Ovilia)\n- [Fix] [label] Fix endLabel fails with null data. #18841 (Ovilia)\n- [Fix] [util] Fix {yy} pattern has no zero padding in time format util. #18535 (linghaoSu)\n- [Fix] [api] Only deprecate disConnect but not disconnect. #18758 (Justineo)\n- [Fix] [i18n] Fix the abbr of "March" for the DE language ("Mar" -> "Mrz"). #18387 (Stebeber)\n- [Fix] [type] Fix wrong type for data item value of the parallel series. #18425 (ManishDait)\n- [Fix] [type] Allow passing null to the parameters of init function. #18575 (zhuscat)\n\n## Wind Speed\n\nA graph showing both wind speed & direction by community member [tkurki](https://gist.github.com/tkurki):\n\n<Image\n  title="Showing both wind speed & direction on the same chart using Apache ECharts."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/0wind.png"\n/>\n\n```js\nconst ecData = [];\n\nif (data.series.length === 0) {\n  return {};\n}\n\nconst time = data.series[0].fields[0].values;\nconst direction = data.series[0].fields[1].values;\nconst speed = data.series[1].fields[1].values;\n\nfor (let i = 0; i < data.series[0].length; i++) {\n  ecData.push({\n    value: [time.get(i), Number(speed.get(i)).toFixed(2)],\n    symbolRotate: (direction.get(i) / Math.PI) * 180 - 90,\n  });\n}\n\nconst series = {\n  name: data.series[0].refId,\n  type: "line",\n  showSymbol: true,\n  symbol:\n    "path://m13.022 14.999v3.251c0 .412.335.75.752.75.188 0 .375-.071.518-.206 1.775-1.685 4.945-4.692 6.396-6.069.2-.189.312-.452.312-.725 0-.274-.112-.536-.312-.725-1.451-1.377-4.621-4.385-6.396-6.068-.143-.136-.33-.207-.518-.207-.417 0-.752.337-.752.75v3.251h-9.02c-.531 0-1.002.47-1.002 1v3.998c0 .53.471 1 1.002 1z",\n  symbolSize: 15,\n  areaStyle: {\n    opacity: 0.1,\n  },\n  lineStyle: {\n    width: 1,\n  },\n  data: ecData,\n};\n\n/**\n * Enable Data Zoom by default\n */\nsetTimeout(\n  () =>\n    echartsInstance.dispatchAction({\n      type: "takeGlobalCursor",\n      key: "dataZoomSelect",\n      dataZoomSelectActive: true,\n    }),\n  500\n);\n\n/**\n * Update Time Range on Zoom\n */\nechartsInstance.on("datazoom", function (params) {\n  const startValue = params.batch[0]?.startValue;\n  const endValue = params.batch[0]?.endValue;\n  locationService.partial({ from: startValue, to: endValue });\n});\n\nreturn {\n  backgroundColor: "transparent",\n  tooltip: {\n    trigger: "axis",\n  },\n  legend: {\n    left: "0",\n    bottom: "0",\n    data: ["Wind Speed & Angle"],\n    textStyle: {\n      color: "rgba(128, 128, 128, .9)",\n    },\n  },\n  toolbox: {\n    feature: {\n      dataZoom: {\n        yAxisIndex: "none",\n        icon: {\n          zoom: "path://",\n          back: "path://",\n        },\n      },\n      saveAsImage: {},\n    },\n  },\n  xAxis: {\n    type: "time",\n  },\n  yAxis: {\n    type: "value",\n    min: "dataMin",\n  },\n  grid: {\n    left: "2%",\n    right: "2%",\n    top: "2%",\n    bottom: 24,\n    containLabel: true,\n  },\n  series,\n};\n```\n\n## Getting Started\n\nApache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-echarts-panel\n```\n\n## YouTube Tutorial\n\nThe Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.\n\n<Video\n  src="https://www.youtube.com/embed/DxqCrBEmrQw"\n  title="How to create modern dashboards in Grafana."\n/>\n\n## Release Notes\n\n### Features / Enhancements in 5.1.0\n\n- Update to Grafana 10.0.3 (#206)\n\n### Bugfixes in 5.1.0\n\n- Fix Memory Leak on resubscribing to restore event (#208)\n\n### Breaking changes in 5.0.0\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements in 5.0.0\n\n- Update Documentation (#182)\n- Update Examples to Grafana 10 (#190)\n- Add Result v2 with unsubscribe function (#188)\n- Update Streaming to redraw charts (#188)\n- Update to Grafana 10.0.0 (#191)\n- Update README and panel options (#192)\n- Remove Grafana 8.5 support (#193)\n- Update to Grafana 10.0.2 dependencies (#195)\n- Update ESLint configuration (#196)\n- Add Wordcloud Extension (#198)\n- Update to Apache ECharts 5.4.3 (#199)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
     id: "calendar-panel-2.1.0-20230815/",
     metadata: {
       permalink: "/blog/calendar-panel-2.1.0-20230815/",
@@ -23,7 +74,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -36,13 +87,17 @@ export const BlogPosts = [
         image: "/img/blog/2023-08-15-calendar-panel-2.1.0/banner.png",
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
       },
+      prevItem: {
+        title: "Apache ECharts Panel 5.1.0",
+        permalink: "/blog/echarts-panel-5.1.0-20230822/",
+      },
       nextItem: {
         title: "Dynamic Text Panel 4.1.0",
         permalink: "/blog/dynamictext-panel-4.1.0-20230731/",
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nA new version of the Calendar panel 2.1.0 was released. This major release\n\n- Added the React Big Calendar with Monthly, Weekly and Daily views.\n- Added multi-language support for Big Calendar: Spanish, French, German and simplified Chinese.\n- Added Annotations filtering by type and maximum limit.\n- Requires Grafana 9.2+ and Grafana 10.\n- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on Aug 15, 2023.\n:::\n\n## Big Calendar\n\nThe Big Calendar is a new implementation of the calendar panel based on the powerful React library.\n\nIt introduces a multi-language toolbar that allows to:\n\n1. Switch between Month, Week and Day layouts.\n2. Get back to Today.\n3. Display events from the previous and next selected time range.\n\n<Image\n  title="Volkov Labs releases in July 2023 displayed with Calendar plugin."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/big.png"\n/>\n\n## Legacy Calendar\n\nThe Legacy Calendar is a native implementation of the calendar panel based on the custom components. Compare to the Big Calendar it does not provide a toolbar and has limited support of week and day layouts.\n\nThe legacy Calendar allows you to display multi months of events by scrolling.\n\n<Image\n  title="Grafana plugins updated in July 2023 displayed with Legacy Calendar."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/legacy.png"\n/>\n\n## Multi-language support\n\nThe Big Calendar supports native Grafana languages (Spanish, French, German and simplified Chinese) in dates and toolbar.\n\n<Image\n  title="Grafana plugins updated in July 2023 displayed with Big Calendar."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/spanish.png"\n/>\n\n## Annotations\n\nThe Calendar panel allows to display and filter Grafana annotations.\n\nFilter allows to\n\n- Select types: Any, Alerts and manual Annotations only.\n- Set a maximum limit of returned annotations.\n\n<Image\n  title="Annotations options to select annotation type and set the limit."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/annotations.png"\n/>\n\n## Getting Started\n\nThe calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-calendar-panel\n```\n\n## YouTube Tutorial\n\nThe Calendar visualization panel is a Grafana plugin created to display events from data sources.\n\n<Video\n  src="https://www.youtube.com/embed/iPJ122x0oos"\n  title="Display events from JSON API data source."\n/>\n\n## Release Notes\n\n### Features / Enhancements in 2.1.0\n\n- Add Annotations type and limit (#121)\n- Update to Grafana 10.0.3 (#122)\n- Add Big Calendar Language Messages (#123)\n\n### Bugfixes in 2.0.1\n\n- Fix display annotations options (#119)\n\n### Breaking changes in 2.0.0\n\n- Requires Grafana 9.2 and Grafana 10\n\n### Features / Enhancements in 2.0.0\n\n- Increase tests coverage (#105)\n- Add Big Calendar component for rendering calendar (#106)\n- Update ESLint configuration (#106)\n- Remove Grafana 8.5 support (#110)\n- Update to Grafana 10.0 (#110)\n- Update events overlap when the start date equals the end date in Big Calendar (#112)\n- Add quick links for Big Calendar (#113)\n- Update back/next button for weekly and daily views in Big Calendar (#114)\n- Update button styles for Big Calendar (#115)\n- Update calendar resizing for Big Calendar (#116)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nA new version of the Calendar panel 2.1.0 was released. This major release\n\n- Added the React Big Calendar with Monthly, Weekly and Daily layouts.\n- Added multi-language support for Big Calendar: Spanish, French, German and simplified Chinese.\n- Added Annotations filtering by type and maximum limit.\n- Requires Grafana 9.2+ and Grafana 10.\n- Updated to Grafana 10.0.3 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on Aug 15, 2023.\n:::\n\n<Video\n  src="https://www.youtube.com/embed/DV3HLdHMz5Y"\n  title="Calendar panel 2.1.0 for Grafana."\n/>\n\n## Big Calendar\n\nThe Big Calendar is a new implementation of the calendar panel based on the powerful React library.\n\nIt introduces a multi-language toolbar that allows to:\n\n1. Switch between Month, Week and Day layouts.\n2. Get back to Today.\n3. Display events from the previous and next selected time range.\n\n<Image\n  title="Volkov Labs releases in July 2023 displayed with Calendar plugin."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/big.png"\n/>\n\n## Legacy Calendar\n\nThe Legacy Calendar is a native implementation of the calendar panel based on the custom components. Compare to the Big Calendar it does not provide a toolbar and has limited support of week and day layouts.\n\nThe legacy Calendar allows you to display multi months of events by scrolling.\n\n<Image\n  title="Grafana plugins updated in July 2023 displayed with Legacy Calendar."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/legacy.png"\n/>\n\n## Multi-language support\n\nThe Legacy and Big calendars support native Grafana languages (Spanish, French, German and simplified Chinese) in dates. The big calendar provides a multi-language toolbar.\n\n<Image\n  title="Grafana plugins updated in July 2023 displayed with Big Calendar."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/spanish.png"\n/>\n\n## Annotations\n\nThe Calendar panel allows to display and filter Grafana annotations.\n\nFilter allows to\n\n- Select types: Any, Alerts and manual Annotations only.\n- Set a maximum limit of returned annotations.\n\n<Image\n  title="Annotations options to select annotation type and set the limit."\n  src="/img/blog/2023-08-15-calendar-panel-2.1.0/annotations.png"\n/>\n\n## Getting Started\n\nThe calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-calendar-panel\n```\n\n## YouTube Tutorial\n\nThe Calendar visualization panel is a Grafana plugin created to display events from data sources.\n\n<Video\n  src="https://www.youtube.com/embed/iPJ122x0oos"\n  title="Display events from JSON API data source."\n/>\n\n## Release Notes\n\n### Features / Enhancements in 2.1.0\n\n- Add Annotations type and limit (#121)\n- Update to Grafana 10.0.3 (#122)\n- Add Big Calendar Language Messages (#123)\n\n### Bugfixes in 2.0.1\n\n- Fix display annotations options (#119)\n\n### Breaking changes in 2.0.0\n\n- Requires Grafana 9.2 and Grafana 10\n\n### Features / Enhancements in 2.0.0\n\n- Increase tests coverage (#105)\n- Add Big Calendar component for rendering calendar (#106)\n- Update ESLint configuration (#106)\n- Remove Grafana 8.5 support (#110)\n- Update to Grafana 10.0 (#110)\n- Update events overlap when the start date equals the end date in Big Calendar (#112)\n- Add quick links for Big Calendar (#113)\n- Update back/next button for weekly and daily views in Big Calendar (#114)\n- Update button styles for Big Calendar (#115)\n- Update calendar resizing for Big Calendar (#116)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
   },
   {
     id: "dynamictext-panel-4.1.0-20230731/",
@@ -68,7 +123,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -117,7 +172,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -129,6 +184,7 @@ export const BlogPosts = [
         tags: ["Variables", "Release Notes"],
         image: "/img/blog/2023-07-26-variable-panel-1.6.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
+        updated: "2023-08-21T00:00:00.000Z",
       },
       prevItem: {
         title: "Dynamic Text Panel 4.1.0",
@@ -140,7 +196,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of the Variable Panel 1.6.0. This feature release\n\n- Added status sort button.\n- Added minimized mode similar to the native select for Query and Custom variables.\n- Added input for Text box variable.\n- Updated ESLint configuration.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 27, 2023.\n:::\n\n## 1,000 downloads\n\nWe hit the first milestone of 1,000 downloads and appreciate the feedback from the community.\n\n<Image\n  title="The variable panel was downloaded 1,000 times from the Grafana Catalog."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/downloads.png"\n  lazy={false}\n/>\n\n## Status sort button\n\nThe status sort button allows filtering values in ascending and descending directions based on the status field from the data source. Status fields with variable and status values should be specified.\n\n<Image\n  title="Sort button allows to sort values by status field in both directions."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/sort.png"\n  width="60%"\n/>\n\n## Minimized mode\n\nThe minimized mode is similar to the native select and works for Query and Custom variables.\n\nDepending on the variable options user allow to select a single or multi-value in the multi-lines element.\n\n<Image\n  title="Multi-line select element allows to select and deselect multiple values."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/minimize.png"\n  width="60%"\n/>\n\nThe variable panel allows updating dashboard variables without occupying valuable top space and placing it anywhere on the dashboard.\n\n<Image\n  title="The Variable panel is an excellent alternative to the native implementation."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/select.gif"\n/>\n\n## Input text box\n\nWe added a community-requested feature allowing input value for the Text box variables.\n\nThe input text box is supported in the table and minimized display modes. If you select the table and enable the feature, the input can be sticky and follow used when scrolling the dashboard.\n\n<Image\n  title="New input feature for the Text box variables."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/input.png"\n  width="60%"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update ESLint configuration (#47)\n- Add status sort button (#49, #51)\n- Add minimize mode similar to the native select for Query and Custom (#50)\n- Add input for text box variable (#53)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of the Variable Panel 1.6.0. This feature release\n\n- Added status sort button.\n- Added minimized mode similar to the native select for Query and Custom variables.\n- Added input for Text box variable.\n- Updated ESLint configuration.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 27, 2023.\n:::\n\n<Video\n  src="https://www.youtube.com/embed/zD3QLYmnqsI"\n  title="Variable panel 1.6.0 for Grafana."\n/>\n\n## 2,500 downloads\n\nWe hit the milestone of 2,500 downloads and appreciate the feedback from the community.\n\n<Image\n  title="The variable panel was downloaded 1,000 times from the Grafana Catalog."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/downloads.png"\n  lazy={false}\n/>\n\n## Status sort button\n\nThe status sort button allows filtering values in ascending and descending directions based on the status field from the data source. Status fields with variable and status values should be specified.\n\n<Image\n  title="Sort button allows to sort values by status field in both directions."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/sort.png"\n  width="60%"\n/>\n\n## Minimized mode\n\nThe minimized mode is similar to the native select and works for Query and Custom variables.\n\nDepending on the variable options user allow to select a single or multi-value in the multi-lines element.\n\n<Image\n  title="Multi-line select element allows to select and deselect multiple values."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/minimize.png"\n  width="60%"\n/>\n\nThe variable panel allows updating dashboard variables without occupying valuable top space and placing it anywhere on the dashboard.\n\n<Image\n  title="The Variable panel is an excellent alternative to the native implementation."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/select.gif"\n/>\n\n## Input text box\n\nWe added a community-requested feature allowing input value for the Text box variables.\n\nThe input text box is supported in the table and minimized display modes. If you select the table and enable the feature, the input can be sticky and follow used when scrolling the dashboard.\n\n<Image\n  title="New input feature for the Text box variables."\n  src="/img/blog/2023-07-26-variable-panel-1.6.0/input.png"\n  width="60%"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update ESLint configuration (#47)\n- Add status sort button (#49, #51)\n- Add minimize mode similar to the native select for Query and Custom (#50)\n- Add input for text box variable (#53)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
   },
   {
     id: "pizzeria-canvas-20230723/",
@@ -162,7 +218,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -212,7 +268,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -262,7 +318,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -280,61 +336,12 @@ export const BlogPosts = [
         permalink: "/blog/form-panel-3.0.0-20230715/",
       },
       nextItem: {
-        title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
-        permalink: "/blog/image-panel-4.0.0-20230709/",
-      },
-    },
-    content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released the new version of Variable Panel 1.5.0. This feature release\n\n- Added sticky header.\n- Added auto-scroll for multi-group selection.\n- Added drag and drop for tree view groups.\n- Added expand and collapse all in the header.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 12, 2023.\n:::\n\n<Video\n  src="https://www.youtube.com/embed/YJXXMUgXDys"\n  title="Variable panel 1.5.0 for Grafana."\n/>\n\nWe appreciate the feedback and interest in the Variable panel plugin. Provided functionality was requested by the community many times and we gladly contributed.\n\n## Demo\n\nInterested to try the panel? Take a look at [Grafana plugins registered in the Grafana Catalog](https://release.volkovlabs.io/d/O73WAt27z/plugin-info?orgId=1&var-slug=volkovlabs-variable-panel).\n\nOne of my favorite features in this release is the sticky header, which allows you to filter values and select favorites. Statuses indicate when the plugin was updated:\n\n- Green less than 365 days.\n- Yellow for more than 365 days.\n- Red for more than 730 days.\n\n<Image\n  title="Plugins dashboard helps us to learn about new plugins in the Grafana Catalog."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/demo.png"\n  lazy={false}\n/>\n\n## Single value table\n\nThe single value table was updated to support the `All` option and allows to select a single value by clicking on it.\n\n<Image\n  title="To select a single value, choose the value from the list."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/single.png"\n/>\n\n## Collapse and expand all\n\nWe added a new collapse and expand all button next to the variable title in the header. It\'s a must-have feature to expand and collapse all branches at the same time for 5+ levels.\n\n<Image\n  title="Expand and collapse all feature allows to quickly switch between branches."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/collapse.png"\n/>\n\n## Tree View groups\n\nA new feature allows to drag and drop configured Tree View groups to rearrange how they will be displayed on the panel.\n\n<Image\n  title="Groups and Levels support drag and drop functionality."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/groups.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update single select variable with All enabled (#41)\n- Add sticky header and auto scroll on multi-group selection (#38)\n- Add drag and drop for Groups (#42)\n- Add expand and collapse all in the header (#46)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
-  },
-  {
-    id: "image-panel-4.0.0-20230709/",
-    metadata: {
-      permalink: "/blog/image-panel-4.0.0-20230709/",
-      source: "@site/blog/2023-07-09-image-panel-4.0.0/index.mdx",
-      title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
-      description:
-        "We released a new version of Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release",
-      date: "2023-07-09T00:00:00.000Z",
-      formattedDate: "July 9, 2023",
-      tags: [
-        {
-          label: "Base64 Image/Video/Audio/PDF",
-          permalink: "/blog/tags/base-64-image-video-audio-pdf",
-        },
-        {
-          label: "Release Notes",
-          permalink: "/blog/tags/release-notes",
-        },
-      ],
-      hasTruncateMarker: false,
-      authors: [
-        {
-          name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
-          url: "https://github.com/VolkovLabs",
-          imageURL: "/img/team/mikhail.png",
-          key: "mikhail",
-        },
-      ],
-      frontMatter: {
-        authors: ["mikhail"],
-        slug: "image-panel-4.0.0-20230709/",
-        tags: ["Base64 Image/Video/Audio/PDF", "Release Notes"],
-        image: "/img/blog/2023-07-09-image-panel-4.0.0/banner.png",
-        keywords: ["Base64", "Panel", "Zoom", "Label", "Images"],
-      },
-      prevItem: {
-        title: "Variable Panel 1.5.0",
-        permalink: "/blog/variable-panel-1.5.0-20230711/",
-      },
-      nextItem: {
         title: "Dynamic Text Panel 4.0.0",
         permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release\n\n- Requires Grafana 9 and Grafana 10.\n- Added pan and pinch zoom in addition to the full-screen zoom, introduced in 3.6.0.\n- Added description labels for images and media files.\n- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on June 28, 2023.\n:::\n\n<Video\n  src="https://www.youtube.com/embed/cNxWxd6mqf8"\n  title="Base64 Image/Video/Audio/PDF panel 4.0.0 for Grafana."\n/>\n\n## Pan and pinch-zoom\n\nThe pan and pinch zoom allows you to zoom in, and out and reset while working with high-resolution images.\n\nWhen selecting the Zoom button to display on the toolbar you can choose between Full Screen and Pan and Pinch modes.\n\n<Image\n  title="Tokyo image analyzed with YOLO model and zoomed in to see details."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/zoom.png"\n  lazy={false}\n/>\n\n## Description\n\nWe added an option to specify a description field to add a label to the selected image. Label displayed on the bottom.\n\nThe image is auto-scaled when using Panel\'s height option. If you are using the original height, then the panel should be adjusted accordingly.\n\n<Image\n  title="Image displayed with description on the bottom."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/description.png"\n  lazy={false}\n/>\n\n## Getting Started\n\nBase64 Image/Video/Audio/PDF visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-image-panel\n```\n\n## YouTube Tutorial\n\nThe Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats.\n\n<Video\n  src="https://www.youtube.com/embed/1_bgLSehjhg"\n  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements\n\n- Add pan and pinch zooming option (#78)\n- Move pan pinch buttons to the toolbar (#79)\n- Update to Grafana 10.0.0 (#80)\n- Add description label (#82)\n- Remove Grafana 8.5 support (#83)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released the new version of Variable Panel 1.5.0. This feature release\n\n- Added sticky header.\n- Added auto-scroll for multi-group selection.\n- Added drag and drop for tree view groups.\n- Added expand and collapse all in the header.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 12, 2023.\n:::\n\n<Video\n  src="https://www.youtube.com/embed/YJXXMUgXDys"\n  title="Variable panel 1.5.0 for Grafana."\n/>\n\nWe appreciate the feedback and interest in the Variable panel plugin. Provided functionality was requested by the community many times and we gladly contributed.\n\n## Demo\n\nInterested to try the panel? Take a look at [Grafana plugins registered in the Grafana Catalog](https://release.volkovlabs.io/d/O73WAt27z/plugin-info?orgId=1&var-slug=volkovlabs-variable-panel).\n\nOne of my favorite features in this release is the sticky header, which allows you to filter values and select favorites. Statuses indicate when the plugin was updated:\n\n- Green less than 365 days.\n- Yellow for more than 365 days.\n- Red for more than 730 days.\n\n<Image\n  title="Plugins dashboard helps us to learn about new plugins in the Grafana Catalog."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/demo.png"\n  lazy={false}\n/>\n\n## Single value table\n\nThe single value table was updated to support the `All` option and allows to select a single value by clicking on it.\n\n<Image\n  title="To select a single value, choose the value from the list."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/single.png"\n/>\n\n## Collapse and expand all\n\nWe added a new collapse and expand all button next to the variable title in the header. It\'s a must-have feature to expand and collapse all branches at the same time for 5+ levels.\n\n<Image\n  title="Expand and collapse all feature allows to quickly switch between branches."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/collapse.png"\n/>\n\n## Tree View groups\n\nA new feature allows to drag and drop configured Tree View groups to rearrange how they will be displayed on the panel.\n\n<Image\n  title="Groups and Levels support drag and drop functionality."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/groups.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update single select variable with All enabled (#41)\n- Add sticky header and auto scroll on multi-group selection (#38)\n- Add drag and drop for Groups (#42)\n- Add expand and collapse all in the header (#46)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us:\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
   },
   {
     id: "dynamictext-panel-4.0.0-20230709/",
@@ -360,7 +367,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -374,8 +381,57 @@ export const BlogPosts = [
         keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
       },
       prevItem: {
+        title: "Variable Panel 1.5.0",
+        permalink: "/blog/variable-panel-1.5.0-20230711/",
+      },
+      nextItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
         permalink: "/blog/image-panel-4.0.0-20230709/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Dynamic Text Panel 4.0.0. This major release\n\n- Requires Grafana 9 and Grafana 10.\n- Added Event Bus object to JavaScript function.\n- Added dashboard variables support in CSS style.\n- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on June 28, 2023.\n:::\n\n## 3 million downloads\n\nIn February we celebrated 2 million downloads. Since then we have seen an accelerated adaptation of the panel.\n\nJavaScript code, CSS style editor, and supporting Grafana events provide unique capabilities, you can\'t find in native and community plugins.\n\n<Image\n  title="Dynamic Text panel was downloaded more than three million times."\n  src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"\n  lazy={false}\n/>\n\n## Dashboard variables\n\nThe Dynamic Text panel provides helpers to support variables. Variables can also be used in the JavaScript code and CSS styles.\n\n### JavaScript code\n\nUse `replaceVariables` to replace dashboard variables in the JavaScript code.\n\n```\nconst bonjour = replaceVariables("${variable}");\nconsole.log(bonjour.toUpperCase())\n```\n\n### Styles\n\nDashboard variables are replaced automatically in the CSS styles.\n\n### Content\n\nReturns a string array of the currently selected values for a certain variable.\n\n```handlebars\n{{variable "hostname"}}\n\n<!-- result: [\'server1\', \'server2\', \'server3\']  -->\n```\n\nMore examples are in the [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).\n\n## Event Bus\n\nGrafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.\n\n### Predefined Events\n\nA full list of events is available in the [Grafana Crash Course](/grafana/developer/eventbus).\n\n### Subscribe to events\n\nTo avoid memory leaks all events must be unsubscribed.\n\n```\nconst subscription = eventBus.subscribe({ type: \'data-hover\' }, () => {\n  console.log(\'React to Data Hover\')\n})\n\nreturn () => {\n  subscription.unsubscribe();\n  console.log(\'Unsubscribed\');\n}\n```\n\n## Getting Started\n\nThe Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-dynamictext-panel\n```\n\n## YouTube Tutorial\n\nA Dynamic Text visualization panel is a Grafana plugin that transforms monotone text/table data into vibrant, easy-to-read information cards. The panel supports variables, Markdown and Handlebars.\n\nThe Dynamic Text visualization panel lets you define a text template using the data from your data source query.\n\n<Video\n  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"\n  title="Markdown, HTML and Handlebars to transform data visualizations."\n/>\n\n<Video\n  src="https://www.youtube.com/embed/lJqk5Gobec4"\n  title="JavaScript code in the Dynamic text panel."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements\n\n- Increase Test Coverage and update to testing-library/react (#177)\n- Add Event Bus object to JavaScript function (#179)\n- Migrate to Plugin Tools 1.5.2 (#183)\n- Update to Grafana 10.0.0 (#166, #178, #183)\n- Update to Node 18 and npm (#183)\n- Remove Grafana 8.5 support (#183)\n- Add E2E Cypress testing (#184)\n- Support Variables in CSS styles editor (#185)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+  },
+  {
+    id: "image-panel-4.0.0-20230709/",
+    metadata: {
+      permalink: "/blog/image-panel-4.0.0-20230709/",
+      source: "@site/blog/2023-07-09-image-panel-4.0.0/index.mdx",
+      title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
+      description:
+        "We released a new version of Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release",
+      date: "2023-07-09T00:00:00.000Z",
+      formattedDate: "July 9, 2023",
+      tags: [
+        {
+          label: "Base64 Image/Video/Audio/PDF",
+          permalink: "/blog/tags/base-64-image-video-audio-pdf",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder at Volkov Labs, Grafana Champion",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "image-panel-4.0.0-20230709/",
+        tags: ["Base64 Image/Video/Audio/PDF", "Release Notes"],
+        image: "/img/blog/2023-07-09-image-panel-4.0.0/banner.png",
+        keywords: ["Base64", "Panel", "Zoom", "Label", "Images"],
+      },
+      prevItem: {
+        title: "Dynamic Text Panel 4.0.0",
+        permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
       },
       nextItem: {
         title: "Variable Panel 1.4.0 available in Grafana Catalog",
@@ -383,7 +439,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Dynamic Text Panel 4.0.0. This major release\n\n- Requires Grafana 9 and Grafana 10.\n- Added Event Bus object to JavaScript function.\n- Added dashboard variables support in CSS style.\n- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on June 28, 2023.\n:::\n\n## 3 million downloads\n\nIn February we celebrated 2 million downloads. Since then we have seen an accelerated adaptation of the panel.\n\nJavaScript code, CSS style editor, and supporting Grafana events provide unique capabilities, you can\'t find in native and community plugins.\n\n<Image\n  title="Dynamic Text panel was downloaded more than three million times."\n  src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"\n  lazy={false}\n/>\n\n## Dashboard variables\n\nThe Dynamic Text panel provides helpers to support variables. Variables can also be used in the JavaScript code and CSS styles.\n\n### JavaScript code\n\nUse `replaceVariables` to replace dashboard variables in the JavaScript code.\n\n```\nconst bonjour = replaceVariables("${variable}");\nconsole.log(bonjour.toUpperCase())\n```\n\n### Styles\n\nDashboard variables are replaced automatically in the CSS styles.\n\n### Content\n\nReturns a string array of the currently selected values for a certain variable.\n\n```handlebars\n{{variable "hostname"}}\n\n<!-- result: [\'server1\', \'server2\', \'server3\']  -->\n```\n\nMore examples are in the [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).\n\n## Event Bus\n\nGrafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.\n\n### Predefined Events\n\nA full list of events is available in the [Grafana Crash Course](/grafana/developer/eventbus).\n\n### Subscribe to events\n\nTo avoid memory leaks all events must be unsubscribed.\n\n```\nconst subscription = eventBus.subscribe({ type: \'data-hover\' }, () => {\n  console.log(\'React to Data Hover\')\n})\n\nreturn () => {\n  subscription.unsubscribe();\n  console.log(\'Unsubscribed\');\n}\n```\n\n## Getting Started\n\nThe Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install marcusolsson-dynamictext-panel\n```\n\n## YouTube Tutorial\n\nA Dynamic Text visualization panel is a Grafana plugin that transforms monotone text/table data into vibrant, easy-to-read information cards. The panel supports variables, Markdown and Handlebars.\n\nThe Dynamic Text visualization panel lets you define a text template using the data from your data source query.\n\n<Video\n  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"\n  title="Markdown, HTML and Handlebars to transform data visualizations."\n/>\n\n<Video\n  src="https://www.youtube.com/embed/lJqk5Gobec4"\n  title="JavaScript code in the Dynamic text panel."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements\n\n- Increase Test Coverage and update to testing-library/react (#177)\n- Add Event Bus object to JavaScript function (#179)\n- Migrate to Plugin Tools 1.5.2 (#183)\n- Update to Grafana 10.0.0 (#166, #178, #183)\n- Update to Node 18 and npm (#183)\n- Remove Grafana 8.5 support (#183)\n- Add E2E Cypress testing (#184)\n- Support Variables in CSS styles editor (#185)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe released a new version of Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release\n\n- Requires Grafana 9 and Grafana 10.\n- Added pan and pinch zoom in addition to the full-screen zoom, introduced in 3.6.0.\n- Added description labels for images and media files.\n- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on June 28, 2023.\n:::\n\n<Video\n  src="https://www.youtube.com/embed/cNxWxd6mqf8"\n  title="Base64 Image/Video/Audio/PDF panel 4.0.0 for Grafana."\n/>\n\n## Pan and pinch-zoom\n\nThe pan and pinch zoom allows you to zoom in, and out and reset while working with high-resolution images.\n\nWhen selecting the Zoom button to display on the toolbar you can choose between Full Screen and Pan and Pinch modes.\n\n<Image\n  title="Tokyo image analyzed with YOLO model and zoomed in to see details."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/zoom.png"\n  lazy={false}\n/>\n\n## Description\n\nWe added an option to specify a description field to add a label to the selected image. Label displayed on the bottom.\n\nThe image is auto-scaled when using Panel\'s height option. If you are using the original height, then the panel should be adjusted accordingly.\n\n<Image\n  title="Image displayed with description on the bottom."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/description.png"\n  lazy={false}\n/>\n\n## Getting Started\n\nBase64 Image/Video/Audio/PDF visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-image-panel\n```\n\n## YouTube Tutorial\n\nThe Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats.\n\n<Video\n  src="https://www.youtube.com/embed/1_bgLSehjhg"\n  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements\n\n- Add pan and pinch zooming option (#78)\n- Move pan pinch buttons to the toolbar (#79)\n- Update to Grafana 10.0.0 (#80)\n- Add description label (#82)\n- Remove Grafana 8.5 support (#83)\n\n## Feedback\n\nWe love to hear from you. There are various ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Star the repository to show your support.',
   },
   {
     id: "variable-panel-1.4.0-20230708/",
@@ -409,7 +465,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -423,8 +479,8 @@ export const BlogPosts = [
         keywords: ["Variable", "Panel", "Status"],
       },
       prevItem: {
-        title: "Dynamic Text Panel 4.0.0",
-        permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
+        title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
+        permalink: "/blog/image-panel-4.0.0-20230709/",
       },
       nextItem: {
         title: "Volkov Labs App 2.5.0 supports Grafana 10",
@@ -458,7 +514,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -507,7 +563,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -556,7 +612,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -605,7 +661,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -660,7 +716,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -715,7 +771,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -760,7 +816,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -805,7 +861,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -850,7 +906,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -899,7 +955,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -948,7 +1004,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1056,7 +1112,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1108,7 +1164,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1158,7 +1214,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1208,7 +1264,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1258,7 +1314,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1308,7 +1364,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1358,7 +1414,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1408,7 +1464,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1458,7 +1514,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1507,7 +1563,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1563,7 +1619,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1613,7 +1669,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1663,7 +1719,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1719,7 +1775,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1769,7 +1825,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1819,7 +1875,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1876,7 +1932,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1934,14 +1990,14 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -1995,7 +2051,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2048,7 +2104,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2098,7 +2154,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2149,7 +2205,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2205,14 +2261,14 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
         },
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2262,7 +2318,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2312,7 +2368,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2370,7 +2426,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2427,7 +2483,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2477,7 +2533,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2533,7 +2589,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2583,7 +2639,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2633,7 +2689,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2747,7 +2803,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2796,7 +2852,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2858,7 +2914,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2912,7 +2968,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -2964,7 +3020,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3025,7 +3081,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3087,7 +3143,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3143,7 +3199,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3196,7 +3252,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3246,7 +3302,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3305,7 +3361,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3358,7 +3414,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -3406,7 +3462,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director, Volkov Labs",
+          title: "Creative Director at Volkov Labs",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -3459,7 +3515,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3507,7 +3563,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3556,7 +3612,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",
@@ -3605,7 +3661,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Mikhail Volkov",
-          title: "Founder, Volkov Labs",
+          title: "Founder at Volkov Labs, Grafana Champion",
           url: "https://github.com/VolkovLabs",
           imageURL: "/img/team/mikhail.png",
           key: "mikhail",

@@ -1,0 +1,285 @@
+---
+authors: [mikhail]
+slug: echarts-panel-5.1.0-20230822/
+tags: [Apache ECharts, Release Notes]
+image: /img/blog/2023-08-22-echarts-panel-5.1.0/banner.png
+keywords: [Apache ECharts, Panel, Chart, Visualization, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Apache ECharts Panel 5.1.0
+
+We released a new version of the Apache ECharts Panel 5.1.0 for Grafana. This major release
+
+- Added Result v2 with unsubscribe function.
+- Added Wordcloud Extension to create a tag cloud presentation.
+- Updated Streaming functionality to redraw charts.
+- Fixed Memory Leak on resubscribing to restore event.
+- Updated to Apache ECharts 5.4.3.
+- Requires Grafana 9 and Grafana 10.
+- Updated to Grafana 10.0.3 and removed Grafana 8.5 support.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on August 11, 2023.
+:::
+
+<Video
+  src="https://www.youtube.com/embed/bEBA5Q8PNCE"
+  title="Apache ECharts panel 5.1.0 for Grafana."
+/>
+
+## Result v2 with unsubscribe function
+
+The extended result object allows to return configuration, options and unsubscribe functions to avoid memory leaks. Ideal for subscribing and publishing events to [Event Bus](/grafana/developer/eventbus/).
+
+```json
+return {
+  version: 2,
+  config: { notMerge: true },
+  option: {
+    tooltip: {
+      formatter: '{a} <br/>{b} : {c}%'
+    },
+    series: [
+      {
+        name: 'Pressure',
+        type: 'gauge',
+        detail: {
+          formatter: '{value}'
+        },
+        data: [
+          {
+            value: 50,
+            name: 'SCORE'
+          }
+        ]
+      }
+    ]
+  },
+  unsubscribe: () => {
+    console.log('unsubscribeFunction')
+  }
+};
+```
+
+Take a look at the [Extended Result](/plugins/volkovlabs-echarts-panel/extended/) in the documentation for details.
+
+## Wordcloud Extension
+
+Wordcloud extension allows the creation of a tag cloud presentation on 2D canvas.
+
+<Image
+  title="A tag cloud presentation on 2D canvas using Apache ECharts panel."
+  src="/img/blog/2023-08-22-echarts-panel-5.1.0/wordcloud.png"
+/>
+
+Check out the documentation for the [Wordcloud Extension](https://github.com/ecomfe/echarts-wordcloud).
+
+## Streaming
+
+Streaming allows real-time data updates using streaming Data Sources and Grafana Live. Streaming is supported by the Apache ECharts visualization panel starting from version 4.1.0.
+
+Apache ECharts version 5.0.0 fixed the re-render issue for live data.
+
+<Image
+  title="Display gauge with the live data in real-time."
+  src="/img/blog/2023-08-22-echarts-panel-5.1.0/gauge.png"
+/>
+
+Take a look at the [Streaming examples](/plugins/volkovlabs-echarts-panel/streaming/) in the documentation for details.
+
+## Memory Leak
+
+We fixed the memory leak on resubscribing to restore event handler. Thank you to community member [sergiomonteroselma](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/205) for reporting it and helping us to troubleshoot.
+
+We recommend updating the Apache ECharts panel to the latest version 5.1.0 to avoid Out Of Memory error after constantly refreshing dashboard for a longer period of time.
+
+## Apache ECharts 5.4.3
+
+We keep the plugin updated with the latest version of the Apache ECharts library and recently updated to 5.4.3:
+
+- [Feature] [axisPointer] Add triggerEmphasis option to disable emphasis. #18524 (juliepagano)
+- [Feature] [sankey] Support trajectory for emphasis state. #17451 (ElayGelbart)
+- [Fix] [sankey] Fix sankey line color 'target'/'source'/'gradient' doesn't work in non-normal state. #18834 (linghaoSu)
+- [Fix] [sankey] Fix value is undefined in label/edgeLabel formatter. #18733 (plainheart)
+- [Fix] [sunburst] Fix sunburst label may rotate when labelLayout.hideOverlap is enabled. #18808 (linghaoSu)
+- [Fix] [graph] Fix graph chart can't be hidden by legend due to edgeLabel NPE. #18624 (plainheart)
+- [Fix] [state] Fix focus self doesn't work when item emphasis by other component. #18511 (linghaoSu)
+- [Fix] [axis] Fix last tick doesn't show for single data. #18469 (Ovilia)
+- [Fix] [pie] Fix incorrect response area of pie piece when selectedOffset is enabled and animation is disabled. #1011 (plainheart)
+- [Fix] [custom] Fix user-defined info property was not available in the event handler. #18400 (sobolewsk)
+- [Fix] [legend] Inherit legend rich text color from legend's options. #18260 (ChepteaCatalin)
+- [Fix] [label] Fix ellipsis was not working. #18525 (Ovilia)
+- [Fix] [label] Fix endLabel fails with null data. #18841 (Ovilia)
+- [Fix] [util] Fix {yy} pattern has no zero padding in time format util. #18535 (linghaoSu)
+- [Fix] [api] Only deprecate disConnect but not disconnect. #18758 (Justineo)
+- [Fix] [i18n] Fix the abbr of "March" for the DE language ("Mar" -> "Mrz"). #18387 (Stebeber)
+- [Fix] [type] Fix wrong type for data item value of the parallel series. #18425 (ManishDait)
+- [Fix] [type] Allow passing null to the parameters of init function. #18575 (zhuscat)
+
+## Wind Speed
+
+A graph example showing both wind speed & direction by community member [tkurki](https://gist.github.com/tkurki/0bb07f29987cc2af471b5e44706b00b4):
+
+<Image
+  title="Showing both wind speed & direction on the same chart using Apache ECharts."
+  src="/img/blog/2023-08-22-echarts-panel-5.1.0/0wind.png"
+/>
+
+```js
+const ecData = [];
+
+if (data.series.length === 0) {
+  return {};
+}
+
+const time = data.series[0].fields[0].values;
+const direction = data.series[0].fields[1].values;
+const speed = data.series[1].fields[1].values;
+
+for (let i = 0; i < data.series[0].length; i++) {
+  ecData.push({
+    value: [time.get(i), Number(speed.get(i)).toFixed(2)],
+    symbolRotate: (direction.get(i) / Math.PI) * 180 - 90,
+  });
+}
+
+const series = {
+  name: data.series[0].refId,
+  type: "line",
+  showSymbol: true,
+  symbol:
+    "path://m13.022 14.999v3.251c0 .412.335.75.752.75.188 0 .375-.071.518-.206 1.775-1.685 4.945-4.692 6.396-6.069.2-.189.312-.452.312-.725 0-.274-.112-.536-.312-.725-1.451-1.377-4.621-4.385-6.396-6.068-.143-.136-.33-.207-.518-.207-.417 0-.752.337-.752.75v3.251h-9.02c-.531 0-1.002.47-1.002 1v3.998c0 .53.471 1 1.002 1z",
+  symbolSize: 15,
+  areaStyle: {
+    opacity: 0.1,
+  },
+  lineStyle: {
+    width: 1,
+  },
+  data: ecData,
+};
+
+/**
+ * Enable Data Zoom by default
+ */
+setTimeout(
+  () =>
+    echartsInstance.dispatchAction({
+      type: "takeGlobalCursor",
+      key: "dataZoomSelect",
+      dataZoomSelectActive: true,
+    }),
+  500
+);
+
+/**
+ * Update Time Range on Zoom
+ */
+echartsInstance.on("datazoom", function (params) {
+  const startValue = params.batch[0]?.startValue;
+  const endValue = params.batch[0]?.endValue;
+  locationService.partial({ from: startValue, to: endValue });
+});
+
+return {
+  backgroundColor: "transparent",
+  tooltip: {
+    trigger: "axis",
+  },
+  legend: {
+    left: "0",
+    bottom: "0",
+    data: ["Wind Speed & Angle"],
+    textStyle: {
+      color: "rgba(128, 128, 128, .9)",
+    },
+  },
+  toolbox: {
+    feature: {
+      dataZoom: {
+        yAxisIndex: "none",
+        icon: {
+          zoom: "path://",
+          back: "path://",
+        },
+      },
+      saveAsImage: {},
+    },
+  },
+  xAxis: {
+    type: "time",
+  },
+  yAxis: {
+    type: "value",
+    min: "dataMin",
+  },
+  grid: {
+    left: "2%",
+    right: "2%",
+    top: "2%",
+    bottom: 24,
+    containLabel: true,
+  },
+  series,
+};
+```
+
+## Getting Started
+
+Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-echarts-panel
+```
+
+## YouTube Tutorial
+
+The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/S3PiL1p1v5U"
+  title="Explore possibilities of the Apache ECharts."
+/>
+
+## Release Notes
+
+### Features / Enhancements in 5.1.0
+
+- Update to Grafana 10.0.3 (#206)
+
+### Bugfixes in 5.1.0
+
+- Fix Memory Leak on resubscribing to restore event handler (#208)
+
+### Breaking changes in 5.0.0
+
+- Requires Grafana 9 and Grafana 10
+
+### Features / Enhancements in 5.0.0
+
+- Update Documentation (#182)
+- Update Examples to Grafana 10 (#190)
+- Add Result v2 with unsubscribe function (#188)
+- Update Streaming to redraw charts (#188)
+- Update to Grafana 10.0.0 (#191)
+- Update README and panel options (#192)
+- Remove Grafana 8.5 support (#193)
+- Update to Grafana 10.0.2 dependencies (#195)
+- Update ESLint configuration (#196)
+- Add Wordcloud Extension (#198)
+- Update to Apache ECharts 5.4.3 (#199)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
