@@ -15,11 +15,11 @@ import Video from "@theme/Video";
 We released a new version of the Apache ECharts Panel 5.1.0 for Grafana. This major release
 
 - Added Result v2 with unsubscribe function.
-- Added Wordcloud Extension to visualize tag cloud presentation.
-- Updated Streaming functionality to redraw charts without clearing.
+- Added Wordcloud Extension to create a tag cloud presentation.
+- Updated Streaming functionality to redraw charts.
 - Fixed Memory Leak on resubscribing to restore event.
 - Updated to Apache ECharts 5.4.3.
-- Requires Grafana 9.0+ and Grafana 10.
+- Requires Grafana 9 and Grafana 10.
 - Updated to Grafana 10.0.3 and removed Grafana 8.5 support.
 
 :::info Grafana Catalog
@@ -72,7 +72,7 @@ Take a look at the [Extended Result](/plugins/volkovlabs-echarts-panel/extended/
 Wordcloud extension allows the creation of a tag cloud presentation on 2D canvas.
 
 <Image
-  title="A tag cloud/Wordle presentation on 2D canvas using Apache ECharts panel."
+  title="A tag cloud presentation on 2D canvas using Apache ECharts panel."
   src="/img/blog/2023-08-22-echarts-panel-5.1.0/wordcloud.png"
 />
 
@@ -89,11 +89,11 @@ Apache ECharts version 5.0.0 fixed the re-render issue for live data.
   src="/img/blog/2023-08-22-echarts-panel-5.1.0/gauge.png"
 />
 
-Take a look at the [Streaming examples](/plugins/volkovlabs-echarts-panel/extended/) in the documentation for details.
+Take a look at the [Streaming examples](/plugins/volkovlabs-echarts-panel/streaming/) in the documentation for details.
 
 ## Memory Leak
 
-We fixed the memory leak on resubscribing to restore the event. Thank you to community member [sergiomonteroselma](https://github.com/sergiomonteroselma) for reporting it and helping us to troubleshoot.
+We fixed the memory leak on resubscribing to restore event handler. Thank you to community member [sergiomonteroselma](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/205) for reporting it and helping us to troubleshoot.
 
 We recommend updating the Apache ECharts panel to the latest version 5.1.0 to avoid Out Of Memory error after constantly refreshing dashboard for a longer period of time.
 
@@ -122,7 +122,7 @@ We keep the plugin updated with the latest version of the Apache ECharts library
 
 ## Wind Speed
 
-A graph showing both wind speed & direction by community member [tkurki](https://gist.github.com/tkurki):
+A graph example showing both wind speed & direction by community member [tkurki](https://gist.github.com/tkurki/0bb07f29987cc2af471b5e44706b00b4):
 
 <Image
   title="Showing both wind speed & direction on the same chart using Apache ECharts."
@@ -243,8 +243,8 @@ grafana-cli plugins install volkovlabs-echarts-panel
 The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
 
 <Video
-  src="https://www.youtube.com/embed/DxqCrBEmrQw"
-  title="How to create modern dashboards in Grafana."
+  src="https://www.youtube.com/embed/S3PiL1p1v5U"
+  title="Explore possibilities of the Apache ECharts."
 />
 
 ## Release Notes
@@ -255,7 +255,7 @@ The Apache ECharts plugin is a visualization panel for Grafana that allows you t
 
 ### Bugfixes in 5.1.0
 
-- Fix Memory Leak on resubscribing to restore event (#208)
+- Fix Memory Leak on resubscribing to restore event handler (#208)
 
 ### Breaking changes in 5.0.0
 
