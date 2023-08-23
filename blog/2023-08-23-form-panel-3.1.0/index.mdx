@@ -1,0 +1,224 @@
+---
+authors: [mikhail]
+slug: form-panel-3.1.0-20230823/
+tags: [Data Manipulation, Release Notes]
+image: /img/blog/2023-08-23-form-panel-3.1.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Data Manipulation Panel 3.1.0
+
+We released a new version of the Data Manipulation Panel 3.1.0. This feature release
+
+- Added Multi-Select element.
+- Added conditional element visibility.
+- Added custom payload code editor.
+- Added custom reset code editor.
+- Added Data Source request.
+- Added onChange to update elements in the local state within the custom code.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on August 15, 2023.
+:::
+
+<Video
+  src="https://www.youtube.com/embed/0ratMv5XYSk"
+  title="Data Manipulation panel 3.1.0 for Grafana."
+/>
+
+## Multi-Select
+
+A new multi-select element is similar to the select element and allows selecting multiple options.
+
+<Image
+  title="A new multi-select element allows to select multiple options."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/multi.png"
+/>
+
+## Conditional element visibility
+
+A new Show If option available for any element allows control visibility of the element depending on other element values. JavaScript function should return `true` to show the element or `false` to hide.
+
+For example, this element will be shown only if the selected value for `select` element is equal to `max`.
+
+```js
+const select = elements.find((element) => element.id === "select");
+
+if (select) {
+  return select.value === "max";
+}
+```
+
+<Image
+  title="Element visibility can be controlled using JavaScript function, which should return true or false."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/showif.png"
+/>
+
+## Custom payload code editor
+
+### Initial request with Data Source
+
+A custom payload code editor is available for initial requests using the Data Source. When the data source is selected, you can specify a custom payload to execute the SQL statement `rawSql` and any other property required for the specific data source.
+
+```
+return {
+  rawSql: '',
+  format: 'table',
+}
+```
+
+Response from the data source can be manually parsed in the custom code using `toDataQueryResponse()` function, which returns data frames. Values from the data frames can be set to the form elements following documentation.
+
+```
+const dataQuery = toDataQueryResponse(response);
+console.log(dataQuery);
+```
+
+<Image
+  title="Initial Request for Data Source allows to specify request payload."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/initial.png"
+/>
+
+### Update request
+
+In the update request, you can send the payload as
+
+- All Elements
+- Updated only
+- Custom Code
+
+In the Custom Code, you can create your own logic to create a payload.
+
+```
+const payload = {};
+
+elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  payload[element.id] = element.value;
+})
+
+return payload;
+
+/**
+ * Data Source payload
+ */
+return {
+  rawSql: '',
+  format: 'table',
+};
+```
+
+<Image
+  title="Update Request can send all, updated elements and custom payload."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/update.png"
+/>
+
+## Custom reset code editor
+
+The reset button allows adding custom logic in the JavaScript code editor. By default, it's calling the Initial Request.
+
+<Image
+  title="Reset button allows to add custom logic in the JavaScript code editor."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/reset.png"
+/>
+
+## Data Source request
+
+The support for Data Sources was one of the most requested community features. Starting from version 3.1.0 you don't need a Rest API server to interact with databases and storages configured as Data Sources.
+
+### Initial Request
+
+Response from the initial request can be parsed manually as demonstrated above or automatically assigned to the form elements.
+
+Input the field name returned from the data source for any element to get the latest value, which can be user modified and sent in the payload to update.
+
+<Image
+  title="Assign element values based on the data from the Initial requests using Data Source."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/fieldname.png"
+/>
+
+### Update Request
+
+Update request payload for the data source should be created in the custom code according to the Data Source specification. For SQL databases it's `rawSql` and `format`:
+
+```
+const payload = {};
+
+elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  payload[element.id] = element.value;
+})
+
+/**
+ * Data Source payload
+ */
+return {
+  rawSql: '',
+  format: 'table',
+};
+```
+
+<Image
+  title="Update requests using Data Source."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/datasource.png"
+/>
+
+## onChange to update elements in the local state
+
+In Data Manipulation v3 the `onChange()` is required to manually update the element values in the local state.
+
+```
+onChange(elements.map((element) => {
+  return element.id === 'name' ? { ...element, value: 'test' } : element
+});
+```
+
+## Getting Started
+
+The Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool.
+
+For the latter, use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-form-panel
+```
+
+## YouTube Tutorial
+
+The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/DXALVG8GijM"
+  title="Manual data entering and User input into Dashboard."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update jest selectors to use npm package (#209)
+- Add onChange to update elements in local state within custom code (#214)
+- Update ESLint configuration (#215)
+- Add Multi Select element (#217)
+- Add conditional element visibility (#219)
+- Add custom payload code editor (#220)
+- Add custom reset code editor (#221)
+- Add Data Source request (#222)
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
