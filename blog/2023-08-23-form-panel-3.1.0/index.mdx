@@ -61,7 +61,7 @@ if (select) {
 
 ### Initial request with Data Source
 
-A custom payload code editor is available for initial requests to the Data Source. When the data source is selected, you can specify a custom payload to execute the SQL statement `rawSql` and any other required property required for the specific data source.
+A custom payload code editor is available for initial requests using the Data Source. When the data source is selected, you can specify a custom payload to execute the SQL statement `rawSql` and any other property required for the specific data source.
 
 ```
 return {
@@ -130,13 +130,13 @@ The reset button allows adding custom logic in the JavaScript code editor. By de
 
 ## Data Source request
 
-The support for Data Sources was one of the most requested community features. Starting from version 3.1.0 you don't need a Rest API server to interact with databases or storage configured as Data Sources.
+The support for Data Sources was one of the most requested community features. Starting from version 3.1.0 you don't need a Rest API server to interact with databases and storages configured as Data Sources.
 
 ### Initial Request
 
 Response from the initial request can be parsed manually as demonstrated above or automatically assigned to the form elements.
 
-You can input the field name returned from the data source for any element to get the latest value, which can be modified and sent in the payload to update.
+Input the field name returned from the data source for any element to get the latest value, which can be user modified and sent in the payload to update.
 
 <Image
   title="Assign element values based on the data from the Initial requests using Data Source."
@@ -145,7 +145,7 @@ You can input the field name returned from the data source for any element to ge
 
 ### Update Request
 
-Update request payload should be created in the custom code according to the Data Source specification. For SQL database it's `rawSql` and `format`:
+Update request payload for the data source should be created in the custom code according to the Data Source specification. For SQL databases it's `rawSql` and `format`:
 
 ```
 const payload = {};
@@ -157,8 +157,6 @@ elements.forEach((element) => {
 
   payload[element.id] = element.value;
 })
-
-return payload;
 
 /**
  * Data Source payload
@@ -176,7 +174,7 @@ return {
 
 ## onChange to update elements in the local state
 
-In Data Manipulation v3 the `onChange()` is required to update the element values in the local state.
+In Data Manipulation v3 the `onChange()` is required to manually update the element values in the local state.
 
 ```
 onChange(elements.map((element) => {
