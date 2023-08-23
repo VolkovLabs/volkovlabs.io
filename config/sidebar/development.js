@@ -10,6 +10,11 @@ const development = {
           id: "volkovlabs-echarts-lite/index",
           label: "Introduction",
         },
+        {
+          type: "link",
+          href: "/blog/tags/apache-e-charts",
+          label: "Related Blog posts",
+        },
         "volkovlabs-echarts-lite/release",
       ],
       label: "Apache ECharts Lite Panel",
