@@ -11,7 +11,9 @@ import Video from "@theme/Video";
 
 # Data Sources
 
-Below is a code snippet demonstrating how you can retrieve data from your data source to use in the Apache ECharts visualization panel.
+Apache ECharts Panel, as well as Grafana, supports various data sources that you can use to query data for building charts.
+
+The following code snippet demonstrates how you can retrieve data from your data source to use in Apache ECharts Panel.
 
 ```javascript
 data.series.map((s) => {
@@ -37,10 +39,10 @@ data.series.map((s) => {
 });
 ```
 
-- You can use `.map()` and `.find()` JavaScript functions,
-- `refId` is the name of the query retrieving data from the data source. By default, the names are `A`, `B` and so forth. The code above works with three queries the `logo`, `connections`, and `nodes`.
-- `name` is the data frame column name. The code above references the `body`, `source`, `target`, `title`, and `description` columns.
-- Supports Grafana 10 and older with `values` and `values.buffer`.
+- You can use the `.map()` and `.find()` JavaScript functions.
+- The `refId` query retrieves data from a data source. By default, the assigned names look like `A`, `B`, and so on. The code above works with the three queries `logo`, `connections`, and `nodes`.
+- `name` is the name of the data frame column. The code above references the `body`, `source`, `target`, `title`, and `description` columns.
+- To work with Grafana 10 and its older versions, you need to use the `values` and `values.buffer` fields.
 
 ## Tutorial
 
@@ -51,12 +53,12 @@ data.series.map((s) => {
 
 ## Array of Arrays
 
-Convert one-dimensional arrays into many-dimensional arrays if needed.
+You can convert one-dimensional arrays into multi-dimensional arrays if needed.
 
-- Get values for each field.
-- Combine in an array of arrays.
-- Use as `series[0]` to access first query, `series[1]` to access second query, etc.
-- Supports Grafana 10 and older with `values` and `values.buffer`.
+- Fetch values for each field.
+- Combine an array into an array of arrays.
+- Use as `series[0]` to access the first query, `series[1]` to access the second query, etc.
+- To work with Grafana 10 and its older versions, you need to use the `values` and `values.buffer` fields.
 
 ```javascript
 const series = data.series.map((s) => {
@@ -76,10 +78,10 @@ const series = data.series.map((s) => {
 
 ## Pie Chart
 
-We are using the [Static Data Source](/plugins/volkovlabs-static-datasource) for this example.
+We use the [static data source](/plugins/volkovlabs-static-datasource) for this example.
 
 <Image
-  title="Visualize Pie Chart using Data Source."
+  title="Build a Pie Chart using a data source."
   src="/img/plugins/volkovlabs-echarts-panel/pie-chart.png"
 />
 
@@ -92,14 +94,14 @@ We are using the [Static Data Source](/plugins/volkovlabs-static-datasource) for
 
 ## Wind Speed
 
-Wind speed visualization is one of many exciting examples of what the Apache ECharts library can do.
+The wind speed visualization is one of the most advanced examples of what the Apache ECharts library can do.
 
-- Every data element is displayed using the custom arrow.
-- The arrow color signifies the speed.
-- The direction where the arrow points - shows the wind direction.
+- Every data point is displayed with a custom arrow.
+- The arrow color indicates the speed.
+- The direction where the arrow points to indicates the wind direction.
 
 <Image
-  title="Visualizing Wind Speed using custom Arrows on the Grafana dashboard."
+  title="Building a wind speed chart with custom arrows on the Grafana dashboard."
   src="/img/plugins/volkovlabs-echarts-panel/wind-speed.png"
 />
 
@@ -112,10 +114,10 @@ Wind speed visualization is one of many exciting examples of what the Apache ECh
 
 ## Circular Graph
 
-We are using the [Static Data Source](/plugins/volkovlabs-static-datasource) for this example.
+We use the [static data source](/plugins/volkovlabs-static-datasource) for this example.
 
 <Image
-  title="Visualize Circular Graph using Data Source."
+  title="Visualize a circular graph using a data source."
   src="/img/plugins/volkovlabs-echarts-panel/circular-graph.png"
 />
 
