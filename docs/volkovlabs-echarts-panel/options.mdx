@@ -10,44 +10,44 @@ import Video from "@theme/Video";
 
 # ECharts Function
 
-`setOption(options)` is the main Apache ECharts library function. This function is called to build any chart.
+`setOption(options)` is the main function from the Apache ECharts library. You need to call this function to build any chart with Apache ECharts Panel.
 
-It has one mandatory parameter `options` which is a chart configuration in a JSON format.
+This function has the only required `options` parameter that you can use to specify the chart configuration in the JSON format.
 
 <Image
-  title="Apache ECharts panel uses Apache ECharts library and parameters to produce charts."
+  title="Apache ECharts Panel uses the Apache ECharts library and specified parameters to generate charts."
   src="/img/plugins/volkovlabs-echarts-panel/schema.png"
 />
 
 ## Options
 
-You specify the `options` in the Apache ECharts visualization panel in the Monaco Code editor located on the right-hand side.
+You need to specify the `options` parameter in the Monaco Code editor in the right part of the screen where the Apache ECharts panel resides.
 
 <Image
-  title="Apache ECharts panel provides an editor to create ECharts functions."
+  title="Apache ECharts Panel provides the code editor to specify ECharts functions."
   src="/img/plugins/volkovlabs-echarts-panel/function.png"
 />
 
-This whole text area is a body of the function that you write for the execution. This function takes in many parameters from Grafana. See the complete list in the table below.
+In the **Function** text area, you can specify the function for chart generation. This function can take different parameters from Grafana. You can find the full list of parameters in the following table.
 
-The only parameter that is passed from this function to the `setOption()` is `options`. See the `return` statement in the picture above.
+The `options` parameter is the only parameter that is passed from this function to the `setOption()` function. In the screenshot above, see the `return` statement that specifies the look of the chart.
 
 ## Parameters
 
-| Parameter                                  | Description                                                    |
-| ------------------------------------------ | -------------------------------------------------------------- |
-| `data`                                     | Object with a time range, series and request information.      |
-| `echarts`                                  | ECharts library.                                               |
-| `echartsInstance`                          | Instance of the ECharts. See the example in the picture above. |
-| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.         |
-| `eventBus`                                 | Publish and subscribe to application events.                   |
-| `locationService`                          | Works with browser location and history.                       |
-| `notifyError(['Header', 'Error Message'])` | Display error notification.                                    |
-| `notifySuccess(['Header', 'Message'])`     | Display successful notification.                               |
-| `replaceVariables`                         | Function to interpolate variables.                             |
-| `theme`                                    | Theming object.                                                |
+| Parameter                                  | Description                                                                |
+| ------------------------------------------ | -------------------------------------------------------------------------- |
+| `data`                                     | Object containing a time range, series, and request information.           |
+| `echarts`                                  | ECharts library.                                                           |
+| `echartsInstance`                          | Instance of the ECharts library. See the example in the screenshot above.  |
+| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.                     |
+| `eventBus`                                 | Publish and subscribe to application events.                               |
+| `locationService`                          | Works with browser location and history.                                   |
+| `notifyError(['Header', 'Error Message'])` | Display error notifications.                                               |
+| `notifySuccess(['Header', 'Message'])`     | Display success notifications.                                             |
+| `replaceVariables`                         | Function to interpolate variables.                                         |
+| `theme`                                    | Theme object.                                                              |
 
-To look at the parameters, you can log them in the Browser Console.
+To inspect the used parameters, use the browser's developer console.
 
 ```javascript
 console.error(
@@ -62,9 +62,9 @@ console.error(
 
 ## Notifications
 
-Success and Error notifications can be triggered on events handling.
+You can display success and error notifications when handling specific events.
 
 ```javascript
 notifySuccess(["Update", "Values updated successfully."]);
-notifyError(["Update", `An error occurred updating values.`]);
+notifyError(["Update", `An error occurred while updating values.`]);
 ```
