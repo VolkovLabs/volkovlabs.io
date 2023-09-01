@@ -10,19 +10,19 @@ import Video from "@theme/Video";
 
 # ECharts Instance
 
-The `echartsInstance` is the created instance (container) of the Apache ECharts. It allows to
+The `echartsInstance` is a created instance (container) of the Apache ECharts library. It allows you to do the following:
 
 - Get the width and height of the ECharts container.
 - Get the DOM (Document Object Model) to include additional elements.
-- Resize.
-- Handle Events.
+- Resize the chart size.
+- Handle events.
 - Update options, etc.
 
-The [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance) described in the ECharts documentation.
+For more details, please review the documentation for [echartsInstance](https://echarts.apache.org/en/api.html#echartsInstance).
 
 ## Scale when resizing
 
-To scale the content when the panel is resized using the instance methods to retrieve the width and height of the panel.
+To scale the content for fitting the resized panel, you need to use the instance methods to retrieve the width and height of the panel.
 
 ```javascript
   graphic: {
@@ -37,14 +37,14 @@ To scale the content when the panel is resized using the instance methods to ret
 
 ## Create DOM elements
 
-It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using the instance.
+You can add elements (buttons, checkboxes, select boxes, etc.) to the DOM (Document Object Model) using the instance.
 
 ### Button
 
-Add a button with an on-click event handler on top of the Apache ECharts.
+You can add a button with an on-click event handler on top of Apache ECharts.
 
 <Image
-  title="Add a button to add Events on the Apache ECharts container."
+  title="Add a button to handle events in the Apache ECharts container."
   src="/img/plugins/volkovlabs-echarts-panel/dom.png"
 />
 
@@ -55,10 +55,10 @@ Add a button with an on-click event handler on top of the Apache ECharts.
 
 ### Select
 
-Add a select list with an on-change event handler.
+Add a select box with an on-change event handler.
 
 <Image
-  title="Add a select list to select an option and update Apache EChart options."
+  title="Add a select box with options and update Apache EChart options based on the user's selection."
   src="/img/plugins/volkovlabs-echarts-panel/select.png"
 />
 
