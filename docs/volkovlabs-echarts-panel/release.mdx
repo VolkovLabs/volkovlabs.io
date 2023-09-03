@@ -1,5 +1,5 @@
 ---
-description: Release Notes for the Apache ECharts plugin.
+description: Release Notes for Apache ECharts Panel.
 tags:
   - Apache ECharts
   - Release Notes
@@ -14,11 +14,11 @@ import Video from "@theme/Video";
 
 ### Features / Enhancements
 
-- Update to Grafana 10.0.3 (#206)
+- Added compatibility with Grafana 10.0.3 (#206).
 
 ### Bugfixes
 
-- Fix Memory Leak on resubscribing to restore event (#208)
+- Fixed memory leaks when resubscribing to the restore event (#208).
 
 <Video
   src="https://www.youtube.com/embed/bEBA5Q8PNCE"
@@ -29,156 +29,156 @@ import Video from "@theme/Video";
 
 ### Breaking changes
 
-- Requires Grafana 9 and Grafana 10
+- This release requires Grafana 9 or Grafana 10.
 
 ### Features / Enhancements
 
-- Update Documentation (#182)
-- Update Examples to Grafana 10 (#190)
-- Add Result v2 with unsubscribe function (#188)
-- Update Streaming to redraw charts (#188)
-- Update to Grafana 10.0.0 (#191)
-- Update README and panel options (#192)
-- Remove Grafana 8.5 support (#193)
-- Update to Grafana 10.0.2 dependencies (#195)
-- Update ESLint configuration (#196)
-- Add Wordcloud Extension (#198)
-- Update to Apache ECharts 5.4.3 (#199)
+- Updated the product documentation with recent updates (#182).
+- Updated examples for Grafana 10 (#190).
+- Add Result v2 with unsubscribe function (#188).
+- Updated the streaming to redraw charts (#188).
+- Added compatibility with Grafana 10.0.0 (#191).
+- Updated the README file and panel options (#192).
+- Deprecated support for Grafana 8.5 (#193).
+- Updated support for Grafana 10.0.2 dependencies (#195).
+- Updated ESLint configuration (#196).
+- Integrated the Wordcloud extension (#198).
+- Updated the Apache ECharts library to version 5.4.3 (#199).
 
 ## [4.5.0 (2023-06-03)](/blog/echarts-panel-4.5.0-20230603/)
 
 ### Features / Enhancements
 
-- Migrate to Plugin Tools 1.5.2 (#171, #176)
-- Update to Node 18 and npm (#172, #173)
-- Add an alert for theme parsing error (#175)
-- Update Default Function to support Grafana 10 (#178)
-- Tested with Grafana 10 Preview (#179)
+- Migrated to Plugin Tools 1.5.2 (#171, #176).
+- Updated the plugin to Node 18 and npm (#172, #173).
+- Added an alert for the theme parsing error (#175).
+- Update the default function to support Grafana 10 (#178).
+- Tested the plugin on Grafana 10 Preview (#179).
 
 ## [4.4.0 (2023-05-25)](/blog/echarts-panel-4.4.0-20230526/)
 
 ### Features / Enhancements
 
-- Increase Test Coverage and update test library (#163)
-- Update to Grafana 9.5.2 (#164)
-- Update Google Maps Extension to 1.6.0 (#164)
-- Add E2E Cypress testing (#165)
-- Add Theme Editor to allow custom themes (#167)
-- Update documentation (#166, #168)
+- Increased the test coverage and updated the test library (#163).
+- Added compatibility with Grafana 9.5.2 (#164).
+- Updated the Google Maps extension to version 1.6.0 (#164).
+- Added E2E Cypress testing (#165).
+- Added Theme Editor to enable usage of custom themes (#167).
+- Updated the documentation (#166, #168).
 
 ## [4.3.1 (2023-04-21)](/blog/echarts-panel-4.3.0-20230417/)
 
 ### Breaking changes
 
-- Due to security reasons getDataSourceSrv parameter was removed (#156)
+- Removed the `getDataSourceSrv` parameter due to security reasons (#156).
 
 ## [4.3.0 (2023-04-16)](/blog/echarts-panel-4.3.0-20230417/)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.4.7 (#146)
-- Add getDataSourceSrv parameter to retrieve the entry point to data sources (#146)
-- Update to Apache ECharts 5.4.2 (#147)
-- Update USA and World GeoJSON used in GeoMap (#154)
-- Add Alert State and Annotations (#155)
+- Added compatibility with Grafana 9.4.7 (#146).
+- Added `getDataSourceSrv` parameter to retrieve the entry point to data sources (#146).
+- Updated the Apache ECharts library to version 5.4.2 (#147).
+- Updated USA and World GeoJSON used in the GeoMap module (#154).
+- Added the Alert State and Annotations (#155).
 
 ## [4.2.0 (2023-03-04)](/blog/echarts-panel-4.2.0-20230304/)
 
 ### Features / Enhancements
 
-- Add `EventBus` to the available parameters to publish events (#122)
-- Update to Grafana 9.3.6 (#132)
-- Update CI and Release workflows (#134)
-- Add NoPadding to remove extra padding around (#138)
-- Set Background color to Transparent by default (#139)
-- Add Magic (JavaScript) Trio tutorial (#141)
-- Update to Grafana 9.4.3 (#142)
+- Added `EventBus` to the available parameters for publishing events (#122).
+- Added compatibility with Grafana 9.3.6 (#132).
+- Added compatibility with Grafana 9.4.3 (#142).
+- Updated CI and release workflows (#134).
+- Added `NoPadding` to remove extra padding around (#138).
+- Set the background color as transparent by default (#139).
+- Added the Magic (JavaScript) Trio tutorial (#141).
 
 ## [4.1.0 (2023-01-12)](/blog/echarts-panel-4.1.0-20230113/)
 
 ### Features / Enhancements
 
-- Synchronize the README file with Documentation (#111)
-- Add Streaming Support for WebSockets and Grafana Live (#113)
-- Move InfluxDB Example to the Guest Blog post (#115)
-- Update Documentation and Tutorials in README (#116)
-- Add Data Zoom to default Line Example (#117)
+- Synchronized the README file with the product documentation (#111).
+- Added the Streaming support for WebSockets and Grafana Live (#113).
+- Moved the InfluxDB example to the guest blog post (#115).
+- Updated the documentation and tutorials in the README file (#116).
+- Added the data zooming to the default Line example (#117).
 
 ## [4.0.0 (2022-12-20)](/blog/echarts-panel-4.0.0-20221220/)
 
 ### Breaking changes
 
-- World and USA GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
+- World and U.S. GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
 
 ### Features / Enhancements
 
-- Update ECharts Examples on https://echarts.volkovlabs.io (#103)
-- Add Calendar Examples on https://echarts.volkovlabs.io (#105)
-- Update README and move Documentation to docs.volkovlabs.io (#107)
+- Update ECharts Examples at https://echarts.volkovlabs.io (#103).
+- Added the Calendar examples at https://echarts.volkovlabs.io (#105).
+- Updated the README file and moved the product documentation to the [documentation site](docs.volkovlabs.io) (#107).
 
 ### Bug fixes
 
-- Fix javascript code in documentation (#102)
+- Fixed JavaScript code in the product documentation (#102).
 
 ## 3.8.0 (2022-12-10)
 
 ### Features / Enhancements
 
-- Update documentation for Event Handling (#80)
-- Add Histograms, Clustering, Regression tutorial (#83)
-- Add Provisioning dashboards for ECharts Examples on https://echarts.volkovlabs.io (#91)
-- Add Gaode map support (#95)
-- Update to Grafana 9.3.1 (#97)
-- Add Google map support (#98)
-- Refactor Maps support (#99)
-- Update to Apache ECharts 5.4.1 (#101)
+- Updated the documentation about the event handling (#80).
+- Added the Histograms, Clustering, Regression tutorial (#83).
+- Added the Provisioning dashboards for ECharts examples at https://echarts.volkovlabs.io (#91).
+- Added support for Gaode Maps (#95).
+- Added compatibility with Grafana 9.3.1 (#97).
+- Added support for Google Maps (#98).
+- Refactored the support for maps (#99).
+- Updated the Apache ECharts library to version 5.4.1 (#101).
 
 ### Bug fixes
 
-- Fix Disabled Format options (#88)
+- Fixed the Disabled Format options (#88).
 
 ## 3.7.0 (2022-11-16)
 
 ### Features / Enhancements
 
-- Limit the URL for loading the Baidu map (#76)
+- Limit the URL for loading the Baidu map (#76).
 
 ## 3.6.0 (2022-11-13)
 
 ### Features / Enhancements
 
-- Update CI to Node 16 and Synchronize with Release workflow (#65)
-- Update to Grafana 9.2.2 (#66)
-- Update YouTube Thumbnails (#66)
-- Update CI to upload signed artifacts (#68)
-- Add Statistics tool (Regression, Clustering, etc.) (#69)
-- Add how to react on mouse events (#71)
-- Add Monaco Code Editor suggestions for available parameters (#32)
-- Improve Tests Coverage (#8)
-- Add Status notification on event handling (#74)
-- Add Baidu map support (#64)
-- Add Tutorial on how to load and use Baidu maps (#75)
+- Updated CI to Node 16 and synchronize it with the release workflow (#65).
+- Added compatibility with Grafana 9.2.2 (#66).
+- Updated thumbnails of video tutorials on YouTube (#66).
+- Updated CI to upload signed artifacts (#68).
+- Added the Statistics tool (Regression, Clustering, etc.) (#69).
+- Added event handling for mouse events (#71).
+- Added suggestions for available parameters in Monaco Code Editor (#32).
+- Improved the test coverage (#8).
+- Added Status notification on event handling (#74).
+- Added support for Baidu maps (#64).
+- Added tutorials on how to load and use Baidu maps (#75).
 
 ## 3.5.0 (2022-10-04)
 
 ### Features / Enhancements
 
-- Update to Apache ECharts 5.4.0 (#52)
-- Add Stacked Bar Graph (InfluxDB) Example (#55)
-- Add Examples to README and update links in Plugin.json (#56)
+- Updated the Apache ECharts library to version 5.4.0 (#52).
+- Added the Stacked Bar Graph (InfluxDB) example (#55).
+- Added examples into the README file and updated links in the Plugin.json file (#56).
 
 ## 3.4.0 (2022-09-21)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.1.0 (#37)
-- Add Youtube tutorial for PNG/SVG images (#38)
-- Access to dashboard variables - explain in README (#39)
-- Update to Grafana 9.1.4 (#44)
-- Add Grafana Variables video (#45)
-- Add Data Source instructions to README (#46)
-- Add Compatibility Check Workflow (#49)
-- Update to Grafana 9.1.6 (#50)
+- Added compatibility with Grafana 9.1.0 (#37).
+- Added compatibility with Grafana 9.1.6 (#50).
+- Added a Youtube tutorial for PNG/SVG images (#38).
+- Explained access to dashboard variables into the README file (#39).
+- Added compatibility with Grafana 9.1.4 (#44).
+- Added a video tutorial about Grafana variables (#45).
+- Added instructions about data sources into the README file (#46).
+- Added the Compatibility check workflow (#49).
 - Add ECharts-GL extension, which provides 3D plots, globe visualization and WebGL acceleration (#51)
 
 ## 3.3.0 (2022-08-12)
@@ -189,48 +189,48 @@ import Video from "@theme/Video";
 
 ### Features / Enhancements
 
-- Update to be included in the Grafana Catalog (#35)
+- Added support for showing the plugin in Grafana Catalog (#35).
 
 ## 3.2.0 (2022-08-09)
 
 ### Features / Enhancements
 
-- Add YouTube video to README (#29)
-- Add YouTube Tutorial (#31)
-- Update to Grafana 9.0.6 (#34)
+- Added links to video tutorials on YouTube into the README file (#29).
+- Added video tutorials on YouTube (#31).
+- Added compatibility with Grafana 9.0.6 (#34).
 
 ## 3.1.0 (2022-07-11)
 
 ### Features / Enhancements
 
-- Add setOption() description in README And Options (#12)
-- Maps json files are missing (#14)
-- Registering USA and World maps (#20)
-- Add Auto Formatting (#21)
-- Rebuild using Grafana 9.0.2 (#22)
-- Add Variables support (`replaceVariables`) in the Code Editor (#9)
-- Add `locationService` parameter (#24)
-- Add Liquid fill plugin (#25)
+- Added description of `setOption()` into the README file and options (#12).
+- Fixed the issue with the missing maps JSON files (#14).
+- Registered U.S. and World maps (#20).
+- Added the auto formatting (#21).
+- Added compatibility with Grafana 9.0.2 (#22).
+- Added support for the `replaceVariables` variables support in the code editor (#9).
+- Added the `locationService` parameter (#24).
+- Integrated the Liquid fill plugin (#25).
 
 ### Bug fixes
 
-- Reset zoom will destroy the chart (#13)
+- Resolved the ussye with chart corruption after resetting the zoom (#13).
 
 ## 3.0.0 (2022-06-19)
 
 ### Breaking changes
 
-- Requires Grafana 8.5+ and 9.0+
-- Uses Monaco Code Editor instead of Code Mirror
-- Based on the ECharts 5.3.3
-- Removes outdated ECharts Extensions (echarts-wordcloud, echarts-liquidfill, echarts-gl)
+- Requires Grafana 8.5+ or 9.0+.
+- Uses Monaco Code Editor instead of Code Mirror.
+- Based on the ECharts 5.3.3.
+- Removes outdated ECharts Extensions (echarts-wordcloud, echarts-liquidfill, echarts-gl).
 
 ### Features / Enhancements
 
-- Initial Release based on the bilibala-echarts-panel 2.2.4
-- Updated based on Volkov Labs Panel Template 2.0.0
-- Refactoring plugin (#2)
-- Replace Code Mirror with Monaco Code Editor (#3)
-- Refactor Panel and update plugin files (#4)
-- Update Provisioning, Screenshot and remove Follow Theme (#5)
-- Add SVG and Canvas Renderer (#6)
+- Initial Release based on the bilibala-echarts-panel 2.2.4.
+- Updated based on Volkov Labs Panel Template 2.0.0.
+- Refactored the plugin code (#2).
+- Replaced Code Mirror with Monaco Code Editor (#3).
+- Refactored Panel and updated plugin files (#4).
+- Updated the provisioning, screenshots, and removed Follow Theme (#5).
+- Added SVG and Canvas Renderer (#6).
