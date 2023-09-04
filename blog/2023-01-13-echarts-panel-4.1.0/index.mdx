@@ -12,19 +12,19 @@ import Video from "@theme/Video";
 
 # Apache ECharts Panel 4.1.0
 
-We released a new version of the Apache ECharts Panel 4.1.0 for Grafana. This feature release
+We are happy to announce the release of Apache ECharts Panel 4.1.0 for Grafana. This feature release includes the following updates:
 
-- Added Streaming Support for WebSockets and Grafana Live.
-- Added Data Zoom feature updating Time Range similar to TimeSeries panel.
-- Updated Documentation answering community questions.
+- Added support for streaming for WebSockets and Grafana Live.
+- Added the Data Zoom feature updating a time range similar to the TimeSeries panel.
+- Updated the product documentation answering community questions.
 
 ## Streaming
 
-Streaming allows real-time data updates using streaming Data Sources and Grafana Live. You can find examples and configurations in the [Documentation](/plugins/volkovlabs-echarts-panel/streaming).
+Streaming enables real-time data updates using streaming data sources and Grafana Live. You can find examples and configurations in [our documentation](/plugins/volkovlabs-echarts-panel/streaming).
 
 ### Grafana Live
 
-Grafana Live is a real-time messaging engine introduced in Grafana 8. With Grafana Live, you can push event data to a frontend as soon as an event occurs.
+Grafana Live is a real-time messaging engine introduced in Grafana v8.0. With Grafana Live, you can push event data to a frontend as soon as an event occurs.
 
 <Image
   title="Apache ECharts allows displaying messages from Grafana Live real-time engine."
@@ -34,29 +34,29 @@ Grafana Live is a real-time messaging engine introduced in Grafana 8. With Grafa
 
 ### WebSocket API
 
-To stream real-time data, we used the [WebSocket Data Source for Grafana](https://grafana.com/grafana/plugins/golioth-websocket-datasource/).
+To stream real-time data, we used the [WebSocket data source for Grafana](https://grafana.com/grafana/plugins/golioth-websocket-datasource/).
 
 <Image
-  title="Streaming real-time events from WebSocket data source."
+  title="Streaming real-time events from the WebSocket data source."
   src="/img/blog/2023-01-13-echarts-panel-4.1.0/websocket.png"
 />
 
 ## Data Zoom feature
 
-The data zoom feature allows selecting the time range on the chart. When the time range is selected the event can trigger updating the dashboard's time range using the `locationService` parameter similar to Grafana behavior.
+The Data Zoom feature allows you to choose a time period on the chart. Once the time range is selected, the event can update the time range on the dashboard using the `locationService` parameter, similar to native Grafana behavior.
 
 <Image
-  title="Data Zoom feature for Random Walk allows updating Time Range for the selected range."
+  title="The Data Zoom feature for Random Walk allows updating a time range for the selected range."
   src="/img/blog/2023-01-13-echarts-panel-4.1.0/data-zoom.png"
 />
 
-You can find the code in the [Event Handling](/plugins/volkovlabs-echarts-panel/events) section.
+You can find the code snippet in the [Event Handling](/plugins/volkovlabs-echarts-panel/events) section.
 
 ## Getting Started
 
-Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+You can install Apache ECharts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
 
-For the latter, use the following command.
+For the latter, please use the following command.
 
 ```bash
 grafana-cli plugins install volkovlabs-echarts-panel
@@ -64,14 +64,14 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 ## YouTube Tutorial
 
-The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+The Apache ECharts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
 
 <Video
   src="https://www.youtube.com/embed/DxqCrBEmrQw"
   title="How to create modern dashboards in Grafana."
 />
 
-Apache ECharts is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+One of the three plugins that completes Grafana is Apache ECharts Panel. With Dynamic Text, Data Manipulation, and Apache ECharts Panel you can create fully functional web applications meeting your needs and expectations.
 
 <Video
   src="https://www.youtube.com/embed/wPr4gZYzUVA"
@@ -82,17 +82,17 @@ Apache ECharts is one of the three plugins that make Grafana complete. Dynamic T
 
 ### Features / Enhancements
 
-- Synchronize the README file with Documentation (#111)
-- Add Streaming Support for WebSockets and Grafana Live (#113)
-- Move InfluxDB Example to the Guest Blog post (#115)
-- Update Documentation and Tutorials in README (#116)
-- Add Data Zoom to default Line Example (#117)
+- Synchronized the README file with the product documentation (#111).
+- Added the Streaming support for WebSockets and Grafana Live (#113).
+- Moved the InfluxDB example to the guest blog post (#115).
+- Updated the documentation and tutorials in the README file (#116).
+- Added the data zooming to the default Line example (#117).
 
 ## Feedback
 
-We love to hear from you. There are various ways to get in touch with us.
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
-- Star the repository to show your support.
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
