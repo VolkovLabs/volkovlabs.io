@@ -55,11 +55,17 @@ The version is reserved for future improvements. The only supported version is 2
 
 ## Configuration
 
-| Option       | Description                              | Default |
-| ------------ | ---------------------------------------- | ------- |
-| `notMerge`   | Don't merge options.                     | `true`  |
-| `lazyUpdate` | Useful when updating options frequently. | `false` |
-| `silent`     | Whether trigger events.                  | `false` |
+| Option       | Description                                                                             | Default |
+| ------------ | --------------------------------------------------------------------------------------- | ------- |
+| `notMerge`   | Specifies whether it's required to merge the current option with a previous one.        | `true`  |
+| `lazyUpdate` | Specifies whether it's required to update the modified chart instantly or not.          | `false` |
+| `silent`     | Specifies whether it's required to prevent triggering events when calling `setOption`.  | `false` |
+
+:::info Additional resources
+
+To find more details on configuration options, please see [ECharts documentation](https://echarts.apache.org/en/api.html#echartsInstance.setOption).
+
+:::
 
 ## Option
 
@@ -69,4 +75,4 @@ The option is the chart configuration in the JSON format described in [ECharts F
 
 The unsubscribe section allows the adding of JavaScript code which is executed before the object is destroyed.
 
-One of the use cases relates to unsubscription from [Grafana events using Event Bus](../eventbus).
+One of the use cases relates to unsubscription from [Grafana events using an event bus](../eventbus).
