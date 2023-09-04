@@ -12,20 +12,20 @@ import Video from "@theme/Video";
 
 # Apache ECharts Panel 4.5.0 supports Grafana 10
 
-We released a new version of the Apache ECharts Panel 4.5.0 for Grafana. This maintenance release
+We are happy to announce the release of Apache ECharts Panel 4.5.0 for Grafana. This maintenance release includes the following updates:
 
-- Tested with Grafana 10 Preview.
-- Example function was updated to support Grafana 10.
+- Tested the plugin with Grafana 10 Preview.
+- Updated the function example to support Grafana 10.
 - Added an alert for custom theme parsing errors.
 - Migrated to Plugin Tools 1.5.2 with Node 18 and npm.
 
-:::info Grafana Catalog
-The plugin was updated in Grafana Catalog on June 15, 2023.
+:::info Grafana Plugins catalog
+The plugin was updated in the Grafana Plugins catalog on June 15, 2023.
 :::
 
 ## Changes in Grafana 10
 
-Some data sources in Grafana 10 return field values as `values` instead of `values.buffer` as in Grafana 9 and before. We updated the example function to work in Grafana 9 and Grafana 10:
+Some data sources in Grafana 10 return field values as `values` instead of `values.buffer` as in Grafana 9 and prior versions. We updated the function example to work in Grafana 9 and Grafana 10:
 
 ```
   const sData = s.fields.find((f) => f.type === 'number').values.buffer || s.fields.find((f) => f.type === 'number').values;
@@ -34,22 +34,22 @@ Some data sources in Grafana 10 return field values as `values` instead of `valu
 
 You can remove the `||` statement and choose the correct expression for your Grafana version.
 
-## Custom Theme
+## Custom Themes
 
-We added an alert for theme parsing errors. JSON errors can be hard to spot and the theme won't be applied until all errors are fixed.
+We added an alert for theme parsing errors. It may be difficult to identify JSON errors when applying a modified theme until all issues are resolved.
 
-A new alert makes the troubleshooting process effortless.
+A new alert makes the troubleshooting process simpler and more effective.
 
 <Image
-  title="Apache ECharts visualization panel supports custom theme from Theme Builder."
+  title="Apache ECharts Panel supports custom themes from Theme Builder."
   src="/img/blog/2023-06-03-echarts-panel-4.5.0/theme.png"
 />
 
 ## Getting Started
 
-Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+Apache ECharts visualization panel can be installed from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
 
-For the latter, use the following command.
+For the latter, please use the following command.
 
 ```bash
 grafana-cli plugins install volkovlabs-echarts-panel
@@ -57,7 +57,7 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 ## YouTube Tutorial
 
-The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+The Apache ECharts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
 
 <Video
   src="https://www.youtube.com/embed/DxqCrBEmrQw"
@@ -68,17 +68,17 @@ The Apache ECharts plugin is a visualization panel for Grafana that allows you t
 
 ### Features / Enhancements
 
-- Migrate to Plugin Tools 1.5.2 (#171, #176)
-- Update to Node 18 and npm (#172, #173)
-- Add an alert for theme parsing error (#175)
-- Update Default Function to support Grafana 10 (#178)
-- Tested with Grafana 10 Preview (#179)
+- Migrated to Plugin Tools 1.5.2 (#171, #176).
+- Updated the plugin to Node 18 and npm (#172, #173).
+- Added an alert for the theme parsing error (#175).
+- Updated the default function to support Grafana 10 (#178).
+- Tested the plugin on Grafana 10 Preview (#179).
 
 ## Feedback
 
-We love to hear from you. There are various ways to get in touch with us.
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
-- Star the repository to show your support.
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
