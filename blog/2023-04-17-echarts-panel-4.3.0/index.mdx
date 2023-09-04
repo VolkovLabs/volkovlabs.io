@@ -12,25 +12,24 @@ import Video from "@theme/Video";
 
 # Apache ECharts Panel 4.3.0/4.3.1
 
-We released a new version of the Apache ECharts Panel 4.3.0/4.3.1 for Grafana. This feature release
-
-- Added Alert State and Annotations.
+We are happy to announce the release of Apache ECharts Panel 4.3.0 and 4.3.1 for Grafana  for Grafana. These feature release include the following updates:
+- Added an alert state and annotations.
 - <del>
-    Added `getDataSourceSrv` parameter to retrieve the entry point to data
+    Added the `getDataSourceSrv` parameter to retrieve the entry point to data
     sources.
   </del>
-- Updated USA and World GeoJSON.
-- Updated to the latest Grafana 9.4.7 toolkit and Apache ECharts 5.4.2.
+- Updated U.S. and world maps in the GeoJSON module.
+- Updated the plugin to the latest Grafana 9.4.7 toolkit and the Apache ECharts 5.4.2 library.
 
-:::info Grafana Catalog
-During the Grafana teams review the `getDataSourceSrv` parameter was removed due to security reasons in v4.3.1.
+:::info Grafana Plugins catalog
+After the plugin review by the Grafana team, the `getDataSourceSrv` parameter was removed due to security reasons in v4.3.1.
 
-The plugin was updated in Grafana Catalog on April 24, 2023.
+The plugin was updated in the Grafana Plugins catalog on April 24, 2023.
 :::
 
 ## 100k downloads
 
-The Apache ECharts panel was downloaded more than 100,000 times. Apache ECharts is not plug-an-play and has a learning curve. Our YouTube tutorials and [documentation](/plugins/volkovlabs-echarts-panel) help to experience unbeatable customization capabilities.
+We are pleased to announce that Apache ECharts Panel has been downloaded over 100,000 times. This extension is not a plug-and-play product and requires some learning. Our [YouTube tutorials](https://www.youtube.com/watch?v=B4Uj1n4Cr88&list=PLPow72ygztmQHGWFqksEf3LebUfhqBfFu) and [documentation](/plugins/volkovlabs-echarts-panel) will undoubtedly assist you in mastering the plugin and revealing its unrivaled customization potential.
 
 <Image
   title="100,000 downloads in 6 months since we forked the panel."
@@ -40,7 +39,7 @@ The Apache ECharts panel was downloaded more than 100,000 times. Apache ECharts 
 
 ## Alert State and Annotations
 
-We added support for Annotations in Apache ECharts using mark lines. Data for mark lines should be retrieved from the `data` as explained in the [documentation](/plugins/volkovlabs-echarts-panel/annotations/).
+We added support for Annotations in Apache ECharts using mark lines. Data for mark lines is retrieved from the `data.annotations` object as explained in the [product documentation](/plugins/volkovlabs-echarts-panel/annotations/).
 
 ```js
 const annotations = [];
@@ -99,12 +98,12 @@ const series = data.series.map((s) => {
 
 :::info Security
 
-During the Grafana teams review this functionality was removed due to security reasons in v4.3.1.
+After the plugin review by the Grafana team, this functionality was removed due to security reasons in v4.3.1.
 
-We are experimenting with a safe approach in the Data Manipulation plugin and will look into implementing it for the Apache ECharts.
+We are testing a security-safe technique in the Data Manipulation plugin and plan to include it into Apache ECharts Panel.
 :::
 
-Apache ECharts panel allows retrieving the entry point to data sources. With the data source instance, you can execute any methods provided by the data source.
+Apache ECharts Panel allows you to retrieve an entry point of a data source. You can use the data source instance to perform any methods supplied by the data source.
 
 ```js
 async () => {
@@ -118,7 +117,7 @@ async () => {
 
 ## GeoJSON updates
 
-GeoJSON files for USA and World were synchronized to the native maps found in Grafana GeoMap. Now you can easily switch to Apache ECharts from GeoMap to show visual maps as we did for the [Website Analytics blog](/blog/documentation-updates-20230214/).
+GeoJSON files (U.S. and world maps) were synchronized with native maps provided within Grafana GeoMap. You may now quickly transition from GeoMap to Apache ECharts Panel to display visual maps, like we already did for the [Website Analytics blog](/blog/documentation-updates-20230214/).
 
 <Image
   title="GeoJSON Map displays requests from users around the world."
@@ -127,10 +126,10 @@ GeoJSON files for USA and World were synchronized to the native maps found in Gr
 
 ## Panel Variables
 
-We continue to experiment with adding DOM elements directly to the Apache ECharts container to add interactivity. This time we added a select list to choose an option to update Apache ECharts or directly interact with the data source using an entry point.
+We continue to explore with integrating DOM components straight into the Apache ECharts container to add more interactivity. This time, we introduced a dropdown box that lets you update Apache ECharts or establish a direct interaction with the data source through an entry point.
 
 <Image
-  title="Add a select list to select an option and update Apache EChart options."
+  title="Added a dropdown box to select an option and update options in Apache ECharts Panel."
   src="/img/blog/2023-04-17-echarts-panel-4.3.0/select.png"
 />
 
@@ -141,9 +140,9 @@ We continue to experiment with adding DOM elements directly to the Apache EChart
 
 ## Getting Started
 
-Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+You can install Apache ECharts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
 
-For the latter, use the following command.
+For the latter, please use the following command.
 
 ```bash
 grafana-cli plugins install volkovlabs-echarts-panel
@@ -151,14 +150,14 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 ## YouTube Tutorial
 
-The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+The Apache ECharts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
 
 <Video
   src="https://www.youtube.com/embed/DxqCrBEmrQw"
   title="How to create modern dashboards in Grafana."
 />
 
-Apache ECharts is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+One of the three plugins that completes Grafana is Apache ECharts Panel. With Dynamic Text, Data Manipulation, and Apache ECharts Panel you can create fully functional web applications meeting your needs and expectations.
 
 <Video
   src="https://www.youtube.com/embed/wPr4gZYzUVA"
@@ -169,15 +168,15 @@ Apache ECharts is one of the three plugins that make Grafana complete. Dynamic T
 
 ### Breaking changes in 4.3.1
 
-- Due to security reasons getDataSourceSrv parameter was removed (#156)
+- Removed the `getDataSourceSrv` parameter due to security reasons (#156).
 
 ### Features / Enhancements
 
-- Update to Grafana 9.4.7 (#146)
-- Add getDataSourceSrv parameter to retrieve the entry point to data sources (#146)
-- Update to Apache ECharts 5.4.2 (#147)
-- Update USA and World GeoJSON used in GeoMap (#154)
-- Add Alert State and Annotations (#155)
+- Added compatibility with Grafana 9.4.7 (#146).
+- Added `getDataSourceSrv` parameter to retrieve the entry point to data sources (#146).
+- Updated the Apache ECharts library to version 5.4.2 (#147).
+- Updated U.S. and world GeoJSON maps used in the GeoMap module (#154).
+- Added the Alert State and Annotations (#155).
 
 ### Apache ECharts 5.4.2
 
@@ -197,9 +196,9 @@ Apache ECharts is one of the three plugins that make Grafana complete. Dynamic T
 
 ## Feedback
 
-We love to hear from you. There are various ways to get in touch with us.
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
-- Star the repository to show your support.
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.

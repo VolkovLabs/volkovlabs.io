@@ -13,20 +13,20 @@ import Video from "@theme/Video";
 
 # Apache ECharts Panel 4.2.0
 
-We released a new version of the Apache ECharts Panel 4.2.0 for Grafana. This maintenance release
+We are happy to announce the release of Apache ECharts Panel 4.2.0 for Grafana. This maintenance release includes the following updates:
 
-- Added `EventBus` parameter to publish events.
-- Removed panel padding allowing to use of panel's space corner to corner.
-- Updated default background to `transparent` for Light and Dark themes.
-- Updated to the latest Grafana 9.4.3 toolkit and workflows.
+- Added the `EventBus` parameter to publish events.
+- Removed the panel padding, allowing you to use all of the panel space from corner to corner.
+- Updated the default background to `transparent` for light and dark themes.
+- Updated the plugin to the latest Grafana 9.4.3 toolkit and workflows.
 
-:::info Grafana Catalog
-The plugin was updated in Grafana Catalog on March 8, 2023.
+:::info Grafana Plugins catalog
+The plugin was updated in the Grafana Plugins catalog on March 8, 2023.
 :::
 
 ## No Padding
 
-Removed panel padding allows using of the panel space from corner to corner and displays charts, maps, and graphics in the full width and height of the panel.
+The removal of the panel padding lets you use the panel space more effectively for displaying charts, maps, and graphics across the entire width and height of the panel.
 
 <Image
   title="GeoJSON Map displays requests from users around the world."
@@ -36,30 +36,30 @@ Removed panel padding allows using of the panel space from corner to corner and 
 
 ## Community Use cases
 
-We are impressed with the everyday creations from the community using the latest features in the Apache ECharts panel for Grafana.
+We are amazed by the everyday developments of the community that make use of the latest capabilities in Apache ECharts Panel for Grafana.
 
 ### Dynamic toolbox
 
-One of the interesting use cases is displaying complex ECharts objects like a sunburst with the toolbox, strongly dynamic and dependent on many variables by [ftasso](https://github.com/ftasso).
+Our community member [ftasso](https://github.com/ftasso) shared an extremely interesting use case that displays complex ECharts objects like a sunburst with the toolbox. It dynamically retrieves data and uses a variety of variables for chart generation. 
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/dynamic.js"
   language="js"
 />
 
-### Preserve Visual Map selected range
+### Preserve the selected range on a visual map 
 
-Saving the `visualMap` range slider settings across Dashboard refreshes by [Barryetter](https://github.com/Barryetter).
+Our community member [Barryetter](https://github.com/Barryetter) shared another use case that allows you to preserve the range slider settings of the `visualMap` object after the dashboard refresh.
 
-1. Create two dashboard variables. Constants are fine, and they should be hidden from the user. Name them `datarangeStart` and `datarangeEnd` and set them to some initial values.
-2. In the EChart panel code editor (before the return), add an event handler for the `datarangeselected` event. Remove any event handler to prevent creating duplicate handlers.
+1. Specify two dashboard variables. Constants are also fine but you need to hide them from the user. Name them `datarangeStart` and `datarangeEnd` and apply some initial values to them.
+2. In the Apache EChart Panel code editor (before the `return` snippet), add an event handler for the `datarangeselected` event. Remove any other event handler to prevent creation of duplicate handlers.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/range.js"
   language="js"
 />
 
-3. In the `visualMap` definition, set the `range` property to the Dashboard variables using the `replaceVariables` method as described in the [documentation](/plugins/volkovlabs-echarts-panel/variables).
+3. In the `visualMap` definition, set the `range` property to the dashboard variables using the `replaceVariables` method as described in our [documentation](/plugins/volkovlabs-echarts-panel/variables).
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/visual-map.js"
@@ -68,10 +68,10 @@ Saving the `visualMap` range slider settings across Dashboard refreshes by [Barr
 
 ## Create DOM (Document Object Model) Elements
 
-It's possible to add elements (button, checkbox, select, etc.) to the DOM (Document Object Model) using `echartsInstance` by [Lroy](https://github.com/Lroy).
+You can add elements (buttons, checkboxes, dropdown boxes, etc.) to the DOM (Document Object Model) using `echartsInstance` contributed by [Lroy](https://github.com/Lroy).
 
 <Image
-  title="Add a button to add Events on the Apache ECharts container."
+  title="Add a button to add Events into the Apache ECharts container."
   src="/img/blog/2023-03-04-echarts-panel-4.2.0/dom.png"
 />
 
@@ -84,9 +84,9 @@ For example, you can add a button with an event handler.
 
 ## Getting Started
 
-Apache ECharts visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or utilizing the Grafana command line tool.
+You can install Apache ECharts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
 
-For the latter, use the following command.
+For the latter, please use the following command.
 
 ```bash
 grafana-cli plugins install volkovlabs-echarts-panel
@@ -94,37 +94,37 @@ grafana-cli plugins install volkovlabs-echarts-panel
 
 ## YouTube Tutorial
 
-The Apache ECharts plugin is a visualization panel for Grafana that allows you to incorporate the popular Apache ECharts library into your Grafana dashboard.
+The Apache ECharts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
 
 <Video
   src="https://www.youtube.com/embed/DxqCrBEmrQw"
   title="How to create modern dashboards in Grafana."
 />
 
-Apache ECharts is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+One of the three plugins that completes Grafana is Apache ECharts Panel. With Dynamic Text, Data Manipulation, and Apache ECharts Panel you can create fully functional web applications meeting your needs and expectations.
 
 <Video
   src="https://www.youtube.com/embed/wPr4gZYzUVA"
-  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
+  title="Dynamic Text, Data Manipulation, and Apache ECharts Panel plugins."
 />
 
 ## Release Notes
 
 ### Features / Enhancements
 
-- Add `EventBus` to the available parameters to publish events (#122)
-- Update to Grafana 9.3.6 (#132)
-- Update CI and Release workflows (#134)
-- Add NoPadding to remove extra padding around (#138)
-- Set Background color to Transparent by default (#139)
-- Add Magic (JavaScript) Trio tutorial (#141)
-- Update to Grafana 9.4.3 (#142)
+- Added `EventBus` to the available parameters for publishing events (#122).
+- Added compatibility with Grafana 9.3.6 (#132).
+- Added compatibility with Grafana 9.4.3 (#142).
+- Updated CI and release workflows (#134).
+- Added `NoPadding` to remove extra padding around (#138).
+- Set the background color as transparent by default (#139).
+- Added the Magic (JavaScript) Trio tutorial (#141).
 
 ## Feedback
 
-We love to hear from you. There are various ways to get in touch with us.
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
-- Star the repository to show your support.
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
