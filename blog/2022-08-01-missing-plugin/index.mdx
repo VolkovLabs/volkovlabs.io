@@ -12,27 +12,27 @@ import Video from "@theme/Video";
 
 # The missing plugin to create business and industrial charts in Grafana
 
-Grafana is a de-facto one of the best observability visualization tools with various chart panels and many community plugins like Plotly. Still, no none of them can compare with Apache ECharts' flexibility.
+Grafana is without a doubt one of the best analytics and data visualization platforms, with a wide range of chart panels and a long list of community plugins like Plotly. Nonetheless, none of them can compete with the flexibility of Apache ECharts.
 
-Apache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts. It is written in pure JavaScript and based on zrender.
+Apache ECharts is a free but powerful charting and visualization library that allows you to create intuitive, interactive, and highly customizable charts in a matter of minutes. It is written entirely in JavaScript and is based on the zrender library.
 
 <Image
-  title="Apache ECharts Examples Grafana instance."
+  title="Apache ECharts Panel - Examples in Grafana."
   src="https://github.com/VolkovLabs/volkovlabs-echarts-panel/raw/main/src/img/examples.png"
   lazy={false}
 />
 
-The Apache ECharts visualization panel is a plugin for Grafana that allows you to incorporate the Apache ECharts library into your Grafana dashboard. The original plugin was developed for Grafana 6.3/7.0 and Apache ECharts library 4.9.0. It has not been maintained since then.
+Apache ECharts Panel is a plugin for Grafana that allows you to integrate the Apache ECharts library and its unlimited capabilities into your Grafana dashboard. The original plugin was developed for Grafana 6.3 and 7.0 and was based on Apache ECharts 4.9.0. It hasn't been updated since then.
 
-Volkov Labs adapted and updated it based on the latest Grafana 9 with Apache ECharts library 5.3.3, introducing new features like Monaco Code Editor and supporting SVG and Canvas renderer.
+Volkov Labs adapted and upgraded it based on the most recent Grafana 9 with the integration of Apache ECharts 5.3.3, which allowed adding new features such as Monaco Code Editor and support for SVG and Canvas renderers.
 
-The Apache ECharts visualization panel can be installed from the Grafana Catalog (Plugins Configuration menu). Alternatively, you can install it manually [downloading from GitHub](https://github.com/volkovlabs/volkovlabs-echarts-panel).
+You can install Apache ECharts Panel from the Grafana Plugins catalog (Plugins Configuration menu). Alternatively, you can set up it manually by [downloading from GitHub](https://github.com/volkovlabs/volkovlabs-echarts-panel).
 
 ## Apache ECharts
 
-Apache ECharts library is a mighty tool. You do not need a senior Javascript developer to start displaying modern-looking animated visualizations. And if your use case is unique, Apache ECharts provides an excellent venue to develop visualizations of any complexity.
+The Apache ECharts library is a powerful and robust data visualization solution. To get started with building visually appealing and insightful data visualizations, you do not need to be a senior JavaScript developer. Furthermore, if your use case is pretty unique, Apache ECharts is a perfect tool for developing visualizations of any complexity and scale.
 
-The Apache ECharts visualization panel for Grafana is a bridge that has been missing and finally arrived. You can use the benefits of two great open-source products Grafana and Apache ECharts in one solution tailored to your needs.
+Apache ECharts Panel for Grafana is a much-anticipated bridge that has now become available. You can combine the top-notch advantages of two outstanding open-source solutions, Grafana and Apache ECharts, into a single solution tailored to your specific requirements.
 
 <Video
   src="https://www.youtube.com/embed/DxqCrBEmrQw"
@@ -43,17 +43,17 @@ According to the [press release](https://www.globenewswire.com/fr/news-release/2
 
 > "Apache ECharts is in use at Alibaba, Amazon, Baidu, GitLab, Intel, and Tencent, among others, as well as solutions such as Apache Superset data visualization software."
 
-The project continues to grow in popularity, with more than 50,000 stars on GitHub and 450,000 weekly downloads on [npm](https://www.npmjs.com/package/echarts).
+The project's popularity is exponentially growing, with over 50,000 stars on GitHub and 450,000 weekly downloads at [npm](https://www.npmjs.com/package/echarts).
 
 ## Wind Speed
 
-Wind speed visualization is one of many exciting examples of what the Apache ECharts library can do.
+The Wind Speed chart is one of many captivating uses of the Apache ECharts library.
 
-- Every data element is displayed using the custom arrow.
-- The arrow color signifies the speed.
-- The direction where the arrow points - shows the wind direction.
+- Each data element is displayed using a custom arrow.
+- The speed is shown by the color of the arrow.
+- The direction of the arrow indicates the direction of the wind.
 
-So much information is geniusly packed in a single display.
+A lot of insightful information is cleverly packed into a single visualization.
 
 <Image
   title="Visualizing Wind Speed using custom Arrows on the Grafana dashboard."
@@ -62,9 +62,9 @@ So much information is geniusly packed in a single display.
 
 ## Directed Graph
 
-We at Volkov Labs spent some time researching the options for displaying directed graphs. The Apache ECharts satisfied every single requirement we had in mind effortlessly.
+Volkov Labs spent some time investigating the various options for visualizing directed graphs. The Apache ECharts easily met every single requirement we had in mind.
 
-The video below demonstrates the Apache ECharts directed/undirected graphs capabilities.
+The following video highlights the capabilities of Apache ECharts for building directed and undirected graphs.
 
 <Video
   src="https://www.youtube.com/embed/BcW7iyTadWE"
@@ -73,9 +73,9 @@ The video below demonstrates the Apache ECharts directed/undirected graphs capab
 
 ### Tutorial
 
-The launch of the [Live Dashboard](https://live.volkovlabs.io/) triggered many how-to questions. To answer them all by explaining how we created this project, the following two parts tutorial was put together.
+The launch of our [Live Dashboard](https://live.volkovlabs.io/) caused an avalanche of how-to requests from the Grafana community. We developed the following two-part tutorial explaining how we created this project.
 
-In this project, we employed directed graph visualization to track company activities across Blog (Medium), GitHub, YouTube, and various external resources.
+In this project, we took advantage of a directed graph visualization to track company activities across Blog (Medium), GitHub, YouTube, and various external resources.
 
 <Video
   src="https://www.youtube.com/embed/e3VHgpuzEF0"
@@ -89,20 +89,20 @@ In this project, we employed directed graph visualization to track company activ
 
 ## Live Dashboard
 
-The [Live Dashboard](https://live.volkovlabs.io) is ALIVE. The directed graphs are built dynamically. We daily update the underlying data, so, at any point in time, the visualization gives the freshest possible update on our articles, releases, videos and other activities.
+The [Live Dashboard](https://live.volkovlabs.io) is now fully operational. The directed graphs are generated dynamically. We refresh the underlying data on a daily basis so that the visualization always provides the most recent information on our articles, releases, videos, and other activities.
 
 <Image
-  title="Live Updated project helps us to track our activities across all mediums."
+  title="The Live Dashboard project helps us track our activities across all mediums.."
   src="/img/blog/2022-08-01-missing-plugin/live.png"
 />
 
-Directed graphs use the force layout to adjust nodes' location automatically. In addition, nodes have different icons/styling depending on their type. Clicking on the elements allows you to open an external URL or take a closer look at the subgraphs.
+Directed graphs use the force layout to automatically alter the location of nodes. Furthermore, depending on their kind, nodes have varied icons and styles. By clicking the elements, you can view an external URL or zoom in on the subgraphs.
 
-The tutorial above gives a complete picture of the achieved functionality.
+The preceding tutorial provides a comprehensive overview of the implemented functionality.
 
-The picture below displays all our GitHub projects. When this picture was taken, we had the following projects.
+All of our GitHub projects are shown in the screenshot below. At the time this screenshot was taken, we were working on all these projects.
 
-- [Apache ECharts panel](https://live.volkovlabs.io/d/tXQ9_367z/apache-echarts-panel?orgId=1)
+- [Apache ECharts Panel](https://live.volkovlabs.io/d/tXQ9_367z/apache-echarts-panel?orgId=1)
 - [Calendar panel](https://live.volkovlabs.io/d/0fgJcb4Vz/calendar-panel?orgId=1)
 - [Dynamic Text panel](https://live.volkovlabs.io/d/2L2sYjVVz/dynamic-text-panel?orgId=1)
 - [Data Manipulation panel](https://live.volkovlabs.io/d/h5IJk66nk/data-manipulation-panel?orgId=1)
@@ -110,19 +110,19 @@ The picture below displays all our GitHub projects. When this picture was taken,
 - [RSS-Atom data source](https://live.volkovlabs.io/d/zUDs5zRVk/rss-atom-data-source?orgId=1)
 - [Static data source](https://live.volkovlabs.io/d/heM1lTN4z/static-data-source?orgId=1)
 
-You can see all releases we published for each project.
+You can see all of the releases we've made for each project.
 
 <Image
-  title="The directed Graph for GitHub displays all major and minor releases for our Grafana plugins."
+  title="The directed graph for GitHub displays all major and minor releases for our Grafana plugins."
   src="/img/blog/2022-08-01-missing-plugin/github.png"
 />
 
-You are welcome to take a look and learn about our [Grafana plugins at Live Dashboard](https://live.volkovlabs.io).
+We invite you to visit our [Live Dashboard](https://live.volkovlabs.io) to find out more about the plugins we develop.
 
-## Apache ECharts visualization panel in the wild
+## Apache ECharts Panel in the wild
 
-Since we adopted and improved the Apache ECharts visualization panel, we have received great positive feedback from the community. Thank you!
+We have received a lot of encouraging feedback from the community since we adopted and upgraded Apache ECharts Panel. Thank you very much!
 
-Our clients gladly accepted our help in upgrading from an older version of the library.
+Our clients gratefully welcomed our assistance in upgrading from an earlier version of the library.
 
-In addition, Volkov Labs migrated industrial Plotly dashboards to Apache ECharts. We were able to keep all existing functionality and as well added all desired extra features like a custom toolbox button (to dynamically change the charts) and support of the multiple Y-axis.
+Volkov Labs also switched industrial Plotly dashboards to Apache ECharts. We were able to preserve all existing functionality while also adding all of the required extra features, such as a custom toolbox button (to dynamically change the charts) and multiple Y-axis support.
