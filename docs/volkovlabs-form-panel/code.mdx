@@ -90,6 +90,35 @@ if (response && response.ok) {
 }
 ```
 
+## Perform Initial Request only on dashboard load
+
+```javascript
+const getValues = async () => {
+  /**
+   * Check if all values are empty
+   */
+  const isFirstLoad = elements.every((element) => !element.value)
+
+  if (isFirstLoad) {
+    /**
+     * Get Data
+     */
+    const response = await fetch();
+    const json = await response.json();
+
+   /**
+    * Update initial element values
+    */
+   onChange(elements.map((element) => ({
+     ...element,
+     value: json[element.id],
+   }))
+  }
+}
+
+return getValues();
+```
+
 ## Clear elements' values after Submit or on the Reset button click
 
 ```javascript
