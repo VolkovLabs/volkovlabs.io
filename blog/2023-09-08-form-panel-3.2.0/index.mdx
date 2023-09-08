@@ -1,0 +1,197 @@
+---
+authors: [daria]
+slug: form-panel-3.2.0-20230908/
+tags: [Data Manipulation, Review]
+image: /img/blog/2023-09-08-form-panel-3.2.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Image from "@theme/Image";
+
+# Using Query and Data Sources in the Data Manipulation plugin for Grafana 
+
+The Data Manipulation plugin drew massive community attention in recent months. With about 500 daily downloads, we were swamped with questions and great ideas for improvements for quite some time.  
+
+:::info Thanks
+Big thanks to all participating in the creative thinking feast!
+:::
+
+When we first introduced this plugin, we knew the functionality it provides had been long awaited for, but we did not anticipate such avalanche demand. 
+
+Grafana is famous for its unparalleled data visualization ability. The Data Manipulation plugin is esteemed for extending the Grafana vast visualization arsenal by data manipulation functionality. 
+In other words, The Data Manipulation plugin gracefully transforms one-way data street into two ways, allowing users to add and update data in the database. 
+
+REST API is the first method the Data Manipulation plugin started with. Now, in addition to REST API, you can choose Query and Data Source. We also kept a fully Custom method available for the use cases with the most unusual requirements.
+
+The Query utilizes the standard Grafana data retrieval functionality, which limits this method to exist only in the Initial request data flow.
+
+:::info Asian proveb
+Better to see something once than to hear about it a thousand times
+:::
+
+## The final product
+
+This article describes the steps to complete a basic Grafana project where the central requirement is the user's ability to update a device setting stored in an external database. 
+
+Below, you can see a Grafana dashboard with the Data Manipulation plugin. It contains two similar examples with the difference in the Initial Request type. In the first example, I use the Query and in the second, I use the Data Source Initial Request type.
+
+<Image
+  title="Data Manipulation with Query and Data Source as Initial Requests Demo."
+  src="/img/blog/2023-09-08-form-panel-3.2.0/dashboard.png"
+/>
+
+For switching between devices, I chose to use the Variable panel. It is unessential to the Data manipulation, but I needed a filter located on the side of the users' forms, hence, my choice.
+
+## Database 
+
+PostgreSQL is our go-to database for most of our dummy and production projects. This time is no exception. 
+The data table structure below demonstrates the basics of the Data Manipulation plugin.
+The name column captures a device name. The rest of the columns are for corresponding device metrics.
+
+```sql
+CREATE TABLE configuration (
+    name text,
+    max integer not null,
+    min integer not null,
+    speed integer not null
+); 
+
+insert into configuration values ('device1', 100, 10, 54);
+insert into configuration values ('device2', 60, 0, 10);
+insert into configuration values ('device3', 60, 30, 40);
+insert into configuration values ('device4', 34, 10, 20);
+```
+
+## Query Initial Request
+
+In the Initial Request, you have a  choice of four types:
+- Custom[-],
+- Data Source,
+- Query,
+- REST API(GET).
+
+I selected the Query type for the first example.  This method refers to the standard Grafana fetching mechanism. That means you need to have a configured Grafana data source and select it on the left-hand side drop-down. The Data Manipulation supports all Grafana data sources. 
+
+The next step is to specify a query. In my example, I use a simple SQL statement to retrieve min, max, and speed metrics from a configuration table for all devices. 
+
+Then, I created three form elements, all read-only. Every element is mapped to the corresponding query field.
+
+The Highlight Changes feature, when enabled, displays the modified values with a specified color. 
+
+<Image
+  title="Query Initial Request setup Example"
+  src="/img/blog/2023-09-08-form-panel-3.2.0/init-query.png"
+/>
+
+The SQL from the picture above to copy:
+```sql
+SELECT min, max, speed
+FROM configuration
+WHERE name = '$device';  
+```
+
+:::note Good to know
+Query exists only as Initial Request type and not as Update Request type. This method utilized Grafana's standard retrieval mechanism, which is one-way in its core and, thus, can only be used in the Initial Request process.
+:::
+
+## Data Source Initial Request
+
+When you select Data Source as your Initial Request type, the standard data source setting on the left becomes completely irrelevant. 
+
+I specified PostgreSQL as a Data Source on the right and the retrieval query in the create payload parameter located in the Initial Request Payload section.
+
+Highlight Changes feature for the Data Source type requires to call the SetInitial() function in the post-process. 
+
+In the picture below, I provide the example code with SetInitial() function. 
+
+<Image
+  title="Data Source Initial Request setup Example"
+  src="/img/blog/2023-09-08-form-panel-3.2.0/init-ds.png"
+/>
+
+Initial Request payload to copy:
+
+```js
+return {
+  rawSql: "select * from configuration where name ='$device';",
+  format: 'table',
+}
+```
+
+Initial Request Custom Code to copy:
+```js
+const payload = {};
+
+elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  payload[element.id] = element.value;
+})
+
+console.log(payload);
+setInitial(payload);
+
+return;
+
+/**
+ * Data Source
+ * Requires form elements to be defined
+ */
+const dataQuery = toDataQueryResponse(response);
+console.log(dataQuery);
+```
+
+## Update Request
+
+In my example, I choose to have the identical update Request for both Initial requests. 
+My configuration is in the picture below.
+
+<Image
+  title="Update Request setup Example"
+  src="/img/blog/2023-09-08-form-panel-3.2.0/update.png"
+/>
+
+Update Request Payload code to copy:
+
+```js
+const payload = {};
+
+elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  payload[element.id] = element.value;
+})
+
+/**
+ * Data Source payload
+ */
+return {
+  rawSql: `update configuration set min=${payload.min}, max=${payload.max}, speed=${payload.speed} where name='$device'`,
+  format: 'table',
+};
+
+```
+
+Update Request Custom Code to copy:
+
+```js
+if (response && response.ok) {
+  notifySuccess(['Update', 'Values updated successfully.']);
+  initialRequest();
+} else {
+  notifyError(['Update', 'An error occured updating values.']);
+}
+```
+
+## Feedback
+
+We love to hear from you. There are various ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Star the repository to show your support.
