@@ -4,7 +4,7 @@ slug: image-panel-3.5.0-20230307/
 tags: [Base64 Image/Video/Audio/PDF, Release Notes]
 image: /img/blog/2023-03-07-image-panel-3.5.0/banner.png
 keywords: [Base64, Panel, PDF, Images, Video, Audio]
-updated: 2023-03-08
+updated: 2023-09-09
 ---
 
 import Image from "@theme/Image";
@@ -12,34 +12,34 @@ import Video from "@theme/Video";
 
 # Base64 Image/Video/Audio/PDF Panel 3.5.0
 
-We released a new version of Base64 Image/Video/Audio/PDF Panel 3.5.0. This maintenance release
+We are excited to announce the release of Base64 Image/Video/Audio/PDF Panel 3.5.0. This maintenance release includes the following updates:
 
-- Removed panel padding allowing to use of panel's space corner to corner.
-- Updated to the latest Grafana 9.4.3 toolkit and workflows.
+- Removed the panel padding, allowing you to use the entire area of the panel.
+- Updated workflows and compatibility with the latest Grafana 9.4.3 toolkit.
 
-:::info Grafana Catalog
-The plugin was updated in Grafana Catalog on March 8, 2023.
+:::info Grafana Plugins catalog
+The plugin was updated in the Grafana Plugins catalog on March 8, 2023.
 :::
 
 ## No Padding
 
-Removed panel padding allows using of the panel space from corner to corner and displays images, pdf and media files in the full width and height of the panel.
+Removed the panel padding, which allows you to use the entire panel area for displaying images and PDF or media files.
 
 <Image
-  title="How to use Base64 Panel to display Base64 PNG image."
+  title="How to use the plugin to display Base64-encoded PNG images."
   src="/img/blog/2023-03-07-image-panel-3.5.0/panel.png"
   lazy={false}
 />
 
 ## MQTT Data source
 
-The Base64 panel works with any data source. It was successfully used with the MQTT data source to view the live camera feed by the community.
+Base64 Image/Video/Audio/PDF Panel works with any data source. You can also use it with the MQTT data source to display the live camera feed.
 
 ## Getting Started
 
-Base64 Image/Video/Audio/PDF visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or utilizing the Grafana command line tool.
+You can install Base64 Image/Video/Audio/PDF Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.
 
-For the latter, use the following command.
+For the latter, please use the following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-image-panel
@@ -47,7 +47,7 @@ grafana-cli plugins install volkovlabs-image-panel
 
 ## YouTube Tutorial
 
-The Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats.
+Base64 Image/Video/Audio/PDF Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.
 
 <Video
   src="https://www.youtube.com/embed/1_bgLSehjhg"
@@ -58,15 +58,15 @@ The Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana tha
 
 ### Features / Enhancements
 
-- Update CI and Release workflows (#64)
-- Update to Grafana 9.4.3 (#65)
-- Set NoPadding to use panel corner to corner (#66)
+- Updated CI and release workflows (#64).
+- Added compatibility with Grafana 9.4.3 (#65)
+- Set the `NoPadding` parameter to use the entire area of the panel (#66).
 
 ## Feedback
 
-We love to hear from you. There are various ways to get in touch with us.
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues/new/choose).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and add a comment.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
-- Star the repository to show your support.
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
