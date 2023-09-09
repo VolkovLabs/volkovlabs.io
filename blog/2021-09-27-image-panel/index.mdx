@@ -5,7 +5,7 @@ description: Base64 Image/PDF panel plugin was recently upgraded and has everyth
 tags: [Base64 Image/Video/Audio/PDF]
 image: /img/blog/2021-09-27-image-panel/banner.png
 keywords: [Image, PDF, Base64, Visualization]
-updated: 2023-02-15
+updated: 2023-09-09
 ---
 
 import Image from "@theme/Image";
@@ -13,24 +13,24 @@ import Video from "@theme/Video";
 
 # Display Base64 images from any data source
 
-Base64 Image/PDF panel plugin was recently upgraded in the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) and has everything you need to display images from any data source on your dashboards.
+The Base64 Image/PDF Panel plugin has recently been upgraded in the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) and now has everything you need to display images from any data source on your dashboards.
 
-The initial version of the Base64 Image/PDF panel for Grafana was created for the project "Analyzing camera feed in real-time" and helped to streamline the original project by displaying AI-analyzed images on the Grafana dashboard.
+The initial version of the Grafana plugin was designed for the project analyzing a camera feed in real-time and simplified the original project by displaying AI-analyzed images on the Grafana dashboard.
 
 <Image
-  title="Analyzing camera feed in real-time using RedisAI, OpenCV-Python, and Redis plugins for Grafana."
+  title="Analyzing camera feeds in real-time using RedisAI, OpenCV-Python, and Redis plugins for Grafana."
   src="/img/blog/2021-09-27-image-panel/bat-camera.png"
   lazy={false}
 />
 
 ## Updates
 
-Since the original version, the Base64 panel was
+Since the original version, the Base64 Image/PDF Panel plugin has achieved the following:
 
-- Upgraded to support Grafana 8.
-- Downloaded more than 45,000 times.
+- Support for Grafana 8.
+- More than 45,000 downloads.
 - Featured in the [Grafana Community Plugin Showcase (August 2021)](https://grafana.com/blog/2021/08/10/grafana-community-plugin-showcase-august-2021/).
-- Used for various projects like security camera monitoring.
+- Used for various projects, such as security camera monitoring.
 
 <Video
   src="https://www.youtube.com/embed/1_bgLSehjhg"
@@ -39,32 +39,32 @@ Since the original version, the Base64 panel was
 
 ## Getting Started
 
-You can use the `grafana-cli` tool to install from the command line for standalone Grafana or directly in the Grafana Cloud.
+You can install Base64 Image/PDF Panel from the command line or directly in the Grafana Cloud with the `grafana-cli` tool.
 
 ```sh
 grafana-cli plugins install volkovlabs-image-panel
 ```
 
-In the latest version of Grafana 8.1 standalone plugin can also be installed using the Grafana Catalog application.
+In the latest version of Grafana 8.1, you can install standalone plugins from the Grafana Plugins catalog.
 
 <Image
-  title="Grafana Catalog allows installing plugins directly from the Grafana dashboard without restarting the application."
+  title="Grafana Plugins catalog allows installing plugins directly from the dashboard without restarting the application."
   src="/img/blog/2021-09-27-image-panel/installation.png"
 />
 
 ## Panel Features
 
-The values returned from the data source can be Base64 encoded with or without definition in the format `data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`.
+The values returned from the data source can be Base64 encoded with or without definition in the format like `data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`.
 
-If the definition is not provided, the file type is determined automatically based on the first Base64 symbol.
+If no definition is provided, the file type is automatically determined based on the first Base64 symbol.
 
 <Image
-  title="Base64 Image/PDF panel displays an image using the Static data source."
+  title="Base64 Image/PDF panel displays an image using the static data source."
   src="/img/blog/2021-09-27-image-panel/panel.png"
 />
 
-If the data source returns more than one field with `string` type, you can select the Field Name in the panel's display options. If the data source returns multiple rows, the panel will display the image from the last row.
+If the data source returns more than one field of the `string` type, you can choose the field name in the plugin's options. If the data source returns multiple rows, the image from the last row is displayed in the panel.
 
-The height and width of the image can be auto-adjusted to the panel's size, kept original, or customized based on the field's value, or panel options.
+The image's dimensions can be automatically adjusted, left as-is, or changed based on the values you specify in the panel settings.
 
-Take a look at [the repository](https://github.com/VolkovLabs/volkovlabs-image-panel) and let us know if you have any questions or future requests.
+Please check the [plugin's repository](https://github.com/VolkovLabs/volkovlabs-image-panel) and let us know if you have any questions or suggestions for futuree improvements.

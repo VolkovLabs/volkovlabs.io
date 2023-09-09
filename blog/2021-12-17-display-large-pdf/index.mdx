@@ -4,20 +4,20 @@ slug: using-grafana-to-display-large-pdf-documents-weve-got-you-covered-4e654e8d
 tags: [Base64 Image/Video/Audio/PDF]
 image: /img/blog/2021-12-17-display-large-pdf/banner.png
 keywords: [Image, PDF, Base64, Visualization]
-updated: 2023-02-15
+updated: 2023-09-09
 ---
 
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Display Large PDF documents in Grafana
+# Display large PDF documents in Grafana
 
-We discussed the benefits of using Docker containers and initial Provisioning in [the recent article](/blog/display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e) about creating our panel plugin template for Grafana. While working on the current feature request for the Base64 image/PDF panel, this technique helped us quickly deliver solutions and improve the long-term support for the panel.
+In the [recent article](/blog/display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e) on our blog, we delved into the advantages of utilizing Docker containers and initial provisioning when crafting our panel plugin template for Grafana. This approach has proven to be valuable when implementing the current feature request for Base64 Image/Video/Audio/PDF Panel and letting us swiftly provide solutions for long-term plugin support.
 
-When we created a Base64 image/PDF panel to display images for one of our projects, support for PDF documents was added as a feature. I am glad the panel is being used to display PDF documents stored in the databases like PostgreSQL.
+During the creation of Base64 Image/Video/Audio/PDF Panel for one of our projects, we also included support for displaying PDF documents. It's satisfying to see that the plugin is now used to display PDF files stored in databases such as PostgreSQL.
 
-You can learn more about the plugin in the video on our YouTube channel.
+For an in-depth overview of the plugin, feel free to check out the video on our YouTube channel.
 
 <Video
   src="https://www.youtube.com/embed/1_bgLSehjhg"
@@ -26,34 +26,34 @@ You can learn more about the plugin in the video on our YouTube channel.
 
 ## PDF documents
 
-Depending on the size, PDF documents are classified as
+PDF documents are classified into four categories based on their size:
 
-- Small (10-100kb)
-- Medium (100-1MB)
-- Large (1-16 MB)
-- Huge (16-128 MB).
+- small (10-100kb)
+- medium (100-1MB)
+- large (1-16MB)
+- huge (16-128MB)
 
-Our panel supported Small and Medium-sized PDF documents, which are easy to test and do not require any database to store. We used the [Static Data Source](/plugins/volkovlabs-static-datasource), and data was held in the dashboard.
+Our plugin was designed to support small and medium-sized PDF documents that you can easily test without setting up a separate database for storage. For this purpose, we have used the static data source and stored the data in the dashboard.
 
-To test support for Large documents, we
+To validate and assess the plugin's performance when showcasing large PDF documents, we followed these steps:
 
-- Installed PostgreSQL.
-- Loaded PDF documents into the database.
-- Created a data source and dashboard to validate and check performance.
+1. Installed PostgreSQL.
+1. Loaded PDF documents into the database.
+1. Created a data source and dashboard to facilitate validation and performance checks.
 
-Also, it has to be scripted, and easy to deploy for continuous integration and development.
+Furthermore, it is essential to verify that that the script is easily deployable for continuous integration and development purposes.
 
 ## PostgreSQL
 
-From Grafana's point of view, all data sources are the same while they return data frames. The panel's feature request was opened to support Large PDF documents retrieved from PostgreSQL.
+From Grafana's perspective, all data sources are the same because they return data frames. We received a feature request for the plugin to enable display of large PDF documents retrieved from a PostgreSQL database.
 
 <Image
-  title="Large PDF document retrieved from the PostgreSQL database and displayed in Grafana."
+  title="Large PDF document retrieved from a PostgreSQL database and displayed in Grafana."
   src="/img/blog/2021-12-17-display-large-pdf/panel.png"
   lazy={false}
 />
 
-To install PostgreSQL, we added a container with the latest version of the image `postgres`. We specified a volume for the folder `/docker-entrypoint-initdb.d`, which takes care of creating necessary tables and permissions when starting.
+To install PostgreSQL, we added a container with the latest version of the `postgres` image. We specified a volume for the folder `/docker-entrypoint-initdb.d`, which takes care of creating necessary tables and permissions when starting.
 
 ```yaml
 postgres:
@@ -67,15 +67,15 @@ postgres:
     - ./postgres:/docker-entrypoint-initdb.d
 ```
 
-In our case, it was a table with `bytea` fields to store binary data with unique names. Images and PDF documents can be stored in base64 format or converted using the command `encode()` when retrieved from the database.
+In our case, it was a table with the `bytea` fields to store binary data with unique names. When images and PDF documents are retrieved from the database, they can be stored in the Base64 format or transformed using the `encode()` command.
 
 ```sql
 CREATE TABLE images (name text, img bytea, UNIQUE(name));
 ```
 
-## Load PDF into the database
+## Loading PDF files into the database
 
-To load PDF documents and a test image into the database, we created a Node.js script:
+To load PDF documents and test images into the database, we created a Node.js script:
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/load.ts"
@@ -84,26 +84,26 @@ To load PDF documents and a test image into the database, we created a Node.js s
 
 ## Provisioning
 
-Our Panel plugin template already has the Initial Provisioning configuration in place to add a new dashboard for PostgreSQL.
+The initial provisioning configuration that adds a new dashboard for PostgreSQL is already present in our plugin template.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/provisioning/dashboards/default.yaml"
   language="yaml"
 />
 
-And we additionally added configuration to provision PostgreSQL data source with SSL disabled, specific username, password, and URL.
+We have included a configuration to provision a PostgreSQL data source with SSL disabled, as well as a specific login, password, and URL pertaining to the database setup.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/provisioning/datasources/postgres.yaml"
   language="yaml"
 />
 
-You can learn more about the PostgreSQL data source in the official [Documentation](https://grafana.com/docs/grafana/latest/datasources/postgres/).
+You can find more information about the PostgreSQL data source in the [official documentation](https://grafana.com/docs/grafana/latest/datasources/postgres/).
 
 ## Load data
 
-The last step is to start containers and load data, when starting, Grafana and PostgreSQL will be auto-provisioned and ready to go.
+The final step is to start containers and load data. When they start, Grafana and PostgreSQL will be automatically provisioned and ready for use.
 
-Overall, a 13Mb PDF document with 2990 pages takes 1-2 seconds to display. The user confirmed the feature request, and the plugin was sent to the Grafana team to review and update in the Grafana Catalog.
+It takes around 1-2 seconds to load a 13-megabyte PDF document with 2,990 pages. The user who requested this feature was pretty happy wtih results, therefore we passed the plugin to the Grafana team for review and approval, and it was later added to the Grafana Plugins catalog.
 
-Take a look at [the repository](https://github.com/VolkovLabs/volkovlabs-image-panel) and let us know if you have any questions or future requests.
+Please check the [plugin's repository](https://github.com/VolkovLabs/volkovlabs-image-panel) and let us know if you have any questions or suggestions for futuree improvements.
