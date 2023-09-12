@@ -4,7 +4,7 @@ slug: calendar-panel-1.1.0-20221212/
 tags: [Calendar, Release Notes]
 image: /img/blog/2022-12-12-calendar-panel-1.1.0/banner.png
 keywords: [Calendar, Panel, Events, Grafana]
-updated: 2023-02-07
+updated: 2023-09-11
 ---
 
 import Image from "@theme/Image";
@@ -12,25 +12,25 @@ import Video from "@theme/Video";
 
 # Calendar Panel 1.1.0
 
-A new version of the Calendar panel 1.1.0 was released today. This maintenance release
+We are happy to announce the release of Calendar Panel 1.1.0. This maintenance release includes the following updates:
 
-- Updated to the latest Grafana toolkit 9.3.1.
-- Added Annotations support.
-- Refactored legacy code, and increased test coverage.
+- Added compatibility with Grafana 9.3.1.
+- Added support for annotations.
+- Refactored the legacy code and increased the test coverage for the plugin's functionality.
 
-We have already started working on the upcoming version to finish refactoring, fix outstanding issues, and looking forward to your feedback.
+We've already started working on the next version to complete the code refactoring and address the remained issues. We're looking forward to receiving your feedback.
 
 <Image
-  title="Calendar panel displays the latest updates in the Grafana Catalog."
+  title="Calendar Panel displays the latest updates in the Grafana Plugins catalog."
   src="/img/blog/2022-12-12-calendar-panel-1.1.0/panel.png"
   lazy={false}
 />
 
 ## Getting Started
 
-The calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.
+You can install Calendar Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or using the Grafana command line tool.
 
-For the latter, please use the following command.
+For the latter, please use the following command:
 
 ```bash
 grafana-cli plugins install marcusolsson-calendar-panel
@@ -38,38 +38,38 @@ grafana-cli plugins install marcusolsson-calendar-panel
 
 ## YouTube Tutorial
 
-The Calendar visualization panel is a Grafana plugin created to display events from data sources.
+Calendar Panel is a Grafana plugin that displays events from various data sources.
 
 <Video
   src="https://www.youtube.com/embed/iPJ122x0oos"
-  title="Display events from JSON API data source."
+  title="Display events from the JSON API data source."
 />
 
 ## Release Notes
 
 ### Breaking changes
 
-Refactoring may introduce breaking changes. Please test before upgrading in Production.
+Refactoring may introduce breaking changes. Please test before upgrading the plugin on production Grafana instances.
 
 ### Features / Enhancements
 
-- Update Panel options in README (#53)
-- Add Youtube tutorial for Calendar with JSON API data source (#54)
-- Update CI to Node 16 and Synchronize with Release workflow (#56)
-- Update to Grafana 9.2.2 (#57)
-- Code Refactoring (#58)
-- Update to Grafana 9.3.1 (#59)
-- Update CI to upload signed artifacts (#60)
-- Refactor panel options and increase test coverage (#61)
-- Add annotation support (#8)
-- Refactoring and Removing legacy code (#62)
-- Refactor Panel Options and add Annotations options (#63)
+- Updated the plugin's options in the README file (#53).
+- Added a YouTube tutorial for Calendar Panel explaining how to display events from the JSON API data source (#54).
+- Updated CI to Node.js 16 and synchronized it with the release workflow (#56).
+- Added compatibility with Grafana 9.2.2 (#57).
+- Refactored the program code (#58).
+- Added compatibility with Grafana 9.3.1 (#59).
+- Updated CI to upload signed artifacts (#60).
+- Refactored the plugin options and increased the test coverage (#61).
+- Added support for annotations (#8).
+- Refactored the program code and removed the legacy code (#62).
+- Refactored the plugin options and added the annotation options (#63).
 
 ## Feedback
 
 We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 - Support our project by starring the repository.

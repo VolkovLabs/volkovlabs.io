@@ -4,7 +4,7 @@ slug: calendar-panel-1.3.0-20230311/
 tags: [Calendar, Release Notes]
 image: /img/blog/2023-03-11-calendar-panel-1.3.0/banner.png
 keywords: [Calendar, Panel, Events, Time Range, Grafana]
-updated: 2023-03-13
+updated: 2023-09-11
 ---
 
 import Image from "@theme/Image";
@@ -12,21 +12,21 @@ import Video from "@theme/Video";
 
 # Calendar Panel 1.3.0
 
-A new version of the Calendar panel 1.3.0 was released today. This feature release
+We are happy to announce the release of Calendar Panel 1.3.0. This feature release includes the following updates:
 
-- Added option to display colors based on Event or Frame id if the Color field is not specified.
-- Added support for Color schemes.
-- Added labels split to display in the drawer.
-- Added Annotation tags as labels.
-- Updated multi-day intervals to auto-align events weekly.
+- Added an option to display colors based on Event ID or Frame ID if the Color field is not specified.
+- Added support for color schemes.
+- Added the splitting of labels when showing in the drawer.
+- Added display of annotation tags as labels.
+- Updated multi-day intervals to automatically align events throughout the week.
 
-:::info Grafana Catalog
-The plugin was updated in Grafana Catalog on March 13, 2023.
+:::info Grafana Plugins catalog
+The plugin was updated in the Grafana Plugins catalog on March 13, 2023.
 :::
 
 ## Configuration
 
-Our latest video tutorial explains how to configure the Calendar plugin in Grafana. We keep our events in the PostgreSQL database, but you can use any storage!
+Our latest video tutorial explains how to configure the Calendar Panel plugin in Grafana. We store our events in the PostgreSQL database, but you can use any supported storage.
 
 <Video
   src="https://www.youtube.com/embed/6WGmm5y4fs4"
@@ -35,56 +35,55 @@ Our latest video tutorial explains how to configure the Calendar plugin in Grafa
 
 ### Events Duration
 
-Events can be instantaneous, has duration, multi-day and ongoing.
+Events are categorized into four types:
 
-- If the event has only the Start time field configured, events are considered instantaneous.
-- If the event has Start and End time fields configured, events are considered to have a duration.
-- Any events that have an End time field configured and equal NULL are considered ongoing.
+1. **instantaneous**: an event having only the start time.
+2. **continuing**: an event having the start and end time.
+3. **multi-day**: an event having the start and end time and lasting for two days or more.
+4. **ongoing**: an event having the start time without the end time.
 
 <Image
-  title="Schema explains how events will look like depends on the end time field."
+  title="Schema explains how events are classified depending on the End Time field."
   src="/img/blog/2023-03-11-calendar-panel-1.3.0/schema.png"
   lazy={false}
 />
 
 ## Multi-day events
 
-We improved aligning of multi-day events. In the latest version events are aligned weekly, which helps avoid gaps in-between for events longer than a week.
+We improved the aligning of multi-day events. In the latest version, events are aligned by week, which prevents in-between gaps for events spanning for more than one week.
 
-The oldest events are always on the top.
+Events are displayed in chronological order, with the earliest events appearing at the top.
 
 <Image
-  title="Release Management dashboard using the Calendar panel for Grafana."
+  title="Release Management dashboard using Calendar Panel for Grafana."
   src="/img/blog/2023-03-11-calendar-panel-1.3.0/release.png"
 />
 
 ## Event colors
 
-We improved color options for the events. If the color field is not specific events can be colored based on the Frame or Events id.
-
-You can also choose a Color scheme in the Standard options.
+We improved the coloring options for events. If the Color field is not specified, events can be colored based on Frame ID or Event ID. In the plugin preferences, you can also select the classic palette.
 
 <Image
-  title="Releases colored based on event id using the Classic palette."
+  title="Releases colored based on Event ID using the classic palette."
   src="/img/blog/2023-03-11-calendar-panel-1.3.0/colors.png"
 />
 
 ## Event details
 
-Events details were improved to split comma-separated values in the labels field. The description values support HTML elements for formatting.
+The splitting of comma-separated values in the Labels field has been added into event details. The Description field supports the HTML elements that you can use for formatting event descriptions.
 
 <Image
   title="Event details with HTML-formatted description and labels."
   src="/img/blog/2023-03-11-calendar-panel-1.3.0/drawer.png"
 />
 
-Annotation tags will be displayed as labels as well.
+Annotation tags are also displayed as labels.
 
 ## Getting Started
 
-The calendar panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or utilizing the Grafana command line tool.
+You can install Calendar Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or using the Grafana command line tool.
 
-For the latter, please use the following command.
+For the latter, please use the following command:
 
 ```bash
 grafana-cli plugins install marcusolsson-calendar-panel
@@ -92,34 +91,34 @@ grafana-cli plugins install marcusolsson-calendar-panel
 
 ## YouTube Tutorial
 
-The Calendar visualization panel is a Grafana plugin created to display events from data sources.
+Calendar Panel is a Grafana plugin that displays events from various data sources.
 
 <Video
   src="https://www.youtube.com/embed/iPJ122x0oos"
-  title="Display events from JSON API data source."
+  title="Display events from the JSON API data source."
 />
 
 ## Release Notes
 
 ### Features / Enhancements
 
-- Rebuild using Grafana 9.4.3 (#87)
-- Add labels split to display in the drawer (#88)
-- Add annotation tags as labels (#88)
-- Refactor multi-day interval (#89)
-- Add display colors based on Event or Frame id if the Color field is not specified (#90)
-- Add support for Color schemes (#91)
-- Add video configuration tutorial (#92)
+- Added compatibility with Grafana 9.4.3 (#87).
+- Added the splitting of labels when showing them in the Drawer component (#88).
+- Added annotation tags as labels (#88).
+- Refactored the multi-day interval (#89).
+- Added the event coloring based on Event ID or Frame ID if the Color field is not specified (#90).
+- Added support for color schemes (#91).
+- Added the video configuration tutorial (#92).
 
 ### Bug fixes
 
-- Fix scrollable content in the Day drawer (#93)
+- Fixed the content scrolling in the Day drawer (#93).
 
 ## Feedback
 
 We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 - Support our project by starring the repository.
