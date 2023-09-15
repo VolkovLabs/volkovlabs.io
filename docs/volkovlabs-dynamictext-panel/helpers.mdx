@@ -9,7 +9,7 @@ import Video from "@theme/Video";
 
 # Helpers
 
-Helpers are functions that let you perform basic text transformations within your template.
+Helpers are functions that allow you to perform basic text transformations within your template.
 
 ## `{{contains}}`
 
@@ -31,7 +31,7 @@ Checks if a given value exists within an array.
 
 Formats the timestamp in a given field using a date format. Uses [helper-date](https://github.com/helpers/helper-date).
 
-The field value must be a Unix timestamp or any of the formats supported by [date.js](https://date.js.org/).
+The field value must be a Unix timestamp or any of the formats supported by the [date.js library](https://date.js.org/).
 
 ```handlebars
 <!-- Time: 1598791377556 -->
@@ -43,7 +43,7 @@ The field value must be a Unix timestamp or any of the formats supported by [dat
 
 ## `{{eq}}`
 
-Compares two strings for equality.
+Checks two strings for equality.
 
 ```handlebars
 <!-- app: foo -->
@@ -59,7 +59,7 @@ Compares two strings for equality.
 
 ## `{{join}}`
 
-Join all elements of array into a string using a given separator.
+Joins all elements of an array into a string using a given separator.
 
 ```handlebars
 <!-- array: ['a', 'b', 'c'] -->
@@ -73,11 +73,11 @@ Join all elements of array into a string using a given separator.
 
 :::info Version
 
-Supported since Dynamic Text panel 2.2.0.
+Supported since Dynamic Text Panel 2.2.0.
 
 :::
 
-Present object (JSON) or array as a formatted string. Markdown supports syntax highlight.
+Presents an object (JSON) or an array as a formatted string. Markdown supports the syntax highlighting.
 
 ````handlebars
 <!-- object or array -->
@@ -90,16 +90,16 @@ Present object (JSON) or array as a formatted string. Markdown supports syntax h
 ````
 
 <Image
-  title="Visualize formatted JSON object."
+  title="Visualize a formatted JSON object."
   src="/img/plugins/volkovlabs-dynamictext-panel/json.png"
 />
 
 ### Transformation
 
-JSON helper expects an object or array to display it as a formatted string. If the data source returns a string it should be transformed to a JSON object using Transformation `Convert field type`.
+The `JSON` helper expects an object or an array to display it as a formatted string. If the data source returns a string it should be transformed to a JSON object using the `Convert field type` transformation.
 
 <Image
-  title="Transform JSON string to object."
+  title="Transform a JSON string into an object."
   src="/img/plugins/volkovlabs-dynamictext-panel/json-transformation.png"
 />
 
@@ -107,11 +107,11 @@ JSON helper expects an object or array to display it as a formatted string. If t
 
 :::info Version
 
-Supported since Dynamic Text panel 2.2.0.
+Supported since Dynamic Text Panel 2.2.0.
 
 :::
 
-Split a string into an array using a given separator.
+Splits a string into an array using a given separator.
 
 ```handlebars
 <!-- string: 'a,b,c,d' -->
@@ -122,13 +122,13 @@ Split a string into an array using a given separator.
 ```
 
 <Image
-  title="Examples of splitting string into array."
+  title="Examples of splitting a string into an array."
   src="/img/plugins/volkovlabs-dynamictext-panel/split.png"
 />
 
 ## `{{toFixed}}`
 
-Formats the given number using fixed-point notation.
+Formats the given number using a fixed-point notation.
 
 ```handlebars
 <!-- Value: 1.1234 -->

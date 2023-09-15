@@ -9,19 +9,22 @@ import Video from "@theme/Video";
 
 # Content
 
-It is the code editor where you can place the parsing commands or, in other words, create a visualization template for your data. To reference the data elements in your template, use double and triple braces.
+In the code editor, you can define the parsing commands, or let's say, define a visualization template for your data. To reference specific data elements in your templates, use double or triple curly braces.
 
-To display a value from the `app` field.
+To display a value from the `app` field, use the following syntax:
 
 ```handlebars
 {{app}}
 ```
 
-Depending on the `All rows/Every row` toggle, the template is applied to either every row or to the entire query results.
+The **Render template** toggle allows you to define how the template is applied:
+
+- **Every row** - a template is applied to each row in particular within the queried dataset.
+- **All rows** - a template is applied to the entire dataset.
 
 ## Render HTML from data
 
-If you would like to render HTML returned by the data source, you need to use three-brace expressions, `{{{htmlValue}}}`, otherwise Handlebars escape the HTML content.
+If you want to render HTML markup returned by the data source, you need to use triple curly braces with the element reference within it like `{{{htmlValue}}}`, otherwise Handlebars escapes your HTML content.
 
 ```handlebars
 <ul>
@@ -36,9 +39,9 @@ where `htmlValue` is
 <li>bar</li>
 ```
 
-## Field name with spaces
+## Reference field names with spaces
 
-Field names with spaces should be displayed as `{{[Field Name]}}` or `{{'Field Name'}}`
+Field names with spaces should be declared as `{{[Field Name]}}` or `{{'Field Name'}}`
 
 <Image
   title="Display fields with spaces."
@@ -47,26 +50,26 @@ Field names with spaces should be displayed as `{{[Field Name]}}` or `{{'Field N
 
 ## Default content
 
-The default content is displayed if the connected data source returns nothing. Use it to give users instructions on what to do or who to contact when the query returns an empty result.
+The default content is displayed if the connected data source returns no data. You can use it to provide users with instructions on what to do or who to contact when the query returns an empty result.
 
-Even though there are no data from the data source, you can still use the available [helpers](/plugins/volkovlabs-dynamictext-panel/helpers).
+Even though your data source returns no data, you can still use the available [helpers](/plugins/volkovlabs-dynamictext-panel/helpers).
 
 ## The rendering order
 
-The panel renders Handlebars → Markdown → Sanitized HTML (unless disabled) and displays the final result.
+The content is rendered by the plugin in the following order: Handlebars > Markdown > Sanitized HTML (unless disabled), followed by the final result.
 
 <Image
-  title="Dynamic Text rendering order."
+  title="Dynamic Text Panel: rendering order."
   src="/img/plugins/volkovlabs-dynamictext-panel/rendering-schema.png"
 />
 
-## Sanitizing
+## HTML sanitization
 
-Sanitizing is enabled by default, which makes some elements like `<button>` unavailable in the Content panel option.
+HTML sanitization is enabled by default, which makes some elements like `<button>` unavailable in the content editor.
 
-To disable sanitizing, use the Grafana configuration option [`disable_sanitize_html`](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#disable_sanitize_html).
+To disable sanitization, use Grafana's configuration option [`disable_sanitize_html`](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#disable_sanitize_html) and set it as `true`.
 
-For Docker container and Docker Compose, use as.
+For a Docker container and Docker Compose, use it as follows:
 
 ```bash
 - GF_PANELS_DISABLE_SANITIZE_HTML=true

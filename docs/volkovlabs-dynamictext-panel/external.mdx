@@ -13,55 +13,55 @@ import Video from "@theme/Video";
 
 :::info Version
 
-The external resources are supported by the Dynamic Text panel starting from version 4.1.0.
+Dynamic Text Panel supports the external resources starting from version 4.1.0.
 
 :::
 
-The dynamic text panel allows the loading of additional JavaScript and CSS Resources using external URLs like CDN (Content Delivery Network).
+Dynamic Text Panel enables the loading of additional JavaScript and CSS resources using external URLs like CDN (Content Delivery Network).
 
-You can store CSS/JS files on your Grafana instance, in the public folder to prevent loading 3rd party URLs.
+To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance.
 
 <Image
-  title="Loading Google Material CSS and JS files from external resource."
+  title="Loading Google Material CSS and JS files from an external resource."
   src="/img/plugins/volkovlabs-dynamictext-panel/external.png"
   lazy={false}
 />
 
-## Sanitizing
+## Sanitization
 
-Sanitizing configuration should be disabled to see External Resources in the Panel Options.
+You need to disable the sanitization configuration to see external resources in the plugin options.
 
 ## JavaScript Code
 
-External CSS/JS files can be used to include additional visual elements, and JavaScript functions to execute from the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+You can use external CSS and JS files to include additional visual elements and execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
 
 ## Plotly 3D Scatter
 
-It's possible to visualize Plotly 3D Scatter by loading the external JS library `https://cdn.plot.ly/plotly-2.24.1.min.js` and adding a JavaScript Code.
+You can visualize Plotly's 3D Scatter chart by loading the external JS library from `https://cdn.plot.ly/plotly-2.24.1.min.js` and adding a JavaScript code snippet.
 
-Thanks to community member [yosiasz](https://github.com/yosiasz) for the solution.
+Thanks to our community member [yosiasz](https://github.com/yosiasz) for the provided solution.
 
 <Image
-  title="Loading Plotly library and adding content with javascript code."
+  title="Loading Plotly library and adding content with JavaScript code."
   src="/img/plugins/volkovlabs-dynamictext-panel/external-plotly.png"
   lazy={false}
   width="60%"
 />
 
-Grafana's Edit Mode may prevent displaying the Plotly chart in the Edit Mode. Save and check the result on the dashboard.
+Grafana's edit mode may prevent displaying the Plotly chart in the edit mode. Save and check the result on the dashboard.
 
 ### Content
 
 ```html
 <body>
   <div id="addisAbeba">
-    <!-- Plotly chart will be drawn inside this DIV -->
+    <!-- Plotly chart will be rendered inside this DIV -->
   </div>
 </body>
 ```
 
 <Image
-  title="3D Scatter visualized using Plotly external JavaScript library."
+  title="3D Scatter chart visualized with Plotly, an external JavaScript library."
   src="/img/plugins/volkovlabs-dynamictext-panel/plotly.png"
   lazy={false}
   width="60%"

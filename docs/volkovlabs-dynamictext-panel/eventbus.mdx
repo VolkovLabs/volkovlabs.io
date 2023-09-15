@@ -12,19 +12,19 @@ import Video from "@theme/Video";
 
 :::info Version
 
-The event bus is supported by the Dynamic Text panel starting from version 4.0.0.
+Dynamic Text Panel supports the event bus starting from version 4.0.0.
 
 :::
 
-Grafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.
+Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. Dynamic Text Panel can respond to these interactions by subscribing to one or more events.
 
 ## Predefined Events
 
-A full list of events is available in the [Grafana Crash Course](/grafana/developer/eventbus).
+A full list of events is available in our [Grafana Crash Course](/grafana/developer/eventbus).
 
 ## Subscribe to events
 
-To avoid memory leaks all events must be unsubscribed.
+To avoid memory leaks, all events must be unsubscribed.
 
 ```
 const subscription = eventBus.subscribe({ type: 'data-hover' }, () => {
@@ -38,6 +38,6 @@ return () => {
 ```
 
 <Image
-  title="Dynamic text panel displays the hovered value in the Time Series panel."
+  title="Dynamic Text Panel displays the hovered value in the Time Series chart."
   src="/img/plugins/volkovlabs-dynamictext-panel/eventbus.png"
 />
