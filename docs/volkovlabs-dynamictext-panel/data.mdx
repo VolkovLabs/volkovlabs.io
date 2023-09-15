@@ -9,16 +9,16 @@ import Video from "@theme/Video";
 
 # Data
 
-You can choose how the retrieved data is passed into the Dynamic Text Panel.
+You can choose how the retrieved data is passed into the Dynamic Text Panel plugin.
 
-- `Every row` means that the **Content** template is applied to every retrieved row.
-- `All rows`, the query results are passed entirely as the `data` field to the template.
+- The `Every row` option applies the **Content** template to every row returned by the query.
+- The `All rows` option passes the query results as a single `data` field to the **Content** template.
 
-To work with the query results as a whole, you can use [#each builtin helper](../recipes/#iterate-through-all-fields-in-each-record) to iterate over the records.
+To work with query results as a whole, you can use [#each builtin helper](../recipes/#iterate-through-all-fields-in-each-record) to iterate through records.
 
 ## Every row
 
-If your data source returns the following four columns of data.
+Your data source returns a four-column table as follows:
 
 ```md
 | app  | description                  | cluster | tier     |
@@ -28,7 +28,7 @@ If your data source returns the following four columns of data.
 
 ### Template
 
-Display it using the following template for each row.
+Apply the following template for each row to display data.
 
 ```md
 # {{app}}
@@ -41,13 +41,13 @@ Link: <a href="https://{{cluster}}.example.com/{{app}}">https://{{cluster}}.exam
 ```
 
 <Image
-  title="Display application data using Handlebars, Markdown and HTML."
+  title="Display application data using Handlebars, Markdown, and HTML."
   src="/img/plugins/volkovlabs-dynamictext-panel/application.png"
 />
 
 ## Render a single template (All rows)
 
-For the following query result.
+Your data source returns a table with multiple rows as follows: 
 
 | title | author        | year |
 | ----- | ------------- | ---- |
@@ -56,7 +56,7 @@ For the following query result.
 
 ### Template
 
-Given that All Rows is selected, the following template renders a table from the query result.
+With the **All rows** option selected, the template renders a table from the query result as follows:
 
 ```
 | Title | Author | Year |
