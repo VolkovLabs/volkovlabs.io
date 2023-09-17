@@ -4,6 +4,7 @@ slug: dynamictext-panel-4.0.0-20230709/
 tags: [Dynamic Text, Release Notes]
 image: /img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png
 keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
+updated: 2023-09-15
 ---
 
 import Code from "@theme/Code";
@@ -12,36 +13,36 @@ import Video from "@theme/Video";
 
 # Dynamic Text Panel 4.0.0
 
-We released a new version of Dynamic Text Panel 4.0.0. This major release
+We're excited to announce the release of Dynamic Text Panel 4.0.0. This major release includes the following updates:
 
-- Requires Grafana 9 and Grafana 10.
-- Added Event Bus object to JavaScript function.
-- Added dashboard variables support in CSS style.
-- Updated to Grafana 10.0.0 and removed Grafana 8.5 support.
+- Requires Grafana 9 or Grafana 10.
+- Added the Event Bus object into JavaScript functions.
+- Added support for dashboard variables in CSS styles.
+- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.
 
-:::info Grafana Catalog
-The plugin was updated in Grafana Catalog on June 28, 2023.
+:::info Grafana Plugins catalog
+The plugin was updated in the Grafana Plugins catalog on June 28, 2023.
 :::
 
 ## 3 million downloads
 
-In February we celebrated 2 million downloads. Since then we have seen an accelerated adaptation of the panel.
+We celebrated 2 million downloads in February. The panel's adaptability has been extremely accelerated since then.
 
-JavaScript code, CSS style editor, and supporting Grafana events provide unique capabilities, you can't find in native and community plugins.
+JavaScript code, a CSS style editor, and Grafana events offer functionalities that no native or community plugin has yet to provide.
 
 <Image
-  title="Dynamic Text panel was downloaded more than three million times."
+  title="Dynamic Text Panel was downloaded more than three million times."
   src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"
   lazy={false}
 />
 
 ## Dashboard variables
 
-The Dynamic Text panel provides helpers to support variables. Variables can also be used in the JavaScript code and CSS styles.
+Dynamic Text Panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.
 
 ### JavaScript code
 
-Use `replaceVariables` to replace dashboard variables in the JavaScript code.
+Use the `replaceVariables` function to replace dashboard variables in the JavaScript code.
 
 ```
 const bonjour = replaceVariables("${variable}");
@@ -50,7 +51,7 @@ console.log(bonjour.toUpperCase())
 
 ### Styles
 
-Dashboard variables are replaced automatically in the CSS styles.
+Dashboard variables are replaced automatically in CSS styles.
 
 ### Content
 
@@ -62,19 +63,19 @@ Returns a string array of the currently selected values for a certain variable.
 <!-- result: ['server1', 'server2', 'server3']  -->
 ```
 
-More examples are in the [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).
+You can find more examples in our [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).
 
 ## Event Bus
 
-Grafana uses an event bus to publish application events to notify different parts of Grafana when the user acts. Dynamic Text panel can react to these actions by subscribing to one or more events.
+Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. Dynamic Text Panel can respond to these interactions by subscribing to one or more events.
 
 ### Predefined Events
 
-A full list of events is available in the [Grafana Crash Course](/grafana/developer/eventbus).
+A full list of events is available in our [Grafana Crash Course](/grafana/developer/eventbus).
 
 ### Subscribe to events
 
-To avoid memory leaks all events must be unsubscribed.
+To avoid memory leaks, all events must be unsubscribed.
 
 ```
 const subscription = eventBus.subscribe({ type: 'data-hover' }, () => {
@@ -89,9 +90,9 @@ return () => {
 
 ## Getting Started
 
-The Dynamic Text visualization panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or utilizing the Grafana command line tool.
+You can install Dynamic Text Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
 
-For the latter, please use the following command.
+For the latter, please use the following command:
 
 ```bash
 grafana-cli plugins install marcusolsson-dynamictext-panel
@@ -99,42 +100,42 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 
 ## YouTube Tutorial
 
-A Dynamic Text visualization panel is a Grafana plugin that transforms monotone text/table data into vibrant, easy-to-read information cards. The panel supports variables, Markdown and Handlebars.
+Dynamic Text Panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. You can use variables, Markdown, and Handlebars to customize the look of the outputted cards.
 
-The Dynamic Text visualization panel lets you define a text template using the data from your data source query.
+The Dynamic Text Panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.
 
 <Video
   src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
-  title="Markdown, HTML and Handlebars to transform data visualizations."
+  title="Markdown, HTML, and Handlebars for transforming data visualizations."
 />
 
 <Video
   src="https://www.youtube.com/embed/lJqk5Gobec4"
-  title="JavaScript code in the Dynamic text panel."
+  title="JavaScript code in Dynamic Text Panel."
 />
 
 ## Release Notes
 
 ### Breaking changes
 
-- Requires Grafana 9 and Grafana 10
+- Requires Grafana 9 or Grafana 10
 
 ### Features / Enhancements
 
-- Increase Test Coverage and update to testing-library/react (#177)
-- Add Event Bus object to JavaScript function (#179)
-- Migrate to Plugin Tools 1.5.2 (#183)
-- Update to Grafana 10.0.0 (#166, #178, #183)
-- Update to Node 18 and npm (#183)
-- Remove Grafana 8.5 support (#183)
-- Add E2E Cypress testing (#184)
-- Support Variables in CSS styles editor (#185)
+- Increased the test coverage and updated the library to test React code (#177).
+- Added the Event Bus object into a JavaScript function (#179).
+- Migrated to Plugin Tools 1.5.2 (#183).
+- Added compatibility with Grafana 10.0.0 (#166, #178, #183).
+- Updated the plugin to Node.js 18 and npm (#183).
+- Deprecated support for Grafana 8.5 (#183).
+- Integrated E2E Cypress testing into the plugin (#184).
+- Added support for variables in CSS styles editor (#185).
 
 ## Feedback
 
 We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues/new/choose).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 - Support our project by starring the repository.
