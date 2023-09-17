@@ -11,11 +11,11 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Keep up with the most recent news while working in Grafana
+# Keep up with the most recent news while working in Grafana
 
-When you open Grafana, what is the first panel you see? It's most likely the News panel on the Home dashboard, which contains the most recent blog entries from the Grafana team and community. The News panel directly loads the RSS feed into the browser, and while it works for some feeds, it has numerous restrictions.
+When you open Grafana, what is the first panel you see? It's most likely the News panel on the Home dashboard, which contains the most recent blog entries from the Grafana team and community. The News panel directly loads the RSS feed into the browser, and while it works for some feeds, it has numerous restrictions.
 
-Looking around, we discovered several open conversations and issues related to updating the News panel or creating an RSS and Atom data source. The question is, how to display data from such data sources? Time series or table panels are not appropriate alternatives for displaying news in a custom layout.
+Looking around, we discovered several open conversations and issues related to updating the News panel or creating an RSS and Atom data source. The question is, how to display data from such data sources? Time series or table panels are not appropriate alternatives for displaying news in a custom layout.
 
 You can find a video version of this post on our YouTube channel.
 
@@ -35,10 +35,10 @@ An RSS data source was implemented with the recently released [Data Source Templ
 The Grafana Plugins catalog now lists 120 data source plugins, 22 of which were added this year. There are several questions you need to address when thinking about developing a new data source plugin:
 
 - Is it possible to retrieve the data via the HTTP(S) protocol?
-- Does a standard HTTP(S) application backend meet your requirements and provide all necessary options for authentication?
+- Does a standard HTTP(S) application backend meet your requirements and provide all necessary options for authentication?
 - Does the data source need support for alerting?
 
-The HTTP (S) protocol can be used to read RSS and Atom feeds, and in most circumstances, no authentication is required. Authentication can be introduced in a future release, and the default authentication options in the HTTP(S) backend should be sufficient.
+The HTTP(S) protocol can be used to read RSS and Atom feeds, and in most circumstances, no authentication is required. Authentication can be introduced in a future release, and the default authentication options in the HTTP(S) backend should be sufficient.
 
 We decided to develop RSS/Atom Data Source without the backend using [our data source plugin template](/plugins/templates/datasource). Similar to the panel plugin template, this template comes preconfigured with Docker Compose, initial provisioning, and continuous integration with test coverage settings.
 
@@ -46,7 +46,7 @@ We decided to develop RSS/Atom Data Source without the backend using [our data s
 
 Let's add a new RSS data source to the Grafana blog and create a panel to display the latest news similar to the News Panel plugin.
 
-You can add the RSS/Atom Data Source manually in the Data Sources Configuration menu or provision it through configuration files.
+You can add the RSS/Atom Data Source manually in the Data Sources Configuration menu or provision it through configuration files.
 
 <Image
   title="We are adding an RSS/Atom data source for showing a newsfeed in Grafana."
