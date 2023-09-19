@@ -1,0 +1,77 @@
+---
+description: Data Manipulation Panel - data flow
+tags:
+  - Data Manipulation
+  - Data flow
+image: /img/honeycomb.png
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Data flow
+
+In this section, we want to describe what the data flow with the Data Manipulation Panel plugin looks like. The following diagram illustrates the data flow step by step:
+
+<Image
+  title="Data Manipulation Panel - data flow diagram."
+  src="/img/plugins/volkovlabs-form-panel/data-manipulation-flow.png"
+/>
+
+The process starts with an initial request triggered by the form loading. 
+
+## Initial Request
+
+Data Manipulation Panel can perform an initial request in three different ways:
+
+**1.	Native Grafana query**
+
+You can specify an initial request as a native Grafana query that retrieves data. The initial request executes a query and displays extracted values in the form elements according to the mapping you specified.
+
+**2.	Data source**
+
+Alternatively, you can query a connected data source. During the form loading, your initial payload request is executed, and the results are returned to the data manipulation form, where they can be parsed instantly or with some delay with the JavaScript function you specify.
+
+**3.	REST API**
+
+Finally, you can try the REST API (the GET request in particular). Preliminarily, you need to bootstrap an API server and specify its URL in the plugin settings. You can use dashboard and global variables when calling specific REST API endpoints. Grafana supports a variety of API servers, so you can easily set up the one appropriate for your use case. For more details on setting up an API server, please check [our documentation](../servers), where we share step-by-step guides for Deno, InfluxDB, JSON API, MySQL, Node-Red, and PostgreSQL.
+
+## Post-request execution
+
+Once the initial request has been executed, the plugin populates the form elements and runs the custom code snippets you specified. Custom code is presented for every initial request type.
+
+After that, the form expects some action from the user. For example, the user can use the Reset button to implement some custom logic. In the **Reset request** section, click **–** (minus) and specify the custom logic for the Reset button in the **Custom Code** text area.
+
+If you preserve the default option (`Initial request`), the plugin will execute the initial request again as if the form has been loaded.
+
+The plugin supports the highlighting of values modified by the user, so the user can easily see the difference between the prior and actual values. To highlight values, in the **Highlight Changes** section, select **Enabled**, then pick the appropriate color in the color picker below.
+
+When using a data source, you need to specify the initial request with the `SetInitial()` function. You can find examples of such code snippets in the Grafana documentation.
+
+## Data submission
+
+Once the user clicks the Submit button, you can request confirmation from the user before applying the modifications. For example, you can implement this as a plain table showing the old and new values. The user can review the updated values and confirm the modification before their submission. After this, the Submit button initiates the update request.
+
+## Data update request
+
+If you need to update values in the target storage, you can choose between the data source and REST API, as follows:
+
+For the **REST API**, the plugin supports the following request types:
+
+- `DELETE`
+-	`PATCH`
+-	`POST`
+-	`PUT`
+
+When using the REST API, you need to specify the API Server URL address, and you can optionally call dashboard and global variables.
+
+For the **data source**, you need to specify the create payload in the dedicated text area below the Update Request Payload toggle. For example, you can use an update statement.
+The execution of custom code from the update request is performed once the data source returns the data. Within the custom code, you can access the following:
+
+-	access panel options
+-	API responses
+-	form elements
+-	Grafana services
+-	dashboard and global variables
+
+You can find common examples to get started with this in the Grafana documentation. For example, during the post-processing, you can output a status message, transition the user to another dashboard, reload a page, call an initial request, or implement something else you need.
