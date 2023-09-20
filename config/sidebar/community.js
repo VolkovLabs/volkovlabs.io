@@ -199,6 +199,7 @@ const community = {
           id: "volkovlabs-form-panel/index",
           label: "Introduction",
         },
+        "volkovlabs-form-panel/options",
         "volkovlabs-form-panel/architecture",
         "volkovlabs-form-panel/code",
         {

@@ -1,0 +1,41 @@
+---
+description: Data Manipulation Panel - Options
+tags:
+  - Data Manipulation
+  - Options
+image: /img/honeycomb.png
+---
+
+import Image from "@theme/Image";
+
+# Options
+
+The Data Manipulation Panel plugin provides a variety of options that you can use to adjust the data transformation operations.
+
+All options can fall into two categories:
+
+-	**Common options** that are available for all request types.
+-	**Specific options** that are available for specific request types.
+
+The availability of specific options can also vary used during execution of an initial request or of an update request.
+
+<Image
+  title="Data Manipulation Panel - options."
+  src="/img/plugins/volkovlabs-form-panel/data-manipulation-options.png"
+/>
+
+The following table provides an overview of available options and explains how you can use them.
+
+| Name | Option type | Request type | Applicable to | Description |
+| --- | --- | --- | --- | --- |
+| Highlight Changes | Common | All | Initial request | <p>This option regulates the highlighting of modified values with a specific color you pick. By default, this option is set as `Disabled`.</p><ul><li>When using it with a **query** or **REST API** (GET request), you can enable this option without adding any program code.</li><li>When using with a **data source**, you need to define it through the `SetInitial()` function.</li></ul> <p>Please check [our documentation](../code) for details.</p> |
+| Custom code | Common | All | Initial request | <p>Specify custom logic to run after the initial request or after the update request.</p><p>Please also consider the following:</p><ul><li>It’s designed for post-processing of data values returned by a data source, query, or REST API.</li><li>With custom code, you can access the panel's options, API responses, form elements, Grafana services, dashboard and global variables.</li></ul><p>Typical use cases:</p><ul><li>Display success, error, and warning messages.</li><li>Resetting modified values to the prior values.</li><li>Applying default values.</li></ul> |
+| Data source (native) | Specific | Query | Initial request | <p>Specify the query to retrieve data through the native Grafana query editor.</p><p>This option has the following specifics:</p><ul><li>Secure authorization.</li><li>Simple and quick setup.</li><li>Logic is restricted by a data source.</li><li>API server is not required.</li></ul> |
+| Data source (plugin specific) | Specific | Data source | <ul><li>Initial request</li><li>Update request</li></ul> | Select a specific data source in the panel’s options. Grafana’s native query editor is not needed in this case. |
+| Data source (plugin specific) | Specific | Data source | <ul><li>Initial request</li><li>Update request</li></ul> | Select a specific data source in the panel’s options. Grafana’s native query editor is not needed in this case. |
+| Initial Request Payload | Specific | Data source | <ul><li>Initial request</li><li>Update request</li></ul> | Specify the request payload. It depends on the data source you use. Please check [our documentation](../request) for examples. |
+| API Server URL | Specific | REST API | <ul><li>Initial request</li><li>Update request</li></ul> | Enter the URL of the API server. |
+| Header parameters | Specific | REST API | <ul><li>Initial request</li><li>Update request</li></ul> | Specify and pass header parameters when performing a request to an API server. You can also use dashboard and global variables, for example: `token=${token}` or `user=${_user.id}`. |
+| Content-type | Specific | REST API | Update request | Specify and pass the Content-type representation header to indicate the original media type of the resource. |
+| Confirmation | Common | All | Update request | <p>Opens the dialog box to verify the values before data submittal. You can compare old and new values.</p><p>This option provides two states:</p><ul><li>`No`: the confirmation dialog box is not shown.</li><li>`Require`: the confirmation dialog box is shown.</li></ul><p>When using it with a **query** or **REST API** (GET request), you can enable this option without adding any program code. When using with a **data source**, you need to define it through the `SetInitial()` function.</p><p>Please check [our documentation](../code) for details.</p> |
+| Update Request Payload | Common | All | Update Request | <p>Specify and pass a payload within the update request.</p><ul><li>For the **REST API** and **data source**, you can apply the `All Elements` or `Updated Only` values.</li><li>For a native **Grafana query**, you can specify a custom request payload.</li></ul> |
