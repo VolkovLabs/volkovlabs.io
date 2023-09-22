@@ -4,7 +4,7 @@ slug: data-manipulation-panel-plugin-for-grafana-97f9af2c67e0/
 tags: [Data Manipulation, API]
 image: /img/blog/2022-05-19-data-manipulation-panel/banner.png
 keywords: [Grafana, Data Manipulation, Forms]
-updated: 2023-02-14
+updated: 2023-09-21
 ---
 
 import Image from "@theme/Image";
@@ -12,23 +12,23 @@ import Video from "@theme/Video";
 
 # Data Manipulation plugin for Grafana
 
-Working on a commercial project, we created a Data Manipulation panel plugin that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
+The Data Manipulation Panel plugin evolved from a commercial project we were working on. This solution allowed you to import and update application data, as well as modify settings, straight from your Grafana dashboard.
 
-The Data Manipulation panel has been requested by the community multiple times. We decided to open-source it and submit it for review to the Grafana team to include in the Grafana Catalog.
+Our community had been insistently requesting this solution from us, so one day we decided to make it open-source and submitted it for evaluation to the Grafana team for inclusion into the Grafana Plugins catalog.
 
-The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
+Data Manipulation Panel is our brand-new Grafana plugin that our community was anticipating, and we are pretty confident that it will provide you with powerful capabilities to modify data in Grafana the way you want.
 
 <Video
   src="https://www.youtube.com/embed/DXALVG8GijM"
-  title="Manual data entering and User input into Dashboard."
+  title="Manual data entry and user input into dashboard."
 />
 
 ## Architecture
 
-Panel options allow you to specify the URL for GET requests to receive initial values and POST, PUT, or PATCH requests to update values sent as a JSON. Header parameters can be added to secure your REST API calls.
+The plugin's options allow you to specify the URL for the `GET` requests to receive initial values and the `POST`, `PUT`, or `PATCH` requests to update values sent in the JSON format. Header parameters can be added to secure your REST API calls.
 
 <Image
-  title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
+  title="Data Manipulation Panel uses GET and POST/PUT requests to interact with API Server."
   src="/img/blog/2022-05-19-data-manipulation-panel/form-api.png"
   lazy={false}
 />
@@ -38,75 +38,75 @@ The plugin supports dashboard variables in the URL and header parameters.
 For example, `http://localhost:3001/${var}`, where `${var}` is a dashboard variable.
 
 <Image
-  title="Panel options allow specifying URL, header parameters, and Custom code."
+  title="Plugin's options enable specifying URL, header parameters, and custom code."
   src="/img/blog/2022-05-19-data-manipulation-panel/panel.png"
 />
 
-## Javascript Code
+## JavaScript Code
 
-You can add the custom Javascript code, which will be executed after the browser's various requests, e.g. `GET`, `POST`, `PUT`, and `PATCH`.
+You can add custom JavaScript code snippets that will be executed after the browser's various requests, e.g. `GET`, `POST`, `PUT`, and `PATCH`.
 
 For example, we added the browser's location reload in the provided screenshot after a successful `POST` request.
 
-The custom code has access to
+The custom code has access to the following:
 
-- Panel options.
-- Response from the REST API call.
-- Form elements.
-- Grafana services.
-- Variables are replaced automatically.
+- panel options
+- response from the REST API call
+- form elements
+- Grafana services
+- variables that are replaced automatically.
 
-Check out the [documentation](/plugins/volkovlabs-form-panel/code) for all parameters.
+Check out our [documentation](/plugins/volkovlabs-form-panel/code) for the available parameters.
 
 ## Form Elements
 
-The Data Manipulation Form panel is actively improving and already supports this.
+The Data Manipulation Form plugin already supports the following form elements:
 
 | Element                          | Description                                                                          |
 | -------------------------------- | ------------------------------------------------------------------------------------ |
-| Date and Time                    | Drop-down to set and adjust date and time.                                           |
+| Date and time                    | Time picker to set and adjust date and time.                                         |
 | Disabled                         | Display values that can't be changed.                                                |
-| Number Input                     | Enter numbers with minimum and maximum options.                                      |
-| Number Slider                    | Slider element with minimum, maximum, and step options.                              |
-| Password Input                   | Enter sensitive information.                                                         |
-| Radio Group with Boolean options | Select `True` or `False`.                                                            |
-| Radio Group with Custom options  | Provide custom options.                                                              |
-| Select with Custom options       | Similar to Radio Group visualized as drop-down.                                      |
-| String Input                     | Enter any alphanumeric values.                                                       |
-| Text Area                        | Multiline text area with an adjustable number of rows for comments and descriptions. |
+| Number input                     | Field to enter numbers with minimum and maximum options.                             |
+| Number slider                    | Slider for numbers with minimum, maximum, and step options.                          |
+| Password input                   | Field to enter sensitive information.                                                |
+| Radio group with Boolean options | Select box with the `True` and `False` options.                                      |
+| Radio group with custom options  | Provide custom options.                                                              |
+| Select box with custom options   | Similar to a radio group visualized as a drop-down box.                                |
+| String input                     | Field to enter any alphanumeric values.                                              |
+| Text area                        | Multiline text area with an adjustable number of rows for comments and descriptions. |
 
 <Image
-  title="Form elements can be moved up and down and provide individual options."
+  title="Form elements can be reordered and provide individual options."
   src="/img/blog/2022-05-19-data-manipulation-panel/elements.png"
 />
 
-We plan to include Code Editor, File, and Image Upload elements in upcoming versions.
+We plan to include the code editor and form elements for file and image upload in upcoming versions.
 
-If you are interested in additional elements, please [open an issue in the repository](https://github.com/volkovlabs/volkovlabs-form-panel).
+If you are interested in additional form elements, please [open an issue in our repository](https://github.com/volkovlabs/volkovlabs-form-panel).
 
 ## Customization
 
-The form provides Submit and Reset buttons which can be customized to use
+The form provides the Submit and Reset buttons, which can be customized to use the following:
 
-- Theme-specific sizes.
-- Types.
-- Icons.
-- Flexible combination of background and foreground colors.
+- theme-specific sizes
+- types
+- icons
+- a flexible combination of background and foreground colors.
 
 <Image
   title="Submit and Reset buttons can be customized to use theme-specific types and icons."
   src="/img/blog/2022-05-19-data-manipulation-panel/buttons.png"
 />
 
-Form options can be displayed in a single column or split into multiple columns, and each element can be assigned to a specific column. This feature will be available in an upcoming version. The current version allows splitting editable and disabled elements only.
+Form elements can be displayed in a single column or split into multiple columns, and each element can be assigned to a specific column. This feature will be available in the upcoming version. The current version allows splitting editable and disabled form elements only.
 
 ## Feedback dashboard
 
-Let's take a look at the example of using the Data Manipulation panel to submit comments, issues, and feature requests integrated into the Application plugin.
+Let's take a look at the example of using Data Manipulation Panel to submit comments, issues, and feature requests integrated directly into the plugin.
 
 <Image
-  title="Feedback dashboard with Data Manipulation panel and native Grafana visualizations."
+  title="Feedback dashboard with Data Manipulation Panel and native Grafana visualizations."
   src="/img/blog/2022-05-19-data-manipulation-panel/feedback.png"
 />
 
-For a seamless user experience, the feedback form allows users to provide us with valuable feedback for the application. All submissions are stored in the database and sent out using various communication channels.
+For a seamless user experience, the feedback form allows you to provide us with valuable feedback about the plugin's functionality. All reported requests are stored in the database and sent out using various communication channels.
