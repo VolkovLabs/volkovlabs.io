@@ -1,0 +1,106 @@
+---
+tags:
+  - Getting Started
+  - Time Series
+image: /img/grafana/variety.png
+---
+
+import BlogPost from "@theme/BlogPost";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Time Series
+
+Time Series is one of the first Grafana visualization panels. Some people still argue about what came first: Grafana or Time Series. With that being said, this panel is tightly embedded into the Grafana core and plays a giant role in Grafana's identity.
+
+## Data frames
+
+In Grafana's realm, a data frame is a specific concept. In the picture below, you can see the fundamental basics of Grafana. A data source works with data storage to retrieve data according to the retrieval queries. A visualization panel expects data in a particular format to be able to display it.
+
+<Image
+  title="Data frames is a common denominator between a data source and panel."
+  src="/img/grafana/grafana-basics.png"
+/>
+
+The common denominator in this process is a data frame, meaning data in a specific format that a data source retrieves and the visualization panel expects as input. A data frame format is a table layout with typified columns.
+
+For all instances when a data source cannot return a required format, Grafana, starting from v7.0, introduced transformations. Please refer to a separate [article in our course](/grafana/transformations) to learn about transformations.
+
+:::info Time Data
+One column must be in a time data format for the Time Series panel to work correctly.
+:::
+
+Time Series accepts the following formats.
+
+<Image
+  title="Time Series accepted data frames."
+  src="/img/grafana/ts-dataformats.png"
+  width="80%"
+/>
+
+### Simple
+
+The simple format consists of two columns. One column must be in a time format, and the other must contain metric values for display. Metric values should be numeric. Time Series treats a metric column as a data series.
+
+### Wide
+
+The wide format is similar to the simple, but you can have multiple columns instead of one. Every column will be treated as a data series.
+
+### Multi-dimensional
+
+The multi-dimensional data format is when a data source returns multiple simple or wide formats. Every single simple or wide, in that event, is called a dimension. You can switch between dimensions in the drop-down located between the visualization preview and the data source query area.
+
+<Image
+  title="Switch between dimensions in this drop-down."
+  src="/img/grafana/dimension-select.png"
+/>
+
+## Display options
+
+Time Series builds lines, bars, dots and any combination of those.
+
+<Image
+  title="Some examples of Time Series styling."
+  src="/img/grafana/variety.png"
+/>
+
+### Override options
+
+The override options feature is one of the powerful Grafana concepts. For Time Series, in particular, you might need it when working with either wide or multi-dimensional data frames.
+
+Both of these data layouts are meant to contain data for multiple data series. The override functionality allows you to configure the visualization of each data series separately.
+
+For instance, one data series could be a bar visualization and the other one - a line with a colored area underneath.
+
+## Streaming
+
+Time Series visualization is ideal for displaying live data, or, in other words, streaming. Your data source must support streaming. You can find some profound examples of streaming in our [Apache ECharts plugin documentation](/plugins/volkovlabs-echarts-panel/streaming).
+
+Yes, the materials are created for a different plugin, but it is as close as we could get to documenting streaming in Grafana for the moment.
+
+## Annotations and alerts
+
+Time Series supports annotations and alerts natively. In edit mode, you can find the Alerts tab to create an alert rule for this particular visualization. All queries will be copied into the alert creation form, saving you time and patience.
+
+<Image
+  title="Alert rule is prepopulated if created from Edit mode."
+  src="/img/grafana/alert-tab.png"
+  width="80%"
+/>
+
+For more information about annotation and alerts, please, refer to a specific [section of our Grafana crash course](/grafana/annotations).
+
+## De-coupling
+
+De-coupling a native plugin might be an unexpected, but brilliant idea. Grafana's flexible architecture allows for many twists in your homegrown Grafana-based applications, and de-coupling a native plugin is just one of them.
+
+If anything is missing in any native plugin, you do not have to wait for the format PR process to be complete! To get a better understanding of how de-coupling could be done, you can refer to [our GitHub repository](https://github.com/volkovlabs/volkovlabs-timeseries-panel).
+
+## Tutorial
+
+If you like to reiterate the materials you just read in a video form, with examples and some step-by-step guidance, please, watch our YouTube video where I walk over the Time Series and demo along the way.
+
+<Video
+  src="https://www.youtube.com/embed/YpOazX67GSo"
+  title="Time Series panel is the Grafana most popular plugin."
+/>
