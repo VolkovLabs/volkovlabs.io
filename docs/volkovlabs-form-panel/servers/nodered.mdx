@@ -11,20 +11,20 @@ import Video from "@theme/Video";
 
 # Node-RED
 
-Node-RED is a good companion for Data Manipulation Plugin because it is simple, visual, and does not require developer experience.
+Node-RED is a good companion for Data Manipulation Panel because it is simple, provides a visual interface, and does not require any developer experience.
 
-Thanks to community member [Alejandro Guida](https://github.com/canob) for the explanation.
+Thanks to the community member [Alejandro Guida](https://github.com/canob) for the explanation.
 
 ## Use Cases
 
-Use cases of Node-RED related to Data Manipulation Plugin:
+Node-RED usage scenarios involving the Data Manipulation Panel plugin:
 
-- Manage the authentication (get and renew the token) for API Services that require OAuth2 authentication. Doing “API inside API”, because Data Manipulation Plugin cannot manage that kind of authentication.
-- API Gateway for “relax” CORS restrictions, because Node-RED default response includes `Access-Control-Allow-Origin: *` header.
-- Manage authentication over all the destination databases and APIs to use single authentication for all the services.
+- Manage authentication (acquire and renew tokens) for API Services using OAuth2 authentication. Because the Data Manipulation Plugin cannot handle this type of authentication, the API inside API approach is used.
+- API Gateway to relax CORS restrictions, because Node-RED's default response includes the `Access-Control-Allow-Origin: *` header.
+- Manage authentication across all destination databases and APIs to preserve a single authentication type for all services.
 
 <Image
-  title="Node-RED workflow to implement GET and POST endpoints for multiple databases."
+  title="Node-RED flow to implement GET and POST endpoints for multiple databases."
   src="/img/plugins/volkovlabs-form-panel/node-red.png"
   lazy={false}
 />

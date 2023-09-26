@@ -4,7 +4,7 @@ slug: form-panel-2.7.0-20221110/
 tags: [Data Manipulation, Release Notes]
 image: /img/blog/2022-11-10-form-panel-2.7.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
-updated: 2023-02-07
+updated: 2023-09-21
 ---
 
 import Image from "@theme/Image";
@@ -12,26 +12,26 @@ import Video from "@theme/Video";
 
 # Data Manipulation Panel 2.7.0
 
-We released a new version of the Data Manipulation Panel 2.7.0. This feature release
+We are happy to announce the release of Data Manipulation Panel 2.7.0. This feature release includes the following updates:
 
-- Includes community-requested updates for Payload.
+- Includes community-requested updates for the payload.
 - Updated request parameters.
 - Grafana-style success/error notifications.
-- The code editor for Initial and Update requests was improved with suggestions for variables and parameters.
+- The code editor for the initial and update requests was improved with suggestions for variables and parameters.
 
-We are impressed with the increasing number of use cases from the community and looking forward to the feedback to continue improving it.
+We are impressed by the ever-growing number of use cases from the community and look forward to receiving more feedback and enhancing the plugin.
 
 <Image
-  title="Data Manipulation panel allows to input and edit all kinds of data."
+  title="Data Manipulation Panel allows you to enter and edit all kinds of data."
   src="/img/blog/2022-11-10-form-panel-2.7.0/panel.png"
   lazy={false}
 />
 
 ## Getting Started
 
-The Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool.
+You can install Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
 
-For the latter, please use the following command.
+For the latter, please use the following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-form-panel
@@ -39,29 +39,29 @@ grafana-cli plugins install volkovlabs-form-panel
 
 ## YouTube Tutorial
 
-The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
+Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
 
 <Video
   src="https://www.youtube.com/embed/DXALVG8GijM"
-  title="Manual data entering and User input into Dashboard."
+  title="Manual data entry and user input into dashboard."
 />
 
 ## Release Notes
 
 ### Features / Enhancements
 
-- Update to Grafana 9.2.2 (#113)
-- Update CI to upload signed artifacts (#116)
-- Allow sending all or updated only values in Payload (#116)
-- Add Initial values parameter to Update Request parameters (#117)
-- Add Status notification after submitting the form (#98)
-- Add Monaco Code Editor suggestions for available parameters (#88)
+- Added compatibility with Grafana 9.2.2 (#113).
+- Update CI to upload signed artifacts (#116).
+- Allowed the passing of all or updated only values within the payload (#116).
+- Added the Initial values parameter into the Update Request parameters (#117).
+- Added the output of status notifications after the form submittal (#98).
+- Added suggestions in Monaco Code Editor for available parameters (#88).
 
 ## Feedback
 
 We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 - Support our project by starring the repository.
