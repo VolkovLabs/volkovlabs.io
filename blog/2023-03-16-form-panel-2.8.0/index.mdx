@@ -4,7 +4,7 @@ slug: form-panel-2.8.0-20230316/
 tags: [Data Manipulation, Release Notes]
 image: /img/blog/2023-03-16-form-panel-2.8.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
-updated: 2023-03-23
+updated: 2023-09-22
 ---
 
 import Image from "@theme/Image";
@@ -12,40 +12,40 @@ import Video from "@theme/Video";
 
 # Data Manipulation Panel 2.8.0
 
-We released a new version of the Data Manipulation Panel 2.8.0. This feature release
+We are happy to announce the release of Data Manipulation Panel 2.8.0. This feature release includes the following updates:
 
-- Added String, Number Type selection for Select and Radio options.
-- Added Lookup options for Disabled elements.
-- Added support for DELETE requests.
-- Added "Buttons only" Layout to do GET/POST/DELETE requests.
-- Added panel padding configuration to allow using of panel's space corner to corner.
-- Refactored documentation and API Servers examples for MySQL, PostgreSQL, and Deno.
+- Added the string and number type selection for select boxes and radio buttons.
+- Added lookup options for disabled form elements.
+- Added support for `DELETE` requests.
+- Added the **Buttons only** layout to perform `GET`, `POST`, and `DELETE` requests.
+- Added the panel padding configuration allowing the usage of the entire panel area.
+- Refactored documentation and examples of using API Servers with MySQL, PostgreSQL, and Deno.
 - Updated to the latest Grafana 9.4.3 toolkit and workflows.
 
 :::info Grafana Catalog
-The plugin was updated in Grafana Catalog on March 23, 2023.
+The plugin was updated in the Grafana Plugins catalog on March 23, 2023.
 :::
 
 <Image
-  title="Data Manipulation panel allows to input and edit all kinds of data."
+  title="Data Manipulation Panel enables the entry and editing of different kinds of data."
   src="/img/blog/2023-03-16-form-panel-2.8.0/panel.png"
   lazy={false}
 />
 
 ## Layout
 
-The new "Buttons Only" layout does not require any elements and allows performing Update Requests.
+The new **Buttons Only** layout does not require any elements and allows performing update requests.
 
 <Image
   title="Layout can be Basic, Buttons only, and Sections with no or extra padding if required."
   src="/img/blog/2023-03-16-form-panel-2.8.0/layout.png"
 />
 
-Padding can be decreased or increased from 0 to 20 pixels depending on your use case.
+The panel padding can be adjusted within the range of 0 to 20 pixels depending on your use case.
 
 ## Select and Radio options
 
-The Select and Radio options can be set as a string or a number type to correctly visualize returned value and update using API.
+For the select boxes and radio buttons, you can configure the format type (string or number) to correctly visualize returned values and update them using API.
 
 <Image
   title="Select a string or a number type for each option."
@@ -54,7 +54,7 @@ The Select and Radio options can be set as a string or a number type to correctl
 
 ## Lookup for Read-only (Disabled) elements
 
-We added a lookup for Read-only elements similar to Radio and Select elements to implement control forms and verify initial values before updating.
+We added a lookup for read-only form elements similar to radio buttons and select boxes to implement control forms and verify initial values before updating.
 
 <Image
   title="Add options to lookup labels for returned values."
@@ -63,7 +63,7 @@ We added a lookup for Read-only elements similar to Radio and Select elements to
 
 ### Control Form
 
-Control Form is a special form with multiple sections consisting of Read-Only and input elements.
+A control form is a special form with multiple sections consisting of read-only and input fields.
 
 <Image
   title="Control form to verify and update Id and Type."
@@ -72,27 +72,27 @@ Control Form is a special form with multiple sections consisting of Read-Only an
 
 ## DELETE requests
 
-Update request supports DELETE, PATCH, POST, and PUT methods.
+The update request supports the `DELETE`, `PATCH`, `POST`, and `PUT` methods.
 
 <Image
-  title="DELETE update requests allows to execute DELETE API calls."
+  title="DELETE update requests allows you to execute DELETE API calls."
   src="/img/blog/2023-03-16-form-panel-2.8.0/update.png"
 />
 
 ## Magic (JavaScript) Trio
 
-Data Manipulation is one of the three plugins that make Grafana complete. Dynamic Text, Data Manipulation and Apache ECharts are all you need to create functional real-world web applications.
+Data Manipulation Panel is one of the three plugins that complete Grafana. With Dynamic Text, Data Manipulation, and Apache ECharts Panel you can create fully functional web applications meeting your needs and expectations.
 
 <Video
   src="https://www.youtube.com/embed/wPr4gZYzUVA"
-  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
+  title="Dynamic Text, Data Manipulation, and Apache ECharts Panel plugins."
 />
 
 ## Getting Started
 
-The Data Manipulation panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or utilizing the Grafana command line tool.
+You can install Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
 
-For the latter, please use the following command.
+For the latter, please use the following command:
 
 ```bash
 grafana-cli plugins install volkovlabs-form-panel
@@ -100,40 +100,40 @@ grafana-cli plugins install volkovlabs-form-panel
 
 ## YouTube Tutorial
 
-The Data Manipulation Panel is a conceptually new plugin for Grafana. It is the first plugin that allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.
+Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
 
 <Video
   src="https://www.youtube.com/embed/DXALVG8GijM"
-  title="Manual data entering and User input into Dashboard."
+  title="Manual data entry and user input into dashboard."
 />
 
 ## Release Notes
 
 ### Features / Enhancements
 
-- Add String, Number Type for Select and Radio options (#120)
-- Add Lookup options for Disabled element (#121)
-- Add Server API with MYSQL for Feedback Dashboard (#125)
-- Update to Grafana 9.3.1 (#129)
-- Add Option for DELETE request (#130)
-- Add "Buttons only" Layout to do GET/POST/DELETE requests (#131)
-- Update README and move Documentation to docs.volkovlabs.io (#132)
-- Update README and Documentation (#134)
-- Refactor API Servers (#128)
-- Update CI and Release workflows (#145)
-- Update to Grafana 9.4.3 (#146)
-- Add NoPadding to remove extra padding around and make it configurable (#146)
-- Update README and Documentation (#147)
+- Added the string and number type for select boxes and radio buttons (#120).
+- Added the lookup options for disabled elements (#121).
+- Added support for Server API with MySQL for the feedback dashboard (#125).
+- Added compatibility with Grafana 9.3.1 (#129).
+- Added options for the `DELETE` request (#130).
+- Added the Buttons-only layout to perform `GET`/`POST`/`DELETE` requests (#131).
+- Updated the README file and moved product documentation to docs.volkovlabs.io (#132).
+- Updated the README file and product documentation (#134).
+- Refactored API servers (#128).
+- Updated CI and release workflows (#145).
+- Added compatibility with Grafana 9.4.3 (#146).
+- Added the `NoPadding` parameter to remove extra padding around the panel and make it configurable (#146).
+- Updated the README file and product documentation (#147).
 
 ### Bug fixes
 
-- Fix Password and Boolean elements confirmation (#120)
+- Fixed the password and Boolean elements confirmation (#120).
 
 ## Feedback
 
 We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 - Support our project by starring the repository.
