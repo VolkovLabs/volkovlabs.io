@@ -11,70 +11,70 @@ import Video from "@theme/Video";
 
 # REST API
 
-The Data Manipulation panel can request (GET) and update (DELETE, PATCH, POST, PUT) data and configuration using REST API.
+Data Manipulation Panel can request data (`GET` request) and update data (`DELETE`, `PATCH`, `POST`, or `PUT` request) or configuration through REST API.
 
 <Image
-  title="Data Manipulation panel uses GET, POST/PUT request to interact with API Server."
+  title="Data Manipulation Panel uses GET or POST/PUT request to interact with API server."
   src="/img/plugins/volkovlabs-form-panel/form-api.png"
 />
 
 ## JSON Payload
 
-Elements defined in the panel options are used to parse the Initial and sent in the Update requests.
+Form elements defined in the panel options are used to parse data within the initial request and send data within the update request.
 
 <Image
-  title="Elements defined in the Data Manipulation panel."
+  title="Form elements defined in Data Manipulation Panel."
   src="/img/plugins/volkovlabs-form-panel/elements.png"
   width="80%"
 />
 
-The JSON response of the initial request consists of the element's ids and values. The response will be parsed and update the initial values of the form.
+The JSON response of the initial request includes the form elements' identifiers and values. The response is parsed and initial values on the form are updated.
 
 ```json
 { "name": "Name", "amount": 30, "updated": false, "step": 4 }
 ```
 
-After values are updated, all form elements will create a similar payload for the Update request.
+Once values have been updated, all the form elements will create a similar payload for the update request.
 
 ## Tutorial
 
 <Video
   src="https://www.youtube.com/embed/SHN2S-dRIEM"
-  title="How to Manipulate Data using Grafana dashboard."
+  title="How to manipulate data on Grafana dashboard."
 />
 
 ## NGINX
 
-We recommend running Grafana behind NGINX reverse proxy for an additional security layer. The reverse proxy also allows us to expose additional API endpoints and static files in the same domain, which makes it CORS-ready.
+We recommend that you run Grafana behind an NGINX reverse proxy for an additional security layer. The reverse proxy also allows you to expose additional API endpoints and static files within the scope of the same domain, which makes it CORS-ready.
 
 <Image
-  title="Grafana and Server API behind NGINX reverse proxy."
+  title="Grafana and Server API behind an NGINX reverse proxy."
   src="/img/plugins/volkovlabs-form-panel/form-nginx-api.png"
 />
 
 ## CORS
 
-The Data Manipulation panel may be blocked by CORS policy to access API Server. You can look for a rejection error in your browser Console window.
+Operation of the Data Manipulation Panel plugin may be blocked by a CORS policy when accessing an API server. You can find a rejection error in the browser's console.
 
 <Image
-  title="Rejection error in the browser's Console."
+  title="Rejection error in the browser's console."
   src="/img/plugins/volkovlabs-form-panel/cors.png"
 />
 
-Unfortunately, Grafana will not be explicit. Nothing will notify you about a CORS restrictions error.
+Please consider that Grafana will not explicitly indicate a CORS error.
 
 ### Policies
 
-**Same-Origin** is a policy allowing interaction with resources ONLY from the same domain, host and port. For instance, `abc.com` can retrieve data from `abc.com/page1`, but is not permitted to access `anyotherdomain.com`.
+**Same-Origin** is a policy that strictly restricts interaction with resources solely to the same domain, host, and port. For example, the `abc.com` domain can retrieve data from `abc.com/page1`, but cannot access any other domain such as `anyotherdomain.com`.
 
-**Cross-Origin Resource Sharing (CORS)** policy is more flexible. It was created to allow different domains to interact. If CORS restrictions are off, any domain is allowed to request data. If CORS restrictions are ON, only whitelisted domains are permitted.
+**Cross-Origin Resource Sharing (CORS)** policy offers more flexibility by allowing interactions between different domains. When CORS restrictions are disabled, any domain can freely request data. On the other hand, when CORS restrictions are enabled, only certain domains designated in its allow list are permitted.
 
 ## Connect to API Server
 
-We understand the risk of data manipulation and take security concerns seriously. This blog post explores three secure ways to connect the Data Manipulation panel to the API Server.
+We acknowledge the risks of data manipulation and consider security concerns seriously. This blog post explores three secure ways to connect Data Manipulation Panel to an API server.
 
 <BlogPost
   href="/blog/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904"
-  title="How to connect the Data Manipulation plugin for Grafana to API Server."
+  title="How to connect Data Manipulation Panel for Grafana to an API server."
   src="/img/blog/2022-06-12-data-manipulation-api/banner.png"
 />
