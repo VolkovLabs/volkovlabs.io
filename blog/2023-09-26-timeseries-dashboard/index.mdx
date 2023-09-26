@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: timeseries-dashboard-20230926/
-tags: [Time Series]
+tags: [Grafana Crash Course]
 image: /img/blog/2023-09-26-timeseries-dashboard/banner.png
 keywords: [Time Series, Prometheus, Visualization, Grafana, Monitoring]
 ---
@@ -11,11 +11,11 @@ import Video from "@theme/Video";
 
 # Monitoring Linux servers with Prometheus, Node Exporter and Grafana Time Series
 
-I am writing this article to supplement one of my recent YouTube videos. In there, I provided a step-by-step tutorial to create a Grafana dashboard to monitor Linux servers. The data is collected by Node Exporter and stored in the Prometheus database. 
+I am writing this article to supplement one of my recent YouTube videos. In there, I provided a step-by-step tutorial to create a Grafana dashboard to monitor Linux servers. The data is collected by Node Exporter and stored in the Prometheus database.
 
-Both, the video and this article, are complementing each other since some of the materials are better in a motion picture format and some shine brighter in the written word. 
+Both, the video and this article, are complementing each other since some of the materials are better in a motion picture format and some shine brighter in the written word.
 
-To get a better understanding of the topic, I recommend watching the video first and then getting back to this article. But the decision of what should go first is surely up to you. 
+To get a better understanding of the topic, I recommend watching the video first and then getting back to this article. But the decision of what should go first is surely up to you.
 
 <Video
   src="https://www.youtube.com/embed/YpOazX67GSo"
@@ -24,30 +24,29 @@ To get a better understanding of the topic, I recommend watching the video first
 
 ## Data flow
 
-My dashboard visualizes server diagnostic data that is stored in the Prometheus database where it gets collected from the Node Exporters. Every node exporter works with one Linux server instance. 
+My dashboard visualizes server diagnostic data that is stored in the Prometheus database where it gets collected from the Node Exporters. Every node exporter works with one Linux server instance.
 
 <Image
   title="Node exporters collect data to store in Prometheus and then display in Grafana dashboard."
   src="/img/blog/2023-09-26-timeseries-dashboard/timeseries-prometheus.png"
 />
 
-For more information on how such a system can be set up, please, refer to the external resource:
-[Node Exporter](https://prometheus.io/docs/guides/node-exporter/).
+For more information on how such a system can be set up, please, refer to the [Prometheus documentation for Node Exporter](https://prometheus.io/docs/guides/node-exporter/).
 
 ## Variable panel
 
-I started my dashboard by configuring a filtering functionality. To be more user-friendly, I wanted to position my filter on the same horizontal level as my TimeSeries. 
+I started my dashboard by configuring a filtering functionality. To be more user-friendly, I wanted to position my filter on the same horizontal level as my Time Series.
 
-There is only one Grafana plugin as of this moment that allows achieving such a requirement. It is the Variable panel.
+There is only one Grafana plugin as of this moment that allows achieving such a requirement. It is the [Variable panel](/plugins/volkovlabs-variable-panel).
 
 <Image
-  title="Variable panel to select servers for display."
+  title="Variable panel to select one or many servers for display."
   src="/img/blog/2023-09-26-timeseries-dashboard/dash.png"
 />
 
-### Panels' Datasource
+## Data Source
 
-All panels have the same data source to read data from. The data source is configured as a dashboard variable that a user can select in the Variable panel.
+All panels have the same data source to read data from. The data source is configured as a dashboard variable.
 
 <Image
   title="The dashboard variables set up."
@@ -64,7 +63,7 @@ All panels have the same data source to read data from. The data source is confi
   src="/img/blog/2023-09-26-timeseries-dashboard/var-p.png"
 />
 
-### Panels' Title
+## Dynamic Title
 
 I made the Time Series panels' titles dynamic by including the dashboard variable `{instance}` in the value. That makes every title change according to the selected server on the variable panel.
 
@@ -73,40 +72,39 @@ I made the Time Series panels' titles dynamic by including the dashboard variabl
   src="/img/blog/2023-09-26-timeseries-dashboard/title.png"
 />
 
-### Panels' Repeat Option
+## Repeat Options
 
 The dashboard variable `{$instance}` that I created to have the filtering functionality represents an array of values. Each value is a server name.
-According to my design, one server per chart should be displayed. What this means is when a user selects two servers in the variable panel, the same two charts should be created, one per server. 
+According to my design, one server per chart should be displayed. What this means is when a user selects two servers in the variable panel, the same two charts should be created, one per server.
 
 To archive that, in the Time Series edit mode, in the Panel Options section, you can specify which variable to use for the Repeat feature.
 
 <Image
-  title="Repeat option in Time Series."
+  title="Repeat options in Time Series."
   src="/img/blog/2023-09-26-timeseries-dashboard/repeat.png"
 />
 
-### Panels Visualization Options
+## Visualization Options
 
 By visualization option I mean the settings that a user configures on the right-hand side of any Grafana panel. The configuration in my case is almost identical for all four panels.
 
-I already mentioned everything I changed in the <b>Panel options</b> section, namely, dynamic title and Repeat options. 
-
-For the rest, I touched upon <b>Graph styles</b> and <b>Standard option</b> sections to set the fill opacity, gradient mode, and units.
+I already mentioned everything I changed in the <b>Panel options</b> section, namely, dynamic title and Repeat options. For the rest, I touched upon <b>Graph styles</b> and <b>Standard option</b> sections to set the fill opacity, gradient mode, and units.
 
 <Image
   title="Graph styles and Standard options configuration."
   src="/img/blog/2023-09-26-timeseries-dashboard/style.png"
 />
 
-## Four Time Series
+## Prometheus Queries
 
-This dashboard builds four time series for each selected server. 
+This dashboard consists of four time series for each selected server.
+
 - CPU Usage
 - Load Average
 - Memory Usage
 - Disk Space
 
-### CPU Usage Query
+### CPU Usage
 
 This panel contains one query to calculate the usage per CPU.
 
@@ -118,7 +116,7 @@ This panel contains one query to calculate the usage per CPU.
 )
 ```
 
-### Load Average Queries
+### Load Average
 
 Query to compute the total number of active CPUs on the server.
 
@@ -202,9 +200,11 @@ sum(
 )
 
 ```
+
 ## Questions?
 
-If you have any questions about this article, please, do not hesitate to leave them in the comments section under the YouTube video I mentioned at the beginning. 
+If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube video mentioned at the beginning](https://www.youtube.com/watch?v=YpOazX67GSo).
 
 ## Become a member!
+
 Become a [member of our fan club](https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join) and earn loyalty badges!
