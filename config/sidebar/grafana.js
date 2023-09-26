@@ -12,6 +12,7 @@ const mySidebar = [
       "provisioning",
       "transformations",
       "variables",
+      "timeseries",
       "allow-unsigned",
     ],
     label: "Getting Started",

@@ -9,11 +9,11 @@ import Code from "@theme/Code";
 
 # Custom Requests
 
-Data Manipulation panel allows you to create your own Initial and Update requests using Custom Code.
+Data Manipulation Panel allows you to create your own initial and update requests with custom code.
 
 ## Initial Request
 
-Select Initial Request as `-` and set Custom Code:
+Select `-` to choose an initial request, and then define the custom code:
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/js/initial-request.js"
@@ -22,7 +22,7 @@ Select Initial Request as `-` and set Custom Code:
 
 ### Initial values
 
-To support `Highlight changed values` and `Require Confirmation` the Custom Code should use `setInitial({})` function to update `initial` values:
+To support the `Highlight changed values` and `Require Confirmation` features, you need to use the `setInitial({})` function within your custom code to update initial values:
 
 ```javascript
 setInitial({ value: 99, name: "Test" });
@@ -30,7 +30,7 @@ setInitial({ value: 99, name: "Test" });
 
 ## Update Request
 
-Select Update Request as `-` and set Custom Code. Depending on the selected Payload options it will add all or only updated values.
+Select `-` to choose an update request, and then define the custom code. Depending on the selected payload option, it will add all or only the updated values.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/js/update-request.js"
