@@ -15,231 +15,231 @@ import Video from "@theme/Video";
 
 ### Features / Enhancements
 
-- Add backward compatibility for option id (#244)
+- Added the backward compatibility for option identifiers (#244).
 
 ## 3.2.0 (2023-09-06)
 
 ### Features / Enhancements
 
-- Add min and max date for date time element (#225)
-- Map Data Source values to elements (#224)
-- Update element Show If to support variables (#230)
-- Add clearing errors before initial and update requests (#232)
-- Add URL encode to variables (#231)
-- Allow empty section name (#228)
-- Add Query Field Picker for Initial Request (#227)
-- Add File element type for File Upload (#229)
-- Add converting option value to string and number based on type (#233)
-- Add loading states for Initial, Update and Reset button actions (#234)
-- Add support for asynchronous custom code (#234)
-- Update Query and Data Source initial request (#237)
-- Add icons for radio and select options (#238)
+- Added the minimum and maximum date for the date time element (#225).
+- Added the mapping of data source values to form elements (#224).
+- Updated the Show If element to support variables (#230).
+- Added the clearing of errors before initial and update requests (#232).
+- Added the URL encoding into variables (#231).
+- Allowed the section name to be empty (#228).
+- Added the query field picker for an initial request (#227).
+- Added the file element type for file upload (#229).
+- Added the conversion of option values to string and number based on type (#233).
+- Added the loading states for the initial request and the Update and Reset button actions (#234).
+- Added the support for asynchronous execution of custom code (#234).
+- Update the initial request to work with Query and Data Source (#237).
+- Added icons for radio buttons and select boxes (#238).
 
 ## [3.1.0 (2023-08-13)](/blog/form-panel-3.1.0-20230823/)
 
 ### Features / Enhancements
 
-- Update jest selectors to use npm package (#209)
-- Add onChange to update elements in local state within custom code (#214)
-- Update ESLint configuration (#215)
-- Add Multi Select element (#217)
-- Add conditional element visibility (#219)
-- Add custom payload code editor (#220)
-- Add custom reset code editor (#221)
-- Add Data Source request (#222)
+- Updated `jest` selectors to use the `npm` package (#209).
+- Added the `onChange` function to update elements in the local state within the custom code (#214).
+- Updated ESLint configuration (#215).
+- Added the multi-select element (#217).
+- Added the conditional element visibility (#219).
+- Added the code editor for the Custom Payload section (#220).
+- Added the code editor for the Custom Reset section (#221).
+- Added the Data Source request (#222).
 
 <Video
   src="https://www.youtube.com/embed/0ratMv5XYSk"
-  title="Data Manipulation panel 3.1.0 for Grafana."
+  title="Data Manipulation Panel 3.1.0 for Grafana."
 />
 
 ## [3.0.0 (2023-07-15)](/blog/form-panel-3.0.0-20230715/)
 
 ## Breaking changes
 
-- Requires Grafana 9 and Grafana 10.
-- Form Elements are kept in the local state and not saved in the dashboard by default.
-- Local states and elements refactoring may introduce breaking changes. Please test before using it in Production.
+- Requires Grafana 9 or Grafana 10.
+- Form elements are kept in the local state and are not saved into the dashboard by default.
+- The refactoring of local states and elements may introduce breaking changes. Please test this version before updating the plugin on production Grafana instances.
 
 ### Features / Enhancements
 
-- Update Documentation for API Servers (#149)
-- Update to Grafana 10.0.0 (#165, #172, #184, #200)
-- Add Hidden option to String element (#171)
-- Add E2E Cypress testing (#180)
-- Increase Test Coverage and update Test library (#181, #183, #185)
-- Update Form Elements to delay save changes with auto-save (#186)
-- Migrate to Plugin Tools 1.5.2 (#187, #192)
-- Update to Node 18 (#188)
-- Update constants and E2E tests (#190)
-- Update Form elements to use local state (#191)
-- Add notifyWarning() function (#201)
-- Add drag and drop for elements editor (#202)
-- Remove Grafana 8.5 support (#203)
-- Add running initial request on initial updates (#205)
-- Add vertical layout orientation (#206)
+- Updated the product documentation for API Servers (#149).
+- Added compatibility with Grafana 10.0.0 (#165, #172, #184, #200).
+- Added the Hidden option into the string element (#171).
+- Integrated E2E Cypress testing (#180).
+- Increased the test coverage for the plugin's functionality and updated the test library (#181, #183, #185).
+- Updated form elements to delay the saving of changes with auto-save (#186).
+- Migrated to Plugin Tools 1.5.2 (#187, #192).
+- Updated to Node.js 18 (#188).
+- Updated constants and E2E tests (#190).
+- Updated the form elements to use the local state (#191).
+- Added the `notifyWarning()` function (#201).
+- Added the drag and drop for elements editor (#202).
+- Deprecated support for Grafana 8.5 (#203).
+- Added the execution of the initial request on initial updates (#205).
+- Added the landscape orientation for the layout (#206).
 
 <Video
   src="https://www.youtube.com/embed/zNrFOtW6j-o"
-  title="Data Manipulation 3.0.0 for Grafana."
+  title="Data Manipulation Panel 3.0.0 for Grafana."
 />
 
 ## [2.8.0 (2023-03-16)](/blog/form-panel-2.8.0-20230316/)
 
 ### Features / Enhancements
 
-- Add String, Number Type for Select and Radio options (#120)
-- Add Lookup options for Disabled element (#121)
-- Add Server API with MYSQL for Feedback Dashboard (#125)
-- Update to Grafana 9.3.1 (#129)
-- Add Option for DELETE request (#130)
-- Add "Buttons only" Layout to do GET/POST/DELETE requests (#131)
-- Update README and move Documentation to docs.volkovlabs.io (#132)
-- Update README and Documentation (#134)
-- Refactor API Servers (#128)
-- Update CI and Release workflows (#145)
-- Update to Grafana 9.4.3 (#146)
-- Add NoPadding to remove extra padding around and make it configurable (#146)
-- Update README and Documentation (#147)
+- Added the string and number type for select boxes and radio buttons (#120).
+- Added the lookup options for disabled elements (#121).
+- Added support for Server API with MySQL for the feedback dashboard (#125).
+- Added compatibility with Grafana 9.3.1 (#129).
+- Added options for the `DELETE` request (#130).
+- Added the Buttons-only layout to perform `GET`/`POST`/`DELETE` requests (#131).
+- Updated the README file and moved product documentation to docs.volkovlabs.io (#132).
+- Updated the README file and product documentation (#134).
+- Refactored API servers (#128).
+- Updated CI and release workflows (#145).
+- Added compatibility with Grafana 9.4.3 (#146).
+- Added the `NoPadding` parameter to remove extra padding around the panel and make it configurable (#146).
+- Updated the README file and product documentation (#147).
 
 ### Bug fixes
 
-- Fix Password and Boolean elements confirmation (#120)
+- Fixed the password and Boolean elements confirmation (#120).
 
 ## [2.7.0 (2022-11-10)](/blog/form-panel-2.7.0-20221110/)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.2.2 (#113)
-- Update CI to upload signed artifacts (#116)
-- Allow to send all or updated only values in Payload (#116)
-- Add Initial values parameter to Update Request parameters (#117)
-- Add Status notification after submit form (#98)
-- Add Monaco Code Editor suggestions for available parameters (#88)
+- Added compatibility with Grafana 9.2.2 (#113).
+- Update CI to upload signed artifacts (#116).
+- Allowed the passing of all or updated only values within the payload (#116).
+- Added the Initial values parameter into the Update Request parameters (#117).
+- Added the output of status notifications after the form submittal (#98).
+- Added suggestions in Monaco Code Editor for available parameters (#88).
 
 ## 2.6.0 (2022-10-23)
 
 ### Features / Enhancements
 
-- Add Compatibility Check Workflow (#92)
-- Update to Grafana 9.1.6 (#92)
-- Add Custom Code to update variable after update request (#106)
-- Add Number Input and Slider min, max validation (#95)
-- Initialize element value from a Data Source query (#105)
-- Update CI to Node 16 and Synchronize with Release workflow (#109)
+- Added the compatibility check workflow (#92).
+- Added compatibility with Grafana 9.1.6 (#92)
+- Added custom code to update variables after an update request (#106).
+- Added validation for the number input box and slider with minimum and maximum values (#95).
+- Initialized the element value from a Data Source query (#105).
+- Updated CI to Node.js 16 and synchronized with the release workflow (#109).
 
 ### Bug fixes
 
-- Initial GET request date time formatting (#99)
+- Initial GET request date time formatting (#99).
 
 ## 2.5.0 (2022-09-10)
 
 ### Features / Enhancements
 
-- Add Request Header check (#85)
-- Expose `initialRequest()` in Custom Code to reload panel (#89)
-- Set `json` as response data from Initial Request (#90)
-- Update to Grafana 9.1.4 (#91)
+- Added validation of request headers (#85).
+- Exposed the `initialRequest()` method in custom code to reload the panel (#89).
+- Set `json` as the response data format from the initial request (#90).
+- Added compatibility with Grafana 9.1.4 (#91).
 
 ## 2.4.0 (2022-08-31)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.1.1 (#72)
-- Explain how to use Dashboard Variables in README (#73)
-- Add onOptionsChange in examples to update the panel (#75)
-- Add variables in URL to call from form elements (#78)
-- Add Custom Update Request to README (#79)
-- Add Deno Deploy Playground server and dashboard (#80)
-- Add "How to Manipulate Data using Grafana dashboard" video in README (#80)
-- Show Title instead of Id in the Confirmation Panel (#81)
-- Avoid showing confirmation for disabled elements (#77)
-- Improve Test Coverage (#21)
+- Added compatibility with Grafana 9.1.1 (#72).
+- Explain how to use dashboard variables in the README file (#73).
+- Added the `onOptionsChange` event in examples to update a panel (#75).
+- Added support for variables in the URL to call from form elements (#78).
+- Added description of a custom update request in the README file (#79).
+- Added the Deno Deploy Playground server and dashboard (#80).
+- Added the "How to Manipulate Data using Grafana dashboard" video in the README file (#80).
+- Added display of the title instead of identifier in the confirmation dialog box (#81).
+- Disabled the showing of confirmation for disabled elements (#77).
+- Increased test coverage for the plugin's functionality (#21).
 
 ## 2.3.0 (2022-08-11)
 
 ### Breaking changes
 
-- Signed as Community Plugin.
+- Signed as a community plugin.
 
 ### Features / Enhancements
 
-- Update Sample code in README (#67)
-- Updated to be included in the Grafana Catalog (#68)
+- Updated sample code in the README file (#67).
+- Updated the plugin for its exposure in the Grafana Plugins catalog (#68).
 
 ## 2.2.0 (2022-08-09)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.0.6 (#63)
-- Allow to get Elements Initial Value and Configuration from Data Source (#22)
-- Update Alert when no elements defined (#66)
+- Added compatibility with Grafana 9.0.6 (#63).
+- Allowed the retrieval of the element's initial value and configuration from a data source (#22).
+- Updated the alert when no elements are defined (#66).
 
 ### Bug fixes
 
-- Number Slider is not updated properly (#18)
+- Updated the number slider (#18).
 
 ## 2.1.0 (2022-07-17)
 
 ### Features / Enhancements
 
-- Rebuild based on 9.0.3 (#58)
-- Automatic Code Editor Formatting (#59)
-- Explain Custom code in Readme (#60)
-- Update YouTube link with tutorial in README #61
+- Added compatibility with Grafana 9.0.3 (#58).
+- Added the automatic formatting in the code editor (#59).
+- Explained how to use custom code in the README file (#60).
+- Update the YouTube link with the tutorial in the README file (#61).
 
 ## 2.0.0 (2022-06-17)
 
 ### Breaking changes
 
-- Requires Grafana 8.3+ and 9.0+
+- Requires Grafana 8.3+ or 9.0+.
 
 ### Features / Enhancements
 
-- Rebuild based on 9.0.0 (#53)
+- Added compatibility with Grafana 9.0.0 (#53).
 
 ## 1.4.0 (2022-05-30)
 
 ### Features / Enhancements
 
-- Allow to update Element Width (#50)
-- Add Highlight for changed values (#51)
-- Add Confirmation before Submit (#52)
+- Allowed to update the element's width (#50).
+- Added the value highlighting for changed values (#51).
+- Added the confirmation dialog box before the form submittal (#52).
 
 ## 1.3.0 (2022-05-22)
 
 ### Features / Enhancements
 
-- Update Architecture Diagram (#44)
-- Changing colors on Submit is not working properly (#43)
-- Update layout to have sections for Form Fields (#47)
-- Add None Request for Initial and Update requests (#48)
-- Add Code Editor Element for Configuration Forms (#23)
+- Updated the architecture diagram (#44).
+- Resolved the issue with the proper change of colors during the form submittal (#43).
+- Updated the layout to have sections for form elements (#47).
+- Added the `None Request` option for initial and update requests (#48).
+- Added the code editor for elements when configuring forms (#23).
 
 ## 1.2.0 (2022-05-19)
 
 ### Features / Enhancements
 
-- Add Label Width and Tooltip (#39)
-- Add Server API with Postgres for Feedback Dashboard (#36)
-- Update Input Parameters to Form Elements (#41)
+- Added the label width and tooltip (#39).
+- Added support for Server API with PostgreSQL for the feedback dashboard (#36).
+- Updated the input parameters of form elements (#41).
 
 ## 1.1.0 (2022-05-12)
 
 ### Features / Enhancements
 
-- Added Disabled Element (#24)
-- Added ability to move elements up and down (#19)
-- Added Split Disabled layout for Input/Output (#27)
-- Added Interpolate Variables (#28)
-- Added Min and Max for Numbers (#29)
-- Added Unit Label (#31)
-- Added Header Parameters (#32)
-- Added Password Input (#33)
-- Subscribed to Refresh Events (#30)
+- Added display of disabled elements (#24).
+- Added a capability to reorder form elements (#19).
+- Added the splitting of the disabled layout for Input/Output (#27).
+- Added the interpolation of variables (#28).
+- Added the fields to specify minimum and maximum values for the number element (#29).
+- Added the Unit label (#31).
+- Added support for header parameters (#32).
+- Added the password input element (#33).
+- Subscribed to refresh events (#30).
 
 ## 1.0.0 (2022-05-11)
 
 ### Features / Enhancements
 
-- Initial release based on the Volkov Labs Panel template 1.5.0
+- Initial release based on the Volkov Labs Panel template 1.5.0.
