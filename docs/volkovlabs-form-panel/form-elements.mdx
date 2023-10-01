@@ -10,9 +10,9 @@ import Image from "@theme/Image";
 
 # Form Elements
 
-## Layout 
+## Layout
 
-You have a choice of three layouts - Basic, Buttons Only, and Sections. 
+You have a choice of three layouts - Basic, Buttons Only, and Sections.
 To switch between them open the Layout section.
 
 <Image
@@ -20,7 +20,7 @@ To switch between them open the Layout section.
   src="/img/plugins/volkovlabs-form-panel/sections.png"
 />
 
-In the Basic layout, all form elements are positioned vertically, one following another. 
+In the Basic layout, all form elements are positioned vertically, one following another.
 
 With the Sections layout, you can create as many sections as needed and place sections either vertically or horizontally using the Orientation option.
 
@@ -35,8 +35,7 @@ The Buttons Only, as the name implies, keeps only buttons on your form. With tha
 
 ## Add a form element
 
-Go to the Form Elements section to add a form element. You start by specifying ID, label, and type. After you click the 'Add Element' button, more element options are available to configure. Almost all element types have specific options. For instance, the Code Editor type in addition to the common option 'Width' also has 'Height'. 
-
+Go to the Form Elements section to add a form element. You start by specifying ID, label, and type. After you click the 'Add Element' button, more element options are available to configure. Almost all element types have specific options. For instance, the Code Editor type in addition to the common option 'Width' also has 'Height'.
 
 <Image
   title="Form element in Edit mode."
@@ -45,7 +44,7 @@ Go to the Form Elements section to add a form element. You start by specifying I
 
 ## Form element types
 
-The Data Manipulation plugin is equipped with a rich variety of element types to cover almost any imaginable requirements of a web application. 
+The Data Manipulation plugin is equipped with a rich variety of element types to cover almost any imaginable requirements of a web application.
 The picture below illustrates what the element types look like.
 
 <Image
@@ -55,17 +54,19 @@ The picture below illustrates what the element types look like.
 
 ### Code Editor
 
-The Code editor type highlights keywords and formats the entered text. 
+The Code editor type highlights keywords and formats the entered text.
 
 Specific for this element are the following options:
- - Language. Select between JSON and JavaScript. 
- - Height. How high the entering window should be.
+
+- Language. Select between JSON and JavaScript.
+- Height. How high the entering window should be.
 
 ### Date and time
 
 The Data and time type give access to the built-in datatime Grafana component where a user can select a date and time using the familiar controls.
 
 Specific for this element are the following options:
+
 - Min. Sets the minimum allowed date and time.
 - Max. Sets the maximum allowed data and time.
 
@@ -74,39 +75,43 @@ Specific for this element are the following options:
 The file type allows users to access their file system to select a file. The file will be transferred as binary or Base64.
 
 Specific for this element are the following options:
+
 - Accept. Lists the allowed file extensions. Example:
 
 ```js
  *.png,*.gif
- ```
+```
 
 ### Multiselect with custom options
 
-The Multiselect with custom options is a dropdown where users can select one or many options. 
+The Multiselect with custom options is a dropdown where users can select one or many options.
 
 Specific for this element are the following options:
- - User options. To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list. 
+
+- User options. To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list.
 
 ### Number input
 
 The Number input is a text box where users enter a number manually.
 
 Specific for this element are the following options:
- - Min. Sets the minimum allowed input number. 
- - Max. Sets the maximum allowed input number. 
+
+- Min. Sets the minimum allowed input number.
+- Max. Sets the maximum allowed input number.
 
 ### Number slider
 
-The Number slider is a horizontal line with a toggle that a user can move left and right with a mouse. Alternatively, the user can enter the integer number manually. 
+The Number slider is a horizontal line with a toggle that a user can move left and right with a mouse. Alternatively, the user can enter the integer number manually.
 
 Specific for this element are the following options:
- - Min. Sets the minimum allowed input number. 
- - Max. Sets the maximum allowed input number. 
- - Step. Sets the value of every move the toggle makes.
+
+- Min. Sets the minimum allowed input number.
+- Max. Sets the maximum allowed input number.
+- Step. Sets the value of every move the toggle makes.
 
 ### Password input
 
-The Password input is a text box where every entered symbol is transformed into a dot. 
+The Password input is a text box where every entered symbol is transformed into a dot.
 
 This type does not have any specific options.
 
@@ -118,10 +123,11 @@ This type does not have any specific options.
 
 ### Radio Group with Custom options
 
-The Radio Group with Custom options provides a user with a choice between two or many options. 
+The Radio Group with Custom options provides a user with a choice between two or many options.
 
 Specific for this element are the following options:
- - User options. To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list. 
+
+- User options. To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list.
 
 ### Read-only
 
@@ -131,27 +137,30 @@ This type does not have any specific options.
 
 ### Select with Custom options
 
-The Select with custom options is a dropdown where users can select one option. 
+The Select with custom options is a dropdown where users can select one option.
 
 Specific for this element are the following options:
- - User options. To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list. 
+
+- User options. To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list.
 
 ### String input
 
 The String input is a text box where a user manually enters a string value.
 
 Specific for this element are the following options:
-A visual control, a button, to make the element hidden. 
+A visual control, a button, to make the element hidden.
 
 ### Text area
-The Text area is a rectangular area where a user can enter a text. 
+
+The Text area is a rectangular area where a user can enter a text.
 
 Specific for this element are the following options:
+
 - Rows. Sets the vertical size of the element.
 
 ## Conditional Visibility
 
-All form elements have the 'Show if returned value is true' parameter. It is a code area where you can use JavaScript to create conditional statements. 
+All form elements have the 'Show if returned value is true' parameter. It is a code area where you can use JavaScript to create conditional statements.
 
 For instance, the code below makes an element visible if in the other form element with the id = 'select', the user chose/typed value equal to 'max'.
 
@@ -163,8 +172,7 @@ if (select) {
 }
 ```
 
-Another example where the element is displayed when 
-
+Another example where the element is displayed when
 
 ```js
 
@@ -172,7 +180,7 @@ Another example where the element is displayed when
 
 ## Buttons
 
-There are three buttons available in the Data Manipulation form. 
+There are three buttons available in the Data Manipulation form.
 
 <Image
   title="Three buttons are available in the Data Manipulation form."
@@ -182,4 +190,5 @@ There are three buttons available in the Data Manipulation form.
 ### Submit
 
 ### Reset
+
 ### Save Default

@@ -1,0 +1,159 @@
+---
+description: Data Manipulation Panel - data flow
+tags:
+  - Data Manipulation
+  - Data flow
+image: /img/plugins/volkovlabs-form-panel/data-manipulation-flow.png
+---
+
+import Image from "@theme/Image";
+
+# Data flow
+
+:::info Version
+
+Relevant starting from version 3.2.0.
+
+:::
+
+The Data Manipulation plugin offers to convert any Grafana dashboard into a fully functional web application. No wonder getting lost in all option parameters and their interconnections is easy.
+
+The schema below is created to illustrate the major parts and their roles.
+
+<Image
+  title="Data flow diagram for the Data Manipulation Panel."
+  src="/img/plugins/volkovlabs-form-panel/data-manipulation-flow.png"
+/>
+
+## Initial Request
+
+The initial request is executed after the browser finishes a page-loading step. You can configure your Initial request as Query, Data Source, and REST API.
+
+### Query
+
+The query is short for the native Grafana query. Any initial request carries data from a data source into Grafana and is what the core Grafana does already with excellence. The Query method works with the data frames prepared by the Data Source, the one you specified on the left.
+
+This method was created to allow leveraging the existing Grafana data extraction mechanism. To make it work, map every Data Manipulation form element to the appropriate data frame field.
+
+<Image
+  title="Configure the Initial Request for Query."
+  src="/img/plugins/volkovlabs-form-panel/query.png"
+/>
+
+### Data source
+
+Do not confuse this data source with the one you can select on the left-hand side. This is a different parameter located in the Update Request section and is visible when the Data source type is selected.
+
+The Data source type is more flexible than the Query type. However, it means the developer must also take more responsibility by creating Initial Payload Request.
+
+The Initial Payload Request is a mandatory piece of code that needs to contain the database request at the bare minimum. More complex data parsing functionality could be added if required.
+
+<Image
+  title="Steps to configure the Initial Request for Data Source."
+  src="/img/plugins/volkovlabs-form-panel/ds-all.png"
+/>
+
+### REST API
+
+The REST API type works with an external API server. When specifying the API URL, you can use global and dashboard variables. Header parameters are available as separate options.
+
+<Image
+  title="Steps to configure the Initial Request for REST API."
+  src="/img/plugins/volkovlabs-form-panel/rest-get.png"
+/>
+
+You can find ready-to-use API servers for Deno, InfluxDB, JSON API, MySQL, Node-Red, and PostgreSQL in [servers section](../servers).
+
+## Initial Request Custom Code
+
+To create post-processing logic, you can access panel options, API responses, form elements, Grafana services, dashboard, and global variables. Find the [code snippet here](../code).
+
+<Image
+  title="Initial Request Custom Code exists for every Initial Request type."
+  src="/img/plugins/volkovlabs-form-panel/init-custom.png"
+/>
+
+## Ball is on the user's side
+
+The Data Manipulation form rests at this step, awaiting the user's actions.
+
+## Highlight Changes
+
+You can enable the Highlight Changes feature, which displays all modifications made by the user in a specified color. For the Query and REST API Initial request types, simply enabling the feature in the plugin edit mode is enough.
+
+For the Data Source type, you must use the `SetInitial()` function in the Initial Request Custom Code. See the illustration for the Initial Request, Data Source type above (on the picture). Also, find [code examples here](../request).
+
+<Image
+  title="Enable Highlight Changes to see the new values on the form."
+  src="/img/plugins/volkovlabs-form-panel/highlight.png"
+/>
+
+## Reset button
+
+The reset button is not shown by default. To review all available options, switch the visibility parameter to anything, but 'hidden'.
+Primary, Secondary and Destructive are pre-set visualization templates. In Custom, you can specify foreground color, background color, icon and the text to put instead of 'Reset' if needed.
+
+When this button is not hidden (any other mode is selected), you will also get the Reset Request section. There, you can go with either the Initial Request option or Custom code.
+
+The Initial request is selected by default. In that event, the plugin executes the Initial Request again as if the form is being loaded for the first time.
+
+In the Custom code, you can have any custom logic required. For instance, set all form elements to their defaults.
+
+<Image
+  title="Reset button can call the Initial Request or execute any custom code."
+  src="/img/plugins/volkovlabs-form-panel/reset.png"
+/>
+
+## Update request
+
+The Update Request carries data from the Grafana dashboard to your data source. There are two ways of doing so - Data Source and Rest API. This process is independent of the Initial Request, which means you can use any combination of Initial and Update Request types.
+
+### Data Source
+
+For the Data Source type, start with the Data Source parameter. Then go to the Update Request Payload, select Custom code and create a payload script there. Use JavaScript and the language of your data source to create a code that will update your data source data.
+
+<Image
+  title="Steps to configure the Update Request for Data Source."
+  src="/img/plugins/volkovlabs-form-panel/update-request-ds.png"
+/>
+
+### REST API
+
+See the description for the Initial Request REST API. Both Initial and Update requests have the same parameters. Also similarly, you can use global and dashboard variables in the API server call along with header parameters.
+
+## Submit button
+
+You can enable the Confirmation step if needed. This step looks like a popup window with old and new values. For the Query and REST API Initial request types, simply enabling the feature in the plugin edit mode, Update Request section, is enough.
+
+For the Data Source type, you must use the `SetInitial()` function in the Initial Request Custom Code. See the illustration for the Initial Request, Data Source type above (on the picture).
+
+<Image
+  title="Confirmation step looks like a table with old and new values."
+  src="/img/plugins/volkovlabs-form-panel/confirm.png"
+/>
+
+Following Confirmation, the Submit button initiates the Update Request.
+
+## Update Request Custom Code
+
+Or in other words, the post-processing step. Similarly to the Initial Request Custom Code, this step exists in all Update Request Custom Code types. You can access the same entities from the code: panel options, API responses, form elements, Grafana services, dashboard, and global variable. Find the [code snippet here](../code).
+
+For example, during the post-processing, you can output a status message, transition the user to another dashboard, reload a page, call an initial request, etc.
+
+## Save Default Button
+
+In addition to the Submit and Reset button, there is a third one - Save Default. It saves the current form values in the dashboard. You can choose an icon and text instead of the pre-set ones.
+
+<Image
+  title="Save Default Button configuration."
+  src="/img/plugins/volkovlabs-form-panel/default-button.png"
+/>
+
+## Initial Request vs Update Request
+
+Below is the comparative table showing the similarities and differences between the initial and update requests.
+
+<Image
+  title="Similarities and differences between the initial and update requests."
+  src="/img/plugins/volkovlabs-form-panel/init-update.png"
+/>
