@@ -200,6 +200,7 @@ const community = {
           label: "Introduction",
         },
         "volkovlabs-form-panel/data-flow",
+        "volkovlabs-form-panel/form-elements",
         "volkovlabs-form-panel/architecture",
         "volkovlabs-form-panel/code",
         {
