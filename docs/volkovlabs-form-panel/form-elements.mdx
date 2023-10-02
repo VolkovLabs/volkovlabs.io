@@ -10,66 +10,212 @@ import Image from "@theme/Image";
 
 # Form Elements
 
+The Data Manipulation plugin is equipped with a rich variety of element types to cover almost any imaginable requirements of a web application.
+
 ## Layout
 
-You have a choice of three layouts for the form elements - Basic, Buttons Only, and Sections.
-To switch between them open the Layout section.
+You have a choice of three layouts - Basic, Buttons Only, and Sections. To switch between them open the Layout section.
 
 <Image
-  title="Where to select a layout for the form elements."
+  title="Layout can be Basic, Buttons Only, and Sections."
   src="/img/plugins/volkovlabs-form-panel/sections.png"
+  width="80%"
 />
 
-In the Basic layout, all form elements are positioned vertically, one following another.
-With the Sections layout, you can create as many sections as needed and position sections either vertically or horizontally. Ensure to specify a section ID for every form element.
+### Basic
 
-The Buttons Only, as the name implies, keeps only buttons on your form and all Panel Options related to all other form elements are hidden, so, you have a cleaner edit mode to work with.
+In the Basic layout, all form elements are positioned vertically, one following another.
+
+### Sections
+
+With the Sections layout, you can create as many sections as needed and place sections either vertically or horizontally using the Orientation option.
+
+As shown in the picture above, when the layout Section is chosen, the controls to create sections appear. For every section you can specify an ID, to use when referencing the section, and a name which will be a displayed section label.
+
+### Buttons Only
+
+The Buttons Only, as the name implies, keeps only buttons on your form. With that layout, all Panel Options related to other form elements are hidden, which gives a cleaner Edit mode to work with.
 
 <Image
   title="Form elements layout types."
-  src="/img/plugins/volkovlabs-form-panel/form-elements.png"
+  src="/img/plugins/volkovlabs-form-panel/layouts.png"
 />
 
-## Form element in Edit mode
+## Add a form element
+
+Go to the Form Elements section to add a form element. Start by specifying ID, label, and type. After you click the Add Element button, more element options are available to configure.
+
+Element types have specific options. For instance, the Code Editor type in addition to the common option `Width` also has `Height`.
 
 <Image
   title="Form element in Edit mode."
-  src="/img/plugins/volkovlabs-form-panel/form-element.png"
+  src="/img/plugins/volkovlabs-form-panel/add-form-element.png"
 />
 
 ## Form element types
 
-There are plenty of types to choose from.
+The picture below illustrates what the element types look like.
 
 <Image
-  title="Form elements on UI"
+  title="Form elements on UI."
   src="/img/plugins/volkovlabs-form-panel/elements-demo.png"
 />
 
 ### Code Editor
 
-### Date and time
+The Code editor highlights keywords and formats the entered text. Specific for this element are the following options:
+
+- Language. Select between JSON and JavaScript.
+- Height. How high the entering window should be.
+
+<Image
+  title="Options specific to the Code Editor type."
+  src="/img/plugins/volkovlabs-form-panel/code-editor.png"
+/>
+
+### Date and Time
+
+The Date and Time element gives access to the built-in date time Grafana component where a user can select a date and time using the familiar controls.
+
+<Image
+  title="Date and time type is Grafana universal type."
+  src="/img/plugins/volkovlabs-form-panel/calendar.png"
+/>
+
+Specific for this element are the following options:
+
+- Min. Sets the allowed minimum.
+- Max. Sets the allowed maximum.
+
+<Image
+  title="Options specific to the Date and time type."
+  src="/img/plugins/volkovlabs-form-panel/min-max.png"
+/>
 
 ### File
 
-### Multiselect with custom options
+The File type allows users to access their file system to select a file. The file will be transferred as binary or Base64 encoded.
 
-### Number input
+Specific for this element are the following options:
 
-### Number slider
+- Accept. Lists the allowed file extensions. Example:
 
-### Password input
+```js
+ .png,.gif
+```
+
+<Image
+  title="Options specific to the File type."
+  src="/img/plugins/volkovlabs-form-panel/accept.png"
+/>
+
+### Multi-select with custom options
+
+The Multi-select with custom options is a dropdown where users can select one or many options.
+
+Specific for this element are the following options:
+
+- User options.
+
+To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list.
+
+<Image
+  title="Add custom options for the multi-select custom type."
+  src="/img/plugins/volkovlabs-form-panel/multi.png"
+/>
+
+### Number Input
+
+The Number Input is a text box where users enter a number manually.
+
+Specific for this element are the following options:
+
+- Min. Sets the minimum allowed input number.
+- Max. Sets the maximum allowed input number.
+
+### Number Slider
+
+The Number Slider is a horizontal line with a toggle that a user can drag left and right with a mouse. Alternatively, the user can enter the integer number manually.
+
+Specific for this element are the following options:
+
+- Min. Sets the minimum allowed input number.
+- Max. Sets the maximum allowed input number.
+- Step. Sets the value of every move the toggle makes.
+
+### Password Input
+
+The Password Input is a text box where every entered symbol is transformed into a dot.
+
+This type does not have any specific options.
 
 ### Radio Group with boolean options
 
-### Radio Group with Custom options
+The Radio Group with boolean options provides a user with a choice between True and False.
+
+This type does not have any specific options.
+
+### Radio Group with custom options
+
+The Radio Group with custom options provides a user with a choice between two or many options.
+
+Specific for this element are the following options:
+
+- User options.
+
+To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list.
+
+<Image
+  title="Add custom options for the radio custom type."
+  src="/img/plugins/volkovlabs-form-panel/radio.png"
+/>
 
 ### Read-only
 
+The read-only type is sometimes also called the disabled type. It is a text box with a faded background and text. It does not allow a user to change the value it displays.
+
+Specific for this element are the following options:
+
+- User options.
+
+To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list.
+
 ### Select with Custom options
 
-### String input
+The Select with Custom Options type is a dropdown where users can select one option.
 
-### Text area
+Specific for this element are the following options:
+
+- User options.
+
+To add an option click the 'Add option' button and then specify an option type (number or string), value, label and select an icon from the given list.
+
+### String Input
+
+The String Input is a text box where a user manually enters a string value.
+
+Specific for this element are the following options:
+
+- A visual control, a button, to make the element hidden.
+
+### Text Area
+
+The Text Area is a rectangular area where a user can enter a text.
+
+Specific for this element are the following options:
+
+- Rows. Sets the vertical size of the element.
 
 ## Conditional Visibility
+
+All form elements have the `Show if returned value is true` parameter. It is a code area where you can use JavaScript to create conditional statements.
+
+For instance, the code below makes an element visible if in the other form element with the `id` equal to `select`, the user chose/typed value equal to `max`.
+
+```js
+const select = elements.find((element) => element.id === "select");
+
+if (select) {
+  return select.value === "max";
+}
+```
