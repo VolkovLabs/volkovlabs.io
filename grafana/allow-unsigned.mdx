@@ -13,7 +13,7 @@ To allow unsigned plugins, enter a comma-separated list of plugin identifiers to
 Update environment variable in the Docker container.
 
 ```docker
-GF_ALLOW_LOADING_UNSIGNED_PLUGINS=PLUGIN-ID
+GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=PLUGIN-ID
 ```
 
 ## Host installation
@@ -29,7 +29,7 @@ allow_loading_unsigned_plugins=PLUGIN-ID
 Signed plugins store checksum for all included files in the `MANIFEST.txt` file. Delete the `MANIFEST.txt` file if
 
 - Need to modify `plugin.json` or any other plugin files.
-- Plugin was signed for a specific URL and it does not match your Grafana's URL.
+- The plugin was signed for a specific URL and it does not match your Grafana's URL.
 
 ## Plugin Management
 
