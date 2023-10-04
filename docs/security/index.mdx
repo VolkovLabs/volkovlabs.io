@@ -1,0 +1,90 @@
+---
+tags:
+  - Volkov Labs Plugins
+  - Security
+---
+
+import BlogPost from "@theme/BlogPost";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Security Guidelines 
+
+We take security while building and using Grafana plugins very seriously. This section addresses many general questions we received on the matter. 
+
+At the bottom, find some of the plugins solely related notes in the corresponding sections. 
+
+## Challenge
+
+Many of our plugins have a powerful, yet, in some cases, risky parameter - area(s) for Jave Script code which can be entered/modified while in Edit mode. 
+
+The ability to use JavaScript is one of the most demanded features in community plugins since it expands the Grafana possibilities even further. However, as with any mighty force, this one also has to be wielded with caution. 
+
+## Solution
+
+To facilitate the safe usage of our JavaScript-reinforced plugins we suggest the following approaches provisioning and access limitation. 
+
+### Provisioning
+
+In the provisioned dashboard, an end user is not able to save any changes they make. 
+
+Our channel holds the following video to explain the mechanics of provisioning in great detail.
+
+<Video
+  src="https://www.youtube.com/embed/sGHKY0VmbLw"
+  title="Provisioning in Grafana | Basics and pitfalls | File examples | Windows and Docker Demo."
+/>
+
+Also, you can look at the blog post that covers a similar scope.
+
+<BlogPost
+  href="/blog/provisioning-grafana-20230509/"
+  src="/img/blog/2023-05-09-provisioning-grafana/banner.png"
+  title="Blog post about provisioning in Grafana."
+/>
+
+### Access restriction
+
+Access restriction is ensuring only trusted users are allotted Admin and Editor privileges. 
+Users privileged with a Viewer role are not able to open panels in edit mode, hence, their ability to even accidentally create a hazard is decapitated.
+
+## Specific notes to some plugins
+
+Above we dissucces the general safety suggestions. Below you find recommendations solely related to specified plugins.
+
+### Apache ECharts plugin
+
+The full version of the Apache ECharts plugin has many third-party extensions embedded. If you are after the core functionality, you can use the Apache ECharts Lite version instead of the full version. 
+
+The video below explains the difference between the full and lite versions of the Apache ECharts plugins. 
+
+<Video
+  src="https://www.youtube.com/embed/S3PiL1p1v5U"
+  title="Explore possibilities of the Apache ECharts."
+/>
+
+### Dynamic Text Panel
+
+You can keep the default setting disable_sanitize_html = false as a precaution that can improve security. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
+
+The feature to process external CSS and JavaScript files is available only when disable_sanitize_html = false.
+
+
+### Static Data Source
+
+<Image
+  title="Disable the JavaScript Value Editor in the Data Source options."
+  src="/img/static-java.png"
+/>
+
+### Environment Data Source
+
+To stay out of trouble, Grafana core chose not to support the environment variables at this time. Yet, many industrial cases require the ability to display environment variables, for instance, in cases where the goal is to manage numerous remote devices (ex, IoT networks).
+
+To make the environmental data source more secure, you can restrict the variables that are allowed to be shown in the Environment data source configuration. For the endless possibilities, the filter utilizes a regex pattern
+
+<Image
+  title="Use the Regex pattern to restrict the available environment variables."
+  src="/img/blog/2022-09-13-grafana-variables/regex.png"
+/>
+
