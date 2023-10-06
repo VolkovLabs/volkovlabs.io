@@ -10,20 +10,21 @@ import Video from "@theme/Video";
 
 # ECharts Function
 
-`setOption(options)` is the primary function in the Apache ECharts library. It is depicted as a square on the right in the schema below. This function gets called by the Apache ECharts panel (the `ECharts` Function) with only one required parameter, 'options'. 
+`setOption(options)` is the primary function in the Apache ECharts library. It is depicted as a square on the right in the schema below. This function gets called by the Apache ECharts panel (the ECharts Function) with only one required parameter `options`.
 
-The parameter 'options' describes the charts in the JSON format.
+The parameter `options` describes the charts in the JSON format.
 
-To configure the Apache ECharts panel mainly means writing the `ECharts` Function. Generally, this function contains two parts:
- - JavaScript to read data points from the data source. 
- - JSON to specify a graph as 'options'.
+To configure the Apache ECharts panel mainly means writing the ECharts Function. Generally, this function contains two parts:
+
+- JavaScript to read data points from the data source.
+- JSON to specify a graph as `options`.
 
 Both parts can use parameters passed into the ECharts function. You can find the complete list of parameters in the table below.
 
 See the schema and the print screen below for illustration.
 
 <Image
-  title="The ECharts function receives many parameters from Grafana and sends one to the .setOption function."
+  title="The ECharts function receives many parameters from Grafana and sends one to the setOption() function."
   src="/img/plugins/volkovlabs-echarts-panel/schema.png"
 />
 
