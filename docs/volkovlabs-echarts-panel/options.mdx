@@ -10,27 +10,32 @@ import Video from "@theme/Video";
 
 # ECharts Function
 
-`setOption(options)` is the main function from the Apache ECharts library. You need to call this function to build any chart with Apache ECharts Panel.
+`setOption(options)` is the primary function in the Apache ECharts library. It is depicted as a square on the right in the schema below. This function gets called by the Apache ECharts panel (the ECharts Function) with only one required parameter `options`.
 
-This function has the only required `options` parameter that you can use to specify the chart configuration in the JSON format.
+The parameter `options` describes the charts in the JSON format.
+
+To configure the Apache ECharts panel mainly means writing the ECharts Function. Generally, this function contains two parts:
+
+- JavaScript to read data points from the data source.
+- JSON to specify a graph as `options`.
+
+Both parts can use parameters passed into the ECharts function. You can find the complete list of parameters in the table below.
+
+See the schema and the print screen below for illustration.
 
 <Image
-  title="Apache ECharts Panel uses the Apache ECharts library and specified parameters to generate charts."
+  title="The ECharts function receives many parameters from Grafana and sends one to the setOption() function."
   src="/img/plugins/volkovlabs-echarts-panel/schema.png"
 />
 
 ## Options
 
-You need to specify the `options` parameter in the Monaco Code editor in the right part of the screen where the Apache ECharts panel resides.
+The `return` clause is where you need to specify the `options` parameter to be passed into the `setOption(options)` Apache ECharts function.
 
 <Image
-  title="Apache ECharts Panel provides the code editor to specify ECharts functions."
+  title="Apache ECharts Panel provides the code editor to specify ECharts function."
   src="/img/plugins/volkovlabs-echarts-panel/function.png"
 />
-
-In the **Function** text area, you can specify the function for chart generation. This function can take different parameters from Grafana. You can find the full list of parameters in the following table.
-
-The `options` parameter is the only parameter that is passed from this function to the `setOption()` function. In the screenshot above, see the `return` statement that specifies the look of the chart.
 
 ## Parameters
 
@@ -47,7 +52,7 @@ The `options` parameter is the only parameter that is passed from this function 
 | `replaceVariables`                         | Function to interpolate variables.                                        |
 | `theme`                                    | Theme object.                                                             |
 
-To inspect the used parameters, use the browser's developer console.
+To inspect those parameters, use the browser's developer console.
 
 ```javascript
 console.error(
