@@ -1,5 +1,5 @@
 ---
-authors: [mikhail]
+authors: [daria]
 slug: calendar-panel-2.2.0-20231006/
 tags: [Calendar, Release Notes]
 image: /img/blog/2023-10-06-calendar-panel-2.2.0/banner.png
@@ -11,20 +11,30 @@ import Video from "@theme/Video";
 
 # Calendar Panel 2.2.0
 
-We are happy to announce the release of Calendar Panel 2.2.0. This major release includes the following updates:
+We are happy to announce the release of Calendar Panel 2.2.0. This major release includes the following updates.
 
-- Added event location and contrast text color for Big Calendar.
-- Added ability to select views: day, week, work week and month.
+Only for the Big Calendar.
+- New option parameter: event location.
+- Text color auto adjustment to ensure a readable contrast with the background. 
+- New ability to select views: day, week, work week, and month.
+
+For the Legacy and Big Calendar.
 - Added support for dashboard timezone in Start and End time.
 - Added compatibility with Grafana 10.1.4.
 
+<Image
+  title="Calendar panel supports Legacy and Big Calendar types."
+  src="/img/blog/2023-10-06-calendar-panel-2.2.0/calendar-type.png"
+  width="30%"
+/>
+
 :::info Grafana Plugins catalog
-The plugin was submitted for review.
+The plugin is submitted for review.
 :::
 
 ## 2 million downloads
 
-The Calendar panel is finishing the year strong with 2 million downloads from Grafana Catalog.
+The Calendar panel inevitably targets the 2 million downloads mark towards the end of this year!  Thank you for your trust and support.
 
 <Image
   title="Calendar panel is on the way to 2 million downloads."
@@ -33,9 +43,39 @@ The Calendar panel is finishing the year strong with 2 million downloads from Gr
 
 ## Event Location
 
+In the Event section, a new <b>Location</b> parameter is available for Big Calendar type only. It is displayed in two places. First is following the <b>Text</b>, separated by a colon character(:). The second is in the Event Details, a popup window appearing after you click on the event in the calendar panel.
+
+<Image
+  title="Location is a new parameter available for Big Calendar type only."
+  src="/img/blog/2023-10-06-calendar-panel-2.2.0/location.png"
+/>
+
 ## Contrast Text
 
-## Work Week and select views for Big Calendar
+This feature ensures to pick a text color to always contrast well with the backgound color.
+It is available for Big Calendar type only. 
+
+## Work Week and select views
+
+In the Calendar section, for the Views parameter, we added a new option <b>work week</b>. The setting is similar to a week view, but instead of seven days, it displays 5 days and hides Saturdays and Sundays. 
+
+In addition, now you can configure which views out of four (day, week, month, work week) will be available for an end-user.
+
+The feature is available for Big Calendar type only.
+
+<Image
+  title="Work week is a new view for the Calendar panel available for Big Calendar type only"
+  src="/img/blog/2023-10-06-calendar-panel-2.2.0/work-week.png"
+/>
+
+## Dashboard Timezones
+
+Starting from this release, the Calendar panel will automatically synch with the TimeZone specified for the dashboard. Previously, it synched with the Browser Time Zone.
+
+<Image
+  title="The Calendar panel automatically syncs with the dashboard Time Zone."
+  src="/img/blog/2023-10-06-calendar-panel-2.2.0/timezone.png"
+/>
 
 ## Getting Started
 
