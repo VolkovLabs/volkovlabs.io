@@ -1,5 +1,51 @@
 export const BlogPosts = [
   {
+    id: "calendar-panel-2.2.0-20231006/",
+    metadata: {
+      permalink: "/blog/calendar-panel-2.2.0-20231006/",
+      source: "@site/blog/2023-10-06-calendar-panel-2.2.0/index.mdx",
+      title: "Calendar Panel 2.2.0",
+      description:
+        "We are happy to announce the release of Calendar Panel 2.2.0. This major release includes the following updates.",
+      date: "2023-10-06T00:00:00.000Z",
+      formattedDate: "October 6, 2023",
+      tags: [
+        {
+          label: "Calendar",
+          permalink: "/blog/tags/calendar",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Daria Volkova",
+          title: "Creative Director at Volkov Labs",
+          url: "https://youtube.com/@VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
+        },
+      ],
+      frontMatter: {
+        authors: ["daria"],
+        slug: "calendar-panel-2.2.0-20231006/",
+        tags: ["Calendar", "Release Notes"],
+        image: "/img/blog/2023-10-06-calendar-panel-2.2.0/banner.png",
+        keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
+      },
+      nextItem: {
+        title:
+          "Monitoring Linux servers with Prometheus, Node Exporter and Grafana Time Series",
+        permalink: "/blog/timeseries-dashboard-20230926/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of Calendar Panel 2.2.0. This major release includes the following updates.\n\nOnly for the Big Calendar.\n\n- New option parameter: event location.\n- Text color auto adjustment to ensure a readable contrast with the background.\n- New ability to select views: day, week, work week, and month.\n\nFor the Legacy and Big Calendar.\n\n- Added support for dashboard timezone in Start and End time.\n- Added compatibility with Grafana 10.1.4.\n\n<Image\n  title="Calendar panel supports Legacy and Big Calendar types."\n  src="/img/blog/2023-10-06-calendar-panel-2.2.0/calendar-type.png"\n  width="30%"\n/>\n\n:::info Grafana Plugins catalog\nThe plugin is under review.\n:::\n\n## 2 million downloads\n\nThe Calendar panel inevitably targets the 2 million downloads mark towards the end of this year! Thank you for your trust and support.\n\n<Image\n  title="Calendar panel is on the way to 2 million downloads."\n  src="/img/blog/2023-10-06-calendar-panel-2.2.0/downloads.png"\n/>\n\n## Event Location\n\nIn the Event section, a new <b>Location</b> parameter is available for Big Calendar type only.\n\nIt is displayed in two places. First is following the <b>Text</b>, separated by a colon character(:). The second is in the Event Details, a popup window appearing after you click on the event in the calendar panel.\n\n<Image\n  title="Location is a new parameter available for Big Calendar type only."\n  src="/img/blog/2023-10-06-calendar-panel-2.2.0/location.png"\n/>\n\n## Contrast Text\n\nThis feature ensures that a text color always contrasts well with the background color. It is available for Big Calendar type only.\n\n## Work Week and select views\n\nIn the Calendar section, for the Views parameter, we added a new option <b>work week</b>. The setting is similar to a week view, but instead of seven days, it displays 5 days and hides Saturdays and Sundays.\n\nIn addition, now you can configure which views out of four (day, week, month, work week) will be available for an end-user.\n\nThe feature is available for Big Calendar type only.\n\n<Image\n  title="Work week is a new view for the Calendar panel available for Big Calendar type only"\n  src="/img/blog/2023-10-06-calendar-panel-2.2.0/work-week.png"\n/>\n\n## Dashboard time zones\n\nStarting from this release, the Calendar panel supports dashboard time zones. Previously, it synched with the Browser time zone.\n\n<Image\n  title="The Calendar panel automatically syncs with the selected dashboard time zone."\n  src="/img/blog/2023-10-06-calendar-panel-2.2.0/timezone.png"\n/>\n\n## Getting Started\n\nYou can install Calendar Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install marcusolsson-calendar-panel\n```\n\n## YouTube Tutorial\n\nCalendar Panel is a Grafana plugin that displays events from various data sources.\n\n<Video\n  src="https://www.youtube.com/embed/iPJ122x0oos"\n  title="Display events from the JSON API data source."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Added Event Location for Big Calendar (#127)\n- Added contrast text color for events (#129)\n- Added compatibility with Grafana 10.1.4 (#132)\n- Updated with Plugin Tools 2.0.2 (#132)\n- Updated to use Grafana Access Policy to sign plugin (#132)\n- Added support for dashboard timezone in Start and End time (#128)\n- Added ability to select views: day, week, work week and month (#133)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues/new/choose).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+  },
+  {
     id: "timeseries-dashboard-20230926/",
     metadata: {
       permalink: "/blog/timeseries-dashboard-20230926/",
@@ -38,6 +84,10 @@ export const BlogPosts = [
           "Grafana",
           "Monitoring",
         ],
+      },
+      prevItem: {
+        title: "Calendar Panel 2.2.0",
+        permalink: "/blog/calendar-panel-2.2.0-20231006/",
       },
       nextItem: {
         title:
