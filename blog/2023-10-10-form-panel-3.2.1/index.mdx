@@ -1,0 +1,68 @@
+---
+authors: [daria]
+slug: form-panel-3.2.1-20231010/
+tags: [Data Manipulation, Release Notes]
+image: /img/blog/2023-10-10-form-panel-3.2.1/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Data Manipulation Panel 3.2.1
+
+We are happy to announce the release of Data Manipulation Panel 3.2.1. This major release includes the following updates:
+
+:::info Grafana Catalog
+The plugin was updated in the Grafana Plugins catalog on September 11, 2023.
+:::
+
+## Getting Started
+
+You can install Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install volkovlabs-form-panel
+```
+
+## YouTube Tutorial
+
+Data Manipulation Panel is a plugin for Grafana that allows you to insert and update application data, as well as modify configuration directly from your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/hVy9NfFiI5U"
+  title="Use REST API, Data Source, and Queries to manipulate your data."
+/>
+
+## Release Notes
+
+### Features / Enhancements in 3.2.1
+
+- Added backward compatibility for option id (#244)
+
+### Features / Enhancements in 3.2.0
+
+- Added min and max date for date time element (#225)
+- Added mapping Data Source values to elements (#224)
+- Updated element Show If to support variables (#230)
+- Added clearing errors before initial and update requests (#232)
+- Added URL encode to variables (#231)
+- Updated section name to allow empty values (#228)
+- Added Query Field Picker for Initial Request (#227)
+- Added File element type for File Upload (#229)
+- Added converting option value to string and number based on type (#233)
+- Added loading states for Initial, Update and Reset button actions (#234)
+- Added support for asynchronous custom code (#234)
+- Updated Query and Data Source initial request (#237)
+- Added icons for radio and select options (#238)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues/new/choose).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
