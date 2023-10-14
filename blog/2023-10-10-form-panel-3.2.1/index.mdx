@@ -13,13 +13,13 @@ import Video from "@theme/Video";
 
 We are happy to announce the release of Data Manipulation Panel 3.2.1. This major release includes the following updates:
 
-- Added min and max date for date time element.
-- Added mapping Data Source values to elements.
-- Updated element Show If to support variables.
-- Added Query Field Picker for Initial Request.
-- Added File element type for File Upload.
-- Added loading states for Initial, Update and Reset button actions.
-- Added icons for radio and select options.
+- Added min and max date limit for the date time element.
+- Added a limpid field mapping for the <b>Data Source</b> Initial Request type.
+- Added a limpid field mapping for the <b>Query</b> Initial Request type.
+- <b>Show If returned value is true</b> element now supports variables.
+- Added the ability to restrict a file type for the File element.
+- Added indication of loading in progress for Initial, Update and Reset button actions.
+- Added the ability to have icons for radio and select options.
 
 :::info Grafana Catalog
 The plugin was updated in the Grafana Plugins catalog on September 11, 2023.
@@ -27,24 +27,103 @@ The plugin was updated in the Grafana Plugins catalog on September 11, 2023.
 
 ## Date Time
 
-## Data Source Mapping
+Now you can impose the allowed minimum and maximum date by using the familiar built-in Grafana controls. 
 
-## Show If
+<Image
+  title="Impose min and max for the Date Time type."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/min-max.png"
+/>
 
-Support variables
+## Data Source Field Mapping
+
+Following many community requests, we made field-to-form element mapping for the <b>Data Source</b> initial request type more straightforward. Now you can do it using a new parameter that appears for every form element when the <b>Data Source</b> initial request type is selected. 
+
+<Image
+  title="Explicitly specify the field-to-form element mapping using a new parameter."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-ds.png"
+/> 
+
+## Query Field Mapping
+
+Following many community requests, we made field-to-form element mapping for the <b>Query</b> initial request type more straightforward. Now you can do it using a new parameter that appears for every form element when the <b>Query</b> initial request type is selected. 
+
+<Image
+  title="Explicitly specify the field-to-form element mapping using a new parameter."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-query.png"
+/> 
+
+## Show If supports variables
+
+Every form element has the <b>Show If returned value is true</b> parameter where you enter JavaScript code. 
+ - If this code returns `true`, the element is shown on the panel.
+ - If this code returns `false`, the element is hidden from the panel.
+
+<Image
+  title="Conditional visibility example."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/select.png"
+/> 
+
+```js
+const select = elements.find((element) => element.id ==="select");
+
+if (select){
+  return select.value==="max";
+}
+```
+
+In this release, we made it possible to use dashboard and global variables within your JavaScript code. 
+
+<Image
+  title="Conditional visibility using a dashboard variable example."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/var.png"
+/> 
 
 ```
 const test = replaceVariables('$var');
 return test === 'test'
 ```
 
-## Query Field Picker
-
 ## File Upload
 
-## Loading state for actions
+For the File type, you can specify a list of allowed file extensions. 
+
+<Image
+  title="A new parameter for the File type - accepted file extensions."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/accepted.png"
+/> 
+
+```
+.png,.gif
+```
+
+## Indication of loading in progress
+
+If the data loading takes time, the Data Manipulation form will indicate that as follows.
+
+ - For the Initial request, the end user will see a running blue line at the top of the form.
+
+<Image
+  title="A moving blue line indicates an initial request being in progress."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/status-initial.png"
+/> 
+
+ - For the Update request, all buttons are disabled and moving circled dots are placed instead of the Submit button icon.
+
+<Image
+  title="Dots moving in a circle indicate an update request being in progress."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/status-update.png"
+/> 
 
 ## Radio and Select icons
+
+Radio with Custom options element and two Select elements (Select with custom options and Multi Select with Custom options) have the <b>Options</b> parameter where you specify all possible choices that a user can make. 
+
+Starting from this release, every such choice in addition to type, value and label, now has an icon parameter. You can select from the standard Grafana icon list.
+
+<Image
+  title="Dots moving in a circle indicate an update request being in progress."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/icons.png"
+/> 
 
 ## Getting Started
 
