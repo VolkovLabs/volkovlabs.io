@@ -27,7 +27,7 @@ The plugin was updated in the Grafana Plugins catalog on September 11, 2023.
 
 ## Date Time
 
-Now you can impose the allowed minimum and maximum date by using the familiar built-in Grafana controls. 
+Now you can impose the allowed minimum and maximum date by using the familiar built-in Grafana controls.
 
 <Image
   title="Impose min and max for the Date Time type."
@@ -36,47 +36,48 @@ Now you can impose the allowed minimum and maximum date by using the familiar bu
 
 ## Data Source Field Mapping
 
-Following many community requests, we made field-to-form element mapping for the <b>Data Source</b> initial request type more straightforward. Now you can do it using a new parameter that appears for every form element when the <b>Data Source</b> initial request type is selected. 
+Following many community requests, we made field-to-form element mapping for the <b>Data Source</b> initial request type more straightforward. Now you can do it using a new parameter that appears for every form element when the <b>Data Source</b> initial request type is selected.
 
 <Image
   title="Explicitly specify the field-to-form element mapping using a new parameter."
   src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-ds.png"
-/> 
+/>
 
 ## Query Field Mapping
 
-Following many community requests, we made field-to-form element mapping for the <b>Query</b> initial request type more straightforward. Now you can do it using a new parameter that appears for every form element when the <b>Query</b> initial request type is selected. 
+Following many community requests, we made field-to-form element mapping for the <b>Query</b> initial request type more straightforward. Now you can do it using a new parameter that appears for every form element when the <b>Query</b> initial request type is selected.
 
 <Image
   title="Explicitly specify the field-to-form element mapping using a new parameter."
   src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-query.png"
-/> 
+/>
 
 ## Show If supports variables
 
-Every form element has the <b>Show If returned value is true</b> parameter where you enter JavaScript code. 
- - If this code returns `true`, the element is shown on the panel.
- - If this code returns `false`, the element is hidden from the panel.
+Every form element has the <b>Show If returned value is true</b> parameter where you enter JavaScript code.
+
+- If this code returns `true`, the element is shown on the panel.
+- If this code returns `false`, the element is hidden from the panel.
 
 <Image
   title="Conditional visibility example."
   src="/img/blog/2023-10-10-form-panel-3.2.1/select.png"
-/> 
+/>
 
 ```js
-const select = elements.find((element) => element.id ==="select");
+const select = elements.find((element) => element.id === "select");
 
-if (select){
-  return select.value==="max";
+if (select) {
+  return select.value === "max";
 }
 ```
 
-In this release, we made it possible to use dashboard and global variables within your JavaScript code. 
+In this release, we made it possible to use dashboard and global variables within your JavaScript code.
 
 <Image
   title="Conditional visibility using a dashboard variable example."
   src="/img/blog/2023-10-10-form-panel-3.2.1/var.png"
-/> 
+/>
 
 ```
 const test = replaceVariables('$var');
@@ -85,12 +86,12 @@ return test === 'test'
 
 ## File Upload
 
-For the File type, you can specify a list of allowed file extensions. 
+For the File type, you can specify a list of allowed file extensions.
 
 <Image
   title="A new parameter for the File type - accepted file extensions."
   src="/img/blog/2023-10-10-form-panel-3.2.1/accepted.png"
-/> 
+/>
 
 ```
 .png,.gif
@@ -100,30 +101,30 @@ For the File type, you can specify a list of allowed file extensions.
 
 If the data loading takes time, the Data Manipulation form will indicate that as follows.
 
- - For the Initial request, the end user will see a running blue line at the top of the form.
+- For the Initial request, the end user will see a running blue line at the top of the form.
 
 <Image
   title="A moving blue line indicates an initial request being in progress."
   src="/img/blog/2023-10-10-form-panel-3.2.1/status-initial.png"
-/> 
+/>
 
- - For the Update request, all buttons are disabled and moving circled dots are placed instead of the Submit button icon.
+- For the Update request, all buttons are disabled and moving circled dots are placed instead of the Submit button icon.
 
 <Image
   title="Dots moving in a circle indicate an update request being in progress."
   src="/img/blog/2023-10-10-form-panel-3.2.1/status-update.png"
-/> 
+/>
 
 ## Radio and Select icons
 
-Radio with Custom options element and two Select elements (Select with custom options and Multi Select with Custom options) have the <b>Options</b> parameter where you specify all possible choices that a user can make. 
+Radio with Custom options element and two Select elements (Select with custom options and Multi Select with Custom options) have the <b>Options</b> parameter where you specify all possible choices that a user can make.
 
 Starting from this release, every such choice in addition to type, value and label, now has an icon parameter. You can select from the standard Grafana icon list.
 
 <Image
   title="Dots moving in a circle indicate an update request being in progress."
   src="/img/blog/2023-10-10-form-panel-3.2.1/icons.png"
-/> 
+/>
 
 ## Getting Started
 
