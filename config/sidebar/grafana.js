@@ -48,6 +48,11 @@ const mySidebar = [
       id: "developer/index",
     },
   },
+  {
+    type: "link",
+    href: "/blog/tags/grafana-crash-course",
+    label: "Related Blog posts",
+  },
 ];
 
 /**
