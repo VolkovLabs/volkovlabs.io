@@ -23,7 +23,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -68,7 +68,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -115,7 +115,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -168,7 +168,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1075,7 +1075,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1120,7 +1120,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1165,7 +1165,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -1574,7 +1574,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2251,7 +2251,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2361,7 +2361,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2411,7 +2411,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2518,7 +2518,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -2683,7 +2683,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -3056,7 +3056,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -3105,7 +3105,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -3667,7 +3667,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
@@ -3715,7 +3715,7 @@ export const BlogPosts = [
       authors: [
         {
           name: "Daria Volkova",
-          title: "Creative Director at Volkov Labs",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
           url: "https://youtube.com/@VolkovLabs",
           imageURL: "/img/team/daria.png",
           key: "daria",
