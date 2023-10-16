@@ -22,12 +22,9 @@ const Header = (siteConfig) => {
             </h1>
             <p className="hero__subtitle margin-vert--md">
               At Volkov Labs, we offer two tiers of support for maintained
-              Grafana Community plugins: Standard (which is free) and Premium.
+              Grafana Community plugins: Standard (free) and Premium.
             </p>
 
-            <p className="hero__subtitle">
-              The Premium also includes support for Development plugins.
-            </p>
             <div className="margin-vert--lg">
               <a
                 className={clsx(
