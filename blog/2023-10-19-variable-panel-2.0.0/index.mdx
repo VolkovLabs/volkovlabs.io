@@ -1,0 +1,78 @@
+---
+authors: [daria]
+slug: variable-panel-2.0.0-20231019/
+tags: [Variables, Release Notes]
+image: /img/blog/2023-10-19-variable-panel-2.0.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variable Panel 2.0.0
+
+We are happy to announce the release of the Variable Panel 2.0.0. This release includes the following updates:
+
+- Added handling enter and escape keys for Text Variable.
+- Added table virtualization to improve performance.
+- Added clear value for the multi-choice variable.
+- Updated variable option label for parent items in the tree view.
+- Updated `key:value` option selection for Minimize and Button views.
+
+:::info Grafana Catalog
+The plugin is under review.
+:::
+
+## Text Variable
+
+## Improved Performance
+
+## Multi-choice variable
+
+## Variable option label
+
+## Getting Started
+
+The Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
+
+For the latter, please use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-variable-panel
+```
+
+## YouTube Tutorial
+
+The Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+
+The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+
+<Video
+  src="https://www.youtube.com/embed/mYYtMW9qiPA"
+  title="Demonstrates the Variable panel functionality."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update variable option label for parent items in tree view (#62)
+- Add handling enter and escape keys for Text Variable (#69)
+- Add table virtualization to improve performance (#64, #74)
+- Clear value for the multi-choice variable (#66)
+- Update to Plugin Tools 2.1.1 (#72)
+- Use Grafana Access Policy to sign plugin (#72)
+- Update to Grafana 10.1.5 (#73)
+
+### Bugfixes
+
+- Fix key:value option selection for Minimize and Button views (#75)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
