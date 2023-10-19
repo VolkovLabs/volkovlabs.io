@@ -1,5 +1,5 @@
 ---
-authors: [mikhail]
+authors: [daria]
 slug: variable-panel-1.7.0-20230810/
 tags: [Variables, Release Notes]
 image: /img/blog/2023-08-10-variable-panel-1.7.0/banner.png
@@ -13,13 +13,59 @@ import Video from "@theme/Video";
 
 We are happy to announce the release of the Variable Panel 1.7.0. This release includes the following updates:
 
-- Added Button View.
-- Added group selection for Tree View.
-- Added variables with text and value in Table/Tree View.
+- Added the Button dispaly mode.
+- Added group selection for the Tree View layout (beta).
+- Added support of the Grafana key-value variable format.
 
 :::info Grafana Catalog
 The plugin was updated in Grafana Catalog on August 11, 2023.
 :::
+
+## Button display mode 
+
+In the Button display mode, you get horizontally positioned variable values instead of them being placed from top to bottom. Optionally, you can set up color coding rules in the Thresholds section on the right.
+
+<Image
+  title="The Button mode converts vertical listing into horizontal elements. Color coding follows the threshold rules."
+  src="/img/blog/2023-08-10-variable-panel-1.7.0/button-mode.png"
+/>
+
+## Group selection
+
+:::info
+This parameter is still under development and now is availabe in Beta version. Try it out with care. 
+:::
+
+In the Layout section, for the Tree View, we added a new parameter, 'Allow group selection'. When it is enabled, choosing a root of the group will automatically select all elements belonging to this group.
+
+<Image
+  title="With a new parameter, 'Allow group selection'(beta), the selection of a group automatically selects all elements in this group."
+  src="/img/blog/2023-08-10-variable-panel-1.7.0/group-selection.png"
+/>
+
+## Key-values format in Variables
+
+A Grafana variable can be composed of a key and value to make possible joining data sets by IDs(key) while user-friendly names(value) are shown. 
+
+Starting from this release, the variable panel supports this feature.
+
+In the illustration below, screen 1, the `city` variable is created with three key-value pairs.
+
+```text
+
+Chicago:1, New York:2, Tampa:3
+
+```
+
+Screen 2 is a dashboard view where an end-user sees only city names. After the selection is made (here, New York:2), the variable carries a value equal to 2. 
+
+From there the `city` variable's value can be used in the queries for other panels, screen 3.
+
+<Image
+  title="Example of key-value variable format in the Variable panel."
+  src="/img/blog/2023-08-10-variable-panel-1.7.0/key-value.png"
+/>
+
 
 ## Getting Started
 
