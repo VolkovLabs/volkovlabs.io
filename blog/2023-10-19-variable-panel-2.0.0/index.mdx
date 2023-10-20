@@ -14,17 +14,17 @@ import Video from "@theme/Video";
 We are happy to announce the release of the Variable Panel 2.0.0. This release includes the following updates:
 
 - Added handling of the enter key for the Text Box variable type.
-- Significant performance improvement.
-- Added clear(empty) value for the multi-value variables.
-- Added support of the Grafana key-value variable format for all display modes.
+- Added a clear(empty) value for the multi-value variables.
+- Added support for the Grafana key-value variable format for all display modes.
+- Significant performance improvements.
 
 :::info Grafana Catalog
-The plugin is under review.
+The plugin was updated in Grafana Catalog on October 18, 2023.
 :::
 
-## Enter key for the Text Box type
+## Enter the key for the Text Box type
 
-Hitting the enter key after typing a text value in the Text box variable type will trigger the dashboard refresh. Before implementing this feature, a user had to use a mouse cursor to click outside the box for the variable to take effect. 
+Hitting the enter key after typing a text value in the Text box variable type will trigger the dashboard refresh. Before implementing this feature, a user had to use a mouse cursor to click outside the box for the variable to take effect.
 
 <Image
   title="You can use the enter key for the variable to take effect."
@@ -33,12 +33,9 @@ Hitting the enter key after typing a text value in the Text box variable type wi
 
 ## Improved Performance
 
-Up to 10K records will work swiftly without significant performance degradation.
-For up to 50K records, you might notice a slight one- to two-second delay. 
+Up to 10,000 records will work swiftly without significant performance degradation. For up to 50,000 records, you might notice a slight one- to two-second delay. We achieved that improvement by using a table virtualization approach.
 
-We achieved that improvement by using a table virtualization approach.
-
-The illustration below displays the performance statistics we collected in one of the Chrome extensions to confirm the approach is working.
+The illustration below displays the performance statistics we collected in the Chrome extensions to confirm the approach is working.
 
 <Image
   title="Initial load time with 50,000 items in the table view."
@@ -47,52 +44,46 @@ The illustration below displays the performance statistics we collected in one o
 
 ## Empty value in Multi-value Variables
 
-This feature works for the following Display modes:
- - Minimize
- - Button
+This feature works for the following Minimize and Button display modes.
 
 <Image
-  title="Empty Value exists for the Minimize and Button Display modes."
+  title="Empty Value allowed for the Minimize and Button Display modes."
   src="/img/blog/2023-10-19-variable-panel-2.0.0/empty-value.png"
 />
 
-Until now, after a user had selected an item in a Multi-value variable, there was no way of returning to the filter that was not activated.
+In previous versions, after a user had selected an item in a Multi-value variable, there was no way to unselect all values.
 
 <Image
   title="Multi-value setting for dashboard variables."
   src="/img/blog/2023-10-19-variable-panel-2.0.0/multi-value.png"
 />
 
-With this release, a user can clear a filtering option and have the original variable setup. By the original setup, we imply when nothing is selected.
-
 For this feature to work, you must enable the <b>Empty Value</b> parameter in the Variable section.
 
 <Image
-  title="When Empty value is enabled, a user can get back to the original state of the variable."
+  title="When Empty value is enabled, a user can unselect all variable values."
   src="/img/blog/2023-10-19-variable-panel-2.0.0/empty-all.png"
 />
 
 ## Key-values format in Variables
 
-We intriduced this feature in the Rleease 1.7.0 of the Variable plugin. The functionality was limited to the Table/Tree View. Starting from this release all display modes (All variations of Table, Minimize, Button) support key-value variable format. 
+We introduced this feature in version 1.7.0 and it was limited to the Table/Tree View. Starting from this release all display modes (Table/Tree View, Minimize, Button) support the key-value variable format.
 
-A Grafana variable can be composed of a key and value to make possible joining data sets by IDs(key) while user-friendly names(value) are shown. 
+A Grafana variable can be composed of a key and value to make it possible to join data sets by IDs(key) while displaying user-friendly names(value).
 
 In the illustration below, screen 1, the `city` variable is created with three key-value pairs.
 
 ```text
-
 Chicago:1, New York:2, Tampa:3
-
 ```
 
-Screen 2 is a dashboard view where an end-user sees only city names. After the selection is made (here, New York:2), the variable carries a value equal to 2. 
+Screen 2 is a dashboard view where an end-user sees only city names. After the selection is made (here, New York:2), the variable carries a value equal to 2.
 
 From there the `city` variable's value can be used in the queries for other panels, screen 3.
 
 <Image
-  title="Example of key-value variable format in the Variable panel."
-  src="/img/blog/2023-08-10-variable-panel-1.7.0/key-value.png"
+  title="Example of the key-value variable format in the Variable panel."
+  src="/img/blog/2023-10-19-variable-panel-2.0.0/key-value.png"
 />
 
 ## Getting Started
