@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "variable-panel-2.0.0-20231019/",
+    metadata: {
+      permalink: "/blog/variable-panel-2.0.0-20231019/",
+      source: "@site/blog/2023-10-19-variable-panel-2.0.0/index.mdx",
+      title: "Variable Panel 2.0.0",
+      description:
+        "We are happy to announce the release of the Variable Panel 2.0.0. This release includes the following updates:",
+      date: "2023-10-19T00:00:00.000Z",
+      formattedDate: "October 19, 2023",
+      tags: [
+        {
+          label: "Variables",
+          permalink: "/blog/tags/variables",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Daria Volkova",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
+          url: "https://youtube.com/@VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
+        },
+      ],
+      frontMatter: {
+        authors: ["daria"],
+        slug: "variable-panel-2.0.0-20231019/",
+        tags: ["Variables", "Release Notes"],
+        image: "/img/blog/2023-10-19-variable-panel-2.0.0/banner.png",
+        keywords: ["Variable", "Panel", "Status"],
+      },
+      nextItem: {
+        title: "Data Manipulation Panel 3.2.1",
+        permalink: "/blog/form-panel-3.2.1-20231010/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Variable Panel 2.0.0. This release includes the following updates:\n\n- Added handling of the enter key for the Text Box variable type.\n- Added a clear(empty) value for the multi-value variables.\n- Added support for the Grafana key-value variable format for all display modes.\n- Significant performance improvements.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on October 18, 2023.\n:::\n\n## Enter the key for the Text Box type\n\nHitting the enter key after typing a text value in the Text box variable type will trigger the dashboard refresh. Before implementing this feature, a user had to use a mouse cursor to click outside the box for the variable to take effect.\n\n<Image\n  title="You can use the enter key for the variable to take effect."\n  src="/img/blog/2023-10-19-variable-panel-2.0.0/enter.png"\n/>\n\n## Improved Performance\n\nUp to 10,000 records will work swiftly without significant performance degradation. For up to 50,000 records, you might notice a slight one- to two-second delay. We achieved that improvement by using a table virtualization approach.\n\nThe illustration below displays the performance statistics we collected in the Chrome extensions to confirm the approach is working.\n\n<Image\n  title="Initial load time with 50,000 items in the table view."\n  src="/img/blog/2023-10-19-variable-panel-2.0.0/performance.png"\n/>\n\n## Empty value in Multi-value Variables\n\nThis feature works for the following Minimize and Button display modes.\n\n<Image\n  title="Empty Value allowed for the Minimize and Button Display modes."\n  src="/img/blog/2023-10-19-variable-panel-2.0.0/empty-value.png"\n/>\n\nIn previous versions, after a user had selected an item in a Multi-value variable, there was no way to unselect all values.\n\n<Image\n  title="Multi-value setting for dashboard variables."\n  src="/img/blog/2023-10-19-variable-panel-2.0.0/multi-value.png"\n/>\n\nFor this feature to work, you must enable the <b>Empty Value</b> parameter in the Variable section.\n\n<Image\n  title="When Empty value is enabled, a user can unselect all variable values."\n  src="/img/blog/2023-10-19-variable-panel-2.0.0/empty-all.png"\n/>\n\n## Key-values format in Variables\n\nWe introduced this feature in version 1.7.0 and it was limited to the Table/Tree View. Starting from this release all display modes (Table/Tree View, Minimize, Button) support the key-value variable format.\n\nA Grafana variable can be composed of a key and value to make it possible to join data sets by IDs(key) while displaying user-friendly names(value).\n\nIn the illustration below, screen 1, the `city` variable is created with three key-value pairs.\n\n```text\nChicago:1, New York:2, Tampa:3\n```\n\nScreen 2 is a dashboard view where an end-user sees only city names. After the selection is made (here, New York:2), the variable carries a value equal to 2.\n\nFrom there the `city` variable\'s value can be used in the queries for other panels, screen 3.\n\n<Image\n  title="Example of the key-value variable format in the Variable panel."\n  src="/img/blog/2023-10-19-variable-panel-2.0.0/key-value.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update variable option label for parent items in tree view (#62)\n- Add handling enter and escape keys for Text Variable (#69)\n- Add table virtualization to improve performance (#64, #74)\n- Clear value for the multi-choice variable (#66)\n- Update to Plugin Tools 2.1.1 (#72)\n- Use Grafana Access Policy to sign plugin (#72)\n- Update to Grafana 10.1.5 (#73)\n\n### Bugfixes\n\n- Fix key:value option selection for Minimize and Button views (#75)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+  },
+  {
     id: "form-panel-3.2.1-20231010/",
     metadata: {
       permalink: "/blog/form-panel-3.2.1-20231010/",
@@ -35,6 +80,10 @@ export const BlogPosts = [
         tags: ["Data Manipulation", "Release Notes"],
         image: "/img/blog/2023-10-10-form-panel-3.2.1/banner.png",
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
+      },
+      prevItem: {
+        title: "Variable Panel 2.0.0",
+        permalink: "/blog/variable-panel-2.0.0-20231019/",
       },
       nextItem: {
         title: "Calendar Panel 2.2.0",
@@ -374,15 +423,15 @@ export const BlogPosts = [
       hasTruncateMarker: false,
       authors: [
         {
-          name: "Mikhail Volkov",
-          title: "Founder at Volkov Labs, Grafana Champion",
-          url: "https://github.com/VolkovLabs",
-          imageURL: "/img/team/mikhail.png",
-          key: "mikhail",
+          name: "Daria Volkova",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
+          url: "https://youtube.com/@VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
         },
       ],
       frontMatter: {
-        authors: ["mikhail"],
+        authors: ["daria"],
         slug: "variable-panel-1.7.0-20230810/",
         tags: ["Variables", "Release Notes"],
         image: "/img/blog/2023-08-10-variable-panel-1.7.0/banner.png",
@@ -398,7 +447,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Variable Panel 1.7.0. This release includes the following updates:\n\n- Added Button View.\n- Added group selection for Tree View.\n- Added variables with text and value in Table/Tree View.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on August 11, 2023.\n:::\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Add variables with text and value in Table/Tree View (#57)\n- Add Button View (#59)\n- Add group selection (#58)\n- Update dependencies to Grafana 10.0.3 (#60)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Variable Panel 1.7.0. This release includes the following updates:\n\n- Added the Button display mode.\n- Added group selection for the Tree View layout (beta).\n- Added support of the Grafana key-value variable format for the <b>Table</b> display mode.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on August 11, 2023.\n:::\n\n## Button display mode\n\nIn the Button display mode, you get horizontally positioned variable values instead of them being placed from top to bottom. Optionally, you can set up color-coding rules in the Thresholds section on the right.\n\n<Image\n  title="The Button mode converts vertical listing into horizontal elements. Color coding follows the threshold rules."\n  src="/img/blog/2023-08-10-variable-panel-1.7.0/button-mode.png"\n/>\n\n## Group selection\n\n:::info\nThis parameter is still under development and now is available in the Beta version. Try it out with care.\n:::\n\nIn the Layout section, for the Tree View, we added a new parameter, \'Allow group selection\'. When it is enabled, choosing a root of the group will automatically select all elements belonging to this group.\n\n<Image\n  title="With a new parameter, \'Allow group selection\', the selection of a group automatically selects all elements in this group."\n  src="/img/blog/2023-08-10-variable-panel-1.7.0/group-selection.png"\n/>\n\n## Key-values format in Variables\n\nA Grafana variable can be composed of a key and value to make it possible to join data sets by IDs(key) while displaying user-friendly names(value).\n\nStarting from this release, the Variable panel in the <b>Table</b> view supports this feature.\n\nIn the illustration below, screen 1, the `city` variable is created with three key-value pairs.\n\n```text\nChicago:1, New York:2, Tampa:3\n```\n\nScreen 2 is a dashboard view where an end-user sees only city names. After the selection is made (here, New York:2), the variable carries a value equal to 2.\n\nFrom there the `city` variable\'s value can be used in the queries for other panels, screen 3.\n\n<Image\n  title="Example of the key-value variable format in the Variable panel."\n  src="/img/blog/2023-08-10-variable-panel-1.7.0/key-value.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Add variables with text and value in Table/Tree View (#57)\n- Add Button View (#59)\n- Add group selection (#58)\n- Update dependencies to Grafana 10.0.3 (#60)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
   },
   {
     id: "dynamictext-panel-4.1.0-20230731/",
