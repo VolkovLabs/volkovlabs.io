@@ -12,9 +12,9 @@ type Props = {
 };
 
 /**
- * Video
+ * Shorts Video
  */
-const Video = ({ src, title, height = 378, width = 672 }: Props) => (
+const Shorts = ({ src, title, height = 560, width = 315 }: Props) => (
   <figure>
     <iframe
       width={width}
@@ -32,4 +32,4 @@ const Video = ({ src, title, height = 378, width = 672 }: Props) => (
   </figure>
 );
 
-export default Video;
+export default Shorts;
