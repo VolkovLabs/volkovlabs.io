@@ -1,25 +1,26 @@
 ---
-authors: [mikhail]
-slug: grapi-datasource-2.0.0-20230718/
+authors: [daria]
+slug: grapi-datasource-2.2.0-20231027/
 tags: [Grafana HTTP API Data Source, Release Notes]
-image: /img/blog/2023-07-18-grapi-datasource-2.0.0/banner.png
+image: /img/blog/2023-10-27-grapi-datasource-2.2.0/banner.png
 keywords: [Grafana, HTTP API, Data Source, Annotations]
 ---
 
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Grafana HTTP API Data Source 2.0.0
+# Grafana HTTP API Data Source 2.2.0
 
-We are happy to announce the release of the Grafana HTTP API Data Source 2.0.0. This release includes the following updates:
+We are happy to announce the release of the Grafana HTTP API Data Source 2.2.0. This release includes the following updates:
 
-- Added compatibility with Grafana 10.0.2 and deprecated support for Grafana 8.5.
-- Requires Grafana 9 or Grafana 10.
-- Migrated to Plugin Tools 1.5.2 with the update of Node.js 18 and `npm`.
-- Increased test coverage of the plugin's functionality up to 86%.
+- Added a values field from annotation text.
+- Added Local mode to access the local instance.
+- Added Organization Users.
+- Added feature flag to support various Grafana versions.
+- Refactored API and increased test coverage to 99%.
 
 :::info Grafana Catalog
-The plugin was updated in Grafana Catalog on July 18, 2023.
+The plugin was updated in Grafana Catalog on September 21, 2023.
 :::
 
 ## Getting Started
@@ -38,21 +39,18 @@ Will be available soon.
 
 ## Release Notes
 
-### Breaking changes
+### Features / Enhancements in 2.2.0
 
-- Requires Grafana 9 and Grafana 10
+- Move API methods under the feature flag to support various Grafana versions (#53)
+- Add an option to disable Alert Rules in Annotations (#55)
+- Add a values field from annotation text (#30)
 
-### Features / Enhancements
+### Features / Enhancements in 2.1.0
 
-- Update to Grafana 10.0.2 (#31, #40, #45, #47)
-- Add Annotations Tutorial to README (#33)
-- Add Authentication to Getting Started (#36)
-- Add exception handling for Alert Rules in Annotations (#39)
-- Update tests with testing-library/react (#42)
-- Add tests for Components and datasource (#44)
-- Migrate to Plugin Tools 1.5.2 (#45)
-- Update to Node 18 and npm (#45)
-- Add E2E Cypress testing (#48)
+- Refactor API and increase test coverage (#50)
+- Update ESLint configuration (#50)
+- Add Local mode to access local instance (#51)
+- Add Organization Users (#52)
 
 ## Feedback
 
