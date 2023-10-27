@@ -1,0 +1,110 @@
+---
+authors: [daria]
+slug: grapi-datasource-2.2.0-20231027/
+tags: [Grafana HTTP API Data Source, Release Notes]
+image: /img/blog/2023-10-27-grapi-datasource-2.2.0/banner.png
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Grafana HTTP API Data Source 2.2.0
+
+We are happy to announce the release of the Grafana HTTP API Data Source 2.2.0. This release includes the following updates:
+
+- Added the <b>Local</b> mode to access a local instance.
+- Added the <b>Values</b> field for Annotations.
+- Added <b>Organization Users</b> into the Request options.
+- Refactored API and increased test coverage to 99%.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on September 21, 2023.
+:::
+
+## 100,000 downloads
+
+The Grafana HTTP API Data Source was downloaded more than 100,000 times! Thank you for your trust and support.
+
+<Image
+  title="Total downloads from Grafana Catalog for the Grafana HTTP API Data Source."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/downloads.png"
+/>
+
+## Local mode
+
+With the <b>Local</b> request mode, the Grafana HTTP API data source connects to the local configuration storage using the same Grafana privileges a user has been assigned during login and, thus, simplifies the access policy.
+
+The <b>Local</b> request mode has no parameters.
+
+<Image
+  title="The new Local request mode has no parameters."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/local.png"
+/>
+
+With the <b>Remote</b> request mode, the privileges are taken from the token and might differ from those assigned during login into Grafana.
+
+## Values in Annotations
+
+Starting from this release, the HTTP API data source digests the <b>Values</b> field from the Annotations's text.
+
+<Image
+  title="Values field is digested from the Annotations."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/value.png"
+/>
+
+As shown below, you can always use transformations to have one value per column format.
+
+<Image
+  title="Use the transformation 'Extract fields' to convert Values into columns."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/trans.png"
+/>
+
+## Organization Users
+
+**Request** in the query editor is a drop-down parameter that appears when you connect your panel
+to the HTTP API data source. In addition to all existing options, we added
+**Organization Users**. The picture below illustrates the new possibility.
+
+<Image
+  title="The new Organization Users option in the Request parameter."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/Users.png"
+/>
+
+## Getting Started
+
+The Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install volkovlabs-grapi-datasource
+```
+
+## YouTube Tutorial
+
+Will be available soon.
+
+## Release Notes
+
+### Features / Enhancements in 2.2.0
+
+- Moved API methods under the feature flag to support various Grafana versions (#53)
+- Added an option to disable Alert Rules in Annotations (#55)
+- Added a values field from annotation text (#30)
+
+### Features / Enhancements in 2.1.0
+
+- Refactored API and increased test coverage (#50)
+- Updated ESLint configuration (#50)
+- Added Local mode to access local instance (#51)
+- Added Organization Users (#52)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.

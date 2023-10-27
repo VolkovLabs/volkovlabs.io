@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "grapi-datasource-2.2.0-20231027/",
+    metadata: {
+      permalink: "/blog/grapi-datasource-2.2.0-20231027/",
+      source: "@site/blog/2023-10-27-grapi-datasource-2.2.0/index.mdx",
+      title: "Grafana HTTP API Data Source 2.2.0",
+      description:
+        "We are happy to announce the release of the Grafana HTTP API Data Source 2.2.0. This release includes the following updates:",
+      date: "2023-10-27T00:00:00.000Z",
+      formattedDate: "October 27, 2023",
+      tags: [
+        {
+          label: "Grafana HTTP API Data Source",
+          permalink: "/blog/tags/grafana-http-api-data-source",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Daria Volkova",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
+          url: "https://youtube.com/@VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
+        },
+      ],
+      frontMatter: {
+        authors: ["daria"],
+        slug: "grapi-datasource-2.2.0-20231027/",
+        tags: ["Grafana HTTP API Data Source", "Release Notes"],
+        image: "/img/blog/2023-10-27-grapi-datasource-2.2.0/banner.png",
+        keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
+      },
+      nextItem: {
+        title: "Variable Panel 2.0.0",
+        permalink: "/blog/variable-panel-2.0.0-20231019/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Grafana HTTP API Data Source 2.2.0. This release includes the following updates:\n\n- Added the <b>Local</b> mode to access a local instance.\n- Added the <b>Values</b> field for Annotations.\n- Added <b>Organization Users</b> into the Request options.\n- Refactored API and increased test coverage to 99%.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on September 21, 2023.\n:::\n\n## 100,000 downloads\n\nThe Grafana HTTP API Data Source was downloaded more than 100,000 times! Thank you for your trust and support.\n\n<Image\n  title="Total downloads from Grafana Catalog for the Grafana HTTP API Data Source."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/downloads.png"\n/>\n\n## Local mode\n\nWith the <b>Local</b> request mode, the Grafana HTTP API data source connects to the local configuration storage using the same Grafana privileges a user has been assigned during login and, thus, simplifies the access policy.\n\nThe <b>Local</b> request mode has no parameters.\n\n<Image\n  title="The new Local request mode has no parameters."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/local.png"\n/>\n\nWith the <b>Remote</b> request mode, the privileges are taken from the token and might differ from those assigned during login into Grafana.\n\n## Values in Annotations\n\nStarting from this release, the HTTP API data source digests the <b>Values</b> field from the Annotations\'s text.\n\n<Image\n  title="Values field is digested from the Annotations."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/value.png"\n/>\n\nAs shown below, you can always use transformations to have one value per column format.\n\n<Image\n  title="Use the transformation \'Extract fields\' to convert Values into columns."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/trans.png"\n/>\n\n## Organization Users\n\n**Request** in the query editor is a drop-down parameter that appears when you connect your panel\nto the HTTP API data source. In addition to all existing options, we added\n**Organization Users**. The picture below illustrates the new possibility.\n\n<Image\n  title="The new Organization Users option in the Request parameter."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/Users.png"\n/>\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available soon.\n\n## Release Notes\n\n### Features / Enhancements in 2.2.0\n\n- Moved API methods under the feature flag to support various Grafana versions (#53)\n- Added an option to disable Alert Rules in Annotations (#55)\n- Added a values field from annotation text (#30)\n\n### Features / Enhancements in 2.1.0\n\n- Refactored API and increased test coverage (#50)\n- Updated ESLint configuration (#50)\n- Added Local mode to access local instance (#51)\n- Added Organization Users (#52)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+  },
+  {
     id: "variable-panel-2.0.0-20231019/",
     metadata: {
       permalink: "/blog/variable-panel-2.0.0-20231019/",
@@ -35,6 +80,10 @@ export const BlogPosts = [
         tags: ["Variables", "Release Notes"],
         image: "/img/blog/2023-10-19-variable-panel-2.0.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
+      },
+      prevItem: {
+        title: "Grafana HTTP API Data Source 2.2.0",
+        permalink: "/blog/grapi-datasource-2.2.0-20231027/",
       },
       nextItem: {
         title: "Data Manipulation Panel 3.2.1",
@@ -642,7 +691,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Grafana HTTP API Data Source 2.0.0. This release includes the following updates:\n\n- Added compatibility with Grafana 10.0.2 and deprecated support for Grafana 8.5.\n- Requires Grafana 9 or Grafana 10.\n- Migrated to Plugin Tools 1.5.2 with the update of Node.js 18 and `npm`.\n- Increased test coverage of the plugin\'s functionality up to 99%.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 18, 2023.\n:::\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available soon.\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements\n\n- Update to Grafana 10.0.2 (#31, #40, #45, #47)\n- Add Annotations Tutorial to README (#33)\n- Add Authentication to Getting Started (#36)\n- Add exception handling for Alert Rules in Annotations (#39)\n- Update tests with testing-library/react (#42)\n- Add tests for Components and datasource (#44)\n- Migrate to Plugin Tools 1.5.2 (#45)\n- Update to Node 18 and npm (#45)\n- Add E2E Cypress testing (#48)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Grafana HTTP API Data Source 2.0.0. This release includes the following updates:\n\n- Added compatibility with Grafana 10.0.2 and deprecated support for Grafana 8.5.\n- Requires Grafana 9 or Grafana 10.\n- Migrated to Plugin Tools 1.5.2 with the update of Node.js 18 and `npm`.\n- Increased test coverage of the plugin\'s functionality up to 86%.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 18, 2023.\n:::\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available soon.\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements\n\n- Update to Grafana 10.0.2 (#31, #40, #45, #47)\n- Add Annotations Tutorial to README (#33)\n- Add Authentication to Getting Started (#36)\n- Add exception handling for Alert Rules in Annotations (#39)\n- Update tests with testing-library/react (#42)\n- Add tests for Components and datasource (#44)\n- Migrate to Plugin Tools 1.5.2 (#45)\n- Update to Node 18 and npm (#45)\n- Add E2E Cypress testing (#48)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
   },
   {
     id: "form-panel-3.0.0-20230715/",
