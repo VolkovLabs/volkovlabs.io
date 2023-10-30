@@ -1,5 +1,50 @@
 export const BlogPosts = [
   {
+    id: "image-panel-4.1.0-20231029/",
+    metadata: {
+      permalink: "/blog/image-panel-4.1.0-20231029/",
+      source: "@site/blog/2023-10-29-image-panel-4.1.0/index.mdx",
+      title: "Base64 Image/Video/Audio/PDF Panel 4.1.0",
+      description:
+        "We are excited to announce the release of Base64 Image/Video/Audio/PDF Panel 4.1.0. This major release includes the following updates:",
+      date: "2023-10-29T00:00:00.000Z",
+      formattedDate: "October 29, 2023",
+      tags: [
+        {
+          label: "Base64 Image/Video/Audio/PDF",
+          permalink: "/blog/tags/base-64-image-video-audio-pdf",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder at Volkov Labs, Grafana Champion",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "image-panel-4.1.0-20231029/",
+        tags: ["Base64 Image/Video/Audio/PDF", "Release Notes"],
+        image: "/img/blog/2023-10-29-image-panel-4.1.0/banner.png",
+        keywords: ["Base64", "Panel", "Zoom", "Label", "Images"],
+      },
+      nextItem: {
+        title: "Grafana HTTP API Data Source 2.2.0",
+        permalink: "/blog/grapi-datasource-2.2.0-20231027/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of Base64 Image/Video/Audio/PDF Panel 4.1.0. This major release includes the following updates:\n\n- Added Image Scale Algorithm option.\n- Added compatibility with Grafana 10.1.4.\n\n:::info Grafana Plugins catalog\nThe plugin is under review.\n:::\n\n## 1 million downloads\n\nThe Base64 Panel was downloaded almost 1 million times! Thank you for your trust and support.\n\n<Image\n  title="Total downloads from Grafana Catalog for the Base64 Panel."\n  src="/img/blog/2023-10-29-image-panel-4.1.0/downloads.png"\n  lazy={false}\n/>\n\n## Image Scale Algorithm\n\n## Getting Started\n\nYou can install Base64 Image/Video/Audio/PDF Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-image-panel\n```\n\n## YouTube Tutorial\n\nBase64 Image/Video/Audio/PDF Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.\n\n<Video\n  src="https://www.youtube.com/embed/1_bgLSehjhg"\n  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update ESLint configuration (#84)\n- Add Image Scale Algorithm option (#89)\n- Update to Plugin Tools 2.1.1 (#90)\n- Use Grafana Access Policy to sign plugin (#90)\n- Update to Grafana 10.1.5 (#90)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+  },
+  {
     id: "grapi-datasource-2.2.0-20231027/",
     metadata: {
       permalink: "/blog/grapi-datasource-2.2.0-20231027/",
@@ -36,13 +81,17 @@ export const BlogPosts = [
         image: "/img/blog/2023-10-27-grapi-datasource-2.2.0/banner.png",
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
       },
+      prevItem: {
+        title: "Base64 Image/Video/Audio/PDF Panel 4.1.0",
+        permalink: "/blog/image-panel-4.1.0-20231029/",
+      },
       nextItem: {
         title: "Variable Panel 2.0.0",
         permalink: "/blog/variable-panel-2.0.0-20231019/",
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Grafana HTTP API Data Source 2.2.0. This release includes the following updates:\n\n- Added the <b>Local</b> mode to access a local instance.\n- Added the <b>Values</b> field for Annotations.\n- Added <b>Organization Users</b> into the Request options.\n- Refactored API and increased test coverage to 99%.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on September 21, 2023.\n:::\n\n## 100,000 downloads\n\nThe Grafana HTTP API Data Source was downloaded more than 100,000 times! Thank you for your trust and support.\n\n<Image\n  title="Total downloads from Grafana Catalog for the Grafana HTTP API Data Source."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/downloads.png"\n/>\n\n## Local mode\n\nWith the <b>Local</b> request mode, the Grafana HTTP API data source connects to the local configuration storage using the same Grafana privileges a user has been assigned during login and, thus, simplifies the access policy.\n\nThe <b>Local</b> request mode has no parameters.\n\n<Image\n  title="The new Local request mode has no parameters."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/local.png"\n/>\n\nWith the <b>Remote</b> request mode, the privileges are taken from the token and might differ from those assigned during login into Grafana.\n\n## Values in Annotations\n\nStarting from this release, the HTTP API data source digests the <b>Values</b> field from the Annotations\'s text.\n\n<Image\n  title="Values field is digested from the Annotations."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/value.png"\n/>\n\nAs shown below, you can always use transformations to have one value per column format.\n\n<Image\n  title="Use the transformation \'Extract fields\' to convert Values into columns."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/trans.png"\n/>\n\n## Organization Users\n\n**Request** in the query editor is a drop-down parameter that appears when you connect your panel\nto the HTTP API data source. In addition to all existing options, we added\n**Organization Users**. The picture below illustrates the new possibility.\n\n<Image\n  title="The new Organization Users option in the Request parameter."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/Users.png"\n/>\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available soon.\n\n## Release Notes\n\n### Features / Enhancements in 2.2.0\n\n- Moved API methods under the feature flag to support various Grafana versions (#53)\n- Added an option to disable Alert Rules in Annotations (#55)\n- Added a values field from annotation text (#30)\n\n### Features / Enhancements in 2.1.0\n\n- Refactored API and increased test coverage (#50)\n- Updated ESLint configuration (#50)\n- Added Local mode to access local instance (#51)\n- Added Organization Users (#52)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+      'import Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Grafana HTTP API Data Source 2.2.0. This release includes the following updates:\n\n- Added the <b>Local</b> mode to access a local instance.\n- Added the <b>Values</b> field for Annotations.\n- Added <b>Organization Users</b> into the Request options.\n- Refactored API and increased test coverage to 99%.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on September 21, 2023.\n:::\n\n<Shorts\n  src="https://www.youtube.com/embed/K6U1ZpG6a5U"\n  title="HTTP API Data Source 2.2.0 for Grafana."\n/>\n\n## 100,000 downloads\n\nThe Grafana HTTP API Data Source was downloaded more than 100,000 times! Thank you for your trust and support.\n\n<Image\n  title="Total downloads from Grafana Catalog for the Grafana HTTP API Data Source."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/downloads.png"\n/>\n\n## Local mode\n\nWith the <b>Local</b> request mode, the Grafana HTTP API data source connects to the local configuration storage using the same Grafana privileges a user has been assigned during login and, thus, simplifies the access policy.\n\nThe <b>Local</b> request mode has no parameters.\n\n<Image\n  title="The new Local request mode has no parameters."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/local.png"\n/>\n\nWith the <b>Remote</b> request mode, the privileges are taken from the token and might differ from those assigned during login into Grafana.\n\n## Values in Annotations\n\nStarting from this release, the HTTP API data source digests the <b>Values</b> field from the Annotations\'s text.\n\n<Image\n  title="Values field is digested from the Annotations."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/value.png"\n/>\n\nAs shown below, you can always use transformations to have one value per column format.\n\n<Image\n  title="Use the transformation \'Extract fields\' to convert Values into columns."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/trans.png"\n/>\n\n## Organization Users\n\n**Request** in the query editor is a drop-down parameter that appears when you connect your panel\nto the HTTP API data source. In addition to all existing options, we added\n**Organization Users**. The picture below illustrates the new possibility.\n\n<Image\n  title="The new Organization Users option in the Request parameter."\n  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/users.png"\n/>\n\n## Getting Started\n\nThe Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-grapi-datasource\n```\n\n## YouTube Tutorial\n\nWill be available soon.\n\n## Release Notes\n\n### Features / Enhancements in 2.2.0\n\n- Moved API methods under the feature flag to support various Grafana versions (#53)\n- Added an option to disable Alert Rules in Annotations (#55)\n- Added a values field from annotation text (#30)\n\n### Features / Enhancements in 2.1.0\n\n- Refactored API and increased test coverage (#50)\n- Updated ESLint configuration (#50)\n- Added Local mode to access local instance (#51)\n- Added Organization Users (#52)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
   },
   {
     id: "variable-panel-2.0.0-20231019/",
