@@ -6,6 +6,7 @@ image: /img/blog/2023-11-21-big-alerting/banner.png
 keywords: [Alerting, Business Intelligence]
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
@@ -45,29 +46,33 @@ The three main alerting components:
   width="50%"
 />
 
+:::note Basics
+
 So, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created. Following the created alert records, alert actions are initiated.
 
-## Alerting versus BIG alerting
+:::
 
-The schema below depicts the Alerting as it is side-by-side with the Big Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
+## Native versus BI(G) Alerting
 
-Users create alert rules using the Alerting UI.
+The schema below depicts the Alerting as it is side-by-side with the BI(G) Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
 
 <Image
   title="Alerting versus BIG alerting."
   src="/img/blog/2023-11-21-big-alerting/alerting-vs-big.png"
 />
 
+Users create alert rules using the Alerting UI.
+
 The alerting records are created by the alert manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.
 The alert manager works only with backend data sources.
 
-For the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, slack messages and emails.
+For the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, Slack messages, emails and OnCall.
 
 Webhooks, which are 3rd party APIs, can also be added as triggered by an alert rule record. However, even if the possibility exists the implementation might be foggy for many.
 
-In the Big Alerting, we reimaged all three modules.
+In the BI(G) Alerting, we reimaged all three modules.
 
-### Alerting management panel
+## Alerting Management panel
 
 The alerting management panel is set to simplify the alert rule creation. We designed it to be intuitive and business-oriented users friendly. You specify all parameters in a one-screen form.
 
@@ -87,52 +92,58 @@ We target to have the Alert Management UI panel work with hundreds or even thous
   src="/img/blog/2023-11-21-big-alerting/alert-management-ui.png"
 />
 
-### Alerting BI Engine
+### BI Engine
 
-We reimagined the alert manager and came up with the BI Alert Engine:
+We reimagined the alert manager and came up with the BI Engine:
 
 - It supports both frontend and backend data sources.
 - It uses dashboards as configuration which means it retrieves dashboard queries and thresholds and uses them as alert rule parameters. That eliminates the duplicative work when users have to enter the same specifics twice.
-- It is installed in a separate container which makes the system architecture flexible and performance improvement easier.
+- It is installed in a separate container which makes the system architecture flexible.
 
 In the future, we will include forecasting with AI algorithms.
 
 To connect to the Alerting BI Engine, you need the Business Intelligence data source installed and configured.
 
 <Image
-  title="Business Intelligence data source."
+  title="Business Intelligence Data Source."
   src="/img/blog/2023-11-21-big-alerting/bi-ds.png"
 />
 
-### Web-hooks UI panel
+### Webhooks UI panel
 
-This panel lists all configured webhooks. In the edit mode, you specify a name, type (HTTP or test), request URL and request method. For now, only POST is available.
+This panel lists all configured webhooks. In the edit mode, you specify a name, type (HTTP or Test), request URL and request method. For now, only POST is available.
 
 <Image
   title="Webhook configuration panel."
   src="/img/blog/2023-11-21-big-alerting/web-hooks-panel.png"
 />
 
-## Product POC (proof of concept)
+## Proof Of Concept
 
-You can download the PRODUCT POC from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-toolkit). The docker-compose file describes the following containers:
+You can download the Proof of Concept from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-toolkit). The docker-compose file consists of the following containers:
 
-- Grafana container. It includes the provisioned BI Engine data source, an Alerting panel, and an example dashboard.
-- BI Engine container. It has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
-- JSON web-hook container. It is a web-hook example based on nodeJS, which accepts alert payload and saves it to the files for testing purposes.
-- Node-RED container provides an HTTP POST endpoint and sends a Slack notification with alert details.
+- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and an example dashboard.
+- **Timescale** is required to store configuration, events, rules, etc.
+- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
+- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
+- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
 
-When you run a docker-compose file, it launches the Grafana and BI Engine containers.
+When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.
 
-## Early adapters
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-bi-toolkit/blob/main/docker-compose.yml"
+  language="yaml"
+/>
 
-Reach out immediately if you are interested in the product roadmap discussion. We are happy to gather a group of early adopters to swiftly push this product forward.
+## Early adopters
 
-The first official version is planned on January '24, and there is so much more to come afterwards. Together we can ensure the product includes the most desired features.
+Reach out if you are interested in the product roadmap discussion. We are happy to gather a group of early adopters to swiftly push this product forward.
+
+The first official version is planned in January '24, and there is so much more to come afterwards. Together we can ensure the product includes the most desired features.
 
 ## Questions?
 
-If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube video mentioned at the beginning](https://www.youtube.com/embed/vky-7-DfvXE).
+If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube video](https://www.youtube.com/embed/vky-7-DfvXE).
 
 ## Become a member!
 
