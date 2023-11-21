@@ -1,29 +1,29 @@
 ---
 authors: [daria]
-slug: big-alerting-20231113/
+slug: big-alerting-20231121/
 tags: [Business Intelligence]
-image: /img/blog/2023-11-13-big-alerting/banner.png
+image: /img/blog/2023-11-21-big-alerting/banner.png
 keywords: [Alerting, Business Intelligence]
 ---
 
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# BIG alerting
+# BI(G) Alerting
 
 While working closely with the Community and helping to solve production use cases, we have accumulated quite a list of wishes for reimagined alerting functioning.
 
-Most asks were related to simplifying user interaction by possibly having all controls in one UI place. Many users were eager to incorporate forecasting paired with AI.
+Most asks were related to simplifying user interaction by possibly having all controls in one UI place. Many users were eager to incorporate forecasting paired with AI for self-hosted Grafana.
 
-This is how the idea of the Big Alerting was born. With the general thought of making alerting accessible for business users.
+This is how the idea of the BI(G) Alerting was born. With the general thought of making alerting accessible for business users.
 
-In the video below, I go over the alerting basics, existing alerting system components and our vision of BIG Alerting.
+In the video below, I go over the alerting basics, existing alerting system components and our vision of BI(G) Alerting.
 
 By the way, BI stands for Business Intelligence and G for Grafana. The article below reiterates many points I made in the video and adds more details to some topics.
 
 <Video
   src="https://www.youtube.com/embed/vky-7-DfvXE"
-  title="BIG alerting announcement"
+  title="BI(G) Alerting Announcement."
 />
 
 ## Alerting basics
@@ -41,7 +41,7 @@ The three main alerting components:
 
 <Image
   title="Alerting basics."
-  src="/img/blog/2023-11-13-big-alerting/basics.png"
+  src="/img/blog/2023-11-21-big-alerting/basics.png"
   width="50%"
 />
 
@@ -55,7 +55,7 @@ Users create alert rules using the Alerting UI.
 
 <Image
   title="Alerting versus BIG alerting."
-  src="/img/blog/2023-11-13-big-alerting/alerting-vs-big.png"
+  src="/img/blog/2023-11-21-big-alerting/alerting-vs-big.png"
 />
 
 The alerting records are created by the alert manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.
@@ -84,7 +84,7 @@ We target to have the Alert Management UI panel work with hundreds or even thous
 
 <Image
   title="Alerting Management Panel."
-  src="/img/blog/2023-11-13-big-alerting/alert-management-ui.png"
+  src="/img/blog/2023-11-21-big-alerting/alert-management-ui.png"
 />
 
 ### Alerting BI Engine
@@ -101,7 +101,7 @@ To connect to the Alerting BI Engine, you need the Business Intelligence data so
 
 <Image
   title="Business Intelligence data source."
-  src="/img/blog/2023-11-13-big-alerting/bi-ds.png"
+  src="/img/blog/2023-11-21-big-alerting/bi-ds.png"
 />
 
 ### Web-hooks UI panel
@@ -110,7 +110,7 @@ This panel lists all configured webhooks. In the edit mode, you specify a name, 
 
 <Image
   title="Webhook configuration panel."
-  src="/img/blog/2023-11-13-big-alerting/web-hooks-panel.png"
+  src="/img/blog/2023-11-21-big-alerting/web-hooks-panel.png"
 />
 
 ## Product POC (proof of concept)
