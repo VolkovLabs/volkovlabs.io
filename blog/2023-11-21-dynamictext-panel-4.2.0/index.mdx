@@ -24,7 +24,7 @@ The plugin is under review.
 
 ## 4.4 million downloads
 
-We celebrated 2 million downloads this February. Since then many more fundamental features have been added like JavaScript, CSS styles and Grafana events. We suspect them to be the primary reason for the extreme adaptability acceleration. 
+We celebrated 2 million downloads this February. Since then many more fundamental features have been added like JavaScript, CSS styles and Grafana events. We suspect them to be the primary reason for the extreme adaptability acceleration.
 
 More than four million downloads as of today! Thank you for your trust!
 
@@ -36,14 +36,15 @@ More than four million downloads as of today! Thank you for your trust!
 
 ## JavaScript code after content ready
 
-This is a new parameter to specify another JavaScript code. This one will be executed after the **Content** option runs. 
+This is a new parameter to specify another JavaScript code. This one will be executed after the **Content** option runs.
 
-Another important change to point out is we reorganized the UI positioning of code options for a more intuitive display. 
+Another important change to point out is we reorganized the UI positioning of code options for a more intuitive display.
 
 Starting from this release, you see separate sections for:
- - Content (with Content and Default content inside),
- - JavaScript (with the Before and After rendering options inside),
- - CSS styles.
+
+- Content (with Content and Default content inside),
+- JavaScript (with the Before and After rendering options inside),
+- CSS styles.
 
 <Image
   title="New order of the coding parameters."
@@ -59,7 +60,7 @@ For a cleaner view, you can control which options are visible in the **Dynamic T
   lazy={false}
 />
 
-Below are two schemas of the rendering order in the Dynamic text plugin. They represent the same thing. The first is oriented toward a general public and the second is targeted to answer developers' questions. 
+Below are two schemas of the rendering order in the Dynamic text plugin. They represent the same thing. The first is oriented toward a general public and the second is targeted to answer developers' questions.
 
 ### The Rendering Order General
 
@@ -104,62 +105,59 @@ The code used in the examples above:
 
 ```html
 <figure>
-<ul>
-  <li> In Progress : 34 </li>
-  <li> Completed : 5 </li>
-</ul>
+  <ul>
+    <li>In Progress : 34</li>
+    <li>Completed : 5</li>
+  </ul>
 </figure>
 ```
 
 ## New handlebars
 
-In the **JavaScript->before rendering content** option a user can describe(register) handlebars which are functions to use in the rest of the code. 
+In the **JavaScript->before rendering content** option a user can describe(register) handlebars which are functions to use in the rest of the code.
 
-The Dynamic Text panel has plenty of predefined handlebars that are registered automatically and ready to use. All of them are listed on our [documentation page](/plugins/volkovlabs-dynamictext-panel/helpers/). 
+The Dynamic Text panel has plenty of predefined handlebars that are registered automatically and ready to use. All of them are listed on our [documentation page](/plugins/volkovlabs-dynamictext-panel/helpers/).
 
 In this release, we added three more:
 
 ### startsWith
 
-Returns true if the variable starts with a specified value. 
+Returns true if the variable starts with a specified value.
 Example:
 
-```handlebars
-|Name| My Value|
-|---|---|
+```md
+|Name| My Value| |---|---|
 {{#each @root}}
 {{#if (startsWith @key "My_")}}
-| {{@key}} | {{this}}  |
+| {{@key}} | {{this}} |
 {{/if}}
 {{/each}}
 ```
 
 ### endsWith
 
-Returns true if the variable ends with a specified value. 
+Returns true if the variable ends with a specified value.
 Example:
 
-```handlebars
-|Name| My Keys|
-|---|---|
+```md
+|Name| My Keys| |---|---|
 {{#each @root}}
 {{#if (endsWith @key "_key")}}
-| {{@key}} | {{this}}  |
+| {{@key}} | {{this}} |
 {{/if}}
 {{/each}}=
 ```
 
 ### match
 
-Returns true if the variable matches with a specified value. 
+Returns true if the variable matches with a specified value.
 Example:
 
-```handlebars
-|Key| Value|
-|---|---|
+```md
+|Key| Value| |---|---|
 {{#each @root}}
 {{#if (match @key "^(Country|Street|Post)")}}
-| {{@key}} | {{this}}  |
+| {{@key}} | {{this}} |
 {{/if}}
 {{/each}}
 ```
@@ -178,12 +176,12 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 
 The Dynamic Text panel is a mighty Grafana plugin to convert any monotonous bulk of data into vibrant, effortlessly comprehended visualization.
 
-To this moment, I have created three videos. The latest one describes more features as more features have been implemented to the day of creation. 
-Yet, the latest Dynamic Text plugin version is far more advanced with numerous new features implemented since August. 
+To this moment, I have created three videos. The latest one describes more features as more features have been implemented to the day of creation.
+Yet, the latest Dynamic Text plugin version is far more advanced with numerous new features implemented since August.
 
 ### Video 3, published on August 15, 2023
 
-In this video, I touch upon the main features and panel options along with demonstrating community use cases. 
+In this video, I touch upon the main features and panel options along with demonstrating community use cases.
 
 <Video
   src="https://www.youtube.com/embed/AcQi-6GCrNU"
@@ -192,7 +190,7 @@ In this video, I touch upon the main features and panel options along with demon
 
 ### Video 2, published on January 29, 2023
 
-Since the latest release, the community has requested many changes. This video outlines all the new features we implemented, including the most asked-for JavaScript area code. 
+Since the latest release, the community has requested many changes. This video outlines all the new features we implemented, including the most asked-for JavaScript area code.
 
 <Video
   src="https://www.youtube.com/embed/lJqk5Gobec4"
@@ -201,8 +199,8 @@ Since the latest release, the community has requested many changes. This video o
 
 ### Video 1, published on October 24, 2022
 
-This is the first guide we created for the Dynamic Text plugin for Grafana. 
-The plugin does a fantastic job by transforming bland table data into vibrant, readable visualization emphasizing critical tidbits. 
+This is the first guide we created for the Dynamic Text plugin for Grafana.
+The plugin does a fantastic job by transforming bland table data into vibrant, readable visualization emphasizing critical tidbits.
 
 <Video
   src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
