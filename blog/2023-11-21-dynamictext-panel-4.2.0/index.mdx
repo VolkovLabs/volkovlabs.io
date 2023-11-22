@@ -13,13 +13,13 @@ import Video from "@theme/Video";
 
 We're excited to announce the release of the Dynamic Text Panel 4.2.0. This feature release includes the following updates:
 
-- Added **JavaScript->After Content Ready** option to execute after the code in the content is run.
+- Added **JavaScript->After Content Ready** option to execute after the DOM rendered.
 - Added an option to enable/disable text wrapping to support empty lines in HTML.
 - Added handlebars (startsWith, endsWith, match).
 - Added compatibility with Grafana 10.2.1.
 
 :::info Grafana Plugins catalog
-The plugin is under review.
+The plugin was updated in Grafana Catalog on November 21, 2023.
 :::
 
 ## 4.4 million downloads
@@ -36,9 +36,9 @@ More than four million downloads as of today! Thank you for your trust!
 
 ## JavaScript code after content ready
 
-This is a new parameter to specify another JavaScript code. This one will be executed after the **Content** option runs.
+This is a new panel option to specify another JavaScript code. This one will be executed after the **Content** option rendered.
 
-Another important change to point out is we reorganized the UI positioning of code options for a more intuitive display.
+Another important change to point out is we reorganized the UI positioning of panel options for a more intuitive display.
 
 Starting from this release, you see separate sections for:
 
@@ -47,50 +47,49 @@ Starting from this release, you see separate sections for:
 - CSS styles.
 
 <Image
-  title="New order of the coding parameters."
+  title="New order of the panel options."
   src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order.png"
-  lazy={false}
 />
 
 For a cleaner view, you can control which options are visible in the **Dynamic Text** section.
 
 <Image
-  title="Show/hide the parameters you need using the Dynamic Text section."
+  title="Show/hide the options you need using the Dynamic Text section."
   src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/show-hide.png"
-  lazy={false}
 />
 
-Below are two schemas of the rendering order in the Dynamic text plugin. They represent the same thing. The first is oriented toward a general public and the second is targeted to answer developers' questions.
+## The Rendering Order
 
-### The Rendering Order General
+Below are two schemas of the rendering order in the Dynamic text plugin. They represent the same thing.
+
+The first is oriented toward a general public and the second is targeted to answer developers' questions.
+
+### For Users
 
 <Image
-  title="The Rendering Order General."
+  title="The Rendering Order for Users."
   src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order-all.png"
-  lazy={false}
 />
 
-### The Rendering Order for Developers
+### For Developers
 
 <Image
   title="The Rendering Order for Developers."
   src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order-dev.png"
-  lazy={false}
 />
 
 ## Content Wrapping
 
 We added a new option **Wrap automatically in paragraphs** into the **Content** section.
 
-- If enabled, every row of the content will be wrapped into paragraph (p) tags.
-- If disabled, every row will NOT be wrapped into paragraph (p) tags.
+- If enabled, every row of the content will be wrapped into paragraph `<p>` tags.
+- If disabled, every row will NOT be wrapped into paragraph `<p>` tags.
 
 The example below shows the Content that does not contain any spaces. In that event, the new parameter is irrelevant and both Enabled and Disabled modes generate the same output.
 
 <Image
   title="No spaces in the Content, the wrap parameter is irrelevant. The dashboard looks as expected for both, Enabled and Disabled, modes."
   src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/no-empty-lines.png"
-  lazy={false}
 />
 
 The example below shows the Content that contains one empty line and how the form will be interpreted with Enabled and Dispaled modes.
@@ -98,7 +97,6 @@ The example below shows the Content that contains one empty line and how the for
 <Image
   title="The wrap option effect on the Content with space in it."
   src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/yes-empty-lines.png"
-  lazy={false}
 />
 
 The code used in the examples above:
@@ -114,7 +112,7 @@ The code used in the examples above:
 
 ## New handlebars
 
-In the **JavaScript->before rendering content** option a user can describe(register) handlebars which are functions to use in the rest of the code.
+In the **JavaScript->before rendering content** option a user can register handlebars which are functions to use in the rest of the code.
 
 The Dynamic Text panel has plenty of predefined handlebars that are registered automatically and ready to use. All of them are listed on our [documentation page](/plugins/volkovlabs-dynamictext-panel/helpers/).
 
