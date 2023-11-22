@@ -13,9 +13,9 @@ import Video from "@theme/Video";
 
 We're excited to announce the release of the Dynamic Text Panel 4.2.0. This feature release includes the following updates:
 
-- Added custom code option which is called after content is ready.
-- Add option to enabled/disable wrapping to support empty lines in HTML.
-- Add handlebars (startsWith, endsWith, match).
+- Added **JavaScript->After Content Ready** option to execute after the code in the content is run.
+- Added an option to enable/disable text wrapping to support empty lines in HTML.
+- Added handlebars (startsWith, endsWith, match).
 - Added compatibility with Grafana 10.2.1.
 
 :::info Grafana Plugins catalog
@@ -24,27 +24,145 @@ The plugin is under review.
 
 ## 4.4 million downloads
 
-We celebrated 2 million downloads in February. The panel's adaptability has been extremely accelerated since then.
+We celebrated 2 million downloads this February. Since then many more fundamental features have been added like JavaScript, CSS styles and Grafana events. We suspect them to be the primary reason for the extreme adaptability acceleration. 
 
-JavaScript code, a CSS style editor, and Grafana events offer functionalities that no native or community plugin has yet to provide.
+More than four million downloads as of today! Thank you for your trust!
 
 <Image
-  title="Dynamic Text Panel was downloaded more than three million times."
-  src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"
+  title="Dynamic Text Panel was downloaded more than four million times."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/downloads.png"
   lazy={false}
 />
 
 ## JavaScript code after content ready
 
+This is a new parameter to specify another JavaScript code. This one will be executed after the **Content** option runs. 
+
+Another important change to point out is we reorganized the UI positioning of code options for a more intuitive display. 
+
+Starting from this release, you see separate sections for:
+ - Content (with Content and Default content inside),
+ - JavaScript (with the Before and After rendering options inside),
+ - CSS styles.
+
 <Image
-  title="Loading Google Material CSS and JS files from an external resource."
-  src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/external.png"
+  title="New order of the coding parameters."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order.png"
+  lazy={false}
+/>
+
+For a cleaner view, you can control which options are visible in the **Dynamic Text** section.
+
+<Image
+  title="Show/hide the parameters you need using the Dynamic Text section."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/show-hide.png"
+  lazy={false}
+/>
+
+Below are two schemas of the rendering order in the Dynamic text plugin. They represent the same thing. The first is oriented toward a general public and the second is targeted to answer developers' questions. 
+
+### The Rendering Order General
+
+<Image
+  title="The Rendering Order General."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order-all.png"
+  lazy={false}
+/>
+
+### The Rendering Order for Developers
+
+<Image
+  title="The Rendering Order for Developers."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order-dev.png"
   lazy={false}
 />
 
 ## Content Wrapping
 
+We added a new option **Wrap automatically in paragraphs** into the **Content** section.
+
+- If enabled, every row of the content will be wrapped into paragraph (p) tags.
+- If disabled, every row will NOT be wrapped into paragraph (p) tags.
+
+The example below shows the Content that does not contain any spaces. In that event, the new parameter is irrelevant and both Enabled and Disabled modes generate the same output.
+
+<Image
+  title="No spaces in the Content, the wrap parameter is irrelevant. The dashboard looks as expected for both, Enabled and Disabled, modes."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/no-empty-lines.png"
+  lazy={false}
+/>
+
+The example below shows the Content that contains one empty line and how the form will be interpreted with Enabled and Dispaled modes.
+
+<Image
+  title="The wrap option effect on the Content with space in it."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/yes-empty-lines.png"
+  lazy={false}
+/>
+
+The code used in the examples above:
+
+```html
+<figure>
+<ul>
+  <li> In Progress : 34 </li>
+  <li> Completed : 5 </li>
+</ul>
+</figure>
+```
+
 ## New handlebars
+
+In the **JavaScript->before rendering content** option a user can describe(register) handlebars which are functions to use in the rest of the code. 
+
+The Dynamic Text panel has plenty of predefined handlebars that are registered automatically and ready to use. All of them are listed on our [documentation page](/plugins/volkovlabs-dynamictext-panel/helpers/). 
+
+In this release, we added three more:
+
+### startsWith
+
+Returns true if the variable starts with a specified value. 
+Example:
+
+```handlebars
+|Name| My Value|
+|---|---|
+{{#each @root}}
+{{#if (startsWith @key "My_")}}
+| {{@key}} | {{this}}  |
+{{/if}}
+{{/each}}
+```
+
+### endsWith
+
+Returns true if the variable ends with a specified value. 
+Example:
+
+```handlebars
+|Name| My Keys|
+|---|---|
+{{#each @root}}
+{{#if (endsWith @key "_key")}}
+| {{@key}} | {{this}}  |
+{{/if}}
+{{/each}}=
+```
+
+### match
+
+Returns true if the variable matches with a specified value. 
+Example:
+
+```handlebars
+|Key| Value|
+|---|---|
+{{#each @root}}
+{{#if (match @key "^(Country|Street|Post)")}}
+| {{@key}} | {{this}}  |
+{{/if}}
+{{/each}}
+```
 
 ## Getting Started
 
@@ -58,18 +176,37 @@ grafana-cli plugins install marcusolsson-dynamictext-panel
 
 ## YouTube Tutorial
 
-Dynamic Text Panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. You can use variables, Markdown, and Handlebars to customize the look of the outputted cards.
+The Dynamic Text panel is a mighty Grafana plugin to convert any monotonous bulk of data into vibrant, effortlessly comprehended visualization.
 
-The Dynamic Text Panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.
+To this moment, I have created three videos. The latest one describes more features as more features have been implemented to the day of creation. 
+Yet, the latest Dynamic Text plugin version is far more advanced with numerous new features implemented since August. 
+
+### Video 3, published on August 15, 2023
+
+In this video, I touch upon the main features and panel options along with demonstrating community use cases. 
 
 <Video
-  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
-  title="Markdown, HTML, and Handlebars for transforming data visualizations."
+  src="https://www.youtube.com/embed/AcQi-6GCrNU"
+  title="Dynamic Text plugin for Grafana | Use HTML, Markdown, JavaScript and CSS | Community use cases."
 />
+
+### Video 2, published on January 29, 2023
+
+Since the latest release, the community has requested many changes. This video outlines all the new features we implemented, including the most asked-for JavaScript area code. 
 
 <Video
   src="https://www.youtube.com/embed/lJqk5Gobec4"
   title="JavaScript code in Dynamic Text Panel."
+/>
+
+### Video 1, published on October 24, 2022
+
+This is the first guide we created for the Dynamic Text plugin for Grafana. 
+The plugin does a fantastic job by transforming bland table data into vibrant, readable visualization emphasizing critical tidbits. 
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML, and Handlebars for transforming data visualizations."
 />
 
 ## Release Notes
