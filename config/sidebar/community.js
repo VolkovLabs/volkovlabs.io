@@ -156,18 +156,25 @@ const community = {
           id: "volkovlabs-dynamictext-panel/index",
           label: "Introduction",
         },
-        "volkovlabs-dynamictext-panel/content",
+        {
+          items: [
+            "volkovlabs-dynamictext-panel/external",
+            "volkovlabs-dynamictext-panel/code",
+            "volkovlabs-dynamictext-panel/styles",
+          ],
+          label: "Rendering",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-dynamictext-panel/content",
+          },
+        },
         "volkovlabs-dynamictext-panel/recipes",
         {
           items: [
-            "volkovlabs-dynamictext-panel/data",
-            "volkovlabs-dynamictext-panel/code",
             "volkovlabs-dynamictext-panel/helpers",
             "volkovlabs-dynamictext-panel/eventbus",
-            "volkovlabs-dynamictext-panel/external",
-            "volkovlabs-dynamictext-panel/diagram",
             "volkovlabs-dynamictext-panel/status",
-            "volkovlabs-dynamictext-panel/styles",
             "volkovlabs-dynamictext-panel/variables",
           ],
           label: "Features",

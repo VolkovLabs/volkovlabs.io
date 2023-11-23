@@ -9,7 +9,11 @@ import Video from "@theme/Video";
 
 # Helpers
 
-Helpers are functions that allow you to perform basic text transformations within your template.
+Helpers, sometimes called handlebars, are functions that allow you to perform basic text transformations within your template.
+
+In the **JavaScript->before rendering content** option a user can register custom handlebars.
+
+The Dynamic Text panel has plenty of predefined handlebars that are registered automatically and ready to use. 
 
 ## `{{contains}}`
 
@@ -136,4 +140,46 @@ Formats the given number using a fixed-point notation.
 {{toFixed Value 2}}
 
 <!-- result: '1.12' -->
+```
+
+## `{{startsWith}}`
+
+Returns true if the variable starts with a specified value.
+Example:
+
+```handlebars
+|Name| My Value| |---|---|
+{{#each @root}}
+{{#if (startsWith @key "My_")}}
+| {{@key}} | {{this}} |
+{{/if}}
+{{/each}}
+```
+
+## `{{endsWith}}`
+
+Returns true if the variable ends with a specified value.
+Example:
+
+```handlebars
+|Name| My Keys| |---|---|
+{{#each @root}}
+{{#if (endsWith @key "_key")}}
+| {{@key}} | {{this}} |
+{{/if}}
+{{/each}}=
+```
+
+## `{{match}}`
+
+Returns true if the variable matches with a specified value.
+Example:
+
+```handlebars
+|Key| Value| |---|---|
+{{#each @root}}
+{{#if (match @key "^(Country|Street|Post)")}}
+| {{@key}} | {{this}} |
+{{/if}}
+{{/each}}
 ```

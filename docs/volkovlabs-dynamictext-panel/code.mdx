@@ -86,7 +86,7 @@ myFunc = () => {
 
 ## Internationalization
 
-Grafana 9 offers internationalization, which plugins do not yet have full access to.
+Grafana 9 and up offers internationalization, which most of the plugins do not yet have full access to.
 
 Meanwhile, you can use the `getLocale()` method to get a value for the chosen locale and display terms from a defined dictionary.
 
@@ -117,7 +117,14 @@ This code snippet uses the `translate` helper to show the translation of a defau
 
 You can display the selected dashboard, browser's time zone, and time ranges in Grafana.
 
+<Image
+  title="Dynamic Text Panel allows displaying an updated time zone and time ranges in Grafana."
+  src="/img/plugins/volkovlabs-dynamictext-panel/time.png"
+/>
+
 ### Content
+
+Use the following for the **Content**
 
 ````
 <h2>Dashboard {{tz}}</h1>
@@ -130,16 +137,13 @@ You can display the selected dashboard, browser's time zone, and time ranges in 
 
 ### JavaScript Code
 
+Use the following for the **JavaScript->Before Content Rendering**
+
 ```
 handlebars.registerHelper('tz', () => timeZone);
 handlebars.registerHelper('range', () => timeRange);
 handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions().timeZone);
 ```
-
-<Image
-  title="Dynamic Text Panel allows displaying an updated time zone and time ranges in Grafana."
-  src="/img/plugins/volkovlabs-dynamictext-panel/time.png"
-/>
 
 ## Automatic scrolling
 
@@ -151,6 +155,8 @@ If the table does not fit into the allocated panel area, you can add automatic s
 />
 
 ### Content
+
+Use the following for the **Content**:
 
 ```html
 <table id="dataTable" width="100%">
@@ -171,10 +177,17 @@ If the table does not fit into the allocated panel area, you can add automatic s
 
 ### JavaScript Code
 
+Use the following for the **JavaScript->Before Content Rendering**:
+
+<details>
+  <summary>JavaScript for autoscrolling</summary>
+
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/js/scroll.js"
   language="js"
 />
+
+</details>
 
 ## Unique values
 
@@ -182,11 +195,15 @@ You can sort out unique values from the `data` object using the `unique` helper 
 
 ### Content
 
+Use the following for the **Content**:
+
 ```html
 <div>{{#each (unique data "hostname.keyword")}}{{this}}; {{/each}}</div>
 ```
 
 ### JavaScript Code
+
+Use the following for the **JavaScript->Before Content Rendering**:
 
 ```js
 handlebars.registerHelper("unique", (context, key) => {
@@ -202,3 +219,72 @@ You can use the `replaceVariables` function to replace dashboard variables in th
 const bonjour = replaceVariables("${variable}");
 console.log(bonjour.toUpperCase())
 ```
+
+## REST API 
+
+Dynamic Text Plugin submits REST API request.
+
+<Image
+  title="Dynamic Text Plugin submits REST API request."
+  src="/img/plugins/volkovlabs-dynamictext-panel/rest.png"
+/>
+
+### Content
+
+Into the **Content**:
+
+```html
+<form id="myForm">
+  <input name="firstName" />
+  <input name="lastName" />
+
+  <button>submit</button>
+</form>
+```
+
+### JavaScript Code
+
+Into the **JavaScript->After Content Ready**
+
+<details>
+  <summary>JavaScript to submit REST request</summary>
+
+```js
+/**
+ * Form Element
+ */
+const form = document.querySelector('#myForm');
+
+/**
+ * Handle Submit
+ */
+const handleSubmit = (event) => {
+  /**
+   * Prevent Default submition
+   */
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+  
+  console.log(data);
+  /**
+   * Result: { firstName: '', lastName: '' }
+   */
+
+  /**
+   * Your request to send form
+   */
+  fetch('url', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+}
+
+form.addEventListener('submit', handleSubmit)
+
+return () => {
+  form.removeEventListener('submit', handleSubmit)
+}
+```
+</details>

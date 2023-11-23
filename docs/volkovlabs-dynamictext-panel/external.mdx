@@ -9,7 +9,7 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# External JS and CSS
+# External JavaScript and CSS
 
 :::info Version
 
@@ -19,6 +19,8 @@ Dynamic Text Panel supports the external resources starting from version 4.1.0.
 
 Dynamic Text Panel enables the loading of additional JavaScript and CSS resources using external URLs like CDN (Content Delivery Network).
 
+Use that functionality to include additional visual elements and execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+
 To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance.
 
 <Image
@@ -27,30 +29,95 @@ To prevent the loading of third-party URLs, you can store CSS and JS files in th
   lazy={false}
 />
 
-## Sanitization
+:::info Sanitization
 
 You need to disable the sanitization configuration to see external resources in the plugin options.
 
-## JavaScript Code
+:::
 
-You can use external CSS and JS files to include additional visual elements and execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+## Manual scripts
 
-## Plotly 3D Scatter
+In the event when a library can not be referenced as an external script, you always can reference and initiate it directly in the **JavaScript->After Content Ready**
 
-You can visualize Plotly's 3D Scatter chart by loading the external JS library from `https://cdn.plot.ly/plotly-2.24.1.min.js` and adding a JavaScript code snippet.
+<Image
+  title="Alternative way to load an external llibrary."
+  src="/img/plugins/volkovlabs-dynamictext-panel/alt.png"
+  lazy={false}
+/>
+
+#### Code to copy
+
+Into the **Content**:
+
+```diagramm
+<pre class="mermaid">
+    graph LR
+    A --- B
+    B-->C[fa:fa-ban {{data.0.test}}]
+    B-->D(fa:fa-spinner);
+</pre>
+```
+
+Into the **JavaScript->After Content Ready**:
+
+```js
+const script = document.createElement('script');
+
+script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js';
+
+document.body.appendChild(script);
+
+mermaid.initialize({ startOnLoad: true });
+
+mermaid.run({
+  querySelector: '.mermaid',
+  suppressErrors: false,
+});
+```
+
+## External JavaScript resources
+
+Below you can find a collection of breathtaking use cases for the external JavaScript resources in the Dynamic Text plugin. 
+
+### Plotly 3D Scatter
 
 Thanks to our community member [yosiasz](https://github.com/yosiasz) for the provided solution.
 
+Use the following external Plotly's 3D Scatter chart library:
+
+```md
+ https://cdn.plot.ly/plotly-2.24.1.min.js
+```
+
+:::info
+
+Grafana's edit mode might prevent displaying Plotly charts. Save and check the result on the dashboard.
+
+:::
+
+You can run this example in two ways:
+ - inserting the provided code from the below into the Default content
+ - inserting the provided code from the below into the Content
+
+#### Use the Default Content
+
 <Image
-  title="Loading Plotly library and adding content with JavaScript code."
-  src="/img/plugins/volkovlabs-dynamictext-panel/external-plotly.png"
+  title="Option 1. Use that option when the data source is set to return nothing."
+  src="/img/plugins/volkovlabs-dynamictext-panel/plotly-1.png"
   lazy={false}
-  width="60%"
 />
 
-Grafana's edit mode may prevent displaying the Plotly chart in the edit mode. Save and check the result on the dashboard.
+#### Use the Content
 
-### Content
+<Image
+  title="Option 2. Use that option when the data source is set to return something."
+  src="/img/plugins/volkovlabs-dynamictext-panel/plotly-2.png"
+  lazy={false}
+/>
+
+#### Code to copy
+
+Into the **Content** or **Default Content**:
 
 ```html
 <body>
@@ -60,16 +127,121 @@ Grafana's edit mode may prevent displaying the Plotly chart in the edit mode. Sa
 </body>
 ```
 
-<Image
-  title="3D Scatter chart visualized with Plotly, an external JavaScript library."
-  src="/img/plugins/volkovlabs-dynamictext-panel/plotly.png"
-  lazy={false}
-  width="60%"
-/>
+Into the **JavaScript->Before Content Rendering**:
 
-### JavaScript Code
+<details>
+  <summary>JavaScript code for Plotly example</summary>
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/js/plotly.js"
   language="js"
 />
+</details>
+
+
+### Mermaid
+
+Mermaid is a popular JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams using Markdown-defined text definitions.
+
+:::info
+
+Previously we maintained two Dynamic Text plugin builds. One with embedded Mermaid Library and the other without. The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply load it as an external resource. 
+
+:::
+
+<Image
+  title="Mermaid diagrams displayed using the Dynamic Text Panel plugin."
+  src="/img/plugins/volkovlabs-dynamictext-panel/diagram.png"
+/>
+
+#### Example
+
+<Image
+  title="Mermaid diagrams example."
+  src="/img/plugins/volkovlabs-dynamictext-panel/mer.png"
+/>
+
+Use the following external library 
+
+```md
+https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
+```
+#### Code to copy
+
+Use the following for the **Content** (when your data source is set to return something) or in the **Default Content** (when your data source returns nothing):
+
+```diagram
+flowchart LR
+<pre class="mermaid">
+    graph LR
+    A --- B
+    B-->C[fa:fa-ban {{data.0.test}}]
+    B-->D(fa:fa-spinner);
+</pre>
+```
+
+Use the following for the **JavaScript->After Content Ready**:
+
+```js
+mermaid.initialize({ startOnLoad: true });
+
+mermaid.run({
+  querySelector: '.mermaid',
+  suppressErrors: false,
+});
+```
+
+### Chart.js 
+
+Chart.js is one of the popular open-source charting libraries. The Dynamic Text plugin makes using chart.js in Grafana possible!
+
+<Image
+  title="Chart.js diagrams displayed using the Dynamic Text Panel plugin."
+  src="/img/plugins/volkovlabs-dynamictext-panel/chartjs-examples.png"
+/>
+
+#### Example
+
+<Image
+  title="Chart.js diagram example."
+  src="/img/plugins/volkovlabs-dynamictext-panel/chartjs.png"
+/>
+
+Use the following external library 
+
+```md
+https://cdn.jsdelivr.net/npm/chart.js
+```
+#### Code to copy
+
+Use the following for the **Content**:
+
+```js
+<canvas id="myChart"></canvas>
+```
+
+Use the following for the **JavaScript->After Content Ready**:
+
+```js
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+```
+
