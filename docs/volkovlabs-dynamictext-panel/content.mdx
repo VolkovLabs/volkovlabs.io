@@ -9,8 +9,8 @@ import Video from "@theme/Video";
 
 # Rendering
 
-There are two main concepts to comprehend for the successful use of the Dynamic Text plugin. 
-The first is **Render Template** and the second is rendering order. 
+There are two main concepts to comprehend for the successful use of the Dynamic Text plugin.
+The first is **Render Template** and the second is rendering order.
 
 ## Render Template
 
@@ -24,7 +24,7 @@ The **Render Template** option instructs the Dynamic Text plugin on how to apply
 - **Every row**. The template will be applied to every row returned by your query. Your template is rendered as many times as rows are fetched.
 - **All rows**. The query results are passed as a single `data` field to the **Content** template. Your template is rendered once. To work with query results as a whole, you can use [#each builtin helper](../recipes/#iterate-through-all-fields-in-each-record) to iterate through records.
 
-Below you can find some examples to illustrate further. 
+Below you can find some examples to illustrate further.
 
 ### Every row
 
@@ -55,7 +55,7 @@ Link: <a href="https://{{cluster}}.example.com/{{app}}">https://{{cluster}}.exam
 
 ### All rows
 
-For instance, your data source returns a table with multiple rows as follows. To mimic that in the example below, the Static data source is used. 
+For instance, your data source returns a table with multiple rows as follows. To mimic that in the example below, the Static data source is used.
 
 ```md
 | title | author        | year |
@@ -112,8 +112,9 @@ To reference a specific data element in your templates, use double or triple cur
 ### Reference field names with spaces
 
 Field names with spaces should be declared as:
- - `{{[Field Name]}}` where the field name is surrounded by brackets,
- - `{{'Field Name'}}` where the field name is surrounded by quotes.
+
+- `{{[Field Name]}}` where the field name is surrounded by brackets,
+- `{{'Field Name'}}` where the field name is surrounded by quotes.
 
 <Image
   title="Display fields with spaces."

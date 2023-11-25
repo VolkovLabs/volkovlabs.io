@@ -220,7 +220,7 @@ const bonjour = replaceVariables("${variable}");
 console.log(bonjour.toUpperCase())
 ```
 
-## REST API 
+## REST API
 
 Dynamic Text Plugin submits REST API request.
 
@@ -253,7 +253,7 @@ Into the **JavaScript->After Content Ready**
 /**
  * Form Element
  */
-const form = document.querySelector('#myForm');
+const form = document.querySelector("#myForm");
 
 /**
  * Handle Submit
@@ -266,7 +266,7 @@ const handleSubmit = (event) => {
 
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
-  
+
   console.log(data);
   /**
    * Result: { firstName: '', lastName: '' }
@@ -275,16 +275,17 @@ const handleSubmit = (event) => {
   /**
    * Your request to send form
    */
-  fetch('url', {
-    method: 'POST',
-    body: JSON.stringify(data)
-  })
-}
+  fetch("url", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+};
 
-form.addEventListener('submit', handleSubmit)
+form.addEventListener("submit", handleSubmit);
 
 return () => {
-  form.removeEventListener('submit', handleSubmit)
-}
+  form.removeEventListener("submit", handleSubmit);
+};
 ```
+
 </details>
