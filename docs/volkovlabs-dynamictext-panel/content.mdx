@@ -7,22 +7,121 @@ image: /img/plugins/volkovlabs-dynamictext-panel/rendering-schema.png
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Content
+# Rendering
 
-In the code editor, you can define the parsing commands, or let's say, define a visualization template for your data. To reference specific data elements in your templates, use double or triple curly braces.
+There are two main concepts to comprehend for the successful use of the Dynamic Text plugin.
+The first is **Render Template** and the second is rendering order.
 
-To display a value from the `app` field, use the following syntax:
+## Render Template
+
+<Image
+  title="Select one of the two available options for the Render Template parameter."
+  src="/img/plugins/volkovlabs-dynamictext-panel/render-template.png"
+/>
+
+The **Render Template** option instructs the Dynamic Text plugin on how to apply your template to the fetched data frame.
+
+- **Every row**. The template will be applied to every row returned by your query. Your template is rendered as many times as rows are fetched.
+- **All rows**. The query results are passed as a single `data` field to the **Content** template. Your template is rendered once. To work with query results as a whole, you can use [#each builtin helper](../recipes/#iterate-through-all-fields-in-each-record) to iterate through records.
+
+Below you can find some examples to illustrate further.
+
+### Every row
+
+For instance, your data source returns a four-column table as follows. To mimic that in the example below, the [Static data source](/plugins/volkovlabs-static-datasource) is used.
+
+```md
+| app  | description                  | cluster | tier     |
+| ---- | ---------------------------- | ------- | -------- |
+| auth | Handles user authentication. | prod    | frontend |
+```
+
+You can apply the following template for each row to display data.
+
+```md
+# {{app}}
+
+> {{description}}
+
+{{#if (eq tier "frontend")}}
+Link: <a href="https://{{cluster}}.example.com/{{app}}">https://{{cluster}}.example.com/{{app}}</a>
+{{/if}}
+```
+
+<Image
+  title="Every row option example. Display fetched data using Handlebars, Markdown, and HTML."
+  src="/img/plugins/volkovlabs-dynamictext-panel/every.png"
+/>
+
+### All rows
+
+For instance, your data source returns a table with multiple rows as follows. To mimic that in the example below, the [Static data source](/plugins/volkovlabs-static-datasource) is used.
+
+```md
+| title | author        | year |
+| ----- | ------------- | ---- |
+| Dune  | Frank Herbert | 1965 |
+| 1984  | George Orwell | 1949 |
+```
+
+With the **All rows** option selected, your template might look like this:
+
+```
+| Title | Author | Year |
+| ----- | ------ | ---- |
+{{#each data}}
+| {{title}} | {{author}} | {{year}} |
+{{/each}}
+```
+
+<Image
+  title="All rows option example. Visualize returned data as a table using #each helper."
+  src="/img/plugins/volkovlabs-dynamictext-panel/all.png"
+/>
+
+## Rendering Order
+
+Below are two schemas of the rendering order in the Dynamic text plugin. They represent the same thing.
+
+The first is oriented toward the general public and the second is targeted to answer developers' questions.
+
+### For Users
+
+<Image
+  title="The Rendering Order for Users."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order-all.png"
+/>
+
+### For Developers
+
+<Image
+  title="The Rendering Order for Developers."
+  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/order-dev.png"
+/>
+
+## Rendering details
+
+### Reference a specific data element
+
+To reference a specific data element in your templates, use double or triple curly braces. For instance, for the extracted `app` data field, use the following syntax:
 
 ```handlebars
 {{app}}
 ```
 
-The **Render template** toggle allows you to define how the template is applied:
+### Reference field names with spaces
 
-- **Every row** - a template is applied to each row in particular within the queried dataset.
-- **All rows** - a template is applied to the entire dataset.
+Field names with spaces should be declared as:
 
-## Render HTML from data
+- `{{[Field Name]}}` where the field name is surrounded by brackets,
+- `{{'Field Name'}}` where the field name is surrounded by quotes.
+
+<Image
+  title="Display fields with spaces."
+  src="/img/plugins/volkovlabs-dynamictext-panel/space.png"
+/>
+
+### Render HTML from data
 
 If you want to render HTML markup returned by the data source, you need to use triple curly braces with the element reference within it like `{{{htmlValue}}}`, otherwise Handlebars escapes your HTML content.
 
@@ -39,31 +138,13 @@ where `htmlValue` is
 <li>bar</li>
 ```
 
-## Reference field names with spaces
-
-Field names with spaces should be declared as `{{[Field Name]}}` or `{{'Field Name'}}`
-
-<Image
-  title="Display fields with spaces."
-  src="/img/plugins/volkovlabs-dynamictext-panel/fields.png"
-/>
-
-## Default content
+### Default content
 
 The default content is displayed if the connected data source returns no data. You can use it to provide users with instructions on what to do or who to contact when the query returns an empty result.
 
 Even though your data source returns no data, you can still use the available [helpers](/plugins/volkovlabs-dynamictext-panel/helpers).
 
-## The rendering order
-
-The content is rendered by the plugin in the following order: Handlebars > Markdown > Sanitized HTML (unless disabled), followed by the final result.
-
-<Image
-  title="Dynamic Text Panel: rendering order."
-  src="/img/plugins/volkovlabs-dynamictext-panel/rendering-schema.png"
-/>
-
-## HTML sanitization
+### HTML sanitization
 
 HTML sanitization is enabled by default, which makes some elements like `<button>` unavailable in the content editor.
 
