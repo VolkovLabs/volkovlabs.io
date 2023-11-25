@@ -61,23 +61,23 @@ Into the **Content**:
 Into the **JavaScript->After Content Ready**:
 
 ```js
-const script = document.createElement('script');
+const script = document.createElement("script");
 
-script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js';
+script.src = "https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js";
 
 document.body.appendChild(script);
 
 mermaid.initialize({ startOnLoad: true });
 
 mermaid.run({
-  querySelector: '.mermaid',
+  querySelector: ".mermaid",
   suppressErrors: false,
 });
 ```
 
 ## External JavaScript resources
 
-Below you can find a collection of breathtaking use cases for the external JavaScript resources in the Dynamic Text plugin. 
+Below you can find a collection of breathtaking use cases for the external JavaScript resources in the Dynamic Text plugin.
 
 ### Plotly 3D Scatter
 
@@ -86,7 +86,7 @@ Thanks to our community member [yosiasz](https://github.com/yosiasz) for the pro
 Use the following external Plotly's 3D Scatter chart library:
 
 ```md
- https://cdn.plot.ly/plotly-2.24.1.min.js
+https://cdn.plot.ly/plotly-2.24.1.min.js
 ```
 
 :::info
@@ -96,8 +96,9 @@ Grafana's edit mode might prevent displaying Plotly charts. Save and check the r
 :::
 
 You can run this example in two ways:
- - inserting the provided code from the below into the Default content
- - inserting the provided code from the below into the Content
+
+- inserting the provided code from the below into the Default content
+- inserting the provided code from the below into the Content
 
 #### Use the Default Content
 
@@ -138,14 +139,13 @@ Into the **JavaScript->Before Content Rendering**:
 />
 </details>
 
-
 ### Mermaid
 
 Mermaid is a popular JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams using Markdown-defined text definitions.
 
 :::info
 
-Previously we maintained two Dynamic Text plugin builds. One with embedded Mermaid Library and the other without. The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply load it as an external resource. 
+Previously we maintained two Dynamic Text plugin builds. One with embedded Mermaid Library and the other without. The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply load it as an external resource.
 
 :::
 
@@ -161,11 +161,12 @@ Previously we maintained two Dynamic Text plugin builds. One with embedded Merma
   src="/img/plugins/volkovlabs-dynamictext-panel/mer.png"
 />
 
-Use the following external library 
+Use the following external library
 
 ```md
 https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
 ```
+
 #### Code to copy
 
 Use the following for the **Content** (when your data source is set to return something) or in the **Default Content** (when your data source returns nothing):
@@ -186,12 +187,12 @@ Use the following for the **JavaScript->After Content Ready**:
 mermaid.initialize({ startOnLoad: true });
 
 mermaid.run({
-  querySelector: '.mermaid',
+  querySelector: ".mermaid",
   suppressErrors: false,
 });
 ```
 
-### Chart.js 
+### Chart.js
 
 Chart.js is one of the popular open-source charting libraries. The Dynamic Text plugin makes using chart.js in Grafana possible!
 
@@ -207,11 +208,12 @@ Chart.js is one of the popular open-source charting libraries. The Dynamic Text 
   src="/img/plugins/volkovlabs-dynamictext-panel/chartjs.png"
 />
 
-Use the following external library 
+Use the following external library
 
 ```md
 https://cdn.jsdelivr.net/npm/chart.js
 ```
+
 #### Code to copy
 
 Use the following for the **Content**:
@@ -223,25 +225,26 @@ Use the following for the **Content**:
 Use the following for the **JavaScript->After Content Ready**:
 
 ```js
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById("myChart");
 
 new Chart(ctx, {
-  type: 'bar',
+  type: "bar",
   data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1,
+      },
+    ],
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true
-      }
-    }
-  }
+        beginAtZero: true,
+      },
+    },
+  },
 });
 ```
-
