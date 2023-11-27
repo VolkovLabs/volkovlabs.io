@@ -83,6 +83,10 @@ const footer = {
           href: "/blog/",
         },
         {
+          label: "Business Intelligence",
+          href: "/big/",
+        },
+        {
           label: "Grafana Crash Course",
           href: "/grafana/",
         },

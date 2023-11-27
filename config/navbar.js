@@ -18,14 +18,20 @@ const navbar = {
     {
       to: "/plugins/",
       position: "left",
-      label: "Documentation",
-      "aria-label": "Documentation",
+      label: "Plugins",
+      "aria-label": "Plugins",
     },
     {
       to: "/grafana/",
       position: "left",
       label: "Grafana Crash Course",
       "aria-label": "Grafana",
+    },
+    {
+      to: "/big/",
+      position: "left",
+      label: "Business Intelligence",
+      "aria-label": "Business Intelligence",
     },
     {
       to: "/support/",
