@@ -1,0 +1,84 @@
+---
+authors: [daria]
+slug: big-1.2.0-20231127/
+tags: [Business Intellignce, Release Notes]
+image: /img/blog/2023-11-27-big-1.2.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Video from "@theme/Video";
+
+# Business Intelligence for Grafana 1.2.0
+
+We're excited to announce the release of the Proof of Concept project Business Intelligence 1.2.0. This release includes the following updates:
+
+- Improved Alerting panel.
+- Added testing webhooks.
+- Added Regex Patterns for alerts.
+
+## Proof of Concept
+
+Business Intelligence for Grafana is a Proof of Concept project with an expected launch in January 2024.
+
+<Image title="Business Intelligence for Grafana." src="/img/big/concept.png" />
+
+## Visual improvements
+
+<Image
+  title="Visual Improvements."
+  src="/img/blog/2023-11-27-big-1.2.0/dashboard.png"
+/>
+
+## Testing Webhooks
+
+## Regex Pattern
+
+## Getting Started
+
+You can download the Proof of Concept from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana).
+
+### Docker Compose
+
+The `docker-compose.yml` file consists of the following containers:
+
+- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and an demo dashboard.
+- **Timescale** is required to store configuration, events, rules, etc.
+- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
+- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
+- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
+- **Data Generator** generate test data for threshold evaluating in the demo dashboard.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
+  language="yaml"
+/>
+
+### Start
+
+When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.
+
+```
+docker compose pull && docker compose up
+```
+
+### Stop
+
+```
+docker compose down
+```
+
+## Release Notes
+
+### Features / Enhancements
+
+- Initial Proof of Concept (POC) release for testing.
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
