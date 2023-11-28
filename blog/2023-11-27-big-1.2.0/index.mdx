@@ -8,8 +8,6 @@ keywords: [Business Intelligence, Alerting, Grafana]
 
 import Code from "@theme/Code";
 import Image from "@theme/Image";
-import Shorts from "@theme/Shorts";
-import Video from "@theme/Video";
 
 # Business Intelligence for Grafana 1.2.0
 
@@ -22,13 +20,13 @@ This release includes the following updates:
 
 ## Proof of Concept
 
-Business Intelligence App for Grafana is a proof-of-concept project with an expected launch in January 2024. It includes the following five components:
+Business Intelligence App is a proof-of-concept project with an expected launch in January 2024. It will include the following components:
 
-- Dashboard management,
-- High performance,
-- Reporting,
 - Alerting,
-- Forecasting.
+- High performance Engine,
+- Reporting (Q1 2024),
+- Dashboard management (Q1 2024),
+- Forecasting (Q2 2024).
 
 <Image
   title="Business Intelligence for Grafana. Our BI(G) project."
@@ -39,64 +37,62 @@ Business Intelligence App for Grafana is a proof-of-concept project with an expe
 
 The latest version of the Alerting panel is depicted below. This panel is designed to simplify work with alerts by having all controls in one place and having an intuitive order of configuration settings.
 
-The creation logic follows the Grafana [alerting basics](link)
+The creation logic follows the Grafana [alerting basics](/big/alerting-vs-big/).
 
 ### Alert card
 
-Every alert on the Alerting panel has a sleek card with the title, the panel name it should be displayed on, schedule details, statuses and action buttons.
+Every alert on the Alerting panel has a sleek card with the title, the panel name it's evaluating, schedule details, statuses and action buttons.
 
 <Image
   title="Alert card components."
   src="/img/blog/2023-11-27-big-1.2.0/alert-card.png"
 />
 
-#### Statuses
+### Statuses
 
 There are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**.
 
 And the other status might be one of the four values:
 
 - **Scheduled**. The alert is scheduled, but never run yet.
-- **OK**. The alert has been run and the thresholds are NOT breached and the regex pattern is NOT found.
+- **OK**. The alert has been run and the thresholds are NOT breached or the regex pattern is NOT found.
 - **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.
-- **Error**. Something is wrong which could be the query, annotation or webhook.
+- **Error**. Something is wrong, which could be the query, annotation or webhook.
 
-Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused.
-After any change, the alert status changes to **Scheduled**.
+Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any change, the alert status changes to **Scheduled**.
 
-#### Action buttons
+### Action buttons
 
-Four action buttons are available.
+Four action buttons are available:
 
-- Info. Open the window with the alert details.
-- Pause/Active. Set the alert to pause or active mode.
-- Edit. Opens the Edit window. When you click in the Edit window, the alert status changes to Scheduled.
-- Delete. Delete the alert after the user's confirmation.
+- **Info**. Open the drawer with the alert details.
+- **Pause/Active**. Set the alert to pause or active mode.
+- **Edit**. Opens the Edit drawer. When you click in the Edit drawer, the alert status changes to Scheduled.
+- **Delete**. Delete the alert after the user's confirmation.
 
 <Image
-  title="The Alerting panel and the Edit alert window."
+  title="The Alerting panel and the Edit alert rule drawer."
   src="/img/blog/2023-11-27-big-1.2.0/alerting-panel.png"
 />
 
 ## Regex Pattern
 
-The regex pattern is a new parameter. The alert evaluation could be set to Thresholds or a Regex Pattern.
+The regex pattern evaluation is a new evaluation option. The alert evaluation could be set to Thresholds or a Regex Pattern:
 
-In the case of the thresholds, the alert examines the thresholds set for the specified dashboard/panel.
-
-In the case of the Regex Pattern, the alert examines the specified fields (optional) and searches the specified pattern.
+- **Thresholds**. The alert examines data against the specified thresholds in the panel options.
+- **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.
 
 The Evaluation section is shown in the picture above.
 
-## Webhooks, test connectivity and use by default
+## Webhook updates
 
 ### Test connectivity
 
-You can test connectivity in the Edit Webhook window using the red button at the bottom.
+You can test connectivity in the Edit Webhook drawer using the red button at the bottom.
 
 ### Use by Default
 
-You can set any webhook to be called by default, meaning, when a webhook is not specified, the default one is executed.
+You can set any webhook to be assigned by default, meaning, when a webhook is not specified, the default one is executed.
 
 <Image
   title="New features for a webhook - connectivity test and use by default."
@@ -125,13 +121,15 @@ The `docker-compose.yml` file consists of the following containers:
 
 ### Start
 
-When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.
+When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers:
 
 ```
 docker compose pull && docker compose up
 ```
 
 ### Stop
+
+Stop and remove all containers:
 
 ```
 docker compose down
