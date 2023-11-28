@@ -57,7 +57,7 @@ So, you describe WHAT to observe and specify the rules of HOW exactly. Then ever
 The schema below depicts the Alerting as it is side-by-side with the BI(G) Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
 
 <Image
-  title="Alerting versus BIG alerting."
+  title="Alerting versus BI(G) alerting."
   src="/img/blog/2023-11-21-big-alerting/alerting-vs-big.png"
 />
 
@@ -120,7 +120,7 @@ This panel lists all configured webhooks. In the edit mode, you specify a name, 
 
 ## Proof Of Concept
 
-You can download the Proof of Concept from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-toolkit). The docker-compose file consists of the following containers:
+You can download the Proof of Concept from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana). The docker-compose file consists of the following containers:
 
 - **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and an example dashboard.
 - **Timescale** is required to store configuration, events, rules, etc.
@@ -131,7 +131,7 @@ You can download the Proof of Concept from our [GitHub repository](https://githu
 When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.
 
 <Code
-  url="https://github.com/VolkovLabs/volkovlabs-bi-toolkit/blob/main/docker-compose.yml"
+  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
   language="yaml"
 />
 
