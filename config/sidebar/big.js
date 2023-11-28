@@ -3,6 +3,21 @@
  */
 const mySidebar = [
   "index",
+  "getting-started",
+  {
+    items: [
+      "alerting-vs-big",
+      "alerting-panel",
+      "engine",
+    ],
+    label: "Alerting",
+    type: "category",
+    collapsible: false,
+    link: {
+      type: "doc",
+      id: "alerting",
+    },
+  },
   {
     type: "link",
     href: "/blog/tags/business-intelligence",

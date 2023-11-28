@@ -1,0 +1,60 @@
+---
+tags:
+  - Getting Started
+  - Alerting, BI, BIG
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Grafana vs BI(G) alerting
+
+**Alerting** is a system to observe how your data changes and act when a change occurs.
+
+The three main alerting components:
+
+1. **An alert rule**. It is an instruction to evaluate the observable data.
+   Most alert rules have parameters like time frame to check, how often, query to run (SQL and PromQL, etc.), and thresholds.
+
+2. **An alert record**. An alert record is created when observable data goes beyond the threshold.
+
+3. **An alert action**. It is an action triggered by an alert record.
+
+<Image
+  title="Alerting basics."
+  src="/img/big/basics.png"
+  width="50%"
+/>
+
+:::note Basics
+
+So, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created. Following the created alert records, alert actions are initiated.
+
+:::
+
+## Similarities and differences
+
+The schema below depicts the Alerting as it is side-by-side with the BI(G) Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
+
+<Image
+  title="Alerting versus BI(G) alerting."
+  src="/img/big/alerting-vs-big.png"
+/>
+
+Users create alert rules using the Alerting UI.
+
+The alerting records are created by the alert manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.
+The alert manager works only with backend data sources.
+
+For the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, Slack messages, emails and OnCall.
+
+Webhooks, which are 3rd party APIs, can also be added as triggered by an alert rule record. However, even if the possibility exists the implementation might be foggy for many.
+
+In the BI(G) Alerting, we reimaged all three modules.
+
+The video below provides an overview of the BI(G) alerting. However, the code has been updated and some features have been added since the video release date. 
+
+<Video
+  src="https://www.youtube.com/embed/vky-7-DfvXE"
+  title="BI(G) Alerting in Grafana announcement."
+/>

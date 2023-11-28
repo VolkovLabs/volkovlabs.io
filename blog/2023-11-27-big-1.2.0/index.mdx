@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: big-1.2.0-20231127/
-tags: [Business Intellignce, Release Notes]
+tags: [Business Intelligence, Release Notes]
 image: /img/blog/2023-11-27-big-1.2.0/banner.png
 keywords: [Business Intelligence, Alerting, Grafana]
 ---
@@ -13,28 +13,93 @@ import Video from "@theme/Video";
 
 # Business Intelligence for Grafana 1.2.0
 
-We're excited to announce the release of the Proof of Concept project Business Intelligence 1.2.0. This release includes the following updates:
+We are excited to announce the release of the Business Intelligence App, version 1.2.0. At this early stage, it is a proof-of-concept, meaning a product created as a starter to vastly extend its functionality in the future. 
+This release includes the following updates:
 
-- Improved Alerting panel.
-- Added testing webhooks.
-- Added Regex Patterns for alerts.
+- Improved the Alerting panel.
+- Added regex patterns for alerts.
+- New for webhooks: added test connectivity and a new **Use by Default** parameter.
 
 ## Proof of Concept
 
-Business Intelligence for Grafana is a Proof of Concept project with an expected launch in January 2024.
-
-<Image title="Business Intelligence for Grafana." src="/img/big/concept.png" />
-
-## Visual improvements
+Business Intelligence App for Grafana is a proof-of-concept project with an expected launch in January 2024. It includes the following five components:
+- Dashboard management,
+- High performance,
+- Reporting,
+- Alerting,
+- Forecasting.
 
 <Image
-  title="Visual Improvements."
-  src="/img/blog/2023-11-27-big-1.2.0/dashboard.png"
+ title="Business Intelligence for Grafana. Our BI(G) project."
+ src="/img/big/concept.png" 
 />
 
-## Testing Webhooks
+## Alerting panel improvements
+
+The latest version of the Alerting panel is depicted below. This panel is designed to simplify work with alerts by having all controls in one place and having an intuitive order of configuration settings. 
+
+The creation logic follows the Grafana [alerting basics](link)
+
+### Alert card
+
+Every alert on the Alerting panel has a sleek card with the title, the panel name it should be displayed on, schedule details, statuses and action buttons. 
+
+<Image
+  title="Alert card components."
+  src="/img/blog/2023-11-27-big-1.2.0/alert-card.png"
+/>
+
+#### Statuses
+
+There are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**. 
+
+And the other status might be one of the four values:
+
+- **Scheduled**. The alert is scheduled, but never run yet. 
+- **OK**. The alert has been run and the thresholds are NOT breached and the regex pattern is NOT found.
+- **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.
+- **Error**. Something is wrong which could be the query, annotation or webhook.
+
+Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. 
+After any change, the alert status changes to **Scheduled**. 
+
+#### Action buttons
+
+Four action buttons are available. 
+- Info. Open the window with the alert details. 
+- Pause/Active. Set the alert to pause or active mode. 
+- Edit. Opens the Edit window. When you click in the Edit window, the alert status changes to Scheduled. 
+- Delete. Delete the alert after the user's confirmation.
+
+<Image
+  title="The Alerting panel and the Edit alert window."
+  src="/img/blog/2023-11-27-big-1.2.0/alerting-panel.png"
+/>
 
 ## Regex Pattern
+
+The regex pattern is a new parameter. The alert evaluation could be set to Thresholds or a Regex Pattern. 
+
+In the case of the thresholds, the alert examines the thresholds set for the specified dashboard/panel.
+
+In the case of the Regex Pattern, the alert examines the specified fields (optional) and searches the specified pattern. 
+
+The Evaluation section is shown in the picture above.
+
+## Webhooks, test connectivity and use by default
+
+### Test connectivity
+
+You can test connectivity in the Edit Webhook window using the red button at the bottom. 
+
+### Use by Default
+
+You can set any webhook to be called by default, meaning, when a webhook is not specified, the default one is executed.
+
+<Image
+  title="New features for a webhook - connectivity test and use by default."
+  src="/img/blog/2023-11-27-big-1.2.0/webhook.png"
+/>
 
 ## Getting Started
 
@@ -44,12 +109,12 @@ You can download the Proof of Concept from our [GitHub repository](https://githu
 
 The `docker-compose.yml` file consists of the following containers:
 
-- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and an demo dashboard.
+- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and a demo dashboard.
 - **Timescale** is required to store configuration, events, rules, etc.
 - **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
 - **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
 - **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
-- **Data Generator** generate test data for threshold evaluating in the demo dashboard.
+- **Data Generator** generates test data for threshold evaluation in the demo dashboard.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
