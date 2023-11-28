@@ -7,7 +7,7 @@ tags:
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Grafana vs BI(G) alerting
+# Grafana and BI(G) alerting
 
 **Alerting** is a system to observe how your data changes and act when a change occurs.
 
@@ -20,15 +20,13 @@ The three main alerting components:
 
 3. **An alert action**. It is an action triggered by an alert record.
 
-<Image
-  title="Alerting basics."
-  src="/img/big/basics.png"
-  width="50%"
-/>
+<Image title="Alerting basics." src="/img/big/basics.png" width="50%" />
 
 :::note Basics
 
-So, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created. Following the created alert records, alert actions are initiated.
+So, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created.
+
+Following the created alert records, alert actions are initiated.
 
 :::
 
@@ -36,10 +34,7 @@ So, you describe WHAT to observe and specify the rules of HOW exactly. Then ever
 
 The schema below depicts the Alerting as it is side-by-side with the BI(G) Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
 
-<Image
-  title="Alerting versus BI(G) alerting."
-  src="/img/big/alerting-vs-big.png"
-/>
+<Image title="Grafana and BI(G) alerting." src="/img/big/alerting-vs-big.png" />
 
 Users create alert rules using the Alerting UI.
 
@@ -50,9 +45,11 @@ For the alert actions, Grafana has an extensive notification alerting channel sy
 
 Webhooks, which are 3rd party APIs, can also be added as triggered by an alert rule record. However, even if the possibility exists the implementation might be foggy for many.
 
+## BI(G) Alerting
+
 In the BI(G) Alerting, we reimaged all three modules.
 
-The video below provides an overview of the BI(G) alerting. However, the code has been updated and some features have been added since the video release date. 
+The video below provides an overview of the BI(G) alerting. However, the code has been updated and some features have been added since the video release date.
 
 <Video
   src="https://www.youtube.com/embed/vky-7-DfvXE"

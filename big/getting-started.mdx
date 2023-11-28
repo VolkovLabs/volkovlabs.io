@@ -5,7 +5,6 @@ tags:
 ---
 
 import Code from "@theme/Code";
-import Video from "@theme/Video";
 
 # Getting Started
 
@@ -22,23 +21,22 @@ The `docker-compose.yml` file consists of the following containers:
 - **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
 - **Data Generator** generates test data for threshold evaluation in the demo dashboard.
 
-<details>
- <summary>docker-compose file to copy</summary>
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
   language="yaml"
 />
-</details>
 
 ## Start
 
-When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.
+When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers:
 
 ```
 docker compose pull && docker compose up
 ```
 
 ## Stop
+
+Stop and remove all containers:
 
 ```
 docker compose down

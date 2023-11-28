@@ -19,59 +19,54 @@ The new alert rule/edit mode has the following configuration elements to specify
 - **Schedule** is a frequency of how often the rule should run. With CRON expressions your schedule can be as complex as needed.
 - **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones. The alert rule will take queries and thresholds from there automatically.
 - **Time Range** could be either taken from the dashboard and specified custom.
-- The alert **evaluation** could be set to **Thresholds** or **Regex Pattern**. 
-    - Ror the **Thresholds**, the alert examines the thresholds set for the specified dashboard/panel.
-    - For the **Regex Pattern**, the alert examines the specified fields (optional) and searches the specified pattern. 
+- The alert **evaluation** could be set to **Thresholds** or **Regex Pattern**.
+  - For the **Thresholds**, the alert examines the data against thresholds set in the panel options.
+  - For the **Regex Pattern**, the alert examines the specified fields (optional) and searches the specified pattern.
 - For the alert **action**, select from the drop-down list of the existing, pre-configured webhook APIs.
-- Disabled **Annotation** option will prevent sending a record into the annotation table.
+- **Annotation** option will allows to create annotations in the annotation table.
 
 We target to have the Alert Management UI panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.
 
 <Image
-  title="The Alerting panel and the Edit alert window."
+  title="The Alerting panel and the Edit alert drawer."
   src="/img/big/alerting-panel.png"
 />
 
 ## Alert card
 
-Every alert on the Alerting panel has a sleek card with the title, the panel name it should be displayed on, schedule details, statuses and action buttons. 
+Every alert on the Alerting panel has a sleek card with the title, the panel name it evaluates, schedule details, statuses and action buttons.
 
-<Image
-  title="Alert card components."
-  src="/img/big/alert-card.png"
-/>
+<Image title="Alert card components." src="/img/big/alert-card.png" />
 
 ### Statuses
 
-There are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**. 
+There are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**.
 
 And the other status might be one of the four values:
 
-- **Scheduled**. The alert is scheduled, but never run yet. 
+- **Scheduled**. The alert is scheduled, but never run yet.
 - **OK**. The alert has been run and the thresholds are NOT breached and the regex pattern is NOT found.
 - **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.
 - **Error**. Something is wrong which could be the query, annotation or webhook.
 
-Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. 
-After any change, the alert status changes to **Scheduled**. 
+Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused.
+After any change, the alert status changes to **Scheduled**.
 
 ### Action buttons
 
-Four action buttons are available. 
-- **Info**. Open the window with the alert details. 
-- **Pause/Active**. Set the alert to pause or active mode. 
-- **Edit**. Opens the Edit window. When you click in the Edit window, the alert status changes to Scheduled. 
+Four action buttons are available:
+
+- **Info**. Open the drawer with the alert details.
+- **Pause/Active**. Set the alert to pause or active mode.
+- **Edit**. Opens the Edit drawer. When you click in the Edit drawer, the alert status changes to Scheduled.
 - **Delete**. Delete the alert after the user's confirmation.
 
 ## Webhooks Configuration
 
-This tab lists all configured webhooks. In the edit mode, you specify a title, type (HTTP or Test), request URL and request method. For now, only POST is available.
+This tab lists all configured webhooks. In the edit mode, you specify a title, type (HTTP or Test), request URL and request method.
 
 Any webhook could be configured as a default one by setting the **Use by Default** parameter to **Enabled**.
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
 
-<Image
-  title="Webhook configuration panel."
-  src="/img/big/web-hooks-panel.png"
-/>
+<Image title="Webhook configuration tab." src="/img/big/web-hooks-panel.png" />
