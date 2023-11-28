@@ -13,7 +13,7 @@ import Video from "@theme/Video";
 
 # Business Intelligence for Grafana 1.2.0
 
-We are excited to announce the release of the Business Intelligence App, version 1.2.0. At this early stage, it is a proof-of-concept, meaning a product created as a starter to vastly extend its functionality in the future. 
+We are excited to announce the release of the Business Intelligence App, version 1.2.0. At this early stage, it is a proof-of-concept, meaning a product created as a starter to vastly extend its functionality in the future.
 This release includes the following updates:
 
 - Improved the Alerting panel.
@@ -23,6 +23,7 @@ This release includes the following updates:
 ## Proof of Concept
 
 Business Intelligence App for Grafana is a proof-of-concept project with an expected launch in January 2024. It includes the following five components:
+
 - Dashboard management,
 - High performance,
 - Reporting,
@@ -30,19 +31,19 @@ Business Intelligence App for Grafana is a proof-of-concept project with an expe
 - Forecasting.
 
 <Image
- title="Business Intelligence for Grafana. Our BI(G) project."
- src="/img/big/concept.png" 
+  title="Business Intelligence for Grafana. Our BI(G) project."
+  src="/img/big/concept.png"
 />
 
 ## Alerting panel improvements
 
-The latest version of the Alerting panel is depicted below. This panel is designed to simplify work with alerts by having all controls in one place and having an intuitive order of configuration settings. 
+The latest version of the Alerting panel is depicted below. This panel is designed to simplify work with alerts by having all controls in one place and having an intuitive order of configuration settings.
 
 The creation logic follows the Grafana [alerting basics](link)
 
 ### Alert card
 
-Every alert on the Alerting panel has a sleek card with the title, the panel name it should be displayed on, schedule details, statuses and action buttons. 
+Every alert on the Alerting panel has a sleek card with the title, the panel name it should be displayed on, schedule details, statuses and action buttons.
 
 <Image
   title="Alert card components."
@@ -51,24 +52,25 @@ Every alert on the Alerting panel has a sleek card with the title, the panel nam
 
 #### Statuses
 
-There are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**. 
+There are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**.
 
 And the other status might be one of the four values:
 
-- **Scheduled**. The alert is scheduled, but never run yet. 
+- **Scheduled**. The alert is scheduled, but never run yet.
 - **OK**. The alert has been run and the thresholds are NOT breached and the regex pattern is NOT found.
 - **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.
 - **Error**. Something is wrong which could be the query, annotation or webhook.
 
-Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. 
-After any change, the alert status changes to **Scheduled**. 
+Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused.
+After any change, the alert status changes to **Scheduled**.
 
 #### Action buttons
 
-Four action buttons are available. 
-- Info. Open the window with the alert details. 
-- Pause/Active. Set the alert to pause or active mode. 
-- Edit. Opens the Edit window. When you click in the Edit window, the alert status changes to Scheduled. 
+Four action buttons are available.
+
+- Info. Open the window with the alert details.
+- Pause/Active. Set the alert to pause or active mode.
+- Edit. Opens the Edit window. When you click in the Edit window, the alert status changes to Scheduled.
 - Delete. Delete the alert after the user's confirmation.
 
 <Image
@@ -78,11 +80,11 @@ Four action buttons are available.
 
 ## Regex Pattern
 
-The regex pattern is a new parameter. The alert evaluation could be set to Thresholds or a Regex Pattern. 
+The regex pattern is a new parameter. The alert evaluation could be set to Thresholds or a Regex Pattern.
 
 In the case of the thresholds, the alert examines the thresholds set for the specified dashboard/panel.
 
-In the case of the Regex Pattern, the alert examines the specified fields (optional) and searches the specified pattern. 
+In the case of the Regex Pattern, the alert examines the specified fields (optional) and searches the specified pattern.
 
 The Evaluation section is shown in the picture above.
 
@@ -90,7 +92,7 @@ The Evaluation section is shown in the picture above.
 
 ### Test connectivity
 
-You can test connectivity in the Edit Webhook window using the red button at the bottom. 
+You can test connectivity in the Edit Webhook window using the red button at the bottom.
 
 ### Use by Default
 
