@@ -1,0 +1,91 @@
+---
+authors: [daria]
+slug: variable-panel-2.2.0-20231130/
+tags: [Variables, Release Notes]
+image: /img/blog/2023-11-30-variable-panel-2.2.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variable Panel 2.2.0
+
+We are happy to announce the release of the Variable Panel 2.2.0. This release includes the following updates:
+
+- Added dashboard redirect option.
+- Added clean filter value button.
+- Added an option for an always-visible search filter.
+- Added group rename functionality.
+- Added toggle expanded row state by clicking on the label.
+- Added compatibility with Grafana 10.2.1.
+- Updated Safari layout and alignining for favorites.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on November 21, 2023.
+:::
+
+## Dashboard redirect option
+
+XXX.
+
+<Image
+  title="You can use the enter key for the variable to take effect."
+  src="/img/blog/variable-panel-2.2.0-20231130/enter.png"
+/>
+
+## Search filter
+
+## Tree View improvements
+
+## Getting Started
+
+The Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
+
+For the latter, please use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-variable-panel
+```
+
+## YouTube Tutorial
+
+The Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+
+The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+
+<Video
+  src="https://www.youtube.com/embed/mYYtMW9qiPA"
+  title="Demonstrates the Variable panel functionality."
+/>
+
+## Release Notes
+
+### Features / Enhancements in 2.2.0
+
+- Add dashboard redirect option (#92)
+- Update ESLint configuration and sort imports (#93)
+- Update Safari layout for favorites (#97)
+- Update to Grafana 10.2.1 (#98)
+- Add clean filter value button (#99)
+
+### Features / Enhancements in 2.1.0
+
+- Add an option for an always-visible search filter (#83)
+- Add Group rename functionality (#84)
+- Add selecting fields from data frames without RefId (#85)
+- Add toggle expanded row state by clicking on the label (#86)
+
+### Bugfixes in 2.1.0
+
+- Update the deselection of All variable value which is not defined in the URL (#87)
+- Removed ability to add group to favorites (#88)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
