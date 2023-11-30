@@ -1,0 +1,172 @@
+---
+authors: [daria]
+slug: variable-panel-2.2.0-20231130/
+tags: [Variables, Release Notes]
+image: /img/blog/2023-11-30-variable-panel-2.2.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variable Panel 2.2.0
+
+We are happy to announce the release of the Variable Panel 2.2.0. This release includes the following updates:
+
+- Added dashboard redirect option.
+- Search usability improvements:
+  - Added clean filter value button.
+  - Added a new option **Always Visible Search**.
+- TreeView usability improvements:
+  - Added group rename functionality(edit button).
+  - Expanded action area to expand a treeview node.
+- Updated Safari layout and alignment for favorites.
+- Added compatibility with Grafana 10.2.1.
+
+:::info Grafana Catalog
+The plugin was updated in Grafana Catalog on November 21, 2023.
+:::
+
+## Dashboard redirect option
+
+This feature allows opening the corresponding dashboard to a variable value. It is useful, for instance, if a variable panel displays a list of some devices where every device requires a specific dashboard.
+
+When a user selects a device in the variable panel, the corresponding dashboard opens. With that, the dashboard switch is not obvious for the users. For them, it might seem they stay in one place.
+
+Let us review, how to make it work.
+
+### Map dashboard variables
+
+Create two dashboard variables. One to retrieve all devices needed. The second is to contain one `dashboard_id` at a time following the device from the first variable.
+
+<Image
+  title="You can use the enter key for the variable to take effect."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/vars.png"
+/>
+
+### Dashboards
+
+Create specific device dashboards with an identical variable panel on each dashboard.
+
+<Image
+  title="Create specific device dashboards with an identical variable panel."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/switch-dash.png"
+/>
+
+### Variable panel
+
+Configure the variable panel. Specify a value for the new parameter **Dashboard**.
+
+<Image
+  title="New parameter - dashboard for redirection."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/var-conf.png"
+/>
+
+After the above-presented configuration, the variable panel switches dashboards when a user selects a device. A sleek transition makes the user experience smooth and pleasant.
+
+## Search usability
+
+Two features make the search user experience better.
+
+### Clean filter value button
+
+It is a small, but very nice improvement. Once you start typing in the search text field, you can remove all entered symbols by using an X button appearing at the far-right corner of the search text.
+
+<Image
+  title="Clean filter value button is a new feature."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/clean.png"
+/>
+
+### Always Visible Search option
+
+The ability to hide a search text area can be taken away from users by using a new option **Always Visible search**.
+
+When it is **Disabled**, the funnel icon is shown on the dashboard. By clicking on the funnel icon, users can alternate between hiding and showing the search text area.
+
+When it is **Enabled**, the funnel icon is hidden and with that users are not capable of hiding the search text area.
+
+<Image
+  title="Always visible search is a new feature."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/hide-search.png"
+/>
+
+## Tree View improvements
+
+### Group rename
+
+Now you can rename a group in the TreeView layout.
+
+<Image
+  title="Always visible search is a new feature."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/edit-treeview.png"
+/>
+
+### Expand by clicking anywhere
+
+Before this feature, in order to expand the tree node, you had to be very precise and aim exactly at the arrow next to the name. After this release, clicking anywhere on the whole row with the name expands the tree node.
+
+<Image
+  title="Expand by clicking anywhere on the name row."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/row.png"
+/>
+
+## Updated Safari layout
+
+In the Safari web browser, the positioning of star icons indicating the favorites is now aligned in the same style as in all other browsers.
+
+<Image
+  title="The position of the star icons indicating favorites is styled in the same manner as for all other browsers."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/favs.png"
+/>
+
+## Getting Started
+
+The Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
+
+For the latter, please use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-variable-panel
+```
+
+## YouTube Tutorial
+
+The Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+
+The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+
+<Video
+  src="https://www.youtube.com/embed/mYYtMW9qiPA"
+  title="Demonstrates the Variable panel functionality."
+/>
+
+## Release Notes
+
+### Features / Enhancements in 2.2.0
+
+- Add dashboard redirect option (#92)
+- Update ESLint configuration and sort imports (#93)
+- Update Safari layout for favorites (#97)
+- Update to Grafana 10.2.1 (#98)
+- Add clean filter value button (#99)
+
+### Features / Enhancements in 2.1.0
+
+- Add an option for an always-visible search filter (#83)
+- Add Group rename functionality (#84)
+- Add selecting fields from data frames without RefId (#85)
+- Add toggle expanded row state by clicking on the label (#86)
+
+### Bugfixes in 2.1.0
+
+- Update the deselection of All variable value which is not defined in the URL (#87)
+- Removed ability to add group to favorites (#88)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
