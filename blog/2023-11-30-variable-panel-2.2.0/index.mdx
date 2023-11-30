@@ -15,8 +15,8 @@ We are happy to announce the release of the Variable Panel 2.2.0. This release i
 
 - Added dashboard redirect option.
 - Search usability improvements:
-   - Added clean filter value button.
-   - Added a new option **Always Visible Search**.
+  - Added clean filter value button.
+  - Added a new option **Always Visible Search**.
 - TreeView usability improvements:
   - Added group rename functionality(edit button).
   - Expanded action area to expand a treeview node.
@@ -29,13 +29,13 @@ The plugin was updated in Grafana Catalog on November 21, 2023.
 
 ## Dashboard redirect option
 
-This feature allows opening the corresponding dashboard to a variable value. It is useful, for instance, if a variable panel displays a list of some devices where every device requires a specific dashboard. 
+This feature allows opening the corresponding dashboard to a variable value. It is useful, for instance, if a variable panel displays a list of some devices where every device requires a specific dashboard.
 
-When a user selects a device in the variable panel, the corresponding dashboard opens. With that, the dashboard switch is not obvious for the users. For them, it might seem they stay in one place. 
+When a user selects a device in the variable panel, the corresponding dashboard opens. With that, the dashboard switch is not obvious for the users. For them, it might seem they stay in one place.
 
 Let us review, how to make it work.
 
-### Map device_id to dashboard_id 
+### Map device_id to dashboard_id
 
 Create two dashboard variables. One to retrieve all devices needed. The second is to contain one dashboard_id at a time following the device from the first variable.
 
@@ -44,7 +44,7 @@ Create two dashboard variables. One to retrieve all devices needed. The second i
   src="/img/blog/2023-11-30-variable-panel-2.2.0/vars.png"
 />
 
-### Dashboards 
+### Dashboards
 
 Create specific device dashboards with an identical variable panel on each dashboard.
 
@@ -66,11 +66,11 @@ After the above-presented configuration, the variable panel switches dashboards 
 
 ## Search usability
 
-Two features make the search user experience better. 
+Two features make the search user experience better.
 
 ### Clean filter value button
 
-It is a small, but very nice improvement. Once you start typing in the search text field, you can remove all entered symbols by using an X button appearing at the far-right corner of the search text. 
+It is a small, but very nice improvement. Once you start typing in the search text field, you can remove all entered symbols by using an X button appearing at the far-right corner of the search text.
 
 <Image
   title="Clean filter value button is a new feature."
@@ -79,11 +79,11 @@ It is a small, but very nice improvement. Once you start typing in the search te
 
 ### Always Visible Search option
 
-The ability to hide a search text area can be taken away from users by using a new option **Always Visible search**. 
+The ability to hide a search text area can be taken away from users by using a new option **Always Visible search**.
 
-When it is **Disabled**, the funnel icon is shown on the dashboard. By clicking on the funnel icon, users can alternate between hiding and showing the search text area. 
+When it is **Disabled**, the funnel icon is shown on the dashboard. By clicking on the funnel icon, users can alternate between hiding and showing the search text area.
 
-When it is **Enabled**, the funnel icon is hidden and with that users are not capable of hiding the search text area. 
+When it is **Enabled**, the funnel icon is hidden and with that users are not capable of hiding the search text area.
 
 <Image
   title="Always visible search is a new feature."
@@ -103,7 +103,7 @@ Now you can rename a group in the TreeView layout.
 
 ### Expand by clicking anywhere
 
-Before this feature, in order to expand the tree node, you had to be very precise and aim exactly at the arrow next to the name. After this release, clicking anywhere on the whole row with the name expands the tree node. 
+Before this feature, in order to expand the tree node, you had to be very precise and aim exactly at the arrow next to the name. After this release, clicking anywhere on the whole row with the name expands the tree node.
 
 <Image
   title="Expand by clicking anywhere on the name row."
@@ -112,7 +112,7 @@ Before this feature, in order to expand the tree node, you had to be very precis
 
 ## Updated Safari layout
 
-In the Safari web browser, the positioning of star icons indicating the favorites is now aligned in the same style as in all other browsers. 
+In the Safari web browser, the positioning of star icons indicating the favorites is now aligned in the same style as in all other browsers.
 
 <Image
   title="The position of the star icons indicating favorites is styled in the same manner as for all other browsers."
