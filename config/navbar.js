@@ -86,6 +86,10 @@ const navbar = {
           to: "/plugins/volkovlabs-form-panel/",
         },
         {
+          label: "Environment Data Source",
+          to: "/plugins/volkovlabs-env-datasource/",
+        },
+        {
           label: "Grafana API Data Source",
           to: "/plugins/volkovlabs-grapi-datasource/",
         },
