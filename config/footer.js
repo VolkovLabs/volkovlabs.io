@@ -70,16 +70,8 @@ const footer = {
           href: "/grafana/",
         },
         {
-          label: "ECharts Examples",
-          href: "https://echarts.volkovlabs.io",
-        },
-        {
-          label: "Live Dashboard",
-          href: "https://live.volkovlabs.io",
-        },
-        {
-          label: "Release Dashboard",
-          href: "https://release.volkovlabs.io",
+          label: "Sponsor",
+          href: "/sponsor/",
         },
         {
           label: "YouTube Channel",
@@ -88,12 +80,25 @@ const footer = {
       ],
     },
     {
-      title: "Get in touch",
+      title: "Dashboards",
       items: [
         {
-          label: "Sponsor",
-          href: "/sponsor/",
+          label: "ECharts Examples",
+          href: "https://echarts.volkovlabs.io",
         },
+        {
+          label: "Live Updates",
+          href: "https://live.volkovlabs.io",
+        },
+        {
+          label: "Releases",
+          href: "https://release.volkovlabs.io",
+        },
+      ],
+    },
+    {
+      title: "Get in touch",
+      items: [
         {
           label: "GitHub",
           href: "https://github.com/VolkovLabs",
