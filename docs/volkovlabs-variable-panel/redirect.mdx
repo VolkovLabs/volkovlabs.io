@@ -1,0 +1,43 @@
+---
+tags:
+  - Variable
+---
+
+import Image from "@theme/Image";
+
+# Dashboard redirect option
+
+This feature allows opening the corresponding dashboard to a variable value. It is useful, for instance, if a variable panel displays a list of some devices where every device requires a specific dashboard.
+
+When a user selects a device in the variable panel, the corresponding dashboard opens. With that, the dashboard switch is not obvious for the users. For them, it might seem they stay in one place.
+
+Let us review, how to make it work.
+
+## Map dashboard variables
+
+Create two dashboard variables. One to retrieve all devices needed. The second is to contain one `dashboard_id` at a time following the device from the first variable.
+
+<Image
+  title="Create a dashboard/variable mapping example."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/vars.png"
+/>
+
+## Dashboards
+
+Create specific device dashboards with an identical variable panel on each dashboard.
+
+<Image
+  title="Create specific device dashboards with an identical variable panel."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/switch-dash.png"
+/>
+
+## Variable panel
+
+Configure the variable panel. Specify a value for the new parameter **Dashboard**.
+
+<Image
+  title="New parameter - dashboard for redirection."
+  src="/img/blog/2023-11-30-variable-panel-2.2.0/var-conf.png"
+/>
+
+After the above-presented configuration, the variable panel switches dashboards when a user selects a device. A sleek transition makes the user experience smooth and pleasant.
