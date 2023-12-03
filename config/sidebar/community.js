@@ -347,14 +347,23 @@ const community = {
           id: "volkovlabs-variable-panel/index",
           label: "Introduction",
         },
-        "volkovlabs-variable-panel/layout",
+        {
+          items: [
+            "volkovlabs-variable-panel/select",
+            "volkovlabs-variable-panel/input",
+          ],
+          label: "Layout",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-variable-panel/layout",
+          },
+        },
         {
           items: [
             "volkovlabs-variable-panel/favorites",
-            "volkovlabs-variable-panel/select",
             "volkovlabs-variable-panel/groups",
             "volkovlabs-variable-panel/sort",
-            "volkovlabs-variable-panel/input",
             "volkovlabs-variable-panel/key",
             "volkovlabs-variable-panel/empty",
             "volkovlabs-variable-panel/redirect",
