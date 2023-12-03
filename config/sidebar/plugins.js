@@ -426,32 +426,6 @@ const mySidebar = [
       id: "volkovlabs-variable-panel/index",
     },
   },
-  {
-    link: {
-      type: "doc",
-      id: "templates/index",
-    },
-    items: [
-      {
-        type: "doc",
-        id: "templates/application",
-        label: "Application",
-      },
-      {
-        type: "doc",
-        id: "templates/datasource",
-        label: "Data Source",
-      },
-      {
-        type: "doc",
-        id: "templates/panel",
-        label: "Panel",
-      },
-      "templates/release",
-    ],
-    label: "Plugin Templates",
-    type: "category",
-  },
 ];
 
 /**

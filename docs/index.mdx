@@ -9,32 +9,27 @@ import Video from "@theme/Video";
 
 We create and maintain open-source plugins for Grafana.
 
-- [Community](#community) panels and data sources are registered in the Grafana Catalog.
-- [Development](#development) plugins are available to download from the GitHub repository.
-
 <Image title="Plugins for Grafana by Volkov Labs." src="/img/honeycomb.png" />
 
-## Community
-
-Community Plugins are registered in the Grafana Catalog and can be installed in Grafana Cloud and On-Premises.
-
-| Section                                                      | Description                                                                      |
+| Plugin                                                       | Description                                                                      |
 | ------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | [Apache ECharts Panel](volkovlabs-echarts-panel)             | Powerful charting and visualization library Apache ECharts.                      |
 | [Base64 Image/Video/Audio/PDF Panel](volkovlabs-image-panel) | Display Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats. |
 | [Calendar Panel](volkovlabs-calendar-panel)                  | Display events and change time range.                                            |
 | [Dynamic Text Panel](volkovlabs-dynamictext-panel)           | Dynamic, data-driven text.                                                       |
 | [Data Manipulation Panel](volkovlabs-form-panel)             | Insert, update application data, and modify configuration.                       |
+| [Environment Data Source](volkovlabs-env-datasource)         | Environment variables on your dashboard.                                         |
 | [Grafana HTTP API Data Source](volkovlabs-grapi-datasource)  | Connect to Local and Remote Grafana instances.                                   |
 | [RSS/Atom Data Source](volkovlabs-rss-datasource)            | Visualize RSS/Atom feeds using Dynamic Text.                                     |
 | [Static Data Source](volkovlabs-static-datasource)           | Store and emulate your data.                                                     |
 | [Variable Panel](volkovlabs-variable-panel)                  | Update dashboard variables.                                                      |
 
-## Development
+## Templates
 
-We use development plugins and templates for our open-source and commercial projects. They are available to download from the GitHub organization.
+We created many Grafana panels, data sources and application plugins to this moment. To make the creation process efficient, starting with a well-constructed template is always easier.
 
-| Section                                              | Description                              |
-| ---------------------------------------------------- | ---------------------------------------- |
-| [Environment Data Source](volkovlabs-env-datasource) | Environment variables on your dashboard. |
-| [Plugin Templates](templates)                        | Start from well-constructed template.    |
+| Template                                                                | Description                                       |
+| ----------------------------------------------------------------------- | ------------------------------------------------- |
+| [Application](https://github.com/VolkovLabs/volkovlabs-abc-app/)        | Demonstrates how to create an Application plugin. |
+| [Data Source](https://github.com/VolkovLabs/volkovlabs-abc-datasource/) | Demonstrates how to create a Data Source plugin.  |
+| [Panel](https://github.com/VolkovLabs/volkovlabs-abc-panel/)            | Demonstrates how to create a Panel plugin.        |
