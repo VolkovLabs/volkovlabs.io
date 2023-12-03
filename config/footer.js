@@ -58,10 +58,6 @@ const footer = {
           to: "/plugins/volkovlabs-echarts-lite/",
         },
         {
-          label: "Balena Application",
-          to: "/plugins/volkovlabs-balena-app/",
-        },
-        {
           label: "Environment Data Source",
           to: "/plugins/volkovlabs-env-datasource/",
         },

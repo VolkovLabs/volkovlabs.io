@@ -45,9 +45,9 @@ const Header = (siteConfig) => {
               &nbsp;
               <a
                 className={clsx("button button--primary button--lg", styles.bi)}
-                href={useBaseUrl("/big")}
+                href={useBaseUrl("/grafana")}
               >
-                Business Intelligence&nbsp;&nbsp;→
+                Grafana Crash Course&nbsp;&nbsp;→
               </a>
             </div>
           </div>

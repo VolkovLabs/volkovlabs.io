@@ -12,17 +12,6 @@ export const ProjectList: PluginItem[] = [
     href: "/plugins/volkovlabs-echarts-lite/",
   },
   {
-    title: "Balena Application",
-    name: "volkovlabs-balena-app",
-    description: (
-      <>
-        Display device information and manage services using Balena Supervisor
-        API.
-      </>
-    ),
-    href: "/plugins/volkovlabs-balena-app/",
-  },
-  {
     title: "Environment Data Source",
     name: "volkovlabs-env-datasource",
     description: <>Environment variables on your dashboard.</>,
