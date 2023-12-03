@@ -65,10 +65,6 @@ const footer = {
           label: "Plugin Templates",
           href: "/plugins/templates/",
         },
-        {
-          label: "Volkov Labs App",
-          href: "/plugins/volkovlabs-app/",
-        },
       ],
     },
     {

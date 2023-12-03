@@ -452,23 +452,6 @@ const mySidebar = [
     label: "Plugin Templates",
     type: "category",
   },
-  {
-    items: [
-      {
-        type: "doc",
-        id: "volkovlabs-app/index",
-        label: "Introduction",
-      },
-      "volkovlabs-app/release",
-    ],
-    label: "Volkov Labs App",
-    type: "category",
-    description: "Docker image with customized Grafana.",
-    link: {
-      type: "doc",
-      id: "volkovlabs-app/index",
-    },
-  },
 ];
 
 /**

@@ -23,10 +23,4 @@ export const ProjectList: PluginItem[] = [
     description: <>Start from well-constructed template.</>,
     href: "/plugins/templates/",
   },
-  {
-    title: "Volkov Labs App",
-    name: "volkovlabs-app",
-    description: <>Docker image with customized Grafana.</>,
-    href: "/plugins/volkovlabs-app/",
-  },
 ];
