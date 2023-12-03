@@ -31,6 +31,7 @@ const Header = (siteConfig) => {
               Our plugins are enriched with JavaScript, providing you with
               unparalleled customization options.
             </p>
+
             <div className="margin-vert--lg">
               <a
                 className={clsx(
@@ -39,7 +40,14 @@ const Header = (siteConfig) => {
                 )}
                 href={useBaseUrl("/plugins")}
               >
-                What we do&nbsp;&nbsp;→
+                Plugins&nbsp;&nbsp;→
+              </a>
+              &nbsp;
+              <a
+                className={clsx("button button--primary button--lg", styles.bi)}
+                href={useBaseUrl("/big")}
+              >
+                Business Intelligence&nbsp;&nbsp;→
               </a>
             </div>
           </div>
