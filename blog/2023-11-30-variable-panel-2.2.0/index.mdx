@@ -8,6 +8,7 @@ keywords: [Variable, Panel, Status]
 
 import Image from "@theme/Image";
 import Video from "@theme/Video";
+import Shorts from "@theme/Shorts";
 
 # Variable Panel 2.2.0
 
@@ -27,6 +28,11 @@ We are happy to announce the release of the Variable Panel 2.2.0. This release i
 The plugin was updated in Grafana Catalog on November 21, 2023.
 :::
 
+<Shorts
+  src="https://www.youtube.com/embed/TtC2bh7a4fE"
+  title="Variable panel 2.2.0 for Grafana."
+/>
+
 ## Dashboard redirect option
 
 This feature allows opening the corresponding dashboard to a variable value. It is useful, for instance, if a variable panel displays a list of some devices where every device requires a specific dashboard.
@@ -40,7 +46,7 @@ Let us review, how to make it work.
 Create two dashboard variables. One to retrieve all devices needed. The second is to contain one `dashboard_id` at a time following the device from the first variable.
 
 <Image
-  title="You can use the enter key for the variable to take effect."
+  title="Create a dashboard/variable mapping example."
   src="/img/blog/2023-11-30-variable-panel-2.2.0/vars.png"
 />
 
