@@ -1,12 +1,12 @@
-import clsx from 'clsx';
-import React from 'react';
-import Head from '@docusaurus/Head';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import ThemedImage from '@theme/ThemedImage';
-import styles from '../css/index.module.css';
-import Image from '../theme/Image';
+import clsx from "clsx";
+import React from "react";
+import Head from "@docusaurus/Head";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import ThemedImage from "@theme/ThemedImage";
+import styles from "../css/index.module.css";
+import Image from "../theme/Image";
 
 /**
  * Header
@@ -21,8 +21,11 @@ const Header = (siteConfig) => {
               {siteConfig.tagline}
             </h1>
             <p className="hero__subtitle margin-vert--md">
-              At Volkov Labs, we offer two tiers of support for maintained
-              Grafana Community plugins: Standard (free) and Premium.
+              Sponsor our open-source Grafana plugins on GitHub Sponsor.
+            </p>
+
+            <p className="hero__subtitle">
+              We prioritize issue and question replies for Premium sponsors.
             </p>
 
             <div className="margin-vert--lg">
@@ -41,8 +44,8 @@ const Header = (siteConfig) => {
             <ThemedImage
               className={clsx("margin-vert--md")}
               sources={{
-                light: useBaseUrl("/img/support/feature-1.svg"),
-                dark: useBaseUrl("/img/support/feature-1.dark.svg"),
+                light: useBaseUrl("/img/sponsor/feature-1.svg"),
+                dark: useBaseUrl("/img/sponsor/feature-1.dark.svg"),
               }}
               height={"65%"}
               alt={siteConfig.tagline}
@@ -94,8 +97,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/support/left.svg"),
-                dark: useBaseUrl("/img/support/left.dark.svg"),
+                light: useBaseUrl("/img/sponsor/left.svg"),
+                dark: useBaseUrl("/img/sponsor/left.dark.svg"),
               }}
             />
           </div>
@@ -115,8 +118,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/support/right.svg"),
-                dark: useBaseUrl("/img/support/right.dark.svg"),
+                light: useBaseUrl("/img/sponsor/right.svg"),
+                dark: useBaseUrl("/img/sponsor/right.dark.svg"),
               }}
             />
           </div>

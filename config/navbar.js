@@ -16,10 +16,10 @@ const navbar = {
       "aria-label": "Blog",
     },
     {
-      to: "/plugins/",
+      to: "/big/",
       position: "left",
-      label: "Plugins",
-      "aria-label": "Plugins",
+      label: "Business Intelligence",
+      "aria-label": "Business Intelligence",
     },
     {
       to: "/grafana/",
@@ -28,16 +28,16 @@ const navbar = {
       "aria-label": "Grafana",
     },
     {
-      to: "/big/",
+      to: "/plugins/",
       position: "left",
-      label: "Business Intelligence",
-      "aria-label": "Business Intelligence",
+      label: "Plugins",
+      "aria-label": "Plugins",
     },
     {
-      to: "/support/",
+      to: "/sponsor/",
       position: "left",
-      label: "Support",
-      "aria-label": "Support",
+      label: "Sponsor",
+      "aria-label": "Sponsor",
     },
     {
       href: "https://www.youtube.com/@volkovlabs",

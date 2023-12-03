@@ -1,34 +1,34 @@
 /**
  * Features
  */
- .featureItem {
+.featureItem {
   border-radius: 10px 10px 10px 10px;
   padding: 1rem;
- }
+}
 
- [data-theme='light'] .featureItem {
+[data-theme="light"] .featureItem {
   border: 2px solid var(--ifm-color-white);
 }
 
-[data-theme='dark'] .featureItem {
+[data-theme="dark"] .featureItem {
   border: 2px solid var(--ifm-background-color);
 }
 
-[data-theme='light'] .featureItem:hover {
+[data-theme="light"] .featureItem:hover {
   border: 2px solid var(--ifm-color-black);
 }
 
-[data-theme='dark'] .featureItem:hover {
+[data-theme="dark"] .featureItem:hover {
   border: 2px solid var(--ifm-color-white);
 }
 
-[data-theme='light'] .featureItem a,
-[data-theme='light'] .featureItem a:hover {
+[data-theme="light"] .featureItem a,
+[data-theme="light"] .featureItem a:hover {
   color: var(--ifm-color-gray-1000);
 }
 
-[data-theme='dark'] .featureItem a,
-[data-theme='dark'] .featureItem a:hover {
+[data-theme="dark"] .featureItem a,
+[data-theme="dark"] .featureItem a:hover {
   color: var(--ifm-color-gray-100);
 }
 
@@ -51,19 +51,27 @@
   background-color: #ff5656;
 }
 
+.bi {
+  border-radius: 0px;
+  border-radius: 10px 10px 10px 10px;
+  color: var(--ifm-color-white);
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary);
+}
+
 /**
  * Why inside the Box
  */
- .whyBox {
+.whyBox {
   padding: 0;
   border-radius: 10px 10px 10px 10px;
- }
- 
- [data-theme='light'] .whyBox {
-  border: 2px solid var(--ifm-color-black);
- } 
+}
 
-[data-theme='dark'] .whyBox {
+[data-theme="light"] .whyBox {
+  border: 2px solid var(--ifm-color-black);
+}
+
+[data-theme="dark"] .whyBox {
   border: 2px solid var(--ifm-color-white);
 }
 
@@ -74,24 +82,24 @@
 /**
  * Header with line
  */
- [data-theme='light'] .header {
+[data-theme="light"] .header {
   width: 100%;
   border-bottom: 2px solid var(--ifm-color-black);
   line-height: 0.1em;
 }
 
-[data-theme='dark'] .header {
+[data-theme="dark"] .header {
   width: 100%;
   border-bottom: 2px solid var(--ifm-color-white);
   line-height: 0.1em;
 }
 
-[data-theme='light'] .header span {
+[data-theme="light"] .header span {
   background: var(--ifm-color-white);
   padding-right: 20px;
 }
 
-[data-theme='dark'] .header span {
+[data-theme="dark"] .header span {
   background: var(--ifm-background-color);
   padding-right: 20px;
 }

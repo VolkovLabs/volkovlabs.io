@@ -112,8 +112,8 @@ const footer = {
       title: "Get in touch",
       items: [
         {
-          label: "Support",
-          href: "/support/",
+          label: "Sponsor",
+          href: "/sponsor/",
         },
         {
           label: "GitHub",
