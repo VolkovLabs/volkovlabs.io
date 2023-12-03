@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
-import { Plugins, Projects } from "../components";
+import { Plugins } from "../components";
 import Blogs from "../components/Blogs";
 import styles from "../css/index.module.css";
 
@@ -75,21 +75,11 @@ const Main = (siteConfig) => {
     <main>
       <div id="Plugins" className="container margin-vert--md padding-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Community</span>
+          <span>Plugins</span>
         </h2>
 
         <div className="container margin-vert--md padding-vert--lg">
           <Plugins />
-        </div>
-      </div>
-
-      <div id="Development" className="container margin-vert--md">
-        <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Development</span>
-        </h2>
-
-        <div className="container margin-vert--lg padding-vert--lg">
-          <Projects />
         </div>
       </div>
 

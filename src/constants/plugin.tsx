@@ -45,6 +45,12 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-form-panel/",
   },
   {
+    title: "Environment Data Source",
+    name: "volkovlabs-env-datasource",
+    description: <>Environment variables on your dashboard.</>,
+    href: "/plugins/volkovlabs-env-datasource/",
+  },
+  {
     title: "Grafana HTTP API Data Source",
     name: "volkovlabs-grapi-datasource",
     description: <>Connect to Local and Remote Grafana instances.</>,
@@ -67,5 +73,11 @@ export const PluginList: PluginItem[] = [
     name: "volkovlabs-variable-panel",
     description: <>Update dashboard variables.</>,
     href: "/plugins/volkovlabs-variable-panel/",
+  },
+  {
+    title: "Plugin Templates",
+    name: "templates",
+    description: <>Start from well-constructed template.</>,
+    href: "/plugins/templates/",
   },
 ];
