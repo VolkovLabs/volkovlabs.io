@@ -20,18 +20,88 @@ const navbar = {
       position: "left",
       label: "Business Intelligence",
       "aria-label": "Business Intelligence",
+      items: [
+        {
+          label: "Getting Started",
+          to: "/big/getting-started",
+        },
+        {
+          label: "Alerting",
+          to: "/big/alerting",
+        },
+        {
+          label: "Release Notes",
+          to: "/big/release/",
+        },
+      ],
     },
     {
       to: "/grafana/",
       position: "left",
       label: "Grafana Crash Course",
       "aria-label": "Grafana",
+      items: [
+        {
+          label: "Getting Started",
+          to: "/grafana/started",
+        },
+        {
+          label: "Advanced",
+          to: "/grafana/advanced",
+        },
+        {
+          label: "Developer",
+          to: "/grafana/developer",
+        },
+        {
+          label: "Related Blog posts",
+          to: "/blog/tags/grafana-crash-course",
+        },
+      ],
     },
     {
       to: "/plugins/",
       position: "left",
       label: "Plugins",
       "aria-label": "Plugins",
+      items: [
+        {
+          label: "Apache ECharts Panel",
+          to: "/plugins/volkovlabs-echarts-panel/",
+        },
+        {
+          label: "Base64 Panel",
+          to: "/plugins/volkovlabs-image-panel/",
+        },
+        {
+          label: "Calendar Panel",
+          to: "/plugins/volkovlabs-calendar-panel/",
+        },
+        {
+          label: "Dynamic Text Panel",
+          to: "/plugins/volkovlabs-dynamictext-panel/",
+        },
+        {
+          label: "Data Manipulation Panel",
+          to: "/plugins/volkovlabs-form-panel/",
+        },
+        {
+          label: "Grafana API Data Source",
+          to: "/plugins/volkovlabs-grapi-datasource/",
+        },
+        {
+          label: "RSS/Atom Data Source",
+          to: "/plugins/volkovlabs-rss-datasource/",
+        },
+        {
+          label: "Static Data Source",
+          to: "/plugins/volkovlabs-static-datasource/",
+        },
+        {
+          label: "Variable Panel",
+          to: "/plugins/volkovlabs-variable-panel/",
+        },
+      ],
     },
     {
       to: "/sponsor/",
