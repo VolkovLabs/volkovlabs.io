@@ -10,7 +10,7 @@ const footer = {
   style: "light",
   links: [
     {
-      title: "Community",
+      title: "Plugins",
       items: [
         {
           label: "Apache ECharts Panel",
@@ -33,6 +33,10 @@ const footer = {
           to: "/plugins/volkovlabs-form-panel/",
         },
         {
+          label: "Environment Data Source",
+          to: "/plugins/volkovlabs-env-datasource/",
+        },
+        {
           label: "Grafana API Data Source",
           to: "/plugins/volkovlabs-grapi-datasource/",
         },
@@ -47,23 +51,6 @@ const footer = {
         {
           label: "Variable Panel",
           to: "/plugins/volkovlabs-variable-panel/",
-        },
-      ],
-    },
-    {
-      title: "Development",
-      items: [
-        {
-          label: "Apache ECharts Lite Panel",
-          to: "/plugins/volkovlabs-echarts-lite/",
-        },
-        {
-          label: "Environment Data Source",
-          to: "/plugins/volkovlabs-env-datasource/",
-        },
-        {
-          label: "Plugin Templates",
-          href: "/plugins/templates/",
         },
       ],
     },
