@@ -18,8 +18,8 @@ We are happy to announce the release of the Data Manipulation Panel 3.3.0. This 
 - New element type **Link**.
 - New option **Options Source**, applicable for all types with Custom options.
 - New **Data Source** option for the Reset request.
-- **Confirmation Window** element names are now customizable.
-- Usability improvement: any Code Editor automatic size change.
+- **Confirmation Window** labels are now customizable.
+- Usability improvement: Code Editor automatic size change.
 - Added compatibility with Grafana 10.2.1.
 
 :::info Grafana Catalog
@@ -37,7 +37,7 @@ This new element type is similar to the previously existing read-only type, but 
 
 ## Link Element
 
-This new element type allows you to add links on your Data Manipulation form. The link text is customizable using the **Link Text** option.
+This new element type allows you to add links on your Data Manipulation form. The link text is customizable using the **Link Text** option. If not specified, link address will be displayed.
 
 The link can be opened in the same or a new tab.
 
@@ -48,9 +48,9 @@ The link can be opened in the same or a new tab.
 
 ## Select Options from Query
 
-Previously all types with Custom options supported only options entered manually during the configuration. Starting from this release, you can reference a query from any configured data source.
+Previously all types with Custom options supported only options entered manually during the configuration or set using Custom code. Starting from this release, you can reference a query from any configured data source.
 
-You can specify the **Label** and **Value**.
+You can specify the **Label** and **Value** fields.
 
 <Image
   title="Use values from the query for your types with Custom options."
@@ -59,7 +59,7 @@ You can specify the **Label** and **Value**.
 
 ## Data Source for the Reset button
 
-Now you can specify a data source for the **Reset Request** and reference its fields in the **Custom code** if needed.
+Now you can specify a data source for the **Reset Request** and set payload.
 
 <Image
   title="Data Source is a new option for Reset Request."
@@ -69,7 +69,8 @@ Now you can specify a data source for the **Reset Request** and reference its fi
 ## Confirmation Window
 
 The Confirmation window, if enabled, is shown after a user clicks the submit button to highlight all changes made in the Data Manipulation form.
-Starting from this release, you can customize all name elements using the **Confirmation Window** section.
+
+Starting from this release, you can customize all labels using the **Confirmation Window** section.
 
 <Image
   title="Customize confirmation window element names."
@@ -78,10 +79,10 @@ Starting from this release, you can customize all name elements using the **Conf
 
 ## Autosize Code Editor
 
-Any option containing code (for instance, **Show if returned value is true**, **Custom code**) changes its size(number of rows) following the number of code rows in it. The smallest size is 10 rows of code which means the size will not shrink to be less than 10 rows. The size can increase up to 2000 rows of code.
+Any option containing code (for instance, **Custom code**, **Show if returned value is true**) changes its size (number of rows) following the number of code rows in it. The smallest size is 10 rows of code which means the size will not shrink to be less than 10 rows. The size can increase up to 50 rows of code.
 
 <Image
-  title="Any option with code changes size(number of rows) automatically."
+  title="Any option with code changes size (number of rows) automatically."
   src="/img/blog/2023-12-03-form-panel-3.3.0/size.png"
 />
 
