@@ -6,14 +6,10 @@ const mySidebar = [
   {
     items: [
       "installation",
-      "annotations",
       "business",
-      "customize",
-      "provisioning",
       "transformations",
       "variables",
       "timeseries",
-      "allow-unsigned",
     ],
     label: "Getting Started",
     type: "category",
@@ -24,7 +20,14 @@ const mySidebar = [
     },
   },
   {
-    items: ["datasources/json", "storage"],
+    items: [
+      "annotations",
+      "customize",
+      "datasources/json",
+      "provisioning",
+      "storage",
+      "allow-unsigned",
+    ],
     label: "Advanced",
     type: "category",
     collapsible: false,
