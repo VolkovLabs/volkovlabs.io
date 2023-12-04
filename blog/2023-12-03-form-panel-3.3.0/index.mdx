@@ -1,0 +1,132 @@
+---
+authors: [daria]
+slug: form-panel-3.3.0-20231203/
+tags: [Data Manipulation, Release Notes]
+image: /img/blog/2023-12-03-form-panel-3.3.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Video from "@theme/Video";
+
+# Data Manipulation Panel 3.3.0
+
+We are happy to announce the release of the Data Manipulation Panel 3.3.0. This release includes the following updates:
+
+- New element type **Read-only Text Area**.
+- New element type **Link**.
+- New option **Options Source**, applicable for all types with Custom options.
+- New **Data Source** option for the Reset request.
+- **Confirmation Window** labels are now customizable.
+- Usability improvement: Code Editor automatic size change.
+- Added compatibility with Grafana 10.2.1.
+
+:::info Grafana Catalog
+The plugin was updated in the Grafana Plugins catalog on November 23, 2023.
+:::
+
+## Read-only Text Area
+
+This new element type is similar to the previously existing read-only type, but this one allows to display multiple rows of text.
+
+<Image
+  title="Read-only Text is a new element type."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/read-text.png"
+/>
+
+## Link Element
+
+This new element type allows you to add links on your Data Manipulation form. The link text is customizable using the **Link Text** option. If not specified, link address will be displayed.
+
+The link can be opened in the same or a new tab.
+
+<Image
+  title="Link is a new element type."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/link.png"
+/>
+
+## Select Options from Query
+
+Previously all types with Custom options supported only options entered manually during the configuration or set using Custom code. Starting from this release, you can reference a query from any configured data source.
+
+You can specify the **Label** and **Value** fields.
+
+<Image
+  title="Use values from the query for your types with Custom options."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-query.png"
+/>
+
+## Data Source for the Reset button
+
+Now you can specify a data source for the **Reset Request** and set payload.
+
+<Image
+  title="Data Source is a new option for Reset Request."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/reset.png"
+/>
+
+## Confirmation Window
+
+The Confirmation window, if enabled, is shown after a user clicks the submit button to highlight all changes made in the Data Manipulation form.
+
+Starting from this release, you can customize all labels using the **Confirmation Window** section.
+
+<Image
+  title="Customize confirmation window element names."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/confirm.png"
+/>
+
+## Autosize Code Editor
+
+Any option containing code (for instance, **Custom code**, **Show if returned value is true**) changes its size (number of rows) following the number of code rows in it. The smallest size is 10 rows of code which means the size will not shrink to be less than 10 rows. The size can increase up to 50 rows of code.
+
+<Image
+  title="Any option with code changes size (number of rows) automatically."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/size.png"
+/>
+
+## Getting Started
+
+You can install the Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install volkovlabs-form-panel
+```
+
+## YouTube Tutorial
+
+Data Manipulation Panel is a plugin for Grafana that allows you to insert and update application data, as well as modify configuration directly from your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/hVy9NfFiI5U"
+  title="Use REST API, Data Source, and Queries to manipulate your data."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add Disabled Text Area element type (#243)
+- Add Confirmation Window options (#242)
+- Add context object to the custom code (#255)
+- Add Select Options From Query (#254)
+- Add NumberInput component which allows to enter decimals (#291)
+- Update to Plugin Tools 2.1.1 (#292)
+- Use Grafana Access Policy to sign plugin (#292)
+- Update to Grafana 10.2.1 (#292)
+- Update ESLint configuration (#294)
+- Add Autosize Code Editor (#295)
+- Add Data Source option for Reset button (#296)
+- Add Link Element (#297)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
