@@ -14,36 +14,76 @@ import Video from "@theme/Video";
 
 We are happy to announce the release of the Data Manipulation Panel 3.3.0. This release includes the following updates:
 
-- Added Disabled Text Area element type
-- Added Confirmation Window options
-- Added Select Options From Query
-- Added Autosize Code Editor
-- Added Data Source option for Reset button
-- Added Link Element
+- New element type **Read-only Text Area**.
+- New element type **Link**.
+- New option **Options Source**, applicable for all types with Custom options.
+- New **Data Source** option for the Reset request.
+- **Confirmation Window** element names are now customizable.
+- Usability improvement: any Code Editor automatic size change.
 - Added compatibility with Grafana 10.2.1.
 
 :::info Grafana Catalog
 The plugin was updated in the Grafana Plugins catalog on November 23, 2023.
 :::
 
-## Disabled Text Area
+## Read-only Text Area
 
-Now you can...
+This new element type is similar to the previously existing read-only type, but this one allows to display multiple rows of text. 
 
 <Image
-  title="Impose minimum and maximum for the Date Time type."
-  src="/img/blog/2023-12-03-form-panel-3.3.0/min-max.png"
+  title="Read-only Text is a new element type."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/read-text.png"
+/>
+
+## Link Element
+
+This new element type allows you to add links on your Data Manipulation form. The link text is customizable using the **Link Text** option.
+
+The link can be opened in the same or a new tab.
+
+<Image
+  title="Link is a new element type."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/link.png"
+/>
+
+## Select Options from Query
+
+Previously all types with Custom options supported only options entered manually during the configuration. Starting from this release, you can reference a query from any configured data source. 
+
+You can specify the **Label** and **Value**.
+
+<Image
+  title="Use values from the query for your types with Custom options."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-query.png"
+/>
+
+## Data Source for the Reset button
+
+Now you can specify a data source for the **Reset Request** and reference its fields in the **Custom code** if needed. 
+
+<Image
+  title="Data Source is a new option for Reset Request."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/reset.png"
 />
 
 ## Confirmation Window
 
-## Select Options from Query
+The Confirmation window, if enabled, is shown after a user clicks the submit button to highlight all changes made in the Data Manipulation form. 
+Starting from this release, you can customize all name elements using the **Confirmation Window** section.
+
+<Image
+  title="Customize confirmation window element names."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/confirm.png"
+/>
 
 ## Autosize Code Editor
 
-## Reset button with Data Source
+Any option containing code (for instance, **Show if returned value is true**, **Custom code**) changes its size(number of rows) following the number of code rows in it. The smallest size is 10 rows of code which means the size will not shrink to be less than 10 rows. The size can increase up to 2000 rows of code.
 
-## Link Element
+<Image
+  title="Any option with code changes size(number of rows) automatically."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/size.png"
+/>
 
 ## Getting Started
 
