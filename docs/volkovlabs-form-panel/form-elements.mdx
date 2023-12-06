@@ -52,6 +52,21 @@ Element types have specific options. For instance, the Code Editor type in addit
   src="/img/plugins/volkovlabs-form-panel/add-form-element.png"
 />
 
+## Move a form element
+
+:::info Version
+
+Supported from version 3.0.0.
+
+:::
+
+You can drag-and-drop form elements in the edit mode to change their order on the form.
+
+<Image
+  title="Drag-and-drop form elements in Edit mode."
+  src="/img/plugins/volkovlabs-form-panel/drag.png"
+/>
+
 ## Form element types
 
 The picture below illustrates what the element types look like.
@@ -106,7 +121,7 @@ Specific for this element are the following options:
 
 <Image
   title="Options specific to the File type."
-  src="/img/plugins/volkovlabs-form-panel/accept.png"
+  src="/img/blog/2023-10-10-form-panel-3.2.1/accepted.png"
 />
 
 ### Multi-select with custom options
@@ -206,11 +221,81 @@ Specific for this element are the following options:
 
 - Rows. Sets the vertical size of the element.
 
+### Read-only Text Area
+
+:::info Version
+
+Below is supported from version 3.2.1.
+
+:::
+This element type is similar to the Read-Only type with the difference that this one allows to display multiple rows of text.
+
+### Link
+
+:::info Version
+
+Below is supported from version 3.2.1.
+
+:::
+
+This element type allows you to add links on your Data Manipulation form. The link text is customizable using the Link Text option. If not specified, link address will be displayed.
+
+Specific for this element are the following options:
+- **Link text**
+- **Open in**. The link can be opened in the same or a new tab.
+
+<Image
+  title="The Link element type."
+  src="/img/plugins/volkovlabs-form-panel/link.png"
+/>
+
+### Common configuration
+
+There are three form elements with select options.
+
+- Multi Select with Custom Options
+- Select with Custom Options
+- Radio Group with Custom Options
+
+All three have some options in common. 
+
+#### Icon
+
+<Image
+  title="Optionally select an icon for this element."
+  src="/img/plugins/volkovlabs-form-panel/icons.png"
+/>
+
+#### Select Options from Query
+
+:::info Version
+
+Below is supported from version 3.2.1.
+
+:::
+
+Reference a query from any configured data source to populate form elements dynamically.
+You can specify the **Label** and **Value** fields.
+
+<Image
+  title="Use values from the query for your types with select options."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-query.png"
+/>
+
+
 ## Conditional Visibility
 
-All form elements have the `Show if returned value is true` parameter. It is a code area where you can use JavaScript to create conditional statements.
+Every form element has the <b>Show If returned value is true</b> parameter where you enter JavaScript code.
 
-For instance, the code below makes an element visible if in the other form element with the `id` equal to `select`, the user chose/typed value equal to `max`.
+- If this code returns `true`, the element is shown on the panel.
+- If this code returns `false`, the element is hidden from the panel.
+
+<Image
+  title="Conditional visibility example."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/select.png"
+/>
+
+Example code to check the current value of the `select` element and show the `dateTime` element if the value equal to `max`:
 
 ```js
 const select = elements.find((element) => element.id === "select");
@@ -219,3 +304,47 @@ if (select) {
   return select.value === "max";
 }
 ```
+
+:::info Version
+
+Below is supported from version 3.2.1.
+
+:::
+
+You can use the dashboard and global variables within your JavaScript code.
+
+<Image
+  title="Conditional visibility using a dashboard variable example."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/var.png"
+/>
+
+Example code to check the value of the dashboard variable `var`:
+
+```
+const test = replaceVariables('$var');
+return test === 'test'
+```
+
+## Field Mapping
+
+:::info Version
+
+Below is supported from version 3.2.1.
+
+:::
+
+Using the **Field name** parameter for **Data Source** and the **Query Field** for **Query**, you can specify field-to-form mapping.
+
+### Data Source
+
+<Image
+  title="Explicitly specify the field-to-form element mapping for Data Source using Field name."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-ds.png"
+/>
+
+### Query
+
+<Image
+  title="Explicitly specify the field-to-form element mapping for Query using Query Field."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-query.png"
+/>

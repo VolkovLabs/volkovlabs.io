@@ -92,14 +92,16 @@ For the Data Source type, you must use the `SetInitial()` function in the Initia
 
 ## Reset button
 
-The reset button is not shown by default. To review all available options, switch the visibility parameter to anything, but 'hidden'.
-Primary, Secondary and Destructive are pre-set visualization templates. In Custom, you can specify foreground color, background color, icon and the text to put instead of 'Reset' if needed.
+The reset button is not shown by default. To review all available options, switch the visibility parameter to anything, but **Hidden**.
+**Primary**, **Secondary** and **Destructive** are pre-set visualization templates. In the **Custom**, you can specify foreground color, background color, icon and the text to replace the 'Reset' label if needed.
 
-When this button is not hidden (any other mode is selected), you will also get the Reset Request section. There, you can go with either the Initial Request option or Custom code.
+When this button is not hidden (any other mode is selected), you will also get the Reset Request section. There, you can go with either Custom Code, Initial Request or Data Source option.
 
-The Initial request is selected by default. In that event, the plugin executes the Initial Request again as if the form is being loaded for the first time.
+The **Initial request** is selected by default. In that event, the plugin executes the Initial Request again as if the form is being loaded for the first time.
 
-In the Custom code, you can have any custom logic required. For instance, set all form elements to their defaults.
+With the **Data Source** reset action you can specify a data source for the Reset Request and set payload in the following **Custom code area**.
+
+In the **Custom code**, you can have any custom logic required. For instance, set all form elements to their defaults.
 
 <Image
   title="Reset button can call the Initial Request or execute any custom code."

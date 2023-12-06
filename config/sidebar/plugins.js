@@ -224,6 +224,8 @@ const mySidebar = [
           "volkovlabs-form-panel/request",
           "volkovlabs-form-panel/dynamic",
           "volkovlabs-form-panel/variables",
+          "volkovlabs-form-panel/load",
+          "volkovlabs-form-panel/confirm-window",
         ],
         label: "Features",
         type: "category",
