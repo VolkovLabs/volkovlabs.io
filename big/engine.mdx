@@ -33,7 +33,10 @@ As you know, an alert rule is created for a particular panel on a particular das
 
 The BI(G), Business Intelligence App, supports multi-frame data sets. That means that the alert rule assigned to a dashboard and panel will be applied to all data frames fetched from the connected data source.
 
-In the picture below, the panel fetches three data frames, one for each device. The alert is created when at least one device temperature goes beyond the allowable range (in this example, it is device 2, yellow line). The alert stops ringing when the last device temperature (in this example, it is device 3, blue line) comes back into the allowable range.
+In the picture below, the panel fetches three data frames, one for each device.
+
+- The alert is created when at least one device temperature goes beyond the allowable range (in this example, it is device 2, yellow line).
+- The alert stops ringing when the last device temperature (in this example, it is device 3, blue line) comes back into the allowable range.
 
 <Image
   title="Multi-frames data set example."
@@ -51,7 +54,5 @@ Grafana transformations are now also supported. However, please, note, that Graf
 :::tip
 
 Support of Grafana transformation is in beta state. This is due to the number of existing transformations.
-
-Please open an issue you experience working with transformations in the GitHub repository.
 
 :::
