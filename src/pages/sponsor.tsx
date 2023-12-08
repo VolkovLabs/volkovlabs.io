@@ -21,11 +21,11 @@ const Header = (siteConfig) => {
               {siteConfig.tagline}
             </h1>
             <p className="hero__subtitle margin-vert--md">
-              Sponsor our open-source Grafana plugins on GitHub Sponsor.
+              We prioritize issue and question replies for Premium sponsors.
             </p>
 
             <p className="hero__subtitle">
-              We prioritize issue and question replies for Premium sponsors.
+              Sponsor our open-source Grafana plugins on GitHub Sponsor.
             </p>
 
             <div className="margin-vert--lg">
