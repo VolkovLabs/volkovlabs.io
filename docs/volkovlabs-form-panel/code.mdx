@@ -34,7 +34,6 @@ Custom code is executed after the `Initial` and `Update` requests.
 | `setInitial({})`                           | Specifies initial values for a custom initial request to highlight modified values and requests a user's confirmation. |
 | `templateService`                          | Grafana's `templateService` function that provides access to variables and enables the update of a time range.         |
 
-
 To find out the current parameters, you can log them in the browser's console:
 
 ```javascript
@@ -48,21 +47,18 @@ console.log(
 );
 ```
 
-## Refresh Dashboard after update request or show error
+## Refresh Dashboard after update request or show warning
 
 ```javascript
 if (response && response.ok) {
   notifySuccess(["Update", "Values updated successfully."]);
   locationService.reload();
 } else {
-  notifyError([
+  notifyWarning([
     "Error",
     `An error occurred updating values: ${response.status}`,
   ]);
 }
---Misha, add an example here with
-notifyWarning
-
 ```
 
 ## Update variable after update request to interact with other panels
