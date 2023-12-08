@@ -3,9 +3,19 @@
  */
 const mySidebar = [
   "index",
-  "getting-started",
   {
-    items: ["big-alerting", "alerting-panel", "engine"],
+    items: ["health-checks"],
+    label: "Getting Started",
+    type: "category",
+    collapsible: false,
+    link: {
+      type: "doc",
+      id: "getting-started",
+    },
+  },
+
+  {
+    items: ["big-alerting", "alerting-panel", "engine", "thresholds"],
     label: "Alerting",
     type: "category",
     collapsible: false,
