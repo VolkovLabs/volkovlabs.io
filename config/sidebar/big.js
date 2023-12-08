@@ -5,7 +5,7 @@ const mySidebar = [
   "index",
   "getting-started",
   {
-    items: ["big-alerting", "alerting-panel", "engine"],
+    items: ["big-alerting", "alerting-panel", "engine", "thresholds", "health-checks"],
     label: "Alerting",
     type: "category",
     collapsible: false,
