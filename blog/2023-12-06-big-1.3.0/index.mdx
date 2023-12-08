@@ -49,34 +49,28 @@ A greyed-out delete button in the **Webhook** tab means the alert rule with this
 
 ## Color range in Threshold
 
-To simplify the alert configuration further, we pointed the BI Alert Engine to the **Thresholds** color for reading the allowable range of data.
+To support higher high and lower low ranges, we pointed the BI Alert Engine to the **Thresholds** color for reading the allowable range of data. The BI Engine uses the **Thresholds** colors as a guide in the creation of alert records and calls the assigned webhook.
 
 :::info
 The allowable range of data is a way to set what is normal, not requiring anyone's attention. No alerts/actions are needed when the data is within the allowable range.
 :::
 
-The BI Alert manager uses the **Thresholds** colors as a guide in the creation of alert records.
-
-In this release, the allowable ranges include only the ranges that are configured with green color. This means, for now, the ranges could be high and low.
-
-In the upcoming releases, we will add more colors to allow high/high, low/low ranges and so forth.
-
 In the illustration below, three alert records have been created due to the data being outside the allowable range three times.
 
-The alert records are displayed on the graph as light blue highlighted areas. They highlight all time ranges when the data values (temperature, in this example) went outside the allowable range. In this example, the allowable range is from 50 to 80 (set in the **Thresholds** section).
+The alert records (annotations) are displayed on the graph as light blue highlighted areas. They highlight all time ranges when the data values (temperature, in this example) went outside the allowable range. In this example, the allowable range is from 50 to 80 (set in the **Thresholds** section).
 
 :::info
 Please note, that there are no values (no registered temperature data) between the highest peak and the lowest deep on the graph. The temperature changes abruptly from max to min.
 :::
 
-The temperature for alert 1 goes from below 40 to 50.
-The temperature for alert 2 goes from 80 to 94.7(illustrated with a tooltip) and then from about 20.4(illustrated with a tooltip) to 50.
-The temperature for alert 3 goes from 80 to about 93.4 and then from about 21.1 to about 33.7.
+- The temperature for alert 1 goes from below 40 to 50.
+- The temperature for alert 2 goes from 80 to 94.7 (illustrated with a tooltip) and then from about 20.4 (illustrated with a tooltip) to 50.
+- The temperature for alert 3 goes from 80 to about 93.4 and then from about 21.1 to about 33.7.
 
 The temperature then continues still within the not allowable interval though it is not yet alerted since the alert rules run periodically. In this example, the last time, the alert rule was challenged was 11:04:50. After the next alert rule run, the interval for alert 3 will extend and a bigger area will be highlighted with light blue (not shown here).
 
 <Image
-  title="BI Alert Engine looks up the threshold color to create an alert record."
+  title="BI Alert Engine looks up the threshold color to create an alert record and calls the assigned webhook."
   src="/img/blog/2023-12-06-big-1.3.0/thresh-color.png"
 />
 
@@ -89,7 +83,7 @@ As you know, an alert rule is created for a particular panel on a particular das
   src="/img/blog/2023-12-06-big-1.3.0/dash-panel.png"
 />
 
-Starting from this release, BI(G) supports multi-data frame sets. That means that the alert rule assigned to a dashboard/panel will be applied to all data frames fetched from the connected data source.
+Starting from this release, BI(G) supports multi-frame data sets. That means that the alert rule assigned to a dashboard and panel will be applied to all data frames fetched from the connected data source.
 
 In the picture below, the panel fetches three data frames, one for each device. The alert is created when at least one device temperature goes beyond the allowable range (in this example, it is device 2, yellow line). The alert stops ringing when the last device temperature (in this example, it is device 3, blue line) comes back into the allowable range.
 
@@ -100,19 +94,19 @@ In the picture below, the panel fetches three data frames, one for each device. 
 
 In addition, Grafana transformations are now also supported. However, please, note, that Grafana offers a large number of transformations, hence, there is a chance that some of them will not work correctly.
 
-Please contact us with any issues you experience working with transformations.
-
 :::info
 
-Support of Grafna transformation is in beta state. This is due to the number of existing transformations.
+Support of Grafana transformation is in beta state. This is due to the number of existing transformations.
+
+Please open an issue you experience working with transformations in the GitHub repository.
 
 :::
 
 ## Grafana Health Check
 
-To successfully run the BI(G) app, you need Grafana and BI Alert Manager. In some instances, Grafana might take longer time to launch than the BI Engine. This scenario may lead to the failure of the environmental health check. Simply put, if the BI Engine does not find Grafana running, it shuts itself down.
+To successfully run the BI(G) app, you need Grafana and BI Engine. In some instances, Grafana might take longer time to launch than the BI Engine. This scenario may lead to the failure of the startup health check. Simply put, if the BI Engine does not find Grafana running, it shuts itself down.
 
-To avoid this false health check failure, we added timing parameters that determine how long the BI Engine waits before checking Grafana's active status (Grafana token and URL to connect to).
+To avoid this false health check failure, we added timing parameters that determine how long the BI Engine waits before checking Grafana's active status using Grafana token and URL to connect to.
 
 By default, the waiting is 5 seconds. You can configure that by using the parameters below.
 
