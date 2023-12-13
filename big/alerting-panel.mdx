@@ -49,10 +49,15 @@ And the other status might be one of the four values:
 - **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.
 - **Error**. Something is wrong which could be the query, annotation or webhook.
 
-Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused.
-After any mo, the alert status changes to **Scheduled**.
+Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any modification, the alert status changes to **Scheduled**.
 
-Reference the flow schema to get a better understanding of how statuses change [here](/engine.mdx)
+Reference the flow schema to get a better understanding of how statuses change in the BI Engine.
+
+<Image
+  title="Flow schema for the statuses change in the BI Engine."
+  src="/img/big/alert-statuses.png"
+  width="60%"
+/>
 
 ### Action buttons
 
