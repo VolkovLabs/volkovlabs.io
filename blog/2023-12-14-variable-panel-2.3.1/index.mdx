@@ -1,21 +1,21 @@
 ---
 authors: [daria]
-slug: variable-panel-2.3.0-20231214/
+slug: variable-panel-2.3.1-20231214/
 tags: [Variables, Release Notes]
-image: /img/blog/2023-12-14-variable-panel-2.3.0/banner.png
+image: /img/blog/2023-12-14-variable-panel-2.3.1/banner.png
 keywords: [Variable, Panel, Status]
 ---
 
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Variable Panel 2.3.0
+# Variable Panel 2.3.1
 
-We are happy to announce the release of the Variable Panel 2.3.0. This release includes the following updates:
+We are happy to announce the release of the Variable Panel 2.3.1. This release includes the following updates:
 
 - Added clean table state on tab change.
 - Added persistent mode.
-- Added compatibility with Grafana 10.2.2.
+- Added compatibility with Grafana 10.2.2 and Grafana 10.3.0 (pre-release).
 
 :::info Grafana Catalog
 The plugin is under review.
@@ -27,7 +27,7 @@ Text.
 
 <Image
   title="Create a dashboard/variable mapping example."
-  src="/img/blog/2023-12-14-variable-panel-2.3.0/vars.png"
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/vars.png"
 />
 
 ### Persistent Mode
@@ -57,7 +57,11 @@ The variable panel offers you single- and multi-variable layouts along with an a
 
 ## Release Notes
 
-### Features / Enhancements
+### Bugfixes in 2.3.1
+
+- Fix draggable icon for Grafana 10.3 (#107)
+
+### Features / Enhancements in 2.3.0
 
 - Add clean table state on tab change (#101)
 - Update ESLint configuration and refactor (#102)
