@@ -34,7 +34,11 @@ Text.
 
 ## Event Bus and App Events
 
-Text.
+Refresh all dashboard panels using `EventBus` with global scope called `AppEvents`:
+
+```
+appEvents.publish({ type: 'variables-changed', payload: { refreshAll: true } });
+```
 
 ## Variable in Payload functions
 
