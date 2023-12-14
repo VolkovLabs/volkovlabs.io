@@ -13,26 +13,67 @@ import Video from "@theme/Video";
 
 We are happy to announce the release of the Variable Panel 2.3.1. This release includes the following updates:
 
-- Added clean table state on tab change.
-- Added persistent mode.
+- Added the feature to automatically remove **Search values** after switching tabs.
+- Added the **Persistent** mode.
 - Added compatibility with Grafana 10.2.2 and Grafana 10.3.0 (pre-release).
 
 :::info Grafana Catalog
 The plugin is under review.
 :::
 
-## Clean state on tab change
+## Number of downloads
 
-Text.
+The Variable plugin shoots for the stars and is very close to 100K downloads! :clap:     
 
 <Image
-  title="Create a dashboard/variable mapping example."
-  src="/img/blog/2023-12-14-variable-panel-2.3.1/vars.png"
+  title="Variable panel number of downloads."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/downloads.png"
+/>
+
+## Remove **Search values** after switching tabs
+
+This feature is applicable when your Variable panel displays multiple tabs.
+
+In the example below, the variable panel displays two tabs: **Location** and **Country**. When a user clicks a funnel icon and types in the **Search values**, only the nodes containing, in this example, 5 are shown. 
+
+Next, if this user switches to the **Country** tab, the **Search values** are cleared and no filters are applied. 
+
+That means that when a user changes tabs, all previous **Search values** are removed.
+
+<Image
+  title="Clear Search value on a tab change feature."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/clear-tab.png"
+/>
+
+The same rule applies to the **Favorites**. The **Show only favorites** filter is cleared when a user switches to another tab.
+
+<Image
+  title="Clear Only Favorites on a tab change feature."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/clear-tab-fav.png"
 />
 
 ### Persistent Mode
 
-Text.
+This mode could be turned on and off in the Variable panel options. 
+
+<Image
+  title="Enable/Disable the Persistent mode."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/persist-on-off.png"
+  width="50%"
+/>
+
+When **Enabled**, the selected values are stored in the browser. It comes in handy when one variable panel is controlled by the other variable panel. 
+
+For instance, in the illustration below, I have two variable panels. One displays countries and the other one displays states within the selected country. 
+
+I chose **USA** in the first panel and then **IL** on the other panel.
+
+Depending on the **Persistent** option value set for the **State** variable panel, the selected value is either <u>saved</u> in the browser for future use or <u>not</u>. 
+
+<Image
+  title="Persistent option allows to save the selected values into the browser."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/persistent.png"
+/>
 
 ## Getting Started
 
