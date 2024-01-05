@@ -1,8 +1,8 @@
 ---
 authors: [daria]
-slug: form-panel-3.4.0-20231215/
+slug: form-panel-3.4.0-20240105/
 tags: [Data Manipulation, Release Notes]
-image: /img/blog/2023-12-15-form-panel-3.4.0/banner.png
+image: /img/blog/2024-01-05-form-panel-3.4.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
@@ -29,7 +29,7 @@ Text.
 
 <Image
   title="Read-only Text is a new element type."
-  src="/img/blog/2023-12-15-form-panel-3.4.0/read-text.png"
+  src="/img/blog/2024-01-05-form-panel-3.4.0/read-text.png"
 />
 
 ## Event Bus and App Events
@@ -37,7 +37,13 @@ Text.
 Refresh all dashboard panels using `EventBus` with global scope called `AppEvents`:
 
 ```
-appEvents.publish({ type: 'variables-changed', payload: { refreshAll: true } });
+context.grafana.appEvents.publish({ type: 'variables-changed', payload: { refreshAll: true } });
+```
+
+or
+
+```
+context.grafana.refresh();
 ```
 
 ## Variable in Payload functions
