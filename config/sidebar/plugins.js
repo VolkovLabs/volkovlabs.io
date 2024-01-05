@@ -404,6 +404,7 @@ const mySidebar = [
           "volkovlabs-variable-panel/sort",
           "volkovlabs-variable-panel/key",
           "volkovlabs-variable-panel/empty",
+          "volkovlabs-variable-panel/persistent",
           "volkovlabs-variable-panel/redirect",
         ],
         label: "Features",

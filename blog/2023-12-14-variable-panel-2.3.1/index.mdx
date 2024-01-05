@@ -1,0 +1,117 @@
+---
+authors: [daria]
+slug: variable-panel-2.3.1-20231214/
+tags: [Variables, Release Notes]
+image: /img/blog/2023-12-14-variable-panel-2.3.1/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Variable Panel 2.3.1
+
+We are happy to announce the release of the Variable Panel 2.3.1. This release includes the following updates:
+
+- Added the feature to automatically clear **Search values** after switching tabs.
+- Added the **Persistent** mode.
+- Added compatibility with Grafana 10.2.2 and Grafana 10.3.0 (pre-release).
+
+:::info Grafana Catalog
+The plugin is under review.
+:::
+
+## Number of downloads
+
+The Variable plugin shoots for the stars and is very close to 100K downloads! :clap:
+
+<Image
+  title="Variable panel was downloaded almost 100K times."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/downloads.png"
+/>
+
+## Clear **Search values** after switching tabs
+
+This feature is applicable when your Variable panel displays multiple tabs.
+
+In the example below, the variable panel displays two tabs: **Location** and **Country**. When a user clicks a funnel icon and types in the **Search values**, only the nodes containing, in this example, 5 are shown.
+
+Next, if this user switches to the **Country** tab, the **Search values** are cleared and no filters are applied.
+
+That means that when a user changes tabs, all previous **Search values** are removed.
+
+<Image
+  title="Clear Search value on a tab change feature."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/clear-tab.png"
+/>
+
+The same rule applies to the **Favorites**. The **Show only favorites** filter is cleared when a user switches to another tab.
+
+<Image
+  title="Clear Only Favorites on a tab change feature."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/clear-tab-fav.png"
+/>
+
+### Persistent Mode
+
+This feature is applicable when Variable configured in Minimized and Button layouts. This mode could be turned on and off in the Variable panel options.
+
+<Image
+  title="Enable/Disable the Persistent mode."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/persist-on-off.png"
+  width="50%"
+/>
+
+When **Enabled**, the selected values are stored in the browser's local storage. It comes in handy when one variable panel is controlled by the other variable panel.
+
+For instance, in the illustration below, I have two variable panels. One displays countries and the other one displays states within the selected country. I chose **USA** in the first panel and then **IL** on the other panel.
+
+Depending on the **Persistent** option value set for the **State** variable panel, the selected value is either <u>saved</u> in the browser for future use or <u>not</u>.
+
+<Image
+  title="Persistent option allows to keep the selected values in the browser's local cache."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/persistent.png"
+/>
+
+## Getting Started
+
+The Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
+
+For the latter, please use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-variable-panel
+```
+
+## YouTube Tutorial
+
+The Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+
+The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+
+<Video
+  src="https://www.youtube.com/embed/mYYtMW9qiPA"
+  title="Demonstrates the Variable panel functionality."
+/>
+
+## Release Notes
+
+### Bugfixes in 2.3.1
+
+- Fix draggable icon for Grafana 10.3 (#107)
+
+### Features / Enhancements in 2.3.0
+
+- Add clean table state on tab change (#101)
+- Update ESLint configuration and refactor (#102)
+- Add persistent mode (#103)
+- Update to Grafana 10.2.2 and Volkov labs packages (#104)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
