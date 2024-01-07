@@ -14,7 +14,7 @@ import Shorts from "@theme/Shorts";
 
 We are happy to announce the release of the Data Manipulation Panel 3.4.0. This release includes the following updates:
 
-- Added a new parameter **Synchronize with data** in the Initial Request section. 
+- Added a new parameter **Synchronize with data** in the Initial Request section.
 - Extended the Context parameter by adding EventBus and AppEvents.
 - Enabled replacing variables in Payload functions.
 - Ensured compatibility with Grafana 10.2.2.
@@ -25,7 +25,7 @@ The plugin is under review.
 
 ## Downloads and GitHub issues
 
-### Downloads 
+### Downloads
 
 The Grafana Community has downloaded the Data Manipulation plugin more than 175K times! We are happy to learn what goals this plugin helped you to achieve. Contact us with your use case to share with the rest of the world.
 
@@ -36,9 +36,9 @@ The Grafana Community has downloaded the Data Manipulation plugin more than 175K
 
 ### GitHub issues
 
-The Data Manipulation plugin has the most number of ussies. Thanks to the active community members who do not stop to surprise us with incredible ideas for improvements. During the summer of 2023, this plugin had a record number of open issues. We keep battling that number and are proud to report that as of now there are only 3 outstanding issues left. 
+The Data Manipulation plugin has the most number of ussies. Thanks to the active community members who do not stop to surprise us with incredible ideas for improvements. During the summer of 2023, this plugin had a record number of open issues. We keep battling that number and are proud to report that as of now there are only 3 outstanding issues left.
 
-Keep asking and requesting, it is the best way to improve the plugin and keep it useful and relevant. 
+Keep asking and requesting, it is the best way to improve the plugin and keep it useful and relevant.
 
 <Image
   title="The Data Manipulation plugin open issues fluctuation."
@@ -48,13 +48,13 @@ Keep asking and requesting, it is the best way to improve the plugin and keep it
 ### LIVE project
 
 If you ever wondered where we take the downloads and other statistics, please check out our [LIVE](http://live.volkovlabs.io) project.
-You can find general statistics about all our open-source plugins, including release calendar, download number, and links to all related blog posts and YouTube videos. We created the [LIVE](http://live.volkovlabs.io) project for internal use, but since many people found the presented information useful we made it open to anyone. 
+You can find general statistics about all our open-source plugins, including release calendar, download number, and links to all related blog posts and YouTube videos. We created the [LIVE](http://live.volkovlabs.io) project for internal use, but since many people found the presented information useful we made it open to anyone.
 
 If you believe that some other statistical measures would add depth to the overview, contact us and we will consider modifying the existing dashboards.
 
 ## Panel syncing for Initial Request
 
-As you know, one of the basic Grafana dashboard parameters is the frequency of updates. In other words, admins/editors can set up how often the whole dashboard is going to be refreshed. 
+As you know, one of the basic Grafana dashboard parameters is the frequency of updates. In other words, admins/editors can set up how often the whole dashboard is going to be refreshed.
 
 <Image
   title="The frequency of a dashboard update can be set up in the top right corner."
@@ -62,7 +62,7 @@ As you know, one of the basic Grafana dashboard parameters is the frequency of u
   width="100%"
 />
 
-Some of the time frequencies might bring a challenge for a user trying to populate a Data Manipulation form. If the user does not hit the Submit button often enough then everything they entered is lost. With frequencies less than 3-5 minutes, the task the user faces is practically impossible. 
+Some of the time frequencies might bring a challenge for a user trying to populate a Data Manipulation form. If the user does not hit the Submit button often enough then everything they entered is lost. With frequencies less than 3-5 minutes, the task the user faces is practically impossible.
 
 To avoid user stress, we added a new parameter - **Synchronize with data**.
 
@@ -78,7 +78,7 @@ When it is **Disabled**, the Data Manipulation form is excluded from the frequen
 
 **Custom code** allows you to access the panel's options, REST API responses, form elements, and various Grafana services. To keep the Data Manipulation plugin organized and simplify the search among the available options, we allowed to access them all under the **context** object.
 
-Simply type **context** and get the list of everything available from the Data Manipulation arsenal. 
+Simply type **context** and get the list of everything available from the Data Manipulation arsenal.
 
 <Image
   title="Panel's options, REST API responses, form elements, and various Grafana services are now can be referenced from the Context parameter."
@@ -103,7 +103,7 @@ context.grafana.refresh();
 
 ## Variable in Payload functions
 
-Starting from this release we enabled the usage of dashboard variables in the Initial and Update Payloads. 
+Starting from this release we enabled the usage of dashboard variables in the Initial and Update Payloads.
 
 <Image
   title="You can use dashboard variables in the Initial and Update Payloads."
