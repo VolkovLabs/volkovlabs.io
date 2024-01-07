@@ -17,7 +17,7 @@ We are happy to announce the release of the Data Manipulation Panel 3.4.0. This 
 - Added a new parameter **Synchronize with data** in the Initial Request section.
 - Extended the Context parameter by adding EventBus and AppEvents.
 - Enabled replacing variables in Payload functions.
-- Ensured compatibility with Grafana 10.2.2.
+- Ensured compatibility with Grafana 10.2.2 and upcoming 10.3.0.
 
 :::info Grafana Catalog
 The plugin is under review.
@@ -27,7 +27,7 @@ The plugin is under review.
 
 ### Downloads
 
-The Grafana Community has downloaded the Data Manipulation plugin more than 175K times! We are happy to learn what goals this plugin helped you to achieve. Contact us with your use case to share with the rest of the world.
+The Grafana Community has downloaded the Data Manipulation plugin more than 175K times! We are happy to learn what goals this plugin helped you to achieve. [Contact us](https://github.com/volkovlabs/volkovlabs-form-panel/issues) with your use case to share with the rest of the world.
 
 <Image
   title="The Data Manipulation plugin downloads exceed 175K in 2023."
@@ -36,7 +36,7 @@ The Grafana Community has downloaded the Data Manipulation plugin more than 175K
 
 ### GitHub issues
 
-The Data Manipulation plugin has the most number of ussies. Thanks to the active community members who do not stop to surprise us with incredible ideas for improvements. During the summer of 2023, this plugin had a record number of open issues. We keep battling that number and are proud to report that as of now there are only 3 outstanding issues left.
+Thanks to the active community members who do not stop to surprise us with incredible ideas for improvements. During the summer of 2023, this plugin had a record number of open issues. We keep battling that number and are proud to report that as of now there are only 3 outstanding issues left.
 
 Keep asking and requesting, it is the best way to improve the plugin and keep it useful and relevant.
 
@@ -74,7 +74,7 @@ When it is **Disabled**, the Data Manipulation form is excluded from the frequen
   width="40%"
 />
 
-## Event Bus and App Events
+## Context
 
 **Custom code** allows you to access the panel's options, REST API responses, form elements, and various Grafana services. To keep the Data Manipulation plugin organized and simplify the search among the available options, we allowed to access them all under the **context** object.
 
@@ -85,9 +85,9 @@ Simply type **context** and get the list of everything available from the Data M
   src="/img/blog/2024-01-05-form-panel-3.4.0/context.png"
 />
 
-Starting from this release, we added Event Bus and App Events into the **Context** object.
+### Event Bus and App Events
 
-For the complete list, please, reference the [Data Manipulation plugin documentation].
+Starting from this release, we added Event Bus and App Events into the **Context** object. For the complete list, please, reference the [Data Manipulation plugin documentation](/plugins/volkovlabs-form-panel/code).
 
 Refresh all dashboard panels using `EventBus` with global scope called `AppEvents`:
 
