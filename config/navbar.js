@@ -22,6 +22,10 @@ const navbar = {
       "aria-label": "Business Intelligence",
       items: [
         {
+          label: "Introduction",
+          to: "/big/",
+        },
+        {
           label: "Getting Started",
           to: "/big/getting-started",
         },
@@ -30,8 +34,8 @@ const navbar = {
           to: "/big/alerting",
         },
         {
-          label: "Release Notes",
-          to: "/big/release/",
+          label: "Related Blog posts",
+          to: "/blog/tags/business-intelligence",
         },
       ],
     },
@@ -41,6 +45,10 @@ const navbar = {
       label: "Grafana Crash Course",
       "aria-label": "Grafana",
       items: [
+        {
+          label: "Introduction",
+          to: "/grafana/",
+        },
         {
           label: "Getting Started",
           to: "/grafana/started",
