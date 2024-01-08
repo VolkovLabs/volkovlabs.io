@@ -15,7 +15,7 @@ import Video from "@theme/Video";
 We're excited to announce the release of the Dynamic Text Panel 4.3.0. This feature release includes the following updates:
 
 - Added new Data Render Mode.
-- Added selected data frame variable.
+- Added access to panel data selected data frame from context.
 - Added variableValue helper.
 - Added re-render on dashboard refresh.
 - Added compatibility with Grafana 10.2.2 and upcoming 10.3.0.
@@ -25,6 +25,49 @@ The plugin was updated in Grafana Catalog on January 2, 2024.
 :::
 
 ## New Data Render Mode
+
+Example of iteration within panel data:
+
+### Display Data Frame
+
+```handlebars
+{{{json data}}}
+```
+
+### Example
+
+#### Data
+
+```json
+{
+  "data": [
+    [{ "name": "a" }, { "name": "b" }],
+    [{ "age": 10 }, { "age": 20 }]
+  ]
+}
+```
+
+#### Template
+
+```handlebars
+{{#each data.[0]}}
+{{name}} - {{#with (lookup ../data.[1] @index)}}{{age}}{{/with}}
+{{/each}}
+```
+
+## Panel Data and selected data frame
+
+```
+console.log(context)
+```
+
+## `variableValue` helper
+
+```handlebars
+<a href="/d/abc?{{variableValue '${test:queryparam}'}}">Link</a>
+```
+
+## Re-render on dashboard refresh
 
 ## Getting Started
 
