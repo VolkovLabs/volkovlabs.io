@@ -1,0 +1,97 @@
+---
+authors: [daria]
+slug: dynamictext-panel-4.3.0-20240108/
+tags: [Dynamic Text, Release Notes]
+image: /img/blog/2024-01-08-dynamictext-panel-4.3.0/banner.png
+keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
+---
+
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Video from "@theme/Video";
+
+# Dynamic Text Panel 4.3.0
+
+We're excited to announce the release of the Dynamic Text Panel 4.3.0. This feature release includes the following updates:
+
+- Added new Data Render Mode.
+- Added selected data frame variable.
+- Added variableValue helper.
+- Added re-render on dashboard refresh.
+- Added compatibility with Grafana 10.2.2 and upcoming 10.3.0.
+
+:::info Grafana Plugins catalog
+The plugin was updated in Grafana Catalog on January 2, 2024.
+:::
+
+## New Data Render Mode
+
+## Getting Started
+
+You can install Dynamic Text Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+The Dynamic Text panel is a mighty Grafana plugin to convert any monotonous bulk of data into vibrant, effortlessly comprehended visualization.
+
+To this moment, I have created three videos. The latest one describes more features as more features have been implemented to the day of creation.
+Yet, the latest Dynamic Text plugin version is far more advanced with numerous new features implemented since August.
+
+### Video 3, published on August 15, 2023
+
+In this video, I touch upon the main features and panel options along with demonstrating community use cases.
+
+<Video
+  src="https://www.youtube.com/embed/AcQi-6GCrNU"
+  title="Dynamic Text plugin for Grafana | Use HTML, Markdown, JavaScript and CSS | Community use cases."
+/>
+
+### Video 2, published on January 29, 2023
+
+Since the latest release, the community has requested many changes. This video outlines all the new features we implemented, including the most asked-for JavaScript area code.
+
+<Video
+  src="https://www.youtube.com/embed/lJqk5Gobec4"
+  title="JavaScript code in Dynamic Text Panel."
+/>
+
+### Video 1, published on October 24, 2022
+
+This is the first guide we created for the Dynamic Text plugin for Grafana.
+The plugin does a fantastic job by transforming bland table data into vibrant, readable visualization emphasizing critical tidbits.
+
+<Video
+  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"
+  title="Markdown, HTML, and Handlebars for transforming data visualizations."
+/>
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update ESLint configuration and refactor (#239)
+- Update Collapse from @volkovlabs/components (#239)
+- Update Introduction video in README (#240)
+- Add data render mode and passing selected data frame (#246)
+- Update to Grafana 10.2.2 and Volkov labs packages (#247)
+- Add variableValue helper (#252)
+- Add re-render on dashboard refresh (#252)
+
+### Bug fixes
+
+- Fix draggable icon in Grafana 10.3 (#249)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
