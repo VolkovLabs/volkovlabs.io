@@ -4,7 +4,7 @@
 const mySidebar = [
   "index",
   {
-    items: ["health-checks"],
+    items: ["health-checks", "high-availability"],
     label: "Getting Started",
     type: "category",
     collapsible: false,
