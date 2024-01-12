@@ -98,3 +98,77 @@ We included the Accessibility (A11Y) syntax highlighting style for light and dar
 />
 
 </details>
+
+
+## Table styling example
+ 
+Here I have a simple, yet amazing styling approach. For instance, you can display the status of your devices/servers as green or red dots in a table.
+
+<Image
+  title="Simple, yet stylish way to display unit status."
+  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/dots.png"
+/>
+
+To have this on your dashboard, copy the **Content** and **CSS Styles** parameters from below.
+
+#### Content
+
+```html
+<table>
+  <tbody>
+    <tr>
+      <td style="width: 10%;" colspan="10" class="header">SPC (last 10 samples)</td>
+    </tr>
+    <tr>
+      <td style="width: 10%;"><span class="dot_niO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+      <td style="width: 10%;"><span class="dot_niO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+      <td style="width: 10%;"><span class="dot_iO"></span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;" colspan="5">last</td>
+      <td style="text-align: right;" colspan="5">10th</td>
+    </tr>
+    <tr>
+      <td style="width: 10%;" colspan="5" class="down">Control interval: every 50 pcs</td>
+      <td style="text-align: right;" colspan="5"></td>
+    </tr>
+  </tbody>
+</table>
+```
+
+#### CSS Styles
+
+```css
+.dot_iO {
+  height: 45px;
+  width: 45px;
+  background-color: #56ff56;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.dot_niO {
+  height: 45px;
+  width: 45px;
+  background-color: #FF5656;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+table {
+  border-style: unset !important;
+}
+
+tr td {
+  border-style: unset !important;
+}
+```

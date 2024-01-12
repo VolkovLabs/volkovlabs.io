@@ -26,9 +26,30 @@ Dynamic Text Panel supports JavaScript since version 2.2.0.
 
 ## Parameters
 
+
+:::info Version
+
+The Dynamic Text Panel supports `context` starting from version 4.3.0.
+
+:::
+
+Starting from the release 4.3.0, we allowed access to the panel data `panelData` and selected data frame `data` via a new object `context`. 
+
+In addition, we are actively working on adding more JavaScript and Gafana parameters.
+
+Start typing the `context` word in the **Before Content Rendering** or **After Content Ready** boxes and see the latest list of all available features.
+
+<Image
+  title="Simplified access to the panel data and selected data frame and some other features."
+  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/context.png"
+  width = "70%"
+/>
+
+
 | Parameter          | Description                                                                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `data`             | Data from data sources. The display of one or multiple data rows is determined by the **Every Row** and **All Rows** options respectively. |
+| `data`             | Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**/**All Rows**/**All data**|
+| `panelData`        | |
 | `eventBus`         | Publish and subscribe to application events. Supported since Dynamic Text Panel 4.0.0.                                                     |
 | `getLocale()`      | Returns the user's locale: 'en', 'fr', 'es', and so on.                                                                                    |
 | `handlebars`       | Handlebars library.                                                                                                                        |
