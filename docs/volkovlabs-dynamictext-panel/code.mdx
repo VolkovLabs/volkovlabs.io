@@ -310,3 +310,34 @@ return () => {
 ```
 
 </details>
+
+## JSON parsing
+
+The community member [havedill](https://github.com/havedill) [asked](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/255) how to parse a JSON data format in the case when the transformation **Convert field type** is not available.
+
+We believe the solution might be helpful for many, so here is how you can do it.
+
+<Image
+  title="."
+  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/json-parsing.png"
+/>
+
+### JSON example
+
+```json
+ {"title": {"text" : "Area Chart", "size" : 45, "font" : "Arial"}}
+```
+```json
+ {"title": {"text" : "Bar Chart", "color" : "black"}}
+```
+### Content
+
+```json
+{{{json (parse JSON)}}}
+```
+
+### JavaScript
+
+```js
+handlebars.registerHelper('parse', (context) => JSON.parse(context));
+```
