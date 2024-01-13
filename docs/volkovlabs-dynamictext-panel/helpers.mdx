@@ -211,9 +211,8 @@ It returns a string array including the currently selected values for a certain 
 ```handlebars
 {{variable "hostname"}}
 
-if hostname = ["server1", "server2", "server3"] 
-then
-result: ["server1", "server2", "server3"]  
+if hostname = ["server1", "server2", "server3"] then result: ["server1",
+"server2", "server3"]
 ```
 
 ## Helper `{{variableValue}}`
@@ -228,10 +227,11 @@ This helper works with all [Grafana variable formats](https://grafana.com/docs/g
 Below is an example of the `queryparam` type.
 
 ```handlebars
-<a href='/d/abc?{{variableValue "${example:queryparam}"}}'>Link</a>
+<a href="/d/abc?{{variableValue '${example:queryparam}'}}">Link</a>
+```
 
-if example = ["value1", "value2"]
-then
-result: ['var-example=value1&var-example=value2'] 
+If example equal to `["value1", "value2"]` then result:
 
+```
+<a href="/d/abc?var-example=value1&var-example=value2">Link</a>
 ```
