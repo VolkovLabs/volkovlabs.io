@@ -14,6 +14,12 @@ The first is **Render Template** and the second is rendering order.
 
 ## Render Template
 
+:::info Version
+
+The Dynamic Text Panel supports the **All data** template since version 4.3.0.
+
+:::
+
 <Image
   title="Select one of the three available options for the Render Template parameter."
   src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/alldata.png"
@@ -23,12 +29,6 @@ The **Render Template** option instructs the Dynamic Text plugin on how to apply
 
 - **Every row**. The template applies to every row returned by your query. Your template is rendered as many times as rows are fetched.
 - **All rows**. The query results are passed as a single `data` field to the **Content** template. Your template is rendered once. To work with query results as a whole, you can use [#each built-in helper](../recipes/#iterate-through-all-fields-in-each-record) to iterate through records.
-
-:::info Version
-
-The Dynamic Text Panel supports the **All data** template since version 4.3.0.
-
-:::
 
 - **All data**. The template applies to all rows from the fetched data of all specified data frames.
 
