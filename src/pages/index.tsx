@@ -28,8 +28,8 @@ const Header = (siteConfig) => {
             </p>
 
             <p className="hero__subtitle">
-              Our plugins are enriched with JavaScript, providing you with
-              unparalleled customization options.
+              Our Grafana plugins are enriched with JavaScript, providing you
+              with unparalleled customization options.
             </p>
 
             <div className="margin-vert--lg">
