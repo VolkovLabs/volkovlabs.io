@@ -26,37 +26,35 @@ Dynamic Text Panel supports JavaScript since version 2.2.0.
 
 ## Parameters
 
-
 :::info Version
 
 The Dynamic Text Panel supports `context` starting from version 4.3.0.
 
 :::
 
-Starting from the release 4.3.0, we allowed access to the panel data `panelData` and selected data frame `data` via a new object `context`. 
+Starting from the release 4.3.0, we allowed access to the panel data `panelData` and selected data frame `data` via a new object `context`.
 
-In addition, we are actively working on adding more JavaScript and Gafana parameters.
+In addition, we are actively working on refactoring existing JavaScript and Grafana parameters to include in the `context`.
 
 Start typing the `context` word in the **Before Content Rendering** or **After Content Ready** boxes and see the latest list of all available features.
 
 <Image
   title="Simplified access to the panel data and selected data frame and some other features."
   src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/context.png"
-  width = "70%"
+  width="70%"
 />
 
-
-| Parameter          | Description                                                                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `data`             | Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**/**All Rows**/**All data**|
-| `panelData`        | |
-| `eventBus`         | Publish and subscribe to application events. Supported since Dynamic Text Panel 4.0.0.                                                     |
-| `getLocale()`      | Returns the user's locale: 'en', 'fr', 'es', and so on.                                                                                    |
-| `handlebars`       | Handlebars library.                                                                                                                        |
-| `locationService`  | The `locationService` works with the browser location and history. Supported since Dynamic Text Panel 3.1.0.                               |
-| `replaceVariables` | The `replaceVariables()` function to interpolate variables. Supported since Dynamic Text Panel 3.1.0.                                      |
-| `timeRange`        | Time range of the current dashboard. Supported since Dynamic Text Panel 3.1.0.                                                             |
-| `timeZone`         | Time zone of the current dashboard. Supported since Dynamic Text Panel 3.1.0.                                                              |
+| Parameter           | Description                                                                                                                                                                                                                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `context.data`      | Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data** |
+| `context.panelData` |                                                                                                                                                                                                                                                     |
+| `eventBus`          | Publish and subscribe to application events. Supported since Dynamic Text Panel 4.0.0.                                                                                                                                                              |
+| `getLocale()`       | Returns the user's locale: 'en', 'fr', 'es', and so on.                                                                                                                                                                                             |
+| `handlebars`        | Handlebars library.                                                                                                                                                                                                                                 |
+| `locationService`   | The `locationService` works with the browser location and history. Supported since Dynamic Text Panel 3.1.0.                                                                                                                                        |
+| `replaceVariables`  | The `replaceVariables()` function to interpolate variables. Supported since Dynamic Text Panel 3.1.0.                                                                                                                                               |
+| `timeRange`         | Time range of the current dashboard. Supported since Dynamic Text Panel 3.1.0.                                                                                                                                                                      |
+| `timeZone`          | Time zone of the current dashboard. Supported since Dynamic Text Panel 3.1.0.                                                                                                                                                                       |
 
 ## Custom Handlebars helper
 
@@ -325,11 +323,13 @@ We believe the solution might be helpful for many, so here is how you can do it.
 ### JSON example
 
 ```json
- {"title": {"text" : "Area Chart", "size" : 45, "font" : "Arial"}}
+{ "title": { "text": "Area Chart", "size": 45, "font": "Arial" } }
 ```
+
 ```json
- {"title": {"text" : "Bar Chart", "color" : "black"}}
+{ "title": { "text": "Bar Chart", "color": "black" } }
 ```
+
 ### Content
 
 ```json
@@ -339,5 +339,5 @@ We believe the solution might be helpful for many, so here is how you can do it.
 ### JavaScript
 
 ```js
-handlebars.registerHelper('parse', (context) => JSON.parse(context));
+handlebars.registerHelper("parse", (context) => JSON.parse(context));
 ```
