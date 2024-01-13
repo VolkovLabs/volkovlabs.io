@@ -16,7 +16,6 @@
     "url": "^0.11.1"
   },
   "name": "volkovlabs-io",
-  "private": true,
   "scripts": {
     "build": "docusaurus build",
     "clear": "docusaurus clear",
@@ -25,6 +24,5 @@
     "start:3100": "docusaurus start -p 3100",
     "swizzle": "docusaurus swizzle",
     "upgrade": "npm upgrade --save"
-  },
-  "version": "4.2.0"
+  }
 }

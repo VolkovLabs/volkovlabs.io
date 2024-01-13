@@ -201,3 +201,37 @@ Example:
 {{/if}}
 {{/each}}
 ```
+
+## Helper `{{variable}}`
+
+This helper works only with one format of Grafana dashboard variables - array.
+
+It returns a string array including the currently selected values for a certain variable.
+
+```handlebars
+{{variable "hostname"}}
+
+if hostname = ["server1", "server2", "server3"] then result: ["server1",
+"server2", "server3"]
+```
+
+## Helper `{{variableValue}}`
+
+:::info Version
+
+Supported since Dynamic Text Panel 4.3.0.
+
+:::
+
+This helper works with all [Grafana variable formats](https://grafana.com/docs/grafana/latest/dashboards/variables/variable-syntax/).
+Below is an example of the `queryparam` type.
+
+```handlebars
+<a href="/d/abc?{{variableValue '${example:queryparam}'}}">Link</a>
+```
+
+If example equal to `["value1", "value2"]` then result:
+
+```
+<a href="/d/abc?var-example=value1&var-example=value2">Link</a>
+```

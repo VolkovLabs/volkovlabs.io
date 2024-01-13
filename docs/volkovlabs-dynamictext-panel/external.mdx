@@ -13,7 +13,7 @@ import Video from "@theme/Video";
 
 :::info Version
 
-Dynamic Text Panel supports the external resources since version 4.1.0.
+The Dynamic Text Panel supports the external resources since version 4.1.0.
 
 :::
 
@@ -83,7 +83,7 @@ Below you can find a collection of breathtaking use cases for the external JavaS
 
 ### Plotly 3D Scatter
 
-Thanks to our community member [yosiasz](https://github.com/yosiasz) for the provided solution.
+Thanks to our community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
 
 Use the following external Plotly's 3D Scatter chart library:
 
@@ -250,3 +250,63 @@ new Chart(ctx, {
   },
 });
 ```
+
+### Flowchart
+
+Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic Flowchart return to Grafana! We are happy to share your example with the world.
+
+Below you can find how the beloved by many Flowchart libraries can be implemented using the Dynamic Text plugin.
+
+Simply, add two external libraries and then write your code addressing the Flowchart libraries directly.
+
+#### Example
+
+<Image
+  title="Delivering Flowchart libraries to a Grafana dashboard using the Dynamic Text plugin."
+  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/flow.png"
+/>
+
+#### External Resources
+
+```
+https://flowchart.js.org/flowchart-latest.js
+https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js
+```
+
+#### Content to copy
+
+```html
+<div id="addisAbeba"></div>
+```
+
+#### JavaScript code to copy
+
+```
+var flow = `
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+para=>parallel: parallel tasks
+in=>input: some in
+out=>output: some out
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->para
+para(path1, bottom)->sub1(right)->op1
+para(path2, top)->op1
+para(path3, right)->in->out->e`
+
+var diagram = flowchart.parse(flow);
+diagram.drawSVG('addisAbeba');
+```
+
+:::info Render template parameter
+
+Use **All rows** or **All data** template to execute template only once. With **Every row**, the **Content** will be applied to every row of retrieved data. Even though the data frames of the specified data source are not used, still the plugin runs the code as many times as the number of rows is retrieved.
+
+:::
