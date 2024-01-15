@@ -91,7 +91,7 @@ You can reference it using the following code:
 
 ```handlebars
 {{#each data.[0]}}
-{{Metric}} - {{#with (lookup ../data.[1] @index)}}{{Value}}{{/with}}
+{{Metric}} - {{#with (lookup ../data.[1] @index)}}{{Attitude}}{{/with}}
 {{/each}}
 ```
 
