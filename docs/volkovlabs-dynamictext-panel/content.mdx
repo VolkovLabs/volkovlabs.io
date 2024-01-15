@@ -136,7 +136,7 @@ Please, modify the code according to my example above (blog and docs).
 
 ```handlebars
 {{#each data.[0]}}
-{{Metric}} - {{#with (lookup ../data.[1] @index)}}{{Value}}{{/with}}
+{{Metric}} - {{#with (lookup ../data.[1] @index)}}{{Attitude}}{{/with}}
 {{/each}}
 ```
 
