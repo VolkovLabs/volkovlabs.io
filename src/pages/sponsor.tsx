@@ -24,10 +24,6 @@ const Header = (siteConfig) => {
               We prioritize issue and question replies for Premium sponsors.
             </p>
 
-            <p className="hero__subtitle">
-              Sponsor our open-source Grafana plugins on GitHub Sponsor.
-            </p>
-
             <div className="margin-vert--lg">
               <a
                 className={clsx(
@@ -36,7 +32,7 @@ const Header = (siteConfig) => {
                 )}
                 href="https://github.com/sponsors/VolkovLabs"
               >
-                Go Premium &nbsp;&nbsp;→
+                Become a sponsor &nbsp;&nbsp;→
               </a>
             </div>
           </div>
