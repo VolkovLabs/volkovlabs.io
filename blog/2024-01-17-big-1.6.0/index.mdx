@@ -1,0 +1,120 @@
+---
+authors: [daria]
+slug: big-1.6.0-20240117/
+tags: [Business Intelligence, Release Notes]
+image: /img/blog/2024-01-17-big-1.6.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+
+# Business Intelligence App 1.6.0
+
+We are excited to announce the release of the Business Intelligence App, version 1.6.0. This development release includes the following updates:
+
+- Add Variables support.
+- Add Prometheus monitoring.
+- Add Support for Prometheus data source.
+- Support remote Grafana instances.
+- Add Alert History.
+
+## Variables Support
+
+## Prometheus Monitoring
+
+## Prometheus Data Source
+
+## Remote Grafana Instances
+
+## Alert History
+
+## Getting Started
+
+You can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana).
+
+### Docker Compose
+
+The `docker-compose.yml` file consists of the following containers:
+
+- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and dashboards.
+- **Timescale** is required to store configuration, events, rules, etc.
+- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
+- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
+- **Prometheus** collects and store performance metrics from BI Engine.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
+  language="yaml"
+/>
+
+### Start
+
+When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine, Prometheus and Webhook containers:
+
+```
+docker compose pull && docker compose up
+```
+
+### Stop
+
+Stop and remove all containers:
+
+```
+docker compose down
+```
+
+## Release Notes
+
+### Features / Enhancements in 1.6.0
+
+- Update BI App and BI Engine (#11)
+- [App] Update Prometheus dashboard.
+- [App] Make repeated variable is multi and add all option.
+- [App] Add Group Statuses.
+- [Engine] Add execution batching.
+- [Engine] Add running migrations only via server app.
+- [Engine] Skip creating annotations for repeat variables without results.
+- [Engine] Update Production scripts.
+
+### Features / Enhancements in 1.5.0
+
+- [App] Add Prometheus dashboard.
+- [App] Add showing load variables error.
+- [App] Add check for creating alerts without variable values.
+- [App] Update to Grafana Utils 1.2.0.
+- [Engine] Create mapper service to convert entities.
+- [Engine] Add Prometheus middleware.
+- [Engine] Add failing load variables request if unable to query variable options.
+- [Engine] Add redirect support for Home dashboard.
+- [Engine] Add prometheus datasource for getting variable options.
+- [Engine] Update the License Key.
+- [Engine] Update to Node 20.
+
+### Features / Enhancements in 1.4.0
+
+- Update BI App and BI Engine (#10)
+- [App] Add Variables support.
+- [App] Add Grafana proxy requests.
+- [App] Update Dashboard annotation modes.
+- [App] Add License Info tab.
+- [App] Add Evaluation overrides.
+- [Engine] Add Alert State to created Annotations.
+- [Engine] Add Variables support.
+- [Engine] Modules refactoring.
+- [Engine] Add Grafana proxy for App requests.
+- [Engine] Update alert checksum.
+- [Engine] Update Dashboard annotations.
+- [Engine] Add Configurable grafana request timeout.
+- [Engine] Add License Info.
+- [Engine] Add Alert history.
+- [Engine] Add Evaluation overrides.
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Support our project by starring the repository.
