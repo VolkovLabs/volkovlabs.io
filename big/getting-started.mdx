@@ -7,7 +7,12 @@ import Code from "@theme/Code";
 
 # Getting Started
 
-You can download the Proof of Concept from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana).
+You can download the Development version from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana).
+
+<Video
+  src="https://www.youtube.com/embed/8UaY916PPXc"
+  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"
+/>
 
 ## Docker Compose
 
@@ -18,7 +23,6 @@ The `docker-compose.yml` file consists of the following containers:
 - **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
 - **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
 - **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
-- **Data Generator** generates test data for threshold evaluation in the demo dashboard.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
