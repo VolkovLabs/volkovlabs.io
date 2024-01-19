@@ -34,6 +34,10 @@ const navbar = {
           to: "/big/alerting",
         },
         {
+          label: "REST API",
+          to: "/big/api",
+        },
+        {
           label: "Related Blog posts",
           to: "/blog/tags/business-intelligence",
         },

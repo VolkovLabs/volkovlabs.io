@@ -21,7 +21,7 @@ const Header = (siteConfig) => {
               {siteConfig.tagline}
             </h1>
             <p className="hero__subtitle margin-vert--md">
-              We prioritize issue and question replies for Premium sponsors.
+              We prioritize issue and question replies for GitHub sponsors.
             </p>
 
             <div className="margin-vert--lg">
