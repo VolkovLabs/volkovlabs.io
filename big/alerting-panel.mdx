@@ -11,7 +11,7 @@ import Video from "@theme/Video";
 
 The alert management panel is set to simplify the alert rule creation. We designed it to be intuitive and business-oriented users friendly. You specify all parameters in a one-screen form.
 
-## Configuration
+## Alert rule parameters
 
 The new alert rule/edit mode has the following configuration elements to specify:
 
@@ -23,13 +23,16 @@ The new alert rule/edit mode has the following configuration elements to specify
   - For the **Thresholds**, the alert examines the data against thresholds set in the panel options.
   - For the **Regex Pattern**, the alert examines the specified fields (optional) and searches the specified pattern.
 - For the alert **action**, select from the drop-down list of the existing, pre-configured webhook APIs.
-- **Annotation** option will allows to create annotations in the annotation table.
+- **Add Annotation** option. 
+   - specify **Panel** to create and attach an annotation to a panel,
+   - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
+   - specify **Disabled** to disable the creation of any annotation following the alert rule breach.
 
 We target to have the Alert Management UI panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.
 
 <Image
   title="The Alerting panel and the Edit alert drawer."
-  src="/img/big/alerting-panel.png"
+  src="/img/blog/2024-01-17-big-1.6.0/alerting-panel.png"
 />
 
 ## Alert card
@@ -63,12 +66,18 @@ Reference the flow schema to get a better understanding of how statuses change i
 
 Four action buttons are available:
 
-- **Info**. Open the drawer with the alert details.
-- **Pause/Active**. Set the alert to pause or active mode.
-- **Edit**. Opens the Edit drawer. When you click in the Edit drawer, the alert status changes to Scheduled.
-- **Delete**. Delete the alert after the user's confirmation.
+- **Details**. Opens the drawer with the alert details. For the alert rules in the **Alerting** and **Error** statuses, the BI App also adds the **Event Details** section with all necessary information for troubleshooting. 
 
-## Webhooks Configuration
+<Image
+  title="Event details for the alert rules in the Alerting and Error statuses."
+  src="/img/blog/2024-01-17-big-1.6.0/event-details.png"
+/>
+
+- **Pause/Active**. Sets the alert to pause or active mode.
+- **Edit**. Opens the Edit drawer (scroll up to find the illustrating image). When you save in the Edit drawer, the alert status changes to Scheduled.
+- **Delete**. Deletes the alert after the user's confirmation.
+
+## Alert action parameters
 
 This tab lists all configured webhooks. In the edit mode, you specify a title, type (HTTP or Test), request URL and request method.
 
@@ -76,7 +85,7 @@ Any webhook could be configured as a default one by setting the **Use by Default
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
 
-<Image title="Webhook configuration tab." src="/img/big/web-hooks-panel.png" />
+<Image title="Alert action parameters tab." src="/img/big/alert-action-panel.png" />
 
 ## User roles in the Alerting panel
 
