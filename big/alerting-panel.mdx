@@ -22,11 +22,11 @@ The new alert rule/edit mode has the following configuration elements to specify
 - The alert **evaluation** could be set to **Thresholds** or **Regex Pattern**.
   - For the **Thresholds**, the alert examines the data against thresholds set in the panel options.
   - For the **Regex Pattern**, the alert examines the specified fields (optional) and searches the specified pattern.
-- For the alert **action**, select from the drop-down list of the existing, pre-configured webhook APIs.
-- **Add Annotation** option. 
-   - specify **Panel** to create and attach an annotation to a panel,
-   - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
-   - specify **Disabled** to disable the creation of any annotation following the alert rule breach.
+- For the alert **action**, select from the drop-down list of the existing, pre-configured action APIs.
+- **Add Annotation** option.
+  - specify **Panel** to create and attach an annotation to a panel,
+  - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
+  - specify **Disabled** to disable the creation of any annotation following the alert rule breach.
 
 We target to have the Alert Management UI panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.
 
@@ -48,9 +48,9 @@ There are two statuses for each alert. One indicates whether the alert is **Acti
 And the other status might be one of the four values:
 
 - **Scheduled**. The alert is scheduled, but never run yet. This status is assigned right after the alert is created or modified by the user and API.
-- **OK**. The alert has been run and the thresholds are NOT breached and the regex pattern is NOT found.
-- **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.
-- **Error**. Something is wrong which could be the query, annotation or webhook.
+- **OK**. The alert has been run and the thresholds are NOT breached and the Regex pattern is NOT found.
+- **Alerting**. The alert has been run and the thresholds are being breached or the Regex pattern is found.
+- **Error**. Something is wrong which could be the query, annotation or action.
 
 Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any modification, the alert status changes to **Scheduled**.
 
@@ -66,7 +66,7 @@ Reference the flow schema to get a better understanding of how statuses change i
 
 Four action buttons are available:
 
-- **Details**. Opens the drawer with the alert details. For the alert rules in the **Alerting** and **Error** statuses, the BI App also adds the **Event Details** section with all necessary information for troubleshooting. 
+- **Details**. Opens the drawer with the alert details. For the alert rules in the **Alerting** and **Error** statuses, the BI App also adds the **Event Details** section with all necessary information for troubleshooting.
 
 <Image
   title="Event details for the alert rules in the Alerting and Error statuses."
@@ -79,19 +79,18 @@ Four action buttons are available:
 
 ## Alert action parameters
 
-This tab lists all configured webhooks. In the edit mode, you specify a title, type (HTTP or Test), request URL and request method.
+This tab lists all configured actions. In the edit mode, you specify a title, type (HTTP or Logs), request URL and request method.
 
-Any webhook could be configured as a default one by setting the **Use by Default** parameter to **Enabled**.
+Any action could be configured as a default one by setting the **Use by Default** parameter to **Enabled**.
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
 
-<Image title="Alert action parameters tab." src="/img/big/alert-action-panel.png" />
+<Image
+  title="Alert action parameters tab."
+  src="/img/big/alert-action-panel.png"
+/>
 
 ## User roles in the Alerting panel
-
-:::info
-Roles are supported since version 1.3.0
-:::
 
 ### Alert rules tab
 
@@ -102,15 +101,15 @@ For Admins and Editors, all four action buttons are available: info, pause/resum
   src="/img/blog/2023-12-06-big-1.3.0/roles.png"
 />
 
-### Webhooks tab
+### Actions tab
 
 For Admins and Editors, all three action buttons are available: test, edit, delete. For Viewers, only one action button is available: test.
 
 :::tip
-A greyed-out delete button in the **Webhook** tab means the alert rule with this webhook is currently active and can not be deleted.
+A greyed-out delete button in the **Actions** tab means the alert rule with this action is currently active and can not be deleted.
 :::
 
 <Image
-  title="Action buttons accessibility for different Grafana roles on the Webhooks tab."
+  title="Action buttons accessibility for different Grafana roles on the Actions tab."
   src="/img/blog/2023-12-06-big-1.3.0/roles-hooks.png"
 />
