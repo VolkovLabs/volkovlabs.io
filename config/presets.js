@@ -23,6 +23,17 @@ const presets = [
       },
     },
   ],
+  [
+    "redocusaurus",
+    {
+      specs: [
+        {
+          spec: "big/engine-spec.json",
+          route: "big/api/",
+        },
+      ],
+    },
+  ],
 ];
 
 module.exports = presets;
