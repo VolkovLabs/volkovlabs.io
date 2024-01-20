@@ -1,0 +1,198 @@
+---
+authors: [daria]
+slug: big-1.6.0-20240117/
+tags: [Business Intelligence, Release Notes]
+image: /img/blog/2024-01-17-big-1.6.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Business Intelligence App 1.6.0
+
+We are excited to announce the release of the Business Intelligence App, version 1.6.0. It accumulates massive functionality enhancements and, thus, marks an important milestone in transitioning from a POC (proof of concept) to a development type of release.
+
+The Business Intelligence App, version 1.6.0 includes the following updates:
+
+- Allowed Variables support.
+- Added Support for Prometheus data source.
+- Enabled Prometheus monitoring.
+- Extended UI functionality.
+- Added Alert History.
+
+## Variables Support
+
+Supporting dashboard variables greatly simplifies work with configuring the alerting in general. Let's say, you have two very similar devices and your task is to monitor their technical health by creating alerts in the event of an alert rule breach.
+
+Your alert rules are almost identical for both devices with only thresholds being slightly different. For instance, one device is allowed to rotate no faster than 50 rpm and the other device no more than 100 rpm.
+
+Without dashboard variables, you have to create two separate alert rules. For a small number of devices, this approach is reasonable. However, it turns into a severe headache once instead of two devices you need to maintain hundreds. For every device, you will have to create and maintain a separate alert rule containing an identical query.
+
+With dashboard variables enabled, creating one alert rule is enough. The thresholds could be configured in the **Overrides**.
+
+### Prometheus Data Source
+
+At this stage, we ensured that the BI App supports the variables in Prometheus Data Source. Some data source has unique support for the variables and we plan to support most popular of the them in the future.
+
+## Enabled Prometheus Monitoring
+
+In this release, we added a Prometheus middleware and container to allow the collection of the BI Engine system health statistics. Having Prometheus monitoring built-in in the BI App allows you to monitor the alerting system itself. Being an outside system, the BI App is an excellent choice for observing the observability system while using the familiar interface.
+
+Following the enabling of the Prometheus monitoring, we crafted a [ready-to-use, out-of-the-box dashboard](https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/provisioning/dashboards/engine.json) with all necessary metrics for kick-off the successful monitoring.
+
+<Image
+  title="Built-in BI Engine monitoring dashboard. Data collected and stored via Prometheus."
+  src="/img/blog/2024-01-17-big-1.6.0/prom.png"
+/>
+
+The BI Engine consists of two components which provides metrics:
+
+- API Server - **Instance** `engine:3001`
+- Scheduler - **Instance** `engine:3002`
+
+<Image
+  title="API Server and Scheduler are two components of the BI App."
+  src="/img/blog/2024-01-17-big-1.6.0/bi-app.png"
+/>
+
+## Alert rules workflow
+
+The below schema illustrates the conceptual workflow from the user point of view. Prometheus serves to collect all system health-related and other data to ensure troubleshooting and reporting on system behavior.
+
+<Image
+  title="Conceptual workflow from the user POV."
+  src="/img/blog/2024-01-17-big-1.6.0/workflow.png"
+/>
+
+## Extended UI functionality
+
+### Actions
+
+To align with the alerting basics terminology [Alert rule-Alert record-Alert action](/big/big-alerting/), we renamed the **Webhooks** tab into the **Actions** tab.
+
+### Annotations
+
+In the Edit mode->**Action section**->**Add annotations** parameter, now you can specify whether you need to attach them to a panel or a dashboard (i.e. all panels of the specified dashboard).
+
+<Image
+  title="The Alerting panel and the Edit alert drawer."
+  src="/img/blog/2024-01-17-big-1.6.0/alerting-panel.png"
+/>
+
+### Alert details
+
+For the alert rules in the **Alerting** and **Error** statuses, we added the **Event Details** section.
+
+To review, click the **Details** button on an alert card, then **Event Details** header.
+
+<Image
+  title="Event details for the alert rules in the Alerting and Error statuses."
+  src="/img/blog/2024-01-17-big-1.6.0/event-details.png"
+/>
+
+## Alert History
+
+We added a new option to the **Request** parameter of the Business Intelligence Engine data source. It allows you to display alert history in a visualization panel of your choice.
+
+In the example below, the alert history is displayed in the Table visualization panel.
+
+<Image
+  title="New request type, Alerts History, allows to display."
+  src="/img/blog/2024-01-17-big-1.6.0/alert-history.png"
+/>
+
+## Getting Started
+
+You can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.
+
+<Video
+  src="https://www.youtube.com/embed/8UaY916PPXc"
+  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"
+/>
+
+### Docker Compose
+
+The `docker-compose.yml` file consists of the following containers:
+
+- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and dashboards.
+- **Timescale** is required to store configuration, events, rules, etc.
+- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
+- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
+- **Prometheus** collects and store performance metrics from BI Engine.
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
+  language="yaml"
+/>
+
+### Start
+
+When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine, Prometheus and Webhook containers:
+
+```
+docker compose pull && docker compose up
+```
+
+### Stop
+
+Stop and remove all containers:
+
+```
+docker compose down
+```
+
+## Release Notes
+
+### Features / Enhancements in 1.6.0
+
+- Update BI App and BI Engine (#11)
+- [App] Update Prometheus dashboard.
+- [App] Make repeated variable is multi and add all option.
+- [App] Add Group Statuses.
+- [Engine] Add execution batching.
+- [Engine] Add running migrations only via server app.
+- [Engine] Skip creating annotations for repeat variables without results.
+- [Engine] Update Production scripts.
+
+### Features / Enhancements in 1.5.0
+
+- [App] Add Prometheus dashboard.
+- [App] Add showing load variables error.
+- [App] Add check for creating alerts without variable values.
+- [App] Update to Grafana Utils 1.2.0.
+- [Engine] Create mapper service to convert entities.
+- [Engine] Add Prometheus middleware.
+- [Engine] Add failing load variables request if unable to query variable options.
+- [Engine] Add redirect support for Home dashboard.
+- [Engine] Add prometheus datasource for getting variable options.
+- [Engine] Update the License Key.
+- [Engine] Update to Node 20.
+
+### Features / Enhancements in 1.4.0
+
+- Update BI App and BI Engine (#10)
+- [App] Add Variables support.
+- [App] Add Grafana proxy requests.
+- [App] Update Dashboard annotation modes.
+- [App] Add License Info tab.
+- [App] Add Evaluation overrides.
+- [Engine] Add Alert State to created Annotations.
+- [Engine] Add Variables support.
+- [Engine] Modules refactoring.
+- [Engine] Add Grafana proxy for App requests.
+- [Engine] Update alert checksum.
+- [Engine] Update Dashboard annotations.
+- [Engine] Add Configurable grafana request timeout.
+- [Engine] Add License Info.
+- [Engine] Add Alert history.
+- [Engine] Add Evaluation overrides.
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Support our project by starring the repository.
