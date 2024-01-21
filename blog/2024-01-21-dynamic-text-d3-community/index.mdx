@@ -17,9 +17,9 @@ import Video from "@theme/Video";
 
 :::info foreword by Daria Volkova
 
-Since we added the external libraries feature along with the JavaScript functionality, the Dynamic Text plugin can not stop surprising us with its applicability. 
+Since we added the external libraries feature along with the JavaScript functionality, the Dynamic Text plugin can not stop surprising us with its applicability.
 
-We already demonstrated how as in one-two-three you can incorporate 
+We already demonstrated how as in one-two-three you can incorporate
 [Plotly 3D Scatter](/plugins/volkovlabs-dynamictext-panel/external/#plotly-3d-scatter),
 [Mermaid](/plugins/volkovlabs-dynamictext-panel/external/#mermaid),
 [Chart.js](/plugins/volkovlabs-dynamictext-panel/external/#chartjs), and
@@ -30,7 +30,7 @@ This article is an instruction provided by [Raghavendra Samant](https://github.c
 
 ## At a glance
 
-If you want to create a process flow chart that can be easily referenced in a Grafana dashboard, one option is to use a standard flow charting tool like [Draw.io](https://app.diagrams.net) to design the chart and save it as an SVG file. 
+If you want to create a process flow chart that can be easily referenced in a Grafana dashboard, one option is to use a standard flow charting tool like [Draw.io](https://app.diagrams.net) to design the chart and save it as an SVG file.
 
 This file can then be imported into the Grafana's Dynamic Text plugin developed by [Volkov labs](https://volkovlabs.io), which allows you to display and interact with the chart directly within the dashboard.
 
@@ -39,11 +39,11 @@ This file can then be imported into the Grafana's Dynamic Text plugin developed 
   src="/img/blog/2024-01-21-dynamic-text-d3-community/d3-1.png"
 />
 
-To take things a step further, you can use the [Dynamic Text plugin's ability](https://volkovlabs.io/plugins/volkovlabs-dynamictext-panel/external/) to link external JavaScript libraries and CSS stylesheets to add additional functionality to the chart. 
+To take things a step further, you can use the [Dynamic Text plugin's ability](https://volkovlabs.io/plugins/volkovlabs-dynamictext-panel/external/) to link external JavaScript libraries and CSS stylesheets to add additional functionality to the chart.
 
 For example, you could use the popular data visualization library [D3.js](https://cdnjs.com/libraries/d3) to display real-time metric values directly on the flow chart. The Dynamic Text plugin also includes hooks for controlling data manipulation before and after the content is rendered, giving you even greater flexibility over how the metrics on the chart are displayed and changed based on data in real time.
 
-Overall, combining the power of tools like Draw.io and open-source Dynamic Text plugin makes it easy to create dynamic, interactive flow charts that can be seamlessly integrated into your dashboards and updated as needed. 
+Overall, combining the power of tools like Draw.io and open-source Dynamic Text plugin makes it easy to create dynamic, interactive flow charts that can be seamlessly integrated into your dashboards and updated as needed.
 
 To learn more about these features and how to use them, check out the official documentation for the Dynamic Text plugin [here](https://volkovlabs.io/plugins/volkovlabs-dynamictext-panel).
 
@@ -56,15 +56,15 @@ How to use Grafana's Dynamic Text panel and display real-time metric values on t
   src="/img/blog/2024-01-21-dynamic-text-d3-community/d3-2.png"
 />
 
- 1. Design the process flow chart in Draw.io and save it as an SVG file. You can include shapes, connectors, text labels, and other elements as desired. Make sure to give the chart a clear, descriptive name so that it will be easy to identify later.
- 2. In Grafana, navigate to the dashboard where you want to display the flow chart and click on the "Add Panel" button. Type "Text" as the panel type and choose the "Dynamic Text" plugin.
- 3. Copy and paste the SVG code for the flow chart into the Dynamic Text panel editor (**Content**). You can access the SVG code by opening the saved file in a text editor or viewing the source code for the chart in a web browser.
- 4. Use the Dynamic Text plugin's panel options to customize the data binding aspects of the flow chart. Details are in the documentation link above.
- 5. Link the D3.js library and any required CSS stylesheets using the Dynamic Text plugin's settings. This will allow you to use D3.js functions and methods to manipulate the flow chart and display real-time metric values.
- 6. Write the D3.js code to select specific elements on the flow chart and bind them to data sources. For example, you might use the select method to target certain shapes or text labels, and then use the data method to associate those elements with live metric values.
- 7. Define the behavior of the chart using the Dynamic Text plugin's hooks. These hooks allow you to run custom JavaScript code before and after the content is rendered, enabling you to perform calculations, apply transformations, or trigger animations based on changes in the underlying data.
- 8. Save the Dynamic Text panel and test the flow chart to ensure that it displays correctly and updates in response to changes in the metric data. You may need to fine-tune the placement and formatting of the chart elements or adjust the timing of the hook functions to get everything working smoothly.
- 9. Once the flow chart is finalized, you can publish the dashboard and share it with team members or stakeholders as needed. They will be able to see the process flow chart alongside relevant metric data and understand how different components of the system fit together.
+1.  Design the process flow chart in Draw.io and save it as an SVG file. You can include shapes, connectors, text labels, and other elements as desired. Make sure to give the chart a clear, descriptive name so that it will be easy to identify later.
+2.  In Grafana, navigate to the dashboard where you want to display the flow chart and click on the "Add Panel" button. Type "Text" as the panel type and choose the "Dynamic Text" plugin.
+3.  Copy and paste the SVG code for the flow chart into the Dynamic Text panel editor (**Content**). You can access the SVG code by opening the saved file in a text editor or viewing the source code for the chart in a web browser.
+4.  Use the Dynamic Text plugin's panel options to customize the data binding aspects of the flow chart. Details are in the documentation link above.
+5.  Link the D3.js library and any required CSS stylesheets using the Dynamic Text plugin's settings. This will allow you to use D3.js functions and methods to manipulate the flow chart and display real-time metric values.
+6.  Write the D3.js code to select specific elements on the flow chart and bind them to data sources. For example, you might use the select method to target certain shapes or text labels, and then use the data method to associate those elements with live metric values.
+7.  Define the behavior of the chart using the Dynamic Text plugin's hooks. These hooks allow you to run custom JavaScript code before and after the content is rendered, enabling you to perform calculations, apply transformations, or trigger animations based on changes in the underlying data.
+8.  Save the Dynamic Text panel and test the flow chart to ensure that it displays correctly and updates in response to changes in the metric data. You may need to fine-tune the placement and formatting of the chart elements or adjust the timing of the hook functions to get everything working smoothly.
+9.  Once the flow chart is finalized, you can publish the dashboard and share it with team members or stakeholders as needed. They will be able to see the process flow chart alongside relevant metric data and understand how different components of the system fit together.
 
 ## Let's sum up
 
@@ -94,18 +94,17 @@ function getRandomInt(max) {
 
 //console.log('After Content Ready : use Context object to access data ' + context.data[0].country)
 var dataPt_1 = 100 - getRandomInt(9);
-var dataPt_2 = dataPt_1 - getRandomInt(6)
-var dataPt_3 = dataPt_2 - getRandomInt(12)
+var dataPt_2 = dataPt_1 - getRandomInt(6);
+var dataPt_3 = dataPt_2 - getRandomInt(12);
 
-console.log(dataPt_1)
+console.log(dataPt_1);
 d3.selectAll("#Metric-A").text(dataPt_1);
 d3.selectAll("#Metric-B").text(dataPt_2);
 d3.selectAll("#Metric-C").text(dataPt_3);
 
 if (dataPt_2 < 97) {
   d3.selectAll("#Ellipse-B").style("fill", "green");
-}
-else {
+} else {
   d3.selectAll("#Ellipse-B").style("fill", "red");
 }
 ```
