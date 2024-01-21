@@ -41,6 +41,10 @@ const navbar = {
           label: "Related Blog posts",
           to: "/blog/tags/business-intelligence",
         },
+        {
+          label: "Release Notes",
+          to: "/big/release",
+        },
       ],
     },
     {

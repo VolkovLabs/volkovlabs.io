@@ -8,7 +8,7 @@ import Video from "@theme/Video";
 
 # Getting Started
 
-You can download the Development version from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana).
+You can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.
 
 <Video
   src="https://www.youtube.com/embed/8UaY916PPXc"
@@ -22,8 +22,8 @@ The `docker-compose.yml` file consists of the following containers:
 - **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and dashboards.
 - **Timescale** is required to store configuration, events, rules, etc.
 - **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
-- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
 - **Prometheus** collects and store performance metrics from BI Engine.
+- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"

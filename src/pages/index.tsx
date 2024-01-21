@@ -83,6 +83,48 @@ const Main = (siteConfig) => {
         </div>
       </div>
 
+      <div id="Plugins" className="container margin-vert--md padding-vert--md">
+        <h2 className={clsx(styles.header, "hero__title")}>
+          <span>BI(G)</span>
+        </h2>
+        <div className="container margin-vert--lg">
+          <div className="row">
+            <div className="col col--7 margin-vert--lg">
+              <h1 className="hero__title margin-vert--lg">
+                {siteConfig.tagline}
+              </h1>
+
+              <p className="hero__subtitle margin-vert--md">
+                Business Intelligence for Grafana simplifies alerting for
+                business users, providing them with an accessible platform.
+              </p>
+
+              <div className="margin-vert--lg">
+                <a
+                  className={clsx(
+                    "button button--primary button--lg",
+                    styles.getStarted
+                  )}
+                  href={useBaseUrl("/big")}
+                >
+                  Learn More&nbsp;&nbsp;→
+                </a>
+              </div>
+            </div>
+            <div className="col col--5">
+              <ThemedImage
+                className={clsx(styles.heroBannerLogo, "margin-vert--md")}
+                sources={{
+                  light: useBaseUrl("/img/index/big.svg"),
+                  dark: useBaseUrl("/img/index/big.dark.svg"),
+                }}
+                alt="Business Intelligence for Grafana"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="Blogs" className="container margin-vert--md padding-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Blog Posts</span>
