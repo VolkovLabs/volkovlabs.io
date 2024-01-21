@@ -28,7 +28,7 @@ const presets = [
     {
       specs: [
         {
-          spec: "big/engine-spec.json",
+          spec: "big/big-spec.json",
           route: "big/api/",
         },
       ],
