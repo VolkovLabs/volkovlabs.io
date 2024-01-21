@@ -21,7 +21,14 @@ const Header = (siteConfig) => {
               {siteConfig.tagline}
             </h1>
             <p className="hero__subtitle margin-vert--md">
-              We prioritize issue and question replies for GitHub sponsors.
+              Get your issues and questions answered faster by becoming a GitHub
+              sponsor.
+            </p>
+
+            <p className="hero__subtitle">
+              Our dedicated team prioritizes responding to the needs of our
+              sponsors. Don't wait for answers - join our sponsorship program
+              today.
             </p>
 
             <div className="margin-vert--lg">
