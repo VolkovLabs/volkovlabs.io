@@ -15,7 +15,7 @@ const mySidebar = [
   },
 
   {
-    items: ["big-alerting", "alerting-panel", "engine", "thresholds"],
+    items: ["big-alerting", "alerting-panel", "engine", "variables", "thresholds"],
     label: "Alerting",
     type: "category",
     collapsible: false,
