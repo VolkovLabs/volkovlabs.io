@@ -310,3 +310,60 @@ diagram.drawSVG('addisAbeba');
 Use **All rows** or **All data** template to execute template only once. With **Every row**, the **Content** will be applied to every row of retrieved data. Even though the data frames of the specified data source are not used, still the plugin runs the code as many times as the number of rows is retrieved.
 
 :::
+
+### Youtube video
+
+This idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Dynamic Text plugin can be used to display YouTube videos on your Grafana dashboard.
+
+<Image
+  title="How to configure the Dynamic Text plugin to display a YouTube video."
+  src="/img/plugins/volkovlabs-dynamictext-panel/yt-edit.png"
+/>
+
+#### External Resources
+
+```
+https://www.youtube.com/iframe_api
+```
+
+#### Content to copy
+
+```html
+<h1>Volkov Labs Latest videos</h1>
+<div id="player"></div>
+```
+
+#### JavaScript code to copy
+
+```js
+const videoList = ["AcQi-6GCrNU", "1ogv2jstrlI", "vky-7-DfvXE"];
+
+const randomVideoId = videoList[Math.floor(Math.random() * videoList.length)];
+
+const onPlayerReady = (event) => event.target.playVideo();
+
+const onPlayerStateChange = (event) => {
+  if (event.data === YT.PlayerState.ENDED) {
+    var newRandomVideoId =
+      videoList[Math.floor(Math.random() * videoList.length)];
+    event.target.loadVideoById(newRandomVideoId);
+  }
+};
+
+const player = new YT.Player("player", {
+  height: "360",
+  width: "640",
+  videoId: randomVideoId,
+  events: {
+    onReady: onPlayerReady,
+    onStateChange: onPlayerStateChange,
+  },
+});
+```
+
+Below is an example of a dashboard displaying a YouTube video.
+
+<Image
+  title="Use the Dynamic Text plugin to display YouTube videos on your Grafana dashboard."
+  src="/img/plugins/volkovlabs-dynamictext-panel/yt.png"
+/>
