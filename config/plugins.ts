@@ -1,14 +1,14 @@
 /**
  * Plugins
  */
-const plugins = [
+export const PLUGINS = [
   [
     "@docusaurus/plugin-content-docs",
     {
       id: "grafana",
       path: "grafana",
       routeBasePath: "grafana",
-      sidebarPath: require.resolve("./sidebar/grafana.js"),
+      sidebarPath: require.resolve("./grafana_sidebar.js"),
     },
   ],
   [
@@ -17,9 +17,7 @@ const plugins = [
       id: "big",
       path: "big",
       routeBasePath: "big",
-      sidebarPath: require.resolve("./sidebar/big.js"),
+      sidebarPath: require.resolve("./big_sidebar.ts"),
     },
   ],
 ];
-
-module.exports = plugins;

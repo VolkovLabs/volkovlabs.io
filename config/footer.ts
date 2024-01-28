@@ -1,7 +1,7 @@
 /**
  * Footer
  */
-const footer = {
+export const FOOTER = {
   logo: {
     alt: "Volkov Labs",
     src: "img/logo.svg",
@@ -116,5 +116,3 @@ const footer = {
   ],
   copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs. All rights reserved.`,
 };
-
-module.exports = footer;

@@ -1,13 +1,10 @@
-const presets = require(require.resolve("./config/presets.js"));
-const plugins = require(require.resolve("./config/plugins.js"));
-const themeConfig = require(require.resolve("./config/theme.config.js"));
+import { Config } from "@docusaurus/types";
+import { PLUGINS, PRESETS, THEME_CONFIG } from "./config";
 
 /**
  * Config
- *
- * @type {import('@docusaurus/types').Config}
  */
-const config = {
+const config: Config = {
   baseUrl: "/",
   customFields: {
     updated: "",
@@ -16,15 +13,15 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   organizationName: "VolkovLabs",
-  plugins,
-  presets,
+  plugins: PLUGINS,
+  presets: PRESETS,
   projectName: "volkovlabs.io",
   tagline: "Plugin development for Grafana",
-  themeConfig,
+  themeConfig: THEME_CONFIG,
   themes: [],
   title: "Volkov Labs",
   trailingSlash: true,
   url: "https://volkovlabs.io",
 };
 
-module.exports = config;
+export default config;

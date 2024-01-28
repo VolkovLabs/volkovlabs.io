@@ -38,16 +38,9 @@ const Header = (siteConfig) => {
                   "button button--primary button--lg",
                   styles.getStarted
                 )}
-                href={useBaseUrl("/plugins")}
+                href="/plugins/"
               >
-                Plugins&nbsp;&nbsp;→
-              </a>
-              &nbsp;
-              <a
-                className={clsx("button button--primary button--lg", styles.bi)}
-                href={useBaseUrl("/grafana")}
-              >
-                Grafana Crash Course&nbsp;&nbsp;→
+                Open-Source Plugins&nbsp;&nbsp;→
               </a>
             </div>
           </div>
@@ -74,9 +67,7 @@ const Main = (siteConfig) => {
   return (
     <main>
       <div id="Plugins" className="container margin-vert--md padding-vert--md">
-        <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Plugins</span>
-        </h2>
+        <h2 className={clsx(styles.header, "hero__title")} />
 
         <div className="container margin-vert--md padding-vert--lg">
           <Plugins />
@@ -105,7 +96,7 @@ const Main = (siteConfig) => {
                     "button button--primary button--lg",
                     styles.getStarted
                   )}
-                  href={useBaseUrl("/big")}
+                  href="/big/"
                 >
                   Learn More&nbsp;&nbsp;→
                 </a>
@@ -127,7 +118,7 @@ const Main = (siteConfig) => {
 
       <div id="Blogs" className="container margin-vert--md padding-vert--md">
         <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Blog Posts</span>
+          <span>Blog</span>
         </h2>
 
         <div className="container margin-vert--md padding-vert--lg">
