@@ -1,7 +1,7 @@
 /**
  * Navigation Bar
  */
-const navbar = {
+export const NAVBAR = {
   hideOnScroll: true,
   logo: {
     alt: "Volkov Labs",
@@ -143,5 +143,3 @@ const navbar = {
     },
   ],
 };
-
-module.exports = navbar;

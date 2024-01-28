@@ -1,13 +1,15 @@
+import { PresetConfig } from "@docusaurus/types";
+
 /**
  * Presets
  */
-const presets = [
+export const PRESETS: PresetConfig[] = [
   [
-    "@docusaurus/preset-classic",
+    "classic",
     {
       docs: {
         routeBasePath: "plugins",
-        sidebarPath: require.resolve("./sidebar/plugins.js"),
+        sidebarPath: require.resolve("./plugins_sidebar.js"),
       },
       blog: {
         postsPerPage: "ALL",
@@ -35,5 +37,3 @@ const presets = [
     },
   ],
 ];
-
-module.exports = presets;
