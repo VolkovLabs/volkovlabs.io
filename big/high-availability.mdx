@@ -14,7 +14,7 @@ All BI App system components could exist in clusters, where a cluster is a set o
 ## Deployment
 
 - BI Engine Cluster:
-  - Requests to Server API are distributed behind Load Balancer.
+  - Requests to Server API are distributed behind the Load Balancer.
   - Schedulers distribute alert rules automatically.
 - Grafana Cluster visualizes data and provides HTTP API for BI Engine to retrieve configuration and data.
 - Prometheus Cluster stores BI Engine performance data.
@@ -22,6 +22,8 @@ All BI App system components could exist in clusters, where a cluster is a set o
   - BI Engine database.
   - Grafana configuration database.
   - Production data.
+
+Below is the picture to illustrate the current HA setup. 
 
 <Image
   title="Distributed High Availability Deployment of BI(G)."

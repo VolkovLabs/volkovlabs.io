@@ -19,7 +19,11 @@ The Business Intelligence App, version 1.7.0 includes the following updates:
 
 - Added distributed High Availability.
 - Added Swagger REST API documentation.
-- UI updates: Copy Alert, dashboard refresh, cron validator, custom Variable values.
+- UI enhancements: 
+     - Added a new **Duplicate** alert button,
+     - Improved dashboard refresh functionality, 
+     - Extended CRON validator rule set, 
+     - Enabled the use of custom variable values in alert rule configuration.
 
 ## Distributed High Availability
 
@@ -28,7 +32,7 @@ One of the most requested capabilities is the high-availability(HA) setup. We de
 All BI App system components could exist in clusters, where a cluster is a set of mirrored servers. It is done to primarily facilitate uninterrupted service by distributing the load most efficiently.
 
 - BI Engine Cluster:
-  - Requests to Server API are distributed behind Load Balancer.
+  - Requests to Server API are distributed behind the Load Balancer.
   - Schedulers distribute alert rules automatically.
 - Grafana Cluster visualizes data and provides HTTP API for BI Engine to retrieve configuration and data.
 - Prometheus Cluster stores BI Engine performance data.
@@ -37,6 +41,8 @@ All BI App system components could exist in clusters, where a cluster is a set o
   - Grafana configuration database.
   - Production data.
 
+Below is the picture to illustrate the current HA setup. 
+
 <Image
   title="Distributed High Availability Deployment of BI(G)."
   src="/img/blog/2024-01-17-big-1.6.0/high-availability.png"
@@ -44,9 +50,50 @@ All BI App system components could exist in clusters, where a cluster is a set o
 
 ## Swagger REST API
 
-Available at [REST API](/big/api/).
+Starting from this release, you can use the Swagger REST API to work with our BI Engine. The detailed instructions are available at [REST API](/big/api/) section of our documentation.
+You can learn and try simple requests there.
 
 ## UI Updates
+
+### Duplicate Alert
+
+We added one more action button. Now you can create a new alert using a previously created one as a template. 
+
+<Image
+  title="New action button - duplicate an existing alert."
+  src="/img/blog/2024-02-04-big-1.7.0/copy-button.png"
+  width = "60%"
+/>
+
+### Dashboard Refresh 
+
+Until this release, with every dashboard refresh, the add/edit drawer was automatically closing. That imposed challenges with adding/editing an alert rule when the refresh time was less than 2-3 minutes. 
+With this update, the add/edit window stays up regardless of the dashboard refresh periodicity.
+
+<Image
+  title="The dashboard refresh periodicity does not close the Add/Edit alert drawer."
+  src="/img/blog/2024-02-04-big-1.7.0/refresh.png"
+/>
+
+### Cron Validator
+
+We improved the CRON format validation. After this change, you will always see an error if the format you entered is erroneous. 
+
+<Image
+  title="CRON format validation is improved."
+  src="/img/blog/2024-02-04-big-1.7.0/cron.png"
+/>
+
+### Custom variable values
+
+Grafana supports a wide range of data sources. The most popular to work with while configuring alerts is the PostgreSQL data source. From the beginning, we ensured the compatibility between the BI Engine and the PostgreSQL data source. We are actively working on ensuring many other data sources are compatible.
+
+However, in the case when your particular data source is not yet supported, we allow to specify variable values directly on the Add/Edit alert drawer. 
+
+<Image
+  title="Manual variable values entering feature."
+  src="/img/blog/2024-02-04-big-1.7.0/manual.png"
+/>
 
 ## Getting Started
 
