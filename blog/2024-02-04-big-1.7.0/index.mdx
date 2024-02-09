@@ -17,17 +17,22 @@ We are excited to announce the release of the Business Intelligence App, version
 
 The Business Intelligence App, version 1.7.0 includes the following updates:
 
-- Added distributed High Availability.
+- Added Distributed High Availability (HA).
 - Added Swagger REST API functionality.
 - UI enhancements:
-  - Added a new **Duplicate** alert button,
-  - Improved dashboard refresh functionality,
-  - Extended CRON validator rule set,
+  - Added a new **Duplicate** alert button.
+  - Improved dashboard refresh functionality.
+  - Extended CRON validator rule set.
   - Enabled the use of custom variable values in alert rule configuration.
+
+<Shorts
+  src="https://www.youtube.com/embed/FY1W0B3Pxog"
+  title="Business Intelligence App 1.7.0 for Grafana."
+/>
 
 ## Distributed High Availability
 
-One of the most requested capabilities is the high-availability(HA) setup. We designed the BI App specifically keeping that in mind.
+One of the most requested capabilities is the High Availability (HA) setup. We designed the BI App specifically keeping that in mind.
 
 All BI App system components could exist in clusters, where a cluster is a set of mirrored servers. It is done to primarily facilitate uninterrupted service by distributing the load most efficiently.
 
@@ -50,8 +55,7 @@ Below is the picture to illustrate the current HA setup.
 
 ## Swagger REST API
 
-Starting from this release, you can use the Swagger REST API to work with our BI Engine. The detailed instructions are available at [REST API](/big/api/) section of our documentation.
-You can learn and try simple requests there.
+Starting from this release, you can use the Swagger REST API to automate configuration and get data from BI Engine. The detailed instructions are available in the [REST API](/big/api/) section of our documentation.
 
 ## UI Updates
 
@@ -75,7 +79,7 @@ With this update, the add/edit window stays up regardless of the dashboard refre
   src="/img/blog/2024-02-04-big-1.7.0/refresh.png"
 />
 
-### Cron Validator
+### CRON Validator
 
 We improved the CRON format validation. After this change, you will always see an error if the format you entered is erroneous.
 
@@ -86,9 +90,9 @@ We improved the CRON format validation. After this change, you will always see a
 
 ### Custom variable values
 
-Grafana supports a wide range of data sources. The most popular to work with while configuring alerts is the PostgreSQL data source. From the beginning, we ensured the compatibility between the BI Engine and the PostgreSQL data source. We are actively working on ensuring many other data sources are compatible.
+Grafana supports a wide range of data sources. From the beginning, we ensured the compatibility between the BI Engine and SQL and Prometheus data sources. We are actively working on ensuring many other data sources are compatible.
 
-However, in the case when your particular data source is not yet supported, we allow to specify variable values directly on the Add/Edit alert drawer.
+However, in the case when variables for your particular data source are not yet supported, we allow to specify variable values directly on the Add/Edit alert drawer.
 
 <Image
   title="Manual variable values entering feature."
@@ -101,7 +105,7 @@ You can download the Development release from our [GitHub repository](https://gi
 
 <Video
   src="https://www.youtube.com/embed/8UaY916PPXc"
-  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"
+  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana. Unscripted and Hands-On."
 />
 
 ### Docker Compose
@@ -136,8 +140,6 @@ docker compose down
 ```
 
 ## Release Notes
-
-### Features / Enhancements
 
 ### Features / Enhancements
 
