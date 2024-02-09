@@ -1,5 +1,51 @@
 export const BlogPosts = [
   {
+    id: "big-1.7.0-20240204/",
+    metadata: {
+      permalink: "/blog/big-1.7.0-20240204/",
+      source: "@site/blog/2024-02-04-big-1.7.0/index.mdx",
+      title: "Business Intelligence App 1.7.0",
+      description:
+        "We are excited to announce the release of the Business Intelligence App, version 1.7.0.",
+      date: "2024-02-04T00:00:00.000Z",
+      formattedDate: "February 4, 2024",
+      tags: [
+        {
+          label: "Business Intelligence",
+          permalink: "/blog/tags/business-intelligence",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Daria Volkova",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
+          url: "https://youtube.com/@VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
+        },
+      ],
+      frontMatter: {
+        authors: ["daria"],
+        slug: "big-1.7.0-20240204/",
+        tags: ["Business Intelligence", "Release Notes"],
+        image: "/img/blog/2024-02-04-big-1.7.0/banner.png",
+        keywords: ["Business Intelligence", "Alerting", "Grafana"],
+      },
+      unlisted: false,
+      nextItem: {
+        title: "Extend visualization capabilities with D3.js",
+        permalink: "/blog/dynamic-text-d3-community-20240121/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of the Business Intelligence App, version 1.7.0.\n\nThe Business Intelligence App, version 1.7.0 includes the following updates:\n\n- Added Distributed High Availability (HA).\n- Added Swagger REST API functionality.\n- UI enhancements:\n  - Added a new **Duplicate** alert button.\n  - Improved dashboard refresh functionality.\n  - Extended CRON validator rule set.\n  - Enabled the use of custom variable values in alert rule configuration.\n\n<Shorts\n  src="https://www.youtube.com/embed/FY1W0B3Pxog"\n  title="Business Intelligence App 1.7.0 for Grafana."\n/>\n\n## Distributed High Availability\n\nOne of the most requested capabilities is the High Availability (HA) setup. We designed the BI App specifically keeping that in mind.\n\nAll BI App system components could exist in clusters, where a cluster is a set of mirrored servers. It is done to primarily facilitate uninterrupted service by distributing the load most efficiently.\n\n- BI Engine Cluster:\n  - Requests to Server API are distributed behind the Load Balancer.\n  - Schedulers distribute alert rules automatically.\n- Grafana Cluster visualizes data and provides HTTP API for BI Engine to retrieve configuration and data.\n- Prometheus Cluster stores BI Engine performance data.\n- PostgreSQL Cluster stores:\n  - BI Engine database.\n  - Grafana configuration database.\n  - Production data.\n\nBelow is the picture to illustrate the current HA setup.\n\n<Image\n  title="Distributed High Availability Deployment of BI(G)."\n  src="/img/blog/2024-01-17-big-1.6.0/high-availability.png"\n/>\n\n## Swagger REST API\n\nStarting from this release, you can use the Swagger REST API to automate configuration and get data from BI Engine. The detailed instructions are available in the [REST API](/big/api/) section of our documentation.\n\n## UI Updates\n\n### Duplicate Alert\n\nWe added one more action button. Now you can create a new alert using a previously created one as a template.\n\n<Image\n  title="New action button - duplicate an existing alert."\n  src="/img/blog/2024-02-04-big-1.7.0/copy-button.png"\n  width="60%"\n/>\n\n### Dashboard Refresh\n\nUntil this release, with every dashboard refresh, the add/edit drawer was automatically closing. That imposed challenges with adding/editing an alert rule when the refresh time was less than 2-3 minutes.\nWith this update, the add/edit window stays up regardless of the dashboard refresh periodicity.\n\n<Image\n  title="The dashboard refresh periodicity does not close the Add/Edit alert drawer."\n  src="/img/blog/2024-02-04-big-1.7.0/refresh.png"\n/>\n\n### CRON Validator\n\nWe improved the CRON format validation. After this change, you will always see an error if the format you entered is erroneous.\n\n<Image\n  title="CRON format validation is improved."\n  src="/img/blog/2024-02-04-big-1.7.0/cron.png"\n/>\n\n### Custom variable values\n\nGrafana supports a wide range of data sources. From the beginning, we ensured the compatibility between the BI Engine and SQL and Prometheus data sources. We are actively working on ensuring many other data sources are compatible.\n\nHowever, in the case when variables for your particular data source are not yet supported, we allow to specify variable values directly on the Add/Edit alert drawer.\n\n<Image\n  title="Manual variable values entering feature."\n  src="/img/blog/2024-02-04-big-1.7.0/manual.png"\n/>\n\n## Getting Started\n\nYou can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.\n\n<Video\n  src="https://www.youtube.com/embed/8UaY916PPXc"\n  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana. Unscripted and Hands-On."\n/>\n\n### Docker Compose\n\nThe `docker-compose.yml` file consists of the following containers:\n\n- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and dashboards.\n- **Timescale** is required to store configuration, events, rules, etc.\n- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.\n- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.\n- **Prometheus** collects and store performance metrics from BI Engine.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"\n  language="yaml"\n/>\n\n### Start\n\nWhen you run a docker-compose file, it launches the Grafana, Timescale, BI Engine, Prometheus and Webhook containers:\n\n```\ndocker compose pull && docker compose up\n```\n\n### Stop\n\nStop and remove all containers:\n\n```\ndocker compose down\n```\n\n## Release Notes\n\n### Features / Enhancements\n\n- Updated BI App and BI Engine (#12)\n- [App] Added support dashboard refresh to alerting panel.\n- [App] Added filter rows from panel targets.\n- [App] Added enter custom variable values if unable to load options.\n- [App] Added cron validator to validate alert schedule.\n- [App] Added copy alert button.\n- [Engine] Added alerts assignment between engine nodes.\n- [Engine] Added Swagger REST API documentation.\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Support our project by starring the repository.',
+  },
+  {
     id: "dynamic-text-d3-community-20240121/",
     metadata: {
       permalink: "/blog/dynamic-text-d3-community-20240121/",
@@ -37,6 +83,11 @@ export const BlogPosts = [
         tags: ["Dynamic Text"],
         image: "/img/blog/2024-01-21-dynamic-text-d3-community/banner.png",
         keywords: ["Grafana", "API", "Business", "Planhat"],
+      },
+      unlisted: false,
+      prevItem: {
+        title: "Business Intelligence App 1.7.0",
+        permalink: "/blog/big-1.7.0-20240204/",
       },
       nextItem: {
         title: "Business Intelligence App 1.6.0",
@@ -83,6 +134,7 @@ export const BlogPosts = [
         image: "/img/blog/2024-01-17-big-1.6.0/banner.png",
         keywords: ["Business Intelligence", "Alerting", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Extend visualization capabilities with D3.js",
         permalink: "/blog/dynamic-text-d3-community-20240121/",
@@ -93,7 +145,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of the Business Intelligence App, version 1.6.0. It accumulates massive functionality enhancements and, thus, marks an important milestone in transitioning from a POC (proof of concept) to a development type of release.\n\nThe Business Intelligence App, version 1.6.0 includes the following updates:\n\n- Allowed Variables support.\n- Added Support for Prometheus data source.\n- Enabled Prometheus monitoring.\n- Extended UI functionality.\n- Added Alert History.\n\n## Variables Support\n\nSupporting dashboard variables greatly simplifies work with configuring the alerting in general. Let\'s say, you have two very similar devices and your task is to monitor their technical health by creating alerts in the event of an alert rule breach.\n\nYour alert rules are almost identical for both devices with only thresholds being slightly different. For instance, one device is allowed to rotate no faster than 50 rpm and the other device no more than 100 rpm.\n\nWithout dashboard variables, you have to create two separate alert rules. For a small number of devices, this approach is reasonable. However, it turns into a severe headache once instead of two devices you need to maintain hundreds. For every device, you will have to create and maintain a separate alert rule containing an identical query.\n\nWith dashboard variables enabled, creating one alert rule is enough. The thresholds could be configured in the **Overrides**.\n\n### Prometheus Data Source\n\nAt this stage, we ensured that the BI App supports the variables in Prometheus Data Source. Some data source has unique support for the variables and we plan to support most popular of the them in the future.\n\n## Enabled Prometheus Monitoring\n\nIn this release, we added a Prometheus middleware and container to allow the collection of the BI Engine system health statistics. Having Prometheus monitoring built-in in the BI App allows you to monitor the alerting system itself. Being an outside system, the BI App is an excellent choice for observing the observability system while using the familiar interface.\n\nFollowing the enabling of the Prometheus monitoring, we crafted a [ready-to-use, out-of-the-box dashboard](https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/provisioning/dashboards/engine.json) with all necessary metrics for kick-off the successful monitoring.\n\n<Image\n  title="Built-in BI Engine monitoring dashboard. Data collected and stored via Prometheus."\n  src="/img/blog/2024-01-17-big-1.6.0/prom.png"\n/>\n\nThe BI Engine consists of two components which provides metrics:\n\n- API Server - **Instance** `engine:3001`\n- Scheduler - **Instance** `engine:3002`\n\n<Image\n  title="API Server and Scheduler are two components of the BI App."\n  src="/img/blog/2024-01-17-big-1.6.0/bi-app.png"\n/>\n\n## Alert rules workflow\n\nThe below schema illustrates the conceptual workflow from the user point of view. Prometheus serves to collect all system health-related and other data to ensure troubleshooting and reporting on system behavior.\n\n<Image\n  title="Conceptual workflow from the user POV."\n  src="/img/blog/2024-01-17-big-1.6.0/workflow.png"\n/>\n\n## Extended UI functionality\n\n### Actions\n\nTo align with the alerting basics terminology [Alert rule-Alert record-Alert action](/big/big-alerting/), we renamed the **Webhooks** tab into the **Actions** tab.\n\n### Annotations\n\nIn the Edit mode->**Action section**->**Add annotations** parameter, now you can specify whether you need to attach them to a panel or a dashboard (i.e. all panels of the specified dashboard).\n\n<Image\n  title="The Alerting panel and the Edit alert drawer."\n  src="/img/blog/2024-01-17-big-1.6.0/alerting-panel.png"\n/>\n\n### Alert details\n\nFor the alert rules in the **Alerting** and **Error** statuses, we added the **Event Details** section.\n\nTo review, click the **Details** button on an alert card, then **Event Details** header.\n\n<Image\n  title="Event details for the alert rules in the Alerting and Error statuses."\n  src="/img/blog/2024-01-17-big-1.6.0/event-details.png"\n/>\n\n## Alert History\n\nWe added a new option to the **Request** parameter of the Business Intelligence Engine data source. It allows you to display alert history in a visualization panel of your choice.\n\nIn the example below, the alert history is displayed in the Table visualization panel.\n\n<Image\n  title="New request type, Alerts History, allows to display."\n  src="/img/blog/2024-01-17-big-1.6.0/alert-history.png"\n/>\n\n## Getting Started\n\nYou can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.\n\n<Video\n  src="https://www.youtube.com/embed/8UaY916PPXc"\n  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"\n/>\n\n### Docker Compose\n\nThe `docker-compose.yml` file consists of the following containers:\n\n- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and dashboards.\n- **Timescale** is required to store configuration, events, rules, etc.\n- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.\n- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.\n- **Prometheus** collects and store performance metrics from BI Engine.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"\n  language="yaml"\n/>\n\n### Start\n\nWhen you run a docker-compose file, it launches the Grafana, Timescale, BI Engine, Prometheus and Webhook containers:\n\n```\ndocker compose pull && docker compose up\n```\n\n### Stop\n\nStop and remove all containers:\n\n```\ndocker compose down\n```\n\n## Release Notes\n\n### Features / Enhancements in 1.6.0\n\n- Update BI App and BI Engine (#11)\n- [App] Update Prometheus dashboard.\n- [App] Make repeated variable is multi and add all option.\n- [App] Add Group Statuses.\n- [Engine] Add execution batching.\n- [Engine] Add running migrations only via server app.\n- [Engine] Skip creating annotations for repeat variables without results.\n- [Engine] Update Production scripts.\n\n### Features / Enhancements in 1.5.0\n\n- [App] Add Prometheus dashboard.\n- [App] Add showing load variables error.\n- [App] Add check for creating alerts without variable values.\n- [App] Update to Grafana Utils 1.2.0.\n- [Engine] Create mapper service to convert entities.\n- [Engine] Add Prometheus middleware.\n- [Engine] Add failing load variables request if unable to query variable options.\n- [Engine] Add redirect support for Home dashboard.\n- [Engine] Add prometheus datasource for getting variable options.\n- [Engine] Update the License Key.\n- [Engine] Update to Node 20.\n\n### Features / Enhancements in 1.4.0\n\n- Update BI App and BI Engine (#10)\n- [App] Add Variables support.\n- [App] Add Grafana proxy requests.\n- [App] Update Dashboard annotation modes.\n- [App] Add License Info tab.\n- [App] Add Evaluation overrides.\n- [Engine] Add Alert State to created Annotations.\n- [Engine] Add Variables support.\n- [Engine] Modules refactoring.\n- [Engine] Add Grafana proxy for App requests.\n- [Engine] Update alert checksum.\n- [Engine] Update Dashboard annotations.\n- [Engine] Add Configurable grafana request timeout.\n- [Engine] Add License Info.\n- [Engine] Add Alert history.\n- [Engine] Add Evaluation overrides.\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Support our project by starring the repository.',
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of the Business Intelligence App, version 1.6.0. It accumulates massive functionality enhancements and, thus, marks an important milestone in transitioning from a POC (proof of concept) to a development type of release.\n\nThe Business Intelligence App, version 1.6.0 includes the following updates:\n\n- Allowed Variables support.\n- Added Support for Prometheus data source.\n- Enabled Prometheus monitoring.\n- Extended UI functionality.\n- Added Alert History.\n\n<Shorts\n  src="https://www.youtube.com/embed/NG8eg1F5nX4"\n  title="Business Intelligence App 1.6.0 for Grafana."\n/>\n\n## Variables Support\n\nSupporting dashboard variables greatly simplifies work with configuring the alerting in general. Let\'s say, you have two very similar devices and your task is to monitor their technical health by creating alerts in the event of an alert rule breach.\n\nYour alert rules are almost identical for both devices with only thresholds being slightly different. For instance, the CPU usage of one device must stay within the 0 to 2 percent range and the other CPU usage can go over 2%.\n\nWithout dashboard variables, you have to create two separate alert rules. For a small number of devices, this approach is reasonable. However, it turns into a severe headache once instead of two devices you need to maintain hundreds. For every device, you will have to create and maintain a separate alert rule containing an identical query.\n\nWith dashboard variables enabled, creating one alert rule is enough. The thresholds could be configured in the **Overrides**.\n\nHere is an example of the Time Series visualization where one data series triggers an alert and another does not.\n\n<Image\n  title="An example of the Time Series visualization where one data series triggers an alert and another does not."\n  src="/img/blog/2024-01-17-big-1.6.0/var-1.png"\n/>\n\nBelow is what the configuration of the alert rule using dashboard variables looks like.\n\n<Image\n  title="With variables, the same alert rule can have multiple thresholds."\n  src="/img/blog/2024-01-17-big-1.6.0/var-2.png"\n/>\n\n### Prometheus Data Source\n\nAt this stage, we ensured that the BI App supports the variables in Prometheus Data Source. Some data source has unique support for the variables and we plan to support the most popular of them in the future.\n\n## Enabled Prometheus Monitoring\n\nIn this release, we added a Prometheus middleware and container to allow the collection of the BI Engine system health statistics. Having Prometheus monitoring built-in in the BI App allows you to monitor the alerting system itself. Being an outside system, the BI App is an excellent choice for observing the observability system while using the familiar interface.\n\nFollowing the enabling of the Prometheus monitoring, we crafted a [ready-to-use, out-of-the-box dashboard](https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/provisioning/dashboards/engine.json) with all necessary metrics for kick-off the successful monitoring.\n\n<Image\n  title="Built-in BI Engine monitoring dashboard. Data collected and stored via Prometheus."\n  src="/img/blog/2024-01-17-big-1.6.0/prom.png"\n/>\n\nThe BI Engine consists of two components which provides metrics:\n\n- API Server - **Instance** `engine:3001`\n- Scheduler - **Instance** `engine:3002`\n\n<Image\n  title="API Server and Scheduler are two components of the BI App."\n  src="/img/blog/2024-01-17-big-1.6.0/bi-app.png"\n/>\n\n## Alert rules workflow\n\nThe below schema illustrates the conceptual workflow from the user point of view. Prometheus serves to collect all system health-related and other data to ensure troubleshooting and reporting on system behavior.\n\n<Image\n  title="Conceptual workflow from the user POV."\n  src="/img/blog/2024-01-17-big-1.6.0/workflow.png"\n/>\n\n## Extended UI functionality\n\n### Actions\n\nTo align with the alerting basics terminology [Alert rule-Alert record-Alert action](/big/big-alerting/), we renamed the **Webhooks** tab into the **Actions** tab.\n\n### Annotations\n\nIn the Edit mode->**Action section**->**Add annotations** parameter, now you can specify whether you need to attach them to a panel or a dashboard (i.e. all panels of the specified dashboard).\n\n<Image\n  title="The Alerting panel and the Edit alert drawer."\n  src="/img/blog/2024-01-17-big-1.6.0/alerting-panel.png"\n/>\n\n### Alert details\n\nFor the alert rules in the **Alerting** and **Error** statuses, we added the **Event Details** section.\n\nTo review, click the **Details** button on an alert card, then **Event Details** header.\n\n<Image\n  title="Event details for the alert rules in the Alerting and Error statuses."\n  src="/img/blog/2024-01-17-big-1.6.0/event-details.png"\n/>\n\n## Alert History\n\nWe added a new option to the **Request** parameter of the Business Intelligence Engine data source. It allows you to display alert history in a visualization panel of your choice.\n\nIn the example below, the alert history is displayed in the Table visualization panel.\n\n<Image\n  title="New request type, Alerts History, allows to display."\n  src="/img/blog/2024-01-17-big-1.6.0/alert-history.png"\n/>\n\n## Getting Started\n\nYou can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.\n\n<Video\n  src="https://www.youtube.com/embed/8UaY916PPXc"\n  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana. Unscripted and Hands-On."\n/>\n\n### Docker Compose\n\nThe `docker-compose.yml` file consists of the following containers:\n\n- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and dashboards.\n- **Timescale** is required to store configuration, events, rules, etc.\n- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.\n- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.\n- **Prometheus** collects and store performance metrics from BI Engine.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"\n  language="yaml"\n/>\n\n### Start\n\nWhen you run a docker-compose file, it launches the Grafana, Timescale, BI Engine, Prometheus and Webhook containers:\n\n```\ndocker compose pull && docker compose up\n```\n\n### Stop\n\nStop and remove all containers:\n\n```\ndocker compose down\n```\n\n## Release Notes\n\n### Features / Enhancements in 1.6.0\n\n- Update BI App and BI Engine (#11)\n- [App] Update Prometheus dashboard.\n- [App] Make repeated variable is multi and add all option.\n- [App] Add Group Statuses.\n- [Engine] Add execution batching.\n- [Engine] Add running migrations only via server app.\n- [Engine] Skip creating annotations for repeat variables without results.\n- [Engine] Update Production scripts.\n\n### Features / Enhancements in 1.5.0\n\n- [App] Add Prometheus dashboard.\n- [App] Add showing load variables error.\n- [App] Add check for creating alerts without variable values.\n- [App] Update to Grafana Utils 1.2.0.\n- [Engine] Create mapper service to convert entities.\n- [Engine] Add Prometheus middleware.\n- [Engine] Add failing load variables request if unable to query variable options.\n- [Engine] Add redirect support for Home dashboard.\n- [Engine] Add prometheus datasource for getting variable options.\n- [Engine] Update the License Key.\n- [Engine] Update to Node 20.\n\n### Features / Enhancements in 1.4.0\n\n- Update BI App and BI Engine (#10)\n- [App] Add Variables support.\n- [App] Add Grafana proxy requests.\n- [App] Update Dashboard annotation modes.\n- [App] Add License Info tab.\n- [App] Add Evaluation overrides.\n- [Engine] Add Alert State to created Annotations.\n- [Engine] Add Variables support.\n- [Engine] Modules refactoring.\n- [Engine] Add Grafana proxy for App requests.\n- [Engine] Update alert checksum.\n- [Engine] Update Dashboard annotations.\n- [Engine] Add Configurable grafana request timeout.\n- [Engine] Add License Info.\n- [Engine] Add Alert history.\n- [Engine] Add Evaluation overrides.\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Support our project by starring the repository.',
   },
   {
     id: "dynamictext-panel-4.3.0-20240108/",
@@ -132,6 +184,7 @@ export const BlogPosts = [
         image: "/img/blog/2024-01-12-dynamictext-panel-4.3.0/banner.png",
         keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Business Intelligence App 1.6.0",
         permalink: "/blog/big-1.6.0-20240117/",
@@ -181,6 +234,7 @@ export const BlogPosts = [
         image: "/img/blog/2024-01-05-form-panel-3.4.0/banner.png",
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 4.3.0",
         permalink: "/blog/dynamictext-panel-4.3.0-20240108/",
@@ -226,6 +280,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-12-22-top-of-2023/banner.png",
         keywords: ["Volkov Labs", "Highlights"],
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation Panel 3.4.0",
         permalink: "/blog/form-panel-3.4.0-20240105/",
@@ -275,6 +330,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-12-14-variable-panel-2.3.1/banner.png",
         keywords: ["Variable", "Panel", "Status"],
       },
+      unlisted: false,
       prevItem: {
         title: "Highlights of 2023",
         permalink: "/blog/top-of-2023-20231222/",
@@ -324,6 +380,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-12-06-big-1.3.0/banner.png",
         keywords: ["Business Intelligence", "Alerting", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Variable Panel 2.3.1",
         permalink: "/blog/variable-panel-2.3.1-20231214/",
@@ -373,6 +430,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-12-03-form-panel-3.3.0/banner.png",
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Business Intelligence App 1.3.0",
         permalink: "/blog/big-1.3.0-20231206/",
@@ -422,6 +480,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-11-30-variable-panel-2.2.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation Panel 3.3.0",
         permalink: "/blog/form-panel-3.3.0-20231203/",
@@ -471,6 +530,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-11-27-big-1.2.0/banner.png",
         keywords: ["Business Intelligence", "Alerting", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Variable Panel 2.2.0",
         permalink: "/blog/variable-panel-2.2.0-20231130/",
@@ -481,7 +541,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of the Business Intelligence App, version 1.2.0. At this early stage, it is a proof-of-concept, meaning a product created as a starter to vastly extend its functionality in the future.\nThis release includes the following updates:\n\n- Improved the Alerting panel.\n- Added regex patterns for alerts.\n- New for webhooks: added test connectivity and a new **Use by Default** parameter.\n\n<Shorts\n  src="https://www.youtube.com/embed/X2An_gbxX5k"\n  title="Business Intelligence App 1.2.0 for Grafana."\n/>\n\n## Proof of Concept\n\nBusiness Intelligence App is a proof-of-concept project with an expected launch in January 2024. It will include the following components:\n\n- Alerting,\n- High performance Engine,\n- Reporting (Q1 2024),\n- Dashboard management (Q1 2024),\n- Forecasting (Q2 2024).\n\n<Image\n  title="Business Intelligence for Grafana. Our BI(G) project."\n  src="/img/big/concept.png"\n/>\n\n## Alerting panel improvements\n\nThe latest version of the Alerting panel is depicted below. This panel is designed to simplify work with alerts by having all controls in one place and having an intuitive order of configuration settings.\n\nThe creation logic follows the Grafana [alerting basics](/big/big-alerting/).\n\n### Alert card\n\nEvery alert on the Alerting panel has a sleek card with the title, the panel name it evaluates, schedule details, statuses and action buttons.\n\n<Image\n  title="Alert card components."\n  src="/img/blog/2023-11-27-big-1.2.0/alert-card.png"\n/>\n\n### Statuses\n\nThere are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**.\n\nAnd the other status might be one of the four values:\n\n- **Scheduled**. The alert is scheduled, but never run yet.\n- **OK**. The alert has been run and the thresholds are NOT breached or the regex pattern is NOT found.\n- **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.\n- **Error**. Something is wrong, which could be the query, annotation or webhook.\n\nRight after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any change, the alert status changes to **Scheduled**.\n\n### Action buttons\n\nFour action buttons are available:\n\n- **Info**. Open the drawer with the alert details.\n- **Pause/Active**. Set the alert to pause or active mode.\n- **Edit**. Opens the Edit drawer. When you click in the Edit drawer, the alert status changes to Scheduled.\n- **Delete**. Delete the alert after the user\'s confirmation.\n\n<Image\n  title="The Alerting panel and the Edit alert rule drawer."\n  src="/img/blog/2023-11-27-big-1.2.0/alerting-panel.png"\n/>\n\n## Regex Pattern\n\nThe regex pattern evaluation is a new evaluation option. The alert evaluation could be set to Thresholds or a Regex Pattern:\n\n- **Thresholds**. The alert examines data against the specified thresholds in the panel options.\n- **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.\n\nThe Evaluation section is shown in the picture above.\n\n## Webhook updates\n\n### Test connectivity\n\nYou can test connectivity in the Edit Webhook drawer using the red button at the bottom.\n\n### Use by Default\n\nYou can set any webhook to be assigned by default, meaning, when a webhook is not specified, the default one is executed.\n\n<Image\n  title="New features for a webhook - connectivity test and use by default."\n  src="/img/blog/2023-11-27-big-1.2.0/webhook.png"\n/>\n\n## Getting Started\n\nYou can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.\n\n<Video\n  src="https://www.youtube.com/embed/8UaY916PPXc"\n  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"\n/>\n\n### Docker Compose\n\nThe `docker-compose.yml` file consists of the following containers:\n\n- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and a demo dashboard.\n- **Timescale** is required to store configuration, events, rules, etc.\n- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.\n- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.\n- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.\n- **Data Generator** generates test data for threshold evaluation in the demo dashboard.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"\n  language="yaml"\n/>\n\n### Start\n\nWhen you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers:\n\n```\ndocker compose pull && docker compose up\n```\n\n### Stop\n\nStop and remove all containers:\n\n```\ndocker compose down\n```\n\n## Release Notes\n\n### Features / Enhancements\n\n- Initial Proof of Concept (POC) release for testing.\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.',
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of the Business Intelligence App, version 1.2.0. At this early stage, it is a proof-of-concept, meaning a product created as a starter to vastly extend its functionality in the future.\nThis release includes the following updates:\n\n- Improved the Alerting panel.\n- Added regex patterns for alerts.\n- New for webhooks: added test connectivity and a new **Use by Default** parameter.\n\n<Shorts\n  src="https://www.youtube.com/embed/X2An_gbxX5k"\n  title="Business Intelligence App 1.2.0 for Grafana."\n/>\n\n## Proof of Concept\n\nBusiness Intelligence App is a proof-of-concept project with an expected launch in February 2024. It will include the following components:\n\n- Alerting,\n- High performance Engine,\n- Reporting (Q1 2024),\n- Dashboard management (Q1 2024),\n- Forecasting (Q2 2024).\n\n<Image\n  title="Business Intelligence for Grafana. Our BI(G) project."\n  src="/img/big/concept.png"\n/>\n\n## Alerting panel improvements\n\nThe latest version of the Alerting panel is depicted below. This panel is designed to simplify work with alerts by having all controls in one place and having an intuitive order of configuration settings.\n\nThe creation logic follows the Grafana [alerting basics](/big/big-alerting/).\n\n### Alert card\n\nEvery alert on the Alerting panel has a sleek card with the title, the panel name it evaluates, schedule details, statuses and action buttons.\n\n<Image\n  title="Alert card components."\n  src="/img/blog/2023-11-27-big-1.2.0/alert-card.png"\n/>\n\n### Statuses\n\nThere are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**.\n\nAnd the other status might be one of the four values:\n\n- **Scheduled**. The alert is scheduled, but never run yet.\n- **OK**. The alert has been run and the thresholds are NOT breached or the regex pattern is NOT found.\n- **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.\n- **Error**. Something is wrong, which could be the query, annotation or webhook.\n\nRight after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any change, the alert status changes to **Scheduled**.\n\n### Action buttons\n\nFour action buttons are available:\n\n- **Info**. Open the drawer with the alert details.\n- **Pause/Active**. Set the alert to pause or active mode.\n- **Edit**. Opens the Edit drawer. When you click in the Edit drawer, the alert status changes to Scheduled.\n- **Delete**. Delete the alert after the user\'s confirmation.\n\n<Image\n  title="The Alerting panel and the Edit alert rule drawer."\n  src="/img/blog/2023-11-27-big-1.2.0/alerting-panel.png"\n/>\n\n## Regex Pattern\n\nThe regex pattern evaluation is a new evaluation option. The alert evaluation could be set to Thresholds or a Regex Pattern:\n\n- **Thresholds**. The alert examines data against the specified thresholds in the panel options.\n- **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.\n\nThe Evaluation section is shown in the picture above.\n\n## Webhook updates\n\n### Test connectivity\n\nYou can test connectivity in the Edit Webhook drawer using the red button at the bottom.\n\n### Use by Default\n\nYou can set any webhook to be assigned by default, meaning, when a webhook is not specified, the default one is executed.\n\n<Image\n  title="New features for a webhook - connectivity test and use by default."\n  src="/img/blog/2023-11-27-big-1.2.0/webhook.png"\n/>\n\n## Getting Started\n\nYou can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.\n\n<Video\n  src="https://www.youtube.com/embed/8UaY916PPXc"\n  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"\n/>\n\n### Docker Compose\n\nThe `docker-compose.yml` file consists of the following containers:\n\n- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and a demo dashboard.\n- **Timescale** is required to store configuration, events, rules, etc.\n- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.\n- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.\n- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.\n- **Data Generator** generates test data for threshold evaluation in the demo dashboard.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"\n  language="yaml"\n/>\n\n### Start\n\nWhen you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers:\n\n```\ndocker compose pull && docker compose up\n```\n\n### Stop\n\nStop and remove all containers:\n\n```\ndocker compose down\n```\n\n## Release Notes\n\n### Features / Enhancements\n\n- Initial Proof of Concept (POC) release for testing.\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-bi-grafana/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.',
   },
   {
     id: "big-alerting-20231121/",
@@ -516,6 +576,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-11-21-big-alerting/banner.png",
         keywords: ["Alerting", "Business Intelligence"],
       },
+      unlisted: false,
       prevItem: {
         title: "Business Intelligence App 1.2.0",
         permalink: "/blog/big-1.2.0-20231127/",
@@ -526,7 +587,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWhile working closely with the Community and helping to solve production use cases, we have accumulated quite a list of wishes for reimagined alerting functioning.\n\nMost asks were related to simplifying user interaction by possibly having all controls in one UI place. Many users were eager to incorporate forecasting paired with AI for self-hosted Grafana.\n\nThis is how the idea of the BI(G) Alerting was born. With the general thought of making alerting accessible for business users.\n\nIn the video below, I go over the alerting basics, existing alerting system components and our vision of BI(G) Alerting.\n\nBy the way, BI stands for Business Intelligence and G for Grafana. The article below reiterates many points I made in the video and adds more details to some topics.\n\n<Video\n  src="https://www.youtube.com/embed/vky-7-DfvXE"\n  title="BI(G) Alerting Announcement."\n/>\n\n## Alerting basics\n\n**Alerting** is a system to observe how your data changes and act when a change occurs.\n\nThe three main alerting components:\n\n1. **An alert rule**. It is an instruction to evaluate the observable data.\n   Most alert rules have parameters like time frame to check, how often, query to run (SQL and PromQL, etc.), and thresholds.\n\n2. **An alert record**. An alert record is created when observable data goes beyond the threshold.\n\n3. **An alert action**. It is an action triggered by an alert record.\n\n<Image\n  title="Alerting basics."\n  src="/img/blog/2023-11-21-big-alerting/basics.png"\n  width="50%"\n/>\n\n:::note Basics\n\nSo, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created. Following the created alert records, alert actions are initiated.\n\n:::\n\n## Native versus BI(G) Alerting\n\nThe schema below depicts the Alerting as it is side-by-side with the BI(G) Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.\n\n<Image\n  title="Alerting versus BI(G) alerting."\n  src="/img/blog/2023-11-21-big-alerting/alerting-vs-big.png"\n/>\n\nUsers create alert rules using the Alerting UI.\n\nThe alerting records are created by the alert manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.\nThe alert manager works only with backend data sources.\n\nFor the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, Slack messages, emails and OnCall.\n\nWebhooks, which are 3rd party APIs, can also be added as triggered by an alert rule record. However, even if the possibility exists the implementation might be foggy for many.\n\nIn the BI(G) Alerting, we reimaged all three modules.\n\n## Alerting Management panel\n\nThe alerting management panel is set to simplify the alert rule creation. We designed it to be intuitive and business-oriented users friendly. You specify all parameters in a one-screen form.\n\nThe new alert rule/edit mode has the following configuration elements to specify:\n\n- **Title** is an alert name.\n- **Schedule** is a frequency of how often the rule should run. With CRON expressions your schedule can be as complex as needed.\n- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones. The alert rule will take queries and thresholds from there automatically.\n- **Time Range** could be either taken from the dashboard and specified custom.\n- For the alert **action**, select from the drop-down list of the existing, pre-configured webhook APIs.\n- Disabled **Annotation** option will prevent sending a record into the annotation table.\n\nWe target to have the Alert Management UI panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.\n\n<Image\n  title="Alerting Management Panel."\n  src="/img/blog/2023-11-21-big-alerting/alert-management-ui.png"\n/>\n\n### BI Engine\n\nWe reimagined the alert manager and came up with the BI Engine:\n\n- It supports both frontend and backend data sources.\n- It uses dashboards as configuration which means it retrieves dashboard queries and thresholds and uses them as alert rule parameters. That eliminates the duplicative work when users have to enter the same specifics twice.\n- It is installed in a separate container which makes the system architecture flexible.\n\nIn the future, we will include forecasting with AI algorithms.\n\nTo connect to the Alerting BI Engine, you need the Business Intelligence data source installed and configured.\n\n<Image\n  title="Business Intelligence Data Source."\n  src="/img/blog/2023-11-21-big-alerting/bi-ds.png"\n/>\n\n### Webhooks UI panel\n\nThis panel lists all configured webhooks. In the edit mode, you specify a name, type (HTTP or Test), request URL and request method. For now, only POST is available.\n\n<Image\n  title="Webhook configuration panel."\n  src="/img/blog/2023-11-21-big-alerting/web-hooks-panel.png"\n/>\n\n## Development release\n\nYou can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.\n\n<Video\n  src="https://www.youtube.com/embed/8UaY916PPXc"\n  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"\n/>\n\nThe docker-compose file consists of the following containers:\n\n- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and an example dashboard.\n- **Timescale** is required to store configuration, events, rules, etc.\n- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.\n- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.\n- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.\n\nWhen you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"\n  language="yaml"\n/>\n\n## Early adopters\n\nReach out if you are interested in the product roadmap discussion. We are happy to gather a group of early adopters to swiftly push this product forward.\n\nThe first official version is planned in January \'24, and there is so much more to come afterwards. Together we can ensure the product includes the most desired features.\n\n## Questions?\n\nIf you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube video](https://www.youtube.com/embed/vky-7-DfvXE).\n\n## Become a member!\n\nBecome a [member of our fan club](https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join) and earn loyalty badges!',
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWhile working closely with the Community and helping to solve production use cases, we have accumulated quite a list of wishes for reimagined alerting functioning.\n\nMost asks were related to simplifying user interaction by possibly having all controls in one UI place. Many users were eager to incorporate forecasting paired with AI for self-hosted Grafana.\n\nThis is how the idea of the BI(G) Alerting was born. With the general thought of making alerting accessible for business users.\n\nIn the video below, I go over the alerting basics, existing alerting system components and our vision of BI(G) Alerting.\n\nBy the way, BI stands for Business Intelligence and G for Grafana. The article below reiterates many points I made in the video and adds more details to some topics.\n\n<Video\n  src="https://www.youtube.com/embed/vky-7-DfvXE"\n  title="BI(G) Alerting Announcement."\n/>\n\n## Alerting basics\n\n**Alerting** is a system to observe how your data changes and act when a change occurs.\n\nThe three main alerting components:\n\n1. **An alert rule**. It is an instruction to evaluate the observable data.\n   Most alert rules have parameters like time frame to check, how often, query to run (SQL and PromQL, etc.), and thresholds.\n\n2. **An alert record**. An alert record is created when observable data goes beyond the threshold.\n\n3. **An alert action**. It is an action triggered by an alert record.\n\n<Image\n  title="Alerting basics."\n  src="/img/blog/2023-11-21-big-alerting/basics.png"\n  width="50%"\n/>\n\n:::note Basics\n\nSo, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created. Following the created alert records, alert actions are initiated.\n\n:::\n\n## Native versus BI(G) Alerting\n\nThe schema below depicts the Alerting as it is side-by-side with the BI(G) Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.\n\n<Image\n  title="Alerting versus BI(G) alerting."\n  src="/img/blog/2023-11-21-big-alerting/alerting-vs-big.png"\n/>\n\nUsers create alert rules using the Alerting UI.\n\nThe alerting records are created by the alert manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.\nThe alert manager works only with backend data sources.\n\nFor the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, Slack messages, emails and OnCall.\n\nWebhooks, which are 3rd party APIs, can also be added as triggered by an alert rule record. However, even if the possibility exists the implementation might be foggy for many.\n\nIn the BI(G) Alerting, we reimaged all three modules.\n\n## Alerting Management panel\n\nThe alerting management panel is set to simplify the alert rule creation. We designed it to be intuitive and business-oriented users friendly. You specify all parameters in a one-screen form.\n\nThe new alert rule/edit mode has the following configuration elements to specify:\n\n- **Title** is an alert name.\n- **Schedule** is a frequency of how often the rule should run. With CRON expressions your schedule can be as complex as needed.\n- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones. The alert rule will take queries and thresholds from there automatically.\n- **Time Range** could be either taken from the dashboard and specified custom.\n- For the alert **action**, select from the drop-down list of the existing, pre-configured webhook APIs.\n- Disabled **Annotation** option will prevent sending a record into the annotation table.\n\nWe target to have the Alert Management UI panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.\n\n<Image\n  title="Alerting Management Panel."\n  src="/img/blog/2023-11-21-big-alerting/alert-management-ui.png"\n/>\n\n### BI Engine\n\nWe reimagined the alert manager and came up with the BI Engine:\n\n- It uses dashboards as configuration which means it retrieves dashboard queries and thresholds and uses them as alert rule parameters. That eliminates the duplicative work when users have to enter the same specifics twice.\n- It is installed in a separate container which makes the system architecture flexible.\n\nIn the future, we will include forecasting with AI algorithms.\n\nTo connect to the Alerting BI Engine, you need the Business Intelligence data source installed and configured.\n\n<Image\n  title="Business Intelligence Data Source."\n  src="/img/blog/2023-11-21-big-alerting/bi-ds.png"\n/>\n\n### Webhooks UI panel\n\nThis panel lists all configured webhooks. In the edit mode, you specify a name, type (HTTP or Test), request URL and request method. For now, only POST is available.\n\n<Image\n  title="Webhook configuration panel."\n  src="/img/blog/2023-11-21-big-alerting/web-hooks-panel.png"\n/>\n\n## Development release\n\nYou can download the Development release from our [GitHub repository](https://github.com/volkovlabs/volkovlabs-bi-grafana) and follow this hands-on tutorial.\n\n<Video\n  src="https://www.youtube.com/embed/8UaY916PPXc"\n  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"\n/>\n\nThe docker-compose file consists of the following containers:\n\n- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and an example dashboard.\n- **Timescale** is required to store configuration, events, rules, etc.\n- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.\n- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.\n- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.\n\nWhen you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.\n\n<Code\n  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"\n  language="yaml"\n/>\n\n## Early adopters\n\nReach out if you are interested in the product roadmap discussion. We are happy to gather a group of early adopters to swiftly push this product forward.\n\nThe first official version is planned in February \'24, and there is so much more to come afterwards. Together we can ensure the product includes the most desired features.\n\n## Questions?\n\nIf you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube video](https://www.youtube.com/embed/vky-7-DfvXE).\n\n## Become a member!\n\nBecome a [member of our fan club](https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join) and earn loyalty badges!',
   },
   {
     id: "dynamictext-panel-4.2.0-20231121/",
@@ -565,6 +626,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-11-21-dynamictext-panel-4.2.0/banner.png",
         keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Alerting with Business Intelligence in Grafana",
         permalink: "/blog/big-alerting-20231121/",
@@ -614,6 +676,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-11-01-calendar-panel-2.3.0/banner.png",
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 4.2.0",
         permalink: "/blog/dynamictext-panel-4.2.0-20231121/",
@@ -663,6 +726,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-10-29-image-panel-4.1.0/banner.png",
         keywords: ["Base64", "Panel", "Zoom", "Label", "Images"],
       },
+      unlisted: false,
       prevItem: {
         title: "Calendar Panel 2.3.1",
         permalink: "/blog/calendar-panel-2.3.0-20231101/",
@@ -712,6 +776,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-10-27-grapi-datasource-2.2.0/banner.png",
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
       },
+      unlisted: false,
       prevItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 4.1.0",
         permalink: "/blog/image-panel-4.1.0-20231029/",
@@ -761,6 +826,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-10-19-variable-panel-2.0.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
       },
+      unlisted: false,
       prevItem: {
         title: "Grafana HTTP API Data Source 2.2.0",
         permalink: "/blog/grapi-datasource-2.2.0-20231027/",
@@ -810,6 +876,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-10-10-form-panel-3.2.1/banner.png",
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Variable Panel 2.0.0",
         permalink: "/blog/variable-panel-2.0.0-20231019/",
@@ -859,6 +926,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-10-06-calendar-panel-2.2.0/banner.png",
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation Panel 3.2.1",
         permalink: "/blog/form-panel-3.2.1-20231010/",
@@ -912,6 +980,7 @@ export const BlogPosts = [
           "Monitoring",
         ],
       },
+      unlisted: false,
       prevItem: {
         title: "Calendar Panel 2.2.0",
         permalink: "/blog/calendar-panel-2.2.0-20231006/",
@@ -959,6 +1028,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-09-08-form-panel-data-source/banner.png",
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title:
           "Monitoring Linux servers with Prometheus, Node Exporter and Grafana Time Series",
@@ -1010,6 +1080,7 @@ export const BlogPosts = [
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
         updated: "2023-09-22T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "Using Query and Data Sources in the Data Manipulation plugin for Grafana",
@@ -1067,6 +1138,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation Panel 3.1.0",
         permalink: "/blog/form-panel-3.1.0-20230823/",
@@ -1077,7 +1149,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Apache ECharts Panel 5.1.0. This release includes the following updates:\n\n- Added Result v2 with the `unsubscribe` function.\n- Added Wordcloud Extension to create a tag cloud presentation.\n- Updated the streaming functionality to redraw charts.\n- Fixed memory leaks when resubscribing to the restore event.\n- Updated the Apache ECharts library to version 5.4.3\n- Requires Grafana 9 or Grafana 10.\n- Added support for Grafana 10.0.3 and deprecated support for Grafana 8.5.\n\n:::info Grafana Plugins catalog\nThe plugin was updated in the Grafana Plugins catalog on August 11, 2023.\n:::\n\n<Shorts\n  src="https://www.youtube.com/embed/bEBA5Q8PNCE"\n  title="Apache ECharts Panel 5.1.0 for Grafana."\n/>\n\n## Result v2 with unsubscribe function\n\nThe extended result object allows you to return the configuration, options, and unsubscribe functions to prevent memory leaks. You can use it to subscribe and publish events to the [event bus](/grafana/developer/eventbus/).\n\n```json\nreturn {\n  version: 2,\n  config: { notMerge: true },\n  option: {\n    tooltip: {\n      formatter: \'{a} <br/>{b} : {c}%\'\n    },\n    series: [\n      {\n        name: \'Pressure\',\n        type: \'gauge\',\n        detail: {\n          formatter: \'{value}\'\n        },\n        data: [\n          {\n            value: 50,\n            name: \'SCORE\'\n          }\n        ]\n      }\n    ]\n  },\n  unsubscribe: () => {\n    console.log(\'unsubscribeFunction\')\n  }\n};\n```\n\nPlease explore details about the extended result in [our product documentation](/plugins/volkovlabs-echarts-panel/extended/).\n\n## Wordcloud Extension\n\nThe Wordcloud extension renders a tag cloud presentation on a two-dimensional canvas.\n\n<Image\n  title="A tag cloud presentation on 2D canvas with Apache ECharts Panel."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/wordcloud.png"\n/>\n\nPlease check out the extension documentation for details on the [Wordcloud extension](https://github.com/ecomfe/echarts-wordcloud).\n\n## Streaming\n\nStreaming enables the real-time data update with streaming data sources and Grafana Live. Apache ECharts Panel supports the streaming since version 4.1.0.\n\nApache ECharts version 5.0.0 addressed the rendering issue for live data.\n\n<Image\n  title="Display a gauge with the live data in real-time."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/gauge.png"\n/>\n\nPlease check our documentation with [Streaming use cases](/plugins/volkovlabs-echarts-panel/streaming/).\n\n## Memory Leak\n\nWe\'ve fixed the memory leaks on resubscribing to the restore event handler. We want to thank you our community member [sergiomonteroselma](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/205) for reporting this issue and helping us with its troubleshooting.\n\nWe recommend that you update Apache ECharts Panel to the latest version 5.1.0 to avoid `Out Of Memory` errors after continuous refresh of the dashboard for a long period of time.\n\n## Apache ECharts 5.4.3\n\nWe continue updating the plugin with the latest version of the Apache ECharts library and recently updated it to version 5.4.3:\n\n- [Feature] [axisPointer] Add triggerEmphasis option to disable emphasis. #18524 (juliepagano)\n- [Feature] [sankey] Support trajectory for emphasis state. #17451 (ElayGelbart)\n- [Fix] [sankey] Fix sankey line color \'target\'/\'source\'/\'gradient\' doesn\'t work in non-normal state. #18834 (linghaoSu)\n- [Fix] [sankey] Fix value is undefined in label/edgeLabel formatter. #18733 (plainheart)\n- [Fix] [sunburst] Fix sunburst label may rotate when labelLayout.hideOverlap is enabled. #18808 (linghaoSu)\n- [Fix] [graph] Fix graph chart can\'t be hidden by legend due to edgeLabel NPE. #18624 (plainheart)\n- [Fix] [state] Fix focus self doesn\'t work when item emphasis by other component. #18511 (linghaoSu)\n- [Fix] [axis] Fix last tick doesn\'t show for single data. #18469 (Ovilia)\n- [Fix] [pie] Fix incorrect response area of pie piece when selectedOffset is enabled and animation is disabled. #1011 (plainheart)\n- [Fix] [custom] Fix user-defined info property was not available in the event handler. #18400 (sobolewsk)\n- [Fix] [legend] Inherit legend rich text color from legend\'s options. #18260 (ChepteaCatalin)\n- [Fix] [label] Fix ellipsis was not working. #18525 (Ovilia)\n- [Fix] [label] Fix endLabel fails with null data. #18841 (Ovilia)\n- [Fix] [util] Fix {yy} pattern has no zero padding in time format util. #18535 (linghaoSu)\n- [Fix] [api] Only deprecate disConnect but not disconnect. #18758 (Justineo)\n- [Fix] [i18n] Fix the abbr of "March" for the DE language ("Mar" -> "Mrz"). #18387 (Stebeber)\n- [Fix] [type] Fix wrong type for data item value of the parallel series. #18425 (ManishDait)\n- [Fix] [type] Allow passing null to the parameters of init function. #18575 (zhuscat)\n\n## Wind Speed\n\nA graph example showing both wind speed & direction prepared by our community member [tkurki](https://gist.github.com/tkurki/0bb07f29987cc2af471b5e44706b00b4):\n\n<Image\n  title="Showing both wind speed & direction on the same chart using Apache ECharts."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/0wind.png"\n/>\n\n```js\nconst ecData = [];\n\nif (data.series.length === 0) {\n  return {};\n}\n\nconst time = data.series[0].fields[0].values;\nconst direction = data.series[0].fields[1].values;\nconst speed = data.series[1].fields[1].values;\n\nfor (let i = 0; i < data.series[0].length; i++) {\n  ecData.push({\n    value: [time.get(i), Number(speed.get(i)).toFixed(2)],\n    symbolRotate: (direction.get(i) / Math.PI) * 180 - 90,\n  });\n}\n\nconst series = {\n  name: data.series[0].refId,\n  type: "line",\n  showSymbol: true,\n  symbol:\n    "path://m13.022 14.999v3.251c0 .412.335.75.752.75.188 0 .375-.071.518-.206 1.775-1.685 4.945-4.692 6.396-6.069.2-.189.312-.452.312-.725 0-.274-.112-.536-.312-.725-1.451-1.377-4.621-4.385-6.396-6.068-.143-.136-.33-.207-.518-.207-.417 0-.752.337-.752.75v3.251h-9.02c-.531 0-1.002.47-1.002 1v3.998c0 .53.471 1 1.002 1z",\n  symbolSize: 15,\n  areaStyle: {\n    opacity: 0.1,\n  },\n  lineStyle: {\n    width: 1,\n  },\n  data: ecData,\n};\n\n/**\n * Enable Data Zoom by default\n */\nsetTimeout(\n  () =>\n    echartsInstance.dispatchAction({\n      type: "takeGlobalCursor",\n      key: "dataZoomSelect",\n      dataZoomSelectActive: true,\n    }),\n  500\n);\n\n/**\n * Update Time Range on Zoom\n */\nechartsInstance.on("datazoom", function (params) {\n  const startValue = params.batch[0]?.startValue;\n  const endValue = params.batch[0]?.endValue;\n  locationService.partial({ from: startValue, to: endValue });\n});\n\nreturn {\n  backgroundColor: "transparent",\n  tooltip: {\n    trigger: "axis",\n  },\n  legend: {\n    left: "0",\n    bottom: "0",\n    data: ["Wind Speed & Angle"],\n    textStyle: {\n      color: "rgba(128, 128, 128, .9)",\n    },\n  },\n  toolbox: {\n    feature: {\n      dataZoom: {\n        yAxisIndex: "none",\n        icon: {\n          zoom: "path://",\n          back: "path://",\n        },\n      },\n      saveAsImage: {},\n    },\n  },\n  xAxis: {\n    type: "time",\n  },\n  yAxis: {\n    type: "value",\n    min: "dataMin",\n  },\n  grid: {\n    left: "2%",\n    right: "2%",\n    top: "2%",\n    bottom: 24,\n    containLabel: true,\n  },\n  series,\n};\n```\n\n## Getting Started\n\nYou can install Apache ECharts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-echarts-panel\n```\n\n## YouTube Tutorial\n\nThe Apache ECharts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.\n\n<Video\n  src="https://www.youtube.com/embed/S3PiL1p1v5U"\n  title="Explore possibilities of the Apache ECharts."\n/>\n\n## Release Notes\n\n### Features / Enhancements in 5.1.0\n\n- Added compatibility with Grafana 10.0.3 (#206).\n\n### Bugfixes in 5.1.0\n\n- Fixed memory leaks when resubscribing to the restore event (#208).\n\n### Breaking changes in 5.0.0\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements in 5.0.0\n\n- Updated the product documentation with recent updates (#182).\n- Updated examples for Grafana 10 (#190).\n- Added Result v2 with unsubscribe function (#188).\n- Updated the streaming to redraw charts (#188).\n- Added compatibility with Grafana 10.0.0 (#191).\n- Updated the README file and panel options (#192).\n- Deprecated support for Grafana 8.5 (#193).\n- Updated support for Grafana 10.0.2 dependencies (#195).\n- Updated ESLint configuration (#196).\n- Integrated the Wordcloud extension (#198).\n- Updated the Apache ECharts library to version 5.4.3 (#199).\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Apache ECharts Panel 5.1.0. This release includes the following updates:\n\n- Added Result v2 with the `unsubscribe` function.\n- Added Wordcloud Extension to create a tag cloud presentation.\n- Updated the streaming functionality to redraw charts.\n- Fixed memory leaks when resubscribing to the restore event.\n- Updated the Apache ECharts library to version 5.4.3\n- Requires Grafana 9 or Grafana 10.\n- Added support for Grafana 10.0.3 and deprecated support for Grafana 8.5.\n\n:::info Grafana Plugins catalog\nThe plugin was updated in the Grafana Plugins catalog on August 11, 2023.\n:::\n\n<Shorts\n  src="https://www.youtube.com/embed/bEBA5Q8PNCE"\n  title="Apache ECharts Panel 5.1.0 for Grafana."\n/>\n\n## Result v2 with unsubscribe function\n\nThe extended result object allows you to return the configuration, options, and unsubscribe functions to prevent memory leaks. You can use it to subscribe and publish events to the [event bus](/grafana/developer/eventbus/).\n\n```json\nreturn {\n  version: 2,\n  config: { notMerge: true },\n  option: {\n    tooltip: {\n      formatter: \'{a} <br/>{b} : {c}%\'\n    },\n    series: [\n      {\n        name: \'Pressure\',\n        type: \'gauge\',\n        detail: {\n          formatter: \'{value}\'\n        },\n        data: [\n          {\n            value: 50,\n            name: \'SCORE\'\n          }\n        ]\n      }\n    ]\n  },\n  unsubscribe: () => {\n    console.log(\'unsubscribeFunction\')\n  }\n};\n```\n\nPlease explore details about the extended result in [our product documentation](/plugins/volkovlabs-echarts-panel/extended/).\n\n## Wordcloud Extension\n\nThe Wordcloud extension renders a tag cloud presentation on a two-dimensional canvas.\n\n<Image\n  title="A tag cloud presentation on 2D canvas with Apache ECharts Panel."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/wordcloud.png"\n/>\n\nPlease check out the extension documentation for details on the [Wordcloud extension](https://github.com/ecomfe/echarts-wordcloud).\n\n## Streaming\n\nStreaming enables the real-time data update with streaming data sources and Grafana Live. Apache ECharts Panel supports the streaming since version 4.1.0.\n\nApache ECharts version 5.0.0 addressed the rendering issue for live data.\n\n<Image\n  title="Display a gauge with the live data in real-time."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/gauge.png"\n/>\n\nPlease check our documentation with [Streaming use cases](/plugins/volkovlabs-echarts-panel/streaming/).\n\n## Memory Leak\n\nWe\'ve fixed the memory leaks on resubscribing to the restore event handler. We want to thank you our community member [sergiomonteroselma](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/205) for reporting this issue and helping us with its troubleshooting.\n\nWe recommend that you update Apache ECharts Panel to the latest version 5.1.0 to avoid `Out Of Memory` errors after continuous refresh of the dashboard for a long period of time.\n\n## Apache ECharts 5.4.3\n\nWe continue updating the plugin with the latest version of the Apache ECharts library and recently updated it to version 5.4.3:\n\n- [Feature] [axisPointer] Add triggerEmphasis option to disable emphasis. #18524 (juliepagano)\n- [Feature] [sankey] Support trajectory for emphasis state. #17451 (ElayGelbart)\n- [Fix] [sankey] Fix sankey line color \'target\'/\'source\'/\'gradient\' doesn\'t work in non-normal state. #18834 (linghaoSu)\n- [Fix] [sankey] Fix value is undefined in label/edgeLabel formatter. #18733 (plainheart)\n- [Fix] [sunburst] Fix sunburst label may rotate when labelLayout.hideOverlap is enabled. #18808 (linghaoSu)\n- [Fix] [graph] Fix graph chart can\'t be hidden by legend due to edgeLabel NPE. #18624 (plainheart)\n- [Fix] [state] Fix focus self doesn\'t work when item emphasis by other component. #18511 (linghaoSu)\n- [Fix] [axis] Fix last tick doesn\'t show for single data. #18469 (Ovilia)\n- [Fix] [pie] Fix incorrect response area of pie piece when selectedOffset is enabled and animation is disabled. #1011 (plainheart)\n- [Fix] [custom] Fix user-defined info property was not available in the event handler. #18400 (sobolewsk)\n- [Fix] [legend] Inherit legend rich text color from legend\'s options. #18260 (ChepteaCatalin)\n- [Fix] [label] Fix ellipsis was not working. #18525 (Ovilia)\n- [Fix] [label] Fix endLabel fails with null data. #18841 (Ovilia)\n- [Fix] [util] Fix pattern has no zero padding in time format util. #18535 (linghaoSu)\n- [Fix] [api] Only deprecate disConnect but not disconnect. #18758 (Justineo)\n- [Fix] [i18n] Fix the abbr of "March" for the DE language ("Mar" -> "Mrz"). #18387 (Stebeber)\n- [Fix] [type] Fix wrong type for data item value of the parallel series. #18425 (ManishDait)\n- [Fix] [type] Allow passing null to the parameters of init function. #18575 (zhuscat)\n\n## Wind Speed\n\nA graph example showing both wind speed & direction prepared by our community member [tkurki](https://gist.github.com/tkurki/0bb07f29987cc2af471b5e44706b00b4):\n\n<Image\n  title="Showing both wind speed & direction on the same chart using Apache ECharts."\n  src="/img/blog/2023-08-22-echarts-panel-5.1.0/0wind.png"\n/>\n\n```js\nconst ecData = [];\n\nif (data.series.length === 0) {\n  return {};\n}\n\nconst time = data.series[0].fields[0].values;\nconst direction = data.series[0].fields[1].values;\nconst speed = data.series[1].fields[1].values;\n\nfor (let i = 0; i < data.series[0].length; i++) {\n  ecData.push({\n    value: [time.get(i), Number(speed.get(i)).toFixed(2)],\n    symbolRotate: (direction.get(i) / Math.PI) * 180 - 90,\n  });\n}\n\nconst series = {\n  name: data.series[0].refId,\n  type: "line",\n  showSymbol: true,\n  symbol:\n    "path://m13.022 14.999v3.251c0 .412.335.75.752.75.188 0 .375-.071.518-.206 1.775-1.685 4.945-4.692 6.396-6.069.2-.189.312-.452.312-.725 0-.274-.112-.536-.312-.725-1.451-1.377-4.621-4.385-6.396-6.068-.143-.136-.33-.207-.518-.207-.417 0-.752.337-.752.75v3.251h-9.02c-.531 0-1.002.47-1.002 1v3.998c0 .53.471 1 1.002 1z",\n  symbolSize: 15,\n  areaStyle: {\n    opacity: 0.1,\n  },\n  lineStyle: {\n    width: 1,\n  },\n  data: ecData,\n};\n\n/**\n * Enable Data Zoom by default\n */\nsetTimeout(\n  () =>\n    echartsInstance.dispatchAction({\n      type: "takeGlobalCursor",\n      key: "dataZoomSelect",\n      dataZoomSelectActive: true,\n    }),\n  500\n);\n\n/**\n * Update Time Range on Zoom\n */\nechartsInstance.on("datazoom", function (params) {\n  const startValue = params.batch[0]?.startValue;\n  const endValue = params.batch[0]?.endValue;\n  locationService.partial({ from: startValue, to: endValue });\n});\n\nreturn {\n  backgroundColor: "transparent",\n  tooltip: {\n    trigger: "axis",\n  },\n  legend: {\n    left: "0",\n    bottom: "0",\n    data: ["Wind Speed & Angle"],\n    textStyle: {\n      color: "rgba(128, 128, 128, .9)",\n    },\n  },\n  toolbox: {\n    feature: {\n      dataZoom: {\n        yAxisIndex: "none",\n        icon: {\n          zoom: "path://",\n          back: "path://",\n        },\n      },\n      saveAsImage: {},\n    },\n  },\n  xAxis: {\n    type: "time",\n  },\n  yAxis: {\n    type: "value",\n    min: "dataMin",\n  },\n  grid: {\n    left: "2%",\n    right: "2%",\n    top: "2%",\n    bottom: 24,\n    containLabel: true,\n  },\n  series,\n};\n```\n\n## Getting Started\n\nYou can install Apache ECharts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-echarts-panel\n```\n\n## YouTube Tutorial\n\nThe Apache ECharts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.\n\n<Video\n  src="https://www.youtube.com/embed/S3PiL1p1v5U"\n  title="Explore possibilities of the Apache ECharts."\n/>\n\n## Release Notes\n\n### Features / Enhancements in 5.1.0\n\n- Added compatibility with Grafana 10.0.3 (#206).\n\n### Bugfixes in 5.1.0\n\n- Fixed memory leaks when resubscribing to the restore event (#208).\n\n### Breaking changes in 5.0.0\n\n- Requires Grafana 9 and Grafana 10\n\n### Features / Enhancements in 5.0.0\n\n- Updated the product documentation with recent updates (#182).\n- Updated examples for Grafana 10 (#190).\n- Added Result v2 with unsubscribe function (#188).\n- Updated the streaming to redraw charts (#188).\n- Added compatibility with Grafana 10.0.0 (#191).\n- Updated the README file and panel options (#192).\n- Deprecated support for Grafana 8.5 (#193).\n- Updated support for Grafana 10.0.2 dependencies (#195).\n- Updated ESLint configuration (#196).\n- Integrated the Wordcloud extension (#198).\n- Updated the Apache ECharts library to version 5.4.3 (#199).\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
   },
   {
     id: "calendar-panel-2.1.0-20230815/",
@@ -1117,6 +1189,7 @@ export const BlogPosts = [
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
         updated: "2023-09-11T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Apache ECharts Panel 5.1.0",
         permalink: "/blog/echarts-panel-5.1.0-20230822/",
@@ -1166,6 +1239,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-08-10-variable-panel-1.7.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
       },
+      unlisted: false,
       prevItem: {
         title: "Calendar Panel 2.1.0",
         permalink: "/blog/calendar-panel-2.1.0-20230815/",
@@ -1216,6 +1290,7 @@ export const BlogPosts = [
         keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
         updated: "2023-09-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Variable Panel 1.7.0",
         permalink: "/blog/variable-panel-1.7.0-20230810/",
@@ -1266,6 +1341,7 @@ export const BlogPosts = [
         keywords: ["Variable", "Panel", "Status"],
         updated: "2023-08-21T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 4.1.0",
         permalink: "/blog/dynamictext-panel-4.1.0-20230731/",
@@ -1316,6 +1392,7 @@ export const BlogPosts = [
         keywords: ["Pizzeria", "Canvas", "Data", "Grafana"],
         updated: "2023-07-31T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Variable Panel 1.6.0",
         permalink: "/blog/variable-panel-1.6.0-20230726/",
@@ -1365,6 +1442,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-07-18-grapi-datasource-2.0.0/banner.png",
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
       },
+      unlisted: false,
       prevItem: {
         title: "Pizzeria observability on Grafana Canvas panel",
         permalink: "/blog/pizzeria-canvas-20230723/",
@@ -1415,6 +1493,7 @@ export const BlogPosts = [
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
         updated: "2023-09-22T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Grafana HTTP API Data Source 2.0.0",
         permalink: "/blog/grapi-datasource-2.0.0-20230718/",
@@ -1464,6 +1543,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-07-11-variable-panel-1.5.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation Panel 3.0.0",
         permalink: "/blog/form-panel-3.0.0-20230715/",
@@ -1514,6 +1594,7 @@ export const BlogPosts = [
         keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
         updated: "2023-09-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Variable Panel 1.5.0",
         permalink: "/blog/variable-panel-1.5.0-20230711/",
@@ -1564,6 +1645,7 @@ export const BlogPosts = [
         keywords: ["Base64", "Panel", "Zoom", "Label", "Images"],
         updated: "2023-09-09T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 4.0.0",
         permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
@@ -1613,6 +1695,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-07-08-variable-panel-1.4.0/banner.png",
         keywords: ["Variable", "Panel", "Status"],
       },
+      unlisted: false,
       prevItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
         permalink: "/blog/image-panel-4.0.0-20230709/",
@@ -1662,6 +1745,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-06-17-volkovlabs-app-2.5.0/banner.png",
         keywords: ["Volkov Labs App", "Development", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Variable Panel 1.4.0 available in Grafana Catalog",
         permalink: "/blog/variable-panel-1.4.0-20230708/",
@@ -1712,6 +1796,7 @@ export const BlogPosts = [
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
         updated: "2023-09-11T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Volkov Labs App 2.5.0 supports Grafana 10",
         permalink: "/blog/volkovlabs-app-2.5.0-20230617/",
@@ -1762,6 +1847,7 @@ export const BlogPosts = [
         keywords: ["Base64", "Panel", "PDF", "Images", "Video", "Audio"],
         updated: "2023-09-09T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Calendar Panel 1.4.0 supports Grafana 10",
         permalink: "/blog/calendar-panel-1.4.0-20230610/",
@@ -1818,6 +1904,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 3.6.0 supports Grafana 10",
         permalink: "/blog/image-panel-3.6.0-20230606/",
@@ -1874,6 +1961,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Apache ECharts Panel 4.5.0 supports Grafana 10",
         permalink: "/blog/echarts-panel-4.5.0-20230603/",
@@ -1923,6 +2011,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-05-22-env-datasource-2.4.0/banner.png",
         keywords: ["Data Source", "Environment", "Grafana"],
       },
+      unlisted: false,
       prevItem: {
         title: "Apache ECharts Panel 4.4.0",
         permalink: "/blog/echarts-panel-4.4.0-20230526/",
@@ -1968,6 +2057,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-05-19-transformations-grafana/banner.png",
         keywords: ["Grafana", "Transformations", "Data Source"],
       },
+      unlisted: false,
       prevItem: {
         title: "Environment Data Source 2.4.0",
         permalink: "/blog/env-datasource-2.4.0-20230522/",
@@ -2013,6 +2103,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-05-10-youtube-one-year/banner.png",
         keywords: ["Grafana", "YouTube", "1 year"],
       },
+      unlisted: false,
       prevItem: {
         title: "Transformations in Grafana",
         permalink: "/blog/transformations-grafana-20230519/",
@@ -2058,6 +2149,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-05-09-provisioning-grafana/banner.png",
         keywords: ["Grafana", "Provisioning", "Data Source"],
       },
+      unlisted: false,
       prevItem: {
         title: "Celebrate with us! Our YouTube Channel is 1 year!",
         permalink: "/blog/youtube-one-year-20230510/",
@@ -2108,6 +2200,7 @@ export const BlogPosts = [
         keywords: ["Volkov Labs App", "Development", "Grafana"],
         updated: "2023-06-17T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Provisioning in Grafana",
         permalink: "/blog/provisioning-grafana-20230509/",
@@ -2119,7 +2212,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Volkov Labs App 2.4.0. This release includes the following updates:\n\n- Updated to Grafana 9.5.1 toolkit.\n- Updated to Grafana docker image 9.5.1.\n- Updated the Application page and Home dashboard with an auto-scroll table.\n\n:::info Grafana Catalog\n\nVolkov Labs App is for internal use and is not included in the Grafana Catalog.\n\n:::\n\nWe share this project with the community as an example of how to create [a customized Docker image with included Application plugin and provisioning](https://github.com/volkovlabs/volkovlabs-app).\n\n## Grafana 9.5.1\n\nGrafana 9.5.0/9.5.1 introduced Connections as a new and easier way to install and add Data Sources. It\'s an interesting feature to explore various data sources, but we already know what we need and disabled it.\n\n<Image\n  title="Connections is a new and easier way to install and add Data Sources."\n  src="/img/blog/2023-04-09-native-grafana-plugins/connections.png"\n  lazy={false}\n/>\n\nOther notable changes in the [Docker file](https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile):\n\n- Top navigation and Chrome UI features are enabled by default and were removed.\n- Commands to replace JavaScripts were updated according to the latest changes.\n\n## Customization\n\nMonths of work bundled with deep expertise nicely wrapped into a 7-minute long video revealing simple steps to customize Grafana. In this tutorial, we answered all community questions we collected to this moment.\n\n<Video\n  src="https://www.youtube.com/embed/ChI78v4UZc0"\n  title="How to customize Grafana 9.4. A cheat-sheet for Docker container and Windows."\n/>\n\n## Home Dashboard\n\nThe home dashboard, which we provisioned with data sources, displays the latest videos from our YouTube channel and blog posts. It is based on the [RSS/Atom Data Source](/plugins/volkovlabs-rss-datasource) and improved [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel).\n\n<Image\n  title="Home dashboard with RSS feeds from YouTube channel and blog."\n  src="/img/blog/2023-04-30-volkovlabs-app-2.4.0/home.png"\n/>\n\nThe table with blog posts has auto-scroll capabilities, which we explained in the documentation\n[JavaScript code to auto-scroll news](/plugins/volkovlabs-dynamictext-panel/code/#auto-scroll).\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update to Grafana 9.5.1 (#63)\n- Update Docker image 9.5.1 (#64)\n- Add Customization tutorial (#66)\n- Update Home Page and Plugins (#67)\n\n## Feedback\n\nSubscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.',
+      'import Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Volkov Labs App 2.4.0. This release includes the following updates:\n\n- Updated to Grafana 9.5.1 toolkit.\n- Updated to Grafana docker image 9.5.1.\n- Updated the Application page and Home dashboard with an auto-scroll table.\n\n:::info Grafana Catalog\n\nVolkov Labs App is for internal use and is not included in the Grafana Catalog.\n\n:::\n\nWe share this project with the community as an example of how to create [a customized Docker image with included Application plugin and provisioning](https://github.com/volkovlabs/volkovlabs-app).\n\n## Grafana 9.5.1\n\nGrafana 9.5.0/9.5.1 introduced Connections as a new and easier way to install and add Data Sources. It\'s an interesting feature to explore various data sources, but we already know what we need and disabled it.\n\n<Image\n  title="Connections is a new and easier way to install and add Data Sources."\n  src="/img/blog/2023-04-09-native-grafana-plugins/connections.png"\n  lazy={false}\n/>\n\nOther notable changes in the [Docker file](https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile):\n\n- Top navigation and Chrome UI features are enabled by default and were removed.\n- Commands to replace JavaScripts were updated according to the latest changes.\n\n## Customization\n\nMonths of work bundled with deep expertise nicely wrapped into a 7-minute long video revealing simple steps to customize Grafana. In this tutorial, we answered all community questions we collected to this moment.\n\n<Video\n  src="https://www.youtube.com/embed/ChI78v4UZc0"\n  title="How to customize Grafana 9.4. A cheat-sheet for Docker container and Windows."\n/>\n\n## Home Dashboard\n\nThe home dashboard, which we provisioned with data sources, displays the latest videos from our YouTube channel and blog posts. It is based on the [RSS/Atom Data Source](/plugins/volkovlabs-rss-datasource) and improved [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel).\n\n<Image\n  title="Home dashboard with RSS feeds from YouTube channel and blog."\n  src="/img/blog/2023-04-30-volkovlabs-app-2.4.0/home.png"\n/>\n\nThe table with blog posts has auto-scroll capabilities, which we explained in the documentation\n[JavaScript code to auto-scroll news](/plugins/volkovlabs-dynamictext-panel/code).\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update to Grafana 9.5.1 (#63)\n- Update Docker image 9.5.1 (#64)\n- Add Customization tutorial (#66)\n- Update Home Page and Plugins (#67)\n\n## Feedback\n\nSubscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.',
   },
   {
     id: "planhat-dashboard-20230421/",
@@ -2166,6 +2259,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-04-21-planhat-dashboard/banner.png",
         keywords: ["Grafana", "API", "Business", "Planhat"],
       },
+      unlisted: false,
       prevItem: {
         title: "Volkov Labs App 2.4.0",
         permalink: "/blog/volkovlabs-app-2.4.0-20230430/",
@@ -2222,6 +2316,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "Grafana and the ultimate question of life, universe, and Customer Success",
@@ -2269,6 +2364,7 @@ export const BlogPosts = [
         keywords: ["Grafana", "Data Source", "Panels", "Cleanup"],
         updated: "2023-06-17T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Apache ECharts Panel 4.3.0/4.3.1",
         permalink: "/blog/echarts-panel-4.3.0-20230417/",
@@ -2319,6 +2415,7 @@ export const BlogPosts = [
         keywords: ["Data Source", "RSS", "Atom", "Grafana"],
         updated: "2023-04-14T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Hey, it is time for spring cleaning your Grafana",
         permalink: "/blog/native-grafana-plugins-20230409/",
@@ -2369,6 +2466,7 @@ export const BlogPosts = [
         keywords: ["Data Source", "Environment", "Grafana"],
         updated: "2023-05-23T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "RSS/Atom Data Source 2.4.0",
         permalink: "/blog/rss-datasource-2.4.0-20230408/",
@@ -2419,6 +2517,7 @@ export const BlogPosts = [
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
         updated: "2023-06-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Environment Data Source 2.3.0",
         permalink: "/blog/env-datasource-2.3.0-20230405/",
@@ -2469,6 +2568,7 @@ export const BlogPosts = [
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
         updated: "2023-04-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Annotations, Alerts and Annotation Queries in Grafana",
         permalink: "/blog/annotations-grafana-api-20230401/",
@@ -2519,6 +2619,7 @@ export const BlogPosts = [
         keywords: ["Data Source", "Static", "Storage", "Grafana"],
         updated: "2023-03-30T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Grafana HTTP API Data Source 1.2.0",
         permalink: "/blog/grapi-datasource-1.2.0-20230331/",
@@ -2569,6 +2670,7 @@ export const BlogPosts = [
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
         updated: "2023-09-22T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Static Data Source 2.2.0",
         permalink: "/blog/static-datasource-2.2.0-20230327/",
@@ -2618,6 +2720,7 @@ export const BlogPosts = [
         image: "/img/blog/2023-03-15-grapi-datasource-1.1.0/banner.png",
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation Panel 2.8.0",
         permalink: "/blog/form-panel-2.8.0-20230316/",
@@ -2675,6 +2778,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Grafana HTTP API Data Source 1.1.0",
         permalink: "/blog/grapi-datasource-1.1.0-20230315/",
@@ -2725,6 +2829,7 @@ export const BlogPosts = [
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
         updated: "2023-09-11T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 3.1.0",
         permalink: "/blog/dynamictext-panel-3.1.0-20230312/",
@@ -2775,6 +2880,7 @@ export const BlogPosts = [
         keywords: ["Base64", "Panel", "PDF", "Images", "Video", "Audio"],
         updated: "2023-09-09T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Calendar Panel 1.3.0",
         permalink: "/blog/calendar-panel-1.3.0-20230311/",
@@ -2831,6 +2937,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 3.5.0",
         permalink: "/blog/image-panel-3.5.0-20230307/",
@@ -2881,6 +2988,7 @@ export const BlogPosts = [
         keywords: ["Grafana", "HTTP API", "Data Source", "Annotations"],
         updated: "2023-03-17T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Apache ECharts Panel 4.2.0",
         permalink: "/blog/echarts-panel-4.2.0-20230304/",
@@ -2931,6 +3039,7 @@ export const BlogPosts = [
         keywords: ["Calendar", "Panel", "Events", "Time Range", "Grafana"],
         updated: "2023-09-11T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Grafana HTTP API Data Source 1.0.0",
         permalink: "/blog/grapi-datasource-1.0.0-20230302/",
@@ -2988,6 +3097,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Calendar Panel 1.2.0",
         permalink: "/blog/calendar-panel-1.2.0-20230223/",
@@ -3044,6 +3154,7 @@ export const BlogPosts = [
         ],
         updated: "2023-04-22T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 3.0.0",
         permalink: "/blog/dynamictext-panel-3.0.0-20230219/",
@@ -3103,6 +3214,7 @@ export const BlogPosts = [
         keywords: ["Documentation", "Grafana", "Analytics"],
         updated: "2023-03-02T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Grafana Development Templates 2.2.0",
         permalink: "/blog/development-templates-2.2.0-20230216/",
@@ -3149,6 +3261,7 @@ export const BlogPosts = [
         keywords: ["NGINX", "Loki", "Grafana", "Analytics"],
         updated: "2023-04-14T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "Romance of documentation and blog produced a story-telling analytics",
@@ -3198,6 +3311,7 @@ export const BlogPosts = [
         keywords: ["PostgreSQL", "Timescale", "Configuration", "Storage"],
         updated: "2023-03-19T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Website Analytics based on Nginx, Loki, Promtail, and Grafana",
         permalink: "/blog/nginx-loki-grafana-20230129/",
@@ -3244,6 +3358,7 @@ export const BlogPosts = [
         keywords: ["PostgreSQL", "Setup", "Grafana", "High-Availability"],
         updated: "2023-02-13T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "PostgreSQL with Timescale is the ultimate storage partner for Grafana",
@@ -3301,6 +3416,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "From default Grafana setup to the real deal",
         permalink: "/blog/grafana-setup-20230122/",
@@ -3358,6 +3474,7 @@ export const BlogPosts = [
         keywords: ["Data Manipulation", "API", "Grafana", "Observability"],
         updated: "2023-09-21T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Apache ECharts Panel 4.1.0",
         permalink: "/blog/echarts-panel-4.1.0-20230113/",
@@ -3408,6 +3525,7 @@ export const BlogPosts = [
         keywords: ["Dynamic Text", "Panel", "Data", "Grafana"],
         updated: "2023-09-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Observability without Data Manipulation is a lost opportunity",
         permalink: "/blog/data-manipulation-grafana-20230112/",
@@ -3458,6 +3576,7 @@ export const BlogPosts = [
         keywords: ["Base64", "Panel", "PDF", "Images", "Video", "Audio"],
         updated: "2023-09-09T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 2.2.0",
         permalink: "/blog/dynamictext-panel-2.2.0-20230110/",
@@ -3523,6 +3642,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 3.4.0",
         permalink: "/blog/image-panel-3.4.0-20230108/",
@@ -3573,6 +3693,7 @@ export const BlogPosts = [
         keywords: ["Data Source", "Static", "Storage", "Grafana"],
         updated: "2023-02-07T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "JSON API Data sources in Grafana",
         permalink: "/blog/json-api-data-sources-in-grafana-20230104/",
@@ -3629,6 +3750,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Static Data Source 2.1.0",
         permalink: "/blog/static-datasource-2.1.0-20221229/",
@@ -3679,6 +3801,7 @@ export const BlogPosts = [
         keywords: ["Calendar", "Panel", "Events", "Grafana"],
         updated: "2023-09-11T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Apache ECharts Panel 4.0.0",
         permalink: "/blog/echarts-panel-4.0.0-20221220/",
@@ -3729,6 +3852,7 @@ export const BlogPosts = [
         keywords: ["Dynamic Text", "Panel", "Data", "Grafana"],
         updated: "2023-09-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Calendar Panel 1.1.0",
         permalink: "/blog/calendar-panel-1.1.0-20221212/",
@@ -3779,6 +3903,7 @@ export const BlogPosts = [
         keywords: ["Data Manipulation", "Form Panel", "Data", "Grafana"],
         updated: "2023-09-21T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Dynamic Text Panel 2.1.0",
         permalink: "/blog/dynamictext-panel-2.1.0-20221127/",
@@ -3832,6 +3957,7 @@ export const BlogPosts = [
         keywords: ["Apache ECharts", "Grafana", "Visualization"],
         updated: "2023-02-13T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation Panel 2.7.0",
         permalink: "/blog/form-panel-2.7.0-20221110/",
@@ -3889,6 +4015,7 @@ export const BlogPosts = [
         keywords: ["Variables", "Grafana", "Visualization"],
         updated: "2023-05-23T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "Create Stacked Bars using the Apache ECharts visualization panel",
@@ -3944,6 +4071,7 @@ export const BlogPosts = [
         ],
         updated: "2023-06-17T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "Grafana variables at a glance, Environment data source explained",
@@ -4007,6 +4135,7 @@ export const BlogPosts = [
         ],
         updated: "2023-09-06T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "How to customize the Grafana user interface",
         permalink:
@@ -4054,6 +4183,7 @@ export const BlogPosts = [
         keywords: ["Balena", "NFS", "IoT"],
         updated: "2023-02-14T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "The missing plugin to create business and industrial charts in Grafana",
@@ -4113,6 +4243,7 @@ export const BlogPosts = [
         ],
         updated: "2023-05-23T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Balena NFS Server Project",
         permalink: "/blog/balena-nfs-server-and-client-project-5d5de6dd47ca/",
@@ -4173,6 +4304,7 @@ export const BlogPosts = [
         ],
         updated: "2023-03-24T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Our plugins are ready for Grafana 9",
         permalink: "/blog/our-plugins-are-ready-for-grafana-9-2bc257db92eb/",
@@ -4225,6 +4357,7 @@ export const BlogPosts = [
         keywords: ["Grafana", "Data Manipulation", "Forms"],
         updated: "2023-09-21T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "Using Grafana and machine learning for real-time microscopy image analysis",
@@ -4277,6 +4410,7 @@ export const BlogPosts = [
         keywords: ["PyTorch", "GPU"],
         updated: "2023-04-30T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Connect Data Manipulation Panel for Grafana to API Server",
         permalink:
@@ -4330,6 +4464,7 @@ export const BlogPosts = [
         keywords: ["Grafana", "Data Manipulation", "Forms"],
         updated: "2023-09-21T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "PyTorch in Ray Docker container with NVIDIA GPU support on Google Cloud",
@@ -4380,6 +4515,7 @@ export const BlogPosts = [
         keywords: ["Grafana", "Private Repository", "Plugins"],
         updated: "2023-02-14T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Data Manipulation plugin for Grafana",
         permalink:
@@ -4439,6 +4575,7 @@ export const BlogPosts = [
         keywords: ["Variables", "Grafana", "Visualization"],
         updated: "2023-05-23T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Installing Grafana plugins from a Private repository",
         permalink:
@@ -4492,6 +4629,7 @@ export const BlogPosts = [
         keywords: ["Business", "Charts", "Grafana", "Visualization"],
         updated: "2023-02-14T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title:
           "Environment Variables for Configuration, Provisioning, and Dashboards in Grafana",
@@ -4540,6 +4678,7 @@ export const BlogPosts = [
         keywords: ["Business", "Charts", "Grafana", "Visualization"],
         updated: "2023-04-09T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "How to create your first Grafana Dashboard",
         permalink:
@@ -4593,6 +4732,7 @@ export const BlogPosts = [
         keywords: ["Image", "PDF", "Base64", "Visualization"],
         updated: "2023-09-16T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Grafana 101 - What, Why, Who?",
         permalink: "/blog/grafana-101-what-why-who-6b25f0d0fd11/",
@@ -4641,6 +4781,7 @@ export const BlogPosts = [
         keywords: ["Image", "PDF", "Base64", "Visualization"],
         updated: "2023-09-09T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Keep up with the most recent news while working in Grafana",
         permalink:
@@ -4690,6 +4831,7 @@ export const BlogPosts = [
         keywords: ["Template", "Panel", "Grafana", "Visualization"],
         updated: "2023-02-15T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Display large PDF documents in Grafana",
         permalink:
@@ -4741,6 +4883,7 @@ export const BlogPosts = [
         keywords: ["Image", "PDF", "Base64", "Visualization"],
         updated: "2023-09-09T00:00:00.000Z",
       },
+      unlisted: false,
       prevItem: {
         title: "Our panel plugin template for Grafana",
         permalink:
