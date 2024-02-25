@@ -367,3 +367,108 @@ Below is an example of a dashboard displaying a YouTube video.
   title="Use the Dynamic Text plugin to display YouTube videos on your Grafana dashboard."
   src="/img/plugins/volkovlabs-dynamictext-panel/yt.png"
 />
+
+### Leaflet interactive maps
+
+This idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/276) opened by [Josiah Solomon](https://github.com/yosiasz). The Dynamic Text plugin can be used to display Leaflet.js maps on your Grafana dashboard.
+
+<Image
+  title="How to configure the Dynamic Text plugin to display a YouTube video."
+  src="/img/plugins/volkovlabs-dynamictext-panel/yt-edit.png"
+/>
+
+#### External Resources
+
+```
+https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
+https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
+```
+
+#### Content to copy
+
+```html
+<div id="map"></div>
+```
+
+#### JavaScript code to copy
+
+```js
+//Addis Abeba centered
+var map = L.map("map").setView([9.024857, 38.737607], 13);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 18,
+}).addTo(map);
+
+//if you want to use inline data
+var geojsonv1 = {
+  type: "FeatureCollection",
+  crs: { type: "name", properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  features: [
+    {
+      type: "Feature",
+      properties: { AOIs: "bbb", daily: "33" },
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [33.5, 32.0],
+            [33.5, 29.0],
+            [36.0, 29.0],
+            [36.0, 27.5],
+            [33.5, 27.5],
+            [32.5, 27.5],
+            [29.0, 27.5],
+            [29.0, 32.0],
+            [33.5, 32.0],
+          ],
+        ],
+      },
+    },
+    {
+      type: "Feature",
+      properties: { AOIs: "aaa", daily: "23" },
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [34.5, 32.5],
+            [36.0, 32.5],
+            [36.0, 29.0],
+            [33.5, 29.0],
+            [33.5, 32.0],
+            [33.5, 32.5],
+            [34.5, 32.5],
+          ],
+        ],
+      },
+    },
+  ],
+};
+
+var myStyle = {
+  color: "black",
+  weight: 10,
+};
+
+var geojsonLayer = L.geoJSON(geojsonv1).addTo(map);
+```
+
+CSS styles to copy
+
+```css
+#map {
+  height: 480px;
+  display: flex;
+  flex-direction: row;
+}
+```
+
+Below is an example of a dashboard displaying a leaflet.js maps
+
+<Image
+  title="Use the Dynamic Text plugin to display YouTube videos on your Grafana dashboard."
+  src="/img/plugins/volkovlabs-dynamictext-panel/yt.png"
+/>
