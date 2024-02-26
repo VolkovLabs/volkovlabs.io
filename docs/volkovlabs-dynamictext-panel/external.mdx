@@ -367,3 +367,117 @@ Below is an example of a dashboard displaying a YouTube video.
   title="Use the Dynamic Text plugin to display YouTube videos on your Grafana dashboard."
   src="/img/plugins/volkovlabs-dynamictext-panel/yt.png"
 />
+
+### Leaflet.js interactive maps
+
+This is another great example of external resource usages in the Dynamic Text Plugin. The idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/276) opened by [Josiah Solomon](https://github.com/yosiasz). Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
+
+<Image
+  title="How to configure the Dynamic Text plugin to display Leaflet.js maps."
+  src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-edit.png"
+/>
+
+The map on the dashboard from this example looks like in the illustration below.
+
+<Image
+  title="The Leaflet.js map on the dashboard."
+  src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-display.png"
+/>
+
+#### Data can be set using Static Data Source
+
+```js
+{   "type": "Feature",   "geometry": {     "type": "Point",     "coordinates": [125.6, 10.1]   },   "properties": {     "name": "Dinagat Islands"   } }
+```
+
+#### External Resources
+
+```
+https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
+https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
+```
+
+#### Content
+
+```html
+<div id="map"></div>
+```
+
+#### JavaScript code
+
+```js
+// This data is coming from the data source.
+// const geojson = JSON.parse(context.data[0][0].data);
+
+//Addis Abeba centered
+const map = L.map("map").setView([9.024857, 38.737607], 13);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 18,
+}).addTo(map);
+
+//if you want to use inline data
+const geojson = {
+  type: "FeatureCollection",
+  crs: { type: "name", properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  features: [
+    {
+      type: "Feature",
+      properties: { AOIs: "bbb", daily: "33" },
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [33.5, 32.0],
+            [33.5, 29.0],
+            [36.0, 29.0],
+            [36.0, 27.5],
+            [33.5, 27.5],
+            [32.5, 27.5],
+            [29.0, 27.5],
+            [29.0, 32.0],
+            [33.5, 32.0],
+          ],
+        ],
+      },
+    },
+    {
+      type: "Feature",
+      properties: { AOIs: "aaa", daily: "23" },
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [34.5, 32.5],
+            [36.0, 32.5],
+            [36.0, 29.0],
+            [33.5, 29.0],
+            [33.5, 32.0],
+            [33.5, 32.5],
+            [34.5, 32.5],
+          ],
+        ],
+      },
+    },
+  ],
+};
+
+var myStyle = {
+  color: "black",
+  weight: 10,
+};
+
+var geojsonLayer = L.geoJSON(geojson).addTo(map);
+```
+
+#### CSS styles
+
+```css
+#map {
+  height: 480px;
+  display: flex;
+  flex-direction: row;
+}
+```
