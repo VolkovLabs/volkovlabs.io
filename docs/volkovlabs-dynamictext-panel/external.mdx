@@ -370,12 +370,26 @@ Below is an example of a dashboard displaying a YouTube video.
 
 ### Leaflet interactive maps
 
-This idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/276) opened by [Josiah Solomon](https://github.com/yosiasz). The Dynamic Text plugin can be used to display Leaflet.js maps on your Grafana dashboard.
+This is another great example of external resource usages in the Dynamic Text Plugin. 
+The idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/276) opened by [Josiah Solomon](https://github.com/yosiasz). Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
 
 <Image
-  title="How to configure the Dynamic Text plugin to display a YouTube video."
-  src="/img/plugins/volkovlabs-dynamictext-panel/yt-edit.png"
+  title="How to configure the Dynamic Text plugin to display Leaflet.js maps."
+  src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-edit.png"
 />
+
+The map on the dashboard from this example looks like in the illustration below. 
+
+<Image
+  title="The Leaflet map on the dashboard."
+  src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-display.png"
+/>
+
+#### Data
+
+```js
+{   "type": "Feature",   "geometry": {     "type": "Point",     "coordinates": [125.6, 10.1]   },   "properties": {     "name": "Dinagat Islands"   } }
+```
 
 #### External Resources
 
@@ -384,13 +398,13 @@ https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
 https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
 ```
 
-#### Content to copy
+#### Content
 
 ```html
 <div id="map"></div>
 ```
 
-#### JavaScript code to copy
+#### JavaScript code
 
 ```js
 //Addis Abeba centered
@@ -456,7 +470,7 @@ var myStyle = {
 var geojsonLayer = L.geoJSON(geojsonv1).addTo(map);
 ```
 
-CSS styles to copy
+#### CSS styles
 
 ```css
 #map {
@@ -465,10 +479,3 @@ CSS styles to copy
   flex-direction: row;
 }
 ```
-
-Below is an example of a dashboard displaying a leaflet.js maps
-
-<Image
-  title="Use the Dynamic Text plugin to display YouTube videos on your Grafana dashboard."
-  src="/img/plugins/volkovlabs-dynamictext-panel/yt.png"
-/>
