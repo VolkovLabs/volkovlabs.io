@@ -167,31 +167,31 @@ const start = () => {
     /**
      * Continue
      */
-    if (window.dtAnomizerId === id) {
+    if (window.dtAnonymizerId === id) {
       start();
     }
   });
 
-  window.dtAnomizerId = id;
+  window.dtAnonymizerId = id;
 };
 
 /**
  * Stop
  */
 const stop = () => {
-  if (window.dtAnomizerId) {
-    window.cancelAnimationFrame(window.dtAnomizerId);
-    window.dtAnomizerId = null;
+  if (window.dtAnonymizerId) {
+    window.cancelAnimationFrame(window.dtAnonymizerId);
+    window.dtAnonymizerId = null;
   }
 };
 
 /**
- * Clean previous anomizer
+ * Clean previous anonymizer
  */
 stop();
 
 /**
- * Start anomizer
+ * Start anonymizer
  */
 start();
 ```
