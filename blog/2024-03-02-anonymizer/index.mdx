@@ -1,0 +1,201 @@
+---
+authors: [daria]
+slug: anonymizer-20240302/
+tags: [Dynamic Text]
+image: /img/blog/2024-03-02-anonymizer/banner.png
+keywords: [Dynamic Text, Anonymizer]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+
+# Streamline demos with Dynamic Text Anonymizer
+
+Initially, we created Anonymizer for our internal use, as we share many other things on our blog. It proved itself during multiple successful presentations as reliable, easy and quick to configure. Thus, we decide to share it with the world.
+
+In a nutshell, Anonymizer:
+
+- is a JavaScript that you can copy from down below.
+- is loaded into the browser's memory and works in the background.
+- searches for specified values in one array and replaces them with the values from the other specified array.
+- wipes out from the browser's memory when a user switches a page or refreshes the opened page.
+
+Shout out to our Director of Engineering [Alex Simonok](https://github.com/asimonok) for developing such a creative solution.
+
+## Prerequisites
+
+In addition to the Anonymizer JavaScript itself, you will need the following.
+
+- List of values you would like to replace.
+- List of values you would like to replace with.
+
+The lists can be either hardcoded or come from the data source.
+
+## Anonymizer purpose
+
+The best data for the development and testing phases is the actual production data. It has a good variety of possible scenarios and is the most illustrative.
+
+However, connecting development and testing environments to a database containing actual data often prevents seamless demo sessions. More often than not, the audience you are presenting to does not have an NDA (non-disclosure agreement). That fact can lead to quite challenging data and application manipulations to hide proprietary datasets.
+
+We created Anonymizer to avoid dummy data generation headaches and to make the configuration of our demo environments easier.
+
+## Implementation method
+
+To implement Anonymizer into your Grafana dashboard, I suggest using the [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel/) and placing the JavaScript code into the **After Content Ready** option.
+
+Below is the Dynamic Text panel opened in Edit mode to illustrate how it is configured.
+
+<Image
+  title="The Anonymizer setup on the Dynamic Text panel."
+  src="/img/blog/2024-03-02-anonymizer/anony-edit.png"
+/>
+
+Next, I describe two methods of how you can make the Anonymizer work.
+
+## Method 1. Storing on a separate dashboard
+
+One method is to have the Dynamic Text panel with Anonymizer code embedded on a separate dashboard. In that event, the demoing dashboard can stay exactly how it is, with no need for any adjustments.
+However, with every page refresh (F5) the browser's memory is cleaned and the Anonymizer script is wiped out. That leads to the actual values to be revealed.
+
+<Image
+  title="When the Anonymizer panel is NOT on the dashboard, every page refresh(F5) might reveal the actual data."
+  src="/img/blog/2024-03-02-anonymizer/anony-no-form.png"
+/>
+
+### When it works the best
+
+This method works best when you do not share your Grafana dashboard in real time. Instead, you are working on the screen recording, taking print screens for documentation and static presentations.
+
+## Method 2. Storing on the same dashboard
+
+For the live demos, you can place the Dynamic Text panel with the Anonymizer script right on the demoing dashboard. It can be made a small size or in a closed row.
+That way the UI look is a little distorted, but not to the extent to be immediately noticeable.
+
+### When it works the best
+
+This approach works best for real time demos. You can be certain that all proprietary values are replaced on the fly and nothing of importance is going to be accidentally revealed.
+
+<Image
+  title="When the Anonymizer panel IS on the dashboard, the actual data always is replaced in real-time. Page refresh is safe to perform."
+  src="/img/blog/2024-03-02-anonymizer/anony-yes-form.png"
+/>
+
+## JavaScript
+
+```js
+const searches = context.data[0].map((el) => el.name);
+const searchesMap = searches.reduce(
+  (acc, value, index) => ({
+    ...acc,
+    [value]: index,
+  }),
+  {}
+);
+
+const searchTemplate = new RegExp(`(${searches.join("|")})`, "gi");
+
+const replacements = [
+  "Time",
+  "Past",
+  "Future",
+  "Dev",
+  "Fly",
+  "Flying",
+  "Soar",
+  "Soaring",
+  "Power",
+  "Falling",
+  "Fall",
+  "Jump",
+  "Cliff",
+  "Mountain",
+  "Rend",
+  "Red",
+  "Blue",
+];
+
+const getTextNodesUnder = (el) => {
+  const children = []; // Type: Node[]
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    children.push(walker.currentNode);
+  }
+  return children;
+};
+
+const anomyze = (debug = false) => {
+  const elements = getTextNodesUnder(document.querySelector("body"));
+
+  for (const element of elements) {
+    /**
+     * Reset index
+     * @type {number}
+     */
+    searchTemplate.lastIndex = 0;
+
+    const textContent = element.textContent;
+
+    if (!textContent) {
+      continue;
+    }
+
+    /**
+     * Replace
+     */
+    try {
+      element.textContent = textContent.replaceAll(searchTemplate, (value) => {
+        const index = searchesMap[value];
+
+        if (debug) {
+          return "[REPLACED]";
+        }
+        return replacements[index % replacements.length];
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }
+};
+
+/**
+ * Start
+ */
+const start = () => {
+  const id = requestAnimationFrame(() => {
+    anomyze();
+
+    /**
+     * Continue
+     */
+    if (window.dtAnomizerId === id) {
+      start();
+    }
+  });
+
+  window.dtAnomizerId = id;
+};
+
+/**
+ * Stop
+ */
+const stop = () => {
+  if (window.dtAnomizerId) {
+    window.cancelAnimationFrame(window.dtAnomizerId);
+    window.dtAnomizerId = null;
+  }
+};
+
+/**
+ * Clean previous anomizer
+ */
+stop();
+
+/**
+ * Start anomizer
+ */
+start();
+```
+
+## Questions?
+
+If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube videos](https://www.youtube.com/@volkovlabs).
