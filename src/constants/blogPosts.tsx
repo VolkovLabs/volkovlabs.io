@@ -1,5 +1,47 @@
 export const BlogPosts = [
   {
+    id: "anonymizer-20240302/",
+    metadata: {
+      permalink: "/blog/anonymizer-20240302/",
+      source: "@site/blog/2024-03-02-anonymizer/index.mdx",
+      title: "Streamline demos with Dynamic Text Anonymizer",
+      description:
+        "Initially, we created Anonymizer for our internal use, as we share many other things on our blog. It proved itself during multiple successful presentations as reliable, easy and quick to configure. Thus, we decide to share it with the world.",
+      date: "2024-03-02T00:00:00.000Z",
+      formattedDate: "March 2, 2024",
+      tags: [
+        {
+          label: "Dynamic Text",
+          permalink: "/blog/tags/dynamic-text",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Daria Volkova",
+          title: "Creative Director at Volkov Labs, Grafana Champion",
+          url: "https://youtube.com/@VolkovLabs",
+          imageURL: "/img/team/daria.png",
+          key: "daria",
+        },
+      ],
+      frontMatter: {
+        authors: ["daria"],
+        slug: "anonymizer-20240302/",
+        tags: ["Dynamic Text"],
+        image: "/img/blog/2024-03-02-anonymizer/banner.png",
+        keywords: ["Dynamic Text", "Anonymizer"],
+      },
+      unlisted: false,
+      nextItem: {
+        title: "Business Intelligence App 1.7.0",
+        permalink: "/blog/big-1.7.0-20240204/",
+      },
+    },
+    content:
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\n\n\nInitially, we created Anonymizer for our internal use, as we share many other things on our blog. It proved itself during multiple successful presentations as reliable, easy and quick to configure. Thus, we decide to share it with the world.\n\nIn a nutshell, Anonymizer:\n\n- is a JavaScript that you can copy from down below.\n- is loaded into the browser\'s memory and works in the background.\n- searches for specified values in one array and replaces them with the values from the other specified array.\n- wipes out from the browser\'s memory when a user switches a page or refreshes the opened page.\n\n## Prerequisites\n\nIn addition to the Anonymizer JavaScript itself, you will need the following.\n\n- List of values you would like to replace.\n- List of values you would like to replace with.\n\nThe lists can be either hardcoded or come from the data source.\n\n## Anonymizer purpose\n\nThe best data for the development and testing phases is the actual production data. It has a good variety of possible scenarios and is the most illustrative.\n\nHowever, connecting development and testing environments to a database containing actual data often prevents seamless demo sessions. More often than not, the audience you are presenting to does not have an NDA (non-disclosure agreement). That fact can lead to quite challenging data and application manipulations to hide proprietary datasets.\n\nWe created Anonymizer to avoid dummy data generation headaches and to make the configuration of our demo environments easier.\n\n## Implementation method\n\nTo implement Anonymizer into your Grafana dashboard, I suggest using the [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel/) and placing the JavaScript code into the **After Content Ready** option.\n\nBelow is the Dynamic Text panel opened in Edit mode to illustrate how it is configured.\n\n<Image\n  title="The Anonymizer setup on the Dynamic Text panel."\n  src="/img/blog/2024-03-02-anonymizer/anony-edit.png"\n/>\n\nNext, I describe two methods of how you can make the Anonymizer work.\n\n## Method 1. Storing on a separate dashboard\n\nOne method is to have the Dynamic Text panel with Anonymizer code embedded on a separate dashboard. In that event, the demoing dashboard can stay exactly how it is, with no need for any adjustments.\nHowever, with every page refresh (F5) the browser\'s memory is cleaned and the Anonymizer script is wiped out. That leads to the actual values to be revealed.\n\n<Image\n  title="When the Anonymizer panel is NOT on the dashboard, every page refresh(F5) might reveal the actual data."\n  src="/img/blog/2024-03-02-anonymizer/anony-no-form.png"\n/>\n\n### When it works the best\n\nThis method works best when you do not share your Grafana dashboard in real time. Instead, you are working on the screen recording, taking print screens for documentation and static presentations.\n\n## Method 2. Storing on the same dashboard\n\nFor the live demos, you can place the Dynamic Text panel with the Anonymizer script right on the demoing dashboard. It can be made a small size or in a closed row.\nThat way the UI look is a little distorted, but not to the extent to be immediately noticeable.\n\n### When it works the best\n\nThis approach works best for real time demos. You can be certain that all proprietary values are replaced on the fly and nothing of importance is going to be accidentally revealed.\n\n<Image\n  title="When the Anonymizer panel IS on the dashboard, the actual data always is replaced in real-time. Page refresh is safe to perform."\n  src="/img/blog/2024-03-02-anonymizer/anony-yes-form.png"\n/>\n\n## JavaScript\n\n```js\nconst searches = context.data[0].map((el) => el.name);\nconst searchesMap = searches.reduce(\n  (acc, value, index) => ({\n    ...acc,\n    [value]: index,\n  }),\n  {}\n);\n\nconst searchTemplate = new RegExp(`(${searches.join("|")})`, "gi");\n\nconst replacements = [\n  "Time",\n  "Past",\n  "Future",\n  "Dev",\n  "Fly",\n  "Flying",\n  "Soar",\n  "Soaring",\n  "Power",\n  "Falling",\n  "Fall",\n  "Jump",\n  "Cliff",\n  "Mountain",\n  "Rend",\n  "Red",\n  "Blue",\n];\n\nconst getTextNodesUnder = (el) => {\n  const children = []; // Type: Node[]\n  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);\n  while (walker.nextNode()) {\n    children.push(walker.currentNode);\n  }\n  return children;\n};\n\nconst anomyze = (debug = false) => {\n  const elements = getTextNodesUnder(document.querySelector("body"));\n\n  for (const element of elements) {\n    /**\n     * Reset index\n     * @type {number}\n     */\n    searchTemplate.lastIndex = 0;\n\n    const textContent = element.textContent;\n\n    if (!textContent) {\n      continue;\n    }\n\n    /**\n     * Replace\n     */\n    try {\n      element.textContent = textContent.replaceAll(searchTemplate, (value) => {\n        const index = searchesMap[value];\n\n        if (debug) {\n          return "[REPLACED]";\n        }\n        return replacements[index % replacements.length];\n      });\n    } catch (e) {\n      console.error(e);\n    }\n  }\n};\n\n/**\n * Start\n */\nconst start = () => {\n  const id = requestAnimationFrame(() => {\n    anomyze();\n\n    /**\n     * Continue\n     */\n    if (window.dtAnomizerId === id) {\n      start();\n    }\n  });\n\n  window.dtAnomizerId = id;\n};\n\n/**\n * Stop\n */\nconst stop = () => {\n  if (window.dtAnomizerId) {\n    window.cancelAnimationFrame(window.dtAnomizerId);\n    window.dtAnomizerId = null;\n  }\n};\n\n/**\n * Clean previous anomizer\n */\nstop();\n\n/**\n * Start anomizer\n */\nstart();\n```\n\n## Questions?\n\nIf you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube videos](https://www.youtube.com/@volkovlabs).',
+  },
+  {
     id: "big-1.7.0-20240204/",
     metadata: {
       permalink: "/blog/big-1.7.0-20240204/",
@@ -37,6 +79,10 @@ export const BlogPosts = [
         keywords: ["Business Intelligence", "Alerting", "Grafana"],
       },
       unlisted: false,
+      prevItem: {
+        title: "Streamline demos with Dynamic Text Anonymizer",
+        permalink: "/blog/anonymizer-20240302/",
+      },
       nextItem: {
         title: "Extend visualization capabilities with D3.js",
         permalink: "/blog/dynamic-text-d3-community-20240121/",
@@ -1549,63 +1595,12 @@ export const BlogPosts = [
         permalink: "/blog/form-panel-3.0.0-20230715/",
       },
       nextItem: {
-        title: "Dynamic Text Panel 4.0.0",
-        permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
-      },
-    },
-    content:
-      'import Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Variable Panel 1.5.0. This release includes the following updates:\n\n- Added sticky header.\n- Added auto-scroll for multi-group selection.\n- Added drag and drop for tree view groups.\n- Added expand and collapse all in the header.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 12, 2023.\n:::\n\n<Shorts\n  src="https://www.youtube.com/embed/YJXXMUgXDys"\n  title="Variable panel 1.5.0 for Grafana."\n/>\n\nWe appreciate the feedback and interest in the Variable panel plugin. Provided functionality was requested by the community many times and we gladly contributed.\n\n## Demo\n\nInterested to try the panel? Take a look at [Grafana plugins registered in the Grafana Catalog](https://release.volkovlabs.io/d/O73WAt27z/plugin-info?orgId=1&var-slug=volkovlabs-variable-panel).\n\nOne of my favorite features in this release is the sticky header, which allows you to filter values and select favorites. Statuses indicate when the plugin was updated:\n\n- Green less than 365 days.\n- Yellow for more than 365 days.\n- Red for more than 730 days.\n\n<Image\n  title="Plugins dashboard helps us to learn about new plugins in the Grafana Catalog."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/demo.png"\n  lazy={false}\n/>\n\n## Single value table\n\nThe single value table was updated to support the `All` option and allows to select a single value by clicking on it.\n\n<Image\n  title="To select a single value, choose the value from the list."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/single.png"\n/>\n\n## Collapse and expand all\n\nWe added a new collapse and expand all button next to the variable title in the header. It\'s a must-have feature to expand and collapse all branches at the same time for 5+ levels.\n\n<Image\n  title="Expand and collapse all feature allows to quickly switch between branches."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/collapse.png"\n/>\n\n## Tree View groups\n\nA new feature allows to drag and drop configured Tree View groups to rearrange how they will be displayed on the panel.\n\n<Image\n  title="Groups and Levels support drag and drop functionality."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/groups.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update single select variable with All enabled (#41)\n- Add sticky header and auto scroll on multi-group selection (#38)\n- Add drag and drop for Groups (#42)\n- Add expand and collapse all in the header (#46)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
-  },
-  {
-    id: "dynamictext-panel-4.0.0-20230709/",
-    metadata: {
-      permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
-      source: "@site/blog/2023-07-09-dynamictext-panel-4.0.0/index.mdx",
-      title: "Dynamic Text Panel 4.0.0",
-      description:
-        "We're excited to announce the release of the Dynamic Text Panel 4.0.0. This major release includes the following updates:",
-      date: "2023-07-09T00:00:00.000Z",
-      formattedDate: "July 9, 2023",
-      tags: [
-        {
-          label: "Dynamic Text",
-          permalink: "/blog/tags/dynamic-text",
-        },
-        {
-          label: "Release Notes",
-          permalink: "/blog/tags/release-notes",
-        },
-      ],
-      hasTruncateMarker: false,
-      authors: [
-        {
-          name: "Mikhail Volkov",
-          title: "Founder at Volkov Labs, Grafana Champion",
-          url: "https://github.com/VolkovLabs",
-          imageURL: "/img/team/mikhail.png",
-          key: "mikhail",
-        },
-      ],
-      frontMatter: {
-        authors: ["mikhail"],
-        slug: "dynamictext-panel-4.0.0-20230709/",
-        tags: ["Dynamic Text", "Release Notes"],
-        image: "/img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png",
-        keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
-        updated: "2023-09-15T00:00:00.000Z",
-      },
-      unlisted: false,
-      prevItem: {
-        title: "Variable Panel 1.5.0",
-        permalink: "/blog/variable-panel-1.5.0-20230711/",
-      },
-      nextItem: {
         title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
         permalink: "/blog/image-panel-4.0.0-20230709/",
       },
     },
     content:
-      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe\'re excited to announce the release of the Dynamic Text Panel 4.0.0. This major release includes the following updates:\n\n- Requires Grafana 9 or Grafana 10.\n- Added the Event Bus object into JavaScript functions.\n- Added support for dashboard variables in CSS styles.\n- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.\n\n:::info Grafana Plugins catalog\nThe plugin was updated in the Grafana Plugins catalog on June 28, 2023.\n:::\n\n## 3 million downloads\n\nWe celebrated 2 million downloads in February. The panel\'s adaptability has been extremely accelerated since then.\n\nJavaScript code, a CSS style editor, and Grafana events offer functionalities that no native or community plugin has yet to provide.\n\n<Image\n  title="Dynamic Text Panel was downloaded more than three million times."\n  src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"\n  lazy={false}\n/>\n\n## Dashboard variables\n\nDynamic Text Panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.\n\n### JavaScript code\n\nUse the `replaceVariables` function to replace dashboard variables in the JavaScript code.\n\n```\nconst bonjour = replaceVariables("${variable}");\nconsole.log(bonjour.toUpperCase())\n```\n\n### Styles\n\nDashboard variables are replaced automatically in CSS styles.\n\n### Content\n\nReturns a string array of the currently selected values for a certain variable.\n\n```handlebars\n{{variable "hostname"}}\n\n<!-- result: [\'server1\', \'server2\', \'server3\']  -->\n```\n\nYou can find more examples in our [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).\n\n## Event Bus\n\nGrafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. Dynamic Text Panel can respond to these interactions by subscribing to one or more events.\n\n### Predefined Events\n\nA full list of events is available in our [Grafana Crash Course](/grafana/developer/eventbus).\n\n### Subscribe to events\n\nTo avoid memory leaks, all events must be unsubscribed.\n\n```\nconst subscription = eventBus.subscribe({ type: \'data-hover\' }, () => {\n  console.log(\'React to Data Hover\')\n})\n\nreturn () => {\n  subscription.unsubscribe();\n  console.log(\'Unsubscribed\');\n}\n```\n\n## Getting Started\n\nYou can install Dynamic Text Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install marcusolsson-dynamictext-panel\n```\n\n## YouTube Tutorial\n\nDynamic Text Panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. You can use variables, Markdown, and Handlebars to customize the look of the outputted cards.\n\nThe Dynamic Text Panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.\n\n<Video\n  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"\n  title="Markdown, HTML, and Handlebars for transforming data visualizations."\n/>\n\n<Video\n  src="https://www.youtube.com/embed/lJqk5Gobec4"\n  title="JavaScript code in Dynamic Text Panel."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 or Grafana 10\n\n### Features / Enhancements\n\n- Increased the test coverage and updated the library to test React code (#177).\n- Added the Event Bus object into a JavaScript function (#179).\n- Migrated to Plugin Tools 1.5.2 (#183).\n- Added compatibility with Grafana 10.0.0 (#166, #178, #183).\n- Updated the plugin to Node.js 18 and npm (#183).\n- Deprecated support for Grafana 8.5 (#183).\n- Integrated E2E Cypress testing into the plugin (#184).\n- Added support for variables in CSS styles editor (#185).\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+      'import Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are happy to announce the release of the Variable Panel 1.5.0. This release includes the following updates:\n\n- Added sticky header.\n- Added auto-scroll for multi-group selection.\n- Added drag and drop for tree view groups.\n- Added expand and collapse all in the header.\n\n:::info Grafana Catalog\nThe plugin was updated in Grafana Catalog on July 12, 2023.\n:::\n\n<Shorts\n  src="https://www.youtube.com/embed/YJXXMUgXDys"\n  title="Variable panel 1.5.0 for Grafana."\n/>\n\nWe appreciate the feedback and interest in the Variable panel plugin. Provided functionality was requested by the community many times and we gladly contributed.\n\n## Demo\n\nInterested to try the panel? Take a look at [Grafana plugins registered in the Grafana Catalog](https://release.volkovlabs.io/d/O73WAt27z/plugin-info?orgId=1&var-slug=volkovlabs-variable-panel).\n\nOne of my favorite features in this release is the sticky header, which allows you to filter values and select favorites. Statuses indicate when the plugin was updated:\n\n- Green less than 365 days.\n- Yellow for more than 365 days.\n- Red for more than 730 days.\n\n<Image\n  title="Plugins dashboard helps us to learn about new plugins in the Grafana Catalog."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/demo.png"\n  lazy={false}\n/>\n\n## Single value table\n\nThe single value table was updated to support the `All` option and allows to select a single value by clicking on it.\n\n<Image\n  title="To select a single value, choose the value from the list."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/single.png"\n/>\n\n## Collapse and expand all\n\nWe added a new collapse and expand all button next to the variable title in the header. It\'s a must-have feature to expand and collapse all branches at the same time for 5+ levels.\n\n<Image\n  title="Expand and collapse all feature allows to quickly switch between branches."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/collapse.png"\n/>\n\n## Tree View groups\n\nA new feature allows to drag and drop configured Tree View groups to rearrange how they will be displayed on the panel.\n\n<Image\n  title="Groups and Levels support drag and drop functionality."\n  src="/img/blog/2023-07-11-variable-panel-1.5.0/groups.png"\n/>\n\n## Getting Started\n\nThe Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.\n\nFor the latter, please use the following command.\n\n```bash\ngrafana-cli plugins install volkovlabs-variable-panel\n```\n\n## YouTube Tutorial\n\nThe Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.\n\nThe variable panel offers you single- and multi-variable layouts along with an advanced Tree View.\n\n<Video\n  src="https://www.youtube.com/embed/mYYtMW9qiPA"\n  title="Demonstrates the Variable panel functionality."\n/>\n\n## Release Notes\n\n### Features / Enhancements\n\n- Update single select variable with All enabled (#41)\n- Add sticky header and auto scroll on multi-group selection (#38)\n- Add drag and drop for Groups (#42)\n- Add expand and collapse all in the header (#46)\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
   },
   {
     id: "image-panel-4.0.0-20230709/",
@@ -1647,8 +1642,59 @@ export const BlogPosts = [
       },
       unlisted: false,
       prevItem: {
+        title: "Variable Panel 1.5.0",
+        permalink: "/blog/variable-panel-1.5.0-20230711/",
+      },
+      nextItem: {
         title: "Dynamic Text Panel 4.0.0",
         permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
+      },
+    },
+    content:
+      'import Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of the Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release includes the following updates:\n\n- Requires Grafana 9 and Grafana 10.\n- Added the zoom-in and out functions in addition to the full-screen mode, introduced in 3.6.0.\n- Added the capability to specify captions for images and media files.\n- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.\n\n:::info Grafana Plugins catalog\nThe plugin was updated in the Grafana Plugins catalog on June 28, 2023.\n:::\n\n<Shorts\n  src="https://www.youtube.com/embed/cNxWxd6mqf8"\n  title="Base64 Image/Video/Audio/PDF Panel 4.0.0 for Grafana."\n/>\n\n## Image zooming in and out\n\nThe plugin supports image zooming in and out, which simplifies the display of images within the plugin\'s panel and allows you to reset the scale of high-resolution images to fit the available display area.\n\nWhen enabling the image zooming on the panel toolbar, you can choose between the Full Screen or Pan and Pinch modes.\n\n<Image\n  title="Tokyo image analyzed with the YOLO model and zoomed in for a detailed view."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/zoom.png"\n  lazy={false}\n/>\n\n## Description\n\nWe added the capability to show captions for images and media files. Captions are displayed below the area rendering images or media files.\n\nImages are scaled automatically when using the Height option in the plugin settings. When using the original height, you need to manually adjust the dimensions of the display area.\n\n<Image\n  title="Captions displayed under the image."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/description.png"\n  lazy={false}\n/>\n\n## Getting Started\n\nYou can install Base64 Image/Video/Audio/PDF Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-image-panel\n```\n\n## YouTube Tutorial\n\nBase64 Image/Video/Audio/PDF Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.\n\n<Video\n  src="https://www.youtube.com/embed/1_bgLSehjhg"\n  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10.\n\n### Features / Enhancements\n\n- Added the zoom in/out actions on the image toolbar (#78).\n- Moved the zoom in/out buttons to the image toolbar (#79).\n- Added compatibility with Grafana 10.0.0 (#80).\n- Added captions for images and media files (#82).\n- Deprecated support for Grafana 8.5 (#83).\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+  },
+  {
+    id: "dynamictext-panel-4.0.0-20230709/",
+    metadata: {
+      permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
+      source: "@site/blog/2023-07-09-dynamictext-panel-4.0.0/index.mdx",
+      title: "Dynamic Text Panel 4.0.0",
+      description:
+        "We're excited to announce the release of the Dynamic Text Panel 4.0.0. This major release includes the following updates:",
+      date: "2023-07-09T00:00:00.000Z",
+      formattedDate: "July 9, 2023",
+      tags: [
+        {
+          label: "Dynamic Text",
+          permalink: "/blog/tags/dynamic-text",
+        },
+        {
+          label: "Release Notes",
+          permalink: "/blog/tags/release-notes",
+        },
+      ],
+      hasTruncateMarker: false,
+      authors: [
+        {
+          name: "Mikhail Volkov",
+          title: "Founder at Volkov Labs, Grafana Champion",
+          url: "https://github.com/VolkovLabs",
+          imageURL: "/img/team/mikhail.png",
+          key: "mikhail",
+        },
+      ],
+      frontMatter: {
+        authors: ["mikhail"],
+        slug: "dynamictext-panel-4.0.0-20230709/",
+        tags: ["Dynamic Text", "Release Notes"],
+        image: "/img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png",
+        keywords: ["Dynamic Text", "Panel", "JavaScript", "Events", "Grafana"],
+        updated: "2023-09-15T00:00:00.000Z",
+      },
+      unlisted: false,
+      prevItem: {
+        title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
+        permalink: "/blog/image-panel-4.0.0-20230709/",
       },
       nextItem: {
         title: "Variable Panel 1.4.0 available in Grafana Catalog",
@@ -1656,7 +1702,7 @@ export const BlogPosts = [
       },
     },
     content:
-      'import Image from "@theme/Image";\nimport Shorts from "@theme/Shorts";\nimport Video from "@theme/Video";\n\n\nWe are excited to announce the release of the Base64 Image/Video/Audio/PDF Panel 4.0.0. This major release includes the following updates:\n\n- Requires Grafana 9 and Grafana 10.\n- Added the zoom-in and out functions in addition to the full-screen mode, introduced in 3.6.0.\n- Added the capability to specify captions for images and media files.\n- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.\n\n:::info Grafana Plugins catalog\nThe plugin was updated in the Grafana Plugins catalog on June 28, 2023.\n:::\n\n<Shorts\n  src="https://www.youtube.com/embed/cNxWxd6mqf8"\n  title="Base64 Image/Video/Audio/PDF Panel 4.0.0 for Grafana."\n/>\n\n## Image zooming in and out\n\nThe plugin supports image zooming in and out, which simplifies the display of images within the plugin\'s panel and allows you to reset the scale of high-resolution images to fit the available display area.\n\nWhen enabling the image zooming on the panel toolbar, you can choose between the Full Screen or Pan and Pinch modes.\n\n<Image\n  title="Tokyo image analyzed with the YOLO model and zoomed in for a detailed view."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/zoom.png"\n  lazy={false}\n/>\n\n## Description\n\nWe added the capability to show captions for images and media files. Captions are displayed below the area rendering images or media files.\n\nImages are scaled automatically when using the Height option in the plugin settings. When using the original height, you need to manually adjust the dimensions of the display area.\n\n<Image\n  title="Captions displayed under the image."\n  src="/img/blog/2023-07-09-image-panel-4.0.0/description.png"\n  lazy={false}\n/>\n\n## Getting Started\n\nYou can install Base64 Image/Video/Audio/PDF Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install volkovlabs-image-panel\n```\n\n## YouTube Tutorial\n\nBase64 Image/Video/Audio/PDF Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.\n\n<Video\n  src="https://www.youtube.com/embed/1_bgLSehjhg"\n  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 and Grafana 10.\n\n### Features / Enhancements\n\n- Added the zoom in/out actions on the image toolbar (#78).\n- Moved the zoom in/out buttons to the image toolbar (#79).\n- Added compatibility with Grafana 10.0.0 (#80).\n- Added captions for images and media files (#82).\n- Deprecated support for Grafana 8.5 (#83).\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
+      'import Code from "@theme/Code";\nimport Image from "@theme/Image";\nimport Video from "@theme/Video";\n\n\nWe\'re excited to announce the release of the Dynamic Text Panel 4.0.0. This major release includes the following updates:\n\n- Requires Grafana 9 or Grafana 10.\n- Added the Event Bus object into JavaScript functions.\n- Added support for dashboard variables in CSS styles.\n- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.\n\n:::info Grafana Plugins catalog\nThe plugin was updated in the Grafana Plugins catalog on June 28, 2023.\n:::\n\n## 3 million downloads\n\nWe celebrated 2 million downloads in February. The panel\'s adaptability has been extremely accelerated since then.\n\nJavaScript code, a CSS style editor, and Grafana events offer functionalities that no native or community plugin has yet to provide.\n\n<Image\n  title="Dynamic Text Panel was downloaded more than three million times."\n  src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"\n  lazy={false}\n/>\n\n## Dashboard variables\n\nDynamic Text Panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.\n\n### JavaScript code\n\nUse the `replaceVariables` function to replace dashboard variables in the JavaScript code.\n\n```\nconst bonjour = replaceVariables("${variable}");\nconsole.log(bonjour.toUpperCase())\n```\n\n### Styles\n\nDashboard variables are replaced automatically in CSS styles.\n\n### Content\n\nReturns a string array of the currently selected values for a certain variable.\n\n```handlebars\n{{variable "hostname"}}\n\n<!-- result: [\'server1\', \'server2\', \'server3\']  -->\n```\n\nYou can find more examples in our [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).\n\n## Event Bus\n\nGrafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. Dynamic Text Panel can respond to these interactions by subscribing to one or more events.\n\n### Predefined Events\n\nA full list of events is available in our [Grafana Crash Course](/grafana/developer/eventbus).\n\n### Subscribe to events\n\nTo avoid memory leaks, all events must be unsubscribed.\n\n```\nconst subscription = eventBus.subscribe({ type: \'data-hover\' }, () => {\n  console.log(\'React to Data Hover\')\n})\n\nreturn () => {\n  subscription.unsubscribe();\n  console.log(\'Unsubscribed\');\n}\n```\n\n## Getting Started\n\nYou can install Dynamic Text Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.\n\nFor the latter, please use the following command:\n\n```bash\ngrafana-cli plugins install marcusolsson-dynamictext-panel\n```\n\n## YouTube Tutorial\n\nDynamic Text Panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. You can use variables, Markdown, and Handlebars to customize the look of the outputted cards.\n\nThe Dynamic Text Panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.\n\n<Video\n  src="https://www.youtube.com/embed/MpNZ4Yl-p0U"\n  title="Markdown, HTML, and Handlebars for transforming data visualizations."\n/>\n\n<Video\n  src="https://www.youtube.com/embed/lJqk5Gobec4"\n  title="JavaScript code in Dynamic Text Panel."\n/>\n\n## Release Notes\n\n### Breaking changes\n\n- Requires Grafana 9 or Grafana 10\n\n### Features / Enhancements\n\n- Increased the test coverage and updated the library to test React code (#177).\n- Added the Event Bus object into a JavaScript function (#179).\n- Migrated to Plugin Tools 1.5.2 (#183).\n- Added compatibility with Grafana 10.0.0 (#166, #178, #183).\n- Updated the plugin to Node.js 18 and npm (#183).\n- Deprecated support for Grafana 8.5 (#183).\n- Integrated E2E Cypress testing into the plugin (#184).\n- Added support for variables in CSS styles editor (#185).\n\n## Feedback\n\nWe\'re looking forward to hearing from you. You can use different ways to get in touch with us.\n\n- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues).\n- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.\n- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).\n- Support our project by starring the repository.',
   },
   {
     id: "variable-panel-1.4.0-20230708/",
@@ -1697,8 +1743,8 @@ export const BlogPosts = [
       },
       unlisted: false,
       prevItem: {
-        title: "Base64 Image/Video/Audio/PDF Panel 4.0.0",
-        permalink: "/blog/image-panel-4.0.0-20230709/",
+        title: "Dynamic Text Panel 4.0.0",
+        permalink: "/blog/dynamictext-panel-4.0.0-20230709/",
       },
       nextItem: {
         title: "Volkov Labs App 2.5.0 supports Grafana 10",
