@@ -12,22 +12,24 @@ import Image from "@theme/Image";
 # Anonymizer
 
 ## What is Anonymizer
- 
+
 Initially, we created Anonymizer for our internal use, as we share many other things on our blog. It proved itself during multiple successful presentations as reliable and easy/quick to configure. Thus, we decide to share it with the world.
 
 In a nutshell, Anonymizer:
-  - is a JavaScript that you can copy from down below.
-  - is loaded into the browser's memory and works in the background.
-  - searches for specified values in one array and replaces them with the values from the other specified array.
-  - wipes out from the browser's memory when a user switches a page or refreshes the opened page.
+
+- is a JavaScript that you can copy from down below.
+- is loaded into the browser's memory and works in the background.
+- searches for specified values in one array and replaces them with the values from the other specified array.
+- wipes out from the browser's memory when a user switches a page or refreshes the opened page.
 
 ## Anonymizer prerequisites
 
 In addition to the Anonymizer JavaScript itself, you will need the following:
- - the list of values you would like to replace,
- - the list of values you would like to replace with.
 
-The lists can be either hardcoded or come from the data source. 
+- the list of values you would like to replace,
+- the list of values you would like to replace with.
+
+The lists can be either hardcoded or come from the data source.
 
 ## Anonymizer purpose
 
@@ -35,7 +37,7 @@ The best data for the development and testing phases is the actual production da
 
 However, connecting development and testing environments to a database containing actual data often prevents seamless demo sessions. More often than not, the audience you are presenting to does not have an NDA (non-disclosure agreement). That fact can lead to quite challenging data and application manipulations to hide proprietary datasets.
 
-We created Anonymizer to avoid dummy data generation headaches and to make the configuration of our demo environments easier. 
+We created Anonymizer to avoid dummy data generation headaches and to make the configuration of our demo environments easier.
 
 ## Implementation method
 
@@ -52,8 +54,8 @@ Next, I describe two methods of how you can make the Anonymizer work.
 
 ## Method 1. Storing on a separate dashboard
 
-One method is to have the Dynamic Text panel with Anonymizer code in it on a separate dashboard. In that event, the demoing dashboard can stay exactly how it is, with no need for any adjustments. 
-However, with every page refresh (F5) the browser operative memory is cleaned and the Anonymizer script is wiped out. That leads to the actual values to be revealed. 
+One method is to have the Dynamic Text panel with Anonymizer code in it on a separate dashboard. In that event, the demoing dashboard can stay exactly how it is, with no need for any adjustments.
+However, with every page refresh (F5) the browser operative memory is cleaned and the Anonymizer script is wiped out. That leads to the actual values to be revealed.
 
 <Image
   title="When the Anonymizer panel is NOT on the dashboard, every page refresh(F5) might reveal the actual data."
@@ -67,11 +69,11 @@ This method works best when you do not share your Grafana dashboard in real time
 ## Method 2.Storing on the same dashboard
 
 For the live demos, you can place the Dynamic Text panel with the Anonymizer script right on the demoing dashboard. It can be made a small size or in a closed row.
-That way the UI look is a little distorted, but not to the extent to be immediately noticeable. 
+That way the UI look is a little distorted, but not to the extent to be immediately noticeable.
 
 ### When it works the best
 
-This approach works best for real time demos. You can be certain that all proprietary values are replaced on the fly and nothing of importance is going to be accidentally revealed. 
+This approach works best for real time demos. You can be certain that all proprietary values are replaced on the fly and nothing of importance is going to be accidentally revealed.
 
 <Image
   title="When the Anonymizer panel IS on the dashboard, the actual data always is replaced in real-time. Page refresh is safe to perform."
@@ -80,6 +82,6 @@ This approach works best for real time demos. You can be certain that all propri
 
 ## JavaScript
 
-``JS
+`JS
 place it here when fixed
-``
+`
