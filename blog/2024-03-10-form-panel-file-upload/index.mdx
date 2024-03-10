@@ -1,14 +1,14 @@
 ---
 authors: [alex]
-slug: form-panel-file-upload-20240305/
+slug: form-panel-file-upload-20240310/
 tags: [Data Manipulation]
-image: /img/blog/2024-01-05-form-panel-3.4.0/banner.png
+image: /img/blog/2024-03-10-file-upload/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana, File Upload]
 ---
 
 import Image from "@theme/Image";
 
-# Data Manipulation: File Upload
+# File Upload in Grafana
 
 ## Preparation
 
@@ -25,7 +25,7 @@ Configure PostgreSQL Data Source.
 
 <Image
   title="Configured PostgreSQL data source."
-  src="/img/blog/2024-03-05-form-panel-file-upload/configured-postgres-datasource.png"
+  src="/img/blog/2024-03-10-file-upload/configured-postgres-datasource.png"
 />
 
 Create and run Node.js HTTP server with `POST /upload` endpoint for accepting files as form data and inserting to the database.
@@ -130,7 +130,7 @@ Everything is ready, let's move to the panel configuration.
 
 <Image
   title="Configured form with file element."
-  src="/img/blog/2024-03-05-form-panel-file-upload/form-with-file-element.png"
+  src="/img/blog/2024-03-10-file-upload/form-with-file-element.png"
 />
 
 ### Configure update request
@@ -139,14 +139,14 @@ First of all, need to set the update action is a Data Source and choose the data
 
 <Image
   title="Use PostgreSQL data source for update request."
-  src="/img/blog/2024-03-05-form-panel-file-upload/update-request-datasource.png"
+  src="/img/blog/2024-03-10-file-upload/update-request-datasource.png"
 />
 
 Next, need to configure a code payload for the update request.
 
 <Image
   title="Custom Request Payload."
-  src="/img/blog/2024-03-05-form-panel-file-upload/update-request-code-payload.png"
+  src="/img/blog/2024-03-10-file-upload/update-request-code-payload.png"
 />
 
 Create Payload Code.
@@ -193,14 +193,14 @@ After all setup, user is able to save files into database as base64 strings.
 
 <Image
   title="Selected file in the form."
-  src="/img/blog/2024-03-05-form-panel-file-upload/selected-file-in-form.png"
+  src="/img/blog/2024-03-10-file-upload/selected-file-in-form.png"
 />
 
 After form submission, the file should appear in the database.
 
 <Image
   title="Uploaded file in database."
-  src="/img/blog/2024-03-05-form-panel-file-upload/uploaded-file-in-database.png"
+  src="/img/blog/2024-03-10-file-upload/uploaded-file-in-database.png"
 />
 
 ## Uploading files as Form Data with HTTP server
@@ -213,7 +213,7 @@ Need to update request for using `/POST http://localhost:3002/upload` request wi
 
 <Image
   title="HTTP update request with Multipart/form-data."
-  src="/img/blog/2024-03-05-form-panel-file-upload/http-update-request.png"
+  src="/img/blog/2024-03-10-file-upload/http-update-request.png"
 />
 
 ### Configure Update Request Payload
@@ -222,21 +222,21 @@ Custom payload is not needed anymore, so change it to `All Elements`.
 
 <Image
   title="Select All Elements for update request payload."
-  src="/img/blog/2024-03-05-form-panel-file-upload/http-update-request.png"
+  src="/img/blog/2024-03-10-file-upload/http-update-request.png"
 />
 
 Everything is ready to send files from panel to the server. Let's check it out.
 
 <Image
   title="Selected file in the form."
-  src="/img/blog/2024-03-05-form-panel-file-upload/selected-file-for-http.png"
+  src="/img/blog/2024-03-10-file-upload/selected-file-for-http.png"
 />
 
 After form submission, the file should appear in the database.
 
 <Image
   title="Uploaded file in database via HTTP server."
-  src="/img/blog/2024-03-05-form-panel-file-upload/http-uploaded-file-in-database.png"
+  src="/img/blog/2024-03-10-file-upload/http-uploaded-file-in-database.png"
 />
 
 ## Bonus: Showing files from database on the dashboard with `volkovlabs-image-panel`
@@ -245,7 +245,7 @@ First of all, let's create a query variable with file name which will be used in
 
 <Image
   title="Name Variable Settings."
-  src="/img/blog/2024-03-05-form-panel-file-upload/name-variable.png"
+  src="/img/blog/2024-03-10-file-upload/name-variable.png"
 />
 
 Variable JSON:
@@ -280,14 +280,14 @@ Next, let's add and configure a `volkovlabs-image-panel`.
 
 <Image
   title="Image panel to show current file from the database."
-  src="/img/blog/2024-03-05-form-panel-file-upload/configured-image-panel.png"
+  src="/img/blog/2024-03-10-file-upload/configured-image-panel.png"
 />
 
 Finally, we've got a dashboard which allows to save files into the database and show them.
 
 <Image
   title="Dashboard with file uploading and browsing."
-  src="/img/blog/2024-03-05-form-panel-file-upload/dashboard-result.png"
+  src="/img/blog/2024-03-10-file-upload/dashboard-result.png"
 />
 
 Working dashboard example are available in [Dashboard JSON or Live example](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/480f15191b48596c1ae9ce80e0a2f5f9c313c893/provisioning/dashboards/files.json).
