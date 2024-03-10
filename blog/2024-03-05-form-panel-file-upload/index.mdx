@@ -1,8 +1,5 @@
 ---
-authors:
-  - name: Daria Volkova
-    image_url: https://volkovlabs.io/img/team/daria.png
-    title: Creative Director at Volkov Labs, Grafana Champion
+authors: [alex]
 slug: form-panel-file-upload-20240305/
 tags: [Data Manipulation]
 image: /img/blog/2024-01-05-form-panel-3.4.0/banner.png
@@ -15,26 +12,29 @@ import Image from "@theme/Image";
 
 ## Preparation
 
-Create a table in PostgreSQL for storing uploaded files
-```
+Create a table in PostgreSQL for storing uploaded files.
+
+```sql
 CREATE TABLE files (
     name text,
     file text
 );
 ```
 
-Configure PostgreSQL Data Source
+Configure PostgreSQL Data Source.
+
 <Image
   title="Configured PostgreSQL data source."
   src="/img/blog/2024-03-05-form-panel-file-upload/configured-postgres-datasource.png"
 />
 
-Create and run Node.js HTTP server with `POST /upload` endpoint for accepting files as form data and inserting to the database
-```
-const http = require('http');
-const fs = require('fs');
-const { Client } = require('pg');
-const multiparty = require('multiparty');
+Create and run Node.js HTTP server with `POST /upload` endpoint for accepting files as form data and inserting to the database.
+
+```js
+const http = require("http");
+const fs = require("fs");
+const { Client } = require("pg");
+const multiparty = require("multiparty");
 
 /**
  * Server Port
@@ -58,11 +58,14 @@ const server = http.createServer(async function (req: any, res: any) {
   /**
    * Set CORS headers
    */
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Request-Method', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-  if (req.method === 'OPTIONS') {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Request-Method", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
     res.writeHead(200);
     res.end();
 
@@ -72,31 +75,39 @@ const server = http.createServer(async function (req: any, res: any) {
   /**
    * Upload File
    */
-  if (req.url === '/upload' && req.method === 'POST') {
+  if (req.url === "/upload" && req.method === "POST") {
     const form = new multiparty.Form({ autoFiles: true });
 
     form.parse(req, async function (err: any, fields: any, files: any) {
       if (!files) {
-        res.writeHead(200, { 'content-type': 'text/plain' });
-        res.write('Incorrect request');
+        res.writeHead(200, { "content-type": "text/plain" });
+        res.write("Incorrect request");
         res.end();
         return;
       }
 
-      const filesArray = Object.values(files).reduce((acc: any[], files) => acc.concat(files), []);
+      const filesArray = Object.values(files).reduce(
+        (acc: any[], files) => acc.concat(files),
+        []
+      );
 
       /**
        * Insert files to database
        */
       await Promise.all(
         filesArray.map(async (file) => {
-          const base64 = await fs.readFileSync(file.path, { encoding: 'base64' });
-          await client.query('INSERT INTO files(name, file) VALUES($1, $2)', [file.originalFilename, base64]);
+          const base64 = await fs.readFileSync(file.path, {
+            encoding: "base64",
+          });
+          await client.query("INSERT INTO files(name, file) VALUES($1, $2)", [
+            file.originalFilename,
+            base64,
+          ]);
         })
       );
 
-      res.writeHead(200, { 'content-type': 'text/plain' });
-      res.write('Files uploaded');
+      res.writeHead(200, { "content-type": "text/plain" });
+      res.write("Files uploaded");
       res.end();
     });
 
@@ -111,11 +122,12 @@ server.listen(port);
 console.log(`Server for Postgres is running on port ${port}...`);
 ```
 
-Everything is ready, let's move to the panel configuration
+Everything is ready, let's move to the panel configuration.
 
 ## Uploading files as Base64 with PostgreSQL Data Source
 
-### Add a file form element
+### Add a file form element.
+
 <Image
   title="Configured form with file element."
   src="/img/blog/2024-03-05-form-panel-file-upload/form-with-file-element.png"
@@ -124,19 +136,22 @@ Everything is ready, let's move to the panel configuration
 ### Configure update request
 
 First of all, need to set the update action is a Data Source and choose the data source.
+
 <Image
   title="Use PostgreSQL data source for update request."
   src="/img/blog/2024-03-05-form-panel-file-upload/update-request-datasource.png"
 />
 
 Next, need to configure a code payload for the update request.
+
 <Image
   title="Custom Request Payload."
   src="/img/blog/2024-03-05-form-panel-file-upload/update-request-code-payload.png"
 />
 
-Create Payload Code
-```
+Create Payload Code.
+
+```js
 const payload = {};
 
 elements.forEach((element) => {
@@ -145,7 +160,7 @@ elements.forEach((element) => {
   }
 
   payload[element.id] = element.value;
-})
+});
 
 const toBase64 = (file) =>
   new Promise((resolve, reject) => {
@@ -154,7 +169,6 @@ const toBase64 = (file) =>
     reader.onload = () => resolve(reader.result);
     reader.onerror = reject;
   });
-
 
 /**
  * Data Source payload
@@ -166,9 +180,9 @@ const getPayload = async () => {
   return {
     rawSql: `INSERT INTO files (name, file)
 VALUES ('${file.name}', '${base64}');`,
-    format: 'table',
-  }
-}
+    format: "table",
+  };
+};
 
 return getPayload();
 ```
@@ -176,12 +190,14 @@ return getPayload();
 ### Usage
 
 After all setup, user is able to save files into database as base64 strings.
+
 <Image
   title="Selected file in the form."
   src="/img/blog/2024-03-05-form-panel-file-upload/selected-file-in-form.png"
 />
 
-After form submission, the file should appear in the database
+After form submission, the file should appear in the database.
+
 <Image
   title="Uploaded file in database."
   src="/img/blog/2024-03-05-form-panel-file-upload/uploaded-file-in-database.png"
@@ -189,11 +205,12 @@ After form submission, the file should appear in the database
 
 ## Uploading files as Form Data with HTTP server
 
-Clone the panel from previous example
+Clone the panel from previous example.
 
 ### Configure Update Request
 
-Need to update request for using `/POST http://localhost:3002/upload` request with `Multipart/form-data` content type. HTTP Server should be created and run in preparation step
+Need to update request for using `/POST http://localhost:3002/upload` request with `Multipart/form-data` content type. HTTP Server should be created and run in preparation step.
+
 <Image
   title="HTTP update request with Multipart/form-data."
   src="/img/blog/2024-03-05-form-panel-file-upload/http-update-request.png"
@@ -201,19 +218,22 @@ Need to update request for using `/POST http://localhost:3002/upload` request wi
 
 ### Configure Update Request Payload
 
-Custom payload is not needed anymore, so change it to `All Elements`
+Custom payload is not needed anymore, so change it to `All Elements`.
+
 <Image
   title="Select All Elements for update request payload."
   src="/img/blog/2024-03-05-form-panel-file-upload/http-update-request.png"
 />
 
-Everything is ready to send files from panel to the server. Let's check it out
+Everything is ready to send files from panel to the server. Let's check it out.
+
 <Image
   title="Selected file in the form."
   src="/img/blog/2024-03-05-form-panel-file-upload/selected-file-for-http.png"
 />
 
-After form submission, the file should appear in the database
+After form submission, the file should appear in the database.
+
 <Image
   title="Uploaded file in database via HTTP server."
   src="/img/blog/2024-03-05-form-panel-file-upload/http-uploaded-file-in-database.png"
@@ -222,62 +242,52 @@ After form submission, the file should appear in the database
 ## Bonus: Showing files from database on the dashboard with `volkovlabs-image-panel`
 
 First of all, let's create a query variable with file name which will be used in the next steps.
+
 <Image
   title="Name Variable Settings."
   src="/img/blog/2024-03-05-form-panel-file-upload/name-variable.png"
 />
 
-Variable JSON
-```
+Variable JSON:
+
+```json
 {
-    "current": {
-      "selected": true,
-      "text": "volkovlabs.png",
-      "value": "volkovlabs.png"
-    },
-    "datasource": {
-      "type": "grafana-postgresql-datasource",
-      "uid": "PCC52D03280B7034C"
-    },
-    "definition": "select name from files",
-    "hide": 0,
-    "includeAll": false,
-    "multi": false,
-    "name": "name",
-    "options": [],
-    "query": "select name from files",
-    "refresh": 1,
-    "regex": "",
-    "skipUrlSync": false,
-    "sort": 0,
-    "type": "query"
+  "current": {
+    "selected": true,
+    "text": "volkovlabs.png",
+    "value": "volkovlabs.png"
+  },
+  "datasource": {
+    "type": "grafana-postgresql-datasource",
+    "uid": "PCC52D03280B7034C"
+  },
+  "definition": "select name from files",
+  "hide": 0,
+  "includeAll": false,
+  "multi": false,
+  "name": "name",
+  "options": [],
+  "query": "select name from files",
+  "refresh": 1,
+  "regex": "",
+  "skipUrlSync": false,
+  "sort": 0,
+  "type": "query"
 }
 ```
 
-Next, let's add and configure a `volkovlabs-image-panel`
+Next, let's add and configure a `volkovlabs-image-panel`.
+
 <Image
   title="Image panel to show current file from the database."
   src="/img/blog/2024-03-05-form-panel-file-upload/configured-image-panel.png"
 />
 
 Finally, we've got a dashboard which allows to save files into the database and show them.
+
 <Image
   title="Dashboard with file uploading and browsing."
   src="/img/blog/2024-03-05-form-panel-file-upload/dashboard-result.png"
 />
 
-Working dashboard example are available in [Dashboard JSON or Live example](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/480f15191b48596c1ae9ce80e0a2f5f9c313c893/provisioning/dashboards/files.json)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Working dashboard example are available in [Dashboard JSON or Live example](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/480f15191b48596c1ae9ce80e0a2f5f9c313c893/provisioning/dashboards/files.json).
