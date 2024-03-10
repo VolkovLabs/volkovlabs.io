@@ -1,11 +1,8 @@
 ---
-authors:
-  - name: Daria Volkova
-    image_url: https://volkovlabs.io/img/team/daria.png
-    title: Creative Director at Volkov Labs, Grafana Champion
+authors: [alex, daria]
 slug: form-panel-use-variables-20240301/
 tags: [Data Manipulation]
-image: /img/blog/2024-01-05-form-panel-3.4.0/banner.png
+image: /img/blog/2024-03-12-form-variables/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana, Variables]
 ---
 
@@ -22,7 +19,8 @@ In the blog post will be shown how to configure Data Manipulation panel to use a
 Configure needed variables which will be used later in Data Manipulation panel: facility, room and bench. Static datasource is used in the example.
 
 Variables JSON
-```
+
+```json
 [
   {
     "current": {
@@ -79,19 +77,13 @@ Variables JSON
             "config": {},
             "name": "value",
             "type": "string",
-            "values": [
-              "$facility-room1",
-              "$facility-room2"
-            ]
+            "values": ["$facility-room1", "$facility-room2"]
           },
           {
             "config": {},
             "name": "label",
             "type": "string",
-            "values": [
-              "$facility-room1",
-              "$facility-room2"
-            ]
+            "values": ["$facility-room1", "$facility-room2"]
           }
         ],
         "meta": {}
@@ -126,19 +118,13 @@ Variables JSON
             "config": {},
             "name": "value",
             "type": "string",
-            "values": [
-              "$room-bench1",
-              "$room-bench2"
-            ]
+            "values": ["$room-bench1", "$room-bench2"]
           },
           {
             "config": {},
             "name": "label",
             "type": "string",
-            "values": [
-              "$room-bench1",
-              "$room-bench2"
-            ]
+            "values": ["$room-bench1", "$room-bench2"]
           }
         ],
         "meta": {}
@@ -154,46 +140,55 @@ Variables JSON
 ```
 
 Variables should be shown on the dashboard.
+
 <Image
   title="Configured variables on the dashboard."
-  src="/img/blog/2024-03-01-form-panel-use-variables/variables.png"
+  src="/img/blog/2024-03-12-form-variables/variables.png"
 />
 
 ## Detailed Steps
 
 ### Setup form elements
+
 Add 3 select with Custom Options form elements: facility, room and bench to the Data Manipulation panel.
+
 <Image
   title="Configured elements in the Data Manipulation panel."
-  src="/img/blog/2024-03-01-form-panel-use-variables/form-elements.png"
+  src="/img/blog/2024-03-12-form-variables/form-elements.png"
 />
 
 ### Add dynamic options to elements
+
 Currently, the elements don't have any options let's fix it and setup dynamic options from panel queries.
 
 Create panel queries with Static Datasource for all dynamic options. Usually, it should equal to the variable query.
+
 <Image
   title="Facility options data."
-  src="/img/blog/2024-03-01-form-panel-use-variables/facility-options-query.png"
+  src="/img/blog/2024-03-12-form-variables/facility-options-query.png"
 />
 
 Next, need to set appropriated fields to the form elements
+
 <Image
   title="Use options from query."
-  src="/img/blog/2024-03-01-form-panel-use-variables/query-options-source.png"
+  src="/img/blog/2024-03-12-form-variables/query-options-source.png"
 />
 
 Since now, the form elements have options which is retrieved from panel data.
+
 <Image
   title="Query data options."
-  src="/img/blog/2024-03-01-form-panel-use-variables/query-options-example.png"
+  src="/img/blog/2024-03-12-form-variables/query-options-example.png"
 />
 
 ### Configure initial values
+
 Currently, the initial form values are empty. Let's configure a query which returns variable values.
+
 <Image
   title="Initial values query for the panel."
-  src="/img/blog/2024-03-01-form-panel-use-variables/initial-values.png"
+  src="/img/blog/2024-03-12-form-variables/initial-values.png"
 />
 
 Next, need to update the panel options to enable query options for initial action.
@@ -201,40 +196,44 @@ Keep sure that sync option is also enabled.
 
 <Image
   title="Enabled query initial action and sync."
-  src="/img/blog/2024-03-01-form-panel-use-variables/query-initial-action.png"
+  src="/img/blog/2024-03-12-form-variables/query-initial-action.png"
 />
 
 After that, the elements have query field. Need to set appropriated field for each element.
+
 <Image
   title="Configured query field for element."
-  src="/img/blog/2024-03-01-form-panel-use-variables/element-query-field.png"
+  src="/img/blog/2024-03-12-form-variables/element-query-field.png"
 />
 
 Since now, if variable is updated, the value will be pre-populated to the form.
+
 <Image
   title="Initial values from variable values."
-  src="/img/blog/2024-03-01-form-panel-use-variables/initial-values-example.png"
+  src="/img/blog/2024-03-12-form-variables/initial-values-example.png"
 />
 
 ### Update variables from Data Manipulation panel
+
 To update select options, the variable should be updated. There is needed to
 configure the Element Value Changed code for updating variables if element changed.
-```
-if (context.element.id === 'facility') {
+
+```js
+if (context.element.id === "facility") {
   context.grafana.locationService.partial({
-    'var-facility': context.element.value,
+    "var-facility": context.element.value,
   });
 }
 
-if (context.element.id === 'room') {
+if (context.element.id === "room") {
   context.grafana.locationService.partial({
-    'var-room': context.element.value,
+    "var-room": context.element.value,
   });
 }
 
-if (context.element.id === 'bench') {
+if (context.element.id === "bench") {
   context.grafana.locationService.partial({
-    'var-bench': context.element.value,
+    "var-bench": context.element.value,
   });
 }
 ```
@@ -242,27 +241,23 @@ if (context.element.id === 'bench') {
 Since now, if element changed, the variable will be updated as well as select options.
 
 ### Enable submit button
+
 Enablement of submit button depends on if current values are different from initial.
 In our case, they are equal. So the submit button is always disabled.
 
 To enable it after user interaction we have to select Manual mode for the Enable Update option.
+
 <Image
   title="Manual enabled mode for submit button."
-  src="/img/blog/2024-03-01-form-panel-use-variables/enable-update-manual.png"
+  src="/img/blog/2024-03-12-form-variables/enable-update-manual.png"
 />
 
 After that, we have to adjust the Element Value Changed code to enable submit button ourself.
 
 Element Value Changed
-```
+
+```js
 context.panel.enableSubmit();
 ```
 
 Working dashboard example are available in [Dashboard JSON or Live example](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/38ac8ea141a7be749db9bc748d1e2dd44b751c33/provisioning/dashboards/variables.json)
-
-
-
-
-
-
-
