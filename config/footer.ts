@@ -15,42 +15,52 @@ export const FOOTER = {
         {
           label: "Apache ECharts Panel",
           to: "/plugins/volkovlabs-echarts-panel/",
+          className: "volkovlabs-footer-link icon-plugins-echarts-link",
         },
         {
           label: "Base64 Image/PDF Panel",
           to: "/plugins/volkovlabs-image-panel/",
+          className: "volkovlabs-footer-link icon-plugins-base64-link",
         },
         {
           label: "Calendar Panel",
           to: "/plugins/volkovlabs-calendar-panel/",
+          className: "volkovlabs-footer-link icon-plugins-calendar-link",
         },
         {
           label: "Dynamic Text Panel",
           to: "/plugins/volkovlabs-dynamictext-panel/",
+          className: "volkovlabs-footer-link icon-plugins-dt-link",
         },
         {
           label: "Data Manipulation Panel",
           to: "/plugins/volkovlabs-form-panel/",
+          className: "volkovlabs-footer-link icon-plugins-form-link",
         },
         {
           label: "Environment Data Source",
           to: "/plugins/volkovlabs-env-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-env-link",
         },
         {
           label: "Grafana API Data Source",
           to: "/plugins/volkovlabs-grapi-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-grapi-link",
         },
         {
           label: "RSS/Atom Data Source",
           to: "/plugins/volkovlabs-rss-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-rss-link",
         },
         {
           label: "Static Data Source",
           to: "/plugins/volkovlabs-static-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-static-link",
         },
         {
           label: "Variable Panel",
           to: "/plugins/volkovlabs-variable-panel/",
+          className: "volkovlabs-footer-link icon-plugins-variable-link",
         },
       ],
     },
