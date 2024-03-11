@@ -9,14 +9,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-medium-image-zoom": "^5.1.10",
-    "redocusaurus": "^2.0.1",
+    "redocusaurus": "^2.0.2",
     "url": "^0.11.3"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.1.1",
     "@docusaurus/tsconfig": "3.1.1",
     "@docusaurus/types": "3.1.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   },
   "name": "volkovlabs-io",
   "scripts": {

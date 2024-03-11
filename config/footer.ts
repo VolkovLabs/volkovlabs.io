@@ -70,25 +70,12 @@ export const FOOTER = {
           href: "/grafana/",
         },
         {
-          label: "YouTube Channel",
-          href: "https://youtube.com/@volkovlabs",
-        },
-      ],
-    },
-    {
-      title: "Dashboards",
-      items: [
-        {
-          label: "Releases",
+          label: "Release Dashboard",
           href: "https://release.volkovlabs.io",
         },
         {
-          label: "ECharts Examples",
-          href: "https://echarts.volkovlabs.io",
-        },
-        {
-          label: "Live Updates",
-          href: "https://live.volkovlabs.io",
+          label: "YouTube Channel",
+          href: "https://youtube.com/@volkovlabs",
         },
       ],
     },
