@@ -12,20 +12,21 @@ import Image from "@theme/Image";
 
 The Data Manipulation plugin is one of our most popular ones. By looking at the stats, we registered that the Grafana community downloaded it more than 100K times in the first two months of 2024!
 
-Those numbers are not surprising, given that the plugin allows Grafana dashboard users to analyze and **interact with** data, tremendously extending the core Grafana functionality. 
+Those numbers are not surprising, given that the plugin allows Grafana dashboard users to analyze and **interact with** data, tremendously extending the core Grafana functionality.
 
-The variety of possible use cases requiring the Data Manipulation plugin seems countless. In this article, we would like to share one particular solution that is as useful as illustrative. It has already been employed and tested by many Community members in different environments, solidifying our confidence. 
+The variety of possible use cases requiring the Data Manipulation plugin seems countless. In this article, we would like to share one particular solution that is as useful as illustrative. It has already been employed and tested by many Community members in different environments, solidifying our confidence.
 
 ## Solution overview
 
 In this article, we provide a step-by-step tutorial on how to create a dashboard containing the following parts:
- 1. [The Data Manipulation panel](https://volkovlabs.io/plugins/volkovlabs-form-panel/) which is configured with the HTTP API server to upload files in the Base64 format. It can be used to upload files into your data source. 
- 2. [The Data Manipulation panel](https://volkovlabs.io/plugins/volkovlabs-form-panel/) which is configured with Data Source to upload files in the Base64 format. It alternatively can be used to upload files into your data source.
 
-Choose which Data Manipulation panel configuration is best for your needs. 
+1.  [The Data Manipulation panel](https://volkovlabs.io/plugins/volkovlabs-form-panel/) which is configured with the HTTP API server to upload files in the Base64 format. It can be used to upload files into your data source.
+2.  [The Data Manipulation panel](https://volkovlabs.io/plugins/volkovlabs-form-panel/) which is configured with Data Source to upload files in the Base64 format. It alternatively can be used to upload files into your data source.
 
- 3. [The Variable panel](https://volkovlabs.io/plugins/volkovlabs-variable-panel/) is configured to provide a selection of all upload files.
- 4. [The Base64 panel](https://volkovlabs.io/plugins/volkovlabs-image-panel/) displays the selected on the Variable panel file.
+Choose which Data Manipulation panel configuration is best for your needs.
+
+3.  [The Variable panel](https://volkovlabs.io/plugins/volkovlabs-variable-panel/) is configured to provide a selection of all upload files.
+4.  [The Base64 panel](https://volkovlabs.io/plugins/volkovlabs-image-panel/) displays the selected on the Variable panel file.
 
 <Image
   title="The dashboard described in this article."
@@ -43,7 +44,7 @@ The uploaded files will be saved into the PostgreSQL database in the Base64 form
 
 ### Table
 
-We start with creating a table for storing uploaded files. You can choose any storage as long as it has a Grafana data source. We prefer the PostgreSQL database as a [long-standing champ](https://volkovlabs.io/blog/grafana-postgresql-20230123/) for many of our solutions and demos. 
+We start with creating a table for storing uploaded files. You can choose any storage as long as it has a Grafana data source. We prefer the PostgreSQL database as a [long-standing champ](https://volkovlabs.io/blog/grafana-postgresql-20230123/) for many of our solutions and demos.
 
 Create a table in PostgreSQL.
 
@@ -69,18 +70,18 @@ Configure PostgreSQL Data Source.
 
 In this example, both Data Manipulation forms contain one form element **File**, which is identically configured for both panels.
 
-The data source on the bottom left can be anything because it is irrelevant here. 
+The data source on the bottom left can be anything because it is irrelevant here.
 
 <Image
   title="A file form element configurations are identical for both Data Manipulations."
   src="/img/blog/2024-03-10-file-upload/form-with-file-element.png"
 />
 
-### Initial Request 
+### Initial Request
 
-The **initial request** is responsible for providing data right after the page is loaded. In this example, no data is expected to be fetched into the **File** form element, so there is no need to configure the **Initial Request**, all settings are left as default. 
+The **initial request** is responsible for providing data right after the page is loaded. In this example, no data is expected to be fetched into the **File** form element, so there is no need to configure the **Initial Request**, all settings are left as default.
 
-### Upload Request 
+### Upload Request
 
 The **Upload Request** is where the configuration of two Data Manipulation forms differ.
 
@@ -90,7 +91,6 @@ The **Upload Request** is where the configuration of two Data Manipulation forms
   title="Update Request configuration when the Data Manipulation panel uses Data Source."
   src="/img/blog/2024-03-10-file-upload/datasource-config.png"
 />
-
 
 Create Payload Code.
 
@@ -235,9 +235,9 @@ console.log(`Server for Postgres is running on port ${port}...`);
 
 ## Variable panel
 
-### Dashboard variable configuration 
+### Dashboard variable configuration
 
-Start with creating a new dashboard variable to later reference it on the Variable panel. 
+Start with creating a new dashboard variable to later reference it on the Variable panel.
 
 <Image
   title="Dashboard variable configuration."
@@ -280,9 +280,9 @@ For the reference, here is the variable JSON:
 
 ### Variable panel configuration
 
-Below is an illustration of how the Variable panel can be configured. We believe that the **Button** display mode works best instead of **Table** or **Minimize**. 
+Below is an illustration of how the Variable panel can be configured. We believe that the **Button** display mode works best instead of **Table** or **Minimize**.
 
-Also, a data source is not needed for the basic variable panel setup. You can specify anything there. 
+Also, a data source is not needed for the basic variable panel setup. You can specify anything there.
 
 <Image
   title="Dashboard variable configuration."
@@ -291,7 +291,7 @@ Also, a data source is not needed for the basic variable panel setup. You can sp
 
 ## Base64 panel
 
-We use the Base64 panel to display the selected image. It works with many file formats, including image, video, audio, and PDF formats. 
+We use the Base64 panel to display the selected image. It works with many file formats, including image, video, audio, and PDF formats.
 
 <Image
   title="Image panel to show current file from the database."
@@ -300,6 +300,6 @@ We use the Base64 panel to display the selected image. It works with many file f
 
 ## Afterword
 
-Following the outlined steps, you should be able to create a dashboard with an image upload feature. You should also be able to select from all uploaded earlier images and display them one by one. 
+Following the outlined steps, you should be able to create a dashboard with an image upload feature. You should also be able to select from all uploaded earlier images and display them one by one.
 
 Working dashboard example are available in [Dashboard JSON or Live example](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/480f15191b48596c1ae9ce80e0a2f5f9c313c893/provisioning/dashboards/files.json).
