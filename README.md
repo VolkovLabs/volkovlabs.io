@@ -1,7 +1,5 @@
 # Blog, Documentation, and Grafana Crash Course
 
-## Introduction
-
 This documentation is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
