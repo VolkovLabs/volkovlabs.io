@@ -30,6 +30,6 @@ export const THEME_CONFIG: ThemeConfig = {
   prism: {
     theme: themes.github,
     darkTheme: themes.dracula,
-    additionalLanguages: ["docker", "nginx"],
+    additionalLanguages: ["docker", "nginx", "json"],
   },
 };
