@@ -1,8 +1,7 @@
-import React from 'react';
-import { useBlogPost } from '@docusaurus/theme-common/internal';
-import { BlogPosts } from '../../constants/blogPosts';
-import BlogPostCard from '../BlogPostCard';
-import styles from './styles.module.css';
+import React from "react";
+import { useBlogPost } from "@docusaurus/theme-common/internal";
+import BlogPostCard from "../BlogPostCard";
+import styles from "./styles.module.css";
 
 /**
  * Related posts as Paginator
@@ -10,12 +9,13 @@ import styles from './styles.module.css';
 const BlogPostPaginator = (props) => {
   const post = useBlogPost();
   const posts = [];
+  const recentBlogPosts = require("../../../.docusaurus/docusaurus-plugin-content-blog/default/blog-archive-80c.json");
 
   /**
    * Add posts with the same tags
    */
   post.metadata.tags.forEach((postTag) =>
-    BlogPosts.filter((related) => {
+    recentBlogPosts?.blogPosts.filter((related) => {
       if (related.metadata.permalink === post.metadata.permalink) {
         return;
       }

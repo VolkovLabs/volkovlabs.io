@@ -1,16 +1,17 @@
 import React from "react";
-import { BlogPosts } from "../constants";
 import BlogPostCard from "../theme/BlogPostCard";
 
 /**
  * Blogs
  */
 export const Blogs = (): JSX.Element => {
+  const recentBlogPosts = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-archive-80c.json");
+
   return (
     <section>
       <div className="container">
         <div className="row">
-          {BlogPosts.slice(0, 6).map((post) => (
+          {recentBlogPosts?.blogPosts.slice(0, 9).map((post) => (
             <div className="col col--4 margin-vert--lg">
               <BlogPostCard key={post.id} post={post} />
             </div>

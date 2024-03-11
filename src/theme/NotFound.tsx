@@ -1,14 +1,15 @@
-import React from 'react';
-import { PageMetadata } from '@docusaurus/theme-common';
-import Layout from '@theme/Layout';
-import { BlogPosts } from '../constants/blogPosts';
-import BlogPostItems from './BlogPostItems';
+import React from "react";
+import { PageMetadata } from "@docusaurus/theme-common";
+import Layout from "@theme/Layout";
+import BlogPostItems from "./BlogPostItems";
 
 /**
  * Not Found
  */
 const NotFound = () => {
-  const items = BlogPosts.slice(0, 6).map((post) => {
+  const recentBlogPosts = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-archive-80c.json");
+
+  const items = recentBlogPosts?.blogPosts.slice(0, 6).map((post) => {
     return {
       content: post,
     };
