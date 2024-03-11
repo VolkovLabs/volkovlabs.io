@@ -24,7 +24,7 @@ const Header = (siteConfig) => {
 
             <p className="hero__subtitle margin-vert--md">
               We specialize in creating plugins that enable you to visualize
-              your data on the Grafana platform.
+              your business data on the Grafana platform.
             </p>
 
             <p className="hero__subtitle">
