@@ -1,5 +1,5 @@
 ---
-authors: [alex, daria]
+authors: [alex]
 slug: form-panel-use-variables-20240301/
 tags: [Data Manipulation]
 image: /img/blog/2024-03-12-form-variables/banner.png
@@ -8,7 +8,7 @@ keywords: [Data Manipulation, Form Panel, Data, Grafana, Variables]
 
 import Image from "@theme/Image";
 
-# Using variables in Data Manipulation
+# Update dashboard variables in Data Manipulation
 
 ## At a glance
 
@@ -16,7 +16,7 @@ In the blog post will be shown how to configure Data Manipulation panel to use a
 
 ## Preparation
 
-Configure needed variables which will be used later in Data Manipulation panel: facility, room and bench. Static datasource is used in the example.
+Configure needed variables which will be used later in Data Manipulation panel: facility, room and bench. [Static Data Source](/plugins/volkovlabs-static-datasource) is used in the example.
 
 Variables JSON
 
@@ -146,9 +146,7 @@ Variables should be shown on the dashboard.
   src="/img/blog/2024-03-12-form-variables/variables.png"
 />
 
-## Detailed Steps
-
-### Setup form elements
+## Setup form elements
 
 Add 3 select with Custom Options form elements: facility, room and bench to the Data Manipulation panel.
 
@@ -157,11 +155,11 @@ Add 3 select with Custom Options form elements: facility, room and bench to the 
   src="/img/blog/2024-03-12-form-variables/form-elements.png"
 />
 
-### Add dynamic options to elements
+## Add dynamic options to elements
 
 Currently, the elements don't have any options let's fix it and setup dynamic options from panel queries.
 
-Create panel queries with Static Datasource for all dynamic options. Usually, it should equal to the variable query.
+Create panel queries with Static Data Source for all dynamic options. Usually, it should be equal to the variable query.
 
 <Image
   title="Facility options data."
@@ -182,7 +180,7 @@ Since now, the form elements have options which is retrieved from panel data.
   src="/img/blog/2024-03-12-form-variables/query-options-example.png"
 />
 
-### Configure initial values
+## Configure initial values
 
 Currently, the initial form values are empty. Let's configure a query which returns variable values.
 
@@ -213,7 +211,7 @@ Since now, if variable is updated, the value will be pre-populated to the form.
   src="/img/blog/2024-03-12-form-variables/initial-values-example.png"
 />
 
-### Update variables from Data Manipulation panel
+## Update variables from the panel
 
 To update select options, the variable should be updated. There is needed to
 configure the Element Value Changed code for updating variables if element changed.
@@ -240,9 +238,9 @@ if (context.element.id === "bench") {
 
 Since now, if element changed, the variable will be updated as well as select options.
 
-### Enable submit button
+## Enable submit button
 
-Enablement of submit button depends on if current values are different from initial.
+Enablement of submit button depends on if current values are different from the initial.
 In our case, they are equal. So the submit button is always disabled.
 
 To enable it after user interaction we have to select Manual mode for the Enable Update option.
@@ -260,4 +258,6 @@ Element Value Changed
 context.panel.enableSubmit();
 ```
 
-Working dashboard example are available in [Dashboard JSON or Live example](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/38ac8ea141a7be749db9bc748d1e2dd44b751c33/provisioning/dashboards/variables.json)
+Working dashboard example are available in the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/provisioning/dashboards/variables.json).
+
+If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube videos](https://www.youtube.com/@volkovlabs).
