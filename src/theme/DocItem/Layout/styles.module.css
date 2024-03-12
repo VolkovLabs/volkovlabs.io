@@ -3,8 +3,20 @@
   margin-top: 0;
 }
 
+.docMainItem {
+  width: 100%;
+  padding: 0 var(--ifm-spacing-horizontal);
+}
+
+.docRightItem {
+  max-width: 30%;
+  width: 100%;
+}
+
 @media (min-width: 997px) {
-  .docItemCol {
-    max-width: 82% !important;
+  .docMainItem {
+    width: 100%;
+    max-width: 70%;
+    padding: 0 var(--ifm-spacing-horizontal);
   }
 }
