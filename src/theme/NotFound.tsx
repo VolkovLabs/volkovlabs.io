@@ -2,14 +2,13 @@ import React from "react";
 import { PageMetadata } from "@docusaurus/theme-common";
 import Layout from "@theme/Layout";
 import BlogPostItems from "./BlogPostItems";
+import { blogArchive } from "../constants";
 
 /**
  * Not Found
  */
 const NotFound = () => {
-  const recentBlogPosts = require("../../.docusaurus/docusaurus-plugin-content-blog/default/blog-archive-80c.json");
-
-  const items = recentBlogPosts?.blogPosts.slice(0, 6).map((post) => {
+  const items = blogArchive?.blogPosts.slice(0, 6).map((post) => {
     return {
       content: post,
     };
