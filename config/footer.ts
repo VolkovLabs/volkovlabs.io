@@ -84,8 +84,14 @@ export const FOOTER = {
           href: "https://release.volkovlabs.io",
         },
         {
+          label: "GitHub",
+          href: "https://github.com/VolkovLabs",
+          className: "volkovlabs-footer-link icon-github-link",
+        },
+        {
           label: "YouTube Channel",
           href: "https://youtube.com/@volkovlabs",
+          className: "volkovlabs-footer-link icon-youtube-link",
         },
       ],
     },
@@ -95,10 +101,6 @@ export const FOOTER = {
         {
           label: "Sponsor",
           href: "/sponsor/",
-        },
-        {
-          label: "GitHub",
-          href: "https://github.com/VolkovLabs",
         },
         {
           label: "LinkedIn",
