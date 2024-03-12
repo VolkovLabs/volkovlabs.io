@@ -1,2 +1,2 @@
-export * from "./blogPosts";
+export * from "./docusaurus";
 export * from "./plugin";

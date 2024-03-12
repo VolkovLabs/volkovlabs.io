@@ -1,8 +1,8 @@
-import React from 'react';
-import { useBlogPost } from '@docusaurus/theme-common/internal';
-import { BlogPosts } from '../../constants/blogPosts';
-import BlogPostCard from '../BlogPostCard';
-import styles from './styles.module.css';
+import React from "react";
+import { useBlogPost } from "@docusaurus/theme-common/internal";
+import BlogPostCard from "../BlogPostCard";
+import styles from "./styles.module.css";
+import { BlogArchive } from "../../constants";
 
 /**
  * Related posts as Paginator
@@ -15,7 +15,7 @@ const BlogPostPaginator = (props) => {
    * Add posts with the same tags
    */
   post.metadata.tags.forEach((postTag) =>
-    BlogPosts.filter((related) => {
+    BlogArchive?.blogPosts.filter((related) => {
       if (related.metadata.permalink === post.metadata.permalink) {
         return;
       }

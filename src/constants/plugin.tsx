@@ -1,5 +1,5 @@
 import React from "react";
-import { FeatureItem, PluginItem } from "../types";
+import { PluginItem } from "../types";
 
 /**
  * Plugin List
