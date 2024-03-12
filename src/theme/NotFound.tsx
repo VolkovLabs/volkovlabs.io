@@ -2,13 +2,13 @@ import React from "react";
 import { PageMetadata } from "@docusaurus/theme-common";
 import Layout from "@theme/Layout";
 import BlogPostItems from "./BlogPostItems";
-import { blogArchive } from "../constants";
+import { BlogArchive } from "../constants";
 
 /**
  * Not Found
  */
 const NotFound = () => {
-  const items = blogArchive?.blogPosts.slice(0, 6).map((post) => {
+  const items = BlogArchive?.blogPosts.slice(0, 6).map((post) => {
     return {
       content: post,
     };

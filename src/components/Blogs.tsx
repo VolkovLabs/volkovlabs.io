@@ -1,6 +1,6 @@
 import React from "react";
 import BlogPostCard from "../theme/BlogPostCard";
-import { blogArchive } from "../constants";
+import { BlogArchive } from "../constants";
 
 /**
  * Blogs
@@ -10,7 +10,7 @@ export const Blogs = (): JSX.Element => {
     <section>
       <div className="container">
         <div className="row">
-          {blogArchive?.blogPosts.slice(0, 6).map((post) => (
+          {BlogArchive?.blogPosts.slice(0, 6).map((post) => (
             <div className="col col--4 margin-vert--lg">
               <BlogPostCard key={post.id} post={post} />
             </div>

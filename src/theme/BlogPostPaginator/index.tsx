@@ -2,7 +2,7 @@ import React from "react";
 import { useBlogPost } from "@docusaurus/theme-common/internal";
 import BlogPostCard from "../BlogPostCard";
 import styles from "./styles.module.css";
-import { blogArchive } from "../../constants";
+import { BlogArchive } from "../../constants";
 
 /**
  * Related posts as Paginator
@@ -15,7 +15,7 @@ const BlogPostPaginator = (props) => {
    * Add posts with the same tags
    */
   post.metadata.tags.forEach((postTag) =>
-    blogArchive?.blogPosts.filter((related) => {
+    BlogArchive?.blogPosts.filter((related) => {
       if (related.metadata.permalink === post.metadata.permalink) {
         return;
       }
