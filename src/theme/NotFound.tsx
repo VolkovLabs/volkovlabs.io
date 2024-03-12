@@ -1,14 +1,14 @@
-import React from 'react';
-import { PageMetadata } from '@docusaurus/theme-common';
-import Layout from '@theme/Layout';
-import { BlogPosts } from '../constants/blogPosts';
-import BlogPostItems from './BlogPostItems';
+import React from "react";
+import { PageMetadata } from "@docusaurus/theme-common";
+import Layout from "@theme/Layout";
+import BlogPostItems from "./BlogPostItems";
+import { BlogArchive } from "../constants";
 
 /**
  * Not Found
  */
 const NotFound = () => {
-  const items = BlogPosts.slice(0, 6).map((post) => {
+  const items = BlogArchive?.blogPosts.slice(0, 6).map((post) => {
     return {
       content: post,
     };
