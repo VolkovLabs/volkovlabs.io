@@ -3,8 +3,32 @@
   margin-top: 0;
 }
 
+.docMainItem {
+  width: 100%;
+  padding: 0 var(--ifm-spacing-horizontal);
+}
+
+.docRightItem {
+  max-width: 30%;
+  width: 100%;
+}
+
+.docRightItem > div:first-child > div > a > img {
+  width: 100%;
+  max-width: 180px;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.docRightItem > div:first-child > div {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
 @media (min-width: 997px) {
-  .docItemCol {
-    max-width: 82% !important;
+  .docMainItem {
+    width: 100%;
+    max-width: 70%;
+    padding: 0 var(--ifm-spacing-horizontal);
   }
 }

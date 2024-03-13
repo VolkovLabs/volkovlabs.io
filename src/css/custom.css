@@ -67,8 +67,8 @@
 
 .icon-plugins-echarts-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-echarts-panel/logo.svg")
     no-repeat;
@@ -82,8 +82,8 @@
 
 .icon-plugins-base64-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-image-panel/logo.svg")
     no-repeat;
@@ -97,8 +97,8 @@
 
 .icon-plugins-calendar-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-calendar-panel/logo.svg")
     no-repeat;
@@ -112,8 +112,8 @@
 
 .icon-plugins-dt-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-dynamictext-panel/logo.svg")
     no-repeat;
@@ -127,8 +127,8 @@
 
 .icon-plugins-form-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-form-panel/logo.svg")
     no-repeat;
@@ -142,8 +142,8 @@
 
 .icon-plugins-env-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-env-datasource/logo.svg")
     no-repeat;
@@ -157,8 +157,8 @@
 
 .icon-plugins-grapi-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-grapi-datasource/logo.svg")
     no-repeat;
@@ -172,8 +172,8 @@
 
 .icon-plugins-rss-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-rss-datasource/logo.svg")
     no-repeat;
@@ -187,8 +187,8 @@
 
 .icon-plugins-static-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-static-datasource/logo.svg")
     no-repeat;
@@ -202,8 +202,8 @@
 
 .icon-plugins-variable-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/plugins/volkovlabs-variable-panel/logo.svg")
     no-repeat;
@@ -217,8 +217,8 @@
 
 .icon-youtube-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/index/youtube.svg") no-repeat;
   margin-right: 0.5rem;
@@ -230,8 +230,8 @@
 
 .icon-github-link::before {
   content: "";
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: flex;
   background: url("/static/img/index/github.svg") no-repeat;
   margin-right: 0.5rem;
