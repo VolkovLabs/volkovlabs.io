@@ -24,7 +24,7 @@ export const Plugin = ({
       <a href={href} target={target}>
         <ThemedImage
           role="img"
-          height="160px"
+          height="120px"
           sources={{
             light: useBaseUrl(`/img/plugins/${name}/logo.svg`),
             dark: useBaseUrl(`/img/plugins/${name}/logo.dark.svg`),
