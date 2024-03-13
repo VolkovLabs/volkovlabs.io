@@ -13,6 +13,18 @@
   width: 100%;
 }
 
+.docRightItem > div:first-child > div > a > img {
+  width: 100%;
+  max-width: 180px;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.docRightItem > div:first-child > div {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
 @media (min-width: 997px) {
   .docMainItem {
     width: 100%;
