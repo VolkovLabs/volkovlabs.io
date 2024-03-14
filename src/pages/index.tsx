@@ -78,9 +78,9 @@ const Main = (siteConfig) => {
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>BI(G)</span>
         </h2>
-        <div className="container margin-vert--lg">
+        <div className="container">
           <div className="row">
-            <div className="col col--7 margin-vert--lg">
+            <div className="col col--8 margin-vert--lg">
               <h1 className="hero__title margin-vert--lg">
                 {siteConfig.tagline}
               </h1>
@@ -102,9 +102,9 @@ const Main = (siteConfig) => {
                 </a>
               </div>
             </div>
-            <div className="col col--5">
+            <div className="col col--4 margin-vert--md">
               <ThemedImage
-                className={clsx(styles.heroBannerLogo, "margin-vert--md")}
+                className={clsx(styles.heroBannerLogo)}
                 sources={{
                   light: useBaseUrl("/img/index/big.svg"),
                   dark: useBaseUrl("/img/index/big.dark.svg"),
