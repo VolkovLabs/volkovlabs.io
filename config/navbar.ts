@@ -78,7 +78,7 @@ export const NAVBAR = {
     {
       to: "/plugins/",
       position: "left",
-      label: "Plugins",
+      label: "Open-Source Plugins",
       "aria-label": "Plugins",
       items: [
         {
