@@ -10,11 +10,11 @@ import Image from "@theme/Image";
 
 # Sync dashboard variables with Data Manipulation plugin
 
-This blog post was initiated by a [particular question](link) from the Community. 
+This blog post was initiated by a [particular question](link) from the Community.
 
 While working on a detailed answer, we realized that the solution to this question covers multiple hot Grafana topics and might thus be of interest to many Community members.
 
-Collaboration with the Community, if used wisely, can produce great results. Many times it inspired us to take an unexpected but very anticipated turn on the product roadmap. Collecting ideas and struggles worldwide is a clever way to move forward by creating the most coveted products. 
+Collaboration with the Community, if used wisely, can produce great results. Many times it inspired us to take an unexpected but very anticipated turn on the product roadmap. Collecting ideas and struggles worldwide is a clever way to move forward by creating the most coveted products.
 
 We are aware that our readers come from a wide range of backgrounds. To better convey today's topic, we constructed a tiny project for which we describe two states—current and enhanced. Following this article, you can learn how to go from one to another, or in other words, you can start with a current-state dashboard and then enhance it with all the required features.
 
@@ -24,8 +24,8 @@ We are open to questions; please leave them as comments on our [YouTube channel]
 
 We will start by describing the product in its current state.
 
- - A Grafana dashboard with three hierarchical dashboard variables. 
- - Any analytical chart that rebuilds according to the selected dashboard variable combination. The nature of the chart is unimportant.  
+- A Grafana dashboard with three hierarchical dashboard variables.
+- Any analytical chart that rebuilds according to the selected dashboard variable combination. The nature of the chart is unimportant.
 
 <Image
   title="The product in the current state."
@@ -172,12 +172,14 @@ For reference below are the dashboard variables described in the JSON format:
 ## Requirements for the enhanced state
 
 The requirements for the enhanced state are as follows:
+
 - Add the Data Manipulation panel that mirrors the functionality of the dashboard variables.
 
 The described solution consists of these components:
- - Synchronization between dashboard variables and the Data Manipulation form elements.
- - Using a new Data Manipulation feature **Element Value Changed**. It is a JavaScript code area that is executed in the event of any form element changing a value. 
- - Conditional enablement of the **Submit** button.
+
+- Synchronization between dashboard variables and the Data Manipulation form elements.
+- Using a new Data Manipulation feature **Element Value Changed**. It is a JavaScript code area that is executed in the event of any form element changing a value.
+- Conditional enablement of the **Submit** button.
 
 <Image
   title="The final product."
@@ -201,14 +203,14 @@ We add the Data Manipulation panel and create three form elements with the type 
 
   Thus, we use the same approach, namely the [Static Data Source](/plugins/volkovlabs-static-datasource). As shown below, we create three queries: Facility Options, Room Options, Bench Options.
 
-  All queries return two columns: `value[string]` and `label[string]`. The values for the Facility Options are hard-coded. For the Room Options and Bench options, the values are taken from the currently selected `facility` and `room` dashboard variables respectively. 
+  All queries return two columns: `value[string]` and `label[string]`. The values for the Facility Options are hard-coded. For the Room Options and Bench options, the values are taken from the currently selected `facility` and `room` dashboard variables respectively.
 
 <Image
   title="Specify option lists for the three form elements."
   src="/img/blog/2024-03-12-form-variables/options-query.png"
 />
 
-- After a data frame is configured, we can map its fields with the form elements. 
+- After a data frame is configured, we can map its fields with the form elements.
 
   In the current Data Manipulation panel release, every **Select with Custom Options** type has three choices for the **Options source**: **Query**, **Custom**, and **Code**.
 
@@ -219,9 +221,9 @@ We add the Data Manipulation panel and create three form elements with the type 
   src="/img/blog/2024-03-12-form-variables/query-options-source.png"
 />
 
-At this point, your Data Manipulation form should have three form elements with hierarchical dependencies. 
+At this point, your Data Manipulation form should have three form elements with hierarchical dependencies.
 That means that the listing of Room Names is limited by the selected Facility Name and the listing of Bench Names is limited by the selected Room Name.
- 
+
 <Image
   title="Three form elements with hierarchical dependencies.."
   src="/img/blog/2024-03-12-form-variables/query-options-example.png"
@@ -235,7 +237,7 @@ In this example two sets of filters, in the dashboard variables and the Data Man
 
 ### Step 3. Sync the initial values
 
-If you open the dashboard now, the Data Manipulation will display "Choose" in all **Select with Custom Options** element types. At this step, we sync the Data Manipulation form elements with the dashboard variables for the initial load event. 
+If you open the dashboard now, the Data Manipulation will display "Choose" in all **Select with Custom Options** element types. At this step, we sync the Data Manipulation form elements with the dashboard variables for the initial load event.
 
 <Image
   title="At this step, the form elements are not synced with the dashboard variables on Initial load."
@@ -244,21 +246,21 @@ If you open the dashboard now, the Data Manipulation will display "Choose" in al
 
 To facilitate the Initial load synchronization between dashboard variables and the Data Manipulation form elements we do the following:
 
- - Add a new query to the Data Manipulation Form returning the necessary values. We name it 'Initial Values'. In the values specify a reference to the corresponding dashboard variables. 
+- Add a new query to the Data Manipulation Form returning the necessary values. We name it 'Initial Values'. In the values specify a reference to the corresponding dashboard variables.
 
 <Image
   title="Initial Values query for the panel."
   src="/img/blog/2024-03-12-form-variables/initial-values.png"
 />
 
--  Update the Data Manipulation panel options to enable the **Query** option for **Initial Action**.
+- Update the Data Manipulation panel options to enable the **Query** option for **Initial Action**.
 
 <Image
   title="Enabled 'Query' for the 'Initial Action'."
   src="/img/blog/2024-03-12-form-variables/query-initial-action.png"
 />
 
-- For every form element specify the field where an initial value should come from. When the **Query** selected in the **Initial Action**, a new parameter **Query Field** appears. Populate it with the appropriate field name. 
+- For every form element specify the field where an initial value should come from. When the **Query** selected in the **Initial Action**, a new parameter **Query Field** appears. Populate it with the appropriate field name.
 
 <Image
   title="'Query Field' parameter appears when you select 'Query for 'Initial Action' parameter as mentioned above."
@@ -267,12 +269,12 @@ To facilitate the Initial load synchronization between dashboard variables and t
 
 ### Step 4. Ensure the values synchronize in real time
 
-In this step, we ensure that the changes are reflected in the dashboard variable whenever a user changes anything on the Data Manipulation form. 
+In this step, we ensure that the changes are reflected in the dashboard variable whenever a user changes anything on the Data Manipulation form.
 That can be done in the newest Data Manipulation option **Element Value Changed**, section **Form Events**.
 
 :::note
 
- The opposite synchronization is already in place since the values for the current Data Manipulation form elements are taken from the dashboard variables.
+The opposite synchronization is already in place since the values for the current Data Manipulation form elements are taken from the dashboard variables.
 
 :::
 
@@ -314,14 +316,14 @@ The most appealing scenario is when the **Submit** button is initiated in the di
 
 That can be achieved by the following:
 
- - Set **Enable Update** option to **Manual**.
+- Set **Enable Update** option to **Manual**.
 
 <Image
   title="Set 'Enable Update' option to 'Manual'."
   src="/img/blog/2024-03-12-form-variables/enable-update-manual.png"
 />
 
- - Modify the JavaScript code in the **Element Value Changed** by adding one row at the end.
+- Modify the JavaScript code in the **Element Value Changed** by adding one row at the end.
 
 <Image
   title="Modify the JavaScript code to enable the 'Submit' button."
@@ -336,13 +338,10 @@ context.panel.enableSubmit();
 
 ## Congratulations
 
-We hope you were able to follow the provided steps and arrived to the same results as we did. If yes, congratulations to you, you now are ready for the next Grafana adventure. 
+We hope you were able to follow the provided steps and arrived to the same results as we did. If yes, congratulations to you, you now are ready for the next Grafana adventure.
 
 ## Explore further on our GitHub
 
 A working dashboard example is available in the [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/provisioning/dashboards/variables.json).
 
 If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube videos](https://www.youtube.com/@volkovlabs).
-
-
-
