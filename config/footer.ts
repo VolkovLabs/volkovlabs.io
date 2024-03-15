@@ -10,7 +10,7 @@ export const FOOTER = {
   style: "light",
   links: [
     {
-      title: "Plugins",
+      title: "Open-Source Plugins",
       items: [
         {
           label: "Apache ECharts Panel",
