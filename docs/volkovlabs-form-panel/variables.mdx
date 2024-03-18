@@ -4,6 +4,9 @@ tags:
   - Variables
 ---
 
+import Video from "@theme/Video";
+import BlogPost from "@theme/BlogPost";
+
 # Variables
 
 Dashboard and global variables are replaced automatically in the following elements:
@@ -21,3 +24,20 @@ Three types of variables are thoroughly explained in our [Grafana Crash Course](
 const formIcon = elements.find((element) => element.id === "icon");
 formIcon.value = "$IconVar";
 ```
+
+## Synchronize with dashboard variables
+
+To demonstrate how Data Manipulation plugin can work with dashboard variables we created the following blog post.
+
+<BlogPost
+  href="/blog/form-panel-use-variables-20240301/"
+  src="/img/blog/2024-03-12-form-variables/banner.png"
+  title="Synchronize dashboard variables with Data Manipulation panel."
+/>
+
+The related video is a work in progress now. It should be ready in March-April of 2024.  
+
+<Video
+  src="https://www.youtube.com/embed/FMSEGGFbJy"
+  title="Synchronize dashboard variables with Data Manipulation panel."
+/>

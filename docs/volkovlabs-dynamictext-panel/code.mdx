@@ -8,6 +8,7 @@ image: /img/plugins/volkovlabs-dynamictext-panel/replace.png
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
+import BlogPost from "@theme/BlogPost";
 
 # JavaScript Code
 
@@ -342,3 +343,25 @@ We believe the solution might be helpful for many, so here is how you can do it.
 ```js
 handlebars.registerHelper("parse", (context) => JSON.parse(context));
 ```
+
+
+## Anonymizer
+
+Anonymizer is the tool we created for internal purposes of converting real production data into dummy values in order to have our dashboards demo-ready. 
+
+Anonymizer is another great example of how embedded JavaScript can simplify tedious and repetitive tasks. 
+
+You can find all you need in the following BlogPost:
+
+<BlogPost
+  href="/blog/anonymizer-20240302/"
+  src="/img/blog/2024-03-02-anonymizer/banner.png"
+  title="Streamline demos with Dynamic Text Anonymizer."
+/>
+
+If you are a visual style learner, you can watch the video. It covers the same ground.
+
+<Video
+  src="https://www.youtube.com/embed/FMSEGGFbJy0"
+  title="Grafana Anonymizer | Convert dashboard values on the fly for demo purposes."
+/>
