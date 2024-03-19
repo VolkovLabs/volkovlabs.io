@@ -4,8 +4,29 @@ tags:
   - Variables
 ---
 
+import BlogPost from "@theme/BlogPost";
+import Video from "@theme/Video";
+
 # Variables
 
 Base64 Image/Video/Audio/PDF Panel supports dashboard and global variables in the `Image URL` panel option.
 
 These three types of variables are explained in our [Grafana Crash Course](/grafana/variables).
+
+## Example of dashboard variable in the Base64 panel
+
+Below you can find an example of how a dashboard variable can be used to dynamically determine which file to display on the panel. The following blog post describes a project that integrates three open-source plugins to solve the task of uploading a file into a database and then immediately showing what has been uploaded.
+
+The plugins used in the example are:
+
+- [The Data Manipulation](/plugins/volkovlabs-form-panel/) to provide with the File type element for file upload.
+- [The Variable panel](/plugins/volkovlabs-variable-panel/) to provide a choice of what file to display.
+- [The Base64 panel](/plugins/volkovlabs-image-panel/) to display a selected file.
+
+<BlogPost
+  href="/blog/form-panel-file-upload-20240310/"
+  src="/img/blog/2024-03-10-file-upload/banner.png"
+  title="File upload using the Grafana dashboard."
+/>
+
+If you are a visual style learner, you can watch the video (coming soon). It covers the same ground.
