@@ -118,7 +118,7 @@ const sidebars: SidebarsConfig = {
       label: "Business Charts Panel",
       type: "category",
       description:
-        "Powerful visualization plugin for Grafana powered by Apache ECharts.",
+        "Powerful visualizations for Grafana powered by Apache ECharts.",
       link: {
         type: "doc",
         id: "volkovlabs-echarts-panel/index",
