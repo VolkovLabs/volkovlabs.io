@@ -13,14 +13,14 @@ export const FOOTER = {
       title: "Open-Source Plugins",
       items: [
         {
-          label: "Apache ECharts Panel",
-          to: "/plugins/volkovlabs-echarts-panel/",
-          className: "volkovlabs-footer-link icon-plugins-echarts-link",
-        },
-        {
           label: "Base64 Image/PDF Panel",
           to: "/plugins/volkovlabs-image-panel/",
           className: "volkovlabs-footer-link icon-plugins-base64-link",
+        },
+        {
+          label: "Business Charts Panel",
+          to: "/plugins/volkovlabs-echarts-panel/",
+          className: "volkovlabs-footer-link icon-plugins-echarts-link",
         },
         {
           label: "Calendar Panel",
