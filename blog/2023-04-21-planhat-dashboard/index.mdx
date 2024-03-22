@@ -4,7 +4,7 @@ authors:
     image_url: https://github.com/alex6058.png
     title: Director of Customer Success Strategy and Operations, Redis
 slug: planhat-dashboard-20230421/
-tags: [Apache ECharts, Analytics]
+tags: [Business Charts, Analytics]
 image: /img/blog/2023-04-21-planhat-dashboard/banner.png
 keywords: [Grafana, API, Business, Planhat]
 ---
@@ -125,19 +125,19 @@ Out of the box, it supports text on the panel, a clickable popup window with des
 
 ## Renewal Progress
 
-Another community plugin, which also needs to be installed [Apache ECharts](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/).
+Another community plugin, which also needs to be installed [Business Charts](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/).
 
 <Image
   title="Cumulative won ARR and lost renewals for the Time Range."
   src="/img/blog/2023-04-21-planhat-dashboard/echarts.png"
 />
 
-For those willing to take on the challenge, the Apache EChart panel is a potent tool that can unlock a world of possibilities. It allows for virtually any data transformation and visualization options, making it the gem of the Renewal Dashboard.
+For those willing to take on the challenge, the Business Charts panel is a potent tool that can unlock a world of possibilities. It allows for virtually any data transformation and visualization options, making it the gem of the Renewal Dashboard.
 
 However, unlike most Grafana panels, it's not plug-and-play. You need to write JavaScript code. This means it requires a certain level of mastery in JavaScript and an understanding of the Apache ECharts principles.
 
-While there is an extensive demo available [Apache ECharts Examples](https://echarts.volkovlabs.io/d/pL5iH7FVk/home?orgId=1) that covers hundreds of various scenarios, it doesn't necessarily cover every scenario.
+While there is an extensive demo available [Business Charts Examples](https://echarts.volkovlabs.io/d/pL5iH7FVk/home?orgId=1) that covers hundreds of various scenarios, it doesn't necessarily cover every scenario.
 
 In my case, I needed to get four time-series (renewal won, renewal lost, positive forecast, and negative forecast) and draw two lines (cumulative won renewal, including forecast, and cumulatively lost renewal, including forecast) out of them. I also needed to support custom fill and display a comprehensive tooltip.
 
-Despite the steep learning curve, the Apache EChart panel is well worth the effort. With its ability to implement the popular Apache EChart library in Grafana, the possibilities are truly endless. And for those who are up to the challenge, it can be a valuable addition to their visualization toolkit.
+Despite the steep learning curve, the Business Charts panel is well worth the effort. With its ability to implement the popular Apache EChart library in Grafana, the possibilities are truly endless. And for those who are up to the challenge, it can be a valuable addition to their visualization toolkit.
