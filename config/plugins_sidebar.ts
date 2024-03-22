@@ -110,7 +110,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "link",
-          href: "/blog/tags/apache-e-charts",
+          href: "/blog/tags/business-charts",
           label: "Related Blog posts",
         },
         "volkovlabs-echarts-panel/release",
