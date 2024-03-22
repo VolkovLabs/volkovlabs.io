@@ -56,7 +56,7 @@
             transform="matrix(0.969,-0.245,0.245,0.969,473.0925,234.3019)" fill="#333">Visualize</text>
         <text dominant-baseline="central" text-anchor="middle"
             style="font-size:14px;font-family:sans-serif;" xml:space="preserve"
-            transform="matrix(0.476,-0.879,0.879,0.476,498.6736,100.7761)" fill="#333">Apache ECharts</text>
+            transform="matrix(0.476,-0.879,0.879,0.476,498.6736,100.7761)" fill="#333">Business Charts</text>
         <text dominant-baseline="central" text-anchor="middle"
             style="font-size:14px;font-family:sans-serif;"
             transform="matrix(0.969,-0.245,0.245,0.969,581.2776,206.9057)" fill="#333">Calendar</text>

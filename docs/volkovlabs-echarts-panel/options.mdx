@@ -1,6 +1,6 @@
 ---
 tags:
-  - Apache ECharts
+  - Business Charts
   - JavaScript Code
 image: /img/plugins/volkovlabs-echarts-panel/schema.png
 ---
@@ -8,49 +8,54 @@ image: /img/plugins/volkovlabs-echarts-panel/schema.png
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# ECharts Function
+# Charts Function
 
-`setOption(options)` is the primary function in the Apache ECharts library. It is depicted as a square on the right in the schema below. This function gets called by the Apache ECharts panel (the ECharts Function) with only one required parameter `options`.
+`setOption(options)` is the primary function in the [Apache ECharts library](https://echarts.apache.org/en/index.html). It is depicted as a square on the right in the schema below. This function gets called by the Business Charts panel (the Charts Function) with only one required parameter `options`.
 
 The parameter `options` describes the charts in the JSON format.
 
-To configure the Apache ECharts panel mainly means writing the ECharts Function. Generally, this function contains two parts:
+To configure the Business Charts panel mainly means writing the Charts Function. Generally, this function contains two parts:
 
 - JavaScript to read data points from the data source.
 - JSON to specify a graph as `options`.
 
-Both parts can use parameters passed into the ECharts function. You can find the complete list of parameters in the table below.
+Both parts can use parameters passed into the Charts function. You can find the complete list of parameters in the table below.
 
 See the schema and the print screen below for illustration.
 
 <Image
-  title="The ECharts function receives many parameters from Grafana and sends one to the setOption() function."
+  title="The Charts function receives many parameters from Grafana and sends one to the setOption() function."
   src="/img/plugins/volkovlabs-echarts-panel/schema.png"
+/>
+
+<Image
+  title="The Charts function."
+  src="/img/plugins/volkovlabs-echarts-panel/charts-function.png"
 />
 
 ## Options
 
-The `return` clause is where you need to specify the `options` parameter to be passed into the `setOption(options)` Apache ECharts function.
+The `return` clause is where you need to specify the `options` parameter to be passed into the `setOption(options)` Apache ECharts library function.
 
 <Image
-  title="Apache ECharts Panel provides the code editor to specify ECharts function."
+  title="The Business Charts Panel provides the code editor to specify the Charts function."
   src="/img/plugins/volkovlabs-echarts-panel/function.png"
 />
 
 ## Parameters
 
-| Parameter                                  | Description                                                               |
-| ------------------------------------------ | ------------------------------------------------------------------------- |
-| `data`                                     | Object containing a time range, series, and request information.          |
-| `echarts`                                  | ECharts library.                                                          |
-| `echartsInstance`                          | Instance of the ECharts library. See the example in the screenshot above. |
-| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.                    |
-| `eventBus`                                 | Publish and subscribe to application events.                              |
-| `locationService`                          | Works with browser location and history.                                  |
-| `notifyError(['Header', 'Error Message'])` | Display error notifications.                                              |
-| `notifySuccess(['Header', 'Message'])`     | Display success notifications.                                            |
-| `replaceVariables`                         | Function to interpolate variables.                                        |
-| `theme`                                    | Theme object.                                                             |
+| Parameter                                  | Description                                                                      |
+| ------------------------------------------ | -------------------------------------------------------------------------------- |
+| `data`                                     | Object containing a time range, series, and request information.                 |
+| `echarts`                                  | Apache ECharts library.                                                          |
+| `echartsInstance`                          | Instance of the Apache ECharts library. See the example in the screenshot above. |
+| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.                           |
+| `eventBus`                                 | Publish and subscribe to application events.                                     |
+| `locationService`                          | Works with browser location and history.                                         |
+| `notifyError(['Header', 'Error Message'])` | Display error notifications.                                                     |
+| `notifySuccess(['Header', 'Message'])`     | Display success notifications.                                                   |
+| `replaceVariables`                         | Function to interpolate variables.                                               |
+| `theme`                                    | Theme object.                                                                    |
 
 To inspect those parameters, use the browser's developer console.
 

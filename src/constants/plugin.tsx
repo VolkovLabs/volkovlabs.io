@@ -6,14 +6,6 @@ import { PluginItem } from "../types";
  */
 export const PluginList: PluginItem[] = [
   {
-    title: "Apache ECharts Panel",
-    name: "volkovlabs-echarts-panel",
-    description: (
-      <>Powerful charting and visualization library Apache ECharts.</>
-    ),
-    href: "/plugins/volkovlabs-echarts-panel/",
-  },
-  {
     title: "Base64 Image/Video/Audio/PDF Panel",
     name: "volkovlabs-image-panel",
     description: (
@@ -23,6 +15,14 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/volkovlabs-image-panel/",
+  },
+  {
+    title: "Business Charts Panel",
+    name: "volkovlabs-echarts-panel",
+    description: (
+      <>Powerful visualizations for Grafana powered by Apache ECharts.</>
+    ),
+    href: "/plugins/volkovlabs-echarts-panel/",
   },
   {
     title: "Calendar Panel",

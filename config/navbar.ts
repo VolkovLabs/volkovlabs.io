@@ -82,14 +82,14 @@ export const NAVBAR = {
       "aria-label": "Plugins",
       items: [
         {
-          label: "Apache ECharts Panel",
-          to: "/plugins/volkovlabs-echarts-panel/",
-          className: "volkovlabs-link icon-plugins-echarts-link",
-        },
-        {
           label: "Base64 Panel",
           to: "/plugins/volkovlabs-image-panel/",
           className: "volkovlabs-link icon-plugins-base64-link",
+        },
+        {
+          label: "Business Charts Panel",
+          to: "/plugins/volkovlabs-echarts-panel/",
+          className: "volkovlabs-link icon-plugins-echarts-link",
         },
         {
           label: "Calendar Panel",

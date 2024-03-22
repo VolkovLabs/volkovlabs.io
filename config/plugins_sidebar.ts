@@ -19,6 +19,43 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "volkovlabs-image-panel/index",
+          label: "Introduction",
+        },
+        "volkovlabs-image-panel/formats",
+        {
+          items: [
+            "volkovlabs-image-panel/datasources",
+            "volkovlabs-image-panel/toolbar",
+            "volkovlabs-image-panel/variables",
+          ],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-image-panel/features",
+          },
+        },
+        {
+          type: "link",
+          href: "/blog/tags/base-64-image-video-audio-pdf",
+          label: "Related Blog posts",
+        },
+        "volkovlabs-image-panel/release",
+      ],
+      label: "Base64 Image/PDF Panel",
+      type: "category",
+      description:
+        "Display Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-image-panel/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
           id: "volkovlabs-echarts-panel/index",
           label: "Introduction",
         },
@@ -73,55 +110,18 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "link",
-          href: "/blog/tags/apache-e-charts",
+          href: "/blog/tags/business-charts",
           label: "Related Blog posts",
         },
         "volkovlabs-echarts-panel/release",
       ],
-      label: "Apache ECharts Panel",
+      label: "Business Charts Panel",
       type: "category",
       description:
-        "Powerful charting and visualization library Apache ECharts.",
+        "Powerful visualizations for Grafana powered by Apache ECharts.",
       link: {
         type: "doc",
         id: "volkovlabs-echarts-panel/index",
-      },
-    },
-    {
-      items: [
-        {
-          type: "doc",
-          id: "volkovlabs-image-panel/index",
-          label: "Introduction",
-        },
-        "volkovlabs-image-panel/formats",
-        {
-          items: [
-            "volkovlabs-image-panel/datasources",
-            "volkovlabs-image-panel/toolbar",
-            "volkovlabs-image-panel/variables",
-          ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "volkovlabs-image-panel/features",
-          },
-        },
-        {
-          type: "link",
-          href: "/blog/tags/base-64-image-video-audio-pdf",
-          label: "Related Blog posts",
-        },
-        "volkovlabs-image-panel/release",
-      ],
-      label: "Base64 Image/PDF Panel",
-      type: "category",
-      description:
-        "Display Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, PDF formats.",
-      link: {
-        type: "doc",
-        id: "volkovlabs-image-panel/index",
       },
     },
     {
