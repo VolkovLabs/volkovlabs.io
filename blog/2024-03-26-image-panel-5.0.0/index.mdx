@@ -16,22 +16,51 @@ We are excited to announce the release of the Base64 Image/Video/Audio/PDF Panel
 
 - Requires Grafana 10 and Grafana 11.
 - Added compatibility with Grafana 10.4.1.
-- Added the ability to customize the alert message.
+- Added the ability to customize the No Results message.
 - Added infinity play option.
 
 :::info Grafana Plugins catalog
 The plugin is under review.
 :::
 
+## Downloads increase
+
+On March 8, 2024, the Base64 plugin received a significant download number increase. Right now this plugin is at an impressive 1.81M total downloads mark with an average daily downloads around 18K.  
+Thank you for your continuous support of our work. The graph below is simply beautiful and very inspiring to have.
+
+<Image
+  title="The Base64 plugin downloads."
+  src="/img/blog/2024-03-26-image-panel-5.0.0/downloads.png"
+/>
+
 ## Grafana 11
 
-We are ready for Grafana 11. Removed support for Grafana 9.
+This is a breaking change. Our plugins always follow the latest Grafana versions and stay compatible with the most recent releases. That means, however, that we have to sunset the support of obsolete releases. 
+The newest Base64 5.0.0 is fully aligned with any Grafana starting from the 10.4.1 release. 
 
-## Customize the Alert message
+## Customize the No Results message
+
+We added a new option where you can specify a message to display instead of the image in case of loading problems. By default, the message says "Nothing to display..."
+
+<Image
+  title="Customize the No Results message using a new option."
+  src="/img/blog/2024-03-26-image-panel-5.0.0/nothing.png"
+/>
 
 ## Infinity play option
 
+This new option allows you to play video/audio files in an endless loop. 
+
+<Image
+  title="New option allows to display files in an endless loop."
+  src="/img/blog/2024-03-26-image-panel-5.0.0/infinity.png"
+/>
+
 ## File Upload video
+
+Below is one of our YouTube videos with a use-case review. It features three open-source plugins (the Data Manipulation plugin, Variable panel and Base64 panel) that come together on one Grafana dashboard to provide a solution for a long-standing task - file upload using a Grafana dashboard and immediate display of the uploaded files. 
+
+The Base64 plugin is an essential element in this example. 
 
 <Video
   src="https://www.youtube.com/embed/V4Sza0uDQNs"
