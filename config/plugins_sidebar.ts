@@ -23,10 +23,10 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         "volkovlabs-image-panel/formats",
+        "volkovlabs-image-panel/options",
         {
           items: [
             "volkovlabs-image-panel/datasources",
-            "volkovlabs-image-panel/toolbar",
             "volkovlabs-image-panel/variables",
           ],
           label: "Features",

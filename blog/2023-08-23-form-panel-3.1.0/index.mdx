@@ -65,16 +65,16 @@ if (select) {
 
 The code editor for the custom payload is available for initial requests using the data source. When the data source is selected, you can specify a custom payload to execute the `rawSql` SQL statement and any other property required for a specific data source.
 
-```
+```javascript
 return {
-  rawSql: '',
-  format: 'table',
-}
+  rawSql: "",
+  format: "table",
+};
 ```
 
 A response from the data source can be manually parsed in the custom code using the `toDataQueryResponse()` function, which returns data frames. Values from the data frames can be applied to the form elements as described in the documentation.
 
-```
+```javascript
 const dataQuery = toDataQueryResponse(response);
 console.log(dataQuery);
 ```
@@ -94,7 +94,7 @@ In the update request, you can send the payload as follows:
 
 In the **Custom Code** section, you can create your own logic to form a payload.
 
-```
+```javascript
 const payload = {};
 
 elements.forEach((element) => {
@@ -103,7 +103,7 @@ elements.forEach((element) => {
   }
 
   payload[element.id] = element.value;
-})
+});
 
 return payload;
 
@@ -111,8 +111,8 @@ return payload;
  * Data Source payload
  */
 return {
-  rawSql: '',
-  format: 'table',
+  rawSql: "",
+  format: "table",
 };
 ```
 
@@ -149,7 +149,7 @@ To get the latest value of any field returned from the data source, provide the 
 
 The update request payload for the data source should be created in the custom code according to the data source specification. For SQL databases, it's `rawSql` and `format`:
 
-```
+```javascript
 const payload = {};
 
 elements.forEach((element) => {
@@ -158,14 +158,14 @@ elements.forEach((element) => {
   }
 
   payload[element.id] = element.value;
-})
+});
 
 /**
  * Data Source payload
  */
 return {
-  rawSql: '',
-  format: 'table',
+  rawSql: "",
+  format: "table",
 };
 ```
 
@@ -178,9 +178,9 @@ return {
 
 In Data Manipulation Panel 3.X, the `onChange()` function is required to manually update the form element's values in the local state.
 
-```
+```javascript
 onChange(elements.map((element) => {
-  return element.id === 'name' ? { ...element, value: 'test' } : element
+  return element.id === 'name' ? { ...element, value: 'test' } : element;
 });
 ```
 
