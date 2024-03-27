@@ -1,0 +1,126 @@
+---
+authors: [daria]
+slug: image-panel-5.0.0-20240326/
+tags: [Base64 Image/Video/Audio/PDF, Release Notes]
+image: /img/blog/2024-03-26-image-panel-5.0.0/banner.png
+keywords: [Base64, Panel, Zoom, Label, Images]
+---
+
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Video from "@theme/Video";
+
+# Base64 Image/Video/Audio/PDF Panel 5.0.0
+
+We are excited to announce the release of the Base64 Image/Video/Audio/PDF Panel 5.0.0. This major release includes the following updates:
+
+- Removed support for Grafana 9. Requires Grafana 10 and Grafana 11.
+- Added compatibility with Grafana 10.4.1.
+- Added the ability to customize the No Results message.
+- Added infinity play option.
+
+:::info Grafana Plugins catalog
+The plugin is under review.
+:::
+
+## Downloads increase
+
+On March 8, 2024, the Base64 plugin received a significant download number increase. Right now this plugin is at an impressive 1.81M total downloads mark with an average daily downloads around 18K.
+
+Thank you for your continuous support of our work. The graph below is simply beautiful and very inspiring to have.
+
+<Image
+  title="The Base64 plugin was downloaded 1.81M times."
+  src="/img/blog/2024-03-26-image-panel-5.0.0/downloads.png"
+/>
+
+## Grafana 11
+
+:::warning
+This is a breaking change.
+:::
+
+Our plugins always follow the latest Grafana versions and stay compatible with the most recent releases. That means, however, that we have to sunset the support of obsolete releases.
+
+The latest Base64 5.0.0 fully supports Grafana 10 and upcoming 11 releases.
+
+## Customize the No Results message
+
+We added a new option where you can specify a message to display instead of the image in case of loading problems or no data error. By default, the message says "Nothing to display..."
+
+<Image
+  title="Customize the No Results message using a new option."
+  src="/img/blog/2024-03-26-image-panel-5.0.0/nothing.png"
+/>
+
+## Infinity play option
+
+This new option allows you to play video and audio files in an endless loop.
+
+<Image
+  title="New option allows to display files in an endless loop."
+  src="/img/blog/2024-03-26-image-panel-5.0.0/infinity.png"
+/>
+
+## File Upload video
+
+Below is one of our YouTube videos with a use-case review. It features three open-source plugins that come together on one Grafana dashboard to provide a solution for a long-standing task - file upload using a Grafana dashboard and immediate display of the uploaded files.
+
+The plugins used in the example are:
+
+- [The Data Manipulation](/plugins/volkovlabs-form-panel/) to provide with the File type element for file upload.
+- [The Variable panel](/plugins/volkovlabs-variable-panel/) to provide a choice of what file to display.
+- [The Base64 panel](/plugins/volkovlabs-image-panel/) to display a selected file.
+
+The Base64 plugin is an essential element in this example.
+
+<Video
+  src="https://www.youtube.com/embed/V4Sza0uDQNs"
+  title="File Upload using Grafana dashboard."
+/>
+
+## Getting Started
+
+You can install Base64 Image/Video/Audio/PDF Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install volkovlabs-image-panel
+```
+
+## YouTube Tutorial
+
+Base64 Image/Video/Audio/PDF Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.
+
+<Video
+  src="https://www.youtube.com/embed/1_bgLSehjhg"
+  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."
+/>
+
+## Release Notes
+
+### Breaking changes
+
+- Requires Grafana 10 and Grafana 11
+
+### Features / Enhancements in 5.0.0
+
+- Added the ability to customize the alert message (#96)
+- Updated to Grafana 10.4.1 (#97)
+- Remove ArrayVector deprecated in Grafana 11 (#99)
+
+### Features / Enhancements in 4.2.0
+
+- Update ESLint configuration and refactoring (#92)
+- Update dependencies and Actions (#94)
+- Add infinity play option (#93)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
