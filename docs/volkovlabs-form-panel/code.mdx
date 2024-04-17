@@ -129,9 +129,9 @@ The `onOptionsChange` handler is required to update the panel.
 
 ### Update local state in Data Manipulation Panel 3.1.0
 
-```
+```javascript
 onChange(elements.map((element) => {
-  return element.id === 'name' ? { ...element, value: 'test' } : element
+  return element.id === 'name' ? { ...element, value: 'test' } : element;
 });
 ```
 
