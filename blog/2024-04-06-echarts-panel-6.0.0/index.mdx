@@ -27,9 +27,9 @@ The plugin was updated in the Grafana Plugins catalog on April 3, 2024.
 
 ## Business Charts Panel
 
-Usually, we quite easily come up with good, memorable names for our plugins. However, with this plugin, we have struggled a bit. After two years of having our plugin bear a working title, we realized that all that time we worked on the panel that can help visualize any business data, that this plugin is ideal for anyone who creates business dashboards, and that the plugin name should be **Business Charts Panel**. 
+Usually, we quite easily come up with good, memorable names for our plugins. However, with this plugin, we have struggled a bit. After two years of having our plugin bear a working title, we realized that all that time we worked on the panel that can help visualize any business data, that this plugin is ideal for anyone who creates business dashboards, and that the plugin name should be **Business Charts Panel**.
 
-Simple rebranding means all existing features get carried over. 
+Simple rebranding means all existing features get carried over.
 
 Please welcome the new name for the same unique and needed functionality!
 
@@ -62,7 +62,7 @@ This feature is in the beta version. As of now, it should work for simple charts
   src="/img/blog/2024-04-06-echarts-panel-6.0.0/vis-editor.png"
 />
 
-This is one of the most exciting features. Instead of using JavaScript code, you can use UI elements to specify many chart parameters. 
+This is one of the most exciting features. Instead of using JavaScript code, you can use UI elements to specify many chart parameters.
 
 ### Visual Editor Examples
 
@@ -70,11 +70,11 @@ To get you started faster, we have prepared many examples of how the **Visual Ed
 
 1. Find the chart that looks the most of what you need to create.
 2. Open it in Edit mode.
-3. Review how the Visual Editor elements are configured. 
+3. Review how the Visual Editor elements are configured.
 
 ## Auto size editor
 
-This new feature automatically changes the size of the code editor depending on the number of rows in it. It is an intuitive feature that takes usability to the next level. Now users can work with their code with fewer distractions. 
+This new feature automatically changes the size of the code editor depending on the number of rows in it. It is an intuitive feature that takes usability to the next level. Now users can work with their code with fewer distractions.
 
 <Image
   title="The window size changes automatically."
@@ -84,12 +84,12 @@ This new feature automatically changes the size of the code editor depending on 
 ## Context parameters
 
 :::warning
-    It is a breaking change. 
+It is a breaking change.
 :::
 
-All available parameters are now combined under the **Context** option. It makes the searches of what you need easier. Just type **Context.** and all available options will appear. 
+All available parameters are now combined under the **Context** option. It makes the searches of what you need easier. Just type **Context.** and all available options will appear.
 
-However, note, that previously we allowed the direct call, then now it has stopped working. In order to migrate to this release, please, ensure to reference **Context** as a prefix to all options. 
+However, note, that previously we allowed the direct call, then now it has stopped working. In order to migrate to this release, please, ensure to reference **Context** as a prefix to all options.
 
 <Image
   title="Use context to access all available parameters."
@@ -98,23 +98,22 @@ However, note, that previously we allowed the direct call, then now it has stopp
 
 Please refer to the Code parameters migration guide below:
 
-| Parameter        |     | How to reference starting from 6.0.0  |
-| -----------------|---- | ------------------------------------- |
-| data             | ->  | context.panel.data                    |
-| theme            | ->  | context.grafana.theme                 |
-| echartsInstance  | ->  | context.panel.chart                   |
-| echarts          | ->  | context.echarts                       |
-| ecStat           | ->  | context.ecStat                        |
-| replaceVariables | ->  | context.grafana.replaceVariables      |
-| eventBus         | ->  | context.grafana.eventBus              |
-| locationService  | ->  | context.grafana.locationService       |
-| notifySuccess    | ->  | context.grafana.notifySuccess         |
-| notifyError      | ->  | context.grafana.notifyError           |
+| Parameter        |     | How to reference starting from 6.0.0 |
+| ---------------- | --- | ------------------------------------ |
+| data             | ->  | context.panel.data                   |
+| theme            | ->  | context.grafana.theme                |
+| echartsInstance  | ->  | context.panel.chart                  |
+| echarts          | ->  | context.echarts                      |
+| ecStat           | ->  | context.ecStat                       |
+| replaceVariables | ->  | context.grafana.replaceVariables     |
+| eventBus         | ->  | context.grafana.eventBus             |
+| locationService  | ->  | context.grafana.locationService      |
+| notifySuccess    | ->  | context.grafana.notifySuccess        |
+| notifyError      | ->  | context.grafana.notifyError          |
 
 :::note
-   We implemented this feature in all our plugins with embedded JavaScript. 
+We implemented this feature in all our plugins with embedded JavaScript.
 :::
-
 
 ## Grafana 10 and Grafana 11
 
