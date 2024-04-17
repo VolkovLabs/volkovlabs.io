@@ -73,6 +73,7 @@ const sidebars: SidebarsConfig = {
             "volkovlabs-echarts-panel/theme",
             "volkovlabs-echarts-panel/transformations",
             "volkovlabs-echarts-panel/variables",
+            "volkovlabs-echarts-panel/visualeditor",
           ],
           label: "Features",
           type: "category",
