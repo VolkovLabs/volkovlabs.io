@@ -27,9 +27,9 @@ The plugin was updated in the Grafana Plugins catalog on April 3, 2024.
 
 ## Business Charts Panel
 
-Usually, we quite easily come up with good, memorable names for our plugins. However, with this plugin, we have struggled a bit. After two years of having our plugin bear a working title, we realized that all that time we worked on the panel that can help visualize any business data, that this plugin is ideal for anyone who creates business dashboards, and that the plugin name should be **Business Charts Panel**.
+Usually, we quite easily come up with good, memorable names for our plugins. However, with this plugin, we have struggled a bit.
 
-Simple rebranding means all existing features get carried over.
+After two years of having our plugin bear a working title, we realized that all that time we worked on the panel that can help visualize any business data, that this plugin is ideal for anyone who creates business dashboards, and that the plugin name should be **Business Charts Panel**. Simple rebranding means all existing features get carried over.
 
 Please welcome the new name for the same unique and needed functionality!
 
@@ -87,29 +87,31 @@ This new feature automatically changes the size of the code editor depending on 
 It is a breaking change.
 :::
 
-All available parameters are now combined under the **Context** option. It makes the searches of what you need easier. Just type **Context.** and all available options will appear.
+All available parameters are now combined under the **context** parameter. It makes the searches of what you need easier. Just type **context.** and all available options will appear.
 
-However, note, that previously we allowed the direct call, then now it has stopped working. In order to migrate to this release, please, ensure to reference **Context** as a prefix to all options.
+However, note, that previously we allowed the direct call, then now it has stopped working. In order to migrate to this release, please, ensure to reference **context** as a prefix to all options.
 
 <Image
   title="Use context to access all available parameters."
   src="/img/blog/2024-04-06-echarts-panel-6.0.0/context.png"
 />
 
-Please refer to the Code parameters migration guide below:
+### Migration Guide
 
-| Parameter        |     | How to reference starting from 6.0.0 |
-| ---------------- | --- | ------------------------------------ |
-| data             | ->  | context.panel.data                   |
-| theme            | ->  | context.grafana.theme                |
-| echartsInstance  | ->  | context.panel.chart                  |
-| echarts          | ->  | context.echarts                      |
-| ecStat           | ->  | context.ecStat                       |
-| replaceVariables | ->  | context.grafana.replaceVariables     |
-| eventBus         | ->  | context.grafana.eventBus             |
-| locationService  | ->  | context.grafana.locationService      |
-| notifySuccess    | ->  | context.grafana.notifySuccess        |
-| notifyError      | ->  | context.grafana.notifyError          |
+Please refer to the Code parameters migration guide below.
+
+| Parameter        | How to reference starting from 6.0.0 |
+| ---------------- | ------------------------------------ |
+| data             | context.panel.data                   |
+| theme            | context.grafana.theme                |
+| echartsInstance  | context.panel.chart                  |
+| echarts          | context.echarts                      |
+| ecStat           | context.ecStat                       |
+| replaceVariables | context.grafana.replaceVariables     |
+| eventBus         | context.grafana.eventBus             |
+| locationService  | context.grafana.locationService      |
+| notifySuccess    | context.grafana.notifySuccess        |
+| notifyError      | context.grafana.notifyError          |
 
 :::note
 We implemented this feature in all our plugins with embedded JavaScript.
