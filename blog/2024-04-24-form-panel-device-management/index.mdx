@@ -1,6 +1,6 @@
 ---
-authors: [alex]
-slug: form-panel-file-upload-20240310/
+authors: [alex, chris_field]
+slug: form-panel-device-management-20240424/
 tags: [Data Manipulation, Device Management]
 image: /img/blog/2024-03-10-file-upload/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana, Device Management]
@@ -27,7 +27,7 @@ In this case, the initial form values are coming from the panel query to assign 
   src="/img/blog/2024-04-24-form-panel-device-management/get-leds-query.png"
 />
 
-After the panel query is configured, the initial request should be configured as the following screenshot
+After the panel query is configured, the initial request should be configured as the following screenshot.
 
 <Image
   title="Configured initial request to use data from the panel query."
@@ -72,6 +72,7 @@ To update device state through the panel we have to setup an update request. For
 
 Code on the screenshot. To allow updating values on the previous one (which is initial value and submit button will be disabled) we set initial values with the updated values.
 So since now, user can update mode and then update on the previous one.
+
 ```
 const handleResponse = async (response) => {
   if (response && !response.error) {
@@ -97,7 +98,8 @@ const handleResponse = async (response) => {
 return handleResponse(context.panel.response);
 ```
 
-Also data source request should be configured to update device mode.
+Also data source request should be configured to update device mode. It's a new functionality introduced in 4.0.0.
+
 <Image
   title="Data Source query to update device mode."
   src="/img/blog/2024-04-24-form-panel-device-management/update-request-payload.png"
