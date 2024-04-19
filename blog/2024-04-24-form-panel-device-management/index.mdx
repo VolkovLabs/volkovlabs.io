@@ -1,0 +1,112 @@
+---
+authors: [alex]
+slug: form-panel-file-upload-20240310/
+tags: [Data Manipulation, Device Management]
+image: /img/blog/2024-03-10-file-upload/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana, Device Management]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Device management using the Grafana dashboard
+
+### Data Source
+
+A custom frontend data source was developed for device management. It uses REST API calls to get and update device state.
+
+## Data Manipulation options
+
+### Initial Request
+
+Data manipulation supports a various of initial request options such as custom code, data source request and using data from panel query.
+In this case, the initial form values are coming from the panel query to assign data fields on form elements.
+
+<Image
+  title="Configured Panel query to get LEDs state."
+  src="/img/blog/2024-04-24-form-panel-device-management/get-leds-query.png"
+/>
+
+After the panel query is configured, the initial request should be configured as the following screenshot
+
+<Image
+  title="Configured initial request to use data from the panel query."
+  src="/img/blog/2024-04-24-form-panel-device-management/query-initial-request.png"
+/>
+
+Also, synchronize option is disabled to keep entered values for auto refreshing dashboard.
+
+### Create form elements
+
+Since now, all elements should be created and mapped to fields within the panel query.
+Only mode value is editable so count and intensity fields are readonly.
+
+<Image
+  title="Configured count element."
+  src="/img/blog/2024-04-24-form-panel-device-management/count-element.png"
+/>
+<Image
+  title="Configured intensity element."
+  src="/img/blog/2024-04-24-form-panel-device-management/intensity-element.png"
+/>
+<Image
+  title="Configured mode element with all possible options."
+  src="/img/blog/2024-04-24-form-panel-device-management/mode-element.png"
+/>
+
+After that, all elements should have current device state as initial values.
+
+<Image
+  title="Elements with the current device state."
+  src="/img/blog/2024-04-24-form-panel-device-management/configured-elements-result.png"
+/>
+
+### Update Request
+
+To update device state through the panel we have to setup an update request. For that we will use the data source request option.
+
+<Image
+  title="Data Source request with updating initial values."
+  src="/img/blog/2024-04-24-form-panel-device-management/data-source-update-request.png"
+/>
+
+Code on the screenshot. To allow updating values on the previous one (which is initial value and submit button will be disabled) we set initial values with the updated values.
+So since now, user can update mode and then update on the previous one.
+```
+const handleResponse = async (response) => {
+  if (response && !response.error) {
+    context.grafana.notifySuccess(['Update', 'LEDs Mode updated successfully.']);
+
+    /**
+     * Find new mode in response
+     */
+    const newMode = response.data[0].fields.find((field) => field.name === 'mode')?.values[0];
+
+    /**
+     * Update Initial values with updated mode
+     */
+    context.panel.setInitial({
+      ...context.panel.initial,
+      mode: newMode,
+    })
+  } else {
+    context.grafana.notifyError(['Update', 'An error occured updating values.']);
+  }
+}
+
+return handleResponse(context.panel.response);
+```
+
+Also data source request should be configured to update device mode.
+<Image
+  title="Data Source query to update device mode."
+  src="/img/blog/2024-04-24-form-panel-device-management/update-request-payload.png"
+/>
+
+### Outcomes
+
+User can see the current device state and update it through the configured panel.
+
+## Afterword
+
+If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube videos](https://www.youtube.com/@volkovlabs).
