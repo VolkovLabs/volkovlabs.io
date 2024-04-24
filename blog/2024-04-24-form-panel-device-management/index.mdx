@@ -11,17 +11,18 @@ import Video from "@theme/Video";
 
 # Manage your device using the Grafana dashboard
 
-Most of the time, Grafana is considered as a superb system monitoring and observability tool. 
+Most of the time, Grafana is considered as a superb system monitoring and observability tool.
 
-However, Grafana has much more to offer. 
+However, Grafana has much more to offer.
 
 In addition to beautiful and informative dashboards, Grafana is capable of **process control**. Two simple words hide the whole application universe behind them. Technically, process control means sending data back from the dashboard into a data source. Strategically, that could mean converting your dashboard into a full-scale web application.
 
 But let's take one step at a time.
 
 This article describes a use case demonstrating how a user can control an NVidia Orin device from a Grafana dashboard. To spice things up a bit, we enhanced the device by mounting the following:
- - a custom LED Monitor to display IP address, MAC, and device names,
- - LED lights to indicate a status by various types of blinking. 
+
+- a custom LED Monitor to display IP address, MAC, and device names,
+- LED lights to indicate a status by various types of blinking.
 
 <Image
   title="The NVidia Orin device with a custom LED monitor and LED lights."
@@ -35,9 +36,10 @@ Schematically, the described solution can be depicted in the following illustrat
   src="/img/blog/2024-04-24-form-panel-device-management/schema.png"
 />
 
-The final Grafana dashboard contains two Data Manipulation panels: 
- - `LED Monitor` with **Tier** and **Interval** as read-only metrics. A user can change the device **State** between on and off using the drop-drop element.
- - `LED Lights` with **Count** and **Intensity** as read-only metrics. A user can change between different **Modes**. Here, a mode is how the LED lights beam.
+The final Grafana dashboard contains two Data Manipulation panels:
+
+- `LED Monitor` with **Tier** and **Interval** as read-only metrics. A user can change the device **State** between on and off using the drop-drop element.
+- `LED Lights` with **Count** and **Intensity** as read-only metrics. A user can change between different **Modes**. Here, a mode is how the LED lights beam.
 
 <Image
   title="Dashboard to display and change the device's configuration."
@@ -65,13 +67,14 @@ Another example, LED Light in the Kiosk mode:
   src="/img/blog/2024-04-24-form-panel-device-management/kiosk.gif"
 />
 
-Down below in this article, we describe in detail how to configure the `LED Lights` Grafana panel. The configuration of the other panel, `LED Monitor` is very similar. 
+Down below in this article, we describe in detail how to configure the `LED Lights` Grafana panel. The configuration of the other panel, `LED Monitor` is very similar.
 
-## Proprietary Data Source 
+## Proprietary Data Source
 
 To work with our NVidia Orin device we developed a proprietary front-end data source. It uses REST API calls to:
- - read the necessary device information and transmit it to a connected dashboard,
- - send the data from a dashboard back to a device.
+
+- read the necessary device information and transmit it to a connected dashboard,
+- send the data from a dashboard back to a device.
 
 The configuration of this data source requires a name and API URL.
 
@@ -84,9 +87,9 @@ The configuration of this data source requires a name and API URL.
 
 ### Dashboard configuration
 
-On the dashboard, when the appropriate data source is selected from the list, the **Request** drop-down appears. 
+On the dashboard, when the appropriate data source is selected from the list, the **Request** drop-down appears.
 
-It contains all available request types, which we added to our proprietary data source. Two requests are created to fetch data, and two to submit the data back into the data source. 
+It contains all available request types, which we added to our proprietary data source. Two requests are created to fetch data, and two to submit the data back into the data source.
 
 In this particular selection, only the ones to fetch data make sense and will work (`Get Display` and `Get LEDs`). We will use the `Update LEDs Mode` request in the Update Request section of this article.
 
@@ -97,7 +100,7 @@ In this particular selection, only the ones to fetch data make sense and will wo
 
 ## Data Manipulation plugin
 
-We created the [Data Manipulation plugin](/plugins/volkovlabs-form-panel/) to make sending data back into a connected data source possible. That simple idea allows users not only to overview the data but also **act** upon it right on the Grafana dashboard. 
+We created the [Data Manipulation plugin](/plugins/volkovlabs-form-panel/) to make sending data back into a connected data source possible. That simple idea allows users not only to overview the data but also **act** upon it right on the Grafana dashboard.
 
 This makes the Data Manipulation plugin the ideal candidate for managing your devices from a Grafana dashboard.
 
@@ -108,11 +111,12 @@ Below we will review in detail how we configured the `LED Lights` Data Manipulat
 We start with choosing the NVidia Orin data source and selecting the appropriate **Request** type which in our case is the `Get LEDs`.
 
 As you can see in the illustration below, this type of **Request** fetches three metrics:
- - Count, 
- - Intensity, 
- - Mode.
 
-Next, on the right-hand side, we obviously select the Data Manipulation plugin from the plugin drop-downs. 
+- Count,
+- Intensity,
+- Mode.
+
+Next, on the right-hand side, we obviously select the Data Manipulation plugin from the plugin drop-downs.
 
 <Image
   title="Configured initial request to use data from the panel query."
@@ -120,7 +124,8 @@ Next, on the right-hand side, we obviously select the Data Manipulation plugin f
 />
 
 For the plugin options, in the **Initial Request** section we set the following:
- - **Synchronize with data** to **Disabled**. Let me explain. As you know, every Grafana dashboard has a configurable timespan for a dashboard refresh (where a timespan is how often a dashboard refreshes).
+
+- **Synchronize with data** to **Disabled**. Let me explain. As you know, every Grafana dashboard has a configurable timespan for a dashboard refresh (where a timespan is how often a dashboard refreshes).
 
 <Image
   title="Configurable timespan for a dashboard refresh."
@@ -128,7 +133,7 @@ For the plugin options, in the **Initial Request** section we set the following:
   width="50%"
 />
 
-When **Synchronize with data** is **Enabled** with every such refresh, the data populating all Data Manipulation form elements is re-fetched from the data source. That means if the refresh process catches a user in the middle of the editing, all newly entered values are going to get lost. 
+When **Synchronize with data** is **Enabled** with every such refresh, the data populating all Data Manipulation form elements is re-fetched from the data source. That means if the refresh process catches a user in the middle of the editing, all newly entered values are going to get lost.
 
 To avoid that or in other words, to prevent the Data Manipulation form elements to re-fetch the data with every dashboard refresh, we set **Synchronize with data** to **Disabled**.
 
@@ -136,14 +141,14 @@ To avoid that or in other words, to prevent the Data Manipulation form elements 
 
 ### Form elements
 
-Now we can create and configure form elements. We need two **Read-Only** types to review the device's stats. We specify id, type, label and use the **Query Field** to map with the data frame columns. 
+Now we can create and configure form elements. We need two **Read-Only** types to review the device's stats. We specify id, type, label and use the **Query Field** to map with the data frame columns.
 
 <Image
   title="Configured Count and Intensity elements."
   src="/img/blog/2024-04-24-form-panel-device-management/count-intensity.png"
 />
 
-We also need one **Select with custom options** type to allow users to modify the current LED Light blinking mode. For this type, we similarly to the previous ones specify **Query Field** and then using the **Option Source** set to **Custom** create the listing of all options we need. 
+We also need one **Select with custom options** type to allow users to modify the current LED Light blinking mode. For this type, we similarly to the previous ones specify **Query Field** and then using the **Option Source** set to **Custom** create the listing of all options we need.
 While doing that we ensure that the mode values match between the data source API calls and specified here.
 
 <Image
@@ -191,7 +196,7 @@ const handleResponse = async (response) => {
 return handleResponse(context.panel.response);
 ```
 
-Please, note that we also call the Initial Request here to ensure the form elements (mode, in this case) are updated timely with the user actions. 
+Please, note that we also call the Initial Request here to ensure the form elements (mode, in this case) are updated timely with the user actions.
 
 ## Final result
 
