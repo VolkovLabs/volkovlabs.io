@@ -11,9 +11,7 @@ import Video from "@theme/Video";
 
 # Manage your device using the Grafana dashboard
 
-Most of the time, Grafana is considered as a superb system monitoring and observability tool.
-
-However, Grafana has much more to offer.
+Most of the time, Grafana is considered as a superb system monitoring and observability tool. However, Grafana has much more to offer.
 
 In addition to beautiful and informative dashboards, Grafana is capable of **process control**. Two simple words hide the whole application universe behind them. Technically, process control means sending data back from the dashboard into a data source. Strategically, that could mean converting your dashboard into a full-scale web application.
 
@@ -32,7 +30,7 @@ This article describes a use case demonstrating how a user can control an NVidia
 Schematically, the described solution can be depicted in the following illustration. An NVidia Orin device interacts with the Grafana dashboard which contains two main actors - a proprietary data source created specifically for the utilized device and the Data Manipulation plugin.
 
 <Image
-  title="The solution described in this article contains three main actors: NVidia Orin device, a proprietary data source an and open-source Data Manipulation plugin"
+  title="The solution described in this article contains three main actors: NVidia Orin device, a proprietary data source an and open-source Data Manipulation plugin."
   src="/img/blog/2024-04-24-form-panel-device-management/schema.png"
 />
 
@@ -102,13 +100,11 @@ In this particular selection, only the ones to fetch data make sense and will wo
 
 We created the [Data Manipulation plugin](/plugins/volkovlabs-form-panel/) to make sending data back into a connected data source possible. That simple idea allows users not only to overview the data but also **act** upon it right on the Grafana dashboard.
 
-This makes the Data Manipulation plugin the ideal candidate for managing your devices from a Grafana dashboard.
-
-Below we will review in detail how we configured the `LED Lights` Data Manipulation panel on our dashboard.
+This makes the Data Manipulation plugin the ideal candidate for managing your devices from a Grafana dashboard. Below we will review in detail how we configured the `LED Lights` Data Manipulation panel on our dashboard.
 
 ### Data Source and the Initial Request
 
-We start with choosing the NVidia Orin data source and selecting the appropriate **Request** type which in our case is the `Get LEDs`.
+We start with choosing the NVidia Orin data source and selecting the appropriate **Request** type which in our case is the `Get LEDs` in the query editor.
 
 As you can see in the illustration below, this type of **Request** fetches three metrics:
 
@@ -133,9 +129,7 @@ For the plugin options, in the **Initial Request** section we set the following:
   width="50%"
 />
 
-When **Synchronize with data** is **Enabled** with every such refresh, the data populating all Data Manipulation form elements is re-fetched from the data source. That means if the refresh process catches a user in the middle of the editing, all newly entered values are going to get lost.
-
-To avoid that or in other words, to prevent the Data Manipulation form elements to re-fetch the data with every dashboard refresh, we set **Synchronize with data** to **Disabled**.
+When **Synchronize with data** is **Enabled** with every such refresh, the data populating all Data Manipulation form elements is re-fetched from the data source. To prevent the Data Manipulation form elements to re-fetch the data with every dashboard refresh, we set **Synchronize with data** to **Disabled**.
 
 - **Initial Action** to **Query**. This setting instructs the plugin to use data fetched by a data source. It also adds a **Query Field** option for all form elements to allow the mapping of form elements to data frame columns. We will set it up next.
 
@@ -148,7 +142,7 @@ Now we can create and configure form elements. We need two **Read-Only** types t
   src="/img/blog/2024-04-24-form-panel-device-management/count-intensity.png"
 />
 
-We also need one **Select with custom options** type to allow users to modify the current LED Light blinking mode. For this type, we similarly to the previous ones specify **Query Field** and then using the **Option Source** set to **Custom** create the listing of all options we need.
+We also need one **Select with custom options** type to allow users to modify the current LED Light blinking mode. For this type, we similarly to the previous ones specify **Query Field** and then using the **Options Source** set to **Custom** create the listing of all options we need.
 While doing that we ensure that the mode values match between the data source API calls and specified here.
 
 <Image
@@ -196,12 +190,10 @@ const handleResponse = async (response) => {
 return handleResponse(context.panel.response);
 ```
 
-Please, note that we also call the Initial Request here to ensure the form elements (mode, in this case) are updated timely with the user actions.
+Please, note that we also update initial values here to ensure the form elements (mode, in this case) are updated timely with the user actions.
 
 ## Final result
 
-After all described above steps, we ended up with the Data Manipulation form that displays the current device stats allowing users to modify one data element - the device mode.
-
-## Feedback and questions
+After all described above steps, we ended up with the Data Manipulation form that displays the current device stats allowing users to modify behaviour of LED monitor and lights.
 
 Please feel free to ask any questions related to the discussed in this article materials. You can do it in the Comments section under any video on our [YouTube channel](https://www.youtube.com/@volkovlabs).
