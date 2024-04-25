@@ -19,12 +19,12 @@ But let's take one step at a time.
 
 This article describes a use case demonstrating how a user can control an NVidia Orin device from a Grafana dashboard. To spice things up a bit, we enhanced the device by mounting the following:
 
-- a custom LED Monitor to display IP address, MAC, and device names,
+- A custom Electrophoretic Display (EPD) to show IP address, MAC, device name, and a QR code to access the hosted web application for process control.
 - LED lights to indicate a status by various types of blinking.
 
 <Image
-  title="The NVidia Orin device with a custom LED monitor and LED lights."
-  src="/img/blog/2024-04-24-form-panel-device-management/orin.png"
+  title="The NVidia Orin device with a custom Display and LED lights."
+  src="/img/blog/2024-04-24-form-panel-device-management/monitor.gif"
 />
 
 Schematically, the described solution can be depicted in the following illustration. An NVidia Orin device interacts with the Grafana dashboard which contains two main actors - a proprietary data source created specifically for the utilized device and the Data Manipulation plugin.
@@ -36,8 +36,8 @@ Schematically, the described solution can be depicted in the following illustrat
 
 The final Grafana dashboard contains two Data Manipulation panels:
 
-- `LED Monitor` with **Tier** and **Interval** as read-only metrics. A user can change the device **State** between on and off using the drop-drop element.
-- `LED Lights` with **Count** and **Intensity** as read-only metrics. A user can change between different **Modes**. Here, a mode is how the LED lights beam.
+- `Display` with **Tier** and **Interval** as read-only metrics. A user can change the device **State** between on and off using the drop-drop element.
+- `LEDs` with **Count** and **Intensity** as read-only metrics. A user can change between different **Modes**. Here, a mode is how the LED lights are animated.
 
 <Image
   title="Dashboard to display and change the device's configuration."
@@ -65,7 +65,7 @@ Another example, LED Light in the Kiosk mode:
   src="/img/blog/2024-04-24-form-panel-device-management/kiosk.gif"
 />
 
-Down below in this article, we describe in detail how to configure the `LED Lights` Grafana panel. The configuration of the other panel, `LED Monitor` is very similar.
+Down below in this article, we describe in detail how to configure the `LEDs` Grafana panel. The configuration of the other panel, `Display` is very similar.
 
 ## Proprietary Data Source
 
@@ -100,7 +100,7 @@ In this particular selection, only the ones to fetch data make sense and will wo
 
 We created the [Data Manipulation plugin](/plugins/volkovlabs-form-panel/) to make sending data back into a connected data source possible. That simple idea allows users not only to overview the data but also **act** upon it right on the Grafana dashboard.
 
-This makes the Data Manipulation plugin the ideal candidate for managing your devices from a Grafana dashboard. Below we will review in detail how we configured the `LED Lights` Data Manipulation panel on our dashboard.
+This makes the Data Manipulation plugin the ideal candidate for managing your devices from a Grafana dashboard. Below we will review in detail how we configured the `LEDs` Data Manipulation panel on our dashboard.
 
 ### Data Source and the Initial Request
 
@@ -194,6 +194,6 @@ Please, note that we also update initial values here to ensure the form elements
 
 ## Final result
 
-After all described above steps, we ended up with the Data Manipulation form that displays the current device stats allowing users to modify behaviour of LED monitor and lights.
+After all described above steps, we ended up with the Data Manipulation form that displays the current device stats allowing users to modify behaviour of Display and lights.
 
 Please feel free to ask any questions related to the discussed in this article materials. You can do it in the Comments section under any video on our [YouTube channel](https://www.youtube.com/@volkovlabs).
