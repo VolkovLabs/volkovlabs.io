@@ -13,7 +13,7 @@ import Video from "@theme/Video";
 
 We created the Data [Manipulation plugin](/plugins/volkovlabs-form-panel/) for Grafana to make sending data back into a connected data source possible. This functionality opens the door to a new universe of use cases with great potential to convert your dashboard into a full-scale web application.
 
-This article describes yet another way of using the Data Manipulation plugin and, therefore, using Grafana beyond observability. 
+This article describes yet another way of using the Data Manipulation plugin and, therefore, using Grafana beyond observability.
 
 ## What are the Form Elements
 
@@ -33,13 +33,13 @@ There are two approaches to placing the Form Elements on the Data Manipulation p
 <Image
   title="Parameters to set manually for the Select with custom options type."
   src="/img/blog/2024-04-28-form-panel-server-based-elements/one-form-element.png"
-  width = "70%"
+  width="70%"
 />
 
 - **Dynamic**. The Data Manipulation form supports a Form Element placement via code or, in other words, programmatically. This approach is for more advanced users and can be used in the following cases:
- 
-   - The Data Manipulation form needs to contain a large number of Form Elements, making manual configuration too tedious. 
-   - The Form Elements vary for different users (permission control) and/or variables.
+
+  - The Data Manipulation form needs to contain a large number of Form Elements, making manual configuration too tedious.
+  - The Form Elements vary for different users (permission control) and/or variables.
 
 :::note
 This article explains how to place the Form Elements on the Data Manipulation form on the fly (dynamically) following the selected variable value.
@@ -56,16 +56,16 @@ Schematically, the solution looks like as on the picture below.
 
 The solution contains the following main components:
 
-| Component               | Description                                                                                                                                                          |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| REST API Server         | Accepts a parameter (device name). Returns the description for the Form Elements based on the received parameter.                                      |
+| Component               | Description                                                                                                                                                                       |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| REST API Server         | Accepts a parameter (device name). Returns the description for the Form Elements based on the received parameter.                                                                 |
 | JSON Data Source        | Can be JSON API or Infinity data source.                                                                                                                                          |
-| Variable Panel          | Allows to change the dashboard variable (switch between devices).                                                                                                     |
+| Variable Panel          | Allows to change the dashboard variable (switch between devices).                                                                                                                 |
 | Data Manipulation Panel | On the **Initial Request**, pass the current dashboard variable into the JSON data source. Receives the description of the Form elements, and builds the Data Manipiulation form. |
 
 ### REST API Server
 
-Below is the code for the Node.js HTTP server that we used for this use case. 
+Below is the code for the Node.js HTTP server that we used for this use case.
 The server accepts `GET /form` request with a query parameter `device` and returns an appropriate form element for the device.
 
 The example of the full URL looks like this `GET /form?device=device1`
@@ -73,7 +73,7 @@ The example of the full URL looks like this `GET /form?device=device1`
 The Node.js HTTP server code can be copied from here:
 
 ```js
-const http = require('http');
+const http = require("http");
 
 /**
  * Server Port
@@ -87,11 +87,14 @@ const server = http.createServer(function (req: any, res: any) {
   /**
    * Set CORS headers
    */
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Request-Method', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-  if (req.method === 'OPTIONS') {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Request-Method", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
     res.writeHead(200);
     res.end();
 
@@ -101,11 +104,11 @@ const server = http.createServer(function (req: any, res: any) {
   /**
    * Ping for json data source
    */
-  if (req.url === '/') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+  if (req.url === "/") {
+    res.writeHead(200, { "Content-Type": "application/json" });
     res.write(
       JSON.stringify({
-        message: 'pong',
+        message: "pong",
       })
     );
     res.end();
@@ -116,42 +119,42 @@ const server = http.createServer(function (req: any, res: any) {
    * Get form
    */
   const urlObject = new URL(`http://localhost${req.url}`);
-  if (urlObject.pathname === '/form') {
-    const device = urlObject.searchParams.get('device') || '';
+  if (urlObject.pathname === "/form") {
+    const device = urlObject.searchParams.get("device") || "";
     const formElements: unknown[] = [
       {
-        uid: 'device',
-        id: 'device',
-        title: 'Device',
-        type: 'select',
+        uid: "device",
+        id: "device",
+        title: "Device",
+        type: "select",
         value: device,
         options: [
           {
-            id: 'device1',
-            label: 'device1',
-            type: 'string',
-            value: 'device1',
+            id: "device1",
+            label: "device1",
+            type: "string",
+            value: "device1",
           },
           {
-            id: 'device2',
-            label: 'device2',
-            type: 'string',
-            value: 'device2',
+            id: "device2",
+            label: "device2",
+            type: "string",
+            value: "device2",
           },
         ],
-        optionsSource: 'Custom',
+        optionsSource: "Custom",
       },
     ];
 
     /**
      * Add device1 elements
      */
-    if (device === 'device1') {
+    if (device === "device1") {
       formElements.push({
-        uid: 'device1Field',
-        id: 'device1Field',
-        title: 'Device 1 Field',
-        type: 'number',
+        uid: "device1Field",
+        id: "device1Field",
+        title: "Device 1 Field",
+        type: "number",
         value: 0,
         min: 0,
         max: 10,
@@ -161,12 +164,12 @@ const server = http.createServer(function (req: any, res: any) {
     /**
      * Add device2 elements
      */
-    if (device === 'device2') {
+    if (device === "device2") {
       formElements.push({
-        uid: 'device2Field',
-        id: 'device2Field',
-        title: 'Device 2 Field',
-        type: 'number',
+        uid: "device2Field",
+        id: "device2Field",
+        title: "Device 2 Field",
+        type: "number",
         value: 0,
         min: 0,
         max: 10,
@@ -177,14 +180,14 @@ const server = http.createServer(function (req: any, res: any) {
      * Add common elements
      */
     formElements.push({
-      uid: 'comment',
-      id: 'comment',
-      title: 'Comment',
-      type: 'textarea',
-      value: '',
+      uid: "comment",
+      id: "comment",
+      title: "Comment",
+      type: "textarea",
+      value: "",
     });
 
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.writeHead(200, { "Content-Type": "application/json" });
     res.write(JSON.stringify(formElements));
     res.end();
     return;
@@ -223,8 +226,9 @@ The Variable Panel uses the `device` dashboard variable for display. The configu
 ### Data Manipulation
 
 The configuration of the Data Manipulation consists of two logical parts:
- - Connected data source,
- - Panel options (**Initial Request**, etc.)
+
+- Connected data source,
+- Panel options (**Initial Request**, etc.)
 
 #### Data Source Configuration
 
@@ -233,7 +237,7 @@ We connect to the JSON API data source and specify the `device` variable in the 
 <Image
   title="Configured GET request with device variable value."
   src="/img/blog/2024-04-28-form-panel-server-based-elements/panel-query-path.png"
-    width="80%"
+  width="80%"
 />
 
 Following that, we map a JSON response to the Data Manipulation panel data.
@@ -241,14 +245,14 @@ Following that, we map a JSON response to the Data Manipulation panel data.
 <Image
   title="Configured fields to take a JSON response into the panel data."
   src="/img/blog/2024-04-28-form-panel-server-based-elements/panel-query-fields.png"
-    width="80%"
+  width="80%"
 />
 
 #### Initial request configuration
 
-In this case, the **Initial Action** could be set to **Code** or **Query**. Both options arrive at the same results. 
+In this case, the **Initial Action** could be set to **Code** or **Query**. Both options arrive at the same results.
 
-With that, the Custom code could be as follows. Here, we parse the JSON description and convert it into the commands to create actual Form Elements. 
+With that, the Custom code could be as follows. Here, we parse the JSON description and convert it into the commands to create actual Form Elements.
 Note, that we adjusted helpers to ensure the code works correctly.
 
 <Image
@@ -263,19 +267,22 @@ You can copy the **Custom code** from below:
 /**
  * Convert JSON to form elements array
  */
-const formElements = JSON.parse(context.panel.data.series[0].fields[0].values[0])
+const formElements = JSON.parse(
+  context.panel.data.series[0].fields[0].values[0]
+);
 
 /**
  * Set elements with helpers
  */
-context.panel.onChangeElements(formElements.map((element) => ({
-  ...element,
-  helpers: {
-    showIf: () => true,
-    disableIf: () => false,
-    getOptions: () => element.options,
-  }
-})),
+context.panel.onChangeElements(
+  formElements.map((element) => ({
+    ...element,
+    helpers: {
+      showIf: () => true,
+      disableIf: () => false,
+      getOptions: () => element.options,
+    },
+  }))
 );
 ```
 
@@ -309,10 +316,10 @@ The code for the **Form Events** can be copied from here:
 /**
  * Update device variable
  */
-if (context.element.id === 'device') {
+if (context.element.id === "device") {
   context.grafana.locationService.partial({
-    'var-device': context.element.value,
-  })
+    "var-device": context.element.value,
+  });
 }
 ```
 
@@ -323,44 +330,50 @@ Another requirement that might arise is to keep the entered comment while the de
 To make it possible, adjust the **Custom Code** in the **Initial request** section to keep a comment field value on the device variable change.
 
 ```js
-  if (element.uid === 'comment' && elementInForm) {
-    value = elementInForm.value;
-  }
+if (element.uid === "comment" && elementInForm) {
+  value = elementInForm.value;
+}
 ```
 
 The full **Custom code** with the new lines from above looks like this:
+
 ```js
 /**
  * Convert JSON to form elements array
  */
-const formElements = JSON.parse(context.panel.data.series[0].fields[0].values[0])
+const formElements = JSON.parse(
+  context.panel.data.series[0].fields[0].values[0]
+);
 
 /**
  * Set elements with helpers
  */
-context.panel.onChangeElements(formElements.map((element) => {
-  const elementInForm = context.panel.elements.find((item) => item.uid === element.uid);
-  let value = element.value;
+context.panel.onChangeElements(
+  formElements.map((element) => {
+    const elementInForm = context.panel.elements.find(
+      (item) => item.uid === element.uid
+    );
+    let value = element.value;
 
-  if (element.uid === 'comment' && elementInForm) {
-    value = elementInForm.value;
-  }
-
-  return {
-    ...element,
-    value,
-    helpers: {
-      showIf: () => true,
-      disableIf: () => false,
-      getOptions: () => element.options,
+    if (element.uid === "comment" && elementInForm) {
+      value = elementInForm.value;
     }
-  }
-}),
+
+    return {
+      ...element,
+      value,
+      helpers: {
+        showIf: () => true,
+        disableIf: () => false,
+        getOptions: () => element.options,
+      },
+    };
+  })
 );
 ```
 
 ## Final result
 
-After all the described steps, the Data Manipulation form should be built dynamically depending on the selected value either on the Variable panel or the Data Manipulation panel itself. 
+After all the described steps, the Data Manipulation form should be built dynamically depending on the selected value either on the Variable panel or the Data Manipulation panel itself.
 
 Please feel free to ask any questions related to the discussed in this article materials. You can do it in the Comments section under any video on our [YouTube channel](https://www.youtube.com/@volkovlabs).
