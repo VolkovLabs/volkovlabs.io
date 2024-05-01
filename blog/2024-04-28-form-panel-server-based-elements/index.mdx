@@ -11,16 +11,16 @@ import Video from "@theme/Video";
 
 # How to build Form Elements dynamically
 
-We created the Data [Manipulation plugin](/plugins/volkovlabs-form-panel/) for Grafana to make sending data back into a connected data source possible. This functionality opens the door to a new universe of use cases with great potential to convert your dashboard into a full-scale web application.
+We created the [Data Manipulation plugin](/plugins/volkovlabs-form-panel/) for Grafana to make sending data back into a connected data source possible. This functionality opens the door to a new universe of use cases with great potential to convert your dashboard into a full-scale web application.
 
 This article describes yet another way of using the Data Manipulation plugin and, therefore, using Grafana beyond observability.
 
 ## What are the Form Elements
 
-The Form Elements are the interface input/output built-in types that you can use to create your unique Data Manipulation form. As of today, you have 16 types at your disposal.
+The Form Elements are the interface input/output built-in types that you can use to create your unique Data Manipulation form. As of today, you have 16 types at your disposal. We keep adding new elements with each release.
 
 <Image
-  title="Some examples of the Form Element types on UI."
+  title="Examples of the Form Element types on UI."
   src="/img/blog/2024-04-28-form-panel-server-based-elements/form-elements.png"
 />
 
@@ -28,7 +28,9 @@ The Form Elements are the interface input/output built-in types that you can use
 
 There are two approaches to placing the Form Elements on the Data Manipulation panel.
 
-- **Static**. The Data Manipulation form allows you to set the Form elements manually using the plugin options. Below is an example of what parameters you can control manually for the **Select with custom options** type.
+### Static
+
+The Data Manipulation form allows you to set the Form elements manually using the plugin options. Below is an example of what parameters you can control manually for the **Select with custom options** type.
 
 <Image
   title="Parameters to set manually for the Select with custom options type."
@@ -36,10 +38,12 @@ There are two approaches to placing the Form Elements on the Data Manipulation p
   width="70%"
 />
 
-- **Dynamic**. The Data Manipulation form supports a Form Element placement via code or, in other words, programmatically. This approach is for more advanced users and can be used in the following cases:
+### Dynamic
 
-  - The Data Manipulation form needs to contain a large number of Form Elements, making manual configuration too tedious.
-  - The Form Elements vary for different users (permission control) and/or variables.
+The Data Manipulation form supports a Form Element placement via code or, in other words, programmatically. This approach is for more advanced users and can be used in the following cases:
+
+- The Data Manipulation form needs to contain a large number of Form Elements, making manual configuration tedious.
+- The Form Elements vary for different users (permission control) and/or variables.
 
 :::note
 This article explains how to place the Form Elements on the Data Manipulation form on the fly (dynamically) following the selected variable value.
@@ -52,7 +56,7 @@ Schematically, the solution looks like as on the picture below.
   src="/img/blog/2024-04-28-form-panel-server-based-elements/schema.png"
 />
 
-## The use case components
+## Use case components
 
 The solution contains the following main components:
 
@@ -63,12 +67,12 @@ The solution contains the following main components:
 | Variable Panel          | Allows to change the dashboard variable (switch between devices).                                                                                                                 |
 | Data Manipulation Panel | On the **Initial Request**, pass the current dashboard variable into the JSON data source. Receives the description of the Form elements, and builds the Data Manipiulation form. |
 
-### REST API Server
+## REST API Server
 
 Below is the code for the Node.js HTTP server that we used for this use case.
 The server accepts `GET /form` request with a query parameter `device` and returns an appropriate form element for the device.
 
-The example of the full URL looks like this `GET /form?device=device1`
+The example of the full URL looks like this `GET /form?device=device1`.
 
 The Node.js HTTP server code can be copied from here:
 
@@ -202,35 +206,35 @@ console.log(`Server is running on port ${port}...`);
 ```
 
 :::info
-All possible form element options are described in Typescript Interface - [Form Element Type](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/7fe03eb8787af65cdf42548c09db9d044bd6067e/src/types/form-element.ts#L427)
+All possible form element options are described in Typescript Interface - [Form Element Type](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/7fe03eb8787af65cdf42548c09db9d044bd6067e/src/types/form-element.ts#L427).
 :::
 
-### JSON API Data Source
+## JSON API Data Source
 
 We used the [JSON API Data source](https://grafana.com/grafana/plugins/marcusolsson-json-datasource/) to communicate with the REST API Server. The configuration is depicted below:
 
 <Image
-  title="Configured JSON API Data source."
+  title="Configured JSON API Data source to fetch data from Node.js server."
   src="/img/blog/2024-04-28-form-panel-server-based-elements/configured-json-datasource.png"
 />
 
-### Dashboard Variables
+## Dashboard Variables
 
 The Variable Panel uses the `device` dashboard variable for display. The configuration is depicted below:
 
 <Image
-  title="Configured Device dashboard variable."
+  title="Configured Device dashboard variable using Static Data Source."
   src="/img/blog/2024-04-28-form-panel-server-based-elements/device-variable.png"
 />
 
-### Data Manipulation
+## Data Manipulation
 
-The configuration of the Data Manipulation consists of two logical parts:
+The configuration of the Data Manipulation panel consists of two logical parts:
 
 - Connected data source,
 - Panel options (**Initial Request**, etc.)
 
-#### Data Source Configuration
+### Data Source Configuration
 
 We connect to the JSON API data source and specify the `device` variable in the `GET` request.
 
@@ -248,15 +252,18 @@ Following that, we map a JSON response to the Data Manipulation panel data.
   width="80%"
 />
 
-#### Initial request configuration
+### Initial request configuration
 
 In this case, the **Initial Action** could be set to **Code** or **Query**. Both options arrive at the same results.
 
-With that, the Custom code could be as follows. Here, we parse the JSON description and convert it into the commands to create actual Form Elements.
+With that, the Custom code could be as follows. Here, we parse the JSON data and convert it into the commands to create actual Form Elements.
+
+:::info Helpers
 Note, that we adjusted helpers to ensure the code works correctly.
+:::
 
 <Image
-  title="Initial request configuration."
+  title="Custom code to set update form elements dynamically."
   src="/img/blog/2024-04-28-form-panel-server-based-elements/initial-request.png"
   width="60%"
 />
@@ -300,7 +307,9 @@ At this point, the Form Elements should rebuilt dynamically depending on the sel
   width="80%"
 />
 
-#### BONUS 1 Update the dashboard variable following the form element changes
+## Bonus functionality
+
+### Update the dashboard variable following the form element changes
 
 As you can see in the two images above, we added an interesting form element. It is similar to the dashboard variable drop-down. With that, a user can switch the selected device right on the Data Manipulation Form. However, to ensure that the dashboard variable is updated after the drop-down on the form has changed, we need to use the following code.
 
@@ -323,7 +332,7 @@ if (context.element.id === "device") {
 }
 ```
 
-#### BONUS 2 Keeping comment value on the device change
+### Keeping comment value on the device change
 
 Another requirement that might arise is to keep the entered comment while the device form element changes its value.
 
