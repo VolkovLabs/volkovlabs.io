@@ -1,5 +1,5 @@
 ---
-description: Release Notes for Calendar Panel.
+description: Release Notes for Business Calendar Panel.
 tags:
   - Calendar
   - Release Notes
@@ -11,16 +11,30 @@ import Video from "@theme/Video";
 
 # Release Notes
 
+## 3.0.0 (2024-05-02)
+
+### Breaking changes
+
+- Legacy Calendar was replaced by Big Calendar.
+- Requires Grafana 10 and Grafana 11.
+
+### Features / Enhancements
+
+- Added keeping refresh dashboard on time range change (#167)
+- Added plugin e2e tests and remove cypress (#168, #170)
+- Removed Legacy calendar replaced by Big Calendar (#172)
+- Prepared for Grafana 11 (#175, #176)
+
 ## 2.5.0 (2024-03-20)
 
 ### Features / Enhancements
 
-- Update style for event details tags (#161)
+- Updated style for event details tags (#161)
 - Updated dependencies to Grafana 10.4 (#154)
 
 ### Bugfixes
 
-- Fix showing location on month and work week views (#160)
+- Fixed showing location on month and work week views (#160)
 
 ## 2.4.0 (2024-03-07)
 
@@ -40,7 +54,7 @@ import Video from "@theme/Video";
 
 ### Bugfixes
 
-- Fix import order for default big-calendar styles and their overrides (#143)
+- Fixed import order for default big-calendar styles and their overrides (#143)
 
 ## [2.3.0 (2023-11-01)](/blog/calendar-panel-2.3.0-20231101/)
 
@@ -65,7 +79,7 @@ import Video from "@theme/Video";
 
 <Shorts
   src="https://www.youtube.com/embed/bshA7hVVYpY"
-  title="Calendar Panel 2.2.0 for Grafana."
+  title="Business Calendar Panel 2.2.0 for Grafana."
 />
 
 ## [2.1.0 (2023-08-14)](/blog/calendar-panel-2.1.0-20230815/)
@@ -78,7 +92,7 @@ import Video from "@theme/Video";
 
 <Shorts
   src="https://www.youtube.com/embed/DV3HLdHMz5Y"
-  title="Calendar Panel 2.1.0 for Grafana."
+  title="Business Calendar Panel 2.1.0 for Grafana."
 />
 
 ## [2.0.1 (2023-08-03)](/blog/calendar-panel-2.1.0-20230815/)

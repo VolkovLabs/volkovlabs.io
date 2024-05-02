@@ -92,7 +92,7 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-plugins-echarts-link",
         },
         {
-          label: "Calendar Panel",
+          label: "Business Calendar Panel",
           to: "/plugins/volkovlabs-calendar-panel/",
           className: "volkovlabs-link icon-plugins-calendar-link",
         },

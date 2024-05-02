@@ -9,7 +9,7 @@ import Video from "@theme/Video";
 
 # Events
 
-Calendar Panel allows you to load events from any data source and display them on your Grafana dashboard.
+Business Calendar Panel allows you to load events from any data source and display them on your Grafana dashboard.
 
 ## Configuration
 
@@ -24,26 +24,16 @@ Define the required and optional fields in the plugin's options to visualize eve
 | Labels      | No       | Event labels. Supports multiple comma-separated values.     |
 | Color       | No       | Event color.                                                |
 
-<Video
-  src="https://www.youtube.com/embed/6WGmm5y4fs4"
-  title="How to display events from PostgreSQL."
-/>
-
 ## Duration
 
 Events are categorized into four types:
 
-1. **instantaneous**: an event having only the start time.
-1. **continuing**: an event having the start and end time.
-1. **multi-day**: an event having a start and end time and lasting for two days or more.
-1. **ongoing**: an event having the start time without the end time.
+1. **Instantaneous** - an event having only the start time.
+1. **Continuing** - an event having the start and end time.
+1. **Multi-day** - an event having a start and end time and lasting for two days or more.
+1. **Ongoing** - an event having the start time without the end time.
 
 <Image
   title="Schema explains how events are classified depending on the End Time field."
   src="/img/plugins/volkovlabs-calendar-panel/schema.png"
-/>
-
-<Image
-  title="Events with different start and end times pulled from a static data source."
-  src="/img/plugins/volkovlabs-calendar-panel/duration.png"
 />
