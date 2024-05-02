@@ -1,8 +1,8 @@
-import React from 'react';
-import Head from '@docusaurus/Head';
-import { BlogPostProvider } from '@docusaurus/theme-common/internal';
-import BlogPostCard from '../BlogPostCard';
-import styles from './styles.module.css';
+import React from "react";
+import Head from "@docusaurus/Head";
+import { BlogPostProvider } from "@docusaurus/theme-common/internal";
+import BlogPostCard from "../BlogPostCard";
+import styles from "./styles.module.css";
 
 /**
  * Header
@@ -28,7 +28,7 @@ const Header = ({ items }) => {
   return (
     <>
       <Head>
-        <meta property="og:image" content="/img/volkovlabs.png" />
+        <meta property="og:image" content="/img/honeycomb.png" />
       </Head>
       <h1>Blog Posts</h1>
     </>
