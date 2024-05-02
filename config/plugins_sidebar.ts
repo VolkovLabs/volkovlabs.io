@@ -137,7 +137,6 @@ const sidebars: SidebarsConfig = {
           items: [
             "volkovlabs-calendar-panel/annotations",
             "volkovlabs-calendar-panel/big",
-            "volkovlabs-calendar-panel/legacy",
             "volkovlabs-calendar-panel/color",
           ],
           label: "Features",
@@ -154,7 +153,7 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-calendar-panel/release",
       ],
-      label: "Calendar Panel",
+      label: "Business Calendar Panel",
       type: "category",
       description: "Display events and change time range.",
       link: {

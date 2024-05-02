@@ -141,7 +141,7 @@ const Home = () => {
   return (
     <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
       <Head>
-        <meta property="og:image" content="/img/volkovlabs.png" />
+        <meta property="og:image" content="/img/honeycomb.png" />
       </Head>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>

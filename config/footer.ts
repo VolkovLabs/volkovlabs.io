@@ -23,7 +23,7 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-echarts-link",
         },
         {
-          label: "Calendar Panel",
+          label: "Business Calendar Panel",
           to: "/plugins/volkovlabs-calendar-panel/",
           className: "volkovlabs-footer-link icon-plugins-calendar-link",
         },

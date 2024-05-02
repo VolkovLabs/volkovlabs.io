@@ -17,18 +17,18 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-image-panel/",
   },
   {
+    title: "Business Calendar Panel",
+    name: "volkovlabs-calendar-panel",
+    description: <>Display events and change time range.</>,
+    href: "/plugins/volkovlabs-calendar-panel/",
+  },
+  {
     title: "Business Charts Panel",
     name: "volkovlabs-echarts-panel",
     description: (
       <>Powerful visualizations for Grafana powered by Apache ECharts.</>
     ),
     href: "/plugins/volkovlabs-echarts-panel/",
-  },
-  {
-    title: "Calendar Panel",
-    name: "volkovlabs-calendar-panel",
-    description: <>Display events and change time range.</>,
-    href: "/plugins/volkovlabs-calendar-panel/",
   },
   {
     title: "Dynamic Text Panel",
