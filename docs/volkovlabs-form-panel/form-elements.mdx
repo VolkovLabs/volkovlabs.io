@@ -303,6 +303,84 @@ You can specify the **Label** and **Value** fields.
   src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-query.png"
 />
 
+#### Select Options from Get Options Code
+
+:::info Version
+
+Below is supported since version 3.5.0.
+
+:::
+
+Get Options Code allows to set options using the code editor. The code must returns array with `{label,value}` objects. The code must be synchronous.
+
+<Image
+  title="Use values from the Get Options Code"
+  src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-code.png"
+/>
+
+#### Set Options received asynchronously
+
+Get Options Code does not support asynchronous code. Options received asynchronously can be set via Initial Request.
+
+<Image
+  title="Initial request to get options"
+  src="/img/blog/2023-12-03-form-panel-3.3.0/initial-req-for-options.png"
+/>
+
+Find the necessary element and update its options. Once the data has been received, update the element. Use `context.panel.onChangeElements()` to update items.
+
+```js
+const url = "https://jsonplaceholder.typicode.com/users";
+const element = context.panel.elements.find(
+  (element) => element.id === "select"
+);
+
+async function fetchData() {
+  try {
+    const response = await fetch(url);
+    const body = await response.json();
+
+    const optionsNew = body.map((element) => ({
+      label: element.name,
+      value: element.username,
+    }));
+
+    const newElement = {
+      ...element,
+      options: optionsNew,
+    };
+    const newElements = context.panel.elements.map((element) => {
+      if (element.id === "select") {
+        return newElement;
+      }
+      return element;
+    });
+    context.panel.onChangeElements(newElements);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+return fetchData();
+```
+
+After that, we need to set the options from `context.panel.elements` for our element. Add the code to Get Options Code.
+
+<Image
+  title="Set options in code editor"
+  src="/img/blog/2023-12-03-form-panel-3.3.0/set-options-from-code.png"
+/>
+
+```js
+const element = context.panel.elements.find(
+  (element) => element.id === "select"
+);
+
+if (element?.options) {
+  return element?.options;
+}
+```
+
 ## Conditional Visibility
 
 Every form element has the <b>Show If returned value is true</b> parameter where you enter JavaScript code.
