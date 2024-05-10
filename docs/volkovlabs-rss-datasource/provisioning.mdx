@@ -36,3 +36,28 @@ When provisioned, the RSS/Atom data source should be available in the data sourc
   title="RSS/Atom Data source requires to input Feed URL."
   src="/img/plugins/volkovlabs-rss-datasource/datasource.png"
 />
+
+### Feed URL
+
+The correct URL must be set
+
+After set the url and test, an error may occur.
+
+<Image
+  title="Failed to fetch"
+  src="/img/plugins/volkovlabs-rss-datasource/error.png"
+/>
+
+If the url is correct and returns data but returns an error, you need to add `/` to the end of the url.
+
+As example use `https://sitename/feed/` insteat `https://sitename/feed`
+
+<Image
+  title="Correct URL"
+  src="/img/plugins/volkovlabs-rss-datasource/correct-url.png"
+/>
+
+:::info Note
+But if you already have a data source with `https://sitename/feed` and after add `/` and running the test you will get an error.
+After add the `/` at the end, please clear cache and use hard reload
+:::
