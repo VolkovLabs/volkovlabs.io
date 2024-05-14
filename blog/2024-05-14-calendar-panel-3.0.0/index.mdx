@@ -1,0 +1,84 @@
+---
+authors: [daria]
+slug: calendar-panel-3.0.0-20240514/
+tags: [Calendar, Release Notes]
+image: /img/blog/2024-05-14-calendar-panel-3.0.0/banner.png
+keywords: [Calendar, Panel, Events, Time Range, Grafana]
+---
+
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Video from "@theme/Video";
+
+# Business Calendar Panel 3.0.0
+
+We are happy to announce the release of the Business Calendar Panel 3.0.0. This release includes the following updates.
+
+- Added Internationalization(i18n), supported languages include English, Spanish, French, German, and Chinese.
+
+:::info Grafana Plugins catalog
+The plugin was updated in Grafana Catalog on May 2, 2024.
+:::
+
+## Getting Started
+
+You can install Business Calendar Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or using the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install marcusolsson-calendar-panel
+```
+
+## YouTube Tutorial
+
+Business Calendar Panel is a Grafana plugin that displays events from various data sources.
+
+<Video
+  src="https://www.youtube.com/embed/iPJ122x0oos"
+  title="Display events from the JSON API data source."
+/>
+
+## Release Notes
+
+### Breaking changes in 3.0.0
+
+- Legacy Calendar was replaced by Big Calendar.
+- Requires Grafana 10 and Grafana 11.
+
+### Features / Enhancements in 3.0.0
+
+- Added keeping refresh dashboard on time range change (#167)
+- Added plugin e2e tests and remove cypress (#168, #170)
+- Removed Legacy calendar replaced by Big Calendar (#172)
+- Prepared for Grafana 11 (#175, #176)
+
+### Features / Enhancements in 2.5.0
+
+- Updated style for event details tags (#161)
+- Updated dependencies to Grafana 10.4 (#154)
+
+### Bugfixes in 2.5.0
+
+- Fixed showing location on month and work week views (#160)
+
+### Features / Enhancements in 2.4.0
+
+- Updated Big Calendar to 1.10.3 (#150)
+- Added ability to select date format (#151)
+- Updated ESLint configuration and refactoring (#152)
+- Updated dependencies and Actions (#154)
+- Added hiding end time (#155)
+
+### Bugfixes in 2.4.0
+
+- Fixed keeping calendar dates if no time range change (#156)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-calendar-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
