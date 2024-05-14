@@ -10,7 +10,7 @@ export const FOOTER = {
   style: "light",
   links: [
     {
-      title: "Open-Source Plugins",
+      title: "Business Suite for Grafana",
       items: [
         {
           label: "Base64 Image/PDF Panel",
@@ -26,6 +26,11 @@ export const FOOTER = {
           label: "Business Calendar Panel",
           to: "/plugins/volkovlabs-calendar-panel/",
           className: "volkovlabs-footer-link icon-plugins-calendar-link",
+        },
+        {
+          label: "Business News Data Source",
+          to: "/plugins/volkovlabs-rss-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-rss-link",
         },
         {
           label: "Dynamic Text Panel",
@@ -46,11 +51,6 @@ export const FOOTER = {
           label: "Grafana API Data Source",
           to: "/plugins/volkovlabs-grapi-datasource/",
           className: "volkovlabs-footer-link icon-plugins-grapi-link",
-        },
-        {
-          label: "RSS/Atom Data Source",
-          to: "/plugins/volkovlabs-rss-datasource/",
-          className: "volkovlabs-footer-link icon-plugins-rss-link",
         },
         {
           label: "Static Data Source",
