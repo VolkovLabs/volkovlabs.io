@@ -7,7 +7,7 @@ const sidebars: SidebarsConfig = {
   plugins: [
     {
       items: ["security/index"],
-      label: "Plugins",
+      label: "Business Suite",
       type: "category",
       collapsible: false,
       link: {
@@ -159,6 +159,30 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "doc",
         id: "volkovlabs-calendar-panel/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-rss-datasource/index",
+          label: "Introduction",
+        },
+        "volkovlabs-rss-datasource/text",
+        "volkovlabs-rss-datasource/provisioning",
+        {
+          type: "link",
+          href: "/blog/tags/business-news-data-source",
+          label: "Related Blog posts",
+        },
+        "volkovlabs-rss-datasource/release",
+      ],
+      label: "Business News Data Source",
+      type: "category",
+      description: "Visualize RSS/Atom feeds using Dynamic Text.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-rss-datasource/index",
       },
     },
     {
@@ -328,25 +352,6 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "doc",
         id: "volkovlabs-grapi-datasource/index",
-      },
-    },
-    {
-      items: [
-        {
-          type: "doc",
-          id: "volkovlabs-rss-datasource/index",
-          label: "Introduction",
-        },
-        "volkovlabs-rss-datasource/text",
-        "volkovlabs-rss-datasource/provisioning",
-        "volkovlabs-rss-datasource/release",
-      ],
-      label: "RSS/Atom Data Source",
-      type: "category",
-      description: "Visualize RSS/Atom feeds using Dynamic Text.",
-      link: {
-        type: "doc",
-        id: "volkovlabs-rss-datasource/index",
       },
     },
     {
