@@ -41,7 +41,22 @@ To display the YouTube feed with the latest videos we used HTML and Handlebars t
 
 Template (Content) was displayed for each row as defined in the options.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-rss-datasource/html/text.html"
-  language="html"
-/>
+```html
+<table width="100%" style="border: 0">
+  <tr>
+    <td width="*" style="border: 0">
+      <h3>
+        <a target="_blank" style="color: blue" href="{{link}}">{{title}}</a>
+      </h3>
+    </td>
+    <td rowspan="2" style="border: 0" width="30%">
+      <div><img src="{{media:group:media:thumbnail:url}}" /></div>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 0">
+      <b>{{date updated 'MMM, DD YYYY'}} by {{author}}</b>
+    </td>
+  </tr>
+</table>
+```
