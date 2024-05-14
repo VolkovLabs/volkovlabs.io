@@ -66,13 +66,14 @@ You can add a custom Handlebars helper to replace the field's value according to
 {{replace Test "Pattern" "Replaced"}}
 ```
 
-:::info Handlebars available
+:::info After Content Render
 
 Handlebars are not available in the After Content Render.
 
 :::
 
 Handlebars should be created in the **Before content Render**, because they are used during the rendering process to convert Handlebars -> Markdown -> HTML.
+
 The **After Content Render** works with already created HTML elements and handlebars are not available at this point.
 
 ### JavaScript Code
