@@ -16,7 +16,7 @@ const config: Config = {
   plugins: PLUGINS,
   presets: PRESETS,
   projectName: "volkovlabs.io",
-  tagline: "Business solutions for Grafana",
+  tagline: "Business Suite for Grafana",
   themeConfig: THEME_CONFIG,
   themes: [],
   title: "Volkov Labs",

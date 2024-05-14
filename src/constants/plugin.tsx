@@ -31,6 +31,12 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-echarts-panel/",
   },
   {
+    title: "Business News Data Source",
+    name: "volkovlabs-rss-datasource",
+    description: <>Visualize RSS/Atom feeds using Dynamic Text.</>,
+    href: "/plugins/volkovlabs-rss-datasource/",
+  },
+  {
     title: "Dynamic Text Panel",
     name: "volkovlabs-dynamictext-panel",
     description: <>Dynamic, data-driven text.</>,
@@ -49,12 +55,6 @@ export const PluginList: PluginItem[] = [
     name: "volkovlabs-grapi-datasource",
     description: <>Connect to Local and Remote Grafana instances.</>,
     href: "/plugins/volkovlabs-grapi-datasource/",
-  },
-  {
-    title: "RSS/Atom Data Source",
-    name: "volkovlabs-rss-datasource",
-    description: <>Visualize RSS/Atom feeds using Dynamic Text.</>,
-    href: "/plugins/volkovlabs-rss-datasource/",
   },
   {
     title: "Static Data Source",

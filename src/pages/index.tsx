@@ -40,7 +40,7 @@ const Header = (siteConfig) => {
                 )}
                 href="/plugins/"
               >
-                Open-Source Plugins&nbsp;&nbsp;→
+                Business Suite for Grafana&nbsp;&nbsp;→
               </a>
             </div>
           </div>
