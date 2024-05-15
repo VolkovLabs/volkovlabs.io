@@ -14,10 +14,10 @@ import Video from "@theme/Video";
 
 We are happy to announce the release of the Business Calendar Panel 3.0.0. This release includes the following updates.
 
-- Plugin rebranding, the new name is the Business Calendar Panel.
-- Legacy Calendar was replaced by Big Calendar.
-- Added keeping dashboard's refresh settings on time range change.
-- Added ability to select date format.
+- Plugin rebranding, the new name is the **Business Calendar Panel**.
+- Finished transitioning from the Legacy calendar to the Big Calendar.
+- Expanded Grafana's offered date formats.
+- Many small improvements to make the Business Calendar even more intuitive.
 
 :::info Grafana Plugins catalog
 The plugin was updated in Grafana Catalog on May 2, 2024.
@@ -25,7 +25,49 @@ The plugin was updated in Grafana Catalog on May 2, 2024.
 
 ## Downloads
 
-3 mil
+The plugin has been downloaded almost 3M times. What a milestone! The steadily increasing download number is a fantastic indicator of Community trust. Thank you all.
+
+<Image
+  title="The Business Calendar plugin total downloads."
+  src="/img/blog/2024-05-14-calendar-panel-3.0.0/downloads.png"
+/>
+
+## Big Calendar
+
+We employed the [Big Calendar library](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page) in September of 2023.
+
+It is an open-source powerful React library allowing many features such as:
+- Switch between month, week, and day views.
+- Switch back to the current day (today).
+- Display events from the previous and subsequent time ranges.
+- Professional style.
+- Many others. 
+
+The users preferred this library over the Legacy so often that we do not see the need to support the Legacy library anymore. 
+Starting from this release there will be only Big Calendar mode and the Legacy option disappears from the user choice. 
+
+## Extended date formats
+
+As you know, there is a Language setting in the user profile preference. Along with language this setting also impacts the displayed date formats. 
+The currently existing choices were not enough for some of our use cases. We added **English 24** and **ISO 8601** formats.
+
+<Image
+  title="Use the Date and time format option to overwrite the user language setting."
+  src="/img/blog/2024-05-14-calendar-panel-3.0.0/language.png"
+/>
+
+## Many small improvements
+
+There are many small changes to enhance the user experience. One of them is decoupling the dashboard refresh periodicity and the calendar selected time range. 
+
+Previously, when a user changed the Calendar time range that action also affected the settings of how often the dashboard refreshed.
+
+Starting from this release, two settings are completely independent. 
+
+<Image
+  title="Two time settings are completely decoupled."
+  src="/img/blog/2024-05-14-calendar-panel-3.0.0/decoupled.png"
+/>
 
 ## Getting Started
 
