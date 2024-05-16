@@ -5,7 +5,7 @@ let values = [];
 /**
  * Data Source
  */
-data.series.map((s) => {
+context.panel.data.series.map((s) => {
   latitudes =
     s.fields.find((f) => f.name === "latitude").values.buffer ||
     s.fields.find((f) => f.name === "latitude").values;

@@ -76,8 +76,8 @@ const loading = {
  * Maps are Ready
  */
 window.gmapReady = () => {
-  notifySuccess(["Google Maps", "Loaded..."]);
-  echartsInstance.setOption(gmap, (notmerge = true));
+  context.grafana.notifySuccess(["Google Maps", "Loaded..."]);
+  context.panel.chart.setOption(gmap, (notmerge = true));
 };
 
 return typeof google === "object" && typeof google.maps === "object"

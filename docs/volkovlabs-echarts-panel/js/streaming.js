@@ -1,5 +1,5 @@
 const values = {};
-const series = data.series.map((s) => {
+const series = context.panel.data.series.map((s) => {
   names =
     s.fields.find((f) => f.name === "name").values.buffer ||
     s.fields.find((f) => f.name === "name").values;

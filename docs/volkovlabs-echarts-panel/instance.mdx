@@ -10,7 +10,7 @@ import Video from "@theme/Video";
 
 # ECharts Instance
 
-The `echartsInstance` is a created instance (container) of the Apache ECharts library. It allows you to do the following:
+The `context.panel.chart` ( early `echartsInstance` ) is a created instance (container) of the Apache ECharts library. It allows you to do the following:
 
 - Get the width and height of the ECharts container.
 - Get the DOM (Document Object Model) to include additional elements.
@@ -29,8 +29,8 @@ To scale the content for fitting the resized panel, you need to use the instance
     type: "image",
     style: {
       image: `data:image/svg+xml;utf8,${SVG}`,
-      width: echartsInstance.getWidth(),
-      height: echartsInstance.getHeight(),
+      width: context.panel.chart.getWidth(),
+      height: context.panel.chart.getHeight(),
     },
   },
 ```

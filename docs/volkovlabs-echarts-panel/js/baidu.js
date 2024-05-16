@@ -60,8 +60,8 @@ const loading = {
  * Maps are Ready
  */
 window.bmapReady = () => {
-  notifySuccess(["Baidu Maps", "Loaded..."]);
-  echartsInstance.setOption(bmap, (notmerge = true));
+  context.grafana.notifySuccess(["Baidu Maps", "Loaded..."]);
+  context.panel.chart.setOption(bmap, (notmerge = true));
 };
 
 return window.BMap ? bmap : loading;
