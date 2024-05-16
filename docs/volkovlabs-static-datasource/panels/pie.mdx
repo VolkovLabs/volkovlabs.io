@@ -16,40 +16,6 @@ You can use the Static data source to test category panels like Pie Charts.
 - Number field `amount` for numeric value.
 
 <Image
-  title="Category panel like Pie Chart can be tested using Static Data Source."
+  title="Category panel like Pie Chart can be tested using the Static Data Source."
   src="/img/plugins/volkovlabs-static-datasource/dashboard.png"
 />
-
-## Manual and Code Editor
-
-### Fields
-
-- String field `name` for the category name.
-- Number field `value` for numeric value.
-
-<Image
-  title="Pie Chart (Business Charts) using Manual Static Data Source."
-  src="/img/plugins/volkovlabs-static-datasource/bi-charts-pie-manual-editor.png"
-/>
-
-<Image
-  title="Pie Chart (Business Charts) using Code Static Data Source."
-  src="/img/plugins/volkovlabs-static-datasource/bi-charts-pie-code-editor.png"
-/>
-
-```javascript
-const values = [
-  ["Search Engine", "Direct", "Email", "Union Ads", "Video Ads"],
-  [1048, 735, 580, 484, 300],
-];
-
-const result = {
-  ...frame,
-  fields: frame.fields.map((field, index) => ({
-    ...field,
-    values: values[index],
-  })),
-};
-
-return Promise.resolve(result);
-```

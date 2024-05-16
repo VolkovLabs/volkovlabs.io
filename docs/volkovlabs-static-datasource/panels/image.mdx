@@ -12,7 +12,7 @@ You can use the Static data source to store any supported base64-encoded media f
 
 :::info Limitation
 
-Static Data Source is an excellent solution for not huge sizes. If you get a `413 Request Entity Too Long` error, the Grafana limit is reached. In this case, consider using a database/storage data source. PostgreSQL is a good choice.
+The Static Data Source is an excellent solution for not huge sizes. If you get a `413 Request Entity Too Long` error, the Grafana limit is reached. In this case, consider using a database/storage data source. [PostgreSQL is a good choice](/blog/grafana-postgresql-20230123/).
 
 :::
 
@@ -21,6 +21,6 @@ Static Data Source is an excellent solution for not huge sizes. If you get a `41
 - String field `img` to store a base64 encoded media file with or without definition `data:image/IMAGE-FORMAT;base64,ENCODED-CONTENT`.
 
 <Image
-  title="Store Base64 encoded media file to display using Base64 Image panel."
+  title="Storing a Base64 encoded media file to display using the Base64 Image panel."
   src="/img/plugins/volkovlabs-static-datasource/image.png"
 />

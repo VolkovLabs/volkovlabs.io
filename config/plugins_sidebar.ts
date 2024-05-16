@@ -369,6 +369,7 @@ const sidebars: SidebarsConfig = {
             "volkovlabs-static-datasource/panels/logs",
             "volkovlabs-static-datasource/panels/graph",
             "volkovlabs-static-datasource/panels/pie",
+            "volkovlabs-static-datasource/panels/business-charts",
           ],
           label: "Panels",
           type: "category",
