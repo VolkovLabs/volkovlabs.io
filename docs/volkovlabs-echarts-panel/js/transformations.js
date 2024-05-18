@@ -1,18 +1,16 @@
 let names = [];
 let amounts = [];
-data.series.map((s) => {
+
+context.panel.data.series.map((s) => {
   names =
-    s.fields.find((f) => f.name === "Name").values.source.buffer ||
-    s.fields.find((f) => f.name === "Name").values.source;
-  namesOrder = s.fields.find((f) => f.name === "Name").values.order;
+    s.fields.find((f) => f.name === "Name").values ||
+    s.fields.find((f) => f.name === "Name").values;
+  namesOrder = s.fields.find((f) => f.name === "Name").values;
   amounts =
-    s.fields.find((f) => f.name === "Amount").values.source.buffer ||
-    s.fields.find((f) => f.name === "Amount").values.source;
+    s.fields.find((f) => f.name === "Amount").values ||
+    s.fields.find((f) => f.name === "Amount").values;
   amountsOrder = s.fields.find((f) => f.name === "Amount").values.order;
 });
-
-const namesOrdered = namesOrder.map((i) => names[i]);
-const amountsOrdered = amountsOrder.map((i) => amounts[i]);
 
 return {
   grid: {
@@ -24,18 +22,18 @@ return {
   },
   tooltip: {},
   legend: {
-    data: [replaceVariables("$var")],
+    data: [context.grafana.replaceVariables("$var")],
   },
   xAxis: {
-    data: namesOrdered,
+    data: names,
   },
   yAxis: {},
   toolbox: { feature: { restore: {} } },
   series: [
     {
-      name: replaceVariables("$var"),
+      name: context.grafana.replaceVariables("$var"),
       type: "bar",
-      data: amountsOrdered,
+      data: amounts,
     },
   ],
 };

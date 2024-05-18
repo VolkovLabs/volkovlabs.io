@@ -1,5 +1,5 @@
 let wind;
-data.series.map((s) => {
+context.panel.data.series.map((s) => {
   const time =
     s.fields.find((f) => f.name === "Time").values.buffer ||
     s.fields.find((f) => f.name === "Time").values;

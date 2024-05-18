@@ -16,7 +16,7 @@ The Business Charts Panel, as well as Grafana, supports various data sources tha
 The following code snippet demonstrates how you can retrieve data from your data source to use in the Business Charts Panel.
 
 ```javascript
-data.series.map((s) => {
+context.panel.data.series.map((s) => {
   if (s.refId === "logo") {
     images =
       s.fields.find((f) => f.name === "body").values.buffer ||
@@ -61,7 +61,7 @@ You can convert one-dimensional arrays into multi-dimensional arrays if needed.
 - To work with Grafana 10 and its older versions, you need to use the `values` and `values.buffer` fields.
 
 ```javascript
-const series = data.series.map((s) => {
+const series = context.panel.data.series.map((s) => {
   const rates =
     s.fields.find((f) => f.name === "Rate").values.buffer ||
     s.fields.find((f) => f.name === "Rate").values;

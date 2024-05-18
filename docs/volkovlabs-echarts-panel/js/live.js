@@ -1,4 +1,4 @@
-const series = data.series.map((s) => {
+const series = context.panel.data.series.map((s) => {
   const sData =
     s.fields.find((f) => f.type === "number").values.buffer ||
     s.fields.find((f) => f.type === "number").values;

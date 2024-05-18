@@ -1,5 +1,5 @@
 //Get the DOM for the panel
-let dom = echartsInstance.getDom();
+let dom = context.panel.chart.getDom();
 
 //Get the child nodes
 let nodeList = dom.childNodes;

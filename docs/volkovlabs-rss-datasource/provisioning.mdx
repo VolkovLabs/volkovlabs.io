@@ -1,6 +1,6 @@
 ---
 tags:
-  - RSS/Atom Data Source
+  - Business News Data Source
   - Provisioning
 ---
 
@@ -13,7 +13,7 @@ Grafana supports managing data sources by adding one or more YAML config files i
 
 ## Example
 
-Example of provisioning the RSS/Atom Data Source.
+Example of provisioning the Business News Data Source.
 
 ```yaml
 datasources:
@@ -30,9 +30,31 @@ datasources:
 
 ## Data Sources
 
-When provisioned, the RSS/Atom data source should be available in the data sources list.
+When provisioned, the Business News data source should be available in the data sources list.
 
 <Image
-  title="RSS/Atom Data source requires to input Feed URL."
+  title="Business News Data source requires to input Feed URL."
   src="/img/plugins/volkovlabs-rss-datasource/datasource.png"
 />
+
+### Feed URL
+
+The correct URL must be set. During testing you may see the error.
+
+<Image
+  title="Failed to fetch the provided URL."
+  src="/img/plugins/volkovlabs-rss-datasource/error.png"
+/>
+
+If the URL is correct and returns datam, but returns an error. Try to add `/` to the end of the url to avoid redirect blocked by CORS policy.
+
+As an example use `https://sitename/feed/` instead `https://sitename/feed`.
+
+<Image
+  title="Provided URL should be exactly as it returned from the RSS/Atom resource to avoid CORS policy restrictions."
+  src="/img/plugins/volkovlabs-rss-datasource/correct-url.png"
+/>
+
+:::info Caching
+If you already tried a data source with `https://sitename/feed` and added `/` still see an error. Please clear cache and use hard reload.
+:::

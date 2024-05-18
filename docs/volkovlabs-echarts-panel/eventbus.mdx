@@ -30,7 +30,7 @@ A full list of events is available in our [Grafana Crash Course](/grafana/develo
 To subscribe and unsubscribe from events, you can create an extended result object.
 
 ```
-const subscription = eventBus.subscribe({ type: 'data-hover' }, () => {
+const subscription = context.grafana.eventBus.subscribe({ type: 'data-hover' }, () => {
   console.log('React to Data Hover')
 })
 

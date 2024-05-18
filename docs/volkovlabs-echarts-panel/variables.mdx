@@ -11,10 +11,10 @@ import Video from "@theme/Video";
 
 # Variables
 
-Use the `replaceVariables()` function to replace dashboard and global variables.
+Use the `context.grafana.replaceVariables()` function to replace dashboard and global variables.
 
 ```javascript
-const email = replaceVariables("${__user.email}");
+const email = context.grafana.replaceVariables("${__user.email}");
 ```
 
 You can get familiar with three types of variables in our [Grafana Crash Course](/grafana/variables).
@@ -43,7 +43,7 @@ You can update dashboard variables with [event handlers](/plugins/volkovlabs-ech
 - `value` is the updated value.
 
 ```js
-echartsInstance.on("click", (params) => {
-  locationService.partial({ "var-name": value }, true);
+context.panel.chart.on("click", (params) => {
+  context.grafana.locationService.partial({ "var-name": value }, true);
 });
 ```
