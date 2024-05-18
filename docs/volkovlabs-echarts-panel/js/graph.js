@@ -2,7 +2,7 @@ let nodes, links;
 /**
  * Data Source data
  */
-data.series.map((s) => {
+context.panel.data.series.map((s) => {
   if (s.refId === "nodes") {
     var titles =
       s.fields.find((f) => f.name === "sIp").values.buffer ||
@@ -15,6 +15,7 @@ data.series.map((s) => {
       s.fields.find((f) => f.name === "Count").values;
 
     nodes = titles.map((title, i) => ({
+      id: i,
       name: title,
       symbolSize: symbolSizes[i],
       value: symbolSizes[i],
@@ -44,7 +45,6 @@ data.series.map((s) => {
  * Categories
  */
 const categories = [{ name: "1" }, { name: "2" }, { name: "3" }];
-
 return {
   tooltip: {},
   legend: [

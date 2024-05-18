@@ -19,7 +19,7 @@ let timeFn = null;
 /**
  * On Mouse Click
  */
-echartsInstance.on("click", (params) => {
+context.panel.chart.on("click", (params) => {
   clearTimeout(timeFn);
 
   /**
@@ -43,27 +43,27 @@ echartsInstance.on("click", (params) => {
      */
     if (mapCode) {
       return $.get(mapCode, (data) => {
-        echarts.registerMap(name, data);
-        echartsInstance.setOption(loadMap(name));
-        echartsInstance.resize();
+        context.echarts.registerMap(name, data);
+        context.panel.chart.setOption(loadMap(name));
+        context.panel.chart.resize();
       });
     }
 
     /**
      * Load and redraw World Map
      */
-    echartsInstance.setOption(loadMap(name));
-    echartsInstance.resize();
+    context.panel.chart.setOption(loadMap(name));
+    context.panel.chart.resize();
   }, 250);
 });
 
 /**
  * On Double click go back to World Map
  */
-echartsInstance.on("dblclick", (params) => {
+context.panel.chart.on("dblclick", (params) => {
   clearTimeout(timeFn);
-  echartsInstance.setOption(loadMap("world"));
-  echartsInstance.resize();
+  context.panel.chart.setOption(loadMap("world"));
+  context.panel.chart.resize();
 });
 
 /**
