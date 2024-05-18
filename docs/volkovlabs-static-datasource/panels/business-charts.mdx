@@ -8,17 +8,18 @@ import Video from "@theme/Video";
 
 # Business Charts
 
-You can use the Static data source to test the [Business Charts panel](/plugins/volkovlabs-echarts-panel/). Below are illustrations of how you can create values: 
- - Manually,
- - Using the **JavaScript Values Editor**.
+You can use the Static data source to test the [Business Charts panel](/plugins/volkovlabs-echarts-panel/). Below are illustrations of how you can create values:
 
-Please note, in both examples, we also use the Business Charts [**Visual Editor**](/plugins/volkovlabs-echarts-panel/visualeditor/) to read the data frame values and pass them into the Business Charts. 
+- Manually,
+- Using the **JavaScript Values Editor**.
+
+Please note, in both examples, we also use the Business Charts [**Visual Editor**](/plugins/volkovlabs-echarts-panel/visualeditor/) to read the data frame values and pass them into the Business Charts.
 
 :::info
 You can use our Business Charts demo project to play with both Static Data source settings and the Business Charts parameters following the link [Business Charts Pie examples](https://echarts.volkovlabs.io/d/0b5-q7K4k/pie?orgId=1). Go to Edit mode and start experimenting!
 :::
 
-## Manual  
+## Manual
 
 <Image
   title="The Business Charts Pie Chart using Manual mode."
@@ -59,21 +60,21 @@ return {
     source: context.editor.dataset.source,
   },
   tooltip: {
-    trigger: 'item'
+    trigger: "item",
   },
   series: [
     {
-      name: 'Access From',
-      type: 'pie',
-      radius: '80%',
+      name: "Access From",
+      type: "pie",
+      radius: "80%",
       emphasis: {
         itemStyle: {
           shadowBlur: 10,
           shadowOffsetX: 0,
-          shadowColor: 'rgba(0, 0, 0, 0.5)'
-        }
-      }
-    }
-  ]
-}
+          shadowColor: "rgba(0, 0, 0, 0.5)",
+        },
+      },
+    },
+  ],
+};
 ```
