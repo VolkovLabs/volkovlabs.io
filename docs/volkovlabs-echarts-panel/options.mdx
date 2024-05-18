@@ -44,29 +44,29 @@ The `return` clause is where you need to specify the `options` parameter to be p
 
 ## Parameters
 
-| Parameter                                  | Description                                                                      |
-| ------------------------------------------ | -------------------------------------------------------------------------------- |
-| `data`                                     | Object containing a time range, series, and request information.                 |
-| `echarts`                                  | Apache ECharts library.                                                          |
-| `echartsInstance`                          | Instance of the Apache ECharts library. See the example in the screenshot above. |
-| `ecStat`                                   | A statistical and data mining tool for Apache ECharts.                           |
-| `eventBus`                                 | Publish and subscribe to application events.                                     |
-| `locationService`                          | Works with browser location and history.                                         |
-| `notifyError(['Header', 'Error Message'])` | Display error notifications.                                                     |
-| `notifySuccess(['Header', 'Message'])`     | Display success notifications.                                                   |
-| `replaceVariables`                         | Function to interpolate variables.                                               |
-| `theme`                                    | Theme object.                                                                    |
+| Parameter                                                  | Description                                                                      |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `context.panel.data`                                       | Object containing a time range, series, and request information.                 |
+| `context.echarts`                                          | Apache ECharts library.                                                          |
+| `context.panel.chart`                                      | Instance of the Apache ECharts library. See the example in the screenshot above. |
+| `context.ecStat`                                           | A statistical and data mining tool for Apache ECharts.                           |
+| `context.grafana.eventBus`                                 | Publish and subscribe to application events.                                     |
+| `context.grafana.locationService`                          | Works with browser location and history.                                         |
+| `context.grafana.notifyError(['Header', 'Error Message'])` | Display error notifications.                                                     |
+| `context.grafana.notifySuccess(['Header', 'Message'])`     | Display success notifications.                                                   |
+| `context.grafana.replaceVariables`                         | Function to interpolate variables.                                               |
+| `context.grafana.theme`                                    | Theme object.                                                                    |
 
 To inspect those parameters, use the browser's developer console.
 
 ```javascript
-console.error(
-  data,
-  theme,
-  echartsInstance,
-  echarts,
-  replaceVariables,
-  locationService
+console.log(
+  context.panel.data,
+  context.grafana.theme,
+  context.panel.chart,
+  context.echarts,
+  context.grafana.replaceVariables,
+  context.grafana.locationService
 );
 ```
 
@@ -75,6 +75,9 @@ console.error(
 You can display success and error notifications when handling specific events.
 
 ```javascript
-notifySuccess(["Update", "Values updated successfully."]);
-notifyError(["Update", `An error occurred while updating values.`]);
+context.grafana.notifySuccess(["Update", "Values updated successfully."]);
+context.grafana.notifyError([
+  "Update",
+  `An error occurred while updating values.`,
+]);
 ```

@@ -80,13 +80,13 @@ amapReady = () => {
     }, 100);
   }
 
-  notifySuccess(["Gaode Maps", "Loaded..."]);
-  echartsInstance.setOption(amap, (notmerge = true));
+  context.grafana.notifySuccess(["Gaode Maps", "Loaded..."]);
+  context.panel.chart.setOption(amap, (notmerge = true));
 
   /**
    * Get AMap extension component
    */
-  const amapComponent = echartsInstance.getModel().getComponent("amap");
+  const amapComponent = context.panel.chart.getModel().getComponent("amap");
   const amapInstance = amapComponent.getAMap();
   amapInstance.addControl(new AMap.Scale());
   amapInstance.addControl(new AMap.ToolBar());

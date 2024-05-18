@@ -1,50 +1,22 @@
-const pieData = data.series.map((s) => {
-  const models =
-    s.fields.find((f) => f.name === "Model").values.buffer ||
-    s.fields.find((f) => f.name === "Model").values;
-  const values =
-    s.fields.find((f) => f.name === "Value").values.buffer ||
-    s.fields.find((f) => f.name === "Value").values;
-
-  return values.map((d, i) => {
-    return { name: models[i], value: d };
-  });
-})[0];
-
 return {
+  dataset: {
+    source: context.editor.dataset.source,
+  },
   tooltip: {
     trigger: "item",
   },
-  legend: {
-    top: "5%",
-    left: "center",
-  },
   series: [
     {
-      name: "Pie Chart",
+      name: "Access From",
       type: "pie",
-      radius: ["40%", "70%"],
-      avoidLabelOverlap: false,
-      itemStyle: {
-        borderRadius: 10,
-        borderColor: "#fff",
-        borderWidth: 2,
-      },
-      label: {
-        show: false,
-        position: "center",
-      },
+      radius: "80%",
       emphasis: {
-        label: {
-          show: true,
-          fontSize: "40",
-          fontWeight: "bold",
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: "rgba(0, 0, 0, 0.5)",
         },
       },
-      labelLine: {
-        show: false,
-      },
-      data: pieData,
     },
   ],
 };

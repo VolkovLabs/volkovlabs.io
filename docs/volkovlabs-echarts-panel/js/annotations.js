@@ -1,5 +1,5 @@
 const annotations = [];
-data.annotations.map((a) => {
+context.panel.data.annotations.map((a) => {
   a.source.forEach((source) =>
     annotations.push({
       xAxis: source.time,
@@ -15,7 +15,7 @@ data.annotations.map((a) => {
 /**
  * Data Sources
  */
-const series = data.series.map((s) => {
+const series = context.panel.data.series.map((s) => {
   const sData =
     s.fields.find((f) => f.type === "number").values.buffer ||
     s.fields.find((f) => f.type === "number").values;
@@ -49,7 +49,7 @@ const series = data.series.map((s) => {
  */
 setTimeout(
   () =>
-    echartsInstance.dispatchAction({
+    context.panel.chart.dispatchAction({
       type: "takeGlobalCursor",
       key: "dataZoomSelect",
       dataZoomSelectActive: true,
@@ -60,10 +60,10 @@ setTimeout(
 /**
  * Update Time Range on Zoom
  */
-echartsInstance.on("datazoom", function (params) {
+context.panel.chart.on("datazoom", function (params) {
   const startValue = params.batch[0]?.startValue;
   const endValue = params.batch[0]?.endValue;
-  locationService.partial({ from: startValue, to: endValue });
+  context.grafana.locationService.partial({ from: startValue, to: endValue });
 });
 
 /**
@@ -77,7 +77,7 @@ return {
   legend: {
     left: "0",
     bottom: "0",
-    data: data.series.map((s) => s.refId),
+    data: context.panel.data.series.map((s) => s.refId),
     textStyle: {
       color: "rgba(128, 128, 128, .9)",
     },

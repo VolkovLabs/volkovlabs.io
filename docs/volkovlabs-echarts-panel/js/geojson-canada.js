@@ -1,14 +1,14 @@
-const mapName = "Alaska";
+const mapName = "Canada";
 const mapCode =
-  "https://raw.githubusercontent.com/maxogden/simplify-geojson/master/test-data/alaska.geojson";
+  "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/canada.geojson";
 
 /**
  * Register Map
  */
 $.get(mapCode, (data) => {
-  echarts.registerMap(mapName, data);
-  echartsInstance.setOption(loadMap(mapName), (notmerge = true));
-  echartsInstance.resize();
+  context.echarts.registerMap(mapName, data);
+  context.panel.chart.setOption(loadMap(mapName), (notmerge = true));
+  context.panel.chart.resize();
 });
 
 /**

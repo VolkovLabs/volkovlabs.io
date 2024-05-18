@@ -1,4 +1,4 @@
-const requests = data.series.map((s) => {
+const requests = context.panel.data.series.map((s) => {
   const names =
     s.fields.find((f) => f.name === "Metric").values.buffer ||
     s.fields.find((f) => f.name === "Metric").values;

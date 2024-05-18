@@ -1,6 +1,7 @@
 let names = [];
 let amounts = [];
-data.series.map((s) => {
+
+context.panel.data.series.map((s) => {
   names =
     s.fields.find((f) => f.name === "Name").values.buffer ||
     s.fields.find((f) => f.name === "Name").values;
@@ -26,7 +27,7 @@ return {
   toolbox: { feature: { restore: {} } },
   series: [
     {
-      name: replaceVariables("$var"),
+      name: context.grafana.replaceVariables("$var"),
       type: "bar",
       data: amounts,
     },
