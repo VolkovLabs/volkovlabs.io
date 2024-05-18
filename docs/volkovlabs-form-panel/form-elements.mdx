@@ -57,7 +57,7 @@ Element types have specific options. For instance, the Code Editor type in addit
 
 :::info Version
 
-Supported since version 3.0.0.
+Supported starting from the version 3.0.0.
 
 :::
 
@@ -245,7 +245,7 @@ Specific for this element are the following options:
 
 :::info Version
 
-Below is supported since version 3.2.1.
+Below is supported starting from the version 3.2.1.
 
 :::
 This element type is similar to the Read-Only type with the difference that this one allows to display multiple rows of text.
@@ -254,7 +254,7 @@ This element type is similar to the Read-Only type with the difference that this
 
 :::info Version
 
-Below is supported since version 3.2.1 and Grafana 10.1.0.
+Below is supported starting from the version 3.2.1 and Grafana 10.1.0.
 
 :::
 
@@ -291,7 +291,7 @@ All three have some options in common.
 
 :::info Version
 
-Below is supported since version 3.2.1.
+Below is supported starting from the version 3.2.1.
 
 :::
 
@@ -302,6 +302,93 @@ You can specify the **Label** and **Value** fields.
   title="Use values from the query for your types with select options."
   src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-query.png"
 />
+
+#### Select Options from Get Options Code
+
+:::info Version
+
+Below is supported starting from the version 3.5.0.
+
+:::
+
+**Get Options Code** allows to hard code options using the code editor. The code must:
+
+- return array with `{label,value}` objects,
+- be synchronous.
+
+<Image
+  title="Use hard-coded values from the Get Options Code for your types with select options."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-code.png"
+/>
+
+#### Set Options received asynchronously
+
+The **Get Options Code** does not support asynchronous code. However, you still can work with options received asynchronously.
+
+It could be done in two steps:
+
+##### Step 1. **Initial Request**.
+
+<Image
+  title="Initial request to work with options received asynchronously."
+  src="/img/blog/2023-12-03-form-panel-3.3.0/initial-req-for-options.png"
+/>
+
+In the example below, we find a necessary element and update its options. Once the data has been received, we update the element using`context.panel.onChangeElements()`.
+
+```js
+const url = "https://jsonplaceholder.typicode.com/users";
+const element = context.panel.elements.find(
+  (element) => element.id === "select"
+);
+
+async function fetchData() {
+  try {
+    const response = await fetch(url);
+    const body = await response.json();
+
+    const optionsNew = body.map((element) => ({
+      label: element.name,
+      value: element.username,
+    }));
+
+    const newElement = {
+      ...element,
+      options: optionsNew,
+    };
+    const newElements = context.panel.elements.map((element) => {
+      if (element.id === "select") {
+        return newElement;
+      }
+      return element;
+    });
+    context.panel.onChangeElements(newElements);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+return fetchData();
+```
+
+##### Step 2. Create the GET Options Code
+
+Set options for your element from `context.panel.elements`.
+
+<Image
+  title="Get Options code for the Options received asynchronously"
+  src="/img/blog/2023-12-03-form-panel-3.3.0/set-options-from-code.png"
+/>
+
+```js
+const element = context.panel.elements.find(
+  (element) => element.id === "select"
+);
+
+if (element?.options) {
+  return element?.options;
+}
+```
 
 ## Conditional Visibility
 
@@ -327,7 +414,7 @@ if (select) {
 
 :::info Version
 
-Below is supported since version 3.2.1.
+Below is supported starting from the version 3.2.1.
 
 :::
 
@@ -349,7 +436,7 @@ return test === 'test'
 
 :::info Version
 
-Below is supported since version 3.2.1.
+Below is supported starting from the version 3.2.1.
 
 :::
 
