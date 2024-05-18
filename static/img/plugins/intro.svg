@@ -65,7 +65,7 @@
             transform="matrix(0.916,0.402,-0.402,0.916,572.3005,315.2438)" fill="#333">Dynamic Text</text>
         <text dominant-baseline="central" text-anchor="middle"
             style="font-size:12px;font-family:sans-serif;" xml:space="preserve"
-            transform="matrix(0.614,0.789,-0.789,0.614,521.8192,380.1021)" fill="#333">Base64 Image/PDF</text>
+            transform="matrix(0.614,0.789,-0.789,0.614,521.8192,380.1021)" fill="#333">Business Image/PDF</text>
         <text dominant-baseline="central" text-anchor="middle"
             style="font-size:14px;font-family:sans-serif;"
             transform="matrix(0.614,-0.789,0.789,0.614,384.7269,292.034)" fill="#333">Operate</text>
