@@ -16,6 +16,64 @@ export const NAVBAR = {
       "aria-label": "Blog",
     },
     {
+      to: "/plugins/",
+      position: "left",
+      label: "Business Suite for Grafana",
+      "aria-label": "Plugins",
+      items: [
+        {
+          label: "Business Calendar Panel",
+          to: "/plugins/volkovlabs-calendar-panel/",
+          className: "volkovlabs-link icon-plugins-calendar-link",
+        },
+        {
+          label: "Business Charts Panel",
+          to: "/plugins/volkovlabs-echarts-panel/",
+          className: "volkovlabs-link icon-plugins-echarts-link",
+        },
+        {
+          label: "Business Forms Panel",
+          to: "/plugins/volkovlabs-form-panel/",
+          className: "volkovlabs-link icon-plugins-form-link",
+        },
+        {
+          label: "Business Image/PDF Panel",
+          to: "/plugins/volkovlabs-image-panel/",
+          className: "volkovlabs-link icon-plugins-base64-link",
+        },
+        {
+          label: "Business News Data Source",
+          to: "/plugins/volkovlabs-rss-datasource/",
+          className: "volkovlabs-link icon-plugins-rss-link",
+        },
+        {
+          label: "Business Text Panel",
+          to: "/plugins/volkovlabs-dynamictext-panel/",
+          className: "volkovlabs-link icon-plugins-dt-link",
+        },
+        {
+          label: "Business Variable Panel",
+          to: "/plugins/volkovlabs-variable-panel/",
+          className: "volkovlabs-link icon-plugins-variable-link",
+        },
+        {
+          label: "Environment Data Source",
+          to: "/plugins/volkovlabs-env-datasource/",
+          className: "volkovlabs-link icon-plugins-env-link",
+        },
+        {
+          label: "Grafana API Data Source",
+          to: "/plugins/volkovlabs-grapi-datasource/",
+          className: "volkovlabs-link icon-plugins-grapi-link",
+        },
+        {
+          label: "Static Data Source",
+          to: "/plugins/volkovlabs-static-datasource/",
+          className: "volkovlabs-link icon-plugins-static-link",
+        },
+      ],
+    },
+    {
       to: "/big/",
       position: "left",
       label: "Business Intelligence",
@@ -44,64 +102,6 @@ export const NAVBAR = {
         {
           label: "Release Notes",
           to: "/big/release",
-        },
-      ],
-    },
-    {
-      to: "/plugins/",
-      position: "left",
-      label: "Business Suite for Grafana",
-      "aria-label": "Plugins",
-      items: [
-        {
-          label: "Base64 Panel",
-          to: "/plugins/volkovlabs-image-panel/",
-          className: "volkovlabs-link icon-plugins-base64-link",
-        },
-        {
-          label: "Business Charts Panel",
-          to: "/plugins/volkovlabs-echarts-panel/",
-          className: "volkovlabs-link icon-plugins-echarts-link",
-        },
-        {
-          label: "Business Calendar Panel",
-          to: "/plugins/volkovlabs-calendar-panel/",
-          className: "volkovlabs-link icon-plugins-calendar-link",
-        },
-        {
-          label: "Business News Data Source",
-          to: "/plugins/volkovlabs-rss-datasource/",
-          className: "volkovlabs-link icon-plugins-rss-link",
-        },
-        {
-          label: "Dynamic Text Panel",
-          to: "/plugins/volkovlabs-dynamictext-panel/",
-          className: "volkovlabs-link icon-plugins-dt-link",
-        },
-        {
-          label: "Data Manipulation Panel",
-          to: "/plugins/volkovlabs-form-panel/",
-          className: "volkovlabs-link icon-plugins-form-link",
-        },
-        {
-          label: "Environment Data Source",
-          to: "/plugins/volkovlabs-env-datasource/",
-          className: "volkovlabs-link icon-plugins-env-link",
-        },
-        {
-          label: "Grafana API Data Source",
-          to: "/plugins/volkovlabs-grapi-datasource/",
-          className: "volkovlabs-link icon-plugins-grapi-link",
-        },
-        {
-          label: "Static Data Source",
-          to: "/plugins/volkovlabs-static-datasource/",
-          className: "volkovlabs-link icon-plugins-static-link",
-        },
-        {
-          label: "Variable Panel",
-          to: "/plugins/volkovlabs-variable-panel/",
-          className: "volkovlabs-link icon-plugins-variable-link",
         },
       ],
     },

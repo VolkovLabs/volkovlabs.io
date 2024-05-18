@@ -13,9 +13,9 @@ export const FOOTER = {
       title: "Business Suite for Grafana",
       items: [
         {
-          label: "Base64 Image/PDF Panel",
-          to: "/plugins/volkovlabs-image-panel/",
-          className: "volkovlabs-footer-link icon-plugins-base64-link",
+          label: "Business Calendar Panel",
+          to: "/plugins/volkovlabs-calendar-panel/",
+          className: "volkovlabs-footer-link icon-plugins-calendar-link",
         },
         {
           label: "Business Charts Panel",
@@ -23,9 +23,14 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-echarts-link",
         },
         {
-          label: "Business Calendar Panel",
-          to: "/plugins/volkovlabs-calendar-panel/",
-          className: "volkovlabs-footer-link icon-plugins-calendar-link",
+          label: "Business Forms Panel",
+          to: "/plugins/volkovlabs-form-panel/",
+          className: "volkovlabs-footer-link icon-plugins-form-link",
+        },
+        {
+          label: "Business Image/PDF Panel",
+          to: "/plugins/volkovlabs-image-panel/",
+          className: "volkovlabs-footer-link icon-plugins-base64-link",
         },
         {
           label: "Business News Data Source",
@@ -33,14 +38,14 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-rss-link",
         },
         {
-          label: "Dynamic Text Panel",
+          label: "Business Text Panel",
           to: "/plugins/volkovlabs-dynamictext-panel/",
           className: "volkovlabs-footer-link icon-plugins-dt-link",
         },
         {
-          label: "Data Manipulation Panel",
-          to: "/plugins/volkovlabs-form-panel/",
-          className: "volkovlabs-footer-link icon-plugins-form-link",
+          label: "Business Variable Panel",
+          to: "/plugins/volkovlabs-variable-panel/",
+          className: "volkovlabs-footer-link icon-plugins-variable-link",
         },
         {
           label: "Environment Data Source",
@@ -56,11 +61,6 @@ export const FOOTER = {
           label: "Static Data Source",
           to: "/plugins/volkovlabs-static-datasource/",
           className: "volkovlabs-footer-link icon-plugins-static-link",
-        },
-        {
-          label: "Variable Panel",
-          to: "/plugins/volkovlabs-variable-panel/",
-          className: "volkovlabs-footer-link icon-plugins-variable-link",
         },
       ],
     },
