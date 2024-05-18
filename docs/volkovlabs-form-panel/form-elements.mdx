@@ -312,8 +312,9 @@ Below is supported starting from the version 3.5.0.
 :::
 
 **Get Options Code** allows to hard code options using the code editor. The code must:
- - return array with `{label,value}` objects,
- - be synchronous.
+
+- return array with `{label,value}` objects,
+- be synchronous.
 
 <Image
   title="Use hard-coded values from the Get Options Code for your types with select options."
@@ -322,7 +323,7 @@ Below is supported starting from the version 3.5.0.
 
 #### Set Options received asynchronously
 
-The **Get Options Code** does not support asynchronous code. However, you still can work with options received asynchronously. 
+The **Get Options Code** does not support asynchronous code. However, you still can work with options received asynchronously.
 
 It could be done in two steps:
 
@@ -369,6 +370,7 @@ async function fetchData() {
 
 return fetchData();
 ```
+
 ##### Step 2. Create the GET Options Code
 
 Set options for your element from `context.panel.elements`.
