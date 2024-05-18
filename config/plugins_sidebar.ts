@@ -365,11 +365,11 @@ const sidebars: SidebarsConfig = {
         "volkovlabs-static-datasource/variables",
         {
           items: [
+            "volkovlabs-static-datasource/panels/business-charts",
             "volkovlabs-static-datasource/panels/image",
             "volkovlabs-static-datasource/panels/logs",
             "volkovlabs-static-datasource/panels/graph",
             "volkovlabs-static-datasource/panels/pie",
-            "volkovlabs-static-datasource/panels/business-charts",
           ],
           label: "Panels",
           type: "category",
