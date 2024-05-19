@@ -241,6 +241,19 @@
   background: url("/static/img/index/github.dark.svg") no-repeat;
 }
 
+.icon-linkedin-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/linkedin.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-linkedin-link::before {
+  background: url("/static/img/index/linkedin.dark.svg") no-repeat;
+}
+
 /* Search */
 
 .DocSearch {

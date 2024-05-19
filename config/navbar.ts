@@ -10,12 +10,6 @@ export const NAVBAR = {
   },
   items: [
     {
-      to: "/blog/",
-      position: "left",
-      label: "Blog",
-      "aria-label": "Blog",
-    },
-    {
       to: "/plugins/",
       position: "left",
       label: "Business Suite for Grafana",
@@ -132,6 +126,12 @@ export const NAVBAR = {
           to: "/blog/tags/grafana-crash-course",
         },
       ],
+    },
+    {
+      to: "/blog/",
+      position: "left",
+      label: "Blog",
+      "aria-label": "Blog",
     },
     {
       to: "/sponsor/",

@@ -65,15 +65,28 @@ export const FOOTER = {
       ],
     },
     {
+      title: "Business Intelligence",
+      items: [
+        {
+          label: "Getting started",
+          href: "/big/getting-started/",
+        },
+        {
+          label: "Alerting",
+          href: "/big/alerting/",
+        },
+        {
+          label: "REST API",
+          href: "/big/api/",
+        },
+      ],
+    },
+    {
       title: "Discover",
       items: [
         {
           label: "Blog",
           href: "/blog/",
-        },
-        {
-          label: "Business Intelligence",
-          href: "/big/",
         },
         {
           label: "Grafana Crash Course",
@@ -105,6 +118,7 @@ export const FOOTER = {
         {
           label: "LinkedIn",
           href: "https://linkedin.com/company/volkovlabs",
+          className: "volkovlabs-footer-link icon-linkedin-link",
         },
         {
           label: "YouTube Community",

@@ -50,7 +50,7 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-variable-panel/",
   },
   {
-    title: "Grafana HTTP API Data Source",
+    title: "Grafana API Data Source",
     name: "volkovlabs-grapi-datasource",
     description: <>Connect to Local and Remote Grafana instances.</>,
     href: "/plugins/volkovlabs-grapi-datasource/",
