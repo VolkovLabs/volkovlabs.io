@@ -65,6 +65,23 @@ export const FOOTER = {
       ],
     },
     {
+      title: "Business Intelligence",
+      items: [
+        {
+          label: "Getting started",
+          href: "/big/getting-started/",
+        },
+        {
+          label: "Alerting",
+          href: "/big/alerting/",
+        },
+        {
+          label: "REST API",
+          href: "/big/api/",
+        },
+      ],
+    },
+    {
       title: "Discover",
       items: [
         {
