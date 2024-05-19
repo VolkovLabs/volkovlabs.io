@@ -38,7 +38,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "link",
-          href: "/blog/tags/calendar",
+          href: "/blog/tags/business-calendar",
           label: "Related Blog posts",
         },
         "volkovlabs-calendar-panel/release",
