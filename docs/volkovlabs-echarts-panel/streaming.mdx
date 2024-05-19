@@ -59,10 +59,20 @@ Example of Node.js WebSocket Server implementation.
 
 WebSocket API Data Source can be provisioned using configuration files or in Grafana UI.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-echarts-panel/yml/websocket.yml"
-  language="yaml"
-/>
+```yaml
+apiVersion: 1
+
+datasources:
+  - name: Websocket
+    type: golioth-websocket-datasource
+    uid: LWj8ert4k
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      host: ws://WebSocker-Server:8080
+```
 
 ### Example
 
