@@ -90,10 +90,6 @@ export const NAVBAR = {
           to: "/big/api",
         },
         {
-          label: "Related Blog posts",
-          to: "/blog/tags/business-intelligence",
-        },
-        {
           label: "Release Notes",
           to: "/big/release",
         },
@@ -121,10 +117,6 @@ export const NAVBAR = {
           label: "Developer",
           to: "/grafana/developer",
         },
-        {
-          label: "Related Blog posts",
-          to: "/blog/tags/grafana-crash-course",
-        },
       ],
     },
     {
@@ -132,6 +124,20 @@ export const NAVBAR = {
       position: "left",
       label: "Blog",
       "aria-label": "Blog",
+      items: [
+        {
+          label: "Business Suite",
+          to: "/blog/tags/business-suite",
+        },
+        {
+          label: "Business Intelligence",
+          to: "/blog/tags/business-intelligence",
+        },
+        {
+          label: "Grafana Crash Course",
+          to: "/blog/tags/grafana-crash-course",
+        },
+      ],
     },
     {
       to: "/sponsor/",
