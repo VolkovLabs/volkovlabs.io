@@ -89,10 +89,6 @@ export const FOOTER = {
           href: "/blog/",
         },
         {
-          label: "Business Intelligence",
-          href: "/big/",
-        },
-        {
           label: "Grafana Crash Course",
           href: "/grafana/",
         },
@@ -122,6 +118,7 @@ export const FOOTER = {
         {
           label: "LinkedIn",
           href: "https://linkedin.com/company/volkovlabs",
+          className: "volkovlabs-footer-link icon-linkedin-link",
         },
         {
           label: "YouTube Community",
