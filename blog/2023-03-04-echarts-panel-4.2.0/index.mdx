@@ -77,10 +77,39 @@ You can add elements (buttons, checkboxes, dropdown boxes, etc.) to the DOM (Doc
 
 For example, you can add a button with an event handler.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/dom.js"
-  language="js"
-/>
+```js
+const myFunction = () => {
+  alert("myFunction() called!");
+};
+
+//Get the DOM for the panel
+let dom = context.panel.chart.getDom();
+
+//Get the child nodes
+let nodeList = dom.childNodes;
+
+//If we haven't added our controls to the DOM yet
+if (nodeList.length < 2) {
+  //Create a new button
+  const btn = document.createElement("button");
+
+  //Establish button name
+  const textnode = document.createTextNode("My Button");
+  btn.appendChild(textnode);
+
+  //Add click event handler
+  btn.addEventListener("click", myFunction);
+
+  //Create a new <div>
+  const div = document.createElement("div");
+
+  //Add button to <div>
+  div.appendChild(btn);
+
+  //Insert new <div> ahead of existing chart div
+  dom.insertBefore(div, dom.firstChild);
+}
+```
 
 ## Getting Started
 
