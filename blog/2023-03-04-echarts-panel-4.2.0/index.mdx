@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: echarts-panel-4.2.0-20230304/
-tags: [Business Charts, Release Notes]
+tags: [Business Charts, Business Suite]
 image: /img/blog/2023-03-04-echarts-panel-4.2.0/banner.png
 keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 updated: 2023-09-06
@@ -42,10 +42,30 @@ We are amazed by the everyday developments of the community that make use of the
 
 Our community member [ftasso](https://github.com/ftasso) shared an extremely interesting use case that displays complex ECharts objects like a sunburst with the toolbox. It dynamically retrieves data and uses a variety of variables for chart generation.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/dynamic.js"
-  language="js"
-/>
+```js
+myCallback = (text) => {
+  alert(text);
+};
+
+const myTextCallbackHelper = "alert('Step 1'); myCallback('Step2');";
+const onclick = new Function(myTextCallbackHelper);
+
+let myToolbox = {
+  toolbox: {
+    show: true,
+    itemSize: 30,
+    feature: {
+      my1: {
+        title: "chart",
+        icon: "M4.1,28.9h7.1l9.3-22l7.4,38l9.7-19.7l3,12.8h14.9M4.1,58h51.4",
+        onclick,
+      },
+    },
+  },
+};
+
+return myToolbox;
+```
 
 ### Preserve the selected range on a visual map
 
@@ -54,24 +74,51 @@ Our community member [Barryetter](https://github.com/Barryetter) shared another 
 1. Specify two dashboard variables. Constants are also fine but you need to hide them from the user. Name them `datarangeStart` and `datarangeEnd` and apply some initial values to them.
 2. In the Apache EChart Panel code editor (before the `return` snippet), add an event handler for the `datarangeselected` event. Remove any other event handler to prevent creation of duplicate handlers.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/range.js"
-  language="js"
-/>
+```js
+echartsInstance.off("datarangeselected");
+
+echartsInstance.on("datarangeselected", (params) => {
+  const startValue = params.selected[0];
+  const endValue = params.selected[1];
+  locationService.partial(
+    { "var-datarangeStart": startValue, "var-datarangeEnd": endValue },
+    true
+  );
+});
+```
 
 3. In the `visualMap` definition, set the `range` property to the dashboard variables using the `replaceVariables` method as described in our [documentation](/plugins/volkovlabs-echarts-panel/variables).
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2023-03-04-echarts-panel-4.2.0/visual-map.js"
-  language="js"
-/>
+```js
+visualMap: [
+  {
+    type: "continuous",
+    left: "center",
+    bottom: "0%",
+    min: 0,
+    max: 30,
+    range: [
+      replaceVariables("$datarangeStart"),
+      replaceVariables("$datarangeEnd"),
+    ],
+    orient: "horizontal",
+    text: ["", "Occupancy"],
+    realtime: true,
+    calculable: true,
+    dimension: 0,
+    inRange: {
+      color: ["#ffffff", "#0000ff", "#ffff00", "#ff00ff"],
+    },
+  },
+];
+```
 
 ## Create DOM (Document Object Model) Elements
 
 You can add elements (buttons, checkboxes, dropdown boxes, etc.) to the DOM (Document Object Model) using `echartsInstance` contributed by [Lroy](https://github.com/Lroy).
 
 <Image
-  title="Add a button to add Events into the Apache ECharts container."
+  title="Add a button to add Events into the panel's container."
   src="/img/blog/2023-03-04-echarts-panel-4.2.0/dom.png"
 />
 

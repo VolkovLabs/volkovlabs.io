@@ -14,6 +14,8 @@ import Video from "@theme/Video";
 
 The parameter `options` describes the charts in the JSON format.
 
+## Getting started
+
 To configure the Business Charts panel mainly means writing the Charts Function. Generally, this function contains two parts:
 
 - JavaScript to read data points from the data source.
@@ -46,16 +48,19 @@ The `return` clause is where you need to specify the `options` parameter to be p
 
 | Parameter                                                  | Description                                                                      |
 | ---------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `context.panel.data`                                       | Object containing a time range, series, and request information.                 |
 | `context.echarts`                                          | Apache ECharts library.                                                          |
-| `context.panel.chart`                                      | Instance of the Apache ECharts library. See the example in the screenshot above. |
 | `context.ecStat`                                           | A statistical and data mining tool for Apache ECharts.                           |
+| `context.editor.dataset`                                   | **[Visual mode]** Publish and subscribe to application events.                   |
+| `context.editor.series`                                    | **[Visual mode]** Publish and subscribe to application events.                   |
 | `context.grafana.eventBus`                                 | Publish and subscribe to application events.                                     |
 | `context.grafana.locationService`                          | Works with browser location and history.                                         |
 | `context.grafana.notifyError(['Header', 'Error Message'])` | Display error notifications.                                                     |
 | `context.grafana.notifySuccess(['Header', 'Message'])`     | Display success notifications.                                                   |
-| `context.grafana.replaceVariables`                         | Function to interpolate variables.                                               |
+| `context.grafana.refresh()`                                | Function to refresh dashboard panels using application events.                   |
+| `context.grafana.replaceVariables()`                       | Function to interpolate variables.                                               |
 | `context.grafana.theme`                                    | Theme object.                                                                    |
+| `context.panel.chart`                                      | Instance of the Apache ECharts library. See the example in the screenshot above. |
+| `context.panel.data`                                       | Object containing a time range, series, and request information.                 |
 
 To inspect those parameters, use the browser's developer console.
 

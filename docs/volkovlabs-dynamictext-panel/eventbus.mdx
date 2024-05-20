@@ -26,15 +26,15 @@ A full list of events is available in our [Grafana Crash Course](/grafana/develo
 
 To avoid memory leaks, all events must be unsubscribed.
 
-```
-const subscription = eventBus.subscribe({ type: 'data-hover' }, () => {
-  console.log('React to Data Hover')
-})
+```js
+const subscription = eventBus.subscribe({ type: "data-hover" }, () => {
+  console.log("React to Data Hover");
+});
 
 return () => {
   subscription.unsubscribe();
-  console.log('Unsubscribed');
-}
+  console.log("Unsubscribed");
+};
 ```
 
 <Image

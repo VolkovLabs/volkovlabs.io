@@ -33,20 +33,20 @@ All buttons are disabled and moving circled dots are placed instead of the Submi
 
 Custom code can be asynchronous. For that, the custom code should return the `Promise`.
 
-```
+```js
 const getInitialData = async () => {
-  const response = await fetch('http://123');
+  const response = await fetch("http://123");
 
   const data = await response.json();
 
   /**
    * Update Elements with data
    */
-  onChange([])
-}
+  onChange([]);
+};
 
 /**
  * Return Promise
  */
-return getInitialData()
+return getInitialData();
 ```

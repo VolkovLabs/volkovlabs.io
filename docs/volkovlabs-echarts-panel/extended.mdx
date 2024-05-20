@@ -17,7 +17,11 @@ The Business Charts Panel supports the extended result object since version 5.0.
 
 :::
 
-The extended result object allows you to return a configuration, options, and unsubscribe functions.
+The extended result object allows you to return:
+
+- Configuration
+- Options
+- Unsubscribe function
 
 ```json
 return {
@@ -57,8 +61,8 @@ The version is reserved for future improvements. The only supported version is 2
 
 | Option       | Description                                                                            | Default |
 | ------------ | -------------------------------------------------------------------------------------- | ------- |
-| `notMerge`   | Specifies whether it's required to merge the current option with a previous one.       | `true`  |
 | `lazyUpdate` | Specifies whether it's required to update the modified chart instantly or not.         | `false` |
+| `notMerge`   | Specifies whether it's required to merge the current option with a previous one.       | `true`  |
 | `silent`     | Specifies whether it's required to prevent triggering events when calling `setOption`. | `false` |
 
 :::info Additional resources

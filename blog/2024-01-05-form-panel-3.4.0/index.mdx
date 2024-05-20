@@ -91,13 +91,16 @@ Starting from this release, we added Event Bus and App Events into the **Context
 
 Refresh all dashboard panels using `EventBus` with global scope called `AppEvents`:
 
-```
-context.grafana.appEvents.publish({ type: 'variables-changed', payload: { refreshAll: true } });
+```js
+context.grafana.appEvents.publish({
+  type: "variables-changed",
+  payload: { refreshAll: true },
+});
 ```
 
 or
 
-```
+```js
 context.grafana.refresh();
 ```
 
