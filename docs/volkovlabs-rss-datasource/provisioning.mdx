@@ -39,14 +39,16 @@ When provisioned, the Business News data source should be available in the data 
 
 ### Feed URL
 
-The correct URL must be set. During testing you may see the error.
+The URL must be contain all necessary characters ('/' at the end, etc.) to avoid redirects.
+
+During testing you may see the error.
 
 <Image
   title="Failed to fetch the provided URL."
   src="/img/plugins/volkovlabs-rss-datasource/error.png"
 />
 
-If the URL is correct and returns datam, but returns an error. Try to add `/` to the end of the url to avoid redirect blocked by CORS policy.
+If the URL is correct and returns data, but returns an error. Try to add `/` to the end of the url to avoid redirect blocked by CORS policy.
 
 As an example use `https://sitename/feed/` instead `https://sitename/feed`.
 
