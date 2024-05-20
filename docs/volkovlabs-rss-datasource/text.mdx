@@ -23,7 +23,7 @@ To display HTML returned from feeds, disable the Sanitize HTML parameter.
 
 ### Docker
 
-```bash
+```sh
 GF_PANELS_DISABLE_SANITIZE_HTML=true
 ```
 
@@ -33,11 +33,11 @@ To display the YouTube feed with the latest videos we used HTML and Handlebars t
 
 | Handlebar value                       | Description                          |
 | ------------------------------------- | ------------------------------------ |
-| `{{link}}`                            | URL.                                 |
-| `{{title}}`                           | Title.                               |
-| `{{media:group:media:thumbnail:url}}` | Thumbnail URL.                       |
-| `{{date updated 'MMM, DD YYYY'}}`     | Updated date in the specific format. |
 | `{{author}}`                          | Author.                              |
+| `{{date updated 'MMM, DD YYYY'}}`     | Updated date in the specific format. |
+| `{{link}}`                            | URL.                                 |
+| `{{media:group:media:thumbnail:url}}` | Thumbnail URL.                       |
+| `{{title}}`                           | Title.                               |
 
 Template (Content) was displayed for each row as defined in the options.
 
