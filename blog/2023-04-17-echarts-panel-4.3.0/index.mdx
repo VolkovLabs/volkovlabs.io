@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: echarts-panel-4.3.0-20230417/
-tags: [Business Charts, Release Notes]
+tags: [Business Charts, Business Suite]
 image: /img/blog/2023-04-17-echarts-panel-4.3.0/banner.png
 keywords: [ECharts, Panel, Chart, Visualization, Grafana]
 updated: 2023-09-06
@@ -11,9 +11,9 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Business Charts Panel 4.3.0/4.3.1
+# Business Charts Panel 4.3.1
 
-We are happy to announce the release of the Business Charts Panel 4.3.0/4.3.1. This release include the following updates:
+We are happy to announce the release of the Business Charts Panel 4.3.1. This release include the following updates:
 
 - Added an alert state and annotations.
 - <del>
@@ -41,11 +41,11 @@ We are pleased to announce that Business Charts Panel has been downloaded over 1
 
 ## Alert State and Annotations
 
-We added support for Annotations in Apache ECharts using mark lines. Data for mark lines is retrieved from the `data.annotations` object as explained in the [product documentation](/plugins/volkovlabs-echarts-panel/annotations/).
+We added support for Annotations in Apache ECharts using mark lines. Data for mark lines is retrieved from the `context.panel.data.annotations` object as explained in the [product documentation](/plugins/volkovlabs-echarts-panel/annotations/).
 
 ```js
 const annotations = [];
-data.annotations.map((a) => {
+context.panel.data.annotations.map((a) => {
   a.source.forEach((source) =>
     annotations.push({
       xAxis: source.time,
@@ -61,13 +61,9 @@ data.annotations.map((a) => {
 /**
  * Data Sources
  */
-const series = data.series.map((s) => {
-  const sData =
-    s.fields.find((f) => f.type === "number").values.buffer ||
-    s.fields.find((f) => f.type === "number").values;
-  const sTime =
-    s.fields.find((f) => f.type === "time").values.buffer ||
-    s.fields.find((f) => f.type === "time").values;
+const series = context.panel.data.series.map((s) => {
+  const sData = s.fields.find((f) => f.type === "number").values;
+  const sTime = s.fields.find((f) => f.type === "time").values;
 
   return {
     name: s.refId,

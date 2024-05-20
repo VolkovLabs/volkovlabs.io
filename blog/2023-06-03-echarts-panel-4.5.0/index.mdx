@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: echarts-panel-4.5.0-20230603/
-tags: [Business Charts, Release Notes]
+tags: [Business Charts, Business Suite]
 image: /img/blog/2023-06-03-echarts-panel-4.5.0/banner.png
 keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 updated: 2023-09-06
@@ -26,11 +26,17 @@ The plugin was updated in the Grafana Plugins catalog on June 15, 2023.
 
 ## Changes in Grafana 10
 
-Some data sources in Grafana 10 return field values as `values` instead of `values.buffer` as in Grafana 9 and prior versions. We updated the function example to work in Grafana 9 and Grafana 10:
+Some data sources in Grafana 10 return field values as `values` instead of `values.buffer` as in Grafana 9 and prior versions.
 
-```
-  const sData = s.fields.find((f) => f.type === 'number').values.buffer || s.fields.find((f) => f.type === 'number').values;
-  const sTime = s.fields.find((f) => f.type === 'time').values.buffer || s.fields.find((f) => f.type === 'time').values;
+We updated the function example to work in Grafana 9 and Grafana 10:
+
+```js
+const sData =
+  s.fields.find((f) => f.type === "number").values.buffer ||
+  s.fields.find((f) => f.type === "number").values;
+const sTime =
+  s.fields.find((f) => f.type === "time").values.buffer ||
+  s.fields.find((f) => f.type === "time").values;
 ```
 
 You can remove the `||` statement and choose the correct expression for your Grafana version.
