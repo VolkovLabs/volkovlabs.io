@@ -1,0 +1,801 @@
+---
+authors: [vitali]
+slug: echarts-panel-6.0.0-20240520/
+tags: [Business Charts, Business Suite]
+image: /img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/banner.png
+keywords:
+  [
+    Business Charts,
+    Panel,
+    Chart,
+    Visualization,
+    Grafana,
+    EventBus,
+    Shared Crosshair,
+  ]
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Video from "@theme/Video";
+
+# Shared Crosshair and EventBus
+
+Grafana supports Shared Crosshair
+
+Grafana is a powerful data visualization tool that allows you to create rich, interactive dashboards.
+One of the most useful features in Grafana is the ability to link the crosshair or cursor across multiple panels,
+providing a synchronized view of your data. This "Shared Crosshair" functionality becomes particularly powerful when combined
+with Business Charts Panel that extend the visualization capabilities beyond the standard graphs.
+
+"Shared Crosshair" function set up via dashboard settings.
+
+<Image
+  title="Dashboard general settings"
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/options.png"
+/>
+
+# Business Charts Panel and Time Series panel
+
+The Shared Crosshair feature in Grafana allows you to link the cursor or crosshair across multiple panels on a dashboard.
+When the user hovers over a data point in one panel, the crosshair will automatically sync and draw markline in the other linked panels.
+
+In our example, we will create 2 “Time Series” panels
+Data Source is set Grafana -> Random Walk
+
+<Image
+  title="“Time Series” panels"
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/time-series-panels.png"
+/>
+
+<Image
+  title="“Time Series” panel data source"
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/time-series-data-source.png"
+/>
+
+With the “Shared Crosshair” settings enabled, the relationship between panels will already be established
+
+<Image
+  title="“Time Series” panels are linked"
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/share-t-series-panels.png"
+/>
+
+Let's set the relationship between "Time Series” panels and the "Business Charts"
+
+Create 2 panels Random Walk 1 (Business Charts) and Random Walk 2 (Business Charts). Data Source is set Grafana -> Random Walk.
+To display the graph, let's set the basic options for Apache echarts graphs
+
+### Example
+
+```js
+let series;
+let data;
+
+series = context.panel.data.series.map((s) => {
+  const sData =
+    s.fields.find((f) => f.type === "number").values.buffer ||
+    s.fields.find((f) => f.type === "number").values;
+  const sTime =
+    s.fields.find((f) => f.type === "time").values.buffer ||
+    s.fields.find((f) => f.type === "time").values;
+
+  return {
+    name: s.refId,
+    type: "line",
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
+  };
+});
+
+data = context.panel.data.series.map((s) => s.refId);
+
+return {
+  backgroundColor: "transparent",
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: "cross",
+      lineStyle: {
+        type: "dashed",
+        width: 3,
+      },
+    },
+  },
+  legend: {
+    left: "0",
+    bottom: "0",
+    data: data,
+    textStyle: {
+      color: "rgba(128, 128, 128, .9)",
+    },
+  },
+  toolbox: {
+    feature: {
+      dataZoom: {
+        yAxisIndex: "none",
+        icon: {
+          zoom: "path://",
+          back: "path://",
+        },
+      },
+      saveAsImage: {},
+    },
+  },
+  xAxis: {
+    type: "time",
+    axisTick: {
+      inside: true,
+    },
+  },
+  yAxis: {
+    type: "value",
+    min: "dataMin",
+    axisTick: {
+      inside: true,
+    },
+  },
+  grid: {
+    left: "2%",
+    right: "2%",
+    top: "2%",
+    bottom: 24,
+    containLabel: true,
+  },
+  series,
+};
+```
+
+On the dashboard we see four panels. At the moment our "Business" panels are not linked to Time Series panels.
+
+<Image
+  title="Сustomized dashboard"
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/all-panels.png"
+/>
+
+## EventBus as solution
+
+Grafana Events documentation for Business Charts [Grafana Events](/plugins/volkovlabs-echarts-panel/eventbus).
+
+:::info Extended result object
+
+The Business Charts 5.0.0 allows you to unsubscribe from events to avoid memory leaks by returning an [extended result object](/plugins/volkovlabs-echarts-panel/extended).
+
+:::
+
+To interact with and track the hover over the Time Series graph, and display a markline on the Business Chart,
+you can subscribe to the 'data-hover' event type.
+
+By subscribing to the 'data-hover' event, you can capture the hover event from the Time Series graph and use the provided parameters
+to update the markline on the Business Chart. This allows you to create a seamless interaction between the two visualizations,
+enhancing the user experience and making it easier to correlate the data across different chart types.
+
+The key aspects of this implementation are:
+
+Subscribing to the 'data-hover' event on the ECharts instance.
+Checking if the event is for the Time Series panel (based on the seriesIndex).
+Updating the markline on the Business Chart using the setOption method.
+
+### Code Example for Random Walk 1
+
+```js
+let series;
+let data;
+
+const subscription = context.grafana.eventBus.subscribe(
+  { type: "data-hover" },
+  (data) => {
+    /**
+     * for Random Walk 2 it should be
+     * !== "echarts-walk-2"
+     */
+    if (data?.origin?.path[0] !== "echarts-walk-1") {
+      const options = context.panel.chart.getOption();
+      const series = options.series;
+      const newSeries = series.map((s) => ({
+        ...s,
+        markLine: {
+          data: [
+            {
+              xAxis: data.payload?.point?.time || 0,
+            },
+          ],
+          label: {
+            show: false,
+          },
+          symbol: ["none", "none"],
+        },
+      }));
+
+      context.panel.chart.setOption({
+        ...options,
+        series: newSeries,
+        markLine: [
+          {
+            animationEasing: "linear",
+            animation: false,
+            lineStyle: {
+              type: "dashed",
+            },
+            symbolOffset: 0,
+            label: {
+              show: false,
+            },
+            symbol: ["none", "none"],
+          },
+        ],
+      });
+    }
+  }
+);
+
+series = context.panel.data.series.map((s) => {
+  const sData =
+    s.fields.find((f) => f.type === "number").values.buffer ||
+    s.fields.find((f) => f.type === "number").values;
+  const sTime =
+    s.fields.find((f) => f.type === "time").values.buffer ||
+    s.fields.find((f) => f.type === "time").values;
+
+  return {
+    name: s.refId,
+    type: "line",
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
+  };
+});
+
+data = context.panel.data.series.map((s) => s.refId);
+
+return {
+  version: 2,
+  config: { notMerge: true },
+  option: {
+    backgroundColor: "transparent",
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {
+        type: "cross",
+        lineStyle: {
+          type: "dashed",
+          width: 3,
+        },
+      },
+    },
+    legend: {
+      left: "0",
+      bottom: "0",
+      data: data,
+      textStyle: {
+        color: "rgba(128, 128, 128, .9)",
+      },
+    },
+    toolbox: {
+      feature: {
+        dataZoom: {
+          yAxisIndex: "none",
+          icon: {
+            zoom: "path://",
+            back: "path://",
+          },
+        },
+        saveAsImage: {},
+      },
+    },
+    xAxis: {
+      type: "time",
+      axisTick: {
+        inside: true,
+      },
+    },
+    yAxis: {
+      type: "value",
+      min: "dataMin",
+      axisTick: {
+        inside: true,
+      },
+    },
+    grid: {
+      left: "2%",
+      right: "2%",
+      top: "2%",
+      bottom: 24,
+      containLabel: true,
+    },
+    series,
+  },
+  unsubscribe: () => {
+    subscription.unsubscribe();
+    console.log("Unsubscribed");
+  },
+};
+```
+
+Now we can see that when we hover over the Time Series panel on our charts, the markline is displayed.
+
+<Image
+  title="All panels are linked together"
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/marklines.png"
+/>
+
+Now, we need to implement a mechanism where when we hover over the Random Walk 1 and Random Walk 2 panels,
+we see a markline on the Time Series panel.
+
+To achieve this, we need to add actions using the ECharts instance:
+
+```js
+context.panel.chart.on("mousemove", function (params) {
+  /**
+   * time contains current x-axis value
+   */
+  context.grafana.eventBus.publish({
+    type: "data-hover",
+    payload: {
+      point: {
+        time: params.value[0],
+      },
+    },
+    /**
+     * Current panel id for event
+     */
+    origin: {
+      path: ["echarts-walk-1"],
+    },
+  });
+});
+```
+
+Additionally, we need to add cursor hover tracking on our own chart and remove the previously drawn markline:
+
+```js
+if (data?.origin?.path[0] === "echarts-walk-1") {
+  const options = context.panel.chart.getOption();
+  const series = options.series;
+  const newSeries = series.map((s) => ({
+    ...s,
+    markLine: {
+      data: [
+        {
+          xAxis: 0,
+        },
+      ],
+      label: {
+        show: false,
+      },
+      symbol: ["none", "none"],
+    },
+  }));
+
+  context.panel.chart.setOption({
+    ...options,
+    series: newSeries,
+    markLine: [],
+  });
+}
+```
+
+This approach allows us to create a bidirectional interaction between the "Bussines Chart" panels and the Time Series panels,
+where hovering over the Random Walk charts will update the markline on the Time Series chart, and vice versa.
+
+<Image
+  title="Bussines Chart panels are linked with Time Series panels"
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/vice-versa-marklines.png"
+/>
+
+### Full Code Example for Random Walk 1
+
+```js
+let series;
+let data;
+
+const subscription = context.grafana.eventBus.subscribe(
+  { type: "data-hover" },
+  (data) => {
+    if (data?.origin?.path[0] !== "echarts-walk-1") {
+      const options = context.panel.chart.getOption();
+      const series = options.series;
+      const newSeries = series.map((s) => ({
+        ...s,
+        markLine: {
+          data: [
+            {
+              xAxis: data.payload?.point?.time || 0,
+            },
+          ],
+          label: {
+            show: false,
+          },
+          symbol: ["none", "none"],
+        },
+      }));
+
+      context.panel.chart.setOption({
+        ...options,
+        series: newSeries,
+        markLine: [
+          {
+            animationEasing: "linear",
+            animation: false,
+            lineStyle: {
+              type: "dashed",
+            },
+            symbolOffset: 0,
+            label: {
+              show: false,
+            },
+            symbol: ["none", "none"],
+          },
+        ],
+      });
+    }
+    if (data?.origin?.path[0] === "echarts-walk-1") {
+      const options = context.panel.chart.getOption();
+      const series = options.series;
+      const newSeries = series.map((s) => ({
+        ...s,
+        markLine: {
+          data: [
+            {
+              xAxis: 0,
+            },
+          ],
+          label: {
+            show: false,
+          },
+          symbol: ["none", "none"],
+        },
+      }));
+
+      context.panel.chart.setOption({
+        ...options,
+        series: newSeries,
+        markLine: [],
+      });
+    }
+  }
+);
+
+series = context.panel.data.series.map((s) => {
+  const sData =
+    s.fields.find((f) => f.type === "number").values.buffer ||
+    s.fields.find((f) => f.type === "number").values;
+  const sTime =
+    s.fields.find((f) => f.type === "time").values.buffer ||
+    s.fields.find((f) => f.type === "time").values;
+
+  return {
+    name: s.refId,
+    type: "line",
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
+  };
+});
+
+data = context.panel.data.series.map((s) => s.refId);
+
+context.panel.chart.on("mousemove", function (params) {
+  context.grafana.eventBus.publish({
+    type: "data-hover",
+    payload: {
+      point: {
+        time: params.value[0],
+      },
+    },
+    origin: {
+      path: ["echarts-walk-1"],
+    },
+  });
+});
+
+return {
+  version: 2,
+  config: { notMerge: true },
+  option: {
+    backgroundColor: "transparent",
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {
+        type: "cross",
+        lineStyle: {
+          type: "dashed",
+          width: 3,
+        },
+      },
+    },
+    legend: {
+      left: "0",
+      bottom: "0",
+      data: data,
+      textStyle: {
+        color: "rgba(128, 128, 128, .9)",
+      },
+    },
+    toolbox: {
+      feature: {
+        dataZoom: {
+          yAxisIndex: "none",
+          icon: {
+            zoom: "path://",
+            back: "path://",
+          },
+        },
+        saveAsImage: {},
+      },
+    },
+    xAxis: {
+      type: "time",
+      axisTick: {
+        inside: true,
+      },
+    },
+    yAxis: {
+      type: "value",
+      min: "dataMin",
+      axisTick: {
+        inside: true,
+      },
+    },
+    grid: {
+      left: "2%",
+      right: "2%",
+      top: "2%",
+      bottom: 24,
+      containLabel: true,
+    },
+    series,
+  },
+  unsubscribe: () => {
+    subscription.unsubscribe();
+    console.log("Unsubscribed");
+  },
+};
+```
+
+### Full Code Example for Random Walk 2
+
+```js
+let series;
+let data;
+
+const subscription = context.grafana.eventBus.subscribe(
+  { type: "data-hover" },
+  (data) => {
+    if (data?.origin?.path[0] !== "echarts-walk-2") {
+      const options = context.panel.chart.getOption();
+      const series = options.series;
+      const newSeries = series.map((s) => ({
+        ...s,
+        markLine: {
+          data: [
+            {
+              xAxis: data.payload?.point?.time || 0,
+            },
+          ],
+          label: {
+            show: false,
+          },
+          symbol: ["none", "none"],
+        },
+      }));
+
+      context.panel.chart.setOption({
+        ...options,
+        series: newSeries,
+        markLine: [
+          {
+            animationEasing: "linear",
+            animation: false,
+            lineStyle: {
+              type: "dashed",
+            },
+            symbolOffset: 0,
+            label: {
+              show: false,
+            },
+            symbol: ["none", "none"],
+          },
+        ],
+      });
+    }
+    if (data?.origin?.path[0] === "echarts-walk-2") {
+      const options = context.panel.chart.getOption();
+
+      const series = options.series;
+      const newSeries = series.map((s) => ({
+        ...s,
+        markLine: {
+          data: [
+            {
+              xAxis: 0,
+            },
+          ],
+          label: {
+            show: false,
+          },
+          symbol: ["none", "none"],
+        },
+      }));
+
+      context.panel.chart.setOption({
+        ...options,
+        series: newSeries,
+        markLine: [],
+      });
+    }
+  }
+);
+
+series = context.panel.data.series.map((s) => {
+  const sData =
+    s.fields.find((f) => f.type === "number").values.buffer ||
+    s.fields.find((f) => f.type === "number").values;
+  const sTime =
+    s.fields.find((f) => f.type === "time").values.buffer ||
+    s.fields.find((f) => f.type === "time").values;
+
+  return {
+    name: s.refId,
+    type: "line",
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
+  };
+});
+
+data = context.panel.data.series.map((s) => s.refId);
+
+context.panel.chart.on("mousemove", function (params) {
+  context.grafana.eventBus.publish({
+    type: "data-hover",
+    payload: {
+      point: {
+        time: params.value[0],
+      },
+    },
+    origin: {
+      path: ["echarts-walk-2"],
+    },
+  });
+});
+
+return {
+  version: 2,
+  config: { notMerge: true },
+  option: {
+    backgroundColor: "transparent",
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {
+        type: "cross",
+        lineStyle: {
+          type: "dashed",
+          width: 3,
+        },
+      },
+    },
+    legend: {
+      left: "0",
+      bottom: "0",
+      data: data,
+      textStyle: {
+        color: "rgba(128, 128, 128, .9)",
+      },
+    },
+    toolbox: {
+      feature: {
+        dataZoom: {
+          yAxisIndex: "none",
+          icon: {
+            zoom: "path://",
+            back: "path://",
+          },
+        },
+        saveAsImage: {},
+      },
+    },
+    xAxis: {
+      type: "time",
+      axisTick: {
+        inside: true,
+      },
+    },
+    yAxis: {
+      type: "value",
+      min: "dataMin",
+      axisTick: {
+        inside: true,
+      },
+    },
+    grid: {
+      left: "2%",
+      right: "2%",
+      top: "2%",
+      bottom: 24,
+      containLabel: true,
+    },
+    series,
+  },
+  unsubscribe: () => {
+    subscription.unsubscribe();
+    console.log("Unsubscribed");
+  },
+};
+```
+
+## Release Notes
+
+### Breaking changes
+
+- Requires Grafana 10 and Grafana 11.
+- Removed non-context code parameters. Please update parameters to use `context`.
+
+### Code parameters migration guide
+
+- data -> context.panel.data
+- theme -> context.grafana.theme
+- echartsInstance -> context.panel.chart
+- echarts -> context.echarts
+- ecStat -> context.ecStat
+- replaceVariables -> context.grafana.replaceVariables
+- eventBus -> context.grafana.eventBus
+- locationService -> context.grafana.locationService
+- notifySuccess -> context.grafana.notifySuccess
+- notifyError -> context.grafana.notifyError
+
+### Features / Enhancements in 6.0.0
+
+- Updated name to Business Charts Panel (#268)
+- Added Apache Acknowledgment and update description (#268)
+- Updated to Grafana 10.4.1 (#270)
+- Removed ArrayVector deprecated in Grafana 11 (#272)
+- Updated Apache ECharts deprecation warnings (#272)
+
+### Features / Enhancements in 5.3.0
+
+- Updated to Apache ECharts 5.5.0 (#257)
+- Updated code parameters with Code Parameters Builder (#261)
+- Updated auto size code editor (#263)
+
+### Features / Enhancements in 5.2.0
+
+- Updated README and documentation (#214)
+- Added visual editor for working with data sources (#211)
+- Updated ESLint configuration and refactoring (#237)
+- Updated dependencies and Actions (#238)
+- Added context parameter to non-visual mode (#245)
+- Added refresh function using Application Event Bus (#247)
+- Updated to disallow to choose already selected fields (#251)
+- Updated echarts.volkovlabs.io to use visual editor and data sources (#248)
+- Updated draggable handler in Visual editor (#256)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Support our project by starring the repository.
