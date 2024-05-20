@@ -11,15 +11,13 @@ import Video from "@theme/Video";
 
 # Grafana Events
 
-:::info Version
+Grafana uses an event bus to publish application events for notifying different parts of Grafana when the user interacts with the chart. Business Charts panel can react to these actions by subscribing to one or more events.
 
-The Business Charts Panel supports the event bus since version 4.2.0.
+:::info Extended result object
 
 The Business Charts 5.0.0 allows you to unsubscribe from events to avoid memory leaks by returning an [extended result object](../extended).
 
 :::
-
-Grafana uses an event bus to publish application events for notifying different parts of Grafana when the user interacts with the chart. Apache ECharts can react to these actions by subscribing to one or more events.
 
 ## Predefined Events
 
