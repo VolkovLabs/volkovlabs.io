@@ -1,7 +1,7 @@
 ---
 authors: [daria]
 slug: echarts-panel-6.0.0-20240406/
-tags: [Business Charts, Release Notes]
+tags: [Business Charts, Business Suite]
 image: /img/blog/2024-04-06-echarts-panel-6.0.0/banner.png
 keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 ---
@@ -49,7 +49,7 @@ The Business Charts Panel powered by the Apache ECharts library.
 
 ## Downloads
 
-The Business Charts Panel has been downloaded more than 2.15M times! It is an incredible number. We are thrilled to see our plugin in a huge demand around the world.
+The Business Charts Panel has been downloaded more than 2 million times! It is an incredible number. We are thrilled to see our plugin in a huge demand around the world.
 
 <Image
   title="The Business Charts Panel has been downloaded more than 2.15M times."
@@ -58,7 +58,7 @@ The Business Charts Panel has been downloaded more than 2.15M times! It is an in
 
 ## Visual Editor
 
-:::info
+:::info Beta version
 This feature is in the beta version. As of now, it should work for simple charts. If you need anything advanced, please, use the **Code** mode.
 :::
 
@@ -88,11 +88,11 @@ This new feature automatically changes the size of the code editor depending on 
 
 ## Context parameters
 
-:::warning
-It is a breaking change.
+:::warning Breaking changes
+All available parameters are now combined under the context parameter
 :::
 
-All available parameters are now combined under the **context** parameter. It makes the searches of what you need easier. Just type **context.** and all available options will appear.
+Just type **context** and all available options will appear. It makes the searches of what you need easier.
 
 However, note, that previously we allowed the direct call, then now it has stopped working. In order to migrate to this release, please, ensure to reference **context** as a prefix to all options.
 
@@ -108,24 +108,20 @@ Please refer to the Code parameters migration guide below.
 | Parameter        | How to reference starting from 6.0.0 |
 | ---------------- | ------------------------------------ |
 | data             | context.panel.data                   |
-| theme            | context.grafana.theme                |
-| echartsInstance  | context.panel.chart                  |
 | echarts          | context.echarts                      |
+| echartsInstance  | context.panel.chart                  |
 | ecStat           | context.ecStat                       |
-| replaceVariables | context.grafana.replaceVariables     |
 | eventBus         | context.grafana.eventBus             |
 | locationService  | context.grafana.locationService      |
-| notifySuccess    | context.grafana.notifySuccess        |
 | notifyError      | context.grafana.notifyError          |
-
-:::note
-We implemented this feature in all our plugins with embedded JavaScript.
-:::
+| notifySuccess    | context.grafana.notifySuccess        |
+| replaceVariables | context.grafana.replaceVariables     |
+| theme            | context.grafana.theme                |
 
 ## Grafana 10 and Grafana 11
 
-:::warning
-This is a breaking change.
+:::warning Breaking changes
+Grafana 9 is not supported.
 :::
 
 Our plugins always follow the latest Grafana versions and stay compatible with the most recent releases. That means, however, that we have to sunset the support of obsolete releases.
@@ -147,8 +143,8 @@ grafana-cli plugins install volkovlabs-echarts-panel
 The Business Charts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
 
 <Video
-  src="https://www.youtube.com/embed/S3PiL1p1v5U"
-  title="Explore possibilities of the Apache ECharts."
+  src="https://www.youtube.com/embed/adOjUxrfysc"
+  title="Business Charts panel for Grafana 6.0.0 powered by Apache ECharts library."
 />
 
 ## Release Notes
