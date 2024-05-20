@@ -171,15 +171,20 @@ The configuration looks as in the illustration below:
 
 You can copy the code provided in the above screenshot here:
 
-```
+```js
 const handleResponse = async (response) => {
   if (response && !response.error) {
-    context.grafana.notifySuccess(['Update', 'LEDs Mode updated successfully.']);
+    context.grafana.notifySuccess([
+      "Update",
+      "LEDs Mode updated successfully.",
+    ]);
 
     /**
      * Find new mode in response
      */
-    const newMode = response.data[0].fields.find((field) => field.name === 'mode')?.values[0];
+    const newMode = response.data[0].fields.find(
+      (field) => field.name === "mode"
+    )?.values[0];
 
     /**
      * Update Initial values with updated mode
@@ -187,11 +192,14 @@ const handleResponse = async (response) => {
     context.panel.setInitial({
       ...context.panel.initial,
       mode: newMode,
-    })
+    });
   } else {
-    context.grafana.notifyError(['Update', 'An error occured updating values.']);
+    context.grafana.notifyError([
+      "Update",
+      "An error occured updating values.",
+    ]);
   }
-}
+};
 
 return handleResponse(context.panel.response);
 ```

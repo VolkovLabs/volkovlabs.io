@@ -117,7 +117,7 @@ To avoid this false health check failure, we added timing parameters that determ
 
 By default, the waiting is 5 seconds. You can configure that by using the parameters below.
 
-```
+```sh
 ##
 ## Service Account
 ## - Viewer permission is required to access dashboards
@@ -171,7 +171,7 @@ The `docker-compose.yml` file consists of the following containers:
 
 When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers:
 
-```
+```sh
 docker compose pull && docker compose up
 ```
 
@@ -179,7 +179,7 @@ docker compose pull && docker compose up
 
 Stop and remove all containers:
 
-```
+```sh
 docker compose down
 ```
 
