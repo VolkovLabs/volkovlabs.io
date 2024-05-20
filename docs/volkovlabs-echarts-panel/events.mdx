@@ -4,6 +4,7 @@ tags:
 image: /img/plugins/volkovlabs-echarts-panel/data-zoom.png
 ---
 
+import BlogPost from "@theme/BlogPost";
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
@@ -13,9 +14,6 @@ import Video from "@theme/Video";
 You can handle specific events while viewing charts, for example, handle mouse events or any other event with the `context.panel.chart` ( early `echartsInstance` ) instance.
 
 For more examples and detailed descriptions, please check the Apache ECharts documentation about [Events and Actions](https://apache.github.io/echarts-handbook/en/concepts/event/).
-
-We recommend reading the article about using [Shared Crosshair and EventBus](/blog/echarts-panel-6.0.0-20240520).
-This article additionally describes the possibility of using ECharts Instance, Grafana Events, Extended Result.
 
 ## Mouse click
 
@@ -138,3 +136,9 @@ return {
   series,
 };
 ```
+
+<BlogPost
+  href="http://localhost:3100/blog/echarts-panel-6.0.0-20240520/"
+  title="Shared Crosshair and EventBus. This article additionally describes the possibility of using ECharts Instance, Grafana Events, Extended Result."
+  src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/banner.png"
+/>

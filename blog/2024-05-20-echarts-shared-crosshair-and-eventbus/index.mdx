@@ -54,14 +54,14 @@ Data Source is set Grafana -> Random Walk
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/time-series-data-source.png"
 />
 
-With the “Shared Crosshair” settings enabled, the relationship between panels will already be established
+With the “Shared Crosshair” settings enabled, the panels are linked together.
 
 <Image
   title="“Time Series” panels are linked"
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/share-t-series-panels.png"
 />
 
-Let's set the relationship between "Time Series” panels and the "Business Charts"
+Let's connect "Time Series” panels and the "Business Charts"
 
 Create 2 panels Random Walk 1 (Business Charts) and Random Walk 2 (Business Charts). Data Source is set Grafana -> Random Walk.
 To display the graph, let's set the basic options for Apache echarts graphs
@@ -69,17 +69,19 @@ To display the graph, let's set the basic options for Apache echarts graphs
 ### Example
 
 ```js
-let series;
-let data;
+/**
+ *  Map the series data to the required format for the ECharts series
+ */
+let series = context.panel.data.series.map((s) => {
+  /**
+   *  Find the number and time fields in the series
+   */
+  const numberField = s.fields.find((f) => f.type === "number");
+  const timeField = s.fields.find((f) => f.type === "time");
 
-series = context.panel.data.series.map((s) => {
-  const sData =
-    s.fields.find((f) => f.type === "number").values.buffer ||
-    s.fields.find((f) => f.type === "number").values;
-  const sTime =
-    s.fields.find((f) => f.type === "time").values.buffer ||
-    s.fields.find((f) => f.type === "time").values;
-
+  /**
+   *  Create the series object
+   */
   return {
     name: s.refId,
     type: "line",
@@ -90,12 +92,18 @@ series = context.panel.data.series.map((s) => {
     lineStyle: {
       width: 1,
     },
-    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
+    data: numberField.values.map((d, i) => [timeField.values[i], d.toFixed(2)]),
   };
 });
 
-data = context.panel.data.series.map((s) => s.refId);
+/**
+ * Extract the series reference IDs for the legend
+ */
+let data = context.panel.data.series.map((s) => s.refId);
 
+/**
+ * Return the ECharts configuration object
+ */
 return {
   backgroundColor: "transparent",
   tooltip: {
@@ -185,19 +193,57 @@ Updating the markline on the Business Chart using the setOption method.
 ### Code Example for Random Walk 1
 
 ```js
-let series;
-let data;
+/**
+ *  Map the series data to the required format for the ECharts series
+ */
+let series = context.panel.data.series.map((s) => {
+  /**
+   *  Find the number and time fields in the series
+   */
+  const numberField = s.fields.find((f) => f.type === "number");
+  const timeField = s.fields.find((f) => f.type === "time");
 
+  /**
+   *  Create the series object
+   */
+  return {
+    name: s.refId,
+    type: "line",
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: numberField.values.map((d, i) => [timeField.values[i], d.toFixed(2)]),
+  };
+});
+
+/**
+ * Extract the series reference IDs for the legend
+ */
+let data = context.panel.data.series.map((s) => s.refId);
+
+/**
+ * Subscribe to the event
+ */
 const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
     /**
      * for Random Walk 2 it should be
      * !== "echarts-walk-2"
+     * check path for event;process data from other panels
      */
     if (data?.origin?.path[0] !== "echarts-walk-1") {
       const options = context.panel.chart.getOption();
       const series = options.series;
+
+      /**
+       * To create markline we need set up for series markline option
+       * set for data -> xAxis -> data from event payload
+       */
       const newSeries = series.map((s) => ({
         ...s,
         markLine: {
@@ -213,6 +259,10 @@ const subscription = context.grafana.eventBus.subscribe(
         },
       }));
 
+      /**
+       * Set up new options and new series via chart Instance and method setOption
+       * additionaly set markLine params for chart
+       */
       context.panel.chart.setOption({
         ...options,
         series: newSeries,
@@ -235,30 +285,12 @@ const subscription = context.grafana.eventBus.subscribe(
   }
 );
 
-series = context.panel.data.series.map((s) => {
-  const sData =
-    s.fields.find((f) => f.type === "number").values.buffer ||
-    s.fields.find((f) => f.type === "number").values;
-  const sTime =
-    s.fields.find((f) => f.type === "time").values.buffer ||
-    s.fields.find((f) => f.type === "time").values;
-
-  return {
-    name: s.refId,
-    type: "line",
-    showSymbol: false,
-    areaStyle: {
-      opacity: 0.1,
-    },
-    lineStyle: {
-      width: 1,
-    },
-    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
-  };
-});
-
-data = context.panel.data.series.map((s) => s.refId);
-
+/**
+ * Return the ECharts configuration object
+ * as extended object
+ * contain unsubscribe option
+ * The Business Charts Panel supports the extended result object since version 5.0.0.
+ */
 return {
   version: 2,
   config: { notMerge: true },
@@ -336,9 +368,15 @@ we see a markline on the Time Series panel.
 To achieve this, we need to add actions using the ECharts instance:
 
 ```js
+/**
+ * Use Chart Instance and method on
+ * Each time you hover over a value on the graph
+ * The event will be created via the eventBus with the payload
+ * Processed by TimeSeries panels
+ */
 context.panel.chart.on("mousemove", function (params) {
   /**
-   * time contains current x-axis value
+   * Time contains current x-axis value
    */
   context.grafana.eventBus.publish({
     type: "data-hover",
@@ -348,7 +386,8 @@ context.panel.chart.on("mousemove", function (params) {
       },
     },
     /**
-     * Current panel id for event
+     * Set current panel id for event
+     * Necessary to track the event that the current panel creates
      */
     origin: {
       path: ["echarts-walk-1"],
@@ -357,33 +396,46 @@ context.panel.chart.on("mousemove", function (params) {
 });
 ```
 
+:::info Note
+
+Hover event via context.panel.chart.on(“mousemove”) works when pointing directly at the chart.
+
+:::
+
 Additionally, we need to add cursor hover tracking on our own chart and remove the previously drawn markline:
 
 ```js
-if (data?.origin?.path[0] === "echarts-walk-1") {
-  const options = context.panel.chart.getOption();
-  const series = options.series;
-  const newSeries = series.map((s) => ({
-    ...s,
-    markLine: {
-      data: [
-        {
-          xAxis: 0,
+else {
+      /**
+       * Handle the current panel event
+       * It is necessary to remove the markline that was received from the Time Series panel
+       * Set up new options and new series via chart Instance and method setOption
+       * markLine for series should`t contain data in xAxis
+       * markline for chart should`t contain data too
+       */
+      const options = context.panel.chart.getOption();
+      const series = options.series;
+      const newSeries = series.map((s) => ({
+        ...s,
+        markLine: {
+          data: [
+            {
+              xAxis: 0,
+            },
+          ],
+          label: {
+            show: false,
+          },
+          symbol: ["none", "none"],
         },
-      ],
-      label: {
-        show: false,
-      },
-      symbol: ["none", "none"],
-    },
-  }));
+      }));
 
-  context.panel.chart.setOption({
-    ...options,
-    series: newSeries,
-    markLine: [],
-  });
-}
+      context.panel.chart.setOption({
+        ...options,
+        series: newSeries,
+        markLine: [],
+      });
+    }
 ```
 
 This approach allows us to create a bidirectional interaction between the "Bussines Chart" panels and the Time Series panels,
@@ -397,15 +449,57 @@ where hovering over the Random Walk charts will update the markline on the Time 
 ### Full Code Example for Random Walk 1
 
 ```js
-let series;
-let data;
+/**
+ *  Map the series data to the required format for the ECharts series
+ */
+let series = context.panel.data.series.map((s) => {
+  /**
+   *  Find the number and time fields in the series
+   */
+  const numberField = s.fields.find((f) => f.type === "number");
+  const timeField = s.fields.find((f) => f.type === "time");
 
+  /**
+   *  Create the series object
+   */
+  return {
+    name: s.refId,
+    type: "line",
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: numberField.values.map((d, i) => [timeField.values[i], d.toFixed(2)]),
+  };
+});
+
+/**
+ * Extract the series reference IDs for the legend
+ */
+let data = context.panel.data.series.map((s) => s.refId);
+
+/**
+ * Subscribe to the event
+ */
 const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
+    /**
+     * for Random Walk 2 it should be
+     * !== "echarts-walk-2"
+     * check path for event;process data from other panels
+     */
     if (data?.origin?.path[0] !== "echarts-walk-1") {
       const options = context.panel.chart.getOption();
       const series = options.series;
+
+      /**
+       * To create markline we need set up for series markline option
+       * set for data -> xAxis -> data from event payload
+       */
       const newSeries = series.map((s) => ({
         ...s,
         markLine: {
@@ -421,6 +515,10 @@ const subscription = context.grafana.eventBus.subscribe(
         },
       }));
 
+      /**
+       * Set up new options and new series via chart Instance and method setOption
+       * additionaly set markLine params for chart
+       */
       context.panel.chart.setOption({
         ...options,
         series: newSeries,
@@ -439,8 +537,14 @@ const subscription = context.grafana.eventBus.subscribe(
           },
         ],
       });
-    }
-    if (data?.origin?.path[0] === "echarts-walk-1") {
+    } else {
+      /**
+       * Handle the current panel event
+       * It is necessary to remove the markline that was received from the Time Series panel
+       * Set up new options and new series via chart Instance and method setOption
+       * markLine for series should`t contain data in xAxis
+       * markline for chart should`t contain data too
+       */
       const options = context.panel.chart.getOption();
       const series = options.series;
       const newSeries = series.map((s) => ({
@@ -467,31 +571,16 @@ const subscription = context.grafana.eventBus.subscribe(
   }
 );
 
-series = context.panel.data.series.map((s) => {
-  const sData =
-    s.fields.find((f) => f.type === "number").values.buffer ||
-    s.fields.find((f) => f.type === "number").values;
-  const sTime =
-    s.fields.find((f) => f.type === "time").values.buffer ||
-    s.fields.find((f) => f.type === "time").values;
-
-  return {
-    name: s.refId,
-    type: "line",
-    showSymbol: false,
-    areaStyle: {
-      opacity: 0.1,
-    },
-    lineStyle: {
-      width: 1,
-    },
-    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
-  };
-});
-
-data = context.panel.data.series.map((s) => s.refId);
-
+/**
+ * Use Chart Instance and method on
+ * Each time you hover over a value on the graph
+ * The event will be created via the eventBus with the payload
+ * Processed by TimeSeries panels
+ */
 context.panel.chart.on("mousemove", function (params) {
+  /**
+   * Time contains current x-axis value
+   */
   context.grafana.eventBus.publish({
     type: "data-hover",
     payload: {
@@ -499,12 +588,22 @@ context.panel.chart.on("mousemove", function (params) {
         time: params.value[0],
       },
     },
+    /**
+     * Set current panel id for event
+     * Necessary to track the event that the current panel creates
+     */
     origin: {
       path: ["echarts-walk-1"],
     },
   });
 });
 
+/**
+ * Return the ECharts configuration object
+ * as extended object
+ * contain unsubscribe option
+ * The Business Charts Panel supports the extended result object since version 5.0.0.
+ */
 return {
   version: 2,
   config: { notMerge: true },
@@ -572,15 +671,57 @@ return {
 ### Full Code Example for Random Walk 2
 
 ```js
-let series;
-let data;
+/**
+ *  Map the series data to the required format for the ECharts series
+ */
+let series = context.panel.data.series.map((s) => {
+  /**
+   *  Find the number and time fields in the series
+   */
+  const numberField = s.fields.find((f) => f.type === "number");
+  const timeField = s.fields.find((f) => f.type === "time");
 
+  /**
+   *  Create the series object
+   */
+  return {
+    name: s.refId,
+    type: "line",
+    showSymbol: false,
+    areaStyle: {
+      opacity: 0.1,
+    },
+    lineStyle: {
+      width: 1,
+    },
+    data: numberField.values.map((d, i) => [timeField.values[i], d.toFixed(2)]),
+  };
+});
+
+/**
+ * Extract the series reference IDs for the legend
+ */
+let data = context.panel.data.series.map((s) => s.refId);
+
+/**
+ * Subscribe to the event
+ */
 const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
+    /**
+     * for Random Walk 1 it should be
+     * !== "echarts-walk-1"
+     * check path for event; process data from other panels
+     */
     if (data?.origin?.path[0] !== "echarts-walk-2") {
       const options = context.panel.chart.getOption();
       const series = options.series;
+
+      /**
+       * To create markline we need set up for series markline option
+       * set for data -> xAxis -> data from event payload
+       */
       const newSeries = series.map((s) => ({
         ...s,
         markLine: {
@@ -596,6 +737,10 @@ const subscription = context.grafana.eventBus.subscribe(
         },
       }));
 
+      /**
+       * Set up new options and new series via chart Instance and method setOption
+       * additionaly set markLine params for chart
+       */
       context.panel.chart.setOption({
         ...options,
         series: newSeries,
@@ -614,10 +759,15 @@ const subscription = context.grafana.eventBus.subscribe(
           },
         ],
       });
-    }
-    if (data?.origin?.path[0] === "echarts-walk-2") {
+    } else {
+      /**
+       * Handle the current panel event
+       * It is necessary to remove the markline that was received from the Time Series panel
+       * Set up new options and new series via chart Instance and method setOption
+       * markLine for series should`t contain data in xAxis
+       * markline for chart should`t contain data too
+       */
       const options = context.panel.chart.getOption();
-
       const series = options.series;
       const newSeries = series.map((s) => ({
         ...s,
@@ -643,31 +793,16 @@ const subscription = context.grafana.eventBus.subscribe(
   }
 );
 
-series = context.panel.data.series.map((s) => {
-  const sData =
-    s.fields.find((f) => f.type === "number").values.buffer ||
-    s.fields.find((f) => f.type === "number").values;
-  const sTime =
-    s.fields.find((f) => f.type === "time").values.buffer ||
-    s.fields.find((f) => f.type === "time").values;
-
-  return {
-    name: s.refId,
-    type: "line",
-    showSymbol: false,
-    areaStyle: {
-      opacity: 0.1,
-    },
-    lineStyle: {
-      width: 1,
-    },
-    data: sData.map((d, i) => [sTime[i], d.toFixed(2)]),
-  };
-});
-
-data = context.panel.data.series.map((s) => s.refId);
-
+/**
+ * Use Chart Instance and method on
+ * Each time you hover over a value on the graph
+ * The event will be created via the eventBus with the payload
+ * Processed by TimeSeries panels
+ */
 context.panel.chart.on("mousemove", function (params) {
+  /**
+   * Time contains current x-axis value
+   */
   context.grafana.eventBus.publish({
     type: "data-hover",
     payload: {
@@ -675,12 +810,22 @@ context.panel.chart.on("mousemove", function (params) {
         time: params.value[0],
       },
     },
+    /**
+     * Set current panel id for event
+     * Necessary to track the event that the current panel creates
+     */
     origin: {
       path: ["echarts-walk-2"],
     },
   });
 });
 
+/**
+ * Return the ECharts configuration object
+ * as extended object
+ * contain unsubscribe option
+ * The Business Charts Panel supports the extended result object since version 5.0.0.
+ */
 return {
   version: 2,
   config: { notMerge: true },
@@ -744,52 +889,6 @@ return {
   },
 };
 ```
-
-## Release Notes
-
-### Breaking changes
-
-- Requires Grafana 10 and Grafana 11.
-- Removed non-context code parameters. Please update parameters to use `context`.
-
-### Code parameters migration guide
-
-- data -> context.panel.data
-- theme -> context.grafana.theme
-- echartsInstance -> context.panel.chart
-- echarts -> context.echarts
-- ecStat -> context.ecStat
-- replaceVariables -> context.grafana.replaceVariables
-- eventBus -> context.grafana.eventBus
-- locationService -> context.grafana.locationService
-- notifySuccess -> context.grafana.notifySuccess
-- notifyError -> context.grafana.notifyError
-
-### Features / Enhancements in 6.0.0
-
-- Updated name to Business Charts Panel (#268)
-- Added Apache Acknowledgment and update description (#268)
-- Updated to Grafana 10.4.1 (#270)
-- Removed ArrayVector deprecated in Grafana 11 (#272)
-- Updated Apache ECharts deprecation warnings (#272)
-
-### Features / Enhancements in 5.3.0
-
-- Updated to Apache ECharts 5.5.0 (#257)
-- Updated code parameters with Code Parameters Builder (#261)
-- Updated auto size code editor (#263)
-
-### Features / Enhancements in 5.2.0
-
-- Updated README and documentation (#214)
-- Added visual editor for working with data sources (#211)
-- Updated ESLint configuration and refactoring (#237)
-- Updated dependencies and Actions (#238)
-- Added context parameter to non-visual mode (#245)
-- Added refresh function using Application Event Bus (#247)
-- Updated to disallow to choose already selected fields (#251)
-- Updated echarts.volkovlabs.io to use visual editor and data sources (#248)
-- Updated draggable handler in Visual editor (#256)
 
 ## Feedback
 
