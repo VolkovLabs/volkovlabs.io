@@ -70,17 +70,17 @@ export const FOOTER = {
         {
           label: "Getting started",
           href: "/big/getting-started/",
-          className: "volkovlabs-link icon-big-getting-started-link",
+          className: "volkovlabs-footer-link icon-big-getting-started-link",
         },
         {
           label: "Alerting",
           href: "/big/alerting/",
-          className: "volkovlabs-link icon-big-alerting-link",
+          className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
           label: "REST API",
           href: "/big/api/",
-          className: "volkovlabs-link icon-big-rest-api-link",
+          className: "volkovlabs-footer-link icon-big-rest-api-link",
         },
       ],
     },

@@ -28,8 +28,8 @@ const Header = (siteConfig) => {
             </p>
 
             <p className="hero__subtitle">
-              The Business Suite is your key to effortlessly overcoming
-              intricate business challenges.
+              The Business Suite is your key to effortlessly overcome intricate
+              business challenges.
             </p>
 
             <div className="margin-vert--lg">
