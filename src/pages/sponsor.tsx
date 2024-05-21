@@ -72,22 +72,30 @@ const Main = (siteConfig) => {
         </h2>
 
         <div className="row margin-vert--lg text--center">
-          <div className="col col--4">
+          <div className="col col--6">
             <Image src="/img/team/mikhail.png" zoom={false} lazy={true} />
             <h3>Mikhail</h3>
             <p>Founder, CEO and Grafana Champion</p>
           </div>
 
-          <div className="col col--4">
+          <div className="col col--6">
+            <Image src="/img/team/alex.png" zoom={false} lazy={true} />
+            <h3>Alex</h3>
+            <p>Director of Engineering</p>
+          </div>
+        </div>
+
+        <div className="row margin-vert--lg text--center">
+          <div className="col col--6">
             <Image src="/img/team/daria.png" zoom={false} lazy={true} />
             <h3>Daria</h3>
             <p>Creative Director, COO and Grafana Champion</p>
           </div>
 
-          <div className="col col--4">
-            <Image src="/img/team/alex.png" zoom={false} lazy={true} />
-            <h3>Alex</h3>
-            <p>Director of Engineering</p>
+          <div className="col col--6">
+            <Image src="/img/team/vitali.png" zoom={false} lazy={true} />
+            <h3>Vitali</h3>
+            <p>Community Engineer</p>
           </div>
         </div>
       </div>
