@@ -70,14 +70,17 @@ export const FOOTER = {
         {
           label: "Getting started",
           href: "/big/getting-started/",
+          className: "volkovlabs-footer-link icon-big-getting-started-link",
         },
         {
           label: "Alerting",
           href: "/big/alerting/",
+          className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
           label: "REST API",
           href: "/big/api/",
+          className: "volkovlabs-footer-link icon-big-rest-api-link",
         },
       ],
     },
@@ -114,6 +117,7 @@ export const FOOTER = {
         {
           label: "Sponsor",
           href: "/sponsor/",
+          className: "volkovlabs-footer-link icon-sponsor-link",
         },
         {
           label: "LinkedIn",
