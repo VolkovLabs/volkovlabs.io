@@ -55,6 +55,34 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-env-datasource/index",
+          label: "Introduction",
+        },
+        "volkovlabs-env-datasource/deployment",
+        "volkovlabs-env-datasource/provisioning",
+        {
+          items: ["volkovlabs-env-datasource/variables"],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-env-datasource/features",
+          },
+        },
+        "volkovlabs-env-datasource/release",
+      ],
+      label: "Environment Data Source",
+      type: "category",
+      description: "Environment variables on your dashboard.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-env-datasource/index",
+      },
+    },
+    {
       type: "link",
       href: "/blog/tags/grafana-crash-course",
       label: "Related Blog posts",

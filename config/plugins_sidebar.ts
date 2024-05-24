@@ -222,6 +222,40 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "volkovlabs-static-datasource/index",
+          label: "Introduction",
+        },
+        "volkovlabs-static-datasource/provisioning",
+        "volkovlabs-static-datasource/variables",
+        {
+          items: [
+            "volkovlabs-static-datasource/panels/business-charts",
+            "volkovlabs-static-datasource/panels/image",
+            "volkovlabs-static-datasource/panels/logs",
+            "volkovlabs-static-datasource/panels/graph",
+            "volkovlabs-static-datasource/panels/pie",
+          ],
+          label: "Panels",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-static-datasource/panels",
+          },
+        },
+        "volkovlabs-static-datasource/release",
+      ],
+      label: "Business Input Data Source",
+      type: "category",
+      description: "Store and create your data.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-static-datasource/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
           id: "volkovlabs-rss-datasource/index",
           label: "Introduction",
         },
@@ -240,6 +274,39 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "doc",
         id: "volkovlabs-rss-datasource/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-grapi-datasource/index",
+          label: "Introduction",
+        },
+        "volkovlabs-grapi-datasource/configuration",
+        "volkovlabs-grapi-datasource/provisioning",
+        {
+          items: ["volkovlabs-grapi-datasource/annotations"],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-grapi-datasource/features",
+          },
+        },
+        {
+          type: "link",
+          href: "/blog/tags/grafana-http-api-data-source",
+          label: "Related Blog posts",
+        },
+        "volkovlabs-grapi-datasource/release",
+      ],
+      label: "Business Satellite Data Source",
+      type: "category",
+      description: "Connect to Local and Remote Grafana instances.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-grapi-datasource/index",
       },
     },
     {
@@ -341,101 +408,6 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "doc",
         id: "volkovlabs-variable-panel/index",
-      },
-    },
-    {
-      items: [
-        {
-          type: "doc",
-          id: "volkovlabs-env-datasource/index",
-          label: "Introduction",
-        },
-        "volkovlabs-env-datasource/deployment",
-        "volkovlabs-env-datasource/provisioning",
-        {
-          items: ["volkovlabs-env-datasource/variables"],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "volkovlabs-env-datasource/features",
-          },
-        },
-        "volkovlabs-env-datasource/release",
-      ],
-      label: "Environment Data Source",
-      type: "category",
-      description: "Environment variables on your dashboard.",
-      link: {
-        type: "doc",
-        id: "volkovlabs-env-datasource/index",
-      },
-    },
-    {
-      items: [
-        {
-          type: "doc",
-          id: "volkovlabs-grapi-datasource/index",
-          label: "Introduction",
-        },
-        "volkovlabs-grapi-datasource/configuration",
-        "volkovlabs-grapi-datasource/provisioning",
-        {
-          items: ["volkovlabs-grapi-datasource/annotations"],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "volkovlabs-grapi-datasource/features",
-          },
-        },
-        {
-          type: "link",
-          href: "/blog/tags/grafana-http-api-data-source",
-          label: "Related Blog posts",
-        },
-        "volkovlabs-grapi-datasource/release",
-      ],
-      label: "Grafana API Data Source",
-      type: "category",
-      description: "Connect to Local and Remote Grafana instances.",
-      link: {
-        type: "doc",
-        id: "volkovlabs-grapi-datasource/index",
-      },
-    },
-    {
-      items: [
-        {
-          type: "doc",
-          id: "volkovlabs-static-datasource/index",
-          label: "Introduction",
-        },
-        "volkovlabs-static-datasource/provisioning",
-        "volkovlabs-static-datasource/variables",
-        {
-          items: [
-            "volkovlabs-static-datasource/panels/business-charts",
-            "volkovlabs-static-datasource/panels/image",
-            "volkovlabs-static-datasource/panels/logs",
-            "volkovlabs-static-datasource/panels/graph",
-            "volkovlabs-static-datasource/panels/pie",
-          ],
-          label: "Panels",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "volkovlabs-static-datasource/panels",
-          },
-        },
-        "volkovlabs-static-datasource/release",
-      ],
-      label: "Static Data Source",
-      type: "category",
-      description: "Store and emulate your data.",
-      link: {
-        type: "doc",
-        id: "volkovlabs-static-datasource/index",
       },
     },
   ],
