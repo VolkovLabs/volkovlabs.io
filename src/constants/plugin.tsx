@@ -32,10 +32,22 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-image-panel/",
   },
   {
+    title: "Business Input Data Source",
+    name: "volkovlabs-static-datasource",
+    description: <>Store and create your data.</>,
+    href: "/plugins/volkovlabs-static-datasource/",
+  },
+  {
     title: "Business News Data Source",
     name: "volkovlabs-rss-datasource",
     description: <>Visualize RSS/Atom feeds using Dynamic Text.</>,
     href: "/plugins/volkovlabs-rss-datasource/",
+  },
+  {
+    title: "Business Satellite Data Source",
+    name: "volkovlabs-grapi-datasource",
+    description: <>Connect to Local and Remote Grafana instances.</>,
+    href: "/plugins/volkovlabs-grapi-datasource/",
   },
   {
     title: "Business Text Panel",
@@ -48,17 +60,5 @@ export const PluginList: PluginItem[] = [
     name: "volkovlabs-variable-panel",
     description: <>Update dashboard variables.</>,
     href: "/plugins/volkovlabs-variable-panel/",
-  },
-  {
-    title: "Grafana API Data Source",
-    name: "volkovlabs-grapi-datasource",
-    description: <>Connect to Local and Remote Grafana instances.</>,
-    href: "/plugins/volkovlabs-grapi-datasource/",
-  },
-  {
-    title: "Static Data Source",
-    name: "volkovlabs-static-datasource",
-    description: <>Store and emulate your data.</>,
-    href: "/plugins/volkovlabs-static-datasource/",
   },
 ];
