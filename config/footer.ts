@@ -33,9 +33,19 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-base64-link",
         },
         {
+          label: "Business Input Data Source",
+          to: "/plugins/volkovlabs-static-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-static-link",
+        },
+        {
           label: "Business News Data Source",
           to: "/plugins/volkovlabs-rss-datasource/",
           className: "volkovlabs-footer-link icon-plugins-rss-link",
+        },
+        {
+          label: "Business Satellite Data Source",
+          to: "/plugins/volkovlabs-grapi-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-grapi-link",
         },
         {
           label: "Business Text Panel",
@@ -46,21 +56,6 @@ export const FOOTER = {
           label: "Business Variable Panel",
           to: "/plugins/volkovlabs-variable-panel/",
           className: "volkovlabs-footer-link icon-plugins-variable-link",
-        },
-        {
-          label: "Environment Data Source",
-          to: "/plugins/volkovlabs-env-datasource/",
-          className: "volkovlabs-footer-link icon-plugins-env-link",
-        },
-        {
-          label: "Grafana API Data Source",
-          to: "/plugins/volkovlabs-grapi-datasource/",
-          className: "volkovlabs-footer-link icon-plugins-grapi-link",
-        },
-        {
-          label: "Static Data Source",
-          to: "/plugins/volkovlabs-static-datasource/",
-          className: "volkovlabs-footer-link icon-plugins-static-link",
         },
       ],
     },
@@ -94,6 +89,12 @@ export const FOOTER = {
         {
           label: "Grafana Crash Course",
           href: "/grafana/",
+          className: "volkovlabs-footer-link icon-grafana-link",
+        },
+        {
+          label: "Environment Data Source",
+          to: "/grafana/volkovlabs-env-datasource/",
+          className: "volkovlabs-footer-link icon-plugins-env-link",
         },
         {
           label: "Release Dashboard",

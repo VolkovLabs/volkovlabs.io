@@ -145,13 +145,13 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-env-datasource/logo.svg")
+  background: url("/static/img/grafana/volkovlabs-env-datasource/logo.svg")
     no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-env-link::before {
-  background: url("/static/img/plugins/volkovlabs-env-datasource/logo.dark.svg")
+  background: url("/static/img/grafana/volkovlabs-env-datasource/logo.dark.svg")
     no-repeat;
 }
 
@@ -308,6 +308,19 @@
 
 [data-theme="dark"] .icon-sponsor-link::before {
   background: url("/static/img/index/sponsor.dark.svg") no-repeat;
+}
+
+.icon-grafana-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/grafana/logo.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-grafana-link::before {
+  background: url("/static/img/grafana/logo.dark.svg") no-repeat;
 }
 
 /* Search */

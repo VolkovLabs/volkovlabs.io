@@ -28,8 +28,8 @@ const Header = (siteConfig) => {
             </p>
 
             <p className="hero__subtitle">
-              The Business Suite is your key to effortlessly overcome intricate
-              business challenges.
+              Designed specifically for users focused on the business side of
+              the process.
             </p>
 
             <div className="margin-vert--lg">
