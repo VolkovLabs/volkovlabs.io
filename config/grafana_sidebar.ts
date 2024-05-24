@@ -48,7 +48,6 @@ const sidebars: SidebarsConfig = {
       ],
       label: "Developer",
       type: "category",
-      collapsible: false,
       link: {
         type: "doc",
         id: "developer/index",
