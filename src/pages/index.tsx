@@ -23,13 +23,13 @@ const Header = (siteConfig) => {
             </h1>
 
             <p className="hero__subtitle margin-vert--md">
-              We specialize in creating plugins that enable you to visualize
-              your business data on the Grafana platform.
+              Do you use Grafana for Business? We created an open-source
+              Business Suite for Grafana to solve numerous business use cases.
             </p>
 
             <p className="hero__subtitle">
-              Our open-source plugins are enriched with JavaScript, providing
-              you with unparalleled customization options.
+              Designed specifically for users focused on the business side of
+              the process.
             </p>
 
             <div className="margin-vert--lg">

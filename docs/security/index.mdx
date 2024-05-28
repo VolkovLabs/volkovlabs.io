@@ -69,14 +69,3 @@ disable_sanitize_html = true
   title="Disable the JavaScript Value Editor in the Data Source options."
   src="/img/plugins/security/static-java.png"
 />
-
-### Environment Data Source
-
-To stay out of trouble, Grafana Core chose not to support the environment variables at this time. Yet, many industrial cases require the ability to display environment variables, for instance, in cases where the goal is to manage numerous remote devices (for example, IoT networks).
-
-To make the [Environmental Data Source](/plugins/volkovlabs-env-datasource) more secure, you can restrict the variables that are allowed to be shown in the Environment data source configuration. For the endless possibilities, the filter utilizes a regex pattern.
-
-<Image
-  title="Use the Regex pattern to restrict the available environment variables."
-  src="/img/blog/2022-09-13-grafana-variables/regex.png"
-/>
