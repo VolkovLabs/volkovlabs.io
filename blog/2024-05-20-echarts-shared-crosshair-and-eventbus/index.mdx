@@ -21,16 +21,10 @@ The solution in this article integrates the open-source [Business Charts](/plugi
 
 ## Crosshair
 
-:::info Focus
-
-A crosshair is usually two lines crossed at the point of focus.
-
-:::
-
-In general, the Crosshair feature helps to highlight the selected data points on the graph. Some of the native Grafana panels have crosshair built-in from the start. For instance, TimeSeries displays it right off the bat. When a user hovers a mouse over the graph, the two dotted perpendicular lines appear.
+In general, the Crosshair feature helps to highlight the selected data points on the graph. Some of the native Grafana panels have crosshair built-in from the start. For instance, Time Series panel displays it right off the bat. When a user hovers a mouse over the graph, the two dotted perpendicular lines appear.
 
 <Image
-  title="The native Time Series crosshair functionality."
+  title="The native Time Series panel has crosshair functionality out of the box."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/crosshair.png"
 />
 
@@ -48,7 +42,7 @@ Below is an example of two Time Series on the dashboard with the **Shared crossh
 Note, that the panel on the left (where a mouse is hovering) displays two dotted perpendicular lines and the panel on the right displays one vertical dotted line which follows the crosshair of the left panel. When a user selects a different time frame on the left panel, the right panel also follows providing a synchronized view of the Time Series data.
 
 <Image
-  title="Two Time Series panel with shared crosshair functionality."
+  title="Two Time Series panels with shared crosshair functionality."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/crosshair.gif"
 />
 
@@ -70,20 +64,16 @@ Grafana provides the EventBus functionality for panel to communicate with each o
 
 :::info Dashboard variables
 
-Using EventBus is one way to facilitate an interaction between visualization panels. The other approach could be by using dashboard variables, but this topic is not covered in this article.
+Using EventBus is a one way to facilitate an interaction between visualization panels. The other approach could be by using dashboard variables. This topic is not covered in this article.
 
 :::
 
 My team started working on documentation for [Grafana EventBus](/plugins/volkovlabs-echarts-panel/eventbus). As of today, you can find the code demonstrating how to subscribe to an event there.
 
-:::info Synchronize in both directions
-
 Please note that the synchronization between the two panels consists of a reaction to the changes on both panels.
 
 - When a mouse hovers over the Time series, we listen for events in the Business Charts.
 - When a mouse hovers over the Business Charts, we send events for the Time Series panel.
-
-:::
 
 ## Add two Business Charts panels
 
