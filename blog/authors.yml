@@ -19,8 +19,8 @@ alex:
 vitali:
   name: Vitali Pinchuk
   title: Community Engineer
-  image_url: https://avatars.githubusercontent.com/u/146737590?v=4
-  url: https://youtube.com/@VolkovLabs
+  image_url: /img/team/vitali.png
+  url: https://github.com/vitPinchuk
 
 chris_field:
   name: Christopher Field

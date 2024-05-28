@@ -1,6 +1,6 @@
 ---
 authors: [vitali]
-slug: echarts-panel-6.0.0-20240520/
+slug: echarts-shared-crosshair-and-eventbus-2024-05-20
 tags: [Business Charts, Business Suite]
 image: /img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/banner.png
 keywords:
@@ -34,7 +34,7 @@ The solution in this article integrates the open-source Business Charts plugin w
 
 :::info
 
- A crosshair is usually two lines crossed at the point of focus. 
+A crosshair is usually two lines crossed at the point of focus.
 
 :::
 
@@ -47,7 +47,7 @@ In general, the Crosshair feature helps to highlight the selected data points on
 
 ### Shared Crosshair
 
-You can go one step further and allow the **Shared crosshair** in the dashboard settings. 
+You can go one step further and allow the **Shared crosshair** in the dashboard settings.
 
 <Image
   title="Dashboard general settings where you can allow the Shared crosshair."
@@ -56,7 +56,7 @@ You can go one step further and allow the **Shared crosshair** in the dashboard 
 
 Below is an example of two Time Series on the dashboard with the **Shared crosshair** turned on. The Data Sources for both are set to **--Grafana--** -> **Random Walk**.
 
-Note, that the panel on the left (where a mouse is hovering) displays two dotted perpendicular lines and the panel on the right displays one vertical dotted line which follows the crosshair of the left panel. When a user selects a different time frame on the left panel, the right panel also follows providing a synchronized view of the Time Series data. 
+Note, that the panel on the left (where a mouse is hovering) displays two dotted perpendicular lines and the panel on the right displays one vertical dotted line which follows the crosshair of the left panel. When a user selects a different time frame on the left panel, the right panel also follows providing a synchronized view of the Time Series data.
 
 <Image
   title="Two Time Series with Shared crosshair."
@@ -67,19 +67,19 @@ Note, that the panel on the left (where a mouse is hovering) displays two dotted
 
 I can point out two limitations:
 
- - With the **Shared crosshair** dashboard setting, you can not specify which panels should be impacted; all panels with the built-in crosshair feature will display it. That is acceptable in most cases, yet it is not ideal for all dashboards.
+- With the **Shared crosshair** dashboard setting, you can not specify which panels should be impacted; all panels with the built-in crosshair feature will display it. That is acceptable in most cases, yet it is not ideal for all dashboards.
 
- - The crosshair feature is available for only some native Grafana plugins. 
+- The crosshair feature is available for only some native Grafana plugins.
 
 ## Crosshair on the Business Charts Panel
 
-So far I explained what a crosshair in Grafana is, how to enable the **Shared crosshair** feature, what the shared crosshair looks like and what are the general limitations. 
+So far I explained what a crosshair in Grafana is, how to enable the **Shared crosshair** feature, what the shared crosshair looks like and what are the general limitations.
 
-Now let's review how to display a shared crosshair on not native panels, or, in other words, how to faciliate panels' interconnectivity. I will use the [Business Charts panel](/plugins/volkovlabs-echarts-panel/) as an example of a Community plugin. 
+Now let's review how to display a shared crosshair on not native panels, or, in other words, how to faciliate panels' interconnectivity. I will use the [Business Charts panel](/plugins/volkovlabs-echarts-panel/) as an example of a Community plugin.
 
 ### Step 1. Add two Business Charts panels
 
-Add two Business Charts panels on the existing dashboard. The codes for both panels are identical. 
+Add two Business Charts panels on the existing dashboard. The codes for both panels are identical.
 
 The data source is **--Grafana--** -> **Random Walk** for both panels.
 
@@ -191,7 +191,7 @@ With two Time Series and two Business Charts panels, the dashboard looks as belo
 
 ### Step 2. Configuring EventBus for panels' interconnectivity
 
-Grafana supports the EventBus approach. This is when you subscribe to the application's events and describe an action in case the event occurs. 
+Grafana supports the EventBus approach. This is when you subscribe to the application's events and describe an action in case the event occurs.
 
 :::info One possible solution
 
@@ -199,26 +199,26 @@ Using EventBus is one way to facilitate an interaction between visualization pan
 
 :::
 
-My team started working on documentation for [Grafana EventBus](/plugins/volkovlabs-echarts-panel/eventbus). As of today, you can find the code demonstrating how to subscribe to an event there. 
+My team started working on documentation for [Grafana EventBus](/plugins/volkovlabs-echarts-panel/eventbus). As of today, you can find the code demonstrating how to subscribe to an event there.
 
 :::info Synchronize in both directions
 
 Please note that the synchronization between the two panels consists of a reaction to the changes on both panels.
 
-- When a mouse hovers above the Time series, we must update the Business Charts. 
+- When a mouse hovers above the Time series, we must update the Business Charts.
 - When a mouse hovers above the Business Charts, we must update the Time Series.
 
 :::
 
-#### Step 2.1. Modify the Business Charts panels following the Time Series change. 
+#### Step 2.1. Modify the Business Charts panels following the Time Series change.
 
 The key parts of the provided below code are:
 
- - Subscribing to the ```data-hover``` event on the ```ECharts``` instance.
- - Checking if the event is for the Time Series panel (based on the seriesIndex).
- - Updating the markline(crosshair line) on the Business Chart using the setOption() method.
+- Subscribing to the `data-hover` event on the `ECharts` instance.
+- Checking if the event is for the Time Series panel (based on the seriesIndex).
+- Updating the markline(crosshair line) on the Business Chart using the setOption() method.
 
-The **Randon Walk 1** and **Randon walk 2** codes are almost identical, but I provide both for your convenience, so you see the difference. 
+The **Randon Walk 1** and **Randon walk 2** codes are almost identical, but I provide both for your convenience, so you see the difference.
 
 ##### Code Example for Random Walk 1
 
@@ -557,9 +557,9 @@ After the above code is implemented, you should see a crosshair line on the Busi
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/marklines.png"
 />
 
-#### Step 2.2. Modify the Time Series panels following the Business Chars change 
+#### Step 2.2. Modify the Time Series panels following the Business Chars change
 
-In this step, I need to ensure that the Time Series crosshair will follow user actions on the Business Charts. For this, I also use the Grafana EventBus. 
+In this step, I need to ensure that the Time Series crosshair will follow user actions on the Business Charts. For this, I also use the Grafana EventBus.
 To achieve this, I add actions using the ECharts instance:
 
 ```js
