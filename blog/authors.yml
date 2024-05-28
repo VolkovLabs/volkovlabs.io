@@ -16,6 +16,12 @@ alex:
   image_url: /img/team/alex.png
   url: https://github.com/asimonok
 
+vitali:
+  name: Vitali Pinchuk
+  title: Community Engineer
+  image_url: /img/team/vitali.png
+  url: https://github.com/vitPinchuk
+
 chris_field:
   name: Christopher Field
   image_url: https://avatars.githubusercontent.com/u/1915469?v=4
