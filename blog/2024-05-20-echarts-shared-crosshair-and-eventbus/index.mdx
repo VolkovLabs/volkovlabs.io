@@ -3,16 +3,7 @@ authors: [vitali]
 slug: echarts-shared-crosshair-and-eventbus-2024-05-20
 tags: [Business Charts, Business Suite]
 image: /img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/banner.png
-keywords:
-  [
-    Business Charts,
-    Panel,
-    Chart,
-    Visualization,
-    Grafana,
-    EventBus,
-    Shared Crosshair,
-  ]
+keywords: [Business Charts, Grafana, EventBus]
 ---
 
 import Code from "@theme/Code";
@@ -26,13 +17,11 @@ When I started working with Grafana, I was stunned by its simple yet genius arch
 
 Allow me to elaborate. By default, Grafana panels operate independently, each residing in its own module, oblivious to the others. Yet, in numerous scenarios, the actions on one panel necessitate a reaction on another. This demand often coincides with the need for data synchronization across multiple panels (for instance, when a user alters the time frame on one panel, the others should adjust accordingly).
 
-The solution in this article integrates the open-source Business Charts plugin with the Crosshair and EvenBus functionalities to have Native and Community panels talking to each other. The panels' interconnectivity makes data analysis more visual and supports Grafana as a top-notch visualization tool.
+The solution in this article integrates the open-source [Business Charts](/plugins/volkovlabs-echarts-panel) panel with the Crosshair and EventBus functionalities to have native and community panels talking to each other. The panels' interconnectivity makes data analysis more visual and supports Grafana as a top-notch visualization tool.
 
-## Shared Crosshair
+## Crosshair
 
-### Crosshair
-
-:::info
+:::info Focus
 
 A crosshair is usually two lines crossed at the point of focus.
 
@@ -41,11 +30,11 @@ A crosshair is usually two lines crossed at the point of focus.
 In general, the Crosshair feature helps to highlight the selected data points on the graph. Some of the native Grafana panels have crosshair built-in from the start. For instance, TimeSeries displays it right off the bat. When a user hovers a mouse over the graph, the two dotted perpendicular lines appear.
 
 <Image
-  title="The built-in Time Series crosshair."
+  title="The native Time Series crosshair functionality."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/crosshair.png"
 />
 
-### Shared Crosshair
+## Shared Crosshair
 
 You can go one step further and allow the **Shared crosshair** in the dashboard settings.
 
@@ -54,12 +43,12 @@ You can go one step further and allow the **Shared crosshair** in the dashboard 
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/options.png"
 />
 
-Below is an example of two Time Series on the dashboard with the **Shared crosshair** turned on. The Data Sources for both are set to **--Grafana--** -> **Random Walk**.
+Below is an example of two Time Series on the dashboard with the **Shared crosshair** turned on. The Data Sources for both are set to **Random Walk** in internal **--Grafana--** data source.
 
 Note, that the panel on the left (where a mouse is hovering) displays two dotted perpendicular lines and the panel on the right displays one vertical dotted line which follows the crosshair of the left panel. When a user selects a different time frame on the left panel, the right panel also follows providing a synchronized view of the Time Series data.
 
 <Image
-  title="Two Time Series with Shared crosshair."
+  title="Two Time Series panel with shared crosshair functionality."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/crosshair.gif"
 />
 
@@ -71,24 +60,43 @@ I can point out two limitations:
 
 - The crosshair feature is available for only some native Grafana plugins.
 
-## Crosshair on the Business Charts Panel
+## EventBus for panels' interconnectivity
 
 So far I explained what a crosshair in Grafana is, how to enable the **Shared crosshair** feature, what the shared crosshair looks like and what are the general limitations.
 
-Now let's review how to display a shared crosshair on not native panels, or, in other words, how to faciliate panels' interconnectivity. I will use the [Business Charts panel](/plugins/volkovlabs-echarts-panel/) as an example of a Community plugin.
+Now let's review how to display a shared crosshair on community panels, or, in other words, how to faciliate panels' interconnectivity. I will use the [Business Charts panel](/plugins/volkovlabs-echarts-panel/) as an example of a Community plugin.
 
-### Step 1. Add two Business Charts panels
+Grafana provides the EventBus functionality for panel to communicate with each other, dashboard and Grafana application. This is when you subscribe to the application's events and describe an action in case the event occurs.
+
+:::info Dashboard variables
+
+Using EventBus is one way to facilitate an interaction between visualization panels. The other approach could be by using dashboard variables, but this topic is not covered in this article.
+
+:::
+
+My team started working on documentation for [Grafana EventBus](/plugins/volkovlabs-echarts-panel/eventbus). As of today, you can find the code demonstrating how to subscribe to an event there.
+
+:::info Synchronize in both directions
+
+Please note that the synchronization between the two panels consists of a reaction to the changes on both panels.
+
+- When a mouse hovers above the Time series, we listen for events in the Business Charts.
+- When a mouse hovers above the Business Charts, we send events for the Time Series panel.
+
+:::
+
+## Add two Business Charts panels
 
 Add two Business Charts panels on the existing dashboard. The codes for both panels are identical.
 
-The data source is **--Grafana--** -> **Random Walk** for both panels.
+The data source is **--Grafana--** with query type **Random Walk** for both panels.
 
 <Image
   title="The Business Charts panels configuration."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/charts-config.png"
 />
 
-Code to copy
+Initial code to parse data frames and display random walk data:
 
 ```js
 /**
@@ -182,45 +190,26 @@ return {
 };
 ```
 
-With two Time Series and two Business Charts panels, the dashboard looks as below. The **Shared crosshair** feature is enabled, so, we can see a synchronized crosshair on the Time Series panels. The Business Charts are not yet linked to the Time Series and, thus, no crosshair for them yet.
+With two Time Series and two Business Charts panels, the dashboard looks as below. The **Shared crosshair** feature is enabled, so, we can see a synchronized crosshair on the Time Series panels.
+
+The Business Charts panels are not yet configured to support EventBus used for interpanel communications and, thus, no crosshair for them yet.
 
 <Image
   title="Dashboard with two Time Series (the built-in crosshair is enabled) and two Business Charts panels (no crosshair yet)."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/all-panels.png"
 />
 
-### Step 2. Configuring EventBus for panels' interconnectivity
-
-Grafana supports the EventBus approach. This is when you subscribe to the application's events and describe an action in case the event occurs.
-
-:::info One possible solution
-
-Using EventBus is one way to facilitate an interaction between visualization panels. The other approach could be by using dashboard variables, but this topic is not covered in this article.
-
-:::
-
-My team started working on documentation for [Grafana EventBus](/plugins/volkovlabs-echarts-panel/eventbus). As of today, you can find the code demonstrating how to subscribe to an event there.
-
-:::info Synchronize in both directions
-
-Please note that the synchronization between the two panels consists of a reaction to the changes on both panels.
-
-- When a mouse hovers above the Time series, we must update the Business Charts.
-- When a mouse hovers above the Business Charts, we must update the Time Series.
-
-:::
-
-#### Step 2.1. Modify the Business Charts panels following the Time Series change.
+## Modify the Business Charts panels to react on the events from Time Series
 
 The key parts of the provided below code are:
 
 - Subscribing to the `data-hover` event on the `ECharts` instance.
-- Checking if the event is for the Time Series panel (based on the seriesIndex).
-- Updating the markline(crosshair line) on the Business Chart using the setOption() method.
+- Checking if the event is for the Time Series panel (based on the `seriesIndex`).
+- Updating the markline(crosshair line) on the Business Chart using the `setOption()` method.
 
 The **Randon Walk 1** and **Randon walk 2** codes are almost identical, but I provide both for your convenience, so you see the difference.
 
-##### Code Example for Random Walk 1
+### Code Example for Random Walk 1
 
 ```js
 /**
@@ -262,9 +251,8 @@ const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
     /**
-     * for Random Walk 2 it should be
-     * !== "echarts-walk-2"
-     * check path for event;process data from other panels
+     * for Random Walk 2 it should be not equal to "echarts-walk-2"
+     * check path for event process data from other panels
      */
     if (data?.origin?.path[0] !== "echarts-walk-1") {
       const options = context.panel.chart.getOption();
@@ -316,8 +304,7 @@ const subscription = context.grafana.eventBus.subscribe(
 );
 
 /**
- * Return the ECharts configuration object
- * as extended object
+ * Return the ECharts configuration object as extended object
  * contain unsubscribe option
  * The Business Charts Panel supports the extended result object since version 5.0.0.
  */
@@ -385,7 +372,7 @@ return {
 };
 ```
 
-##### Code Example for Random Walk 2
+### Code Example for Random Walk 2
 
 ```js
 /**
@@ -427,9 +414,8 @@ const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
     /**
-     * for Random Walk 2 it should be
-     * !== "echarts-walk-2"
-     * check path for event;process data from other panels
+     * for Random Walk 2 it should be not equal to "echarts-walk-2"
+     * check path for event process data from other panels
      */
     if (data?.origin?.path[0] !== "echarts-walk-2") {
       const options = context.panel.chart.getOption();
@@ -481,8 +467,7 @@ const subscription = context.grafana.eventBus.subscribe(
 );
 
 /**
- * Return the ECharts configuration object
- * as extended object
+ * Return the ECharts configuration object sas extended object
  * contain unsubscribe option
  * The Business Charts Panel supports the extended result object since version 5.0.0.
  */
@@ -553,21 +538,21 @@ return {
 After the above code is implemented, you should see a crosshair line on the Business Charts panels, when a user hovers over any of the Time Series panels.
 
 <Image
-  title="All panels are linked together"
+  title="All panels are linked together."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/marklines.png"
 />
 
-#### Step 2.2. Modify the Time Series panels following the Business Chars change
+## Modify the Business Charts panels to send events to Time Series
 
 In this step, I need to ensure that the Time Series crosshair will follow user actions on the Business Charts. For this, I also use the Grafana EventBus.
 To achieve this, I add actions using the ECharts instance:
 
 ```js
 /**
- * Use Chart Instance and method on
- * Each time you hover over a value on the graph
+ * Use Chart Instance and method on mouse move
+ * It executes each time you hover over a value on the graph
  * The event will be created via the eventBus with the payload
- * Processed by TimeSeries panels
+ * Sent event will be processed by Time Series panels
  */
 context.panel.chart.on("mousemove", function (params) {
   /**
@@ -591,9 +576,9 @@ context.panel.chart.on("mousemove", function (params) {
 });
 ```
 
-:::info Note
+:::info Difference in behaviour
 
-Hover event via context.panel.chart.on(“mousemove”) works when pointing directly at the chart.
+Hover event in Business Charts via context.panel.chart.on(“mousemove”) works when pointing directly at the points instead of the whole region as in Time Series.
 
 :::
 
@@ -633,7 +618,7 @@ else {
     }
 ```
 
-### Final result
+## Final result
 
 The described solution creates a two-way interaction between the Bussines Chart panels and the Time Series panels. Hovering over the **Random Walk** charts updates the markline on the Time Series chart, and vice versa.
 
@@ -642,7 +627,7 @@ The described solution creates a two-way interaction between the Bussines Chart 
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/vice-versa-marklines.png"
 />
 
-### Full Code Example for Random Walk 1
+### Full Example for Random Walk 1
 
 ```js
 /**
@@ -684,9 +669,8 @@ const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
     /**
-     * for Random Walk 2 it should be
-     * !== "echarts-walk-2"
-     * check path for event;process data from other panels
+     * for Random Walk 2 it should be not equal to "echarts-walk-2"
+     * check path for event process data from other panels
      */
     if (data?.origin?.path[0] !== "echarts-walk-1") {
       const options = context.panel.chart.getOption();
@@ -768,7 +752,7 @@ const subscription = context.grafana.eventBus.subscribe(
 );
 
 /**
- * Use Chart Instance and method on
+ * Use Chart Instance and method on mouse move
  * Each time you hover over a value on the graph
  * The event will be created via the eventBus with the payload
  * Processed by TimeSeries panels
@@ -795,8 +779,7 @@ context.panel.chart.on("mousemove", function (params) {
 });
 
 /**
- * Return the ECharts configuration object
- * as extended object
+ * Return the ECharts configuration object as extended object
  * contain unsubscribe option
  * The Business Charts Panel supports the extended result object since version 5.0.0.
  */
@@ -864,7 +847,7 @@ return {
 };
 ```
 
-### Full Code Example for Random Walk 2
+### Full Example for Random Walk 2
 
 ```js
 /**
@@ -990,7 +973,7 @@ const subscription = context.grafana.eventBus.subscribe(
 );
 
 /**
- * Use Chart Instance and method on
+ * Use Chart Instance and method on mouse move
  * Each time you hover over a value on the graph
  * The event will be created via the eventBus with the payload
  * Processed by TimeSeries panels
@@ -1017,8 +1000,7 @@ context.panel.chart.on("mousemove", function (params) {
 });
 
 /**
- * Return the ECharts configuration object
- * as extended object
+ * Return the ECharts configuration object as extended object
  * contain unsubscribe option
  * The Business Charts Panel supports the extended result object since version 5.0.0.
  */
@@ -1093,4 +1075,4 @@ We're looking forward to hearing from you. You can use different ways to get in 
 - Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-echarts-panel/issues).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
 - Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
-- Support our project by starring the repository.
+- Support our projects by starring the repository.
