@@ -1,0 +1,216 @@
+---
+authors: [vitali]
+draft: true
+slug: form-elements-validation-20240530/
+tags: [Data Manipulation]
+image: /img/blog/2024-05-30-form-elements-validation/banner.png
+keywords: [Data Manipulation, Validation, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+import Shorts from "@theme/Shorts";
+
+# Validate form Elements
+
+The Data Manipulation Panel allows you to check the dependence of elements on each other.
+
+## Form Panel
+
+Let's create a Simple form with three elements and a Submit button. Each element has type 'Select with custom Options'. Each element has two options (1 and 2).
+
+<Image
+  title="Form panel with two select with custom options elements."
+  src="/img/blog/2024-05-30-form-elements-validation/example-panel.png"
+/>
+
+:::info Initial State
+
+Initial state for elements Room, Bench and Submit button is disabled.
+
+:::
+
+1. The Submit button saves the `disabled` state until all items have the selected values.
+
+2. The Room element saves the `disabled` state until the value in the Facility element is selected.
+   Also, when the Facility value is changed, the Room element resets its value.
+
+<Image
+  title="The Facility element value is selected. Room element is enabled."
+  src="/img/blog/2024-05-30-form-elements-validation/choose-facility-element-value.png"
+/>
+
+3. The Bench element saves the `disabled` state until the value in the Room element is selected.
+   Also, when the Room or Facility values are changed, the Bench element resets its value.
+
+<Image
+  title="The Room element value is selected. Bench element is enabled."
+  src="/img/blog/2024-05-30-form-elements-validation/choose-room-element-value.png"
+/>
+
+## How it works ?
+
+The validation of elements and buttons occur in the corresponding panel settings.
+
+1. Submit button validation occurs in "Form Events". The code located in this section is executed when element values are changed.
+
+   Use `context.panel.enableSubmit()` and `context.panel.disableSubmit()` methods, available in code editor,
+   we can disabled/enabled our Submit button. You can view the list of available parameters here in the [Custom Code](../code/) section.
+
+```js
+let elements = context.panel.elements;
+
+/**
+ * Caclulate form validation state
+ */
+const isFormValid = elements.every((element) => !!element.value);
+
+/**
+ * Enable/Disable submit button
+ */
+if (isFormValid) {
+  context.panel.enableSubmit();
+} else {
+  context.panel.disableSubmit();
+}
+```
+
+<Image
+  title="Validation Submit button in Form Events."
+  src="/img/blog/2024-05-30-form-elements-validation/form-events.png"
+/>
+
+2. Room element disabled/enabled validation occurs in "Disable if" part for element options.
+   The code in this section must return true or false.
+
+```js
+const facility = context.panel.elements.find(
+  (element) => element.id === "facility"
+);
+
+return !facility?.value;
+```
+
+<Image
+  title="Validation Room Element."
+  src="/img/blog/2024-05-30-form-elements-validation/room-element-validation.png"
+/>
+
+3. Bench element disabled/enabled validation occurs in "Disable if" part for element options.
+   The code in this section must return true or false.
+
+```js
+const facility = context.panel.elements.find(
+  (element) => element.id === "facility"
+);
+
+const room = context.panel.elements.find((element) => element.id === "room");
+
+return !facility?.value || !room?.value;
+```
+
+<Image
+  title="Validation Room Element."
+  src="/img/blog/2024-05-30-form-elements-validation/bench-element-validation.png"
+/>
+
+4. Reset values for Room and Bench elements. Validation values for Room and Bench elements and reset it occurs in "Form Events" section.
+
+   Lets expand our previously code for "Form Events" and add block of code.
+   Use `context.panel.onChangeElements(updatedElements)` , available in code editor, to update values and elements.
+
+```js
+/**
+ * Reset room and bench values on facility change
+ */
+if (context.element.id === "facility") {
+  elements = elements.map((element) => {
+    if (element.id === "room" || element.id === "bench") {
+      return {
+        ...element,
+        value: null,
+      };
+    }
+
+    return element;
+  });
+}
+
+/**
+ * Reset bench value on room change
+ */
+if (context.element.id === "room") {
+  elements = elements.map((element) => {
+    if (element.id === "bench") {
+      return {
+        ...element,
+        value: null,
+      };
+    }
+
+    return element;
+  });
+}
+
+/**
+ * Update form elements
+ */
+context.panel.onChangeElements(elements);
+```
+
+Full code for "Form Events" section:
+
+```js
+let elements = context.panel.elements;
+
+/**
+ * Reset room and bench values on facility change
+ */
+if (context.element.id === "facility") {
+  elements = elements.map((element) => {
+    if (element.id === "room" || element.id === "bench") {
+      return {
+        ...element,
+        value: null,
+      };
+    }
+
+    return element;
+  });
+}
+
+/**
+ * Reset bench value on room change
+ */
+if (context.element.id === "room") {
+  elements = elements.map((element) => {
+    if (element.id === "bench") {
+      return {
+        ...element,
+        value: null,
+      };
+    }
+
+    return element;
+  });
+}
+
+/**
+ * Update form elements
+ */
+context.panel.onChangeElements(elements);
+
+/**
+ * Calculate form validation state
+ */
+const isFormValid = elements.every((element) => !!element.value);
+
+/**
+ * Enable/Disable submit button
+ */
+if (isFormValid) {
+  context.panel.enableSubmit();
+} else {
+  context.panel.disableSubmit();
+}
+```

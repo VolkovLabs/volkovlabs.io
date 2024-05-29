@@ -241,8 +241,7 @@ const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
     /**
-     * for Random Walk 2 it should be not equal to "echarts-walk-2"
-     * check path for event process data from other panels
+     * Handle event from other panels
      */
     if (data?.origin?.path[0] !== "echarts-walk-1") {
       const options = context.panel.chart.getOption();
@@ -404,8 +403,7 @@ const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
     /**
-     * for Random Walk 2 it should be not equal to "echarts-walk-2"
-     * check path for event process data from other panels
+     * Handle event from other panels
      */
     if (data?.origin?.path[0] !== "echarts-walk-2") {
       const options = context.panel.chart.getOption();
@@ -457,7 +455,7 @@ const subscription = context.grafana.eventBus.subscribe(
 );
 
 /**
- * Return the ECharts configuration object sas extended object
+ * Return the ECharts configuration object as extended object
  * contain unsubscribe option
  * The Business Charts Panel supports the extended result object since version 5.0.0.
  */
@@ -659,8 +657,7 @@ const subscription = context.grafana.eventBus.subscribe(
   { type: "data-hover" },
   (data) => {
     /**
-     * for Random Walk 2 it should be not equal to "echarts-walk-2"
-     * check path for event process data from other panels
+     * Handle event from other panels
      */
     if (data?.origin?.path[0] !== "echarts-walk-1") {
       const options = context.panel.chart.getOption();
@@ -1057,6 +1054,8 @@ return {
   },
 };
 ```
+
+In this article we provided examples how to use one type of the events supported in EventBus. Full list of events you can find in the [Grafana Crash Course](/grafana/developer/eventbus/).
 
 ## Feedback
 
