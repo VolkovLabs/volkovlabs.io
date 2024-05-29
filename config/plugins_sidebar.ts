@@ -140,7 +140,6 @@ const sidebars: SidebarsConfig = {
             "volkovlabs-form-panel/control",
             "volkovlabs-form-panel/request",
             "volkovlabs-form-panel/dynamic",
-            "volkovlabs-form-panel/validations",
             "volkovlabs-form-panel/variables",
             "volkovlabs-form-panel/load",
             "volkovlabs-form-panel/confirm-window",
