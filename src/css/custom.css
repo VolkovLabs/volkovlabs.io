@@ -302,12 +302,51 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/index/sponsor.svg") no-repeat;
+  background: url("/static/img/sponsor/feature-1.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-sponsor-link::before {
-  background: url("/static/img/index/sponsor.dark.svg") no-repeat;
+  background: url("/static/img/sponsor/feature-1.dark.svg") no-repeat;
+}
+
+.icon-blog-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/blog.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-blog-link::before {
+  background: url("/static/img/index/blog.dark.svg") no-repeat;
+}
+
+.icon-community-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/community.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-community-link::before {
+  background: url("/static/img/index/community.dark.svg") no-repeat;
+}
+
+.icon-release-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/release.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-release-link::before {
+  background: url("/static/img/index/release.dark.svg") no-repeat;
 }
 
 .icon-grafana-link::before {

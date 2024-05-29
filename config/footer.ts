@@ -85,6 +85,7 @@ export const FOOTER = {
         {
           label: "Blog",
           href: "/blog/",
+          className: "volkovlabs-footer-link icon-blog-link",
         },
         {
           label: "Grafana Crash Course",
@@ -99,6 +100,7 @@ export const FOOTER = {
         {
           label: "Release Dashboard",
           href: "https://release.volkovlabs.io",
+          className: "volkovlabs-footer-link icon-release-link",
         },
         {
           label: "GitHub",
@@ -128,6 +130,7 @@ export const FOOTER = {
         {
           label: "YouTube Community",
           href: "https://youtube.com/@volkovlabs/community",
+          className: "volkovlabs-footer-link icon-community-link",
         },
       ],
     },
