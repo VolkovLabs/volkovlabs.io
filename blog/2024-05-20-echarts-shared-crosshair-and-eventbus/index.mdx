@@ -19,6 +19,15 @@ Allow me to elaborate. By default, Grafana panels operate independently, each re
 
 The solution in this article integrates the open-source [Business Charts](/plugins/volkovlabs-echarts-panel) panel with the Crosshair and EventBus functionalities to have native and community panels talking to each other. The panels' interconnectivity makes data analysis more visual and supports Grafana as a top-notch visualization tool.
 
+:::info EventBus
+The provided solution involving the Time Series panel and Shared Crosshair functionality is just one example of panels' interconnectivity using EventBus. Panels can interact in various ways.
+:::
+
+<Shorts
+  src="https://www.youtube.com/embed/HQCKyQ1raKk"
+  title="Grafana EventBus to facilitate panels' interconnectivity. Business Charts 6.1.0."
+/>
+
 ## Crosshair
 
 In general, the Crosshair feature helps to highlight the selected data points on the graph. Some of the native Grafana panels have crosshair built-in from the start. For instance, Time Series panel displays it right off the bat. When a user hovers a mouse over the graph, the two dotted perpendicular lines appear.
@@ -48,17 +57,19 @@ Note, that the panel on the left (where a mouse is hovering) displays two dotted
 
 ### Limitations
 
-I can point out two limitations:
+I can point out three limitations:
 
 - With the **Shared crosshair** dashboard setting, you can not specify which panels should be impacted; all panels with the built-in crosshair feature will display it. That is acceptable in most cases, yet it is not ideal for all dashboards.
 
 - The crosshair feature is available for only some native Grafana plugins.
 
+- The **Shared crosshair** is just one example of many possible panels' interactivities. If you need something else, there has to be JavaScript involved.
+
 ## EventBus for panels' interconnectivity
 
 So far I explained what a crosshair in Grafana is, how to enable the **Shared crosshair** feature, what the shared crosshair looks like and what are the general limitations.
 
-Now let's review how to display a shared crosshair on community panels, or, in other words, how to faciliate panels' interconnectivity. I will use the [Business Charts panel](/plugins/volkovlabs-echarts-panel/) as an example of a Community plugin.
+Now let's review how to display a shared crosshair on community panels, or, in other words, how to faciliate one of the possible ways of the panels' interconnectivities. I will use the [Business Charts panel](/plugins/volkovlabs-echarts-panel/) as an example of a Community plugin.
 
 Grafana provides the EventBus functionality for panel to communicate with each other, dashboard and Grafana application. This is when you subscribe to the application's events and describe an action in case the event occurs.
 
