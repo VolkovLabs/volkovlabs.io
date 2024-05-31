@@ -9,7 +9,7 @@ const dataValueField = context.dataFrame.fields.find(
 context.handlebars.registerHelper("Value", (context) => {
   /**
    * Use 'display' method from field for "Value"
-   * display transform value based on Overide value
+   * display transform value based on Override value
    * ex: 1048576 --> 1.05 MB
    */
   const transformedValue = dataValueField.display?.(context.data.root["Value"]);

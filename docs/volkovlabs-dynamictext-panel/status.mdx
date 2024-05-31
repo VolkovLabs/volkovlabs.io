@@ -5,7 +5,9 @@ tags:
 image: /img/plugins/volkovlabs-dynamictext-panel/external.png
 ---
 
+import Code from "@theme/Code";
 import Image from "@theme/Image";
+import Video from "@theme/Video";
 
 # Status field
 
@@ -27,30 +29,8 @@ Colors are defined based on the threshold ranges for the selected status field.
 
 ### Example
 
-```js
-/**
- * Get data field for "Value"
- *
- */
-const dataValueField = context.dataFrame.fields.find(
-  (field) => field.name === "Value"
-);
-
-context.handlebars.registerHelper("Value", (context) => {
-  /**
-   * Use 'display' method from field for "Value"
-   * display transform value based on Overide value
-   * ex: 1048576 --> 1.05 MB
-   */
-  const transformedValue = dataValueField.display?.(context.data.root["Value"]);
-  console.log("console >>> handlebars transformedValue", transformedValue);
-
-  /**
-   * Return transformed value
-   *
-   */
-  return `${transformedValue.prefix || ""}${transformedValue.text}${
-    transformedValue.suffix
-  }`;
-});
+```handlebars
+<div style="background-color: {{statusColor}}">
+  {{A-series}}
+</div>
 ```
