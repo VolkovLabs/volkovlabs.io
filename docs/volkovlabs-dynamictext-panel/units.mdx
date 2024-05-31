@@ -1,0 +1,77 @@
+---
+tags:
+  - Dynamic Text
+  - Events
+image: /img/plugins/volkovlabs-dynamictext-panel/external.png
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Units
+
+:::info Version
+
+Dynamic Text Panel supports to show the values as their scaled unit transformation
+:::
+
+In the JavaScript->before rendering content option a user can register custom handlebars.
+Example with [custom handlebars Helper](../code/#custom-handlebars-helper)
+
+Use `context.handlebars.registerHelper` and `display` method from data field in code editor to transform value, and display transformed value.
+As example transform value from `1048576` to `1.05 MB`
+
+<Image
+  title="Display method allows you render transformed value"
+  src="/img/plugins/volkovlabs-dynamictext-panel/features/units/panel.png"
+/>
+
+### Override
+
+Value transformation based on the Override units.
+
+<Image
+  title="Override value using units"
+  src="/img/plugins/volkovlabs-dynamictext-panel/features/units/override.png"
+/>
+
+### Example
+
+Define data field. Each data field contain `display` method. Us this method inside `context.handlebars.registerHelper` to override necessary value.
+Transformed value returns object with properties.
+
+<Image
+  title="Display method"
+  src="/img/plugins/volkovlabs-dynamictext-panel/features/units/display.png"
+/>
+
+#### Example Code
+
+```js
+/**
+ * Get data field for "Value"
+ *
+ */
+const dataValueField = context.dataFrame.fields.find(
+  (field) => field.name === "Value"
+);
+
+context.handlebars.registerHelper("Value", (context) => {
+  /**
+   * Use 'display' method from field for "Value"
+   * display transform value based on Override value
+   * ex: 1048576 --> 1.05 MB
+   */
+  const transformedValue = dataValueField.display?.(context.data.root["Value"]);
+  console.log("console >>> handlebars transformedValue", transformedValue);
+
+  /**
+   * Return transformed value
+   *
+   */
+  return `${transformedValue.prefix || ""}${transformedValue.text}${
+    transformedValue.suffix
+  }`;
+});
+```

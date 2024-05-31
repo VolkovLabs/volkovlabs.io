@@ -1,33 +1,3 @@
----
-tags:
-  - Dynamic Text
-  - Events
-image: /img/plugins/volkovlabs-dynamictext-panel/external.png
----
-
-import Image from "@theme/Image";
-
-# Status field
-
-:::info Version
-
-Dynamic Text Panel supports the status field since version 4.1.0.
-:::
-
-You can use the new `statusColor` variable to set a background or foreground color of any HTML element.
-
-<Image
-  title="Status field allows you to dynamically set a background or foreground color."
-  src="/img/plugins/volkovlabs-dynamictext-panel/status.png"
-/>
-
-## Threshold
-
-Colors are defined based on the threshold ranges for the selected status field.
-
-### Example
-
-```js
 /**
  * Get data field for "Value"
  *
@@ -53,4 +23,3 @@ context.handlebars.registerHelper("Value", (context) => {
     transformedValue.suffix
   }`;
 });
-```
