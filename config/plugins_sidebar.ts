@@ -157,11 +157,6 @@ const sidebars: SidebarsConfig = {
             id: "volkovlabs-form-panel/servers/index",
           },
         },
-        {
-          type: "link",
-          href: "/blog/tags/data-manipulation",
-          label: "Related Blog posts",
-        },
         "volkovlabs-form-panel/release",
       ],
       label: "Business Forms",
