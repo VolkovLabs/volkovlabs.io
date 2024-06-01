@@ -1,0 +1,108 @@
+---
+authors: [daria]
+slug: variable-panel-3.0.0-20231214/
+tags: [Variables, Business Suite]
+image: /img/blog/2024-06-01-variable-panel-3.0.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# Business Variable Panel 3.0.0
+
+We are happy to announce the release of the Business Variable Panel 3.0.0. This release includes the following updates:
+
+- Plugin rebranding, the new name is the **Business Variable Panel**.
+- Added maximum visible values option in minimize view.
+- Added Row count in Table view.
+- Added Slider View.
+- Added Responsive tabs and Preserve selection of the group between dashboards.
+- Added support new items in Variable (minimize mode).
+- Added Reset dependent variables when selecting the value.
+- Improved Tree view display and scroll.
+- Required Grafana 10 and Grafana 11. Breaking change.
+
+:::info Grafana Catalog
+The plugin was updated in the Grafana Plugins catalog on May 9, 2024.
+:::
+
+## Number of downloads
+
+The Variable plugin shoots for the stars and reached milestone of 500,000 downloads! :clap:
+
+<Image
+  title="Variable panel was downloaded more than 500,000 times."
+  src="/img/blog/2023-12-14-variable-panel-2.3.1/downloads.png"
+/>
+
+## Getting Started
+
+The Business Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
+
+For the latter, please use the following command.
+
+```bash
+grafana-cli plugins install volkovlabs-variable-panel
+```
+
+## YouTube Tutorial
+
+The Business Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+
+The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+
+<Video
+  src="https://www.youtube.com/embed/1ogv2jstrlI"
+  title="Demonstrates the Variable panel functionality."
+/>
+
+## Release Notes
+
+### Breaking changes in 3.0.0
+
+- Requires Grafana 10 and Grafana 11
+
+### Features / Enhancements in 3.0.0
+
+- Updated selecting and deselecting multi-levels (#139)
+- Updated Auto/Static Minimize label width (#144)
+- Added show and hide Minimize label (#144)
+- Added maximum visible values option in minimize view (#147)
+- Added plugin e2e tests and remove cypress (#149)
+- Added Row count in Table view (#148)
+- Updated AutoScroll Behavior (#152)
+- Added Slider View (#154)
+- Prepared for Grafana 11 (#155)
+- Updated Grafana 10.4.2 and dependencies (#158)
+
+### Features / Enhancements in 2.5.0
+
+- Added the indeterminate state to the checkboxes (#127)
+- Updated Tree View scrolling (#128)
+- Added Responsive tabs (#130)
+- Added support new items in Variable (minimize mode) (#134)
+- Added Preserve selection of the group between dashboards (#135)
+- Improved Tree view display and scroll (#136)
+- Added Reset dependent variables when selecting the value (#138)
+
+### Breaking changes in 2.4.0
+
+- Requires Grafana 9.2 and Grafana 10
+
+### Features / Enhancements in 2.4.0
+
+- Updated video tutorial in README (#111)
+- Updated timescale data (#119)
+- Updated dependencies and Actions (#120)
+- Updated the default color contrast (#122)
+- Added preserve selected group option (#124)
+- Added label for Button view (#125)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
