@@ -103,11 +103,6 @@ const sidebars: SidebarsConfig = {
             id: "volkovlabs-echarts-panel/tutorials/index",
           },
         },
-        {
-          type: "link",
-          href: "/blog/tags/business-charts",
-          label: "Related Blog posts",
-        },
         "volkovlabs-echarts-panel/release",
       ],
       label: "Business Charts",
