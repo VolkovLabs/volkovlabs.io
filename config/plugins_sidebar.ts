@@ -188,11 +188,6 @@ const sidebars: SidebarsConfig = {
             id: "volkovlabs-image-panel/features",
           },
         },
-        {
-          type: "link",
-          href: "/blog/tags/business-image-pdf",
-          label: "Related Blog posts",
-        },
         "volkovlabs-image-panel/release",
       ],
       label: "Business Image/PDF",
