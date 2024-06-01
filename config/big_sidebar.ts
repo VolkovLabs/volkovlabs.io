@@ -37,11 +37,6 @@ const sidebars: SidebarsConfig = {
       href: "/big/api",
       label: "REST API",
     },
-    {
-      type: "link",
-      href: "/blog/tags/business-intelligence",
-      label: "Related Blog posts",
-    },
     "release",
   ],
 };

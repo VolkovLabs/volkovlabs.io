@@ -14,7 +14,7 @@ type Props = {
 /**
  * Blog Post
  */
-const BlogPost = ({ href, title, src, width = "65%" }: Props) => (
+const BlogPost = ({ href, title, src, width = "75%" }: Props) => (
   <a href={href}>
     <Image title={title} src={src} zoom={false} width={width} lazy={true} />
   </a>
