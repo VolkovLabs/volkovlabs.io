@@ -8,7 +8,7 @@ import { BlogArchive } from "../constants";
  * Not Found
  */
 const NotFound = () => {
-  const items = BlogArchive?.blogPosts.slice(0, 6).map((post) => {
+  const items = BlogArchive?.archive?.blogPosts.slice(0, 6).map((post) => {
     return {
       content: post,
     };
