@@ -134,8 +134,16 @@ export const NAVBAR = {
           to: "/blog/tags/community",
         },
         {
+          label: "Development",
+          to: "/blog/tags/development",
+        },
+        {
           label: "Grafana Crash Course",
           to: "/blog/tags/grafana-crash-course",
+        },
+        {
+          label: "Solutions",
+          to: "/blog/tags/solution",
         },
         {
           label: "Volkov Labs",

@@ -36,11 +36,6 @@ const sidebars: SidebarsConfig = {
             id: "volkovlabs-calendar-panel/features",
           },
         },
-        {
-          type: "link",
-          href: "/blog/tags/business-calendar",
-          label: "Related Blog posts",
-        },
         "volkovlabs-calendar-panel/release",
       ],
       label: "Business Calendar",
