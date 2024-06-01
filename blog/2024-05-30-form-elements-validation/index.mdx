@@ -2,7 +2,7 @@
 authors: [vitali]
 draft: true
 slug: form-elements-validation-20240530/
-tags: [Data Manipulation]
+tags: [Data Manipulation, Solution]
 image: /img/blog/2024-05-30-form-elements-validation/banner.png
 keywords: [Data Manipulation, Validation, Grafana]
 ---
@@ -17,21 +17,23 @@ This article shares how to use JavaScript in the Business Forms plugin to enhanc
 
 The [Business Forms plugin](/plugins/volkovlabs-form-panel/), formerly known as the Data Manipulation plugin, is designed around one innovative idea: the ability to send data back into the data source from any Grafana dashboard.
 
-When a user enters data on the UI form, you might wonder what data validation mechanisms are available to ensure only allowable values are sent back to the data source. 
+When a user enters data on the UI form, you might wonder what data validation mechanisms are available to ensure only allowable values are sent back to the data source.
 
 Instead of providing an abstract answer, I put together a particular example where I assume:
 
- - the required UI Form Elements,
- - their expected behavior.
+- the required UI Form Elements,
+- their expected behavior.
 
 Based on the above-assumed requirements, I explain:
- - how to configure the Business Forms plugin to make it all possible.
+
+- how to configure the Business Forms plugin to make it all possible.
 
 ## UI Form Elements
 
-The [Form Elements](/plugins/volkovlabs-form-panel/form-elements/) are UI components the Business Forms plugin provides as building bricks for your data entry forms. 
+The [Form Elements](/plugins/volkovlabs-form-panel/form-elements/) are UI components the Business Forms plugin provides as building bricks for your data entry forms.
 
 In this article, a data entry form consists of the following elements:
+
 - Three drop-downs with the **Select with custom Options** type. Names: **Facility**, **Room**, and **Bench**. Each element provides a selection list. The exact selective options are irrelevant to the topic I cover here. For simplicity, every element has two options, 1 and 2.
 - The **Submit** button. Any Business Form has this button by default. I keep all initial settings.
 
@@ -40,9 +42,9 @@ In this article, a data entry form consists of the following elements:
   src="/img/blog/2024-05-30-form-elements-validation/example-panel.png"
 />
 
-## Expected behavior 
+## Expected behavior
 
-Below, I describe the potential UI Form Elements requirements. 
+Below, I describe the potential UI Form Elements requirements.
 
 1. The initial state of some UI elements (**Room**, **Bench**, **Submit** button) is `disabled`. Only **Facility** should be `enabled` for users' actions.
 2. The **Submit** button must stay `disabled` until all drop-down elements have values selected.
@@ -77,7 +79,7 @@ The Submit button validation occurs in the "Form Events" section. The Business F
   src="/img/blog/2024-05-30-form-elements-validation/form-events.png"
 />
 
-To enable or disable the Submit button I use the `context.panel.enableSubmit()` or `context.panel.disableSubmit()` method respectively. These methods are embedded into the Business Forms plugin and could be used in any of the JavaScript code parameters (**Custom code**, **Form Events**, etc.) 
+To enable or disable the Submit button I use the `context.panel.enableSubmit()` or `context.panel.disableSubmit()` method respectively. These methods are embedded into the Business Forms plugin and could be used in any of the JavaScript code parameters (**Custom code**, **Form Events**, etc.)
 
 :::info
 Access the full list of available methods in the [Business Forms->Custom Code](/plugins/volkovlabs-form-panel/code/) section on our website.
@@ -102,6 +104,7 @@ if (isFormValid) {
   context.panel.disableSubmit();
 }
 ```
+
 ### Room drop-down
 
 The Room element disabled/enabled switch occurs in the "Disable if returned value is true" parameter.
@@ -154,7 +157,7 @@ return !facility?.value || !room?.value;
 
 For the **Room** and **Bench** elements the value reset occurs in the "Form Events" section.
 
-I will use the `context.panel.onChangeElements(updatedElements)` method. It is embedded into the Business Forms plugin and could be used in any of the JavaScript code parameters (**Custom code**, **Form Events**, etc.) 
+I will use the `context.panel.onChangeElements(updatedElements)` method. It is embedded into the Business Forms plugin and could be used in any of the JavaScript code parameters (**Custom code**, **Form Events**, etc.)
 
 You can copy the code from here:
 
