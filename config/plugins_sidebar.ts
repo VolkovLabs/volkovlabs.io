@@ -360,11 +360,6 @@ const sidebars: SidebarsConfig = {
             id: "volkovlabs-variable-panel/features",
           },
         },
-        {
-          type: "link",
-          href: "/blog/tags/variables",
-          label: "Related Blog posts",
-        },
         "volkovlabs-variable-panel/release",
       ],
       label: "Business Variable",
