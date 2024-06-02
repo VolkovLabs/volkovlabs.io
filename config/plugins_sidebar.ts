@@ -269,11 +269,6 @@ const sidebars: SidebarsConfig = {
             id: "volkovlabs-grapi-datasource/features",
           },
         },
-        {
-          type: "link",
-          href: "/blog/tags/grafana-http-api-data-source",
-          label: "Related Blog posts",
-        },
         "volkovlabs-grapi-datasource/release",
       ],
       label: "Business Satellite Data Source",
