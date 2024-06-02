@@ -1,6 +1,6 @@
 ---
 tags:
-  - Dynamic Text
+  - Business Text
   - JavaScript Code
 image: /img/plugins/volkovlabs-dynamictext-panel/replace.png
 ---
@@ -139,10 +139,27 @@ This code snippet uses the `translate` helper to show the translation of a defau
 
 ### JavaScript Code
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/js/translate.js"
-  language="js"
-/>
+```js
+const messages = {
+  Hello: {
+    en: "Hello",
+    fr: "Salut",
+    es: "Hola",
+  },
+  Default: {
+    en: "The query didn't return any results.",
+    fr: "La requête n'a renvoyé aucun résultat.",
+    es: "La consulta no arrojó ningún resultado.",
+  },
+};
+
+const locale = getLocale();
+
+handlebars.registerHelper(
+  "translate",
+  (message) => messages[message][locale] ?? messages[message]["en"]
+);
+```
 
 ## Time Zone and Range
 
@@ -213,10 +230,58 @@ Use the following for the **JavaScript->Before Content Rendering**:
 <details>
   <summary>JavaScript for autoscrolling</summary>
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/js/scroll.js"
-  language="js"
-/>
+```js
+const scrollWindow = () => {
+  parentWindow =
+    document.getElementById("dataTable").parentElement.parentElement;
+  bottomOfWindow = parentWindow.scrollHeight - parentWindow.offsetHeight;
+
+  /**
+   * Scroll
+   */
+  if (parentWindow.scrollTop < bottomOfWindow) {
+    parentWindow.scrollBy(0, 1);
+    setTimeout(scrollWindow, 50);
+    return;
+  }
+
+  /**
+   * Scroll to the Top
+   */
+  setTimeout(function () {
+    parentWindow.scrollTo({ top: 0, behavior: "smooth" });
+  }, 1000);
+
+  /**
+   * Start scrolling again
+   */
+  setTimeout(scrollWindow, 1000);
+};
+
+$(() => {
+  dataTable = document.getElementById("dataTable");
+
+  /**
+   * Avoid scrolling for short tables
+   */
+  if (
+    dataTable.parentElement.scrollHeight <
+    dataTable.parentElement.parentElement.offsetHeight
+  ) {
+    return;
+  }
+
+  /**
+   * Already set to scroll
+   */
+  if (dataTable.parentElement.parentElement.getAttribute("listener")) {
+    return;
+  }
+
+  dataTable.parentElement.parentElement.setAttribute("listener", true);
+  scrollWindow();
+});
+```
 
 </details>
 

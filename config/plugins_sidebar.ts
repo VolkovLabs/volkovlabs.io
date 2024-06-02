@@ -314,11 +314,6 @@ const sidebars: SidebarsConfig = {
             id: "volkovlabs-dynamictext-panel/features",
           },
         },
-        {
-          type: "link",
-          href: "/blog/tags/dynamic-text",
-          label: "Related Blog posts",
-        },
         "volkovlabs-dynamictext-panel/release",
       ],
       label: "Business Text",
