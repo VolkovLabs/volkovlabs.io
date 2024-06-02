@@ -1,6 +1,6 @@
 ---
 tags:
-  - Grafana HTTP API Data Source
+  - Business Satellite Data Source
   - Provisioning
 ---
 
@@ -15,10 +15,20 @@ Grafana supports managing data sources by adding one or more YAML config files i
 
 Example of provisioning the Grafana HTTP API Data Source for the remote Grafana instance.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-grapi-datasource/yml/provisioning.yaml"
-  language="yaml"
-/>
+```yaml
+datasources:
+  - name: Grafana HTTP API
+    type: volkovlabs-grapi-datasource
+    access: proxy
+    uid: grapi
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      url: https://GRAFANA-IP:GRAFANA-PORT
+    secureJsonData:
+      token: API-KEY
+```
 
 ## Data Sources
 
@@ -33,7 +43,25 @@ When provisioned, the data source should be available in the Data sources lists.
 
 To complete the provisioning you need to set the token using UI or HTTP API:
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-grapi-datasource/sh/token.sh"
-  language="sh"
-/>
+```sh
+#!/bin/sh
+
+# Generate a new token
+jsonTokenApi=$(curl -X POST -H "Content-Type: application/json" -d '{"name":"apiKey-grapi", "role": "Admin"}' \
+    http://${GRAFANA_USER}:${GRAFANA_PASSWORD}@${GRAFANA_IP}:${GRAFANA_PORT}/api/auth/keys)
+token=$(echo $jsonTokenApi | jq .key)
+
+# Get Provisioned Data Source configuration
+jsonDataSource=$(curl -X GET -H "Content-Type: application/json" \
+    http://${GRAFANA_USER}:${GRAFANA_PASSWORD}@${GRAFANA_IP}:${GRAFANA_PORT}/api/datasources/name/grapi)
+datasourceId=$(echo $jsonDataSource | jq '.id')
+
+# Add a token to Secure JSON Data
+echo $jsonDataSource | jq '. + {"secureJsonData":{"token":'$token'}}' |
+    jq '. + {"secureJsonFields":{"token":true}}' >.datasource.json
+
+# Update Data Source
+curl -X PUT -H "Content-Type: application/json" -d @.datasource.json \
+    http://${GRAFANA_USER}:${GRAFANA_PASSWORD}@${GRAFANA_IP}:${GRAFANA_PORT}/api/datasources/${datasourceId}
+
+```
