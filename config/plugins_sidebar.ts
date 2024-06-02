@@ -241,11 +241,6 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-rss-datasource/text",
         "volkovlabs-rss-datasource/provisioning",
-        {
-          type: "link",
-          href: "/blog/tags/business-news-data-source",
-          label: "Related Blog posts",
-        },
         "volkovlabs-rss-datasource/release",
       ],
       label: "Business News Data Source",
