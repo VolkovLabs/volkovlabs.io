@@ -81,11 +81,6 @@ const sidebars: SidebarsConfig = {
         id: "volkovlabs-env-datasource/index",
       },
     },
-    {
-      type: "link",
-      href: "/blog/tags/grafana-crash-course",
-      label: "Related Blog posts",
-    },
   ],
 };
 
