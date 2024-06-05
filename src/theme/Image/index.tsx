@@ -5,10 +5,7 @@ import Zoom from "react-medium-image-zoom";
 import styles from "./styles.module.css";
 
 declare module "react" {
-  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
-    // extends React's HTMLAttributes
-    fetchPriority?: string;
-  }
+  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {}
 }
 /**
  * Properties
@@ -38,7 +35,6 @@ const Image = ({
       <Zoom>
         <img
           loading={lazy ? "lazy" : "eager"}
-          fetchPriority={lazy ? "auto" : "high"}
           alt={title}
           className={styles.image}
           height={height ? height : "auto"}
@@ -49,7 +45,6 @@ const Image = ({
     ) : (
       <img
         loading={lazy ? "lazy" : "eager"}
-        fetchPriority={lazy ? "auto" : "high"}
         alt={title}
         className={clsx(styles.image, styles.blog)}
         height={height ? height : "auto"}
