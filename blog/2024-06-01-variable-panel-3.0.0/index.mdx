@@ -7,6 +7,7 @@ keywords: [Variable, Panel, Status]
 ---
 
 import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
 import Video from "@theme/Video";
 
 # Business Variable Panel 3.0.0
@@ -18,7 +19,7 @@ We are happy to announce the release of the Business Variable Panel 3.0.0. This 
 - **Minimize** display mode. Manual entry is possible.
 - **Table** display mode. Added total and selected values count.
 - New display mode: **Slider**.
-- Enhanced the user experience within the multi-tab view. 
+- Enhanced the user experience within the multi-tab view.
 - **Advanced** section. Added **Select dependent variable to reset** parameter.
 - **Tree view** display mode. Smoothed the scroll and improved the user experience in general.
 - Required Grafana 10 and Grafana 11. Breaking change.
@@ -26,6 +27,11 @@ We are happy to announce the release of the Business Variable Panel 3.0.0. This 
 :::info Grafana Catalog
 The plugin was updated in the Grafana Plugins catalog on May 9, 2024.
 :::
+
+<Shorts
+  src="https://www.youtube.com/embed/x0qEtDfZs9c"
+  title="Business Variable panel 3.0.0 for Grafana."
+/>
 
 ## Business Variable Panel
 
@@ -47,7 +53,7 @@ The Business Variable plugin shoots for the stars by reaching a milestone of 500
   src="/img/blog/2024-06-01-variable-panel-3.0.0/downloads.png"
 />
 
-## Maximum visible values 
+## Maximum visible values
 
 **Maximum visible values** is a new parameter added to the **Values** section. It is available when the **Business Variable**->**Display mode** is set to **Minimize**.
 
@@ -64,7 +70,7 @@ For instance, in the picture below (print-screen on the right), the **Maximum vi
 
 ## Manual entry
 
-When in the **Minimize** display mode, you can allow users to enter the values to be selected manually. Those values are stored in the user's browser under their login name. They are not saved to the database. 
+When in the **Minimize** display mode, you can allow users to enter the values to be selected manually. Those values are stored in the user's browser under their login name. They are not saved to the database.
 
 The new parameter is called **Allow custom values** and is located in the **Values** section. Set it to **Enabled** to allow manual entry. By default, it is set to **Disabled**
 
@@ -88,7 +94,7 @@ In the **Table** display mode, you can now choose to **Display total and selecte
 
 The **Header** must be in the **Display** mode to see the new parameter.
 
-The new parameter is the enable/disable type. The total count appears next to the header in a gray font color where the first number indicates how many values are selected and the second how many are available for selection in total. 
+The new parameter is the enable/disable type. The total count appears next to the header in a gray font color where the first number indicates how many values are selected and the second how many are available for selection in total.
 
 <Image
   title="New parameter: Total and selected values."
@@ -102,10 +108,10 @@ The **Slider** is a new **Display mode** under the **Business Variable** section
 <Image
   title="Slider is a new Display mode."
   src="/img/blog/2024-06-01-variable-panel-3.0.0/slider-mode.png"
-  width = "50%"
+  width="50%"
 />
 
-When a dashboard variable contains a massive volume of values and only one selected value is logically acceptable, the **Slider** display mode is your way to go. For instance, a user needs to choose a year as shown below. The standard alternative is a long dropdown list (shown for comparison). 
+When a dashboard variable contains a massive volume of values and only one selected value is logically acceptable, the **Slider** display mode is your way to go. For instance, a user needs to choose a year as shown below. The standard alternative is a long dropdown list (shown for comparison).
 
 <Image
   title="Slider mode is a new way of selecting a single value from a long list."
@@ -129,7 +135,7 @@ Text values also could be displayed using the **Slide** display mode.
 
 ### Tab auto-grouping
 
-The ability to auto group tab adds even more sophistication to the Business Variable panel. When too many tabs are located side by side, the panel collects the overflowing tabs and shows the three vertical dots instead. Upon clicking on the dots, a user sees the rest of the tabs in a drop-down for selection. 
+The ability to auto group tab adds even more sophistication to the Business Variable panel. When too many tabs are located side by side, the panel collects the overflowing tabs and shows the three vertical dots instead. Upon clicking on the dots, a user sees the rest of the tabs in a drop-down for selection.
 
 The Business Variable panel shifts the selected tab on the very left among all other tabs.
 
@@ -146,7 +152,7 @@ To configure the preservation of the selected tab, you need the **Selected group
 
 Choose a unique word and specify it across all dashboards where you have the Business Variable panel and need to preserve the selected tab.
 
-In the illustration below, you can see three different dashboards with an identical Business Variable panel on each. All three Business Variable panels have the same word *device* in the **Selected group id** parameter. 
+In the illustration below, you can see three different dashboards with an identical Business Variable panel on each. All three Business Variable panels have the same word _device_ in the **Selected group id** parameter.
 
 <Image
   title="Selected tab preservation configuration."
@@ -156,44 +162,48 @@ In the illustration below, you can see three different dashboards with an identi
 ## Advanced. Select dependent variable to reset
 
 The **Select dependent variable to reset** option is for advanced Business Variable panel users.
-This option is created to jump over some default Grafana functionality. 
+This option is created to jump over some default Grafana functionality.
 
-Grafana saves the dashboard variable values for better performance and reuses them whenever possible. This is majorly helpful. However, there are some scenarios when it is not aligned with the best user experience. 
+Grafana saves the dashboard variable values for better performance and reuses them whenever possible. This is majorly helpful. However, there are some scenarios when it is not aligned with the best user experience.
 
 To better understand the new parameter, first, outline the participating concepts:
- - *dashboard variable*,
- - *dashboard variable query*,
- - *selected current value*,
- - *dashboard variable refresh/update*,
- - *dashboard variable reset*.
 
-A [*dashboard variable*](/grafana/variables/) usually is a set of values retrieved following the rules set by a dashboard developer. Though, there could be many possible ways to set the rules, for simplicity, let's call them all a *dashboard variable query*. 
+- _dashboard variable_,
+- _dashboard variable query_,
+- _selected current value_,
+- _dashboard variable refresh/update_,
+- _dashboard variable reset_.
 
-A *dashboard variable* might have a *selected current value* (or values).
+A [_dashboard variable_](/grafana/variables/) usually is a set of values retrieved following the rules set by a dashboard developer. Though, there could be many possible ways to set the rules, for simplicity, let's call them all a _dashboard variable query_.
 
-A *dashboard variable refresh/update* is when the *dashboard variable query* is called to retrieve the whole set of values. If previously the *selected current value* existed, Grafana specifies it as well right after the refresh/update. 
+A _dashboard variable_ might have a _selected current value_ (or values).
 
-Thus, there are two steps in the *dashboard variable refresh/update*.
+A _dashboard variable refresh/update_ is when the _dashboard variable query_ is called to retrieve the whole set of values. If previously the _selected current value_ existed, Grafana specifies it as well right after the refresh/update.
 
-The **Select dependent variable to reset** option instructs Grafana to perform only the first step: to rerun the *dashboard variable query* and omit the second step, meaning NOT to assign a *selected current value*. 
+Thus, there are two steps in the _dashboard variable refresh/update_.
 
-The first step without the second is called *dashboard variable reset*.
+The **Select dependent variable to reset** option instructs Grafana to perform only the first step: to rerun the _dashboard variable query_ and omit the second step, meaning NOT to assign a _selected current value_.
+
+The first step without the second is called _dashboard variable reset_.
 
 With all that in mind, we can define what **Select dependent variable to reset** option does.
 
-It links two *dashboard variables* and instructs Grafana to reset one of them after the value of the first one is changed.
+It links two _dashboard variables_ and instructs Grafana to reset one of them after the value of the first one is changed.
 
-The two scenarios below provide use-case examples of when the *dashboard variable reset* is needed.
+The two scenarios below provide use-case examples of when the _dashboard variable reset_ is needed.
 
 ### Scenario 1
 
 In this scenario, we have two dashboard variables:
- - `device` which is populated by the query 
 
-```sql 
+- `device` which is populated by the query
+
+```sql
  select name from device_time;
 ```
- - `type` which is populated by the query that is dependent on the first variable
+
+- `type` which is populated by the query that is dependent on the first variable
+
 ```
 select value from device_time where name='$device';
 ```
@@ -203,7 +213,7 @@ select value from device_time where name='$device';
   src="/img/blog/2024-06-01-variable-panel-3.0.0/reset-var.png"
 />
 
-With this configuration, whenever the `device` variable is updated (a value is selected in the dashboard drop-down, etc.), the other variable `type` automatically gets refreshed/updated. That means that the query to populate the `type` variable is run with every `device` variable value update. 
+With this configuration, whenever the `device` variable is updated (a value is selected in the dashboard drop-down, etc.), the other variable `type` automatically gets refreshed/updated. That means that the query to populate the `type` variable is run with every `device` variable value update.
 
 Let's say that some of the values of the `type` variable overlap. In the example below, we have:
 
@@ -225,7 +235,7 @@ If you set `type` to '3', then with switching devices in the `device` variable, 
 <Image
   title="In case of the overlapping values, Grafana sets the common value."
   src="/img/blog/2024-06-01-variable-panel-3.0.0/reset-no.gif"
-  width = "60%"
+  width="60%"
 />
 
 If you set `type` to 1 (not overlapping value, the value '1' is unique to one device), then with every switch of the `device` variable, the `type` gets refreshed/updated (the underlying query is rerun) and the first retrieved value is displayed. Grafana can not set to the value selected previously since there is no such value for device 2, and for device 3.
@@ -233,12 +243,12 @@ If you set `type` to 1 (not overlapping value, the value '1' is unique to one de
 <Image
   title="In case of no overlapping values, the first from the query result is displayed."
   src="/img/blog/2024-06-01-variable-panel-3.0.0/reset-yes.gif"
-  width = "60%"
+  width="60%"
 />
 
-The **Select dependent variable to reset** parameter ensures that overlapping values do not matter. 
+The **Select dependent variable to reset** parameter ensures that overlapping values do not matter.
 
-The variable name you specify in the **Select dependent variable to reset** always will be *reset* and the value to display will be taken from the first retrieved, not from the previous selections.
+The variable name you specify in the **Select dependent variable to reset** always will be _reset_ and the value to display will be taken from the first retrieved, not from the previous selections.
 
 ### Scenario 2
 
