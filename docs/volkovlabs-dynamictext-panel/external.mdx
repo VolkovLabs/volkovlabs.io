@@ -155,63 +155,65 @@ const csvToJson = (data, delimiter = ",") => {
 /**
  * Load plotly
  */
-import('https://esm.sh/plotly.js-dist-min').then(async ({ default: Plotly }) => {
-  let url =
-    "https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv";
+import("https://esm.sh/plotly.js-dist-min").then(
+  async ({ default: Plotly }) => {
+    let url =
+      "https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv";
 
-  let fetchData = await fetch(url);
-  let csvData = await fetchData.text();
-  let rows = csvToJson(csvData);
+    let fetchData = await fetch(url);
+    let csvData = await fetchData.text();
+    let rows = csvToJson(csvData);
 
-  var trace1 = {
-    x: unpack(rows, "x1"),
-    y: unpack(rows, "y1"),
-    z: unpack(rows, "z1"),
-    mode: "markers",
-    marker: {
-      size: 12,
-      line: {
-        color: "rgba(217, 217, 217, 0.14)",
-        width: 0.5,
+    var trace1 = {
+      x: unpack(rows, "x1"),
+      y: unpack(rows, "y1"),
+      z: unpack(rows, "z1"),
+      mode: "markers",
+      marker: {
+        size: 12,
+        line: {
+          color: "rgba(217, 217, 217, 0.14)",
+          width: 0.5,
+        },
+        opacity: 0.8,
       },
-      opacity: 0.8,
-    },
-    type: "scatter3d",
-  };
+      type: "scatter3d",
+    };
 
-  var trace2 = {
-    x: unpack(rows, "x2"),
-    y: unpack(rows, "y2"),
-    z: unpack(rows, "z2"),
-    mode: "markers",
-    marker: {
-      color: "rgb(127, 127, 127)",
-      size: 12,
-      symbol: "circle",
-      line: {
-        color: "rgb(204, 204, 204)",
-        width: 1,
+    var trace2 = {
+      x: unpack(rows, "x2"),
+      y: unpack(rows, "y2"),
+      z: unpack(rows, "z2"),
+      mode: "markers",
+      marker: {
+        color: "rgb(127, 127, 127)",
+        size: 12,
+        symbol: "circle",
+        line: {
+          color: "rgb(204, 204, 204)",
+          width: 1,
+        },
+        opacity: 0.8,
       },
-      opacity: 0.8,
-    },
-    type: "scatter3d",
-  };
+      type: "scatter3d",
+    };
 
-  var data = [trace1, trace2];
+    var data = [trace1, trace2];
 
-  var layout = {
-    margin: {
-      l: 0,
-      r: 0,
-      b: 0,
-      t: 0,
-    },
-  };
+    var layout = {
+      margin: {
+        l: 0,
+        r: 0,
+        b: 0,
+        t: 0,
+      },
+    };
 
-  var config = { responsive: true }
+    var config = { responsive: true };
 
-  Plotly.newPlot("plotly-chart", data, layout, config);
-})
+    Plotly.newPlot("plotly-chart", data, layout, config);
+  }
+);
 ```
 
 </details>
@@ -260,14 +262,14 @@ Use the following for the **Content** (when your data source is set to return so
 Use the following for the **JavaScript->After Content Ready**:
 
 ```js
-import('https://esm.sh/mermaid').then(({ default: mermaid }) => {
+import("https://esm.sh/mermaid").then(({ default: mermaid }) => {
   mermaid.initialize({ startOnLoad: true });
 
   mermaid.run({
     querySelector: ".mermaid",
     suppressErrors: false,
   });
-})
+});
 ```
 
 ### Chart.js
@@ -303,7 +305,7 @@ Use the following for the **Content**:
 Use the following for the **JavaScript->After Content Ready**:
 
 ```js
-import('https://esm.sh/chart.js').then(({ Chart, registerables }) => {
+import("https://esm.sh/chart.js").then(({ Chart, registerables }) => {
   Chart.register(...registerables);
 
   /**
@@ -335,7 +337,7 @@ import('https://esm.sh/chart.js').then(({ Chart, registerables }) => {
       },
     },
   });
-})
+});
 ```
 
 ### Flowchart
@@ -427,15 +429,15 @@ https://www.youtube.com/iframe_api
 #### JavaScript code to copy
 
 ```js
-import('https://esm.sh/youtube-player').then(({ default: YouTubePlayer }) => {
-  const player = YouTubePlayer('player');
+import("https://esm.sh/youtube-player").then(({ default: YouTubePlayer }) => {
+  const player = YouTubePlayer("player");
 
   const videoList = ["AcQi-6GCrNU", "1ogv2jstrlI", "vky-7-DfvXE"];
 
   const randomVideoId = videoList[Math.floor(Math.random() * videoList.length)];
 
   player.loadVideoById(randomVideoId);
-})
+});
 ```
 
 Below is an example of a dashboard displaying a YouTube video.
@@ -486,7 +488,7 @@ https://esm.sh/leaflet
 // This data is coming from the data source.
 // const geojson = JSON.parse(context.data[0][0].data);
 
-import('https://esm.sh/leaflet').then(({ default: L }) => {
+import("https://esm.sh/leaflet").then(({ default: L }) => {
   /**
    * Cleanup
    */
@@ -506,7 +508,10 @@ import('https://esm.sh/leaflet').then(({ default: L }) => {
   //if you want to use inline data
   const geojson = {
     type: "FeatureCollection",
-    crs: { type: "name", properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    crs: {
+      type: "name",
+      properties: { name: "urn:ogc:def:crs:OGC:1.3:CRS84" },
+    },
     features: [
       {
         type: "Feature",
@@ -555,7 +560,70 @@ import('https://esm.sh/leaflet').then(({ default: L }) => {
   };
 
   var geojsonLayer = L.geoJSON(geojson).addTo(map);
-})
+});
+```
+
+#### CSS styles
+
+```css
+#leaflet {
+  height: 480px;
+  display: flex;
+  flex-direction: row;
+}
+```
+
+### Advanced using Leaflet.js interactive maps
+
+This is example based on example above and extend it with using dashboard variables and another approach to using `Leaflet.js` in the Dynamic Text Plugin.
+Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
+
+Dashboard variables
+
+```SQL
+select 'China' as __text, '104.1954,35.8617' as __value union
+select 'Ethiopia', '40.4897,9.1450' union
+select 'Sardina', '9.283447, 40.078072'
+```
+
+#### External Resources
+
+```
+https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
+https://esm.sh/leaflet
+```
+
+#### Content
+
+```html
+<div id="leaflet"></div>
+```
+
+#### Code After Content section
+
+```js
+// This data is coming from the data source.
+
+import('https://esm.sh/leaflet').then(({ default: L }) => {
+  /**
+   * Cleanup
+   */
+  if (this.map) {
+    this.map.remove();
+  }
+
+  var countries = context.grafana.replaceVariables("${countries:value}")
+  var lon = Number(countries.split(",")[0])
+  var lat = Number(countries.split(",")[1])
+
+  var map = new L.Map('leaflet');
+  map.setView(new L.LatLng(lat, lon), 4);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+    maxZoom: 10,
+  }).addTo(map);
+}):
 ```
 
 #### CSS styles
