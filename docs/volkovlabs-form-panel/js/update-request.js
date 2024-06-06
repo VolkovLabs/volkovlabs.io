@@ -2,7 +2,7 @@
  * Set body
  */
 const body = {};
-options.elements.forEach((element) => {
+context.panel.options.elements.forEach((element) => {
   if (!options.update.updatedOnly) {
     body[element.id] = element.value;
     return;

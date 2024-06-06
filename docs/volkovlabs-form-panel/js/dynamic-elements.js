@@ -1,5 +1,9 @@
-const feedback = data.series.find((serie) => serie.refId === "Feedback");
-const typeOptions = data.series.find((serie) => serie.refId === "Types");
+const feedback = context.panel.data.series.find(
+  (serie) => serie.refId === "Feedback"
+);
+const typeOptions = context.panel.data.series.find(
+  (serie) => serie.refId === "Types"
+);
 
 if (feedback?.fields.length) {
   const ids =
@@ -15,7 +19,7 @@ if (feedback?.fields.length) {
   /**
    * Set Elements
    */
-  elements = ids.map((id, index) => {
+  const elements = ids.map((id, index) => {
     return { id, title: titles[index], type: types[index] };
   });
 
@@ -42,5 +46,5 @@ if (feedback?.fields.length) {
   /**
    * Update Panel Options
    */
-  onOptionsChange({ ...options, elements });
+  context.panel.onOptionsChange({ ...context.panel.options, elements });
 }

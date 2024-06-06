@@ -1,4 +1,6 @@
-const bucketsSelect = elements.find((element) => element.id === "buckets");
+const bucketsSelect = context.panel.elements.find(
+  (element) => element.id === "buckets"
+);
 
 /**
  * Set URL
@@ -25,5 +27,5 @@ const resp = fetch(url, {
       return { label: value, value };
     });
 
-    onOptionsChange(options);
+    context.panel.onOptionsChange(options);
   });

@@ -11,50 +11,66 @@ import Video from "@theme/Video";
 
 Custom code allows you to access the panel's options, REST API responses, form elements, and various Grafana services.
 
-Custom code is executed after the `Initial` and `Update` requests.
+Custom code is executed after the `Initial` and `Update` requests, when `Element Value Changed`.
 
 ## Parameters
 
-| Parameter                                  | Description                                                                                                            |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `data`                                     | Result set of panel queries.                                                                                           |
-| `elements`                                 | Form elements.                                                                                                         |
-| `initial`                                  | Parsed values from the initial request.                                                                                |
-| `initialRequest()`                         | Performs an initial request to reload the panel.                                                                       |
-| `locationService`                          | Grafana's `locationService` function to work with the browser's location and history.                                  |
-| `notifyError(['Header', 'Error Message'])` | Displays an error.                                                                                                     |
-| `notifySuccess(['Header', 'Message'])`     | Displays a success notification.                                                                                       |
-| `notifyWarning(['Header', 'Message'])`     | Displays a warning.                                                                                                    |
-| `onChange()`                               | Updates elements in the local state. Added in v3.1.0.                                                                  |
-| `onOptionsChange()`                        | Modifies a handler to refresh the panel.                                                                               |
-| `options`                                  | Panel's options.                                                                                                       |
-| `response`                                 | Request's response.                                                                                                    |
-| `setInitial({})`                           | Specifies initial values for a custom initial request to highlight modified values and requests a user's confirmation. |
-| `templateService`                          | Grafana's `templateService` function that provides access to variables and enables the update of a time range.         |
+| Parameter                                              | Description                                                                                                            | <span style={{fontSize:'14px'}}>Initial, Update</span> | <span style={{fontSize:'14px'}}>Change Value</span> | <span style={{fontSize:'14px'}}>ShowIf, DisableIf, Get Options</span> |
+| :----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | --------------------------------------------------- | --------------------------------------------------------------------- |
+| `context.element`                                      | Current element                                                                                                        |                                                        | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.data`                                   | Result set of panel queries.                                                                                           | :heavy_check_mark:                                     | :heavy_check_mark:                                  | :heavy_check_mark: (For `Get Options`)                                |
+| `context.panel.elements`                               | Form elements.                                                                                                         | :heavy_check_mark:                                     | :heavy_check_mark:                                  | :heavy_check_mark:                                                    |
+| `context.panel.initial`                                | Parsed values from the initial request.                                                                                | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.initialRequest()`                       | Performs an initial request to reload the panel.                                                                       | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.onChange()`                             | Updates elements in the local state. Added in v3.1.0.                                                                  | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.options`                                | Panel's options.                                                                                                       | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.onOptionsChange()`                      | Modifies a handler to refresh the panel.                                                                               | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.response`                               | Request's response.                                                                                                    | :heavy_check_mark:                                     |                                                     |                                                                       |
+| `context.panel.setInitial({})`                         | Specifies initial values for a custom initial request to highlight modified values and requests a user's confirmation. | :heavy_check_mark:                                     |                                                     |                                                                       |
+| `context.panel.enableSubmit()`                         | Enable Submit button                                                                                                   | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.disableSubmit()`                        | Disable Submit button                                                                                                  | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.enableReset()`                          | Enable Reset button                                                                                                    |                                                        | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.disableReset()`                         | Disable Reset button                                                                                                   |                                                        | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.enableSaveDefault()`                    | Enable Save Default button                                                                                             |                                                        | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.disableSaveDefault()`                   | Disable Save Default button                                                                                            |                                                        | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.setError('Message')`                    | Displays an error on panel.                                                                                            |                                                        | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.collapseSection(id)`                    | Collapse Section. Added in v4.0.0.                                                                                     | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.expandSection(id)`                      | Expand Section. Added in v4.0.0.                                                                                       | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.toggleSection(id)`                      | Toggle (Collapse/Expand) Section. Added in v4.0.0.                                                                     | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.sectionsExpandedState`                  | Expand/Collapse State for Sections. Added in v4.0.0.                                                                   | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.locationService`                      | Grafana's `locationService` function to work with the browser's location and history.                                  | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.backendService`                       | Grafana's `backendService` used to communicate to a remote backend such as the Grafana backend, a datasource etc.      | :heavy_check_mark:                                     |                                                     |                                                                       |
+| `context.grafana.notifyError(['Header', 'Message'])`   | Displays an error.                                                                                                     | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.notifySuccess(['Header', 'Message'])` | Displays a success notification.                                                                                       | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.notifyWarning(['Header', 'Message'])` | Displays a warning.                                                                                                    | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.eventBus`                             | Publish and subscribe to application events.                                                                           | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.templateService`                      | Grafana's `templateService` function that provides access to variables and enables the update of a time range.         | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.refresh()`                            | Function to refresh dashboard panels using application events.                                                         | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.grafana.replaceVariables()`                   | Function to interpolate variables.                                                                                     |                                                        |                                                     | :heavy_check_mark:                                                    |
 
 To find out the current parameters, you can log them in the browser's console:
 
 ```javascript
 console.log(
-  options,
-  data,
-  response,
-  elements,
-  locationService,
-  templateService
+  context.panel.options,
+  context.panel.data,
+  context.panel.response,
+  context.panel.elements,
+  context.grafana.locationService,
+  context.grafana.templateService
 );
 ```
 
 ## Refresh Dashboard after update request or show warning
 
 ```javascript
-if (response && response.ok) {
-  notifySuccess(["Update", "Values updated successfully."]);
-  locationService.reload();
+if (context.panel.response && context.panel.response.ok) {
+  context.grafana.notifySuccess(["Update", "Values updated successfully."]);
+  context.panel.initialRequest();
 } else {
-  notifyWarning([
-    "Error",
-    `An error occurred updating values: ${response.status}`,
+  context.grafana.notifyError([
+    "Update",
+    `An error occurred updating values: ${context.panel.response.status}`,
   ]);
 }
 ```
@@ -62,9 +78,9 @@ if (response && response.ok) {
 ## Update variable after update request to interact with other panels
 
 ```javascript
-if (response && response.ok) {
-  response.json().then((resp) => {
-    locationService.partial({ "var-name": resp["name"] }, true);
+if (context.panel.response && context.panel.response.ok) {
+  context.panel.response.json().then((resp) => {
+    context.grafana.locationService.partial({ "var-name": resp["name"] }, true);
   });
 }
 ```
@@ -72,13 +88,13 @@ if (response && response.ok) {
 ## Perform Initial Request after update request or show error
 
 ```javascript
-if (response && response.ok) {
-  notifySuccess(["Update", "Values updated successfully."]);
-  initialRequest();
+if (context.panel.response && context.panel.response.ok) {
+  context.grafana.notifySuccess(["Update", "Values updated successfully."]);
+  context.panel.initialRequest();
 } else {
-  notifyError([
+  context.grafana.notifyError([
     "Error",
-    `An error occured updating values: ${response.status}`,
+    `An error occurred updating values: ${context.panel.response.status}`,
   ]);
 }
 ```
@@ -90,7 +106,7 @@ const getValues = async () => {
   /**
    * Check if all values are empty
    */
-  const isFirstLoad = elements.every((element) => !element.value)
+  const isFirstLoad = context.panel.elements.every((element) => !element.value);
 
   if (isFirstLoad) {
     /**
@@ -99,15 +115,17 @@ const getValues = async () => {
     const response = await fetch();
     const json = await response.json();
 
-   /**
-    * Update initial element values
-    */
-   onChange(elements.map((element) => ({
-     ...element,
-     value: json[element.id],
-   }))
+    /**
+     * Update initial element values
+     */
+    context.panel.onChange(
+      context.panel.elements.map((element) => ({
+        ...element,
+        value: json[element.id],
+      }))
+    );
   }
-}
+};
 
 return getValues();
 ```
@@ -115,7 +133,7 @@ return getValues();
 ## Clear elements' values after click on the Submit or Reset button
 
 ```javascript
-onOptionsChange({
+context.panel.onOptionsChange({
   ...options,
   elements: options.elements.map((element) => {
     return element.id === "name" ? { ...element, value: "test" } : element;
@@ -123,14 +141,16 @@ onOptionsChange({
 });
 ```
 
-The `onOptionsChange` handler is required to update the panel.
+The `context.panel.onOptionsChange()` handler is required to update the panel.
 
 ### Update local state in Data Manipulation Panel 3.1.0
 
 ```javascript
-onChange(elements.map((element) => {
-  return element.id === 'name' ? { ...element, value: 'test' } : element;
-});
+context.panel.onChange(
+  elements.map((element) => {
+    return element.id === "name" ? { ...element, value: "test" } : element;
+  })
+);
 ```
 
-The `onChange()` function is required to update the element values in the local state.
+The `context.panel.onChange()` function is required to update the element values in the local state.
