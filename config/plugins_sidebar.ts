@@ -304,9 +304,9 @@ const sidebars: SidebarsConfig = {
           items: [
             "volkovlabs-dynamictext-panel/helpers",
             "volkovlabs-dynamictext-panel/eventbus",
+            "volkovlabs-dynamictext-panel/standard",
             "volkovlabs-dynamictext-panel/status",
             "volkovlabs-dynamictext-panel/variables",
-            "volkovlabs-dynamictext-panel/units",
           ],
           label: "Features",
           type: "category",
