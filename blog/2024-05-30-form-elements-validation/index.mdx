@@ -1,61 +1,89 @@
 ---
-authors: [vitali]
-draft: true
+authors: [vitali, alex]
 slug: form-elements-validation-20240530/
-tags: [Data Manipulation]
+tags: [Data Manipulation, Solution]
 image: /img/blog/2024-05-30-form-elements-validation/banner.png
 keywords: [Data Manipulation, Validation, Grafana]
 ---
 
 import Image from "@theme/Image";
 import Video from "@theme/Video";
-import Shorts from "@theme/Shorts";
 
-# Validate form Elements
+# How to validate Form Elements
 
-The Data Manipulation Panel allows you to check the dependence of elements on each other.
+This article shares how to use JavaScript in the Business Forms plugin to enhance user experience by validating Form Elements.
 
-## Form Panel
+The [Business Forms plugin](/plugins/volkovlabs-form-panel/), formerly known as the Data Manipulation plugin, is designed around one innovative idea: the ability to send data back into the data source from any Grafana dashboard.
 
-Let's create a Simple form with three elements and a Submit button. Each element has type 'Select with custom Options'. Each element has two options (1 and 2).
+When a user enters data on the form, you might wonder what data validation mechanisms are available to ensure only allowable values are sent back to the data source.
+
+Instead of providing an abstract answer, I put together a particular example where I assume:
+
+- the required Form Elements,
+- their expected behavior.
+
+Based on the above-assumed requirements, I explain:
+
+- how to configure the Business Forms plugin to make it all possible.
+
+## Form Elements
+
+The [Form Elements](/plugins/volkovlabs-form-panel/form-elements/) are components the Business Forms plugin provides as building bricks for your data entry forms.
+
+In this article, a data entry form consists of the following elements:
+
+- Three drop-downs with the **Select with custom Options** type. Names: **Facility**, **Room**, and **Bench**. Each element provides a selection list. The exact selective options are irrelevant to the topic I cover here. For simplicity, every element has two options, 1 and 2.
+- The **Submit** button. Any Business Form has this button by default. I keep all initial settings.
 
 <Image
-  title="Form panel with two select with custom options elements."
+  title="Configuration for three Form Elements."
   src="/img/blog/2024-05-30-form-elements-validation/example-panel.png"
 />
 
-:::info Initial State
+## Expected behavior
 
-Initial state for elements Room, Bench and Submit button is disabled.
+Below, I describe the potential Form Elements requirements.
 
+1. The initial state of some elements (**Room**, **Bench**, **Submit** button) is `disabled`. Only **Facility** should be enabled for users' actions.
+2. The **Submit** button must stay `disabled` until all drop-down elements have values selected.
+3. The **Room** element must stay `disabled` until the **Facility** element value is selected.
+4. The **Bench** element must stay `disabled` until the value in the **Room** element is selected.
+5. Update the previously selected values (set Form Elements values to Unselected state):
+   - When the **Facility** value is changed, the **Room** element updates its value to unselected.
+   - When the **Room** or **Facility** values are changed, the **Bench** element updates its value to unselected.
+
+<Image
+  title="The Room element is enabled only when the Facility element has a value selected."
+  src="/img/blog/2024-05-30-form-elements-validation/room-value.gif"
+  width="60%"
+/>
+
+<Image
+  title="The Bench element is enabled only when the Room element has a value selected."
+  src="/img/blog/2024-05-30-form-elements-validation/bench-value.gif"
+  width="60%"
+/>
+
+## Configuration
+
+For elements validation, I will use JaveScript in the corresponding panel options.
+
+### Submit button
+
+The Submit button validation occurs in the "Form Events" section. The Business Forms executes the code located in this section with every Form Element value change.
+
+<Image
+  title="Place the code for the Submit button validation into the Form Events."
+  src="/img/blog/2024-05-30-form-elements-validation/form-events.png"
+/>
+
+To enable or disable the Submit button I use the `context.panel.enableSubmit()` or `context.panel.disableSubmit()` method respectively. These methods are provided by the Business Forms and could be used in any of the JavaScript code parameters (**Custom code**, **Form Events**, etc.)
+
+:::info Parameters
+Access the full list of available parameters in the [Business Forms->Custom Code](/plugins/volkovlabs-form-panel/code/) section in the documentation.
 :::
 
-1. The Submit button saves the `disabled` state until all items have the selected values.
-
-2. The Room element saves the `disabled` state until the value in the Facility element is selected.
-   Also, when the Facility value is changed, the Room element resets its value.
-
-<Image
-  title="The Facility element value is selected. Room element is enabled."
-  src="/img/blog/2024-05-30-form-elements-validation/choose-facility-element-value.png"
-/>
-
-3. The Bench element saves the `disabled` state until the value in the Room element is selected.
-   Also, when the Room or Facility values are changed, the Bench element resets its value.
-
-<Image
-  title="The Room element value is selected. Bench element is enabled."
-  src="/img/blog/2024-05-30-form-elements-validation/choose-room-element-value.png"
-/>
-
-## How it works ?
-
-The validation of elements and buttons occur in the corresponding panel settings.
-
-1. Submit button validation occurs in "Form Events". The code located in this section is executed when element values are changed.
-
-   Use `context.panel.enableSubmit()` and `context.panel.disableSubmit()` methods, available in code editor,
-   we can disabled/enabled our Submit button. You can view the list of available parameters here in the [Custom Code](../code/) section.
+You can copy the code from here:
 
 ```js
 let elements = context.panel.elements;
@@ -75,13 +103,17 @@ if (isFormValid) {
 }
 ```
 
+### Room drop-down
+
+The Room element disabled/enabled switch occurs in the "Disable if returned value is true" parameter.
+The code in this section must return true or false.
+
 <Image
-  title="Validation Submit button in Form Events."
-  src="/img/blog/2024-05-30-form-elements-validation/form-events.png"
+  title="Place the code for the Room drop-down validation into the Disable if returned value is true."
+  src="/img/blog/2024-05-30-form-elements-validation/room-element-validation.png"
 />
 
-2. Room element disabled/enabled validation occurs in "Disable if" part for element options.
-   The code in this section must return true or false.
+You can copy the code from here:
 
 ```js
 const facility = context.panel.elements.find(
@@ -91,13 +123,17 @@ const facility = context.panel.elements.find(
 return !facility?.value;
 ```
 
+### Bench drop-down
+
+The Bench element disabled/enabled switch occurs in the "Disable if returned value is true" parameter.
+The code in this section must return true or false.
+
 <Image
-  title="Validation Room Element."
-  src="/img/blog/2024-05-30-form-elements-validation/room-element-validation.png"
+  title="Place the code for the Bench drop-down validation into the Disable if returned value is true."
+  src="/img/blog/2024-05-30-form-elements-validation/bench-element-validation.png"
 />
 
-3. Bench element disabled/enabled validation occurs in "Disable if" part for element options.
-   The code in this section must return true or false.
+You can copy the code from here:
 
 ```js
 const facility = context.panel.elements.find(
@@ -109,19 +145,15 @@ const room = context.panel.elements.find((element) => element.id === "room");
 return !facility?.value || !room?.value;
 ```
 
-<Image
-  title="Validation Room Element."
-  src="/img/blog/2024-05-30-form-elements-validation/bench-element-validation.png"
-/>
+## Update values
 
-4. Reset values for Room and Bench elements. Validation values for Room and Bench elements and reset it occurs in "Form Events" section.
+For the **Room** and **Bench** elements the value update occurs in the "Form Events" section. I will use the `context.panel.onChangeElements(updatedElements)` method.
 
-   Lets expand our previously code for "Form Events" and add block of code.
-   Use `context.panel.onChangeElements(updatedElements)` , available in code editor, to update values and elements.
+You can copy the code from here:
 
 ```js
 /**
- * Reset room and bench values on facility change
+ * Update room and bench values on facility change
  */
 if (context.element.id === "facility") {
   elements = elements.map((element) => {
@@ -137,7 +169,7 @@ if (context.element.id === "facility") {
 }
 
 /**
- * Reset bench value on room change
+ * Update bench value on room change
  */
 if (context.element.id === "room") {
   elements = elements.map((element) => {
@@ -158,13 +190,17 @@ if (context.element.id === "room") {
 context.panel.onChangeElements(elements);
 ```
 
-Full code for "Form Events" section:
+## Full code for the Form Events section
+
+Below you can find the full code that I placed in the Form Events section.
+
+You can copy the code from here:
 
 ```js
 let elements = context.panel.elements;
 
 /**
- * Reset room and bench values on facility change
+ * Update room and bench values on facility change
  */
 if (context.element.id === "facility") {
   elements = elements.map((element) => {
@@ -180,7 +216,7 @@ if (context.element.id === "facility") {
 }
 
 /**
- * Reset bench value on room change
+ * Update bench value on room change
  */
 if (context.element.id === "room") {
   elements = elements.map((element) => {
@@ -214,3 +250,13 @@ if (isFormValid) {
   context.panel.disableSubmit();
 }
 ```
+
+I hope the solution is illustrative enough to keep you moving forward with your validation tasks. There could be many possible scenarios, and this article should be a good start for any complicated requirements.
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).

@@ -15,7 +15,7 @@ const BlogPostPaginator = (props) => {
    * Add posts with the same tags
    */
   post.metadata.tags.forEach((postTag) =>
-    BlogArchive?.blogPosts.filter((related) => {
+    BlogArchive?.archive?.blogPosts.filter((related) => {
       if (related.metadata.permalink === post.metadata.permalink) {
         return;
       }

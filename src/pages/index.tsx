@@ -23,7 +23,7 @@ const Header = (siteConfig) => {
             </h1>
 
             <p className="hero__subtitle margin-vert--md">
-              Do you use Grafana for Business? We created an open-source
+              Do you use Grafana for Business? We created an open source
               Business Suite for Grafana to solve numerous business use cases.
             </p>
 

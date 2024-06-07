@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: balena-nfs-server-and-client-project-5d5de6dd47ca/
-tags: [Balena]
+tags: [Solution]
 image: /img/blog/2022-07-04-balena-nfs/banner.png
 keywords: [Balena, NFS, IoT]
 updated: 2023-02-14
@@ -53,7 +53,6 @@ Balena NFS Server and client project consists of three containers and can be for
 <Image
   title="PostgreSQL container has NFS Server. NGINX container utilizes NFS Client to connect and access files on the NFS drive."
   src="/img/blog/2022-07-04-balena-nfs/balena-nfs.png"
-  lazy={false}
 />
 
 First, the project includes an NFS Server built on top of the PostgreSQL Alpine image. It uses OpenRC (dependency-based init system) to manage NFS services, which is the recommended way to start NFS service for Alpine Linux.

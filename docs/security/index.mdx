@@ -24,7 +24,10 @@ JavaScript code can be modified in Edit mode by any Editor and Admin users.
 
 Grafana executes JavaScript code in a Sandbox environment, which significantly reduces security risks.
 
-To facilitate the safe usage of our JavaScript-enriched plugins we suggest the following approaches: provisioning and access restrictions.
+To facilitate the safe usage of our JavaScript-enriched plugins we suggest the following approaches:
+
+- Provisioning
+- Access restrictions
 
 ## Provisioning
 
@@ -40,7 +43,6 @@ Also, you can look at the blog post that covers a similar scope.
 <BlogPost
   href="/blog/provisioning-grafana-20230509/"
   src="/img/blog/2023-05-09-provisioning-grafana/banner.png"
-  title="Blog post about provisioning in Grafana."
 />
 
 ## Access restriction
@@ -51,7 +53,7 @@ Access restriction ensures that only trusted users are allotted Admin and Editor
 
 Above we discussed the general safety suggestions. Below you find recommendations solely related to specified plugins.
 
-### Dynamic Text Panel
+### Business Text Panel
 
 You can keep the default setting `disable_sanitize_html = false` to keep security restrictions in place. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
 
@@ -61,9 +63,9 @@ The feature to process external CSS and JavaScript files is available only when 
 disable_sanitize_html = true
 ```
 
-### Static Data Source
+### Business Input Data Source
 
-[Static Data Source allows](/plugins/volkovlabs-static-datasource) to set values using JavaScript Value Editor, which can be disabled in the Data Source options.
+[Business Input Data Source allows](/plugins/volkovlabs-static-datasource) to set values using JavaScript Value Editor, which can be disabled in the Data Source options.
 
 <Image
   title="Disable the JavaScript Value Editor in the Data Source options."

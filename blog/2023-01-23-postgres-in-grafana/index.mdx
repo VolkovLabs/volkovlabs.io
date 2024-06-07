@@ -31,10 +31,9 @@ The [default setup is excellent for discovering Grafana](/blog/grafana-setup-202
 <Image
   title="Grafana management basics: Configuration, Provisioning and Data storage."
   src="/img/blog/2023-01-23-postgres-in-grafana/basics.png"
-  lazy={false}
 />
 
-Both databases are open-source, and both are supported by Grafana. The benefits are.
+Both databases are open source, and both are supported by Grafana. The benefits are.
 
 - Configuration in a separate container (or host) makes your application design flexible and manageable, with a more straightforward backup/restoration process.
 - The separated configuration storage does not get lost when the Grafana UI container is acting up.
@@ -183,7 +182,7 @@ SELECT create_hypertable('stocks', 'datetime');
 
 ## Relational data
 
-And the third reason we love PostgreSQL is that it is the world's most advanced open-source relational database.
+And the third reason we love PostgreSQL is that it is the world's most advanced open source relational database.
 
 This fact, along with time-series ability and using PostgreSQL for configuration storage, makes it an ultimate choice for Grafana. Working with one database for all your needs is more accessible than with many different kinds.
 

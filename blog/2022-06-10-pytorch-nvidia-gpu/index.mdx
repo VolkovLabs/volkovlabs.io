@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: we-tried-pytorch-in-docker-container-with-nvidia-gpu-support-on-google-cloud-5e30c49d9864/
-tags: [Machine Learning]
+tags: [Solution]
 image: /img/blog/2022-06-10-pytorch-nvidia-gpu/banner.png
 keywords: [PyTorch, GPU]
 updated: 2023-04-30
@@ -17,9 +17,9 @@ One of the commercial projects we are working on is based on Ray and uses PyTorc
 
 Processing AI models with CPU in PyTorch works out of the box and can be an option for the Development environment. Still, it's slow and not applicable for real-time operations or performance testing. To test NVIDIA GPU, we used one of the Google Cloud instances with GPU support.
 
-This article will share our experience building Docker images with [Ray](https://www.ray.io/) and PyTorch on Google Cloud instances with GPU support. Ray is an open-source project that makes it simple to scale any compute-intensive Python workload from deep learning to production model serving.
+This article will share our experience building Docker images with [Ray](https://www.ray.io/) and PyTorch on Google Cloud instances with GPU support. Ray is an open source project that makes it simple to scale any compute-intensive Python workload from deep learning to production model serving.
 
-[PyTorch](https://pytorch.org/) is an open-source machine learning framework that accelerates the path from research prototyping to production deployment.
+[PyTorch](https://pytorch.org/) is an open source machine learning framework that accelerates the path from research prototyping to production deployment.
 
 ## Google Cloud instances
 
@@ -37,7 +37,6 @@ We selected:
 <Image
   title="Creating a new Google Cloud instance with NVIDIA Tesla K80 GPU."
   src="/img/blog/2022-06-10-pytorch-nvidia-gpu/configuration.png"
-  lazy={false}
 />
 
 ### Installation

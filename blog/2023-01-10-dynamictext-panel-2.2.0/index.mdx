@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: dynamictext-panel-2.2.0-20230110/
-tags: [Dynamic Text, Release Notes]
+tags: [Dynamic Text, Business Suite]
 image: /img/blog/2023-01-10-dynamictext-panel-2.2.0/banner.png
 keywords: [Dynamic Text, Panel, Data, Grafana]
 updated: 2023-09-15
@@ -50,7 +50,6 @@ handlebars.registerHelper("replace", (context, pattern, replacement) =>
 <Image
   title="How to create a helper to replace text in the returned data."
   src="/img/blog/2023-01-10-dynamictext-panel-2.2.0/replace.png"
-  lazy={false}
 />
 
 ### Add Internationalization
@@ -71,10 +70,27 @@ Default Content:
 
 JavaScript code:
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-dynamictext-panel/js/translate.js"
-  language="js"
-/>
+```js
+const messages = {
+  Hello: {
+    en: "Hello",
+    fr: "Salut",
+    es: "Hola",
+  },
+  Default: {
+    en: "The query didn't return any results.",
+    fr: "La requête n'a renvoyé aucun résultat.",
+    es: "La consulta no arrojó ningún resultado.",
+  },
+};
+
+const locale = getLocale();
+
+handlebars.registerHelper(
+  "translate",
+  (message) => messages[message][locale] ?? messages[message]["en"]
+);
+```
 
 ## Getting Started
 
@@ -117,4 +133,4 @@ We're looking forward to hearing from you. You can use different ways to get in 
 
 - Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana at [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).

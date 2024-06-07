@@ -17,10 +17,9 @@ type Props = {
  * Blog Card
  */
 const BlogPostCard = ({ post, size = "medium" }: Props) => {
-  const { permalink, title, formattedDate, frontMatter, tags, authors } =
-    post.metadata;
-  const author = authors ? authors[0] : "";
-  const tag = tags ? tags[0] : "";
+  const { permalink, title, date, frontMatter, tags, authors } = post.metadata;
+  const author = authors.length ? authors[0] : "";
+  const tag = tags.length ? tags[0] : "";
 
   return (
     <div className={styles.post}>
@@ -43,9 +42,14 @@ const BlogPostCard = ({ post, size = "medium" }: Props) => {
           <a href={permalink}>{title}</a>
         </h3>
 
-        {author && formattedDate && size === "medium" && (
+        {author && date && size === "medium" && (
           <div className={styles.author}>
-            by <b>{author.name}</b> on {formattedDate}
+            by <b>{author.name}</b> on{" "}
+            {new Date(date).toLocaleDateString("en", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
           </div>
         )}
       </div>

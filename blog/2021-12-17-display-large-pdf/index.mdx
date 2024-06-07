@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: using-grafana-to-display-large-pdf-documents-weve-got-you-covered-4e654e8d4bce/
-tags: [Business Image/PDF]
+tags: [Business Image/PDF, Solution]
 image: /img/blog/2021-12-17-display-large-pdf/banner.png
 keywords: [Image, PDF, Base64, Visualization]
 updated: 2023-09-09
@@ -50,7 +50,6 @@ From Grafana's perspective, all data sources are the same because they return da
 <Image
   title="Large PDF document retrieved from a PostgreSQL database and displayed in Grafana."
   src="/img/blog/2021-12-17-display-large-pdf/panel.png"
-  lazy={false}
 />
 
 To install PostgreSQL, we added a container with the latest version of the `postgres` image. We specified a volume for the folder `/docker-entrypoint-initdb.d`, which takes care of creating necessary tables and permissions when starting.
