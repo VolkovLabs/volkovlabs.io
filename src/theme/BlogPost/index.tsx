@@ -16,7 +16,7 @@ type Props = {
  */
 const BlogPost = ({ href, title, src, width = "75%" }: Props) => (
   <a href={href}>
-    <Image title={title} src={src} zoom={false} width={width} lazy={true} />
+    <Image title={title} src={src} zoom={false} width={width} />
   </a>
 );
 
