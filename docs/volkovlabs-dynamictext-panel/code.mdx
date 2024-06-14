@@ -86,7 +86,7 @@ Here we register a function with the `replace` helper that takes three arguments
 Then we call this function and pass the `pattern` and `replacement` arguments to it.
 
 ```js
-handlebars.registerHelper("replace", (context, pattern, replacement) =>
+context.handlebars.registerHelper("replace", (context, pattern, replacement) =>
   context.replace(pattern, replacement)
 );
 ```
@@ -113,6 +113,11 @@ myFunc = () => {
   alert("Bonjour!");
 };
 ```
+
+<Image
+  title="Event handler."
+  src="/img/plugins/volkovlabs-dynamictext-panel/event-handler.png"
+/>
 
 ## Internationalization
 
@@ -154,7 +159,7 @@ const messages = {
 
 const locale = getLocale();
 
-handlebars.registerHelper(
+context.handlebars.registerHelper(
   "translate",
   (message) => messages[message][locale] ?? messages[message]["en"]
 );
@@ -187,9 +192,12 @@ Use the following for the **Content**
 Use the following for the **JavaScript->Before Content Rendering**
 
 ```
-handlebars.registerHelper('tz', () => timeZone);
-handlebars.registerHelper('range', () => timeRange);
-handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions().timeZone);
+const dashboardTimeZone = context.panelData.request.timezone
+const dashboardTimeRange = context.panelData.timeRange
+
+context.handlebars.registerHelper('tz', () => dashboardTimeZone);
+context.handlebars.registerHelper('range', () => dashboardTimeRange);
+context.handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions().timeZone);
 ```
 
 ## Automatic scrolling
@@ -301,17 +309,17 @@ Use the following for the **Content**:
 Use the following for the **JavaScript->Before Content Rendering**:
 
 ```js
-handlebars.registerHelper("unique", (context, key) => {
+context.handlebars.registerHelper("unique", (context, key) => {
   return [...new Set(context.map((item) => item[key]))];
 });
 ```
 
 ## Dashboard Variables
 
-You can use the `replaceVariables` function to replace dashboard variables in the JavaScript code.
+You can use the `context.grafana.replaceVariables` function to replace dashboard variables in the JavaScript code.
 
 ```
-const bonjour = replaceVariables("${variable}");
+const bonjour = context.grafana.replaceVariables("${variable}");
 console.log(bonjour.toUpperCase())
 ```
 
@@ -415,7 +423,7 @@ We believe the solution might be helpful for many, so here is how you can do it.
 ### JavaScript
 
 ```js
-handlebars.registerHelper("parse", (context) => JSON.parse(context));
+context.handlebars.registerHelper("parse", (context) => JSON.parse(context));
 ```
 
 ## Anonymizer

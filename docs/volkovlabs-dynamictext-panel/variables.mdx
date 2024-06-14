@@ -50,10 +50,10 @@ book:
 
 ## JavaScript code
 
-Use the `replaceVariables` function to replace dashboard variables in the JavaScript Code.
+Use the `context.grafana.replaceVariables()` function to replace dashboard variables in the JavaScript Code.
 
 ```js
-const bonjour = replaceVariables("${variable}");
+const bonjour = context.grafana.replaceVariables("${variable}");
 console.log(bonjour.toUpperCase());
 ```
 
