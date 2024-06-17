@@ -333,8 +333,7 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         {
-          items: [
-          ],
+          items: [],
           label: "Data Flow",
           type: "category",
           link: {
