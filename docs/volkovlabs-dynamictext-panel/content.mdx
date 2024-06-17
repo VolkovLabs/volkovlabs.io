@@ -9,14 +9,14 @@ import Video from "@theme/Video";
 
 # Rendering
 
-There are two main concepts to comprehend for the successful use of the Dynamic Text plugin.
+There are two main concepts to comprehend for the successful use of the Business Text plugin.
 The first is **Render Template** and the second is rendering order.
 
 ## Render Template
 
 :::info Version
 
-The Dynamic Text Panel supports the **All data** template since version 4.3.0.
+The Business Text Panel supports the **All data** template starting from version 4.3.0.
 
 :::
 
@@ -25,7 +25,7 @@ The Dynamic Text Panel supports the **All data** template since version 4.3.0.
   src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/alldata.png"
 />
 
-The **Render Template** option instructs the Dynamic Text plugin on how to apply your template to the fetched data frame.
+The **Render Template** option instructs the Business Text plugin on how to apply your template to the fetched data frame.
 
 - **Every row**. The template applies to every row returned by your query. Your template is rendered as many times as rows are fetched.
 - **All rows**. The query results are passed as a single `data` field to the **Content** template. Your template is rendered once. To work with query results as a whole, you can use [#each built-in helper](../recipes/#iterate-through-all-fields-in-each-record) to iterate through records.
@@ -142,7 +142,7 @@ Please, modify the code according to my example above (blog and docs).
 
 ## Rendering Order
 
-Below are two schemas of the rendering order in the Dynamic text plugin. They represent the same thing.
+Below are two schemas of the rendering order in the Business text plugin. They represent the same thing.
 
 The first is oriented toward the general public and the second is targeted to answer developers' questions.
 

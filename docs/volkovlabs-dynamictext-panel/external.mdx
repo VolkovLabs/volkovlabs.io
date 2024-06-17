@@ -13,11 +13,11 @@ import Video from "@theme/Video";
 
 :::info Version
 
-The Dynamic Text Panel supports the external resources since version 4.1.0.
+The Business Text Panel supports external resources starting from version 4.1.0.
 
 :::
 
-Dynamic Text Panel enables the loading of additional JavaScript and CSS resources using external URLs like CDN (Content Delivery Network).
+The Business Text Panel enables the loading of additional JavaScript and CSS resources using external URLs like CDN (Content Delivery Network).
 
 Use that functionality to include additional visual elements and execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
 
@@ -77,7 +77,7 @@ mermaid.run({
 
 ## External JavaScript resources
 
-Below you can find a collection of breathtaking use cases for the external JavaScript resources in the Dynamic Text plugin.
+Below you can find a collection of breathtaking use cases for the external JavaScript resources in the Business Text plugin.
 
 ### Plotly 3D Scatter
 
@@ -219,13 +219,13 @@ import("https://esm.sh/plotly.js-dist-min").then(
 Mermaid is a popular JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams using Markdown-defined text definitions.
 
 :::info
-Previously we maintained two Dynamic Text plugin builds. One with embedded Mermaid Library and the other without.
+Previously we maintained two Business text (old name Dynamic Text) plugin builds. One with embedded Mermaid Library and the other without.
 
 The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply load it as an external resource.
 :::
 
 <Image
-  title="Mermaid diagrams displayed using the Dynamic Text Panel plugin."
+  title="Mermaid diagrams displayed using the Business Text Panel."
   src="/img/plugins/volkovlabs-dynamictext-panel/diagram.png"
 />
 
@@ -270,10 +270,10 @@ import("https://esm.sh/mermaid").then(({ default: mermaid }) => {
 
 ### Chart.js
 
-Chart.js is one of the popular open source charting libraries. The Dynamic Text plugin makes using chart.js in Grafana possible!
+Chart.js is one of the popular open source charting libraries. The Business Text plugin makes using chart.js in Grafana possible!
 
 <Image
-  title="Chart.js diagrams displayed using the Dynamic Text Panel plugin."
+  title="Chart.js diagrams displayed using the Business Text Panel."
   src="/img/plugins/volkovlabs-dynamictext-panel/chartjs-examples.png"
 />
 
@@ -340,14 +340,14 @@ import("https://esm.sh/chart.js").then(({ Chart, registerables }) => {
 
 Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic Flowchart return to Grafana! We are happy to share your example with the world.
 
-Below you can find how the beloved by many Flowchart libraries can be implemented using the Dynamic Text plugin.
+Below you can find how the beloved by many Flowchart libraries can be implemented using the Business Text plugin.
 
 Simply, add two external libraries and then write your code addressing the Flowchart libraries directly.
 
 #### Example
 
 <Image
-  title="Delivering Flowchart libraries to a Grafana dashboard using the Dynamic Text plugin."
+  title="Delivering Flowchart libraries to a Grafana dashboard using the Business Text plugin."
   src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/flow.png"
 />
 
@@ -402,10 +402,10 @@ Use **All rows** or **All data** template to execute template only once. With **
 
 ### Youtube video
 
-This idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Dynamic Text plugin can be used to display YouTube videos on your Grafana dashboard.
+This idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Business Text plugin can be used to display YouTube videos on your Grafana dashboard.
 
 <Image
-  title="How to configure the Dynamic Text plugin to display a YouTube video."
+  title="How to configure the Business Text plugin to display a YouTube video."
   src="/img/plugins/volkovlabs-dynamictext-panel/yt-edit.png"
 />
 
@@ -439,16 +439,16 @@ import("https://esm.sh/youtube-player").then(({ default: YouTubePlayer }) => {
 Below is an example of a dashboard displaying a YouTube video.
 
 <Image
-  title="Use the Dynamic Text plugin to display YouTube videos on your Grafana dashboard."
+  title="Use the Business Text plugin to display YouTube videos on your Grafana dashboard."
   src="/img/plugins/volkovlabs-dynamictext-panel/yt.png"
 />
 
 ### Leaflet.js interactive maps
 
-This is another great example of external resource usages in the Dynamic Text Plugin. The idea comes from [BlinderMiri](https://github.com/BlinderMiri) and [Josiah Solomon](https://github.com/yosiasz). Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
+This is another great example of external resource usage in the Business Text Plugin. The idea comes from [BlinderMiri](https://github.com/BlinderMiri) and [Josiah Solomon](https://github.com/yosiasz). Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
 
 <Image
-  title="How to configure the Dynamic Text plugin to display Leaflet.js maps."
+  title="How to configure the Business Text plugin to display Leaflet.js maps."
   src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-edit.png"
 />
 
