@@ -50,7 +50,6 @@ From Grafana's perspective, all data sources are the same because they return da
 <Image
   title="Large PDF document retrieved from a PostgreSQL database and displayed in Grafana."
   src="/img/blog/2021-12-17-display-large-pdf/panel.png"
-  lazy={false}
 />
 
 To install PostgreSQL, we added a container with the latest version of the `postgres` image. We specified a volume for the folder `/docker-entrypoint-initdb.d`, which takes care of creating necessary tables and permissions when starting.
