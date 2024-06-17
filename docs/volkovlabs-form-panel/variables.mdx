@@ -21,7 +21,9 @@ Three types of variables are thoroughly explained in our [Grafana Crash Course](
 ## JavaScript code
 
 ```js
-const formIcon = elements.find((element) => element.id === "icon");
+const formIcon = context.panel.elements.find(
+  (element) => element.id === "icon"
+);
 formIcon.value = "$IconVar";
 ```
 

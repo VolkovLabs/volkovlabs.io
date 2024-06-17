@@ -24,7 +24,7 @@ Select `-` to choose an initial request, and then define the custom code:
 To support the `Highlight changed values` and `Require Confirmation` features, you need to use the `setInitial({})` function within your custom code to update initial values:
 
 ```javascript
-setInitial({ value: 99, name: "Test" });
+context.panel.setInitial({ value: 99, name: "Test" });
 ```
 
 ## Update Request
