@@ -9,31 +9,34 @@ import Video from "@theme/Video";
 
 # Events
 
-Business Calendar Panel allows you to load events from any data source and display them on your Grafana dashboard.
+The first parameter of the **Events** section is **On click**:
+ - **Open Link** instructs the plugin to open an assigned link, 
+ - **Show Details** instructs the plugin to open a drawer. 
 
-## Configuration
+## Links
 
-Define the required and optional fields in the plugin's options to visualize events on the Grafana dashboard.
-
-| Field       | Required | Description                                                 |
-| ----------- | -------- | ----------------------------------------------------------- |
-| Text        | Yes      | Event title. By default, the first text field is used.      |
-| Start time  | Yes      | Event start time. By default, the first time field is used. |
-| Description | No       | Event description.                                          |
-| End time    | No       | Event end time.                                             |
-| Labels      | No       | Event labels. Supports multiple comma-separated values.     |
-| Color       | No       | Event color.                                                |
-
-## Duration
-
-Events are categorized into four types:
-
-1. **Instantaneous** - an event having only the start time.
-1. **Continuing** - an event having the start and end time.
-1. **Multi-day** - an event having a start and end time and lasting for two days or more.
-1. **Ongoing** - an event having the start time without the end time.
+The links are configured in the **Data links** section which is common for all Grafana plugins section. In the picture below the link is specified as follows:
+ - `__data` is a reference to a retrieved data frame,
+ - `fields` is a reference to the retrieved data frame fields, 
+ - `url` is a reference to a retrieved field name. 
 
 <Image
-  title="Schema explains how events are classified depending on the End Time field."
-  src="/img/plugins/volkovlabs-calendar-panel/schema.png"
+  title="On click parameter determines the plugin action upon a user click event."
+  src="/img/plugins/volkovlabs-calendar-panel/events-section.png"
+/>
+
+## Drawers / Event details
+
+A drawer is a pop-up window that opens on the right-hand side of your browser and displays event details. 
+
+<Image
+  title="Event drawer example."
+  src="/img/plugins/volkovlabs-calendar-panel/drawer-location.png"
+/>
+
+You can configure which data elements to show in the drawer by selecting them in the **Details info** parameter (see the first image on this page).
+
+<Image
+  title="A drawer dissection."
+  src="/img/plugins/volkovlabs-calendar-panel/drawer-dissect.png"
 />

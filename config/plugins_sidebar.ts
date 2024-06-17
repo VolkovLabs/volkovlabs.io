@@ -22,11 +22,11 @@ const sidebars: SidebarsConfig = {
           id: "volkovlabs-calendar-panel/index",
           label: "Introduction",
         },
-        "volkovlabs-calendar-panel/events",
+        "volkovlabs-calendar-panel/basic-config",
         {
           items: [
-            "volkovlabs-calendar-panel/annotations",
-            "volkovlabs-calendar-panel/big",
+            "volkovlabs-calendar-panel/internationalization",
+            "volkovlabs-calendar-panel/dashboard-timezones",
             "volkovlabs-calendar-panel/color",
           ],
           label: "Features",
@@ -34,6 +34,21 @@ const sidebars: SidebarsConfig = {
           link: {
             type: "doc",
             id: "volkovlabs-calendar-panel/features",
+          },
+        },
+        {
+          items: [
+            "volkovlabs-calendar-panel/business-calendar",
+            "volkovlabs-calendar-panel/layout",
+            "volkovlabs-calendar-panel/events",
+            "volkovlabs-calendar-panel/data",
+            "volkovlabs-calendar-panel/annotations",
+          ],
+          label: "Sections",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-calendar-panel/sections",
           },
         },
         "volkovlabs-calendar-panel/release",
