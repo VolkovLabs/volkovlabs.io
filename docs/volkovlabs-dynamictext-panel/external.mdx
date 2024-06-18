@@ -625,3 +625,101 @@ import('https://esm.sh/leaflet').then(({ default: L }) => {
   flex-direction: row;
 }
 ```
+
+### Tailwind CSS
+
+Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a utility-first CSS framework Tailwind CSS. Tailwind adds style and beauty to your panels. Applying Tailwind to Business Text is a little different from the previous examples.
+
+<Image
+  title="Panel with Tailwind styles on the dashboard."
+  src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel.png"
+/>
+
+To prevent CORS issue we recommend to add Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
+
+File can contain the import function and use Ttailwind, or it can load code from `cdn.tailwindcss.com`.
+
+#### CDN based code
+
+Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload to `/usr/share/grafana/public/` in Docker container. We used latest version `https://cdn.tailwindcss.com/3.4.4`.
+
+<Image
+  title="Tailwind script uploaded to the Docker container."
+  src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-file-example.png"
+/>
+
+#### Content
+
+```html
+<div class="bg-gray-100 min-h-64 flex items-center justify-center">
+  <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+    <h1 class="text-2xl font-bold mb-4">Welcome to Business Text</h1>
+    <p class="text-gray-600 mb-6">
+      This is a simple HTML element using the Tailwind CSS library.
+    </p>
+    <a
+      href="#"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md"
+      >Learn More</a
+    >
+  </div>
+</div>
+```
+
+#### JavaScript code (After Content Ready)
+
+```js
+import("/public/tailwind.js");
+```
+
+<Image
+  title="Business Text panel with imported Tailwind CSS."
+  src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel-edit-mode.png"
+/>
+
+#### Load Tailwind from CDN
+
+Create a `loadTailwindFromCDN.js` file with the following code and upload to the same location in Docker container.
+
+```js
+function loadTailwindFromCDN() {
+  var responseData = "";
+
+  const script = document.createElement("script");
+
+  script.src = "https://cdn.tailwindcss.com";
+  document.body.appendChild(script);
+
+  console.log("script" + script);
+}
+
+export default loadTailwindFromCDN;
+```
+
+#### Content
+
+```html
+<div class="bg-gray-100 min-h-64 flex items-center justify-center">
+  <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+    <h1 class="text-2xl font-bold mb-4">Welcome to Business Text</h1>
+    <p class="text-gray-600 mb-6">
+      This is a simple HTML element using the Tailwind CSS library.
+    </p>
+    <a
+      href="#"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md"
+      >Learn More</a
+    >
+  </div>
+</div>
+```
+
+#### JavaScript code (After Content Ready)
+
+```js
+import("/public/loadTailwindFromCDN.js").then(
+  ({ default: loadTailwindFromCDN }) => {
+    loadTailwindFromCDN();
+  }
+);
+```

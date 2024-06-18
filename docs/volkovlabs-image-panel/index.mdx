@@ -1,24 +1,36 @@
 ---
 tags:
-  - Business Image/PDF
+  - Business Media
 image: /img/plugins/volkovlabs-image-panel/panel.png
 ---
 
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Business Image/PDF Panel
+# Business Media Panel
 
-Business Image/PDF Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.
+:::info announcement
+The Base64 Image/PDF panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Media panel.
+
+Please welcome the new name for the same functionality!
+:::
+
+<Image
+  title="The Base64 Image/PDF panel now is called the Business Media panel."
+  src="/img/plugins/volkovlabs-image-panel/new-name.png"
+  width="60%"
+/>
+
+The Business Media panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the base64 format.
 
 <Video
   src="https://www.youtube.com/embed/hLMtsCWPOg8"
-  title="Display images and PDF on Grafana using Business Image/PDF panel."
+  title="Display images and PDF on Grafana using the Business Media panel."
 />
 
 ## Requirements
 
-The Business Image/PDF Panel version requirements for Grafana are as follows:
+The Business Media Panel version requirements for Grafana are as follows:
 
 - Business Image/PDF Panel 5.X requires **Grafana 10** or **Grafana 11**.
 - Base64 Image/PDF Panel 4.X requires **Grafana 9** or **Grafana 10**.
@@ -28,7 +40,7 @@ The Business Image/PDF Panel version requirements for Grafana are as follows:
 
 ## Getting Started
 
-You can install Business Image/PDF Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.
+You can install Business Media panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.
 
 For the latter, please use the following command.
 
@@ -39,7 +51,7 @@ grafana-cli plugins install volkovlabs-image-panel
 ## Highlights
 
 - The returned value can include base64 encoded content with or without a specified definition. The formats for the definition can look like `data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`.
-- The file type is automatically determined based on the first Base64 symbol if no definition is provided.
+- The file type is automatically determined based on the first base64 symbol if no definition is provided.
 - If the data source returns more than one field of the `string` type, you can select the Field Name in the panel's display options.
 - You can fit image dimensions to the panel size, keep the original values, or adjust dimensions based on the manually supplied values.
 - Allows adding a URL with a title to navigate to other dashboards when clicking the image. URL supports dashboard variables.
