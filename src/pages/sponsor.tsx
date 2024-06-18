@@ -115,15 +115,12 @@ const Main = (siteConfig) => {
           </div>
           <div className="col col--6 text--center">
             <br />
-            <h2 className="hero__title margin-vert--lg">Why work with us</h2>
+            <h2 className="hero__title margin-vert--lg">Business Suite</h2>
 
             <p className="margin-vert--lg hero__subtitle">
-              "Volkov Labs' plugin development service is amazing. <br /> It is
-              a rocket ship for transitioning an idea to reality."
-            </p>
-
-            <p className="margin-vert--md">
-              Christopher Field, President, Theia Scientific
+              The <a href="/plugins/">Business Suite for Grafana</a> is a
+              collection of open source plugins created and actively maintained
+              by Volkov Labs.
             </p>
           </div>
           <div className="col col--3">
