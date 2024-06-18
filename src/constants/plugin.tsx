@@ -26,16 +26,16 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-form-panel/",
   },
   {
-    title: "Business Image/PDF Panel",
-    name: "volkovlabs-image-panel",
-    description: <>Display Base64 encoded media files.</>,
-    href: "/plugins/volkovlabs-image-panel/",
-  },
-  {
     title: "Business Input Data Source",
     name: "volkovlabs-static-datasource",
     description: <>Store and create your data.</>,
     href: "/plugins/volkovlabs-static-datasource/",
+  },
+  {
+    title: "Business Media Panel",
+    name: "volkovlabs-image-panel",
+    description: <>Display Base64 encoded media files.</>,
+    href: "/plugins/volkovlabs-image-panel/",
   },
   {
     title: "Business News Data Source",
