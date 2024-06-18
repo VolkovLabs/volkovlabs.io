@@ -191,7 +191,7 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-image-panel/release",
       ],
-      label: "Business Image/PDF",
+      label: "Business Media",
       type: "category",
       description: "Display Base64 encoded media files.",
       link: {
