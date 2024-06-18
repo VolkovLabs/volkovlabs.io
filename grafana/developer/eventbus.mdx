@@ -23,30 +23,30 @@ return () => {
 
 ## Predefined Events
 
-| Event                             | Description                                                        |
-| --------------------------------- | ------------------------------------------------------------------ |
-| absolute-time                     |                                                                    |
-| annotation-event                  |                                                                    |
-| annotation-query-finished         |                                                                    |
-| annotation-query-started          |                                                                    |
-| copy-panel                        | Called to copy a panel JSON into local storage.                    |
-| dashboard-loaded                  |                                                                    |
-| dashboard-saved                   |                                                                    |
-| data-hover                        | Hovering over Legend and data point when shared crosshair enabled. |
-| data-hover-clear                  |                                                                    |
-| data-select                       |                                                                    |
-| datasource-updated-successfully   |                                                                    |
-| panel-edit-finished               |                                                                    |
-| panel-edit-started                |                                                                    |
-| refresh                           | Called when a dashboard is refreshed.                              |
-| render                            |                                                                    |
-| shift-time                        |                                                                    |
-| theme-changed                     | Called when the theme settings change.                             |
-| time-range-updated                | Called when time range is updated.                                 |
-| variables-changed                 |                                                                    |
-| variables-changed-in-url          |                                                                    |
-| variables-time-range-process-done |                                                                    |
-| zoom-out                          |                                                                    |
+| Event                             | Description                                                                                         |
+| --------------------------------- | --------------------------------------------------------------------------------------------------- |
+| absolute-time                     | Called when the user selects an absolute time range on the dashboard.                               |
+| annotation-event                  | Called when an annotation event occurs, such as when an annotation is created, updated, or deleted. |
+| annotation-query-finished         | Called when an annotation query has finished executing.                                             |
+| annotation-query-started          | Called when an annotation query has started executing.                                              |
+| copy-panel                        | Called to copy a panel JSON into local storage.                                                     |
+| dashboard-loaded                  | Called when a dashboard is loaded.                                                                  |
+| dashboard-saved                   | Called when a dashboard is saved.                                                                   |
+| data-hover                        | Hovering over Legend and data point when shared crosshair enabled.                                  |
+| data-hover-clear                  | Called when the user stops hovering over a data point on a panel when shared crosshair enabled.     |
+| data-select                       | Called when the user selects a data point on a panel.                                               |
+| datasource-updated-successfully   | Called when a datasource is successfully updated.                                                   |
+| panel-edit-finished               | Called when the user finishes editing a panel.                                                      |
+| panel-edit-started                | Called When the user starts editing a panel.                                                        |
+| refresh                           | Called when a dashboard is refreshed.                                                               |
+| render                            | Called when a dashboard is rendered                                                                 |
+| shift-time                        | Called when the time shifts range on the dashboard.                                                 |
+| theme-changed                     | Called when the theme settings change.                                                              |
+| time-range-updated                | Called when time range is updated.                                                                  |
+| variables-changed                 | Called when the variable values on the dashboard are changed.                                       |
+| variables-changed-in-url          | Called when the variable values in the URL are changed.                                             |
+| variables-time-range-process-done | Called when the time range for variables in the dashboard is processed.                             |
+| zoom-out                          | Called when use time range zoom out.                                                                |
 
 ## Panels interconnectivity in Grafana via EventBus
 
@@ -54,6 +54,5 @@ This article describes the possibility of using ECharts Instance, Grafana Events
 
 <BlogPost
   href="/blog/echarts-shared-crosshair-and-eventbus-20240520/"
-  title="Panels interconnectivity in Grafana via EventBus."
   src="/img/blog/2024-05-20-echarts-shared-crosshair-and-eventbus/banner.png"
 />

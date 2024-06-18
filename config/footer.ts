@@ -28,14 +28,14 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-form-link",
         },
         {
-          label: "Business Image/PDF Panel",
-          to: "/plugins/volkovlabs-image-panel/",
-          className: "volkovlabs-footer-link icon-plugins-base64-link",
-        },
-        {
           label: "Business Input Data Source",
           to: "/plugins/volkovlabs-static-datasource/",
           className: "volkovlabs-footer-link icon-plugins-static-link",
+        },
+        {
+          label: "Business Media Panel",
+          to: "/plugins/volkovlabs-image-panel/",
+          className: "volkovlabs-footer-link icon-plugins-base64-link",
         },
         {
           label: "Business News Data Source",

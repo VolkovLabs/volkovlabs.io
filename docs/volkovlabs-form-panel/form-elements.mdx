@@ -333,7 +333,7 @@ It could be done in two steps:
   src="/img/blog/2023-12-03-form-panel-3.3.0/initial-req-for-options.png"
 />
 
-In the example below, we find a necessary element and update its options. Once the data has been received, we update the element using`context.panel.onChangeElements()`.
+In the example below, we find a necessary element and update its options. Once the data has been received, we update the element using `context.panel.onChangeElements()`.
 
 ```js
 const url = "https://jsonplaceholder.typicode.com/users";
@@ -404,7 +404,9 @@ Every form element has the <b>Show If returned value is true</b> parameter where
 Example code to check the current value of the `select` element and show the `dateTime` element if the value equal to `max`:
 
 ```js
-const select = elements.find((element) => element.id === "select");
+const select = context.panel.elements.find(
+  (element) => element.id === "select"
+);
 
 if (select) {
   return select.value === "max";
@@ -427,7 +429,7 @@ You can use the dashboard and global variables within your JavaScript code.
 Example code to check the value of the dashboard variable `var`:
 
 ```js
-const test = replaceVariables("$var");
+const test = context.grafana.replaceVariables("$var");
 return test === "test";
 ```
 

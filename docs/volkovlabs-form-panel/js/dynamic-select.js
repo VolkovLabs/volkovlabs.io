@@ -1,5 +1,9 @@
-const icons = data.series.find((serie) => serie.refId === "icons");
-const iconSelect = elements.find((element) => element.id === "icon");
+const icons = context.panel.data.series.find(
+  (serie) => serie.refId === "icons"
+);
+const iconSelect = context.panel.elements.find(
+  (element) => element.id === "icon"
+);
 
 if (icons?.fields.length) {
   const ids =
@@ -14,4 +18,4 @@ if (icons?.fields.length) {
   });
 }
 
-onOptionsChange(options);
+context.panel.onOptionsChange(options);

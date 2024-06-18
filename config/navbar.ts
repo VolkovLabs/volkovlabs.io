@@ -31,14 +31,14 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-plugins-form-link",
         },
         {
-          label: "Business Image/PDF Panel",
-          to: "/plugins/volkovlabs-image-panel/",
-          className: "volkovlabs-link icon-plugins-base64-link",
-        },
-        {
           label: "Business Input Data Source",
           to: "/plugins/volkovlabs-static-datasource/",
           className: "volkovlabs-link icon-plugins-static-link",
+        },
+        {
+          label: "Business Media Panel",
+          to: "/plugins/volkovlabs-image-panel/",
+          className: "volkovlabs-link icon-plugins-base64-link",
         },
         {
           label: "Business News Data Source",
