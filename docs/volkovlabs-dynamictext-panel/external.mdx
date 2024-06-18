@@ -628,32 +628,23 @@ import('https://esm.sh/leaflet').then(({ default: L }) => {
 
 ### Tailwind CSS
 
-Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring an Tailwind CSS.
-
-Tailwind adds style and beauty to your panels. Applying Tailwind to Business Text is a little different from the previous examples.
+Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a utility-first CSS framework Tailwind CSS. Tailwind adds style and beauty to your panels. Applying Tailwind to Business Text is a little different from the previous examples.
 
 <Image
   title="Panel with Tailwind styles on the dashboard."
   src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel.png"
 />
 
-Create a file and place it in public folder. `usr/share/grafana/public/yourFileName.js`
+To prevent CORS issue we recommend to add Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
+
+File can contain the import function and use Ttailwind, or it can load code from `cdn.tailwindcss.com`.
+
+#### CDN based code
+
+Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload to `/usr/share/grafana/public/` in Docker container. We used latest version `https://cdn.tailwindcss.com/3.4.4`.
 
 <Image
-  title="Path with placed file"
-  src="/img/plugins/volkovlabs-dynamictext-panel/file-path.png"
-/>
-
-File can contain the import function and use tailwind, or it can use code from `cdn.tailwindcss.com.`
-
-Let's consider both variants
-
-#### 1. CDN base code
-
-Create a `tailwind.js` file and put the code from `cdn.tailwindcss.com.` into it. As example we use `https://cdn.tailwindcss.com/3.4.4`
-
-<Image
-  title="Tailwind file example"
+  title="Tailwind script uploaded to the Docker container."
   src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-file-example.png"
 />
 
@@ -682,15 +673,13 @@ import("/public/tailwind.js");
 ```
 
 <Image
-  title="Tailwind panel"
+  title="Business Text panel with imported Tailwind CSS."
   src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel-edit-mode.png"
 />
 
-#### 1. Function to load Tailwind from CDN
+#### Load Tailwind from CDN
 
-Create a `loadTailwindFromCDN.js` file and put the code below
-
-##### File code
+Create a `loadTailwindFromCDN.js` file with the following code and upload to the same location in Docker container.
 
 ```js
 function loadTailwindFromCDN() {
