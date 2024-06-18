@@ -15,14 +15,44 @@ import Video from "@theme/Video";
 We're excited to announce the release of the Business Text Panel 5.0.0. This release includes the following updates:
 
 - Plugin rebranding, the new name is the **Business Text Panel**.
-- Removed external scripts deprecated in Grafana 11. Use import instead.
-- Removed non-context code parameters. Please update parameters to use context.
+- Replaced the **External Resource**->**Scripts** (external JavaScript) with importing via the code. **Breaking change**.
+- Non-context code parameters are retired. Please update parameters to use context.
 - Added Units and Decimal in panel options.
 - Required Grafana 10 and Grafana 11. Breaking change.
 
 :::info Grafana Plugins catalog
 The plugin was updated in Grafana Catalog on June 6, 2024.
 :::
+
+## Business Text Panel
+
+The Dynamic Text panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Text panel.
+
+Please welcome the new name for the same functionality!
+
+<Image
+  title="The Dynamic Text panel now is called the Business Text panel."
+  src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/new-name.png"
+/>
+
+## Downloads
+
+The Business Text plugin took off in May of this year and now the total downloads are close to the soaring 7M!
+
+<Image
+  title="The Dynamic Text panel now is called the Business Text panel."
+  src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/downloads.png"
+/>
+
+## Farewell External JavaScript
+
+:::info versions
+This is a breaking change. However, note, that you still can use external JavaScript code. Find details below. 
+:::
+
+Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
+
+Our documentation has [many examples](/plugins/volkovlabs-dynamictext-panel/external/) of how to use external JavaScript libraries moving forward. 
 
 ## Getting Started
 
