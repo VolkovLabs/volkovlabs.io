@@ -245,7 +245,7 @@ const sidebars: SidebarsConfig = {
       ],
       label: "Business News Data Source",
       type: "category",
-      description: "Visualize RSS/Atom feeds using Dynamic Text.",
+      description: "Visualize RSS/Atom feeds using Business Text.",
       link: {
         type: "doc",
         id: "volkovlabs-rss-datasource/index",
