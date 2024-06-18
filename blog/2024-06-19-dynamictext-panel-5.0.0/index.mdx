@@ -1,0 +1,103 @@
+---
+authors: [daria]
+slug: dynamictext-panel-5.0.0-20240619/
+tags: [Business Text, Business Suite]
+image: /img/blog/2024-06-19-dynamictext-panel-5.0.0/banner.png
+keywords: [Dynamic Text, Panel, JavaScript, Grafana]
+---
+
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Video from "@theme/Video";
+
+# Business Text Panel 5.0.0
+
+We're excited to announce the release of the Business Text Panel 5.0.0. This release includes the following updates:
+
+- Plugin rebranding, the new name is the **Business Text Panel**.
+- Required Grafana 10 and Grafana 11. Breaking change.
+
+:::info Grafana Plugins catalog
+The plugin was updated in Grafana Catalog on June 6, 2024.
+:::
+
+## Getting Started
+
+You can install Business Text Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install marcusolsson-dynamictext-panel
+```
+
+## YouTube Tutorial
+
+The Business Text panel is a mighty Grafana plugin to convert any monotonous bulk of data into vibrant, effortlessly comprehended visualization.
+
+<Video
+  src="https://www.youtube.com/embed/AcQi-6GCrNU"
+  title="Business Text plugin for Grafana | Use HTML, Markdown, JavaScript and CSS | Community use cases."
+/>
+
+## Release Notes
+
+### Breaking changes in 5.0.0
+
+- Requires Grafana 10 and Grafana 11.
+- Removed external scripts deprecated in Grafana 11. Use import instead.
+- Removed non-context code parameters. Please update parameters to use `context`.
+
+### Code parameters migration guide
+
+- data -> context.data
+- dataFrame -> context.dataFrame
+- eventBus -> context.grafana.eventBus
+- getLocale -> context.grafana.getLocale
+- handlebars -> context.handlebars
+- locationService -> context.grafana.locationService
+- panelData -> context.panelData
+- replaceVariables -> context.grafana.replaceVariables
+- timeRange -> context.grafana.timeRange
+- timezone -> context.grafana.timezone
+
+### Features / Enhancements in 5.0.0
+
+- Added plugin e2e tests and remove cypress (#301)
+- Updated name to Business Text Panel (#304)
+- Prepared for Grafana 11 (#304)
+- Added ES6 Modules Support (#312)
+- Added Units and Decimal in panel options (#311)
+- Updated to Grafana 11.0 and dependencies (#315)
+
+### Features / Enhancements in 4.5.0
+
+- Add Info message if sanitize enabled (#290)
+- Update CSS styles responsive and supporting themes (#281)
+- Update to Grafana 10.4.0 (#291)
+
+### Breaking changes in 4.4.0
+
+- Requires Grafana 9.2 and Grafana 10
+
+### Features / Enhancements in 4.4.0
+
+- Update context parameter (#270)
+- Added theme object, notifySuccess & notifyError (#270)
+- Update dependencies and Actions (#271)
+- Replace custom code parameters with Code Parameters Builder (#285)
+- Update CSS class for the Panel instead of a Row (#272)
+- Update Editor auto height from fixed value (#278)
+- Disable unitScale and fieldMinMax standard panel options (#286)
+
+### Bug fixes in 4.4.0
+
+- Fix statusColor for Row (#280)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
