@@ -68,6 +68,7 @@ const sidebars: SidebarsConfig = {
             "volkovlabs-echarts-panel/transformations",
             "volkovlabs-echarts-panel/variables",
             "volkovlabs-echarts-panel/visualeditor",
+            "volkovlabs-echarts-panel/wordcloud",
           ],
           label: "Features",
           type: "category",
@@ -190,7 +191,7 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-image-panel/release",
       ],
-      label: "Business Image/PDF",
+      label: "Business Media",
       type: "category",
       description: "Display Base64 encoded media files.",
       link: {
@@ -333,11 +334,22 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         {
+          items: [],
+          label: "Data Flow",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-variable-panel/data-flow",
+          },
+        },
+        {
           items: [
-            "volkovlabs-variable-panel/select",
-            "volkovlabs-variable-panel/input",
+            "volkovlabs-variable-panel/table",
+            "volkovlabs-variable-panel/minimize",
+            "volkovlabs-variable-panel/button",
+            "volkovlabs-variable-panel/slider",
           ],
-          label: "Layout",
+          label: "Display Mode",
           type: "category",
           link: {
             type: "doc",
@@ -346,13 +358,12 @@ const sidebars: SidebarsConfig = {
         },
         {
           items: [
-            "volkovlabs-variable-panel/favorites",
-            "volkovlabs-variable-panel/groups",
             "volkovlabs-variable-panel/sort",
             "volkovlabs-variable-panel/key",
             "volkovlabs-variable-panel/empty",
             "volkovlabs-variable-panel/persistent",
             "volkovlabs-variable-panel/redirect",
+            "volkovlabs-variable-panel/input",
           ],
           label: "Features",
           type: "category",

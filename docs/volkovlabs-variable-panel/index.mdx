@@ -4,19 +4,32 @@ tags:
 image: /img/plugins/volkovlabs-variable-panel/dashboard.png
 ---
 
+import Image from "@theme/Image";
 import Video from "@theme/Video";
 
 # Business Variable Panel
 
-The Business Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
+:::info announcement
+The Variable panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Variable panel.
 
-The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
+Please welcome the new name for the same functionality!
+:::
 
-With the latest updates, this panel allows users to seamlessly switch between dashboards which adds to the satisfying user experience.
+<Image
+  title="The Variable panel now is called the Business Variable panel."
+  src="/img/plugins/volkovlabs-variable-panel/new-name.png"
+  width="60%"
+/>
+
+The Business Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel, which you can place anywhere on the dashboard.
+
+The Business Variable panel offers many layouts with robust options, including an advanced TreeView layout.
+
+With the latest updates, users can [switch between dashboards](/plugins/volkovlabs-variable-panel/redirect), which adds to the satisfying user experience.
 
 <Video
-  src="https://www.youtube.com/embed/1ogv2jstrlI"
-  title="Demonstrates the Variable panel functionality."
+  src="https://www.youtube.com/embed/vcdcLDVQYek"
+  title="Business Variable Panel for Grafana. New features and updates in 3.0.0."
 />
 
 ## Requirements
@@ -36,22 +49,23 @@ grafana-cli plugins install volkovlabs-variable-panel
 
 ## Highlights
 
-- Allows working with dashboard variables in Table, Tree View, Minimized, Button, and Slider layouts.
+- Allows working with dashboard variables in the **Table**, **Minimize**, **Button**, and **Slider** dispaly modes.
+- The **Table** display mode can be configured into a TreeView.
 - Displays statuses based on thresholds from data sources.
 - Supports single and multi-value variables with the All option.
 - Allows filtering values by pattern and selected favorites.
-- Supports follow when scrolling (sticky).
-- Supports multiple Tree Views using tabs.
-- Supports input text variables.
+- Supports follow when scrolling (**Sticky position**).
+- Supports multiple TreeViews using groups/tabs.
+- Supports the input text (**Input box**) variables.
 
 ## Documentation
 
-| Section                             | Description                                                 |
-| ----------------------------------- | ----------------------------------------------------------- |
-| [Layout](layout/)                   | Explains how to display variables in a table and tree view. |
-| [Features](features)                | Demonstrates panel features.                                |
-| [Blog posts](/blog/tags/variables/) | Related blog posts.                                         |
-| [Release Notes](release/)           | Stay up to date with the latest features and updates.       |
+| Section                   | Description                              |
+| ------------------------- | ---------------------------------------- |
+| [Data Flow](data-flow/)   | Explains the Business Variable data flow |
+| [Display Modes](layout/)  | Explains different display modes         |
+| [Features](features)      | Explains panel features                  |
+| [Release Notes](release/) | The latest features and updates          |
 
 ## Feedback
 
