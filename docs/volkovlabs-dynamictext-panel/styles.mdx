@@ -9,21 +9,43 @@ import Image from "@theme/Image";
 
 # Styles
 
-The styles editor allows you to define new CSS styles and override the default ones using the dedicated code editor with CSS syntax highlighting.
+## Methods to include CSS
 
-Dashboard variables are replaced automatically in CSS styles.
+You can impose style using one, all, or any combination of the following:
+ - Inline. Specify CSS commands right in the **Content**.
+ - Internal. Specify CSS in the **Style editor** with convenient CSS syntax highlighting.
+ - External. Import an external CSS file. To prevent the loading of third-party URLs, you can store CSS files in the public folder on your Grafana instance:
+     - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css` 
+     - Or on local Grafana instance `/public/grafanaCSS.css`
+
+<Image
+  title="The Business Text panel supports all usual styling methods."
+  src="/img/plugins/volkovlabs-dynamictext-panel/style-methods.png"
+/>
+
+## Dashboard variables
+
+Dashboard variables are replaced automatically in all CSS style methods.
 
 :::info Version
 
-The Business Text Panel supports dashboard variables starting version 3.0.0 and dashboard variables in CSS styles starting from version 4.0.0.
+The Business Text Panel supports dashboard variables starting from version 3.0.0 and dashboard variables in CSS styles starting from version 4.0.0.
 
 :::
 
-## Add new styles
+## Internal method example 1
 
-You can define your styles and use them in the template.
+You can define your styles and use them in a template (**Content**, **Default Content**).
 
-### Styles
+Code for a template:
+
+```html
+<td class="name">
+  <p><b class="name">{{first_name}} {{last_name}}</b></p>
+</td>
+```
+
+Code for the **Styles editor**:
 
 ```css
 td.name {
@@ -38,74 +60,18 @@ b.name {
 }
 ```
 
-### Template
-
-```html
-<td class="name">
-  <p><b class="name">{{first_name}} {{last_name}}</b></p>
-</td>
-```
-
 <Image
-  title="Add custom styles for table cells and bold text."
+  title="Using internal CSS for bold text in a table."
   src="/img/plugins/volkovlabs-dynamictext-panel/styles.png"
 />
 
-## Override
-
-You can see all the defined styles in the source code.
-
-<details>
-  <summary>Default styles</summary>
-
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/blob/main/src/components/Text/Text.styles.ts"
-  language="js"
-/>
-
-</details>
-
-### Padding and margins
-
-To display content without padding and margins, you need to override the parent CSS style.
-
-```css
-& {
-  padding: 0;
-  margin: 0;
-}
-```
-
-## Code Syntax Highlight
-
-The code syntax highlighting is based on the `highlight.js` library, which supports key programming languages.
-
-<Image
-  title="Random Walk data displayed with the highlighting and without margins or paddings."
-  src="/img/plugins/volkovlabs-dynamictext-panel/json.png"
-/>
-
-### Styling
-
-We included the Accessibility (A11Y) syntax highlighting style for light and dark themes. You can override it in the styles editor by copying one of the styles from the [project source files](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
-
-<details>
-  <summary>A11Y light theme</summary>
-
-<Code
-  url="https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-light.css"
-  language="css"
-/>
-
-</details>
-
-## Table styling example
+## Internal method example 2
 
 Here I have a simple, yet amazing styling approach. For instance, you can display the status of your devices/servers as green or red dots in a table.
 
 <Image
   title="Simple, yet stylish way to display unit status."
-  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/dots.png"
+  src="/img/plugins/volkovlabs-dynamictext-panel/dots.png"
 />
 
 To have this on your dashboard, copy the **Content** and **CSS Styles** parameters from below.
@@ -175,3 +141,55 @@ tr td {
   border-style: unset !important;
 }
 ```
+
+## External method example
+
+For the external method example, refer to the [Leaflet.js interactive maps](/plugins/volkovlabs-dynamictext-panel/external/#leafletjs-interactive-maps).
+
+## Override
+
+You can see all the defined styles in the source code.
+
+<details>
+  <summary>Default styles</summary>
+
+<Code
+  url="https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/blob/main/src/components/Text/Text.styles.ts"
+  language="js"
+/>
+
+</details>
+
+### Padding and margins
+
+To display content without padding and margins, you need to override the parent CSS style.
+
+```css
+& {
+  padding: 0;
+  margin: 0;
+}
+```
+
+## Code Syntax Highlight
+
+The code syntax highlighting is based on the `highlight.js` library, which supports key programming languages.
+
+<Image
+  title="Random Walk data displayed with the highlighting and without margins or paddings."
+  src="/img/plugins/volkovlabs-dynamictext-panel/json.png"
+/>
+
+### Styling
+
+We included the Accessibility (A11Y) syntax highlighting style for light and dark themes. You can override it in the styles editor by copying one of the styles from the [project source files](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
+
+<details>
+  <summary>A11Y light theme</summary>
+
+<Code
+  url="https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-light.css"
+  language="css"
+/>
+
+</details>

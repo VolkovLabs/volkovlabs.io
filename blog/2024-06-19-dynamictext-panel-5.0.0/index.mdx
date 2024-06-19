@@ -16,9 +16,9 @@ We're excited to announce the release of the Business Text Panel 5.0.0. This rel
 
 - Plugin rebranding, the new name is the **Business Text Panel**.
 - Replaced the **External Resource**->**Scripts** (external JavaScript) with importing via the code. **Breaking change**.
-- Non-context code parameters are retired. Please update parameters to use context.
-- Added Units and Decimal in panel options.
-- Required Grafana 10 and Grafana 11. Breaking change.
+- Non`context` code parameters are retired. Please update the parameter reference the use the `context`. **Breaking change**.
+- Added support of the Grafana **Standard Options** and **Overrides** (**Units** and **Decimals**).
+- Required Grafana 10 and Grafana 11. **Breaking change**.
 
 :::info Grafana Plugins catalog
 The plugin was updated in Grafana Catalog on June 6, 2024.
@@ -40,11 +40,11 @@ Please welcome the new name for the same functionality!
 The Business Text plugin took off in May of this year and now the total downloads are close to the soaring 7M!
 
 <Image
-  title="The Dynamic Text panel now is called the Business Text panel."
+  title="Soaring 7M downloads!"
   src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/downloads.png"
 />
 
-## Farewell External JavaScript
+## External JavaScript replaced with Import
 
 :::info versions
 This is a breaking change. However, note, that you still can use external JavaScript code. Find details below. 
@@ -53,6 +53,64 @@ This is a breaking change. However, note, that you still can use external JavaSc
 Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
 
 Our documentation has [many examples](/plugins/volkovlabs-dynamictext-panel/external/) of how to use external JavaScript libraries moving forward. 
+
+## `Context` migration guide
+
+Starting from this release, ensure to reference the Grafana parameter using the `context`
+
+|     Previously        | Starting from version 5.0.0      |
+| --------------------- | -------------------------------- |
+| data                  | context.data                     |
+| dataFrame             | context.dataFrame                |
+| eventBus              | context.grafana.eventBus         |
+| getLocale             | context.grafana.getLocale        |
+| handlebars            | context.handlebars               |
+| locationService       | context.grafana.locationService  |
+| panelData             | context.panelData                |
+| replaceVariables      | context.grafana.replaceVariables |
+| timeRange             | context.grafana.timeRange        |
+| timezone              | context.grafana.timezone         |
+
+## Standard Options and Overrides
+
+The Grafana **Standard Options** impact all retrieved data columns, whereas **Override** allows the application of the same configuration only for a limited set of columns. 
+
+Starting from this release, the Business Text panel supports two parameters (**Units** and **Decimals**) from both **Standard Options** and **Overrides** sections. 
+
+Below is an example with various **Units** configurations.
+
+<Image
+  title="Formating using Overrides."
+  src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/units.png"
+/>
+
+Each of them is configured similarly. An example of one such configuration is below.
+For simplicity, the data is specified right on the Grafana dashboard using the [Business Input data source](/plugins/volkovlabs-static-datasource/). 
+
+The numbers for configuration have a `String` type. One override is created for the `Value` column to format it using the **Newtons (N)** template.
+
+<Image
+  title="Formating using Overrides in edit mode."
+  src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/unit-edit.png"
+/>
+
+**Content** code to copy:
+
+```js
+{{!-- Return --}}
+{{Text}}: {{Value}}
+```
+
+## Grafana 10 and Grafana 11
+
+:::warning Breaking changes
+Grafana 9 is not supported.
+:::
+
+Our plugins always follow the latest Grafana versions and stay compatible with the most recent releases. That means, however, that we have to sunset the support of obsolete releases.
+
+The latest Business Text Panel 5.0.0 fully supports Grafana 10 and the upcoming 11 releases.
+
 
 ## Getting Started
 
