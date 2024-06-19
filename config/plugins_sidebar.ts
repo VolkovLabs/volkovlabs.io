@@ -41,7 +41,6 @@ const sidebars: SidebarsConfig = {
             "volkovlabs-calendar-panel/business-calendar",
             "volkovlabs-calendar-panel/layout",
             "volkovlabs-calendar-panel/events",
-            "volkovlabs-calendar-panel/data",
             "volkovlabs-calendar-panel/annotations",
           ],
           label: "Sections",
