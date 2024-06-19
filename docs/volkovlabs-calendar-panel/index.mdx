@@ -21,16 +21,29 @@ Please welcome the new name for the same functionality!
   width="60%"
 />
 
+The Business Calendar panel is a Grafana plugin that displays events in a stylish calendar format. The data can come from various data sources.
+
+:::info Big Calendar
+Starting from version 3.0.0, the Business Calendar Panel is completely rebuilt based on the [Big Calendar library](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page). The previously existed **Legacy** mode has been retired.
+
+The users preferred this library over the **Legacy** so often that we do not see the need to support the **Legacy** library anymore.
+
+Starting from version 3.0.0 there will be only **Big Calendar** mode and the Legacy option disappears from the user choice.
+
+:::
+
+The [Big Calendar library](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page) is an open-source powerful React library with various features designed to make any calendar intuitive, modern and efficient.
+
 Business Calendar Panel is a Grafana plugin that displays events from various data sources.
 
 <Video
   src="https://www.youtube.com/embed/CvLqyY2fQfo"
-  title="Business Calendar 3.1.0. Overview and detailed tutorial. Display dates and time in Grafana."
+  title="The Business Calendar 3.1.0. Overview and detailed tutorial. Display dates and times in style."
 />
 
 ## Requirements
 
-- Business Calendar Panel 3.X requires **Grafana 10** or **Grafana 11**.
+- The Business Calendar Panel 3.X requires **Grafana 10** or **Grafana 11**.
 - Calendar Panel 2.X requires **Grafana 9.2** or **Grafana 10**.
 - Calendar Panel 1.X requires **Grafana 8.5** or **Grafana 9**.
 
@@ -46,26 +59,35 @@ grafana-cli plugins install marcusolsson-calendar-panel
 
 ## Highlights
 
-- Displays events in a monthly, weekly, or daily view.
-- Query calendar events from any data source.
-- Supports the filtration of events by a time range.
-- Supports the event coloring based on thresholds.
-- Enables the opening of a data link instead of a sidebar when clicking an event.
+- Intuitive multi-language toolbar that allows you to:
+  - Switch between the **Day**, **Week**, **Month**, **Work Week**, **Year**, and **Agenda** views.
+  - Switch back to today's events.
+  - Display events from the previous and subsequent time ranges.
+- Fetch and combine event data from any data sources.
+- Event filter by a time range.
+- Event coloring based on the Grafana Thresholds.
+- Enables the opening of a data link instead of a sidebar when clicking on an event.
 - Enables the display of annotations across all dashboards for the specified period.
-- Supports Internationalization: Spanish, French, German, and Chinese
+- Supports Internationalization: Spanish, French, German, and Chinese.
 
 <Image
-  title="Updated plugins in the Grafana Plugins catalog in April 2024."
+  title="The Business Calendar panel toolbar."
+  src="/img/plugins/volkovlabs-calendar-panel/toolbar.png"
+/>
+
+<Image
+  title="The Business Calendar plugin example: the Grafana Plugins catalog events in April 2024."
   src="/img/plugins/volkovlabs-calendar-panel/dashboard.png"
 />
 
 ## Documentation
 
-| Section                  | Description                                           |
-| ------------------------ | ----------------------------------------------------- |
-| [Events](events)         | Explains how to set up a calendar to display events.  |
-| [Features](features)     | Explains the plugin's features.                       |
-| [Release Notes](release) | Stay up to date with the latest features and updates. |
+| Section                       | Description                                                     |
+| ----------------------------- | --------------------------------------------------------------- |
+| [Basic configuration](events) | Explains plugin basics.                                         |
+| [Features](features)          | Describes plugin's features.                                    |
+| [Sections](sections)          | Describes plugin's sectitons.                                   |
+| [Release Notes](release)      | Allows to stay up to date with the latest features and updates. |
 
 ## Feedback
 
