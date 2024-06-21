@@ -9,69 +9,29 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# External JavaScript and CSS
+# Import JavaScript
 
 :::info Version
 
-The Business Text Panel supports external resources starting from version 4.1.0.
+Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
 
 :::
 
-The Business Text Panel enables the loading of additional JavaScript and CSS resources using external URLs like CDN (Content Delivery Network).
+The Business Text Panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network).
 
-Use that functionality to include additional visual elements and execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
 
-To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance.
-
-<Image
-  title="Loading Google Material CSS and JS files from an external resource."
-  src="/img/plugins/volkovlabs-dynamictext-panel/external.png"
-/>
-
-## Manual scripts
-
-In the event when a library can not be referenced as an external script, you always can reference and initiate it directly in the **JavaScript->After Content Ready**
-
-<Image
-  title="Alternative way to load an external llibrary."
-  src="/img/plugins/volkovlabs-dynamictext-panel/alt.png"
-/>
-
-### Content
-
-Into the **Content**:
-
-```diagramm
-<pre class="mermaid">
-    graph LR
-    A --- B
-    B-->C[fa:fa-ban {{data.0.test}}]
-    B-->D(fa:fa-spinner);
-</pre>
-```
-
-### JavaScript
-
-Into the **JavaScript->After Content Ready**:
-
-```js
-const script = document.createElement("script");
-
-script.src = "https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js";
-
-document.body.appendChild(script);
-
-mermaid.initialize({ startOnLoad: true });
-
-mermaid.run({
-  querySelector: ".mermaid",
-  suppressErrors: false,
-});
-```
+To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance. - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css` - Or on local Grafana instance `/public/grafanaCSS.css`
 
 ## External JavaScript resources
 
-Below you can find a collection of breathtaking use cases for the external JavaScript resources in the Business Text plugin.
+Below, you can find a collection of breathtaking use cases, the perfect examples of using external JavaScript libraries in the Business Text plugin.
+
+:::info Render template parameter
+
+Use **All rows** or **All data** template to execute template only once. With **Every row**, the **Content** will be applied to every row of retrieved data. Even though the data frames of the specified data source are not used, still the plugin runs the code as many times as the number of rows is retrieved.
+
+:::
 
 ### Plotly 3D Scatter
 
@@ -89,23 +49,9 @@ Grafana's edit mode might prevent displaying Plotly charts. Save and check the r
 
 :::
 
-You can run this example in two ways:
-
-- inserting the provided code from the below into the Default content
-- inserting the provided code from the below into the Content
-
-#### Use the Default Content
-
 <Image
-  title="Option 1. Use that option when the data source is set to return nothing."
-  src="/img/plugins/volkovlabs-dynamictext-panel/plotly-1.png"
-/>
-
-#### Use the Content
-
-<Image
-  title="Option 2. Use that option when the data source is set to return something."
-  src="/img/plugins/volkovlabs-dynamictext-panel/plotly-2.png"
+  title="Plotly chart displayed using the Business Text Panel."
+  src="/img/plugins/volkovlabs-dynamictext-panel/plotly.png"
 />
 
 #### Code to copy
@@ -116,7 +62,7 @@ Into the **Content** or **Default Content**:
 <div id="plotly-chart" />
 ```
 
-Into the **JavaScript->Before Content Rendering**:
+Into the **JavaScript**->**After Content Ready**:
 
 <details>
   <summary>JavaScript code for Plotly example</summary>
@@ -215,7 +161,7 @@ Mermaid is a popular JavaScript-based diagramming and charting tool that dynamic
 :::info
 Previously we maintained two Business text (old name Dynamic Text) plugin builds. One with embedded Mermaid Library and the other without.
 
-The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply load it as an external resource.
+The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply import it as an external resource.
 :::
 
 <Image
@@ -249,7 +195,7 @@ Use the following for the **Content** (when your data source is set to return so
 </pre>
 ```
 
-Use the following for the **JavaScript->After Content Ready**:
+Use the following for the **JavaScript**->**After Content Ready**:
 
 ```js
 import("https://esm.sh/mermaid").then(({ default: mermaid }) => {
@@ -292,7 +238,7 @@ Use the following for the **Content**:
 <canvas id="myChart" />
 ```
 
-Use the following for the **JavaScript->After Content Ready**:
+Use the following for the **JavaScript**->**After Content Ready**:
 
 ```js
 import("https://esm.sh/chart.js").then(({ Chart, registerables }) => {
@@ -332,17 +278,17 @@ import("https://esm.sh/chart.js").then(({ Chart, registerables }) => {
 
 ### Flowchart
 
-Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic Flowchart return to Grafana! We are happy to share your example with the world.
+Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic [Flowchart](https://flowchart.js.org) return to Grafana! We are happy to share your example with the world.
 
 Below you can find how the beloved by many Flowchart libraries can be implemented using the Business Text plugin.
 
-Simply, add two external libraries and then write your code addressing the Flowchart libraries directly.
+Simply, import two external libraries and then write your code addressing the Flowchart libraries directly.
 
 #### Example
 
 <Image
   title="Delivering Flowchart libraries to a Grafana dashboard using the Business Text plugin."
-  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/flow.png"
+  src="/img/plugins/volkovlabs-dynamictext-panel/flow.png"
 />
 
 #### External Resources
@@ -358,11 +304,11 @@ https://esm.sh/raphael
 <div id="flowchart" />
 ```
 
-#### JavaScript code to copy
+Use the following for the **JavaScript**->**After Content Ready**:
 
-```
-import('https://esm.sh/flowchart.js').then(async (flowchart) => {
-  await import('https://esm.sh/raphael');
+```js
+import("https://esm.sh/flowchart.js").then(async (flowchart) => {
+  await import("https://esm.sh/raphael");
 
   const flow = `
 st=>start: Start:>http://www.google.com[blank]
@@ -381,18 +327,12 @@ cond(yes)->io->e
 cond(no)->para
 para(path1, bottom)->sub1(right)->op1
 para(path2, top)->op1
-para(path3, right)->in->out->e`
+para(path3, right)->in->out->e`;
 
   const diagram = flowchart.parse(flow);
-  diagram.drawSVG('flowchart');
-})
+  diagram.drawSVG("flowchart");
+});
 ```
-
-:::info Render template parameter
-
-Use **All rows** or **All data** template to execute template only once. With **Every row**, the **Content** will be applied to every row of retrieved data. Even though the data frames of the specified data source are not used, still the plugin runs the code as many times as the number of rows is retrieved.
-
-:::
 
 ### Youtube video
 
@@ -416,7 +356,7 @@ https://www.youtube.com/iframe_api
 <div id="player"></div>
 ```
 
-#### JavaScript code to copy
+Use the following for the **JavaScript**->**After Content Ready**:
 
 ```js
 import("https://esm.sh/youtube-player").then(({ default: YouTubePlayer }) => {
@@ -429,13 +369,6 @@ import("https://esm.sh/youtube-player").then(({ default: YouTubePlayer }) => {
   player.loadVideoById(randomVideoId);
 });
 ```
-
-Below is an example of a dashboard displaying a YouTube video.
-
-<Image
-  title="Use the Business Text plugin to display YouTube videos on your Grafana dashboard."
-  src="/img/plugins/volkovlabs-dynamictext-panel/yt.png"
-/>
 
 ### Leaflet.js interactive maps
 
@@ -453,17 +386,12 @@ The map on the dashboard from this example looks like in the illustration below.
   src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-display.png"
 />
 
-#### Data can be set using Static Data Source
+#### Data to copy
+
+In this example, we use the [Business Input Data Source](/plugins/volkovlabs-static-datasource/).
 
 ```js
 {   "type": "Feature",   "geometry": {     "type": "Point",     "coordinates": [125.6, 10.1]   },   "properties": {     "name": "Dinagat Islands"   } }
-```
-
-#### External Resources
-
-```
-https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
-https://esm.sh/leaflet
 ```
 
 #### Content
@@ -472,7 +400,7 @@ https://esm.sh/leaflet
 <div id="leaflet" />
 ```
 
-#### JavaScript code
+Use the following for the **JavaScript**->**After Content Ready**:
 
 ```js
 // This data is coming from the data source.
@@ -553,67 +481,10 @@ import("https://esm.sh/leaflet").then(({ default: L }) => {
 });
 ```
 
-#### CSS styles
-
-```css
-#leaflet {
-  height: 480px;
-  display: flex;
-  flex-direction: row;
-}
-```
-
-### Advanced using Leaflet.js interactive maps
-
-This is example based on example above and extend it with using dashboard variables and another approach to using `Leaflet.js` in the Business Text Plugin.
-Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
-
-Dashboard variables
-
-```SQL
-select 'China' as __text, '104.1954,35.8617' as __value union
-select 'Ethiopia', '40.4897,9.1450' union
-select 'Sardina', '9.283447, 40.078072'
-```
-
-#### External Resources
+#### External CSS file
 
 ```
 https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
-https://esm.sh/leaflet
-```
-
-#### Content
-
-```html
-<div id="leaflet"></div>
-```
-
-#### Code After Content section
-
-```js
-// This data is coming from the data source.
-
-import('https://esm.sh/leaflet').then(({ default: L }) => {
-  /**
-   * Cleanup
-   */
-  if (this.map) {
-    this.map.remove();
-  }
-
-  var countries = context.grafana.replaceVariables("${countries:value}")
-  var lon = Number(countries.split(",")[0])
-  var lat = Number(countries.split(",")[1])
-
-  var map = new L.Map('leaflet');
-  map.setView(new L.LatLng(lat, lon), 4);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    maxZoom: 10,
-  }).addTo(map);
-}):
 ```
 
 #### CSS styles
@@ -628,23 +499,23 @@ import('https://esm.sh/leaflet').then(({ default: L }) => {
 
 ### Tailwind CSS
 
-Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a utility-first CSS framework Tailwind CSS. Tailwind adds style and beauty to your panels. Applying Tailwind to Business Text is a little different from the previous examples.
+Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a utility-first framework [Tailwind CSS](https://tailwindcss.com). Using Tailwind in the Business Text panel differs slightly from the previous examples.
 
 <Image
-  title="Panel with Tailwind styles on the dashboard."
+  title="The Business Text panel with Tailwind styles on the dashboard."
   src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel.png"
 />
 
-To prevent CORS issue we recommend to add Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
+To prevent CORS issues we recommend adding Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
 
-File can contain the import function and use Ttailwind, or it can load code from `cdn.tailwindcss.com`.
+The file can contain the import function and use Tailwind, or it can load code from `cdn.tailwindcss.com`.
 
 #### CDN based code
 
-Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload to `/usr/share/grafana/public/` in Docker container. We used latest version `https://cdn.tailwindcss.com/3.4.4`.
+Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload it to `/usr/share/grafana/public/` in the Docker container. We used the latest version `https://cdn.tailwindcss.com/3.4.4`.
 
 <Image
-  title="Tailwind script uploaded to the Docker container."
+  title="A Tailwind script uploaded to the Docker container."
   src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-file-example.png"
 />
 
@@ -666,20 +537,20 @@ Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload 
 </div>
 ```
 
-#### JavaScript code (After Content Ready)
+Use the following for the **JavaScript**->**After Content Ready**:
 
 ```js
 import("/public/tailwind.js");
 ```
 
 <Image
-  title="Business Text panel with imported Tailwind CSS."
+  title="The Business Text panel with imported Tailwind CSS."
   src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel-edit-mode.png"
 />
 
 #### Load Tailwind from CDN
 
-Create a `loadTailwindFromCDN.js` file with the following code and upload to the same location in Docker container.
+Create a `loadTailwindFromCDN.js` file with the following code and upload it to the same location in the Docker container.
 
 ```js
 function loadTailwindFromCDN() {
@@ -714,7 +585,7 @@ export default loadTailwindFromCDN;
 </div>
 ```
 
-#### JavaScript code (After Content Ready)
+Use the following for the **JavaScript**->**After Content Ready**:
 
 ```js
 import("/public/loadTailwindFromCDN.js").then(

@@ -303,8 +303,8 @@ const sidebars: SidebarsConfig = {
         },
         {
           items: [
-            "volkovlabs-dynamictext-panel/external",
             "volkovlabs-dynamictext-panel/code",
+            "volkovlabs-dynamictext-panel/external",
             "volkovlabs-dynamictext-panel/styles",
           ],
           label: "Rendering",
