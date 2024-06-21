@@ -9,7 +9,7 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Import JavaScript 
+# Import JavaScript
 
 :::info Version
 
@@ -21,9 +21,7 @@ The Business Text Panel enables the loading of additional JavaScript using exter
 
 Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
 
-To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance.
-     - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css` 
-     - Or on local Grafana instance `/public/grafanaCSS.css`
+To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance. - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css` - Or on local Grafana instance `/public/grafanaCSS.css`
 
 ## External JavaScript resources
 
@@ -309,8 +307,8 @@ https://esm.sh/raphael
 Use the following for the **JavaScript**->**After Content Ready**:
 
 ```js
-import('https://esm.sh/flowchart.js').then(async (flowchart) => {
-  await import('https://esm.sh/raphael');
+import("https://esm.sh/flowchart.js").then(async (flowchart) => {
+  await import("https://esm.sh/raphael");
 
   const flow = `
 st=>start: Start:>http://www.google.com[blank]
@@ -329,11 +327,11 @@ cond(yes)->io->e
 cond(no)->para
 para(path1, bottom)->sub1(right)->op1
 para(path2, top)->op1
-para(path3, right)->in->out->e`
+para(path3, right)->in->out->e`;
 
   const diagram = flowchart.parse(flow);
-  diagram.drawSVG('flowchart');
-})
+  diagram.drawSVG("flowchart");
+});
 ```
 
 ### Youtube video
@@ -481,8 +479,8 @@ import("https://esm.sh/leaflet").then(({ default: L }) => {
 
   var geojsonLayer = L.geoJSON(geojson).addTo(map);
 });
-
 ```
+
 #### External CSS file
 
 ```
