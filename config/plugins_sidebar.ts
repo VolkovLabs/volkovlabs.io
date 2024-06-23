@@ -322,6 +322,7 @@ const sidebars: SidebarsConfig = {
             "volkovlabs-dynamictext-panel/standard",
             "volkovlabs-dynamictext-panel/status",
             "volkovlabs-dynamictext-panel/variables",
+            "volkovlabs-dynamictext-panel/wrap",
           ],
           label: "Features",
           type: "category",
