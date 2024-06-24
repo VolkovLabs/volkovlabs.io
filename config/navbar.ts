@@ -154,8 +154,25 @@ export const NAVBAR = {
     {
       to: "/sponsor/",
       position: "left",
-      label: "Sponsor",
-      "aria-label": "Sponsor",
+      label: "Volkov Labs",
+      "aria-label": "Blog",
+      items: [
+        {
+          label: "Team",
+          to: "/sponsor",
+          className: "volkovlabs-link icon-sponsor-link",
+        },
+        {
+          label: "LinkedIn",
+          href: "https://linkedin.com/company/volkovlabs",
+          className: "volkovlabs-link icon-linkedin-link",
+        },
+        {
+          label: "YouTube Community",
+          href: "https://youtube.com/@volkovlabs/community",
+          className: "volkovlabs-link icon-community-link",
+        },
+      ],
     },
     {
       href: "https://www.youtube.com/@volkovlabs",
