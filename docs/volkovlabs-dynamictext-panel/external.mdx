@@ -310,6 +310,11 @@ Use the following for the **JavaScript**->**After Content Ready**:
 import("https://esm.sh/flowchart.js").then(async (flowchart) => {
   await import("https://esm.sh/raphael");
 
+/**
+  * Cleanup
+*/
+document.getElementById('flowchart').innerHTML = "";
+
   const flow = `
 st=>start: Start:>http://www.google.com[blank]
 e=>end:>http://www.google.com
