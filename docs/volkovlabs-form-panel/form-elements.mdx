@@ -32,6 +32,15 @@ With the Sections layout, you can create as many sections as needed and place se
 
 As shown in the picture above, when the layout Section is chosen, the controls to create sections appear. For every section you can specify an ID, to use when referencing the section, and a name which will be a displayed section label.
 
+Since version 4.0.0 `Sections` can be collapsible. Collapsible option available for vertical type section. Can be `Expanded` by default.
+Available parameters to control expand/collapse state for custom code like `context.panel.expandSection(id)` or `context.panel.collapseSection(id)`. Full list of parameters find in ([Custom Code](/plugins/volkovlabs-form-panel/code/#parameters))
+
+<Image
+  title="Collapsible sections and options"
+  src="/img/plugins/volkovlabs-form-panel/collapsible.png"
+  width="80%"
+/>
+
 ### Buttons Only
 
 The Buttons Only, as the name implies, keeps only buttons on your form. With that layout, all Panel Options related to other form elements are hidden, which gives a cleaner Edit mode to work with.
@@ -105,6 +114,13 @@ Specific for this element are the following options:
 <Image
   title="Options specific to the Date and time type."
   src="/img/plugins/volkovlabs-form-panel/min-max.png"
+/>
+
+Since version 4.0.0 you can choose in the options `Time Zone` the date when the value is updated. When updating and setting the Date and Time, the date can remain in Local or be transformed to UTC.
+
+<Image
+  title="Time Zones option"
+  src="/img/plugins/volkovlabs-form-panel/time-zones.png"
 />
 
 ### File
@@ -284,6 +300,26 @@ All three have some options in common.
 <Image
   title="Optionally select an icon for this element."
   src="/img/plugins/volkovlabs-form-panel/icons.png"
+/>
+
+#### Custom color/background color for elements
+
+:::info Version
+
+Colors for elements supported starting from the version 4.0.0.
+
+:::
+
+Colors for background, label, and label background can be set with options. Color options allow add some customization to your form elements
+
+<Image
+  title="Color options"
+  src="/img/plugins/volkovlabs-form-panel/color-options.png"
+/>
+
+<Image
+  title="Custom element"
+  src="/img/plugins/volkovlabs-form-panel/custom-colors-element.png"
 />
 
 #### Select Options from Query
