@@ -55,46 +55,55 @@ Below is the Business Text panel configuration.
 />
 
 **Content** to copy
+
 ```html
-<pre id="event">
-</pre>
+<pre id="event"></pre>
 ```
 
 **Before content rendering** to copy
 
 ```js
-const subscription = context.grafana.eventBus.subscribe({ type: "theme-changed" }, (event) => {
-  document.getElementById("event").innerHTML = JSON.stringify(event, undefined, 2);
-  console.log("React to Theme Changed");
-});
+const subscription = context.grafana.eventBus.subscribe(
+  { type: "theme-changed" },
+  (event) => {
+    document.getElementById("event").innerHTML = JSON.stringify(
+      event,
+      undefined,
+      2
+    );
+    console.log("React to Theme Changed");
+  }
+);
 
 function decycle(obj, stack = []) {
-  if (!obj || typeof obj !== 'object')
-    return obj;
+  if (!obj || typeof obj !== "object") return obj;
 
-  if (stack.includes(obj))
-    return null;
+  if (stack.includes(obj)) return null;
 
   let s = stack.concat([obj]);
 
   return Array.isArray(obj)
-    ? obj.map(x => decycle(x, s))
+    ? obj.map((x) => decycle(x, s))
     : Object.fromEntries(
-      Object.entries(obj)
-        .map(([k, v]) => [k, decycle(v, s)]));
+        Object.entries(obj).map(([k, v]) => [k, decycle(v, s)])
+      );
 }
 
-const subscription2 = context.grafana.eventBus.subscribe({ type: 'data-hover' }, (data) => {
-  document.getElementById("event").innerHTML = JSON.stringify(decycle(data), undefined, 2);
-  console.log('React to Data Hover', data);
-});
-
-console.log(subscription);
+const subscription2 = context.grafana.eventBus.subscribe(
+  { type: "data-hover" },
+  (data) => {
+    document.getElementById("event").innerHTML = JSON.stringify(
+      decycle(data),
+      undefined,
+      2
+    );
+    console.log("React to Data Hover", data);
+  }
+);
 
 return () => {
   subscription.unsubscribe();
   subscription2.unsubscribe();
   console.log("Unsubscribed");
-}
+};
 ```
-
