@@ -32,11 +32,17 @@ With the Sections layout, you can create as many sections as needed and place se
 
 As shown in the picture above, when the layout Section is chosen, the controls to create sections appear. For every section you can specify an ID, to use when referencing the section, and a name which will be a displayed section label.
 
-Since version 4.0.0 `Sections` can be collapsible. Collapsible option available for vertical type section. Can be `Expanded` by default.
-Available parameters to control expand/collapse state for custom code like `context.panel.expandSection(id)` or `context.panel.collapseSection(id)`. Full list of parameters find in ([Custom Code](/plugins/volkovlabs-form-panel/code/#parameters))
+Since version 4.0.0 sections can be collapsible. Collapsible option available for vertical type section only and can be `Expanded` by default.
+
+You can control expand and collapse state for custom code using:
+
+- `context.panel.expandSection(id)`
+- `context.panel.collapseSection(id)`.
+
+Full list of parameters find in [Custom Code](/plugins/volkovlabs-form-panel/code/#parameters).
 
 <Image
-  title="Collapsible sections and options"
+  title="Collapsible sections and available panel options."
   src="/img/plugins/volkovlabs-form-panel/collapsible.png"
   width="80%"
 />
@@ -116,10 +122,10 @@ Specific for this element are the following options:
   src="/img/plugins/volkovlabs-form-panel/min-max.png"
 />
 
-Since version 4.0.0 you can choose in the options `Time Zone` the date when the value is updated. When updating and setting the Date and Time, the date can remain in Local or be transformed to UTC.
+Since version 4.0.0 you can choose time zone for the updated value.
 
 <Image
-  title="Time Zones option"
+  title="New Time Zones option for date and time elements."
   src="/img/plugins/volkovlabs-form-panel/time-zones.png"
 />
 
@@ -310,7 +316,7 @@ Colors for elements supported starting from the version 4.0.0.
 
 :::
 
-Colors for background, label, and label background can be set with options. Color options allow add some customization to your form elements
+Colors for background, label, and label background can be set in options. Color options allow to add unique look and feel to your form elements.
 
 <Image
   title="Color options"
