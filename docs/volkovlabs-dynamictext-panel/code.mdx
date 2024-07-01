@@ -26,9 +26,7 @@ The Business Text Panel supports `context` starting from version 4.3.0.
 
 :::
 
-Starting from release 4.3.0, we allowed access to the panel data `panelData` and selected data frame `data` via a new object `context`.
-
-In addition, we are actively working on refactoring existing JavaScript and Grafana parameters to include in the `context`.
+Starting from release 4.3.0, we provide access to the panel data `panelData` and selected data frame `data` via a new object `context`.
 
 Start typing the `context` word in the **Before Content Rendering** or **After Content Ready** boxes and see the latest list of all available features.
 
@@ -42,12 +40,12 @@ Start typing the `context` word in the **Before Content Rendering** or **After C
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `context.data`                       | Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data**. |
 | `context.dataFrame`                  | Selected Data Frame for **Every Row**, **All Rows** templates                                                                                                                                                                                        |
-| `context.grafana.eventBus`           | Publish and subscribe to application events. Supported starting from the Business Text Panel 4.0.0.                                                                                                                                                  |
+| `context.grafana.eventBus`           | Publish and subscribe to application events.                                                                                                                                                                                                         |
 | `context.grafana.getLocale()`        | Returns the user's locale: 'en', 'fr', 'es', and so on.                                                                                                                                                                                              |
-| `context.grafana.locationService`    | The `locationService` works with the browser location and history. Supported since the Business Text Panel 3.1.0.                                                                                                                                    |
-| `context.grafana.replaceVariables()` | The `replaceVariables()` function to interpolate variables. Supported since the Business Text Panel 3.1.0.                                                                                                                                           |
-| `context.grafana.timeRange`          | Time range of the current dashboard. Supported since the Business Text Panel 3.1.0.                                                                                                                                                                  |
-| `context.grafana.timeZone`           | Time zone of the current dashboard. Supported since the Business Text Panel 3.1.0.                                                                                                                                                                   |
+| `context.grafana.locationService`    | The `locationService` works with the browser location and history.                                                                                                                                                                                   |
+| `context.grafana.replaceVariables()` | The `replaceVariables()` function to interpolate variables.                                                                                                                                                                                          |
+| `context.grafana.timeRange`          | Time range of the current dashboard.                                                                                                                                                                                                                 |
+| `context.grafana.timeZone`           | Time zone of the current dashboard.                                                                                                                                                                                                                  |
 | `context.handlebars`                 | Handlebars library.                                                                                                                                                                                                                                  |
 | `context.panelData`                  | Panel data.                                                                                                                                                                                                                                          |
 
@@ -109,7 +107,7 @@ myFunc = () => {
 ```
 
 <Image
-  title="Event handler."
+  title="JavaScript handler for button onclick event."
   src="/img/plugins/volkovlabs-dynamictext-panel/event-handler.png"
 />
 
