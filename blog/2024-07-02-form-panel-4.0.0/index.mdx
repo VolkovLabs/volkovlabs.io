@@ -16,7 +16,12 @@ We are happy to announce the release of the Business Forms Panel 4.0.0. This rel
 
 - Plugin rebranding, the new name is the **Business Forms Panel**.
 - Non `context` code parameters are retired. Please update the parameter reference the use the `context`. **Breaking change**.
--
+- Query editor and Frontend Data Source.
+- Confirm Window.
+- Collapsable Sections.
+- Custom color/background color for elements.
+- Added Check Box list element.
+- Added server-based form elements.
 - Required Grafana 10 and Grafana 11. **Breaking change**.
 
 :::info Grafana Catalog
@@ -25,13 +30,74 @@ The plugin is under review.
 
 ## State of the Plugin
 
-### Downloads
-
-The Grafana Community has downloaded the Business Forms panel more than 650,000 times! We are happy to learn what goals this plugin helped you to achieve. [Contact us](https://github.com/volkovlabs/volkovlabs-form-panel/issues) with your use case to share with the rest of the world.
+The Grafana Community has downloaded the Business Forms panel more than 650,000 times! We are happy to learn what goals this plugin helped you to achieve.
 
 <Image
   title="The Business Forms plugin downloads exceed 650,000."
   src="/img/blog/2024-01-05-form-panel-3.4.0/downloads.png"
+/>
+
+### Query editor and Frontend Data Source
+
+Query editor in Update Request provides user experience similar to retrieve data from data sources.
+
+<Image
+  title="Update Request and payload for PostgreSQL Data Source."
+  src="/img/plugins/volkovlabs-form-panel/postgresql-update-req.png"
+/>
+
+<Image
+  title="Update Request and payload for PostgreSQL Data Source since version 4.0.0."
+  src="/img/plugins/volkovlabs-form-panel/postgresql-update-req-4.0.png"
+/>
+
+## Confirm Window
+
+Since version 4.0.0 displayed values in confirmation window can be configurable with new option `Display Values`. You can choose `All values` or `Updated Only`.
+
+<Image
+  title="Confirmation window Display values option"
+  src="/img/plugins/volkovlabs-form-panel/confirmation-window-values.png"
+/>
+
+## Collapsable Sections
+
+Since version 4.0.0 sections can be collapsible. Collapsible option available for vertical type section only and can be `Expanded` by default.
+
+You can control expand and collapse state for custom code using:
+
+- `context.panel.expandSection(id)`
+- `context.panel.collapseSection(id)`.
+
+Full list of parameters find in [Custom Code](/plugins/volkovlabs-form-panel/code/#parameters).
+
+<Image
+  title="Collapsible sections and available panel options."
+  src="/img/plugins/volkovlabs-form-panel/collapsible.png"
+  width="80%"
+/>
+
+## Custom color/background color for elements
+
+Colors for background, label, and label background can be set in options. Color options allow to add unique look and feel to your form elements.
+
+<Image
+  title="Color options"
+  src="/img/plugins/volkovlabs-form-panel/color-options.png"
+/>
+
+<Image
+  title="Custom element"
+  src="/img/plugins/volkovlabs-form-panel/custom-colors-element.png"
+/>
+
+## Time Zone
+
+Since version 4.0.0 you can choose time zone for the updated value.
+
+<Image
+  title="New Time Zones option for date and time elements."
+  src="/img/plugins/volkovlabs-form-panel/time-zones.png"
 />
 
 ## Getting Started
