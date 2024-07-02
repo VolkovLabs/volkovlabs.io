@@ -1,0 +1,141 @@
+---
+authors: [daria]
+slug: form-panel-4.0.0-20240702/
+tags: [Data Manipulation, Business Suite]
+image: /img/blog/2024-07-02-form-panel-4.0.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+import Shorts from "@theme/Shorts";
+
+# Business Forms Panel 4.0.0
+
+We are happy to announce the release of the Business Forms Panel 4.0.0. This release includes the following updates:
+
+- Plugin rebranding, the new name is the **Business Forms Panel**.
+- Non `context` code parameters are retired. Please update the parameter reference the use the `context`. **Breaking change**.
+-
+- Required Grafana 10 and Grafana 11. **Breaking change**.
+
+:::info Grafana Catalog
+The plugin is under review.
+:::
+
+## State of the Plugin
+
+### Downloads
+
+The Grafana Community has downloaded the Business Forms panel more than 650,000 times! We are happy to learn what goals this plugin helped you to achieve. [Contact us](https://github.com/volkovlabs/volkovlabs-form-panel/issues) with your use case to share with the rest of the world.
+
+<Image
+  title="The Business Forms plugin downloads exceed 650,000."
+  src="/img/blog/2024-01-05-form-panel-3.4.0/downloads.png"
+/>
+
+## Getting Started
+
+You can install the Business Forms Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
+
+For the latter, please use the following command:
+
+```bash
+grafana-cli plugins install volkovlabs-form-panel
+```
+
+## YouTube Tutorial
+
+Business Forms Panel is a plugin for Grafana that allows you to insert and update application data, as well as modify configuration directly from your Grafana dashboard.
+
+<Video
+  src="https://www.youtube.com/embed/hVy9NfFiI5U"
+  title="Use REST API, Data Source, and Queries to manipulate your data."
+/>
+
+## Release Notes
+
+### Breaking changes in 4.0.0
+
+- Requires Grafana 10 and Grafana 11
+- Data Source requests were updated to use Query Editor.
+- Removed non-context code parameters. Please update parameters to use `context`.
+
+### Code parameters migration guide
+
+- data -> context.panel.data
+- elements -> context.panel.elements
+- initial -> context.panel.initial
+- initialRequest -> context.panel.initialRequest
+- locationService -> context.grafana.locationService
+- notifyError -> context.grafana.notifyError
+- notifySuccess -> context.grafana.notifySuccess
+- notifyWarning -> context.grafana.notifyWarning
+- onChange -> context.panel.onChange
+- onOptionsChange -> context.panel.onOptionsChange
+- options -> context.panel.options
+- replaceVariables -> context.grafana.replaceVariables
+- response -> context.panel.response
+- setInitial -> context.panel.setInitial
+- templateService -> context.grafana.templateService
+- toDataQueryResponse -> context.utils.toDataQueryResponse
+
+### Features / Enhancements in 4.0.0
+
+- Updated name to Business Forms Panel (#361)
+- Added support frontend data sources (#361)
+- Updated elected type for a new option (#402)
+- Prepared for Grafana 11 (#399)
+- Updated Reset button handler (#422)
+- Updated Confirmation Window (#420)
+- Updated Error handling in code editors showIf, disableIf, getOptions (#410)
+- Updated description for Get Options Code (#404)
+- Added custom color/background color for elements (#386)
+- Added Collapsable Sections (#409)
+- Updated to Grafana 11.1 and dependencies (#426)
+- Updated Date Time query field (#429)
+
+### Features / Enhancements in 3.8.0
+
+- Added Checkbox List element (#382)
+- Updated syntax support in Code Editor (#383)
+- Added plugin e2e tests and remove cypress (#390)
+- Added server-based form elements example (#392)
+- Added input type time (#385)
+- Updated hiding/show multi-select element (#389)
+- Updated allowed files for file type (#388)
+- Added Form validation provisioning dashboard (#411)
+
+### Features / Enhancements in 3.7.0
+
+- Added update enabled option and variables examples, fix sync option (#356)
+- Added files upload examples and fix form data header (#357)
+- Added code parameters with builder and add initial request to element value changed code (#358)
+- Allowed to disable columns in confirmation modal (#360)
+- Updated dependencies and Actions (#368)
+- Added skipping elements hidden using Show If from update payload (#369)
+- Add multiple files option (#375)
+
+### Features / Enhancements in 3.6.0
+
+- Added backend service to custom code (#331)
+- Added support for file base64 encoding in payload (#331)
+- Added Context parameter to Payload (#331)
+
+### Features / Enhancements in 3.5.0
+
+- Added disable if code (#321)
+- Updated reset request visibility if reset button is hidden (#322)
+- Added code options source for select element (#323)
+- Added value changed code (#324)
+- Updated to Node 20 (#326)
+- Added suggestions for code editors (#327)
+- Added reset button confirmation (#328)
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
