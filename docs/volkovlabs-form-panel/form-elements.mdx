@@ -32,20 +32,29 @@ With the Sections layout, you can create as many sections as needed and place se
 
 As shown in the picture above, when the layout Section is chosen, the controls to create sections appear. For every section you can specify an ID, to use when referencing the section, and a name which will be a displayed section label.
 
-Since version 4.0.0 sections can be collapsible. Collapsible option available for vertical type section only and can be `Expanded` by default.
+:::info Version
 
-You can control expand and collapse state for custom code using:
+The **Collapsable** parameter has been supported starting from version 4.0.0.
 
-- `context.panel.expandSection(id)`
-- `context.panel.collapseSection(id)`.
+:::
 
-Full list of parameters find in [Custom Code](/plugins/volkovlabs-form-panel/code/#parameters).
+Sections can be collapsible. This functionality is available only for the sections in the **Vertical** orientation. You can make any section **Expanded** for the form opening/refresh.
 
 <Image
-  title="Collapsible sections and available panel options."
-  src="/img/plugins/volkovlabs-form-panel/collapsible.png"
-  width="80%"
+  title="Collapsible sections."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/collapse.gif"
 />
+
+In addition, you can control the **Expanded** and **Collapsed** states in the **Custom code** using the following commands:
+
+```js
+ context.panel.expandSection(id)
+ context.panel.collapseSection(id)
+```
+
+:::note
+The full list of the Business Form panel parameters can be found in the [Custom Code](/plugins/volkovlabs-form-panel/code/#parameters) section of the panel's documentation.
+:::
 
 ### Buttons Only
 
@@ -89,11 +98,32 @@ The picture below illustrates what the element types look like.
 <Image
   title="Form elements on UI."
   src="/img/plugins/volkovlabs-form-panel/elements-demo.png"
+  width="60%"
+/>
+
+### Checkbox list with custom options
+
+The **Checkbox list with custom options** type allows to creation of multi-selection checkmark elements. 
+
+<Image
+  title="Checkbox list with custom options."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/checkbox.png"
+/>
+
+Specific for this element are the following options:
+
+- User options.
+
+To add an option click the 'Add option' button and then specify an option type (number or string), value, and label.
+
+<Image
+  title="Checkbox list with custom options."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/checkbox-options.png"
 />
 
 ### Code Editor
 
-The Code editor highlights keywords and formats the entered text. Specific for this element are the following options:
+The **Code editor** highlights keywords and formats the entered text. Specific for this element are the following options:
 
 - Language. Select between JSON and JavaScript.
 - Height. How high the entering window should be.
@@ -105,7 +135,7 @@ The Code editor highlights keywords and formats the entered text. Specific for t
 
 ### Date and Time
 
-The Date and Time element gives access to the built-in date time Grafana component where a user can select a date and time using the familiar controls.
+The **Date and Time** element gives access to the built-in date time Grafana component where a user can select a date and time using the familiar controls.
 
 <Image
   title="Date and time type is Grafana universal type."
@@ -122,16 +152,24 @@ Specific for this element are the following options:
   src="/img/plugins/volkovlabs-form-panel/min-max.png"
 />
 
-Since version 4.0.0 you can choose time zone for the updated value.
+:::info Version
+
+The **Time Zone** option is available starting from version 4.0.0.
+
+:::
+
+- **UTC**. The date-time value is saved in the UTC zone, 
+- **Local**. The date-time value is saved following the browser's time zone. 
 
 <Image
-  title="New Time Zones option for date and time elements."
-  src="/img/plugins/volkovlabs-form-panel/time-zones.png"
+  title="New Time Zones option for Date and time elements."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/time-zone.png"
+  width="30%"
 />
 
 ### File
 
-The File type allows users to access their file system to select a file. The file will be transferred as binary or Base64 encoded.
+The **File** type allows users to access their file system to select a file. The file will be transferred as binary or Base64 encoded.
 
 Specific for this element are the following options:
 
@@ -167,7 +205,7 @@ If you are a visual style learner, you can watch the video. It covers the same g
 
 ### Multi-select with custom options
 
-The Multi-select with custom options is a dropdown where users can select one or many options.
+The **Multi-select with custom options** is a dropdown where users can select one or many options.
 
 Specific for this element are the following options:
 
@@ -182,7 +220,7 @@ To add an option click the 'Add option' button and then specify an option type (
 
 ### Number Input
 
-The Number Input is a text box where users enter a number manually.
+The **Number Input** is a text box where users enter a number manually.
 
 Specific for this element are the following options:
 
@@ -191,7 +229,7 @@ Specific for this element are the following options:
 
 ### Number Slider
 
-The Number Slider is a horizontal line with a toggle that a user can drag left and right with a mouse. Alternatively, the user can enter the integer number manually.
+The **Number Slider** is a horizontal line with a toggle that a user can drag left and right with a mouse. Alternatively, the user can enter the integer number manually.
 
 Specific for this element are the following options:
 
@@ -201,19 +239,19 @@ Specific for this element are the following options:
 
 ### Password Input
 
-The Password Input is a text box where every entered symbol is transformed into a dot.
+The **Password Input** is a text box where every entered symbol is transformed into a dot.
 
 This type does not have any specific options.
 
 ### Radio Group with boolean options
 
-The Radio Group with boolean options provides a user with a choice between True and False.
+The **Radio Group with boolean options** provides a user with a choice between True and False.
 
 This type does not have any specific options.
 
 ### Radio Group with custom options
 
-The Radio Group with custom options provides a user with a choice between two or many options.
+The **Radio Group with custom options** provides a user with a choice between two or many options.
 
 Specific for this element are the following options:
 
@@ -228,7 +266,7 @@ To add an option click the 'Add option' button and then specify an option type (
 
 ### Read-only
 
-The read-only type is sometimes also called the disabled type. It is a text box with a faded background and text. It does not allow a user to change the value it displays.
+The **Read-only** type is sometimes also called the disabled type. It is a text box with a faded background and text. It does not allow a user to change the value it displays.
 
 Specific for this element are the following options:
 
@@ -238,7 +276,7 @@ To add an option click the 'Add option' button and then specify an option type (
 
 ### Select with Custom options
 
-The Select with Custom Options type is a dropdown where users can select one option.
+The **Select with Custom Options** type is a dropdown where users can select one option.
 
 Specific for this element are the following options:
 
@@ -248,7 +286,7 @@ To add an option click the 'Add option' button and then specify an option type (
 
 ### String Input
 
-The String Input is a text box where a user manually enters a string value.
+The **String Input** is a text box where a user manually enters a string value.
 
 Specific for this element are the following options:
 
@@ -256,7 +294,7 @@ Specific for this element are the following options:
 
 ### Text Area
 
-The Text Area is a rectangular area where a user can enter a text.
+The **Text Area** is a rectangular area where a user can enter a text.
 
 Specific for this element are the following options:
 
@@ -269,17 +307,17 @@ Specific for this element are the following options:
 Below is supported starting from the version 3.2.1.
 
 :::
-This element type is similar to the Read-Only type with the difference that this one allows to display multiple rows of text.
+This element type is similar to the **Read-Only** type with the difference that this one allows to display of multiple rows of text.
 
 ### Link
 
 :::info Version
 
-Below is supported starting from the version 3.2.1 and Grafana 10.1.0.
+Below is supported starting from version 3.2.1 and Grafana 10.1.0.
 
 :::
 
-This element type allows you to add links on your Data Manipulation form. The link text is customizable using the Link Text option. If not specified, link address will be displayed.
+This element type allows you to add links to your Business form. The link text is customizable using the **Link Text** option. If not specified, the link address will be displayed.
 
 Specific for this element are the following options:
 
@@ -312,20 +350,18 @@ All three have some options in common.
 
 :::info Version
 
-Colors for elements supported starting from the version 4.0.0.
+Colors for elements supported starting from version 4.0.0.
 
 :::
 
-Colors for background, label, and label background can be set in options. Color options allow to add unique look and feel to your form elements.
+You can play with **Form Elements** colors. Configurable are:
+ - Background color, 
+ - Label background, 
+ - Label color.
 
 <Image
   title="Color options"
-  src="/img/plugins/volkovlabs-form-panel/color-options.png"
-/>
-
-<Image
-  title="Custom element"
-  src="/img/plugins/volkovlabs-form-panel/custom-colors-element.png"
+  src="/img/blog/2024-07-02-form-panel-4.0.0/colors.png"
 />
 
 #### Select Options from Query

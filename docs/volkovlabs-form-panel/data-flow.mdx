@@ -123,19 +123,28 @@ For the Data Source type, start with the Data Source parameter. Then go to the U
 
 :::info Breaking change
 
-Query editor and Frontend Data Sources are available since 4.0.0.
+Query editor and Frontend Data Sources are available starting from version 4.0.0.
 :::
 
-Query editor in Update Request provides user experience similar to retrieve data from data sources.
+This feature is related to the:
+ - **Initial Request** -> **Initial Action** -> **Data Source**,
+ - **Update Request** -> **Update Action** -> **Data Source**. 
 
 <Image
-  title="Update Request and payload for PostgreSQL Data Source."
-  src="/img/plugins/volkovlabs-form-panel/postgresql-update-req.png"
+  title="The payload area relates to the Data Source (Initial and Update requests)."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/init-update.png"
+/>
+
+We simplified work with the payload creation. The Business Forms panel has a designated area to enter the payload request. 
+
+<Image
+  title="Payload for the Initial Request example."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/ini-payload.png"
 />
 
 <Image
-  title="Update Request and payload for PostgreSQL Data Source since version 4.0.0."
-  src="/img/plugins/volkovlabs-form-panel/postgresql-update-req-4.0.png"
+  title="Payload for the Update Request example."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/update-payload.png"
 />
 
 ### REST API
