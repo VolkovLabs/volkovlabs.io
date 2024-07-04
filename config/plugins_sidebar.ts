@@ -224,7 +224,7 @@ const sidebars: SidebarsConfig = {
         "volkovlabs-static-datasource/variables",
         {
           items: [
-            "volkovlabs-static-datasource/imports",
+            "volkovlabs-static-datasource/code",
             "volkovlabs-static-datasource/llm-app",
           ],
           label: "Features",

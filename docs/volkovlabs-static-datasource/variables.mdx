@@ -14,7 +14,7 @@ Three types of variables are discussed in the [Grafana Crash Course](/grafana/va
 
 ## Code Editor
 
-Create new `custom` variable
+Create new `custom` variable:
 
 ```js
 2022-02-10T00:00:00.000Z,
@@ -27,9 +27,9 @@ Create new `custom` variable
   src="/img/plugins/volkovlabs-static-datasource/1st-variable.png"
 />
 
-Create another variable related to the first variable using the `Business Input Data Source` and `Code editor`
-Variable type `Query`. Query options -> Data source -> `Static`. Take the value of the `from` variable and add 7 days to it for each iteration.
-Use `${variable_name}` syntax to use your variable in code.
+- Create another variable related to the first variable using the `Business Input Data Source` and `Code editor` variable type `Query`. Query options -> Data source -> `Static`.
+- Take the value of the `from` variable and add 7 days to it for each iteration.
+- Use `${variable_name}` syntax to use your variable in code.
 
 ### Code
 
@@ -53,11 +53,11 @@ return Promise.resolve(result);
 ```
 
 <Image
-  title="Variable `to`"
+  title="Fill values for variable."
   src="/img/plugins/volkovlabs-static-datasource/2nd-variable.png"
 />
 
-Values `to` variable as result
+Values for `to` variable will be:
 
 ```js
 2022-02-17T00:00:00.000Z
@@ -65,24 +65,23 @@ Values `to` variable as result
 2022-03-03T00:00:00.000Z
 ```
 
-Now every change value for variable `from` change values and for variable `to`
+Now every change value for variable `from` change values and for variable `to`:
 
 <Image
-  title="Variable reference"
+  title="Change of From variable will update variable To."
   src="/img/plugins/volkovlabs-static-datasource/variable-reference.png"
 />
 
 <Image
-  title="Variable reference"
+  title="Change of From variable will update variable To."
   src="/img/plugins/volkovlabs-static-datasource/variable-reference-2.png"
 />
 
 ## Manual Editor
 
-Variable can be used in `Manual editor`.
-Use `$variable_name` syntax in input field
+Variable can be used in `Manual editor`. Use `$variable_name` syntax in input field.
 
 <Image
-  title="Variable in Manual Editor"
+  title="Variable in Manual Editor."
   src="/img/plugins/volkovlabs-static-datasource/manual-editor-variable.png"
 />
