@@ -222,6 +222,7 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-static-datasource/provisioning",
         "volkovlabs-static-datasource/variables",
+        "volkovlabs-static-datasource/llm-app",
         {
           items: [
             "volkovlabs-static-datasource/panels/business-charts",
