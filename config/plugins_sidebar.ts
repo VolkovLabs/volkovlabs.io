@@ -222,8 +222,18 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-static-datasource/provisioning",
         "volkovlabs-static-datasource/variables",
-        "volkovlabs-static-datasource/llm-app",
-        "volkovlabs-static-datasource/imports",
+        {
+          items: [
+            "volkovlabs-static-datasource/imports",
+            "volkovlabs-static-datasource/llm-app",
+          ],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-static-datasource/features",
+          },
+        },
         {
           items: [
             "volkovlabs-static-datasource/panels/business-charts",
