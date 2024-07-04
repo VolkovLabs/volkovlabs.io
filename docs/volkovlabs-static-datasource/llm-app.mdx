@@ -1,41 +1,48 @@
 ---
 tags:
   - Business Input Data Source
-  - LLM App and OpenAI
+  - LLM Application
 ---
 
 import Image from "@theme/Image";
 
 # LLM App and OpenAI
 
-The Business Input Data Source supports using LLM App and OpenAI.
+The Business Input Data Source supports LLM models (OpenAI, custom) using LLM App from Grafana.
 
-Add LLM APP plugin and set up `OpenAI API Key` with `OpenAI API Organization ID`
+## LLM App
+
+Add [LLM App](https://grafana.com/grafana/plugins/grafana-llm-app/) plugin and set up `OpenAI API Key` with `OpenAI API Organization ID`.
 
 <Image
-  title="LLM APP plugin for grafana"
+  title="Configure LLM App plugin for Grafana to set API key and organization ID."
   src="/img/plugins/volkovlabs-static-datasource/llm-app.png"
 />
 
-After that, a message box will appear in `Code` editor mode in Business Input Data Source.
-Message box allows you to use the response that will be received from the LLM App together with OpenAI.
-The answer is contained in `context.llmResult`
+When LLM App configured, a text area will appear in `Code` editor mode of the Business Input Data Source.
+
+:::note Variables
+
+Dashboard and Global variable are supported in the text area.
+:::
+
+This text area allows you to use the response that will be received from the LLM App together with OpenAI. The result is stored in `context.llmResult`.
 
 <Image
-  title="Message Example LLM App"
+  title="Result returned from LLM App for BTC price."
   src="/img/plugins/volkovlabs-static-datasource/llm-app-message-box.png"
 />
 
 ## Example with BTC price
 
-Message example
+### Message
 
 ```js
 Please return JSON with 2 arrays: datetime and price which contain BTC price
-from ${**from:date} to ${**to:date} for every hour
+from ${__from:date} to ${__to:date} for every hour
 ```
 
-JS code editor example
+### JavaScript code editor
 
 ```js
 console.log("result", context.llmResult);
@@ -62,9 +69,11 @@ const result = {
 return Promise.resolve(result);
 ```
 
-Result of request
+### Result
+
+Produced data frame with results can be displayed with any panel plugin.
 
 <Image
-  title="Message Example LLM App"
+  title="Display OpenAI results for BTC price using native Time Series panel."
   src="/img/plugins/volkovlabs-static-datasource/llm-result.png"
 />
