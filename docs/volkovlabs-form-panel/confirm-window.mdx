@@ -8,24 +8,35 @@ import Image from "@theme/Image";
 
 # Confirmation Window
 
-The Confirmation window, if enabled, is shown after a user clicks the submit button to highlight all changes made in the Data Manipulation form.
+The Confirmation window, if enabled, is shown after a user clicks the submit button to highlight changes made in the Business Form.
 
 :::info Version
 
-Confirmation window labels are supported since version 3.3.0.
+Custom confirmation window labels have been supported starting from version 3.3.0.
 
 :::
 
-You can customize all labels using the **Confirmation Window** section.
+You can customize all labels using the **Update Confirmation Window** section.
 
 <Image
-  title="Customize confirmation window label names."
-  src="/img/blog/2023-12-03-form-panel-3.3.0/confirm.png"
+  title="Customize confirmation window labels."
+  src="/img/plugins/volkovlabs-form-panel/confirm-update.png"
 />
 
-Since version 4.0.0 displayed values in confirmation window can be configurable with new option `Display Values`. You can choose `All values` or `Updated Only`.
+## Display Values parameter
+
+:::info Version
+
+The **Display Values** parameter has been supported starting from version 4.0.0.
+
+:::
+
+The **Display Values** parameter has two options to choose from:
+
+- **All values** to always show all data elements regardless if there was any change in values.
+- **Updated Only** to show only the data elements with changed values.
 
 <Image
-  title="Confirmation window Display values option"
-  src="/img/plugins/volkovlabs-form-panel/confirmation-window-values.png"
+  title="Display Values parameter."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/display-values.png"
 />

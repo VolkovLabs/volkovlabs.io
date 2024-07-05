@@ -11,6 +11,53 @@ import BlogPost from "@theme/BlogPost";
 
 Release Notes for the Business Forms Panel.
 
+## 4.0.0 (2024-07-01)
+
+<BlogPost
+  href="/blog/form-panel-4.0.0-20240702/"
+  src="/img/blog/2024-07-02-form-panel-4.0.0/banner.png"
+/>
+
+### Breaking changes
+
+- Requires Grafana 10 and Grafana 11
+- Data Source requests were updated to use Query Editor.
+- Removed non-context code parameters. Please update parameters to use `context`.
+
+### Code parameters migration guide
+
+- data -> context.panel.data
+- elements -> context.panel.elements
+- initial -> context.panel.initial
+- initialRequest -> context.panel.initialRequest
+- locationService -> context.grafana.locationService
+- notifyError -> context.grafana.notifyError
+- notifySuccess -> context.grafana.notifySuccess
+- notifyWarning -> context.grafana.notifyWarning
+- onChange -> context.panel.onChange
+- onOptionsChange -> context.panel.onOptionsChange
+- options -> context.panel.options
+- replaceVariables -> context.grafana.replaceVariables
+- response -> context.panel.response
+- setInitial -> context.panel.setInitial
+- templateService -> context.grafana.templateService
+- toDataQueryResponse -> context.utils.toDataQueryResponse
+
+### Features / Enhancements
+
+- Updated name to Business Forms Panel (#361)
+- Added support frontend data sources (#361)
+- Updated elected type for a new option (#402)
+- Prepared for Grafana 11 (#399)
+- Updated Reset button handler (#422)
+- Updated Confirmation Window (#420)
+- Updated Error handling in code editors showIf, disableIf, getOptions (#410)
+- Updated description for Get Options Code (#404)
+- Added custom color/background color for elements (#386)
+- Added Collapsable Sections (#409)
+- Updated to Grafana 11.1 and dependencies (#426)
+- Updated Date Time query field (#429)
+
 ## 3.8.0 (2024-05-30)
 
 ### Features / Enhancements
@@ -40,7 +87,7 @@ Release Notes for the Business Forms Panel.
 - Added skipping elements hidden using Show If from update payload (#369)
 - Add multiple files option (#375)
 
-## 3.6.0 (2023-01-10)
+## 3.6.0 (2024-01-10)
 
 ### Features / Enhancements
 
@@ -52,7 +99,7 @@ Release Notes for the Business Forms Panel.
 
 - Fix element custom options source (#334)
 
-## 3.5.0 (2023-01-04)
+## 3.5.0 (2024-01-04)
 
 ### Features / Enhancements
 
