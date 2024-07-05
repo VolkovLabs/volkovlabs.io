@@ -50,44 +50,44 @@ The Business Forms plugin has been downloaded more than 660,000 times! We are cu
 
 ## `Context` migration guide
 
-Starting from this release, ensure to reference the Grafana parameters using the `context`
+Starting from this release, ensure to reference the Grafana parameters using the `context`.
 
-| Previously       | Starting from version 4.0.0      |
-| ---------------- | -------------------------------- |
-| data | context.panel.data |
-| elements |  context.panel.elements |
-| initial |  context.panel.initial |
-| initialRequest |  context.panel.initialRequest |
-| locationService |  context.grafana.locationService |
-| notifyError |  context.grafana.notifyError |
-| notifySuccess |  context.grafana.notifySuccess |
-| notifyWarning |  context.grafana.notifyWarning |
-| onChange |  context.panel.onChange |
-| onOptionsChange |  context.panel.onOptionsChange |
-| options |  context.panel.options |
-| replaceVariables |  context.grafana.replaceVariables |
-| response | context.panel.response |
-| setInitial |  context.panel.setInitial |
-| templateService |  context.grafana.templateService |
-| toDataQueryResponse |  context.utils.toDataQueryResponse |
-
+| Previously          | Starting from version 4.0.0       |
+| ------------------- | --------------------------------- |
+| data                | context.panel.data                |
+| elements            | context.panel.elements            |
+| initial             | context.panel.initial             |
+| initialRequest      | context.panel.initialRequest      |
+| locationService     | context.grafana.locationService   |
+| notifyError         | context.grafana.notifyError       |
+| notifySuccess       | context.grafana.notifySuccess     |
+| notifyWarning       | context.grafana.notifyWarning     |
+| onChange            | context.panel.onChange            |
+| onOptionsChange     | context.panel.onOptionsChange     |
+| options             | context.panel.options             |
+| replaceVariables    | context.grafana.replaceVariables  |
+| response            | context.panel.response            |
+| setInitial          | context.panel.setInitial          |
+| templateService     | context.grafana.templateService   |
+| toDataQueryResponse | context.utils.toDataQueryResponse |
 
 ## Work with the payload simplified
 
-:::warning 
-  Breaking change. The old way does not work anymore. 
+:::warning
+Breaking change. The old way does not work anymore.
 :::
 
 This feature is related to the:
- - **Initial Request** -> **Initial Action** -> **Data Source**,
- - **Update Request** -> **Update Action** -> **Data Source**. 
+
+- **Initial Request** -> **Initial Action** -> **Data Source**,
+- **Update Request** -> **Update Action** -> **Data Source**.
 
 <Image
   title="New payload area relates to the Data Source (Initial and Update requests)."
   src="/img/blog/2024-07-02-form-panel-4.0.0/init-update.png"
 />
 
-We simplified work with the payload creation. Starting from this release, the Business Forms panel has a designated area to enter the payload request. 
+We simplified work with the payload creation. Starting from this release, the Business Forms panel has a designated area to enter the payload request.
 
 <Image
   title="Payload for the Initial Request example."
@@ -103,8 +103,9 @@ We simplified work with the payload creation. Starting from this release, the Bu
 
 The Confirmation window is shown after a user clicks on the **Submit** button. Previously, only data elements with modified values were shown.
 Starting from version 4.0.0, we added a new parameter **Display Values**, where you can choose between two options:
- - **All values** to always show all data elements regardless if there was any change in values.
- - **Updated Only** to show only the data elements with changed values.
+
+- **All values** to always show all data elements regardless if there was any change in values.
+- **Updated Only** to show only the data elements with changed values.
 
 <Image
   title="Display Values parameter."
@@ -123,8 +124,8 @@ Starting from this release, your sections can be collapsible. This functionality
 In addition, you can control the **Expanded** and **Collapsed** states in the **Custom code** using the following commands:
 
 ```js
- context.panel.expandSection(id)
- context.panel.collapseSection(id)
+context.panel.expandSection(id);
+context.panel.collapseSection(id);
 ```
 
 :::note
@@ -134,9 +135,10 @@ The full list of the Business Form panel parameters can be found in the [Custom 
 ## Custom color/background color for elements
 
 Now you can play with **Form Elements** colors. Configurable are:
- - Background color, 
- - Label background, 
- - Label color.
+
+- Background color,
+- Label background,
+- Label color.
 
 <Image
   title="Form Elements color options."
@@ -147,8 +149,8 @@ Now you can play with **Form Elements** colors. Configurable are:
 
 Starting from this release, you can choose a time zone for the updated value.
 
-- **UTC**. The date-time value is saved in the UTC zone, 
-- **Local**. The date-time value is saved following the browser's time zone. 
+- **UTC**. The date-time value is saved in the UTC zone,
+- **Local**. The date-time value is saved following the browser's time zone.
 
 <Image
   title="New Time Zones option for Date and time elements."
@@ -158,7 +160,7 @@ Starting from this release, you can choose a time zone for the updated value.
 
 ## New Form Element type: Checkbox list with custom options
 
-The **Checkbox list with custom options** type allows the creation of multi-selection checkmark elements. 
+The **Checkbox list with custom options** type allows the creation of multi-selection checkmark elements.
 
 <Image
   title="Checkbox list with custom options."
