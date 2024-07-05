@@ -16,10 +16,6 @@ import Video from "@theme/Video";
 We are happy to announce the release of the Business Charts Panel 4.3.1. This release include the following updates:
 
 - Added an alert state and annotations.
-- <del>
-    Added the `getDataSourceSrv` parameter to retrieve the entry point to data
-    sources.
-  </del>
 - Updated U.S. and world maps in the GeoJSON module.
 - Updated the plugin to the latest Grafana 9.4.7 toolkit and the Apache ECharts 5.4.2 library.
 
@@ -199,9 +195,11 @@ One of the three plugins that completes Grafana is Business Charts Panel. With D
 
 ## Release Notes
 
-### Breaking changes in 4.3.1
+:::warning Breaking changes in 4.3.1
 
-- Removed the `getDataSourceSrv` parameter due to security reasons (#156).
+- Removed the `getDataSourceSrv` parameter due to security reasons.
+
+:::
 
 ### Features / Enhancements
 

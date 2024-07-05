@@ -25,15 +25,17 @@ Release Notes for Business Charts Panel.
 
 ## 6.0.0 (2024-03-24)
 
+:::warning Breaking changes
+
+- Requires Grafana 10 and Grafana 11.
+- Removed non-context code parameters. Please update parameters to use `context`.
+
+:::
+
 <BlogPost
   href="/blog/echarts-panel-6.0.0-20240406/"
   src="/img/blog/2024-04-06-echarts-panel-6.0.0/banner.png"
 />
-
-### Breaking changes
-
-- Requires Grafana 10 and Grafana 11.
-- Removed non-context code parameters. Please update parameters to use `context`.
 
 ### Code parameters migration guide
 
@@ -66,9 +68,11 @@ Release Notes for Business Charts Panel.
 
 ## 5.2.0 (2024-02-15)
 
-### Breaking changes
+:::warning Breaking changes
 
 - Requires Grafana 9.2 and Grafana 10
+
+:::
 
 ### Features / Enhancements
 
@@ -99,9 +103,11 @@ Release Notes for Business Charts Panel.
 
 ## 5.0.0 (2023-07-19)
 
-### Breaking changes
+:::warning Breaking changes
 
 - This release requires Grafana 9 or Grafana 10.
+
+:::
 
 ### Features / Enhancements
 
@@ -150,14 +156,16 @@ Release Notes for Business Charts Panel.
 
 ## 4.3.1 (2023-04-21)
 
+:::warning Breaking changes
+
+- Removed the `getDataSourceSrv` parameter due to security reasons.
+
+:::
+
 <BlogPost
   href="/blog/echarts-panel-4.3.0-20230417/"
   src="/img/blog/2023-04-17-echarts-panel-4.3.0/banner.png"
 />
-
-### Breaking changes
-
-- Removed the `getDataSourceSrv` parameter due to security reasons (#156).
 
 ## 4.3.0 (2023-04-16)
 
@@ -203,14 +211,16 @@ Release Notes for Business Charts Panel.
 
 ## 4.0.0 (2022-12-20)
 
+:::warning Breaking changes
+
+- World and U.S. GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
+
+:::
+
 <BlogPost
   href="/blog/echarts-panel-4.0.0-20221220/"
   src="/img/blog/2022-12-20-echarts-panel-4.0.0/banner.png"
 />
-
-### Breaking changes
-
-- World and U.S. GeoJSON maps are not loaded by default. Please select `JSON` in the Maps option.
 
 ### Features / Enhancements
 
@@ -285,9 +295,11 @@ Release Notes for Business Charts Panel.
 
 ## 3.3.0 (2022-08-12)
 
-### Breaking changes
+:::warning Breaking changes
 
 - Signed as Community Plugin.
+
+:::
 
 ### Features / Enhancements
 
@@ -320,12 +332,14 @@ Release Notes for Business Charts Panel.
 
 ## 3.0.0 (2022-06-19)
 
-### Breaking changes
+:::warning Breaking changes
 
 - Requires Grafana 8.5+ or 9.0+.
 - Uses Monaco Code Editor instead of Code Mirror.
 - Based on the ECharts 5.3.3.
 - Removes outdated ECharts Extensions (echarts-wordcloud, echarts-liquidfill, echarts-gl).
+
+:::
 
 ### Features / Enhancements
 
