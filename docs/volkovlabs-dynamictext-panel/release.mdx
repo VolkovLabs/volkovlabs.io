@@ -21,16 +21,18 @@ Release Notes for Business Text Panel.
 
 ## 5.0.0 (2024-06-06)
 
-<BlogPost
-  href="/blog/dynamictext-panel-5.0.0-20240619/"
-  src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/banner.png"
-/>
-
-### Breaking changes
+:::warning Breaking changes
 
 - Requires Grafana 10 and Grafana 11.
 - Removed external scripts deprecated in Grafana 11. Use import instead.
 - Removed non-context code parameters. Please update parameters to use `context`.
+
+:::
+
+<BlogPost
+  href="/blog/dynamictext-panel-5.0.0-20240619/"
+  src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/banner.png"
+/>
 
 ### Code parameters migration guide
 
@@ -64,9 +66,11 @@ Release Notes for Business Text Panel.
 
 ## 4.4.0 (2024-03-06)
 
-### Breaking changes
+:::warning Breaking changes
 
 - Requires Grafana 9.2 and Grafana 10
+
+:::
 
 ### Features / Enhancements
 
@@ -137,14 +141,16 @@ Release Notes for Business Text Panel.
 
 ## 4.0.0 (2023-06-26)
 
+:::warning Breaking changes
+
+- Requires Grafana 9 or Grafana 10
+
+:::
+
 <BlogPost
   href="/blog/dynamictext-panel-4.0.0-20230709/"
   src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png"
 />
-
-### Breaking changes
-
-- Requires Grafana 9 or Grafana 10
 
 ### Features / Enhancements
 
@@ -174,14 +180,18 @@ Release Notes for Business Text Panel.
 
 ## 3.0.0 (2023-02-19)
 
+:::warning Breaking changes
+
+The default Content and JavaScript editors are not displayed unless values are modified.
+
+To display required editors, including the new Styles, they should be selected in the list.
+
+:::
+
 <BlogPost
   href="/blog/dynamictext-panel-3.0.0-20230219/"
   src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/banner.png"
 />
-
-### Breaking changes
-
-The default Content and JavaScript editors are not displayed unless values are modified. To display required editors, including the new Styles, they should be selected in the list.
 
 ### Features / Enhancements
 
@@ -215,14 +225,16 @@ The default Content and JavaScript editors are not displayed unless values are m
 
 ## 2.1.0 (2022-11-27)
 
+:::warning Breaking changes
+
+The code refactoring may introduce breaking changes. Please test the plugin before upgrading it on your production Grafana instances.
+
+:::
+
 <BlogPost
   href="/blog/dynamictext-panel-2.1.0-20221127/"
   src="/img/blog/2022-11-27-dynamictext-panel-2.1.0/banner.png"
 />
-
-### Breaking changes
-
-The code refactoring may introduce breaking changes. Please test the plugin before upgrading it on your production Grafana instances.
 
 ### Features / Enhancements
 
@@ -238,9 +250,11 @@ The code refactoring may introduce breaking changes. Please test the plugin befo
 
 ## 2.0.0 (2022-11-02)
 
-### Breaking changes
+:::warning Breaking changes
 
-Requieres Grafana 8.5 or newer.
+- Requires Grafana 8.5 and newer.
+
+:::
 
 ### Features / Enhancements
 
@@ -251,73 +265,3 @@ Requieres Grafana 8.5 or newer.
 - Updated CI to Node.js 16 and synchronized with the release workflow (#107).
 - Added compatibility with Grafana 9.2.2 (#108).
 - Updated screenshots and the plugin provisioning (#109).
-
-## 1.9.0 (2022-01-09)
-
-### Features / Enhancements
-
-- Added an option to render a template for each row or as a single template. You can use it when you want to create tables from the query result. (#53) Thanks to @andykingking.
-
-### Bug fixes
-
-- Resolved the issue with the visibility of the dropdown bow when selecting between multiple frames (#65).
-
-## 1.8.0 (2021-11-19)
-
-### Features / Enhancements
-
-- Added support for the `contains` helper (#48).
-- Upgraded the dependencies.
-
-## 1.7.2 (2021-06-21)
-
-### Features / Enhancements
-
-- Improved the error handling. Now the plugin does not refresh the dashboard upon occurrence of template errors.
-
-## 1.7.1 (2021-06-15)
-
-### Features / Enhancements
-
-- Update the product documentation and metadata.
-- Upgraded the dependencies.
-
-## 1.7.0 (2021-03-08)
-
-### Features / Enhancements
-
-- Added options for the default content when empty query results are returned (#15).
-
-## 1.6.0 (2021-03-04)
-
-### Features / Enhancements
-
-- Improved the error handling.
-
-## 1.5.0 (2021-02-16
-
-### Features / Enhancements
-
-- Resolved the issue with the recompiling of templates on every render operation.
-
-## 1.4.0 (2021-01-08)
-
-### Features / Enhancements
-
-- Updated @grafana/\* packages.
-- Improved the styling for tables and blockquotes.
-
-## 1.3.0 (2021-01-08)
-
-### Features / Enhancements
-
-- Added support for HTML tags in templates (#4).
-- Added support for an additional conditional operator (#3).
-
-## 1.2.1 (2020-11-27)
-
-### Features / Enhancements
-
-- Updated `@grafana` dependencies from `^7.0.0` to `^7.3.0`
-- Improved the release process using the new [GitHub workflows](https://github.com/grafana/plugin-workflows) for Grafana plugins.
-- Added screenshots.
