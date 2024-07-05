@@ -9,13 +9,28 @@ import Image from "@theme/Image";
 # JavaScript Values Editor
 
 :::info Note
-JavaScript Values Editor must return data frame.
+JavaScript Values Editor must return a data frame.
 :::
+
+```js
+const result = {
+ ...frame,
+ fields: frame.fields.map((field) => ({
+ ...field,
+ values: []
+ }))
+}
+
+return Promise.resolve(result);
+```
+<Image
+  title="Enable JavaScript Values Editor to get access to JavaScript area."
+  src="/img/plugins/volkovlabs-static-datasource/import-js.png"
+/>
 
 ## Imports
 
-Business Input data source supports importing libraries in code editor mode.
-
+The Business Input data source supports importing libraries in the **JavaScript** editor mode.
 You can import external or local libraries.
 
 ```js
