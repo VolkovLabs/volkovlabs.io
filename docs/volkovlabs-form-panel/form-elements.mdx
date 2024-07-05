@@ -48,8 +48,8 @@ Sections can be collapsible. This functionality is available only for the sectio
 In addition, you can control the **Expanded** and **Collapsed** states in the **Custom code** using the following commands:
 
 ```js
- context.panel.expandSection(id)
- context.panel.collapseSection(id)
+context.panel.expandSection(id);
+context.panel.collapseSection(id);
 ```
 
 :::note
@@ -103,7 +103,7 @@ The picture below illustrates what the element types look like.
 
 ### Checkbox list with custom options
 
-The **Checkbox list with custom options** type allows to creation of multi-selection checkmark elements. 
+The **Checkbox list with custom options** type allows to creation of multi-selection checkmark elements.
 
 <Image
   title="Checkbox list with custom options."
@@ -158,8 +158,8 @@ The **Time Zone** option is available starting from version 4.0.0.
 
 :::
 
-- **UTC**. The date-time value is saved in the UTC zone, 
-- **Local**. The date-time value is saved following the browser's time zone. 
+- **UTC**. The date-time value is saved in the UTC zone,
+- **Local**. The date-time value is saved following the browser's time zone.
 
 <Image
   title="New Time Zones option for Date and time elements."
@@ -355,9 +355,10 @@ Colors for elements supported starting from version 4.0.0.
 :::
 
 You can play with **Form Elements** colors. Configurable are:
- - Background color, 
- - Label background, 
- - Label color.
+
+- Background color,
+- Label background,
+- Label color.
 
 <Image
   title="Color options"
