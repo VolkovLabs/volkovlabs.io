@@ -1,10 +1,9 @@
 ---
 authors: [daria]
 slug: annotations-grafana-api-20230401/
-tags: [Grafana HTTP API Data Source, Grafana Crash Course]
+tags: [Business Satellite Data Source, Grafana Crash Course]
 image: /img/blog/2023-04-01-annotations-grafana-api/banner.png
 keywords: [Grafana, HTTP API, Data Source, Annotations]
-updated: 2023-06-06
 ---
 
 import BlogPost from "@theme/BlogPost";
@@ -115,11 +114,11 @@ Time Series do not rely on built-in Annotations and use internal API calls to ge
 
 ### User-defined
 
-To overcome the mentioned limitations for the built-in annotation query, we created the Grafana HTTP API Data Source.
+To overcome the mentioned limitations for the built-in annotation query, we created the Business Satellite Data Source.
 
-## Grafana HTTP API Data Source
+## Business Satellite Data Source
 
-The [Grafana HTTP API Data Source](/plugins/volkovlabs-grapi-datasource) allows:
+The [Business Satellite Data Source](/plugins/volkovlabs-grapi-datasource) allows:
 
 - Work with local and remote Grafana instances.
 - Use API Keys or Tokens to request information from the configuration database and visualize in panels or use in annotations.
@@ -128,14 +127,14 @@ The [Grafana HTTP API Data Source](/plugins/volkovlabs-grapi-datasource) allows:
 - Avoid the broken heart emoji, which is usually shown if at least one alert rule has been triggered.
 
 <Image
-  title="Grafana HTTP API Data Source works with Grafana configuration database."
+  title="Business Satellite Data Source works with Grafana configuration database."
   src="/img/blog/2023-04-01-annotations-grafana-api/schema-around-config.png"
 />
 
-The query options where you specify which annotations to display using Grafana HTTP API Data source look like this.
+The query options where you specify which annotations to display using Business Satellite Data source look like this.
 
 <Image
-  title="Display annotation using Grafana HTTP API Data Source for the selected dashboard variable."
+  title="Display annotation using Business Satellite Data Source for the selected dashboard variable."
   src="/img/blog/2023-04-01-annotations-grafana-api/annotations.png"
 />
 
@@ -143,7 +142,7 @@ The query options where you specify which annotations to display using Grafana H
 
 As you know, if an alerting rule has a Dashboard and Panel Ids set, the Time Series panel will display the broken heart emoji. It is expected behavior for particular graphs which do not depend on the Dashboard variables.
 
-However, when you display data points from multiple devices the broken heart emoji might be a misleading overkill. The broken heart emoji will not be displayed, but your alerts and annotations will if you use Grafana HTTP API Data Source and configure dashboard filters.
+However, when you display data points from multiple devices the broken heart emoji might be a misleading overkill. The broken heart emoji will not be displayed, but your alerts and annotations will if you use Business Satellite Data Source and configure dashboard filters.
 
 <Video
   src="https://www.youtube.com/embed/bmOkirtC65w"
@@ -152,10 +151,10 @@ However, when you display data points from multiple devices the broken heart emo
 
 ## Alerting History
 
-The Grafana HTTP API Data Source can be used with any native or community plugin. Our community member sent us a screenshot of his alerting history for Timescale Linux memory usage over time.
+The Business Satellite Data Source can be used with any native or community plugin. Our community member sent us a screenshot of his alerting history for Timescale Linux memory usage over time.
 
 <Image
-  title="Grafana HTTP API Data Source used to display Alerting History."
+  title="Business Satellite Data Source used to display Alerting History."
   src="/img/blog/2023-04-01-annotations-grafana-api/history.png"
 />
 
