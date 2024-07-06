@@ -13,11 +13,11 @@ Grafana supports managing data sources by adding one or more YAML config files i
 
 ## Configuration
 
-Example of provisioning the Grafana HTTP API Data Source for the remote Grafana instance.
+Example of provisioning the Business Satellite Data Source for the remote Grafana instance.
 
 ```yaml
 datasources:
-  - name: Grafana HTTP API
+  - name: Business Satellite
     type: volkovlabs-grapi-datasource
     access: proxy
     uid: grapi
@@ -35,7 +35,7 @@ datasources:
 When provisioned, the data source should be available in the Data sources lists.
 
 <Image
-  title="Grafana HTTP API Data Source configured for the local Grafana instance."
+  title="Business Satellite Data Source configured for the local Grafana instance."
   src="/img/plugins/volkovlabs-grapi-datasource/configuration.png"
 />
 

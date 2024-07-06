@@ -1,7 +1,7 @@
 ---
 authors: [mikhail]
 slug: grapi-datasource-1.2.0-20230331/
-tags: [Grafana HTTP API Data Source, Business Suite]
+tags: [Business Satellite Data Source, Business Suite]
 image: /img/blog/2023-03-31-grapi-datasource-1.2.0/banner.png
 keywords: [Grafana, HTTP API, Data Source, Annotations]
 updated: 2023-04-15
@@ -10,9 +10,9 @@ updated: 2023-04-15
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# Grafana HTTP API Data Source 1.2.0
+# Business Satellite Data Source 1.2.0
 
-We are happy to announce the release of the Grafana HTTP API Data Source 1.2.0. This release includes the following updates:
+We are happy to announce the release of the Business Satellite Data Source 1.2.0. This release includes the following updates:
 
 - Added formatted Annotation labels for Alerts.
 - Added Alert Rules and Alert UID field to Alert Annotations.
@@ -28,7 +28,7 @@ The plugin was updated in Grafana Catalog on March 31, 2023.
 We added formatted Alert labels in the `labels` field, which can be parsed using `Extract field` transformation to sort, filter, and display by values.
 
 <Image
-  title="Grafana HTTP API Data Source used to display Alerting History."
+  title="Business Satellite Data Source used to display Alerting History."
   src="/img/blog/2023-03-31-grapi-datasource-1.2.0/history.png"
 />
 
@@ -43,7 +43,7 @@ Based on the alert rules Annotations will return the Alert name and UID fields. 
 
 ## Annotations
 
-Annotations might seem different from the Alerts, but under the hood, they are very similar. With a little help from the Grafana HTTP API data source, you can easily work with both.
+Annotations might seem different from the Alerts, but under the hood, they are very similar. With a little help from the Business Satellite data source, you can easily work with both.
 
 This is an introductory video for anyone interested in Grafana Alerts and Annotations.
 
@@ -66,13 +66,13 @@ In this tutorial, we look at the concept from a data flow point of view and prov
 We added initial Variables support to the data source. You can select Alert Rules, Data Sources, and Annotations by UID or text fields.
 
 <Image
-  title="Grafana HTTP API Data Source can be used for Dashboard Variables."
+  title="Business Satellite Data Source can be used for Dashboard Variables."
   src="/img/blog/2023-03-31-grapi-datasource-1.2.0/variables.png"
 />
 
 ## Calendar
 
-The Grafana HTTP API Data Source can be used together with [Business Calendar panel](/plugins/volkovlabs-calendar-panel) to visualize alerts that happened in a week or month.
+The Business Satellite Data Source can be used together with [Business Calendar panel](/plugins/volkovlabs-calendar-panel) to visualize alerts that happened in a week or month.
 
 <Image
   title="Alerts for this week displayed using Calendar panel."
@@ -81,7 +81,7 @@ The Grafana HTTP API Data Source can be used together with [Business Calendar pa
 
 ## Getting Started
 
-The Grafana HTTP API Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.
+The Business Satellite Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.
 
 For the latter, please use the following command.
 
@@ -93,7 +93,7 @@ grafana-cli plugins install volkovlabs-grapi-datasource
 
 <Video
   src="https://www.youtube.com/embed/0zibOEGqTJ8"
-  title="Easy access to Grafana backend using Grafana HTTP API data source."
+  title="Easy access to Grafana backend using Business Satellite data source."
 />
 
 ## Release Notes
