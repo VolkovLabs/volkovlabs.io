@@ -17,9 +17,11 @@ The Business Charts Panel supports the world and USA GeoJSON maps. You can load 
   src="/img/plugins/volkovlabs-echarts-panel/geojson.png"
 />
 
-## Demo
+:::tip Demo
 
 Try the map on the [dashboard in the edit mode](https://echarts.volkovlabs.io/d/X1mkMIFVz/geo-map?orgId=1&editPanel=11).
+
+:::
 
 ## Tutorial
 
@@ -180,14 +182,17 @@ return {
 
 ## Dynamic maps loading
 
-You can load additional GeoJSON maps dynamically using Data source.
+You can load additional GeoJSON maps dynamically from data source:
+
+- Set as a String field using Business Input data source.
+- Fetched from external URL using Infinity or JSON data sources.
 
 <Image
   title="Loading additional GeoJSON maps."
   src="/img/plugins/volkovlabs-echarts-panel/geojson-canada.png"
 />
 
-JSON for Canada map. `https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/canada.geojson`
+JSON for Canada used in the example can be found [here](https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/canada.geojson).
 
 ```js
 const json = context.panel.data.series[0].fields[0].values[0];
