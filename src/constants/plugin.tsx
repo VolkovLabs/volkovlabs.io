@@ -40,7 +40,7 @@ export const PluginList: PluginItem[] = [
   {
     title: "Business News Data Source",
     name: "volkovlabs-rss-datasource",
-    description: <>Visualize RSS/Atom feeds using Dynamic Text.</>,
+    description: <>Visualize RSS/Atom feeds.</>,
     href: "/plugins/volkovlabs-rss-datasource/",
   },
   {
