@@ -186,37 +186,6 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "volkovlabs-image-panel/index",
-          label: "Introduction",
-        },
-        "volkovlabs-image-panel/formats",
-        "volkovlabs-image-panel/options",
-        {
-          items: [
-            "volkovlabs-image-panel/datasources",
-            "volkovlabs-image-panel/variables",
-          ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "volkovlabs-image-panel/features",
-          },
-        },
-        "volkovlabs-image-panel/release",
-      ],
-      label: "Business Media",
-      type: "category",
-      description: "Display Base64 encoded media files.",
-      link: {
-        type: "doc",
-        id: "volkovlabs-image-panel/index",
-      },
-    },
-    {
-      items: [
-        {
-          type: "doc",
           id: "volkovlabs-static-datasource/index",
           label: "Introduction",
         },
@@ -251,12 +220,43 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-static-datasource/release",
       ],
-      label: "Business Input Data Source",
+      label: "Business Input",
       type: "category",
       description: "Store and create your data.",
       link: {
         type: "doc",
         id: "volkovlabs-static-datasource/index",
+      },
+    },
+    {
+      items: [
+        {
+          type: "doc",
+          id: "volkovlabs-image-panel/index",
+          label: "Introduction",
+        },
+        "volkovlabs-image-panel/formats",
+        "volkovlabs-image-panel/options",
+        {
+          items: [
+            "volkovlabs-image-panel/datasources",
+            "volkovlabs-image-panel/variables",
+          ],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "volkovlabs-image-panel/features",
+          },
+        },
+        "volkovlabs-image-panel/release",
+      ],
+      label: "Business Media",
+      type: "category",
+      description: "Display Base64 encoded media files.",
+      link: {
+        type: "doc",
+        id: "volkovlabs-image-panel/index",
       },
     },
     {
@@ -270,7 +270,7 @@ const sidebars: SidebarsConfig = {
         "volkovlabs-rss-datasource/provisioning",
         "volkovlabs-rss-datasource/release",
       ],
-      label: "Business News Data Source",
+      label: "Business News",
       type: "category",
       description: "Visualize RSS/Atom feeds using Business Text.",
       link: {
@@ -298,7 +298,7 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-grapi-datasource/release",
       ],
-      label: "Business Satellite Data Source",
+      label: "Business Satellite",
       type: "category",
       description: "Connect to Local and Remote Grafana instances.",
       link: {
