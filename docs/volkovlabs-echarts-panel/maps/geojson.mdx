@@ -17,9 +17,11 @@ The Business Charts Panel supports the world and USA GeoJSON maps. You can load 
   src="/img/plugins/volkovlabs-echarts-panel/geojson.png"
 />
 
-## Demo
+:::tip Demo
 
 Try the map on the [dashboard in the edit mode](https://echarts.volkovlabs.io/d/X1mkMIFVz/geo-map?orgId=1&editPanel=11).
+
+:::
 
 ## Tutorial
 
@@ -180,92 +182,44 @@ return {
 
 ## Dynamic maps loading
 
-You can load additional GeoJSON maps dynamically using JQuery. While the map is loading, the Business Charts panel displays an animation.
+You can load additional GeoJSON maps dynamically from data source:
+
+- Set as a String field using Business Input data source.
+- Fetched from external URL using Infinity or JSON data sources.
 
 <Image
   title="Loading additional GeoJSON maps."
   src="/img/plugins/volkovlabs-echarts-panel/geojson-canada.png"
 />
 
+JSON for Canada used in the example can be found [here](https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/canada.geojson).
+
 ```js
+const json = context.panel.data.series[0].fields[0].values[0];
+
+/**
+ * Map Name
+ */
 const mapName = "Canada";
-const mapCode =
-  "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/canada.geojson";
 
 /**
- * Register Map
+ * Register map
  */
-$.get(mapCode, (data) => {
-  context.echarts.registerMap(mapName, data);
-  context.panel.chart.setOption(loadMap(mapName), (notmerge = true));
-  context.panel.chart.resize();
-});
+context.echarts.registerMap(mapName, { geoJSON: json });
 
 /**
- * Load Map
- *
- * @returns object for setOption()
+ * Return settiings
  */
-const loadMap = (name) => {
-  return {
-    title: {
-      text: mapName,
-      left: "right",
-    },
-    geo: {
-      map: name,
-      roam: true,
-    },
-    series: [{}],
-  };
-};
-
-/**
- * Loading
- */
-const loading = {
-  graphic: {
-    elements: [
-      {
-        type: "group",
-        left: "center",
-        top: "center",
-        children: new Array(7).fill(0).map((val, i) => ({
-          type: "rect",
-          x: i * 20,
-          shape: {
-            x: 0,
-            y: -40,
-            width: 10,
-            height: 80,
-          },
-          style: {
-            fill: "#5470c6",
-          },
-          keyframeAnimation: {
-            duration: 1000,
-            delay: i * 200,
-            loop: true,
-            keyframes: [
-              {
-                percent: 0.5,
-                scaleY: 0.3,
-                easing: "cubicIn",
-              },
-              {
-                percent: 1,
-                scaleY: 1,
-                easing: "cubicOut",
-              },
-            ],
-          },
-        })),
-      },
-    ],
+return {
+  title: {
+    text: mapName,
+    left: "right",
+  },
+  geo: {
+    map: mapName,
+    roam: true,
   },
 };
-
-return loading;
 ```
 
 ## Switching between maps

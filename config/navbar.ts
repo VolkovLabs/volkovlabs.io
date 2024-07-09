@@ -16,47 +16,47 @@ export const NAVBAR = {
       "aria-label": "Plugins",
       items: [
         {
-          label: "Business Calendar Panel",
+          label: "Business Calendar",
           to: "/plugins/volkovlabs-calendar-panel/",
           className: "volkovlabs-link icon-plugins-calendar-link",
         },
         {
-          label: "Business Charts Panel",
+          label: "Business Charts",
           to: "/plugins/volkovlabs-echarts-panel/",
           className: "volkovlabs-link icon-plugins-echarts-link",
         },
         {
-          label: "Business Forms Panel",
+          label: "Business Forms",
           to: "/plugins/volkovlabs-form-panel/",
           className: "volkovlabs-link icon-plugins-form-link",
         },
         {
-          label: "Business Input Data Source",
+          label: "Business Input data source",
           to: "/plugins/volkovlabs-static-datasource/",
           className: "volkovlabs-link icon-plugins-static-link",
         },
         {
-          label: "Business Media Panel",
+          label: "Business Media",
           to: "/plugins/volkovlabs-image-panel/",
           className: "volkovlabs-link icon-plugins-base64-link",
         },
         {
-          label: "Business News Data Source",
+          label: "Business News data source",
           to: "/plugins/volkovlabs-rss-datasource/",
           className: "volkovlabs-link icon-plugins-rss-link",
         },
         {
-          label: "Business Satellite Data Source",
+          label: "Business Satellite data source",
           to: "/plugins/volkovlabs-grapi-datasource/",
           className: "volkovlabs-link icon-plugins-grapi-link",
         },
         {
-          label: "Business Text Panel",
+          label: "Business Text",
           to: "/plugins/volkovlabs-dynamictext-panel/",
           className: "volkovlabs-link icon-plugins-dt-link",
         },
         {
-          label: "Business Variable Panel",
+          label: "Business Variable",
           to: "/plugins/volkovlabs-variable-panel/",
           className: "volkovlabs-link icon-plugins-variable-link",
         },
@@ -109,7 +109,7 @@ export const NAVBAR = {
           to: "/grafana/developer",
         },
         {
-          label: "Environment Data Source",
+          label: "Environment data source",
           to: "/grafana/volkovlabs-env-datasource/",
           className: "volkovlabs-link icon-plugins-env-link",
         },
