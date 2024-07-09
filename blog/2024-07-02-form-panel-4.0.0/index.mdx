@@ -10,9 +10,9 @@ import Image from "@theme/Image";
 import Video from "@theme/Video";
 import Shorts from "@theme/Shorts";
 
-# Business Forms Panel 4.0.0
+# Business Forms Panel 4.1.0
 
-We are happy to announce the release of the Business Forms Panel 4.0.0. This release includes the following updates:
+We are happy to announce the release of the Business Forms Panel 4.1.0. This release includes the following updates:
 
 - Plugin rebranding, the new name is the **Business Forms Panel**.
 - Non `context` code parameters are retired. Please update the parameter reference the use the `context`. **Breaking change**.
@@ -235,6 +235,14 @@ Business Forms Panel is a plugin for Grafana that allows you to insert and updat
 - setInitial -> context.panel.setInitial
 - templateService -> context.grafana.templateService
 - toDataQueryResponse -> context.utils.toDataQueryResponse
+
+### Features / Enhancements in 4.1.0
+
+- Updated context parameters migration (#433)
+- Updated provisioning files (#433)
+- Updated Checkbox list with custom options (#435)
+- Updated code defaults to use context properties (#438)
+- Updated E2E workflow using Docker (#441)
 
 ### Features / Enhancements in 4.0.0
 

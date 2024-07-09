@@ -12,26 +12,95 @@ Data Manipulation Panel allows you to create your own initial and update request
 
 ## Initial Request
 
-Select `-` to choose an initial request, and then define the custom code:
+Select `Code` to choose an initial request, and then define the custom code:
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/js/initial-request.js"
-  language="js"
-/>
+```js
+const bucketsSelect = context.panel.elements.find(
+  (element) => element.id === "buckets"
+);
+
+/**
+ * Set URL
+ */
+const url = `http://localhost:3001/test`;
+
+/**
+ * Fetch
+ */
+const resp = fetch(url, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    "PRIVATE-TOKEN": "$token",
+  },
+})
+  .catch((error) => {
+    console.error(error);
+  })
+  .then(async (resp) => {
+    const body = await resp.json();
+
+    bucketsSelect.options = body.buckets.map((value) => {
+      return { label: value, value };
+    });
+
+    context.panel.onOptionsChange(options);
+  });
+```
 
 ### Initial values
 
 To support the `Highlight changed values` and `Require Confirmation` features, you need to use the `setInitial({})` function within your custom code to update initial values:
 
-```javascript
+```js
 context.panel.setInitial({ value: 99, name: "Test" });
 ```
 
 ## Update Request
 
-Select `-` to choose an update request, and then define the custom code. Depending on the selected payload option, it will add all or only the updated values.
+Select `Code` to choose an update request, and then define the custom code. Depending on the selected payload option, it will add all or only the updated values.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/docs/volkovlabs-form-panel/js/update-request.js"
-  language="js"
-/>
+```js
+/**
+ * Set body
+ */
+const body = {};
+context.panel.options.elements.forEach((element) => {
+  if (!options.update.updatedOnly) {
+    body[element.id] = element.value;
+    return;
+  }
+
+  /**
+   * Skip not updated elements
+   */
+  if (element.value === initial[element.id]) {
+    return;
+  }
+
+  body[element.id] = element.value;
+});
+
+/**
+ * Set URL
+ */
+const url = `http://localhost:3001/${body["name"]}`;
+
+/**
+ * Fetch
+ */
+const resp = fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "PRIVATE-TOKEN": "$token",
+  },
+  body: JSON.stringify(body),
+})
+  .catch((error) => {
+    console.error(error);
+  })
+  .then((resp) => {
+    console.log(resp);
+  });
+```

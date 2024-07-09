@@ -158,7 +158,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           items: [
-            "volkovlabs-form-panel/servers/deno",
             "volkovlabs-form-panel/servers/influx",
             "volkovlabs-form-panel/servers/json",
             "volkovlabs-form-panel/servers/mysql",
