@@ -31,7 +31,7 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-plugins-form-link",
         },
         {
-          label: "Business Input data source",
+          label: "Business Input",
           to: "/plugins/volkovlabs-static-datasource/",
           className: "volkovlabs-link icon-plugins-static-link",
         },
@@ -41,12 +41,12 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-plugins-base64-link",
         },
         {
-          label: "Business News data source",
+          label: "Business News",
           to: "/plugins/volkovlabs-rss-datasource/",
           className: "volkovlabs-link icon-plugins-rss-link",
         },
         {
-          label: "Business Satellite data source",
+          label: "Business Satellite",
           to: "/plugins/volkovlabs-grapi-datasource/",
           className: "volkovlabs-link icon-plugins-grapi-link",
         },

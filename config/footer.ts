@@ -28,7 +28,7 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-form-link",
         },
         {
-          label: "Business Input data source",
+          label: "Business Input",
           to: "/plugins/volkovlabs-static-datasource/",
           className: "volkovlabs-footer-link icon-plugins-static-link",
         },
@@ -38,12 +38,12 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-base64-link",
         },
         {
-          label: "Business News data source",
+          label: "Business News",
           to: "/plugins/volkovlabs-rss-datasource/",
           className: "volkovlabs-footer-link icon-plugins-rss-link",
         },
         {
-          label: "Business Satellite data source",
+          label: "Business Satellite",
           to: "/plugins/volkovlabs-grapi-datasource/",
           className: "volkovlabs-footer-link icon-plugins-grapi-link",
         },
