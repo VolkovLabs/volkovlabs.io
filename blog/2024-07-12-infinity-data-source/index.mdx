@@ -1,0 +1,195 @@
+---
+authors: [vitali]
+slug: infinity-data-source-2024712/
+tags: [D, Solution]
+image: /img/honeycomb.png
+keywords: [Data Manipulation, Validation, Grafana]
+---
+
+import Image from "@theme/Image";
+import Video from "@theme/Video";
+
+# How to use Infinity Data Source for Update Request
+
+This article shares how to use Infinity Data Source in the Business Forms plugin to enhance user experience with using update request.
+
+If you want to use Infinity Data Source you may wonder how to properly configure the payload, pass it to Infinity Data Source and verify that the request was sent with the required values.
+
+And then we will analyze everything in order.
+
+But before we start, let's configure our panel for work
+
+## Form Elements
+
+The [Form Elements](/plugins/volkovlabs-form-panel/form-elements/) are components the Business Forms plugin provides as building bricks for your data entry forms.
+
+In this article, a data entry form consists of the following elements:
+
+- **String input** with name: **Post Title** and id: **postTitle** is used to enter the title that will be passed to the payload.
+- **Text Area** with name: **Post Body** and id: **postBody** is used to enter the body that will be passed to the payload.
+- **Number input** with name: **Post Id** and id: **postId** is used to enter the user Id that will be passed to the payload.
+- The **Submit** button. Any Business Form has this button by default. I keep all initial settings. Except one: In Initial request code editor enable submit button using method `context.panel.enableSubmit()`
+
+<Image
+  title="Configuration for Form Elements."
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/form-panel.png"
+/>
+
+<Image
+  title="Configuration for Initial Request"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/initial-req.png"
+/>
+
+<Image
+  title="Configuration for Initial Query editor in request"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/initial-query-editor.png"
+/>
+
+Code to copy. More available options and methods you can find using `console.log('contet:', context)`
+
+```js
+console.log("contet:", context);
+context.panel.enableSubmit();
+return;
+```
+
+## Expected behavior
+
+My expectation is that I will use Update Request with Infinity Data Source and see the correct data in the Network tab of the browser in developer mode after click on **Submit Button**
+
+## Configuration
+
+Let's fill in the elements of the form
+Now if we click the `Submit button`, nothing will happen, or rather we will probably get an error because we have not configured our request.
+
+<Image
+  title="Filled Form Elements"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/filled-form.png"
+/>
+
+## Update values
+
+Let's configure our `Update Request`
+
+- **Enable Update** set to Manual
+- **Update Action** set to Data Source
+- **Data Source** select your infinity data source
+
+<Image
+  title="Configuration for Update Request"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/update-req.png"
+/>
+
+Code to copy. I keep default code for `Custom Code`
+
+```js
+if (context.panel.response) {
+  context.grafana.notifySuccess(["Update", "Values updated successfully."]);
+  context.panel.initialRequest();
+} else {
+  context.grafana.notifyError(["Update", "An error occurred updating values."]);
+}
+```
+
+So, Next step we need to configure our code, create payload and then pass our payload to Infinity data Source.
+
+- In section **Request Payload** select **Code**. Now Code editor for configure payload is available.
+
+Please create a payload using the panel elements.
+The code editor should return the appropriate payload.
+
+<Image
+  title="Configuration for Update Request Create Payload"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/update-req-payload.png"
+/>
+
+Code to copy. I use elements Id to find appropriate element and get it value for payload.
+
+```js
+let payload = {
+  title: "",
+  body: "",
+  userId: "",
+};
+context.panel.elements.forEach((element) => {
+  console.log("console >> element", element);
+  if (element.id === "postTitle") {
+    payload.title = element.value;
+  }
+
+  if (element.id === "postBody") {
+    payload.body = element.value;
+  }
+
+  if (element.id === "postId") {
+    payload.userId = element.value;
+  }
+});
+
+return payload;
+```
+
+We have a payload. We need to configure the Query Editor using our payload
+
+Highlights:
+
+- **Source** set to **URL**
+- **Method** set to **POST**
+- **URL** set to your URL or you can you use URL from example for first time
+- Click on `Headers, Body, Request params` to open options
+
+- **Body Type** set to **Raw**
+- **Body Content Type** set to **JSON**
+- **Body Content** fill using our payload
+
+Code to copy:
+
+```js
+{
+  "title": "${payload.title}",
+  "body": "${payload.body}",
+  "userId": "${payload.userId}"
+}
+```
+
+<Image
+  title="Configuration for Update Request Query Editor"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/update-req-query-editor.png"
+/>
+
+Press `F12` on keyboard and open developer panel. In opened panel click on `Network` tab and clear all logs.
+After click `Submit` we will see modal window with success message.
+
+<Image
+  title="Success Message"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/modal-window.png"
+/>
+
+Let's check our Network Tab. Find Our request and open payload tab. Here we have huge object. Expand it and find `url_options` property in nested object.
+We've done everything right, we can see our set parameters
+
+```js
+{
+    "method": "POST",
+    "data": "{\n  \"title\": \"New post\",\n  \"body\": \"Lorem ipsum dolor sit amet...\",\n  \"userId\": \"1\"\n}",
+    "body_type": "raw",
+    "body_content_type": "application/json",
+    "body_graphql_query": "",
+    "body_graphql_variables": ""
+}
+```
+
+<Image
+  title="Network"
+  src="/img/blog/2024-07-12-form-panel-infinity-data-source/network.png"
+/>
+
+I hope the solution is illustrative enough to keep you moving forward with your implementations via using Infinity Data Source and Business Form.
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-form-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
