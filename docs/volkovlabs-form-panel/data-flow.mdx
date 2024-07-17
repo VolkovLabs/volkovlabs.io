@@ -33,9 +33,20 @@ The query is short for the native Grafana query. Any initial request carries dat
 
 This method was created to allow leveraging the existing Grafana data extraction mechanism. To make it work, map every Data Manipulation form element to the appropriate data frame field.
 
+:::info Version
+
+Since version 4.2.0. the `Query Field` and `Field Name` fields have been relocated from the `Elements` section to the `Initial Fields` options section.
+
+:::
+
 <Image
-  title="Configure the Initial Request for Query."
+  title="Configure the Initial Request for Query. "
   src="/img/plugins/volkovlabs-form-panel/query.png"
+/>
+
+<Image
+  title="New location of `Query Field` fields."
+  src="/img/plugins/volkovlabs-form-panel/query-new.png"
 />
 
 ### Data source
@@ -49,6 +60,11 @@ The **Initial Payload Request** is a mandatory piece of code that needs to conta
 <Image
   title="Steps to configure the Initial Request for Data Source."
   src="/img/plugins/volkovlabs-form-panel/ds-all.png"
+/>
+
+<Image
+  title="Steps to configure the Initial Request for Data Source. New location of `Field Name` fields."
+  src="/img/plugins/volkovlabs-form-panel/ds-all-new.png"
 />
 
 ### REST API
