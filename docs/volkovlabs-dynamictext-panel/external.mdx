@@ -600,20 +600,21 @@ import("/public/loadTailwindFromCDN.js").then(
 );
 ```
 
-### Mapbox GL JS
+### Mapbox GL
 
 This is another great example of external resource usage in the Business Text Plugin. The idea comes from [Josiah Solomon](https://github.com/yosiasz).
+
 Follow the below outlined steps to display [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/example/3d-buildings/) on your Grafana dashboard.
 
 <Image
-  title="The Mapbox map on the dashboard."
+  title="The Mapbox map displayed using Business Text on the dashboard."
   src="/img/plugins/volkovlabs-dynamictext-panel/mapboxgl.png"
 />
 
 #### Content
 
 ```html
-</div id="map">
+<div id="map" />
 ```
 
 Use the following for the **JavaScript**->**After Content Ready**:
@@ -622,8 +623,8 @@ Use the following for the **JavaScript**->**After Content Ready**:
 import("https://cdn.jsdelivr.net/npm/mapbox-gl@3.5.1/+esm").then(
   ({ default: mapboxGl }) => {
     console.log("mapboxgl", mapboxGl);
-    mapboxGl.accessToken =
-      "pk.eyJ1IjoieW9zaWFzeiIsImEiOiJjbHlpN2Z5em8wY2JoMmtwdGJrbjVtcDZ6In0.BbnHKs0rxyxrJrHAtleoBA";
+
+    mapboxGl.accessToken = "TOKEN";
     const map = new mapboxGl.Map({
       // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
       style: "mapbox://styles/mapbox/light-v11",
