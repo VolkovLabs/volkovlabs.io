@@ -1,6 +1,6 @@
 ---
 authors: [vitali]
-slug: infinity-data-source-2024712/
+slug: infinity-data-source-2024720/
 tags: [Business Forms, Business Suite, Solution]
 image: /img/honeycomb.png
 keywords: [Data Manipulation, Infinity Data Source, Grafana]
@@ -9,7 +9,7 @@ keywords: [Data Manipulation, Infinity Data Source, Grafana]
 import Image from "@theme/Image";
 import Video from "@theme/Video";
 
-# How to use Infinity Data Source for Update Request
+# How to use Infinity Data Source with Business Forms
 
 This article shares how to use Infinity Data Source in the Business Forms plugin to enhance user experience with using update request.
 
@@ -32,17 +32,17 @@ In this article, a data entry form consists of the following elements:
 
 <Image
   title="Configuration for Form Elements."
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/form-panel.png"
+  src="/img/blog/2024-07-20-infinity-data-source/form-panel.png"
 />
 
 <Image
   title="Configuration for Initial Request"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/initial-req.png"
+  src="/img/blog/2024-07-20-infinity-data-source/initial-req.png"
 />
 
 <Image
   title="Configuration for Initial Query editor in request"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/initial-query-editor.png"
+  src="/img/blog/2024-07-20-infinity-data-source/initial-query-editor.png"
 />
 
 Code to copy. More available options and methods you can find using `console.log('contet:', context)`
@@ -64,7 +64,7 @@ Now if we click the `Submit button`, nothing will happen, or rather we will prob
 
 <Image
   title="Filled Form Elements"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/filled-form.png"
+  src="/img/blog/2024-07-20-infinity-data-source/filled-form.png"
 />
 
 ## Update values
@@ -77,7 +77,7 @@ Let's configure our `Update Request`
 
 <Image
   title="Configuration for Update Request"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/update-req.png"
+  src="/img/blog/2024-07-20-infinity-data-source/update-req.png"
 />
 
 Code to copy. I keep default code for `Custom Code`
@@ -100,7 +100,7 @@ The code editor should return the appropriate payload.
 
 <Image
   title="Configuration for Update Request Create Payload"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/update-req-payload.png"
+  src="/img/blog/2024-07-20-infinity-data-source/update-req-payload.png"
 />
 
 Code to copy. I use elements Id to find appropriate element and get it value for payload.
@@ -154,7 +154,7 @@ Code to copy:
 
 <Image
   title="Configuration for Update Request Query Editor"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/update-req-query-editor.png"
+  src="/img/blog/2024-07-20-infinity-data-source/update-req-query-editor.png"
 />
 
 Press `F12` on keyboard and open developer panel. In opened panel click on `Network` tab and clear all logs.
@@ -162,7 +162,7 @@ After click `Submit` we will see modal window with success message.
 
 <Image
   title="Success Message"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/modal-window.png"
+  src="/img/blog/2024-07-20-infinity-data-source/modal-window.png"
 />
 
 Let's check our Network Tab. Find Our request and open payload tab. Here we have huge object. Expand it and find `url_options` property in nested object.
@@ -181,7 +181,7 @@ We've done everything right, we can see our set parameters
 
 <Image
   title="Network"
-  src="/img/blog/2024-07-12-form-panel-infinity-data-source/network.png"
+  src="/img/blog/2024-07-20-infinity-data-source/network.png"
 />
 
 I hope the solution is illustrative enough to keep you moving forward with your implementations via using Infinity Data Source and Business Form
