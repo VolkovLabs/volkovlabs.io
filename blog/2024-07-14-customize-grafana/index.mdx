@@ -27,14 +27,10 @@ I need to start by saying that there is no one straightforward way for Grafana c
 
 To bring some clarity and order to customization, I categorized all commands into four groups:
 
-- Configuration,
-  - working with Grafana parameters and environment variables.
-- Cleaning,
-  - removing unnecessary files.
-- Visual,
-  - replacing image files.
-- Hands-on,
-  - working directly with JavaScript and HTML files to replace certain parts before rendering.
+- **Configuration** - working with Grafana parameters and environment variables.
+- **Cleaning** - removing unnecessary files.
+- **Visual** - replacing image files.
+- **Hands-on** - working directly with JavaScript and HTML files to replace certain parts before rendering.
 
 <Image
   title="All customization commands can be split into four groups: configuration, cleaning, visual and hands-on."
@@ -330,10 +326,7 @@ RUN find /usr/share/grafana/public/build/ -name *.js \
 
 Grafana offers a lot of data sources to connect with by default along with numerous native visualization panels.
 
-No doubt, it is an impressive and convenient functionality especially when you just getting yourself acquainted with Grafana. However, when you are ready to build an application, you might want to consider removing access to unnecessary plugins and pre-installed panels for two reasons:
-
-- keep your application clean looking, to avoid clutter in the Grafana UI.
-- reduce the size of your docker container.
+No doubt, it is an impressive and convenient functionality especially when you just getting yourself acquainted with Grafana. However, when you are ready to build an application, you might want to consider removing access to unnecessary plugins and pre-installed panels to keep your application clean looking, to avoid clutter in the Grafana UI.
 
 ### Remove native visualization panels
 
@@ -391,7 +384,6 @@ The following article was published more than a year ago, I still recommend revi
 
 <BlogPost
   href="/blog/native-grafana-plugins-20230409/"
-  title="Spring cleaning in Grafana."
   src="/img/blog/2023-04-09-native-grafana-plugins/banner.png"
 />
 
