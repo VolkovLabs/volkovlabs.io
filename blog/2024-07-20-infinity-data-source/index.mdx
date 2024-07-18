@@ -11,24 +11,29 @@ import Video from "@theme/Video";
 
 # How to use Infinity Data Source with Business Forms
 
-This article shares how to use Infinity Data Source in the Business Forms plugin to enhance user experience with using update request.
+This article shares how to use Infinity Data Source in the [Business Forms](/plugins/volkovlabs-form-panel/) plugin to enhance user experience with using update request.
 
 If you want to use Infinity Data Source you may wonder how to properly configure the payload, pass it to Infinity Data Source and verify that the request was sent with the required values.
 
-And then we will analyze everything in order.
-
-But before we start, let's configure our panel for work
+And then we will analyze everything in order. But before we start, let's configure our panel for work.
 
 ## Form Elements
 
-The [Form Elements](/plugins/volkovlabs-form-panel/form-elements/) are components the Business Forms plugin provides as building bricks for your data entry forms.
+The [Form Elements](/plugins/volkovlabs-form-panel/form-elements/) are components of the Business Forms plugin provide a building bricks for your data entry forms.
 
 In this article, a data entry form consists of the following elements:
 
-- **String input** with name: **Post Title** and id: **postTitle** is used to enter the title that will be passed to the payload.
-- **Text Area** with name: **Post Body** and id: **postBody** is used to enter the body that will be passed to the payload.
-- **Number input** with name: **Post Id** and id: **postId** is used to enter the user Id that will be passed to the payload.
-- The **Submit** button. Any Business Form has this button by default. I keep all initial settings. Except one: In Initial request code editor enable submit button using method `context.panel.enableSubmit()`
+- **String input** to enter the title that will be passed to the payload:
+  - name: **Post Title**
+  - id: **postTitle**
+- **Text Area** to enter the body that will be passed to the payload:
+  - name: **Post Body**
+  - id: **postBody**
+- **Number input** to enter the user Id that will be passed to the payload:
+  - name: **Post Id**
+  - id: **postId**
+
+Any Business Form has the **Submit** button by default. I keep all initial settings. Except one: In Initial request code editor enable submit button using method `context.panel.enableSubmit()`
 
 <Image
   title="Configuration for Form Elements."
@@ -36,44 +41,43 @@ In this article, a data entry form consists of the following elements:
 />
 
 <Image
-  title="Configuration for Initial Request"
+  title="Configuration for Initial Request."
   src="/img/blog/2024-07-20-infinity-data-source/initial-req.png"
 />
 
 <Image
-  title="Configuration for Initial Query editor in request"
+  title="Configuration for Initial Query editor in request."
   src="/img/blog/2024-07-20-infinity-data-source/initial-query-editor.png"
 />
 
-Code to copy. More available options and methods you can find using `console.log('contet:', context)`
+Code to copy. More available options and methods you can find using `console.log('context:', context)`
 
 ```js
-console.log("contet:", context);
+console.log("context:", context);
 context.panel.enableSubmit();
 return;
 ```
 
 ## Expected behavior
 
-My expectation is that I will use Update Request with Infinity Data Source and see the correct data in the Network tab of the browser in developer mode after click on **Submit Button**
+My expectation is that I will use Update Request with Infinity Data Source and see the correct data in the Network tab of the browser in developer mode after click on **Submit Button**.
 
-## Configuration
+## New Post
 
-Let's fill in the elements of the form
-Now if we click the `Submit button`, nothing will happen, or rather we will probably get an error because we have not configured our request.
+Let's fill in the elements of the form. Now if we click the `Submit button`, nothing will happen, or rather we will probably get an error because we have not configured our request.
 
 <Image
-  title="Filled Form Elements"
+  title="Filled Form Elements."
   src="/img/blog/2024-07-20-infinity-data-source/filled-form.png"
 />
 
-## Update values
+## Update Request
 
-Let's configure our `Update Request`
+Let's configure our `Update Request`:
 
-- **Enable Update** set to Manual
-- **Update Action** set to Data Source
-- **Data Source** select your infinity data source
+- Set **Enable Update** set to Manual
+- Set **Update Action** set to Data Source
+- For **Data Source** select your Infinity data source
 
 <Image
   title="Configuration for Update Request"
@@ -91,15 +95,16 @@ if (context.panel.response) {
 }
 ```
 
+### Payload
+
 So, Next step we need to configure our code, create payload and then pass our payload to Infinity data Source.
 
-- In section **Request Payload** select **Code**. Now Code editor for configure payload is available.
+In section **Request Payload** select **Code**. Now Code editor for configure payload is available.
 
-Please create a payload using the panel elements.
-The code editor should return the appropriate payload.
+Please create a payload using the panel elements. The code editor should return the appropriate payload.
 
 <Image
-  title="Configuration for Update Request Create Payload"
+  title="Configuration for Update Request Create Payload."
   src="/img/blog/2024-07-20-infinity-data-source/update-req-payload.png"
 />
 
@@ -129,18 +134,18 @@ context.panel.elements.forEach((element) => {
 return payload;
 ```
 
-We have a payload. We need to configure the Query Editor using our payload
+### Query Editor
 
-Highlights:
+We have a payload. We need to configure the Query Editor using our payload:
 
-- **Source** set to **URL**
-- **Method** set to **POST**
-- **URL** set to your URL or you can you use URL from example for first time
+- Set **Source** set to **URL**
+- Set **Method** set to **POST**
+- Set **URL** set to your URL or you can you use URL from example for first time
 - Click on `Headers, Body, Request params` to open options
 
-- **Body Type** set to **Raw**
-- **Body Content Type** set to **JSON**
-- **Body Content** fill using our payload
+- Set **Body Type** set to **Raw**
+- Set **Body Content Type** set to **JSON**
+- Set **Body Content** fill using the created payload
 
 Code to copy:
 
@@ -153,20 +158,21 @@ Code to copy:
 ```
 
 <Image
-  title="Configuration for Update Request Query Editor"
+  title="Configuration for Update Request Query Editor."
   src="/img/blog/2024-07-20-infinity-data-source/update-req-query-editor.png"
 />
 
 Press `F12` on keyboard and open developer panel. In opened panel click on `Network` tab and clear all logs.
-After click `Submit` we will see modal window with success message.
+
+Click `Submit` and you will see modal window with success message.
 
 <Image
-  title="Success Message"
+  title="Success Message that values updated successfully."
   src="/img/blog/2024-07-20-infinity-data-source/modal-window.png"
 />
 
-Let's check our Network Tab. Find Our request and open payload tab. Here we have huge object. Expand it and find `url_options` property in nested object.
-We've done everything right, we can see our set parameters
+Let's check our Network Tab. Find the update request and open payload tab. Here we have huge object. Expand it and find `url_options` property in nested object.
+We've done everything right, we can see our set parameters:
 
 ```js
 {
@@ -184,7 +190,7 @@ We've done everything right, we can see our set parameters
   src="/img/blog/2024-07-20-infinity-data-source/network.png"
 />
 
-I hope the solution is illustrative enough to keep you moving forward with your implementations via using Infinity Data Source and Business Form
+I hope the solution is illustrative enough to keep you moving forward with your implementations using Infinity Data Source and Business Forms panel.
 
 ## Feedback
 
