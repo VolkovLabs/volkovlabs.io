@@ -6,7 +6,6 @@ image: /img/blog/2022-06-10-pytorch-nvidia-gpu/banner.png
 keywords: [PyTorch, GPU]
 ---
 
-import Code from "@theme/Code";
 import Image from "@theme/Image";
 
 # PyTorch in Ray Docker container with NVIDIA GPU support on Google Cloud
@@ -120,10 +119,22 @@ services:
 
 To build a Docker image based on the latest version of Ray, we created a Docker file:
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2022-06-10-pytorch-nvidia-gpu/Dockerfile"
-  language="docker"
-/>
+```docker
+FROM rayproject/ray:1.10.0-py38
+
+## Working directory
+WORKDIR /app
+COPY requirements.txt ./
+
+## Install Requirements
+RUN pip3 install -r requirements.txt
+
+## Copy script
+COPY ./app.py ./
+
+## Start
+CMD ["python3", "./app.py"]
+```
 
 File `requirements.txt` to install the 1.10.0 version of the PyTorch:
 
@@ -133,10 +144,16 @@ torch==1.10.0
 
 Here is the application we used to test PyTorch with CUDA support:
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2022-06-10-pytorch-nvidia-gpu/torch.py"
-  language="python"
-/>
+```python
+import torch
+
+print("CUDA Available:", torch.cuda.is_available())
+print("CUDA Devices count:",torch.cuda.device_count())
+print("CUDA Version: ", torch.version.cuda)
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+device = torch.device(device)
+```
 
 ### Docker container
 

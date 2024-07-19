@@ -6,7 +6,6 @@ image: /img/blog/2021-12-28-rss-datasource/banner.png
 keywords: [Image, PDF, Base64, Visualization]
 ---
 
-import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -49,10 +48,34 @@ You can add the Business News Data Source manually in the Data Sources Configura
   src="/img/blog/2021-12-28-rss-datasource/datasource.png"
 />
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2021-12-28-rss-datasource/provisioning.yml"
-  language="yaml"
-/>
+```yaml
+datasources:
+  - name: Volkov Labs RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    isDefault: true
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://volkovlabs.io/blog/rss.xml
+  - name: AWS CloudFront RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://status.aws.amazon.com/rss/cloudfront.rss
+  - name: Grafana RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://grafana.com/blog/news.xml
+```
 
 ## Dynamic Text panel
 
@@ -72,10 +95,20 @@ To correctly display the date, it should be of the `Time` type. All fields retur
 
 Here is the content of the panel to imitate the look of the News panel:
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs.io/blob/main/blog/2021-12-28-rss-datasource/table.html"
-  language="html"
-/>
+```html
+<table cellpadding="0" cellspacing="0" border="0" style="border: 0">
+  <tr style="border: 0">
+    <td style="border: 0"><img height="100" src="{{og:image}}" /></td>
+    <td style="border: 0">
+      <b>{{date pubDate 'MMM DD'}}</b>
+      <h3>
+        <a style="color: blue" target="_blank" href="{{link}}">{{title}}</a>
+      </h3>
+      {{description}}
+    </td>
+  </tr>
+</table>
+```
 
 You can find more information about the Dynamic Text Panel plugin and various helpers in our [documentation](/plugins/volkovlabs-dynamictext-panel).
 

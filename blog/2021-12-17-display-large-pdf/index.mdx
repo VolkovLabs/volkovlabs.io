@@ -84,17 +84,37 @@ To load PDF documents and test images into the database, we created a Node.js sc
 
 The initial provisioning configuration that adds a new dashboard for PostgreSQL is already present in our plugin template.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/provisioning/dashboards/default.yaml"
-  language="yaml"
-/>
+```yaml
+apiVersion: 1
+
+providers:
+  - name: Default # A uniquely identifiable name for the provider
+    type: file
+    options:
+      path: /etc/grafana/provisioning/dashboards
+```
 
 We have included a configuration to provision a PostgreSQL data source with SSL disabled, as well as a specific login, password, and URL pertaining to the database setup.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/provisioning/datasources/postgres.yaml"
-  language="yaml"
-/>
+```yaml
+apiVersion: 1
+
+datasources:
+  - name: PostgreSQL
+    type: postgres
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    url: postgres:5432
+    user: postgres
+    uid: P1D2C73DC01F2359A
+    jsonData:
+      postgresVersion: 1200
+      sslmode: disable
+    secureJsonData:
+      password: postgres
+```
 
 You can find more information about the PostgreSQL data source in the [official documentation](https://grafana.com/docs/grafana/latest/datasources/postgres/).
 
