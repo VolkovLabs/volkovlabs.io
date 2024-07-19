@@ -55,10 +55,11 @@ SELECT ENCODE (CONVERT_TO('Hello World!', 'UTF-8'), 'BASE64');
 
 Create tables to store images, video, and audio files.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/data.sql"
-  language="sql"
-/>
+```sql
+CREATE TABLE images (name text, img bytea, UNIQUE(name));
+CREATE TABLE videos (name text, video bytea, UNIQUE(name));
+CREATE TABLE audios (name text, audio bytea, UNIQUE(name));
+```
 
 Load PDF, PNG, MP4, MP3, and other supported file formats into your database using the Node.js script.
 

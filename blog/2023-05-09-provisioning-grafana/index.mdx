@@ -6,7 +6,6 @@ image: /img/blog/2023-05-09-provisioning-grafana/banner.png
 keywords: [Grafana, Provisioning, Data Source]
 ---
 
-import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -123,10 +122,34 @@ Unfortunately and surprisingly, there is no UI functionality for exporting a dat
 
 This not-so-exciting fact leads to a sorrowful conclusion. There is no one solid approach to having such a file. I can share what we use for the PostgreSQL data source.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs-grapi-datasource/blob/main/provisioning/datasources/datasources.yaml"
-  language="yaml"
-/>
+```yaml
+apiVersion: 1
+
+datasources:
+  - name: Business Satellite
+    type: volkovlabs-grapi-datasource
+    access: proxy
+    uid: grapi
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      url: http://localhost:3000
+  - name: Timescale
+    type: postgres
+    access: proxy
+    uid: timescale
+    orgId: 1
+    version: 1
+    editable: true
+    url: host.docker.internal:5432
+    user: postgres
+    jsonData:
+      postgresVersion: 1200
+      sslmode: disable
+    secureJsonData:
+      password: postgres
+```
 
 For all others, go into the 'Inspect' menu of your browser and then look at the Network tab. If nothing is shown, try to refresh the page.
 
