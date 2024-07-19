@@ -6,7 +6,6 @@ image: /img/blog/2021-12-10-panel-template/banner.png
 keywords: [Template, Panel, Grafana, Visualization]
 ---
 
-import Code from "@theme/Code";
 import Image from "@theme/Image";
 
 # Our panel plugin template for Grafana
@@ -40,10 +39,23 @@ Here are some benefits of using Docker containers compared to locally installed 
 
 Our typical configuration for Grafana is included in the template.
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs-abc-panel/blob/main/docker-compose.yml"
-  language="yaml"
-/>
+```yaml
+version: "3.4"
+
+services:
+  grafana:
+    container_name: grafana
+    image: ghcr.io/volkovlabs/app:latest
+    ports:
+      - 3000:3000/tcp
+    environment:
+      - GF_DEFAULT_APP_MODE=development
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/panels.json
+      - GF_INSTALL_PLUGINS=marcusolsson-static-datasource
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/volkovlabs-abc-panel
+      - ./provisioning:/etc/grafana/provisioning
+```
 
 In this configuration, Grafana starts in Anonymous mode and does not require authentication. Any plugins can be installed at the start-up automatically.
 
@@ -81,10 +93,18 @@ To make the development process repeatable, transferrable, and easier for the Gr
 
 Here is an example of how to add a Static Data Source:
 
-<Code
-  url="https://github.com/VolkovLabs/volkovlabs-abc-panel/blob/main/provisioning/datasources/datasources.yaml"
-  language="yaml"
-/>
+```yaml
+apiVersion: 1
+
+datasources:
+  - name: Static
+    type: marcusolsson-static-datasource
+    access: proxy
+    isDefault: true
+    orgId: 1
+    version: 1
+    editable: true
+```
 
 To add or update dashboards, they should be exported as Global and placed in the `/provisioning/dashboards` folder. Detailed information can be found in the Grafana [Documentation](https://grafana.com/docs/grafana/latest/administration/provisioning/).
 

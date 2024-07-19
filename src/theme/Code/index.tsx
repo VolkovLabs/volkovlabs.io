@@ -1,6 +1,6 @@
-import React, { useReducer } from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import { codeReducer, fetchCode, initialFetchResultState } from './utils';
+import React, { useReducer } from "react";
+import CodeBlock from "@theme/CodeBlock";
+import { codeReducer, fetchCode, initialFetchResultState } from "./utils";
 
 /**
  * Properties
