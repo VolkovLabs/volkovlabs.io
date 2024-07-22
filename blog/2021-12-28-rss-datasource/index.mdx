@@ -19,9 +19,7 @@ You can find a video version of this post on our YouTube channel.
 
 <Youtube id="RAxqS2hpWkg" title="News feed tutorial for Grafana Dashboard." />
 
-We maintain [Dynamic Text Panel](/plugins/volkovlabs-dynamictext-panel), which displays data frames on a custom layout built with Markdown, HTML, and Handlebars.
-
-An RSS data source was implemented with the recently released [Data Source Template](https://github.com/volkovlabs/volkovlabs-abc-datasource). This template is similar to the panel plugin template introduced in the previous articles. Business News Data Source retrieves a feed and returns data frames to display news in the Dynamic Text Panel plugin or other custom panels.
+An RSS data source was implemented with the recently released [Data Source Template](https://github.com/volkovlabs/volkovlabs-abc-datasource). This template is similar to the panel plugin template introduced in the previous articles. Business News Data Source retrieves a feed and returns data frames to display news in the [Business Text panel](/plugins/volkovlabs-dynamictext-panel) or other custom panels.
 
 ## Data source plugin
 
@@ -35,13 +33,13 @@ The Grafana Plugins catalog now lists 120 data source plugins, 22 of which were 
 
 The HTTP(S) protocol can be used to read RSS and Atom feeds, and in most circumstances, no authentication is required. Authentication can be introduced in a future release, and the default authentication options in the HTTP(S) backend should be sufficient.
 
-We decided to develop Business News Data Source without the backend using [our data source plugin template](https://github.com/volkovlabs/volkovlabs-abc-datasource). Similar to the panel plugin template, this template comes preconfigured with Docker Compose, initial provisioning, and continuous integration with test coverage settings.
+We decided to develop the [Business News data source](/plugins/volkovlabs-rss-datasource/) without the backend using [our data source plugin template](https://github.com/volkovlabs/volkovlabs-abc-datasource). Similar to the panel plugin template, this template comes preconfigured with Docker Compose, initial provisioning, and continuous integration with test coverage settings.
 
 ## Add Data Source
 
-Let's add a new RSS data source to the Grafana blog and create a panel to display the latest news similar to the News Panel plugin.
+Let's add a new Business News data source to the Grafana blog and create a panel to display the latest news similar to the News Panel plugin.
 
-You can add the Business News Data Source manually in the Data Sources Configuration menu or provision it through configuration files.
+You can add the Business News data source manually in the Data Sources Configuration menu or provision it through configuration files.
 
 <Image
   title="We are adding an Business News data source for showing a newsfeed in Grafana."
@@ -77,12 +75,12 @@ datasources:
       feed: https://grafana.com/blog/news.xml
 ```
 
-## Dynamic Text panel
+## Business Text panel
 
-The next step is to add a Dynamic Text panel on the dashboard and set content with Markdown, HTML, and Handlebars.
+The next step is to add a Business Text panel on the dashboard and set content with Markdown, HTML, and Handlebars.
 
 <Image
-  title="Adding a new Dynamic Text panel on the Dashboard for showing a newsfeed in Grafana."
+  title="Adding a new Business Text panel on the Dashboard for showing a newsfeed in Grafana."
   src="/img/blog/2021-12-28-rss-datasource/dashboard.png"
 />
 
@@ -110,7 +108,7 @@ Here is the content of the panel to imitate the look of the News panel:
 </table>
 ```
 
-You can find more information about the Dynamic Text Panel plugin and various helpers in our [documentation](/plugins/volkovlabs-dynamictext-panel).
+You can find more information about the Business Text Panel plugin and various helpers in our [documentation](/plugins/volkovlabs-dynamictext-panel).
 
 ## AWS feed
 
@@ -131,3 +129,11 @@ The Redis Status page is based on the Atom format and can be displayed using thi
 />
 
 Using the Business News data source, you can combine your system and application metrics with newsfeeds from AWS, Redis, and other providers to stay up to date on any issues on their side.
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-rss-datasource/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).

@@ -12,7 +12,7 @@ import Youtube from "@theme/Youtube";
 
 # Display large PDF documents in Grafana
 
-In the [recent article](/blog/display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e) on our blog, we delved into the advantages of utilizing Docker containers and initial provisioning when crafting our panel plugin template for Grafana. This approach has proven to be valuable when implementing the current feature request for Business Media Panel and letting us swiftly provide solutions for long-term plugin support.
+In the [recent article](/blog/we-created-our-own-panel-plugin-template-for-grafana-665f7e6760d1/) on our blog, we delved into the advantages of utilizing Docker containers and initial provisioning when crafting our panel plugin template for Grafana. This approach has proven to be valuable when implementing the current feature request for [Business Media Panel](/plugins/volkovlabs-image-panel/) and letting us swiftly provide solutions for long-term plugin support.
 
 During the creation of Business Media Panel for one of our projects, we also included support for displaying PDF documents. It's satisfying to see that the plugin is now used to display PDF files stored in databases such as PostgreSQL.
 
@@ -32,7 +32,7 @@ PDF documents are classified into four categories based on their size:
 - large (1-16MB)
 - huge (16-128MB)
 
-Our plugin was designed to support small and medium-sized PDF documents that you can easily test without setting up a separate database for storage. For this purpose, we have used the static data source and stored the data in the dashboard.
+Our plugin was designed to support small and medium-sized PDF documents that you can easily test without setting up a separate database for storage. For this purpose, we have used the [Business Input data source](/plugins/volkovlabs-static-datasource/) and stored the data in the dashboard.
 
 To validate and assess the plugin's performance when showcasing large PDF documents, we followed these steps:
 
@@ -73,7 +73,7 @@ CREATE TABLE images (name text, img bytea, UNIQUE(name));
 
 ## Loading PDF files into the database
 
-To load PDF documents and test images into the database, we created a Node.js script:
+To load PDF documents and test images into the database, we created a Node.js script.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/load.ts"
@@ -124,4 +124,10 @@ The final step is to start containers and load data. When they start, Grafana an
 
 It takes around 1-2 seconds to load a 13-megabyte PDF document with 2,990 pages. The user who requested this feature was pretty happy with results, therefore we passed the plugin to the Grafana team for review and approval, and it was later added to the Grafana Plugins catalog.
 
-Please check the [plugin's repository](https://github.com/VolkovLabs/volkovlabs-image-panel) and let us know if you have any questions or suggestions for future improvements.
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-image-panel/issues).
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
