@@ -8,13 +8,18 @@ keywords: [Template, Panel, Grafana, Visualization]
 
 import Image from "@theme/Image";
 
-# Our panel plugin template for Grafana
+# We created panel plugin template for Grafana
 
 Grafana has excellent tutorials on building panel plugins, but we found ourselves repeating the same steps when creating custom plugins for our customers. Eventually, we decided to create our template for a panel plugin, which I hope can be helpful for the community.
 
 Grafana's tutorial [Build a panel plugin](https://grafana.com/tutorials/build-a-panel-plugin/) provides information on setting up the environment, creating a new plugin, and explaining the basics of a panel development using data frames and options control. It's a great starting point, and we recommend reading it before continuing with this article.
 
-As I mentioned before, we wanted to have a template, which can be used as a base for a new panel with everything in place and updated to the latest version of Grafana. We called it the [Abc panel](https://github.com/VolkovLabs/volkovlabs-abc-panel).
+As I mentioned before, we wanted to have a template, which can be used as a base for a new panel with everything in place and updated to the latest version of Grafana. We called it the [Abc panel template](https://github.com/VolkovLabs/volkovlabs-abc-panel).
+
+:::tip Archived
+
+Since publishing this blog Abc panel template was archived. We recommend to use [Plugin Tools](https://grafana.com/developers/plugin-tools/) to create new plugins.
+:::
 
 ## Panel plugins
 
@@ -91,13 +96,13 @@ You may notice special `--coverage` flag added to the build command to generate 
 
 To make the development process repeatable, transferrable, and easier for the Grafana team to Review, we create provisioning files to add data sources, application plugins, and dashboards in the `/provisioning` folder.
 
-Here is an example of how to add a Static Data Source:
+Here is an example of how to add a Business Input Data Source:
 
 ```yaml
 apiVersion: 1
 
 datasources:
-  - name: Static
+  - name: Business Input
     type: marcusolsson-static-datasource
     access: proxy
     isDefault: true
@@ -123,12 +128,12 @@ Here is a part of the GitHub Action to submit coverage to CodeCov.
 
 ```yaml
 - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          directory: ./coverage/
-          files: ./coverage/lcov.info
-          env_vars: OS,PYTHON
-          fail_ci_if_error: true
+  uses: codecov/codecov-action@v2
+  with:
+    directory: ./coverage/
+    files: ./coverage/lcov.info
+    env_vars: OS,PYTHON
+    fail_ci_if_error: true
 ```
 
 ## Long-term Support
@@ -136,3 +141,14 @@ Here is a part of the GitHub Action to submit coverage to CodeCov.
 Every release of Grafana introduces new features, breaking changes, and minor updates. Depending on the features and complexity of the custom plugin, some tests can fail, and parts of the code should be replaced or improved with every major Grafana release.
 
 We recommend doing manual testing of custom plugins and applications for each new release. As mentioned before, Docker with Provisioning and CI included in the template makes it effortless.
+
+## Grafana Crash Course
+
+We demonstrated how to create a panel plugin in the three parts series in the Grafana Crash Course section [Build a Panel plugin](/grafana/developer/panel).
+
+## Feedback
+
+We're looking forward to hearing from you. You can use different ways to get in touch with us.
+
+- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
