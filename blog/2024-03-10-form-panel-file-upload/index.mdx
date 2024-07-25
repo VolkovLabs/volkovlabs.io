@@ -81,7 +81,7 @@ The **initial request** is responsible for providing data right after the page i
 
 The **Upload Request** is where the configuration of two Data Manipulation forms differ.
 
-#### Upload Request configuration for Data Source
+#### Upload Request configuration for Data Source before version 4.0.0
 
 <Image
   title="Update Request configuration when the Data Manipulation panel uses Data Source."
@@ -124,6 +124,57 @@ VALUES ('${file.name}', '${base64}');`,
 };
 
 return getPayload();
+```
+
+#### Upload Request configuration for Data Source from version 4.0.0
+
+<Image
+  title="Update Request configuration when the Data Manipulation panel uses Data Source from version 4.0.0"
+  src="/img/blog/2024-03-10-file-upload/datasource-config-4-0.png"
+/>
+
+Create Payload:
+
+```js
+const payload = {};
+
+context.panel.elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  payload[element.id] = element.value;
+});
+
+const toBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+  });
+
+/**
+ * Data Source payload
+ */
+const getPayload = async () => {
+  const file = payload.file[0];
+  const base64 = await toBase64(file);
+
+  return {
+    file,
+    base64,
+  };
+};
+
+return getPayload();
+```
+
+Query Editor:
+
+```SQL
+INSERT INTO files (name, file)
+VALUES ('${payload.file.name}', '${payload.base64}');
 ```
 
 #### Upload Request configuration for HTTP API
