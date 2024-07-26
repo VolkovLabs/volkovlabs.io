@@ -11,7 +11,7 @@ import Image from "@theme/Image";
 
 # How to combine Infinity Data Source with the Business Forms
 
-This article provides an example of how the [Infinity](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) data source can be integrated with the [Business Forms](/plugins/volkovlabs-form-panel/) plugin on the Grafana dashboard.
+This article provides an example of how the [Infinity data source](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) can be integrated with the [Business Forms](/plugins/volkovlabs-form-panel/) plugin on the Grafana dashboard.
 
 In the next several paragraphs, I will demonstrate how to:
 
@@ -49,7 +49,7 @@ In this article, a data entry form consists of the following elements:
 
 The Business Form provides the **Submit** button by default. I will alter the **Custom Code** to:
 
-- add the `context` into logs,
+- add the `context` into browser console output,
 - have the **Submit** button enabled right after the **Initial Request** executes.
 
 This step is not critical rather it simplifies what I am demonstrating.
@@ -61,7 +61,9 @@ This step is not critical rather it simplifies what I am demonstrating.
 
 ### Initial Request Payload
 
-Below is the illustration of the **Initial Request Payload** configuration. I keep the most parameters by default. The **URL** is any WHAT????
+Below is the illustration of the **Initial Request Payload** configuration. I keep the most parameters by default. URL is set to the endpoint with samples.
+
+The latest version of the Business Forms panel supports Query editors for seamless integration with data sources.
 
 <Image
   title="The Initial Request Payload configuration."
@@ -78,9 +80,11 @@ return;
 
 :::info TIP
 
-Using `console.log('context:', context)` you can find more available options and methods.
+Using `console.log('context:', context)` you can find available options and methods.
 
 :::
+
+Feel free to set initial data to form elements from the initial request using Form fields.
 
 ## Update Request
 
@@ -114,7 +118,7 @@ In this step, I use JavaScript and Payload Query editor to pass the **Update Req
 
 When **Update Request Payload**->**Request Payload** is set to **Code**, the **Create Payload** code editor is available.
 
-My payload uses panel element ID to find the corresponding values and send them into the payload.
+My payload uses panel element ID to find the corresponding values and send them into the payload. You can send all elements as is or transform them using custom logic.
 
 <Image
   title="Configuration for Update Request Create Payload."
@@ -129,6 +133,7 @@ let payload = {
   body: "",
   userId: "",
 };
+
 context.panel.elements.forEach((element) => {
   console.log("console >> element", element);
   if (element.id === "postTitle") {
@@ -153,7 +158,7 @@ After the **Update Request Payload** is configured, I can work on the query to u
 
 - Set **Source** set to **URL**,
 - Set **Method** set to **POST**,
-- Set **URL** set to any URL that WHAT??????
+- Set **URL** set to the API endpoint. We are using the URL with samples.
 
 Click on **Headers, Body, Request params** to open options:
 
@@ -166,7 +171,7 @@ Click on **Headers, Body, Request params** to open options:
   src="/img/blog/2024-07-20-infinity-data-source/update-req-query-editor.png"
 />
 
-Code to copy:
+Body Content to copy:
 
 ```js
 {
