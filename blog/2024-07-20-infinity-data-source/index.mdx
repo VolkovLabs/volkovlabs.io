@@ -14,12 +14,13 @@ import Image from "@theme/Image";
 This article provides an example of how the [Infinity](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) data source can be integrated with the [Business Forms](/plugins/volkovlabs-form-panel/) plugin on the Grafana dashboard.
 
 In the next several paragraphs, I will demonstrate how to:
- - create a basic business form,
- - configure the appropriate **Initial request**,
- - configure the **Update Request Payload** to pass data into the Infinity data source,
- - verify that the Business Forms has submitted the request with the correct values.
 
-Feel free to follow along and get the working template towards the end. 
+- create a basic business form,
+- configure the appropriate **Initial request**,
+- configure the **Update Request Payload** to pass data into the Infinity data source,
+- verify that the Business Forms has submitted the request with the correct values.
+
+Feel free to follow along and get the working template towards the end.
 
 ## Form Elements
 
@@ -47,10 +48,11 @@ In this article, a data entry form consists of the following elements:
 ### Initial Request and Submit button
 
 The Business Form provides the **Submit** button by default. I will alter the **Custom Code** to:
- - add the `context` into logs,
- - have the **Submit** button enabled right after the **Initial Request** executes. 
- 
-This step is not critical rather it simplifies what I am demonstrating. 
+
+- add the `context` into logs,
+- have the **Submit** button enabled right after the **Initial Request** executes.
+
+This step is not critical rather it simplifies what I am demonstrating.
 
 <Image
   title="The Initial Request configuration."
@@ -66,7 +68,7 @@ Below is the illustration of the **Initial Request Payload** configuration. I ke
   src="/img/blog/2024-07-20-infinity-data-source/initial-query-editor.png"
 />
 
-Code to copy. 
+Code to copy.
 
 ```js
 console.log("context:", context);
@@ -85,6 +87,7 @@ Using `console.log('context:', context)` you can find more available options and
 ### Update Request
 
 The configuration of the **Update request** looks as follows:
+
 - Set **Enable Update** set to **Manual**,
 - Set **Update Action** set to **Data Source**,
 - For **Data Source** select your Infinity data source.
@@ -109,7 +112,7 @@ if (context.panel.response) {
 
 In this step, I use JavaScript and Payload Query editor to pass the **Update Request Payload** to the Infinity data source.
 
-When **Update Request Payload**->**Request Payload** is set to **Code**, the **Create Payload** code editor is available. 
+When **Update Request Payload**->**Request Payload** is set to **Code**, the **Create Payload** code editor is available.
 
 My payload uses panel element ID to find the corresponding values and send them into the payload.
 
@@ -118,8 +121,8 @@ My payload uses panel element ID to find the corresponding values and send them 
   src="/img/blog/2024-07-20-infinity-data-source/update-req-payload.png"
 />
 
-Code to copy. 
- 
+Code to copy.
+
 ```js
 let payload = {
   title: "",
@@ -153,6 +156,7 @@ After the **Update Request Payload** is configured, I can work on the query to u
 - Set **URL** set to any URL that WHAT??????
 
 Click on **Headers, Body, Request params** to open options:
+
 - Set **Body Type** set to **Raw**,
 - Set **Body Content Type** set to **JSON**,
 - Specify **Body Content** using the created earlier payload.
@@ -174,17 +178,18 @@ Code to copy:
 
 ## Verify the results
 
-To test that everything works as designed, save the Business Forms panel and open it on the Grafana dashboard. 
+To test that everything works as designed, save the Business Forms panel and open it on the Grafana dashboard.
 
 Next, perform the following steps:
- 1. Press `F12` on the keyboard to open the developer panel and select the **Network** tab.
- 2. Clear all logs.
- 3. Enter values on the Business Forms panel.
- 4. Click the **Submit** button.
- 5. You should see the green success message.
- 6. The query log should appear in the developer panel, select it.
- 7. Expand the query results and navigate to the **url_options**.
- 8. Confirm the submitted values are identical to your entry.
+
+1.  Press `F12` on the keyboard to open the developer panel and select the **Network** tab.
+2.  Clear all logs.
+3.  Enter values on the Business Forms panel.
+4.  Click the **Submit** button.
+5.  You should see the green success message.
+6.  The query log should appear in the developer panel, select it.
+7.  Expand the query results and navigate to the **url_options**.
+8.  Confirm the submitted values are identical to your entry.
 
 <Image
   title="How to verify the results."
@@ -193,7 +198,7 @@ Next, perform the following steps:
 
 ## Feedback
 
-Hopefully, this article clarifies how the Infinity data source can be combined with the Business forms. If not, we are always open to questions. 
+Hopefully, this article clarifies how the Infinity data source can be combined with the Business forms. If not, we are always open to questions.
 
 We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
