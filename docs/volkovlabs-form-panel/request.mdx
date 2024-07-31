@@ -4,6 +4,8 @@ tags:
 image: /img/plugins/volkovlabs-form-panel/request.png
 ---
 
+import Image from "@theme/Image";
+
 # Custom Requests
 
 Data Manipulation Panel allows you to create your own initial and update requests with custom code.
@@ -11,6 +13,18 @@ Data Manipulation Panel allows you to create your own initial and update request
 ## Initial Request
 
 Select `Code` to choose an initial request, and then define the custom code:
+
+:::info Note
+
+The `context.panel.onOptionsChange()` handler call the refresh panel. If you use it in initial request , don't forget to disable the Synchronize option.
+Enabling the Synchronize option and using it together with `context.panel.onOptionsChange()` in the Initial Request will cause the panel to reload constantly.
+
+:::
+
+<Image
+  title="Disable Synchronize with data to avoid endless reloading of the panel if onOptionsChange() is used in the initial request"
+  src="/img/plugins/volkovlabs-form-panel/infinity-reload.png"
+/>
 
 ```js
 const bucketsSelect = context.panel.elements.find(
