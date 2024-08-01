@@ -50,6 +50,11 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/volkovlabs-grapi-datasource/",
   },
   {
+    title: "Business Table (coming soon)",
+    name: "volkovlabs-table-panel",
+    description: <>Summarize large amounts of data.</>,
+  },
+  {
     title: "Business Text",
     name: "volkovlabs-dynamictext-panel",
     description: <>Dynamic, data-driven text.</>,
