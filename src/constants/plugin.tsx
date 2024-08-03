@@ -8,7 +8,7 @@ export const PluginList: PluginItem[] = [
   {
     title: "Business Calendar",
     name: "volkovlabs-calendar-panel",
-    description: <>Display events and change time range.</>,
+    description: <>Display events and set time range.</>,
     href: "/plugins/volkovlabs-calendar-panel/",
   },
   {
@@ -34,7 +34,7 @@ export const PluginList: PluginItem[] = [
   {
     title: "Business Media",
     name: "volkovlabs-image-panel",
-    description: <>Display Base64 encoded media files.</>,
+    description: <>Display Base64 encoded and URL media files.</>,
     href: "/plugins/volkovlabs-image-panel/",
   },
   {
