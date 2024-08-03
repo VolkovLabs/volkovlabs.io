@@ -54,7 +54,7 @@ const sidebars: SidebarsConfig = {
       ],
       label: "Business Calendar",
       type: "category",
-      description: "Display events and change time range.",
+      description: "Display events and set time range.",
       link: {
         type: "doc",
         id: "volkovlabs-calendar-panel/index",
