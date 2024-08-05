@@ -7,9 +7,9 @@ import { PluginItem } from "../types";
 export const PluginList: PluginItem[] = [
   {
     title: "Business Calendar",
-    name: "volkovlabs-calendar-panel",
+    name: "business-calendar",
     description: <>Display events and set time range.</>,
-    href: "/plugins/volkovlabs-calendar-panel/",
+    href: "/plugins/business-calendar/",
   },
   {
     title: "Business Charts",

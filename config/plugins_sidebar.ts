@@ -19,45 +19,45 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "volkovlabs-calendar-panel/index",
+          id: "business-calendar/index",
           label: "Introduction",
         },
-        "volkovlabs-calendar-panel/basic-config",
+        "business-calendar/basic-config",
         {
           items: [
-            "volkovlabs-calendar-panel/internationalization",
-            "volkovlabs-calendar-panel/dashboard-timezones",
-            "volkovlabs-calendar-panel/color",
+            "business-calendar/internationalization",
+            "business-calendar/dashboard-timezones",
+            "business-calendar/color",
           ],
           label: "Features",
           type: "category",
           link: {
             type: "doc",
-            id: "volkovlabs-calendar-panel/features",
+            id: "business-calendar/features",
           },
         },
         {
           items: [
-            "volkovlabs-calendar-panel/business-calendar",
-            "volkovlabs-calendar-panel/layout",
-            "volkovlabs-calendar-panel/events",
-            "volkovlabs-calendar-panel/annotations",
+            "business-calendar/main",
+            "business-calendar/layout",
+            "business-calendar/events",
+            "business-calendar/annotations",
           ],
           label: "Sections",
           type: "category",
           link: {
             type: "doc",
-            id: "volkovlabs-calendar-panel/sections",
+            id: "business-calendar/sections",
           },
         },
-        "volkovlabs-calendar-panel/release",
+        "business-calendar/release",
       ],
       label: "Business Calendar",
       type: "category",
       description: "Display events and set time range.",
       link: {
         type: "doc",
-        id: "volkovlabs-calendar-panel/index",
+        id: "business-calendar/index",
       },
     },
     {

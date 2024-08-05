@@ -14,7 +14,7 @@ export const FOOTER = {
       items: [
         {
           label: "Business Calendar",
-          to: "/plugins/volkovlabs-calendar-panel/",
+          to: "/plugins/business-calendar/",
           className: "volkovlabs-footer-link icon-plugins-calendar-link",
         },
         {
