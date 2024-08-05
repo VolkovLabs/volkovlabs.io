@@ -17,7 +17,7 @@ export const NAVBAR = {
       items: [
         {
           label: "Business Calendar",
-          to: "/plugins/volkovlabs-calendar-panel/",
+          to: "/plugins/business-calendar/",
           className: "volkovlabs-link icon-plugins-calendar-link",
         },
         {
