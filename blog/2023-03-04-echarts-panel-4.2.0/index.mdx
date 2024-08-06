@@ -8,6 +8,8 @@ keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "../../docs/business-charts/_getting_started.mdx";
+import Feedback from "../../docs/business-charts/_feedback.mdx";
 
 # Business Charts Panel 4.2.0
 
@@ -84,7 +86,7 @@ echartsInstance.on("datarangeselected", (params) => {
 });
 ```
 
-3. In the `visualMap` definition, set the `range` property to the dashboard variables using the `replaceVariables` method as described in our [documentation](/plugins/volkovlabs-echarts-panel/variables).
+3. In the `visualMap` definition, set the `range` property to the dashboard variables using the `replaceVariables` method as described in our [documentation](/plugins/business-charts/variables).
 
 ```js
 visualMap: [
@@ -155,15 +157,7 @@ if (nodeList.length < 2) {
 }
 ```
 
-## Getting Started
-
-You can install Business Charts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-echarts-panel
-```
+<GettingStarted />
 
 ## YouTube Tutorial
 
@@ -190,10 +184,4 @@ One of the three plugins that completes Grafana is Business Charts Panel. With D
 - Set the background color as transparent by default (#139).
 - Added the Magic (JavaScript) Trio tutorial (#141).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-charts/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

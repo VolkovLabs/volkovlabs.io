@@ -19,7 +19,7 @@ export const FOOTER = {
         },
         {
           label: "Business Charts",
-          to: "/plugins/volkovlabs-echarts-panel/",
+          to: "/plugins/business-charts/",
           className: "volkovlabs-footer-link icon-plugins-echarts-link",
         },
         {

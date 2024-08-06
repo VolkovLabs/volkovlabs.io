@@ -8,6 +8,8 @@ keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "../../docs/business-charts/_getting_started.mdx";
+import Feedback from "../../docs/business-charts/_feedback.mdx";
 
 # Business Charts Panel 4.1.0
 
@@ -19,7 +21,7 @@ We are happy to announce the release of the Business Charts Panel 4.1.0 for Graf
 
 ## Streaming
 
-Streaming enables real-time data updates using streaming data sources and Grafana Live. You can find examples and configurations in [our documentation](/plugins/volkovlabs-echarts-panel/streaming).
+Streaming enables real-time data updates using streaming data sources and Grafana Live. You can find examples and configurations in [our documentation](/plugins/business-charts/streaming).
 
 ### Grafana Live
 
@@ -48,17 +50,9 @@ The Data Zoom feature allows you to select a time period on the chart for zoomin
   src="/img/blog/2023-01-13-echarts-panel-4.1.0/data-zoom.png"
 />
 
-You can find the code snippet in the [Event Handling](/plugins/volkovlabs-echarts-panel/events) section.
+You can find the code snippet in the [Event Handling](/plugins/business-charts/events) section.
 
-## Getting Started
-
-You can install Business Charts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-echarts-panel
-```
+<GettingStarted />
 
 ## YouTube Tutorial
 
@@ -83,10 +77,4 @@ One of the three plugins that completes Grafana is Business Charts Panel. With D
 - Updated the documentation and tutorials in the README file (#116).
 - Added the data zooming to the default Line example (#117).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-charts/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

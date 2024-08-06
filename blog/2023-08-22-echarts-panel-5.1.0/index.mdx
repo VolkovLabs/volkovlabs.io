@@ -9,6 +9,8 @@ keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "../../docs/business-charts/_getting_started.mdx";
+import Feedback from "../../docs/business-charts/_feedback.mdx";
 
 # Business Charts Panel 5.1.0
 
@@ -65,7 +67,7 @@ return {
 };
 ```
 
-Please explore details about the extended result in the plugin's [documentation](/plugins/volkovlabs-echarts-panel/extended/).
+Please explore details about the extended result in the plugin's [documentation](/plugins/business-charts/extended/).
 
 ## Wordcloud Extension
 
@@ -89,11 +91,11 @@ Apache ECharts version 5.0.0 addressed the rendering issue for live data.
   src="/img/blog/2023-08-22-echarts-panel-5.1.0/gauge.png"
 />
 
-Please check our documentation with [Streaming use cases](/plugins/volkovlabs-echarts-panel/streaming/).
+Please check our documentation with [Streaming use cases](/plugins/business-charts/streaming/).
 
 ## Memory Leak
 
-We've fixed the memory leaks on resubscribing to the restore event handler. We want to thank you our community member [sergiomonteroselma](https://github.com/VolkovLabs/volkovlabs-echarts-panel/issues/205) for reporting this issue and helping us with its troubleshooting.
+We've fixed the memory leaks on resubscribing to the restore event handler. We want to thank you our community member [sergiomonteroselma](https://github.com/VolkovLabs/business-charts/issues/205) for reporting this issue and helping us with its troubleshooting.
 
 We recommend that you update Business Charts Panel to the latest version 5.1.0 to avoid `Out Of Memory` errors after continuous refresh of the dashboard for a long period of time.
 
@@ -228,15 +230,7 @@ return {
 };
 ```
 
-## Getting Started
-
-You can install Business Charts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-echarts-panel
-```
+<GettingStarted />
 
 ## YouTube Tutorial
 
@@ -277,10 +271,4 @@ The Business Charts Panel plugin is a data visualization extension for Grafana t
 - Integrated the Wordcloud extension (#198).
 - Updated the Apache ECharts library to version 5.4.3 (#199).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-charts/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

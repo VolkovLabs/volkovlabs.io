@@ -13,9 +13,9 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Charts",
-    name: "volkovlabs-echarts-panel",
+    name: "business-charts",
     description: <>Powerful visualizations powered by Apache ECharts.</>,
-    href: "/plugins/volkovlabs-echarts-panel/",
+    href: "/plugins/business-charts/",
   },
   {
     title: "Business Forms",
