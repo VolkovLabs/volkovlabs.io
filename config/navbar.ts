@@ -22,7 +22,7 @@ export const NAVBAR = {
         },
         {
           label: "Business Charts",
-          to: "/plugins/volkovlabs-echarts-panel/",
+          to: "/plugins/business-charts/",
           className: "volkovlabs-link icon-plugins-echarts-link",
         },
         {
