@@ -47,7 +47,7 @@ My first idea was to use the Postgres database as the intermediary. The universa
 
 However, I soon realized that this was not a weekend project. I needed to create a synchronization mechanism between Planhat and the Postgres database, which would require either developing some code or spending time on integration with available 3rd party solutions, which is too much work for me.
 
-But then, a glimmer of hope appeared. Planhat's [extensive API](https://docs.planhat.com/) provided a way out. It returned standard JSON output, and a helpful article [JSON API Data sources in Grafana](https://volkovlabs.io/blog/json-api-data-sources-in-grafana-20230104/) shed light on the differences between available JSON data sources and guided me towards Infinity Data Source, which had built-in authorization options, including mine - Bearer token.
+But then, a glimmer of hope appeared. Planhat's [extensive API](https://docs.planhat.com/) provided a way out. It returned standard JSON output, and a helpful article [JSON API Data sources in Grafana](/blog/json-api-data-sources-in-grafana-20230104/) shed light on the differences between available JSON data sources and guided me towards Infinity Data Source, which had built-in authorization options, including mine - Bearer token.
 
 ## Dashboard
 
