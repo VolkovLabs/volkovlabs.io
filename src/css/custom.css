@@ -128,14 +128,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-dynamictext-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-text/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-dt-link::before {
-  background: url("/static/img/plugins/volkovlabs-dynamictext-panel/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-text/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-form-link::before {
