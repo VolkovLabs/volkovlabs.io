@@ -175,7 +175,7 @@ export const NAVBAR = {
       ],
     },
     {
-      href: "https://www.youtube.com/@volkovlabs",
+      href: "https://youtube.com/@volkovlabs",
       position: "right",
       className: "header-youtube-link",
       "aria-label": "YouTube Channel",
