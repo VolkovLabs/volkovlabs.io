@@ -73,7 +73,7 @@ const sidebars: SidebarsConfig = {
         },
         "volkovlabs-env-datasource/release",
       ],
-      label: "Environment Data Source",
+      label: "Environment data source",
       type: "category",
       description: "Environment variables on your dashboard.",
       link: {

@@ -8,6 +8,8 @@ keywords: [Data Source, RSS, Atom, Grafana]
 
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "../../docs/volkovlabs-rss-datasource/_getting_started.mdx";
+import Feedback from "../../docs/volkovlabs-rss-datasource/_feedback.mdx";
 
 # Business News Data Source 2.4.0
 
@@ -36,15 +38,7 @@ For example, a data source can be set to YouTube. You can display specific or mu
   src="/img/blog/2023-04-08-rss-datasource-2.4.0/parameters.png"
 />
 
-## Getting Started
-
-Business News data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-rss-datasource
-```
+<GettingStarted />
 
 ## YouTube Tutorial
 
@@ -61,10 +55,4 @@ The Business News data source is a plugin for Grafana that retrieves RSS/Atom fe
 - Update Documentation, Provisioning (#46)
 - Add URL parameters with variables support (#47, #48)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/business-news/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

@@ -10,8 +10,10 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "../../big/_getting_started.mdx";
+import Feedback from "../../big/_feedback.mdx";
 
-# Business Intelligence App 1.6.0
+# Business Intelligence 1.6.0
 
 We are excited to announce the release of the Business Intelligence App, version 1.6.0. It accumulates massive functionality enhancements and, thus, marks an important milestone in transitioning from a POC (proof of concept) to a development type of release.
 
@@ -25,7 +27,7 @@ The Business Intelligence App, version 1.6.0 includes the following updates:
 
 <Shorts
   src="https://www.youtube.com/embed/NG8eg1F5nX4"
-  title="Business Intelligence App 1.6.0 for Grafana."
+  title="Business Intelligence 1.6.0 for Grafana."
 />
 
 ## Variables Support
@@ -60,7 +62,7 @@ At this stage, we ensured that the BI App supports the variables in Prometheus D
 
 In this release, we added a Prometheus middleware and container to allow the collection of the BI Engine system health statistics. Having Prometheus monitoring built-in in the BI App allows you to monitor the alerting system itself. Being an outside system, the BI App is an excellent choice for observing the observability system while using the familiar interface.
 
-Following the enabling of the Prometheus monitoring, we crafted a [ready-to-use, out-of-the-box dashboard](https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/provisioning/dashboards/engine.json) with all necessary metrics for kick-off the successful monitoring.
+Following the enabling of the Prometheus monitoring, we crafted a [ready-to-use, out-of-the-box dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/provisioning/dashboards/engine.json) with all necessary metrics for kick-off the successful monitoring.
 
 <Image
   title="Built-in BI Engine monitoring dashboard. Data collected and stored via Prometheus."
@@ -123,14 +125,7 @@ In the example below, the alert history is displayed in the Table visualization 
   src="/img/blog/2024-01-17-big-1.6.0/alert-history.png"
 />
 
-## Getting Started
-
-You can download the Development release from our [GitHub repository](https://github.com/volkovlabs/business-intelligence) and follow this hands-on tutorial.
-
-<Youtube
-  id="8UaY916PPXc"
-  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana. Unscripted and Hands-On."
-/>
+<GettingStarted />
 
 ### Docker Compose
 
@@ -143,7 +138,7 @@ The `docker-compose.yml` file consists of the following containers:
 - **Prometheus** collects and store performance metrics from BI Engine.
 
 <Code
-  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
   language="yaml"
 />
 
@@ -209,9 +204,4 @@ docker compose down
 - [Engine] Add Alert history.
 - [Engine] Add Evaluation overrides.
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-intelligence/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+<Feedback />
