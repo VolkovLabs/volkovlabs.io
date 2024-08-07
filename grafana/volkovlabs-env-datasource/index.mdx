@@ -6,10 +6,12 @@ tags:
 
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "./_getting_started.mdx";
+import Feedback from "./_feedback.mdx";
 
-# Environment Data Source
+# Environment data source
 
-The Environment Data Source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables in your code.
+The Environment data source is a plugin for Grafana that returns environment variables to display on your dashboard or use as Variables in your code.
 
 <Youtube
   id="sczRq2lI3e4"
@@ -18,30 +20,12 @@ The Environment Data Source is a plugin for Grafana that returns environment var
 
 ## Requirements
 
-- Environment Data Source 4.X requires Grafana 10 or Grafana 11.
-- Environment Data Source 3.X requires Grafana 9 or Grafana 10.
-- Environment Data Source 2.X requires Grafana 8.5 or Grafana 9.
-- Environment Data Source 1.X requires Grafana 8.
+- Environment data source 4.X requires Grafana 10 or Grafana 11.
+- Environment data source 3.X requires Grafana 9 or Grafana 10.
+- Environment data source 2.X requires Grafana 8.5 or Grafana 9.
+- Environment data source 1.X requires Grafana 8.
 
-## Getting Started
-
-Environment Data Source is not included in the Grafana Catalog. It can be installed directly from GitHub.
-
-### Signed version
-
-Signed to http://localhost:3000/ version can be used behind the proxy server (NGINX).
-
-```bash
-grafana cli --pluginUrl https://github.com/VolkovLabs/volkovlabs-env-datasource/releases/download/v4.0.0/volkovlabs-env-datasource-4.0.0.zip plugins install volkovlabs-env-datasource
-```
-
-### Unsigned version
-
-Can be used with any Grafana instance. Requires to add the environment data source to the allowed unsigned plugin configuration.
-
-```bash
-grafana cli --pluginUrl https://github.com/VolkovLabs/volkovlabs-env-datasource/releases/download/v4.0.0/volkovlabs-env-datasource-4.0.0.unsigned.zip plugins install volkovlabs-env-datasource
-```
+<GettingStarted />
 
 ## Highlights
 
@@ -63,13 +47,7 @@ grafana cli --pluginUrl https://github.com/VolkovLabs/volkovlabs-env-datasource/
 | [Provisioning](provisioning) | Demonstrates how to automatically provision the data Source. |
 | [Release Notes](release)     | Stay up to date with the latest features and updates.        |
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-env-datasource/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
+<Feedback />
 
 ## License
 
