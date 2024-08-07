@@ -6,7 +6,7 @@ import { BlogArchive } from "../../constants";
  * Properties
  */
 type Props = {
-  href: string;
+  id: string;
   width: string;
 };
 
@@ -17,7 +17,7 @@ const BlogPost = ({ id, width = "75%" }: Props) => {
   const posts = [];
 
   /**
-   * Add posts with the same tags
+   * Find post with the specific Id
    */
   BlogArchive?.archive?.blogPosts.filter((post) => {
     if (post.metadata.permalink === `/blog/${id}/`) {
