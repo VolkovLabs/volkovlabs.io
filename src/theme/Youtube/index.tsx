@@ -21,7 +21,7 @@ const Youtube = ({ id, title, height = 378, width = 672 }: Props) => (
         width={width}
         className={styles.video}
         height={height}
-        src={`https://www.youtube.com/embed/${id}`}
+        src={`https://youtube.com/embed/${id}`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
