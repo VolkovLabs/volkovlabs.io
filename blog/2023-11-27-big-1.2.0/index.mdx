@@ -10,8 +10,10 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "../../big/_getting_started.mdx";
+import Feedback from "../../big/_feedback.mdx";
 
-# Business Intelligence App 1.2.0
+# Business Intelligence 1.2.0
 
 We are excited to announce the release of the Business Intelligence App, version 1.2.0. At this early stage, it is a proof-of-concept, meaning a product created as a starter to vastly extend its functionality in the future.
 This release includes the following updates:
@@ -22,7 +24,7 @@ This release includes the following updates:
 
 <Shorts
   src="https://www.youtube.com/embed/X2An_gbxX5k"
-  title="Business Intelligence App 1.2.0 for Grafana."
+  title="Business Intelligence 1.2.0 for Grafana."
 />
 
 ## Proof of Concept
@@ -106,14 +108,7 @@ You can set any webhook to be assigned by default, meaning, when a webhook is no
   src="/img/blog/2023-11-27-big-1.2.0/webhook.png"
 />
 
-## Getting Started
-
-You can download the Development release from our [GitHub repository](https://github.com/volkovlabs/business-intelligence) and follow this hands-on tutorial.
-
-<Youtube
-  id="8UaY916PPXc"
-  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"
-/>
+<GettingStarted />
 
 ### Docker Compose
 
@@ -127,7 +122,7 @@ The `docker-compose.yml` file consists of the following containers:
 - **Data Generator** generates test data for threshold evaluation in the demo dashboard.
 
 <Code
-  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
   language="yaml"
 />
 
@@ -153,9 +148,4 @@ docker compose down
 
 - Initial Proof of Concept (POC) release for testing.
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-intelligence/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+<Feedback />

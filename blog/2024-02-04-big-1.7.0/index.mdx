@@ -10,8 +10,10 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
+import GettingStarted from "../../big/_getting_started.mdx";
+import Feedback from "../../big/_feedback.mdx";
 
-# Business Intelligence App 1.7.0
+# Business Intelligence 1.7.0
 
 We are excited to announce the release of the Business Intelligence App, version 1.7.0.
 
@@ -27,7 +29,7 @@ The Business Intelligence App, version 1.7.0 includes the following updates:
 
 <Shorts
   src="https://www.youtube.com/embed/FY1W0B3Pxog"
-  title="Business Intelligence App 1.7.0 for Grafana."
+  title="Business Intelligence 1.7.0 for Grafana."
 />
 
 ## Distributed High Availability
@@ -99,14 +101,7 @@ However, in the case when variables for your particular data source are not yet 
   src="/img/blog/2024-02-04-big-1.7.0/manual.png"
 />
 
-## Getting Started
-
-You can download the Development release from our [GitHub repository](https://github.com/volkovlabs/business-intelligence) and follow this hands-on tutorial.
-
-<Youtube
-  id="8UaY916PPXc"
-  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana. Unscripted and Hands-On."
-/>
+<GettingStarted />
 
 ### Docker Compose
 
@@ -119,7 +114,7 @@ The `docker-compose.yml` file consists of the following containers:
 - **Prometheus** collects and store performance metrics from BI Engine.
 
 <Code
-  url="https://github.com/VolkovLabs/volkovlabs-bi-grafana/blob/main/docker-compose.yml"
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
   language="yaml"
 />
 
@@ -152,9 +147,4 @@ docker compose down
 - [Engine] Added alerts assignment between engine nodes.
 - [Engine] Added Swagger REST API documentation.
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-intelligence/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
+<Feedback />
