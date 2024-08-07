@@ -51,6 +51,22 @@
   background: url("/static/img/index/github.dark.svg") no-repeat;
 }
 
+.header-linkedin-link:hover {
+  opacity: 0.6;
+}
+
+.header-linkedin-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/linkedin.svg") no-repeat;
+}
+
+[data-theme="dark"] .header-linkedin-link::before {
+  background: url("/static/img/index/linkedin.dark.svg") no-repeat;
+}
+
 /* Icons */
 
 .volkovlabs-link {
@@ -294,17 +310,17 @@
   background: url("/static/img/index/linkedin.dark.svg") no-repeat;
 }
 
-.icon-sponsor-link::before {
+.icon-team-link::before {
   content: "";
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/sponsor/feature-1.svg") no-repeat;
+  background: url("/static/img/team/feature-1.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-sponsor-link::before {
-  background: url("/static/img/sponsor/feature-1.dark.svg") no-repeat;
+[data-theme="dark"] .icon-team-link::before {
+  background: url("/static/img/team/feature-1.dark.svg") no-repeat;
 }
 
 .icon-blog-link::before {

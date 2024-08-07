@@ -152,27 +152,10 @@ export const NAVBAR = {
       ],
     },
     {
-      to: "/sponsor/",
+      to: "/team/",
       position: "left",
       label: "Volkov Labs",
-      "aria-label": "Blog",
-      items: [
-        {
-          label: "Team",
-          to: "/sponsor",
-          className: "volkovlabs-link icon-sponsor-link",
-        },
-        {
-          label: "LinkedIn",
-          href: "https://linkedin.com/company/volkovlabs",
-          className: "volkovlabs-link icon-linkedin-link",
-        },
-        {
-          label: "YouTube Community",
-          href: "https://youtube.com/@volkovlabs/community",
-          className: "volkovlabs-link icon-community-link",
-        },
-      ],
+      "aria-label": "Volkov Labs",
     },
     {
       href: "https://youtube.com/@volkovlabs",
@@ -185,6 +168,12 @@ export const NAVBAR = {
       position: "right",
       className: "header-github-link",
       "aria-label": "GitHub Organization",
+    },
+    {
+      href: "https://linkedin.com/company/volkovlabs",
+      position: "right",
+      className: "header-linkedin-link",
+      "aria-label": "LinkedIn",
     },
   ],
 };

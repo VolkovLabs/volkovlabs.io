@@ -47,8 +47,8 @@ const Header = (siteConfig) => {
             <ThemedImage
               className={clsx("margin-vert--md")}
               sources={{
-                light: useBaseUrl("/img/sponsor/feature-1.svg"),
-                dark: useBaseUrl("/img/sponsor/feature-1.dark.svg"),
+                light: useBaseUrl("/img/team/feature-1.svg"),
+                dark: useBaseUrl("/img/team/feature-1.dark.svg"),
               }}
               height={"65%"}
               alt={siteConfig.tagline}
@@ -108,8 +108,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/sponsor/left.svg"),
-                dark: useBaseUrl("/img/sponsor/left.dark.svg"),
+                light: useBaseUrl("/img/team/left.svg"),
+                dark: useBaseUrl("/img/team/left.dark.svg"),
               }}
             />
           </div>
@@ -126,8 +126,8 @@ const Main = (siteConfig) => {
           <div className="col col--3">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/sponsor/right.svg"),
-                dark: useBaseUrl("/img/sponsor/right.dark.svg"),
+                light: useBaseUrl("/img/team/right.svg"),
+                dark: useBaseUrl("/img/team/right.dark.svg"),
               }}
             />
           </div>

@@ -118,9 +118,9 @@ export const FOOTER = {
       title: "Get in touch",
       items: [
         {
-          label: "Sponsor",
-          href: "/sponsor/",
-          className: "volkovlabs-footer-link icon-sponsor-link",
+          label: "Team",
+          href: "/team/",
+          className: "volkovlabs-footer-link icon-team-link",
         },
         {
           label: "LinkedIn",
