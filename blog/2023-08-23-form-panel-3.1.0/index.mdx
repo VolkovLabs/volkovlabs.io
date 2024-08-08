@@ -6,13 +6,15 @@ image: /img/blog/2023-08-23-form-panel-3.1.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-forms/_feedback.mdx";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-forms/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
-import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
-import Feedback from "../../docs/business-forms/_feedback.mdx";
 
-# Business Forms Panel 3.1.0
+# Business Forms 3.1.0
 
 We are happy to announce the release of the Business Forms Panel 3.1.0. This release includes the following updates:
 
@@ -23,9 +25,7 @@ We are happy to announce the release of the Business Forms Panel 3.1.0. This rel
 - Added support for the Data Source request.
 - Added the `onChange` function to update elements in the local state within the custom code.
 
-:::info Grafana Catalog
-The plugin was updated in the Grafana Plugins catalog on August 15, 2023.
-:::
+<Catalog date="August 15, 2023" />
 
 <Shorts id="0ratMv5XYSk" title="Business Forms panel 3.1.0 for Grafana." />
 
@@ -184,14 +184,7 @@ onChange(elements.map((element) => {
 
 <GettingStarted />
 
-## YouTube Tutorial
-
-Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
-
-<Youtube
-  id="DXALVG8GijM"
-  title="Manual data entry and user input into dashboard."
-/>
+<Tutorial />
 
 ## Release Notes
 
