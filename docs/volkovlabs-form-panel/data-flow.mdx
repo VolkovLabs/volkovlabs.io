@@ -1,7 +1,7 @@
 ---
 tags:
   - Business Forms
-image: /img/plugins/volkovlabs-form-panel/data-manipulation-flow.png
+image: /img/plugins/business-forms/data-manipulation-flow.png
 ---
 
 import Image from "@theme/Image";
@@ -20,7 +20,7 @@ The schema below is created to illustrate the major parts and their roles.
 
 <Image
   title="Data flow diagram for the Data Manipulation Panel."
-  src="/img/plugins/volkovlabs-form-panel/data-manipulation-flow.png"
+  src="/img/plugins/business-forms/data-manipulation-flow.png"
 />
 
 ## Initial Request
@@ -41,12 +41,12 @@ Since version 4.2.0. the `Query Field` and `Field Name` fields have been relocat
 
 <Image
   title="Configure the Initial Request for Query. "
-  src="/img/plugins/volkovlabs-form-panel/query.png"
+  src="/img/plugins/business-forms/query.png"
 />
 
 <Image
   title="New location of `Query Field` fields."
-  src="/img/plugins/volkovlabs-form-panel/query-new.png"
+  src="/img/plugins/business-forms/query-new.png"
 />
 
 ### Data source
@@ -59,12 +59,12 @@ The **Initial Payload Request** is a mandatory piece of code that needs to conta
 
 <Image
   title="Steps to configure the Initial Request for Data Source."
-  src="/img/plugins/volkovlabs-form-panel/ds-all.png"
+  src="/img/plugins/business-forms/ds-all.png"
 />
 
 <Image
   title="Steps to configure the Initial Request for Data Source. New location of `Field Name` fields."
-  src="/img/plugins/volkovlabs-form-panel/ds-all-new.png"
+  src="/img/plugins/business-forms/ds-all-new.png"
 />
 
 ### REST API
@@ -73,7 +73,7 @@ The **REST API** type works with an external API server. When specifying the API
 
 <Image
   title="Steps to configure the Initial Request for REST API."
-  src="/img/plugins/volkovlabs-form-panel/rest-get.png"
+  src="/img/plugins/business-forms/rest-get.png"
 />
 
 You can find ready-to-use API servers for Deno, InfluxDB, JSON API, MySQL, Node-Red, and PostgreSQL in [servers section](../servers).
@@ -86,7 +86,7 @@ To create post-processing logic, you can access panel options, API responses, fo
 
 <Image
   title="Initial Request Custom Code exists for every Initial Request type."
-  src="/img/plugins/volkovlabs-form-panel/init-custom.png"
+  src="/img/plugins/business-forms/init-custom.png"
 />
 
 ## Ball is on the user's side
@@ -101,7 +101,7 @@ For the Data Source type, you must use the `SetInitial()` function in the Initia
 
 <Image
   title="Enable Highlight Changes to see the new values on the form."
-  src="/img/plugins/volkovlabs-form-panel/highlight.png"
+  src="/img/plugins/business-forms/highlight.png"
 />
 
 ## Reset button
@@ -119,7 +119,7 @@ In the **Custom code**, you can have any custom logic required. For instance, se
 
 <Image
   title="Reset button can call the Initial Request or execute any custom code."
-  src="/img/plugins/volkovlabs-form-panel/reset.png"
+  src="/img/plugins/business-forms/reset.png"
 />
 
 ## Update request
@@ -132,7 +132,7 @@ For the Data Source type, start with the Data Source parameter. Then go to the U
 
 <Image
   title="Steps to configure the Update Request for Data Source."
-  src="/img/plugins/volkovlabs-form-panel/update-request-ds.png"
+  src="/img/plugins/business-forms/update-request-ds.png"
 />
 
 ### Query editor and Frontend Data Source
@@ -176,7 +176,7 @@ For the Data Source type, you must use the `SetInitial()` function in the Initia
 
 <Image
   title="Confirmation step looks like a table with old and new values."
-  src="/img/plugins/volkovlabs-form-panel/confirm.png"
+  src="/img/plugins/business-forms/confirm.png"
 />
 
 Following Confirmation, the Submit button initiates the Update Request.
@@ -193,7 +193,7 @@ In addition to the Submit and Reset button, there is a third one - Save Default.
 
 <Image
   title="Save Default Button configuration."
-  src="/img/plugins/volkovlabs-form-panel/default-button.png"
+  src="/img/plugins/business-forms/default-button.png"
 />
 
 ## Initial Request vs Update Request
@@ -202,7 +202,7 @@ Below is the comparative table showing the similarities and differences between 
 
 <Image
   title="Similarities and differences between the initial and update requests."
-  src="/img/plugins/volkovlabs-form-panel/init-update.png"
+  src="/img/plugins/business-forms/init-update.png"
 />
 
 ## Buttons
@@ -211,5 +211,5 @@ The below schema summarises the information about buttons available in the Data 
 
 <Image
   title="Three buttons are available in the Data Manipulation form."
-  src="/img/plugins/volkovlabs-form-panel/buttons.png"
+  src="/img/plugins/business-forms/buttons.png"
 />

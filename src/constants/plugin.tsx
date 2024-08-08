@@ -49,7 +49,7 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Table (coming soon)",
-    name: "volkovlabs-table-panel",
+    name: "business-table",
     description: <>Summarize large amounts of data</>,
   },
   {

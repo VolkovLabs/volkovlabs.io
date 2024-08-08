@@ -141,14 +141,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-form-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-forms/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-form-link::before {
-  background: url("/static/img/plugins/volkovlabs-form-panel/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-forms/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-env-link::before {
