@@ -6,14 +6,15 @@ image: /img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png
 keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
 ---
 
+import Feedback from "../../docs/business-text/_feedback.mdx";
+import GettingStarted from "../../docs/business-text/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
-import GettingStarted from "../../docs/volkovlabs-dynamictext-panel/_getting_started.mdx";
-import Feedback from "../../docs/volkovlabs-dynamictext-panel/_feedback.mdx";
 
-# Dynamic Text Panel 4.0.0
+# Business Text 4.0.0
 
-We're excited to announce the release of the Dynamic Text Panel 4.0.0. This major release includes the following updates:
+We're excited to announce the release of the Business Text Panel 4.0.0. This major release includes the following updates:
 
 - Requires Grafana 9 or Grafana 10.
 - Added the Event Bus object into JavaScript functions.
@@ -31,13 +32,13 @@ We celebrated 2 million downloads in February. The panel's adaptability has been
 JavaScript code, a CSS style editor, and Grafana events offer functionalities that no native or community plugin has yet to provide.
 
 <Image
-  title="Dynamic Text Panel was downloaded more than three million times."
+  title="Business Text Panel was downloaded more than three million times."
   src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"
 />
 
 ## Dashboard variables
 
-Dynamic Text Panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.
+Business Text Panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.
 
 ### JavaScript code
 
@@ -62,11 +63,11 @@ Returns a string array of the currently selected values for a certain variable.
 <!-- result: ['server1', 'server2', 'server3']  -->
 ```
 
-You can find more examples in our [documentation](/plugins/volkovlabs-dynamictext-panel/variables/).
+You can find more examples in our [documentation](/plugins/business-text/variables/).
 
 ## Event Bus
 
-Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. Dynamic Text Panel can respond to these interactions by subscribing to one or more events.
+Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. Business Text panel can respond to these interactions by subscribing to one or more events.
 
 ### Predefined Events
 
@@ -89,18 +90,7 @@ return () => {
 
 <GettingStarted />
 
-## YouTube Tutorial
-
-Dynamic Text Panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. You can use variables, Markdown, and Handlebars to customize the look of the outputted cards.
-
-The Dynamic Text Panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.
-
-<Youtube
-  id="MpNZ4Yl-p0U"
-  title="Markdown, HTML, and Handlebars for transforming data visualizations."
-/>
-
-<Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text Panel." />
+<Tutorial />
 
 ## Release Notes
 

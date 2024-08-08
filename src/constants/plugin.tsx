@@ -54,9 +54,9 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Text",
-    name: "volkovlabs-dynamictext-panel",
+    name: "business-text",
     description: <>Dynamic, data-driven text</>,
-    href: "/plugins/volkovlabs-dynamictext-panel/",
+    href: "/plugins/business-text/",
   },
   {
     title: "Business Variable",

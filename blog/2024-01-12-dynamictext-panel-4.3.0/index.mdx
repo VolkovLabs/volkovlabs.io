@@ -6,15 +6,16 @@ image: /img/blog/2024-01-12-dynamictext-panel-4.3.0/banner.png
 keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
 ---
 
+import Feedback from "../../docs/business-text/_feedback.mdx";
+import GettingStarted from "../../docs/business-text/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
-import GettingStarted from "../../docs/volkovlabs-dynamictext-panel/_getting_started.mdx";
-import Feedback from "../../docs/volkovlabs-dynamictext-panel/_feedback.mdx";
 
-# Dynamic Text Panel 4.3.0
+# Business Text 4.3.0
 
-We're excited to announce the release of the Dynamic Text Panel 4.3.0. This release includes the following updates:
+We're excited to announce the release of the Business Text panel 4.3.0. This release includes the following updates:
 
 - Extended the list of Render Templates.
 - Simplified access to the panel data and the selected data frame along with some other features via a new object `context`.
@@ -39,7 +40,7 @@ The **Render template** parameter instructs the plugin on how to apply the conte
   src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/alldata.png"
 />
 
-The existing previously [templates](/plugins/volkovlabs-dynamictext-panel/content/):
+The existing previously [templates](/plugins/business-text/content/):
 
 - **Every row** - the content template applies to <u>every row</u> from the fetched data of <u>the selected data frame</u>.
 - **All rows** - the content template applies to <u>all rows</u> from the fetched data of <u>the selected data frame</u>.
@@ -115,7 +116,7 @@ Start typing the `context` word in the **Before Content Rendering** or **After C
 
 ## New helper - variableValue
 
-The existing [helper](/plugins/volkovlabs-dynamictext-panel/helpers/#helper-variable) `variable` supports only one format. The `variableValue` is a new helper implemented starting from this release. It works with all [Grafana variable formats](https://grafana.com/docs/grafana/latest/dashboards/variables/variable-syntax/).
+The existing [helper](/plugins/business-text/helpers/#helper-variable) `variable` supports only one format. The `variableValue` is a new helper implemented starting from this release. It works with all [Grafana variable formats](https://grafana.com/docs/grafana/latest/dashboards/variables/variable-syntax/).
 
 Below is an example for the `queryparam` type.
 
@@ -131,9 +132,9 @@ If example equal to `["value1", "value2"]` then result will be:
 
 ## Re-render on dashboard refresh
 
-This feature adds refresh to the list of events triggering the Dynamic Text panel re-render action.
+This feature adds refresh to the list of events triggering the Business Text panel re-render action.
 
-Let's say, your **Content** contains a dashboard variable. Before this release, when the variable takes a new value (is updated by a user or API), the Dynamic text panel was not reacting. After this release, any variable change triggers the panel re-render action.
+Let's say, your **Content** contains a dashboard variable. Before this release, when the variable takes a new value (is updated by a user or API), the Business Text panel was not reacting. After this release, any variable change triggers the panel re-render action.
 
 <Image
   title="The Dynamic Text plugin has something to say."
@@ -278,7 +279,7 @@ tr td {
 
 ### JSON parsing
 
-The community member [havedill](https://github.com/havedill) [asked](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/255) how to parse a JSON data format in the case when the transformation **Convert field type** is not available.
+The community member [havedill](https://github.com/havedill) [asked](https://github.com/VolkovLabs/business-text/issues/255) how to parse a JSON data format in the case when the transformation **Convert field type** is not available.
 
 We believe the solution might be helpful for many, so here is how you can do it.
 
@@ -311,37 +312,7 @@ handlebars.registerHelper("parse", (context) => JSON.parse(context));
 
 <GettingStarted />
 
-## YouTube Tutorial
-
-The Dynamic Text panel is a mighty Grafana plugin to convert any monotonous bulk of data into vibrant, effortlessly comprehended visualization.
-
-To this moment, I have created three videos. The latest one describes more features as more features have been implemented to the day of creation.
-Yet, the latest Dynamic Text plugin version is far more advanced with numerous new features implemented since August.
-
-### Video 3, published on August 15, 2023
-
-In this video, I touch upon the main features and panel options along with demonstrating community use cases.
-
-<Youtube
-  id="AcQi-6GCrNU"
-  title="Dynamic Text plugin for Grafana | Use HTML, Markdown, JavaScript and CSS | Community use cases."
-/>
-
-### Video 2, published on January 29, 2023
-
-Since the latest release, the community has requested many changes. This video outlines all the new features we implemented, including the most asked-for JavaScript area code.
-
-<Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text Panel." />
-
-### Video 1, published on October 24, 2022
-
-This is the first guide we created for the Dynamic Text plugin for Grafana.
-The plugin does a fantastic job by transforming bland table data into vibrant, readable visualization emphasizing critical tidbits.
-
-<Youtube
-  id="MpNZ4Yl-p0U"
-  title="Markdown, HTML, and Handlebars for transforming data visualizations."
-/>
+<Tutorial />
 
 ## Release Notes
 

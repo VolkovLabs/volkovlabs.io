@@ -2,7 +2,7 @@
 tags:
   - Business Text
   - Events
-image: /img/plugins/volkovlabs-dynamictext-panel/external.png
+image: /img/plugins/business-text/external.png
 ---
 
 import Image from "@theme/Image";
@@ -17,7 +17,7 @@ Since in Grafana 11, the functionality of external JavaScript resources is depre
 
 The Business Text Panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network).
 
-Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/business-text/code) editor.
 
 To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance. - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css` - Or on local Grafana instance `/public/grafanaCSS.css`
 
@@ -49,7 +49,7 @@ Grafana's edit mode might prevent displaying Plotly charts. Save and check the r
 
 <Image
   title="Plotly chart displayed using the Business Text Panel."
-  src="/img/plugins/volkovlabs-dynamictext-panel/plotly.png"
+  src="/img/plugins/business-text/plotly.png"
 />
 
 #### Code to copy
@@ -164,14 +164,14 @@ The main reason being the Mermaid Library size. After we added the External Reso
 
 <Image
   title="Mermaid diagrams displayed using the Business Text Panel."
-  src="/img/plugins/volkovlabs-dynamictext-panel/diagram.png"
+  src="/img/plugins/business-text/diagram.png"
 />
 
 #### Example
 
 <Image
   title="Mermaid diagrams example."
-  src="/img/plugins/volkovlabs-dynamictext-panel/mer.png"
+  src="/img/plugins/business-text/mer.png"
 />
 
 Use the following external library
@@ -212,14 +212,14 @@ Chart.js is one of the popular open source charting libraries. The Business Text
 
 <Image
   title="Chart.js diagrams displayed using the Business Text Panel."
-  src="/img/plugins/volkovlabs-dynamictext-panel/chartjs-examples.png"
+  src="/img/plugins/business-text/chartjs-examples.png"
 />
 
 #### Example
 
 <Image
   title="Chart.js diagram example."
-  src="/img/plugins/volkovlabs-dynamictext-panel/chartjs.png"
+  src="/img/plugins/business-text/chartjs.png"
 />
 
 Use the following external library
@@ -286,7 +286,7 @@ Simply, import two external libraries and then write your code addressing the Fl
 
 <Image
   title="Delivering Flowchart libraries to a Grafana dashboard using the Business Text plugin."
-  src="/img/plugins/volkovlabs-dynamictext-panel/flow.png"
+  src="/img/plugins/business-text/flow.png"
 />
 
 #### External Resources
@@ -339,11 +339,11 @@ para(path3, right)->in->out->e`;
 
 ### Youtube video
 
-This idea comes from the [GitHub issue](https://github.com/VolkovLabs/volkovlabs-dynamictext-panel/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Business Text plugin can be used to display YouTube videos on your Grafana dashboard.
+This idea comes from the [GitHub issue](https://github.com/VolkovLabs/business-text/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Business Text plugin can be used to display YouTube videos on your Grafana dashboard.
 
 <Image
   title="How to configure the Business Text plugin to display a YouTube video."
-  src="/img/plugins/volkovlabs-dynamictext-panel/yt-edit.png"
+  src="/img/plugins/business-text/yt-edit.png"
 />
 
 #### External Resources
@@ -379,14 +379,14 @@ This is another great example of external resource usage in the Business Text Pl
 
 <Image
   title="How to configure the Business Text plugin to display Leaflet.js maps."
-  src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-edit.png"
+  src="/img/plugins/business-text/leaflet-edit.png"
 />
 
 The map on the dashboard from this example looks like in the illustration below.
 
 <Image
   title="The Leaflet.js map on the dashboard."
-  src="/img/plugins/volkovlabs-dynamictext-panel/leaflet-display.png"
+  src="/img/plugins/business-text/leaflet-display.png"
 />
 
 #### Data to copy
@@ -506,7 +506,7 @@ Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a u
 
 <Image
   title="The Business Text panel with Tailwind styles on the dashboard."
-  src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel.png"
+  src="/img/plugins/business-text/tailwind-panel.png"
 />
 
 To prevent CORS issues we recommend adding Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
@@ -519,7 +519,7 @@ Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload 
 
 <Image
   title="A Tailwind script uploaded to the Docker container."
-  src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-file-example.png"
+  src="/img/plugins/business-text/tailwind-file-example.png"
 />
 
 #### Content
@@ -548,7 +548,7 @@ import("/public/tailwind.js");
 
 <Image
   title="The Business Text panel with imported Tailwind CSS."
-  src="/img/plugins/volkovlabs-dynamictext-panel/tailwind-panel-edit-mode.png"
+  src="/img/plugins/business-text/tailwind-panel-edit-mode.png"
 />
 
 #### Load Tailwind from CDN
@@ -606,7 +606,7 @@ Follow the below outlined steps to display [Mapbox GL JS](https://docs.mapbox.co
 
 <Image
   title="The Mapbox map displayed using Business Text on the dashboard."
-  src="/img/plugins/volkovlabs-dynamictext-panel/mapboxgl.png"
+  src="/img/plugins/business-text/mapboxgl.png"
 />
 
 #### Content
