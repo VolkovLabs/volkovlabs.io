@@ -37,7 +37,7 @@ export const NAVBAR = {
         },
         {
           label: "Business Media",
-          to: "/plugins/volkovlabs-image-panel/",
+          to: "/plugins/business-media/",
           className: "volkovlabs-link icon-plugins-base64-link",
         },
         {

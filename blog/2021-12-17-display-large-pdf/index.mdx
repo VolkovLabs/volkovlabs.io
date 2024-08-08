@@ -9,12 +9,12 @@ keywords: [Image, PDF, Base64, Visualization]
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
-import GettingStarted from "../../docs/volkovlabs-image-panel/_getting_started.mdx";
-import Feedback from "../../docs/volkovlabs-image-panel/_feedback.mdx";
+import GettingStarted from "../../docs/business-media/_getting_started.mdx";
+import Feedback from "../../docs/business-media/_feedback.mdx";
 
 # Display large PDF documents in Grafana
 
-In the [recent article](/blog/we-created-our-own-panel-plugin-template-for-grafana-665f7e6760d1/) on our blog, we delved into the advantages of utilizing Docker containers and initial provisioning when crafting our panel plugin template for Grafana. This approach has proven to be valuable when implementing the current feature request for [Business Media Panel](/plugins/volkovlabs-image-panel/) and letting us swiftly provide solutions for long-term plugin support.
+In the [recent article](/blog/we-created-our-own-panel-plugin-template-for-grafana-665f7e6760d1/) on our blog, we delved into the advantages of utilizing Docker containers and initial provisioning when crafting our panel plugin template for Grafana. This approach has proven to be valuable when implementing the current feature request for [Business Media Panel](/plugins/business-media/) and letting us swiftly provide solutions for long-term plugin support.
 
 During the creation of Business Media Panel for one of our projects, we also included support for displaying PDF documents. It's satisfying to see that the plugin is now used to display PDF files stored in databases such as PostgreSQL.
 
@@ -78,7 +78,7 @@ CREATE TABLE images (name text, img bytea, UNIQUE(name));
 To load PDF documents and test images into the database, we created a Node.js script.
 
 <Code
-  url="https://github.com/VolkovLabs/volkovlabs-image-panel/blob/main/postgres/load.ts"
+  url="https://github.com/VolkovLabs/business-media/blob/main/postgres/load.ts"
   language="js"
 />
 

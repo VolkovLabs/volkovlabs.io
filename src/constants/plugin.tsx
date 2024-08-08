@@ -31,9 +31,9 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Media",
-    name: "volkovlabs-image-panel",
+    name: "business-media",
     description: <>Display Base64 encoded and URL media files</>,
-    href: "/plugins/volkovlabs-image-panel/",
+    href: "/plugins/business-media/",
   },
   {
     title: "Business News",

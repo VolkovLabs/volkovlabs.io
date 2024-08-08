@@ -34,7 +34,7 @@ export const FOOTER = {
         },
         {
           label: "Business Media",
-          to: "/plugins/volkovlabs-image-panel/",
+          to: "/plugins/business-media/",
           className: "volkovlabs-footer-link icon-plugins-base64-link",
         },
         {
