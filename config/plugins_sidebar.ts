@@ -231,31 +231,28 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "volkovlabs-image-panel/index",
+          id: "business-media/index",
           label: "Introduction",
         },
-        "volkovlabs-image-panel/formats",
-        "volkovlabs-image-panel/options",
+        "business-media/formats",
+        "business-media/options",
         {
-          items: [
-            "volkovlabs-image-panel/datasources",
-            "volkovlabs-image-panel/variables",
-          ],
+          items: ["business-media/datasources", "business-media/variables"],
           label: "Features",
           type: "category",
           link: {
             type: "doc",
-            id: "volkovlabs-image-panel/features",
+            id: "business-media/features",
           },
         },
-        "volkovlabs-image-panel/release",
+        "business-media/release",
       ],
       label: "Business Media",
       type: "category",
       description: "Display Base64 encoded media files.",
       link: {
         type: "doc",
-        id: "volkovlabs-image-panel/index",
+        id: "business-media/index",
       },
     },
     {
