@@ -278,28 +278,28 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "volkovlabs-grapi-datasource/index",
+          id: "business-satellite/index",
           label: "Introduction",
         },
-        "volkovlabs-grapi-datasource/configuration",
-        "volkovlabs-grapi-datasource/provisioning",
+        "business-satellite/configuration",
+        "business-satellite/provisioning",
         {
-          items: ["volkovlabs-grapi-datasource/annotations"],
+          items: ["business-satellite/annotations"],
           label: "Features",
           type: "category",
           link: {
             type: "doc",
-            id: "volkovlabs-grapi-datasource/features",
+            id: "business-satellite/features",
           },
         },
-        "volkovlabs-grapi-datasource/release",
+        "business-satellite/release",
       ],
       label: "Business Satellite",
       type: "category",
       description: "Connect to Local and Remote Grafana instances.",
       link: {
         type: "doc",
-        id: "volkovlabs-grapi-datasource/index",
+        id: "business-satellite/index",
       },
     },
     {

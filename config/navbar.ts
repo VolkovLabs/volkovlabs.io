@@ -47,7 +47,7 @@ export const NAVBAR = {
         },
         {
           label: "Business Satellite",
-          to: "/plugins/volkovlabs-grapi-datasource/",
+          to: "/plugins/business-satellite/",
           className: "volkovlabs-link icon-plugins-grapi-link",
         },
         {
