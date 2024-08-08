@@ -19,9 +19,9 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Forms",
-    name: "volkovlabs-form-panel",
+    name: "business-forms",
     description: <>Insert, update application data, and modify configuration</>,
-    href: "/plugins/volkovlabs-form-panel/",
+    href: "/plugins/business-forms/",
   },
   {
     title: "Business Input",

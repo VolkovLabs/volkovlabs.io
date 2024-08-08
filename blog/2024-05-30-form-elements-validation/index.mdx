@@ -7,14 +7,14 @@ keywords: [Data Manipulation, Validation, Grafana]
 ---
 
 import Image from "@theme/Image";
-import GettingStarted from "../../docs/volkovlabs-form-panel/_getting_started.mdx";
-import Feedback from "../../docs/volkovlabs-form-panel/_feedback.mdx";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
+import Feedback from "../../docs/business-forms/_feedback.mdx";
 
 # How to validate Form Elements
 
 This article shares how to use JavaScript in the Business Forms plugin to enhance user experience by validating Form Elements.
 
-The [Business Forms plugin](/plugins/volkovlabs-form-panel/), formerly known as the Data Manipulation plugin, is designed around one innovative idea: the ability to send data back into the data source from any Grafana dashboard.
+The [Business Forms plugin](/plugins/business-forms/), formerly known as the Data Manipulation plugin, is designed around one innovative idea: the ability to send data back into the data source from any Grafana dashboard.
 
 When a user enters data on the form, you might wonder what data validation mechanisms are available to ensure only allowable values are sent back to the data source.
 
@@ -29,7 +29,7 @@ Based on the above-assumed requirements, I explain:
 
 ## Form Elements
 
-The [Form Elements](/plugins/volkovlabs-form-panel/form-elements/) are components the Business Forms plugin provides as building bricks for your data entry forms.
+The [Form Elements](/plugins/business-forms/form-elements/) are components the Business Forms plugin provides as building bricks for your data entry forms.
 
 In this article, a data entry form consists of the following elements:
 
@@ -81,7 +81,7 @@ The Submit button validation occurs in the "Form Events" section. The Business F
 To enable or disable the Submit button I use the `context.panel.enableSubmit()` or `context.panel.disableSubmit()` method respectively. These methods are provided by the Business Forms and could be used in any of the JavaScript code parameters (**Custom code**, **Form Events**, etc.)
 
 :::info Parameters
-Access the full list of available parameters in the [Business Forms->Custom Code](/plugins/volkovlabs-form-panel/code/) section in the documentation.
+Access the full list of available parameters in the [Business Forms->Custom Code](/plugins/business-forms/code/) section in the documentation.
 :::
 
 You can copy the code from here:
