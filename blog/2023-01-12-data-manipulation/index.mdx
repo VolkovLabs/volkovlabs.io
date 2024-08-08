@@ -26,7 +26,7 @@ Billy's sole thought in the morning was how awesome it would have been if the cl
 
 In general, data visualizations are secured against the users' interventions. However, there are times when granting access to specific database items is helpful for performance, accuracy, and convenience.
 
-After the presentation the next day, Billy inadvertently learned about [Data Manipulation Panel for Grafana](/plugins/volkovlabs-form-panel), which started a new chapter in his life.
+After the presentation the next day, Billy inadvertently learned about [Data Manipulation Panel for Grafana](/plugins/business-forms/), which started a new chapter in his life.
 
 Grafana is a fantastic tool for visualizing a broad spectrum of metrics. The Grafana journey began with observability. However, flexible architecture paved the road to many industrial and commercial domains that go well beyond providing system monitoring metrics.
 
@@ -43,14 +43,14 @@ The [Data Manipulation Panel plugin](/blog/data-manipulation-panel-plugin-for-gr
 
 ## Data Manipulation Panel
 
-There are various ways to install it. The easiest one is to use the Plugins Configuration menu when you are in the Grafana Plugins catalog with admin permissions. You can also download the plugin from the Grafana website or [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel).
+There are various ways to install it. The easiest one is to use the Plugins Configuration menu when you are in the Grafana Plugins catalog with admin permissions. You can also download the plugin from the Grafana website or [GitHub repository](https://github.com/VolkovLabs/business-forms/).
 
 <Youtube
   id="DXALVG8GijM"
   title="Manual data entry and user input into dashboard."
 />
 
-The most adventurous method, however, is to study the [Data Manipulation Panel](/plugins/volkovlabs-form-panel) plugin page. You will definitely discover a lot of useful information as well as find effective tips and techniques there.
+The most adventurous method, however, is to study the [Data Manipulation Panel](/plugins/business-forms/) plugin page. You will definitely discover a lot of useful information as well as find effective tips and techniques there.
 
 The Data Manipulation plugin allows you to insert and update data, as well as make configuration changes, directly from your Grafana dashboard.
 
@@ -72,7 +72,7 @@ The API server is an effective approach to guarantee that only approved data ope
 Look at a simple API server, which returns submitted feedback from the PostgreSQL database.
 
 <Code
-  url="https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-pg/server.ts"
+  url="https://github.com/VolkovLabs/business-forms/blob/main/server-pg/server.ts"
   language="js"
 />
 
@@ -81,17 +81,17 @@ Look at a simple API server, which returns submitted feedback from the PostgreSQ
 This is a great example of how to connect Deno (the easiest, most secure JavaScript runtime) with the panel.
 
 <Code
-  url="https://github.com/VolkovLabs/volkovlabs-form-panel/blob/main/server-deno/server.ts"
+  url="https://github.com/VolkovLabs/business-forms/blob/main/server-deno/server.ts"
   language="js"
 />
 
-You can find more PostgreSQL and MySQL database examples in our [GitHub repository](https://github.com/VolkovLabs/volkovlabs-form-panel).
+You can find more PostgreSQL and MySQL database examples in our [GitHub repository](https://github.com/VolkovLabs/business-forms/).
 
 For an extra security layer, we recommend running Grafana behind an NGINX reverse proxy. The reverse proxy also lets you provision additional API endpoints and static files within the same domain, making them CORS-compliant. It is described in [How to Connect the Data Manipulation Plugin for Grafana to API Server](/blog/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904).
 
 ## Static and Dynamic forms
 
-Data Manipulation Panel, like Grafana itself, was designed to embrace [flexibility](/plugins/volkovlabs-form-panel/code). You can get started with static forms and progress to dynamic ones.
+Data Manipulation Panel, like Grafana itself, was designed to embrace [flexibility](/plugins/business-forms/code). You can get started with static forms and progress to dynamic ones.
 
 - A static form is hard-coded and constructed just once.
 - A dynamic form can be generated on the fly from a data source (such as a database or a CSV file) based on rules and parameters.
@@ -156,6 +156,6 @@ if (feedback?.fields.length) {
 }
 ```
 
-Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard. You can find more details about it in our [product documentation](/plugins/volkovlabs-form-panel).
+Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard. You can find more details about it in our [product documentation](/plugins/business-forms/).
 
 Any suggestions and ideas are greatly appreciated. Please feel free to challenge us with your questions. They help us deliver the top-notch product!

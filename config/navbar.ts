@@ -27,7 +27,7 @@ export const NAVBAR = {
         },
         {
           label: "Business Forms",
-          to: "/plugins/volkovlabs-form-panel/",
+          to: "/plugins/business-forms/",
           className: "volkovlabs-link icon-plugins-form-link",
         },
         {

@@ -24,7 +24,7 @@ export const FOOTER = {
         },
         {
           label: "Business Forms",
-          to: "/plugins/volkovlabs-form-panel/",
+          to: "/plugins/business-forms/",
           className: "volkovlabs-footer-link icon-plugins-form-link",
         },
         {
