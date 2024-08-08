@@ -342,6 +342,15 @@ const sidebars: SidebarsConfig = {
             id: "business-text/features",
           },
         },
+        {
+          items: [],
+          label: "Tutorials",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-text/tutorials/index",
+          },
+        },
         "business-text/release",
       ],
       label: "Business Text",
