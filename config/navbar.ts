@@ -52,7 +52,7 @@ export const NAVBAR = {
         },
         {
           label: "Business Text",
-          to: "/plugins/volkovlabs-dynamictext-panel/",
+          to: "/plugins/business-text/",
           className: "volkovlabs-link icon-plugins-dt-link",
         },
         {

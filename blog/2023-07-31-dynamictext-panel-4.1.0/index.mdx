@@ -6,15 +6,16 @@ image: /img/blog/2023-07-31-dynamictext-panel-4.1.0/banner.png
 keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
 ---
 
+import Feedback from "../../docs/business-text/_feedback.mdx";
+import GettingStarted from "../../docs/business-text/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
-import GettingStarted from "../../docs/volkovlabs-dynamictext-panel/_getting_started.mdx";
-import Feedback from "../../docs/volkovlabs-dynamictext-panel/_feedback.mdx";
 
-# Dynamic Text Panel 4.1.0
+# Business Text 4.1.0
 
-We're excited to announce the release of the Dynamic Text Panel 4.1.0. This feature release includes the following updates:
+We're excited to announce the release of the Business Text Panel 4.1.0. This feature release includes the following updates:
 
 - Added support for external JavaScript and CSS resources.
 - Added the status field to display a background color.
@@ -28,7 +29,7 @@ The plugin was updated in the Grafana Plugins catalog on July 18, 2023.
 
 ## External JavaScript and CSS resources
 
-The Dynamic Text Panel plugin enables the loading of additional JavaScript and CSS resources from external URLs like CDN (Content Delivery Network). To prevent the loading of third-party URLs, you can store CSS and JS files on your Grafana instance in the public folder.
+The Business Text Panel plugin enables the loading of additional JavaScript and CSS resources from external URLs like CDN (Content Delivery Network). To prevent the loading of third-party URLs, you can store CSS and JS files on your Grafana instance in the public folder.
 
 :::note Sanitization
 You need to disable sanitization in your Grafana instance to see external resources in the panel options.
@@ -39,7 +40,7 @@ You need to disable sanitization in your Grafana instance to see external resour
   src="/img/blog/2023-07-31-dynamictext-panel-4.1.0/external.png"
 />
 
-You can use external CSS and JS files to include additional visual elements and execute JavaScript functions from the [JavaScript code](/plugins/volkovlabs-dynamictext-panel/code) editor.
+You can use external CSS and JS files to include additional visual elements and execute JavaScript functions from the [JavaScript code](/plugins/business-text/code) editor.
 
 ## Status field
 
@@ -60,7 +61,7 @@ The `statusColor` variable can be used to set a background or foreground color o
 
 ## Sophisticated solution from the community
 
-Dynamic Text Panel enables the creation of the most comprehensive solutions without building additional panels.
+Business Text Panel enables the creation of the most comprehensive solutions without building additional panels.
 
 Register the `aggr_val` Handlebars helper to aggregate values returned from a data source.
 
@@ -167,7 +168,7 @@ sum:
 
 ## Code Coverage
 
-With our plugins installed on thousands of Grafana instances, we recognize that our users do not experience any unexpected changes, thus we increased Dynamic Text Panel's test coverage up to 99% and refactored its legacy components.
+With our plugins installed on thousands of Grafana instances, we recognize that our users do not experience any unexpected changes, thus we increased Business Text panel's test coverage up to 99% and refactored its legacy components.
 
 <Image
   title="For all of our Grafana plugins, we aim for greater than 90% test coverage."
@@ -176,18 +177,7 @@ With our plugins installed on thousands of Grafana instances, we recognize that 
 
 <GettingStarted />
 
-## YouTube Tutorial
-
-Dynamic Text Panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. You can use variables, Markdown, and Handlebars to customize the look of the outputted cards.
-
-The Dynamic Text Panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.
-
-<Youtube
-  id="MpNZ4Yl-p0U"
-  title="Markdown, HTML, and Handlebars for transforming data visualizations."
-/>
-
-<Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text Panel." />
+<Tutorial />
 
 ## Release Notes
 

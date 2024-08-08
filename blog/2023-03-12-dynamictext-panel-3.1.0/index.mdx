@@ -6,14 +6,15 @@ image: /img/blog/2023-03-12-dynamictext-panel-3.1.0/banner.png
 keywords: [Dynamic Text, Panel, Data, Code, Highlight, Grafana]
 ---
 
+import Feedback from "../../docs/business-text/_feedback.mdx";
+import GettingStarted from "../../docs/business-text/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
-import GettingStarted from "../../docs/volkovlabs-dynamictext-panel/_getting_started.mdx";
-import Feedback from "../../docs/volkovlabs-dynamictext-panel/_feedback.mdx";
 
-# Dynamic Text Panel 3.1.0
+# Business Text 3.1.0
 
-We're excited to announce the release of the Dynamic Text Panel 3.1.0. This feature release includes the following updates:
+We're excited to announce the release of the Business Text Panel 3.1.0. This feature release includes the following updates:
 
 - Added Time Zone and Range parameters for JavaScript Code.
 - Added Replace variables and Location service parameters for Javascript Code.
@@ -58,7 +59,7 @@ handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions
 
 Updated the `replaceVariable` function with a scoped function and added support for repeated panels.
 
-Dynamic Text Panel provides the `{{variable}}` helper to work with dashboard and global variables. Alternatively, you can create a custom Handlebars helper to introduce additional logic and formats.
+Business Text Panel provides the `{{variable}}` helper to work with dashboard and global variables. Alternatively, you can create a custom Handlebars helper to introduce additional logic and formats.
 
 ### Content
 
@@ -75,7 +76,7 @@ handlebars.registerHelper("myVariable", (name) => replaceVariables(`$${name}`));
 
 ## Magic (JavaScript) Trio
 
-One of the three plugins that complete Grafana is Dynamic Text Panel. With Dynamic Text, Data Manipulation, and Business Charts Panel you can create fully functional web applications meeting your needs and expectations.
+One of the three plugins that complete Grafana is Business Text Panel. With Dynamic Text, Data Manipulation, and Business Charts Panel you can create fully functional web applications meeting your needs and expectations.
 
 <Youtube
   id="wPr4gZYzUVA"
@@ -84,18 +85,7 @@ One of the three plugins that complete Grafana is Dynamic Text Panel. With Dynam
 
 <GettingStarted />
 
-## YouTube Tutorial
-
-Dynamic Text Panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. You can use variables, Markdown, and Handlebars to customize the look of the outputted cards.
-
-The Dynamic Text Panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.
-
-<Youtube
-  id="MpNZ4Yl-p0U"
-  title="Markdown, HTML, and Handlebars for transforming data visualizations."
-/>
-
-<Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text Panel." />
+<Tutorial />
 
 ## Release Notes
 

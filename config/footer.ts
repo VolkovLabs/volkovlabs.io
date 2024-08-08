@@ -49,7 +49,7 @@ export const FOOTER = {
         },
         {
           label: "Business Text",
-          to: "/plugins/volkovlabs-dynamictext-panel/",
+          to: "/plugins/business-text/",
           className: "volkovlabs-footer-link icon-plugins-dt-link",
         },
         {

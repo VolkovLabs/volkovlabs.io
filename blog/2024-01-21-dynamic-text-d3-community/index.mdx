@@ -18,10 +18,10 @@ import Image from "@theme/Image";
 Since we added the external libraries feature along with the JavaScript functionality, the Dynamic Text plugin can not stop surprising us with its applicability.
 
 We already demonstrated how as in one-two-three you can incorporate
-[Plotly 3D Scatter](/plugins/volkovlabs-dynamictext-panel/external/#plotly-3d-scatter),
-[Mermaid](/plugins/volkovlabs-dynamictext-panel/external/#mermaid),
-[Chart.js](/plugins/volkovlabs-dynamictext-panel/external/#chartjs), and
-[Flowchart](/plugins/volkovlabs-dynamictext-panel/external/#flowchart).
+[Plotly 3D Scatter](/plugins/business-text/external/#plotly-3d-scatter),
+[Mermaid](/plugins/business-text/external/#mermaid),
+[Chart.js](/plugins/business-text/external/#chartjs), and
+[Flowchart](/plugins/business-text/external/#flowchart).
 
 This article is an instruction provided by [Raghavendra Samant](https://github.com/samant-rags) based on [Josiah Solomon](https://github.com/yosiasz) contributions. It outlines the steps and demonstrates an example of how [D3.js](https://cdnjs.com/libraries/d3) library can be incorporated into your Grafana dashboard.
 :::
@@ -30,24 +30,24 @@ This article is an instruction provided by [Raghavendra Samant](https://github.c
 
 If you want to create a process flow chart that can be easily referenced in a Grafana dashboard, one option is to use a standard flow charting tool like [Draw.io](https://app.diagrams.net) to design the chart and save it as an SVG file.
 
-This file can then be imported into the Grafana's [Dynamic Text plugin](/plugins/volkovlabs-dynamictext-panel) developed by Volkov Labs, which allows you to display and interact with the chart directly within the dashboard.
+This file can then be imported into the Grafana's [Dynamic Text plugin](/plugins/business-text) developed by Volkov Labs, which allows you to display and interact with the chart directly within the dashboard.
 
 <Image
   title="Use draw.io to create a flow chart in the SVG format."
   src="/img/blog/2024-01-21-dynamic-text-d3-community/d3-1.png"
 />
 
-To take things a step further, you can use the [Dynamic Text plugin's ability](/plugins/volkovlabs-dynamictext-panel/external/) to link external JavaScript libraries and CSS stylesheets to add additional functionality to the chart.
+To take things a step further, you can use the [Dynamic Text plugin's ability](/plugins/business-text/external/) to link external JavaScript libraries and CSS stylesheets to add additional functionality to the chart.
 
-For example, you could use the popular data visualization library [D3.js](https://cdnjs.com/libraries/d3) to display real-time metric values directly on the flow chart. The Dynamic Text plugin also includes hooks for controlling data manipulation [before and after the content](/plugins/volkovlabs-dynamictext-panel/code) is rendered, giving you even greater flexibility over how the metrics on the chart are displayed and changed based on data in real time.
+For example, you could use the popular data visualization library [D3.js](https://cdnjs.com/libraries/d3) to display real-time metric values directly on the flow chart. The Dynamic Text plugin also includes hooks for controlling data manipulation [before and after the content](/plugins/business-text/code) is rendered, giving you even greater flexibility over how the metrics on the chart are displayed and changed based on data in real time.
 
 Overall, combining the power of tools like Draw.io and open source Dynamic Text plugin makes it easy to create dynamic, interactive flow charts that can be seamlessly integrated into your dashboards and updated as needed.
 
-To learn more about these features and how to use them, check out the official documentation for the Dynamic Text plugin [here](/plugins/volkovlabs-dynamictext-panel).
+To learn more about these features and how to use them, check out the official documentation for the Dynamic Text plugin [here](/plugins/business-text).
 
 ## Detailed steps
 
-How to use Grafana's Dynamic Text panel and display real-time metric values on the chart using the D3.js library:
+How to use Grafana's Business Text panel and display real-time metric values on the chart using the D3.js library:
 
 <Image
   title="Steps to incorporate D3.js into a Grafana dashboard using the Dynamic Text pluign."
@@ -56,12 +56,12 @@ How to use Grafana's Dynamic Text panel and display real-time metric values on t
 
 1.  Design the process flow chart in Draw.io and save it as an SVG file. You can include shapes, connectors, text labels, and other elements as desired. Make sure to give the chart a clear, descriptive name so that it will be easy to identify later.
 2.  In Grafana, navigate to the dashboard where you want to display the flow chart and click on the "Add Panel" button. Type "Text" as the panel type and choose the "Dynamic Text" plugin.
-3.  Copy and paste the SVG code for the flow chart into the Dynamic Text panel editor (**Content**). You can access the SVG code by opening the saved file in a text editor or viewing the source code for the chart in a web browser.
+3.  Copy and paste the SVG code for the flow chart into the Business Text panel editor (**Content**). You can access the SVG code by opening the saved file in a text editor or viewing the source code for the chart in a web browser.
 4.  Use the Dynamic Text plugin's panel options to customize the data binding aspects of the flow chart. Details are in the documentation link above.
 5.  Link the D3.js library and any required CSS stylesheets using the Dynamic Text plugin's settings. This will allow you to use D3.js functions and methods to manipulate the flow chart and display real-time metric values.
 6.  Write the D3.js code to select specific elements on the flow chart and bind them to data sources. For example, you might use the select method to target certain shapes or text labels, and then use the data method to associate those elements with live metric values.
 7.  Define the behavior of the chart using the Dynamic Text plugin's hooks. These hooks allow you to run custom JavaScript code before and after the content is rendered, enabling you to perform calculations, apply transformations, or trigger animations based on changes in the underlying data.
-8.  Save the Dynamic Text panel and test the flow chart to ensure that it displays correctly and updates in response to changes in the metric data. You may need to fine-tune the placement and formatting of the chart elements or adjust the timing of the hook functions to get everything working smoothly.
+8.  Save the Business Text panel and test the flow chart to ensure that it displays correctly and updates in response to changes in the metric data. You may need to fine-tune the placement and formatting of the chart elements or adjust the timing of the hook functions to get everything working smoothly.
 9.  Once the flow chart is finalized, you can publish the dashboard and share it with team members or stakeholders as needed. They will be able to see the process flow chart alongside relevant metric data and understand how different components of the system fit together.
 
 By following these steps, you can create a dynamic, interactive process flow chart that integrates seamlessly with your Grafana dashboards and provides valuable insights into the performance of your systems.
@@ -103,6 +103,6 @@ if (dataPt_2 < 97) {
 
 ## Let's sum up
 
-The latest version of the Dynamic Text panel opens up a lot of possibilities that we can achieve with the Grafana dashboarding tool.
+The latest version of the Business Text panel opens up a lot of possibilities that we can achieve with the Grafana dashboarding tool.
 
 Also, it gives good control over what metrics can be shown and changed dynamically based on business needs.
