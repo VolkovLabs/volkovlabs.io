@@ -99,14 +99,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-image-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-media/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-base64-link::before {
-  background: url("/static/img/plugins/volkovlabs-image-panel/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-media/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-calendar-link::before {
