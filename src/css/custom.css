@@ -207,13 +207,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-variable-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-variable/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-variable-link::before {
-  background: url("/static/img/plugins/volkovlabs-variable-panel/logo.dark.svg")
+  background: url("/static/img/plugins/business-variable/logo.dark.svg")
     no-repeat;
 }
 

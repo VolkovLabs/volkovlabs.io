@@ -57,7 +57,7 @@ export const NAVBAR = {
         },
         {
           label: "Business Variable",
-          to: "/plugins/volkovlabs-variable-panel/",
+          to: "/plugins/business-variable/",
           className: "volkovlabs-link icon-plugins-variable-link",
         },
       ],
