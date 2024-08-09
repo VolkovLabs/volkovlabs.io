@@ -54,7 +54,7 @@ export const FOOTER = {
         },
         {
           label: "Business Variable",
-          to: "/plugins/volkovlabs-variable-panel/",
+          to: "/plugins/business-variable/",
           className: "volkovlabs-footer-link icon-plugins-variable-link",
         },
       ],

@@ -60,8 +60,8 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Variable",
-    name: "volkovlabs-variable-panel",
+    name: "business-variable",
     description: <>Update dashboard variables</>,
-    href: "/plugins/volkovlabs-variable-panel/",
+    href: "/plugins/business-variable/",
   },
 ];
