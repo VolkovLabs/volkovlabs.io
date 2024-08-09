@@ -43,9 +43,9 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Satellite",
-    name: "volkovlabs-grapi-datasource",
+    name: "business-satellite",
     description: <>Connect to Local and Remote Grafana instances</>,
-    href: "/plugins/volkovlabs-grapi-datasource/",
+    href: "/plugins/business-satellite/",
   },
   {
     title: "Business Table (coming soon)",

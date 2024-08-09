@@ -167,13 +167,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-grapi-datasource/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-satellite/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-grapi-link::before {
-  background: url("/static/img/plugins/volkovlabs-grapi-datasource/logo.dark.svg")
+  background: url("/static/img/plugins/business-satellite/logo.dark.svg")
     no-repeat;
 }
 
