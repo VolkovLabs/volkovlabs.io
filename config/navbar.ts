@@ -32,7 +32,7 @@ export const NAVBAR = {
         },
         {
           label: "Business Input",
-          to: "/plugins/volkovlabs-static-datasource/",
+          to: "/plugins/business-input/",
           className: "volkovlabs-link icon-plugins-static-link",
         },
         {

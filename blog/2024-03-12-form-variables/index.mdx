@@ -44,7 +44,7 @@ The dashboard variables have a hierarchical structure. From the Grafana perspect
   src="/img/blog/2024-03-12-form-variables/data-format.png"
 />
 
-Here is what the configuration of the dashboard variables looks like. We usually use the [Business Input Data Source](/plugins/volkovlabs-static-datasource) in our demo projects. We do it for many reasons, including making it straightforward to follow our steps.
+Here is what the configuration of the dashboard variables looks like. We usually use the [Business Input data source](/plugins/business-input/) in our demo projects. We do it for many reasons, including making it straightforward to follow our steps.
 
 <Image
   title="Dashboard variables configuration in our 'current' project."
@@ -203,7 +203,7 @@ Add the Data Manipulation panel and create three form elements with the type **S
 
 The selectable options for each **Select with Custom Options** form element should be populated dynamically and be identical to the current dashboard variables choices.
 
-Thus, we use the same approach, namely the [Business Input Data Source](/plugins/volkovlabs-static-datasource). As shown below, we create three queries: Facility Options, Room Options, Bench Options.
+Thus, we use the same approach, namely the [Business Input data source](/plugins/business-input/). As shown below, we create three queries: Facility Options, Room Options, Bench Options.
 
 All queries return two columns: `value[string]` and `label[string]`. The values for the Facility Options are hard-coded. For the Room Options and Bench options, the values are taken from the currently selected `facility` and `room` dashboard variables respectively.
 
