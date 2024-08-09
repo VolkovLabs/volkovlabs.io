@@ -94,7 +94,7 @@ export const FOOTER = {
         },
         {
           label: "Environment data source",
-          to: "/grafana/volkovlabs-env-datasource/",
+          to: "/grafana/environment/",
           className: "volkovlabs-footer-link icon-plugins-env-link",
         },
         {

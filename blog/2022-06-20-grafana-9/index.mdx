@@ -6,6 +6,8 @@ image: /img/blog/2022-06-20-grafana-9/banner.png
 keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
 ---
 
+import Feedback from "../_feedback.mdx";
+import GettingStarted from "../../grafana/environment/_getting_started.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -56,13 +58,7 @@ The Environment data source is a plugin for Grafana that returns environment var
 
 Because of security reasons, the Environment Data Source can not be included in the Grafana Catalog.
 
-It can be installed from our private repository or downloaded directly from GitHub.
-
-```sh
-grafana cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
-```
-
-The [Environment Data Source 2.0.0](/grafana/volkovlabs-env-datasource/release) supports Grafana 8.5+. For older versions of Grafana, please use version 1.2.0.
+The [Environment Data Source 2.0.0](/grafana/environment/release) supports Grafana 8.5+. For older versions of Grafana, please use version 1.2.0.
 
 ## Business Forms
 
@@ -93,3 +89,5 @@ The original plugin was developed for Grafana 6.3/7.0 and ECharts 4.9.0. It has 
 <Youtube id="DxqCrBEmrQw" title="How to create modern dashboards in Grafana." />
 
 The Business Charts panel is available in the Grafana Catalog.
+
+<Feedback />
