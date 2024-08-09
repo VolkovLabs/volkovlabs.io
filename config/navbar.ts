@@ -110,7 +110,7 @@ export const NAVBAR = {
         },
         {
           label: "Environment data source",
-          to: "/grafana/volkovlabs-env-datasource/",
+          to: "/grafana/environment/",
           className: "volkovlabs-link icon-plugins-env-link",
         },
       ],

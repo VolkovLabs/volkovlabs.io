@@ -23,8 +23,7 @@
     "build": "docusaurus build",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "start": "docusaurus start --help",
-    "start:3100": "docusaurus start -p 3100",
+    "start": "docusaurus start -p 3100",
     "swizzle": "docusaurus swizzle",
     "upgrade": "npm upgrade --save"
   }
