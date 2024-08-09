@@ -259,19 +259,19 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "volkovlabs-rss-datasource/index",
+          id: "business-news/index",
           label: "Introduction",
         },
-        "volkovlabs-rss-datasource/text",
-        "volkovlabs-rss-datasource/provisioning",
-        "volkovlabs-rss-datasource/release",
+        "business-news/text",
+        "business-news/provisioning",
+        "business-news/release",
       ],
       label: "Business News",
       type: "category",
       description: "Visualize RSS/Atom feeds using Business Text.",
       link: {
         type: "doc",
-        id: "volkovlabs-rss-datasource/index",
+        id: "business-news/index",
       },
     },
     {

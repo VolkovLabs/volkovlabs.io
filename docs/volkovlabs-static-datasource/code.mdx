@@ -1,7 +1,6 @@
 ---
 tags:
-  - Business Input Data Source
-  - Imports
+  - Business Input
 ---
 
 import Image from "@theme/Image";
@@ -14,15 +13,16 @@ JavaScript Values Editor must return a data frame.
 
 ```js
 const result = {
- ...frame,
- fields: frame.fields.map((field) => ({
- ...field,
- values: []
- }))
-}
+  ...frame,
+  fields: frame.fields.map((field) => ({
+    ...field,
+    values: [],
+  })),
+};
 
 return Promise.resolve(result);
 ```
+
 <Image
   title="Enable JavaScript Values Editor to get access to JavaScript area."
   src="/img/plugins/volkovlabs-static-datasource/import-js.png"

@@ -37,9 +37,9 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business News",
-    name: "volkovlabs-rss-datasource",
+    name: "business-news",
     description: <>Visualize RSS/Atom feeds</>,
-    href: "/plugins/volkovlabs-rss-datasource/",
+    href: "/plugins/business-news/",
   },
   {
     title: "Business Satellite",
