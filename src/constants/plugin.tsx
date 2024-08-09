@@ -25,9 +25,9 @@ export const PluginList: PluginItem[] = [
   },
   {
     title: "Business Input",
-    name: "volkovlabs-static-datasource",
+    name: "business-input",
     description: <>Store and create your data</>,
-    href: "/plugins/volkovlabs-static-datasource/",
+    href: "/plugins/business-input/",
   },
   {
     title: "Business Media",

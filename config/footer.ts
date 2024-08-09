@@ -29,7 +29,7 @@ export const FOOTER = {
         },
         {
           label: "Business Input",
-          to: "/plugins/volkovlabs-static-datasource/",
+          to: "/plugins/business-input/",
           className: "volkovlabs-footer-link icon-plugins-static-link",
         },
         {
