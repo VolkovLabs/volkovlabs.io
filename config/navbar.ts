@@ -42,7 +42,7 @@ export const NAVBAR = {
         },
         {
           label: "Business News",
-          to: "/plugins/volkovlabs-rss-datasource/",
+          to: "/plugins/business-news/",
           className: "volkovlabs-link icon-plugins-rss-link",
         },
         {

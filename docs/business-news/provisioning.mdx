@@ -1,6 +1,6 @@
 ---
 tags:
-  - Business News Data Source
+  - Business News
   - Provisioning
 ---
 
@@ -33,7 +33,7 @@ When provisioned, the Business News data source should be available in the data 
 
 <Image
   title="Business News Data source requires to input Feed URL."
-  src="/img/plugins/volkovlabs-rss-datasource/datasource.png"
+  src="/img/plugins/business-news/datasource.png"
 />
 
 ### Feed URL
@@ -44,7 +44,7 @@ During testing you may see the error.
 
 <Image
   title="Failed to fetch the provided URL."
-  src="/img/plugins/volkovlabs-rss-datasource/error.png"
+  src="/img/plugins/business-news/error.png"
 />
 
 If the URL is correct and returns data, but returns an error. Try to add `/` to the end of the url to avoid redirect blocked by CORS policy.
@@ -53,7 +53,7 @@ As an example use `https://sitename/feed/` instead `https://sitename/feed`.
 
 <Image
   title="Provided URL should be exactly as it returned from the RSS/Atom resource to avoid CORS policy restrictions."
-  src="/img/plugins/volkovlabs-rss-datasource/correct-url.png"
+  src="/img/plugins/business-news/correct-url.png"
 />
 
 :::info Caching

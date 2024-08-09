@@ -39,7 +39,7 @@ export const FOOTER = {
         },
         {
           label: "Business News",
-          to: "/plugins/volkovlabs-rss-datasource/",
+          to: "/plugins/business-news/",
           className: "volkovlabs-footer-link icon-plugins-rss-link",
         },
         {
