@@ -21,28 +21,18 @@ const Header = (siteConfig) => {
               {siteConfig.tagline}
             </h1>
             <p className="hero__subtitle margin-vert--md">
-              Get your issues and questions answered faster by becoming a GitHub
-              sponsor.
+              Volkov Labs is a dynamic, family-owned business dedicated to
+              creating innovative open-source plugins for Grafana.
             </p>
 
             <p className="hero__subtitle">
-              Our dedicated team prioritizes responding to the needs of our
-              sponsors. Don't wait for answers - join our sponsorship program
-              today.
+              Our plugins have been downloaded more than 22 million times and
+              have received praise from hundreds of users who are thrilled with
+              its ability to go beyond observability and solve complex business
+              tasks.
             </p>
-
-            <div className="margin-vert--lg">
-              <a
-                className={clsx(
-                  "button button--primary button--lg",
-                  styles.getStarted
-                )}
-                href="https://github.com/sponsors/VolkovLabs"
-              >
-                Become a sponsor &nbsp;&nbsp;→
-              </a>
-            </div>
           </div>
+
           <div className="col col--5 text--center">
             <ThemedImage
               className={clsx("margin-vert--md")}
