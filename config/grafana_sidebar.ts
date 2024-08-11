@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
         "provisioning",
         "advanced/high-availability",
         "allow-unsigned",
+        "advanced/canvas",
         "advanced/analytics",
       ],
       label: "Advanced",
@@ -50,6 +51,7 @@ const sidebars: SidebarsConfig = {
       ],
       label: "Developer",
       type: "category",
+      collapsible: false,
       link: {
         type: "doc",
         id: "developer/index",
