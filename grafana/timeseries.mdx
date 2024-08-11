@@ -25,7 +25,7 @@ In Grafana's realm, a data frame is a specific concept. In the picture below, yo
 
 The common denominator in this process is a data frame, meaning data in a specific format that a data source retrieves and the visualization panel expects as input. A data frame format is a table layout with typified columns.
 
-For all instances when a data source cannot return a required format, Grafana, starting from v7.0, introduced transformations. Please refer to a separate [article in our course](/grafana/transformations) to learn about transformations.
+For all instances when a data source cannot return a required format, Grafana, starting from v7.0, introduced transformations. Please refer to a separate [section in our course](/grafana/transformations) to learn about transformations.
 
 :::info Time Data
 One column must be in a time data format for the Time Series panel to work correctly.
@@ -77,7 +77,7 @@ For instance, one data series could be a bar visualization and the other one - a
 
 Time Series visualization is ideal for displaying live data, or, in other words, streaming. Your data source must support streaming. You can find some profound examples of streaming in our [Business Charts plugin documentation](/plugins/business-charts/streaming).
 
-Yes, the materials are created for a different plugin, but it is as close as we could get to documenting streaming in Grafana for the moment.
+Yes, the materials are created for a different plugin, but it is as close as we could get to documenting streaming in Grafana at this moment.
 
 ## Annotations and alerts
 
@@ -97,9 +97,7 @@ De-coupling a native plugin might be an unexpected, but brilliant idea. Grafana'
 
 If anything is missing in any native plugin, you do not have to wait for the format PR process to be complete! To get a better understanding of how de-coupling could be done, you can refer to [our GitHub repository](https://github.com/volkovlabs/volkovlabs-timeseries-panel).
 
-## Videos
-
-### Tutorial 1
+## Grafana's most popular plugin
 
 If you like to reiterate the materials you just read in a video form, with examples and some step-by-step guidance, please, watch our YouTube video where I walk over the Time Series and demo along the way.
 
@@ -108,7 +106,7 @@ If you like to reiterate the materials you just read in a video form, with examp
   title="Time Series panel is the Grafana most popular plugin."
 />
 
-### Tutorial 2
+## Monitoring dashboards in Grafana
 
 Join me in this short tutorial to quickly learn how to create monitoring dashboards in Grafana, without spending hours reading through the documentation!
 
@@ -119,5 +117,5 @@ Join me in this short tutorial to quickly learn how to create monitoring dashboa
 
 <Youtube
   id="zhWStcxU4Uw"
-  title="Create Grafana dashboard to monitor Linux servers | Prometheus Data Source."
+  title="Create Grafana dashboard to monitor Linux servers using Prometheus data source."
 />
