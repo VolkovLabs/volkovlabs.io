@@ -13,6 +13,7 @@ const sidebars: SidebarsConfig = {
         "transformations",
         "variables",
         "timeseries",
+        "annotations",
       ],
       label: "Getting Started",
       type: "category",
@@ -24,12 +25,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       items: [
-        "annotations",
         "customize",
         "datasources/json",
-        "provisioning",
         "storage",
+        "provisioning",
+        "advanced/high-availability",
         "allow-unsigned",
+        "advanced/analytics",
       ],
       label: "Advanced",
       type: "category",
