@@ -14,47 +14,47 @@ export const FOOTER = {
       items: [
         {
           label: "Business Calendar",
-          to: "/plugins/volkovlabs-calendar-panel/",
+          to: "/plugins/business-calendar/",
           className: "volkovlabs-footer-link icon-plugins-calendar-link",
         },
         {
           label: "Business Charts",
-          to: "/plugins/volkovlabs-echarts-panel/",
+          to: "/plugins/business-charts/",
           className: "volkovlabs-footer-link icon-plugins-echarts-link",
         },
         {
           label: "Business Forms",
-          to: "/plugins/volkovlabs-form-panel/",
+          to: "/plugins/business-forms/",
           className: "volkovlabs-footer-link icon-plugins-form-link",
         },
         {
           label: "Business Input",
-          to: "/plugins/volkovlabs-static-datasource/",
+          to: "/plugins/business-input/",
           className: "volkovlabs-footer-link icon-plugins-static-link",
         },
         {
           label: "Business Media",
-          to: "/plugins/volkovlabs-image-panel/",
+          to: "/plugins/business-media/",
           className: "volkovlabs-footer-link icon-plugins-base64-link",
         },
         {
           label: "Business News",
-          to: "/plugins/volkovlabs-rss-datasource/",
+          to: "/plugins/business-news/",
           className: "volkovlabs-footer-link icon-plugins-rss-link",
         },
         {
           label: "Business Satellite",
-          to: "/plugins/volkovlabs-grapi-datasource/",
+          to: "/plugins/business-satellite/",
           className: "volkovlabs-footer-link icon-plugins-grapi-link",
         },
         {
           label: "Business Text",
-          to: "/plugins/volkovlabs-dynamictext-panel/",
+          to: "/plugins/business-text/",
           className: "volkovlabs-footer-link icon-plugins-dt-link",
         },
         {
           label: "Business Variable",
-          to: "/plugins/volkovlabs-variable-panel/",
+          to: "/plugins/business-variable/",
           className: "volkovlabs-footer-link icon-plugins-variable-link",
         },
       ],
@@ -94,7 +94,7 @@ export const FOOTER = {
         },
         {
           label: "Environment data source",
-          to: "/grafana/volkovlabs-env-datasource/",
+          to: "/grafana/environment/",
           className: "volkovlabs-footer-link icon-plugins-env-link",
         },
         {
@@ -118,9 +118,9 @@ export const FOOTER = {
       title: "Get in touch",
       items: [
         {
-          label: "Sponsor",
-          href: "/sponsor/",
-          className: "volkovlabs-footer-link icon-sponsor-link",
+          label: "Team",
+          href: "/team/",
+          className: "volkovlabs-footer-link icon-team-link",
         },
         {
           label: "LinkedIn",

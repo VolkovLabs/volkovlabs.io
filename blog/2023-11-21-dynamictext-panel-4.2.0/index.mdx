@@ -6,13 +6,16 @@ image: /img/blog/2023-11-21-dynamictext-panel-4.2.0/banner.png
 keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
 ---
 
+import Feedback from "../../docs/business-text/_feedback.mdx";
+import GettingStarted from "../../docs/business-text/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Dynamic Text Panel 4.2.0
+# Business Text 4.2.0
 
-We're excited to announce the release of the Dynamic Text Panel 4.2.0. This feature release includes the following updates:
+We're excited to announce the release of the Business Text panel 4.2.0. This feature release includes the following updates:
 
 - Added **JavaScript->After Content Ready** option to execute after the DOM rendered.
 - Added an option to enable/disable text wrapping to support empty lines in HTML.
@@ -23,10 +26,7 @@ We're excited to announce the release of the Dynamic Text Panel 4.2.0. This feat
 The plugin was updated in Grafana Catalog on November 21, 2023.
 :::
 
-<Shorts
-  src="https://www.youtube.com/embed/qsHtYoPL0LI"
-  title="Dynamic Text 4.2.0 for Grafana."
-/>
+<Shorts id="qsHtYoPL0LI" title="Business Text panel 4.2.0 for Grafana." />
 
 ## 4.4 million downloads
 
@@ -35,7 +35,7 @@ We celebrated 2 million downloads this February. Since then many more fundamenta
 More than four million downloads as of today! Thank you for your trust!
 
 <Image
-  title="Dynamic Text Panel was downloaded more than four million times."
+  title="Business Text panel was downloaded more than four million times."
   src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/downloads.png"
 />
 
@@ -119,7 +119,7 @@ The code used in the examples above:
 
 In the **JavaScript->before rendering content** option a user can register handlebars which are functions to use in the rest of the code.
 
-The Dynamic Text panel has plenty of predefined handlebars that are registered automatically and ready to use. All of them are listed on our [documentation page](/plugins/volkovlabs-dynamictext-panel/helpers/).
+The Business Text panel has plenty of predefined handlebars that are registered automatically and ready to use. All of them are listed on our [documentation page](/plugins/business-text/helpers/).
 
 In this release, we added three more:
 
@@ -165,47 +165,9 @@ Example:
 {{/each}}
 ```
 
-## Getting Started
+<GettingStarted />
 
-You can install Dynamic Text Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install marcusolsson-dynamictext-panel
-```
-
-## YouTube Tutorial
-
-The Dynamic Text panel is a mighty Grafana plugin to convert any monotonous bulk of data into vibrant, effortlessly comprehended visualization.
-
-To this moment, I have created three videos. The latest one describes more features as more features have been implemented to the day of creation.
-Yet, the latest Dynamic Text plugin version is far more advanced with numerous new features implemented since August.
-
-### Video 3, published on August 15, 2023
-
-In this video, I touch upon the main features and panel options along with demonstrating community use cases.
-
-<Youtube
-  id="AcQi-6GCrNU"
-  title="Dynamic Text plugin for Grafana | Use HTML, Markdown, JavaScript and CSS | Community use cases."
-/>
-
-### Video 2, published on January 29, 2023
-
-Since the latest release, the community has requested many changes. This video outlines all the new features we implemented, including the most asked-for JavaScript area code.
-
-<Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text Panel." />
-
-### Video 1, published on October 24, 2022
-
-This is the first guide we created for the Dynamic Text plugin for Grafana.
-The plugin does a fantastic job by transforming bland table data into vibrant, readable visualization emphasizing critical tidbits.
-
-<Youtube
-  id="MpNZ4Yl-p0U"
-  title="Markdown, HTML, and Handlebars for transforming data visualizations."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -220,10 +182,4 @@ The plugin does a fantastic job by transforming bland table data into vibrant, r
 - Use Grafana Access Policy to sign plugin (#236)
 - Update to Grafana 10.2.1 (#237)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

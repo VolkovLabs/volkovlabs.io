@@ -6,11 +6,15 @@ image: /img/blog/2024-01-05-form-panel-3.4.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-forms/_feedback.mdx";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
 import Image from "@theme/Image";
-import Youtube from "@theme/Youtube";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
 
-# Business Forms Panel 3.4.0
+# Business Forms 3.4.0
 
 We are happy to announce the release of the Business Forms Panel 3.4.0. This release includes the following updates:
 
@@ -19,9 +23,7 @@ We are happy to announce the release of the Business Forms Panel 3.4.0. This rel
 - Enabled replacing variables in Payload functions.
 - Ensured compatibility with Grafana 10.2.2 and upcoming 10.3.0.
 
-:::info Grafana Catalog
-The plugin was updated in the Grafana Plugins catalog on December 15, 2023.
-:::
+<Catalog date="December 15, 2023" />
 
 ## State of the Plugin
 
@@ -87,7 +89,7 @@ Simply type **context** and get the list of everything available from the Data M
 
 ### Event Bus and App Events
 
-Starting from this release, we added Event Bus and App Events into the **Context** object. For the complete list, please, reference the [Data Manipulation plugin documentation](/plugins/volkovlabs-form-panel/code).
+Starting from this release, we added Event Bus and App Events into the **Context** object. For the complete list, please, reference the [Data Manipulation plugin documentation](/plugins/business-forms/code).
 
 Refresh all dashboard panels using `EventBus` with global scope called `AppEvents`:
 
@@ -113,24 +115,9 @@ Starting from this release we enabled the usage of dashboard variables in the In
   src="/img/blog/2024-01-05-form-panel-3.4.0/var-payload.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-You can install the Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install volkovlabs-form-panel
-```
-
-## YouTube Tutorial
-
-Data Manipulation Panel is a plugin for Grafana that allows you to insert and update application data, as well as modify configuration directly from your Grafana dashboard.
-
-<Youtube
-  id="hVy9NfFiI5U"
-  title="Use REST API, Data Source, and Queries to manipulate your data."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -148,10 +135,4 @@ Data Manipulation Panel is a plugin for Grafana that allows you to insert and up
 
 - Fix draggable control to support upcoming Grafana changes (#314)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-forms/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

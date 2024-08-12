@@ -1,7 +1,10 @@
-import React, { useMemo } from 'react';
-import { useThemeConfig } from '@docusaurus/theme-common';
-import { useFilteredAndTreeifiedTOC, useTOCHighlight } from '@docusaurus/theme-common/internal';
-import TOCItemTree from '@theme/TOCItems/Tree';
+import React, { useMemo } from "react";
+import { useThemeConfig } from "@docusaurus/theme-common";
+import {
+  useFilteredAndTreeifiedTOC,
+  useTOCHighlight,
+} from "@docusaurus/theme-common/internal";
+import TOCItemTree from "@theme/TOCItems/Tree";
 
 /**
  * TOC Items
@@ -52,12 +55,12 @@ const TOCItems = ({
         {...props}
       />
       <div className="questionsDiv">
-        <a href="https://www.youtube.com/@volkovlabs" target='_blank'>
+        <a href="https://youtube.com/@volkovlabs" target="_blank">
           <img src="/img/youtube.png" className="questions" />
         </a>
       </div>
     </>
   );
-}
+};
 
 export default TOCItems;

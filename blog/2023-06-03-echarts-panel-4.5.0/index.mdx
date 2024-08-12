@@ -6,12 +6,15 @@ image: /img/blog/2023-06-03-echarts-panel-4.5.0/banner.png
 keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 ---
 
+import Feedback from "../../docs/business-charts/_feedback.mdx";
+import GettingStarted from "../../docs/business-charts/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-charts/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Charts Panel 4.5.0 supports Grafana 10
+# Business Charts 4.5.0 supports Grafana 10
 
-We are happy to announce the release of the Business Charts Panel 4.5.0. This release includes the following updates:
+We are happy to announce the release of the Business Charts panel 4.5.0. This release includes the following updates:
 
 - Tested the plugin with Grafana 10 Preview.
 - Updated the function example to support Grafana 10.
@@ -50,21 +53,9 @@ A new alert makes the troubleshooting process simpler and more effective.
   src="/img/blog/2023-06-03-echarts-panel-4.5.0/theme.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-Apache ECharts visualization panel can be installed from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-echarts-panel
-```
-
-## YouTube Tutorial
-
-The Business Charts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
-
-<Youtube id="DxqCrBEmrQw" title="How to create modern dashboards in Grafana." />
+<Tutorial />
 
 ## Release Notes
 
@@ -76,10 +67,4 @@ The Business Charts Panel plugin is a data visualization extension for Grafana t
 - Updated the default function to support Grafana 10 (#178).
 - Tested the plugin on Grafana 10 Preview (#179).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-charts/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

@@ -6,12 +6,15 @@ image: /img/blog/2023-06-10-calendar-panel-1.4.0/banner.png
 keywords: [Calendar, Panel, Events, Time Range, Grafana]
 ---
 
+import Feedback from "../../docs/business-calendar/_feedback.mdx";
+import GettingStarted from "../../docs/business-calendar/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-calendar/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Calendar Panel 1.4.0 supports Grafana 10
+# Business Calendar 1.4.0 supports Grafana 10
 
-We are happy to announce the release of the Business Calendar Panel 1.4.0. This release includes the following updates:
+We are happy to announce the release of the Business Calendar panel 1.4.0. This release includes the following updates:
 
 - Tested the plugin on Grafana 10 Preview.
 - Added the text formatting, mappings, and overrides.
@@ -33,24 +36,9 @@ Units, value mappings, and overrides are all supported in the Event text field. 
   src="/img/blog/2023-06-10-calendar-panel-1.4.0/calendar.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Calendar Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install marcusolsson-calendar-panel
-```
-
-## YouTube Tutorial
-
-Business Calendar Panel is a Grafana plugin that displays events from various data sources.
-
-<Youtube
-  id="iPJ122x0oos"
-  title="Display events from the JSON API data source."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -68,10 +56,4 @@ Business Calendar Panel is a Grafana plugin that displays events from various da
 
 - Increased the event spacing to prevent the overlapping (#96).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-calendar/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

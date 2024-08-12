@@ -6,12 +6,15 @@ image: /img/blog/2023-03-04-echarts-panel-4.2.0/banner.png
 keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
 ---
 
+import Feedback from "../../docs/business-charts/_feedback.mdx";
+import GettingStarted from "../../docs/business-charts/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-charts/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Charts Panel 4.2.0
+# Business Charts 4.2.0
 
-We are happy to announce the release of Business Charts Panel 4.2.0. This release includes the following updates:
+We are happy to announce the release of Business Charts panel 4.2.0. This release includes the following updates:
 
 - Added the `EventBus` parameter to publish events.
 - Removed the panel padding, allowing you to use all of the panel space from corner to corner.
@@ -84,7 +87,7 @@ echartsInstance.on("datarangeselected", (params) => {
 });
 ```
 
-3. In the `visualMap` definition, set the `range` property to the dashboard variables using the `replaceVariables` method as described in our [documentation](/plugins/volkovlabs-echarts-panel/variables).
+3. In the `visualMap` definition, set the `range` property to the dashboard variables using the `replaceVariables` method as described in our [documentation](/plugins/business-charts/variables).
 
 ```js
 visualMap: [
@@ -155,28 +158,9 @@ if (nodeList.length < 2) {
 }
 ```
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Charts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-echarts-panel
-```
-
-## YouTube Tutorial
-
-The Business Charts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
-
-<Youtube id="DxqCrBEmrQw" title="How to create modern dashboards in Grafana." />
-
-One of the three plugins that completes Grafana is Business Charts Panel. With Dynamic Text, Data Manipulation, and Business Charts Panel you can create fully functional web applications meeting your needs and expectations.
-
-<Youtube
-  id="wPr4gZYzUVA"
-  title="Dynamic Text, Data Manipulation, and Business Charts Panel plugins."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -190,10 +174,4 @@ One of the three plugins that completes Grafana is Business Charts Panel. With D
 - Set the background color as transparent by default (#139).
 - Added the Magic (JavaScript) Trio tutorial (#141).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-charts/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

@@ -6,6 +6,7 @@ image: /img/blog/2023-01-23-postgres-in-grafana/banner.png
 keywords: [PostgreSQL, Timescale, Configuration, Storage]
 ---
 
+import Feedback from "../_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -32,7 +33,7 @@ Both databases are open source, and both are supported by Grafana. The benefits 
 
 - Configuration in a separate container (or host) makes your application design flexible and manageable, with a more straightforward backup/restoration process.
 - The separated configuration storage does not get lost when the Grafana UI container is acting up.
-- You also can use it for as many UI instances as needed when switching to the High-Availability setup.
+- You also can use it for as many UI instances as needed when switching to the High Availability setup.
 
 ## PostgreSQL
 
@@ -484,3 +485,5 @@ PostgreSQL combines the three most required storage needs:
 - Relational.
 
 Those are the three primary storage needs for our commercial applications. PostgreSQL was an easy and obvious choice.
+
+<Feedback />

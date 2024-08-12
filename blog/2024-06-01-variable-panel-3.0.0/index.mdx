@@ -6,11 +6,15 @@ image: /img/blog/2024-06-01-variable-panel-3.0.0/banner.png
 keywords: [Variable, Panel, Status]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-variable/_feedback.mdx";
+import GettingStarted from "../../docs/business-variable/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-variable/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Variable Panel 3.0.0
+# Business Variable 3.0.0
 
 We are happy to announce the release of the Business Variable Panel 3.0.0. This release includes the following updates:
 
@@ -24,14 +28,9 @@ We are happy to announce the release of the Business Variable Panel 3.0.0. This 
 - **Tree view** display mode. Smoothed the scroll and improved the user experience in general.
 - Required Grafana 10 and Grafana 11. Breaking change.
 
-:::info Grafana Catalog
-The plugin was updated in the Grafana Plugins catalog on May 9, 2024.
-:::
+<Catalog date="May 9, 2024" />
 
-<Shorts
-  src="https://www.youtube.com/embed/x0qEtDfZs9c"
-  title="Business Variable panel 3.0.0 for Grafana."
-/>
+<Shorts id="x0qEtDfZs9c" title="Business Variable panel 3.0.0 for Grafana." />
 
 ## Business Variable Panel
 
@@ -272,38 +271,15 @@ Our plugins always follow the latest Grafana versions and stay compatible with t
 
 The latest Business Variable Panel 3.0.0 fully supports Grafana 10 and the upcoming 11 releases.
 
-## Getting Started
+<GettingStarted />
 
-The Business Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-variable-panel
-```
-
-## YouTube Tutorial
-
-The Business Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
-
-The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
-
-<Youtube
-  id="1ogv2jstrlI"
-  title="Demonstrates the Variable panel functionality."
-/>
+<Tutorial />
 
 ## Release Notes
 
 :::warning Breaking changes in 3.0.0
 
 - Requires Grafana 10 and Grafana 11
-
-:::
-
-:::warning Breaking changes in 2.4.0
-
-- Requires Grafana 9.2 and Grafana 10
 
 :::
 
@@ -330,6 +306,12 @@ The variable panel offers you single- and multi-variable layouts along with an a
 - Improved Tree view display and scroll (#136)
 - Added Reset dependent variables when selecting the value (#138)
 
+:::warning Breaking changes in 2.4.0
+
+- Requires Grafana 9.2 and Grafana 10
+
+:::
+
 ### Features / Enhancements in 2.4.0
 
 - Updated video tutorial in README (#111)
@@ -339,10 +321,4 @@ The variable panel offers you single- and multi-variable layouts along with an a
 - Added preserve selected group option (#124)
 - Added label for Button view (#125)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

@@ -1,0 +1,71 @@
+---
+tags:
+  - Business Satellite
+  - Annotations
+---
+
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Annotations
+
+Business Satellite Data Source supports retrieving annotations to display filtered annotations and alerts from local and remote Grafana instances.
+
+<Image
+  title="Business Satellite Data Source works with Grafana configuration database."
+  src="/img/plugins/business-satellite/schema.png"
+/>
+
+## Tutorials
+
+### Annotation Types
+
+This introductory video highlights the differences and similarities between Grafana alerts, annotations, and annotation queries.
+
+<Youtube
+  id="4asWJ_Dhcmw"
+  title="Annotations, Alerts, and Annotation queries in Grafana explained."
+/>
+
+### How to and Demo
+
+In this tutorial, we look at the concept from a data flow point of view and provide step-by-step instructions which you can follow and learn as you go.
+
+<Youtube
+  id="bmOkirtC65w"
+  title="Annotations and Alerts tutorial for Grafana with Timescale."
+/>
+
+## Options
+
+| Filter       | Options                                                 |
+| ------------ | ------------------------------------------------------- |
+| Type         | All, Annotation, or Alert.                              |
+| Dashboards   | All or This.                                            |
+| Time Range   | None or Selected in the dashboard.                      |
+| Prev State   | All, Normal, Pending, or Alerting.                      |
+| Next State   | All, Normal, Pending, or Alerting.                      |
+| Text Pattern | Supports Regular expressions and variables.             |
+| Max Limit    | Maximum number of annotations to retrieve. Default 100. |
+
+## Dashboard Annotations
+
+<Image
+  title="Dashboard annotations use Business Satellite Data Source to retrieve Alerting annotations filtered with text pattern."
+  src="/img/plugins/business-satellite/annotations.png"
+/>
+
+## Alerts
+
+:::info Annotation List
+
+The native Annotation List panel does not show Alerts since it's filtering annotations with a specific type.
+
+:::
+
+The Business Satellite data source allows retrieving annotations and alerts to display using any available panel in your style.
+
+<Image
+  title="Display Annotations for Generated Alerts and Operator Actions."
+  src="/img/plugins/business-satellite/alerts.png"
+/>

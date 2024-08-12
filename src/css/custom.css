@@ -51,6 +51,22 @@
   background: url("/static/img/index/github.dark.svg") no-repeat;
 }
 
+.header-linkedin-link:hover {
+  opacity: 0.6;
+}
+
+.header-linkedin-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/linkedin.svg") no-repeat;
+}
+
+[data-theme="dark"] .header-linkedin-link::before {
+  background: url("/static/img/index/linkedin.dark.svg") no-repeat;
+}
+
 /* Icons */
 
 .volkovlabs-link {
@@ -70,14 +86,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-echarts-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-charts/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-echarts-link::before {
-  background: url("/static/img/plugins/volkovlabs-echarts-panel/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-charts/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-base64-link::before {
@@ -85,14 +99,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-image-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-media/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-base64-link::before {
-  background: url("/static/img/plugins/volkovlabs-image-panel/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-media/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-calendar-link::before {
@@ -100,13 +112,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-calendar-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-calendar/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-calendar-link::before {
-  background: url("/static/img/plugins/volkovlabs-calendar-panel/logo.dark.svg")
+  background: url("/static/img/plugins/business-calendar/logo.dark.svg")
     no-repeat;
 }
 
@@ -115,14 +126,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-dynamictext-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-text/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-dt-link::before {
-  background: url("/static/img/plugins/volkovlabs-dynamictext-panel/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-text/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-form-link::before {
@@ -130,14 +139,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-form-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-forms/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-form-link::before {
-  background: url("/static/img/plugins/volkovlabs-form-panel/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-forms/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-env-link::before {
@@ -145,14 +152,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/grafana/volkovlabs-env-datasource/logo.svg")
-    no-repeat;
+  background: url("/static/img/grafana/environment/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-env-link::before {
-  background: url("/static/img/grafana/volkovlabs-env-datasource/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/grafana/environment/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-grapi-link::before {
@@ -160,13 +165,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-grapi-datasource/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-satellite/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-grapi-link::before {
-  background: url("/static/img/plugins/volkovlabs-grapi-datasource/logo.dark.svg")
+  background: url("/static/img/plugins/business-satellite/logo.dark.svg")
     no-repeat;
 }
 
@@ -175,14 +179,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-rss-datasource/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-news/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-rss-link::before {
-  background: url("/static/img/plugins/volkovlabs-rss-datasource/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-news/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-static-link::before {
@@ -190,14 +192,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-static-datasource/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-input/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-static-link::before {
-  background: url("/static/img/plugins/volkovlabs-static-datasource/logo.dark.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-input/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-variable-link::before {
@@ -205,13 +205,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/plugins/volkovlabs-variable-panel/logo.svg")
-    no-repeat;
+  background: url("/static/img/plugins/business-variable/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-plugins-variable-link::before {
-  background: url("/static/img/plugins/volkovlabs-variable-panel/logo.dark.svg")
+  background: url("/static/img/plugins/business-variable/logo.dark.svg")
     no-repeat;
 }
 
@@ -297,17 +296,17 @@
   background: url("/static/img/index/linkedin.dark.svg") no-repeat;
 }
 
-.icon-sponsor-link::before {
+.icon-team-link::before {
   content: "";
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/sponsor/feature-1.svg") no-repeat;
+  background: url("/static/img/team/feature-1.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-sponsor-link::before {
-  background: url("/static/img/sponsor/feature-1.dark.svg") no-repeat;
+[data-theme="dark"] .icon-team-link::before {
+  background: url("/static/img/team/feature-1.dark.svg") no-repeat;
 }
 
 .icon-blog-link::before {

@@ -8,12 +8,13 @@ keywords: [Business Suite, Grafana]
 
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import Feedback from "../_feedback.mdx";
 
-# Business Suite for Grafana. How it all came together and where we move from here?
+# Business Suite for Grafana. How it all came together and where we move from here
 
 The Business Suite for Grafana is a collection of open-source plugins designed to streamline business application development in Grafana.
 
-With a total number of all plugin downloads exceeding 21,700,000, we call it a success. This suite has garnered praise from hundreds of users who are thrilled with its ability to go beyond observability and solve complex business tasks, making it a trusted choice for companies aiming to create cost-effective applications in-house and meet aggressive delivery schedules.
+With a total number of all plugin downloads exceeding 22 millions, we call it a success. This suite has garnered praise from hundreds of users who are thrilled with its ability to go beyond observability and solve complex business tasks, making it a trusted choice for companies aiming to create cost-effective applications in-house and meet aggressive delivery schedules.
 
 <Image
   title="The Business Suite for Grafana."
@@ -26,6 +27,8 @@ We actively support all our plugins and timely update them to be compatible with
 When we discuss Grafana, our focus is on what this platform is capable of to deliver to an end-user. That's why we provide detailed plugin documentation and specific use cases with step-by-step solutions.
 
 Whether it's for monitoring system performance or analyzing business data, our aim is to show that building with Grafana can be both time and cost-efficient. More importantly, its functionality can be fine-tuned to your particular needs, ensuring you have all the answers without unnecessary features.
+
+## Plugins
 
 Currently, the Business Suite consists of 9+1 uniquely positioned plugins, each developed for its niche of tasks.
 
@@ -45,11 +48,9 @@ We are expecting the first release of the [Business Table](/blog/business-suite-
 
 About three years ago, we became part of the vibrant Grafana community. Our first project was an AI image recognition, counting the cars on a busy highway. Grafana was a significant asset, but we faced a unique challenge. To address this, we developed our first community plugin. This panel allowed us to visualize base64 encoded images, allowing us to monitor the real-time movement of objects on our Grafana dashboard.
 
-Many other formats have been added since the first image format, including PDF, video and audio files. Now the plugin is known as the [Business Media](/plugins/volkovlabs-image-panel/) panel with almost 3,000,000 downloads worldwide.
+Many other formats have been added since the first image format, including PDF, video and audio files. Now the plugin is known as the [Business Media](/plugins/business-media/) panel with almost 3,000,000 downloads worldwide.
 
 During the latest GrafanaCon held in Amsterdam, we learned that this plugin has been used by JAXA, the Japan Aerospace Exploration Agency, in their breathtaking [Moon landing project](https://global.jaxa.jp/press/2024/01/20240125-1_e.html)
-
-It was staggering to realize that the Business Media was chosen to monitor the probe movements in real time.
 
 <Image
   title="JAXA Moon landing probe monitoring dashboard used the Business Media plugin."
@@ -57,11 +58,13 @@ It was staggering to realize that the Business Media was chosen to monitor the p
   width="75%"
 />
 
+It was staggering to realize that the Business Media was chosen to monitor the probe movements in real time.
+
 ## Business News
 
 Following the Business Media panel, we embarked on another innovative journey. We created a data source for RSS and Atom news formats, envisioning a Grafana dashboard that would display all the latest news and updates from various web resources.
 
-Eventually, we submitted this new data source for the Grafana team's review and were excited to have another plugin added to the Grafana catalog. Now, it is known as the [Business News](/plugins/volkovlabs-rss-datasource/) and has nearly 800,000 downloads.
+Eventually, we submitted this new data source for the Grafana team's review and were excited to have another plugin added to the Grafana catalog. Now, it is known as the [Business News](/plugins/business-news/) and has nearly 800,000 downloads.
 
 To accompany the Business News data source, soon after we adopted the Business Text panel (previously known as the Dynamic Text).
 This couple is capable of providing for numerous scenarios. We are happy to report that you can find the following references in the [Grafana documentation](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/news/):
@@ -74,7 +77,7 @@ If you're unable to display an RSS feed using the news visualization, you can tr
 
 We adopted the first plugin release (back then known as the Dynamic Text) so we could prettify the news feed. Slowly, however, this plugin turned into a mini development framework within Grafana dashboard. It became possible after we allowed custom JavaScript code in the plugin options including the loading of external resources.
 
-The [Business Text](/plugins/volkovlabs-dynamictext-panel/) panel has become the most popular Volkov Labs plugin with more than 7,000,000 downloads. The plugin truly cuts through many corners with its ability to integrate external JavaScript libraries. With that functionality, beloved panel like Flowchart can have a [second life](/plugins/volkovlabs-dynamictext-panel/external/#flowchart).
+The [Business Text](/plugins/business-text/) panel has become the most popular Volkov Labs plugin with more than 7,000,000 downloads. The plugin truly cuts through many corners with its ability to integrate external JavaScript libraries. With that functionality, beloved panel like Flowchart can have a [second life](/plugins/business-text/external/#flowchart).
 
 Currently, the plugin is called the Business Text, but it could as well be named a swiss army knife for Grafana. Read the [feedback](https://community.grafana.com/t/recommendation-business-text-panel-for-javascript-shenanigans/125839) about the Business Text plugin written by one of the community members.
 
@@ -87,7 +90,7 @@ It's absolutely revolutionized how I can get extra flexibility from Grafana when
 
 ## Business Satellite
 
-Shortly after the successful Business News and Business Text plugin combo, we started working on another plugin. Initially, we called it the HTTP API data source, but presently, it is known as the [Business Satellite](/plugins/volkovlabs-grapi-datasource/). It facilitates access to the Grafana configuration database, the central repository for all Grafana settings, alerts, and annotations.
+Shortly after the successful Business News and Business Text plugin combo, we started working on another plugin. Initially, we called it the HTTP API data source, but presently, it is known as the [Business Satellite](/plugins/business-satellite/). It facilitates access to the Grafana configuration database, the central repository for all Grafana settings, alerts, and annotations.
 
 <Image
   title="The Business Satellite data source simplifies access to the Grafana configuration storage."
@@ -106,7 +109,7 @@ As of this moment, the Business Satellite data source supports the following API
 - health information,
 - organization users.
 
-We are open to new suggestions. Please [open a feature request](https://github.com/VolkovLabs/volkovlabs-grapi-datasource/issues) if your task requires working with something else.
+We are open to new suggestions. Please [open a feature request](https://github.com/VolkovLabs/business-satellite/issues) if your task requires working with something else.
 
 <Image
   title="The Business Satellite data source request types."
@@ -126,7 +129,7 @@ For them, Grafana dashboards became a one-stop for making important production d
 
 In the first release, the plugin supported only one initial request type, REST API. As of today, it also supports the Data Source and Query. The incoming and outgoing payloads can be specified using the Query editor.
 
-At first glance, the [Business Forms](/plugins/volkovlabs-form-panel/) options section might seem complex. To address this, we've created a data flow schema. This visual representation clarifies how the options interact, answering most of the questions we've received and providing a clear path forward.
+At first glance, the [Business Forms](/plugins/business-forms/) options section might seem complex. To address this, we've created a data flow schema. This visual representation clarifies how the options interact, answering most of the questions we've received and providing a clear path forward.
 
 <Image
   title="The Business Forms panel data flow."
@@ -134,13 +137,13 @@ At first glance, the [Business Forms](/plugins/volkovlabs-form-panel/) options s
   width="70%"
 />
 
-In the documentation to this plugin, we share a ready-to-use code for [5 basic API servers](/plugins/volkovlabs-form-panel/servers/):
+In the documentation to this plugin, we share a ready-to-use code for [5 basic API servers](/plugins/business-forms/servers/):
 
-- [InfluxDB](/plugins/volkovlabs-form-panel/servers/influx/),
-- [JSON](/plugins/volkovlabs-form-panel/servers/json/),
-- [MySQL](/plugins/volkovlabs-form-panel/servers/mysql/),
-- [Node-RED](/plugins/volkovlabs-form-panel/servers/nodered/),
-- [PostgreSQL](/plugins/volkovlabs-form-panel/servers/postgresql/).
+- [InfluxDB](/plugins/business-forms/servers/influx/),
+- [JSON](/plugins/business-forms/servers/json/),
+- [MySQL](/plugins/business-forms/servers/mysql/),
+- [Node-RED](/plugins/business-forms/servers/nodered/),
+- [PostgreSQL](/plugins/business-forms/servers/postgresql/).
 
 This should give you a good start in your programming endeavors.
 
@@ -148,7 +151,7 @@ This should give you a good start in your programming endeavors.
 
 The plugin is powered by the [Apache ECharts library](https://echarts.apache.org).
 
-Every plugin has a specific role in our Business Suite, in addition to that, the [Business Charts](/plugins/volkovlabs-echarts-panel/) has a special place in our hearts. With this plugin you can build highly customizable charts of any kind. From simple lines, bars, radar, theme rivers, to maps and 3D simulations. The graphs can be dynamic or transforming from one to another.
+Every plugin has a specific role in our Business Suite, in addition to that, the [Business Charts](/plugins/business-charts/) has a special place in our hearts. With this plugin you can build highly customizable charts of any kind. From simple lines, bars, radar, theme rivers, to maps and 3D simulations. The graphs can be dynamic or transforming from one to another.
 
 <Image
   title="A few examples of the Business Charts panel in motion."
@@ -181,7 +184,7 @@ We started with basic calendar functionality, and soon embedded the Big Calendar
   title="Overview and detailed tutorial for Business Calendar 3.1.0."
 />
 
-Among many [Business Calendar](/plugins/volkovlabs-calendar-panel/) panel features are:
+Among many [Business Calendar](/plugins/business-calendar/) panel features are:
 
 - Intuitive multi-language toolbar.
 - Ability to combine data from any data sources.
@@ -193,7 +196,7 @@ Among many [Business Calendar](/plugins/volkovlabs-calendar-panel/) panel featur
 
 This plugin has started as a helping hand in visualization panel development. In the first release, it allowed users to manually create a data frame with the needed data types for quick and simple visualization panel testing. In the latest versions you can find this plugin enriched with the JavaScript module added to simplify the data emulation.
 
-In short, the latest version of the [Business Input plugin](/plugins/volkovlabs-static-datasource/) allows you to:
+In short, the latest version of the [Business Input data source](/plugins/business-input/) allows you to:
 
 - Create static visualizations that don't depend on a specific data source.
 - Allows specifying values manually or using the JavaScript Values Editor code.
@@ -219,7 +222,7 @@ This text area allows you to use the response that will be received from the LLM
 
 ## Business Variable
 
-The [Business Variable](/plugins/volkovlabs-variable-panel/) panel builds on top of the native dashboard variables. It allows you to have dashboard filters in a separate panel, which you can place anywhere on the dashboard.
+The [Business Variable](/plugins/business-variable/) panel builds on top of the native dashboard variables. It allows you to have dashboard filters in a separate panel, which you can place anywhere on the dashboard.
 
 The Business Variable panel offers many layouts with robust options, including Minimize, Slider, Buttons and an advanced TreeView layouts. The Grafana thresholds feature is also supported.
 
@@ -228,7 +231,7 @@ The Business Variable panel offers many layouts with robust options, including M
   src="/img/blog/2024-08-02-business-suite/variable-layouts.png"
 />
 
-Among many beloved cases that this panel solves with ease is [dashboard redirect](/plugins/volkovlabs-variable-panel/redirect/). This feature allows the corresponding dashboard to be opened to a variable value. It is useful, for instance, if a variable panel displays a list of some devices where every device requires a specific dashboard.
+Among many beloved cases that this panel solves with ease is [dashboard redirect](/plugins/business-variable/redirect/). This feature allows the corresponding dashboard to be opened to a variable value. It is useful, for instance, if a variable panel displays a list of some devices where every device requires a specific dashboard.
 
 The corresponding dashboard opens when a user selects a device in the Business Variable panel. This makes the dashboard switch not obvious to users, who might feel like they stay in one place.
 
@@ -257,6 +260,15 @@ There, three plugins are combined:
 - Business Variable to list and choose the uploaded files.
 - Business Media to display one selected among uploaded files.
 
+## Input data source, Media panel, Variable panel tutorial
+
+In this video, Daria covers the Business Input data source, Business Media panel, and Business Variable panel, explaining what those plugins do and the best way to start with them.
+
+<Youtube
+  id="K1NHBV5e6VE"
+  title="Input data source, Media panel, Variable panel | Tutorial for beginners."
+/>
+
 ## What does the future hold?
 
 We plan to expand and improve existing plugins. The Grafana community is excellent for helping to determine what should happen next for each plugin.
@@ -268,3 +280,5 @@ We carefully study all the questions we receive on our YouTube channel and GitHu
 We are always on the lookout for the latest Grafana news and upcoming features to ensure our plugins are compatible with the latest Grafana updates.
 
 Grafana is one of a kind, incredible tool that can be a focal point of your web-application development. We have productive experience with it and will continue to explore and create together! Bravo Grafana!
+
+<Feedback />

@@ -6,12 +6,15 @@ image: /img/blog/2023-04-17-echarts-panel-4.3.0/banner.png
 keywords: [ECharts, Panel, Chart, Visualization, Grafana]
 ---
 
+import Feedback from "../../docs/business-charts/_feedback.mdx";
+import GettingStarted from "../../docs/business-charts/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-charts/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Charts Panel 4.3.1
+# Business Charts 4.3.1
 
-We are happy to announce the release of the Business Charts Panel 4.3.1. This release include the following updates:
+We are happy to announce the release of the Business Charts panel 4.3.1. This release include the following updates:
 
 - Added an alert state and annotations.
 - Updated U.S. and world maps in the GeoJSON module.
@@ -25,7 +28,7 @@ The plugin was updated in the Grafana Plugins catalog on April 24, 2023.
 
 ## 100k downloads
 
-We are pleased to announce that Business Charts Panel has been downloaded over 100,000 times. This extension is not a plug-and-play product and requires some learning. Our [YouTube tutorials](https://www.youtube.com/watch?v=B4Uj1n4Cr88&list=PLPow72ygztmQHGWFqksEf3LebUfhqBfFu) and [documentation](/plugins/volkovlabs-echarts-panel) will undoubtedly assist you in mastering the plugin and revealing its unrivaled customization potential.
+We are pleased to announce that Business Charts Panel has been downloaded over 100,000 times. This extension is not a plug-and-play product and requires some learning. Our [YouTube tutorials](https://youtube.com/watch?v=B4Uj1n4Cr88&list=PLPow72ygztmQHGWFqksEf3LebUfhqBfFu) and [documentation](/plugins/business-charts) will undoubtedly assist you in mastering the plugin and revealing its unrivaled customization potential.
 
 <Image
   title="100,000 downloads in 6 months since we forked the panel."
@@ -34,7 +37,7 @@ We are pleased to announce that Business Charts Panel has been downloaded over 1
 
 ## Alert State and Annotations
 
-We added support for Annotations in Apache ECharts using mark lines. Data for mark lines is retrieved from the `context.panel.data.annotations` object as explained in the [product documentation](/plugins/volkovlabs-echarts-panel/annotations/).
+We added support for Annotations in Apache ECharts using mark lines. Data for mark lines is retrieved from the `context.panel.data.annotations` object as explained in the [product documentation](/plugins/business-charts/annotations/).
 
 ```js
 const annotations = [];
@@ -165,28 +168,9 @@ if (nodeList.length < 2) {
 }
 ```
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Charts Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-echarts-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-echarts-panel
-```
-
-## YouTube Tutorial
-
-The Business Charts Panel plugin is a data visualization extension for Grafana that allows you to integrate charts and graphs from the popular Apache ECharts library into your Grafana dashboard.
-
-<Youtube id="DxqCrBEmrQw" title="How to create modern dashboards in Grafana." />
-
-One of the three plugins that completes Grafana is Business Charts Panel. With Dynamic Text, Data Manipulation, and Business Charts Panel you can create fully functional web applications meeting your needs and expectations.
-
-<Youtube
-  id="wPr4gZYzUVA"
-  title="Dynamic Text, Data Manipulation and Business Charts plugins."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -220,10 +204,4 @@ One of the three plugins that completes Grafana is Business Charts Panel. With D
 - [Fix] [type] Add missing treePathInfo property into sunburst formatter callback and add missing data option into SunburstSeriesOption. #18310 (plainheart)
 - [Fix] [type] Add missing callback function type for the symbol option of tree series. #18070 (ChepteaCatalin)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-charts/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

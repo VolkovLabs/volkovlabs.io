@@ -6,13 +6,16 @@ image: /img/blog/2023-08-15-calendar-panel-2.1.0/banner.png
 keywords: [Calendar, Panel, Events, Time Range, Grafana]
 ---
 
+import Feedback from "../../docs/business-calendar/_feedback.mdx";
+import GettingStarted from "../../docs/business-calendar/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-calendar/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Calendar Panel 2.1.0
+# Business Calendar 2.1.0
 
-We are happy to announce the release of the Business Calendar Panel 2.1.0. This release includes the following updates:
+We are happy to announce the release of the Business Calendar panel 2.1.0. This release includes the following updates:
 
 - Added an updated version of the calendar, Big Calendar, a React library-based calendar that allows users to switch between month, week, and day views.
 - Added multi-language support into Big Calendar: Spanish, French, German, and simplified Chinese.
@@ -24,10 +27,7 @@ We are happy to announce the release of the Business Calendar Panel 2.1.0. This 
 The plugin was updated in the Grafana Plugins catalog on August 15, 2023.
 :::
 
-<Shorts
-  src="https://www.youtube.com/embed/DV3HLdHMz5Y"
-  title="Business Calendar Panel 2.1.0 for Grafana."
-/>
+<Shorts id="DV3HLdHMz5Y" title="Business Calendar panel 2.1.0 for Grafana." />
 
 ## Big Calendar
 
@@ -78,24 +78,9 @@ In the plugin settings, you can do the following:
   src="/img/blog/2023-08-15-calendar-panel-2.1.0/annotations.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Calendar Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install marcusolsson-calendar-panel
-```
-
-## YouTube Tutorial
-
-Business Calendar Panel is a Grafana plugin that displays events from various data sources.
-
-<Youtube
-  id="iPJ122x0oos"
-  title="Display events from the JSON API data source."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -128,10 +113,4 @@ Business Calendar Panel is a Grafana plugin that displays events from various da
 - Updated button styles in the Big Calendar component (#115).
 - Updated the calendar resizing in the Big Calendar component (#116).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-calendar/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

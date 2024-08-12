@@ -6,11 +6,15 @@ image: /img/blog/2023-08-23-form-panel-3.1.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-forms/_feedback.mdx";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-forms/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Forms Panel 3.1.0
+# Business Forms 3.1.0
 
 We are happy to announce the release of the Business Forms Panel 3.1.0. This release includes the following updates:
 
@@ -21,14 +25,9 @@ We are happy to announce the release of the Business Forms Panel 3.1.0. This rel
 - Added support for the Data Source request.
 - Added the `onChange` function to update elements in the local state within the custom code.
 
-:::info Grafana Catalog
-The plugin was updated in the Grafana Plugins catalog on August 15, 2023.
-:::
+<Catalog date="August 15, 2023" />
 
-<Shorts
-  src="https://www.youtube.com/embed/0ratMv5XYSk"
-  title="Business Forms Panel 3.1.0 for Grafana."
-/>
+<Shorts id="0ratMv5XYSk" title="Business Forms panel 3.1.0 for Grafana." />
 
 ## Multi-Select
 
@@ -183,24 +182,9 @@ onChange(elements.map((element) => {
 });
 ```
 
-## Getting Started
+<GettingStarted />
 
-You can install Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install volkovlabs-form-panel
-```
-
-## YouTube Tutorial
-
-Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
-
-<Youtube
-  id="DXALVG8GijM"
-  title="Manual data entry and user input into dashboard."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -215,10 +199,4 @@ Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin th
 - Added the code editor for the Custom Reset section (#221).
 - Added the Data Source request (#222).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-forms/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

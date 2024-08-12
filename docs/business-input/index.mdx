@@ -1,0 +1,68 @@
+---
+tags:
+  - Business Input
+---
+
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+import GettingStarted from "./_getting_started.mdx";
+import Feedback from "./_feedback.mdx";
+
+# Business Input
+
+:::info announcement
+The Static data source joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Input data source.
+
+<Image
+  title="The Static data source now is called the Business Input data source."
+  src="/img/plugins/business-input/new-name.png"
+  width="60%"
+/>
+:::
+
+The Business Input Data Source is a plugin for Grafana that allows storing and emulating your data.
+
+<Youtube
+  id="QOV8ECOUjWs"
+  title="Tutorial and examples how to mimic any data source."
+/>
+
+## Requirements
+
+- Business Input data source version 4.X requires **Grafana 10** or **Grafana 11**.
+- Static data source version 3.X requires **Grafana 9.2** or **Grafana 10**.
+- Static data source version 2.X requires **Grafana 8.5** or **Grafana 9**.
+- Static data source version 1.X requires **Grafana 7.3**.
+
+<GettingStarted />
+
+## Highlights
+
+- Create static visualizations that don't depend on a specific data source.
+- Allows specifying values [manually or using the **JavaScript Values Editor**](/plugins/business-input/panels/business-charts/) code.
+- Build custom query responses for testing or developing panel plugins.
+- Store data and images directly in the dashboard.
+- Supports variables in the text fields.
+- Uses Number input for Number, Date Time Picker for Time fields.
+- Uses Text Area for String inputs with more than 100 symbols.
+- Allows to temporarily hide values for specific fields.
+
+<Image
+  title="Display Pie Charts based on the data from the Static Data Source."
+  src="/img/plugins/business-input/dashboard.png"
+/>
+
+## Documentation
+
+| Section                      | Description                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| [Provisioning](provisioning) | Demonstrates how to automatically provision the Data Source. |
+| [Variables](variables)       | Demonstrates how to use variables.                           |
+| [Panels](panels)             | Demonstrates how to use data source with panels.             |
+| [Release Notes](release)     | Stay up to date with the latest features and updates.        |
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-input/blob/main/LICENSE).
+
+<Feedback />

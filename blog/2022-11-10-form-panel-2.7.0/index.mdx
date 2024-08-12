@@ -6,10 +6,13 @@ image: /img/blog/2022-11-10-form-panel-2.7.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
+import Feedback from "../../docs/business-forms/_feedback.mdx";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-forms/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Forms Panel 2.7.0
+# Business Forms 2.7.0
 
 We are happy to announce the release of the Data Manipulation Panel 2.7.0. This release includes the following updates:
 
@@ -25,24 +28,9 @@ We are impressed by the ever-growing number of use cases from the community and 
   src="/img/blog/2022-11-10-form-panel-2.7.0/panel.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-You can install Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install volkovlabs-form-panel
-```
-
-## YouTube Tutorial
-
-Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
-
-<Youtube
-  id="DXALVG8GijM"
-  title="Manual data entry and user input into dashboard."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -55,10 +43,4 @@ Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin th
 - Added the output of status notifications after the form submittal (#98).
 - Added suggestions in Monaco Code Editor for available parameters (#88).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-forms/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

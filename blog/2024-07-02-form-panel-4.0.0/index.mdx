@@ -6,11 +6,15 @@ image: /img/blog/2024-07-02-form-panel-4.0.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
+import Feedback from "../../docs/business-forms/_feedback.mdx";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
 import Image from "@theme/Image";
-import Youtube from "@theme/Youtube";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+import Catalog from "../_catalog.mdx";
 
-# Business Forms Panel 4.1.0
+# Business Forms 4.1.0
 
 We are happy to announce the release of the Business Forms Panel 4.1.0. This release includes the following updates:
 
@@ -24,9 +28,7 @@ We are happy to announce the release of the Business Forms Panel 4.1.0. This rel
 - New Form Element type: **Checkbox list with custom options**.
 - Required Grafana 10 and Grafana 11. **Breaking change**.
 
-:::info Grafana Catalog
-The plugin is under review.
-:::
+<Catalog date="July 19, 2024" />
 
 ## Business Forms Panel
 
@@ -129,7 +131,7 @@ context.panel.collapseSection(id);
 ```
 
 :::note
-The full list of the Business Form panel parameters can be found in the [Custom Code](/plugins/volkovlabs-form-panel/code/#parameters) section of the panel's documentation.
+The full list of the Business Form panel parameters can be found in the [Custom Code](/plugins/business-forms/code/#parameters) section of the panel's documentation.
 :::
 
 ## Custom color/background color for elements
@@ -188,24 +190,9 @@ Our plugins always follow the latest Grafana versions and stay compatible with t
 
 The latest Business Forms Panel 4.0.0 fully supports Grafana 10 and 11 releases.
 
-## Getting Started
+<GettingStarted />
 
-You can install the Business Forms Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install volkovlabs-form-panel
-```
-
-## YouTube Tutorial
-
-Business Forms Panel is a plugin for Grafana that allows you to insert and update application data, as well as modify configuration directly from your Grafana dashboard.
-
-<Youtube
-  id="ulbe8U8-IFA"
-  title="The powerful Business Forms panel 4.1.0 Overview."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -296,10 +283,4 @@ Business Forms Panel is a plugin for Grafana that allows you to insert and updat
 - Added suggestions for code editors (#327)
 - Added reset button confirmation (#328)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-forms/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

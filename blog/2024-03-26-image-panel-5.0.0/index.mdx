@@ -6,11 +6,14 @@ image: /img/blog/2024-03-26-image-panel-5.0.0/banner.png
 keywords: [Base64, Panel, Zoom, Label, Images]
 ---
 
+import Feedback from "../../docs/business-media/_feedback.mdx";
+import GettingStarted from "../../docs/business-media/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-media/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Media Panel 5.0.0
+# Business Media 5.0.0
 
 We are excited to announce the release of the Business Media Panel 5.0.0. This major release includes the following updates:
 
@@ -24,12 +27,9 @@ We are excited to announce the release of the Business Media Panel 5.0.0. This m
 The plugin was updated in the Grafana Plugins catalog on April 3, 2024.
 :::
 
-<Shorts
-  src="https://www.youtube.com/embed/0jqJPxRN3QU"
-  title="Business Media Panel 5.0.0 for Grafana."
-/>
+<Shorts id="0jqJPxRN3QU" title="Business Media panel 5.0.0 for Grafana." />
 
-## Business Media Panel
+## Business Media
 
 The Base64 Media panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Calendar panel.
 
@@ -85,32 +85,18 @@ Below is one of our YouTube videos with a use-case review. It features three ope
 
 The plugins used in the example are:
 
-- [The Data Manipulation](/plugins/volkovlabs-form-panel/) to provide with the File type element for file upload.
-- [The Variable panel](/plugins/volkovlabs-variable-panel/) to provide a choice of what file to display.
-- [The Base64 panel](/plugins/volkovlabs-image-panel/) to display a selected file.
+- [The Business Forms panel](/plugins/business-forms/) to provide with the File type element for file upload.
+- [The Business Forms panel](/plugins/business-forms/) to provide with the File type element for file upload.
+- [The Business Variable panel](/plugins/business-variable/) to provide a choice of what file to display.
+- [The Business Media panel](/plugins/business-media/) to display a selected file.
 
 The Base64 plugin is an essential element in this example.
 
 <Youtube id="V4Sza0uDQNs" title="File Upload using Grafana dashboard." />
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Media Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install volkovlabs-image-panel
-```
-
-## YouTube Tutorial
-
-Business Media Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.
-
-<Youtube
-  id="hLMtsCWPOg8"
-  title="Display images and PDF on Grafana using Business Media panel."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -132,10 +118,4 @@ Business Media Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, 
 - Update dependencies and Actions (#94)
 - Add infinity play option (#93)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-media/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

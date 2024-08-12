@@ -8,6 +8,7 @@ keywords: [Business, Grafana, Visualization, Customization, Docker]
 
 import BlogPost from "@theme/BlogPost";
 import Code from "@theme/Code";
+import Feedback from "../_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -250,11 +251,7 @@ RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|{target:"_b
 
 In the following article, we explained how to remove unnecessary native Grafana plugins from your build. It is an easy way to avoid clutter in the Grafana UI. Moreover, as a tempting bonus for keeping only operating parts, you will end up with a lighter package attuned to your needs only.
 
-<BlogPost
-  href="/blog/native-grafana-plugins-20230409/"
-  title="Spring cleaning in Grafana."
-  src="/img/blog/2023-04-09-native-grafana-plugins/banner.png"
-/>
+<BlogPost id="native-grafana-plugins-20230409" />
 
 ## Docker file
 
@@ -264,3 +261,5 @@ In the following article, we explained how to remove unnecessary native Grafana 
 />
 
 We constantly update it with all the latest configuration commands we were able to identify.
+
+<Feedback />

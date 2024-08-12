@@ -6,10 +6,14 @@ image: /img/blog/2023-12-14-variable-panel-2.3.1/banner.png
 keywords: [Variable, Panel, Status]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-variable/_feedback.mdx";
+import GettingStarted from "../../docs/business-variable/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-variable/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Variable Panel 2.3.1
+# Business Variable 2.3.1
 
 We are happy to announce the release of the Variable Panel 2.3.1. This release includes the following updates:
 
@@ -17,9 +21,7 @@ We are happy to announce the release of the Variable Panel 2.3.1. This release i
 - Added the **Persistent** mode.
 - Added compatibility with Grafana 10.2.2 and Grafana 10.3.0 (pre-release).
 
-:::info Grafana Catalog
-The plugin was updated in the Grafana Plugins catalog on December 15, 2023.
-:::
+<Catalog date="December 15, 2023" />
 
 ## Number of downloads
 
@@ -73,26 +75,9 @@ Depending on the **Persistent** option value set for the **State** variable pane
   src="/img/blog/2023-12-14-variable-panel-2.3.1/persistent.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-The Variable panel can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) or utilizing the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-variable-panel
-```
-
-## YouTube Tutorial
-
-The Variable panel builds on top of the regular dashboard variables. It allows you to have dashboard filters in a separate panel which you can place anywhere on the dashboard.
-
-The variable panel offers you single- and multi-variable layouts along with an advanced Tree View.
-
-<Youtube
-  id="1ogv2jstrlI"
-  title="Demonstrates the Variable panel functionality."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -107,10 +92,4 @@ The variable panel offers you single- and multi-variable layouts along with an a
 - Add persistent mode (#103)
 - Update to Grafana 10.2.2 and Volkov labs packages (#104)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-variable-panel/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

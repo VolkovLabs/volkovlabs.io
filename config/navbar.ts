@@ -17,47 +17,47 @@ export const NAVBAR = {
       items: [
         {
           label: "Business Calendar",
-          to: "/plugins/volkovlabs-calendar-panel/",
+          to: "/plugins/business-calendar/",
           className: "volkovlabs-link icon-plugins-calendar-link",
         },
         {
           label: "Business Charts",
-          to: "/plugins/volkovlabs-echarts-panel/",
+          to: "/plugins/business-charts/",
           className: "volkovlabs-link icon-plugins-echarts-link",
         },
         {
           label: "Business Forms",
-          to: "/plugins/volkovlabs-form-panel/",
+          to: "/plugins/business-forms/",
           className: "volkovlabs-link icon-plugins-form-link",
         },
         {
           label: "Business Input",
-          to: "/plugins/volkovlabs-static-datasource/",
+          to: "/plugins/business-input/",
           className: "volkovlabs-link icon-plugins-static-link",
         },
         {
           label: "Business Media",
-          to: "/plugins/volkovlabs-image-panel/",
+          to: "/plugins/business-media/",
           className: "volkovlabs-link icon-plugins-base64-link",
         },
         {
           label: "Business News",
-          to: "/plugins/volkovlabs-rss-datasource/",
+          to: "/plugins/business-news/",
           className: "volkovlabs-link icon-plugins-rss-link",
         },
         {
           label: "Business Satellite",
-          to: "/plugins/volkovlabs-grapi-datasource/",
+          to: "/plugins/business-satellite/",
           className: "volkovlabs-link icon-plugins-grapi-link",
         },
         {
           label: "Business Text",
-          to: "/plugins/volkovlabs-dynamictext-panel/",
+          to: "/plugins/business-text/",
           className: "volkovlabs-link icon-plugins-dt-link",
         },
         {
           label: "Business Variable",
-          to: "/plugins/volkovlabs-variable-panel/",
+          to: "/plugins/business-variable/",
           className: "volkovlabs-link icon-plugins-variable-link",
         },
       ],
@@ -110,7 +110,7 @@ export const NAVBAR = {
         },
         {
           label: "Environment data source",
-          to: "/grafana/volkovlabs-env-datasource/",
+          to: "/grafana/environment/",
           className: "volkovlabs-link icon-plugins-env-link",
         },
       ],
@@ -152,30 +152,13 @@ export const NAVBAR = {
       ],
     },
     {
-      to: "/sponsor/",
+      to: "/team/",
       position: "left",
       label: "Volkov Labs",
-      "aria-label": "Blog",
-      items: [
-        {
-          label: "Team",
-          to: "/sponsor",
-          className: "volkovlabs-link icon-sponsor-link",
-        },
-        {
-          label: "LinkedIn",
-          href: "https://linkedin.com/company/volkovlabs",
-          className: "volkovlabs-link icon-linkedin-link",
-        },
-        {
-          label: "YouTube Community",
-          href: "https://youtube.com/@volkovlabs/community",
-          className: "volkovlabs-link icon-community-link",
-        },
-      ],
+      "aria-label": "Volkov Labs",
     },
     {
-      href: "https://www.youtube.com/@volkovlabs",
+      href: "https://youtube.com/@volkovlabs",
       position: "right",
       className: "header-youtube-link",
       "aria-label": "YouTube Channel",
@@ -185,6 +168,12 @@ export const NAVBAR = {
       position: "right",
       className: "header-github-link",
       "aria-label": "GitHub Organization",
+    },
+    {
+      href: "https://linkedin.com/company/volkovlabs",
+      position: "right",
+      className: "header-linkedin-link",
+      "aria-label": "LinkedIn",
     },
   ],
 };

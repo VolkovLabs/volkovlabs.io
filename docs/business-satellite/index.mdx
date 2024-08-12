@@ -1,0 +1,69 @@
+---
+tags:
+  - Business Satellite
+  - Annotations
+---
+
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+import GettingStarted from "./_getting_started.mdx";
+import Feedback from "./_feedback.mdx";
+
+# Business Satellite
+
+:::info announcement
+The HTTP API data source joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Satellite data source.
+
+<Image
+  title="The HTTP API data source now is called the Business Satellite data source."
+  src="/img/plugins/business-satellite/new-name.png"
+  width="60%"
+/>
+:::
+
+The Business Satellite Data Source for Grafana allows retrieving data from local and remote Grafana instances via HTTP API.
+
+<Youtube
+  id="0zibOEGqTJ8"
+  title="Easy access to Grafana backend using Business Satellite data source."
+/>
+
+## Requirements
+
+- **Grafana 9** and **Grafana 10** are required for major version 2.
+- **Grafana 8.5** and **Grafana 9+** are required for major version 1.
+
+<GettingStarted />
+
+## Highlights
+
+- Connects to Local and Remote Grafana instances via HTTP API using API Keys and Tokens.
+- Allows getting Health information.
+- Allows retrieving Annotations, Alerts, and Data Sources.
+
+<Image
+  title="Data Sources, Annotations and Health information from remote Grafana instance."
+  src="/img/plugins/business-satellite/dashboard.png"
+/>
+
+The Business Satellite data source available requests.
+
+<Image
+  title="The Business Satellite data source available requests."
+  src="/img/plugins/volkovlabs-grapi-datasource/business-satellite-requests.gif"
+/>
+
+## Documentation
+
+| Section                        | Description                                                  |
+| ------------------------------ | ------------------------------------------------------------ |
+| [Configuration](configuration) | Explains configuration settings for the Data Source.         |
+| [Provisioning](provisioning)   | Demonstrates how to automatically provision the Data Source. |
+| [Features](features)           | Demonstrates panel features.                                 |
+| [Release Notes](release)       | Stay up to date with the latest features and updates.        |
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-satellite/blob/main/LICENSE).
+
+<Feedback />

@@ -1,0 +1,86 @@
+---
+tags:
+  - Business Text
+image: /img/plugins/business-text/screenshot.png
+---
+
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+import GettingStarted from "./_getting_started.mdx";
+import Feedback from "./_feedback.mdx";
+
+# Business Text
+
+:::info announcement
+The Business Text panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Text panel.
+
+<Image
+  title="The Business Text panel now is called the Business Text panel."
+  src="/img/plugins/business-text/new-name.png"
+  width="60%"
+/>
+:::
+
+The Business Text Panel is a Grafana visualization plugin that you can use to convert plain text and table data into visually appealing, easy-to-read information cards. For that, the offered arsenal includes:
+
+- Access to variables (dashboard and global),
+- Markdown,
+- Handlebars,
+- Helpers (predefined and your own),
+- CSS styles
+- JavaScript.
+
+By working with the Business Text plugin you construct a text visualization template:
+
+- using the above-mentioned features and
+- indicating the spots where the fetched data frame elements should be placed.
+
+<Youtube
+  id="UVMysEjouNo"
+  title="Business Text Panel for Grafana. Main features overview."
+/>
+
+## Requirements
+
+- Business Text panel 5.X requires **Grafana 10** or **Grafana 11**.
+- Dynamic Text panel 4.X requires **Grafana 9** or **Grafana 10**.
+- Dynamic Text panel 2.X and 3.X require **Grafana 8.5** or **Grafana 9**.
+- Dynamic Text panel 1.X requires **Grafana 7**.
+
+<GettingStarted />
+
+## Highlights
+
+- Uses Monaco Code Editor with automatic JavaScript code formatting. Use it to add your JavaScript code and to [import external JavaScript libraries](/plugins/business-text/external/)
+- Supports [Markdown](https://commonmark.org/help/) and [Handlebars](https://handlebarsjs.com/guide/expressions.html#basic-usage).
+- Renders [markdown-it](https://github.com/markdown-it/markdown-it) into HTML elements.
+  - Supports the highlighting of code syntax using A11Y styles.
+- Provides code sanitization:
+  - HTML inside templates is sanitized using [XSS](https://jsxss.com/en/index.html).
+  - Can be disabled in the Grafana configuration through the `disable_sanitize_html` parameter.
+- Supports display of nested objects using the `{{json object}}` Handlebars helper.
+- Supports display of time global variables (`__to` and `__from`) as seconds, ISO timestamps, or formatted using the `dayjs` library.
+- Supports adding the Handlebars helpers and event handlers.
+- Supports adding CSS styles with dashboard variables.
+- Supports internationalization using custom helpers.
+
+<Image
+  title="The Business Text panel for Grafana."
+  src="/img/plugins/business-text/screenshot.png"
+/>
+
+## Documentation
+
+| Section                  | Description                                                    |
+| ------------------------ | -------------------------------------------------------------- |
+| [Rendering](content)     | Explains how to create a visualization template for your data. |
+| [Recipes](recipes)       | Lists useful snippets that you can use in your templates.      |
+| [Features](features)     | Explains the plugin's features.                                |
+| [Tutorials](tutorials)   | Easy to follow tutorials.                                      |
+| [Release Notes](release) | Stay up to date with the latest features and updates.          |
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-text/blob/main/LICENSE).
+
+<Feedback />

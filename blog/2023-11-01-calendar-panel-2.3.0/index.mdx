@@ -6,11 +6,14 @@ image: /img/blog/2023-11-01-calendar-panel-2.3.0/banner.png
 keywords: [Calendar, Panel, Events, Time Range, Grafana]
 ---
 
+import Feedback from "../../docs/business-calendar/_feedback.mdx";
+import GettingStarted from "../../docs/business-calendar/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-calendar/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Calendar Panel 2.3.1
+# Business Calendar 2.3.1
 
 We are happy to announce the release of the Business Calendar Panel 2.3.1. This release includes the following updates.
 
@@ -70,21 +73,9 @@ Another scenario is when the Calendar panel itself is fully visible in your brow
   src="/img/blog/2023-11-01-calendar-panel-2.3.0/scroll.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Calendar Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-calendar-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install marcusolsson-calendar-panel
-```
-
-## YouTube Tutorial
-
-Business Calendar Panel is a Grafana plugin that displays events from various data sources.
-
-<Youtube id="6WGmm5y4fs4" title="Configure Calendar plugin for Grafana." />
+<Tutorial />
 
 ## Release Notes
 
@@ -99,10 +90,4 @@ Business Calendar Panel is a Grafana plugin that displays events from various da
 - Added default view option (#137)
 - Added scroll to Time option for BigCalendar (#140, #141)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-calendar/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

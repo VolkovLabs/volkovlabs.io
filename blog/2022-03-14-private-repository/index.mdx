@@ -33,7 +33,7 @@ Before Grafana 8, it was the most convenient way to install plugins on Grafana i
 The general syntax for commands in Grafana CLI is:
 
 ```sh
-grafana-cli [global options] command [command options] [arguments...]
+grafana cli [global options] command [command options] [arguments...]
 ```
 
 Grafana CLI allows overriding
@@ -49,7 +49,7 @@ You can learn more about all those options in the [Documentation](https://grafan
 Installing a plugin by overriding the location of the plugin's archive is the most effortless way, which requires copying the plugin's archive to the HTTP(S) server reachable from the Grafana instance and repeating the same step to upgrade in the future.
 
 ```sh
-grafana-cli --insecure --pluginUrl https://company.com/plugins/<plugin-id>-<plugin-version>.zip plugins install <plugin-id>
+grafana cli --insecure --pluginUrl https://company.com/plugins/<plugin-id>-<plugin-version>.zip plugins install <plugin-id>
 ```
 
 ### Update from Repository
@@ -59,7 +59,7 @@ The ultimate solution is to create a Private repository with a list of available
 The syntax is:
 
 ```sh
-grafana-cli --repo "https://example.com/plugins" plugins install <plugin-id>
+grafana cli --repo "https://example.com/plugins" plugins install <plugin-id>
 ```
 
 ## Private Repository
@@ -69,15 +69,15 @@ Looking around, we couldn't find any information on creating a Private repositor
 Grafana CLI looks for the `/plugins/repo` subfolder when setting a repository location. If plugins are found, it will display their names with the latest versions.
 
 ```sh
-$ grafana-cli --repo https://volkovlabs.io/plugins plugins list-remote
+$ grafana cli --repo https://volkovlabs.io/plugins plugins list-remote
 id: volkovlabs-env-datasource version: 2.2.0
-id: volkovlabs-rss-datasource version: 2.3.0
-id: volkovlabs-image-panel version: 3.3.0
-id: volkovlabs-form-panel version: 2.7.0
-id: volkovlabs-echarts-panel version: 4.0.0
-id: marcusolsson-calendar-panel version: 1.1.0
-id: marcusolsson-dynamictext-panel version: 2.1.0
-id: marcusolsson-static-datasource version: 2.1.0
+id: business-news version: 2.3.0
+id: business-media version: 3.3.0
+id: business-forms version: 2.7.0
+id: business-charts version: 4.0.0
+id: business-calendar version: 1.1.0
+id: business-text version: 2.1.0
+id: business-input version: 2.1.0
 ```
 
 The format for the index file is to create a JSON array with the definition of the plugin and the latest version.
@@ -104,7 +104,7 @@ The format for the index file is to create a JSON array with the definition of t
 To list available versions for the specific plugin, provide the plugin's name for the `list-versions` command.
 
 ```sh
-$ grafana-cli --repo https://volkovlabs.io/plugins plugins list-versions volkovlabs-env-datasource
+$ grafana cli --repo https://volkovlabs.io/plugins plugins list-versions volkovlabs-env-datasource
 2.2.0
 2.1.0
 2.0.0
@@ -164,7 +164,7 @@ The next step is to upload plugins to specific locations and install them. To in
 Here is an example of how to install the plugin from the Private repository we just created.
 
 ```sh
-$ grafana-cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
+$ grafana cli --repo https://volkovlabs.io/plugins plugins install volkovlabs-env-datasource
 ✔ Downloaded volkovlabs-env-datasource v2.2.0 zip successfully
 Please restart Grafana after installing plugins.
 ```
@@ -172,7 +172,7 @@ Please restart Grafana after installing plugins.
 To update all plugins at once, execute.
 
 ```sh
-$ grafana-cli --repo https://volkovlabs.io/plugins plugins update-all
+$ grafana cli --repo https://volkovlabs.io/plugins plugins update-all
 ```
 
 ## Environment Data Source

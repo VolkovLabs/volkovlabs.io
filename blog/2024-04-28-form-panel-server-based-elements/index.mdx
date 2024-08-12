@@ -8,15 +8,17 @@ keywords: [Data Manipulation, Dynamic Form Elements, Grafana, Variable panel]
 
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
+import Feedback from "../../docs/business-forms/_feedback.mdx";
 
-# Build Form Elements dynamically in Data Manipulation panel
+# Build Form Elements dynamically in Business Forms panel
 
-We created the [Data Manipulation plugin](/plugins/volkovlabs-form-panel/) for Grafana to make sending data back into a connected data source possible. This functionality opens the door to a new universe of use cases with great potential to convert your dashboard into a full-scale web application.
+We created the [Business Forms plugin](/plugins/business-forms/) for Grafana to make sending data back into a connected data source possible. This functionality opens the door to a new universe of use cases with great potential to convert your dashboard into a full-scale web application.
 
 This article describes yet another way of using the Data Manipulation plugin and, therefore, using Grafana beyond observability.
 
 <Shorts
-  src="https://www.youtube.com/embed/n4xsVrSesy0"
+  id="n4xsVrSesy0"
   title="Dynamic Forms in Grafana using Data Manipulation panel."
 />
 
@@ -211,7 +213,7 @@ console.log(`Server is running on port ${port}...`);
 ```
 
 :::info
-All possible form element options are described in Typescript Interface - [Form Element Type](https://github.com/VolkovLabs/volkovlabs-form-panel/blob/7fe03eb8787af65cdf42548c09db9d044bd6067e/src/types/form-element.ts#L427).
+All possible form element options are described in Typescript Interface - [Form Element Type](https://github.com/VolkovLabs/business-forms/blob/7fe03eb8787af65cdf42548c09db9d044bd6067e/src/types/form-element.ts#L427).
 :::
 
 ## JSON API Data Source
@@ -390,12 +392,4 @@ context.panel.onChangeElements(
 
 After all the described steps, the Data Manipulation form should be built dynamically depending on the selected value either on the Variable panel or the Data Manipulation panel itself.
 
-Please feel free to ask any questions related to the discussed in this article materials. You can do it in the Comments section under any video on our [YouTube channel](https://www.youtube.com/@volkovlabs).
-
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-forms/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

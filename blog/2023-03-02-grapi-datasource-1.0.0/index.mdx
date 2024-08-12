@@ -1,15 +1,19 @@
 ---
 authors: [mikhail]
 slug: grapi-datasource-1.0.0-20230302/
-tags: [Business Satellite Data Source, Business Suite]
+tags: [Business Satellite, Business Suite]
 image: /img/blog/2023-03-02-grapi-datasource-1.0.0/banner.png
 keywords: [Grafana, HTTP API, Data Source, Annotations]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-satellite/_feedback.mdx";
+import GettingStarted from "../../docs/business-satellite/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-satellite/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Satellite Data Source 1.0.0
+# Business Satellite 1.0.0
 
 A new plugin Business Satellite Data Source 1.0.0 was released today. This first release
 
@@ -19,9 +23,7 @@ A new plugin Business Satellite Data Source 1.0.0 was released today. This first
 - Supports Dashboard annotations to display filtered annotations and alerts.
 - Based on the Grafana 9.3.6 toolkit and workflows.
 
-:::info Grafana Catalog
-The plugin was updated in Grafana Catalog on March 15, 2023.
-:::
+<Catalog date="March 15, 2023" />
 
 ## Why?
 
@@ -76,22 +78,9 @@ Business Satellite Data Source supports Dashboard annotations to display filtere
   src="/img/blog/2023-03-02-grapi-datasource-1.0.0/annotations.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-The Business Satellite Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-grapi-datasource/) or utilizing the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install volkovlabs-grapi-datasource
-```
-
-## YouTube Tutorial
-
-<Youtube
-  id="0zibOEGqTJ8"
-  title="Easy access to Grafana backend using Business Satellite data source."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -110,10 +99,4 @@ grafana-cli plugins install volkovlabs-grapi-datasource
 - Add Health and Data Sources (#10)
 - Update README to prepare for the release (#11, #12)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-grapi-datasource/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

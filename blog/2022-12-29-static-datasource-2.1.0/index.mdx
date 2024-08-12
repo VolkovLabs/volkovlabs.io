@@ -1,15 +1,19 @@
 ---
 authors: [mikhail]
 slug: static-datasource-2.1.0-20221229/
-tags: [Business Input Data Source, Business Suite]
+tags: [Business Input, Business Suite]
 image: /img/blog/2022-12-29-static-datasource-2.1.0/banner.png
 keywords: [Data Source, Static, Storage, Grafana]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-input/_feedback.mdx";
+import GettingStarted from "../../docs/business-input/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-input/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Static Data Source 2.1.0
+# Business Input 2.1.0
 
 We are happy to announce the release of the Static Data Source 2.1.0. This release includes the following updates:
 
@@ -24,21 +28,9 @@ The Static Data Source was initially developed and positioned to create data for
   src="/img/blog/2022-12-29-static-datasource-2.1.0/wind.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-The Static Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-static-datasource/) or utilizing the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install marcusolsson-static-datasource
-```
-
-## YouTube Tutorial
-
-The Static Data Source is a plugin for Grafana that allows you to store and create any data.
-
-<Youtube id="QOV8ECOUjWs" title="Mimic any data with Static data source." />
+<Tutorial />
 
 ## Release Notes
 
@@ -60,10 +52,4 @@ Refactoring may introduce breaking changes. Please test before upgrading in Prod
 - Add Date, Time Picker, Number, and Text Area Inputs (#30)
 - Update Value Input component (#31)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/business-input/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

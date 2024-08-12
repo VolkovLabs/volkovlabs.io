@@ -1,8 +1,11 @@
 ---
-image: /img/honeycomb.png
+image: /img/suite.png
 ---
 
 import Image from "@theme/Image";
+import BlogPost from "@theme/BlogPost";
+import Feedback from "./_feedback.mdx";
+import Youtube from "@theme/Youtube";
 
 # Business Suite for Grafana
 
@@ -12,17 +15,36 @@ import Image from "@theme/Image";
 
 <Image
   title="Business Suite for Grafana created and actively maintained by Volkov Labs."
-  src="/img/honeycomb.png"
+  src="/img/suite.png"
 />
 
-| Plugin                                            | Type        | Description                                                |
-| ------------------------------------------------- | ----------- | ---------------------------------------------------------- |
-| [Business Calendar](volkovlabs-calendar-panel)    | Panel       | Display events and set time range.                         |
-| [Business Charts](volkovlabs-echarts-panel)       | Panel       | Powerful visualizations powered by Apache ECharts.         |
-| [Business Forms](volkovlabs-form-panel)           | Panel       | Insert, update application data, and modify configuration. |
-| [Business Input](volkovlabs-static-datasource)    | Data source | Store and create your data.                                |
-| [Business Media](volkovlabs-image-panel)          | Panel       | Display Base64 encoded and URL media files.                |
-| [Business News](volkovlabs-rss-datasource)        | Data source | Visualize RSS/Atom feeds using Business Text.              |
-| [Business Satellite](volkovlabs-grapi-datasource) | Data source | Connect to Local and Remote Grafana instances.             |
-| [Business Text](volkovlabs-dynamictext-panel)     | Panel       | Dynamic, data-driven text.                                 |
-| [Business Variable](volkovlabs-variable-panel)    | Panel       | Update dashboard variables.                                |
+## Input data source, Media panel, and Variable panel
+
+In this video, Daria covers the Business Input data source, Business Media panel, and Business Variable panel, explaining what those plugins do and the best way to start with them.
+
+<Youtube
+  id="K1NHBV5e6VE"
+  title="Input data source, Media panel, Variable panel | Tutorial for beginners."
+/>
+
+## How it all came together and where we move from here
+
+With a total number of all plugin downloads exceeding 22 millions, we call it a success. This suite has garnered praise from hundreds of users who are thrilled with its ability to go beyond observability and solve complex business tasks, making it a trusted choice for companies aiming to create cost-effective applications in-house and meet aggressive delivery schedules.
+
+<BlogPost id="business-suite-20240802" />
+
+## Plugins
+
+| Plugin                                   | Type        | Description                                               |
+| ---------------------------------------- | ----------- | --------------------------------------------------------- |
+| [Business Calendar](business-calendar)   | Panel       | Display events and set time range                         |
+| [Business Charts](business-charts)       | Panel       | Powerful visualizations powered by Apache ECharts         |
+| [Business Forms](business-forms)         | Panel       | Insert, update application data, and modify configuration |
+| [Business Input](business-input)         | Data source | Store and create your data                                |
+| [Business Media](business-media)         | Panel       | Display Base64 encoded and URL media files                |
+| [Business News](business-news)           | Data source | Visualize RSS/Atom feeds using Business Text              |
+| [Business Satellite](business-satellite) | Data source | Connect to Local and Remote Grafana instances             |
+| [Business Text](business-text)           | Panel       | Dynamic, data-driven text                                 |
+| [Business Variable](business-variable)   | Panel       | Update dashboard variables                                |
+
+<Feedback />

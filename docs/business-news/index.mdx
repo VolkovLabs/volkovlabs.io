@@ -1,0 +1,67 @@
+---
+tags:
+  - Business News
+---
+
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+import GettingStarted from "./_getting_started.mdx";
+import Feedback from "./_feedback.mdx";
+
+# Business News
+
+:::info announcement
+The RSS/Atom data source joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business News data source.
+
+<Image
+  title="The RSS/Atom data source now is called the Business News data source."
+  src="/img/plugins/business-news/new-name.png"
+  width="60%"
+/>
+:::
+
+The Business News data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Business Text and other panels.
+
+<Youtube id="RAxqS2hpWkg" title="News feed tutorial for Grafana Dashboard." />
+
+## Requirements
+
+- Business News Data Source 4.X requires **Grafana 10** or **Grafana 11**.
+- RSS/Atom Data Source 3.X requires **Grafana 9** or **Grafana 10**.
+- RSS/Atom Data Source 2.X requires **Grafana 8.5** or **Grafana 9**.
+- RSS/Atom Data Source 1.X requires **Grafana 8**.
+
+<GettingStarted />
+
+## Highlights
+
+- Supports RSS 2.0, RSS 1.0 and Atom.
+- Works with Dynamic Text visualization panel.
+- Returns Channel (Feed) data, Items (Entries) or both as separate data frames.
+- Extract and parse as additional fields:
+  - Image from Meta.
+  - H4 and Image from the Encoded content.
+  - Media:Group for YouTube.
+- Filter items/entries based on the selected Time Range.
+- Allows specifying Query parameters with dashboard variables.
+
+Below is the example where the dashboard combines 5 Business News data sources each paired with the [Business Text panel](/plugins/volkovlabs-dynamictext-panel/). The [Business Variable panel](/plugins/volkovlabs-variable-panel/) (#1) provides a switch between Volkov Labs, Grafana and News channel.
+
+<Image
+  title="The Business News data source allows to visualize RSS/Atom feeds on Grafana dashboard."
+  src="/img/plugins/volkovlabs-rss-datasource/dashboard.png"
+/>
+
+## Documentation
+
+| Section                      | Description                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| [Business Text](text)        | Demonstrates how to display feed using Business Text panel.  |
+| [Provisioning](provisioning) | Demonstrates how to automatically provision the Data Source. |
+| [Release Notes](release)     | Stay up to date with the latest features and updates.        |
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-news/blob/main/LICENSE).
+
+<Feedback />

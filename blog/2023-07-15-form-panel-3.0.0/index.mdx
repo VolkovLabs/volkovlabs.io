@@ -6,11 +6,15 @@ image: /img/blog/2023-07-15-form-panel-3.0.0/banner.png
 keywords: [Data Manipulation, Form Panel, Data, Grafana]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-forms/_feedback.mdx";
+import GettingStarted from "../../docs/business-forms/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-forms/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Forms Panel 3.0.0
+# Business Forms 3.0.0
 
 We are happy to announce the release of the Business Forms Panel 3.0.0. This release includes the following updates:
 
@@ -25,14 +29,9 @@ We are happy to announce the release of the Business Forms Panel 3.0.0. This rel
 - Migrated to Plugin Tools 1.5.2 with the update of Node.js 18 and `npm`.
 - Increased test coverage of the plugin's functionality up to 97%.
 
-:::info Grafana Catalog
-The plugin was updated in the Grafana Plugins catalog on July 18, 2023.
-:::
+<Catalog date="July 18, 2023" />
 
-<Shorts
-  src="https://www.youtube.com/embed/zNrFOtW6j-o"
-  title="Business Forms Panel 3.0.0 for Grafana."
-/>
+<Shorts id="zNrFOtW6j-o" title="Business Forms panel 3.0.0 for Grafana." />
 
 Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
 
@@ -90,24 +89,9 @@ We added an option to hide the string input, which can store additional informat
   src="/img/blog/2023-07-15-form-panel-3.0.0/hidden.png"
 />
 
-## Getting Started
+<GettingStarted />
 
-You can install Data Manipulation Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-form-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install volkovlabs-form-panel
-```
-
-## YouTube Tutorial
-
-Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
-
-<Youtube
-  id="DXALVG8GijM"
-  title="Manual data entry and user input into dashboard."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -139,10 +123,4 @@ Please test this version before updating the plugin on production Grafana instan
 - Added the execution of the initial request on initial updates (#205).
 - Added the landscape orientation for the layout (#206).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-forms/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

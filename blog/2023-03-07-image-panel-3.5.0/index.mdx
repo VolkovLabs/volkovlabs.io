@@ -6,10 +6,13 @@ image: /img/blog/2023-03-07-image-panel-3.5.0/banner.png
 keywords: [Base64, Panel, PDF, Images, Video, Audio]
 ---
 
+import Feedback from "../../docs/business-media/_feedback.mdx";
+import GettingStarted from "../../docs/business-media/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-media/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Media Panel 3.5.0
+# Business Media 3.5.0
 
 We are excited to announce the release of the Business Media Panel 3.5.0. This maintenance release includes the following updates:
 
@@ -33,24 +36,9 @@ Removed the panel padding, which allows you to use the entire panel area for dis
 
 Business Media Panel works with any data source. You can also use it with the MQTT data source to display the live camera feed.
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Media Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install volkovlabs-image-panel
-```
-
-## YouTube Tutorial
-
-Business Media Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the Base64 format.
-
-<Youtube
-  id="1_bgLSehjhg"
-  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -60,10 +48,4 @@ Business Media Panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, 
 - Added compatibility with Grafana 9.4.3 (#65)
 - Set the `NoPadding` parameter to use the entire area of the panel (#66).
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/business-media/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

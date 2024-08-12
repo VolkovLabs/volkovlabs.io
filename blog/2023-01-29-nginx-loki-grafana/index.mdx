@@ -6,6 +6,7 @@ image: /img/blog/2023-01-29-nginx-loki-grafana/banner.png
 keywords: [NGINX, Loki, Grafana, Analytics]
 ---
 
+import Feedback from "../_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -109,7 +110,7 @@ A produced JSON record from the log file looks like this.
 {
   "time_local": "29/Jan/2023:02:57:08 +0000",
   "remote_addr": "111.222.334.444",
-  "request_uri": "/plugins/volkovlabs-form-panel/request/",
+  "request_uri": "/plugins/business-forms/request/",
   "status": "200",
   "http_referer": "(direct)",
   "http_user_agent": "Mozilla/5.0",
@@ -2155,7 +2156,7 @@ We started with the default GeoMap panel to display requests per country. It wor
   src="/img/blog/2023-01-29-nginx-loki-grafana/echarts.png"
 />
 
-Country Heatmap is not supported in the GeoMap, and we used the [Business Charts panel](/plugins/volkovlabs-echarts-panel) instead. In the following video, we demonstrated how we did it.
+Country Heatmap is not supported in the GeoMap, and we used the [Business Charts panel](/plugins/business-charts/) instead. In the following video, we demonstrated how we did it.
 
 <Youtube
   id="0EyFmMlIXPo"
@@ -2167,3 +2168,5 @@ Country Heatmap is not supported in the GeoMap, and we used the [Business Charts
 The proposed solution beat our expectations, and we are looking forward to updating the Grafana dashboard based on the collected data in the upcoming weeks.
 
 Eliminating unnecessary data allows us to laser focus on the metrics we are looking for. The created dashboard is clean without unnecessary clutter — an excellent example of pure elegance.
+
+<Feedback />

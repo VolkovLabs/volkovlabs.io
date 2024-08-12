@@ -8,6 +8,7 @@ keywords: [Dynamic Text, Anonymizer]
 
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import Feedback from "../_feedback.mdx";
 
 # Streamline demos with Dynamic Text Anonymizer
 
@@ -46,12 +47,12 @@ We created Anonymizer to avoid dummy data generation headaches and to make the c
 
 ## Implementation method
 
-To implement Anonymizer into your Grafana dashboard, I suggest using the [Dynamic Text panel](/plugins/volkovlabs-dynamictext-panel/) and placing the JavaScript code into the **After Content Ready** option.
+To implement Anonymizer into your Grafana dashboard, I suggest using the [Business Text panel](/plugins/business-text/) and placing the JavaScript code into the **After Content Ready** option.
 
-Below is the Dynamic Text panel opened in Edit mode to illustrate how it is configured.
+Below is the Business Text panel opened in Edit mode to illustrate how it is configured.
 
 <Image
-  title="The Anonymizer setup on the Dynamic Text panel."
+  title="The Anonymizer setup on the Business Text panel."
   src="/img/blog/2024-03-02-anonymizer/anony-edit.png"
 />
 
@@ -59,7 +60,7 @@ Next, I describe two methods of how you can make the Anonymizer work.
 
 ## Method 1. Storing on a separate dashboard
 
-One method is to have the Dynamic Text panel with Anonymizer code embedded on a separate dashboard. In that event, the demoing dashboard can stay exactly how it is, with no need for any adjustments.
+One method is to have the Business Text panel with Anonymizer code embedded on a separate dashboard. In that event, the demoing dashboard can stay exactly how it is, with no need for any adjustments.
 However, with every page refresh (F5) the browser's memory is cleaned and the Anonymizer script is wiped out. That leads to the actual values to be revealed.
 
 <Image
@@ -73,7 +74,7 @@ This method works best when you do not share your Grafana dashboard in real time
 
 ## Method 2. Storing on the same dashboard
 
-For the live demos, you can place the Dynamic Text panel with the Anonymizer script right on the demoing dashboard. It can be made a small size or in a closed row.
+For the live demos, you can place the Business Text panel with the Anonymizer script right on the demoing dashboard. It can be made a small size or in a closed row.
 That way the UI look is a little distorted, but not to the extent to be immediately noticeable.
 
 ### When it works the best
@@ -201,6 +202,4 @@ stop();
 start();
 ```
 
-## Questions?
-
-If you have any questions about this article, please, do not hesitate to leave them in the comments section under the [YouTube videos](https://www.youtube.com/@volkovlabs).
+<Feedback />

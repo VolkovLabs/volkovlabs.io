@@ -1,0 +1,61 @@
+---
+tags:
+  - Business Input
+---
+
+import Image from "@theme/Image";
+
+# JavaScript Values Editor
+
+:::info Note
+JavaScript Values Editor must return a data frame.
+:::
+
+```js
+const result = {
+  ...frame,
+  fields: frame.fields.map((field) => ({
+    ...field,
+    values: [],
+  })),
+};
+
+return Promise.resolve(result);
+```
+
+<Image
+  title="Enable JavaScript Values Editor to get access to JavaScript area."
+  src="/img/plugins/business-input/import-js.png"
+/>
+
+## Imports
+
+The Business Input data source supports importing libraries in the **JavaScript** editor mode.
+You can import external or local libraries.
+
+```js
+import("https://esm.sh/mermaid").then(({ default: mermaid }) => {
+  mermaid.initialize({ startOnLoad: true });
+
+  mermaid.run({
+    querySelector: ".mermaid",
+    suppressErrors: false,
+  });
+});
+
+const array = Array.from({ length: 3 }, (v, i) => `${i + 1}`);
+
+const result = {
+  ...frame,
+  fields: frame.fields.map((field) => {
+    return {
+      ...field,
+      values: array.map((item) => {
+        return item;
+      }),
+    };
+  }),
+};
+
+return Promise.resolve(result);
+```

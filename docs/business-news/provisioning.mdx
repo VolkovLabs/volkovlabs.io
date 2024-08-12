@@ -1,0 +1,61 @@
+---
+tags:
+  - Business News
+  - Provisioning
+---
+
+import Image from "@theme/Image";
+
+# Provisioning
+
+Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
+
+## Example
+
+Example of provisioning the Business News Data Source.
+
+```yaml
+datasources:
+  - name: Bitcoin
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: rZAdZdf7k
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://news.bitcoin.com/feed/
+```
+
+## Data Sources
+
+When provisioned, the Business News data source should be available in the data sources list.
+
+<Image
+  title="Business News Data source requires to input Feed URL."
+  src="/img/plugins/business-news/datasource.png"
+/>
+
+### Feed URL
+
+The URL must be contain all necessary characters ('/' at the end, etc.) to avoid redirects.
+
+During testing you may see the error.
+
+<Image
+  title="Failed to fetch the provided URL."
+  src="/img/plugins/business-news/error.png"
+/>
+
+If the URL is correct and returns data, but returns an error. Try to add `/` to the end of the url to avoid redirect blocked by CORS policy.
+
+As an example use `https://sitename/feed/` instead `https://sitename/feed`.
+
+<Image
+  title="Provided URL should be exactly as it returned from the RSS/Atom resource to avoid CORS policy restrictions."
+  src="/img/plugins/business-news/correct-url.png"
+/>
+
+:::info Caching
+If you already tried a data source with `https://sitename/feed` and added `/` still see an error. Please clear cache and use hard reload.
+:::

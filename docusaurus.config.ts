@@ -6,9 +6,6 @@ import { PLUGINS, PRESETS, THEME_CONFIG } from "./config";
  */
 const config: Config = {
   baseUrl: "/",
-  customFields: {
-    updated: "",
-  },
   favicon: "img/favicon.ico",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",

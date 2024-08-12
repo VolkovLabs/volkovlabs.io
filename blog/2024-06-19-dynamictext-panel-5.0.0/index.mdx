@@ -6,11 +6,14 @@ image: /img/blog/2024-06-19-dynamictext-panel-5.0.0/banner.png
 keywords: [Dynamic Text, Panel, JavaScript, Grafana]
 ---
 
+import Feedback from "../../docs/business-text/_feedback.mdx";
+import GettingStarted from "../../docs/business-text/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
+import Tutorial from "../../docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Text Panel 5.0.0
+# Business Text 5.0.0
 
 We're excited to announce the release of the Business Text Panel 5.0.0. This release includes the following updates:
 
@@ -24,19 +27,16 @@ We're excited to announce the release of the Business Text Panel 5.0.0. This rel
 The plugin was updated in Grafana Catalog on June 6, 2024.
 :::
 
-<Shorts
-  src="https://www.youtube.com/embed/tdxwyaIa01Y"
-  title="The Business Text 5.0.0 for Grafana."
-/>
+<Shorts id="tdxwyaIa01Y" title="Business Text panel 5.0.0 for Grafana." />
 
 ## Business Text Panel
 
-The Dynamic Text panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Text panel.
+The Business Text panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Text panel.
 
 Please welcome the new name for the same functionality!
 
 <Image
-  title="The Dynamic Text panel now is called the Business Text panel."
+  title="The Business Text panel now is called the Business Text panel."
   src="/img/blog/2024-06-19-dynamictext-panel-5.0.0/new-name.png"
 />
 
@@ -57,7 +57,7 @@ This is a breaking change. However, note, that you still can use external JavaSc
 
 Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
 
-Our documentation has [many examples](/plugins/volkovlabs-dynamictext-panel/external/) of how to use external JavaScript libraries moving forward.
+Our documentation has [many examples](/plugins/business-text/external/) of how to use external JavaScript libraries moving forward.
 
 ## `Context` migration guide
 
@@ -90,7 +90,7 @@ Below is an example with various **Units** configurations.
 />
 
 Each of them is configured similarly. An example of one such configuration is below.
-For simplicity, the data is specified right on the Grafana dashboard using the [Business Input data source](/plugins/volkovlabs-static-datasource/).
+For simplicity, the data is specified right on the Grafana dashboard using the [Business Input data source](/plugins/business-input/).
 
 The numbers for configuration have a `String` type. One override is created for the `Value` column to format it using the **Newtons (N)** template.
 
@@ -116,24 +116,9 @@ Our plugins always follow the latest Grafana versions and stay compatible with t
 
 The latest Business Text Panel 5.0.0 fully supports Grafana 10 and 11 releases.
 
-## Getting Started
+<GettingStarted />
 
-You can install Business Text Panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
-
-For the latter, please use the following command:
-
-```bash
-grafana-cli plugins install marcusolsson-dynamictext-panel
-```
-
-## YouTube Tutorial
-
-The Business Text panel is a mighty Grafana plugin to convert any monotonous bulk of data into vibrant, effortlessly comprehended visualization.
-
-<Youtube
-  id="UVMysEjouNo"
-  title="Business Text Panel for Grafana. Main features overview."
-/>
+<Tutorial />
 
 ## Release Notes
 
@@ -193,10 +178,4 @@ The Business Text panel is a mighty Grafana plugin to convert any monotonous bul
 
 - Fix statusColor for Row (#280)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs-dynamictext-panel/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

@@ -1,15 +1,19 @@
 ---
 authors: [mikhail]
 slug: static-datasource-2.2.0-20230327/
-tags: [Business Input Data Source, Business Suite]
+tags: [Business Input, Business Suite]
 image: /img/blog/2023-03-27-static-datasource-2.2.0/banner.png
 keywords: [Data Source, Static, Storage, Grafana]
 ---
 
+import Catalog from "../_catalog.mdx";
+import Feedback from "../../docs/business-input/_feedback.mdx";
+import GettingStarted from "../../docs/business-input/_getting_started.mdx";
 import Image from "@theme/Image";
+import Tutorial from "../../docs/business-input/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Static Data Source 2.2.0
+# Business Input 2.2.0
 
 We are happy to announce the release of the Static Data Source 2.2.0. This release includes the following updates:
 
@@ -17,9 +21,7 @@ We are happy to announce the release of the Static Data Source 2.2.0. This relea
 - Updated Variable replacement to support Scoped Variables.
 - Updated to the latest Grafana 9.4.7 toolkit and workflows.
 
-:::info Grafana Catalog
-The plugin was updated in Grafana Catalog on March 29, 2023.
-:::
+<Catalog date="March 29, 2023" />
 
 ## Half a Million downloads
 
@@ -32,7 +34,7 @@ The Static Data Source was downloaded more than half a million times. We plan ex
 
 ## Examples
 
-We added various examples in the [Documentation](/plugins/volkovlabs-static-datasource/) to get started with Static Data Source.
+We added various examples in the [Documentation](/plugins/business-input/) to get started with Business Input data source.
 
 <Image
   title="Pie Chart panel visualized data from the Static Data Source."
@@ -45,21 +47,9 @@ The Static Data Source supports dashboard and global variables in the String fie
 
 Three types of variables are discussed in the [Grafana Crash Course](/grafana/variables).
 
-## Getting Started
+<GettingStarted />
 
-The Static Data Source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/marcusolsson-static-datasource/) or utilizing the Grafana command line tool.
-
-For the latter, please use the following command.
-
-```bash
-grafana-cli plugins install marcusolsson-static-datasource
-```
-
-## YouTube Tutorial
-
-The Static Data Source is a plugin for Grafana that allows you to store and create any data.
-
-<Youtube id="QOV8ECOUjWs" title="Mimic any data with Static data source." />
+<Tutorial />
 
 ## Release Notes
 
@@ -70,10 +60,4 @@ The Static Data Source is a plugin for Grafana that allows you to store and crea
 - Update README with Documentation (#35)
 - Add Scoped Variables for Variables replacement (#35)
 
-## Feedback
-
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
-
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/business-input/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+<Feedback />

@@ -1,0 +1,30 @@
+---
+tags:
+  - Business Media
+  - Variables
+---
+
+import BlogPost from "@theme/BlogPost";
+import Youtube from "@theme/Youtube";
+
+# Variables
+
+The Business Media panel supports dashboard and global variables in the `Image URL` panel option.
+
+These three types of variables are explained in our [Grafana Crash Course](/grafana/variables).
+
+## Example of dashboard variable in the Base64 panel
+
+Below you can find an example of how a dashboard variable can be used to dynamically determine which file to display on the panel. The following blog post describes a project that integrates three open source plugins to solve the task of uploading a file into a database and then immediately showing what has been uploaded.
+
+The plugins used in the example are:
+
+- [The Business Forms panel](/plugins/business-forms/) to provide with the File type element for file upload.
+- [The Business Variable panel](/plugins/business-variable/) to provide a choice of what file to display.
+- [The Business Media panel](/plugins/business-media/) to display a selected file.
+
+<BlogPost id="form-panel-file-upload-20240310" />
+
+If you are a visual style learner, you can watch the video. It covers the same ground.
+
+<Youtube id="V4Sza0uDQNs" title="File Upload using Grafana dashboard." />

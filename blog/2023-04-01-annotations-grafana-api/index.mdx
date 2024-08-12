@@ -1,12 +1,13 @@
 ---
 authors: [daria]
 slug: annotations-grafana-api-20230401/
-tags: [Business Satellite Data Source, Grafana Crash Course]
+tags: [Business Satellite, Grafana Crash Course]
 image: /img/blog/2023-04-01-annotations-grafana-api/banner.png
 keywords: [Grafana, HTTP API, Data Source, Annotations]
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Feedback from "../_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -70,11 +71,7 @@ Both alerts and native annotations are stored in the Grafana configuration datab
 
 In short, every Grafana needs a configuration database to capture its settings, including native annotations and alerts. If you do not configure otherwise, you will end up with sqlite3 as your configuration database. The other choices are PostgreSQL and MySQL.
 
-<BlogPost
-  href="/blog/grafana-setup-20230122/"
-  title="Blog post about Grafana configuration database."
-  src="/img/blog/2023-01-22-grafana-setup/banner.png"
-/>
+<BlogPost id="grafana-setup-20230122" />
 
 ## Configuration Menu
 
@@ -117,7 +114,7 @@ To overcome the mentioned limitations for the built-in annotation query, we crea
 
 ## Business Satellite Data Source
 
-The [Business Satellite Data Source](/plugins/volkovlabs-grapi-datasource) allows:
+The [Business Satellite Data Source](/plugins/business-satellite/) allows:
 
 - Work with local and remote Grafana instances.
 - Use API Keys or Tokens to request information from the configuration database and visualize in panels or use in annotations.
@@ -157,4 +154,4 @@ The Business Satellite Data Source can be used with any native or community plug
   src="/img/blog/2023-04-01-annotations-grafana-api/history.png"
 />
 
-We are looking forward to seeing what you can do with it.
+<Feedback />

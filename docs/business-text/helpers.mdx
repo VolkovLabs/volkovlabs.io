@@ -1,0 +1,239 @@
+---
+tags:
+  - Business Text
+image: /img/plugins/business-text/json.png
+---
+
+import Image from "@theme/Image";
+
+# Helpers
+
+Helpers, sometimes called handlebars, are functions that allow you to perform basic text transformations within your template.
+
+In the **JavaScript->before rendering content** option a user can register [custom handlebars](/plugins/business-text/code/#custom-handlebars-helper).
+
+The Business Text panel has plenty of predefined handlebars that are registered automatically and ready to use:
+
+| Handlebar                              | Description                                                           |
+| -------------------------------------- | --------------------------------------------------------------------- |
+| [contains](#contains)                  | Checks if a given value exists within an array                        |
+| [date](#date)                          | Formats the timestamp in a given field using a date format            |
+| [eq](#eq)                              | Checks two strings for equality                                       |
+| [join](#join)                          | Joins all elements of an array into a string using a given separator  |
+| [json](#json)                          | Presents an object (JSON) or an array as a formatted string           |
+| [split](#split)                        | Splits a string into an array using a given separator                 |
+| [toFixed](#tofixed)                    | Formats the given number using a fixed-point notation                 |
+| [startsWith](#startswith)              | Returns true if the variable starts with a specified value            |
+| [endsWith](#endswith)                  | Returns true if the variable ends with a specified value              |
+| [match](#match)                        | Returns true if the variable matches with a specified value           |
+| [variable](#helper-variable)           | This helper works only with one format of Grafana dashboard variables |
+| [variableValue](#helper-variablevalue) | This helper works with all Grafana variable formats                   |
+
+## `{{contains}}`
+
+Checks if a given value exists within an array.
+
+```handlebars
+<!-- array: ['a', 'b', 'c'] -->
+
+{{#if (contains array "a")}}
+  Success!
+{{else}}
+  Not Found!
+{{/if}}
+
+<!-- result: 'Success!'  -->
+```
+
+## `{{date}}`
+
+Formats the timestamp in a given field using a date format. Uses [helper-date](https://github.com/helpers/helper-date).
+
+The field value must be a Unix timestamp or any of the formats supported by the [date.js library](https://date.js.org/).
+
+```handlebars
+<!-- Time: 1598791377556 -->
+
+{{date Time "YYYY-MM-DD"}}
+
+<!-- result: '2020-08-30'  -->
+```
+
+## `{{eq}}`
+
+Checks two strings for equality.
+
+```handlebars
+<!-- app: foo -->
+
+{{#if (eq app "auth")}}
+  This is the auth app.
+{{else}}
+  This is not an auth app.
+{{/if}}
+
+<!-- result: 'Success!'  -->
+```
+
+## `{{join}}`
+
+Joins all elements of an array into a string using a given separator.
+
+```handlebars
+<!-- array: ['a', 'b', 'c'] -->
+
+{{join array "-"}}
+
+<!-- result: 'a-b-c'  -->
+```
+
+## `{{json}}`
+
+Presents an object (JSON) or an array as a formatted string. Markdown supports the syntax highlighting.
+
+````handlebars
+<!-- object or array -->
+
+```json
+{{json obj}}
+```
+
+<!-- result: as string  -->
+````
+
+<Image
+  title="Visualize a formatted JSON object."
+  src="/img/plugins/business-text/json.png"
+/>
+
+### Transformation
+
+The `JSON` helper expects an object or an array to display it as a formatted string. If the data source returns a string it should be transformed to a JSON object using the `Convert field type` transformation.
+
+<Image
+  title="Transform a JSON string into an object."
+  src="/img/plugins/business-text/json-transformation.png"
+/>
+
+## `{{split}}`
+
+Splits a string into an array using a given separator.
+
+```handlebars
+<!-- string: 'a,b,c,d' -->
+
+{{split str ","}}
+
+<!-- result: ['a','b','c']  -->
+```
+
+<Image
+  title="Examples of splitting a string into an array."
+  src="/img/plugins/business-text/split.png"
+/>
+
+## `{{toFixed}}`
+
+Formats the given number using a fixed-point notation.
+
+```handlebars
+<!-- Value: 1.1234 -->
+
+{{toFixed Value 2}}
+
+<!-- result: '1.12' -->
+```
+
+## `{{startsWith}}`
+
+:::info Version
+
+The Business Text Panel supports this starting from version 4.2.0.
+
+:::
+
+Returns true if the variable starts with a specified value.
+Example:
+
+```md
+|Name| My Value| |---|---|
+{{#each @root}}
+{{#if (startsWith @key "My_")}}
+| {{@key}} | {{this}} |
+{{/if}}
+{{/each}}
+```
+
+## `{{endsWith}}`
+
+:::info Version
+
+The Business Text Panel supports this starting from version 4.2.0.
+
+:::
+
+Returns true if the variable ends with a specified value.
+Example:
+
+```md
+|Name| My Keys| |---|---|
+{{#each @root}}
+{{#if (endsWith @key "_key")}}
+| {{@key}} | {{this}} |
+{{/if}}
+{{/each}}=
+```
+
+## `{{match}}`
+
+:::info Version
+
+The Business Text Panel supports this starting from version 4.2.0.
+
+:::
+
+Returns true if the variable matches with a specified value.
+Example:
+
+```md
+|Key| Value| |---|---|
+{{#each @root}}
+{{#if (match @key "^(Country|Street|Post)")}}
+| {{@key}} | {{this}} |
+{{/if}}
+{{/each}}
+```
+
+## Helper `{{variable}}`
+
+This helper works only with one format of Grafana dashboard variables - array.
+
+It returns a string array including the currently selected values for a certain variable.
+
+```handlebars
+{{variable "hostname"}}
+
+if hostname = ["server1", "server2", "server3"] then result: ["server1",
+"server2", "server3"]
+```
+
+## Helper `{{variableValue}}`
+
+:::info Version
+
+The Business Text Panel supports this starting from version 4.3.0.
+
+:::
+
+This helper works with all [Grafana variable formats](https://grafana.com/docs/grafana/latest/dashboards/variables/variable-syntax/).
+Below is an example of the `queryparam` type.
+
+```handlebars
+<a href="/d/abc?{{variableValue '${example:queryparam}'}}">Link</a>
+```
+
+If example equal to `["value1", "value2"]` then result:
+
+```
+<a href="/d/abc?var-example=value1&var-example=value2">Link</a>
+```
