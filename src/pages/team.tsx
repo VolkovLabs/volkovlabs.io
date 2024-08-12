@@ -21,8 +21,8 @@ const Header = (siteConfig) => {
               {siteConfig.tagline}
             </h1>
             <p className="hero__subtitle margin-vert--md">
-              Volkov Labs is a dynamic, family-owned business dedicated to
-              creating innovative open-source plugins for Grafana.
+              Volkov Labs is a family-owned business dedicated to creating
+              innovative open-source plugins for Grafana.
             </p>
 
             <p className="hero__subtitle">
