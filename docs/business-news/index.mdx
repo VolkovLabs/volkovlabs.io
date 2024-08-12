@@ -7,6 +7,7 @@ import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 import GettingStarted from "./_getting_started.mdx";
 import Feedback from "./_feedback.mdx";
+import Tutorial from "./_tutorial.mdx";
 
 # Business News
 
@@ -21,8 +22,6 @@ The RSS/Atom data source joins the [Business Suite](/plugins/) for Grafana and w
 :::
 
 The Business News data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Business Text and other panels.
-
-<Youtube id="RAxqS2hpWkg" title="News feed tutorial for Grafana Dashboard." />
 
 ## Requirements
 
@@ -45,12 +44,14 @@ The Business News data source is a plugin for Grafana that retrieves RSS/Atom fe
 - Filter items/entries based on the selected Time Range.
 - Allows specifying Query parameters with dashboard variables.
 
-Below is the example where the dashboard combines 5 Business News data sources each paired with the [Business Text panel](/plugins/volkovlabs-dynamictext-panel/). The [Business Variable panel](/plugins/volkovlabs-variable-panel/) (#1) provides a switch between Volkov Labs, Grafana and News channel.
+Below is the example where the dashboard combines five Business News data sources each paired with the [Business Text panel](/plugins/volkovlabs-dynamictext-panel/). The [Business Variable panel](/plugins/volkovlabs-variable-panel/) (#1) provides a switch between Volkov Labs, Grafana and News channel.
 
 <Image
   title="The Business News data source allows to visualize RSS/Atom feeds on Grafana dashboard."
-  src="/img/plugins/volkovlabs-rss-datasource/dashboard.png"
+  src="/img/plugins/business-news/dashboard.png"
 />
+
+<Tutorial />
 
 ## Documentation
 
