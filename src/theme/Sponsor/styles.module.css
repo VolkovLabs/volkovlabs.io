@@ -9,6 +9,10 @@
   transition-duration: 0.4s;
 }
 
+.buttonSvg {
+  fill: #ff5656;
+}
+
 [data-theme="light"] .button {
   box-shadow: 0 2px 5px 2px var(--ifm-color-gray-100);
   border: 1px solid #222222;
