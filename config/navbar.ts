@@ -133,14 +133,6 @@ export const NAVBAR = {
           to: "/blog/tags/business-intelligence",
         },
         {
-          label: "Community",
-          to: "/blog/tags/community",
-        },
-        {
-          label: "Development",
-          to: "/blog/tags/development",
-        },
-        {
           label: "Grafana Crash Course",
           to: "/blog/tags/grafana-crash-course",
         },
@@ -157,8 +149,8 @@ export const NAVBAR = {
     {
       to: "/team/",
       position: "left",
-      label: "Volkov Labs",
-      "aria-label": "Volkov Labs",
+      label: "Company",
+      "aria-label": "Company",
     },
     {
       href: "https://youtube.com/@volkovlabs",
