@@ -99,14 +99,17 @@ export const NAVBAR = {
         {
           label: "Getting Started",
           to: "/grafana/started",
+          className: "volkovlabs-link icon-grafana-started-link",
         },
         {
           label: "Advanced",
           to: "/grafana/advanced",
+          className: "volkovlabs-link icon-grafana-advanced-link",
         },
         {
           label: "Developer",
           to: "/grafana/developer",
+          className: "volkovlabs-link icon-grafana-developer-link",
         },
         {
           label: "Environment data source",
