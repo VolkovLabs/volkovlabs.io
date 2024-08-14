@@ -15,7 +15,7 @@ import Feedback from "../../grafana/environment/_feedback.mdx";
 
 The number of use cases operating Grafana as a platform to build modern applications is increasing. Compared to a single central Grafana instance, we are looking at multiple distributed installations with new data sources.
 
-One example is the Environment Data Source, which we created for our customer, who uses balenaCloud, the container-based platform for deploying Internet of Things (IoT) fleets of connected Linux devices.
+One example is the Environment data source, which we created for our customer, who uses balenaCloud, the container-based platform for deploying Internet of Things (IoT) fleets of connected Linux devices.
 
 In balenaCloud each IoT device is independent of its own Grafana instance, and each device can be uniquely identified by environment variables exposed within the project.
 
@@ -26,7 +26,7 @@ Watch this video about the dashboard, global, and environment variables in Grafa
   title="Dashboard, Global and Environment variables."
 />
 
-Before looking at the Environment Data Source, let's examine how you can utilize environment variables in Grafana.
+Before looking at the Environment data source, let's examine how you can utilize environment variables in Grafana.
 
 ## Configuration
 
@@ -44,7 +44,7 @@ export GF_AUTH_GOOGLE_CLIENT_SECRET=newS3cretKey
 
 If you are using Docker and Docker Compose, then environment variables can be set in the command line or the `docker-compose.yml` file.
 
-```docker
+```yaml
 grafana:
   container_name: grafana
   image: grafana/grafana:latest
@@ -82,7 +82,7 @@ datasources:
 Surprisingly, we could not find a solution on how to display environment variables on the dashboard and decided to create a backend data source plugin that retrieves environment variables exposed to the Grafana instance.
 
 <Image
-  title="The Environment Data Source allows retrieving environment variables exposed to the Grafana instance."
+  title="The Environment data source allows retrieving environment variables exposed to the Grafana instance."
   src="/img/blog/2022-02-20-environment-datasource/dashboard.png"
 />
 
@@ -99,10 +99,10 @@ In Settings, the data source has the Filter option to avoid exposing unnecessary
 
 Dashboard variables allow you to create more interactive and dynamic dashboards. Instead of hard-coding things like server, application, and sensor names in your metric queries, you can use variables in their place. Variables are displayed as dropdown lists at the top of the dashboard.
 
-The Environment Data Source supports querying environment variables and returns its value to retrieve metric queries or display them on the dashboard.
+The Environment data source supports querying environment variables and returns its value to retrieve metric queries or display them on the dashboard.
 
 <Image
-  title="The Environment Data Source supports querying environment variables."
+  title="The Environment data source supports querying environment variables."
   src="/img/blog/2022-02-20-environment-datasource/variables.png"
 />
 
@@ -117,7 +117,7 @@ Variables can be added to the device and assigned to a specific service or all s
   src="/img/blog/2022-02-20-environment-datasource/balena-cloud.png"
 />
 
-Employing the Environment Data Source, you can retrieve custom and generic environment variables configured for the IoT device and display them on Grafana's Home page and improve other dashboards.
+Employing the Environment data source, you can retrieve custom and generic environment variables configured for the IoT device and display them on Grafana's Home page and improve other dashboards.
 
 <Image
   title="Balena's environment variables configured for the IoT device and displayed in Grafana."

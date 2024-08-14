@@ -348,6 +348,45 @@
   background: url("/static/img/index/release.dark.svg") no-repeat;
 }
 
+.icon-grafana-started-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/grafana/getting-started.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-grafana-started-link::before {
+  background: url("/static/img/grafana/getting-started.dark.svg") no-repeat;
+}
+
+.icon-grafana-advanced-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/grafana/advanced.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-grafana-advanced-link::before {
+  background: url("/static/img/grafana/advanced.dark.svg") no-repeat;
+}
+
+.icon-grafana-developer-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/grafana/developer.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-grafana-developer-link::before {
+  background: url("/static/img/grafana/developer.dark.svg") no-repeat;
+}
+
 .icon-grafana-link::before {
   content: "";
   width: 24px;

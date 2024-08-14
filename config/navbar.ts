@@ -99,14 +99,17 @@ export const NAVBAR = {
         {
           label: "Getting Started",
           to: "/grafana/started",
+          className: "volkovlabs-link icon-grafana-started-link",
         },
         {
           label: "Advanced",
           to: "/grafana/advanced",
+          className: "volkovlabs-link icon-grafana-advanced-link",
         },
         {
           label: "Developer",
           to: "/grafana/developer",
+          className: "volkovlabs-link icon-grafana-developer-link",
         },
         {
           label: "Environment data source",
@@ -130,14 +133,6 @@ export const NAVBAR = {
           to: "/blog/tags/business-intelligence",
         },
         {
-          label: "Community",
-          to: "/blog/tags/community",
-        },
-        {
-          label: "Development",
-          to: "/blog/tags/development",
-        },
-        {
           label: "Grafana Crash Course",
           to: "/blog/tags/grafana-crash-course",
         },
@@ -154,8 +149,8 @@ export const NAVBAR = {
     {
       to: "/team/",
       position: "left",
-      label: "Volkov Labs",
-      "aria-label": "Volkov Labs",
+      label: "Company",
+      "aria-label": "Company",
     },
     {
       href: "https://youtube.com/@volkovlabs",

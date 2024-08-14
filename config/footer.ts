@@ -115,10 +115,10 @@ export const FOOTER = {
       ],
     },
     {
-      title: "Get in touch",
+      title: "Company",
       items: [
         {
-          label: "Team",
+          label: "About us",
           href: "/team/",
           className: "volkovlabs-footer-link icon-team-link",
         },
@@ -126,11 +126,6 @@ export const FOOTER = {
           label: "LinkedIn",
           href: "https://linkedin.com/company/volkovlabs",
           className: "volkovlabs-footer-link icon-linkedin-link",
-        },
-        {
-          label: "YouTube Community",
-          href: "https://youtube.com/@volkovlabs/community",
-          className: "volkovlabs-footer-link icon-community-link",
         },
       ],
     },
