@@ -25,6 +25,20 @@ const sidebars: SidebarsConfig = {
         "business-calendar/basic-config",
         {
           items: [
+            "business-calendar/main",
+            "business-calendar/layout",
+            "business-calendar/events",
+            "business-calendar/annotations",
+          ],
+          label: "Configuration",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-calendar/sections",
+          },
+        },
+        {
+          items: [
             "business-calendar/internationalization",
             "business-calendar/dashboard-timezones",
             "business-calendar/color",
@@ -37,17 +51,12 @@ const sidebars: SidebarsConfig = {
           },
         },
         {
-          items: [
-            "business-calendar/main",
-            "business-calendar/layout",
-            "business-calendar/events",
-            "business-calendar/annotations",
-          ],
-          label: "Sections",
+          items: [],
+          label: "Tutorials",
           type: "category",
           link: {
             type: "doc",
-            id: "business-calendar/sections",
+            id: "business-calendar/tutorials/index",
           },
         },
         "business-calendar/release",

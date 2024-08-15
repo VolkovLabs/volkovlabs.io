@@ -71,7 +71,7 @@ For elements validation, I will use JaveScript in the corresponding panel option
 
 ### Submit button
 
-The Submit button validation occurs in the "Form Events" section. The Business Forms executes the code located in this section with every Form Element value change.
+The Submit button validation occurs in the "Form Events" category. The Business Forms executes the code located in this category with every Form Element value change.
 
 <Image
   title="Place the code for the Submit button validation into the Form Events."
@@ -107,7 +107,7 @@ if (isFormValid) {
 ### Room drop-down
 
 The Room element disabled/enabled switch occurs in the "Disable if returned value is true" parameter.
-The code in this section must return true or false.
+The code must return true or false.
 
 <Image
   title="Place the code for the Room drop-down validation into the Disable if returned value is true."
@@ -127,7 +127,7 @@ return !facility?.value;
 ### Bench drop-down
 
 The Bench element disabled/enabled switch occurs in the "Disable if returned value is true" parameter.
-The code in this section must return true or false.
+The code must return true or false.
 
 <Image
   title="Place the code for the Bench drop-down validation into the Disable if returned value is true."
@@ -148,7 +148,7 @@ return !facility?.value || !room?.value;
 
 ## Update values
 
-For the **Room** and **Bench** elements the value update occurs in the "Form Events" section. I will use the `context.panel.onChangeElements(updatedElements)` method.
+For the **Room** and **Bench** elements the value update occurs in the "Form Events" category. I will use the `context.panel.onChangeElements(updatedElements)` method.
 
 You can copy the code from here:
 
@@ -191,9 +191,9 @@ if (context.element.id === "room") {
 context.panel.onChangeElements(elements);
 ```
 
-## Full code for the Form Events section
+## Full code for the Form Events category
 
-Below you can find the full code that I placed in the Form Events section.
+Below you can find the full code that I placed in the Form Events category.
 
 You can copy the code from here:
 

@@ -13,8 +13,16 @@
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
 }
 
+[data-theme="light"] .video:hover {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-primary);
+}
+
 [data-theme="dark"] .video {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
+}
+
+[data-theme="dark"] .video:hover {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-primary);
 }
 
 .caption {
