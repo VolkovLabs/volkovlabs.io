@@ -35,7 +35,7 @@ This method was created to allow leveraging the existing Grafana data extraction
 
 :::info Version
 
-Since version 4.2.0. the `Query Field` and `Field Name` fields have been relocated from the `Elements` section to the `Initial Fields` options section.
+Since version 4.2.0. the `Query Field` and `Field Name` fields have been relocated from the `Elements` category to the `Initial Fields` options category.
 
 :::
 
@@ -51,7 +51,7 @@ Since version 4.2.0. the `Query Field` and `Field Name` fields have been relocat
 
 ### Data source
 
-Do not confuse this data source with the one you can select on the left-hand side. This is a different parameter located in the **Update Request** section and is visible when the **Data source** type is selected.
+Do not confuse this data source with the one you can select on the left-hand side. This is a different parameter located in the **Update Request** category and is visible when the **Data source** type is selected.
 
 The **Data source** type is more flexible than the **Query** type. However, it means the developer must also take more responsibility by creating the **Initial Payload Request**.
 
@@ -109,7 +109,7 @@ For the Data Source type, you must use the `SetInitial()` function in the Initia
 The reset button is not shown by default. To review all available options, switch the visibility parameter to anything, but **Hidden**.
 **Primary**, **Secondary** and **Destructive** are pre-set visualization templates. In the **Custom**, you can specify foreground color, background color, icon and the text to replace the 'Reset' label if needed.
 
-When this button is not hidden (any other mode is selected), you will also get the Reset Request section. There, you can go with either Custom Code, Initial Request or Data Source option.
+When this button is not hidden (any other mode is selected), you will also get the Reset Request category. There, you can go with either Custom Code, Initial Request or Data Source option.
 
 The **Initial request** is selected by default. In that event, the plugin executes the Initial Request again as if the form is being loaded for the first time.
 
@@ -170,7 +170,7 @@ See the description for the Initial Request REST API. Both Initial and Update re
 
 ## Submit button
 
-You can enable the Confirmation step if needed. This step looks like a popup window with old and new values. For the Query and REST API Initial request types, simply enabling the feature in the plugin edit mode, Update Request section, is enough.
+You can enable the Confirmation step if needed. This step looks like a popup window with old and new values. For the Query and REST API Initial request types, simply enabling the feature in the plugin edit mode, Update Request category, is enough.
 
 For the Data Source type, you must use the `SetInitial()` function in the Initial Request Custom Code. See the illustration for the Initial Request, Data Source type above (on the picture).
 

@@ -52,9 +52,7 @@ Above we discussed the general safety suggestions. Below you find recommendation
 
 ### Business Text
 
-You can keep the default setting `disable_sanitize_html = false` to keep security restrictions in place. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
-
-The feature to process external CSS and JavaScript files is available only when sanitizing is disabled in the Grafana configuration:
+You can set the default setting `disable_sanitize_html = false` to keep security restrictions in place. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
 
 ```sh
 disable_sanitize_html = true
@@ -62,9 +60,9 @@ disable_sanitize_html = true
 
 ### Business Input
 
-[Business Input Data Source](/plugins/business-input/) allows to set values using JavaScript Value Editor, which can be disabled in the Data Source options.
+[Business Input data source](/plugins/business-input/) allows to set values using JavaScript Value Editor, which can be disabled in the data source options.
 
 <Image
-  title="Disable the JavaScript Value Editor in the Data Source options."
+  title="Disable the JavaScript Value Editor in the data source options."
   src="/img/plugins/security/static-java.png"
 />

@@ -164,11 +164,5 @@ export const NAVBAR = {
       className: "header-github-link",
       "aria-label": "GitHub Organization",
     },
-    {
-      href: "https://linkedin.com/company/volkovlabs",
-      position: "right",
-      className: "header-linkedin-link",
-      "aria-label": "LinkedIn",
-    },
   ],
 };

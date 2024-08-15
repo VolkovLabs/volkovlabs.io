@@ -38,17 +38,17 @@ From a developer's point of view, a panel plugin consists of two major parts:
 
 ### Panel Options
 
-Panel options are the parameters that you, as a developer, let users configure for your visualization panel. For better organization, they could be split into sections.
+Panel options are the parameters that you, as a developer, let users configure for your visualization panel. For better organization, they could be split into categories.
 
 :::info
-There might be some confusion related to the "Panel Options" name. From the developer's point of view (in the code) all sections are called "Panel options". Whereas on Grafana UI only one section has this name.
+There might be some confusion related to the "Panel Options" name. From the developer's point of view (in the code) all categories are called "Panel options". Whereas on Grafana UI only one category has this name.
 
-I like to think of the "Panel Options" section as general options (options given by default to any panel) and all other sections are specific to the panel. Where specific means declared by a developer.
+I like to think of the "Panel Options" category as general options (options given by default to any panel) and all other categories are specific to the panel. Where specific means declared by a developer.
 :::
 
-Every section can include any number of parameters. Usually, the parameters are a simple text value. You have a choice of many data entering types like text box, drop-down box, toggle, etc. All of those play a role in helping your user to choose one value or the array(s) of values as your panel options.
+Every category can include any number of parameters. Usually, the parameters are a simple text value. You have a choice of many data entering types like text box, drop-down box, toggle, etc. All of those play a role in helping your user to choose one value or the array(s) of values as your panel options.
 
-Another alternative is a Monaco code editor. It can be used to specify the panel configuration in a JSON format or incorporate a JavaScript box and allow your users to place JavaScript scripts right into the parameter section.
+Another alternative is a Monaco code editor. It can be used to specify the panel configuration in a JSON format or incorporate a JavaScript box and allow your users to place JavaScript scripts right into the parameter category.
 
 <Image
   title="Examples of panel option types in the Business Text panel."
@@ -60,9 +60,9 @@ Another alternative is a Monaco code editor. It can be used to specify the panel
 It is always better to see with your own eyes rather than read someone's description, right?
 
 Panel Options on the Business Text visualization panel contain all three types.
-This plugin is signed by Grafana, which means you can install it in one click from the Grafana catalog, then select it from the visualization panel drop-down box to check out the Panel Option section firsthand.
+This plugin is signed by Grafana, which means you can install it in one click from the Grafana catalog, then select it from the visualization panel drop-down box to check out the Panel Option category firsthand.
 
-By default, the JavaScript box parameter is not turned on. Specify 'JavaScript Code' in the 'Dynamic Text' section.
+By default, the JavaScript box parameter is not turned on. Specify 'JavaScript Code' in the 'Dynamic Text' category.
 
 <Image
   title="To review a JavaScript box in the Business Text panel options, ensure to make it visible."
