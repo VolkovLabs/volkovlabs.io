@@ -15,6 +15,8 @@ export const PRESETS: PresetConfig[] = [
         postsPerPage: "ALL",
         blogSidebarCount: 0,
         showReadingTime: false,
+        onUntruncatedBlogPosts: "ignore",
+        onInlineAuthors: "ignore",
       },
       gtag: {
         trackingID: process.env.GTAG ?? "G-",
