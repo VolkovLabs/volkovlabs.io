@@ -16,13 +16,15 @@ The **Layout** category consists of the following parameters at the moment:
   width="60%"
 />
 
-## Day
+## Views
+
+### Day
 
 Displays a day.
 
 <Image title="The Day Layout." src="/img/plugins/business-calendar/day.png" />
 
-## Week and Work week
+### Week and Work week
 
 Displays a week with 7 or 5 days respectively.
 
@@ -31,7 +33,7 @@ Displays a week with 7 or 5 days respectively.
   src="/img/plugins/business-calendar/week-5-7.png"
 />
 
-### First day of the week
+#### First day of the week
 
 The plugin considers the Grafana system settings when choosing the first day of the week - Saturday, Sunday, or Monday, or uses the default day from Grafana settings.
 
@@ -40,7 +42,7 @@ The plugin considers the Grafana system settings when choosing the first day of 
   src="/img/plugins/business-calendar/week-start-pref.png"
 />
 
-## Month
+### Month
 
 Displays a month.
 
@@ -49,7 +51,7 @@ Displays a month.
   src="/img/plugins/business-calendar/month.png"
 />
 
-## Year
+### Year
 
 Displays 12 months at the same time. The purpose of this view is to help navigate throughout the calendar since it makes it easier to jump into any day and month of the year.
 
@@ -57,7 +59,7 @@ If you need any particular information to be displayed in the Year view, please,
 
 <Image title="The Year layout." src="/img/plugins/business-calendar/year.png" />
 
-## Agenda
+### Agenda
 
 Displays only the busy time slots and shows multiple days for the selected period.
 
@@ -75,7 +77,7 @@ You can configure which view(s) will be available for an end-user.
   src="/img/plugins/business-calendar/allowed.png"
 />
 
-### Default view
+## Default view
 
 With this setting, you can control what your calendar will look like after a page refresh. Any of the calendar views can be selected as a default view.
 
@@ -83,4 +85,54 @@ With this setting, you can control what your calendar will look like after a pag
   title="The Default View option."
   src="/img/plugins/business-calendar/default-view.png"
   width="75%"
+/>
+
+## Date and time format
+
+As you know, there is a Language setting in the user profile preference. Along with language this setting also impacts the displayed date formats.
+
+:::info Version
+
+The extended date formats are supported starting from version 3.0.0.
+
+:::
+
+The currently existing choices were not enough for some of our use cases. We added **English 24** and **ISO 8601** formats.
+
+If the **Date and time format** is set to **User selection**, the language preferece is taken from the User profile-> Prefereneces->Language.
+
+All other options override the user profile settings. 
+
+<Image
+  title="Use the Date and time format option to overwrite the user language setting."
+  src="/img/plugins/business-calendar/language-extended.png"
+/>
+
+## Month time
+
+:::info Version
+
+Disable event time feature is supported starting from version 3.5.0.
+
+:::
+
+For the **Month** layout, you can turn off the displaying of the event times.
+
+<Image
+  title="You can hide event time for the Month layout."
+  src="/img/blog/2024-08-15-calendar-panel-3.5.0/month-time.png"
+/>
+
+## Colors
+
+Read about the **Colors** option [here](/plugins/business-calendar/color/)
+
+## Text Size 
+
+Yu can control the font size in your Calendar panel.
+By default, the size is 12px.
+
+<Image
+  title="You can control the font size in your Calendar panel."
+  src="/img/blog/2024-08-15-calendar-panel-3.5.0/text-size.png"
 />
