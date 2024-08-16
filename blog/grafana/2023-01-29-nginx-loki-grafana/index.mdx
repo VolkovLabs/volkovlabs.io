@@ -1,0 +1,2172 @@
+---
+authors: [mikhail]
+slug: nginx-loki-grafana-20230129/
+tags: [Grafana Crash Course]
+image: /img/blog/2023-01-29-nginx-loki-grafana/banner.png
+keywords: [NGINX, Loki, Grafana, Analytics]
+---
+
+import Feedback from "@site/blog/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Website Analytics based on Nginx, Loki, Promtail, and Grafana
+
+In this weekend's project, we found a way to collect and visualize the content metrics for our website. Who, What, and from Where requested our resources, like our blog and documentation. To achieve this goal, we assembled Nginx, Loki, and Promtail into a pipeline to work together, showing all required metrics on a Grafana dashboard.
+
+<Image
+  title="Website Analytics based on NGINX, Loki and Grafana."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/dashboard.png"
+/>
+
+If you google how to collect Nginx logs using Promtail and Loki, you most likely will find various dashboards, outdated GitHub repositories, and other fragments of information. None of them represent a solution as a whole, covering all steps from collecting to visualizing.
+
+## Google Analytics
+
+Initially, we used Google Analytics to track activities on our website. Whenever I opened it, I wanted to close it. Why? The interface is too cluttered with campaigns, revenue, retention, and channels. I am forced to dig through a pile of distracting information to find a single useful tidbit. Yet, even after spending time configuring existing custom dashboards and reports, one vital piece was still missing: user activities.
+
+The one that set me on this endeavor of creating story-telling analytics, to begin with. User activities are often blocked on firewalls, security, and VPN devices. All that made me look elsewhere, surfacing a simple idea of collecting user activities directly from the web server. That approach will help to keep the essential data.
+
+## Log flow
+
+Below is the schema of the system we came up with. It illustrates what pieces come together in our puzzle and the data flow.
+
+Let's examine each component's functions and take a closer look at each one.
+
+- Nginx serves the website and produces log files.
+- Promtail collects, and processes log files from Nginx and pushes them to Loki.
+- Loki aggregates log files.
+- Grafana displays content metrics along with some technical details. The data comes from Loki via the Loki data source.
+
+<Image
+  title="System architecture where tailored metrics lead to decision making."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/flow.png"
+/>
+
+## Nginx
+
+Nginx is a web server that can be a reverse proxy, load balancer, and cache. We use it in front of all our projects. For optimal performance, we chose to install it on the host.
+
+Nginx configuration allows you to choose the data elements you want to store. You can keep everything and gift yourself a pass to think later about what you will do with all that data. On the downside of this, the volume of data snowballs. Are you willing to take on the extra task of keeping everything up and running?
+
+From the beginning of this project, I had a clear vision of what data elements are required. Therefore, our minimalist set of cherry-picked variables are:
+
+| Variable             | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| `time_local`         | Local time.                                              |
+| `remote_addr`        | Client IP.                                               |
+| `request_uri`        | Full path and arguments for the request.                 |
+| `status`             | Response status code.                                    |
+| `http_referer`       | HTTP referer.                                            |
+| `http_user_agent`    | HTTP clients - user agents.                              |
+| `server_name`        | The name of the server handling the request.             |
+| `request_time`       | Request processing time in seconds with msec resolution. |
+| `geoip_country_code` | Geo location based on client IP.                         |
+
+We also added additional configuration to the main configuration file `nginx.conf` to get as clean input data as possible and avoid further processing in Promtail and Grafana.
+
+- Replace empty values in `http_referer` with `(direct)` similar to Google Analytics.
+- Replace empty values in `http_user_agent` with `Unknown`.
+- Replace empty values in `geoip_country_code` with `Unknown`.
+- Use preinstalled Geo IP database `/usr/share/GeoIP/GeoIP.dat`.
+- Add `json_analytics` logging JSON format with provided variables, which we will use for server blocks.
+
+```nginx
+http {
+  map $http_referer $httpReferer {
+    default "$http_referer";
+    ""      "(direct)";
+  }
+
+  map $http_user_agent $httpAgent {
+    default "$http_user_agent";
+    ""      "Unknown";
+  }
+
+  map $geoip_country_code $geoIP {
+    default "$geoip_country_code";
+    ""      "Unknown";
+  }
+
+  geoip_country /usr/share/GeoIP/GeoIP.dat;
+
+  log_format json_analytics escape=json '{'
+    '"time_local": "$time_local", '
+    '"remote_addr": "$remote_addr", '
+    '"request_uri": "$request_uri", '
+    '"status": "$status", '
+    '"http_referer": "$httpReferer", '
+    '"http_user_agent": "$httpAgent", '
+    '"server_name": "$server_name", '
+    '"request_time": "$request_time", '
+    '"geoip_country_code": "$geoIP"'
+    '}';
+}
+```
+
+A produced JSON record from the log file looks like this.
+
+```json title=analytics.log
+{
+  "time_local": "29/Jan/2023:02:57:08 +0000",
+  "remote_addr": "111.222.334.444",
+  "request_uri": "/plugins/business-forms/request/",
+  "status": "200",
+  "http_referer": "(direct)",
+  "http_user_agent": "Mozilla/5.0",
+  "server_name": "volkovlabs.io",
+  "request_time": "0.000",
+  "geoip_country_code": "CZ"
+}
+```
+
+### Geo IP database
+
+A Geo IP database is a database of IP addresses with their locations tagged, which we use in Nginx to perform geolocation using an IP address.
+
+Preinstalled Geo IP database on our Linux server is outdated, but works great for this project and does not require additional configuration. To be able to do geolocation, Nginx should have the module [`ngx_http_geoip_module`](http://nginx.org/en/docs/http/ngx_http_geoip_module.html) enabled.
+
+```sh
+/usr/share/GeoIP# ls -lrt
+total 7912
+-rw-r--r-- 1 root root 6426573 Nov  8  2018 GeoIPv6.dat
+-rw-r--r-- 1 root root 1672893 Nov  8  2018 GeoIP.dat
+```
+
+Modern [GeoIP2 database](https://www.maxmind.com/en/geoip2-databases) can be used instead of outdated Geo IP. It requires:
+
+- Set up an account.
+- Additional configuration for daily updates.
+- Compile Nginx with an additional module supporting GeoIP2.
+
+You can easily find instructions on how to do it and go this route if required.
+
+### Server configuration
+
+Server blocks in Nginx can be used to encapsulate configuration details and host more than one domain on a single server. In the configuration file for the website we added additional logging in the file `analytics.log` using discussed JSON format.
+
+```nginx
+server {
+  access_log /var/log/nginx/analytics.log json_analytics;
+}
+```
+
+## Loki
+
+Loki is a horizontally scalable, highly available, multi-tenant log aggregation system inspired by Prometheus. It does not index the contents of the logs, but rather a set of labels for each log stream.
+
+In our environment we are running Loki in a Docker container orchestrated using `docker-compose`.
+
+- The data folder `/loki` stored in the volume folder on a local drive.
+- Configuration file `/etc/loki/local-config.yaml` stored in the `loki` folder next to the data.
+- Uses the latest stable version `2.8.0`.
+
+```docker title=docker-compose.yml
+  loki:
+    container_name: loki
+    image: grafana/loki:2.8.0
+    restart: always
+    network_mode: host
+    volumes:
+      - ./loki/data:/loki
+      - ./loki/loki.yml:/etc/loki/local-config.yaml
+```
+
+Loki, Promtail, and Grafana containers are distributed on separate hosts, and we run them in the network host mode.
+
+### Configuration
+
+The configuration file is based on the default file shipped with the `2.7.1` release. We updated the configuration to increase the number of maximum outstanding requests to accommodate the Grafana dashboard.
+
+```yaml
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+  log_level: warn
+
+common:
+  path_prefix: /loki
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks
+      rules_directory: /loki/rules
+  replication_factor: 1
+  ring:
+    kvstore:
+      store: inmemory
+
+schema_config:
+  configs:
+    - from: 2020-10-24
+      store: boltdb-shipper
+      object_store: filesystem
+      schema: v11
+      index:
+        prefix: index_
+        period: 24h
+
+ruler:
+  alertmanager_url: http://localhost:9093
+
+query_scheduler:
+  max_outstanding_requests_per_tenant: 10000
+```
+
+You can learn more about Loki configuration in the [Documentation](https://grafana.com/docs/loki/latest/configuration/).
+
+## Promtail
+
+Promtail is an agent which ships the contents of local logs to a private Grafana Loki instance. It is usually deployed to every machine that has applications needed to be monitored.
+
+Similar to Loki we are running Promtail in a Docker container orchestrated with `docker-compose`.
+
+- Configuration file `/etc/promtail/config.yml` stored in the `loki` folder.
+- The Nginx log folder `/var/log/nginx` was added to the container.
+- Uses the latest stable version `2.8.0`.
+
+```docker title=docker-compose.yml
+  promtail:
+    image: grafana/promtail:2.8.0
+    restart: always
+    container_name: promtail
+    network_mode: host
+    volumes:
+      - ./loki/promtail.yml:/etc/promtail/config.yml
+      - /var/log/nginx:/var/log/nginx
+```
+
+### Configuration
+
+The configuration file is based on the default file shipped with the `2.7.1` release. We updated the configuration for Nginx analytics log files to add labels `job`, `host`, and `agent` and watch for `analytics.log` files.
+
+Promtail push logs to the Loki specified in the configuration file `http://LOKI-IP:3100/loki/api/v1/push`, which is located on a separate host in our configuration.
+
+We added Pipeline stages to drop records we are not interested in.
+
+- Requests from Googlebot, inspectors, test, network devices and RSS collectors.
+- Requests for images and assets (Javascript, CSS) in the special folders.
+- Requests for particular files for browsers and indexing engines.
+- Malicious request from scanners to find PHP and XML files.
+
+```yaml
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://10.0.0.1:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: nginx
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: nginx
+          host: volkovlabs.io
+          agent: promtail
+          __path__: /var/log/nginx/analytics*log
+    pipeline_stages:
+      - json:
+          expressions:
+            http_user_agent:
+            request_uri:
+      - drop:
+          source: http_user_agent
+          expression: "(bot|Bot|RSS|Producer|Expanse|spider|crawler|Crawler|Inspect|test)"
+      - drop:
+          source: request_uri
+          expression: "/(assets|img)/"
+      - drop:
+          source: request_uri
+          expression: "/(robots.txt|favicon.ico|index.php)"
+      - drop:
+          source: request_uri
+          expression: "(.php|.xml|.png)$"
+```
+
+The [Pipelines](https://grafana.com/docs/loki/latest/clients/promtail/pipelines/) can be changed and updated based on your requirements.
+
+## Grafana
+
+We love Grafana and use it for all our projects. We covered the installation process in the video.
+
+<Youtube
+  id="xTQpV7B700w"
+  title="How to Install Grafana for Data Analysts and Data Scientists."
+/>
+
+### Loki data source
+
+A Loki data source is preinstalled in Grafana. We used the URL `http://localhost:3100` to connect to the private Loki instance without authorization.
+
+<Image
+  title="Loki data source configuration in Grafana."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/loki.png"
+/>
+
+## Analytics Dashboard
+
+Website Analytics dashboard was inspired by [Grafana Loki Dashboard for NGINX Service Mesh](https://grafana.com/grafana/dashboards/12559-grafana-loki-dashboard-for-nginx-service-mesh/?pg=dashboards&plcmt=featured-main), one of the most interesting and updated dashboards we can find for Nginx.
+
+Each panel and query was updated according to our styling guidelines and requirements. In this video, Daria will guide you through the process of creating the dashboard.
+
+<Youtube
+  id="cgu3wMOo03w"
+  title="Tutorial on how to create a website analytics dashboard in Grafana."
+/>
+
+### Content metrics
+
+The first part of the dashboard provides content metrics - Who, What and from Where requested resources.
+
+- Geomap displays a number of requests for each Geo location, except unrecognized countries replaced with `Unknown`.
+- Requests panel displays the total number of requests in the selected Time Range.
+- Visitors per Hour displays a number of unique remote IP addresses per hour.
+- A list of countries as a sorted table with values mapping. The list of countries can be updated if required.
+- Referers display the location from where requested resources are being used.
+- Successfully Requested Pages displays the most frequently requested resources.
+
+<Image
+  title="Content metrics for the website requests."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/content.png"
+/>
+
+### Technical metrics
+
+The second part of the dashboard contains technical information.
+
+- Processing Time (95th Percentile and Max latency) to diagnose any technical issues with delivering content.
+- Status of the HTTP requests in 5 minutes blocks displayed as bars.
+- The most frequently used User Agents with information about browsers and platforms.
+- Logs to display raw logging information and verify that we are collecting only required fields and records.
+
+<Image
+  title="Technical metrics for the website requests."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/technical.png"
+/>
+
+### Heatmap
+
+The third part of the dashboard contains heatmaps, which help to understand when and from where resources were requested in the selected Time Range.
+
+- Country displays requests per country.
+- Requested pages display requests per resource.
+
+<Image
+  title="Heatmap of the website requests."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/heatmap.png"
+/>
+
+### Import
+
+To import the created dashboard, find the `Import` menu. The location might differ depending on your installed Grafana version, but that menu should always be somewhere.
+
+<Image
+  title="Import dashboard file into Grafana."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/import-menu.png"
+/>
+
+For the dashboard to function correctly, you must have the Loki data source installed and configured.
+
+<details>
+  <summary>Grafana dashboard source code</summary>
+
+```json
+{
+  "__inputs": [
+    {
+      "name": "DS_LOKI",
+      "label": "Loki",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "loki",
+      "pluginName": "Loki"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "geomap",
+      "name": "Geomap",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.3.6"
+    },
+    {
+      "type": "panel",
+      "id": "heatmap",
+      "name": "Heatmap",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "logs",
+      "name": "Logs",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "loki",
+      "name": "Loki",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "NGINX Analytics",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": 12559,
+  "graphTooltip": 2,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              },
+              {
+                "color": "#9d70f9",
+                "value": 5
+              },
+              {
+                "color": "#eb4444",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 17,
+        "x": 0,
+        "y": 0
+      },
+      "id": 14,
+      "interval": "5m",
+      "options": {
+        "basemap": {
+          "config": {
+            "server": "streets"
+          },
+          "name": "Layer 0",
+          "opacity": 1,
+          "tooltip": true,
+          "type": "esri-xyz"
+        },
+        "controls": {
+          "mouseWheelZoom": false,
+          "showAttribution": false,
+          "showDebug": false,
+          "showMeasure": false,
+          "showScale": false,
+          "showZoom": false
+        },
+        "layers": [
+          {
+            "config": {
+              "color": {
+                "fixed": "semi-dark-blue"
+              },
+              "fillOpacity": 0.3,
+              "shape": "circle",
+              "showLegend": false,
+              "size": {
+                "field": "Value",
+                "fixed": 5,
+                "max": 50,
+                "min": 10
+              },
+              "style": {
+                "color": {
+                  "field": "Value (sum)",
+                  "fixed": "dark-green"
+                },
+                "opacity": 1,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "field": "Value (sum)",
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "text": {
+                  "field": "Metric",
+                  "fixed": "",
+                  "mode": "fixed"
+                }
+              }
+            },
+            "location": {
+              "lookup": "Metric",
+              "mode": "lookup"
+            },
+            "name": "Requests",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "zero",
+          "lat": 0,
+          "lon": 0,
+          "shared": false,
+          "zoom": 2
+        }
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (geoip_country_code) (count_over_time({host=~\"$host\"} | json [$__interval]))",
+          "legendFormat": "{{geoip_country_code}}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "seriesToRows",
+          "options": {}
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Metric": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Value": {
+                "aggregations": ["sum"],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "geomap"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#9d70f9",
+                "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 17,
+        "y": 0
+      },
+      "hideTimeOverride": false,
+      "id": 4,
+      "interval": "5m",
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["sum"],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "sum by(host) (count_over_time({host=~\"$host\"}[$__interval]))  ",
+          "legendFormat": "{{host}}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Requests  ",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "Different IP addresses",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#9d70f9",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 21,
+        "y": 0
+      },
+      "id": 22,
+      "interval": "1h",
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["mean"],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "count(sum by (remote_addr) (count_over_time({host=~\"$host\"} | json [$__interval])))",
+          "instant": true,
+          "legendFormat": "",
+          "queryType": "range",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Visitors per Hour",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [
+            {
+              "options": {
+                "AD": {
+                  "index": 1,
+                  "text": "🇦🇩 Andorra"
+                },
+                "AE": {
+                  "index": 2,
+                  "text": "🇦🇪 United Arab Emirates"
+                },
+                "AF": {
+                  "index": 3,
+                  "text": "🇦🇫 Afghanistan"
+                },
+                "AP": {
+                  "index": 4,
+                  "text": "Asia/Pacific Region"
+                },
+                "AR": {
+                  "index": 5,
+                  "text": "🇦🇷 Argentina"
+                },
+                "AT": {
+                  "index": 6,
+                  "text": "🇦🇹 Austria"
+                },
+                "AU": {
+                  "index": 7,
+                  "text": "🇦🇺 Australia"
+                },
+                "BE": {
+                  "index": 8,
+                  "text": "🇧🇪 Belgium"
+                },
+                "BG": {
+                  "index": 9,
+                  "text": "🇧🇬 Bulgaria"
+                },
+                "BR": {
+                  "index": 10,
+                  "text": "🇧🇷 Brazil"
+                },
+                "BT": {
+                  "index": 11,
+                  "text": "🇧🇹 Bhutan"
+                },
+                "CA": {
+                  "index": 12,
+                  "text": "🇨🇦 Canada"
+                },
+                "CH": {
+                  "index": 13,
+                  "text": "🇨🇭 Switzerland"
+                },
+                "CM": {
+                  "index": 14,
+                  "text": "🇨🇲 Cameroon"
+                },
+                "CN": {
+                  "index": 15,
+                  "text": "🇨🇳 China"
+                },
+                "CO": {
+                  "index": 16,
+                  "text": "🇨🇴 Colombia"
+                },
+                "CY": {
+                  "index": 17,
+                  "text": "🇨🇾 Cyprus"
+                },
+                "CZ": {
+                  "index": 18,
+                  "text": "🇨🇿 Czech Republic"
+                },
+                "DE": {
+                  "index": 19,
+                  "text": "🇩🇪 Germany"
+                },
+                "DK": {
+                  "index": 20,
+                  "text": "🇩🇰 Denmark"
+                },
+                "ES": {
+                  "index": 21,
+                  "text": "🇪🇸 Spain"
+                },
+                "EU": {
+                  "index": 22,
+                  "text": "European Union"
+                },
+                "FI": {
+                  "index": 23,
+                  "text": "🇫🇮 Finland"
+                },
+                "FR": {
+                  "index": 24,
+                  "text": "🇫🇷 France"
+                },
+                "GB": {
+                  "index": 25,
+                  "text": "🇬🇧 United Kingdom"
+                },
+                "GE": {
+                  "index": 26,
+                  "text": "🇬🇪 Georgia"
+                },
+                "GR": {
+                  "index": 27,
+                  "text": "🇬🇷 Greece"
+                },
+                "HK": {
+                  "index": 29,
+                  "text": "🇭🇰 Hong Kong"
+                },
+                "HN": {
+                  "index": 30,
+                  "text": "🇭🇳 Honduras"
+                },
+                "HR": {
+                  "index": 31,
+                  "text": "🇭🇷 Croatia"
+                },
+                "HU": {
+                  "index": 28,
+                  "text": "🇭🇺 Hungary"
+                },
+                "ID": {
+                  "index": 32,
+                  "text": "🇮🇩 Indonesia"
+                },
+                "IL": {
+                  "index": 33,
+                  "text": "🇮🇱 Israel"
+                },
+                "IN": {
+                  "index": 34,
+                  "text": "🇮🇳 India"
+                },
+                "IR": {
+                  "index": 35,
+                  "text": "🇮🇷 Iran"
+                },
+                "IS": {
+                  "index": 37,
+                  "text": "🇮🇸 Iceland"
+                },
+                "IT": {
+                  "index": 36,
+                  "text": "🇮🇹 Italy"
+                },
+                "JO": {
+                  "index": 38,
+                  "text": "🇯🇴 Jordan"
+                },
+                "JP": {
+                  "index": 39,
+                  "text": "🇯🇵 Japan"
+                },
+                "KH": {
+                  "index": 40,
+                  "text": "🇰🇭 Cambodia"
+                },
+                "KR": {
+                  "index": 41,
+                  "text": "🇰🇷 South Korea"
+                },
+                "KZ": {
+                  "index": 42,
+                  "text": "🇰🇿 Kazakhstan"
+                },
+                "LK": {
+                  "index": 43,
+                  "text": "🇱🇰 Sri Lanka"
+                },
+                "LT": {
+                  "index": 44,
+                  "text": "🇱🇹 Lithuania"
+                },
+                "LU": {
+                  "index": 45,
+                  "text": "🇱🇺 Luxembourg"
+                },
+                "LV": {
+                  "index": 46,
+                  "text": "🇱🇻 Latvia"
+                },
+                "MD": {
+                  "index": 47,
+                  "text": "🇲🇩 Moldova"
+                },
+                "MX": {
+                  "index": 48,
+                  "text": "🇲🇽 Mexico"
+                },
+                "MY": {
+                  "index": 49,
+                  "text": "🇲🇾 Malaysia"
+                },
+                "NA": {
+                  "index": 50,
+                  "text": "🇳🇦 Namibia"
+                },
+                "NL": {
+                  "index": 51,
+                  "text": "🇳🇱 Netherlands"
+                },
+                "NO": {
+                  "index": 53,
+                  "text": "🇳🇴 Norway"
+                },
+                "NP": {
+                  "index": 52,
+                  "text": "🇳🇵 Nepal"
+                },
+                "NZ": {
+                  "index": 54,
+                  "text": "🇳🇿 New Zealand"
+                },
+                "OM": {
+                  "index": 55,
+                  "text": "🇴🇲 Oman"
+                },
+                "PL": {
+                  "index": 56,
+                  "text": "🇵🇱 Poland"
+                },
+                "PT": {
+                  "index": 57,
+                  "text": "🇵🇹 Portugal"
+                },
+                "RO": {
+                  "index": 58,
+                  "text": "🇷🇴 Romania"
+                },
+                "RU": {
+                  "index": 59,
+                  "text": "🇷🇺 Russia"
+                },
+                "SC": {
+                  "index": 60,
+                  "text": "🇸🇨 Seychelles"
+                },
+                "SE": {
+                  "index": 61,
+                  "text": "🇸🇪 Sweden"
+                },
+                "SG": {
+                  "index": 63,
+                  "text": "🇸🇬 Singapore"
+                },
+                "SK": {
+                  "index": 62,
+                  "text": "🇸🇰 Slovakia"
+                },
+                "TH": {
+                  "index": 64,
+                  "text": "🇹🇭 Thailand"
+                },
+                "TN": {
+                  "index": 65,
+                  "text": "🇹🇳 Tunisia"
+                },
+                "TR": {
+                  "index": 66,
+                  "text": "🇹🇷 Turkey"
+                },
+                "TW": {
+                  "index": 67,
+                  "text": "🇹🇼 Taiwan"
+                },
+                "UA": {
+                  "index": 68,
+                  "text": "🇺🇦 Ukraine"
+                },
+                "US": {
+                  "index": 69,
+                  "text": "🇺🇸 United States"
+                },
+                "Unknown": {
+                  "index": 0,
+                  "text": "🏴‍☠️ Unknown"
+                },
+                "VN": {
+                  "index": 70,
+                  "text": "🇻🇳 Viet Nam"
+                },
+                "ZA": {
+                  "index": 71,
+                  "text": "🇿🇦 South Africa"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "noValue": "Unknown",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value (sum)"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "gradient-gauge"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "continuous-BlPu"
+                }
+              },
+              {
+                "id": "custom.width",
+                "value": 200
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 7,
+        "x": 17,
+        "y": 3
+      },
+      "id": 3,
+      "interval": "5m",
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": false,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Value (sum)"
+          }
+        ]
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 14,
+          "refId": "A"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "seriesToRows",
+          "options": {}
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Metric": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Value": {
+                "aggregations": ["sum"],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [],
+          "noValue": "None",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value (sum)"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "gradient-gauge"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "continuous-BlPu"
+                }
+              },
+              {
+                "id": "custom.width",
+                "value": 300
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 11,
+        "x": 0,
+        "y": 17
+      },
+      "id": 6,
+      "interval": "5m",
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": false,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Value (sum)"
+          }
+        ]
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (http_referer) (count_over_time({host=~\"$host\"} | json [$__interval]))",
+          "instant": true,
+          "legendFormat": "{{http_referer}}",
+          "queryType": "range",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Referers",
+      "transformations": [
+        {
+          "id": "seriesToRows",
+          "options": {}
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Metric": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Value": {
+                "aggregations": ["sum"],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value (sum)"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 300
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "gradient-gauge"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "continuous-BlPu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 13,
+        "x": 11,
+        "y": 17
+      },
+      "id": 24,
+      "interval": "5m",
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": false,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Value (sum)"
+          }
+        ]
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (request_uri) (count_over_time({host=~\"$host\"} | json | status = 200 [$__interval]))",
+          "legendFormat": "{{request_uri}}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Successfully Requested Pages",
+      "transformations": [
+        {
+          "id": "seriesToRows",
+          "options": {}
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Metric": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Value": {
+                "aggregations": ["sum"],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "id": 28,
+      "panels": [],
+      "title": "Technical",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-BlPu"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 100,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 0.2
+              },
+              {
+                "color": "red",
+                "value": 0.3
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "max latency"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 11,
+        "x": 0,
+        "y": 28
+      },
+      "id": 16,
+      "interval": "5m",
+      "options": {
+        "legend": {
+          "calcs": ["mean"],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "8.0.0-beta3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "quantile_over_time(0.95,{host=~\"$host\"} | json | unwrap request_time [$__interval]) by (host)",
+          "legendFormat": "95th Percentile",
+          "queryType": "range",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "max by (host) (max_over_time({host=~\"$host\"} | json | unwrap request_time  [$__interval]))",
+          "legendFormat": "Max Latency",
+          "queryType": "range",
+          "refId": "D"
+        }
+      ],
+      "title": "Processing Time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 39,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "HTTP Status 500"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{statuscode=\"200\"} 200"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{statuscode=\"404\"} 404"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{statuscode=\"500\"} 500"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "HTTP Status 404"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "light-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "HTTP Status 301"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "light-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "HTTP Status 200"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "semi-dark-blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 13,
+        "x": 11,
+        "y": 28
+      },
+      "id": 26,
+      "interval": "5m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.0.0-beta3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (status) (count_over_time({host=~\"$host\"} | json [$__interval]))",
+          "legendFormat": "HTTP Status {{status}}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Status",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto",
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value (sum)"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 300
+              },
+              {
+                "id": "custom.displayMode",
+                "value": "gradient-gauge"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "continuous-BlPu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 11,
+        "x": 0,
+        "y": 38
+      },
+      "id": 7,
+      "interval": "5m",
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "frameIndex": 0,
+        "showHeader": false,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Value (sum)"
+          }
+        ]
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "sum by (http_user_agent) (count_over_time({host=~\"$host\"} | json [$__interval]))",
+          "instant": true,
+          "legendFormat": "{{http_user_agent}}",
+          "queryType": "range",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "User Agents",
+      "transformations": [
+        {
+          "id": "seriesToRows",
+          "options": {}
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Metric": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Value": {
+                "aggregations": ["sum"],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 11,
+        "w": 13,
+        "x": 11,
+        "y": 38
+      },
+      "id": 11,
+      "interval": "5m",
+      "maxDataPoints": 1,
+      "options": {
+        "dedupStrategy": "signature",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": true
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "{host=~\"$host\"} | json | line_format \"{{.request_uri}} with HTTP status: {{.status}}\"",
+          "legendFormat": "",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Logs",
+      "type": "logs"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
+      "id": 32,
+      "panels": [],
+      "title": "Heatmap",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 24,
+        "x": 0,
+        "y": 50
+      },
+      "id": 30,
+      "interval": "5m",
+      "options": {
+        "calculate": false,
+        "cellGap": 0,
+        "color": {
+          "exponent": 0.5,
+          "fill": "#9d70f9",
+          "mode": "scheme",
+          "reverse": false,
+          "scale": "exponential",
+          "scheme": "Rainbow",
+          "steps": 64
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 0
+        },
+        "legend": {
+          "show": true
+        },
+        "rowsFrame": {
+          "layout": "auto",
+          "value": "Requests"
+        },
+        "tooltip": {
+          "show": true,
+          "yHistogram": false
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "reverse": true,
+          "unit": "short"
+        }
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 14,
+          "refId": "A"
+        }
+      ],
+      "title": "Country",
+      "transformations": [],
+      "type": "heatmap"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 24,
+        "x": 0,
+        "y": 66
+      },
+      "id": 29,
+      "interval": "5m",
+      "options": {
+        "calculate": false,
+        "cellGap": 1,
+        "color": {
+          "exponent": 0.1,
+          "fill": "#9d70f9",
+          "mode": "scheme",
+          "reverse": false,
+          "scale": "exponential",
+          "scheme": "Rainbow",
+          "steps": 128
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 1e-9
+        },
+        "legend": {
+          "show": true
+        },
+        "rowsFrame": {
+          "layout": "auto"
+        },
+        "tooltip": {
+          "show": true,
+          "yHistogram": false
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "reverse": true,
+          "unit": "short"
+        }
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "panelId": 24,
+          "refId": "A"
+        }
+      ],
+      "title": "Requested Pages",
+      "transformations": [],
+      "type": "heatmap"
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": {
+          "type": "loki",
+          "uid": "${DS_LOKI}"
+        },
+        "definition": "label_values($label_name)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Host",
+        "multi": true,
+        "name": "host",
+        "options": [],
+        "query": {
+          "label": "host",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Website Analytics",
+  "uid": "Nz6kKgtGj",
+  "version": 254,
+  "weekStart": ""
+}
+```
+
+</details>
+
+## Business Charts
+
+We started with the default GeoMap panel to display requests per country. It worked as expected, plotting markers on the map with city-level precision. I prefer the country look from Google Analytics.
+
+<Image
+  title="Business Charts panel displays requests per country."
+  src="/img/blog/2023-01-29-nginx-loki-grafana/echarts.png"
+/>
+
+Country Heatmap is not supported in the GeoMap, and we used the [Business Charts panel](/plugins/business-charts/) instead. In the following video, we demonstrated how we did it.
+
+<Youtube
+  id="0EyFmMlIXPo"
+  title="How to tell the story with Grafana dashboard. Business Charts, Bar Chart, Logs, and Heatmap."
+/>
+
+## Summary
+
+The proposed solution beat our expectations, and we are looking forward to updating the Grafana dashboard based on the collected data in the upcoming weeks.
+
+Eliminating unnecessary data allows us to laser focus on the metrics we are looking for. The created dashboard is clean without unnecessary clutter — an excellent example of pure elegance.
+
+<Feedback />
