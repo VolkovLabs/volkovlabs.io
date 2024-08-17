@@ -1,0 +1,102 @@
+---
+authors: [mikhail]
+slug: grapi-datasource-1.0.0-20230302/
+tags: [Business Satellite, Business Suite]
+image: /img/blog/2023-03-02-grapi-datasource-1.0.0/banner.png
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-satellite/_feedback.mdx";
+import GettingStarted from "@site/docs/business-satellite/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-satellite/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Satellite 1.0.0
+
+A new plugin Business Satellite Data Source 1.0.0 was released today. This first release
+
+- Allows connecting to Local and Remote Grafana instances via HTTP API using API Keys and Tokens.
+- Tested with Grafana HTTP API versions 8.5+. It may work with previous versions.
+- Allows retrieving Health information, Annotations, Alerts, and Data Sources.
+- Supports Dashboard annotations to display filtered annotations and alerts.
+- Based on the Grafana 9.3.6 toolkit and workflows.
+
+<Catalog date="March 15, 2023" />
+
+## Why?
+
+Imagine you have many Grafana instances and you want to
+
+- Quickly check information, configuration and usage reports from all of them.
+- Validate users and teams across all instances.
+- Display annotations collected from many instances on a Time Series panel.
+
+Even if you have a single Grafana instance and you want to display Alerting Annotations filtered by variable on a Time Series panel, which was one of the reasons we created this data source. We will discuss this use case in the upcoming blog.
+
+## First release
+
+This is the first release of the Business Satellite Data Source. It is a game-changer to retrieve annotations, check health information, and verify the configuration of the local and remote Grafana instances, including Grafana Cloud.
+
+Grafana HTTP API requires API Key or Token to access local and remote instances.
+
+<Image
+  title="Business Satellite Data Source allows to connect to Grafana Cloud instances."
+  src="/img/blog/2023-03-02-grapi-datasource-1.0.0/cloud.png"
+/>
+
+## Highlights
+
+The first release can retrieve
+
+- Health information.
+- List of Data Sources.
+- Annotations and Alarms with filter capabilities.
+
+<Image
+  title="Dashboard displays Data sources, annotations and health information of the Grafana instance."
+  src="/img/blog/2023-03-02-grapi-datasource-1.0.0/dashboard.png"
+/>
+
+## Annotations
+
+Business Satellite Data Source supports Dashboard annotations to display filtered annotations and alerts.
+
+| Filter       | Options                                     |
+| ------------ | ------------------------------------------- |
+| Type         | All, Annotation, or Alert.                  |
+| Dashboards   | All or This.                                |
+| Time Range   | None or Selected in the dashboard.          |
+| Prev State   | All, Normal, Pending, or Alerting.          |
+| Next State   | All, Normal, Pending, or Alerting.          |
+| Text Pattern | Supports Regular expressions and variables. |
+| Max Limit    | Maximum number of annotations to retrieve.  |
+
+<Image
+  title="Dashboard annotations use Business Satellite Data Source to retrieve Alerting annotations filtered with text pattern."
+  src="/img/blog/2023-03-02-grapi-datasource-1.0.0/annotations.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Initial release based on Volkov Labs Data source template
+- Update README and configuration (#1)
+- Add Postgres for Alerting (#2)
+- Add Annotations (#3)
+- Update name to Grafana HTTP API (#4)
+- Improve Annotations and update to Timescale (#5)
+- Improve Data Source to check Organization (#6)
+- Add Notifications and increase Test Coverage (#7)
+- Add Annotation filters (#8)
+- Add Annotation Alert States filter (#9)
+- Add Health and Data Sources (#10)
+- Update README to prepare for the release (#11, #12)
+
+<Feedback />

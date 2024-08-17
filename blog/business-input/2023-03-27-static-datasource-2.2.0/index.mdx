@@ -1,0 +1,63 @@
+---
+authors: [mikhail]
+slug: static-datasource-2.2.0-20230327/
+tags: [Business Input, Business Suite]
+image: /img/blog/2023-03-27-static-datasource-2.2.0/banner.png
+keywords: [Data Source, Static, Storage, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-input/_feedback.mdx";
+import GettingStarted from "@site/docs/business-input/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-input/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Input 2.2.0
+
+We are happy to announce the release of the Static Data Source 2.2.0. This release includes the following updates:
+
+- Added examples for Node Graph, Base64, Pie Chart, and Logs panels in Documentation.
+- Updated Variable replacement to support Scoped Variables.
+- Updated to the latest Grafana 9.4.7 toolkit and workflows.
+
+<Catalog date="March 29, 2023" />
+
+## Half a Million downloads
+
+The Static Data Source was downloaded more than half a million times. We plan exciting new features for the upcoming release to get it to a million and become a go-to data source for JavaScript enthusiasts.
+
+<Image
+  title="More than half a million downloads in 2 years."
+  src="/img/blog/2023-03-27-static-datasource-2.2.0/downloads.png"
+/>
+
+## Examples
+
+We added various examples in the [Documentation](/plugins/business-input/) to get started with Business Input data source.
+
+<Image
+  title="Pie Chart panel visualized data from the Static Data Source."
+  src="/img/blog/2023-03-27-static-datasource-2.2.0/pie.png"
+/>
+
+## Variables
+
+The Static Data Source supports dashboard and global variables in the String fields. In this release, we added support for the Scoped variables used when repeating panels based on multi-select variables.
+
+Three types of variables are discussed in the [Grafana Crash Course](/grafana/variables).
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update CI and Release workflows (#33)
+- Update to Grafana 9.4.7 (#34)
+- Update README with Documentation (#35)
+- Add Scoped Variables for Variables replacement (#35)
+
+<Feedback />
