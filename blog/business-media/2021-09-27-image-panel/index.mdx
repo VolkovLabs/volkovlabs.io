@@ -1,0 +1,63 @@
+---
+authors: [mikhail]
+slug: display-base64-encoded-images-from-any-data-source-on-your-dashboard-398a99ba5b5e/
+tags: [Business Media, Solution]
+image: /img/blog/2021-09-27-image-panel/banner.png
+keywords: [Image, PDF, Base64, Visualization]
+---
+
+import Feedback from "@site/docs/business-media/_feedback.mdx";
+import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Display Base64 images from any data source
+
+The Business Media Panel plugin has recently been upgraded in the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-image-panel/) and now has everything you need to display images from any data source on your dashboards.
+
+The initial version of the Grafana plugin was designed for the project analyzing a camera feed in real-time and simplified the original project by displaying AI-analyzed images on the Grafana dashboard.
+
+<Image
+  title="Analyzing camera feeds in real-time using RedisAI, OpenCV-Python, and Redis plugins for Grafana."
+  src="/img/blog/2021-09-27-image-panel/bat-camera.png"
+/>
+
+## Updates
+
+Since the original version, the Business Media Panel plugin has achieved the following:
+
+- Support for Grafana 8.
+- More than 45,000 downloads.
+- Featured in the [Grafana Community Plugin Showcase (August 2021)](https://grafana.com/blog/2021/08/10/grafana-community-plugin-showcase-august-2021/).
+- Used for various projects, such as security camera monitoring.
+
+<Youtube
+  id="1_bgLSehjhg"
+  title="Images, PDFs, Live Camera Feed on Grafana Dashboard."
+/>
+
+<GettingStarted />
+
+In the latest version of Grafana 8.1, you can install standalone plugins from the Grafana Plugins catalog.
+
+<Image
+  title="Grafana Plugins catalog allows installing plugins directly from the dashboard without restarting the application."
+  src="/img/blog/2021-09-27-image-panel/installation.png"
+/>
+
+## Panel Features
+
+The values returned from the data source can be Base64 encoded with or without definition in the format like `data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`.
+
+If no definition is provided, the file type is automatically determined based on the first Base64 symbol.
+
+<Image
+  title="Business Media panel displays an image using the Business Input data source."
+  src="/img/blog/2021-09-27-image-panel/panel.png"
+/>
+
+If the data source returns more than one field of the `string` type, you can choose the field name in the plugin's options. If the data source returns multiple rows, the image from the last row is displayed in the panel.
+
+The image's dimensions can be automatically adjusted, left as-is, or changed based on the values you specify in the panel settings.
+
+<Feedback />

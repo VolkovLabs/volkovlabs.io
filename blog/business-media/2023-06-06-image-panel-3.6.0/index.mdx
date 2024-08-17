@@ -1,0 +1,56 @@
+---
+authors: [mikhail]
+slug: image-panel-3.6.0-20230606/
+tags: [Business Media, Business Suite]
+image: /img/blog/2023-06-06-image-panel-3.6.0/banner.png
+keywords: [Base64, Panel, PDF, Images, Video, Audio]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-media/_feedback.mdx";
+import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-media/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Media 3.6.0
+
+We are excited to announce the release of the Business Media Panel 3.6.0. This feature release includes the following updates:
+
+- Tested the plugin with Grafana 10 Preview.
+- Added a toolbar to download, zoom in/out, and navigate between images.
+- Increased the test coverage for the plugin functionality to 100% and implemented an end-to-end test procedure.
+- Migrated to Plugin Tools 1.5.2 with Node.js 18 and npm.
+
+<Catalog date="June 15, 2023" />
+
+## Image Toolbar
+
+The new toolbar allows you to download, zoom, and navigate between multiple images retrieved from your data source.
+
+The toolbar is enabled by default in the panel options, but you need to define what action buttons to display. The toolbar remains hidden until buttons are selected.
+
+<Image
+  title="Times Square image analyzed with the YOLO model and retrieved from a PostgreSQL database."
+  src="/img/blog/2023-06-06-image-panel-3.6.0/panel.png"
+/>
+
+Please let us know if there is anything else you would like to see on the plugin's toolbar.
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Added compatibility with Grafana 9.5.2 (#70).
+- Integrated E2E Cypress tests into the testing cycle (#71).
+- Migrated to Plugin Tools 1.5.2 (#72, #73)
+- Updated the plugin to Node.js 18 (#72).
+- Increased the test coverage for the plugin functionality (#72).
+- Tested the plugin on Grafana 10 Preview (#74).
+- Added the toolbar to download, zoom in/out, and navigate across images (#75, #76, #77).
+
+<Feedback />

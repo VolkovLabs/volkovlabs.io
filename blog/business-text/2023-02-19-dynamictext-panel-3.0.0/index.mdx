@@ -1,0 +1,156 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-3.0.0-20230219/
+tags: [Business Text, Business Suite]
+image: /img/blog/2023-02-19-dynamictext-panel-3.0.0/banner.png
+keywords: [Dynamic Text, Panel, Data, Code, Highlight, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Code from "@theme/Code";
+import Feedback from "@site/docs/business-text/_feedback.mdx";
+import GettingStarted from "@site/docs/business-text/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-text/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Text 3.0.0
+
+We're excited to announce the release of the Business Text Panel 3.0.0. This major release includes the following updates:
+
+- Added the style editor.
+- Added the code syntax highlighting.
+- Added an option to select optional editors for display, by default, they are hidden. Editors with modified values are always displayed.
+- Removed the panel padding. You can add the padding through the style editor.
+- Added compatibility with Grafana 9.3.6 and updated workflows.
+
+<Catalog date="February 21, 2023" />
+
+## 2 Million downloads
+
+Business Text panel was downloaded more than two million times.
+
+<Image
+  title="Two million plugin downloads in two years."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/downloads.png"
+/>
+
+## Community use case
+
+We are consistently impressed by the innovative ways that the Grafana community uses the latest features of Business Text panel. One particularly fascinating use case is the creation of tabs using CSS styles, JavaScript code, and a combination of Handlebars and HTML. This functionality was previously only available with custom panels, but our plugin makes it possible to implement these tabs.
+
+<Image
+  title="JavaScript code with CSS styles and a mix of Handlebars with HTML to display navigation tabs."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/example.png"
+/>
+
+## Magic (JavaScript) Trio
+
+One of the three plugins that complete Grafana is Business Text panel. With Business Text, Data Manipulation, and Business Charts Panel you can create fully functional web applications meeting your needs and expectations.
+
+<Youtube
+  id="wPr4gZYzUVA"
+  title="Dynamic Text, Data Manipulation, and Business Charts Panel plugins."
+/>
+
+## Select Editor to display
+
+To make the plugin's panel easier to use, we have hidden the default Content, JavaScript code, and styles editors by default. However, if you have modified the default content or are already using JavaScript code or CSS styles, the editors will be displayed even if they are not selected.
+
+<Image
+  title="Enable display of optional editors for default content and JavaScript code."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/select.png"
+/>
+
+In most cases, you won't need to modify the default content, JavaScript code, or CSS styles. We prefer the minimalist design of displaying only one content editor, and we hope you will too.
+
+## Styles editor
+
+Using the dedicated code editor with CSS syntax highlighting, you can create new CSS styles or alter the default ones.
+
+<Image
+  title="Add custom styles for table cells and bold text."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/styles.png"
+/>
+
+<details>
+  <summary>Default styles</summary>
+
+<Code
+  url="https://github.com/VolkovLabs/business-text/blob/main/src/components/Text/Text.styles.ts"
+  language="js"
+/>
+
+</details>
+
+### Padding and margins
+
+To display content without padding and margins, you need to override the parent CSS style.
+
+```css
+& {
+  padding: 0;
+  margin: 0;
+}
+```
+
+## Code Syntax Highlighting
+
+Code syntax highlighting is based on the `highlight.js` library, which supports key programming languages.
+
+<Image
+  title="Random Walk data displayed with the highlighting and without margins or paddings."
+  src="/img/blog/2023-02-19-dynamictext-panel-3.0.0/highlight.png"
+/>
+
+### Styling
+
+We included the Accessibility (A11Y) syntax highlighting style for light and dark themes. You can override it in the styles editor by copying one of the styles from the [project source files](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
+
+<details>
+  <summary>A11Y light theme</summary>
+
+<Code
+  url="https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-light.css"
+  language="css"
+/>
+
+</details>
+
+<details>
+  <summary>A11Y dark theme</summary>
+
+<Code
+  url="https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css"
+  language="css"
+/>
+
+</details>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes
+
+The default Content and JavaScript editors are not displayed unless values are modified.
+
+To display required editors, including the new Styles, they should be selected in the list.
+
+:::
+
+### Features / Enhancements
+
+- Updated the features section in the README file with a new tutorial about JavaScript code editor (#141).
+- Added compatibility with Grafana 9.3.6 (#147).
+- Update the CI and release workflows (#147).
+- Update the README file with a tutorial about using JavaScript (#148).
+- Added custom styles (#149).
+- Added an option to display optional editors (#149).
+- Removed the panel padding (#150).
+- Added the code syntax highlighting (#151).
+- Introduced the breaking changes that impact the display of optional editors (#152).
+
+<Feedback />

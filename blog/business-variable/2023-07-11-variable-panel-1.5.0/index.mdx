@@ -1,0 +1,87 @@
+---
+authors: [mikhail]
+slug: variable-panel-1.5.0-20230711/
+tags: [Business Variable, Business Suite]
+image: /img/blog/2023-07-11-variable-panel-1.5.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-variable/_feedback.mdx";
+import GettingStarted from "@site/docs/business-variable/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-variable/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Variable 1.5.0
+
+We are happy to announce the release of the Business Variable panel 1.5.0. This release includes the following updates:
+
+- Added sticky header.
+- Added auto-scroll for multi-group selection.
+- Added drag and drop for tree view groups.
+- Added expand and collapse all in the header.
+
+<Catalog date="July 12, 2023" />
+
+<Shorts id="YJXXMUgXDys" title="Business Variable panel 1.5.0 for Grafana." />
+
+We appreciate the feedback and interest in the Variable panel plugin. Provided functionality was requested by the community many times and we gladly contributed.
+
+## Demo
+
+Interested to try the panel? Take a look at [Grafana plugins registered in the Grafana Catalog](https://release.volkovlabs.io/d/O73WAt27z/plugin-info?orgId=1&var-slug=volkovlabs-variable-panel).
+
+One of my favorite features in this release is the sticky header, which allows you to filter values and select favorites. Statuses indicate when the plugin was updated:
+
+- Green less than 365 days.
+- Yellow for more than 365 days.
+- Red for more than 730 days.
+
+<Image
+  title="Plugins dashboard helps us to learn about new plugins in the Grafana Catalog."
+  src="/img/blog/2023-07-11-variable-panel-1.5.0/demo.png"
+/>
+
+## Single value table
+
+The single value table was updated to support the `All` option and allows to select a single value by clicking on it.
+
+<Image
+  title="To select a single value, choose the value from the list."
+  src="/img/blog/2023-07-11-variable-panel-1.5.0/single.png"
+/>
+
+## Collapse and expand all
+
+We added a new collapse and expand all button next to the variable title in the header. It's a must-have feature to expand and collapse all branches at the same time for 5+ levels.
+
+<Image
+  title="Expand and collapse all feature allows to quickly switch between branches."
+  src="/img/blog/2023-07-11-variable-panel-1.5.0/collapse.png"
+/>
+
+## Tree View groups
+
+A new feature allows to drag and drop configured Tree View groups to rearrange how they will be displayed on the panel.
+
+<Image
+  title="Groups and Levels support drag and drop functionality."
+  src="/img/blog/2023-07-11-variable-panel-1.5.0/groups.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update single select variable with All enabled (#41)
+- Add sticky header and auto scroll on multi-group selection (#38)
+- Add drag and drop for Groups (#42)
+- Add expand and collapse all in the header (#46)
+
+<Feedback />

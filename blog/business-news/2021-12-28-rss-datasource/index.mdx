@@ -1,0 +1,135 @@
+---
+authors: [mikhail]
+slug: do-you-want-to-be-on-top-of-the-latest-news-staying-in-grafana-9abb064ed449/
+tags: [Business News, Solution]
+image: /img/blog/2021-12-28-rss-datasource/banner.png
+keywords: [Image, PDF, Base64, Visualization]
+---
+
+import Feedback from "@site/docs/business-news/_feedback.mdx";
+import GettingStarted from "@site/docs/business-news/_getting_started.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Keep up with the most recent news while working in Grafana
+
+When you open Grafana, what is the first panel you see? It's most likely the News panel on the Home dashboard, which contains the most recent blog entries from the Grafana team and community. The News panel directly loads the RSS feed into the browser, and while it works for some feeds, it has numerous restrictions.
+
+Looking around, we discovered several open conversations and issues related to updating the News panel or creating an RSS and Atom data source. The question is, how to display data from such data sources? Time series or table panels are not appropriate alternatives for displaying news in a custom layout.
+
+You can find a video version of this post on our YouTube channel.
+
+<Youtube id="RAxqS2hpWkg" title="News feed tutorial for Grafana Dashboard." />
+
+An RSS data source was implemented with the recently released [Data Source Template](https://github.com/volkovlabs/volkovlabs-abc-datasource). This template is similar to the panel plugin template introduced in the previous articles. Business News Data Source retrieves a feed and returns data frames to display news in the [Business Text panel](/plugins/business-text) or other custom panels.
+
+## Data source plugin
+
+> Data source plugins can communicate with external data sources and return the data in a format that Grafana can understand. You can immediately display the data in any of your current dashboards by adding a data source plugin.
+
+The Grafana Plugins catalog now lists 120 data source plugins, 22 of which were added this year. There are several questions you need to address when thinking about developing a new data source plugin:
+
+- Is it possible to retrieve the data via the HTTP(S) protocol?
+- Does a standard HTTP(S) application backend meet your requirements and provide all necessary options for authentication?
+- Does the data source need support for alerting?
+
+The HTTP(S) protocol can be used to read RSS and Atom feeds, and in most circumstances, no authentication is required. Authentication can be introduced in a future release, and the default authentication options in the HTTP(S) backend should be sufficient.
+
+We decided to develop the [Business News data source](/plugins/business-news/) without the backend using [our data source plugin template](https://github.com/volkovlabs/volkovlabs-abc-datasource). Similar to the panel plugin template, this template comes preconfigured with Docker Compose, initial provisioning, and continuous integration with test coverage settings.
+
+## Add Data Source
+
+Let's add a new Business News data source to the Grafana blog and create a panel to display the latest news similar to the News Panel plugin.
+
+You can add the Business News data source manually in the Data Sources Configuration menu or provision it through configuration files.
+
+<Image
+  title="We are adding an Business News data source for showing a newsfeed in Grafana."
+  src="/img/blog/2021-12-28-rss-datasource/datasource.png"
+/>
+
+```yaml
+datasources:
+  - name: Volkov Labs RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    isDefault: true
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://volkovlabs.io/blog/rss.xml
+  - name: AWS CloudFront RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://status.aws.amazon.com/rss/cloudfront.rss
+  - name: Grafana RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://grafana.com/blog/news.xml
+```
+
+## Business Text panel
+
+The next step is to add a Business Text panel on the dashboard and set content with Markdown, HTML, and Handlebars.
+
+<Image
+  title="Adding a new Business Text panel on the Dashboard for showing a newsfeed in Grafana."
+  src="/img/blog/2021-12-28-rss-datasource/dashboard.png"
+/>
+
+To correctly display the date, it should be of the `Time` type. All fields returned by the data source should be of the `String` type and can be transformed by converting a field type with a specified input format to `Time` or `Number`.
+
+<Image
+  title="Convert field type transformation for the pubDate field as Time."
+  src="/img/blog/2021-12-28-rss-datasource/transformation.png"
+/>
+
+Here is the content of the panel to imitate the look of the News panel:
+
+```html
+<table cellpadding="0" cellspacing="0" border="0" style="border: 0">
+  <tr style="border: 0">
+    <td style="border: 0"><img height="100" src="{{og:image}}" /></td>
+    <td style="border: 0">
+      <b>{{date pubDate 'MMM DD'}}</b>
+      <h3>
+        <a style="color: blue" target="_blank" href="{{link}}">{{title}}</a>
+      </h3>
+      {{description}}
+    </td>
+  </tr>
+</table>
+```
+
+You can find more information about the Business Text Panel plugin and various helpers in our [documentation](/plugins/business-text).
+
+## AWS feed
+
+If AWS experiences an unexpected outage, you can track the status directly on your Grafana dashboard.
+
+<Image
+  title="AWS CloudFront Service Status on the Grafana dashboard."
+  src="/img/blog/2021-12-28-rss-datasource/aws.png"
+/>
+
+## Redis Status page
+
+The Redis Status page is based on the Atom format and can be displayed using this data source.
+
+<Image
+  title="Redis Status page based on the Atom format feed."
+  src="/img/blog/2021-12-28-rss-datasource/redis.png"
+/>
+
+Using the Business News data source, you can combine your system and application metrics with newsfeeds from AWS, Redis, and other providers to stay up to date on any issues on their side.
+
+<Feedback />

@@ -1,0 +1,66 @@
+---
+authors: [daria]
+slug: image-panel-4.1.0-20231029/
+tags: [Business Media, Business Suite]
+image: /img/blog/2023-10-29-image-panel-4.1.0/banner.png
+keywords: [Base64, Panel, Zoom, Label, Images]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-media/_feedback.mdx";
+import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-media/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Media 4.1.0
+
+We are excited to announce the release of the Business Media Panel 4.1.0. This major release includes the following updates:
+
+- Added Image Scale Algorithm option.
+- Added compatibility with Grafana 10.1.5.
+
+<Catalog date="October 30, 2023" />
+
+## 1 million downloads
+
+The Base64 Panel just hit an impressive milestone of being downloaded 1 million times! Thank you for your trust and support.
+
+<Image
+  title="Total downloads from Grafana Catalog for the Base64 Panel."
+  src="/img/blog/2023-10-29-image-panel-4.1.0/downloads.png"
+/>
+
+## Image Scale Algorithm
+
+We added a new category **Image** with one drop-down parameter **Scale Algorithm** to specify how scaling of the image should be done. We have three options to choose from:
+
+- **Auto**. A browser chooses the best available algorithm.
+- **Crisp Edges**. The image is scaled with an algorithm that preserves contrast and edges in the image. Generally intended for images such as pixel art or line drawings, no blurring or color smoothing occurs.
+- **Pixelated**. The image is scaled with the "nearest neighbor" or similar algorithm, preserving a "pixelated" look as the image changes in size.
+
+:::info
+The **Crisp Edges** option is not supported in all browsers: https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering
+:::
+
+<Image
+  title="Difference between Auto and Pixelated Scale Algorithms."
+  src="/img/blog/2023-10-29-image-panel-4.1.0/auto-pix.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update ESLint configuration (#84)
+- Add Image Scale Algorithm option (#89)
+- Update to Plugin Tools 2.1.1 (#90)
+- Use Grafana Access Policy to sign plugin (#90)
+- Update to Grafana 10.1.5 (#90)
+
+<Feedback />

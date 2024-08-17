@@ -1,0 +1,81 @@
+---
+authors: [mikhail]
+slug: variable-panel-1.4.0-20230708/
+tags: [Business Variable, Business Suite]
+image: /img/blog/2023-07-08-variable-panel-1.4.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-variable/_feedback.mdx";
+import GettingStarted from "@site/docs/business-variable/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-variable/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Variable 1.4.0
+
+We are happy to announce the first community-signed version of Business Variable panel 1.4.0. This release includes the following updates:
+
+- Added a Favorite icon to filter selected favorites.
+- Added Tree View groups to provide location, configuration, manufacturer, etc. selections in the same panel.
+- Added auto-scroll to the selected value when the panel loads.
+- Added an option to display the variable name in front of the value.
+- Updated Sticky scrollbar to support Grafana 9.
+- Increased Test coverage to 99%.
+
+<Catalog date="July 7, 2023" />
+
+## Favorites
+
+The variable panel allows selecting values as favorites, which are stored in the Web browser's storage and are unique for each user.
+
+The new favorite icon in the header allows you to filter all selected favorites for quick navigation and selection.
+
+<Image
+  title="Selected values are unique for each user and stored in the Web browser's storage."
+  src="/img/blog/2023-07-08-variable-panel-1.4.0/favorites.png"
+/>
+
+## Tree View groups
+
+Multiple tree view groups allow selecting variables based on location, configuration, manufacturer, etc.
+
+Each group has its level configuration and is based on the data from the data frames. Levels from the data frame should have the same name as the variable.
+
+An additional option to display the variable name in front of the value can be enabled to provide additional context for the users.
+
+<Image
+  title="Groups consist of levels with the same names as variables."
+  src="/img/blog/2023-07-08-variable-panel-1.4.0/groups.png"
+/>
+
+## Test Coverage
+
+For developing our plugins we use continuous integration with 80+% test coverage to make sure that any changes won't break existing functionality. We talked about it in [our developing panel plugins series](https://youtube.com/watch?v=ga5Ik32vqIw).
+
+<Image
+  title="The variable panel has 99% test coverage."
+  src="/img/blog/2023-07-08-variable-panel-1.4.0/codecov.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add Tutorial (#21)
+- Update adding new Level to last (#22)
+- Hide unselectable items (#24)
+- Use the main view scroll element to support Grafana 9 (#26)
+- Add a Favorite icon to filter selected favorites (#25)
+- Add Tree View groups. Requires to update Tree View configuration. (#20)
+- Add an option to display the variable name in front of the value (#30)
+- Increase tests coverage (#31)
+- Add auto scroll to the selected value (#32)
+- Community signed release (#37)
+
+<Feedback />
