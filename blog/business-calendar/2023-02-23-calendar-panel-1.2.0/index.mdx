@@ -1,0 +1,126 @@
+---
+authors: [mikhail]
+slug: calendar-panel-1.2.0-20230223/
+tags: [Business Calendar, Business Suite]
+image: /img/blog/2023-02-23-calendar-panel-1.2.0/banner.png
+keywords: [Calendar, Panel, Events, Time Range, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-calendar/_feedback.mdx";
+import GettingStarted from "@site/docs/business-calendar/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Calendar 1.2.0
+
+We are happy to announce the release of the Business Calendar panel 1.2.0. This release includes the following updates:
+
+- Added the event coloring based on the configuration of threshold ranges.
+- Added support for the system week start day (Monday, Satuday, Sunday, or default) pulled from Grafana.
+- Added a time display option for events.
+- Updated the Drawer component (sidebar) for a new card-based design.
+- Added compatibility with Grafana 9.3.6 and updated workflows.
+- Refactored the legacy code and migrated to Theme v2.
+- Removed the panel padding and modified styles for a modern visual look of the plugin.
+
+<Catalog date="February 24, 2023" />
+
+## 1 million downloads
+
+The Business Calendar panel plugin has been downloaded over one million times.
+
+<Image
+  title="More than one million downloads in two years."
+  src="/img/blog/2023-02-23-calendar-panel-1.2.0/downloads.png"
+/>
+
+## Display Events from PostgreSQL
+
+This video explains how to configure Business Calendar panel in Grafana to retrieve events from the PostgreSQL database, but you can use any supported storage.
+
+<Youtube id="6WGmm5y4fs4" title="How to display events from PostgreSQL." />
+
+## Updated Styles
+
+Theme v1 was upgraded to v2, and most styles were modified for a modern look and the provision of a Google Calendar-like experience. **Display Time** is an additional option that displays the time of an event before the title.
+
+<Image
+  title="Calendar panel displays the latest updates in the Grafana Plugins catalog."
+  src="/img/blog/2023-02-23-calendar-panel-1.2.0/dashboard.png"
+/>
+
+## Week Start
+
+The plugin considers the Grafana system settings when choosing the first day of the week - Saturday, Sunday, or Monday, or uses the default day from Grafana settings.
+
+<Image
+  title="You can select the appropriate first day of the week in the user or organization preferences."
+  src="/img/blog/2023-02-23-calendar-panel-1.2.0/week-start.png"
+/>
+
+## Event colors
+
+We have released the most frequently requested feature! You can now color events differently depending on whether their values fall inside the chosen threshold ranges.
+
+<Image
+  title="Showing single- and multi-day events in different colors using the configured threshold ranges."
+  src="/img/blog/2023-02-23-calendar-panel-1.2.0/duration.png"
+/>
+
+## Event details
+
+The `N more` line appears at the bottom of the event list when events do not fit within the allocated day cell. When you click this line, the opened tab will display the full list of events for that day. You may also click an event to view its information in a new tab.
+
+<Image
+  title="Business Calendar panel displays the latest updates in the Grafana Catalog."
+  src="/img/blog/2023-02-23-calendar-panel-1.2.0/drawer.png"
+/>
+
+You can also click a particular event directly on the calendar grid to see its details or navigate to the first data link if the `On Click` option is set to `Open Link`.
+
+<Image
+  title="Event details with links are displayed using card components."
+  src="/img/blog/2023-02-23-calendar-panel-1.2.0/event.png"
+/>
+
+## Time Range
+
+To filter events against a time range, click a specific day in the calendar. Then, hold down the Shift key and drag the selection to the appropriate day. Click **Apply time range** to confirm the selection. The selected time range will be applied to all events in your calendar.
+
+<Image
+  title="Update the time range by selecting days in the calendar."
+  src="/img/blog/2023-02-23-calendar-panel-1.2.0/time-range.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes
+
+Refactoring and style migration may introduce breaking changes. Please test before upgrading the plugin on production Grafana instances.
+
+:::
+
+### Features / Enhancements
+
+- Selected the color for calendar entry queries (#67).
+- Added the filtering of undefined events (#69).
+- Updated the CI and release workflows (#72).
+- Added compatibility with Grafana 9.3.6 (#73).
+- Refactored the plugin options to use field pickers (#74).
+- Refactored the Day and Events drawers (#75).
+- Removed the padding for the panel area (#75).
+- Refactored the day view and updated styles (#76).
+- Migrated styles to version 2 (#79).
+- Applied the system Grafana settings to the week's start day (#80).
+- Added the skipping of undefined events in the Drawer component (#81).
+- Added the display of time (#82).
+- Updated styles and screenshots (#83).
+
+<Feedback />

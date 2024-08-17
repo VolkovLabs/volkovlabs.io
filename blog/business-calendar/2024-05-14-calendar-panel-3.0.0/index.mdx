@@ -1,0 +1,124 @@
+---
+authors: [daria]
+slug: calendar-panel-3.0.0-20240514/
+tags: [Business Calendar, Business Suite]
+image: /img/blog/2024-05-14-calendar-panel-3.0.0/banner.png
+keywords: [Calendar, Panel, Events, Time Range, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-calendar/_feedback.mdx";
+import GettingStarted from "@site/docs/business-calendar/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
+
+# Business Calendar 3.0.0
+
+We are happy to announce the release of the Business Calendar panel 3.0.0. This release includes the following updates.
+
+- Plugin rebranding, the new name is the **Business Calendar panel**.
+- Finished transitioning from the Legacy calendar to the Big Calendar.
+- Expanded Grafana's offered date formats.
+- Many small improvements to make the Business Calendar even more intuitive.
+- Required Grafana 10 and Grafana 11. Breaking change.
+
+<Catalog date="May 2, 2024" />
+
+<Shorts id="FdTKSK6up-Y" title="Business Calendar panel 3.0.0 for Grafana." />
+
+## Business Calendar panel
+
+The Calendar panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Calendar panel.
+
+Please welcome the new name for the same functionality!
+
+<Image
+  title="The Calendar panel now is called the Business Calendar panel."
+  src="/img/blog/2024-05-14-calendar-panel-3.0.0/new-name.png"
+/>
+
+## Downloads
+
+The plugin has been downloaded almost 3 million times. What a milestone! The steadily increasing download number is a fantastic indicator of Community trust. Thank you all!
+
+<Image
+  title="The Business Calendar plugin total downloads from Grafana Catalog."
+  src="/img/blog/2024-05-14-calendar-panel-3.0.0/downloads.png"
+/>
+
+## Big Calendar
+
+We employed the [Big Calendar library](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page) in September of 2023. It is an open source powerful React library allowing many features such as:
+
+- Switch between month, week, and day views.
+- Switch back to the current day (today).
+- Display events from the previous and subsequent time ranges.
+- Professional style.
+- Many others.
+
+The users preferred this library over the Legacy so often that we do not see the need to support the Legacy library anymore.
+Starting from this release there will be only Big Calendar mode and the Legacy option disappears from the user choice.
+
+## Extended date formats
+
+As you know, there is a Language setting in the user profile preference. Along with language this setting also impacts the displayed date formats.
+The currently existing choices were not enough for some of our use cases. We added **English 24** and **ISO 8601** formats.
+
+<Image
+  title="Use the Date and time format option to overwrite the user language setting."
+  src="/img/blog/2024-05-14-calendar-panel-3.0.0/language.png"
+/>
+
+## Grafana 10 and Grafana 11
+
+:::warning Breaking changes
+Grafana 9 is not supported.
+:::
+
+Our plugins always follow the latest Grafana versions and stay compatible with the most recent releases. That means, however, that we have to sunset the support of obsolete releases.
+
+The latest Business Calendar panel 3.0.0 fully supports Grafana 10 and the upcoming 11 releases.
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes in 3.0.0
+
+- Legacy Calendar was replaced by Big Calendar.
+- Requires Grafana 10 and Grafana 11.
+
+:::
+
+### Features / Enhancements in 3.0.0
+
+- Added keeping refresh dashboard on time range change (#167)
+- Added plugin e2e tests and remove cypress (#168, #170)
+- Removed Legacy calendar replaced by Big Calendar (#172)
+- Prepared for Grafana 11 (#175, #176)
+
+### Features / Enhancements in 2.5.0
+
+- Updated style for event details tags (#161)
+- Updated dependencies to Grafana 10.4 (#154)
+
+### Bugfixes in 2.5.0
+
+- Fixed showing location on month and work week views (#160)
+
+### Features / Enhancements in 2.4.0
+
+- Updated Big Calendar to 1.10.3 (#150)
+- Added ability to select date format (#151)
+- Updated ESLint configuration and refactoring (#152)
+- Updated dependencies and Actions (#154)
+- Added hiding end time (#155)
+
+### Bugfixes in 2.4.0
+
+- Fixed keeping calendar dates if no time range change (#156)
+
+<Feedback />
