@@ -1,0 +1,148 @@
+---
+authors: [daria]
+slug: big-alerting-20231121/
+tags: [Business Intelligence, Solution]
+image: /img/blog/2023-11-21-big-alerting/banner.png
+keywords: [Alerting, Business Intelligence]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/blog/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Alerting with Business Intelligence in Grafana
+
+While working closely with the Community and helping to solve production use cases, we have accumulated quite a list of wishes for reimagined alerting functioning.
+
+Most asks were related to simplifying user interaction by possibly having all controls in one UI place. Many users were eager to incorporate forecasting paired with AI for self-hosted Grafana.
+
+This is how the idea of the BI(G) Alerting was born. With the general thought of making alerting accessible for business users.
+
+In the video below, I go over the alerting basics, existing alerting system components and our vision of BI(G) Alerting.
+
+By the way, BI stands for Business Intelligence and G for Grafana. The article below reiterates many points I made in the video and adds more details to some topics.
+
+<Youtube id="vky-7-DfvXE" title="BI(G) Alerting Announcement." />
+
+## Alerting basics
+
+**Alerting** is a system to observe how your data changes and act when a change occurs.
+
+The three main alerting components:
+
+1. **An alert rule**. It is an instruction to evaluate the observable data.
+   Most alert rules have parameters like time frame to check, how often, query to run (SQL and PromQL, etc.), and thresholds.
+
+2. **An alert record**. An alert record is created when observable data goes beyond the threshold.
+
+3. **An alert action**. It is an action triggered by an alert record.
+
+<Image
+  title="Alerting basics."
+  src="/img/blog/2023-11-21-big-alerting/basics.png"
+  width="50%"
+/>
+
+:::note Basics
+
+So, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created. Following the created alert records, alert actions are initiated.
+
+:::
+
+## Native versus BI(G) Alerting
+
+The schema below depicts the Alerting as it is side-by-side with the BI(G) Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
+
+<Image
+  title="Alerting versus BI(G) alerting."
+  src="/img/blog/2023-11-21-big-alerting/alerting-vs-big.png"
+/>
+
+Users create alert rules using the Alerting UI.
+
+The alerting records are created by the alert manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.
+The alert manager works only with backend data sources.
+
+For the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, Slack messages, emails and OnCall.
+
+Webhooks, which are 3rd party APIs, can also be added as triggered by an alert rule record. However, even if the possibility exists the implementation might be foggy for many.
+
+In the BI(G) Alerting, we reimaged all three modules.
+
+## Alerting Management panel
+
+The alerting management panel is set to simplify the alert rule creation. We designed it to be intuitive and business-oriented users friendly. You specify all parameters in a one-screen form.
+
+The new alert rule/edit mode has the following configuration elements to specify:
+
+- **Title** is an alert name.
+- **Schedule** is a frequency of how often the rule should run. With CRON expressions your schedule can be as complex as needed.
+- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones. The alert rule will take queries and thresholds from there automatically.
+- **Time Range** could be either taken from the dashboard and specified custom.
+- For the alert **action**, select from the drop-down list of the existing, pre-configured webhook APIs.
+- Disabled **Annotation** option will prevent sending a record into the annotation table.
+
+We target to have the Alert Management UI panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.
+
+<Image
+  title="Alerting Management Panel."
+  src="/img/blog/2023-11-21-big-alerting/alert-management-ui.png"
+/>
+
+### BI Engine
+
+We reimagined the alert manager and came up with the BI Engine:
+
+- It uses dashboards as configuration which means it retrieves dashboard queries and thresholds and uses them as alert rule parameters. That eliminates the duplicative work when users have to enter the same specifics twice.
+- It is installed in a separate container which makes the system architecture flexible.
+
+In the future, we will include forecasting with AI algorithms.
+
+To connect to the Alerting BI Engine, you need the Business Intelligence data source installed and configured.
+
+<Image
+  title="Business Intelligence Data Source."
+  src="/img/blog/2023-11-21-big-alerting/bi-ds.png"
+/>
+
+### Webhooks UI panel
+
+This panel lists all configured webhooks. In the edit mode, you specify a name, type (HTTP or Test), request URL and request method. For now, only POST is available.
+
+<Image
+  title="Webhook configuration panel."
+  src="/img/blog/2023-11-21-big-alerting/web-hooks-panel.png"
+/>
+
+## Development release
+
+You can download the Development release from our [GitHub repository](https://github.com/volkovlabs/business-intelligence) and follow this hands-on tutorial.
+
+<Youtube
+  id="8UaY916PPXc"
+  title="Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On"
+/>
+
+The docker-compose file consists of the following containers:
+
+- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and an example dashboard.
+- **Timescale** is required to store configuration, events, rules, etc.
+- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
+- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
+- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
+
+When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers.
+
+<Code
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
+  language="yaml"
+/>
+
+## Early adopters
+
+Reach out if you are interested in the product roadmap discussion. We are happy to gather a group of early adopters to swiftly push this product forward.
+
+The first official version is planned in February '24, and there is so much more to come afterwards. Together we can ensure the product includes the most desired features.
+
+<Feedback />

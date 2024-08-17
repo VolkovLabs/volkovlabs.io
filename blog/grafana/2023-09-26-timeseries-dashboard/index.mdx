@@ -1,0 +1,205 @@
+---
+authors: [daria]
+slug: timeseries-dashboard-20230926/
+tags: [Grafana Crash Course]
+image: /img/blog/2023-09-26-timeseries-dashboard/banner.png
+keywords: [Time Series, Prometheus, Visualization, Grafana, Monitoring]
+---
+
+import Feedback from "@site/blog/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Monitoring Linux servers with Prometheus, Node Exporter and Grafana Time Series
+
+I am writing this article to supplement one of my recent YouTube videos. In there, I provided a step-by-step tutorial to create a Grafana dashboard to monitor Linux servers. The data is collected by Node Exporter and stored in the Prometheus database.
+
+Both, the video and this article, are complementing each other since some of the materials are better in a motion picture format and some shine brighter in the written word.
+
+To get a better understanding of the topic, I recommend watching the video first and then getting back to this article. But the decision of what should go first is surely up to you.
+
+<Youtube
+  id="zhWStcxU4Uw"
+  title="Create Grafana dashboard to monitor Linux servers using Prometheus data source."
+/>
+
+## Data flow
+
+My dashboard visualizes server diagnostic data that is stored in the Prometheus database where it gets collected from the Node Exporters. Every node exporter works with one Linux server instance.
+
+<Image
+  title="Node exporters collect data to store in Prometheus and then display in Grafana dashboard."
+  src="/img/blog/2023-09-26-timeseries-dashboard/timeseries-prometheus.png"
+/>
+
+For more information on how such a system can be set up, please, refer to the [Prometheus documentation for Node Exporter](https://prometheus.io/docs/guides/node-exporter/).
+
+## Variable panel
+
+I started my dashboard by configuring a filtering functionality. To be more user-friendly, I wanted to position my filter on the same horizontal level as my Time Series.
+
+There is only one Grafana plugin as of this moment that allows achieving such a requirement. It is the [Business Variable panel](/plugins/business-variable/).
+
+<Image
+  title="Variable panel to select one or many servers for display."
+  src="/img/blog/2023-09-26-timeseries-dashboard/dash.png"
+/>
+
+## Data Source
+
+All panels have the same data source to read data from. The data source is configured as a dashboard variable.
+
+<Image
+  title="The dashboard variables set up."
+  src="/img/blog/2023-09-26-timeseries-dashboard/vars.png"
+/>
+
+<Image
+  title="Selected data source for all four Time Series panels."
+  src="/img/blog/2023-09-26-timeseries-dashboard/ds.png"
+/>
+
+<Image
+  title="Variable panel configuration."
+  src="/img/blog/2023-09-26-timeseries-dashboard/var-p.png"
+/>
+
+## Dynamic Title
+
+I made the Time Series panels' titles dynamic by including the dashboard variable `{instance}` in the value. That makes every title change according to the selected server on the variable panel.
+
+<Image
+  title="Using dashboard variable in the panel title."
+  src="/img/blog/2023-09-26-timeseries-dashboard/title.png"
+/>
+
+## Repeat Options
+
+The dashboard variable `{$instance}` that I created to have the filtering functionality represents an array of values. Each value is a server name.
+According to my design, one server per chart should be displayed. What this means is when a user selects two servers in the variable panel, the same two charts should be created, one per server.
+
+To archive that, in the Time Series edit mode, in the Panel Options category, you can specify which variable to use for the Repeat feature.
+
+<Image
+  title="Repeat options in Time Series."
+  src="/img/blog/2023-09-26-timeseries-dashboard/repeat.png"
+/>
+
+## Visualization Options
+
+By visualization option I mean the settings that a user configures on the right-hand side of any Grafana panel. The configuration in my case is almost identical for all four panels.
+
+I already mentioned everything I changed in the <b>Panel options</b> category, namely, dynamic title and Repeat options. For the rest, I touched upon <b>Graph styles</b> and <b>Standard option</b> categories to set the fill opacity, gradient mode, and units.
+
+<Image
+  title="Graph styles and Standard options configuration."
+  src="/img/blog/2023-09-26-timeseries-dashboard/style.png"
+/>
+
+## Prometheus Queries
+
+This dashboard consists of four time series for each selected server.
+
+- CPU Usage
+- Load Average
+- Memory Usage
+- Disk Space
+
+### CPU Usage
+
+This panel contains one query to calculate the usage per CPU.
+
+```JavaScript
+(
+  (1 - rate(node_cpu_seconds_total{job="node", mode="idle", instance="$instance"}[$__interval]))
+/ ignoring(cpu) group_left
+  count without (cpu)( node_cpu_seconds_total{job="node", mode="idle", instance="$instance"})
+)
+```
+
+### Load Average
+
+Query to compute the total number of active CPUs on the server.
+
+```JavaScript
+count(node_cpu_seconds_total{job="node", instance="$instance", mode="idle"})
+```
+
+Query to compute the average 1-minute load.
+
+```JavaScript
+node_load1{job="node", instance="$instance"}
+```
+
+Query to compute the average 5-minute load.
+
+```JavaScript
+node_load5{job="node", instance="$instance"}
+```
+
+Query to compute the average 15-minute load.
+
+```JavaScript
+node_load15{job="node", instance="$instance"}
+```
+
+### Memory Usage
+
+Query to retrieve used memory
+
+```JavaScript
+(
+  node_memory_MemTotal_bytes{job="node", instance="$instance"}
+-
+  node_memory_MemFree_bytes{job="node", instance="$instance"}
+-
+  node_memory_Buffers_bytes{job="node", instance="$instance"}
+-
+  node_memory_Cached_bytes{job="node", instance="$instance"}
+)
+```
+
+Query to retrieve buffer memory
+
+```JavaScript
+node_memory_Buffers_bytes{job="node", instance="$instance"}
+```
+
+Query to retrieve cached memory
+
+```JavaScript
+node_memory_Cached_bytes{job="node", instance="$instance"}
+```
+
+Query to retrieve free memory
+
+```JavaScript
+node_memory_MemFree_bytes{job="node", instance="$instance"}
+```
+
+### Disk Space
+
+Query to retrieve used memory
+
+```JavaScript
+sum(
+  max by (device) (
+    node_filesystem_size_bytes{job="node", instance="$instance", fstype!=""}
+  -
+    node_filesystem_avail_bytes{job="node", instance="$instance", fstype!=""}
+  )
+)
+```
+
+Query to retrieve available memory
+
+```JavaScript
+sum(
+  max by (device) (
+    node_filesystem_avail_bytes{job="node", instance="$instance", fstype!=""}
+  )
+)
+
+```
+
+<Feedback />
