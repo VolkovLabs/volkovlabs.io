@@ -1,0 +1,286 @@
+---
+authors: [daria]
+slug: form-panel-4.0.0-20240702/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2024-07-02-form-panel-4.0.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Forms 4.1.0
+
+We are happy to announce the release of the Business Forms Panel 4.1.0. This release includes the following updates:
+
+- Plugin rebranding, the new name is the **Business Forms Panel**.
+- Non `context` code parameters are retired. Please update the parameter reference the use the `context`. **Breaking change**.
+- Work with the payload simplified.
+- Confirmation window: new parameter (**Display Values**).
+- Form Elements: collapsable sections.
+- Form Elements: custom colors.
+- **Date and Time** Form Element type: new parameter (**Time Zone**).
+- New Form Element type: **Checkbox list with custom options**.
+- Required Grafana 10 and Grafana 11. **Breaking change**.
+
+<Catalog date="July 19, 2024" />
+
+## Business Forms Panel
+
+The Data Manipulation panel joins the [Business Suite](/plugins/) for Grafana and with that gets an elevated name. Now, the same amazing open source plugin is called the Business Forms panel.
+
+Please welcome the new name for the same functionality!
+
+<Image
+  title="The Data Manipulation panel now is called the Business Forms panel."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/new-name.png"
+/>
+
+## Downloads
+
+The Business Forms plugin has been downloaded more than 660,000 times! We are curioulsy observing what the latest release is going to do with that number.
+
+<Image
+  title="The Business Forms plugin downloads exceeds 660,000."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/downloads.png"
+/>
+
+## `Context` migration guide
+
+Starting from this release, ensure to reference the Grafana parameters using the `context`.
+
+| Previously          | Starting from version 4.0.0       |
+| ------------------- | --------------------------------- |
+| data                | context.panel.data                |
+| elements            | context.panel.elements            |
+| initial             | context.panel.initial             |
+| initialRequest      | context.panel.initialRequest      |
+| locationService     | context.grafana.locationService   |
+| notifyError         | context.grafana.notifyError       |
+| notifySuccess       | context.grafana.notifySuccess     |
+| notifyWarning       | context.grafana.notifyWarning     |
+| onChange            | context.panel.onChange            |
+| onOptionsChange     | context.panel.onOptionsChange     |
+| options             | context.panel.options             |
+| replaceVariables    | context.grafana.replaceVariables  |
+| response            | context.panel.response            |
+| setInitial          | context.panel.setInitial          |
+| templateService     | context.grafana.templateService   |
+| toDataQueryResponse | context.utils.toDataQueryResponse |
+
+## Work with the payload simplified
+
+:::warning
+Breaking change. The old way does not work anymore.
+:::
+
+This feature is related to the:
+
+- **Initial Request** -> **Initial Action** -> **Data Source**,
+- **Update Request** -> **Update Action** -> **Data Source**.
+
+<Image
+  title="New payload area relates to the Data Source (Initial and Update requests)."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/init-update.png"
+/>
+
+We simplified work with the payload creation. Starting from this release, the Business Forms panel has a designated area to enter the payload request.
+
+<Image
+  title="Payload for the Initial Request example."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/ini-payload.png"
+/>
+
+<Image
+  title="Payload for the Update Request example."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/update-payload.png"
+/>
+
+## Confirmation Window: new parameter
+
+The Confirmation window is shown after a user clicks on the **Submit** button. Previously, only data elements with modified values were shown.
+Starting from version 4.0.0, we added a new parameter **Display Values**, where you can choose between two options:
+
+- **All values** to always show all data elements regardless if there was any change in values.
+- **Updated Only** to show only the data elements with changed values.
+
+<Image
+  title="Display Values parameter."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/display-values.png"
+/>
+
+## Collapsable Sections
+
+Starting from this release, your sections can be collapsible. This functionality is available only for the sections in the **Vertical** orientation. You can make any section **Expanded** for the form opening/refresh.
+
+<Image
+  title="Collapsible sections."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/collapse.gif"
+/>
+
+In addition, you can control the **Expanded** and **Collapsed** states in the **Custom code** using the following commands:
+
+```js
+context.panel.expandSection(id);
+context.panel.collapseSection(id);
+```
+
+:::note
+The full list of the Business Form panel parameters can be found in the [Custom Code](/plugins/business-forms/code/#parameters) section of the panel's documentation.
+:::
+
+## Custom color/background color for elements
+
+Now you can play with **Form Elements** colors. Configurable are:
+
+- Background color,
+- Label background,
+- Label color.
+
+<Image
+  title="Form Elements color options."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/colors.png"
+/>
+
+## Date and Time Form Element type: new parameter
+
+Starting from this release, you can choose a time zone for the updated value.
+
+- **UTC**. The date-time value is saved in the UTC zone,
+- **Local**. The date-time value is saved following the browser's time zone.
+
+<Image
+  title="New Time Zones option for Date and time elements."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/time-zone.png"
+  width="30%"
+/>
+
+## New Form Element type: Checkbox list with custom options
+
+The **Checkbox list with custom options** type allows the creation of multi-selection checkmark elements.
+
+<Image
+  title="Checkbox list with custom options."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/checkbox.png"
+/>
+
+Specific for this element are the following options:
+
+- User options.
+
+To add an option click the 'Add option' button and then specify an option type (number or string), value, and label.
+
+<Image
+  title="Checkbox list with custom options."
+  src="/img/blog/2024-07-02-form-panel-4.0.0/checkbox-options.png"
+/>
+
+## Grafana 10 and Grafana 11
+
+:::warning Breaking changes
+Grafana 9 is not supported.
+:::
+
+Our plugins always follow the latest Grafana versions and stay compatible with the most recent releases. That means, however, that we have to sunset the support of obsolete releases.
+
+The latest Business Forms Panel 4.0.0 fully supports Grafana 10 and 11 releases.
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes in 4.0.0
+
+- Requires Grafana 10 and Grafana 11
+- Data Source requests were updated to use Query Editor.
+- Removed non-context code parameters. Please update parameters to use `context`.
+
+:::
+
+### Code parameters migration guide
+
+- data -> context.panel.data
+- elements -> context.panel.elements
+- initial -> context.panel.initial
+- initialRequest -> context.panel.initialRequest
+- locationService -> context.grafana.locationService
+- notifyError -> context.grafana.notifyError
+- notifySuccess -> context.grafana.notifySuccess
+- notifyWarning -> context.grafana.notifyWarning
+- onChange -> context.panel.onChange
+- onOptionsChange -> context.panel.onOptionsChange
+- options -> context.panel.options
+- replaceVariables -> context.grafana.replaceVariables
+- response -> context.panel.response
+- setInitial -> context.panel.setInitial
+- templateService -> context.grafana.templateService
+- toDataQueryResponse -> context.utils.toDataQueryResponse
+
+### Features / Enhancements in 4.1.0
+
+- Updated context parameters migration (#433)
+- Updated provisioning files (#433)
+- Updated Checkbox list with custom options (#435)
+- Updated code defaults to use context properties (#438)
+- Updated E2E workflow using Docker (#441)
+
+### Features / Enhancements in 4.0.0
+
+- Updated name to Business Forms Panel (#361)
+- Added support frontend data sources (#361)
+- Updated elected type for a new option (#402)
+- Prepared for Grafana 11 (#399)
+- Updated Reset button handler (#422)
+- Updated Confirmation Window (#420)
+- Updated Error handling in code editors showIf, disableIf, getOptions (#410)
+- Updated description for Get Options Code (#404)
+- Added custom color/background color for elements (#386)
+- Added Collapsable Sections (#409)
+- Updated to Grafana 11.1 and dependencies (#426)
+- Updated Date Time query field (#429)
+
+### Features / Enhancements in 3.8.0
+
+- Added Checkbox List element (#382)
+- Updated syntax support in Code Editor (#383)
+- Added plugin e2e tests and remove cypress (#390)
+- Added server-based form elements example (#392)
+- Added input type time (#385)
+- Updated hiding/show multi-select element (#389)
+- Updated allowed files for file type (#388)
+- Added Form validation provisioning dashboard (#411)
+
+### Features / Enhancements in 3.7.0
+
+- Added update enabled option and variables examples, fix sync option (#356)
+- Added files upload examples and fix form data header (#357)
+- Added code parameters with builder and add initial request to element value changed code (#358)
+- Allowed to disable columns in confirmation modal (#360)
+- Updated dependencies and Actions (#368)
+- Added skipping elements hidden using Show If from update payload (#369)
+- Add multiple files option (#375)
+
+### Features / Enhancements in 3.6.0
+
+- Added backend service to custom code (#331)
+- Added support for file base64 encoding in payload (#331)
+- Added Context parameter to Payload (#331)
+
+### Features / Enhancements in 3.5.0
+
+- Added disable if code (#321)
+- Updated reset request visibility if reset button is hidden (#322)
+- Added code options source for select element (#323)
+- Added value changed code (#324)
+- Updated to Node 20 (#326)
+- Added suggestions for code editors (#327)
+- Added reset button confirmation (#328)
+
+<Feedback />
