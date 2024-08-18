@@ -1,5 +1,5 @@
 import React from "react";
-import { useBlogPost } from "@docusaurus/theme-common/internal";
+import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
 import BlogPostCard from "../BlogPostCard";
 import styles from "./styles.module.css";
 import { BlogArchive } from "../../constants";
