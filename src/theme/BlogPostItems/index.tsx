@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "@docusaurus/Head";
-import { BlogPostProvider } from "@docusaurus/theme-common/internal";
+import { BlogPostProvider } from "@docusaurus/plugin-content-blog/client";
 import BlogPostCard from "../BlogPostCard";
 import styles from "./styles.module.css";
 
