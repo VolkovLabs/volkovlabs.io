@@ -137,12 +137,12 @@ export const NAVBAR = {
           to: "/blog/tags/grafana-crash-course",
         },
         {
-          label: "Solutions",
-          to: "/blog/tags/solution",
+          label: "Highlights",
+          to: "/blog/tags/highlights",
         },
         {
-          label: "Volkov Labs",
-          to: "/blog/tags/volkov-labs",
+          label: "Solutions",
+          to: "/blog/tags/solution",
         },
       ],
     },
