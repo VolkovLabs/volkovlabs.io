@@ -1,0 +1,111 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-2.2.0-20230110/
+tags: [Business Text, Business Suite]
+image: /img/blog/2023-01-10-dynamictext-panel-2.2.0/banner.png
+keywords: [Dynamic Text, Panel, Data, Grafana]
+---
+
+import Feedback from "@site/docs/business-text/_feedback.mdx";
+import GettingStarted from "@site/docs/business-text/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-text/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Refactoring, new helpers, and internationalization in Business Text 2.2.0
+
+We're excited to announce the release of the Business Text panel 2.2.0. This feature release includes the following:
+
+- Added the JavaScript code editor supporting Handlebars helpers and event handlers.
+- Completed the refactoring of internal components.
+- Migrated styles to Grafana Theme v2.
+- Added support for the `{{json @root}}` and `{{split String ','}}` helpers.
+- Updated CSS styles to fit images to the screen.
+- Added support for internationalization using custom helpers.
+
+## JavaScript code editor
+
+We analyze requests from our community with a passion and appreciate the feedback. This time, we added support for Handlebars helpers and event handlers that you can add in the JavaScript code editor. For examples, please see our [documentation](/plugins/business-text/code).
+
+<Youtube id="lJqk5Gobec4" title="JavaScript code in Business Text panel." />
+
+### Define custom Handlebars helpers
+
+You can add a custom Handlebars helper to replace the field's value according to some pattern.
+
+```handlebars
+{{replace Test "Pattern" "Replaced"}}
+```
+
+JavaScript Code:
+
+```js
+handlebars.registerHelper("replace", (context, pattern, replacement) =>
+  context.replace(pattern, replacement)
+);
+```
+
+<Image
+  title="How to create a helper to replace text in the returned data."
+  src="/img/blog/2023-01-10-dynamictext-panel-2.2.0/replace.png"
+/>
+
+### Add Internationalization
+
+Grafana 9 offers internationalization, which plugins do not yet have full access to. Meanwhile, you can use the `getLocale()` method to get a value for the chosen locale and display terms from a defined dictionary.
+
+Content:
+
+```handlebars
+{{translate "Hello"}}
+```
+
+Default Content:
+
+```handlebars
+{{translate "Default"}}
+```
+
+JavaScript code:
+
+```js
+const messages = {
+  Hello: {
+    en: "Hello",
+    fr: "Salut",
+    es: "Hola",
+  },
+  Default: {
+    en: "The query didn't return any results.",
+    fr: "La requête n'a renvoyé aucun résultat.",
+    es: "La consulta no arrojó ningún resultado.",
+  },
+};
+
+const locale = getLocale();
+
+handlebars.registerHelper(
+  "translate",
+  (message) => messages[message][locale] ?? messages[message]["en"]
+);
+```
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Added the `JSON` helper to show objects and arrays (#121).
+- Added compatibility with Grafana 9.3.1 (#122).
+- Updated links in the product documentation (#130, #131).
+- Added the `Split` helper (#132).
+- Refactored the text component and styles (#133).
+- Added JavaScript code to add Handlebars helpers and event handlers (#134).
+- Updated the default content to `{{json @root}}` and the code editor's panel height to `200px` (#134).
+- Updated CSS to fit images into the screen area (#135).
+- Added the `getLocale()` parameter into JavaScript сode (#137).
+
+<Feedback />

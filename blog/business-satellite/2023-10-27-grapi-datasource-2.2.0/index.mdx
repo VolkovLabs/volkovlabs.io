@@ -1,0 +1,101 @@
+---
+authors: [daria]
+slug: grapi-datasource-2.2.0-20231027/
+tags: [Business Satellite, Business Suite]
+image: /img/blog/2023-10-27-grapi-datasource-2.2.0/banner.png
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-satellite/_feedback.mdx";
+import GettingStarted from "@site/docs/business-satellite/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-satellite/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Local mode, values, and organization users in Business Satellite 2.2.0
+
+We are happy to announce the release of the Business Satellite Data Source 2.2.0. This release includes the following updates:
+
+- Added the <b>Local</b> mode to access a local instance.
+- Added the <b>Values</b> field for Annotations.
+- Added <b>Organization Users</b> into the Request options.
+- Refactored API and increased test coverage to 99%.
+
+<Catalog date="September 21, 2023" />
+
+<Shorts
+  id="K6U1ZpG6a5U"
+  title="Business Satellite data source 2.2.0 for Grafana."
+/>
+
+## 100,000 downloads
+
+The Business Satellite Data Source was downloaded more than 100,000 times! Thank you for your trust and support.
+
+<Image
+  title="Total downloads from Grafana Catalog for the Business Satellite Data Source."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/downloads.png"
+/>
+
+## Local mode
+
+With the <b>Local</b> request mode, the Business Satellite data source connects to the local configuration storage using the same Grafana privileges a user has been assigned during login and, thus, simplifies the access policy.
+
+The <b>Local</b> request mode has no parameters.
+
+<Image
+  title="The new Local request mode has no parameters."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/local.png"
+/>
+
+With the <b>Remote</b> request mode, the privileges are taken from the token and might differ from those assigned during login into Grafana.
+
+## Values in Annotations
+
+Starting from this release, the HTTP API data source digests the <b>Values</b> field from the Annotations's text.
+
+<Image
+  title="Values field is digested from the Annotations."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/value.png"
+/>
+
+As shown below, you can always use transformations to have one value per column format.
+
+<Image
+  title="Use the transformation 'Extract fields' to convert Values into columns."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/trans.png"
+/>
+
+## Organization Users
+
+**Request** in the query editor is a drop-down parameter that appears when you connect your panel
+to the HTTP API data source. In addition to all existing options, we added
+**Organization Users**. The picture below illustrates the new possibility.
+
+<Image
+  title="The new Organization Users option in the Request parameter."
+  src="/img/blog/2023-10-27-grapi-datasource-2.2.0/users.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements in 2.2.0
+
+- Moved API methods under the feature flag to support various Grafana versions (#53)
+- Added an option to disable Alert Rules in Annotations (#55)
+- Added a values field from annotation text (#30)
+
+### Features / Enhancements in 2.1.0
+
+- Refactored API and increased test coverage (#50)
+- Updated ESLint configuration (#50)
+- Added Local mode to access local instance (#51)
+- Added Organization Users (#52)
+
+<Feedback />

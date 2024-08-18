@@ -1,0 +1,52 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-2.1.0-20221127/
+tags: [Business Text, Business Suite]
+image: /img/blog/2022-11-27-dynamictext-panel-2.1.0/banner.png
+keywords: [Dynamic Text, Panel, Data, Grafana]
+---
+
+import Feedback from "@site/docs/business-text/_feedback.mdx";
+import GettingStarted from "@site/docs/business-text/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-text/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Community features, monaco code editor, and refactoring in Business Text 2.1.0
+
+We're excited to announce the release of the Business Text panel 2.1.0. This feature release includes the following updates:
+
+- Includes the community-submitted PRs and features.
+- Integrated Monaco Code Editor.
+- Refactored the plugin's code and increased test coverage to continue enhancing the plugin's functionality.
+
+<Image
+  title="Business Text panel visualizes cards with people information."
+  src="/img/blog/2022-11-27-dynamictext-panel-2.1.0/panel.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes
+
+Major refactoring may introduce breaking changes. Please test before upgrading in Production.
+
+:::
+
+### Features / Enhancements
+
+- Fixed the broken link in the README file (#111).
+- Updated CI to upload signed artifacts (#113).
+- Added a feature parsing the time formatting syntax (#86).
+- Fixed the data rendering when using transformations (#98).
+- Updated the panel options to use Monaco Code Editor (#114).
+- Increased test coverage for the plugin's functionality (#114).
+- Refactored and updated images (#116).
+- Refactored alert messages and text options (#117).
+- Added support for the parameter regulating HTML sanitization in Grafana (#118).
+
+<Feedback />

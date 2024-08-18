@@ -1,0 +1,117 @@
+---
+authors: [mikhail]
+slug: form-panel-2.8.0-20230316/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2023-03-16-form-panel-2.8.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Buttons only, lookup options, and DELETE request in Business Forms 2.8.0
+
+We are happy to announce the release of the Business Forms Panel 2.8.0. This release includes the following updates:
+
+- Added the string and number type selection for select boxes and radio buttons.
+- Added lookup options for disabled form elements.
+- Added support for `DELETE` requests.
+- Added the **Buttons only** layout to perform `GET`, `POST`, and `DELETE` requests.
+- Added the panel padding configuration allowing the usage of the entire panel area.
+- Refactored documentation and examples of using API Servers with MySQL, PostgreSQL, and Deno.
+- Updated to the latest Grafana 9.4.3 toolkit and workflows.
+
+<Catalog date="March 23, 2023" />
+
+<Image
+  title="Business Forms Panel enables the entry and editing of different kinds of data."
+  src="/img/blog/2023-03-16-form-panel-2.8.0/panel.png"
+/>
+
+## Layout
+
+The new **Buttons Only** layout does not require any elements and allows performing update requests.
+
+<Image
+  title="Layout can be Basic, Buttons only, and Sections with no or extra padding if required."
+  src="/img/blog/2023-03-16-form-panel-2.8.0/layout.png"
+/>
+
+The panel padding can be adjusted within the range of 0 to 20 pixels depending on your use case.
+
+## Select and Radio options
+
+For the select boxes and radio buttons, you can configure the format type (string or number) to correctly visualize returned values and update them using API.
+
+<Image
+  title="Select a string or a number type for each option."
+  src="/img/blog/2023-03-16-form-panel-2.8.0/options.png"
+/>
+
+## Lookup for Read-only (Disabled) elements
+
+We added a lookup for read-only form elements similar to radio buttons and select boxes to implement control forms and verify initial values before updating.
+
+<Image
+  title="Add options to lookup labels for returned values."
+  src="/img/blog/2023-03-16-form-panel-2.8.0/readonly.png"
+/>
+
+### Control Form
+
+A control form is a special form with multiple sections consisting of read-only and input fields.
+
+<Image
+  title="Control form to verify and update Id and Type."
+  src="/img/blog/2023-03-16-form-panel-2.8.0/control.png"
+/>
+
+## DELETE requests
+
+The update request supports the `DELETE`, `PATCH`, `POST`, and `PUT` methods.
+
+<Image
+  title="DELETE update requests allows you to execute DELETE API calls."
+  src="/img/blog/2023-03-16-form-panel-2.8.0/update.png"
+/>
+
+## Magic (JavaScript) Trio
+
+Data Manipulation Panel is one of the three plugins that complete Grafana. With Dynamic Text, Data Manipulation, and Business Charts Panel you can create fully functional web applications meeting your needs and expectations.
+
+<Youtube
+  id="wPr4gZYzUVA"
+  title="Dynamic Text, Data Manipulation, and Business Charts Panel plugins."
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Added the string and number type for select boxes and radio buttons (#120).
+- Added the lookup options for disabled elements (#121).
+- Added support for Server API with MySQL for the feedback dashboard (#125).
+- Added compatibility with Grafana 9.3.1 (#129).
+- Added options for the `DELETE` request (#130).
+- Added the Buttons-only layout to perform `GET`/`POST`/`DELETE` requests (#131).
+- Updated the README file and moved product documentation to docs.volkovlabs.io (#132).
+- Updated the README file and product documentation (#134).
+- Refactored API servers (#128).
+- Updated CI and release workflows (#145).
+- Added compatibility with Grafana 9.4.3 (#146).
+- Added the `NoPadding` parameter to remove extra padding around the panel and make it configurable (#146).
+- Updated the README file and product documentation (#147).
+
+### Bug fixes
+
+- Fixed the password and Boolean elements confirmation (#120).
+
+<Feedback />

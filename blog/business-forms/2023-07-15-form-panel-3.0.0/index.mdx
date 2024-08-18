@@ -1,0 +1,126 @@
+---
+authors: [mikhail]
+slug: form-panel-3.0.0-20230715/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2023-07-15-form-panel-3.0.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Local state elements, drag-and-drop, and Grafana 10 in Business Forms 3.0.0
+
+We are happy to announce the release of the Business Forms Panel 3.0.0. This release includes the following updates:
+
+- Added a hidden option for the string inputs.
+- Added the `notifyWarning` function for warnings.
+- Added drag-and-drop support for the form elements editor.
+- Added portrait layout orientation.
+- Updated form elements to delay save changes with auto-save.
+- Updated form elements to use a local state instead of saving values in the dashboard.
+- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.
+- Requires Grafana 9 or Grafana 10.
+- Migrated to Plugin Tools 1.5.2 with the update of Node.js 18 and `npm`.
+- Increased test coverage of the plugin's functionality up to 97%.
+
+<Catalog date="July 18, 2023" />
+
+<Shorts id="zNrFOtW6j-o" title="Business Forms panel 3.0.0 for Grafana." />
+
+Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard.
+
+<Image
+  title="Data Manipulation Panel allows creating dynamic forms in Grafana."
+  src="/img/blog/2023-07-15-form-panel-3.0.0/panel.png"
+/>
+
+:::warning Breaking changes
+
+Updated values of form elements are kept in the local state and are not saved in the dashboard by default.
+
+The refactoring of local states and form elements may introduce breaking changes. Please test this version before updating the plugin on production Grafana instances.
+:::
+
+## 85,000 downloads
+
+This year, we are seeing growing community interest in data manipulation and are trying to deliver the backlog items and requested features as fast as possible.
+
+The plugin was downloaded more than 85,000 times and we aim at the 100,000 downloads milestone.
+
+<Image
+  title="Data Manipulation Panel was downloaded 85,000 times from the Grafana Plugins catalog."
+  src="/img/blog/2023-07-15-form-panel-3.0.0/downloads.png"
+  width="80%"
+/>
+
+## Elements
+
+Form elements in the panel's options were placed into new collapsible components and received support for drag-and-drop support and delayed auto-save.
+
+To improve performance, we added the delayed saving of form elements. Form elements are automatically saved after a one-second timeout or when clicking the Save button to prevent numerous updates when creating new forms.
+
+<Image
+  title="Panel options are saved and rendered on the form after a 1-second timeout."
+  src="/img/blog/2023-07-15-form-panel-3.0.0/elements.png"
+  width="80%"
+/>
+
+## Sections
+
+Form elements can be separated into sections. In addition to the landscape orientation, we added the portrait orientation, which can be selected in the plugin options.
+
+<Image
+  title="Sections with form elements can be positioned vertically or horizontally."
+  src="/img/blog/2023-07-15-form-panel-3.0.0/sections.png"
+/>
+
+## Hidden strings
+
+We added an option to hide the string input, which can store additional information that is not visible to end-users.
+
+<Image
+  title="Hidden string input can store additional information."
+  src="/img/blog/2023-07-15-form-panel-3.0.0/hidden.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes
+
+- Requires Grafana 9 or Grafana 10.
+- Form elements are kept in the local state and are not saved in the dashboard by default.
+- The refactoring of local states and form elements may introduce breaking changes.
+
+Please test this version before updating the plugin on production Grafana instances.
+
+:::
+
+### Features / Enhancements
+
+- Updated the product documentation for API Servers (#149).
+- Added compatibility with Grafana 10.0.0 (#165, #172, #184, #200).
+- Added the Hidden option into the string element (#171).
+- Integrated E2E Cypress testing (#180).
+- Increased the test coverage for the plugin's functionality and updated the test library (#181, #183, #185).
+- Updated form elements to delay the saving of changes with auto-save (#186).
+- Migrated to Plugin Tools 1.5.2 (#187, #192).
+- Updated to Node.js 18 (#188).
+- Updated constants and E2E tests (#190).
+- Updated the form elements to use the local state (#191).
+- Added the `notifyWarning()` function (#201).
+- Added the drag and drop for elements editor (#202).
+- Deprecated support for Grafana 8.5 (#203).
+- Added the execution of the initial request on initial updates (#205).
+- Added the landscape orientation for the layout (#206).
+
+<Feedback />

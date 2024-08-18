@@ -1,0 +1,72 @@
+---
+authors: [mikhail]
+slug: image-panel-4.0.0-20230709/
+tags: [Business Media, Business Suite]
+image: /img/blog/2023-07-09-image-panel-4.0.0/banner.png
+keywords: [Base64, Panel, Zoom, Label, Images]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-media/_feedback.mdx";
+import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-media/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Grafana 10, zoom in and out, and captions in Business Media 4.0.0
+
+We are excited to announce the release of the Business Media Panel 4.0.0. This major release includes the following updates:
+
+- Requires Grafana 9 and Grafana 10.
+- Added the zoom-in and out functions in addition to the full-screen mode, introduced in 3.6.0.
+- Added the capability to specify captions for images and media files.
+- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.
+
+<Catalog date="June 28, 2023" />
+
+<Shorts id="cNxWxd6mqf8" title="Business Media panel 4.0.0 for Grafana." />
+
+## Image zooming in and out
+
+The plugin supports image zooming in and out, which simplifies the display of images within the plugin's panel and allows you to reset the scale of high-resolution images to fit the available display area.
+
+When enabling the image zooming on the panel toolbar, you can choose between the Full Screen or Pan and Pinch modes.
+
+<Image
+  title="Tokyo image analyzed with the YOLO model and zoomed in for a detailed view."
+  src="/img/blog/2023-07-09-image-panel-4.0.0/zoom.png"
+/>
+
+## Description
+
+We added the capability to show captions for images and media files. Captions are displayed below the area rendering images or media files.
+
+Images are scaled automatically when using the Height option in the plugin settings. When using the original height, you need to manually adjust the dimensions of the display area.
+
+<Image
+  title="Captions displayed under the image."
+  src="/img/blog/2023-07-09-image-panel-4.0.0/description.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes
+
+- Requires Grafana 9 and Grafana 10.
+
+:::
+
+### Features / Enhancements
+
+- Added the zoom in/out actions on the image toolbar (#78).
+- Moved the zoom in/out buttons to the image toolbar (#79).
+- Added compatibility with Grafana 10.0.0 (#80).
+- Added captions for images and media files (#82).
+- Deprecated support for Grafana 8.5 (#83).
+
+<Feedback />

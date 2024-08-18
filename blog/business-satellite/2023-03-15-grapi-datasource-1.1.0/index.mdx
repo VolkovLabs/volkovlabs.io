@@ -1,0 +1,56 @@
+---
+authors: [mikhail]
+slug: grapi-datasource-1.1.0-20230315/
+tags: [Business Satellite, Business Suite]
+image: /img/blog/2023-03-15-grapi-datasource-1.1.0/banner.png
+keywords: [Grafana, HTTP API, Data Source, Annotations]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-satellite/_feedback.mdx";
+import GettingStarted from "@site/docs/business-satellite/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-satellite/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Community release, updated configuration, and Grafana compatibility updates in Business Satellite 1.1.0
+
+We are happy to announce the release of the Business Satellite Data Source 1.1.0. This release includes the following updates:
+
+- Signed as a community plugin and available in Grafana Cloud and On-Premises.
+- Updated Plugin configuration, types and README.
+- Updated to the latest Grafana 9.4.3 toolkit.
+
+<Catalog date="March 15, 2023" />
+
+## We just started
+
+The first release can retrieve
+
+- Health information.
+- List of Data Sources.
+- Annotations and Alarms with filter capabilities.
+
+<Image
+  title="Dashboard displays Data sources, annotations and health information of the Grafana instance."
+  src="/img/blog/2023-03-15-grapi-datasource-1.1.0/dashboard.png"
+/>
+
+## Roadmap
+
+We are planning to add most of the HTTP API endpoints for Dashboards, Users management, and Configuration. You are welcome to open feature requests in the repository.
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Update to Grafana 9.4.3 (#13)
+- Update Bearer token plugin configuration (#13)
+- Signed as community plugin (#14)
+- Update Grafana types and description (#15)
+
+<Feedback />

@@ -1,0 +1,82 @@
+---
+authors: [daria]
+slug: variable-panel-1.7.0-20230810/
+tags: [Business Variable, Business Suite]
+image: /img/blog/2023-08-10-variable-panel-1.7.0/banner.png
+keywords: [Variable, Panel, Status]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-variable/_feedback.mdx";
+import GettingStarted from "@site/docs/business-variable/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-variable/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Button display mode, group selection, and key-value variables in Business Variable 1.7.0
+
+We are happy to announce the release of the Variable Panel 1.7.0. This release includes the following updates:
+
+- Added the Button display mode.
+- Added group selection for the Tree View layout (beta).
+- Added support of the Grafana key-value variable format for the <b>Table</b> display mode.
+
+<Catalog date="August 11, 2023" />
+
+## Button display mode
+
+In the Button display mode, you get horizontally positioned variable values instead of them being placed from top to bottom. Optionally, you can set up color-coding rules in the Thresholds category on the right.
+
+<Image
+  title="The Button mode converts vertical listing into horizontal elements. Color coding follows the threshold rules."
+  src="/img/blog/2023-08-10-variable-panel-1.7.0/button-mode.png"
+/>
+
+## Group selection
+
+:::info
+This parameter is still under development and now is available in the Beta version. Try it out with care.
+:::
+
+In the Layout category, for the Tree View, we added a new parameter, 'Allow group selection'. When it is enabled, choosing a root of the group will automatically select all elements belonging to this group.
+
+<Image
+  title="With a new parameter, 'Allow group selection', the selection of a group automatically selects all elements in this group."
+  src="/img/blog/2023-08-10-variable-panel-1.7.0/group-selection.png"
+/>
+
+## Key-values format in Variables
+
+A Grafana variable can be composed of a key and value to make it possible to join data sets by IDs(key) while displaying user-friendly names(value).
+
+Starting from this release, the Variable panel in the <b>Table</b> view supports this feature.
+
+In the illustration below, screen 1, the `city` variable is created with three key-value pairs.
+
+```text
+Chicago:1, New York:2, Tampa:3
+```
+
+Screen 2 is a dashboard view where an end-user sees only city names. After the selection is made (here, New York:2), the variable carries a value equal to 2.
+
+From there the `city` variable's value can be used in the queries for other panels, screen 3.
+
+<Image
+  title="Example of the key-value variable format in the Variable panel."
+  src="/img/blog/2023-08-10-variable-panel-1.7.0/key-value.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add variables with text and value in Table/Tree View (#57)
+- Add Button View (#59)
+- Add group selection (#58)
+- Update dependencies to Grafana 10.0.3 (#60)
+
+<Feedback />

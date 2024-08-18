@@ -1,0 +1,113 @@
+---
+authors: [mikhail]
+slug: dynamictext-panel-4.0.0-20230709/
+tags: [Business Text, Business Suite]
+image: /img/blog/2023-07-09-dynamictext-panel-4.0.0/banner.png
+keywords: [Dynamic Text, Panel, JavaScript, Events, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-text/_feedback.mdx";
+import GettingStarted from "@site/docs/business-text/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-text/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Grafana 10, EventBus, and dashboard variables in Business Text 4.0.0
+
+We're excited to announce the release of the Business Text panel 4.0.0. This major release includes the following updates:
+
+- Requires Grafana 9 or Grafana 10.
+- Added the EventBus object into JavaScript functions.
+- Added support for dashboard variables in CSS styles.
+- Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.
+
+<Catalog date="June 28, 2023" />
+
+## 3 million downloads
+
+We celebrated 2 million downloads in February. The panel's adaptability has been extremely accelerated since then.
+
+JavaScript code, a CSS style editor, and Grafana events offer functionalities that no native or community plugin has yet to provide.
+
+<Image
+  title="Business Text Panel was downloaded more than three million times."
+  src="/img/blog/2023-07-09-dynamictext-panel-4.0.0/downloads.png"
+/>
+
+## Dashboard variables
+
+Business Text panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.
+
+### JavaScript code
+
+Use the `replaceVariables` function to replace dashboard variables in the JavaScript code.
+
+```js
+const bonjour = replaceVariables("${variable}");
+console.log(bonjour.toUpperCase());
+```
+
+### Styles
+
+Dashboard variables are replaced automatically in CSS styles.
+
+### Content
+
+Returns a string array of the currently selected values for a certain variable.
+
+```md
+{{variable "hostname"}}
+
+<!-- result: ['server1', 'server2', 'server3']  -->
+```
+
+You can find more examples in our [documentation](/plugins/business-text/variables/).
+
+## Event Bus
+
+Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. Business Text panel can respond to these interactions by subscribing to one or more events.
+
+### Predefined Events
+
+A full list of events is available in our [Grafana Crash Course](/grafana/developer/eventbus).
+
+### Subscribe to events
+
+To avoid memory leaks, all events must be unsubscribed.
+
+```js
+const subscription = eventBus.subscribe({ type: "data-hover" }, () => {
+  console.log("React to Data Hover");
+});
+
+return () => {
+  subscription.unsubscribe();
+  console.log("Unsubscribed");
+};
+```
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes
+
+- Requires Grafana 9 or Grafana 10
+
+:::
+
+### Features / Enhancements
+
+- Increased the test coverage and updated the library to test React code (#177).
+- Added the Event Bus object into a JavaScript function (#179).
+- Migrated to Plugin Tools 1.5.2 (#183).
+- Added compatibility with Grafana 10.0.0 (#166, #178, #183).
+- Updated the plugin to Node.js 18 and npm (#183).
+- Deprecated support for Grafana 8.5 (#183).
+- Integrated E2E Cypress testing into the plugin (#184).
+- Added support for variables in CSS styles editor (#185).
+
+<Feedback />

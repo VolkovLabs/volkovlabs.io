@@ -1,0 +1,70 @@
+---
+authors: [mikhail]
+slug: echarts-panel-4.1.0-20230113/
+tags: [Business Charts, Business Suite]
+image: /img/blog/2023-01-13-echarts-panel-4.1.0/banner.png
+keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
+---
+
+import Feedback from "@site/docs/business-charts/_feedback.mdx";
+import GettingStarted from "@site/docs/business-charts/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-charts/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Streaming, data zoom, and documentation updates in Business Charts 4.1.0
+
+We are happy to announce the release of the Business Charts panel 4.1.0 for Grafana. This release includes the following updates:
+
+- Added support for streaming for WebSockets and Grafana Live.
+- Added the Data Zoom feature updating a time range similar to the TimeSeries panel.
+- Updated the product documentation answering community questions.
+
+## Streaming
+
+Streaming enables real-time data updates using streaming data sources and Grafana Live. You can find examples and configurations in [our documentation](/plugins/business-charts/streaming).
+
+### Grafana Live
+
+Grafana Live is a real-time messaging engine introduced in Grafana v8.0. With Grafana Live, you can push event data to a frontend as soon as an event occurs.
+
+<Image
+  title="Business Charts allows displaying messages from Grafana Live real-time engine."
+  src="/img/blog/2023-01-13-echarts-panel-4.1.0/live.png"
+/>
+
+### WebSocket API
+
+To stream real-time data, we used the [WebSocket data source for Grafana](https://grafana.com/grafana/plugins/golioth-websocket-datasource/).
+
+<Image
+  title="Streaming real-time events from the WebSocket data source."
+  src="/img/blog/2023-01-13-echarts-panel-4.1.0/websocket.png"
+/>
+
+## Data Zoom feature
+
+The Data Zoom feature allows you to select a time period on the chart for zooming in. Once the time range is selected, the event can update the time range on the dashboard using the `locationService` parameter, similar to native Grafana behavior.
+
+<Image
+  title="In the Random Walk example, the Data Zoom feature allows you to zoom in a temporal time range within the defined range."
+  src="/img/blog/2023-01-13-echarts-panel-4.1.0/data-zoom.png"
+/>
+
+You can find the code snippet in the [Event Handling](/plugins/business-charts/events) section.
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Synchronized the README file with the product documentation (#111).
+- Added the Streaming support for WebSockets and Grafana Live (#113).
+- Moved the InfluxDB example to the guest blog post (#115).
+- Updated the documentation and tutorials in the README file (#116).
+- Added the data zooming to the default Line example (#117).
+
+<Feedback />

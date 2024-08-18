@@ -1,0 +1,138 @@
+---
+authors: [daria]
+slug: form-panel-3.4.0-20240105/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2024-01-05-form-panel-3.4.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Initial request synchronization, extend context, and payload updates in Business Forms 3.4.0
+
+We are happy to announce the release of the Business Forms Panel 3.4.0. This release includes the following updates:
+
+- Added a new parameter **Synchronize with data** in the Initial Request category.
+- Extended the Context parameter by adding EventBus and AppEvents.
+- Enabled replacing variables in Payload functions.
+- Ensured compatibility with Grafana 10.2.2 and upcoming 10.3.0.
+
+<Catalog date="December 15, 2023" />
+
+## State of the Plugin
+
+### Downloads
+
+The Grafana Community has downloaded the Data Manipulation plugin more than 175K times! We are happy to learn what goals this plugin helped you to achieve. [Contact us](https://github.com/volkovlabs/business-forms/issues) with your use case to share with the rest of the world.
+
+<Image
+  title="The Business Forms plugin downloads exceed 175K in 2023."
+  src="/img/blog/2024-01-05-form-panel-3.4.0/downloads.png"
+/>
+
+### GitHub issues
+
+Thanks to the active community members who do not stop to surprise us with incredible ideas for improvements. During the summer of 2023, this plugin had a record number of open issues. We keep battling that number and are proud to report that as of now there are only 3 outstanding issues left.
+
+Keep asking and requesting, it is the best way to improve the plugin and keep it useful and relevant.
+
+<Image
+  title="The Data Manipulation plugin open issues fluctuation."
+  src="/img/blog/2024-01-05-form-panel-3.4.0/issues.png"
+/>
+
+### LIVE project
+
+If you ever wondered where we take the downloads and other statistics, please check out our [LIVE](http://live.volkovlabs.io) project.
+You can find general statistics about all our open source plugins, including release calendar, download number, and links to all related blog posts and YouTube videos. We created the [LIVE](http://live.volkovlabs.io) project for internal use, but since many people found the presented information useful we made it open to anyone.
+
+If you believe that some other statistical measures would add depth to the overview, contact us and we will consider modifying the existing dashboards.
+
+## Panel syncing for Initial Request
+
+As you know, one of the basic Grafana dashboard parameters is the frequency of updates. In other words, admins/editors can set up how often the whole dashboard is going to be refreshed.
+
+<Image
+  title="The frequency of a dashboard update can be set up in the top right corner."
+  src="/img/blog/2024-01-05-form-panel-3.4.0/freq.png"
+  width="100%"
+/>
+
+Some of the time frequencies might bring a challenge for a user trying to populate a Data Manipulation form. If the user does not hit the Submit button often enough then everything they entered is lost. With frequencies less than 3-5 minutes, the task the user faces is practically impossible.
+
+To avoid user stress, we added a new parameter - **Synchronize with data**.
+
+When it is **Disabled**, the Data Manipulation form is excluded from the frequency of update and the user can enter data in peace.
+
+<Image
+  title="Synchronize with data is a new parameter in the Initial Request category."
+  src="/img/blog/2024-01-05-form-panel-3.4.0/sync-w-data.png"
+  width="40%"
+/>
+
+## Context
+
+**Custom code** allows you to access the panel's options, REST API responses, form elements, and various Grafana services. To keep the Data Manipulation plugin organized and simplify the search among the available options, we allowed to access them all under the **context** object.
+
+Simply type **context** and get the list of everything available from the Data Manipulation arsenal.
+
+<Image
+  title="Panel's options, REST API responses, form elements, and various Grafana services are now can be referenced from the Context parameter."
+  src="/img/blog/2024-01-05-form-panel-3.4.0/context.png"
+/>
+
+### Event Bus and App Events
+
+Starting from this release, we added Event Bus and App Events into the **Context** object. For the complete list, please, reference the [Data Manipulation plugin documentation](/plugins/business-forms/code).
+
+Refresh all dashboard panels using `EventBus` with global scope called `AppEvents`:
+
+```js
+context.grafana.appEvents.publish({
+  type: "variables-changed",
+  payload: { refreshAll: true },
+});
+```
+
+or
+
+```js
+context.grafana.refresh();
+```
+
+## Variable in Payload functions
+
+Starting from this release we enabled the usage of dashboard variables in the Initial and Update Payloads.
+
+<Image
+  title="You can use dashboard variables in the Initial and Update Payloads."
+  src="/img/blog/2024-01-05-form-panel-3.4.0/var-payload.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Add ability to disable panel syncing (#298)
+- Update ESLint configuration and refactor (#299)
+- Update Collapse from @volkovlabs/components (#299)
+- Add EventBus and AppEvents to Context (#307)
+- Add replacing variables in Payload functions (#309)
+- Update to Grafana 10.2.2 and Volkov labs packages (#313)
+- Add options migration (#315)
+
+### Bugfixes
+
+- Fix draggable control to support upcoming Grafana changes (#314)
+
+<Feedback />

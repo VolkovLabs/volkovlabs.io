@@ -1,0 +1,93 @@
+---
+authors: [mikhail]
+slug: our-plugins-are-ready-for-grafana-9-2bc257db92eb/
+tags: [Highlights]
+image: /img/blog/2022-06-20-grafana-9/banner.png
+keywords: [ECharts, Business, Industrial, Charts, Grafana, Visualization]
+---
+
+import Feedback from "@site/blog/_feedback.mdx";
+import GettingStarted from "@site/grafana/environment/_getting_started.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Our plugins are ready for Grafana 9
+
+Grafana 9 was released at GrafanaCONline 2022 on June 14, and it's the best version so far. Our open source and commercial plugins were successfully tested using the 9.0.0-beta3 released weeks ago and updated using the latest Grafana 9 toolkit on the day it was released.
+
+One of the topics I heard from the Grafana community it's the hesitation to use third-party plugins:
+
+- Community plugins are not updated constantly and stopped being maintained after a while.
+- It is better not to use them and stick to the plugins supported by the Grafana team.
+
+Volkov Labs regularly updates our open source, commercial plugins and templates based on the latest version of Grafana to stay up-to-date. With every significant Grafana release, we increase the major number in the plugin's version.
+
+Below I want to highlight the latest updates with tutorials on how to hit the ground running.
+
+## Business Media
+
+The Business Media Panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats.
+
+The popular plugin was recently updated to support Video and Audio files in modern formats. You can learn more about this plugin through the newly revamped video on our YouTube channel.
+
+<Youtube
+  id="1_bgLSehjhg"
+  title="Images, PDFs, Video, Live Camera Feed on Grafana Dashboard."
+/>
+
+The [Business Media panel 3.0.0](/plugins/business-media/release) is updated in the Grafana Catalog and supports Grafana 8.5+.
+
+## Business News
+
+Created to display a Blog news feed on our demo server, the Business News data source became popular when Grafana removed proxy support in the News panel.
+
+The data source supports different RSS and Atom formats with logic to extract various fields making it the most straightforward plugin to visualize news and updates.
+
+<Youtube id="RAxqS2hpWkg" title="News feed tutorial for Grafana Dashboard." />
+
+The [Business News data source 2.0.0](/plugins/business-news/release) is updated in the Grafana Catalog and supports Grafana 8.5+. For older versions of Grafana, please use version 1.7.0.
+
+## Environment data source
+
+The Environment data source is a plugin for Grafana that returns environment variables to visualize or use as Dashboard Variables. It's a unique plugin we created for The Internet of Things (IoT) devices in the balenaCloud.
+
+<Youtube
+  id="sczRq2lI3e4"
+  title="Dashboard, Global and Environment variables."
+/>
+
+Because of security reasons, the Environment Data Source can not be included in the Grafana Catalog.
+
+The [Environment data source 2.0.0](/grafana/environment/release) supports Grafana 8.5+. For older versions of Grafana, please use version 1.2.0.
+
+## Business Forms
+
+The Business Forms panel is a plugin for Grafana that can be used to insert, update application data, and modify configuration directly from your Grafana dashboard.
+
+<Youtube
+  id="DXALVG8GijM"
+  title="Manual data entering and User input into Dashboard."
+/>
+
+We understand the risk of data manipulation and take security concerns seriously. We recently published an [article exploring three secure ways](/blog/how-to-connect-the-data-manipulation-plugin-for-grafana-to-api-server-1abe5f60c904) to connect the Business Forms panel to the API Server.
+
+The Business Forms panel is available in the Grafana Catalog.
+
+Please let us know if you have any questions or feature requests for this plugin in the [GitHub Issues](https://github.com/VolkovLabs/business-forms/issues).
+
+## Business Charts
+
+The Business Charts panel is a plugin for Grafana that allows visualizing Apache ECharts on your Grafana dashboard.
+
+<Image
+  title="Grafana instance with Apache ECharts examples."
+  src="https://github.com/VolkovLabs/business-charts/raw/main/src/img/examples.png"
+/>
+
+The original plugin was developed for Grafana 6.3/7.0 and ECharts 4.9.0. It has not been maintained since then. Volkov Labs adapted and updated it based on the Grafana 9 with ECharts 5.3.3, introducing new features like Monaco Code Editor and supporting SVG and Canvas renderer.
+
+<Youtube id="DxqCrBEmrQw" title="How to create modern dashboards in Grafana." />
+
+The Business Charts panel is available in the Grafana Catalog.
+
+<Feedback />

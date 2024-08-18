@@ -1,0 +1,186 @@
+---
+authors: [daria]
+slug: form-panel-3.2.1-20231010/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2023-10-10-form-panel-3.2.1/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Data source, query for Initial Request, progress bar, and show if function in Business Forms 3.2.1
+
+We are happy to announce the release of the Business Forms Panel 3.2.1. This release includes the following updates:
+
+- Added minimum and maximum date limit for the date time element.
+- Added a field mapping for the <b>Data Source</b> Initial Request type.
+- Added a field mapping for the <b>Query</b> Initial Request type.
+- <b>Show If returned value is true</b> element now supports variables.
+- Added the ability to restrict a file type for the File element.
+- Added indication of loading in progress for Initial, Update and Reset button actions.
+- Added the ability to have icons for radio and select options.
+
+<Catalog date="September 11, 2023" />
+
+<Shorts id="pBaKNTCjIVg" title="Business Forms panel 3.2.1 for Grafana." />
+
+## Date Time
+
+Now you can impose the allowed minimum and maximum date by using the familiar built-in Grafana controls.
+
+<Image
+  title="Impose minimum and maximum for the Date Time type."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/min-max.png"
+/>
+
+## Field Mapping
+
+Following many community requests, we made field-to-form element mapping for the <b>Data Source</b> and <b>Query</b> initial request type more straightforward. Now you can do it using a new parameter that appears for every form element when the proper initial request type is selected.
+
+### Data Source
+
+<Image
+  title="Explicitly specify the field-to-form element mapping for Data Source using a new parameter."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-ds.png"
+/>
+
+### Query
+
+<Image
+  title="Explicitly specify the field-to-form element mapping for Query using a new parameter."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/field-name-query.png"
+/>
+
+## Show If supports variables
+
+Every form element has the <b>Show If returned value is true</b> parameter where you enter JavaScript code.
+
+- If this code returns `true`, the element is shown on the panel.
+- If this code returns `false`, the element is hidden from the panel.
+
+<Image
+  title="Conditional visibility example."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/select.png"
+/>
+
+Example code to check the current value of the `select` element and show the `dateTime` element if the value equal to `max`:
+
+```js
+const select = elements.find((element) => element.id === "select");
+
+if (select) {
+  return select.value === "max";
+}
+```
+
+In this release, we made it possible to use dashboard and global variables within your JavaScript code.
+
+<Image
+  title="Conditional visibility using a dashboard variable example."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/var.png"
+/>
+
+Example code to check the value of the dashboard variable `var`:
+
+```js
+const test = replaceVariables("$var");
+return test === "test";
+```
+
+## File Upload
+
+For the File type, you can specify a list of allowed file extensions.
+
+<Image
+  title="A new parameter for the File type - accepted file extensions."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/accepted.png"
+/>
+
+## Indication of loading in progress
+
+If the data loading takes time, the Data Manipulation form will indicate that as follows.
+
+### Initial Request
+
+The end user will see a running blue line at the top of the form.
+
+<Image
+  title="A moving blue line indicates an initial request being in progress."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/status-initial.png"
+/>
+
+### Update Request
+
+All buttons are disabled and moving circled dots are placed instead of the Submit button icon.
+
+<Image
+  title="Dots moving in a circle indicate an update request being in progress."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/status-update.png"
+/>
+
+### Custom Code
+
+Custom code can be asynchronous. For that, the custom code should return the promise.
+
+```js
+const getInitialData = async () => {
+  const response = await fetch("http://123");
+
+  const data = await response.json();
+
+  /**
+   * Update Elements with data
+   */
+  onChange([]);
+};
+
+/**
+ * Return Promise
+ */
+return getInitialData();
+```
+
+## Radio and Select icons
+
+Radio with Custom options element and two Select elements (Select with custom options and Multi Select with Custom options) have the <b>Options</b> parameter where you specify all possible choices that a user can make.
+
+Starting from this release, every such choice in addition to type, value and label, now has an icon parameter. You can select from the standard Grafana icon list.
+
+<Image
+  title="Icon is a new parameter."
+  src="/img/blog/2023-10-10-form-panel-3.2.1/icons.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements in 3.2.1
+
+- Added backward compatibility for option id (#244)
+
+### Features / Enhancements in 3.2.0
+
+- Added min and max date for date time element (#225)
+- Added mapping Data Source values to elements (#224)
+- Updated element Show If to support variables (#230)
+- Added clearing errors before initial and update requests (#232)
+- Added URL encode to variables (#231)
+- Updated section name to allow empty values (#228)
+- Added Query Field Picker for Initial Request (#227)
+- Added File element type for File Upload (#229)
+- Added converting option value to string and number based on type (#233)
+- Added loading states for Initial, Update and Reset button actions (#234)
+- Added support for asynchronous custom code (#234)
+- Updated Query and Data Source initial request (#237)
+- Added icons for radio and select options (#238)
+
+<Feedback />

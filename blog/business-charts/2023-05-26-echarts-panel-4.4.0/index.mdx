@@ -1,0 +1,82 @@
+---
+authors: [mikhail]
+slug: echarts-panel-4.4.0-20230526/
+tags: [Business Charts, Business Suite]
+image: /img/blog/2023-05-26-echarts-panel-4.4.0/banner.png
+keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-charts/_feedback.mdx";
+import GettingStarted from "@site/docs/business-charts/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-charts/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Theme editor, updated Google maps, and increased test coverage in Business Charts 4.4.0
+
+We are happy to announce the release of the Business Charts panel 4.4.0. This release includes the following updates:
+
+- Added Theme Editor to use custom-generated themes from Theme Builder.
+- Updated the Google Maps extension to the latest release 1.6.0.
+- Increased the test coverage to 90% and added end-to-end test workflow.
+- Updated to the latest Grafana 9.5.2 toolkit.
+
+<Catalog date="May 30, 2023" />
+
+## Jack of all trades
+
+Business Charts Panel can solve any visualization challenges reported by our community. When native plugins lack some features or a data source cannot return or transform data in the required format, Business Charts Panel let you address any appeared challenges and achieve the results you anticipate.
+
+We have addressed most critical issues in our GitHub repository as we see an increasing number of daily downloads on our way to 200k downloads the Grafana Plugins catalog.
+
+<Image
+  title="Live Dashboard for the Business Charts Panel resources."
+  src="/img/blog/2023-05-26-echarts-panel-4.4.0/live.png"
+/>
+
+## Theme Editor
+
+Theme Editor allows using custom themes generated with [Theme Builder](https://echarts.apache.org/en/theme-builder.html).
+
+<Image
+  title="Business Charts Panel supports custom themes from Theme Builder."
+  src="/img/blog/2023-05-26-echarts-panel-4.4.0/theme.png"
+/>
+
+### Theme Builder
+
+Theme Builder created by the Apache ECharts team provides advanced options to create fully customizable themes. A theme configuration is saved into a JSON file, which you can download and paste into Theme Editor.
+
+<Image
+  title="Theme Builder allows creating custom theme for Business Charts Panel."
+  src="/img/blog/2023-05-26-echarts-panel-4.4.0/theme-builder.png"
+/>
+
+## Documentation
+
+Answering numerous questions from our community, we continue constantly improving our documentation. We've recently added and updated:
+
+| Section                                                     | Description                                |
+| ----------------------------------------------------------- | ------------------------------------------ |
+| [Annotations](/plugins/business-charts/annotations)         | Explains how to use annotations.           |
+| [Theme Editor](/plugins/business-charts/theme)              | Explains how to use Theme Editor.          |
+| [Transformations](/plugins/business-charts/transformations) | Explains how to work with transformations. |
+| [GeoJSON](/plugins/business-charts/maps/geojson)            | Explains how to work with GeoJSON Maps.    |
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Increased the test coverage and updated the test library (#163).
+- Added compatibility with Grafana 9.5.2 (#164).
+- Updated the Google Maps extension to version 1.6.0 (#164).
+- Added E2E Cypress testing (#165).
+- Added Theme Editor to enable usage of custom themes (#167).
+- Updated the documentation (#166, #168).
+
+<Feedback />

@@ -1,0 +1,202 @@
+---
+authors: [mikhail]
+slug: form-panel-3.1.0-20230823/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2023-08-23-form-panel-3.1.0/banner.png
+keywords: [Data Manipulation, Form Panel, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Multi-select, condition visibility, and data source requests in Business Forms 3.1.0
+
+We are happy to announce the release of the Business Forms Panel 3.1.0. This release includes the following updates:
+
+- Added a multi-select box.
+- Added the conditional visibility of form elements.
+- Added the code editor for a custom payload.
+- Added the code editor for the custom reset operation.
+- Added support for the Data Source request.
+- Added the `onChange` function to update elements in the local state within the custom code.
+
+<Catalog date="August 15, 2023" />
+
+<Shorts id="0ratMv5XYSk" title="Business Forms panel 3.1.0 for Grafana." />
+
+## Multi-Select
+
+A new multi-select box is similar to the select box and allows selecting multiple options.
+
+<Image
+  title="A new multi-select box allows you to select multiple options."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/multi.png"
+/>
+
+## Conditional element visibility
+
+The new **Show If** option available for any form element allows you to control the visibility of the form element depending on other elements' values. The JavaScript function should return `true` to show the element or `false` to hide it.
+
+For example, this form element is shown only if the selected value for the `select` element is equal to `max`.
+
+```js
+const select = elements.find((element) => element.id === "select");
+
+if (select) {
+  return select.value === "max";
+}
+```
+
+<Image
+  title="Element visibility can be controlled using a JavaScript function, which should return true or false."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/showif.png"
+/>
+
+## Custom payload code editor
+
+### Initial request with Data Source
+
+The code editor for the custom payload is available for initial requests using the data source. When the data source is selected, you can specify a custom payload to execute the `rawSql` SQL statement and any other property required for a specific data source.
+
+```javascript
+return {
+  rawSql: "",
+  format: "table",
+};
+```
+
+A response from the data source can be manually parsed in the custom code using the `toDataQueryResponse()` function, which returns data frames. Values from the data frames can be applied to the form elements as described in the documentation.
+
+```javascript
+const dataQuery = toDataQueryResponse(response);
+console.log(dataQuery);
+```
+
+<Image
+  title="Initial request for data source allows you to specify a request payload."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/initial.png"
+/>
+
+### Update request
+
+In the update request, you can send the payload as follows:
+
+- All Elements
+- Updated only
+- Custom Code
+
+In the **Custom Code** category, you can create your own logic to form a payload.
+
+```javascript
+const payload = {};
+
+elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  payload[element.id] = element.value;
+});
+
+return payload;
+
+/**
+ * Data Source payload
+ */
+return {
+  rawSql: "",
+  format: "table",
+};
+```
+
+<Image
+  title="Update request can send all, updated elements, and a custom payload."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/update.png"
+/>
+
+## Code editor Custom reset
+
+The Reset button enables adding custom logic in the JavaScript code editor. By default, it calls the initial request.
+
+<Image
+  title="Reset button allows you to add custom logic in JavaScript code editor."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/reset.png"
+/>
+
+## Data Source request
+
+Support for data sources was one of the most requested community features. Since version 3.1.0, you don't need a REST API server to interact with databases and storages configured as data sources.
+
+### Initial Request
+
+Response from the initial request can be parsed manually as demonstrated above or automatically assigned to the form elements.
+
+To get the latest value of any field returned from the data source, provide the field name and send it in the payload to update.
+
+<Image
+  title="Assign element values based on the data from the initial request using data source."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/fieldname.png"
+/>
+
+### Update Request
+
+The update request payload for the data source should be created in the custom code according to the data source specification. For SQL databases, it's `rawSql` and `format`:
+
+```javascript
+const payload = {};
+
+elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  payload[element.id] = element.value;
+});
+
+/**
+ * Data Source payload
+ */
+return {
+  rawSql: "",
+  format: "table",
+};
+```
+
+<Image
+  title="Update requests using data source."
+  src="/img/blog/2023-08-23-form-panel-3.1.0/datasource.png"
+/>
+
+## onChange to update elements in the local state
+
+In Data Manipulation Panel 3.X, the `onChange()` function is required to manually update the form element's values in the local state.
+
+```javascript
+onChange(elements.map((element) => {
+  return element.id === 'name' ? { ...element, value: 'test' } : element;
+});
+```
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements
+
+- Updated `jest` selectors to use the `npm` package (#209).
+- Added the `onChange` function to update elements in the local state within the custom code (#214).
+- Updated ESLint configuration (#215).
+- Added the multi-select element (#217).
+- Added the conditional element visibility (#219).
+- Added the code editor for the Custom Payload section (#220).
+- Added the code editor for the Custom Reset section (#221).
+- Added the Data Source request (#222).
+
+<Feedback />

@@ -1,0 +1,57 @@
+---
+authors: [mikhail]
+slug: calendar-panel-1.1.0-20221212/
+tags: [Business Calendar, Business Suite]
+image: /img/blog/2022-12-12-calendar-panel-1.1.0/banner.png
+keywords: [Calendar, Panel, Events, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-calendar/_feedback.mdx";
+import GettingStarted from "@site/docs/business-calendar/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
+
+# Annotations, refactoring, and increased test coverage in Business Calendar 1.1.0
+
+We are happy to announce the release of the Business Calendar panel 1.1.0. This release includes the following updates:
+
+- Added compatibility with Grafana 9.3.1.
+- Added support for annotations.
+- Refactored the legacy code and increased the test coverage for the plugin's functionality.
+
+We've already started working on the next version to complete the code refactoring and address the remained issues. We're looking forward to receiving your feedback.
+
+<Image
+  title="Business Calendar panel displays the latest updates in the Grafana Plugins catalog."
+  src="/img/blog/2022-12-12-calendar-panel-1.1.0/panel.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes
+
+Refactoring may introduce breaking changes. Please test before upgrading the plugin on production Grafana instances.
+
+:::
+
+### Features / Enhancements
+
+- Updated the plugin's options in the README file (#53).
+- Added a YouTube tutorial for Calendar panel explaining how to display events from the JSON API data source (#54).
+- Updated CI to Node.js 16 and synchronized it with the release workflow (#56).
+- Added compatibility with Grafana 9.2.2 (#57).
+- Refactored the program code (#58).
+- Added compatibility with Grafana 9.3.1 (#59).
+- Updated CI to upload signed artifacts (#60).
+- Refactored the plugin options and increased the test coverage (#61).
+- Added support for annotations (#8).
+- Refactored the program code and removed the legacy code (#62).
+- Refactored the plugin options and added the annotation options (#63).
+
+<Feedback />
