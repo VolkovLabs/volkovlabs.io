@@ -14,7 +14,7 @@ import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Text 4.1.0
+# External JS and CSS resources, status field, and increased test coverage in Business Text 4.1.0
 
 We're excited to announce the release of the Business Text Panel 4.1.0. This feature release includes the following updates:
 
@@ -52,10 +52,8 @@ The `statusColor` variable can be used to set a background or foreground color o
 
 ### Example
 
-```handlebars
-<div style="background-color: {{statusColor}}">
-  {{A-series}}
-</div>
+```html
+<div style="background-color: {{statusColor}}">{{A-series}}</div>
 ```
 
 ## Sophisticated solution from the community
@@ -135,26 +133,28 @@ handlebars.registerHelper(
 
 Display aggregated values based on any rules, which the native Grafana transformations do not support.
 
-```handlebars
+```md
 # ### sel_val data "value"
+
 {{sel_val data "value"}}
+
 - sum:
-{{aggr_val data "value" "sum"}}, avg:
-{{aggr_val data "value" "avg"}}, min:
-{{aggr_val data "value" "min"}}, max:
-{{aggr_val data "value" "max"}}, first:
-{{aggr_val data "value" "first"}}, last:
-{{aggr_val data "value" "last"}}, # ### sel_val data "value" "category" "A"
-{{sel_val data "value" "category" "A"}}
+  {{aggr_val data "value" "sum"}}, avg:
+  {{aggr_val data "value" "avg"}}, min:
+  {{aggr_val data "value" "min"}}, max:
+  {{aggr_val data "value" "max"}}, first:
+  {{aggr_val data "value" "first"}}, last:
+  {{aggr_val data "value" "last"}}, # ### sel_val data "value" "category" "A"
+  {{sel_val data "value" "category" "A"}}
 - sum:
-{{aggr_val data "value" "sum" "category" "A"}}, avg:
-{{aggr_val data "value" "avg" "category" "A"}}, min:
-{{aggr_val data "value" "min" "category" "A"}}, max:
-{{aggr_val data "value" "max" "category" "A"}}, first:
-{{aggr_val data "value" "first" "category" "A"}}, last:
-{{aggr_val data "value" "last" "category" "A"}}, # ### sel_val data "value"
-"category" "A" "type" "T1"
-{{sel_val data "value" "category" "A" "type" "T1"}}
+  {{aggr_val data "value" "sum" "category" "A"}}, avg:
+  {{aggr_val data "value" "avg" "category" "A"}}, min:
+  {{aggr_val data "value" "min" "category" "A"}}, max:
+  {{aggr_val data "value" "max" "category" "A"}}, first:
+  {{aggr_val data "value" "first" "category" "A"}}, last:
+  {{aggr_val data "value" "last" "category" "A"}}, # ### sel_val data "value"
+  "category" "A" "type" "T1"
+  {{sel_val data "value" "category" "A" "type" "T1"}}
 
 sum:
 {{aggr_val data "value" "sum" "category" "A" "type" "T1"}}, avg:

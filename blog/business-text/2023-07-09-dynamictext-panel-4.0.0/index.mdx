@@ -13,12 +13,12 @@ import Image from "@theme/Image";
 import Tutorial from "@site/docs/business-text/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Business Text 4.0.0
+# Grafana 10, EventBus, and dashboard variables in Business Text 4.0.0
 
-We're excited to announce the release of the Business Text Panel 4.0.0. This major release includes the following updates:
+We're excited to announce the release of the Business Text panel 4.0.0. This major release includes the following updates:
 
 - Requires Grafana 9 or Grafana 10.
-- Added the Event Bus object into JavaScript functions.
+- Added the EventBus object into JavaScript functions.
 - Added support for dashboard variables in CSS styles.
 - Added compatibility with Grafana 10.0.0 and deprecated support for Grafana 8.5.
 
@@ -37,7 +37,7 @@ JavaScript code, a CSS style editor, and Grafana events offer functionalities th
 
 ## Dashboard variables
 
-Business Text Panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.
+Business Text panel provides helpers to support variables. You can also use variables in JavaScript code and CSS styles.
 
 ### JavaScript code
 
@@ -56,7 +56,7 @@ Dashboard variables are replaced automatically in CSS styles.
 
 Returns a string array of the currently selected values for a certain variable.
 
-```handlebars
+```md
 {{variable "hostname"}}
 
 <!-- result: ['server1', 'server2', 'server3']  -->
