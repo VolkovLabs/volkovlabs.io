@@ -134,6 +134,19 @@
   background: url("/static/img/plugins/business-text/logo.dark.svg") no-repeat;
 }
 
+.icon-plugins-table-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/plugins/business-table/logo.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-plugins-table-link::before {
+  background: url("/static/img/plugins/business-table/logo.dark.svg") no-repeat;
+}
+
 .icon-plugins-form-link::before {
   content: "";
   width: 24px;

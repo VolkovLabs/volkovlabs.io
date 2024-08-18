@@ -48,6 +48,11 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-grapi-link",
         },
         {
+          label: "Business Table",
+          to: "/plugins/business-table/",
+          className: "volkovlabs-footer-link icon-plugins-table-link",
+        },
+        {
           label: "Business Text",
           to: "/plugins/business-text/",
           className: "volkovlabs-footer-link icon-plugins-dt-link",

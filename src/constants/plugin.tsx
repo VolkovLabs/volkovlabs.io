@@ -48,9 +48,10 @@ export const PluginList: PluginItem[] = [
     href: "/plugins/business-satellite/",
   },
   {
-    title: "Business Table (coming soon)",
+    title: "Business Table",
     name: "business-table",
     description: <>Summarize large amounts of data</>,
+    href: "/plugins/business-table/",
   },
   {
     title: "Business Text",

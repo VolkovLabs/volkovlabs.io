@@ -309,6 +309,16 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
+      items: ["business-text/release"],
+      label: "Business Table",
+      type: "category",
+      description: "Summarize large amounts of data.",
+      link: {
+        type: "doc",
+        id: "business-table/index",
+      },
+    },
+    {
       items: [
         {
           type: "doc",
