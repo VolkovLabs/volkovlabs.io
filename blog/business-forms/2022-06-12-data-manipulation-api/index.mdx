@@ -11,25 +11,25 @@ import Feedback from "@site/docs/business-forms/_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Connect Data Manipulation Panel for Grafana to API Server
+# Connect Data Manipulation panel for Grafana to API Server
 
-We acknowledge the risks of data manipulation and consider security concerns seriously. This blog post explores three secure ways to connect Data Manipulation Panel to an API server.
+We acknowledge the risks of data manipulation and consider security concerns seriously. This blog post explores three secure ways to connect Data Manipulation panel to an API server.
 
-Our [recent post](/blog/data-manipulation-panel-plugin-for-grafana-97f9af2c67e0) and YouTube tutorial showcased various use cases to bring your Grafana dashboard to the next level using Data Manipulation Panel. This plugin can insert and update application data, as well as modify configuration directly from your Grafana dashboard.
+Our [recent post](/blog/data-manipulation-panel-plugin-for-grafana-97f9af2c67e0) and YouTube tutorial showcased various use cases to bring your Grafana dashboard to the next level using Data Manipulation panel. This plugin can insert and update application data, as well as modify configuration directly from your Grafana dashboard.
 
 <Youtube
   id="DXALVG8GijM"
   title="Manual data entry and user input into dashboard."
 />
 
-Before moving forward, we recommend reading the introductory article to become familiar with Data Manipulation Panel and its capabilities.
+Before moving forward, we recommend reading the introductory article to become familiar with the Data Manipulation panel and its capabilities.
 
 ## Architecture
 
-Data Manipulation Panel options allow you to specify the URL for the `GET` requests to receive initial values and the `POST`, `PUT`, or `PATCH` requests to update values sent in the JSON format.
+Data Manipulation panel options allow you to specify the URL for the `GET` requests to receive initial values and the `POST`, `PUT`, or `PATCH` requests to update values sent in the JSON format.
 
 <Image
-  title="Data Manipulation Panel uses GET and POST/PUT requests to interact with API Server."
+  title="Data Manipulation panel uses GET and POST/PUT requests to interact with API Server."
   src="/img/blog/2022-06-12-data-manipulation-api/form-api.png"
 />
 
@@ -139,14 +139,14 @@ Every data source configured in Grafana has a sequential number and unique strin
   src="/img/blog/2022-06-12-data-manipulation-api/datasources.png"
 />
 
-Let's set up the Update Request options for Data Manipulation Panel. We set the URL `/api/datasources/proxy/2/feedback/submissions` to proxy requests to the API server instead of accessing directly.
+Let's set up the Update Request options for the Data Manipulation panel. We set the URL `/api/datasources/proxy/2/feedback/submissions` to proxy requests to the API server instead of accessing directly.
 
 <Image
   title="Update request configuration for the data source using HTTP proxy."
   src="/img/blog/2022-06-12-data-manipulation-api/update.png"
 />
 
-We keep enhancing Data Manipulation Panel and collecting user feedback in search of fresh and challenging use cases.
+We keep enhancing the Data Manipulation panel and collecting user feedback in search of fresh and challenging use cases.
 
 The upcoming version of the plugin will be based on the Grafana 9 toolkit but will still preserve support for Grafana 8.5+.
 

@@ -3,7 +3,7 @@ authors: [daria]
 slug: form-panel-data-source-20230908/
 tags: [Business Forms, Solution]
 image: /img/blog/2023-09-08-form-panel-data-source/banner.png
-keywords: [Data Manipulation, Form Panel, Data, Grafana]
+keywords: [Data Manipulation, Forms, Data, Grafana]
 ---
 
 import Feedback from "@site/docs/business-forms/_feedback.mdx";
@@ -13,7 +13,7 @@ import Youtube from "@theme/Youtube";
 
 # Using Query and Data Sources in the Data Manipulation plugin for Grafana
 
-In recent months, the Data Manipulation Panel plugin has received a lot of attention from the community. With over 500 daily downloads, we were swamped with requests and great enhancement ideas for quite some time.
+In recent months, the Data Manipulation panel plugin has received a lot of attention from the community. With over 500 daily downloads, we were swamped with requests and great enhancement ideas for quite some time.
 
 :::info Thanks
 Many thanks to everyone who took part in the creative thinking feast!
@@ -21,11 +21,11 @@ Many thanks to everyone who took part in the creative thinking feast!
 
 We knew the functionality provided by this plugin had been long awaited, but we did not expect such an outpouring of interest.
 
-Grafana is well-known for its unrivaled data visualization capabilities. The Data Manipulation Panel plugin is praised for adding data manipulation capability to Grafana's expansive visualization toolset.
+Grafana is well-known for its unrivaled data visualization capabilities. The Data Manipulation panel plugin is praised for adding data manipulation capability to Grafana's expansive visualization toolset.
 
-In other words, Data Manipulation Panel transforms a one-way data street into a two-way data street, allowing users to add and modify data in the database.
+In other words, Data Manipulation panel transforms a one-way data street into a two-way data street, allowing users to add and modify data in the database.
 
-The REST API is the first method the Data Manipulation Panel plugin started with. Now, in addition to the REST API, you can use queries and data sources. We also have a fully custom method available for use cases dealing with the most unusual requirements.
+The REST API is the first method the Data Manipulation panel plugin started with. Now, in addition to the REST API, you can use queries and data sources. We also have a fully custom method available for use cases dealing with the most unusual requirements.
 
 The query utilizes the standard Grafana data retrieval functionality, which limits this method to exist only in the initial request data flow.
 
@@ -33,7 +33,7 @@ The query utilizes the standard Grafana data retrieval functionality, which limi
 
 This article describes the steps to complete a basic Grafana project where the central requirement is the user's ability to update a device setting stored in an external database.
 
-Below, you can see a Grafana dashboard with the Data Manipulation Panel plugin. It provides two similar examples with the difference in the initial request type. In the first example, I use the query and in the other, I use the data source with the initial request type.
+Below, you can see a Grafana dashboard with the Data Manipulation panel plugin. It provides two similar examples with the difference in the initial request type. In the first example, I use the query and in the other, I use the data source with the initial request type.
 
 <Image
   title="Data Manipulation with query and data source as initial request on dashboard."
@@ -44,7 +44,7 @@ For switching between devices, I choose to use the [Business Variable panel](/pl
 
 ## Database
 
-PostgreSQL is our go-to database for most dummy and production projects, including this one. The following table demonstrates the basic data structure for Data Manipulation Panel.
+PostgreSQL is our go-to database for most dummy and production projects, including this one. The following table demonstrates the basic data structure for Data Manipulation panel.
 
 The `name` column captures the device name, and the remaining columns are for corresponding device metrics.
 
@@ -73,7 +73,7 @@ In the initial request, you can choose among the following:
 
 ### Query
 
-For the first example, I used the query type. This method relates to Grafana's standard fetching mechanism. That implies you must have a Grafana data source configured and choose it from the drop-down box on the left. All Grafana data sources are supported by Data Manipulation Panel.
+For the first example, I used the query type. This method relates to Grafana's standard fetching mechanism. That implies you must have a Grafana data source configured and choose it from the drop-down box on the left. All Grafana data sources are supported by Data Manipulation panel.
 
 The following step is to define a query. In my example, I get min, max, and speed metrics from a configuration table for all devices using a simple SQL expression.
 
@@ -180,7 +180,7 @@ if (response && response.ok) {
 
 ## Tutorial
 
-In this video, I reviewed all the new features of Data Manipulation Panel for Grafana.
+In this video, I reviewed all the new features of Data Manipulation panel for Grafana.
 
 <Youtube
   id="hVy9NfFiI5U"

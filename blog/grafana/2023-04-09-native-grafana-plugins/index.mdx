@@ -3,7 +3,7 @@ authors: [mikhail]
 slug: native-grafana-plugins-20230409/
 tags: [Grafana Crash Course]
 image: /img/blog/2023-04-09-native-grafana-plugins/banner.png
-keywords: [Grafana, Data Source, Panels, Cleanup]
+keywords: [Grafana, Data Source, Cleanup]
 ---
 
 import Code from "@theme/Code";
@@ -138,7 +138,7 @@ RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|e.id==="ent
 RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|e.id==="cloud"|e.id==="notacloud"|g' {} \;
 ```
 
-## Native Panels
+## Native panels
 
 In some of our projects, we do not use Annotation List, Dashboard List, News, Candlestick, Node Graph, and Traces.
 Narrowing down the selection to work with is a simple and elegant idea.

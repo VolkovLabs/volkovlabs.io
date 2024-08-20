@@ -67,12 +67,12 @@ Schematically, the solution looks like as on the picture below.
 
 The solution contains the following main components:
 
-| Component               | Description                                                                                                                                                                       |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| REST API Server         | Accepts a parameter (device name). Returns the description for the Form Elements based on the received parameter.                                                                 |
-| JSON Data Source        | Can be JSON API or Infinity data source.                                                                                                                                          |
-| Variable Panel          | Allows to change the dashboard variable (switch between devices).                                                                                                                 |
-| Data Manipulation Panel | On the **Initial Request**, pass the current dashboard variable into the JSON data source. Receives the description of the Form elements, and builds the Data Manipiulation form. |
+| Component            | Description                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| REST API Server      | Accepts a parameter (device name). Returns the description for the Form Elements based on the received parameter.                                                                 |
+| JSON Data Source     | Can be JSON API or Infinity data source.                                                                                                                                          |
+| Variable panel       | Allows to change the dashboard variable (switch between devices).                                                                                                                 |
+| Business Forms panel | On the **Initial Request**, pass the current dashboard variable into the JSON data source. Receives the description of the Form elements, and builds the Data Manipiulation form. |
 
 ## REST API Server
 
@@ -227,7 +227,7 @@ We used the [JSON API Data source](https://grafana.com/grafana/plugins/marcusols
 
 ## Dashboard Variables
 
-The Variable Panel uses the `device` dashboard variable for display. The configuration is depicted below:
+The Variable panel uses the `device` dashboard variable for display. The configuration is depicted below:
 
 <Image
   title="Configured Device dashboard variable using Static Data Source."
