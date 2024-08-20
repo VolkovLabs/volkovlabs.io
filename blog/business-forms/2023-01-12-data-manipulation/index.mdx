@@ -26,7 +26,7 @@ Billy's sole thought in the morning was how awesome it would have been if the cl
 
 In general, data visualizations are secured against the users' interventions. However, there are times when granting access to specific database items is helpful for performance, accuracy, and convenience.
 
-After the presentation the next day, Billy inadvertently learned about [Data Manipulation Panel for Grafana](/plugins/business-forms/), which started a new chapter in his life.
+After the presentation the next day, Billy inadvertently learned about [Data Manipulation panel for Grafana](/plugins/business-forms/), which started a new chapter in his life.
 
 Grafana is a fantastic tool for visualizing a broad spectrum of metrics. The Grafana journey began with observability. However, flexible architecture paved the road to many industrial and commercial domains that go well beyond providing system monitoring metrics.
 
@@ -39,9 +39,9 @@ Grafana, among other areas, is gaining popularity as a platform for software dev
 
 Initially, the Grafana inventors neither provisioned such functionality nor even had it on their roadmap. Regardless, they engineered the adaptable Grafana architecture, which enables full-fledged modifications implemented with plugins utilizing all of the latest advantages of the Grafana toolkit to go above and beyond observability.
 
-The [Data Manipulation Panel plugin](/blog/data-manipulation-panel-plugin-for-grafana-97f9af2c67e0) was created in May-June of this year in response to the rapidly growing demand from the community. It is an open source project distributed under [Apache License Version 2.0].(https://github.com/volkovlabs/business-forms/blob/main/LICENSE).
+The [Data Manipulation panel plugin](/blog/data-manipulation-panel-plugin-for-grafana-97f9af2c67e0) was created in May-June of this year in response to the rapidly growing demand from the community. It is an open source project distributed under [Apache License Version 2.0].(https://github.com/volkovlabs/business-forms/blob/main/LICENSE).
 
-## Data Manipulation Panel
+## Data Manipulation panel
 
 There are various ways to install it. The easiest one is to use the Plugins Configuration menu when you are in the Grafana Plugins catalog with admin permissions. You can also download the plugin from the Grafana website or [GitHub repository](https://github.com/VolkovLabs/business-forms/).
 
@@ -50,13 +50,13 @@ There are various ways to install it. The easiest one is to use the Plugins Conf
   title="Manual data entry and user input into dashboard."
 />
 
-The most adventurous method, however, is to study the [Data Manipulation Panel](/plugins/business-forms/) plugin page. You will definitely discover a lot of useful information as well as find effective tips and techniques there.
+The most adventurous method, however, is to study the [Data Manipulation panel](/plugins/business-forms/) plugin page. You will definitely discover a lot of useful information as well as find effective tips and techniques there.
 
 The Data Manipulation plugin allows you to insert and update data, as well as make configuration changes, directly from your Grafana dashboard.
 
 ## API Server
 
-Data Manipulation Panel requires the installation of the API server on the same server where the database runs or on a separate host.
+Data Manipulation panel requires the installation of the API server on the same server where the database runs or on a separate host.
 
 <Image
   title="Data Manipulation panel uses GET and POST/PUT requests to interact with API server."
@@ -82,14 +82,14 @@ For an extra security layer, we recommend running Grafana behind an NGINX revers
 
 ## Static and Dynamic forms
 
-Data Manipulation Panel, like Grafana itself, was designed to embrace [flexibility](/plugins/business-forms/code). You can get started with static forms and progress to dynamic ones.
+Business Forms panel, like Grafana itself, was designed to embrace [flexibility](/plugins/business-forms/code). You can get started with static forms and progress to dynamic ones.
 
 - A static form is hard-coded and constructed just once.
 - A dynamic form can be generated on the fly from a data source (such as a database or a CSV file) based on rules and parameters.
 
 <Youtube
   id="RSVH1bSBNl8"
-  title="Static and dynamic form elements of Data Manipulation Panel."
+  title="Static and dynamic form elements of Business Forms panel."
 />
 
 For instance, your application may display different forms depending on the logged-in user, time of the day, IP address, and so on.
@@ -147,6 +147,6 @@ if (feedback?.fields.length) {
 }
 ```
 
-Data Manipulation Panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard. You can find more details about it in our [product documentation](/plugins/business-forms/).
+Business Forms panel is a brand-new Grafana plugin. It is the first plugin that allows you to insert and update application data, as well as modify settings, straight from your Grafana dashboard. You can find more details about it in our [product documentation](/plugins/business-forms/).
 
 Any suggestions and ideas are greatly appreciated. Please feel free to challenge us with your questions. They help us deliver the top-notch product!

@@ -3,7 +3,7 @@ authors: [mikhail]
 slug: dynamictext-panel-3.1.0-20230312/
 tags: [Business Text, Business Suite]
 image: /img/blog/2023-03-12-dynamictext-panel-3.1.0/banner.png
-keywords: [Dynamic Text, Panel, Data, Code, Highlight, Grafana]
+keywords: [Dynamic Text, Data, Code, Highlight, Grafana]
 ---
 
 import Catalog from "@site/blog/_catalog.mdx";
@@ -15,7 +15,7 @@ import Youtube from "@theme/Youtube";
 
 # Time range and zone, replace variables, and JS updates in Business Text 3.1.0
 
-We're excited to announce the release of the Business Text Panel 3.1.0. This feature release includes the following updates:
+We're excited to announce the release of the Business Text panel 3.1.0. This feature release includes the following updates:
 
 - Added Time Zone and Range parameters for JavaScript Code.
 - Added Replace variables and Location service parameters for Javascript Code.
@@ -58,7 +58,7 @@ handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolvedOptions
 
 Updated the `replaceVariable` function with a scoped function and added support for repeated panels.
 
-Business Text Panel provides the `{{variable}}` helper to work with dashboard and global variables. Alternatively, you can create a custom Handlebars helper to introduce additional logic and formats.
+Business Text panel provides the `{{variable}}` helper to work with dashboard and global variables. Alternatively, you can create a custom Handlebars helper to introduce additional logic and formats.
 
 ### Content
 
@@ -75,11 +75,11 @@ handlebars.registerHelper("myVariable", (name) => replaceVariables(`$${name}`));
 
 ## Magic (JavaScript) Trio
 
-One of the three plugins that complete Grafana is Business Text Panel. With Dynamic Text, Data Manipulation, and Business Charts Panel you can create fully functional web applications meeting your needs and expectations.
+One of the three plugins that complete Grafana is Business Text panel. With Dynamic Text, Data Manipulation, and Business Charts panel you can create fully functional web applications meeting your needs and expectations.
 
 <Youtube
   id="wPr4gZYzUVA"
-  title="Dynamic Text, Data Manipulation, and Business Charts Panel plugins."
+  title="Dynamic Text, Data Manipulation, and Business Charts panel plugins."
 />
 
 <GettingStarted />

@@ -3,7 +3,7 @@ authors: [mikhail]
 slug: echarts-panel-4.2.0-20230304/
 tags: [Business Charts, Business Suite]
 image: /img/blog/2023-03-04-echarts-panel-4.2.0/banner.png
-keywords: [Business Charts, Panel, Chart, Visualization, Grafana]
+keywords: [Business Charts, Chart, Visualization, Grafana]
 ---
 
 import Catalog from "@site/blog/_catalog.mdx";
@@ -35,7 +35,7 @@ The removal of the panel padding lets you use the panel space more effectively f
 
 ## Community Use cases
 
-We are amazed by the everyday developments of the community that make use of the latest capabilities in Business Charts Panel for Grafana.
+We are amazed by the everyday developments of the community that make use of the latest capabilities in Business Charts panel for Grafana.
 
 ### Dynamic toolbox
 
@@ -71,7 +71,7 @@ return myToolbox;
 Our community member [Barryetter](https://github.com/Barryetter) shared another use case that allows you to preserve the range slider settings of the `visualMap` object after the dashboard refresh.
 
 1. Specify two dashboard variables. Constants are also fine but you need to hide them from the user. Name them `datarangeStart` and `datarangeEnd` and apply some initial values to them.
-2. In the Apache EChart Panel code editor (before the `return` snippet), add an event handler for the `datarangeselected` event. Remove any other event handler to prevent creation of duplicate handlers.
+2. In the Apache EChart panel code editor (before the `return` snippet), add an event handler for the `datarangeselected` event. Remove any other event handler to prevent creation of duplicate handlers.
 
 ```js
 echartsInstance.off("datarangeselected");
