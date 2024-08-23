@@ -22,7 +22,7 @@ We are happy to announce the release of the Business Variable panel 3.4.0. This 
 - TreeView: Use Custom image for the Grafana Thresholds
 - TreeView: Collapse/Expand on initial load
 - TreeView: Tabs order
-- Button view: Reset button 
+- Button view: Reset button
 - Button view: Scrollbar
 - Multiple-selection variables: Unselect with Ctrl key
 
@@ -39,8 +39,8 @@ The Business Variable plugin touched the sky with a rip-roaring 1,000,000 downlo
 
 ## TreeView: Data Source for favorites
 
-Previously, the Business Variable panel stored the selected favorites in the browser, which is an excellent solution in many cases. 
-However, some users use multiple devices and browsers to work with the Grafana dashboard or need to clean their cookies often. 
+Previously, the Business Variable panel stored the selected favorites in the browser, which is an excellent solution in many cases.
+However, some users use multiple devices and browsers to work with the Grafana dashboard or need to clean their cookies often.
 
 For these users, we added a new section, **Favorites**, where they can configure storing the favorites in a data source.
 
@@ -62,10 +62,10 @@ CREATE TABLE favorites (
 
 Example of how the favorites table can be populated:
 
-| id    | variable  |  value  | user_id |
-| ------|-----------|---------|-------- |
-|   2   | device    | Device5 |    1    |
-|   3   | device    | Device3 |    1    |
+| id  | variable | value   | user_id |
+| --- | -------- | ------- | ------- |
+| 2   | device   | Device5 | 1       |
+| 3   | device   | Device3 | 1       |
 
 ## TreeView: Custom image for the Grafana Thresholds
 
@@ -88,15 +88,16 @@ It is a self-explanatory option. You can regulate your ThreeView's appearance af
 ## TreeView: Tabs order
 
 In case of multiple tabs, you can specify their order in the **Tab order** parameter:
- - **In order**. The tabs will always be displayed in the same order as they are in the panel options. 
- - **Selected first**. The selected tab will always be displayed first. 
+
+- **In order**. The tabs will always be displayed in the same order as they are in the panel options.
+- **Selected first**. The selected tab will always be displayed first.
 
 <Image
   title="Specify the order of the tabs."
   src="/img/blog/2024-08-23-variable-panel-3.4.0/order.png"
 />
 
-## Button view: Reset button 
+## Button view: Reset button
 
 In the **Button** view, you can use the Reset selection button(x) to unselect everything in one click.
 
@@ -107,7 +108,7 @@ In the **Button** view, you can use the Reset selection button(x) to unselect ev
 
 ## Button view: Scrollbar
 
-It is a nice change for user experience enhancement. A scrollbar automatically appears in the Button view when needed. 
+It is a nice change for user experience enhancement. A scrollbar automatically appears in the Button view when needed.
 
 <Image
   title="A scrollbar automatically appears in the Button view when needed."
