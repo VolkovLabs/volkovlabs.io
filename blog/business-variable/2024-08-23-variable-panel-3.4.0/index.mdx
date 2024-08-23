@@ -1,0 +1,170 @@
+---
+authors: [daria]
+slug: variable-panel-3.4.0-20240823/
+tags: [Business Variable, Business Suite]
+image: /img/blog/2024-08-23-variable-panel-3.4.0/banner.png
+keywords: [Variable, Status]
+---
+
+import Catalog from "@site/blog/_catalog_unpublished.mdx";
+import Feedback from "@site/docs/business-variable/_feedback.mdx";
+import GettingStarted from "@site/docs/business-variable/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-variable/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Persistent favorites, image thresholds, and button view updates in Business Variable 3.4.0
+
+We are happy to announce the release of the Business Variable panel 3.4.0. This release includes the following updates:
+
+- TreeView: Data Source for favorites
+- TreeView: Use Custom image for the Grafana Thresholds
+- TreeView: Collapse/Expand on initial load
+- TreeView: Tabs order
+- Button view: Reset button
+- Button view: Scrollbar
+- Multiple-selection variables: Unselect with Ctrl key
+
+<Catalog date="-" />
+
+## Downloads
+
+The Business Variable plugin touched the sky with a rip-roaring 1,000,000 downloads! :clap:
+
+<Image
+  title="The Business Variable panel was downloaded more than 1,000,000 times."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/downloads.png"
+/>
+
+## TreeView: Data Source for favorites
+
+Previously, the Business Variable panel stored the selected favorites in the browser, which is an excellent solution in many cases.
+However, some users use multiple devices and browsers to work with the Grafana dashboard or need to clear their cookies often.
+
+For these users, we added a new section, **Favorites**, where they can configure storing the favorites in a data source.
+
+<Image
+  title="Data Source option allows to store your favorites in a data source."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/fav.png"
+/>
+
+SQL to create the table used in the illustration above:
+
+```sql
+CREATE TABLE favorites (
+    id serial primary key,
+    variable text NOT NULL,
+    value text NOT NULL,
+    user_id integer NOT NULL
+);
+```
+
+Example of how the favorites table can be populated:
+
+| id  | variable | value   | user_id |
+| --- | -------- | ------- | ------- |
+| 2   | device   | Device5 | 1       |
+| 3   | device   | Device3 | 1       |
+
+### Get items query
+
+```sql
+select * from favorites where user_id=${__user.id};
+```
+
+### Add item query
+
+```sql
+INSERT INTO favorites(variable, value, user_id)
+VALUES ('${payload.variable}', '${payload.value}', ${__user.id})
+```
+
+### Delete item query
+
+```sql
+DELETE FROM favorites WHERE id=${payload.id}
+```
+
+## TreeView: Custom image for the Grafana Thresholds
+
+Grafana Thresholds functionality provides a better visual representation of data on your dashboard. To enhance it, we added the possibility of specifying an SVG image instead of a simple colored circle!
+
+<Image
+  title="Specify image for a better visual thresholds representation."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/img.png"
+/>
+
+## TreeView: Collapse/Expand on initial load
+
+It is a self-explanatory option. You can regulate your TreeView's appearance after the dashboard is open.
+
+<Image
+  title="Collapse or expand on initial load."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/col-exp.png"
+/>
+
+## TreeView: Tabs order
+
+In case of multiple tabs, you can specify their order in the **Tab order** parameter:
+
+- **In order**. The tabs will always be displayed in the same order as they are in the panel options.
+- **Selected first**. The selected tab will always be displayed first.
+
+<Image
+  title="Specify the order of the tabs."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/order.png"
+/>
+
+## Button view: Reset button
+
+In the **Button** view, you can use the Reset selection button(x) to unselect everything in one click.
+
+<Image
+  title="Use the reset selection button to unselect everything in the Button view."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/reset.png"
+/>
+
+## Button view: Scrollbar
+
+It is a nice change for user experience enhancement. A scrollbar automatically appears in the Button view when needed.
+
+<Image
+  title="A scrollbar automatically appears in the Button view when needed."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/scroll.png"
+  width="20%"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements in 3.4.0
+
+- Added panel options for changing tabs order (#193)
+- Updated the local storage key for favorites (#194)
+- Update to Grafana 11.1.4 (#195)
+
+### Features / Enhancements in 3.3.0
+
+- Added data source use for favorites (#184)
+- Updated documentation (#185)
+- Added scrollbar for button view (#187)
+
+### Features / Enhancements in 3.2.0
+
+- Updated video tutorial (#166)
+- Updated E2E workflow using Docker (#173)
+- Added image threshold style for showing status in Table view (#170)
+
+### Features / Enhancements in 3.1.0
+
+- Added collapse/expand rows option on initial load (#159)
+- Updated Selection Behavior using Ctrl key (#160)
+- Updated Grafana 11.0.0 and dependencies (#161)
+- Added Reset button for button view (#162)
+- Updated selection for variables with key/value pair (#165)
+
+<Feedback />
