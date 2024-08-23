@@ -40,7 +40,7 @@ The Business Variable plugin touched the sky with a rip-roaring 1,000,000 downlo
 ## TreeView: Data Source for favorites
 
 Previously, the Business Variable panel stored the selected favorites in the browser, which is an excellent solution in many cases.
-However, some users use multiple devices and browsers to work with the Grafana dashboard or need to clean their cookies often.
+However, some users use multiple devices and browsers to work with the Grafana dashboard or need to clear their cookies often.
 
 For these users, we added a new section, **Favorites**, where they can configure storing the favorites in a data source.
 
@@ -67,6 +67,25 @@ Example of how the favorites table can be populated:
 | 2   | device   | Device5 | 1       |
 | 3   | device   | Device3 | 1       |
 
+### Get items query
+
+```sql
+select * from favorites where user_id=${__user.id};
+```
+
+### Add item query
+
+```sql
+INSERT INTO favorites(variable, value, user_id)
+VALUES ('${payload.variable}', '${payload.value}', ${__user.id})
+```
+
+### Delete item query
+
+```sql
+DELETE FROM favorites WHERE id=${payload.id}
+```
+
 ## TreeView: Custom image for the Grafana Thresholds
 
 Grafana Thresholds functionality provides a better visual representation of data on your dashboard. To enhance it, we added the possibility of specifying an SVG image instead of a simple colored circle!
@@ -78,10 +97,10 @@ Grafana Thresholds functionality provides a better visual representation of data
 
 ## TreeView: Collapse/Expand on initial load
 
-It is a self-explanatory option. You can regulate your ThreeView's appearance after the dashboard is open.
+It is a self-explanatory option. You can regulate your TreeView's appearance after the dashboard is open.
 
 <Image
-  title="Collapse/Expand on initial load."
+  title="Collapse or expand on initial load."
   src="/img/blog/2024-08-23-variable-panel-3.4.0/col-exp.png"
 />
 
