@@ -309,7 +309,14 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
-      items: ["business-table/release"],
+      items: [
+        {
+          type: "doc",
+          id: "business-table/index",
+          label: "Introduction",
+        },
+        "business-table/release",
+      ],
       label: "Business Table",
       type: "category",
       description: "Summarize large amounts of data.",
