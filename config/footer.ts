@@ -135,5 +135,5 @@ export const FOOTER = {
       ],
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs. All rights reserved.`,
+  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs, USA. All rights reserved.`,
 };
