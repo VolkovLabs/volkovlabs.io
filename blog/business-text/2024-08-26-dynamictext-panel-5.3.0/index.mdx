@@ -21,7 +21,7 @@ We're excited to announce the release of the Business Text panel 5.3.0. This rel
 - Added handlebars partials to load external handlebars templates.
 - Expandable editors for content, JavaScript and CSS.
 - Updated helpers migration from older versions.
-- Update before render JavaScript code to support async requests and pass markdown instance.
+- Updated before render JavaScript code to support async requests and pass markdown instance.
 
 <Catalog date="August 26, 2024" />
 
@@ -36,24 +36,24 @@ In the blink of an eye, 7,000,000 downloads of the Business Text plugin turned i
 
 ## External handlebars templates(partials)
 
-In addition to external CSS files and JavaScript libraries, starting from this release, you can use external [handlebar template](https://handlebarsjs.com/guide/partials.html) pieces. 
+In addition to external CSS files and JavaScript libraries, starting from this release, you can use external [handlebars partials](https://handlebarsjs.com/guide/partials.html).
 
 <Image
-  title="The Business Text supports handlebars partial."
+  title="The Business Text supports handlebars partials."
   src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/partial.png"
 />
 
 ## Expandable editors for content, JS and CSS.
 
-For a better user experience, we added the expand the code area button.
+For a better user experience, we added the expand the editor area button.
 
 <Image
   title="Expand the code area button."
   src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/button.png"
-  width='20%'
+  width="20%"
 />
 
-You can find this button in all areas where you might need to have an extensive piece of code. 
+You can find this button in all areas where you might need to have an extensive piece of code.
 
 <Image
   title="Use the expand the code area button to open your code in a separate window."
@@ -64,16 +64,16 @@ You can find this button in all areas where you might need to have an extensive 
 
 In the previous release of the Business text, we published a mandatory migration guide for the [`context` parameters](/blog/dynamictext-panel-5.0.0-20240619/#context-migration-guide).
 
-Since then, many users have contacted us, mentioning their struggle with the migration process. In this release, we introduce automatic migration (where possible) to mitigate the migration effort. 
+Since then, several users have contacted us, mentioning their struggle with the migration process. In this release, we updated automatic migration (where possible) to mitigate the migration effort.
 
-Based of the feedback, that change lifted the migration burden significantly. However, please be aware that you might still have problems with some marginal cases. 
+Based of the feedback, that change lifted the migration burden significantly. However, please be aware that you might still have problems with some marginal cases.
 
 ## Before render JavaScript code capability
 
 Starting from this release, you can import the external JavaScript libraries in the **Before content rendering** option. Previosly, that was possible only in the **After content ready**.
 
 <Image
-  title="Use import in the Before content rendering parameter."
+  title="Use import in the Before content rendering option."
   src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/before.png"
 />
 
