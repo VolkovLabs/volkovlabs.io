@@ -134,6 +134,37 @@ A TreeView in the illustration below has two groups/tabs. You can add a new grou
   src="/img/plugins/business-variable/tabs.png"
 />
 
+### Collapse/Expand on initial load
+
+:::info Version
+The Business Variable supports the Collapse/Expand feature starting from version 3.4.0.
+:::
+
+It is a self-explanatory option. You can regulate your TreeView's appearance after the dashboard is open.
+
+<Image
+  title="Collapse or expand on initial load."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/col-exp.png"
+/>
+
+
+### Tabs order
+
+:::info Version
+The Business Variable supports the Tabs order feature starting from version 3.4.0.
+:::
+
+In case of multiple tabs, you can specify their order in the **Tab order** parameter:
+
+- **In order**. The tabs will always be displayed in the same order as they are in the panel options.
+- **Selected first**. The selected tab will always be displayed first.
+
+<Image
+  title="Specify the order of the tabs."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/order.png"
+/>
+
+
 ## Dashboard variable name display
 
 An additional option to display the variable name in front of the value can be enabled to provide additional context for the users.
@@ -145,10 +176,6 @@ An additional option to display the variable name in front of the value can be e
 
 ## Favorites
 
-:::info Unique
-Favorites are stored in a web browser and are unique for each user.
-:::
-
 The Business Variable panel allows selecting values as favorites. The favorite icon in the header allows you to filter all favorites for quick navigation and selection.
 
 <Image
@@ -157,6 +184,61 @@ The Business Variable panel allows selecting values as favorites. The favorite i
   lazy={false}
   width="80%"
 />
+
+:::info Version
+Prior to the version 3.4.0 favorites could only be stored in a web browser.
+Starting from the version 3.4.0, there is a second option - data source.
+:::
+
+### Store favorites in a data source
+
+Storing the selected favorites in the browser is an excellent solution in many cases. All favorites are unique for each user.
+
+However, some users use multiple devices and browsers to work with the Grafana dashboard or need to clear their cookies often.
+
+These users can choose to store their favorites in a data source.
+
+<Image
+  title="Data Source option allows to store your favorites in a data source."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/fav.png"
+/>
+
+SQL to create the table used in the illustration above:
+
+```sql
+CREATE TABLE favorites (
+    id serial primary key,
+    variable text NOT NULL,
+    value text NOT NULL,
+    user_id integer NOT NULL
+);
+```
+
+Example of how the favorites table can be populated:
+
+| id  | variable | value   | user_id |
+| --- | -------- | ------- | ------- |
+| 2   | device   | Device5 | 1       |
+| 3   | device   | Device3 | 1       |
+
+#### Get items query
+
+```sql
+select * from favorites where user_id=${__user.id};
+```
+
+#### Add item query
+
+```sql
+INSERT INTO favorites(variable, value, user_id)
+VALUES ('${payload.variable}', '${payload.value}', ${__user.id})
+```
+
+#### Delete item query
+
+```sql
+DELETE FROM favorites WHERE id=${payload.id}
+```
 
 ## Sticky option
 
@@ -262,6 +344,19 @@ In the illustration below, you can see three different dashboards with an identi
 <Image
   title="Selected tab preservation configuration."
   src="/img/blog/2024-06-01-variable-panel-3.0.0/tab-pres.png"
+/>
+
+## Custom image for the Grafana Thresholds
+
+:::info Version
+The Business Variable supports the Custom image feature starting from version 3.4.0.
+:::
+
+Grafana Thresholds functionality provides a better visual representation of data on your dashboard. To enhance it, we added the possibility of specifying an SVG image instead of a simple colored circle!
+
+<Image
+  title="Specify image for a better visual thresholds representation."
+  src="/img/blog/2024-08-23-variable-panel-3.4.0/img.png"
 />
 
 ## Advanced. Select dependent variable to reset
