@@ -334,6 +334,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           items: [
+            "business-text/rendering-content",
             "business-text/code",
             "business-text/external",
             "business-text/styles",
@@ -354,6 +355,7 @@ const sidebars: SidebarsConfig = {
             "business-text/status",
             "business-text/variables",
             "business-text/wrap",
+            "business-text/expandable",
           ],
           label: "Features",
           type: "category",
