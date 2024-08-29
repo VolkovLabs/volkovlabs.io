@@ -164,6 +164,64 @@ We simplified work with the payload creation. The Business Forms panel has a des
   src="/img/blog/2024-07-02-form-panel-4.0.0/update-payload.png"
 />
 
+### Use multiline in payload
+
+Text Area element allows you to create text on multiple lines and add to the payload
+
+<Image
+  title="Text Area element with multiple lines"
+  src="/img/plugins/business-forms/text-area-multiline.png"
+/>
+
+After completing the element and submitting the form, you may see an error. The issue is caused by not properly processing and converting multi-line and add it to payload.
+
+<Image
+  title="Datasource update error with multiple lines"
+  src="/img/plugins/business-forms/datasource-error-update.png"
+/>
+
+To avoid this behavior, please add following steps in Create Payload code editor:
+
+- Find element refer to TextArea.
+- Add replace logic to value `payload[element.id] = element.value.replaceAll("\n", "\\n");`
+
+#### Code example
+
+```js
+const payload = {};
+
+context.panel.elements.forEach((element) => {
+  if (!element.value) {
+    return;
+  }
+
+  /**
+   * Required logic to update the value
+   */
+  if (element.id === "description2") {
+    payload[element.id] = element.value.replaceAll("\n", "\\n");
+    return;
+  }
+
+  payload[element.id] = element.value;
+});
+
+/**
+ * Check payload using developer tools
+ */
+console.log("update payload:", payload);
+
+/**
+ * Data Source payload
+ */
+return payload;
+```
+
+<Image
+  title="Create payload code editor"
+  src="/img/plugins/business-forms/datasource-create-payload-code-editor.png"
+/>
+
 ### REST API
 
 See the description for the Initial Request REST API. Both Initial and Update requests have the same parameters. Also similarly, you can use global and dashboard variables in the API server call along with header parameters.
