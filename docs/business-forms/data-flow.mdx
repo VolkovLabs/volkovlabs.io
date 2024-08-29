@@ -166,23 +166,23 @@ We simplified work with the payload creation. The Business Forms panel has a des
 
 ### Use multiline in payload
 
-Text Area element allows you to create text on multiple lines and add to the payload
+Text Area element allows you to create text with multiple lines:
 
 <Image
   title="Text Area element with multiple lines"
   src="/img/plugins/business-forms/text-area-multiline.png"
 />
 
-After completing the element and submitting the form, you may see an error. The issue is caused by not properly processing and converting multi-line and add it to payload.
+After entering the data and submitting the form, you may see a data source error. The issue is caused by not properly processing and converting multi-line in the payload.
 
 <Image
-  title="Datasource update error with multiple lines"
+  title="Datasource update error with multiple lines."
   src="/img/plugins/business-forms/datasource-error-update.png"
 />
 
-To avoid this behavior, please add following steps in Create Payload code editor:
+To avoid this behavior, please add following steps in the Create Payload code editor:
 
-- Find element refer to TextArea.
+- Find element refer to the TextArea element.
 - Add replace logic to value `payload[element.id] = element.value.replaceAll("\n", "\\n");`
 
 #### Code example
@@ -198,7 +198,7 @@ context.panel.elements.forEach((element) => {
   /**
    * Required logic to update the value
    */
-  if (element.id === "description2") {
+  if (element.id === "description") {
     payload[element.id] = element.value.replaceAll("\n", "\\n");
     return;
   }
@@ -218,7 +218,7 @@ return payload;
 ```
 
 <Image
-  title="Create payload code editor"
+  title="Create payload code editor with custom payload to update multiple lines."
   src="/img/plugins/business-forms/datasource-create-payload-code-editor.png"
 />
 
