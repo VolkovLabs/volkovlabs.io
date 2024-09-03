@@ -1,0 +1,232 @@
+---
+authors: [vitali]
+slug: streaming-images-in-business-media-panel-20240903
+tags: [Business Media, Solution]
+image: /img/volkovlabs.png
+keywords: [Image, PDF, Base64, Visualization]
+---
+
+import Feedback from "@site/docs/business-media/_feedback.mdx";
+import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Streaming images in business media panel
+
+This article provides an example of how the MQTT data source can be or Websocket can be use with the Business Media plugin on the Grafana dashboard.
+
+Thanks to the community for the idea for this post.
+
+## Websocket
+
+First, I'll show you how I used websocket.
+
+To do this, I created a simple server that I ran locally.
+
+It returns to me images that I have previously saved in a folder next to the `index.js` file. For this example we will use the Minions from a famous cartoon.
+
+Here is the sample code I used
+
+### Code sample
+
+```js
+const ws = require("ws");
+const fs = require("fs");
+const path = require("path");
+
+const imagesDir = path.join(__dirname, "images");
+
+const images = fs
+  .readdirSync(imagesDir)
+  .filter((file) => /\.(jpg|jpeg|png|gif)$/.test(file));
+
+let currentIndex = 0;
+
+/**
+ * Server
+ */
+const server = new ws.WebSocketServer({ port: 8090 });
+
+/**
+ * Convert Image to Base64
+ */
+const convertImageToBase64 = (imagePath) => {
+  const imageData = fs.readFileSync(imagePath);
+  return Buffer.from(imageData).toString("base64");
+};
+
+/**
+ * Send Data
+ */
+const sendData = (socket) => {
+  const imagePath = path.join(imagesDir, images[currentIndex]);
+  const base64Image = convertImageToBase64(imagePath);
+
+  const json = [
+    {
+      name: images[currentIndex],
+      image: `data:image/png;base64,${base64Image}`,
+    },
+  ];
+
+  socket.send(JSON.stringify(json));
+
+  currentIndex = (currentIndex + 1) % images.length;
+
+  setTimeout(() => {
+    sendData(socket);
+  }, 100);
+};
+
+/**
+ * Connection
+ */
+server.on("connection", (socket) => {
+  console.log("Connected...");
+
+  setTimeout(() => {
+    sendData(socket);
+  }, 1000);
+});
+```
+
+### Websocket datasource
+
+I'm using the WebSocket API to customize the data
+
+Here is sample of my datasource configuration
+
+<Image
+  title="Websocket API configuration."
+  src="/img/blog/2024-09-03-business-media-streaming/websocket-config.png"
+/>
+
+Let's create a new panel and connect our data source. My websocket example returns `name` and `image`.
+
+<Image
+  title="Websocket API configuration in panel."
+  src="/img/blog/2024-09-03-business-media-streaming/websocket-panel-config.png"
+/>
+
+<Image
+  title="Panel options"
+  src="/img/blog/2024-09-03-business-media-streaming/panel-websocket-options.png"
+/>
+
+### Result
+
+After applying the options and save, on the dashboard, we will see our panel.
+If configured correctly, we will first see the text `Nothing to display...` for a very short time, after which the panel will begin to receive data and display it.
+
+<Image
+  title="WebSocket result"
+  src="/img/blog/2024-09-03-business-media-streaming/websocket-result.gif"
+/>
+
+## MQTT
+
+Next, we will use MQTT datasource.
+Below is a sample code for the server that we will use for MQTT in the future.
+
+### Code sample
+
+```java
+package org.example.testmqttgrafana;
+
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MqttPublisherService {
+
+    private String topic;
+
+    private MqttClient client;
+
+    public MqttPublisherService(@Value("${mqtt.broker}") String broker, @Value("${mqtt.topic}") String topic) {
+        try {
+            this.client = new MqttClient(broker, MqttClient.generateClientId());
+            this.client.connect();
+            this.topic = topic;
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void publish(String sousTopic, String content) {
+        try {
+            if (!client.isConnected()) {
+                System.out.println("Client is not connected. Trying to connect...");
+                client.connect();
+            }
+
+            if (client.isConnected()) {
+                MqttMessage message = new MqttMessage(content.getBytes());
+                message.setQos(2);
+                client.publish(topic + "/" + sousTopic, message);
+            } else {
+                System.out.println("Failed to connect to MQTT broker.");
+            }
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
+### MQTT datasource
+
+Here is sample of my datasource configuration
+
+<Image
+  title="MQTT configuration."
+  src="/img/blog/2024-09-03-business-media-streaming/mqtt-config.png"
+/>
+
+Let's connect our data source and set panel options.
+
+<Image
+  title="MQTT panel configuration."
+  src="/img/blog/2024-09-03-business-media-streaming/mqtt-panel-config.png"
+/>
+
+<Image
+  title="Panel options."
+  src="/img/blog/2024-09-03-business-media-streaming/mqtt-panel-options.png"
+/>
+
+### Result
+
+After applying the options and save, on the dashboard, we will see our panel.
+
+<Image
+  title="MQTT result."
+  src="/img/blog/2024-09-03-business-media-streaming/mqtt-result.gif"
+/>
+
+:::info Be aware
+
+When using MQTT, you may experience panel freeze.
+
+:::
+
+Please, note, that the green circle indicates that the panel is operating in streaming mode. When operating in this mode, rows may accumulate if the query settings are not set, or set incorrect.
+If there is insufficient memory, this will cause the panel to freeze.
+
+To avoid it, set `Max data points` in `Query options` for datasource.
+Select the appropriate value to match your result.
+
+In my example I set the value to 100 and then the rows stopped accumulating.
+
+You can check this by turning on the `Table View`
+
+<Image
+  title="MQTT query options."
+  src="/img/blog/2024-09-03-business-media-streaming/mqtt-query-options.png"
+/>
+
+<Feedback />
