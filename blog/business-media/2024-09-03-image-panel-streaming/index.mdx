@@ -11,23 +11,21 @@ import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Streaming images in business media panel
+# Streaming images using the Business Media panel
 
-This article provides an example of how the MQTT data source can be or Websocket can be use with the Business Media plugin on the Grafana dashboard.
+This article provides an example of how the MQTT and Websocket data sources can be use with the Business Media plugin on the Grafana dashboard.
 
 Thanks to the community for the idea for this post.
 
 ## Websocket
 
-First, I'll show you how I used websocket.
-
-To do this, I created a simple server that I ran locally.
+First, I'll demonstrate you how I used websocket. To do this, I created a simple server that I ran locally.
 
 It returns to me images that I have previously saved in a folder next to the `index.js` file. For this example we will use the Minions from a famous cartoon.
 
-Here is the sample code I used
+### Server
 
-### Code sample
+Here is the sample code I used
 
 ```js
 const ws = require("ws");
@@ -36,6 +34,9 @@ const path = require("path");
 
 const imagesDir = path.join(__dirname, "images");
 
+/**
+ * Find images
+ */
 const images = fs
   .readdirSync(imagesDir)
   .filter((file) => /\.(jpg|jpeg|png|gif)$/.test(file));
@@ -62,6 +63,9 @@ const sendData = (socket) => {
   const imagePath = path.join(imagesDir, images[currentIndex]);
   const base64Image = convertImageToBase64(imagePath);
 
+  /**
+   * Returned JSON
+   */
   const json = [
     {
       name: images[currentIndex],
@@ -90,11 +94,9 @@ server.on("connection", (socket) => {
 });
 ```
 
-### Websocket datasource
+### Data source configuration
 
-I'm using the WebSocket API to customize the data
-
-Here is sample of my datasource configuration
+I'm using the WebSocket API data source to retrieve the data. Here is sample of my datasource configuration:
 
 <Image
   title="Websocket API configuration."
@@ -109,26 +111,28 @@ Let's create a new panel and connect our data source. My websocket example retur
 />
 
 <Image
-  title="Panel options"
+  title="Business Media panel options."
   src="/img/blog/2024-09-03-business-media-streaming/panel-websocket-options.png"
 />
 
 ### Result
 
 After applying the options and save, on the dashboard, we will see our panel.
-If configured correctly, we will first see the text `Nothing to display...` for a very short time, after which the panel will begin to receive data and display it.
+
+If configured correctly, we will first see the text `Nothing to display...` for a very short time, which can be updated in the panel options. After the panel will begin to receive data and display it.
 
 <Image
-  title="WebSocket result"
+  title="Images streaming from WebSocket using Business Media panel."
   src="/img/blog/2024-09-03-business-media-streaming/websocket-result.gif"
 />
 
 ## MQTT
 
-Next, we will use MQTT datasource.
-Below is a sample code for the server that we will use for MQTT in the future.
+Next, we will use the MQTT data source.
 
-### Code sample
+### Publisher
+
+Below is a sample code for the server that we will use to connect to using MQTT data source.
 
 ```java
 package org.example.testmqttgrafana;
@@ -178,24 +182,24 @@ public class MqttPublisherService {
 
 ```
 
-### MQTT datasource
+### Data source configuration
 
-Here is sample of my datasource configuration
+Here is sample of my datasource configuration:
 
 <Image
-  title="MQTT configuration."
+  title="MQTT data source configuration."
   src="/img/blog/2024-09-03-business-media-streaming/mqtt-config.png"
 />
 
 Let's connect our data source and set panel options.
 
 <Image
-  title="MQTT panel configuration."
+  title="Query editor with MQTT data source configuration."
   src="/img/blog/2024-09-03-business-media-streaming/mqtt-panel-config.png"
 />
 
 <Image
-  title="Panel options."
+  title="Business Media panel options."
   src="/img/blog/2024-09-03-business-media-streaming/mqtt-panel-options.png"
 />
 
@@ -204,28 +208,26 @@ Let's connect our data source and set panel options.
 After applying the options and save, on the dashboard, we will see our panel.
 
 <Image
-  title="MQTT result."
+  title="Business Media displays results using MQTT data source."
   src="/img/blog/2024-09-03-business-media-streaming/mqtt-result.gif"
 />
 
-:::info Be aware
+## Performance
+
+:::info Panel freeze
 
 When using MQTT, you may experience panel freeze.
 
 :::
 
-Please, note, that the green circle indicates that the panel is operating in streaming mode. When operating in this mode, rows may accumulate if the query settings are not set, or set incorrect.
-If there is insufficient memory, this will cause the panel to freeze.
+Please, note, that the green circle indicates that the panel is operating in streaming mode. When operating in this mode, rows may accumulate if the query settings are not set, or set incorrect. If there is insufficient memory, this will cause the panel to freeze.
 
-To avoid it, set `Max data points` in `Query options` for datasource.
-Select the appropriate value to match your result.
+To avoid it, set `Max data points` in `Query options` for data source. Select the appropriate value to match your result.
 
-In my example I set the value to 100 and then the rows stopped accumulating.
-
-You can check this by turning on the `Table View`
+In my example I set the value to `100` and then the rows accumulated using rolling buffer. You can check this by turning on the `Table View`.
 
 <Image
-  title="MQTT query options."
+  title="Set Max data points in the MQTT query options."
   src="/img/blog/2024-09-03-business-media-streaming/mqtt-query-options.png"
 />
 
