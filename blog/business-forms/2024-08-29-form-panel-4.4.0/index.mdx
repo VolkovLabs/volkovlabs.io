@@ -38,7 +38,7 @@ The Business Forms plugin has been downloaded almost 1,000,000 times! We are exc
 
 In the release 4.4.0, we added a new Form Elements type - **Button**. The functionality of existing previously standard buttons (Submit, Reset, and Save Default) is still the same.
 
-With the **Button** Form Elements type, you can have more functionality on your form, such as calculating a value, performing validation checks, or any other. 
+With the **Button** Form Elements type, you can have more functionality on your form, such as calculating a value, performing validation checks, or any other.
 
 A user has some options to style a custom button. Colors, size, and position are up to configuration.
 
@@ -47,7 +47,7 @@ A user has some options to style a custom button. Colors, size, and position are
   src="/img/blog/2024-08-29-form-panel-4.4.0/buttons-dash.png"
 />
 
-The custom button element can be located among other Form Elements or in the form footer, next to the standard buttons. 
+The custom button element can be located among other Form Elements or in the form footer, next to the standard buttons.
 
 <Image
   title="Available options for the Button Form Elements type."
@@ -98,19 +98,20 @@ We added a new function to simplify that approach. It has an object name as an i
 Before 4.4.0 version:
 
 ```javascript
-context.panel.onChangeElements(context.panel.elements.map(
-  (element) => 
-    element.id === 'name' ? { ...element, value: 'Alex' } : element
-))
+context.panel.onChangeElements(
+  context.panel.elements.map((element) =>
+    element.id === "name" ? { ...element, value: "Alex" } : element
+  )
+);
 ```
 
 The simplified version example:
 
 ```javascript
 // only passed elements should be updated, the rest stay the same
-context.panel.patchFormValues({ name: 'Alex' }); 
+context.panel.patchFormValues({ name: "Alex" });
 // name and isAdmin
-context.panel.patchFormValues({ name: 'Alex', isAdmin: true }); 
+context.panel.patchFormValues({ name: "Alex", isAdmin: true });
 ```
 
 <GettingStarted />
