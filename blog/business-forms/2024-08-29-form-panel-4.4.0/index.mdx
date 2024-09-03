@@ -21,7 +21,8 @@ We are happy to announce the release of the Business Forms panel 4.4.0. This rel
 - New Form Elements type - **Button**.
 - Relocated field mapping option.
 - Added Expandable editors for the code and payload editors.
-- Simplified the Form Elements `patch` helper.
+- Simplified the Form Elements `patchFormValues` helper.
+- Simplified the Form Elements `formValue` helper.
 
 <Catalog date="August 29, 2024" />
 
@@ -91,9 +92,7 @@ You can find this button at the top left corner of any JavaScript area parameter
 
 ## Simplified the Form Elements `patch` helper
 
-Previosly, in order to update a form element value, a user had to use `context.panel.elements.map()`.
-
-We added a new function to simplify that approach. It has an object name as an inpit parameter and a new value.
+Previosly, in order to update a form element value, a user had to use `context.panel.elements.map()`. We added a new function to simplify that approach. It has an object's key as an inpit parameter and a new value.
 
 Before 4.4.0 version:
 
@@ -112,6 +111,28 @@ The simplified version example:
 context.panel.patchFormValues({ name: "Alex" });
 // name and isAdmin
 context.panel.patchFormValues({ name: "Alex", isAdmin: true });
+```
+
+## Simplified the Form Elements `formValue` helper
+
+Previosly, in order to get a form element value, a user had to use `context.panel.elements.forEach()`. We added a new function to simplify that approach. It has an object's key as an inpit parameter.
+
+Before 4.4.0 version:
+
+```
+const payload = {};
+
+context.panel.elements.forEach((element) => {
+  payload[element.id] = element.value;
+});
+
+// payload = { name: 'Alex', isAdmin: true }
+```
+
+The simplified version example:
+
+```
+context.panel.formValue // { name: 'Alex', isAdmin: true }
 ```
 
 <GettingStarted />
