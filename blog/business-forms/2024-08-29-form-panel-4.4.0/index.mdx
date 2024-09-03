@@ -1,0 +1,168 @@
+---
+authors: [daria]
+slug: form-panel-4.4.0-20240829/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2024-08-29-form-panel-4.4.0/banner.png
+keywords: [Data Manipulation, Forms, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Custom buttons, initial values from the query, and expandable editors in Business Forms 4.4.0
+
+We are happy to announce the release of the Business Forms panel 4.4.0. This release includes the following updates:
+
+- New Form Elements type - **Button**.
+- Relocated field mapping option.
+- Added Expandable editors for the code and payload editors.
+- Simplified the Form Elements `patchFormValues` helper.
+- Simplified the Form Elements `formValue` helper.
+
+<Catalog date="August 29, 2024" />
+
+## Downloads
+
+The Business Forms plugin has been downloaded almost 1,000,000 times! We are excited to see the community's increased adaptation of the panel.
+
+<Image
+  title="The Business Forms plugin downloads almost hit 1,000,000."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/downloads.png"
+/>
+
+## New Form Elements type - **Button**
+
+In the release 4.4.0, we added a new Form Elements type - **Button**. The functionality of existing previously standard buttons (Submit, Reset, and Save Default) is still the same.
+
+With the **Button** Form Elements type, you can have more functionality on your form, such as calculating a value, performing validation checks, or any other.
+
+A user has some options to style a custom button. Colors, size, and position are up to configuration.
+
+<Image
+  title="New Form Elements type - Custom Button."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/buttons-dash.png"
+/>
+
+The custom button element can be located among other Form Elements or in the form footer, next to the standard buttons.
+
+<Image
+  title="Available options for the Button Form Elements type."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/buttons-options.png"
+/>
+
+## Relocated field mapping option
+
+For a better user experience, we relocated the field mapping options and similized their names.
+
+### Data Source
+
+<Image
+  title="Steps to configure the Initial Request for Data Source. New location of `Field Name` fields."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/field-name-ds-440.png"
+/>
+
+### Query
+
+<Image
+  title="Explicitly specify the field-to-form element mapping for Query using Query Field. New location of Query Field fields since version 4.2.0"
+  src="/img/blog/2024-08-29-form-panel-4.4.0/field-name-query-440.png"
+/>
+
+## Expandable editors
+
+For a better user experience, we added the expand the editor area button.
+
+<Image
+  title="Expand the code area button."
+  src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/button.png"
+  width="20%"
+/>
+
+You can find this button at the top left corner of any JavaScript area parameter.
+
+<Image
+  title="Use the expand the code area button to open your code in a separate window."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/window.png"
+/>
+
+## Simplified the Form Elements `patch` helper
+
+Previosly, in order to update a form element value, a user had to use `context.panel.elements.map()`. We added a new function to simplify that approach. It has an object's key as an inpit parameter and a new value.
+
+Before 4.4.0 version:
+
+```javascript
+context.panel.onChangeElements(
+  context.panel.elements.map((element) =>
+    element.id === "name" ? { ...element, value: "Alex" } : element
+  )
+);
+```
+
+The simplified version example:
+
+```javascript
+// only passed elements should be updated, the rest stay the same
+context.panel.patchFormValues({ name: "Alex" });
+// name and isAdmin
+context.panel.patchFormValues({ name: "Alex", isAdmin: true });
+```
+
+## Simplified the Form Elements `formValue` helper
+
+Previosly, in order to get a form element value, a user had to use `context.panel.elements.forEach()`. We added a new function to simplify that approach. It has an object's key as an inpit parameter.
+
+Before 4.4.0 version:
+
+```
+const payload = {};
+
+context.panel.elements.forEach((element) => {
+  payload[element.id] = element.value;
+});
+
+// payload = { name: 'Alex', isAdmin: true }
+```
+
+The simplified version example:
+
+```
+context.panel.formValue // { name: 'Alex', isAdmin: true }
+```
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements in 4.4.0
+
+- Added Expandable Editors (#472)
+- Updated Pre-Selection for multi selection elements (#474)
+- Updated data source query display error (#477)
+
+### Bugfixes in 4.3.1
+
+- Fixed migration helper if nested object properties are not defined (#468)
+
+### Features / Enhancements in 4.3.0
+
+- Added helpers for form elements (#460)
+- Updated payload options migration (#464)
+- Added element custom button (#463)
+
+### Features / Enhancements in 4.2.0
+
+- Updated Docker Compose and E2E pipeline (#446, #447)
+- Improved unit tests (#447)
+- Updated Business Forms tutorial (#451)
+- Updated the logic for comparing values with the initial values (#454)
+- Updated position of Query fields for initial values (#455)
+
+<Feedback />

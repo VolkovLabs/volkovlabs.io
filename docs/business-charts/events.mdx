@@ -88,7 +88,7 @@ setTimeout(
 context.panel.chart.on("datazoom", function (params) {
   const startValue = params.batch[0]?.startValue;
   const endValue = params.batch[0]?.endValue;
-  locationService.partial({ from: startValue, to: endValue });
+  context.grafana.locationService.partial({ from: startValue, to: endValue });
 });
 
 return {
