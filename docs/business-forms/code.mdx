@@ -163,3 +163,49 @@ context.panel.onChange(
 ```
 
 The `context.panel.onChange()` function is required to update the element values in the local state.
+
+
+### Simplified the Form Elements `patchFormValues` helper
+
+Before version 4.4.0, in order to update a form element value, a user had to use `context.panel.elements.map()`. In the 4.4.0, we added a new function to simplify that approach. It has an object's key as an inpit parameter and a new value.
+
+Before 4.4.0 version:
+
+```javascript
+context.panel.onChangeElements(
+  context.panel.elements.map((element) =>
+    element.id === "name" ? { ...element, value: "Alex" } : element
+  )
+);
+```
+
+The simplified version example:
+
+```javascript
+// only passed elements should be updated, the rest stay the same
+context.panel.patchFormValues({ name: "Alex" });
+// name and isAdmin
+context.panel.patchFormValues({ name: "Alex", isAdmin: true });
+```
+
+### Simplified the Form Elements `formValue` helper
+
+Before version 4.4.0, in order to get a form element value, a user had to use `context.panel.elements.forEach()`. In the 4.4.0, we added a new function to simplify that approach. It has an object's key as an inpit parameter.
+
+Before 4.4.0 version:
+
+```
+const payload = {};
+
+context.panel.elements.forEach((element) => {
+  payload[element.id] = element.value;
+});
+
+// payload = { name: 'Alex', isAdmin: true }
+```
+
+The simplified version example:
+
+```
+context.panel.formValue // { name: 'Alex', isAdmin: true }
+```

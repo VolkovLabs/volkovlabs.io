@@ -2,7 +2,7 @@
 authors: [vitali]
 slug: streaming-images-in-business-media-panel-20240903
 tags: [Business Media, Solution]
-image: /img/volkovlabs.png
+image: /img/blog/2024-09-03-business-media-streaming/banner.png
 keywords: [Image, PDF, Base64, Visualization]
 ---
 
@@ -13,19 +13,23 @@ import Youtube from "@theme/Youtube";
 
 # Streaming images using the Business Media panel
 
-This article provides an example of how the MQTT and Websocket data sources can be use with the Business Media plugin on the Grafana dashboard.
+This article contains an example of effective collaboration between the Business Forms panel and two data sources (the Websocket and MQTT) to faciliate streaming images on your Grafana dashboard. 
 
-Thanks to the community for the idea for this post: https://community.grafana.com/t/display-base64-live-image-from-mqtt-datasource/127028
+:::info THANK YOU
+Idea for this post belongs to [peltiern](https://community.grafana.com/u/peltiern/summary), the Grafana community member. 
+
+https://community.grafana.com/t/display-base64-live-image-from-mqtt-datasource/127028
+:::
 
 ## Websocket
 
-First, I'll demonstrate you how I used websocket. To do this, I created a simple server that I ran locally.
+I start with a short video of Minions from a famous cartoon. I split it into several image files and place them all into the folder next to the `index.js` file.
 
-It returns to me images that I have previously saved in a folder next to the `index.js` file. For this example we will use the Minions from a famous cartoon.
+To bringing these images into the Grafana dashboard, I run a simple server locally, as shown in the code below. This code converts the images into the `base64` format, making them ready for submission. 
 
 ### Server
 
-Here is the sample code I used
+Here is the server code from this example:
 
 ```js
 const ws = require("ws");
@@ -96,43 +100,52 @@ server.on("connection", (socket) => {
 
 ### Data source configuration
 
-I'm using the WebSocket API data source to retrieve the data. Here is sample of my datasource configuration:
+Below is the configuration of the WebSocket API data source. 
 
 <Image
-  title="Websocket API configuration."
+  title="The WebSocket API configuration."
   src="/img/blog/2024-09-03-business-media-streaming/websocket-config.png"
+  width="50%"
 />
 
-Let's create a new panel and connect our data source. My websocket example returns `name` and `image`.
+WebSocket host:
+
+```html
+ws://host.docker.internal:8090
+```
+
+### Business Media panel configuration
+
+The illustration below is how we configured the Business Media panel to work with the Websocket data source. 
+
+The Websocket data source returns the `name` and `image` columns in this example.
 
 <Image
   title="Websocket API configuration in panel."
   src="/img/blog/2024-09-03-business-media-streaming/websocket-panel-config.png"
 />
 
-<Image
-  title="Business Media panel options."
-  src="/img/blog/2024-09-03-business-media-streaming/panel-websocket-options.png"
-/>
+### Result on the dashboard
 
-### Result
+After the specified steps and saving the panel, you should see the images streaming on your dashboard. 
 
-After applying the options and save, on the dashboard, we will see our panel.
-
-If configured correctly, we will first see the text `Nothing to display...` for a very short time, which can be updated in the panel options. After the panel will begin to receive data and display it.
+For the loading images time interval, the users will see the message from the **No Results Message** option (step 6 from the above image).
 
 <Image
-  title="Images streaming from WebSocket using Business Media panel."
+  title="Images streaming from the WebSocket using the Business Media panel."
   src="/img/blog/2024-09-03-business-media-streaming/websocket-result.gif"
 />
 
 ## MQTT
 
-Next, we will use the MQTT data source.
+The approach with MQTT is very similar to the WebSocket. 
+Thank you [peltiern](https://community.grafana.com/u/peltiern/summary), Grafana community member, for the provided example of the publisher code. It streams data to the MQTT data source.
+
+I tested it, it worked for us.
 
 ### Publisher
 
-Below is a sample code for the server that we will use to connect to using MQTT data source.
+The Publisher sample code is below. The full code you can find in the above mentioned Community post. 
 
 ```java
 package org.example.testmqttgrafana;
@@ -179,7 +192,6 @@ public class MqttPublisherService {
         }
     }
 }
-
 ```
 
 ### Data source configuration
@@ -191,7 +203,9 @@ Here is sample of my datasource configuration:
   src="/img/blog/2024-09-03-business-media-streaming/mqtt-config.png"
 />
 
-Let's connect our data source and set panel options.
+### Business Media panel configuration
+
+Below is the Business Media panel configuration to work with the MQTT data source.
 
 <Image
   title="Query editor with MQTT data source configuration."
@@ -203,9 +217,11 @@ Let's connect our data source and set panel options.
   src="/img/blog/2024-09-03-business-media-streaming/mqtt-panel-options.png"
 />
 
-### Result
+### Result on the dashboard
 
-After applying the options and save, on the dashboard, we will see our panel.
+Again, thank you [peltiern](https://community.grafana.com/u/peltiern/summary), Grafana community member, for the provided example of the dashboard displaying image streaming on the Grafana dashboard.
+
+He also has two more visualizations for some other purposes. 
 
 <Image
   title="Business Media displays results using MQTT data source."
@@ -214,17 +230,17 @@ After applying the options and save, on the dashboard, we will see our panel.
 
 ## Performance
 
-:::info Panel freeze
+:::warning Panel freeze
 
 When using MQTT, you may experience panel freeze.
 
 :::
 
-Please, note, that the green circle indicates that the panel is operating in streaming mode. When operating in this mode, rows may accumulate if the query settings are not set, or set incorrect. If there is insufficient memory, this will cause the panel to freeze.
+Remember that the green circle, located next to the Business Media panel title, indicates the panel is operating in streaming mode. If the query settings are not set correctly, rows may accumulate, which leads to insufficient memory and causes the panel to freeze. So, being cautious and attentive to the Query parameters is essential.
 
-To avoid it, set `Max data points` in `Query options` for data source. Select the appropriate value to match your result.
+Set the **Max data points** in **Query options** for the data source. Select the appropriate value to match your result.
 
-In my example I set the value to `100` and then the rows accumulated using rolling buffer. You can check this by turning on the `Table View`.
+In my example, I set the value to 100, and then the rows accumulated using a rolling buffer. You can check this by turning on the **Table View**.
 
 <Image
   title="Set Max data points in the MQTT query options."
