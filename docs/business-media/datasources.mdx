@@ -4,6 +4,7 @@ tags:
 image: /img/plugins/business-media/video-comments.png
 ---
 
+import BlogPost from "@theme/BlogPost";
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 
@@ -13,7 +14,7 @@ The Business Media panel retrieves media data from the connected data source. Yo
 
 A static data source is the quickest way to get started. PostgreSQL is also an excellent choice.
 
-## Business Input data source
+## Business Input
 
 You can use a [Business Input data source](/plugins/business-input/) to retrieve any supported Base64 formats and render them on your Grafana dashboard.
 
@@ -67,3 +68,9 @@ Load PDF, PNG, MP4, MP3, and other supported file formats into your database usi
   url="https://github.com/VolkovLabs/business-media/blob/main/postgres/load.ts"
   language="js"
 />
+
+## Websocket and MQTT
+
+This article contains an example of effective collaboration between the Business Forms panel and two data sources (the Websocket and MQTT) to faciliate streaming images on your Grafana dashboard.
+
+<BlogPost id="streaming-images-business-media-20240903" />
