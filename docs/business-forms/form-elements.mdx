@@ -10,11 +10,11 @@ import BlogPost from "@theme/BlogPost";
 
 # Form Elements
 
-The Data Manipulation plugin is equipped with a rich variety of element types to cover almost any imaginable requirements of a web application.
+The Business Forms plugin is equipped with a rich variety of element types to cover almost any imaginable requirements of a web application.
 
 ## Layout
 
-You have a choice of three layouts - Basic, Buttons Only, and Sections. To switch between them open the Layout category.
+You have a choice of three layouts - **Basic**, standard **Buttons Only**, and **Sections**. To switch between them open the Layout category.
 
 <Image
   title="Layout can be Basic, Buttons Only, and Sections."
@@ -22,15 +22,20 @@ You have a choice of three layouts - Basic, Buttons Only, and Sections. To switc
   width="80%"
 />
 
+<Image
+  title="Form elements layout types."
+  src="/img/plugins/business-forms/layouts.png"
+/>
+
 ### Basic
 
-In the Basic layout, all form elements are positioned vertically, one following another.
+In the **Basic** layout, all form elements are positioned vertically, one following another.
 
 ### Sections
 
-With the Sections layout, you can create as many sections as needed and place sections either vertically or horizontally using the Orientation option.
+With the **Sections** layout, you can create as many sections as needed and place sections either vertically or horizontally using the **Orientation** option.
 
-As shown in the picture above, when the layout Section is chosen, the controls to create sections appear. For every section you can specify an ID, to use when referencing the section, and a name which will be a displayed section label.
+As shown in the picture above, when the layout **Sections** is chosen, the controls to create sections appear. For every section you can specify an ID, to use for referencing later, and a name which will be a displayed as a section label.
 
 :::info Version
 
@@ -58,33 +63,17 @@ The full list of the Business Form panel parameters can be found in the [Custom 
 
 ### Buttons Only
 
-The Buttons Only, as the name implies, keeps only buttons on your form. With that layout, all panel options related to other form elements are hidden, which gives a cleaner Edit mode to work with.
-
-<Image
-  title="Form elements layout types."
-  src="/img/plugins/business-forms/layouts.png"
-/>
+The standard **Buttons Only**, as the name implies, keeps only standard buttons on your form. The standard buttons include **Submit**, **Reset**, and **Save default**. With this layout, all panel options related to other form elements are hidden, which gives a cleaner Edit mode to work with.
 
 ## Add a form element
 
-Go to the Form Elements category to add a form element. Start by specifying ID, label, and type. After you click the Add Element button, more element options are available to configure.
+Go to the **Form Elements** category to add a form element. Start by specifying ID, label, and type. After you click the **Add Element** button, more element options are available to configure.
 
-Element types have specific options. For instance, the Code Editor type in addition to the common option `Width` also has `Height`.
+Element types have specific options. For instance, the **Text area** type has **Rows** to regulate the element size on the dashboard.
 
 <Image
   title="Form element in Edit mode."
   src="/img/plugins/business-forms/add-form-element.png"
-/>
-
-:::info Version
-
-Since version 4.2.0. the `Query Field` and `Field Name` fields have been relocated from the `Elements` category to the `Initial Fields` options category.
-
-:::
-
-<Image
-  title="New location of `Query Field` fields."
-  src="/img/plugins/business-forms/query-new.png"
 />
 
 ## Move a form element
@@ -104,12 +93,36 @@ You can drag-and-drop form elements in the edit mode to change their order on th
 
 ## Form element types
 
-The picture below illustrates what the element types look like.
+The picture below illustrates all available element types prior to the version 4.4.0
 
 <Image
   title="Form elements on UI."
   src="/img/plugins/business-forms/elements-demo.png"
   width="60%"
+/>
+
+:::info Version
+
+Custom buttons are supported starting from the version 4.4.0.
+
+:::
+
+In addition to all other types, in release 4.4.0 we added a custom button type.
+
+With the **Button** Form Elements type, you can have more functionality on your form, such as calculating a value, performing validation checks, or any other.
+
+A user has some options to style a custom button. Colors, size, and position are up to configuration.
+
+<Image
+  title="New Form Elements type - Custom Button."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/buttons-dash.png"
+/>
+
+With the **Button place** option, the custom button element can be placed among other Form Elements or in the form footer, next to the standard buttons.
+
+<Image
+  title="Available options for the Button Form Elements type."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/buttons-options.png"
 />
 
 ### Checkbox list with custom options
