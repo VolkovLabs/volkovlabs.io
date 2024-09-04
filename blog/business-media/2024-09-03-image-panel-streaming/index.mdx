@@ -13,10 +13,10 @@ import Youtube from "@theme/Youtube";
 
 # Streaming images using the Business Media panel
 
-This article contains an example of effective collaboration between the Business Forms panel and two data sources (the Websocket and MQTT) to faciliate streaming images on your Grafana dashboard. 
+This article contains an example of effective collaboration between the Business Forms panel and two data sources (the Websocket and MQTT) to faciliate streaming images on your Grafana dashboard.
 
 :::info THANK YOU
-Idea for this post belongs to [peltiern](https://community.grafana.com/u/peltiern/summary), the Grafana community member. 
+Idea for this post belongs to [peltiern](https://community.grafana.com/u/peltiern/summary), the Grafana community member.
 
 https://community.grafana.com/t/display-base64-live-image-from-mqtt-datasource/127028
 :::
@@ -25,7 +25,7 @@ https://community.grafana.com/t/display-base64-live-image-from-mqtt-datasource/1
 
 I start with a short video of Minions from a famous cartoon. I split it into several image files and place them all into the folder next to the `index.js` file.
 
-To bringing these images into the Grafana dashboard, I run a simple server locally, as shown in the code below. This code converts the images into the `base64` format, making them ready for submission. 
+To bringing these images into the Grafana dashboard, I run a simple server locally, as shown in the code below. This code converts the images into the `base64` format, making them ready for submission.
 
 ### Server
 
@@ -100,7 +100,7 @@ server.on("connection", (socket) => {
 
 ### Data source configuration
 
-Below is the configuration of the WebSocket API data source. 
+Below is the configuration of the WebSocket API data source.
 
 <Image
   title="The WebSocket API configuration."
@@ -116,7 +116,7 @@ ws://host.docker.internal:8090
 
 ### Business Media panel configuration
 
-The illustration below is how we configured the Business Media panel to work with the Websocket data source. 
+The illustration below is how we configured the Business Media panel to work with the Websocket data source.
 
 The Websocket data source returns the `name` and `image` columns in this example.
 
@@ -127,7 +127,7 @@ The Websocket data source returns the `name` and `image` columns in this example
 
 ### Result on the dashboard
 
-After the specified steps and saving the panel, you should see the images streaming on your dashboard. 
+After the specified steps and saving the panel, you should see the images streaming on your dashboard.
 
 For the loading images time interval, the users will see the message from the **No Results Message** option (step 6 from the above image).
 
@@ -138,14 +138,14 @@ For the loading images time interval, the users will see the message from the **
 
 ## MQTT
 
-The approach with MQTT is very similar to the WebSocket. 
+The approach with MQTT is very similar to the WebSocket.
 Thank you [peltiern](https://community.grafana.com/u/peltiern/summary), Grafana community member, for the provided example of the publisher code. It streams data to the MQTT data source.
 
 I tested it, it worked for us.
 
 ### Publisher
 
-The Publisher sample code is below. The full code you can find in the above mentioned Community post. 
+The Publisher sample code is below. The full code you can find in the above mentioned Community post.
 
 ```java
 package org.example.testmqttgrafana;
@@ -221,7 +221,7 @@ Below is the Business Media panel configuration to work with the MQTT data sourc
 
 Again, thank you [peltiern](https://community.grafana.com/u/peltiern/summary), Grafana community member, for the provided example of the dashboard displaying image streaming on the Grafana dashboard.
 
-He also has two more visualizations for some other purposes. 
+He also has two more visualizations for some other purposes.
 
 <Image
   title="Business Media displays results using MQTT data source."
