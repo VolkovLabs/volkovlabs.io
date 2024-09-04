@@ -69,7 +69,7 @@ console.log(
 ```javascript
 if (context.panel.response && context.panel.response.ok) {
   context.grafana.notifySuccess(["Update", "Values updated successfully."]);
-  context.panel.initialRequest();
+  context.grafana.refresg();
 } else {
   context.grafana.notifyError([
     "Update",
@@ -152,7 +152,7 @@ The `context.panel.onOptionsChange()` handler calls refresh panel.
 
 The `context.panel.onOptionsChange()` handler is required to update the panel.
 
-### Update local state in Data Manipulation panel 3.1.0
+## Update local state in Data Manipulation panel 3.1.0
 
 ```javascript
 context.panel.onChange(
@@ -164,8 +164,7 @@ context.panel.onChange(
 
 The `context.panel.onChange()` function is required to update the element values in the local state.
 
-
-### Simplified the Form Elements `patchFormValues` helper
+## Simplified the Form Elements `patchFormValues` helper
 
 Before version 4.4.0, in order to update a form element value, a user had to use `context.panel.elements.map()`. In the 4.4.0, we added a new function to simplify that approach. It has an object's key as an inpit parameter and a new value.
 
@@ -188,7 +187,7 @@ context.panel.patchFormValues({ name: "Alex" });
 context.panel.patchFormValues({ name: "Alex", isAdmin: true });
 ```
 
-### Simplified the Form Elements `formValue` helper
+## Simplified the Form Elements `formValue` helper
 
 Before version 4.4.0, in order to get a form element value, a user had to use `context.panel.elements.forEach()`. In the 4.4.0, we added a new function to simplify that approach. It has an object's key as an inpit parameter.
 

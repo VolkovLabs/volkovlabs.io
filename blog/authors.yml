@@ -2,25 +2,36 @@ mikhail:
   name: Mikhail Volkov
   title: Founder at Volkov Labs, Grafana Champion
   image_url: /img/team/mikhail.png
-  url: https://github.com/VolkovLabs
+  page: true
+  socials:
+    youtube: https://youtube.com/@VolkovLabs
+    github: VolkovLabs
+    linkedin: mikhailvolkov
+    x: VolkovLabs
 
 daria:
   name: Daria Volkova
   title: Creative Director at Volkov Labs, Grafana Champion
   image_url: /img/team/daria.png
-  url: https://youtube.com/@VolkovLabs
+  page: true
+  socials:
+    youtube: https://youtube.com/@VolkovLabs
+    github: VolkovLabs
+    x: VolkovLabs
 
 alex:
   name: Alex Simonok
   title: Director of Engineering
   image_url: /img/team/alex.png
   url: https://github.com/asimonok
+  page: true
 
 vitali:
   name: Vitali Pinchuk
   title: Community Engineer
   image_url: /img/team/vitali.png
   url: https://github.com/vitPinchuk
+  page: true
 
 chris_field:
   name: Christopher Field
