@@ -69,7 +69,7 @@ console.log(
 ```javascript
 if (context.panel.response && context.panel.response.ok) {
   context.grafana.notifySuccess(["Update", "Values updated successfully."]);
-  context.grafana.refresg();
+  context.grafana.refresh();
 } else {
   context.grafana.notifyError([
     "Update",
