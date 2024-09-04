@@ -62,14 +62,14 @@ For a better user experience, we relocated the field mapping options and similiz
 ### Data Source
 
 <Image
-  title="Steps to configure the Initial Request for Data Source. New location of `Field Name` fields."
+  title="New place to map dataframe to the Form Elements for Data Source."
   src="/img/blog/2024-08-29-form-panel-4.4.0/field-name-ds-440.png"
 />
 
 ### Query
 
 <Image
-  title="Explicitly specify the field-to-form element mapping for Query using Query Field. New location of Query Field fields since version 4.2.0"
+  title="New place to map dataframe to the Form Elements for Query."
   src="/img/blog/2024-08-29-form-panel-4.4.0/field-name-query-440.png"
 />
 
@@ -90,7 +90,7 @@ You can find this button at the top left corner of any JavaScript area parameter
   src="/img/blog/2024-08-29-form-panel-4.4.0/window.png"
 />
 
-## Simplified the Form Elements `patch` helper
+## Simplified the Form Elements `patchFormValues` helper
 
 Previosly, in order to update a form element value, a user had to use `context.panel.elements.map()`. We added a new function to simplify that approach. It has an object's key as an inpit parameter and a new value.
 
@@ -134,6 +134,21 @@ The simplified version example:
 ```
 context.panel.formValue // { name: 'Alex', isAdmin: true }
 ```
+
+## Business Suite
+
+In this video, Daria provides an overview of the Business Forms plugin. The Business Forms panel provides a runway for data to be sent back into the data source. Plenty of Form Elements types (available UI elements) help you with any necessary functionality.
+
+Moreover, the Business Forms can be created on the fly (i.e., dynamically using code), which allows your Business Forms to be as flexible as needed.
+
+Our blog is a treasure trove of practical examples. Each one is meticulously detailed and ready to be copied and pasted into your dashboard, saving you time and effort.
+
+Feel free to learn from the turn-key solutions!
+
+<Youtube
+  id="dk8ht8G67JY"
+  title="Business Forms panel for Grafana. Send data back into your data source."
+/>
 
 <GettingStarted />
 
