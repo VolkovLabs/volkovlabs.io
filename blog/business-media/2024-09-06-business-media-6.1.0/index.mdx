@@ -1,0 +1,75 @@
+---
+authors: [daria]
+slug: business-media-6.1.0/
+tags: [Business Media, Business Suite]
+image: /img/blog/2024-09-06-business-media-6.1.0/banner.png
+keywords: [Media, Scroll, Images]
+---
+
+import Catalog from "@site/blog/_catalog_unpublished.mdx";
+import Feedback from "@site/docs/business-media/_feedback.mdx";
+import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-media/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Grafana 11, customized messages, and infinity play in Business Media 6.1.0
+
+We are excited to announce the release of the Business Media panel 6.1.0. This major release includes the following updates:
+
+-
+
+<Catalog date="April 3, 2024" />
+
+## Downloads
+
+Right now this plugin is at an impressive 3,000,000 downloads mark.
+
+Thank you for your continuous support of our work. The graph below is simply beautiful and very inspiring to have.
+
+<Image
+  title="The Business Media panel was downloaded 3,000,000 times."
+  src="/img/blog/2024-03-26-image-panel-5.0.0/downloads.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements in 6.1.0
+
+- Updated media sources state (#137)
+- Added Websocket server for streaming (#140)
+- Updated Grafana 11.2 dependencies (#141)
+- Added Scroll option for images (#142)
+
+:::warning Breaking changes in 6.0.0
+
+- Image links in panel options should be updated to use Data links.
+- PDF fields require to update the type of the media source to PDF.
+
+:::
+
+### Features / Enhancements in 6.0.0
+
+- Added poster for video (#120)
+- Updated current index on data series decrease (#121)
+- Updated Image URL to data links (#122)
+- Added slideshow between mixed media (#123)
+- Refactored Media panel (#124)
+- Added multiple queries support in Media Field and Poster Image (#127)
+- Updated to Grafana 11.1 and dependencies (#128)
+- Added PDF Breaking change and prepare 6.0.0 (#132)
+
+### Features / Enhancements in 5.1.0
+
+- Updated video overview (#100)
+- Added plugin e2e tests and remove cypress (#101, #102, #103, #105)
+- Added ability to load image, videos from URL and video toolbar (#111, #116)
+- Updated to Grafana 11 and dependencies (#114)
+- Updated to use frame utils from packages (#115)
+- Updated E2E workflow using Docker (#117)
+
+<Feedback />
