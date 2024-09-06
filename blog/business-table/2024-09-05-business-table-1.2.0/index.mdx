@@ -6,7 +6,7 @@ image: /img/blog/2024-09-05-business-table-1.2.0/banner.png
 keywords: [Business Table, Data, Grafana]
 ---
 
-import Catalog from "@site/blog/_catalog.mdx";
+import Catalog from "@site/blog/_catalog_unpublished.mdx";
 import Feedback from "@site/docs/business-table/_feedback.mdx";
 import GettingStarted from "@site/docs/business-table/_getting_started.mdx";
 import Image from "@theme/Image";
@@ -16,8 +16,7 @@ import Youtube from "@theme/Youtube";
 
 We're excited to announce the first release of the Business Table panel 1.2.0. This feature release includes the following updates:
 
-- Row grouping.
-- Multi tables as tabs.
+- Multi tables and row grouping.
 - Auto-width columns.
 - Colored background.
 - Table footer.
@@ -35,10 +34,10 @@ Please welcome a new panel to our Business Suite collection! The Business Table 
   src="/img/blog/2024-09-05-business-table-1.2.0/business-table.gif"
 />
 
-The following dataframe is used for the better features demonstration.
+The following data frame is used for the better features demonstration.
 
 <Image
-  title="The dataframe in the TableView."
+  title="The data frame in the Table view."
   src="/img/blog/2024-09-05-business-table-1.2.0/tableview.png"
 />
 
@@ -104,9 +103,9 @@ The Business Table panel starts strong with the filtering feature offering two m
 
 Every column of the Business Table panel offers the **Filter** feature. If set to **Yes**, the funnel icon will appear next to the column header.
 
-With the **Filter Mode**->**Client**, when a user clicks on the funnel icon, they see the two types for further filtering.
+With the **Filter Mode**->**Client**, when a user clicks on the funnel icon, depends on the value type they see the two types for further filtering.
 
-- **Search**. It provides a form to type free text to use in the filtering.
+- **Search**. It provides a form to type free text or enter a number value to use in the filtering.
 - **Options**. It provides a multi-select list of all existing values in the column.
 
 <Image
@@ -116,7 +115,7 @@ With the **Filter Mode**->**Client**, when a user clicks on the funnel icon, the
 
 ### Query
 
-This method of filtering allows panel interconnectivity. With the **Filter Mode**->**Query**, the displayed data is filtered according to the selected dashboard variables.
+This method of filtering allows panel interconnectivity or use in the data links. With the **Filter Mode**->**Query**, the displayed data is filtered according to the selected dashboard variables.
 
 <Image
   title="The Query filtering feature of the Business Table panel."
@@ -129,6 +128,8 @@ Below is an example of the displayed data change in the Business Table following
   title="The Client filtering feature of the Business Table panel."
   src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query-gif.gif"
 />
+
+You can combine Business Table with the [Business Variable](/plugins/business-variable) panel for variable selection.
 
 ## Sorting
 
