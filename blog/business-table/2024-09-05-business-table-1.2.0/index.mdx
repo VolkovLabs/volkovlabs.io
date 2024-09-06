@@ -6,6 +6,7 @@ image: /img/blog/2024-09-05-business-table-1.2.0/banner.png
 keywords: [Business Table, Data, Grafana]
 ---
 
+import Catalog from "@site/blog/_catalog.mdx";
 import Feedback from "@site/docs/business-table/_feedback.mdx";
 import GettingStarted from "@site/docs/business-table/_getting_started.mdx";
 import Image from "@theme/Image";
@@ -15,14 +16,127 @@ import Youtube from "@theme/Youtube";
 
 We're excited to announce the first release of the Business Table panel 1.2.0. This feature release includes the following updates:
 
-- First public release registered in Grafana Catalog.
-- Rows grouping.
+- Row grouping.
 - Multi tables as tabs.
 - Auto-width columns.
 - Colored background.
 - Table footer.
 - Filtering using client and query dashboard variables.
 - Sorting.
+
+<Catalog date="September 5, 2024" />
+
+## Welcome to the collection
+
+Please welcome a new panel to our Business Suite collection! The Business Table panel is here to shower you with many impressive features and take your table visualization to the next level. 
+
+<Image
+  title="We welcome the Business Table to our Business Suite collection."
+  src="/img/blog/2024-09-05-business-table-1.2.0/business-table.gif"
+/>
+
+The following dataframe is used for the better features demonstration.
+
+<Image
+  title="The dataframe in the TableView."
+  src="/img/blog/2024-09-05-business-table-1.2.0/tableview.png"
+/>
+
+## Row grouping
+
+This feature allows you to combine unique field values into groups and collapse/expanse using little arrows. 
+
+<Image
+  title="The Business Table panel row grouping."
+  src="/img/blog/2024-09-05-business-table-1.2.0/row-grouping.png"
+/>
+
+## Multi tables as tabs
+
+The Business Table panel allows you to have a multi-tabs view and configure the fields of each view separately. 
+
+To add a new tab, use the **New Table** parameter.
+To add a column to an existing tab, use the **New Column** parameter.
+
+<Image
+  title="The Business Table panel allows you have a multi tabs view."
+  src="/img/blog/2024-09-05-business-table-1.2.0/tabs.png"
+/>
+
+## Auto-width columns
+
+The column width can be determined automatically within a specified range or explicitly hardcoded by a user in pixels.
+
+<Image
+  title="Auto-width column property."
+  src="/img/blog/2024-09-05-business-table-1.2.0/auto-width.png"
+/>
+
+## Colored Background (Thresholds)
+
+The Business Table panel supports the Grafana **Thresholds** feature.
+
+<Image
+  title="The Business Table panel supports the Grafana Thresholds feature."
+  src="/img/blog/2024-09-05-business-table-1.2.0/thresholds.png"
+/>
+
+## Footer
+
+Every column of the Business Table panel has the **Show in Footer** property. 
+If at least one column has it set up, then the Footer will be shown. 
+
+You can select the aggregation function separately for each column to be applied toward the value displayed in the Footer.
+
+<Image
+  title="The Business Table panel supports the Footer feature."
+  src="/img/blog/2024-09-05-business-table-1.2.0/footer.png"
+/>
+
+## Filtering
+
+The Business Table panel starts strong with the filtering feature offering two main options:
+ - Client, 
+ - Query.
+
+### Client 
+
+Every column of the Business Table panel offers the **Filter** feature. If set to **Yes**, the funnel icon will appear next to the column header. 
+
+With the **Filter Mode**->**Client**, when a user clicks on the funnel icon, they see the two types for further filtering. 
+
+ - **Search**. It provides a form to type free text to use in the filtering. 
+ - **Options**. It provides a multi-select list of all existing values in the column. 
+
+<Image
+  title="The Client filtering feature of the Business Table panel."
+  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-client.png"
+/>
+
+### Query
+
+This method of filtering allows panel interconnectivity. With the **Filter Mode**->**Query**, the displayed data is filtered according to the selected dashboard variables.
+
+<Image
+  title="The Query filtering feature of the Business Table panel."
+  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query.png"
+/>
+
+Below is an example of the displayed data change in the Business Table following the dashboard variable update.
+
+<Image
+  title="The Client filtering feature of the Business Table panel."
+  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query-gif.gif"
+/>
+
+## Sorting
+
+Every column of the Business Table panel has the **Sort** property. If set to **Yes**, the ascending sorting icon appears next to the column header. After the user clicks on the icon, the order changes to descending. 
+
+<Image
+  title="The Business Table panel supports the Sorting feature."
+  src="/img/blog/2024-09-05-business-table-1.2.0/sorting.png"
+/>
 
 <GettingStarted />
 
