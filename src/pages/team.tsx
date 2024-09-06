@@ -26,7 +26,7 @@ const Header = (siteConfig) => {
             </p>
 
             <p className="hero__subtitle">
-              Our plugins have been downloaded more than 22 million times and
+              Our plugins have been downloaded more than 23 million times and
               have received praise from hundreds of users who are thrilled with
               its ability to go beyond observability and solve complex business
               tasks.
