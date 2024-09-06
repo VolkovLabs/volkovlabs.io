@@ -4,7 +4,6 @@ mikhail:
   image_url: /img/team/mikhail.png
   page: true
   socials:
-    youtube: https://youtube.com/@VolkovLabs
     github: VolkovLabs
     linkedin: mikhailvolkov
     x: VolkovLabs
@@ -21,20 +20,24 @@ daria:
 
 alex:
   name: Alex Simonok
-  title: Director of Engineering
+  title: Director of Engineering at Volkov Labs
   image_url: /img/team/alex.png
-  url: https://github.com/asimonok
   page: true
+  socials:
+    github: asimonok
 
 vitali:
   name: Vitali Pinchuk
-  title: Community Engineer
+  title: Community Engineer at Volkov Labs
   image_url: /img/team/vitali.png
-  url: https://github.com/vitPinchuk
   page: true
+  socials:
+    github: vitPinchuk
 
 chris_field:
   name: Christopher Field
   image_url: https://avatars.githubusercontent.com/u/1915469?v=4
   title: President at Theia Scientific, LLC
-  url: https://theiascientific.com
+  page: true
+  socials:
+    web: https://theiascientific.com

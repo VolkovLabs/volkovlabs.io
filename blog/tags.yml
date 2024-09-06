@@ -3,3 +3,51 @@ Business Suite:
 
 Business Intelligence:
   description: "Business Intelligence for Grafana simplifies alerting for business users, providing them with an accessible platform."
+
+Business Calendar:
+  description: "Display events and set time range."
+
+Business Charts:
+  description: "Powerful visualizations powered by Apache ECharts."
+
+Business Forms:
+  description: "Insert, update application data, and modify configuration."
+
+Business Input:
+  description: "Store and create your data."
+
+Business Media:
+  description: "Display Base64 encoded and URL media files."
+
+Business News:
+  description: "Visualize RSS/Atom feeds using Business Text."
+
+Business Satellite:
+  description: "Connect to Local and Remote Grafana instances."
+
+Business Table:
+  description: "Summarize large amounts of data."
+
+Business Text:
+  description: "Dynamic, data-driven text."
+
+Business Variable:
+  description: "Update dashboard variables."
+
+Grafana Crash Course:
+  description: "Grafana Crash Course is a collection of tutorials for Grafana created by Volkov Labs."
+
+Community:
+  description: "Solutions from the Grafana Community."
+
+Solution:
+  description: "Solutions from Volkov Labs."
+
+Development:
+  description: "Development related."
+
+Environment Data Source:
+  description: "Returns environment variables."
+
+Highlights:
+  description: "Our Highlights"
