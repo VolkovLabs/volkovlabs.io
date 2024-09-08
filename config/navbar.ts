@@ -154,8 +154,8 @@ export const NAVBAR = {
     {
       to: "/team/",
       position: "left",
-      label: "Company",
-      "aria-label": "Company",
+      label: "Volkov Labs",
+      "aria-label": "Volkov Labs",
     },
     {
       href: "https://youtube.com/@volkovlabs",
