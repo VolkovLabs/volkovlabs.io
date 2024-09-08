@@ -1,0 +1,175 @@
+---
+authors: [daria]
+slug: business-table-1.2.0/
+tags: [Business Table, Business Suite]
+image: /img/blog/2024-09-05-business-table-1.2.0/banner.png
+keywords: [Business Table, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog_unpublished.mdx";
+import Feedback from "@site/docs/business-table/_feedback.mdx";
+import GettingStarted from "@site/docs/business-table/_getting_started.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Multi tables, grouping, and filtering using dashboard variables in Business Table 1.2.0
+
+We're excited to announce the first release of the Business Table panel 1.2.0. This feature release includes the following updates:
+
+- Multi tables and row grouping.
+- Auto-width columns.
+- Colored background.
+- Table footer.
+- Filtering using client and query dashboard variables.
+- Sorting.
+
+<Catalog date="September 5, 2024" />
+
+## Welcome to the collection
+
+Please welcome a new panel to our Business Suite collection! The Business Table panel is here to shower you with many impressive features and take your table visualization to the next level.
+
+<Image
+  title="We welcome the Business Table to our Business Suite collection."
+  src="/img/blog/2024-09-05-business-table-1.2.0/business-table.gif"
+/>
+
+:::info Business Suite for Grafana
+The Business Table effortlessly combines with all other plugins from the [Business Suite](/plugins).
+:::
+
+In addition to the all-around columns/rows visualization functionality, the Business Table effortlessly combines with all other plugins from the Business Suite. One example in this article is where we use the Business Variable and Business Table to facilitate user-intuitive filtering via panels' interconnectivity.
+
+The following data frame is used for the better features demonstration.
+
+<Image
+  title="The data frame in the Table view."
+  src="/img/blog/2024-09-05-business-table-1.2.0/tableview.png"
+/>
+
+## Row grouping
+
+This feature allows you to combine unique field values into groups and collapse/expanse using little arrows.
+
+<Image
+  title="The Business Table panel row grouping."
+  src="/img/blog/2024-09-05-business-table-1.2.0/row-grouping.png"
+/>
+
+## Multi tables as tabs
+
+The Business Table panel allows you to have a multi-tabs view and configure the fields of each view separately.
+
+To add a new tab, use the **New Table** parameter.
+To add a column to an existing tab, use the **New Column** parameter.
+
+<Image
+  title="The Business Table panel allows you have a multi tabs view."
+  src="/img/blog/2024-09-05-business-table-1.2.0/tabs.png"
+/>
+
+## Auto-width columns
+
+The column width can be determined automatically within a specified range or explicitly hardcoded by a user in pixels.
+
+<Image
+  title="Auto-width column property."
+  src="/img/blog/2024-09-05-business-table-1.2.0/auto-width.png"
+/>
+
+## Colored Background using Thresholds
+
+The Business Table panel supports the Grafana **Thresholds** feature.
+
+<Image
+  title="The Business Table panel supports the Grafana Thresholds feature."
+  src="/img/blog/2024-09-05-business-table-1.2.0/thresholds.png"
+/>
+
+## Table Footer
+
+Every column of the Business Table panel has the **Show in Footer** property.
+If at least one column has it set up, then the Footer will be shown.
+
+You can select the aggregation function separately for each column to be applied toward the value displayed in the Footer.
+
+<Image
+  title="The Business Table panel supports the Footer feature."
+  src="/img/blog/2024-09-05-business-table-1.2.0/footer.png"
+/>
+
+## Filtering
+
+The Business Table panel starts strong with the filtering feature offering two main options:
+
+- Client,
+- Query.
+
+### Client
+
+Every column of the Business Table panel offers the **Filter** feature. If set to **Yes**, the funnel icon will appear next to the column header.
+
+With the **Filter Mode**->**Client**, when a user clicks on the funnel icon, depends on the value type they see the two types for further filtering.
+
+- **Search**. It provides a form to type free text or enter a number value to use in the filtering.
+- **Options**. It provides a multi-select list of all existing values in the column.
+
+<Image
+  title="The Client filtering feature of the Business Table panel."
+  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-client.png"
+/>
+
+### Query
+
+This method of filtering allows panel interconnectivity or use in the data links. With the **Filter Mode**->**Query**, the displayed data is filtered according to the selected dashboard variables.
+
+<Image
+  title="The Query filtering feature of the Business Table panel."
+  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query.png"
+/>
+
+### Business Variable example
+
+You can go one step forward and enchance the visualization of your dashboard variables with the Business Variable panel. Below is an example of the displayed data change in the Business Table following the dashboard variable update via the Business Variable panel.
+
+<Image
+  title="The Query filtering feature of the Business Table panel combined with the Business Variable panel."
+  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query-w-var.gif"
+/>
+
+## Sorting
+
+Every column of the Business Table panel has the **Sort** property. If set to **Yes**, the ascending sorting icon appears next to the column header. After the user clicks on the icon, the order changes to descending.
+
+<Image
+  title="The Business Table panel supports the Sorting feature."
+  src="/img/blog/2024-09-05-business-table-1.2.0/sorting.png"
+/>
+
+<GettingStarted />
+
+## Release Notes
+
+### Features / Enhancements in 1.2.0
+
+- Added Colored Background Column type (#33)
+- Added column width and wrap (#34)
+- Added table Footer (#36)
+- Updated to Grafana 11.2.0 (#37)
+
+### Features / Enhancements in 1.1.0
+
+- Signed as Community plugin (#23)
+- Added Column Filtering (#21)
+- Renamed groups to tables (#27)
+- Updated options to show aggregation if at least one column is grouped (#28)
+- Added tabs sorting option (#29)
+- Updated to Grafana 11.1.4 (#31)
+
+### Features / Enhancements in 1.0.0
+
+- Initial release based on Grafana 11.1.0
+- Added basic columns editor (#1)
+- Added groups and tabs (#17)
+
+<Feedback />
