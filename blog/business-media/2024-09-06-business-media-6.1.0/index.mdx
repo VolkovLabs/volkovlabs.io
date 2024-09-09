@@ -1,0 +1,167 @@
+---
+authors: [daria]
+slug: business-media-6.1.0/
+tags: [Business Media, Business Suite]
+image: /img/blog/2024-09-06-business-media-6.1.0/banner.png
+keywords: [Media, Scroll, Images]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-media/_feedback.mdx";
+import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
+import Image from "@theme/Image";
+import Tutorial from "@site/docs/business-media/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+import BlogPost from "@theme/BlogPost";
+
+# URL, data links, and scrolling for images in Business Media 6.1.0
+
+We are excited to announce the release of the Business Media panel 6.1.0. This major release includes the following updates:
+
+- Clarified media type and source parameters.
+  - PDF requires a media type. **Breaking change**.
+- Allowed loading media files from URL.
+- Refactored image links following Grafana's new feature **Data links**. **Breaking change**.
+- Added a poster(thumbnail) feature for the video media type.
+- Original size with scroll for images.
+
+<Catalog date="September 6, 2024" />
+
+## Downloads
+
+The Business Media panel reached an inspiring number of 3 000 000 downloads! Are we surprised and honored? Yes! Are we proud? Oh yes!
+
+<Image
+  title="The Business Media panel was downloaded 3,000,000 times."
+  src="/img/blog/2024-09-06-business-media-6.1.0/downloads.png"
+/>
+
+## Streaming images
+
+Take advantage of our blog post where we provide examples of how you can use the WebSocket data source and MQTT data source to faciliate streaming on the Business Media panel!
+
+<BlogPost id="streaming-images-business-media-20240903" />
+
+## Clarified media type and source parameters
+
+Starting from this release, you can clearly specify the media type and the data frame column name for the Business Media panel.
+
+You can add as many different media files on the same as needed.
+
+<Image
+  title="Use type and field parameters to specify what to display on your Business Media panel."
+  src="/img/blog/2024-09-06-business-media-6.1.0/media-sources.png"
+/>
+
+### PDF media type. Breaking change
+
+:::warning breaking change
+Starting from this release, you must specify PDF media type. If the media type is not specified for PDF file(s), the Business Media panel might NOT display it correctly.
+:::
+
+<Image
+  title="Ensure to specify media type for all PDF files. Otherwise, the Business Media panel might not display them correctly."
+  src="/img/blog/2024-09-06-business-media-6.1.0/pdf.png"
+/>
+
+## Loading media files from URL
+
+The media files can be loaded from the URL link which makes video streaming as accessible as ever. To try it out, simply copy the link of a video, specify media type and field name in the **Media Sources** parameter.
+
+URL video link from the example below:
+
+```link
+https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4
+```
+
+<Image
+  title="Use URL to display any media file type on your Grafana dashboard."
+  src="/img/blog/2024-09-06-business-media-6.1.0/video-link.gif"
+/>
+
+## Refactored image links. **Breaking change**
+
+:::warning breaking change
+Following Grafana 11 new features, we removed previously existing image links and allowed using a new **Data links** feature instead. Be sure to update your Business Media panel options accordingly.
+:::
+
+<Image
+  title="Use the Data links category to create links from Business Media panel."
+  src="/img/blog/2024-09-06-business-media-6.1.0/link.png"
+/>
+
+The links can open in the same tab or a new tab.
+
+<Image
+  title="The links can open in the same tab or a new tab."
+  src="/img/blog/2024-09-06-business-media-6.1.0/link-edit.png"
+/>
+
+## Added a poster feature for the video media type
+
+You can specify a poster image (thumbnail) file for your video files. Use the **Video/Audio**->**Poster Image** parameter for that. A poster image is an image that is shown before the user clicks on the play button (unless the **Auto play** is enabled).
+
+The image can be in the base64 format or a link to the external web resource.
+
+<Image
+  title="The image can be in the base64 format or a link to the external web resource."
+  src="/img/blog/2024-09-06-business-media-6.1.0/poster.png"
+/>
+
+## Original size with scroll for images
+
+To allow more displaying options, we added **Original with scroll** to both **Width** and **Height** parameters.
+
+<Image
+  title="Allow scrolling images if they do not fit on the panel."
+  src="/img/blog/2024-09-06-business-media-6.1.0/scroll.gif"
+/>
+
+You can allow scrolling only horizontally, vertically, or simultaneously in both directions.
+
+<Image
+  title="Original with scroll size mode for width and height."
+  src="/img/blog/2024-09-06-business-media-6.1.0/original.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+:::warning Breaking changes in 6.0.0
+
+- Image links in panel options should be updated to use Data links.
+- PDF fields require to update the type of the media source to PDF.
+
+:::
+
+### Features / Enhancements in 6.1.0
+
+- Updated media sources state (#137)
+- Added Websocket server for streaming (#140)
+- Updated Grafana 11.2 dependencies (#141)
+- Added Scroll option for images (#142)
+
+### Features / Enhancements in 6.0.0
+
+- Added poster for video (#120)
+- Updated current index on data series decrease (#121)
+- Updated Image URL to data links (#122)
+- Added slideshow between mixed media (#123)
+- Refactored Media panel (#124)
+- Added multiple queries support in Media Field and Poster Image (#127)
+- Updated to Grafana 11.1 and dependencies (#128)
+- Added PDF Breaking change and prepare 6.0.0 (#132)
+
+### Features / Enhancements in 5.1.0
+
+- Updated video overview (#100)
+- Added plugin e2e tests and remove cypress (#101, #102, #103, #105)
+- Added ability to load image, videos from URL and video toolbar (#111, #116)
+- Updated to Grafana 11 and dependencies (#114)
+- Updated to use frame utils from packages (#115)
+- Updated E2E workflow using Docker (#117)
+
+<Feedback />
