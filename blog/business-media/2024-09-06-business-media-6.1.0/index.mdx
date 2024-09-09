@@ -6,7 +6,7 @@ image: /img/blog/2024-09-06-business-media-6.1.0/banner.png
 keywords: [Media, Scroll, Images]
 ---
 
-import Catalog from "@site/blog/_catalog_unpublished.mdx";
+import Catalog from "@site/blog/_catalog.mdx";
 import Feedback from "@site/docs/business-media/_feedback.mdx";
 import GettingStarted from "@site/docs/business-media/_getting_started.mdx";
 import Image from "@theme/Image";
@@ -25,22 +25,22 @@ We are excited to announce the release of the Business Media panel 6.1.0. This m
 - Added a poster(thumbnail) feature for the video media type.
 - Original size with scroll for images.
 
-:::note
-Take advantage of our blog post where we provide examples of how you can use the WebSocket data source and MQTT data source to faciliate streaming on the Business Media panel!
-:::
-
-<BlogPost id="streaming-images-business-media-20240903" />
-
-<Catalog date="April 3, 2024" />
+<Catalog date="September 6, 2024" />
 
 ## Downloads
 
-The Business Media panel reached an inspiring number of downloads! 3 000 000! Are we surprised and honored? Yes! Are we proud? Oh yes!
+The Business Media panel reached an inspiring number of 3 000 000 downloads! Are we surprised and honored? Yes! Are we proud? Oh yes!
 
 <Image
   title="The Business Media panel was downloaded 3,000,000 times."
   src="/img/blog/2024-09-06-business-media-6.1.0/downloads.png"
 />
+
+## Streaming images
+
+Take advantage of our blog post where we provide examples of how you can use the WebSocket data source and MQTT data source to faciliate streaming on the Business Media panel!
+
+<BlogPost id="streaming-images-business-media-20240903" />
 
 ## Clarified media type and source parameters
 
@@ -66,9 +66,7 @@ Starting from this release, you must specify PDF media type. If the media type i
 
 ## Loading media files from URL
 
-The media files can be loaded from the URL link which makes video streaming as accessible as ever.
-
-To try it out, simply copy the link of a video, specify media type and field name in the **Media Sources** parameter.
+The media files can be loaded from the URL link which makes video streaming as accessible as ever. To try it out, simply copy the link of a video, specify media type and field name in the **Media Sources** parameter.
 
 URL video link from the example below:
 
@@ -84,7 +82,7 @@ https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surrou
 ## Refactored image links. **Breaking change**
 
 :::warning breaking change
-Following Grafana 11 X's new features, we removed previously existing image links and allowed using a new **Data links** feature instead. Be sure to update your Business Media panel options accordingly. Otherwise, your links might NOT work correctly.
+Following Grafana 11 new features, we removed previously existing image links and allowed using a new **Data links** feature instead. Be sure to update your Business Media panel options accordingly.
 :::
 
 <Image
@@ -99,19 +97,11 @@ The links can open in the same tab or a new tab.
   src="/img/blog/2024-09-06-business-media-6.1.0/link-edit.png"
 />
 
-## Added a poster(thumbnail) feature for the video media type
+## Added a poster feature for the video media type
 
-You can specify a poster image (thumbnail) file for your video files. Use the **Video/Audio**->**Poster Image** parameter for that.
-
-A poster image (thumbnail) is an image that is shown before the user clicks on the play button (unless the **Auto play** is enabled).
+You can specify a poster image (thumbnail) file for your video files. Use the **Video/Audio**->**Poster Image** parameter for that. A poster image is an image that is shown before the user clicks on the play button (unless the **Auto play** is enabled).
 
 The image can be in the base64 format or a link to the external web resource.
-
-URL image link from the example below:
-
-```link
-https://volkovlabs.io/img/index/main.svg
-```
 
 <Image
   title="The image can be in the base64 format or a link to the external web resource."
@@ -130,7 +120,7 @@ To allow more displaying options, we added **Original with scroll** to both **Wi
 You can allow scrolling only horizontally, vertically, or simultaneously in both directions.
 
 <Image
-  title="Original with scroll size mode."
+  title="Original with scroll size mode for width and height."
   src="/img/blog/2024-09-06-business-media-6.1.0/original.png"
 />
 
@@ -140,19 +130,19 @@ You can allow scrolling only horizontally, vertically, or simultaneously in both
 
 ## Release Notes
 
-### Features / Enhancements in 6.1.0
-
-- Updated media sources state (#137)
-- Added Websocket server for streaming (#140)
-- Updated Grafana 11.2 dependencies (#141)
-- Added Scroll option for images (#142)
-
 :::warning Breaking changes in 6.0.0
 
 - Image links in panel options should be updated to use Data links.
 - PDF fields require to update the type of the media source to PDF.
 
 :::
+
+### Features / Enhancements in 6.1.0
+
+- Updated media sources state (#137)
+- Added Websocket server for streaming (#140)
+- Updated Grafana 11.2 dependencies (#141)
+- Added Scroll option for images (#142)
 
 ### Features / Enhancements in 6.0.0
 
