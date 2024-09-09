@@ -18,10 +18,10 @@ import BlogPost from "@theme/BlogPost";
 
 We are excited to announce the release of the Business Media panel 6.1.0. This major release includes the following updates:
 
-- Clarified media type and source parameters.  
-   - PDF requires a media type. **Breaking change**. 
+- Clarified media type and source parameters.
+  - PDF requires a media type. **Breaking change**.
 - Allowed loading media files from URL.
-- Refactored image links following Grafana's new feature **Data links**. **Breaking change**. 
+- Refactored image links following Grafana's new feature **Data links**. **Breaking change**.
 - Added a poster(thumbnail) feature for the video media type.
 - Original size with scroll for images.
 
@@ -44,7 +44,7 @@ The Business Media panel reached an inspiring number of downloads! 3 000 000! Ar
 
 ## Clarified media type and source parameters
 
-Starting from this release, you can clearly specify the media type and the data frame column name for the Business Media panel. 
+Starting from this release, you can clearly specify the media type and the data frame column name for the Business Media panel.
 
 You can add as many different media files on the same as needed.
 
@@ -71,7 +71,8 @@ The media files can be loaded from the URL link which makes video streaming as a
 To try it out, simply copy the link of a video, specify media type and field name in the **Media Sources** parameter.
 
 URL video link from the example below:
-``` link
+
+```link
 https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4
 ```
 
@@ -104,10 +105,11 @@ You can specify a poster image (thumbnail) file for your video files. Use the **
 
 A poster image (thumbnail) is an image that is shown before the user clicks on the play button (unless the **Auto play** is enabled).
 
-The image can be in the base64 format or a link to the external web resource. 
+The image can be in the base64 format or a link to the external web resource.
 
 URL image link from the example below:
-``` link
+
+```link
 https://volkovlabs.io/img/index/main.svg
 ```
 
@@ -116,10 +118,9 @@ https://volkovlabs.io/img/index/main.svg
   src="/img/blog/2024-09-06-business-media-6.1.0/poster.png"
 />
 
-
 ## Original size with scroll for images
 
-To allow more displaying options, we added **Original with scroll** to both **Width** and **Height** parameters. 
+To allow more displaying options, we added **Original with scroll** to both **Width** and **Height** parameters.
 
 <Image
   title="Allow scrolling images if they do not fit on the panel."
@@ -132,8 +133,6 @@ You can allow scrolling only horizontally, vertically, or simultaneously in both
   title="Original with scroll size mode."
   src="/img/blog/2024-09-06-business-media-6.1.0/original.png"
 />
-
-
 
 <GettingStarted />
 
