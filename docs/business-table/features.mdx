@@ -1,52 +1,23 @@
 ---
-authors: [daria]
-slug: business-table-1.2.0/
-tags: [Business Table, Business Suite]
-image: /img/blog/2024-09-05-business-table-1.2.0/banner.png
-keywords: [Business Table, Data, Grafana]
+tags:
+  - Business Table
 ---
 
-import Catalog from "@site/blog/_catalog_unpublished.mdx";
-import Feedback from "@site/docs/business-table/_feedback.mdx";
-import GettingStarted from "@site/docs/business-table/_getting_started.mdx";
 import Image from "@theme/Image";
-import Youtube from "@theme/Youtube";
 
-# Multi tables, grouping, and filtering using dashboard variables in Business Table 1.2.0
+# Features
 
-We're excited to announce the first release of the Business Table panel 1.2.0. This feature release includes the following updates:
+The Business Table panel has the following features.
 
-- Row grouping.
-- Multi tables as tabs.
-- Auto-width columns.
-- Colored background.
-- Table footer.
-- Filtering using client and query dashboard variables.
-- Sorting.
-
-<Catalog date="September 5, 2024" />
-
-## Welcome to the collection
-
-Please welcome a new panel to our Business Suite collection! The Business Table panel is here to shower you with many impressive features and take your table visualization to the next level.
-
-<Image
-  title="We welcome the Business Table to our Business Suite collection."
-  src="/img/blog/2024-09-05-business-table-1.2.0/business-table.gif"
-/>
-
-:::info Business Suite for Grafana
-The Business Table effortlessly combines with all other plugins from the [Business Suite](/plugins).
-:::
-
-In addition to the all-around columns/rows visualization functionality, the Business Table effortlessly combines with all other plugins from the Business Suite. [One example](/blog/business-table-1.2.0/#business-variable-example) in this article is where we use the Business Variable and Business Table to facilitate user-intuitive filtering via panels' interconnectivity.
-
-The following data frame is used for the better features demonstration.
-
-<Image
-  title="The data frame in the Table view."
-  src="/img/blog/2024-09-05-business-table-1.2.0/tableview.png"
-/>
+| Section                                                                        | Description                                                    |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| [Row grouping](/plugins/business-table/features/#row-grouping)                 | Demonstrates row grouping                                      |
+| [Multi tables as tabs](/plugins/business-table/features/#multi-tables-as-tabs) | Demonstrates multi table as tabs                                     |
+| [Auto-width columns](/plugins/business-table/features/#auto-width-columns)     | Demonstrates auto-width columns                                |
+| [Colored Background using Thresholds](/plugins/business-table/features/#colored-background-using-thresholds)| Demonstrates coloring thresholds  |
+| [Table footer](/plugins/business-table/features/#table-footer)                 | Explains how the table footer works | 
+| [Filtering using client and query dashboard variables](/plugins/business-table/features/#filtering) | Demonstrates client and dashboard variable filters|
+| [Sorting](/plugins/business-table/features/#sorting) | Demonstrate sorting|
 
 ## Row grouping
 
@@ -87,7 +58,7 @@ The Business Table panel supports the Grafana **Thresholds** feature.
   src="/img/blog/2024-09-05-business-table-1.2.0/thresholds.png"
 />
 
-## Table Footer
+## Table footer
 
 Every column of the Business Table panel has the **Show in Footer** property.
 If at least one column has it set up, then the Footer will be shown.
@@ -129,15 +100,6 @@ This method of filtering allows panel interconnectivity or use in the data links
   src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query.png"
 />
 
-### Business Variable example
-
-You can go one step forward and enchance the visualization of your dashboard variables with the Business Variable panel. Below is an example of the displayed data change in the Business Table following the dashboard variable update via the Business Variable panel.
-
-<Image
-  title="The Query filtering feature of the Business Table panel combined with the Business Variable panel."
-  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query-w-var.gif"
-/>
-
 ## Sorting
 
 Every column of the Business Table panel has the **Sort** property. If set to **Yes**, the ascending sorting icon appears next to the column header. After the user clicks on the icon, the order changes to descending.
@@ -146,31 +108,3 @@ Every column of the Business Table panel has the **Sort** property. If set to **
   title="The Business Table panel supports the Sorting feature."
   src="/img/blog/2024-09-05-business-table-1.2.0/sorting.png"
 />
-
-<GettingStarted />
-
-## Release Notes
-
-### Features / Enhancements in 1.2.0
-
-- Added Colored Background Column type (#33)
-- Added column width and wrap (#34)
-- Added table Footer (#36)
-- Updated to Grafana 11.2.0 (#37)
-
-### Features / Enhancements in 1.1.0
-
-- Signed as Community plugin (#23)
-- Added Column Filtering (#21)
-- Renamed groups to tables (#27)
-- Updated options to show aggregation if at least one column is grouped (#28)
-- Added tabs sorting option (#29)
-- Updated to Grafana 11.1.4 (#31)
-
-### Features / Enhancements in 1.0.0
-
-- Initial release based on Grafana 11.1.0
-- Added basic columns editor (#1)
-- Added groups and tabs (#17)
-
-<Feedback />
