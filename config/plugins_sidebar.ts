@@ -317,6 +317,7 @@ const sidebars: SidebarsConfig = {
           id: "business-table/index",
           label: "Introduction",
         },
+        "business-table/features",
         "business-table/release",
       ],
       label: "Business Table",
