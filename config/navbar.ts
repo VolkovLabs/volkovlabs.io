@@ -130,6 +130,10 @@ export const NAVBAR = {
       "aria-label": "Blog",
       items: [
         {
+          label: "All",
+          to: "/blog/",
+        },
+        {
           label: "Business Suite",
           to: "/blog/tags/business-suite",
         },
