@@ -84,6 +84,7 @@ const sidebars: SidebarsConfig = {
             "business-charts/datasources",
             "business-charts/events",
             "business-charts/instance",
+            "business-charts/imports",
             "business-charts/extended",
             "business-charts/eventbus",
             "business-charts/streaming",
