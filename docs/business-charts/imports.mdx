@@ -7,21 +7,47 @@ image: /img/plugins/business-charts/function.png
 
 import Image from "@theme/Image";
 
-# Imports
+# Library Imports
 
 :::info Version
 
-The Business Charts panel supports the imports.
+The Business Charts panel supports the npm library imports since 6.0.0 for Grafana 10 and Grafana 11.
+
+Since version 6.4.0 you can return `import` with option instead use `setOption(options)` method.
 
 :::
 
-You can use the built-in functionality via `context`, for example `context.ecStat`, to draw graphs.
-
-Another alternative method is to import the libraries and apply them to your eChart instance.
+Additional NPM libraries can be imported to be used in Business Charts panel using `import` statement.
 
 ## ecStat library
 
-Code example:
+Additional libraries like `ecStat` can be loaded dynamically to provide additional functionality. In this example we use `setOption(options)` method in `then` method.
+
+```js
+const options = {};
+
+/**
+ * echarts-stat import
+ */
+import("https://esm.sh/echarts-stat@1.2.0").then(
+  ({ default: ecStatImport }) => {
+    context.echarts.registerTransform(ecStatImport.transform.regression);
+
+    /**
+     * setOption method use
+     */
+    context.panel.chart.setOption(options);
+  }
+);
+```
+
+<Image
+  title="Scatter type graph with imported ecStat library."
+  src="/img/plugins/business-charts/imports/scatter-import-example.png"
+/>
+
+<details>
+  <summary>Full example</summary>
 
 ```js
 const values = [
@@ -301,24 +327,37 @@ import("https://esm.sh/echarts-stat@1.2.0").then(
 );
 ```
 
-In this example we use `setOption(options)` method in `then` method
-
-<Image
-  title="Scatter type graph with imported ecStat library"
-  src="/img/plugins/business-charts/imports/scatter-import-example.png"
-/>
-
-:::info Version 6.4.0
-
-Since version 6.4.0 you can return `import` with option instead use `setOption(options)` method
-
-:::
+</details>
 
 ## ecSimpleTransform library
 
 For next example we use JSON API datasource and data example from Apache ECharts website.
 
-Code example since version 6.4.0:
+Code example for version 6.4.0 and above:
+
+```js
+/**
+ * echarts-simple-transform import
+ */
+return import("https://esm.sh/@manufac/echarts-simple-transform@2.0.11").then(
+  ({ default: ecSimpleTransform }) => {
+    context.echarts.registerTransform(ecSimpleTransform.aggregate);
+
+    /**
+     * return options
+     */
+    return options;
+  }
+);
+```
+
+<Image
+  title="Boxplot type graph with imported ecSimpleTransform library."
+  src="/img/plugins/business-charts/imports/boxplot-import-example.png"
+/>
+
+<details>
+  <summary>Full example</summary>
 
 ```js
 const dataSetTest = context.panel.data.series[0].fields[0].values;
@@ -461,150 +500,4 @@ return import("https://esm.sh/@manufac/echarts-simple-transform@2.0.11").then(
 );
 ```
 
-<Image
-  title="Boxplot type graph with imported ecSimpleTransform library"
-  src="/img/plugins/business-charts/imports/boxplot-import-example.png"
-/>
-
-Code sample for versions lower than 6.4.0:
-
-```js
-const dataSetTest = context.panel.data.series[0].fields[0].values;
-
-const options = {
-  dataset: [
-    {
-      id: "raw",
-      source: dataSetTest,
-    },
-    {
-      id: "since_year",
-      fromDatasetId: "raw",
-      transform: [
-        {
-          type: "filter",
-          config: {
-            dimension: "Year",
-            gte: 1950,
-          },
-        },
-      ],
-    },
-    {
-      id: "income_aggregate",
-      fromDatasetId: "since_year",
-      transform: [
-        {
-          type: "ecSimpleTransform:aggregate",
-          config: {
-            resultDimensions: [
-              { name: "min", from: "Income", method: "min" },
-              { name: "Q1", from: "Income", method: "Q1" },
-              { name: "median", from: "Income", method: "median" },
-              { name: "Q3", from: "Income", method: "Q3" },
-              { name: "max", from: "Income", method: "max" },
-              { name: "Country", from: "Country" },
-            ],
-            groupBy: "Country",
-          },
-        },
-        {
-          type: "sort",
-          config: {
-            dimension: "Q3",
-            order: "asc",
-          },
-        },
-      ],
-    },
-  ],
-  title: {
-    text: "Income since 1950",
-  },
-  tooltip: {
-    trigger: "axis",
-    confine: true,
-  },
-  xAxis: {
-    name: "Income",
-    nameLocation: "middle",
-    nameGap: 30,
-    scale: true,
-  },
-  yAxis: {
-    type: "category",
-  },
-  grid: {
-    bottom: 100,
-  },
-  legend: {
-    selected: { detail: false },
-  },
-  dataZoom: [
-    {
-      type: "inside",
-    },
-    {
-      type: "slider",
-      height: 20,
-    },
-  ],
-  series: [
-    {
-      name: "boxplot",
-      type: "boxplot",
-      datasetId: "income_aggregate",
-      itemStyle: {
-        color: "#b8c5f2",
-      },
-      encode: {
-        x: ["min", "Q1", "median", "Q3", "max"],
-        y: "Country",
-        itemName: ["Country"],
-        tooltip: ["min", "Q1", "median", "Q3", "max"],
-      },
-    },
-    {
-      name: "detail",
-      type: "scatter",
-      datasetId: "since_year",
-      symbolSize: 6,
-      tooltip: {
-        trigger: "item",
-      },
-      label: {
-        show: true,
-        position: "top",
-        align: "left",
-        verticalAlign: "middle",
-        rotate: 90,
-        fontSize: 12,
-      },
-      itemStyle: {
-        color: "#d00000",
-      },
-      encode: {
-        x: "Income",
-        y: "Country",
-        label: "Year",
-        itemName: "Year",
-        tooltip: ["Country", "Year", "Income"],
-      },
-    },
-  ],
-};
-
-/**
- * echarts-simple-transform import
- */
-import("https://esm.sh/@manufac/echarts-simple-transform@2.0.11").then(
-  ({ default: ecSimpleTransform }) => {
-    context.echarts.registerTransform(ecSimpleTransform.aggregate);
-
-    /**
-     * setOption method use
-     */
-    context.panel.chart.setOption(options);
-  }
-);
-```
+</details>
