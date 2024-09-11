@@ -32,11 +32,11 @@ So, here is the **Part 02** to help you on your way!
 
 Before we continue, I would like to mention three things:
 
-:::note note1 
+:::note note1
 If you are NOT familiar with this topic yet I would strongly advise you to read my other post [Part 01 : Make your own custom Datepicker (use/set your own timerange). Here is how to](https://community.grafana.com/t/make-your-own-custom-datepicker-use-set-your-own-timerange-here-is-how-to/100264) first!
-  
-  > To get a better understanding of how Grafana's basic principle of changing the time range works, and how to set up and use the [**Business Text plugin**](https://volkovlabs.io/plugins/business-text/) (previously known as Dynamic Text). The plugin is required for all solutions mentioned in this article.
-:::
+
+> To get a better understanding of how Grafana's basic principle of changing the time range works, and how to set up and use the [**Business Text plugin**](https://volkovlabs.io/plugins/business-text/) (previously known as Dynamic Text). The plugin is required for all solutions mentioned in this article.
+> :::
 
 :::note note2
 I would like to emphasize that it is not, in any way, an official solution but more a guide with creative suggestions to make your daily life with Grafana easier.
@@ -80,7 +80,7 @@ Below you will find 4 different use cases to copy/paste and implement for your o
 
 ### Exampe 1 Details
 
- #### Specify (static) timeranges manually
+#### Specify (static) timeranges manually
 
 This is the easiest way to make a custom Datepicker.
 All you have to do is to copy my example from below and in the **Content** plugin option specify two dates in the following line.
@@ -107,19 +107,39 @@ For single dates
 
 ```html
 <select placeholder="SelectDate">
- <option value="" style="display:none;">-- Select Date --</option>
- <!-- change/add items below this line -->
-  <option onclick="changeToSelectedRange('2024-02-01','2024-02-01')">01-Feb-2024</option>
-  <option onclick="changeToSelectedRange('2024-02-02','2024-02-02')">02-Feb-2024</option>
-  <option onclick="changeToSelectedRange('2024-03-20','2024-03-20')">20-Mar-2024</option>
-  <option onclick="changeToSelectedRange('2024-03-21','2024-03-21')">21-Mar-2024</option>
-  <option onclick="changeToSelectedRange('2024-05-11','2024-05-11')">11-May-2024</option>
-  <option onclick="changeToSelectedRange('2024-05-15','2024-05-15')">15-May-2024</option>
-  <option onclick="changeToSelectedRange('2024-06-07','2024-06-07')">07-Jun-2024</option>
-  <option onclick="changeToSelectedRange('2024-06-30','2024-06-30')">30-Jun-2024</option>
-  <option onclick="changeToSelectedRange('2024-07-09','2024-07-09')">09-Jul-2024</option>
-  <option onclick="changeToSelectedRange('2024-08-25','2024-08-25')">25-Aug-2024</option>
-<!-- change/add items above this line -->
+  <option value="" style="display:none;">-- Select Date --</option>
+  <!-- change/add items below this line -->
+  <option onclick="changeToSelectedRange('2024-02-01','2024-02-01')">
+    01-Feb-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-02-02','2024-02-02')">
+    02-Feb-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-03-20','2024-03-20')">
+    20-Mar-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-03-21','2024-03-21')">
+    21-Mar-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-05-11','2024-05-11')">
+    11-May-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-05-15','2024-05-15')">
+    15-May-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-06-07','2024-06-07')">
+    07-Jun-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-06-30','2024-06-30')">
+    30-Jun-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-07-09','2024-07-09')">
+    09-Jul-2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-08-25','2024-08-25')">
+    25-Aug-2024
+  </option>
+  <!-- change/add items above this line -->
 </select>
 ```
 
@@ -129,28 +149,68 @@ For ranges of different months
 
 ```html
 <select placeholder="SelectMonth">
-<option value="" style="display:none;">-- Select Range --</option>
+  <option value="" style="display:none;">-- Select Range --</option>
   <!-- change/add items below this line -->
-  <option onclick="changeToSelectedRange('2023-01-01','2023-01-31')">January 2023</option>
-  <option onclick="changeToSelectedRange('2023-02-01','2023-02-28')">February 2023</option>
-  <option onclick="changeToSelectedRange('2023-03-01','2023-03-31')">March 2023</option>
-  <option onclick="changeToSelectedRange('2023-04-01','2023-04-30')">April 2023</option>
-  <option onclick="changeToSelectedRange('2023-05-01','2023-05-31')">May 2023</option>
-  <option onclick="changeToSelectedRange('2023-06-01','2023-06-30')">June 2023</option>
-  <option onclick="changeToSelectedRange('2023-07-01','2023-07-31')">July 2023</option>
-  <option onclick="changeToSelectedRange('2023-08-01','2023-08-31')">August 2023</option>
-  <option onclick="changeToSelectedRange('2023-09-01','2023-09-30')">September 2023</option>
-  <option onclick="changeToSelectedRange('2023-10-01','2023-10-31')">October 2023</option>
-  <option onclick="changeToSelectedRange('2023-11-01','2023-11-30')">November 2023</option>
-  <option onclick="changeToSelectedRange('2023-12-01','2023-12-31')">December 2023</option>
-  <option onclick="changeToSelectedRange('2024-01-01','2024-01-31')">January 2024</option>
-  <option onclick="changeToSelectedRange('2024-02-01','2024-02-28')">February 2024</option>
-  <option onclick="changeToSelectedRange('2024-03-01','2024-03-31')">March 2024</option>
-  <option onclick="changeToSelectedRange('2024-04-01','2024-04-30')">April 2024</option>
-  <option onclick="changeToSelectedRange('2024-05-01','2024-05-31')">May 2024</option>
-  <option onclick="changeToSelectedRange('2024-06-01','2024-06-30')">June 2024</option>
-  <option onclick="changeToSelectedRange('2024-07-01','2024-07-31')">July 2024</option>
-  <option onclick="changeToSelectedRange('2024-08-01','2024-08-31')">August 2024</option>
+  <option onclick="changeToSelectedRange('2023-01-01','2023-01-31')">
+    January 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-02-01','2023-02-28')">
+    February 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-03-01','2023-03-31')">
+    March 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-04-01','2023-04-30')">
+    April 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-05-01','2023-05-31')">
+    May 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-06-01','2023-06-30')">
+    June 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-07-01','2023-07-31')">
+    July 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-08-01','2023-08-31')">
+    August 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-09-01','2023-09-30')">
+    September 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-10-01','2023-10-31')">
+    October 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-11-01','2023-11-30')">
+    November 2023
+  </option>
+  <option onclick="changeToSelectedRange('2023-12-01','2023-12-31')">
+    December 2023
+  </option>
+  <option onclick="changeToSelectedRange('2024-01-01','2024-01-31')">
+    January 2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-02-01','2024-02-28')">
+    February 2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-03-01','2024-03-31')">
+    March 2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-04-01','2024-04-30')">
+    April 2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-05-01','2024-05-31')">
+    May 2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-06-01','2024-06-30')">
+    June 2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-07-01','2024-07-31')">
+    July 2024
+  </option>
+  <option onclick="changeToSelectedRange('2024-08-01','2024-08-31')">
+    August 2024
+  </option>
   <!-- change/add items above this line -->
 </select>
 ```
@@ -159,18 +219,17 @@ Copy/paste in the **JavaScript** option:
 
 ```javascript
 changeToSelectedRange = (range_start, range_end) => {
-
   let timeStart = "T00:00:00"; //<<-- Change 'start' time here of the range
-  let timeEnd = "T23:59:59";   //<<-- Change 'end' time of the range
+  let timeEnd = "T23:59:59"; //<<-- Change 'end' time of the range
   let rangeStart_merged = range_start + timeStart;
   let rangeEnd_merged = range_end + timeEnd;
 
   //Two lines below are responsible to change the actual timerange of the dashboard
-  timeSrv = angular.element('grafana-app').injector().get('timeSrv');
+  timeSrv = angular.element("grafana-app").injector().get("timeSrv");
   timeSrv.setTime({ from: rangeStart_merged, to: rangeEnd_merged });
 
   return;
-}
+};
 ```
 
 Copy/paste in the **CSS Styling** option:
@@ -202,7 +261,7 @@ select {
 
 ### Exampe 2 Details
 
-  #### Custom (single) day Datepicker using relative ranges
+#### Custom (single) day Datepicker using relative ranges
 
 <Image
   title="Custom (single) day Datepicker using relative ranges."
@@ -222,7 +281,7 @@ As specified in the header, this approach does not use the actual dates like '20
   (range would be `From:now-2d/d To: now-2d/d`).
 - etc.
 
-:::note 
+:::note
 Because of relative time indication I added an extra **date** field
 to see what date you actually have selected above the Datepicker
 :::
@@ -231,32 +290,73 @@ Copy/paste in the **Content** option:
 
 ```html
 <table height="100px">
-      <tr valign="middle">
-        <td>
-          <div class="text01">Selected date:
-            <div class="text02" id="insertDate2"></div>
-          </div>
-        </td>
-      </tr>
-      <tr valign="middle">
-        <td>
-          <select placeholder="SelectDay">
-            <option value="" style="display:none;">-- Select Day --</option>
-            <!-- change/add items below this line -->
-            <option onclick="changeToSelectedDay_v2('now/d','now/d');getDateToday_v2(0);">today</option>
-            <option onclick="changeToSelectedDay_v2('now/d','now');getDateToday_v2(0);">today (so far)</option>
-            <option onclick="changeToSelectedDay_v2('now-1d/d','now-1d/d');getDateSelected_v2(1);">today -1d</option>
-            <option onclick="changeToSelectedDay_v2('now-2d/d','now-2d/d');getDateSelected_v2(2);">today -2d</option>
-            <option onclick="changeToSelectedDay_v2('now-3d/d','now-3d/d');getDateSelected_v2(3);">today -3d</option>
-            <option onclick="changeToSelectedDay_v2('now-4d/d','now-4d/d');getDateSelected_v2(4);">today -4d</option>
-            <option onclick="changeToSelectedDay_v2('now-5d/d','now-5d/d');getDateSelected_v2(5);">today -5d</option>
-            <option onclick="changeToSelectedDay_v2('now-6d/d','now-6d/d');getDateSelected_v2(6);">today -6d</option>
-            <option onclick="changeToSelectedDay_v2('now-7d/d','now-7d/d');getDateSelected_v2(7);">today -7d</option>
-            <option onclick="changeToSelectedDay_v2('now-8d/d','now-8d/d');getDateSelected_v2(8);">today -8d</option>
-            <!-- change/add items above this line -->
-          </select>
-        </td>
-      </tr>
+  <tr valign="middle">
+    <td>
+      <div class="text01">
+        Selected date:
+        <div class="text02" id="insertDate2"></div>
+      </div>
+    </td>
+  </tr>
+  <tr valign="middle">
+    <td>
+      <select placeholder="SelectDay">
+        <option value="" style="display:none;">-- Select Day --</option>
+        <!-- change/add items below this line -->
+        <option
+          onclick="changeToSelectedDay_v2('now/d','now/d');getDateToday_v2(0);"
+        >
+          today
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now/d','now');getDateToday_v2(0);"
+        >
+          today (so far)
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-1d/d','now-1d/d');getDateSelected_v2(1);"
+        >
+          today -1d
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-2d/d','now-2d/d');getDateSelected_v2(2);"
+        >
+          today -2d
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-3d/d','now-3d/d');getDateSelected_v2(3);"
+        >
+          today -3d
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-4d/d','now-4d/d');getDateSelected_v2(4);"
+        >
+          today -4d
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-5d/d','now-5d/d');getDateSelected_v2(5);"
+        >
+          today -5d
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-6d/d','now-6d/d');getDateSelected_v2(6);"
+        >
+          today -6d
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-7d/d','now-7d/d');getDateSelected_v2(7);"
+        >
+          today -7d
+        </option>
+        <option
+          onclick="changeToSelectedDay_v2('now-8d/d','now-8d/d');getDateSelected_v2(8);"
+        >
+          today -8d
+        </option>
+        <!-- change/add items above this line -->
+      </select>
+    </td>
+  </tr>
 </table>
 ```
 
@@ -265,27 +365,28 @@ Copy/paste in the **JavaScript** option:
 ```javascript
 //--------- Change GRAFANA date -------//
 changeToSelectedDay_v2 = (date_start, date_end) => {
-  timeSrv = angular.element('grafana-app').injector().get('timeSrv');
+  timeSrv = angular.element("grafana-app").injector().get("timeSrv");
   timeSrv.setTime({ from: date_start, to: date_end });
   return;
 };
 
 //--------- Show selected date in above custom Datepicker -------//
 getDateSelected_v2 = (x) => {
-
   let date = new Date();
   date.setDate(date.getDate() - x);
 
-  let year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
-  let month = new Intl.DateTimeFormat('en', { month: 'short' }).format(date);
-  let day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
-  let weekday = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(date);
+  let year = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
+  let month = new Intl.DateTimeFormat("en", { month: "short" }).format(date);
+  let day = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
+  let weekday = new Intl.DateTimeFormat("en", { weekday: "short" }).format(
+    date
+  );
 
   let dateCustom = `${weekday}, ${day}-${month}-${year}`;
   document.getElementById("insertDate2").innerHTML = dateCustom;
 
   //alert(dateCustom);
-}
+};
 ```
 
 Copy/paste in the **CSS Styling** option:
@@ -362,7 +463,8 @@ Copy/paste in the **Content** option:
 <table height="100px">
   <tr valign="middle">
     <td>
-      <div class="text01">Selected date/week:
+      <div class="text01">
+        Selected date/week:
         <div class="text02" id="insertWeek"></div>
         <div class="text02" id="insertWeekNr"></div>
       </div>
@@ -371,20 +473,60 @@ Copy/paste in the **Content** option:
   <tr valign="middle">
     <td>
       <select name="pickerWeek" placeholder="SelectDay">
-            <option value="" style="display:none;">-- Select Week --</option>
-            <!-- change/add items below this line -->
-            <option onclick="changeToSelectedWeekV3('now/w','now/w');getDateToday_v3(0);getWeek(0);">this week</option>
-            <option onclick="changeToSelectedWeekV3('now/w','now');getDateToday_v3(0);getWeek(0);">this week (so far)</option>
-            <option onclick="changeToSelectedWeekV3('now-1w/w','now-1w/w');getDateSelected_v3(1);getWeek(1);">today -1w</option>
-            <option onclick="changeToSelectedWeekV3('now-2w/w','now-2w/w');getDateSelected_v3(2);getWeek(2);">today -2w</option>
-            <option onclick="changeToSelectedWeekV3('now-3w/w','now-3w/w');getDateSelected_v3(3);getWeek(3);">today -3w</option>
-            <option onclick="changeToSelectedWeekV3('now-4w/w','now-4w/w');getDateSelected_v3(4);getWeek(4);">today -4w</option>
-            <option onclick="changeToSelectedWeekV3('now-5w/w','now-5w/w');getDateSelected_v3(5);getWeek(5);">today -5w</option>
-            <option onclick="changeToSelectedWeekV3('now-6w/w','now-6w/w');getDateSelected_v3(6);getWeek(6);">today -6w</option>
-            <option onclick="changeToSelectedWeekV3('now-7w/w','now-7w/w');getDateSelected_v3(7);getWeek(7);">today -7w</option>
-            <option onclick="changeToSelectedWeekV3('now-8w/w','now-8w/w');getDateSelected_v3(8);getWeek(8);">today -8w</option>
-            <!-- change/add items above this line -->
-          </select>
+        <option value="" style="display:none;">-- Select Week --</option>
+        <!-- change/add items below this line -->
+        <option
+          onclick="changeToSelectedWeekV3('now/w','now/w');getDateToday_v3(0);getWeek(0);"
+        >
+          this week
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now/w','now');getDateToday_v3(0);getWeek(0);"
+        >
+          this week (so far)
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-1w/w','now-1w/w');getDateSelected_v3(1);getWeek(1);"
+        >
+          today -1w
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-2w/w','now-2w/w');getDateSelected_v3(2);getWeek(2);"
+        >
+          today -2w
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-3w/w','now-3w/w');getDateSelected_v3(3);getWeek(3);"
+        >
+          today -3w
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-4w/w','now-4w/w');getDateSelected_v3(4);getWeek(4);"
+        >
+          today -4w
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-5w/w','now-5w/w');getDateSelected_v3(5);getWeek(5);"
+        >
+          today -5w
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-6w/w','now-6w/w');getDateSelected_v3(6);getWeek(6);"
+        >
+          today -6w
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-7w/w','now-7w/w');getDateSelected_v3(7);getWeek(7);"
+        >
+          today -7w
+        </option>
+        <option
+          onclick="changeToSelectedWeekV3('now-8w/w','now-8w/w');getDateSelected_v3(8);getWeek(8);"
+        >
+          today -8w
+        </option>
+        <!-- change/add items above this line -->
+      </select>
     </td>
   </tr>
 </table>
@@ -396,7 +538,7 @@ Copy/paste in the **JavaScript** option:
 //--------- Change GRAFANA date -------//
 
 changeToSelectedWeekV3 = (date_start, date_end) => {
-  timeSrv = angular.element('grafana-app').injector().get('timeSrv');
+  timeSrv = angular.element("grafana-app").injector().get("timeSrv");
   timeSrv.setTime({ from: date_start, to: date_end });
   return;
 };
@@ -404,29 +546,29 @@ changeToSelectedWeekV3 = (date_start, date_end) => {
 //--------- Show selected date in above custom Datepicker -------//
 
 getDateSelected_v3 = (x) => {
+  let date = new Date(Date.now() - 6.048e8 * x);
 
-  let date = new Date(Date.now() - (6.048e+8 * x));
-
-  let year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
-  let month = new Intl.DateTimeFormat('en', { month: 'short' }).format(date);
-  let day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
-  let weekday = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(date);
+  let year = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
+  let month = new Intl.DateTimeFormat("en", { month: "short" }).format(date);
+  let day = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
+  let weekday = new Intl.DateTimeFormat("en", { weekday: "short" }).format(
+    date
+  );
 
   let dateCustom = `${weekday}, ${day}-${month}-${year}`;
   document.getElementById("insertWeek").innerHTML = dateCustom;
-}
+};
 
 //--------- get week (Show selected date in above custom Datepicker) -------//
 
 getWeek = (y) => {
-
-  const d = new Date(Date.now() - (6.048e+8 * y));
+  const d = new Date(Date.now() - 6.048e8 * y);
   let yearStart = new Date(d.getFullYear(), 0, 1);
   let today = new Date(d.getFullYear(), d.getMonth(), d.getDate());
-  let dayOfYear = ((today - yearStart + 1) / 86400000);
+  let dayOfYear = (today - yearStart + 1) / 86400000;
   let week = Math.ceil(dayOfYear / 7);
   document.getElementById("insertWeekNr").innerHTML = "weekNr : " + week;
-}
+};
 ```
 
 Copy/paste in the **CSS Styling** option:
@@ -504,8 +646,7 @@ The principle behind this method is as follow.
 5. Copy/paste in the **JavaScript** option.
 6. Copy/paste in the **CSS Styling** option.
 
-
-### 1. Your query 
+### 1. Your query
 
 Your query should look something like this.
 
@@ -521,14 +662,14 @@ from(bucket: "your_bucket_here")
 
 > **A few extra notes for your own query part**
 >
-> - I am using a static timerange from date `x` (from) untill `today` (to), so this works *independantly* from the Grafana Datepicker. Change startdate `x` to your own date with one of the options below:  
+> - I am using a static timerange from date `x` (from) untill `today` (to), so this works _independantly_ from the Grafana Datepicker. Change startdate `x` to your own date with one of the options below:  
 >   For my example I will use option 1
 >
->   - option 1 `|> range(start: 2024-01-01T02:00:01Z , stop: now())` use *static date/time*.
->   - option 2 `|> range(start: -8d, stop: now())` use relative amount of *days* back as starting point of range.
->   - option 3 `|> range(start: -8w, stop: now())` use relative amount of *weeks* back as starting time of range.
+>   - option 1 `|> range(start: 2024-01-01T02:00:01Z , stop: now())` use _static date/time_.
+>   - option 2 `|> range(start: -8d, stop: now())` use relative amount of _days_ back as starting point of range.
+>   - option 3 `|> range(start: -8w, stop: now())` use relative amount of _weeks_ back as starting time of range.
 >
-> - aggregate `\_time` by *'1d'* in your query like example , so you get only one value for each date.
+> - aggregate `\_time` by _'1d'_ in your query like example , so you get only one value for each date.
 
 ### 2. Part 01
 
@@ -573,7 +714,7 @@ Copy this below your own query, make sure its above the `yield` field if you are
 |> yield(name: "with_mapping")
 ```
 
-#### Your full query 
+#### Your full query
 
 Your full query should look something like this:
 
@@ -632,15 +773,22 @@ Copy/paste in the **Content** option:
 
 ```html
 <select placeholder="SelectDate">
-  <option name="" value="" style="display:none;">--  Select Date  --</option>
-{{#each data}}
-  {{#if (eq date__full date__today) }}
-  <option name="week{{weekNr}}" onclick="changeToToday('now/d','now/d','{{weekNr}}')">{{date__today}} - [ TODAY ]</option>
-{{else}}
-    <option name="week{{weekNr}}" onclick="changeToSelectedDate('{{date__full}}','{{date__full}}','{{weekNr}}', this)">
-      {{date__full}} - {{weekDayName}} [ Week {{weekNr}} ]</option>
-{{/if}}
-{{/each}}
+  <option name="" value="" style="display:none;">-- Select Date --</option>
+  {{#each data}} {{#if (eq date__full date__today) }}
+  <option
+    name="week{{weekNr}}"
+    onclick="changeToToday('now/d','now/d','{{weekNr}}')"
+  >
+    {{date__today}} - [ TODAY ]
+  </option>
+  {{else}}
+  <option
+    name="week{{weekNr}}"
+    onclick="changeToSelectedDate('{{date__full}}','{{date__full}}','{{weekNr}}', this)"
+  >
+    {{date__full}} - {{weekDayName}} [ Week {{weekNr}} ]
+  </option>
+  {{/if}} {{/each}}
 </select>
 ```
 
@@ -650,26 +798,24 @@ Copy/paste in the **JavaScript** option:
 
 ```javascript
 changeToToday = (date_start, date_end, weekNo) => {
-
   let date_start1 = date_start + " 00:00:00";
   let date_end1 = date_end + " 23:59:00";
 
-  timeSrv = angular.element('grafana-app').injector().get('timeSrv');
+  timeSrv = angular.element("grafana-app").injector().get("timeSrv");
   timeSrv.setTime({ from: date_start, to: date_end });
 
   return;
-}
+};
 
 changeToSelectedDate = (date_start, date_end, weekNo, that) => {
-
   let date_start1 = date_start + " 00:00:00";
   let date_end1 = date_end + " 23:59:00";
 
-  timeSrv = angular.element('grafana-app').injector().get('timeSrv');
+  timeSrv = angular.element("grafana-app").injector().get("timeSrv");
   timeSrv.setTime({ from: date_start1, to: date_end1 });
 
   return;
-}
+};
 ```
 
 ### 6. CSS Styling
@@ -708,7 +854,6 @@ P.S. I assume this method can also be applied by the **MySQL** datasource users 
 Once again I hope this helps you on your way. For now I will leave other creative solutions for Datepickers to you again.
 
 See you at the next post!
-
 
 :::info
 This article comes from the [community post](https://community.grafana.com/t/make-your-own-custom-datepicker-use-set-your-own-timerange-quick-ranges-part-02/130306) created by **orosolido**.
