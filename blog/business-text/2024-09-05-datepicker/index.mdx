@@ -9,7 +9,6 @@ image: /img/blog/2024-09-05-datepicker/banner.png
 keywords: [Business Text, Dynamic Text, Date, DateTime picker]
 ---
 
-import Feedback from "@site/docs/business-text/_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
@@ -31,7 +30,7 @@ So, here is the **Part 02** to help you on your way!
 
 Before we continue, I would like to mention three things:
 
-If you are NOT familiar with this topic yet I would strongly advise you to read my other post [Part 01 : Make your own custom Datepicker (use/set your own timerange). Here is how to](https://community.grafana.com/t/make-your-own-custom-datepicker-use-set-your-own-timerange-here-is-how-to/100264) first!
+If you are NOT familiar with this topic yet I would strongly advise you to read my other post [Part 01 : Make your own custom Datepicker (use/set your own timerange)](https://community.grafana.com/t/make-your-own-custom-datepicker-use-set-your-own-timerange-here-is-how-to/100264). Here is how to first!
 
 To get a better understanding of how Grafana's basic principle of changing the time range works, and how to set up and use the [Business Text plugin](/plugins/business-text/) (previously known as Dynamic Text). The plugin is required for all solutions mentioned in this article.
 
@@ -43,7 +42,7 @@ My previous post focused on a more styled time selector. In this topic, I will b
 
 Below you will find 4 different use cases to copy/paste and implement for your own project.
 
-1. Specify (static) timeranges manually
+1. Specify (static) timeranges manually.
 
 <Image
   title="Specify (static) timeranges manually."
@@ -282,8 +281,8 @@ As specified in the header, this approach does not use the actual dates like '20
   (range would be `From:now-2d/d To: now-2d/d`).
 - etc.
 
-:::note extra **date** field
-Because of relative time indication I added an extra **date** field to see what date you actually have selected above the Datepicker
+:::note extra date field
+Because of relative time indication I added an extra **date** field to see what date you actually have selected above the Datepicker.
 :::
 
 Copy/paste in the **Content** option:
@@ -472,8 +471,8 @@ As specified in the header this approach does not use the actual dates like '202
   (range would be `From:now-2w/w To: now-2w/w`).
 - etc.
 
-:::note extra **date** field
-Because of relative time use/indication I added an extra **date** field to see what date/week you selected above the Datepicker
+:::note extra date field
+Because of relative time use/indication I added an extra **date** field to see what date/week you selected above the Datepicker.
 :::
 
 Copy/paste in the **Content** option:
@@ -676,8 +675,9 @@ The principle behind this method is as follow.
 
 3. **Mapping!** Extract elements like (DAY (DD) - MONTH (MM) - YEAR (YYYY) - WEEKDAY - WEEKNR - ETC..) from '**\_time**' as a `string` and map them to seperate columns (using [_strings.substring()_](https://docs.influxdata.com/flux/v0/stdlib/strings/substring/#Copyright) function).
 
-> **++ Additional benefits ++**
-> Adding these extra mapped fields in general allows you to easily filter and sort by specific days of the week, week numbers, months, and more.
+:::note Additional benefits
+Adding these extra mapped fields in general allows you to easily filter and sort by specific days of the week, week numbers, months, and more.
+:::
 
 4. Generate/create **Custom Datepicker** with prefered data.
 
@@ -692,7 +692,7 @@ The principle behind this method is as follow.
 
 ### Your query
 
-Your query should look something like this.
+Your query should look something like this:
 
 ```javascript
 from(bucket: "your_bucket_here")
@@ -704,7 +704,7 @@ from(bucket: "your_bucket_here")
  |> yield(name: "with_mapping")
 ```
 
-**A few extra notes for your own query part**
+#### A few extra notes for your own query part
 
 - I am using a static timerange from date `x` (from) untill `today` (to), so this works _independantly_ from the Grafana Datepicker. Change startdate `x` to your own date with one of the options below:  
   For my example I will use option 1
@@ -906,23 +906,17 @@ select {
 
 ### Result
 
-If done correctly, you have now created a picklist with `x` number of dates based on your specified range. For this example I used the range `|> range(start: 2024-01-01T02:00:01Z , stop: now())` . Your Grafana dashboard timerange will change accordingly after selecting one of these dates with the picklist ;-)
+If done correctly, you have now created a picklist with `x` number of dates based on your specified range.
+
+For this example I used the range `|> range(start: 2024-01-01T02:00:01Z , stop: now())` . Your Grafana dashboard timerange will change accordingly after selecting one of these dates with the picklist ;-)
 
 <Image
   title="Result preview: example 04 (using InfluxDB)."
   src="/img/blog/2024-09-05-datepicker/image15.gif"
 />
 
-P.S. I assume this method can also be applied by the **MySQL** datasource users to achieve the same but with slightly different query commands to extract/map data. If anyone knows how to do so send me a DM please and I will add that to this post.
-
----
+P.S. I assume this method can also be applied by the **MySQL** datasource users to achieve the same but with slightly different query commands to extract/map data. If anyone knows how to do so send me a DM please and I will add that to this [post](https://community.grafana.com/t/make-your-own-custom-datepicker-use-set-your-own-timerange-quick-ranges-part-02/130306).
 
 Once again I hope this helps you on your way. For now I will leave other creative solutions for Datepickers to you again.
 
 See you at the next post!
-
-:::info
-This article comes from the [community post](https://community.grafana.com/t/make-your-own-custom-datepicker-use-set-your-own-timerange-quick-ranges-part-02/130306) created by **orosolido**.
-:::
-
-<Feedback />
