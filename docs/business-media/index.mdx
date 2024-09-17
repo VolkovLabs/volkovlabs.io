@@ -22,7 +22,9 @@ The Base64 Media panel joins the [Business Suite](/plugins/) for Grafana and wit
 />
 :::
 
-The Business Media panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the base64 format.
+The Business Media panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the base64 format. 
+
+The panel offers great flexibility, allowing users to display multiple media files and flip through them. You can mix and match any supported formats for multi-media file visualizations, allowing you to create the desired visual experience.
 
 ## Requirements
 
@@ -40,6 +42,7 @@ The Business Media panel version requirements for Grafana are as follows:
 ## Highlights
 
 - The media file can be specified in the base64 format or as a URL link.
+- Multiple media files display with pagination functionality.
 - The returned value can include base64 encoded content with or without a specified definition. The formats for the definition can look like `data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`.
 - The file type is automatically determined based on the first base64 symbol if no definition is provided.
 - If the data source returns more than one field of the `string` type, you can select the Field Name in the panel's display options.

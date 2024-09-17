@@ -8,12 +8,11 @@ import Image from "@theme/Image";
 
 # Options
 
-Below you can find descriptions of all existing plugin options.
+Below, you can find descriptions of all existing plugin options. The Business Media panel allows for the simultaneous displaying of multi-type media files. The three categories of options (**PDF**, **Image**, **Video/Audio**) are conditionally available depending on the added **Media Source Types** in the **Business Media** category.
 
 <Image
   title="All the Business Media panel options."
   src="/img/plugins/business-media/options.png"
-  width="70%"
 />
 
 ## Business Media
@@ -69,17 +68,29 @@ The Business Media panel offers a powerful toolbar. By enabling the **Display to
   src="/img/plugins/business-media/toolbar.png"
 />
 
-- **Auto play**.
+- **Auto play**. Works when multiple media files are added. When a user clicks on the **Play** toolbar button, the images will switch from the first to the following with the specified **Auto play interval** until the last image. 
+If the **Auto Play infinity** is **Enabled**, then the switching starts again from the beginning automatically.
+
+<Image
+  title="The Toolbar feature - Auto Play."
+  src="/img/plugins/business-media/auto-switch.png"
+/>
+
 - **Download**. Works for the **Image** type only. This enables a button that triggers the downloading of the selected image.
 - **Navigation**. This enables a set of buttons to page media files back and forward.
 - **Zoom**. Works for the **Image** type only. This option has two sub-options:
   - **Full Screen**. This enables one button that allows your image to be opened in full-screen mode.
   - **Pan and Pinch**. This enables three buttons to zoom in and out of your image.
 
+<Image
+  title="The Toolbar features - Download, Navigation, Zoom."
+  src="/img/plugins/business-media/down-nav-zoom.png"
+/>
+
 ## URL
 
 :::info version
-Starting from version 6.1.0, the **URL** category became redundant since Grafana added the **Data links** category, which is fully supported by the Business Media panel.
+Starting from version 6.1.0, the **URL** category became obsolete since Grafana added the **Data links** category, which is fully supported by the Business Media panel.
 :::
 
 In the **URL** category, you can specify two parameters:
@@ -92,19 +103,13 @@ In the **URL** category, you can specify two parameters:
   src="/img/plugins/business-media/url.png"
 />
 
-## Video/Audio
+## PDF
 
-In the **Video/Audio** category, there are specific to these formats parameters:
-
-- **Controls**. **Enabled** instructs the panel to display the video and audio controls.
-- **Auto Play**. When **Enabled**, the video and audio automatically start playing without sound.
-- **Infinity Play**. With **Enabled**, the file plays in an endless loop.
-- **Poster Image**. You can specify a poster image (thumbnail) file for your video files. A poster image is an image that is shown before the user clicks on the play button (unless the **Auto play** is enabled). The image can be in the base64 format or a link to the external web resource.
+Most browsers have a PDF toolbar by default. You can disable that default if needed.
 
 <Image
-  title="Parameters for video and audio files."
-  src="/img/plugins/business-media/video.png"
-  width="70%"
+  title="The Business Media panel provides an option to disable a browser's PDF toolbar."
+  src="/img/plugins/business-media/pdf.png"
 />
 
 ## Image
@@ -124,13 +129,19 @@ The **Crisp Edges** option is not supported in all browsers: https://developer.m
   src="/img/blog/2023-10-29-image-panel-4.1.0/auto-pix.png"
 />
 
-## PDF
+## Video/Audio
 
-Most browsers have a PDF toolbar by default. You can disable that default if needed.
+In the **Video/Audio** category, there are specific to these formats parameters:
+
+- **Controls**. **Enabled** instructs the panel to display the video and audio controls.
+- **Auto Play**. When **Enabled**, the video and audio automatically start playing without sound.
+- **Infinity Play**. With **Enabled**, the file plays in an endless loop.
+- **Poster Image**. You can specify a poster image (thumbnail) file for your video files. A poster image is an image that is shown before the user clicks on the play button (unless the **Auto play** is enabled). The image can be in the base64 format or a link to the external web resource.
 
 <Image
-  title="The Business Media panel provides an option to disable a browser's PDF toolbar."
-  src="/img/plugins/business-media/pdf.png"
+  title="Parameters for video and audio files."
+  src="/img/plugins/business-media/video.png"
+  width="70%"
 />
 
 ## Width and Height
