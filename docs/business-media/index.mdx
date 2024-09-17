@@ -22,7 +22,9 @@ The Base64 Media panel joins the [Business Suite](/plugins/) for Grafana and wit
 />
 :::
 
-The Business Media panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the base64 format.
+The Business Media panel is a Grafana plugin that renders PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF files encoded in the base64 format and URL.
+
+The panel offers great flexibility, allowing users to display multiple media files and flip through them. You can mix and match any supported formats for multi-media file visualizations, allowing you to create the desired visual experience.
 
 ## Requirements
 
@@ -39,14 +41,13 @@ The Business Media panel version requirements for Grafana are as follows:
 
 ## Highlights
 
+- The media file can be specified in the base64 format or as a URL link.
+- Multiple media files display with pagination functionality.
 - The returned value can include base64 encoded content with or without a specified definition. The formats for the definition can look like `data:image/jpg;base64,ENCODED-CONTENT` or `data:application/pdf;base64,ENCODED-CONTENT`.
-- The file type is automatically determined based on the first base64 symbol if no definition is provided.
 - If the data source returns more than one field of the `string` type, you can select the Field Name in the panel's display options.
 - You can fit image dimensions to the panel size, keep the original values, or adjust dimensions based on the manually supplied values.
 - Allows adding a URL with a title to navigate to other dashboards when clicking the image. URL supports dashboard variables.
-- Support for MP4 and WEBM video files with the definitions (`data:video/mp4;base64,ENCODED-CONTENT` and `data:video/webm;base64,ENCODED-CONTENT`)
-- Support for MP3 and OGG audio files with the efinitions (`data:audio/mp3;base64,ENCODED-CONTENT` and `data:audio/ogg;base64,ENCODED-CONTENT`)
-- Provides a toolbar to download, zoom, and navigate between multiple images.
+- Provides a toolbar to download, zoom, and navigate between media files.
 
 <Image
   title="How to start with the Business Media panel."
@@ -62,6 +63,7 @@ The Business Media panel version requirements for Grafana are as follows:
 | [Supported formats](formats) | Explains what formats are supported and how to display media files. |
 | [Options](options)           | Describes all plugin options                                        |
 | [Features](features)         | Demonstrates panel capabilities.                                    |
+| [Tutorials](tutorials)       | Easy to follow tutorials                                            |
 | [Release Notes](release)     | Stay up to date with the latest features and updates.               |
 
 ## License
