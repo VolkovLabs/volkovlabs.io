@@ -254,6 +254,15 @@ const sidebars: SidebarsConfig = {
             id: "business-media/features",
           },
         },
+        {
+          items: [],
+          label: "Tutorials",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-media/tutorials/index",
+          },
+        },
         "business-media/release",
       ],
       label: "Business Media",
