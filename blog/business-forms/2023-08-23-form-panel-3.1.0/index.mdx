@@ -63,9 +63,13 @@ if (select) {
 
 The code editor for the custom payload is available for initial requests using the data source. When the data source is selected, you can specify a custom payload to execute the `rawSql` SQL statement and any other property required for a specific data source.
 
+:::info Interpolation
+Dashboard variables will be replaced automatically. The payload data should be inserted with string interpolation.
+:::
+
 ```javascript
 return {
-  rawSql: "",
+  rawSql: ``,
   format: "table",
 };
 ```
@@ -106,10 +110,12 @@ elements.forEach((element) => {
 return payload;
 
 /**
- * Data Source payload
+ * Data Source payload.
+ * Dashboard variables will be replaced automatically.
+ * The payload data should be inserted with string interpolation.
  */
 return {
-  rawSql: "",
+  rawSql: ``,
   format: "table",
 };
 ```
@@ -159,10 +165,12 @@ elements.forEach((element) => {
 });
 
 /**
- * Data Source payload
+ * Data Source payload.
+ * Dashboard variables will be replaced automatically.
+ * The payload data should be inserted with string interpolation.
  */
 return {
-  rawSql: "",
+  rawSql: ``,
   format: "table",
 };
 ```
