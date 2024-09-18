@@ -91,41 +91,8 @@ export const NAVBAR = {
       ],
     },
     {
-      to: "/grafana/",
-      position: "left",
-      label: "Grafana Crash Course",
-      "aria-label": "Grafana",
-      items: [
-        {
-          label: "Introduction",
-          to: "/grafana/",
-          className: "volkovlabs-link icon-grafana-link",
-        },
-        {
-          label: "Getting Started",
-          to: "/grafana/started",
-          className: "volkovlabs-link icon-grafana-started-link",
-        },
-        {
-          label: "Advanced",
-          to: "/grafana/advanced",
-          className: "volkovlabs-link icon-grafana-advanced-link",
-        },
-        {
-          label: "Developer",
-          to: "/grafana/developer",
-          className: "volkovlabs-link icon-grafana-developer-link",
-        },
-        {
-          label: "Environment data source",
-          to: "/grafana/environment/",
-          className: "volkovlabs-link icon-plugins-env-link",
-        },
-      ],
-    },
-    {
       to: "/blog/",
-      position: "left",
+      position: "right",
       label: "Blog",
       "aria-label": "Blog",
       items: [
@@ -156,10 +123,37 @@ export const NAVBAR = {
       ],
     },
     {
-      to: "/team/",
-      position: "left",
-      label: "Volkov Labs",
-      "aria-label": "Volkov Labs",
+      to: "/grafana/",
+      position: "right",
+      label: "Grafana Crash Course",
+      "aria-label": "Grafana",
+      items: [
+        {
+          label: "Introduction",
+          to: "/grafana/",
+          className: "volkovlabs-link icon-grafana-link",
+        },
+        {
+          label: "Getting Started",
+          to: "/grafana/started",
+          className: "volkovlabs-link icon-grafana-started-link",
+        },
+        {
+          label: "Advanced",
+          to: "/grafana/advanced",
+          className: "volkovlabs-link icon-grafana-advanced-link",
+        },
+        {
+          label: "Developer",
+          to: "/grafana/developer",
+          className: "volkovlabs-link icon-grafana-developer-link",
+        },
+        {
+          label: "Environment data source",
+          to: "/grafana/environment/",
+          className: "volkovlabs-link icon-plugins-env-link",
+        },
+      ],
     },
     {
       href: "https://youtube.com/@volkovlabs",

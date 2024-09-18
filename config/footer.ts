@@ -108,11 +108,6 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-release-link",
         },
         {
-          label: "GitHub",
-          href: "https://github.com/VolkovLabs",
-          className: "volkovlabs-footer-link icon-github-link",
-        },
-        {
           label: "YouTube Channel",
           href: "https://youtube.com/@volkovlabs",
           className: "volkovlabs-footer-link icon-youtube-link",
@@ -126,6 +121,11 @@ export const FOOTER = {
           label: "About us",
           href: "/team/",
           className: "volkovlabs-footer-link icon-team-link",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/VolkovLabs",
+          className: "volkovlabs-footer-link icon-github-link",
         },
         {
           label: "LinkedIn",

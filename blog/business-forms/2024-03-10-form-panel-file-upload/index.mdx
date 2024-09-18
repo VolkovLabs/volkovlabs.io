@@ -112,14 +112,15 @@ const toBase64 = (file) =>
 
 /**
  * Data Source payload
+ * Dashboard variables will be replaced automatically.
+ * The payload data should be inserted with string interpolation.
  */
 const getPayload = async () => {
   const file = payload.file[0];
   const base64 = await toBase64(file);
 
   return {
-    rawSql: `INSERT INTO files (name, file)
-VALUES ('${file.name}', '${base64}');`,
+    rawSql: `INSERT INTO files (name, file) VALUES ('${file.name}', '${base64}');`,
     format: "table",
   };
 };
@@ -174,8 +175,7 @@ return getPayload();
 Query Editor:
 
 ```SQL
-INSERT INTO files (name, file)
-VALUES ('${payload.file.name}', '${payload.base64}');
+INSERT INTO files (name, file) VALUES ('${payload.file.name}', '${payload.base64}');
 ```
 
 #### Upload Request configuration for HTTP API
