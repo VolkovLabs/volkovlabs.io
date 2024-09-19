@@ -115,10 +115,10 @@ export const FOOTER = {
       ],
     },
     {
-      title: "Company",
+      title: "The Company",
       items: [
         {
-          label: "About us",
+          label: "About",
           href: "/team/",
           className: "volkovlabs-footer-link icon-team-link",
         },
