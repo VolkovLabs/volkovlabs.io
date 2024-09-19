@@ -8,14 +8,21 @@ import Image from "@theme/Image";
 
 # Visual Editor
 
-This is one of the most exciting features. Instead of using JavaScript code, you can use UI elements to specify datasets and series for the chart.
+This is one of the most exciting features. We created the Visual Editor to simplify working with the Grafana dataframes and facilitate intuitive data transmission into the [Charts function](/plugins/business-charts/options/). 
 
-:::info Beta version
-This feature is in the beta version. As of now, it should work for simple charts. If your use case requires complex logic, use the **Code** mode.
-:::
+The Visual Editor should significantly help working with datasets, but it does not eliminate the need for the Charts function.
+
+This feature is in the beta version. As of now, it should work for all charts mentioned in the **Type** dropdown. 
 
 <Image
-  title="The Visual Editor is a new and exciting feature added in 6.0.0."
+  title="The Type dropdown location."
+  src="/img/plugins/business-charts/type-location.png"
+/>
+
+If your use case requires complex logic, use the **Code** mode.
+
+<Image
+  title="The Visual Editor is an exciting feature added in 6.0.0."
   src="/img/blog/2024-04-06-echarts-panel-6.0.0/vis-editor.png"
 />
 
@@ -29,11 +36,227 @@ The following is described using the Business Charts version 6.4.1.
 
 Below is a more detailed description of how the **Visual Editor** can be used for a particular series type.
 
-### Bar
+
+| Chart Type                            | Description                                      |
+| ------------------------------------- | -------------------------------------------------|
+| [Line](../visualeditor/#line)         | Provides examples for the **Line** chart type.   |
+| [Bar](../visualeditor/#bar)           | Provides examples for the **Bar** chart type.   |
+| [Radar](../visualeditor/#radar)       | Provides examples for the **Radar** chart type.   |
+| [Sunburst](../visualeditor/#sunburst)         | Provides examples for the **Sunburst** chart type.   |
+| [Boxplot](../visualeditor/#boxplot)         | Provides examples for the **Boxplot** chart type.   |
+
 ### Line
+
+<Image
+  title="Using the Visual Editor to build a Line chart type."
+  src="/img/plugins/business-charts/line-basic.png"
+/>
+
+1. Required dataframe. You need to have at least two columns of data. At least one column should be numerical.
+
+| Value   | Day |
+| ------- | ----|
+| 120     | 1   |
+| 130     | 2   |
+| 10      | 3   |
+| 80      | 4   |
+| 90      | 5   |
+
+2. Datasets. Create at least two datasets (add at least two columns of data from your dataframe into the Charts function input).
+
+3. Chart Type. Set it to the **Line**.
+
+4. Chart Type specific options. Ensure to specify **Encode Y** (values to be located on the vertical axis) and **Encode X** (values to be located on the horizontal axis). 
+
+5. Charts Function. 
+
+```javascript
+return {
+  dataset: context.editor.dataset,
+  series: context.editor.series,
+  xAxis: {
+    type: "category"
+  },
+  yAxis: {
+    type: 'value',
+  },
+}
+```
+
+### Bar
+
+<Image
+  title="Using the Visual Editor to build a Bar chart type.."
+  src="/img/plugins/business-charts/bar-basic.png"
+/>
+
+1. Required dataframe. You need to have at least two columns of data. At least one column should be numerical.
+
+| Value   | Day |
+| ------- | ----|
+| Mon     | 120 |
+| Tue     | 52  |
+| Wed     | 200 |
+| Thu     | 334 |
+| Fri     | 390 |
+| Sat     | 330 |
+| Sun     | 220 |
+
+2. Datasets. Create at least two datasets (add at least two columns of data from your dataframe into the Charts function input).
+
+3. Chart Type. Set it to the **Bar**.
+
+4. Chart Type specific options. For the **Bar** type, the only required option is **ID**.
+
+5. Charts Function. 
+
+```javascript
+return {
+  dataset: context.editor.dataset,
+  series: context.editor.series,
+  xAxis: {
+    type: "category"
+  },
+  yAxis: {
+    type: 'value',
+  },
+}
+```
+
 ### Radar
+
+A radar chart, also known as a spider chart, shows multivariate data stacked at an axis with the same central point.
+The chart usually displays two or more quantitative variables for comparison.
+
+Here, we compare the allocated and actual budgets in six categories (company departments).
+
+<Image
+  title="Using the Visual Editor to build a Radar chart type."
+  src="/img/plugins/business-charts/radar-basic.png"
+/>
+
+1. Required dataframe. You need to have at least two columns of data. At least one column should be numerical. In this example, there are two numerical columns.
+
+| Indicator names (Department)| Allocated Budget | Actual Spending |
+| --------------------------- | ---------------- | --------------- |
+| Sales                       | 4200             | 5000            | 
+| Administration              | 3000             | 14000           |
+| Information Technology      | 20000            | 28000           |
+| Customer Support            | 35000            | 26000           |
+| Development                 | 50000            | 42000           |
+| Marketing                   | 18000            | 21000           |
+
+2. Datasets. Add numerical columns into your datasets.
+
+3. Chart Type. Set it to the **Radar**.
+
+4. Chart Type specific options. For the **Radar** type, specify dimensions where one dimension is one data series. In this example, there are two dimensions. One is for the allocated budget, and the other is for the actual spending.
+
+Then, ensure to configure the **Radar Options**:
+  - **Shape**. It could be **Circle** or **Polygon**.
+  - **Radius**. The size of the radar in pixels. 
+  - **Indicator**. It is a data frame column containing the radar category names (in this example, they are department names).
+
+5. Charts Function. 
+
+```javascript
+return {
+  legend: {
+    data: ['Allocated Budget', 'Actual Spending']
+  },
+  radar: context.editor.radar,
+  series: context.editor.series,
+}
+```
 ### Sunburst
+
+A sunburst chart is a circular diagram displaying pieces of a whole on multiple levels. It indicates the parts' contribution to the whole, and each part can be further divided into smaller pieces.
+
+Data for the sunburst chart should include levels. These levels represent the hierarchical structure of the data. The top level typically represents the set of main categories, and each further level decomposes the previous one, providing a more detailed view of the data.
+
+<Image
+  title="Using the Visual Editor to build a Sunburst chart type.."
+  src="/img/plugins/business-charts/sunburst-basic.png"
+/>
+
+1. Required dataframe. For a meaningful sunburst, you need at least two levels(two columns) of data. 
+
+| Level 0 | Level 1    | Level 2       | Level 3 |
+| ------- | ---------- | ------------- | ------- |
+| Grandpa | Father     | Brother Peter |         |
+| Grandpa | Father     | Me            |         |      
+| Grandpa | Uncle Leo  | Cousin Jack   |         |
+| Grandpa | Uncle Leo  | Cousin Ben    |         |
+| Grandpa | Uncle Leo  | Cousin Mary   |         |
+| Grandpa | Uncle Leo  | Cousin Mary   | Jackson |
+| Nancy   | Uncle Nike | Cousin Jenny  |         |
+| Nancy   | Uncle Nike | Cousin Betty  |         |
+
+2. Datasets. Add every level as a separate dataset. In this example, there are four levels; therefore, there are four datasets.
+
+3. Chart Type. Set it to the **Sunburst**.
+
+4. Chart Type specific options. Every column is a level for the **Sunburst**; ensure to rearrange them if needed. 
+
+Then, configure more options:
+
+- **Inner Radius** and **Outer Radius** is the chart size relative to the panel's in percentage.
+- **Sunburst sort**. The label sorting. 
+- **Emphasis Focus**. What part of the chart is highlighted when a mouse hovers.
+- **Show label**. Show or hode labels. 
+- **Label rorate**. Choose between two ways of label rotation.
+
+5. Charts Function. 
+
+```javascript
+return {
+  radar: context.editor.radar,
+  series: context.editor.series,
+}
+```
+
 ### Boxplot
+
+The boxplot is a chart depicting a variable distribution in a compact way where you can compare it over time or between multiple entities. 
+
+<Image
+  title="Using the Visual Editor to build a Boxplot chart type.."
+  src="/img/plugins/business-charts/boxplot-basic.png"
+/>
+
+1. Required dataframe. For each distribution, you provide the minimum, the first quartile (25% mark), the median, the third quartile (75% mark), and maximum values.
+
+| Category | min  | q1  | median | q3  | maximum |
+| -------- | ---- | --- | ------ | --- | ------- |
+| a        | 1    | 2   | 3      | 4   | 5       |
+| b        | 2    | 3   | 4      | 5   | 6       |
+| c        | 3    | 4   | 5      | 6   | 7       |
+| d        | 4    | 5   | 6      | 7   | 8       |
+
+2. Datasets. For the **Boxplot**, you need to add six datasets, where the first dataset should contain the category, then minimum values, first quartile, median, third quartile, and maximum. The order of the datasets is important.
+
+3. Chart Type. Set it to the **Boxplot**.
+
+4. Chart Type specific options. There are no specific options to specify with the latest plugin release.
+
+5. Charts Function. 
+
+```javascript
+return {
+  tooltip: {},
+  dataset: context.editor.dataset,
+  series: context.editor.series,
+  /**
+   * Set correct axis value
+   */
+  xAxis: {
+    type: 'category',
+  },
+  yAxis: {
+    type: 'value',
+  },
+}
+```
 
 More types description are coming soon.
 
