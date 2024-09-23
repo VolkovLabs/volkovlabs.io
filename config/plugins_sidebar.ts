@@ -77,6 +77,7 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         "business-charts/options",
+        "business-charts/visualeditor",
         "business-charts/examples",
         {
           items: [
@@ -91,7 +92,6 @@ const sidebars: SidebarsConfig = {
             "business-charts/theme",
             "business-charts/transformations",
             "business-charts/variables",
-            "business-charts/visualeditor",
             "business-charts/wordcloud",
             "business-charts/expandable",
           ],

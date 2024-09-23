@@ -110,5 +110,5 @@ export const FOOTER = {
       ],
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs, USA. All rights reserved.`,
+  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs based in Tampa, Florida, USA. All rights reserved.`,
 };

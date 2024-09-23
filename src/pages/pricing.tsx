@@ -75,8 +75,8 @@ const Main = (siteConfig) => {
         <div className="row">
           <div className="col col--7 margin-vert--lg">
             <p className="hero__subtitle margin-vert--md">
-              Click on <b>Help</b> to send us a message. We are eager to start a
-              conversation.
+              Click on <b>Support</b> to send us a message. We are eager to
+              start a conversation.
             </p>
           </div>
 
