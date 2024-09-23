@@ -19,8 +19,8 @@ const Header = (siteConfig) => {
         <div className="row">
           <div className="col col--7 margin-vert--lg">
             <p className="hero__subtitle margin-vert--md">
-              The Business Suite is a collection of open source plugins created
-              and actively maintained by Volkov Labs.
+              The Business Suite is a collection of open source plugins for
+              Grafana created and actively maintained by Volkov Labs.
             </p>
 
             <p className="hero__subtitle">

@@ -84,6 +84,11 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-big-alerting-link",
         },
         {
+          label: "EULA",
+          to: "/eula",
+          className: "volkovlabs-link icon-eula-link",
+        },
+        {
           label: "REST API",
           to: "/big/api",
           className: "volkovlabs-link icon-big-rest-api-link",

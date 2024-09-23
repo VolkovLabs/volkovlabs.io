@@ -24,10 +24,10 @@ const Header = (siteConfig) => {
 
             <p className="hero__subtitle">
               Over the past three years, we have spearheaded a significant
-              open-source initiative, developing ten plugins with a staggering
-              23M+ total downloads. Our commitment to this cause is evident in
-              our best-in-class documentation, a dedicated YouTube channel, and
-              a robust mechanism for addressing community queries.
+              open-source initiative, developing ten plugins for Grafana with a
+              staggering 23M+ total downloads. Our commitment to this cause is
+              evident in our best-in-class documentation, a dedicated YouTube
+              channel, and a robust mechanism for addressing community queries.
             </p>
 
             <p className="hero__subtitle">
@@ -71,7 +71,7 @@ const Main = (siteConfig) => {
           <div className="col col--6">
             <Image src="/img/team/mikhail.png" zoom={false} />
             <h3>Mikhail</h3>
-            <p>Founder, CEO and Grafana Champion</p>
+            <p>Founder and Grafana Champion</p>
           </div>
 
           <div className="col col--6">
@@ -85,7 +85,7 @@ const Main = (siteConfig) => {
           <div className="col col--6">
             <Image src="/img/team/daria.png" zoom={false} />
             <h3>Daria</h3>
-            <p>Creative Director, COO and Grafana Champion</p>
+            <p>Creative Director and Grafana Champion</p>
           </div>
 
           <div className="col col--6">

@@ -15,9 +15,6 @@ const Header = (siteConfig) => {
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--8 margin-vert--lg">
-            <h1 className="hero__title margin-vert--lg">
-              {siteConfig.tagline}
-            </h1>
             <p className="hero__subtitle margin-vert--md">
               Please read these terms and conditions carefully before using Our
               Service.
@@ -49,7 +46,7 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Privacy Policy" className="container margin-vert--md">
+      <div id="Terms" className="container margin-vert--md">
         <h2>Interpretation and Definitions</h2>
         <h3>Interpretation</h3>
         <p>

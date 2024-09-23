@@ -48,6 +48,11 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
+          label: "EULA",
+          to: "/eula/",
+          className: "volkovlabs-footer-link icon-eula-link",
+        },
+        {
           label: "REST API",
           href: "/big/api/",
           className: "volkovlabs-footer-link icon-big-rest-api-link",
@@ -71,6 +76,11 @@ export const FOOTER = {
           label: "Environment data source",
           to: "/grafana/environment/",
           className: "volkovlabs-footer-link icon-plugins-env-link",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/VolkovLabs",
+          className: "volkovlabs-footer-link icon-github-link",
         },
         {
           label: "YouTube Channel",
@@ -98,9 +108,9 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-terms-link",
         },
         {
-          label: "GitHub",
-          href: "https://github.com/VolkovLabs",
-          className: "volkovlabs-footer-link icon-github-link",
+          label: "Disclaimer",
+          to: "/disclaimer/",
+          className: "volkovlabs-footer-link icon-disclaimer-link",
         },
         {
           label: "LinkedIn",
