@@ -5,6 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
+import styles from "../css/index.module.css";
 
 /**
  * Header
@@ -14,26 +15,28 @@ const Header = (siteConfig) => {
     <header>
       <div className="container margin-vert--lg">
         <div className="row">
-          <div className="col col--7 margin-vert--lg">
-            <h1 className="hero__title margin-vert--lg">
-              {siteConfig.tagline}
-            </h1>
+          <div className="col col--8 margin-vert--lg">
             <p className="hero__subtitle margin-vert--md">
-              We can provide quotes, give bulk pricing, and answer any sales or
-              contract-related questions you may have.
+              With the Business Suite Enterprise, you're not just getting a
+              product, you're getting a complete support system. You'll have a
+              designated support team ready to tackle any issues.
             </p>
-
             <p className="hero__subtitle">
-              Email <b>support at volkovlabs.io</b> and start a conversation.
+              You can contact us via Zendesk, receive priority in feature
+              requests and bug fixes, meet with us for in-person consultation,
+              and get access to the Business Intelligence.
+            </p>
+            <p className="hero__subtitle">
+              It's a package that's designed to make your life easier.
             </p>
           </div>
 
-          <div className="col col--5 text--center">
+          <div className="col col--4 text--center">
             <ThemedImage
-              className={clsx("margin-vert--md")}
+              className={clsx("margin-vert--xl")}
               sources={{
-                light: useBaseUrl("/img/index/support.svg"),
-                dark: useBaseUrl("/img/index/support.dark.svg"),
+                light: useBaseUrl("/img/index/enterprise.svg"),
+                dark: useBaseUrl("/img/index/enterprise.dark.svg"),
               }}
               height={"65%"}
               alt={siteConfig.tagline}
@@ -52,13 +55,44 @@ const Main = (siteConfig) => {
   return (
     <main>
       <div id="Plans" className="container margin-vert--md">
-        <stripe-pricing-table
-          pricing-table-id="prctbl_1Q1uoCEiej5nUsoj5F4znGwo"
-          publishable-key="pk_live_51Q1pMcEiej5nUsojvz6cu1k1QH1R5mAHwWz1OotLIAh9qaQiXa70MjggtWr2bsmPqmUIZ6x5b7W9I6VD8QCE4ZxK00GBzofXYZ"
-        ></stripe-pricing-table>
+        <h2 className={clsx(styles.header, "hero__title")}>
+          <span>Plans</span>
+        </h2>
+
+        <div className="col col-12 margin-vert--xl">
+          <stripe-pricing-table
+            pricing-table-id="prctbl_1Q1uoCEiej5nUsoj5F4znGwo"
+            publishable-key="pk_live_51Q1pMcEiej5nUsojvz6cu1k1QH1R5mAHwWz1OotLIAh9qaQiXa70MjggtWr2bsmPqmUIZ6x5b7W9I6VD8QCE4ZxK00GBzofXYZ"
+          ></stripe-pricing-table>
+        </div>
       </div>
 
-      <div className={clsx("container margin-vert--xl")} />
+      <div id="Contact" className="container margin-vert--xl">
+        <h2 className={clsx(styles.header, "hero__title")}>
+          <span>Contact</span>
+        </h2>
+
+        <div className="row">
+          <div className="col col--7 margin-vert--lg">
+            <p className="hero__subtitle margin-vert--md">
+              Click on <b>Help</b> to send us a message. We are eager to start a
+              conversation.
+            </p>
+          </div>
+
+          <div className="col col--5 text--center">
+            <ThemedImage
+              className={clsx("margin-vert--md")}
+              sources={{
+                light: useBaseUrl("/img/index/support.svg"),
+                dark: useBaseUrl("/img/index/support.dark.svg"),
+              }}
+              height={"65%"}
+              alt={siteConfig.tagline}
+            />
+          </div>
+        </div>
+      </div>
     </main>
   );
 };
@@ -74,6 +108,10 @@ const Home = () => {
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />
         <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+        <script
+          id="ze-snippet"
+          src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
+        ></script>
       </Head>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>

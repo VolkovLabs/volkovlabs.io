@@ -13,7 +13,7 @@ export const FOOTER = {
       title: "Business Suite for Grafana",
       items: [
         {
-          label: "Introduction",
+          label: "Documentation",
           to: "/plugins/",
           className: "volkovlabs-footer-link icon-suite-link",
         },

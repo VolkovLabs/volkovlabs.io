@@ -14,7 +14,7 @@ const Header = (siteConfig) => {
     <header>
       <div className="container margin-vert--lg">
         <div className="row">
-          <div className="col col--7 margin-vert--lg">
+          <div className="col col--8 margin-vert--lg">
             <h1 className="hero__title margin-vert--lg">
               {siteConfig.tagline}
             </h1>
@@ -26,7 +26,7 @@ const Header = (siteConfig) => {
             <p className="hero__subtitle">Last updated: September 23, 2024</p>
           </div>
 
-          <div className="col col--5 text--center">
+          <div className="col col--4 text--center">
             <ThemedImage
               className={clsx("margin-vert--md")}
               sources={{
@@ -344,6 +344,10 @@ const Home = () => {
     <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />
+        <script
+          id="ze-snippet"
+          src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
+        ></script>
       </Head>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>
