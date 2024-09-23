@@ -1,5 +1,5 @@
 Business Suite:
-  description: "The Business Suite is a collection of open source plugins created and actively maintained by Volkov Labs."
+  description: "The Business Suite is a collection of open source plugins for Grafana created and actively maintained by Volkov Labs."
 
 Business Intelligence:
   description: "Business Intelligence for Grafana simplifies alerting for business users, providing them with an accessible platform."

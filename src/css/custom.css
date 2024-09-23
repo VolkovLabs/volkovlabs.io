@@ -400,6 +400,32 @@
   background: url("/static/img/index/terms.dark.svg") no-repeat;
 }
 
+.icon-disclaimer-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/disclaimer.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-disclaimer-link::before {
+  background: url("/static/img/index/disclaimer.dark.svg") no-repeat;
+}
+
+.icon-eula-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/big/eula.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-eula-link::before {
+  background: url("/static/img/big/eula.dark.svg") no-repeat;
+}
+
 .icon-release-link::before {
   content: "";
   width: 24px;

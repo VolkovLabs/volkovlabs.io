@@ -15,9 +15,6 @@ const Header = (siteConfig) => {
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--8 margin-vert--lg">
-            <h1 className="hero__title margin-vert--lg">
-              {siteConfig.tagline}
-            </h1>
             <p className="hero__subtitle margin-vert--md">
               This Privacy Policy describes Our policies and procedures on the
               collection, use and disclosure of Your information when You use
