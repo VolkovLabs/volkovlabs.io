@@ -37,7 +37,7 @@ const Header = (siteConfig) => {
                 )}
                 href="/plugins/"
               >
-                Documentation&nbsp;&nbsp;→
+                Documentation
               </a>
               &nbsp;
               <a
