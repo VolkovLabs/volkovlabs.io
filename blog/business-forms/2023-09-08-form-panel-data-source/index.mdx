@@ -113,6 +113,10 @@ To use the highlighting of changes for the data source type, you need to execute
 
 #### Initial Request payload
 
+:::info Interpolation
+Dashboard variables will be replaced automatically. The payload data should be inserted with string interpolation.
+:::
+
 ```js
 return {
   rawSql: "select * from configuration where name ='$device';",
@@ -159,7 +163,9 @@ elements.forEach((element) => {
 });
 
 /**
- * Data Source payload
+ * Data Source payload.
+ * Dashboard variables will be replaced automatically.
+ * The payload data should be inserted with string interpolation.
  */
 return {
   rawSql: `update configuration set min=${payload.min}, max=${payload.max}, speed=${payload.speed} where name='$device'`,

@@ -79,7 +79,7 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-big-getting-started-link",
         },
         {
-          label: "Alerting",
+          label: "Business Alerting",
           to: "/big/alerting",
           className: "volkovlabs-link icon-big-alerting-link",
         },
@@ -91,8 +91,40 @@ export const NAVBAR = {
       ],
     },
     {
+      to: "/blog/",
+      position: "right",
+      label: "Blog",
+      "aria-label": "Blog",
+      items: [
+        {
+          label: "All",
+          to: "/blog/",
+        },
+        {
+          label: "Business Suite",
+          to: "/blog/tags/business-suite",
+        },
+        {
+          label: "Business Intelligence",
+          to: "/blog/tags/business-intelligence",
+        },
+        {
+          label: "Grafana Crash Course",
+          to: "/blog/tags/grafana-crash-course",
+        },
+        {
+          label: "Highlights",
+          to: "/blog/tags/highlights",
+        },
+        {
+          label: "Solutions",
+          to: "/blog/tags/solution",
+        },
+      ],
+    },
+    {
       to: "/grafana/",
-      position: "left",
+      position: "right",
       label: "Grafana Crash Course",
       "aria-label": "Grafana",
       items: [
@@ -124,42 +156,10 @@ export const NAVBAR = {
       ],
     },
     {
-      to: "/blog/",
-      position: "left",
-      label: "Blog",
-      "aria-label": "Blog",
-      items: [
-        {
-          label: "All",
-          to: "/blog/",
-        },
-        {
-          label: "Business Suite",
-          to: "/blog/tags/business-suite",
-        },
-        {
-          label: "Business Intelligence",
-          to: "/blog/tags/business-intelligence",
-        },
-        {
-          label: "Grafana Crash Course",
-          to: "/blog/tags/grafana-crash-course",
-        },
-        {
-          label: "Highlights",
-          to: "/blog/tags/highlights",
-        },
-        {
-          label: "Solutions",
-          to: "/blog/tags/solution",
-        },
-      ],
-    },
-    {
-      to: "/team/",
-      position: "left",
-      label: "Volkov Labs",
-      "aria-label": "Volkov Labs",
+      to: "/pricing/",
+      position: "right",
+      label: "Pricing",
+      "aria-label": "Pricing",
     },
     {
       href: "https://youtube.com/@volkovlabs",
