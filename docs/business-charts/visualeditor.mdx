@@ -12,7 +12,7 @@ This is one of the most exciting features. We created the Visual Editor to simpl
 
 The Visual Editor should significantly help working with datasets, but it does not eliminate the need for the Charts function.
 
-This feature is in the beta version. As of now, it should work for all charts mentioned in the **Type** dropdown.
+This feature is in the beta version. As of now, it should work for all charts enabled in the **Type** dropdown.
 
 <Image
   title="The Type dropdown location."
@@ -26,7 +26,7 @@ If your use case requires complex logic, use the **Code** mode.
   src="/img/blog/2024-04-06-echarts-panel-6.0.0/vis-editor.png"
 />
 
-## Examples
+## Types
 
 :::info Beta version
 
@@ -36,15 +36,15 @@ The following is described using the Business Charts version 6.4.1.
 
 Below is a more detailed description of how the **Visual Editor** can be used for a particular series type.
 
-| Chart Type                            | Description                                        |
-| ------------------------------------- | -------------------------------------------------- |
-| [Line](../visualeditor/#line)         | Provides examples for the **Line** chart type.     |
-| [Bar](../visualeditor/#bar)           | Provides examples for the **Bar** chart type.      |
-| [Radar](../visualeditor/#radar)       | Provides examples for the **Radar** chart type.    |
-| [Sunburst](../visualeditor/#sunburst) | Provides examples for the **Sunburst** chart type. |
-| [Boxplot](../visualeditor/#boxplot)   | Provides examples for the **Boxplot** chart type.  |
+| Chart Type            | Description                                        |
+| --------------------- | -------------------------------------------------- |
+| [Line](#line)         | Provides examples for the **Line** chart type.     |
+| [Bar](#bar)           | Provides examples for the **Bar** chart type.      |
+| [Radar](#radar)       | Provides examples for the **Radar** chart type.    |
+| [Sunburst](#sunburst) | Provides examples for the **Sunburst** chart type. |
+| [Boxplot](#boxplot)   | Provides examples for the **Boxplot** chart type.  |
 
-### Line
+## Line
 
 <Image
   title="Using the Visual Editor to build a Line chart type."
@@ -61,7 +61,7 @@ Below is a more detailed description of how the **Visual Editor** can be used fo
 | 80    | 4   |
 | 90    | 5   |
 
-2. Datasets. Create at least two datasets (add at least two columns of data from your dataframe into the Charts function input).
+2. Datasets. Create at least two datasets. Add at least two columns of data from your dataframe into the Charts function input.
 
 3. Chart Type. Set it to the **Line**.
 
@@ -82,7 +82,7 @@ return {
 };
 ```
 
-### Bar
+## Bar
 
 <Image
   title="Using the Visual Editor to build a Bar chart type.."
@@ -101,7 +101,7 @@ return {
 | Sat   | 330 |
 | Sun   | 220 |
 
-2. Datasets. Create at least two datasets (add at least two columns of data from your dataframe into the Charts function input).
+2. Datasets. Create at least two datasets. Add at least two columns of data from your dataframe into the Charts function input.
 
 3. Chart Type. Set it to the **Bar**.
 
@@ -122,7 +122,7 @@ return {
 };
 ```
 
-### Radar
+## Radar
 
 A radar chart, also known as a spider chart, shows multivariate data stacked at an axis with the same central point.
 The chart usually displays two or more quantitative variables for comparison.
@@ -151,12 +151,6 @@ Here, we compare the allocated and actual budgets in six categories (company dep
 
 4. Chart Type specific options. For the **Radar** type, specify dimensions where one dimension is one data series. In this example, there are two dimensions. One is for the allocated budget, and the other is for the actual spending.
 
-Then, ensure to configure the **Radar Options**:
-
-- **Shape**. It could be **Circle** or **Polygon**.
-- **Radius**. The size of the radar in pixels.
-- **Indicator**. It is a data frame column containing the radar category names (in this example, they are department names).
-
 5. Charts Function.
 
 ```javascript
@@ -169,7 +163,13 @@ return {
 };
 ```
 
-### Sunburst
+### Supported options
+
+- **Shape**. It could be **Circle** or **Polygon**.
+- **Radius**. The size of the radar in pixels.
+- **Indicator**. It is a data frame column containing the radar category names (in this example, they are department names).
+
+## Sunburst
 
 A sunburst chart is a circular diagram displaying pieces of a whole on multiple levels. It indicates the parts' contribution to the whole, and each part can be further divided into smaller pieces.
 
@@ -199,14 +199,6 @@ Data for the sunburst chart should include levels. These levels represent the hi
 
 4. Chart Type specific options. Every column is a level for the **Sunburst**; ensure to rearrange them if needed.
 
-Then, configure more options:
-
-- **Inner Radius** and **Outer Radius** is the chart size relative to the panel's in percentage.
-- **Sunburst sort**. The label sorting.
-- **Emphasis Focus**. What part of the chart is highlighted when a mouse hovers.
-- **Show label**. Show or hode labels.
-- **Label rorate**. Choose between two ways of label rotation.
-
 5. Charts Function.
 
 ```javascript
@@ -216,7 +208,15 @@ return {
 };
 ```
 
-### Boxplot
+### Supported options
+
+- **Inner Radius** and **Outer Radius** is the chart size relative to the panel's in percentage.
+- **Sunburst sort**. The label sorting.
+- **Emphasis Focus**. What part of the chart is highlighted when a mouse hovers.
+- **Show label**. Show or hode labels.
+- **Label rorate**. Choose between two ways of label rotation.
+
+## Boxplot
 
 The boxplot is a chart depicting a variable distribution in a compact way where you can compare it over time or between multiple entities.
 
@@ -247,9 +247,6 @@ return {
   tooltip: {},
   dataset: context.editor.dataset,
   series: context.editor.series,
-  /**
-   * Set correct axis value
-   */
   xAxis: {
     type: "category",
   },
@@ -259,9 +256,7 @@ return {
 };
 ```
 
-More types description are coming soon.
-
-## More Examples
+## Examples
 
 To get you started faster, we have prepared many examples of how the **Visual Editor** can be used.
 
