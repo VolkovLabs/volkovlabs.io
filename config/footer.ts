@@ -13,54 +13,24 @@ export const FOOTER = {
       title: "Business Suite for Grafana",
       items: [
         {
-          label: "Business Calendar",
-          to: "/plugins/business-calendar/",
-          className: "volkovlabs-footer-link icon-plugins-calendar-link",
+          label: "Introduction",
+          to: "/plugins/",
+          className: "volkovlabs-footer-link icon-suite-link",
         },
         {
-          label: "Business Charts",
-          to: "/plugins/business-charts/",
-          className: "volkovlabs-footer-link icon-plugins-echarts-link",
+          label: "Security Guidelines",
+          to: "/plugins/security/",
+          className: "volkovlabs-footer-link icon-security-link",
         },
         {
-          label: "Business Forms",
-          to: "/plugins/business-forms/",
-          className: "volkovlabs-footer-link icon-plugins-form-link",
+          label: "Enterprise Support",
+          to: "/pricing/",
+          className: "volkovlabs-footer-link icon-support-link",
         },
         {
-          label: "Business Input",
-          to: "/plugins/business-input/",
-          className: "volkovlabs-footer-link icon-plugins-static-link",
-        },
-        {
-          label: "Business Media",
-          to: "/plugins/business-media/",
-          className: "volkovlabs-footer-link icon-plugins-base64-link",
-        },
-        {
-          label: "Business News",
-          to: "/plugins/business-news/",
-          className: "volkovlabs-footer-link icon-plugins-rss-link",
-        },
-        {
-          label: "Business Satellite",
-          to: "/plugins/business-satellite/",
-          className: "volkovlabs-footer-link icon-plugins-grapi-link",
-        },
-        {
-          label: "Business Table",
-          to: "/plugins/business-table/",
-          className: "volkovlabs-footer-link icon-plugins-table-link",
-        },
-        {
-          label: "Business Text",
-          to: "/plugins/business-text/",
-          className: "volkovlabs-footer-link icon-plugins-dt-link",
-        },
-        {
-          label: "Business Variable",
-          to: "/plugins/business-variable/",
-          className: "volkovlabs-footer-link icon-plugins-variable-link",
+          label: "Release Dashboard",
+          href: "https://release.volkovlabs.io",
+          className: "volkovlabs-footer-link icon-release-link",
         },
       ],
     },
@@ -73,7 +43,7 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-big-getting-started-link",
         },
         {
-          label: "Alerting",
+          label: "Business Alerting",
           href: "/big/alerting/",
           className: "volkovlabs-footer-link icon-big-alerting-link",
         },
@@ -103,11 +73,6 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-plugins-env-link",
         },
         {
-          label: "Release Dashboard",
-          href: "https://release.volkovlabs.io",
-          className: "volkovlabs-footer-link icon-release-link",
-        },
-        {
           label: "YouTube Channel",
           href: "https://youtube.com/@volkovlabs",
           className: "volkovlabs-footer-link icon-youtube-link",
@@ -121,6 +86,16 @@ export const FOOTER = {
           label: "About",
           href: "/team/",
           className: "volkovlabs-footer-link icon-team-link",
+        },
+        {
+          label: "Privacy Policy",
+          to: "/privacy/",
+          className: "volkovlabs-footer-link icon-privacy-link",
+        },
+        {
+          label: "Terms and Conditions",
+          to: "/terms/",
+          className: "volkovlabs-footer-link icon-terms-link",
         },
         {
           label: "GitHub",
