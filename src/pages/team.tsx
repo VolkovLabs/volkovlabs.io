@@ -16,26 +16,32 @@ const Header = (siteConfig) => {
     <header>
       <div className="container margin-vert--lg">
         <div className="row">
-          <div className="col col--7 margin-vert--lg">
-            <h1 className="hero__title margin-vert--lg">
-              {siteConfig.tagline}
-            </h1>
+          <div className="col col--9 margin-vert--lg">
             <p className="hero__subtitle margin-vert--md">
-              Volkov Labs is a family-owned business based in Tampa, Florida
-              dedicated to creating innovative open-source plugins for Grafana.
+              Open source is at the core of Volkov Labs. We are passionate about
+              the idea of sharing and exchanging ideas without boundaries.
             </p>
 
             <p className="hero__subtitle">
-              Our plugins have been downloaded more than 23 million times and
-              have received praise from hundreds of users who are thrilled with
-              its ability to go beyond observability and solve complex business
-              tasks.
+              Over the past three years, we have spearheaded a significant
+              open-source initiative, developing ten plugins with a staggering
+              23M+ total downloads. Our commitment to this cause is evident in
+              our best-in-class documentation, a dedicated YouTube channel, and
+              a robust mechanism for addressing community queries.
+            </p>
+
+            <p className="hero__subtitle">
+              Our brand became recognizable. Nearly anyone who ever worked with
+              Grafana knows our name. We take immense pride in what we've been
+              able to accomplish. Our journey in the open-source world, from
+              creating a massive project to becoming a recognized brand, is a
+              testament to our collective efforts and dedication.
             </p>
           </div>
 
-          <div className="col col--5 text--center">
+          <div className="col col--3 text--center">
             <ThemedImage
-              className={clsx("margin-vert--md")}
+              className={clsx("margin-vert--lg")}
               sources={{
                 light: useBaseUrl("/img/team/feature-1.svg"),
                 dark: useBaseUrl("/img/team/feature-1.dark.svg"),
@@ -137,6 +143,10 @@ const Home = () => {
     <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />
+        <script
+          id="ze-snippet"
+          src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
+        ></script>
       </Head>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>

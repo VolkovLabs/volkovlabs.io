@@ -11,7 +11,7 @@ export const Blogs = (): JSX.Element => {
       <div className="container">
         <div className="row">
           {BlogArchive?.archive.blogPosts.slice(0, 6).map((post) => (
-            <div className="col col--4 margin-vert--lg">
+            <div className="col col--4 margin-vert--lg" key={post.id}>
               <BlogPostCard key={post.id} post={post} />
             </div>
           ))}

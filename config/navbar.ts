@@ -156,6 +156,12 @@ export const NAVBAR = {
       ],
     },
     {
+      to: "/pricing/",
+      position: "right",
+      label: "Pricing",
+      "aria-label": "Pricing",
+    },
+    {
       href: "https://youtube.com/@volkovlabs",
       position: "right",
       className: "header-youtube-link",

@@ -18,10 +18,6 @@ const Header = (siteConfig) => {
       <div className="container margin-vert--lg">
         <div className="row">
           <div className="col col--7 margin-vert--lg">
-            <h1 className="hero__title margin-vert--lg">
-              {siteConfig.tagline}
-            </h1>
-
             <p className="hero__subtitle margin-vert--md">
               The Business Suite is a collection of open source plugins created
               and actively maintained by Volkov Labs.
@@ -41,13 +37,23 @@ const Header = (siteConfig) => {
                 )}
                 href="/plugins/"
               >
-                Business Suite for Grafana&nbsp;&nbsp;→
+                Documentation&nbsp;&nbsp;→
+              </a>
+              &nbsp;
+              <a
+                className={clsx(
+                  "button button--primary button--lg",
+                  styles.enterprise
+                )}
+                href="/pricing/"
+              >
+                Enterprise Support&nbsp;&nbsp;→
               </a>
             </div>
           </div>
           <div className="col col--5">
             <ThemedImage
-              className={clsx(styles.heroBannerLogo, "margin-vert--md")}
+              className={clsx(styles.heroBannerLogo, "margin-vert--lg")}
               sources={{
                 light: useBaseUrl("/img/index/main.svg"),
                 dark: useBaseUrl("/img/index/main.dark.svg"),
@@ -140,6 +146,10 @@ const Home = () => {
     <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />
+        <script
+          id="ze-snippet"
+          src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
+        ></script>
       </Head>
       <Header siteConfig={siteConfig}></Header>
       <Main siteConfig={siteConfig}></Main>

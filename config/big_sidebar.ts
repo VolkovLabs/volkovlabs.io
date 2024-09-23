@@ -24,7 +24,7 @@ const sidebars: SidebarsConfig = {
         "variables",
         "thresholds",
       ],
-      label: "Alerting",
+      label: "Business Alerting",
       type: "category",
       collapsible: false,
       link: {
