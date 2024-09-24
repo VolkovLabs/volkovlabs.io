@@ -37,17 +37,7 @@ const Header = (siteConfig) => {
                 )}
                 href="/plugins/"
               >
-                Documentation
-              </a>
-              &nbsp;
-              <a
-                className={clsx(
-                  "button button--primary button--lg",
-                  styles.enterprise
-                )}
-                href="/pricing/"
-              >
-                Enterprise Support&nbsp;&nbsp;→
+                Documentation&nbsp;&nbsp;→
               </a>
             </div>
           </div>

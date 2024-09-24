@@ -13,6 +13,10 @@
   fill: #ff5656;
 }
 
+.buttonSvg2 {
+  fill: var(--ifm-color-primary-dark);
+}
+
 [data-theme="light"] .button {
   box-shadow: 0 2px 5px 2px var(--ifm-color-gray-100);
   border: 1px solid #222222;
