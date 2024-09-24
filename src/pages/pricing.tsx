@@ -38,7 +38,6 @@ const Header = (siteConfig) => {
                 light: useBaseUrl("/img/index/enterprise.svg"),
                 dark: useBaseUrl("/img/index/enterprise.dark.svg"),
               }}
-              height={"65%"}
               alt={siteConfig.tagline}
             />
           </div>
