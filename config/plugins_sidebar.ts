@@ -283,7 +283,7 @@ const sidebars: SidebarsConfig = {
       ],
       label: "Business News",
       type: "category",
-      description: "Visualize RSS/Atom feeds using Business Text.",
+      description: "Visualize RSS and Atom feeds using Business Text.",
       link: {
         type: "doc",
         id: "business-news/index",

@@ -102,15 +102,18 @@
   padding-right: 20px;
 }
 
-.panel {
+.plugin {
   margin: 0 auto;
   border-radius: 10px;
+  width: 500px;
+  height: 320px;
+  object-fit: fill;
 }
 
-[data-theme="light"] .panel {
+[data-theme="light"] .plugin {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
 }
 
-[data-theme="dark"] .panel {
+[data-theme="dark"] .plugin {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
 }

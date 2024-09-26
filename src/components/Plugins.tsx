@@ -24,11 +24,10 @@ export const Plugin = ({
       <a href={href} target={target}>
         <ThemedImage
           role="img"
-          class={styles.panel}
-          height="320px"
+          class={styles.plugin}
           sources={{
-            light: useBaseUrl(`/img/plugins/${name}/panel.png`),
-            dark: useBaseUrl(`/img/plugins/${name}/panel.dark.png`),
+            light: useBaseUrl(`/img/plugins/${name}/plugin.png`),
+            dark: useBaseUrl(`/img/plugins/${name}/plugin.dark.png`),
           }}
         />
         <div>

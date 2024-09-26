@@ -74,7 +74,7 @@
             transform="matrix(0,1,-1,0,419,415.4)" fill="#333">Data Manipulation</text>
         <text dominant-baseline="central" text-anchor="middle"
             style="font-size:14px;font-family:sans-serif;" xml:space="preserve"
-            transform="matrix(0.736,-0.677,0.677,0.736,295.8398,361.3769)" fill="#333">RSS/Atom DS</text>
+            transform="matrix(0.736,-0.677,0.677,0.736,295.8398,361.3769)" fill="#333">RSS and Atom DS</text>
         <text dominant-baseline="central" text-anchor="middle"
             style="font-size:14px;font-family:sans-serif;" xml:space="preserve"
             transform="matrix(0.969,-0.245,0.245,0.969,256.7224,289.0943)" fill="#333">Environment DS</text>
