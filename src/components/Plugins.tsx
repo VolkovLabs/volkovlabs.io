@@ -20,14 +20,14 @@ export const Plugin = ({
   description,
 }: PluginItem) => {
   return (
-    <div className={clsx("col col--4", styles.featureItem)}>
+    <div className={clsx("col col--6", styles.featureItem)}>
       <a href={href} target={target}>
         <ThemedImage
           role="img"
-          height="120px"
+          height="320px"
           sources={{
-            light: useBaseUrl(`/img/plugins/${name}/logo.svg`),
-            dark: useBaseUrl(`/img/plugins/${name}/logo.dark.svg`),
+            light: useBaseUrl(`/img/plugins/${name}/panel.png`),
+            dark: useBaseUrl(`/img/plugins/${name}/panel.dark.png`),
           }}
         />
         <div>
