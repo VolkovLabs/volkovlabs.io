@@ -86,6 +86,7 @@ const sidebars: SidebarsConfig = {
             "business-charts/events",
             "business-charts/instance",
             "business-charts/imports",
+            "business-charts/images",
             "business-charts/extended",
             "business-charts/eventbus",
             "business-charts/streaming",
@@ -117,11 +118,7 @@ const sidebars: SidebarsConfig = {
           },
         },
         {
-          items: [
-            "business-charts/tutorials/graph",
-            "business-charts/tutorials/images",
-            "business-charts/tutorials/ecstat",
-          ],
+          items: [],
           label: "Tutorials",
           type: "category",
           link: {
