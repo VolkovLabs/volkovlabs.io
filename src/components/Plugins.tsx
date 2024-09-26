@@ -24,6 +24,7 @@ export const Plugin = ({
       <a href={href} target={target}>
         <ThemedImage
           role="img"
+          class={styles.panel}
           height="320px"
           sources={{
             light: useBaseUrl(`/img/plugins/${name}/panel.png`),

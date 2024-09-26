@@ -44,7 +44,6 @@
  * Button
  */
 .getStarted {
-  border-radius: 0px;
   border-radius: 10px 10px 10px 10px;
   color: var(--ifm-color-white);
   border-color: #ff5656;
@@ -52,7 +51,6 @@
 }
 
 .enterprise {
-  border-radius: 0px;
   border-radius: 10px 10px 10px 10px;
   color: var(--ifm-color-white);
   border-color: var(--ifm-color-primary);
@@ -102,4 +100,17 @@
 [data-theme="dark"] .header span {
   background: var(--ifm-background-color);
   padding-right: 20px;
+}
+
+.panel {
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+[data-theme="light"] .panel {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
+}
+
+[data-theme="dark"] .panel {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
 }
