@@ -38,7 +38,7 @@ export const PluginList: PluginItem[] = [
   {
     title: "Business News",
     name: "business-news",
-    description: <>Visualize RSS/Atom feeds</>,
+    description: <>Visualize RSS and Atom feeds</>,
     href: "/plugins/business-news/",
   },
   {
