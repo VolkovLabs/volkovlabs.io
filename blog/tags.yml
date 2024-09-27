@@ -20,7 +20,7 @@ Business Media:
   description: "Display Base64 encoded and URL media files."
 
 Business News:
-  description: "Visualize RSS/Atom feeds using Business Text."
+  description: "Visualize RSS and Atom feeds using Business Text."
 
 Business Satellite:
   description: "Connect to Local and Remote Grafana instances."
