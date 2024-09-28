@@ -6,7 +6,7 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 const sidebars: SidebarsConfig = {
   plugins: [
     {
-      items: ["security/index"],
+      items: ["foundation/index", "security/index"],
       label: "Business Suite",
       type: "category",
       collapsible: false,
