@@ -242,6 +242,19 @@
   background: url("/static/img/big/alerting.dark.svg") no-repeat;
 }
 
+.icon-big-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/big.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-big-link::before {
+  background: url("/static/img/index/big.dark.svg") no-repeat;
+}
+
 .icon-big-getting-started-link::before {
   content: "";
   width: 24px;
@@ -346,6 +359,32 @@
 
 [data-theme="dark"] .icon-support-link::before {
   background: url("/static/img/index/support.dark.svg") no-repeat;
+}
+
+.icon-solutions-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/solutions.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-solutions-link::before {
+  background: url("/static/img/index/solutions.dark.svg") no-repeat;
+}
+
+.icon-highlights-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/highlights.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-highlights-link::before {
+  background: url("/static/img/index/highlights.dark.svg") no-repeat;
 }
 
 .icon-security-link::before {

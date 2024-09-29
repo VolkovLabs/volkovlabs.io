@@ -104,26 +104,32 @@ export const NAVBAR = {
         {
           label: "All",
           to: "/blog/",
+          className: "volkovlabs-link icon-blog-link",
         },
         {
           label: "Business Suite",
           to: "/blog/tags/business-suite",
+          className: "volkovlabs-link icon-suite-link",
         },
         {
           label: "Business Intelligence",
           to: "/blog/tags/business-intelligence",
+          className: "volkovlabs-link icon-big-getting-started-link",
         },
         {
           label: "Grafana Crash Course",
           to: "/blog/tags/grafana-crash-course",
+          className: "volkovlabs-link icon-grafana-link",
         },
         {
           label: "Highlights",
           to: "/blog/tags/highlights",
+          className: "volkovlabs-link icon-highlights-link",
         },
         {
           label: "Solutions",
           to: "/blog/tags/solution",
+          className: "volkovlabs-link icon-solutions-link",
         },
       ],
     },
