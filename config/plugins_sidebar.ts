@@ -180,6 +180,15 @@ const sidebars: SidebarsConfig = {
             id: "business-forms/servers/index",
           },
         },
+        {
+          items: [],
+          label: "Tutorials",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-forms/tutorials/index",
+          },
+        },
         "business-forms/release",
       ],
       label: "Business Forms",
