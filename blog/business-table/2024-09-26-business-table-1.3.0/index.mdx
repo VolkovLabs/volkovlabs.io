@@ -21,7 +21,7 @@ We're excited to announce the release of the Business Table panel 1.3.0. This fe
 - Pagination feature
 - Column Pin feature
 - Download table data button
-- Support of the Grafana's **Data links**
+- Support of the **Data links**
 
 <Catalog date="September 25, 2024" />
 
@@ -77,9 +77,9 @@ You can choose between the following types:
 
 ### Update Request
 
-Configure the Update Request (the request that takes user-entered values and transmits them into your data source, serving as a bridge between user input and data source) in the **Editable Data** -> **Setting** section.
+Configure the Update Request (the request that takes user-entered values and transmits them into your data source, serving as a bridge between user input and data source) in the **Editable Data** -> **Settings** section.
 
-First, select the data source where the updated values should go to. Then, choose the **Query Editor** mode. Your choice is:
+First, select the data source where the updated values should go to. Then, choose the **Query Editor** mode if it's supported in the data source. Your choice is:
 
 - **Builder**. It uses the standard Grafana query builder.
 - **Code**. It allows you to specify an update request query in a language appropriate for your data source.
@@ -95,7 +95,7 @@ Every column in the Business Table visualization can have unique permissions for
 
 - **Always Allowed**. Every user has permission to edit the column.
 - **By Org User Role**. With that, you need to specify which roles have permission to edit (**Editor**, **Viewer**, **Admin**, **None**).
-- **By Backend**. With that, you need to specify a data frame column with a boolean value. If the value is **True**, a user has permission to edit. If the value is **False**, a user does NOT have permission to edit.
+- **By Backend**. With that, you need to specify a data frame column with a boolean value. If the value is **true**, a user has permission to edit. If the value is **false**, a user does NOT have permission to edit.
 
 <Image
   title="Every column in the Business Table visualization can have unique permissions for editing."
@@ -127,12 +127,12 @@ The **Client** mode is the easiest and fastest to set up. However, users might e
 
 With the **Query** mode, only records needed for the current display are retrieved. That approach guarantees better performance for the end-users.
 
-The determination of what records to retrieve (what records need to be displayed) is done by using the following metrics:
+The determination of what records to retrieve (what records need to be displayed) is done by using the following variables:
 
 - **pageIndex**. Page order number. Specify as a dashboard variable name.
 - **offset**. How many rows to skip starting from the first. Specify as a dashboard variable name.
 - **pageSize**. The number of rows per page. Specify as a dashboard variable name.
-- **Total Count Field**. Specify as a dataframe:column name. **Required**.
+- **Total Count Field**. Specify as a dataframe:column name. **Preffered** to set to display total number of pages.
 
 The necessity of the first three metrics (**pageIndex**, **offset**, **pageSize**) is contingent on the data source from which the data is sourced. Understanding this dependency will prepare you for efficient data retrieval.
 
@@ -175,14 +175,14 @@ You can add a download button right on the Business Table visualization for an i
   src="/img/blog/2024-09-26-business-table-1.3.0/download-btn.png"
 />
 
-## Support Grafana Data links
+## Support Data links
 
-The Business Table visualization supports the Grafana's **Data links** feature. In the example below, when a user clicks on a row, two links are suggested in the popup window.
+The Business Table visualization supports the **Data links** feature. In the example below, when a user clicks on a row, two links are suggested in the popup window.
 
 You can use the Grafana **Overrides** feature to configure column links (not for the whole row).
 
 <Image
-  title="The Business Table panel supports the Grafana's Data links feature."
+  title="The Business Table panel supports the Data links feature."
   src="/img/blog/2024-09-26-business-table-1.3.0/links.png"
 />
 
