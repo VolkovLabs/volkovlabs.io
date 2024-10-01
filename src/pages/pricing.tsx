@@ -29,6 +29,18 @@ const Header = (siteConfig) => {
             <p className="hero__subtitle">
               It's a package that's designed to make your life easier.
             </p>
+
+            <div className="margin-vert--lg">
+              <a
+                className={clsx(
+                  "button button--primary button--lg",
+                  styles.getStarted
+                )}
+                href="https://pay.volkovlabs.io/p/login/6oEaGicwRgZ8gko144"
+              >
+                Customer Portal&nbsp;&nbsp;→
+              </a>
+            </div>
           </div>
 
           <div className="col col--4 text--center">
