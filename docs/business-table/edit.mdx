@@ -1,0 +1,75 @@
+---
+tags:
+  - Business Table
+---
+
+import Image from "@theme/Image";
+
+
+# Edit data and impose permission protection
+
+Highlights:
+
+- Every column has separate editable/permission settings.
+- User can enter a new value manually or select from the predefined listing coming from your data source
+- The Update Request (the request that takes user-entered values and transmits them into your data source, serving as a bridge between user input and data source) is configurable and allows custom logic
+- The permission can be Grafana user-based (Viewer/Editor/Admin/None) or regulated from the backend
+
+Editing and permissions settings are done in a new **Editable Data** category. All columns you add into the **Layout** category, you can further configure there.
+
+<Image
+  title="Editing and permission settings are done in a new Editable Data category."
+  src="/img/blog/2024-09-26-business-table-1.3.0/category.png"
+/>
+
+To make a column editable, turn the appropriate switch on. With that the tag **Editable** appears next to the column name in the **Layout** category.
+
+<Image
+  title="To make a column editable, turn the appropriate switch on."
+  src="/img/blog/2024-09-26-business-table-1.3.0/select-type.png"
+/>
+
+## Editable column types
+
+After you turn the editable switch ON, determine the type for the editable column. Depending on your choice, more parameters appear.
+
+<Image
+  title="Types of the editable columns and their specific parameters."
+  src="/img/blog/2024-09-26-business-table-1.3.0/types.png"
+  width="70%"
+/>
+
+You can choose between the following types:
+
+- **String**. It allows a user to enter a value manually.
+- **Number**. It allows a user to enter a numerical value manually. Optionally, you can specify the **Min** and **Max** for the allowed values.
+- **Select**. It gives users a drop-down populated from the **Value Field** parameter. Optionally, you can specify **Label Field**. Both parameters, **Value field** and **Label Field**, come from the dataframe:column of your data source.
+- **Datetime**. It allows a user to enter a value in the datetime format. Optionally, you can specify a range of allowed datetimes using **Set Min Date** and **Set Max Date** parameters.
+
+## Update Request
+
+Configure the Update Request (the request that takes user-entered values and transmits them into your data source, serving as a bridge between user input and data source) in the **Editable Data** -> **Settings** section.
+
+First, select the data source where the updated values should go to. Then, choose the **Query Editor** mode if it's supported in the data source. Your choice is:
+
+- **Builder**. It uses the standard Grafana query builder.
+- **Code**. It allows you to specify an update request query in a language appropriate for your data source.
+
+<Image
+  title="Configure the Update Request."
+  src="/img/blog/2024-09-26-business-table-1.3.0/update-request.png"
+/>
+
+## Permission
+
+Every column in the Business Table visualization can have unique permissions for editing. Set the **Check** parameter to one of the following:
+
+- **Always Allowed**. Every user has permission to edit the column.
+- **By Org User Role**. With that, you need to specify which roles have permission to edit (**Editor**, **Viewer**, **Admin**, **None**).
+- **By Backend**. With that, you need to specify a data frame column with a boolean value. If the value is **true**, a user has permission to edit. If the value is **false**, a user does NOT have permission to edit.
+
+<Image
+  title="Every column in the Business Table visualization can have unique permissions for editing."
+  src="/img/blog/2024-09-26-business-table-1.3.0/permissions.png"
+  width="90%"
+/>
