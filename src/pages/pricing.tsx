@@ -37,6 +37,7 @@ const Header = (siteConfig) => {
                   styles.getStarted
                 )}
                 href="https://pay.volkovlabs.io/p/login/6oEaGicwRgZ8gko144"
+                target="_blank"
               >
                 Customer Portal&nbsp;&nbsp;→
               </a>
