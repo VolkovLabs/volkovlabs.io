@@ -1,13 +1,15 @@
 ---
 tags:
-  - Getting Started
+  - Business Engine
 ---
 
 # Health Checks
 
-To successfully run the BI(G) app, you need Grafana and BI Engine. In some instances, Grafana might take longer time to launch than the BI Engine. This scenario may lead to the failure of the startup health check. Simply put, if the BI Engine does not find Grafana running, it shuts itself down.
+To successfully run the Business Intelligence, you need Grafana instance and Business Engine.
 
-To avoid this false health check failure, we added timing parameters that determine how long the BI Engine waits before checking Grafana's active status using Grafana token and URL to connect to.
+Depends on the configuration, Grafana might take longer time to launch than the Business Engine. This scenario may lead to the failure of the startup health check. Simply put, if the Business Engine does not find Grafana running, it shuts itself down.
+
+To avoid this false health check failure, we added timing parameters that determine how long the Business Engine waits before checking Grafana's active status using Grafana token and URL to connect to.
 
 By default, the waiting is 5 seconds. You can configure that by using the parameters below.
 

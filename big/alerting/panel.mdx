@@ -1,14 +1,13 @@
 ---
 tags:
-  - Getting Started
-  - Alerting
+  - Business Alerting
 ---
 
 import Image from "@theme/Image";
 
-# Alert Management panel
+# Alert Management
 
-The alert management panel is set to simplify the alert rule creation. We designed it to be intuitive and business-oriented users friendly. You specify all parameters in a one-screen form.
+The Alert Management panel is set to simplify the alert rule creation. We designed it to be intuitive and business-oriented users friendly. You specify all parameters in a one-screen form.
 
 ## Alert rule parameters
 
@@ -27,7 +26,7 @@ The new alert rule/edit mode has the following configuration elements to specify
   - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
   - specify **Disabled** to disable the creation of any annotation following the alert rule breach.
 
-We target to have the Alert Management UI panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.
+We target to have the Alert Management panel work with hundreds or even thousands of alerts with grouping and filtering to ensure easy navigation and control.
 
 <Image
   title="The Alerting panel and the Edit alert drawer."
@@ -53,10 +52,10 @@ And the other status might be one of the four values:
 
 Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any modification, the alert status changes to **Scheduled**.
 
-Reference the flow schema to get a better understanding of how statuses change in the BI Engine.
+Reference the flow schema to get a better understanding of how statuses change in the Business Engine.
 
 <Image
-  title="Flow schema for the statuses change in the BI Engine."
+  title="Flow schema for the statuses change in the Business Engine."
   src="/img/big/alert-statuses.png"
   width="60%"
 />
@@ -65,7 +64,7 @@ Reference the flow schema to get a better understanding of how statuses change i
 
 Four action buttons are available:
 
-- **Details**. Opens the drawer with the alert details. For the alert rules in the **Alerting** and **Error** statuses, the BI App also adds the **Event Details** category with all necessary information for troubleshooting.
+- **Details**. Opens the drawer with the alert details. For the alert rules in the **Alerting** and **Error** statuses, adds the **Event Details** category with all necessary information for troubleshooting.
 
 <Image
   title="Event details for the alert rules in the Alerting and Error statuses."
@@ -105,7 +104,7 @@ For Admins and Editors, all five action buttons are available: info, pause/resum
 
 For Admins and Editors, all three action buttons are available: test, edit, delete. For Viewers, only one action button is available: test.
 
-:::tip Active
+:::note Active
 A greyed-out delete button in the **Actions** tab means the alert rule with this action is currently active and can not be deleted.
 :::
 

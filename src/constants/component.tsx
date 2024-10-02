@@ -8,13 +8,13 @@ export const ComponentList: PluginItem[] = [
   {
     title: "Business Alerting",
     name: "business-alerting",
-    description: <>Display events and set time range</>,
+    description: <>Alerting reimagined</>,
     href: "/big/alerting/",
   },
   {
     title: "Business Engine",
     name: "business-engine",
-    description: <>Powerful visualizations powered by Apache ECharts</>,
+    description: <>High performance backend</>,
     href: "/big/engine/",
   },
   {
