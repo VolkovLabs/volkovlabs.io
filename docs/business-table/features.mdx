@@ -9,15 +9,19 @@ import Image from "@theme/Image";
 
 The Business Table panel has the following features.
 
-| Section                                                                                                      | Description                                        |
-| ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- |
-| [Row grouping](/plugins/business-table/features/#row-grouping)                                               | Demonstrates row grouping                          |
-| [Multi tables as tabs](/plugins/business-table/features/#multi-tables-as-tabs)                               | Demonstrates multi table as tabs                   |
-| [Auto-width columns](/plugins/business-table/features/#auto-width-columns)                                   | Demonstrates auto-width columns                    |
-| [Colored Background using Thresholds](/plugins/business-table/features/#colored-background-using-thresholds) | Demonstrates coloring thresholds                   |
-| [Table footer](/plugins/business-table/features/#table-footer)                                               | Explains how the table footer works                |
-| [Filtering using client and query dashboard variables](/plugins/business-table/features/#filtering)          | Demonstrates client and dashboard variable filters |
-| [Sorting](/plugins/business-table/features/#sorting)                                                         | Demonstrates column sorting                        |
+| Section                                                                     | Description                                        |
+| --------------------------------------------------------------------------- | -------------------------------------------------- |
+| [Row grouping](#row-grouping)                                               | Demonstrates row grouping                          |
+| [Multi tables as tabs](#multi-tables-as-tabs)                               | Demonstrates multi table as tabs                   |
+| [Auto-width columns](#auto-width-columns)                                   | Demonstrates auto-width columns                    |
+| [Colored Background using Thresholds](#colored-background-using-thresholds) | Demonstrates coloring thresholds                   |
+| [Table footer](#table-footer)                                               | Explains how the table footer works                |
+| [Filtering using client and query dashboard variables](#filtering)          | Demonstrates client and dashboard variable filters |
+| [Sorting](#sorting)                                                         | Demonstrates column sorting                        |
+| [Pagination](#pagination)                                                   | Explains pagination                                |
+| [Pin Columns](#pin-columns)                                                 | Demonstrates column pinning                        |
+| [Download button](#download-button)                                         | Demonstrates the Download button                   |
+| [Data links](#data-links)                                                   | Demonstrates data links                            |
 
 ## Row grouping
 
@@ -107,4 +111,87 @@ Every column of the Business Table panel has the **Sort** property. If set to **
 <Image
   title="The Business Table panel supports the Sorting feature."
   src="/img/blog/2024-09-05-business-table-1.2.0/sorting.png"
+/>
+
+## Pagination
+
+You have a choice of two pagination modes: **Client** and **Query**.
+
+<Image
+  title="The pagination feature modes."
+  src="/img/blog/2024-09-26-business-table-1.3.0/pagination.png"
+/>
+
+### Client
+
+With the **Client** mode, all records are retrieved by the Business Table panel simultaneously and then divided into the pages by your browser. By default, ten rows per page are displayed. A user can change it to 20, 50, 100 or 1000.
+
+The **Client** mode is the easiest and fastest to set up. However, users might experience performance issues since all data must be retrieved before being separated into pages.
+
+<Image
+  title="The Client pagination mode."
+  src="/img/blog/2024-09-26-business-table-1.3.0/client.png"
+/>
+
+### Query
+
+With the **Query** mode, only records needed for the current display are retrieved. That approach guarantees better performance for the end-users.
+
+The determination of what records to retrieve (what records need to be displayed) is done by using the following variables:
+
+- **pageIndex**. Page order number. Specify as a dashboard variable name.
+- **offset**. How many rows to skip starting from the first. Specify as a dashboard variable name.
+- **pageSize**. The number of rows per page. Specify as a dashboard variable name.
+- **Total Count Field**. Specify as a dataframe:column name. **Preffered** to set to display total number of pages.
+
+The necessity of the first three metrics (**pageIndex**, **offset**, **pageSize**) is contingent on the data source from which the data is sourced. Understanding this dependency will prepare you for efficient data retrieval.
+
+In the example below, we use the Timescale data source, consequently SQL, to retrieve the data. **pageIndex** and **offset** are enough metrics in that case.
+
+<Image
+  title="All dashboard variables that you ever might need to configure the Query pagination mode."
+  src="/img/blog/2024-09-26-business-table-1.3.0/vars.png"
+/>
+
+<Image
+  title="The Query pagination mode."
+  src="/img/blog/2024-09-26-business-table-1.3.0/query.png"
+/>
+
+## Pin Columns
+
+It is a helpful feature for the wide tables. You can pin any column to always stay visible on the left or right.
+
+<Image
+  title="Column pin parameter."
+  src="/img/blog/2024-09-26-business-table-1.3.0/pin.png"
+  width="50%"
+/>
+
+Below, the column **Country** is pinned to the left.
+
+<Image
+  title="The column Country is pinned to the left."
+  src="/img/blog/2024-09-26-business-table-1.3.0/pin.gif"
+  width="50%"
+/>
+
+## Download button
+
+You can add a download button right on the Business Table visualization for an intuitive user experience.
+
+<Image
+  title="The download button."
+  src="/img/blog/2024-09-26-business-table-1.3.0/download-btn.png"
+/>
+
+## Data links
+
+The Business Table visualization supports the **Data links** feature. In the example below, when a user clicks on a row, two links are suggested in the popup window.
+
+You can use the Grafana **Overrides** feature to configure column links (not for the whole row).
+
+<Image
+  title="The Business Table panel supports the Data links feature."
+  src="/img/blog/2024-09-26-business-table-1.3.0/links.png"
 />
