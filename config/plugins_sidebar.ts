@@ -333,6 +333,7 @@ const sidebars: SidebarsConfig = {
           id: "business-table/index",
           label: "Introduction",
         },
+        "business-table/edit",
         "business-table/features",
         "business-table/release",
       ],
