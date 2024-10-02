@@ -5,37 +5,42 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
  */
 const sidebars: SidebarsConfig = {
   big: [
-    "index",
     {
-      items: ["health-checks", "high-availability"],
-      label: "Getting Started",
+      items: ["getting-started", "high-availability"],
+      label: "Business Intelligence",
       type: "category",
       collapsible: false,
       link: {
         type: "doc",
-        id: "getting-started",
+        id: "index",
       },
     },
     {
-      items: [
-        "big-alerting",
-        "alerting-panel",
-        "engine",
-        "variables",
-        "thresholds",
-      ],
+      items: ["alerting/panel", "alerting/variables", "alerting/thresholds"],
       label: "Business Alerting",
       type: "category",
       collapsible: false,
       link: {
         type: "doc",
-        id: "alerting",
+        id: "alerting/index",
       },
     },
     {
-      type: "link",
-      href: "/big/api",
-      label: "REST API",
+      items: [
+        "engine/health-checks",
+        {
+          type: "link",
+          href: "/big/api",
+          label: "REST API",
+        },
+      ],
+      label: "Business Engine",
+      type: "category",
+      collapsible: false,
+      link: {
+        type: "doc",
+        id: "engine/index",
+      },
     },
     "release",
   ],
