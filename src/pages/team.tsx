@@ -25,9 +25,10 @@ const Header = (siteConfig) => {
             <p className="hero__subtitle">
               Over the past three years, we have spearheaded a significant
               open-source initiative, developing ten plugins for Grafana with a
-              staggering 23M+ total downloads. Our commitment to this cause is
-              evident in our best-in-class documentation, a dedicated YouTube
-              channel, and a robust mechanism for addressing community queries.
+              staggering 24 millions total downloads. Our commitment to this
+              cause is evident in our best-in-class documentation, a dedicated
+              YouTube channel, and a robust mechanism for addressing community
+              queries.
             </p>
 
             <p className="hero__subtitle">
