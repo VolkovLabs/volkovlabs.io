@@ -25,9 +25,10 @@ const Header = (siteConfig) => {
             <p className="hero__subtitle">
               Over the past three years, we have spearheaded a significant
               open-source initiative, developing ten plugins for Grafana with a
-              staggering 23M+ total downloads. Our commitment to this cause is
-              evident in our best-in-class documentation, a dedicated YouTube
-              channel, and a robust mechanism for addressing community queries.
+              staggering 24 millions total downloads. Our commitment to this
+              cause is evident in our best-in-class documentation, a dedicated
+              YouTube channel, and a robust mechanism for addressing community
+              queries.
             </p>
 
             <p className="hero__subtitle">
@@ -119,12 +120,12 @@ const Main = (siteConfig) => {
           </div>
           <div className="col col--6 text--center">
             <br />
-            <h2 className="hero__title margin-vert--lg">Business Suite</h2>
+            <h2 className="hero__title margin-vert--lg">Business Gazette</h2>
 
             <p className="margin-vert--lg hero__subtitle">
-              The <a href="/plugins/">Business Suite for Grafana</a> is a
-              collection of open source plugins created and actively maintained
-              by Volkov Labs.
+              A lot is happening at Volkov Labs. The easiest way to stay on top
+              of the news is to read the{" "}
+              <a href="/blog/tags/business-gazette/">Business Gazette</a>.
             </p>
           </div>
           <div className="col col--3">
