@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
-import { Plugins } from "../components";
+import { Plugins, Components } from "../components";
 import Blogs from "../components/Blogs";
 import styles from "../css/index.module.css";
 
@@ -52,6 +52,10 @@ const Header = (siteConfig) => {
             />
           </div>
         </div>
+
+        <div className="container margin-vert--md padding-vert--lg">
+          <Plugins />
+        </div>
       </div>
     </header>
   );
@@ -65,16 +69,6 @@ const Main = (siteConfig) => {
     <main>
       <div id="Plugins" className="container margin-vert--md padding-vert--md">
         <h2 className={clsx(styles.header, "hero__title")} />
-
-        <div className="container margin-vert--md padding-vert--lg">
-          <Plugins />
-        </div>
-      </div>
-
-      <div id="Plugins" className="container margin-vert--md padding-vert--md">
-        <h2 className={clsx(styles.header, "hero__title")}>
-          <span>BI(G)</span>
-        </h2>
         <div className="container">
           <div className="row">
             <div className="col col--8 margin-vert--lg">
@@ -83,8 +77,8 @@ const Main = (siteConfig) => {
               </h1>
 
               <p className="hero__subtitle margin-vert--md">
-                Business Intelligence for Grafana simplifies alerting for
-                business users, providing them with an accessible platform.
+                The Business Intelligence simplifies alerting for business
+                users, providing them with an accessible platform.
               </p>
 
               <div className="margin-vert--lg">
@@ -103,13 +97,17 @@ const Main = (siteConfig) => {
               <ThemedImage
                 className={clsx(styles.heroBannerLogo)}
                 sources={{
-                  light: useBaseUrl("/img/index/big.svg"),
-                  dark: useBaseUrl("/img/index/big.dark.svg"),
+                  light: useBaseUrl("/img/index/intelligence.svg"),
+                  dark: useBaseUrl("/img/index/intelligence.dark.svg"),
                 }}
-                alt="Business Intelligence for Grafana"
+                alt="Business Intelligence"
               />
             </div>
           </div>
+        </div>
+
+        <div className="container margin-vert--md padding-vert--lg">
+          <Components />
         </div>
       </div>
 

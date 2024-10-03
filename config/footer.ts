@@ -40,7 +40,7 @@ export const FOOTER = {
         {
           label: "Getting started",
           href: "/big/getting-started/",
-          className: "volkovlabs-footer-link icon-big-getting-started-link",
+          className: "volkovlabs-footer-link icon-big-link",
         },
         {
           label: "Business Alerting",
@@ -48,14 +48,14 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
+          label: "Business Engine",
+          href: "/big/engine/",
+          className: "volkovlabs-footer-link icon-big-engine-link",
+        },
+        {
           label: "EULA",
           to: "/eula/",
           className: "volkovlabs-footer-link icon-eula-link",
-        },
-        {
-          label: "REST API",
-          href: "/big/api/",
-          className: "volkovlabs-footer-link icon-big-rest-api-link",
         },
       ],
     },
