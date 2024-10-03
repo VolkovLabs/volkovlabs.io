@@ -119,12 +119,12 @@ const Main = (siteConfig) => {
           </div>
           <div className="col col--6 text--center">
             <br />
-            <h2 className="hero__title margin-vert--lg">Business Suite</h2>
+            <h2 className="hero__title margin-vert--lg">Business Gazette</h2>
 
             <p className="margin-vert--lg hero__subtitle">
-              The <a href="/plugins/">Business Suite for Grafana</a> is a
-              collection of open source plugins created and actively maintained
-              by Volkov Labs.
+              A lot is happening at Volkov Labs. The easiest way to stay on top
+              of the news is to read the{" "}
+              <a href="/blog/tags/business-gazette/">Business Gazette</a>.
             </p>
           </div>
           <div className="col col--3">
