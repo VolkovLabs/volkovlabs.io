@@ -137,8 +137,8 @@ return getValues();
 
 ```javascript
 context.panel.onOptionsChange({
-  ...options,
-  elements: options.elements.map((element) => {
+  ...context.panel.options,
+  elements: context.panel.options.elements.map((element) => {
     return element.id === "name" ? { ...element, value: "test" } : element;
   }),
 });
