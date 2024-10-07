@@ -8,7 +8,7 @@ export const ComponentList: PluginItem[] = [
   {
     title: "Business Alerting",
     name: "business-alerting",
-    description: <>Alerting reimagined</>,
+    description: <>Manage alerts based on panel queries with thresholds</>,
     href: "/big/alerting/",
   },
   {
