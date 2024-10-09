@@ -14,7 +14,7 @@ export const ComponentList: PluginItem[] = [
   {
     title: "Business Engine",
     name: "business-engine",
-    description: <>High performance backend</>,
+    description: <>High performance Business Engine with HA</>,
     href: "/big/engine/",
   },
   {
