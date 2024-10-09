@@ -32,7 +32,7 @@ export const PRESETS: PresetConfig[] = [
     {
       specs: [
         {
-          spec: "big/big-spec.json",
+          spec: "big/engine-spec.json",
           route: "big/api/",
         },
       ],

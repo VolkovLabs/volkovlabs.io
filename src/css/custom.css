@@ -374,17 +374,17 @@
   background: url("/static/img/index/solutions.dark.svg") no-repeat;
 }
 
-.icon-highlights-link::before {
+.icon-gazette-link::before {
   content: "";
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/index/highlights.svg") no-repeat;
+  background: url("/static/img/index/gazette.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-highlights-link::before {
-  background: url("/static/img/index/highlights.dark.svg") no-repeat;
+[data-theme="dark"] .icon-gazette-link::before {
+  background: url("/static/img/index/gazette.dark.svg") no-repeat;
 }
 
 .icon-security-link::before {
