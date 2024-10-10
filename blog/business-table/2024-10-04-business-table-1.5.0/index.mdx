@@ -6,7 +6,7 @@ image: /img/blog/2024-10-04-business-table-1.5.0/banner.png
 keywords: [Business Table, Data, Grafana]
 ---
 
-import Catalog from "@site/blog/_catalog_unpublished.mdx";
+import Catalog from "@site/blog/_catalog.mdx";
 import Feedback from "@site/docs/business-table/_feedback.mdx";
 import GettingStarted from "@site/docs/business-table/_getting_started.mdx";
 import Image from "@theme/Image";
@@ -17,26 +17,26 @@ import Tutorial from "@site/docs/business-table/_tutorial.mdx";
 
 We are excited to announce the release of the Business Table panel 1.5.0. This feature release includes the following updates:
 
-- Nested objects (add, edit, delete rows in a cell). **Experimental**
+- Nested objects (add, edit, delete rows in a cell). **Experimental feature**.
 - Show and hide columns
 - Support of the Standard options
 - Added E2E tests
 
+<Catalog date="October 8, 2024" />
+
 We are surprised by the Grafana community's interest in this plugin. We received a record number of feature requests and questions. Thank you for your feedback; it undoubtedly indicates that this plugin closes a wide functionality gap. It gives us even more inspiration to innovate and improve.
 
-## Nested objects (add, edit, delete rows in a cell)
+## Nested objects
 
 ### What is the Nested objects feature
 
-Simply put, this feature allows an end-user to add, edit, and delete rows associated with a table cell. Until we have a better name, we call the **nested objects** or **comments**.
+Simply put, this feature allows an end-user to add, edit, and delete rows associated with a table cell. Until we have a better name, we call it the **nested objects** or **comments**.
 
-Developed to meet the specific requirements of a commercial client, this feature, even in its current form, holds significant potential for the broader open-source community.
+Developed to meet the specific requirements of our sponsor, this feature, even in its current form, holds significant potential for the broader open-source community.
 
-In the case of good feedback, we might expand the nested objects/comments feature to make it more flexible and configurable.
+In the case of good feedback, we might expand the nested objects/comments feature to make it more flexible and configurable. For now, you are welcome to experiment within the existing limits.
 
-For now, you are welcome to experiment within the existing limits.
-
-Highlights:
+#### Highlights
 
 - The nested objects/comments can be stored in any data source, the same as a table or completely different.
 - An end user can add, edit, and delete nested objects/comments.
@@ -73,7 +73,7 @@ To work with all statuses (all records associated with a specific row), a user c
   width="90%"
 />
 
-Please note that the user can add/edit only two columns (title and description) in the current feature design.
+Please note that the user can add/edit only two fields (title and description) in the current feature design.
 
 <Image
   title="The add/edit event window."
@@ -81,9 +81,7 @@ Please note that the user can add/edit only two columns (title and description) 
   width="90%"
 />
 
-### Example configuration
-
-#### Database side
+### PostgreSQL database configuration
 
 Below are two tables:
 
@@ -162,14 +160,14 @@ insert into order_status(order_status_id, order_id, date, title, description, us
 
 ```
 
-#### Grafana side
+### Grafana configuration
 
 Start with the data frame configuration. In my example, the query returns all orders and the column containing the list of unique order status identifiers.
 
 I utilize Grafana's transformation, **Convert field type**, to ensure the array of status identifiers can be processed correctly.
 
 <Image
-  title="The data frame query."
+  title="The data frame query with array of orders."
   src="/img/blog/2024-10-04-business-table-1.5.0/query.png"
 
 />
@@ -190,7 +188,7 @@ In the Business Table options -> **Layout** ensure to:
 
 - Add a column to display the nested objects/comments,
 - Set its type to **Nested Objects**,
-- Specify the **Object**, which is a column name for WHAT????.
+- Select the configured **Object** from the list.
 
 <Image
   title="Add and configure the column with nested objects/comments in the Layout category."
@@ -203,7 +201,7 @@ In the **Nested objects** category:
 2.  Select a type. Only the **Card** type exists for now.
 3.  Configure the query to fetch the nested objects/comments initially in the **Get options**.
 4.  Specify a data source where your nested objects/comments are kept.
-5.  Create a query. In this example, I use the SQL query, where .....
+5.  Create a query. In this example, I use the SQL query with predefined `${payload.ids:csv}` as a combined list of identifiers.
 6.  Ensure that **Id Field** is populated with the column name containing the unique comment identifier.
 7.  Configure the comment card. See below for more details.
 8.  Set the nested objects/comments sorting: **Show first**, **None**, **Show latest**.
@@ -218,10 +216,10 @@ In the **Nested objects** category:
 
 #### Comment Card
 
-Configuring a comment card means identifying data frame column names for display. In this release, you can specify four column names. An end user can enter only two from the dashboard: **title** and **description**.
+Configuring a comment card means identifying data frame column names for display. In this release, you can specify four column names. An end user can enter only top and bottom **title** and **description** when adding or editing objects. Fields in the middle can displays dates, user login who did changes, etc.
 
 <Image
-  title="Configure a comment card."
+  title="Configure fields to display on a comment card."
   src="/img/blog/2024-10-04-business-table-1.5.0/card.png"
 />
 
@@ -295,15 +293,23 @@ The values displayed in the Business Table visualization can be formatted using 
 To ensure the Business Table panel compatibility with the latest Grafana version, we added E2E tests to run them daily.
 This is the best way to confirm that Grafana's modifications do not compromise the panel code.
 
-<Catalog date="September 25, 2024" />
-
 <GettingStarted />
 
 <Tutorial />
 
 ## Release Notes
 
-### Features / Enhancements
+### Features / Enhancements in 1.5.0
+
+- Updated Autosize Code Editor toolbar (#99)
+- Added sanitizing html content (#110)
+- Added data for hidden columns to payload (#112)
+
+### Bugfixes
+
+- Fixed escaping new lines for content edit (#111)
+
+### Features / Enhancements in 1.4.0
 
 - Updated aggregated cell to support Standard Options (#79)
 - Added nested objects cell type (#80)
