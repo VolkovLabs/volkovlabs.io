@@ -214,6 +214,11 @@ In the **Nested objects** category:
   width="80%"
 />
 
+SQL from the **Get Options**->**Query Editor* parameter:
+```sql
+SELECT * FROM order_status WHERE order_status_id IN (${payload.ids:csv});
+```
+
 #### Comment Card
 
 Configuring a comment card means identifying data frame column names for display. In this release, you can specify four column names. An end user can enter only top and bottom **title** and **description** when adding or editing objects. Fields in the middle can displays dates, user login who did changes, etc.
