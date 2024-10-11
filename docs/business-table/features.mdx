@@ -22,6 +22,8 @@ The Business Table panel has the following features.
 | [Pin Columns](#pin-columns)                                                 | Demonstrates column pinning                        |
 | [Download button](#download-button)                                         | Demonstrates the Download button                   |
 | [Data links](#data-links)                                                   | Demonstrates data links                            |
+| [Show and hide columns](#show-and-hide-columns)                             | Demonstrates the show/hide column button           | 
+| [Standard options support](#support-of-the-standard-options)                | Explains the Syandard options support              | 
 
 ## Row grouping
 
@@ -194,4 +196,33 @@ You can use the Grafana **Overrides** feature to configure column links (not for
 <Image
   title="The Business Table panel supports the Data links feature."
   src="/img/blog/2024-09-26-business-table-1.3.0/links.png"
+/>
+
+## Show and hide columns
+
+:::info version
+The feature is supported starting from version 1.5.0
+:::
+
+This feature allows you to hide/show any column in your Business Table visualization. It is helpful when you need to experiment with the table's visual aspects without removing the column (and all its configuration) to get an idea of what the visualization would look like without it.
+
+Also, the column might be required for the underlying logic but not designed for the end user.
+
+<Image
+  title="Hide and show columns in the Business Table panel."
+  src="/img/blog/2024-10-04-business-table-1.5.0/hide-show.png"
+  width="60%"
+/>
+
+## Support of the Standard options
+
+:::info version
+The feature is supported starting from version 1.5.0
+:::
+
+The values displayed in the Business Table visualization can be formatted using the Grafana **Standard options**.
+
+<Image
+  title="Use Grafana's Standard options to format the displayed values."
+  src="/img/blog/2024-10-04-business-table-1.5.0/standard.png"
 />
