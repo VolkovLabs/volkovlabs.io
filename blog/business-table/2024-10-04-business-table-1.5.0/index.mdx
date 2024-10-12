@@ -13,7 +13,7 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-table/_tutorial.mdx";
 
-# Nested objects, support of the Standard options, and E2E tests in Business Table 1.5.0
+# Nested objects, pagination, and standard options updates in Business Table 1.5.0
 
 We are excited to announce the release of the Business Table panel 1.5.0. This feature release includes the following updates:
 
@@ -214,7 +214,8 @@ In the **Nested objects** category:
   width="80%"
 />
 
-SQL from the **Get Options**->**Query Editor* parameter:
+SQL from the **Get Options->Query Editor** parameter:
+
 ```sql
 SELECT * FROM order_status WHERE order_status_id IN (${payload.ids:csv});
 ```

@@ -193,12 +193,13 @@ In the **Nested objects** category:
   width="80%"
 />
 
-SQL from the **Get Options**->**Query Editor* parameter:
+SQL from the **Get Options->Query Editor** parameter:
+
 ```sql
 SELECT * FROM order_status WHERE order_status_id IN (${payload.ids:csv});
 ```
 
-### Comment Card
+## Comment Card
 
 Configuring a comment card means identifying data frame column names for display. Starting from release 1.5.0, you can specify four column names. An end user can enter only top and bottom **title** and **description** when adding or editing objects. Fields in the middle can displays dates, user login who did changes, etc.
 
@@ -207,7 +208,7 @@ Configuring a comment card means identifying data frame column names for display
   src="/img/blog/2024-10-04-business-table-1.5.0/card.png"
 />
 
-### Actions and privileges
+## Actions and privileges
 
 There are three actions you can allow users to perform on the nested objects/comments. All three actions are availabe in the pop-up window after a user clicks on the **Show All** link.
 
