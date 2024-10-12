@@ -21,13 +21,9 @@ The three main alerting components:
 
 <Image title="Alerting basics." src="/img/big/basics.png" width="50%" />
 
-:::note Basics
-
 To summarize the schema from above, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created.
 
 Following the created alert records, alert actions are initiated.
-
-:::
 
 ## Similarities and differences with Grafana Alerting
 
@@ -42,8 +38,7 @@ The schema below depicts the Alerting as it is side-by-side with the Business Al
 
 Users create alert rules using the Alerting UI.
 
-The alerting records are created by the alert manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.
-The alert manager works only with backend data sources.
+The alerting records are created by the Alert Manager. Every time a rule is broken it creates a record in the annotation table, that way Grafana knows to add a vertical line on a corresponding Time Series.
 
 For the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, Slack messages, emails and OnCall.
 
@@ -61,8 +56,8 @@ The video below provides an overview of the Business Alerting. However, the code
 
 Here you can find more information about the following topics:
 
-| Section                         | Description                                |
-| ------------------------------- | ------------------------------------------ |
-| [Alert Management panel](panel) | Re-imagined alerting panel.                |
-| [Variables](variables)          | Explains using variables in alert rules.   |
-| [Thresholds](thresholds)        | Explains using color ranges in Thresholds. |
+| Section                          | Description                                               |
+| -------------------------------- | --------------------------------------------------------- |
+| [Business Alerting panel](panel) | Demonstrates how to Manage alerts based on panel queries. |
+| [Variables](variables)           | Explains using variables in alert rules.                  |
+| [Thresholds](thresholds)         | Explains using color ranges in Thresholds.                |
