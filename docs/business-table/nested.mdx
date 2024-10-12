@@ -1,34 +1,13 @@
 ---
-authors: [daria]
-slug: business-table-1.5.0/
-tags: [Business Table, Business Suite]
-image: /img/blog/2024-10-04-business-table-1.5.0/banner.png
-keywords: [Business Table, Data, Grafana]
+tags:
+  - Business Table
 ---
 
-import Catalog from "@site/blog/_catalog.mdx";
-import Feedback from "@site/docs/business-table/_feedback.mdx";
-import GettingStarted from "@site/docs/business-table/_getting_started.mdx";
 import Image from "@theme/Image";
-import Shorts from "@theme/Shorts";
-import Tutorial from "@site/docs/business-table/_tutorial.mdx";
 
-# Nested objects, pagination, and standard options updates in Business Table 1.5.0
+# Nested objects
 
-We are excited to announce the release of the Business Table panel 1.5.0. This feature release includes the following updates:
-
-- Nested objects (add, edit, delete rows in a cell). **Experimental feature**.
-- Show and hide columns
-- Support of the Standard options
-- Added E2E tests
-
-<Catalog date="October 8, 2024" />
-
-We are surprised by the Grafana community's interest in this plugin. We received a record number of feature requests and questions. Thank you for your feedback; it undoubtedly indicates that this plugin closes a wide functionality gap. It gives us even more inspiration to innovate and improve.
-
-## Nested objects
-
-### What is the Nested objects feature
+## What is the Nested objects feature
 
 Simply put, this feature allows an end-user to add, edit, and delete rows associated with a table cell. Until we have a better name, we call it the **nested objects** or **comments**.
 
@@ -36,14 +15,14 @@ Developed to meet the specific requirements of our sponsor, this feature, even i
 
 In the case of good feedback, we might expand the nested objects/comments feature to make it more flexible and configurable. For now, you are welcome to experiment within the existing limits.
 
-#### Highlights
+## Highlights
 
 - The nested objects/comments can be stored in any data source, the same as a table or completely different.
 - An end user can add, edit, and delete nested objects/comments.
 - Access to each action is configured separately and can follow Grafana roles or backend configuration.
 - The card displaying nested objects/comments supports Markdown.
 
-### Example requirements
+## Example requirements
 
 I will explain the feature using the following example.
 
@@ -81,7 +60,7 @@ Please note that the user can add/edit only two fields (title and description) i
   width="90%"
 />
 
-### PostgreSQL database configuration
+## PostgreSQL database configuration
 
 Below are two tables:
 
@@ -160,7 +139,7 @@ insert into order_status(order_status_id, order_id, date, title, description, us
 
 ```
 
-### Grafana configuration
+## Grafana configuration
 
 Start with the data frame configuration. In my example, the query returns all orders and the column containing the list of unique order status identifiers.
 
@@ -220,16 +199,16 @@ SQL from the **Get Options->Query Editor** parameter:
 SELECT * FROM order_status WHERE order_status_id IN (${payload.ids:csv});
 ```
 
-#### Comment Card
+## Comment Card
 
-Configuring a comment card means identifying data frame column names for display. In this release, you can specify four column names. An end user can enter only top and bottom **title** and **description** when adding or editing objects. Fields in the middle can displays dates, user login who did changes, etc.
+Configuring a comment card means identifying data frame column names for display. Starting from release 1.5.0, you can specify four column names. An end user can enter only top and bottom **title** and **description** when adding or editing objects. Fields in the middle can displays dates, user login who did changes, etc.
 
 <Image
   title="Configure fields to display on a comment card."
   src="/img/blog/2024-10-04-business-table-1.5.0/card.png"
 />
 
-#### Actions and privileges
+## Actions and privileges
 
 There are three actions you can allow users to perform on the nested objects/comments. All three actions are availabe in the pop-up window after a user clicks on the **Show All** link.
 
@@ -272,60 +251,3 @@ SQL example for the Delete action:
 DELETE FROM order_status
 WHERE order_status_id = ${payload.item.order_status_id};
 ```
-
-## Show and hide columns
-
-This feature allows you to hide/show any column in your Business Table visualization. It is helpful when you need to experiment with the table's visual aspects without removing the column (and all its configuration) to get an idea of what the visualization would look like without it.
-
-Also, the column might be required for the underlying logic but not designed for the end user.
-
-<Image
-  title="Hide and show columns in the Business Table panel."
-  src="/img/blog/2024-10-04-business-table-1.5.0/hide-show.png"
-  width="60%"
-/>
-
-## Support of the Standard options
-
-The values displayed in the Business Table visualization can be formatted using the Grafana **Standard options**.
-
-<Image
-  title="Use Grafana's Standard options to format the displayed values."
-  src="/img/blog/2024-10-04-business-table-1.5.0/standard.png"
-/>
-
-## Added E2E tests
-
-To ensure the Business Table panel compatibility with the latest Grafana version, we added E2E tests to run them daily.
-This is the best way to confirm that Grafana's modifications do not compromise the panel code.
-
-<GettingStarted />
-
-<Tutorial />
-
-## Release Notes
-
-### Features / Enhancements in 1.5.0
-
-- Updated Autosize Code Editor toolbar (#99)
-- Added sanitizing html content (#110)
-- Added data for hidden columns to payload (#112)
-
-### Bugfixes
-
-- Fixed escaping new lines for content edit (#111)
-
-### Features / Enhancements in 1.4.0
-
-- Updated aggregated cell to support Standard Options (#79)
-- Added nested objects cell type (#80)
-- Updated e2e tests (#81)
-- Moved pagination options to separate category (#87)
-- Updated nested objects to show first or last object in the table (#92)
-- Updated row data for accessor key with dots (#90)
-- Added YouTube tutorial (#93)
-- Updated to show/hide columns (#94)
-- Added query pagination error with enabled client column filtering (#95)
-- Updated e2e to support panel edit in dashboard scene (#96)
-
-<Feedback />

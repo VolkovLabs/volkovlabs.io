@@ -335,6 +335,7 @@ const sidebars: SidebarsConfig = {
         },
         "business-table/edit",
         "business-table/features",
+        "business-table/nested",
         "business-table/release",
       ],
       label: "Business Table",
