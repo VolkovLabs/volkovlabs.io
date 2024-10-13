@@ -16,12 +16,12 @@ This command starts a local development server and opens up a browser window. Mo
 npm start
 ```
 
-## License
-
-Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs.io/blob/main/LICENSE).
-
 ## Always happy to hear from you
 
 - Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs.io/issues).
 - Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs) and leave your comments.
 - Sponsor our open source plugins for Grafana through [GitHub](https://github.com/sponsors/VolkovLabs).
+
+## License
+
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs.io/blob/main/LICENSE).
