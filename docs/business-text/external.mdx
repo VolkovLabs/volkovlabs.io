@@ -1,7 +1,6 @@
 ---
 tags:
   - Business Text
-  - Events
 image: /img/plugins/business-text/external.png
 ---
 
@@ -12,10 +11,6 @@ import Image from "@theme/Image";
 :::info Version
 
 Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
-
-:::
-
-:::info Version
 
 The Business Text panel supports the JavaScript libraries import in the **Before content rendering** starting from version 5.3.0.
 
@@ -44,7 +39,7 @@ Use **All rows** or **All data** template to execute template only once. With **
 
 :::
 
-### Plotly 3D Scatter
+## Plotly 3D Scatter
 
 Thanks to our community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
 
@@ -65,7 +60,7 @@ Grafana's edit mode might prevent displaying Plotly charts. Save and check the r
   src="/img/plugins/business-text/plotly.png"
 />
 
-#### Code to copy
+### Code to copy
 
 Into the **Content** or **Default Content**:
 
@@ -165,7 +160,7 @@ import("https://esm.sh/plotly.js-dist-min").then(
 
 </details>
 
-### Mermaid
+## Mermaid
 
 Mermaid is a popular JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams using Markdown-defined text definitions.
 
@@ -180,7 +175,7 @@ The main reason being the Mermaid Library size. After we added the External Reso
   src="/img/plugins/business-text/diagram.png"
 />
 
-#### Example
+### Example
 
 <Image
   title="Mermaid diagrams example."
@@ -193,7 +188,7 @@ Use the following external library
 https://esm.sh/mermaid
 ```
 
-#### Code to copy
+### Code to copy
 
 Use the following for the **Content** (when your data source is set to return something) or in the **Default Content** (when your data source returns nothing):
 
@@ -219,7 +214,7 @@ import("https://esm.sh/mermaid").then(({ default: mermaid }) => {
 });
 ```
 
-### Chart.js
+## Chart.js
 
 Chart.js is one of the popular open source charting libraries. The Business Text plugin makes using chart.js in Grafana possible!
 
@@ -228,7 +223,7 @@ Chart.js is one of the popular open source charting libraries. The Business Text
   src="/img/plugins/business-text/chartjs-examples.png"
 />
 
-#### Example
+### Example
 
 <Image
   title="Chart.js diagram example."
@@ -241,7 +236,7 @@ Use the following external library
 https://esm.sh/chart.js
 ```
 
-#### Code to copy
+### Code to copy
 
 Use the following for the **Content**:
 
@@ -287,7 +282,7 @@ import("https://esm.sh/chart.js").then(({ Chart, registerables }) => {
 });
 ```
 
-### Flowchart
+## Flowchart
 
 Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic [Flowchart](https://flowchart.js.org) return to Grafana! We are happy to share your example with the world.
 
@@ -295,21 +290,21 @@ Below you can find how the beloved by many Flowchart libraries can be implemente
 
 Simply, import two external libraries and then write your code addressing the Flowchart libraries directly.
 
-#### Example
+### Example
 
 <Image
   title="Delivering Flowchart libraries to a Grafana dashboard using the Business Text plugin."
   src="/img/plugins/business-text/flow.png"
 />
 
-#### External Resources
+Use the following external library
 
 ```
 https://esm.sh/flowchart.js
 https://esm.sh/raphael
 ```
 
-#### Content to copy
+### Content to copy
 
 ```html
 <div id="flowchart" />
@@ -350,7 +345,7 @@ para(path3, right)->in->out->e`;
 });
 ```
 
-### Youtube video
+## Youtube video
 
 This idea comes from the [GitHub issue](https://github.com/VolkovLabs/business-text/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Business Text plugin can be used to display YouTube videos on your Grafana dashboard.
 
@@ -359,13 +354,13 @@ This idea comes from the [GitHub issue](https://github.com/VolkovLabs/business-t
   src="/img/plugins/business-text/yt-edit.png"
 />
 
-#### External Resources
+Use the following external library
 
 ```
 https://youtube.com/iframe_api
 ```
 
-#### Content to copy
+### Content to copy
 
 ```html
 <h1>Volkov Labs Latest videos</h1>
@@ -386,7 +381,7 @@ import("https://esm.sh/youtube-player").then(({ default: YouTubePlayer }) => {
 });
 ```
 
-### Leaflet.js interactive maps
+## Leaflet.js interactive maps
 
 This is another great example of external resource usage in the Business Text Plugin. The idea comes from [BlinderMiri](https://github.com/BlinderMiri) and [Josiah Solomon](https://github.com/yosiasz). Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
 
@@ -402,7 +397,7 @@ The map on the dashboard from this example looks like in the illustration below.
   src="/img/plugins/business-text/leaflet-display.png"
 />
 
-#### Data to copy
+### Data to copy
 
 In this example, we use the [Business Input Data Source](/plugins/business-input/).
 
@@ -410,7 +405,7 @@ In this example, we use the [Business Input Data Source](/plugins/business-input
 {   "type": "Feature",   "geometry": {     "type": "Point",     "coordinates": [125.6, 10.1]   },   "properties": {     "name": "Dinagat Islands"   } }
 ```
 
-#### Content
+### Content
 
 ```html
 <div id="leaflet" />
@@ -497,13 +492,13 @@ import("https://esm.sh/leaflet").then(({ default: L }) => {
 });
 ```
 
-#### External CSS file
+### CSS styles
+
+Use the following external CSS
 
 ```
 https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
 ```
-
-#### CSS styles
 
 ```css
 #leaflet {
@@ -513,7 +508,7 @@ https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
 }
 ```
 
-### Tailwind CSS
+## Tailwind CSS
 
 Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a utility-first framework [Tailwind CSS](https://tailwindcss.com). Using Tailwind in the Business Text panel differs slightly from the previous examples.
 
@@ -526,7 +521,7 @@ To prevent CORS issues we recommend adding Tailwind script to the Grafana's publ
 
 The file can contain the import function and use Tailwind, or it can load code from `cdn.tailwindcss.com`.
 
-#### CDN based code
+### CDN based code
 
 Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload it to `/usr/share/grafana/public/` in the Docker container. We used the latest version `https://cdn.tailwindcss.com/3.4.4`.
 
@@ -535,7 +530,7 @@ Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload 
   src="/img/plugins/business-text/tailwind-file-example.png"
 />
 
-#### Content
+### Content
 
 ```html
 <div class="bg-gray-100 min-h-64 flex items-center justify-center">
@@ -564,7 +559,7 @@ import("/public/tailwind.js");
   src="/img/plugins/business-text/tailwind-panel-edit-mode.png"
 />
 
-#### Load Tailwind from CDN
+### Load Tailwind from CDN
 
 Create a `loadTailwindFromCDN.js` file with the following code and upload it to the same location in the Docker container.
 
@@ -583,7 +578,7 @@ function loadTailwindFromCDN() {
 export default loadTailwindFromCDN;
 ```
 
-#### Content
+### Content
 
 ```html
 <div class="bg-gray-100 min-h-64 flex items-center justify-center">
@@ -611,7 +606,7 @@ import("/public/loadTailwindFromCDN.js").then(
 );
 ```
 
-### Mapbox GL
+## Mapbox GL
 
 This is another great example of external resource usage in the Business Text Plugin. The idea comes from [Josiah Solomon](https://github.com/yosiasz).
 
@@ -622,7 +617,7 @@ Follow the below outlined steps to display [Mapbox GL JS](https://docs.mapbox.co
   src="/img/plugins/business-text/mapboxgl.png"
 />
 
-#### Content
+### Content
 
 ```html
 <div id="map" />

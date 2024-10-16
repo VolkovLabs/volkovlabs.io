@@ -50,7 +50,7 @@ export const PluginList: PluginItem[] = [
   {
     title: "Business Table",
     name: "business-table",
-    description: <>Summarize large amounts of data</>,
+    description: <>Simplify data visualization in table format</>,
     href: "/plugins/business-table/",
   },
   {

@@ -26,7 +26,7 @@ Business Satellite:
   description: Connect to Local and Remote Grafana instances.
 
 Business Table:
-  description: Summarize large amounts of data.
+  description: Simplify data visualization in table format.
 
 Business Text:
   description: Dynamic, data-driven text.

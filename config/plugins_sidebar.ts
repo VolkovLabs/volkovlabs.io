@@ -340,7 +340,7 @@ const sidebars: SidebarsConfig = {
       ],
       label: "Business Table",
       type: "category",
-      description: "Summarize large amounts of data.",
+      description: "Simplify data visualization in table format.",
       link: {
         type: "doc",
         id: "business-table/index",
