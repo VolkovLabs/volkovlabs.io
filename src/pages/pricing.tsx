@@ -26,9 +26,6 @@ const Header = (siteConfig) => {
               requests and bug fixes, meet with us for in-person consultation,
               and get access to the Business Intelligence.
             </p>
-            <p className="hero__subtitle">
-              It's a package that's designed to make your life easier.
-            </p>
 
             <div className="margin-vert--lg">
               <a
