@@ -334,8 +334,15 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         "business-table/edit",
-        "business-table/features",
-        "business-table/nested",
+        {
+          items: ["business-table/nested"],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-table/features",
+          },
+        },
         "business-table/release",
       ],
       label: "Business Table",

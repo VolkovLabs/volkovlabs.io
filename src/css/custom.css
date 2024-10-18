@@ -353,12 +353,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/index/support.svg") no-repeat;
+  background: url("/static/img/plugins/support/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-support-link::before {
-  background: url("/static/img/index/support.dark.svg") no-repeat;
+  background: url("/static/img/plugins/support/logo.dark.svg") no-repeat;
 }
 
 .icon-solutions-link::before {
