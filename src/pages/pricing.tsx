@@ -64,10 +64,6 @@ const Main = (siteConfig) => {
   return (
     <main>
       <div id="Plans" className="container margin-vert--md">
-        <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Plans</span>
-        </h2>
-
         <div className="col col-12 margin-vert--xl">
           <stripe-pricing-table
             pricing-table-id="prctbl_1Q1uoCEiej5nUsoj5F4znGwo"
@@ -93,8 +89,8 @@ const Main = (siteConfig) => {
             <ThemedImage
               className={clsx("margin-vert--md")}
               sources={{
-                light: useBaseUrl("/img/index/support.svg"),
-                dark: useBaseUrl("/img/index/support.dark.svg"),
+                light: useBaseUrl("/img/plugins/support/logo.svg"),
+                dark: useBaseUrl("/img/plugins/support/logo.dark.svg"),
               }}
               height={"65%"}
               alt={siteConfig.tagline}

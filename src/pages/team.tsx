@@ -11,12 +11,12 @@ import Image from "../theme/Image";
 /**
  * Header
  */
-const Header = (siteConfig) => {
+const Header = () => {
   return (
     <header>
-      <div className="container margin-vert--lg">
+      <div className="container margin-vert--md">
         <div className="row">
-          <div className="col col--9 margin-vert--lg">
+          <div className="col col--12 margin-vert--md">
             <p className="hero__subtitle margin-vert--md">
               Open source is at the core of Volkov Labs. We are passionate about
               the idea of sharing and exchanging ideas without boundaries.
@@ -25,7 +25,7 @@ const Header = (siteConfig) => {
             <p className="hero__subtitle">
               Over the past three years, we have spearheaded a significant
               open-source initiative, developing ten plugins for Grafana with a
-              staggering 24 millions total downloads. Our commitment to this
+              staggering 25 millions total downloads. Our commitment to this
               cause is evident in our best-in-class documentation, a dedicated
               YouTube channel, and a robust mechanism for addressing community
               queries.
@@ -39,18 +39,6 @@ const Header = (siteConfig) => {
               testament to our collective efforts and dedication.
             </p>
           </div>
-
-          <div className="col col--3 text--center">
-            <ThemedImage
-              className={clsx("margin-vert--lg")}
-              sources={{
-                light: useBaseUrl("/img/team/feature-1.svg"),
-                dark: useBaseUrl("/img/team/feature-1.dark.svg"),
-              }}
-              height={"65%"}
-              alt={siteConfig.tagline}
-            />
-          </div>
         </div>
       </div>
     </header>
@@ -60,14 +48,10 @@ const Header = (siteConfig) => {
 /**
  * Main
  */
-const Main = (siteConfig) => {
+const Main = () => {
   return (
     <main>
       <div id="Team" className="container margin-vert--md">
-        <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Team</span>
-        </h2>
-
         <div className="row margin-vert--lg text--center">
           <div className="col col--6">
             <a href="/blog/authors/mikhail/">
