@@ -7,8 +7,6 @@ import Image from "@theme/Image";
 
 # Nested objects
 
-## What is the Nested objects feature
-
 Simply put, this feature allows an end-user to add, edit, and delete rows associated with a table cell. Until we have a better name, we call it the **nested objects** or **comments**.
 
 Developed to meet the specific requirements of our sponsor, this feature, even in its current form, holds significant potential for the broader open-source community.
@@ -230,14 +228,16 @@ To configure actions and access to them, use the **Nested objects**->Column name
   src="/img/blog/2024-10-04-business-table-1.5.0/action-config.png"
 />
 
-SQL example for the Add action:
+### SQL example
+
+#### Add action
 
 ```sql
 INSERT INTO order_status (order_status_id, order_id, title, description)
 VALUES (nextval('seq_order_status'), ${payload.row.order_id}, ${payload.item.title:sqlstring}, ${payload.item.description:sqlstring})
 ```
 
-SQL example for the Update action:
+#### Update action
 
 ```sql
 UPDATE order_status
@@ -245,7 +245,7 @@ SET title = ${payload.item.title:sqlstring}, description = ${payload.item.descri
 WHERE order_status_id = ${payload.item.order_status_id};
 ```
 
-SQL example for the Delete action:
+#### Delete action
 
 ```sql
 DELETE FROM order_status
