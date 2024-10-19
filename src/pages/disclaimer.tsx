@@ -1,20 +1,18 @@
 import clsx from "clsx";
 import React from "react";
 import Head from "@docusaurus/Head";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import ThemedImage from "@theme/ThemedImage";
 
 /**
  * Header
  */
-const Header = (siteConfig) => {
+const Header = () => {
   return (
     <header>
-      <div className="container margin-vert--lg">
+      <div className="container margin-vert--md">
         <div className="row">
-          <div className="col col--8 margin-vert--lg">
+          <div className="col col--12 margin-vert--md">
             <p className="hero__subtitle margin-vert--md">
               Disclaimer. The information contained on the Service is for
               general information purposes only. The Company assumes no
@@ -23,18 +21,6 @@ const Header = (siteConfig) => {
             </p>
 
             <p className="hero__subtitle">Last updated: September 23, 2024</p>
-          </div>
-
-          <div className="col col--4 text--center">
-            <ThemedImage
-              className={clsx("margin-vert--md")}
-              sources={{
-                light: useBaseUrl("/img/index/disclaimer.svg"),
-                dark: useBaseUrl("/img/index/disclaimer.dark.svg"),
-              }}
-              height={"65%"}
-              alt={siteConfig.tagline}
-            />
           </div>
         </div>
       </div>
@@ -45,7 +31,7 @@ const Header = (siteConfig) => {
 /**
  * Main
  */
-const Main = (siteConfig) => {
+const Main = () => {
   return (
     <main>
       <div id="Disclaimer" className="container margin-vert--md">
