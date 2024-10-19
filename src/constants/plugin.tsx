@@ -52,7 +52,7 @@ export const PluginList: PluginItem[] = [
     description: (
       <>
         Allows to create the desired visual experience by mixing and matching
-        any supported formats for multi-media file visualizations.
+        any supported formats for multimedia file visualizations.
       </>
     ),
     href: "/plugins/business-media/",
