@@ -73,28 +73,12 @@ const Main = (siteConfig) => {
       </div>
 
       <div id="Contact" className="container margin-vert--xl">
-        <h2 className={clsx(styles.header, "hero__title")}>
-          <span>Contact</span>
-        </h2>
-
         <div className="row">
-          <div className="col col--7 margin-vert--lg">
+          <div className="col col--12 margin-vert--md">
             <p className="hero__subtitle margin-vert--md">
               Click on <b>Support</b> to send us a message. We are eager to
               start a conversation.
             </p>
-          </div>
-
-          <div className="col col--5 text--center">
-            <ThemedImage
-              className={clsx("margin-vert--md")}
-              sources={{
-                light: useBaseUrl("/img/plugins/support/logo.svg"),
-                dark: useBaseUrl("/img/plugins/support/logo.dark.svg"),
-              }}
-              height={"65%"}
-              alt={siteConfig.tagline}
-            />
           </div>
         </div>
       </div>

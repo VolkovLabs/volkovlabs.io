@@ -17,12 +17,12 @@ export const ComponentList: PluginItem[] = [
     description: <>High performance backend with HA</>,
     href: "/big/engine/",
   },
-  {
-    title: "Business Reporting",
-    name: "business-reporting",
-    description: <>Coming soon</>,
-    href: "/big/",
-  },
+  //  {
+  //    title: "Business Reporting",
+  //    name: "business-reporting",
+  //    description: <>Coming soon</>,
+  //    href: "/big/",
+  //  },
   {
     title: "Business Studio",
     name: "business-studio",
