@@ -2,8 +2,11 @@
 image: /img/suite.png
 ---
 
+import BlogPost from "@theme/BlogPost";
 import Feedback from "./_feedback.mdx";
 import Image from "@theme/Image";
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 # Business Suite for Grafana
 
@@ -11,25 +14,34 @@ import Image from "@theme/Image";
 - Provides solutions for a broad spectrum of business requirements.
 - Open source.
 
-<Image
-  title="Business Suite for Grafana created and actively maintained by Volkov Labs."
-  src="/img/suite.png"
+<ThemedImage
+  sources={{
+    light: useBaseUrl("/img/index/main.svg"),
+    dark: useBaseUrl("/img/index/main.dark.svg"),
+  }}
+  alt="Business Suite for Grafana created and actively maintained by Volkov Labs."
 />
 
 ## Plugins
 
-| Plugin                                   | Type        | Description                                               |
-| ---------------------------------------- | ----------- | --------------------------------------------------------- |
-| [Business Calendar](business-calendar)   | Panel       | Display events and set time range                         |
-| [Business Charts](business-charts)       | Panel       | Powerful visualizations powered by Apache ECharts         |
-| [Business Forms](business-forms)         | Panel       | Insert, update application data, and modify configuration |
-| [Business Input](business-input)         | Data source | Store and create your data                                |
-| [Business Media](business-media)         | Panel       | Display Base64 encoded and URL media files                |
-| [Business News](business-news)           | Data source | Visualize RSS and Atom feeds using Business Text          |
-| [Business Satellite](business-satellite) | Data source | Connect to Local and Remote Grafana instances             |
-| [Business Table](business-table)         | Panel       | Simplify data visualization in table format               |
-| [Business Text](business-text)           | Panel       | Dynamic, data-driven text                                 |
-| [Business Variable](business-variable)   | Panel       | Update dashboard variables                                |
+| Plugin                                   | Type        | Description                                                                                                                     |
+| ---------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [Business Calendar](business-calendar)   | Panel       | Displays events in a stylish calendar format. The data can come from various data sources.                                      |
+| [Business Charts](business-charts)       | Panel       | Integrates charts and graphs created by the Apache ECharts library into your Grafana dashboard.                                 |
+| [Business Forms](business-forms)         | Panel       | Allows inserting and updating application data, as well as modifying configuration directly from your Grafana dashboard.        |
+| [Business Input](business-input)         | Data source | Allows storing and emulating your data using JavaScript and LLM.                                                                |
+| [Business Media](business-media)         | Panel       | Allows to create the desired visual experience by mixing and matching any supported formats for multimedia file visualizations. |
+| [Business News](business-news)           | Data source | Retrieves RSS and Atom feeds and allows visualizing them using Business Text and other panels.                                  |
+| [Business Satellite](business-satellite) | Data source | Allows to retrieve data from local and remote Grafana instances via HTTP API.                                                   |
+| [Business Table](business-table)         | Panel       | Allows to simplify data visualization in table format.                                                                          |
+| [Business Text](business-text)           | Panel       | Allows to convert plain text and table data into visually appealing, easy-to-read information cards.                            |
+| [Business Variable](business-variable)   | Panel       | Allows you to have dashboard filters in a separate panel to place anywhere on the dashboard.                                    |
+
+## Getting Started
+
+This article is due to clarify the basics and give a quick cheat sheet with clear and easy steps on how to start.
+
+<BlogPost id="howto-start-20241022" />
 
 ## Support
 
