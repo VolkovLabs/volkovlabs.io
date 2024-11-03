@@ -6,16 +6,17 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
 import styles from "../css/index.module.css";
+import Youtube from "@theme/Youtube";
 
 /**
  * Header
  */
-const Header = (siteConfig) => {
+const Header = () => {
   return (
     <header>
       <div className="container margin-vert--lg">
         <div className="row">
-          <div className="col col--8 margin-vert--lg">
+          <div className="col col--7 margin-vert--lg">
             <p className="hero__subtitle margin-vert--md">
               With the Business Suite Enterprise, you're not just getting a
               product, you're getting a complete support system. You'll have a
@@ -41,15 +42,8 @@ const Header = (siteConfig) => {
             </div>
           </div>
 
-          <div className="col col--4 text--center">
-            <ThemedImage
-              className={clsx("margin-vert--xl")}
-              sources={{
-                light: useBaseUrl("/img/index/enterprise.svg"),
-                dark: useBaseUrl("/img/index/enterprise.dark.svg"),
-              }}
-              alt={siteConfig.tagline}
-            />
+          <div className="col col--5 margin-vert--lg">
+            <Youtube id="XDhyEXqa6KA" index />
           </div>
         </div>
       </div>

@@ -42,14 +42,16 @@ const Header = (siteConfig) => {
             </div>
           </div>
           <div className="col col--5">
-            <ThemedImage
-              className={clsx(styles.heroBannerLogo, "margin-vert--lg")}
-              sources={{
-                light: useBaseUrl("/img/index/main.svg"),
-                dark: useBaseUrl("/img/index/main.dark.svg"),
-              }}
-              alt={siteConfig.tagline}
-            />
+            <a href="/plugins/">
+              <ThemedImage
+                className={clsx(styles.heroBannerLogo, "margin-vert--lg")}
+                sources={{
+                  light: useBaseUrl("/img/index/main.svg"),
+                  dark: useBaseUrl("/img/index/main.dark.svg"),
+                }}
+                alt={siteConfig.tagline}
+              />
+            </a>
           </div>
         </div>
 
