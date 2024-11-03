@@ -9,14 +9,21 @@ type Props = {
   title?: string;
   height: number;
   width: number;
+  index: boolean;
 };
 
 /**
  * YouTube
  */
-const Youtube = ({ id, title, height = 378, width = 672 }: Props) => (
+const Youtube = ({
+  id,
+  title,
+  height = 378,
+  width = 672,
+  index = false,
+}: Props) => (
   <figure>
-    <div className={styles.videoWrapper}>
+    <div className={index ? styles.videoWrapperIndex : styles.videoWrapper}>
       <iframe
         width={width}
         className={styles.video}
