@@ -38,6 +38,8 @@ Custom code is executed after the `Initial` and `Update` requests, when `Element
 | `context.panel.disableSaveDefault()`                   | Disable Save Default button                                                                                                                   |                                                        | :heavy_check_mark:                                  |                                                                       |
 | `context.panel.setError('Message')`                    | Displays an error on panel.                                                                                                                   |                                                        | :heavy_check_mark:                                  |                                                                       |
 | `context.panel.collapseSection(id)`                    | Collapse Section. Added in v4.0.0.                                                                                                            | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.addSection(name)`                       | Add new Section. Added in v4.9.0.                                                                                                             | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
+| `context.panel.removeSection(id)`                      | Remove Section. Added in v4.9.0.                                                                                                              | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
 | `context.panel.expandSection(id)`                      | Expand Section. Added in v4.0.0.                                                                                                              | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
 | `context.panel.toggleSection(id)`                      | Toggle (Collapse/Expand) Section. Added in v4.0.0.                                                                                            | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
 | `context.panel.sectionsExpandedState`                  | Expand/Collapse State for Sections. Added in v4.0.0.                                                                                          | :heavy_check_mark:                                     | :heavy_check_mark:                                  |                                                                       |
@@ -63,6 +65,40 @@ console.log(
   context.grafana.templateService
 );
 ```
+
+## Parameters usage
+
+### addSection(name)
+
+_Added in: v4.9.0_
+
+**Usage**
+
+```javascript
+context.panel.addSection(name);
+```
+
+**Arguments**
+
+- `name` _string_
+  <br />
+  Section name.
+
+### removeSection(id)
+
+_Added in: v4.9.0_
+
+**Usage**
+
+```javascript
+context.panel.removeSection(id);
+```
+
+**Arguments**
+
+- `id` _string_
+  <br />
+  Section id.
 
 ## Refresh Dashboard after update request or show warning
 
