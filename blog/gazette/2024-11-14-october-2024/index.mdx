@@ -17,7 +17,8 @@ import Youtube from "@theme/Youtube";
 
 In this October issue of the Business Gazette:
 
-- [Total Business Suite downloads](#total-business-suite-downloads) reached 26 millions
+- [Updates following the Grafana 11.3 release](grafana-113)
+- [Total Business Suite downloads reached 26 millions](#total-business-suite-downloads) 
 - [3,600 YouTube subscribers](#youtube)
 - [Release news](#release-news)
 - [Releases and solution blogs posts](#blog)
@@ -27,13 +28,18 @@ Without further ado, let's summarize the October deliverables.
 
 ## Grafana 11.3
 
-- released
-- scenes dashboards with breaking changes
-- we were working with Grafana team to restore functionality
-- https://github.com/grafana/grafana/pull/93327 was solved by Grafana in the latest Grafana 11.3
-- https://github.com/grafana/grafana/issues/94479 was updated in our plugins
+The [scenes dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins. We thank the Grafana engineering team for the timely collaboration in solving all issues. 
 
-Half of the plugins were updated to the latest Grafana 11.3 and half will be updated followwing their release cycle.
+For more details, refer to this [GitHub issue](https://github.com/grafana/grafana/pull/93327).
+
+Following the fix, we implemented [all necessary changes](https://github.com/grafana/grafana/issues/94479 ) to ensure our plugins are up and running in Grafana 11.3 
+
+Currently, 6 of the Volkov Labs plugins have migrated to the latest Grafana 11.3 release. The rest will follow suit according to the individual release schedule.
+<Image
+  title="Volkov Labs plugins Grafana version distribution."
+  src="/img/blog/2024-11-14-gazette-october-2024/slice.png"
+  width="60%"
+/>
 
 ## Total Business Suite downloads
 
@@ -70,14 +76,14 @@ In October 2024, we published 9 plugin releases, three for our upcoming big cele
 
 <Image
   title="The Business Suite plugin collection releases in October 2024."
-  src="/img/blog/2024-11-02-gazette-october-2024/oct-calendar.png"
+  src="/img/blog/2024-11-14-gazette-october-2024/oct-calendar.png"
 />
 
 Just look at the number of open change requests. The Community is excited and wants more of the [Business Table panel](/plugins/business-table/).
 
 <Image
   title="An overwhelming number of open change requests for the Business Table panel."
-  src="/img/blog/2024-11-02-gazette-october-2024/open.png"
+  src="/img/blog/2024-11-14-gazette-october-2024/open.png"
 />
 
 ## Blog
