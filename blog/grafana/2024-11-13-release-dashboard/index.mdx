@@ -64,7 +64,7 @@ We use [Timescale](https://timescale.com) database to store all collected data. 
 For more reasons to choose Timescale, please review [this blog post](/blog/grafana-postgresql-20230123/).
 :::
 
-As you can see on the [data flow](#data-flow) schema above, we primarely use three tables: [grafana](#grafana-table), [github](#github-table), and [releases](#releases-table).
+As you can see on the [data flow](#data-flow) schema above, we primarely use three tables: grafana, github, and releases.
 
 ### Grafana plugins
 
@@ -110,7 +110,7 @@ Below is a part of the **releases** table to illustrate the collected data about
 />
 
 - **id**. A unique row identifier.
-- **start_date**. The data when a release is first available
+- **start_date**. The data when a release is first available.
 - **end_date**. The **start_date** + 100 days.
 - **title**. The plugin name + version.
 - **labels**. The Grafana version compatible with the release.
@@ -169,8 +169,7 @@ Below is the Lifecycle panel configuration.
 - Query A:
 
 ```sql
-WITH my_time as (SELECT color, max(start_date) as max_time
-                 FROM releases GROUP BY color)
+WITH my_time as (SELECT color, max(start_date) as max_time FROM releases GROUP BY color)
 SELECT a.title, now()::date-a.start_date::date as release
 FROM releases a, my_time mt
 WHERE a.color = mt.color and a.start_date = mt.max_time
@@ -180,8 +179,7 @@ order by title desc;
 - Query B:
 
 ```sql
-WITH my_time as (SELECT color, max(end_date) as max_time
-                 FROM releases GROUP BY color)
+WITH my_time as (SELECT color, max(end_date) as max_time FROM releases GROUP BY color)
 SELECT a.title, a.end_date::date-now()::date as milestone
 FROM releases a, my_time mt
 WHERE a.color = mt.color and a.end_date = mt.max_time
@@ -357,21 +355,21 @@ return {
 This panel shows the number of our plugins that have migrated to the latest Grafana versions. All our products migrate promptly. At this moment, all of them are at least on Grafana 11.1
 
 <Image
-  title="Grafana Toolkit panel using the Business Charts panel (Pie)."
+  title="Grafana Toolkit panel using the Business Charts panel (Pie visualization)."
   src="/img/blog/2024-11-13-release-dashboard/toolkit.png"
   width="80%"
 />
 
 Below is the Grafana Toolkit panel configuration.
 
-| Step                                                 | Grafana Toolkit panel configuration                                                                         |
-| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                             | Timescale                                                                                                   |
-| 2. Specify query                                     | The panel runs one SQL query which returns Grafana version for each plugin                                  |
-| 3. Apply [transformation](/grafana/transformations/) | We use the **Group by** transformation to calculate the number of supported plugins by each Grafana version |
-| 4. Extracted data review                             |                                                                                                             |
-| 5. Select a visualization panel from a list          | [Business Charts panel](/plugins/business-charts/)                                                          |
-| 6. Configure panel properties                        | We use the **Code** Editor mode. See the code below                                                         |
+| Step                                                  | Grafana Toolkit panel configuration                                                                         |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale                                                                                                   |
+| 2. Specify query                                      | The panel runs one SQL query which returns Grafana version for each plugin                                  |
+| 3. Apply [transformations](/grafana/transformations/) | We use the **Group by** transformation to calculate the number of supported plugins by each Grafana version |
+| 4. Extracted data review                              |                                                                                                             |
+| 5. Select a visualization panel from a list           | [Business Charts panel](/plugins/business-charts/)                                                          |
+| 6. Configure panel properties                         | We use the **Code** Editor mode. See the code below                                                         |
 
 <Image
   title="Grafana Toolkit panel configuration."
@@ -382,10 +380,8 @@ Below is the Grafana Toolkit panel configuration.
 - Query A:
 
 ```sql
-WITH my_time as (SELECT color, max(start_date) as max_time
-                FROM releases GROUP BY color)
-SELECT a.labels, 1 as count
-FROM releases a, my_time mt
+WITH my_time as (SELECT color, max(start_date) as max_time FROM releases GROUP BY color)
+SELECT a.labels, 1 as count FROM releases a, my_time mt
 WHERE a.color = mt.color and a.start_date = mt.max_time
 order by 1 desc
 ```
@@ -637,12 +633,10 @@ FROM releases;
 
 ## To sum up
 
-This article explained how we created the [Release](https://release.volkovlabs.io) project, an excellent example of using Grafana for Business purposes. The beautiful and story-telling visualizations are complemented with a data entry form (possible with the Business Form panel), the tool allowing direct user interaction with the data source.
+This article explained how we created the [Release dashboard](https://release.volkovlabs.io), an excellent example of using Grafana for Business purposes. The beautiful and story-telling visualizations are complemented with a data entry form (possible with the Business Form panel), the tool allowing direct user interaction with the data source.
 
 :::info
 You can learn more about the Business Forms panel in the [tutorials](/plugins/business-forms/tutorials/) section of our documentation.
 :::
-
-{" "}
 
 <Feedback />
