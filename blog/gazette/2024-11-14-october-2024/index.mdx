@@ -1,0 +1,155 @@
+---
+authors: [daria]
+slug: gazetta-october-2024/
+tags: [Business Gazette]
+image: /img/blog/2024-11-14-gazette-october-2024/banner.png
+keywords: [Gazette, Newspaper, Monthly]
+draft: true
+---
+
+import BlogPost from "@theme/BlogPost";
+import Feedback from "@site/docs/_feedback.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Business Gazette: Grafana 11.3, nested objects in the Business Table panel, and 3,600 YouTube subscribers
+
+In this October issue of the Business Gazette:
+
+- [Total Business Suite downloads](#total-business-suite-downloads) reached 26 millions
+- [3,600 YouTube subscribers](#youtube)
+- [Release news](#release-news)
+- [Releases and solution blogs posts](#blog)
+- [YouTube tutorials and releases](#youtube)
+
+Without further ado, let's summarize the October deliverables.
+
+## Grafana 11.3
+
+- released
+- scenes dashboards with breaking changes
+- we were working with Grafana team to restore functionality
+- https://github.com/grafana/grafana/pull/93327 was solved by Grafana in the latest Grafana 11.3
+- https://github.com/grafana/grafana/issues/94479 was updated in our plugins
+
+Half of the plugins were updated to the latest Grafana 11.3 and half will be updated followwing their release cycle.
+
+## Total Business Suite downloads
+
+What can be better than 24 000 000 total downloads?? 26 000 000 downloads that we now reached! Way to go!
+
+<Image
+  title="Jumping from 24M to 26M downloads."
+  src="/img/blog/2024-11-14-gazette-october-2024/downloads.png"
+/>
+
+The [Business Text](/plugins/business-text) plugin is an unbeatable star with over 8,000,000 downloads, followed by the [Business Calendar](/plugins/business-calendar/) and [Business Charts](/plugins/business-charts/), which now have nearly 4,000,000 downloads each!
+
+<Image
+  title="The Business Text, Business Calendar, and Business Charts are the leading trio in the total number of downloads among all the Business Suite plugins."
+  src="/img/blog/2024-11-14-gazette-october-2024/download-details.png"
+/>
+
+You are welcome to watch this breathtaking race with us using our [Release](https://release.volkovlabs.io/) open-to-public dashboard.
+
+## Growing YouTube following
+
+Usually, the summer months tend to be quieter months of the year, with general people activity picking up in all spheres starting from September. Cooler air signals to our brain that the vacation time is over, and we again need to roll up our sleeves.
+
+Even expecting better activity in September-October, we are hit by a surprise to get more than 3,600 subscribers in total on our YouTube channel. I am happy to share this fantastic news with our readers.
+
+<Image
+  title="YouTube surprised us with more than 3,600 followers."
+  src="/img/blog/2024-11-14-gazette-october-2024/yt.png"
+/>
+
+## Release news
+
+In October 2024, we published 9 plugin releases, three for our upcoming big celebrity, the [Business Table panel](/plugins/business-table/). This plugin arrived with a big bang and is here to stay as one of the most utilized panels.
+
+<Image
+  title="The Business Suite plugin collection releases in October 2024."
+  src="/img/blog/2024-11-02-gazette-october-2024/oct-calendar.png"
+/>
+
+Just look at the number of open change requests. The Community is excited and wants more of the [Business Table panel](/plugins/business-table/).
+
+<Image
+  title="An overwhelming number of open change requests for the Business Table panel."
+  src="/img/blog/2024-11-02-gazette-october-2024/open.png"
+/>
+
+## Blog
+
+### Releases
+
+:::info what is a release blog
+Our release blogs are short descriptions of all essential changes in the release. At a glance, you can learn what is new and if there are any breaking changes. We provide detailed descriptions with examples, code snippets, step-by-step instructions, etcetera to make the release news as valuable and concise as possible.
+:::
+
+In October, the Business Table 1.5.0 got a thrilling experimental feature, **Nested objects/Comments**, with the following highlights:
+
+- The nested objects/comments can be stored in any data source, the same as a table or completely different.
+- An end user can add, edit, and delete nested objects/comments.
+- Access to each action is configured separately and can follow Grafana roles or backend configuration.
+- The card displaying nested objects/comments supports Markdown.
+
+<table>
+  <tr style={{ border: 0 }}>
+    <td style={{ border: 0 }}>
+      <BlogPost id="business-table-1.5.0" />
+    </td>
+  </tr>
+</table>
+
+Every plugin goes hand in hand with the latest Grafana release to ensure version compatibility.
+
+### Solutions
+
+:::info what is a useful solution blog
+We created the **useful solutions** blog post category to recognize the blog posts containing the particular solutions for one of the most frequently asked subjects.
+:::
+
+:::note your expertise is appreciated
+We are endlessly grateful for the contributions of our community members. Your insights and solutions are invaluable. Please don't hesitate to contact us if you would like to share your knowledge with the world!
+:::
+
+Last month, our blog hosted one article in the **useful solution** category.
+
+We published a detailed guide to the plugin installation for OSS/Enterprise and cloud Grafana versions. With that instruction, everyone is equipped with the best installation knowledge and technical details of how to start with the [Business Suite](/plugins/).
+
+<table>
+  <tr style={{ border: 0 }}>
+    <td style={{ border: 0, width: "50%" }}>
+      <BlogPost id="howto-start-20241022" />
+    </td>
+  </tr>
+</table>
+
+## YouTube Tutorials
+
+:::info why YouTube?
+For some people, it is so much easier to watch one time rather than read about it 1000 times. If you are one of them, we create YouTube videos for you!
+:::
+
+We cover almost the same materials as in our blog and documentation, but we have more opportunities for demonstration in the video format.
+
+<table>
+  <tr style={{ border: 0 }}>
+    <td style={{ border: 0, width: "50%" }}>
+      <Youtube
+        id="1qYzHfPXJF8"
+        title="Install Business Suite plugins in Cloud, OSS, Enterprise | Open source community plugins."
+      />
+    </td>
+    <td style={{ border: 0 }}>
+      <Youtube
+        id="wiy6bBJDdb0"
+        title="Editable tables in Business Table 1.5.0 for Grafana | Step-by-step tutorial and nested objects"
+      />
+    </td>
+  </tr>
+</table>
+
+<Feedback />
