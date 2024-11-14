@@ -1,7 +1,7 @@
 ---
 authors: [daria]
-slug: release-dashboard/
-tags: [Grafana Crash Course]
+slug: release-dashboard-20241113/
+tags: [Grafana Crash Course, Business Suite]
 image: /img/blog/2024-11-13-release-dashboard/banner.png
 keywords: [Business, Grafana, Visualization, Dashboard]
 ---
@@ -12,11 +12,11 @@ import Feedback from "@site/blog/_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Create a Business Dashboard In Grafana. Production example
+# Create a Business Dashboard in Grafana for release management
 
-We firmly believe that Grafana is not just about observability; Grafana can help build fully functional, user-ready web applications with the right tools, like the [Business Suite plugins](https://volkovlabs.io/plugins/).
+We firmly believe that Grafana is not just about observability; Grafana can help build fully functional, user-ready web applications with the right tools, like the [Business Suite plugins](/plugins/).
 
-This artcile aims to be one example. [Release](https://release.volkovlabs.io) is an internal Volkov Labs project for the public to view. We use it daily to monitor our plugin release schedule and community interest by using various metrics (such as number of downloads, etc.)
+This artcile aims to be one example. [Release dashboard](https://release.volkovlabs.io) is an internal Volkov Labs project available for the public to view. We use it daily to monitor our plugin release schedule and community interest by using various metrics such as number of downloads, open issues, etc.
 
 Below is the screenshot of the main dashboard with noted visualization panels.
 
@@ -45,55 +45,49 @@ Let's delve into the details of our data flow. This brief explanation will equip
   src="/img/blog/2024-11-13-release-dashboard/data-flow.png"
 />
 
-### Source/Process
+The data that we use in our [Release dashboard](https://release.volkovlabs.io) is collected from three different sources:
 
-The data that we use in our [Release](https://release.volkovlabs.io) project is collected from three different sources:
-
-- From Grafana.com using Grafana API and hourly CRON script.
-- From GitHub.com using JSON API and hourly CRON script.
-- Manual entry. When the release is published, someone manually enters all required information via the Grafana dashboard using the [Business Forms plugin](https://volkovlabs.io/plugins/business-forms/).
+- From `grafana.com` using Grafana API and hourly CRON script.
+- From `github.com` using GitHub API and hourly CRON script.
+- Manual entry. When the release is published, release manager manually enters all required information via the Grafana dashboard using the [Business Forms](/plugins/business-forms/) panel.
 
 <Image
   title="The Grafana dashboard to enter release details into the data source."
   src="/img/blog/2024-11-13-release-dashboard/release-details.png"
 />
 
-### Timescale
+## Timescale database
 
-We use [Timescale](https://www.timescale.com) database to store all collected data. The primary reason for our choice in the [Release](https://release.volkovlabs.io) project is Timescale's ability to combine table structured data with time-series format and allow querying both simultaneously.
+We use [Timescale](https://timescale.com) database to store all collected data. The primary reason for our choice in the [Release](https://release.volkovlabs.io) project is Timescale's ability to combine table structured data with time-series format and allow querying both simultaneously.
 
 :::info
-For more reasons to choose Timescale, please review [this blog post](https://volkovlabs.io/blog/grafana-postgresql-20230123/).
+For more reasons to choose Timescale, please review [this blog post](/blog/grafana-postgresql-20230123/).
 :::
 
-As you can see on the [data flow](#data-flow) schema above, we primarely use three tables:
+As you can see on the [data flow](#data-flow) schema above, we primarely use three tables: [grafana](#grafana-table), [github](#github-table), and [releases](#releases-table).
 
-- [grafana](#grafana-table),
-- [github](#github-table),
-- [releases](#releases-table).
+### Grafana plugins
 
-#### Grafana table
-
-Below is a part of the **grafana** table to illustrate the collected data.
+Below is a part of the **grafana** table to illustrate the collected data about plugins and number of downloads from Grafana catalog.
 
 <Image
-  title="Grafana table."
+  title="Collected data about plugins and number of downloads."
   src="/img/blog/2024-11-13-release-dashboard/grafana.png"
   width="80%"
 />
 
 - **id**. A unique Grafana plugin identifier in the integer format.
 - **slug**. A unique Grafana plugin identifier in the text format.
-- **time**. The time when a GitHub project data is collected.
+- **time**. The time when a data is collected.
 - **downloads**. Number of downloads.
 - **diff**. The number of downloads increase since the last time the data was collected.
 
-#### Github table
+### GitHub issues
 
-Below is a part of the **github** table to illustrate the collected data.
+Below is a part of the **github** table to illustrate the collected data about issue, stars, and forks from our GitHub organization.
 
 <Image
-  title="Github table."
+  title="Collected data about issue, stars, and forks from our GitHub organization."
   src="/img/blog/2024-11-13-release-dashboard/github.png"
   width="80%"
 />
@@ -101,16 +95,16 @@ Below is a part of the **github** table to illustrate the collected data.
 - **time**. The time when a GitHub project data is collected.
 - **id**. A unique GitHub project identifier in the integer format.
 - **name**. A unique GitHub project identifier in the text format.
-- **forks**. A number of project forks.
-- **stars**. A number of project stars.
-- **issues**. A number of project open issues.
+- **forks**. A number of project's forks.
+- **stars**. A number of project's stars.
+- **issues**. A number of project's open issues.
 
-#### Releases table
+### Business Suite releases
 
-Below is a part of the **releases** table to illustrate the collected data.
+Below is a part of the **releases** table to illustrate the collected data about Business Suite releases.
 
 <Image
-  title="Releases table."
+  title="Collected data about Business Suite releases."
   src="/img/blog/2024-11-13-release-dashboard/releases.png"
   width="80%"
 />
@@ -120,23 +114,21 @@ Below is a part of the **releases** table to illustrate the collected data.
 - **end_date**. The **start_date** + 100 days.
 - **title**. The plugin name + version.
 - **labels**. The Grafana version compatible with the release.
-- **color**. A unique plugin identifier
+- **color**. A unique plugin identifier.
 - **description**. The most significant release features are in HTML format.
-
-## Grafana dashboard
 
 ### Any panel configuration
 
 Any Grafana dashboard consists of various visualization panels. Though the variety of panel types is staggering, the configuration of any kind can be summarized in the following steps.
 
-| Step                                                                      | Notes                                                                                                                                                                                                                                                           |
-| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | One or multiple data sources per one panel. You can reference the other panel on the same dashboard as a data source to avoid unnecessary duplicative query runs and, therefore, improve performance                                                            |
-| 2. Specify query                                                          | One or multiple queries per one panel. You can use the query **Builder** or **Code** mode to specify a query                                                                                                                                                    |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | One or multiple transformations per panel                                                                                                                                                                                                                       |
-| 4. Extracted data review                                                  | Use the **Table View** control at the top to switch between the data view and the panel view. You can enable a transformation using an eye icon to change from the original data frame to transformed and back. It is an optional step used for troubleshooting |
-| 5. Select a visualization panel from a list                               | Choose from the core visualization panels or pre-installed community panels                                                                                                                                                                                     |
-| 6. Configure panel properties                                             | Every panel has common and specific properties                                                                                                                                                                                                                  |
+| Step                                                  | Notes                                                                                                                                                                                                                                                           |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | One or multiple data sources per one panel. You can reference the other panel on the same dashboard as a data source to avoid unnecessary duplicative query runs and, therefore, improve performance                                                            |
+| 2. Specify query                                      | One or multiple queries per one panel. You can use the query **Builder** or **Code** mode to specify a query                                                                                                                                                    |
+| 3. Apply [transformations](/grafana/transformations/) | One or multiple transformations per panel                                                                                                                                                                                                                       |
+| 4. Data review                                        | Use the **Table View** control at the top to switch between the data view and the panel view. You can enable a transformation using an eye icon to change from the original data frame to transformed and back. It is an optional step used for troubleshooting |
+| 5. Select a visualization panel from a list           | Choose from the core visualization panels or pre-installed community panels                                                                                                                                                                                     |
+| 6. Configure panel properties                         | Every panel has common and specific properties                                                                                                                                                                                                                  |
 
 <Image
   title="Any visualization panel configuration steps."
@@ -144,27 +136,29 @@ Any Grafana dashboard consists of various visualization panels. Though the varie
   width="80%"
 />
 
+## Grafana dashboard
+
 ### Lifecycle panel
 
-The panel shows our products: [Business Alerting](https://volkovlabs.io/big/alerting/), open-source [Business Suite plugins](https://volkovlabs.io/plugins/), and the [Environment data source](https://volkovlabs.io/grafana/environment/).
+The panel shows our products: [Business Alerting](/big/alerting/), open-source [Business Suite](/plugins/), and the [Environment data source](/grafana/environment/).
 
-For each, you can see the number of days since the last release and how long is until the next planned release. We aim to have a new release every 100 days for each plugin and so far have been succsesful with that goal.
+For each, you can see the number of days since the last release and how long is until the next planned release. We aim to have a new release every 100 days for each plugin and so far have been successful with that goal.
 
 <Image
-  title="Lifecycle panel using the Business Charts panel (Bar)."
+  title="Lifecycle panel using the Business Charts panel (Bar visualization)."
   src="/img/blog/2024-11-13-release-dashboard/lifecycle.png"
 />
 
 Below is the Lifecycle panel configuration.
 
-| Step                                                                      | Lifecycle panel configuration                                                                                                                                                                                                            |
-| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | Timescale                                                                                                                                                                                                                                |
-| 2. Specify query                                                          | The panel runs two SQL queries: Query A returns the product name(title) and the number of days since the last release has been published. Query B returns the product name(title) and the number of days until the next planned release. |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | We use the **Join by field** transformation to merge two data frames (results of the Query A and Query B) into one data frame                                                                                                            |
-| 4. Extracted data review                                                  |                                                                                                                                                                                                                                          |
-| 5. Select a visualization panel from a list                               | [Business Charts panel](/plugins/business-charts/)                                                                                                                                                                                       |
-| 6. Configure panel properties                                             | We use the **Code** Editor mode. See the code below                                                                                                                                                                                      |
+| Step                                                  | Lifecycle panel configuration                                                                                                                                                                                                            |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale                                                                                                                                                                                                                                |
+| 2. Specify query                                      | The panel runs two SQL queries: Query A returns the product name(title) and the number of days since the last release has been published. Query B returns the product name(title) and the number of days until the next planned release. |
+| 3. Apply [transformations](/grafana/transformations/) | We use the **Join by field** transformation to merge two data frames (results of the Query A and Query B) into one data frame                                                                                                            |
+| 4. Extracted data review                              |                                                                                                                                                                                                                                          |
+| 5. Select a visualization panel from a list           | [Business Charts panel](/plugins/business-charts/)                                                                                                                                                                                       |
+| 6. Configure panel properties                         | We use the **Code** Editor mode. See the code below                                                                                                                                                                                      |
 
 <Image
   title="Lifecycle panel configuration."
@@ -272,21 +266,21 @@ return {
 This visualization shows the number of currently open issues per each plugin. This metric highlights the plugins with the most interest from the Grafana community. At this moment, our [Business Table panel](/plugins/business-table/) is a star with 34 open issues, while the second place takes the [Business Forms panel](/plugins/business-forms/) with only 8.
 
 <Image
-  title="Open issues panel using the Business Charts panel (Pie)."
+  title="Open issues panel using the Business Charts panel (Pie visualization)."
   src="/img/blog/2024-11-13-release-dashboard/open.png"
   width="80%"
 />
 
 Below is the Open Issues panel configuration.
 
-| Step                                                                      | Open Issues panel configuration                                                                                                                           |
-| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | Timescale                                                                                                                                                 |
-| 2. Specify query                                                          | The panel runs one SQL query which returns the number of open issues per plugin                                                                           |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | We use the **Filter data by values** transformation to keep plugins only open issues greater than 0. And then **Sort by** to order plugins by that number |
-| 4. Extracted data review                                                  |                                                                                                                                                           |
-| 5. Select a visualization panel from a list                               | [Business Charts panel](/plugins/business-charts/)                                                                                                        |
-| 6. Configure panel properties                                             | We use the **Code** Editor mode. See the code below                                                                                                       |
+| Step                                                  | Open Issues panel configuration                                                                                                                           |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale                                                                                                                                                 |
+| 2. Specify query                                      | The panel runs one SQL query which returns the number of open issues per plugin                                                                           |
+| 3. Apply [transformations](/grafana/transformations/) | We use the **Filter data by values** transformation to keep plugins only open issues greater than 0. And then **Sort by** to order plugins by that number |
+| 4. Extracted data review                              |                                                                                                                                                           |
+| 5. Select a visualization panel from a list           | [Business Charts panel](/plugins/business-charts/)                                                                                                        |
+| 6. Configure panel properties                         | We use the **Code** Editor mode. See the code below                                                                                                       |
 
 <Image
   title="Open issues panel configuration."
@@ -370,14 +364,14 @@ This panel shows the number of our plugins that have migrated to the latest Graf
 
 Below is the Grafana Toolkit panel configuration.
 
-| Step                                                                      | Grafana Toolkit panel configuration                                                                         |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | Timescale                                                                                                   |
-| 2. Specify query                                                          | The panel runs one SQL query which returns Grafana version for each plugin                                  |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | We use the **Group by** transformation to calculate the number of supported plugins by each Grafana version |
-| 4. Extracted data review                                                  |                                                                                                             |
-| 5. Select a visualization panel from a list                               | [Business Charts panel](/plugins/business-charts/)                                                          |
-| 6. Configure panel properties                                             | We use the **Code** Editor mode. See the code below                                                         |
+| Step                                                 | Grafana Toolkit panel configuration                                                                         |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                             | Timescale                                                                                                   |
+| 2. Specify query                                     | The panel runs one SQL query which returns Grafana version for each plugin                                  |
+| 3. Apply [transformation](/grafana/transformations/) | We use the **Group by** transformation to calculate the number of supported plugins by each Grafana version |
+| 4. Extracted data review                             |                                                                                                             |
+| 5. Select a visualization panel from a list          | [Business Charts panel](/plugins/business-charts/)                                                          |
+| 6. Configure panel properties                        | We use the **Code** Editor mode. See the code below                                                         |
 
 <Image
   title="Grafana Toolkit panel configuration."
@@ -464,14 +458,14 @@ This panel is the first of the three, showing the number of our plugin downloads
 
 Below is the Weekly downloads panel configuration.
 
-| Step                                                                      | Weekly downloads panel configuration                                                                                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1. Data source selection                                                  | Timescale                                                                                                                                                          |
-| 2. Specify query                                                          | The panel runs one SQL query in the Time series format, which returns a date and then a number of weekly downloads for each of the specified in the query products |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | We use the **Organize fields by name** transformation to convert database specific product names into user-friendly names                                          |
-| 4. Extracted data review                                                  |                                                                                                                                                                    |
-| 5. Select a visualization panel from a list                               | [Time series](https://www.youtube.com/watch?v=YpOazX67GSo&t=3s)                                                                                                    |
-| 6. Configure panel properties                                             | Use the panel parameter to configure the appearance                                                                                                                |
+| Step                                                  | Weekly downloads panel configuration                                                                                                                               |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1. Data source selection                              | Timescale                                                                                                                                                          |
+| 2. Specify query                                      | The panel runs one SQL query in the Time series format, which returns a date and then a number of weekly downloads for each of the specified in the query products |
+| 3. Apply [transformations](/grafana/transformations/) | We use the **Organize fields by name** transformation to convert database specific product names into user-friendly names                                          |
+| 4. Extracted data review                              |                                                                                                                                                                    |
+| 5. Select a visualization panel from a list           | [Time series](https://www.youtube.com/watch?v=YpOazX67GSo&t=3s)                                                                                                    |
+| 6. Configure panel properties                         | Use the panel parameter to configure the appearance                                                                                                                |
 
 <Image
   title="Weekly downloads panel configuration."
@@ -504,14 +498,14 @@ This panel is the second of the three, showing the number of our plugin download
 
 Below is the Total downloads panel configuration.
 
-| Step                                                                      | Total downloads panel configuration                                                                     |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | Timescale                                                                                               |
-| 2. Specify query                                                          | The panel runs one SQL query which returns a last counted number of downloads for each specified plugin |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | No need for transformation in this panel                                                                |
-| 4. Extracted data review                                                  |                                                                                                         |
-| 5. Select a visualization panel from a list                               | [Stat](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/stat/)              |
-| 6. Configure panel properties                                             | We use the **Total** Grafana function, to sum up downloads across all plugins                           |
+| Step                                                  | Total downloads panel configuration                                                                     |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale                                                                                               |
+| 2. Specify query                                      | The panel runs one SQL query which returns a last counted number of downloads for each specified plugin |
+| 3. Apply [transformations](/grafana/transformations/) | No need for transformation in this panel                                                                |
+| 4. Extracted data review                              |                                                                                                         |
+| 5. Select a visualization panel from a list           | [Stat](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/stat/)              |
+| 6. Configure panel properties                         | We use the **Total** Grafana function, to sum up downloads across all plugins                           |
 
 <Image
   title="Total downloads panel configuration."
@@ -543,14 +537,14 @@ This panel is the third of the three, showing the number of our plugin downloads
 
 Below is the Total downloads weekly panel configuration.
 
-| Step                                                                      | Total downloads weekly panel configuration                                                                                |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | Timescale                                                                                                                 |
-| 2. Specify query                                                          | The panel runs one SQL query in the Time series format, which returns a date and the number of plugin downloads weekly    |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | We use the **Organize fields by name** transformation to convert database specific product names into user-friendly names |
-| 4. Extracted data review                                                  |                                                                                                                           |
-| 5. Select a visualization panel from a list                               | [Time series](https://www.youtube.com/watch?v=YpOazX67GSo&t=3s)                                                           |
-| 6. Configure panel properties                                             | Use the panel parameter to configure the appearance                                                                       |
+| Step                                                  | Total downloads weekly panel configuration                                                                                |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale                                                                                                                 |
+| 2. Specify query                                      | The panel runs one SQL query in the Time series format, which returns a date and the number of plugin downloads weekly    |
+| 3. Apply [transformations](/grafana/transformations/) | We use the **Organize fields by name** transformation to convert database specific product names into user-friendly names |
+| 4. Extracted data review                              |                                                                                                                           |
+| 5. Select a visualization panel from a list           | [Time series](https://www.youtube.com/watch?v=YpOazX67GSo&t=3s)                                                           |
+| 6. Configure panel properties                         | Use the panel parameter to configure the appearance                                                                       |
 
 <Image
   title="Total downloads weekly panel configuration."
@@ -582,14 +576,14 @@ This panel accompanies the [open issues snapshot](#open-issues-panel), allowing 
 
 Below is the Open issues over time panel configuration.
 
-| Step                                                                      | Open issues over time panel configuration                                                                                     |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | Timescale                                                                                                                     |
-| 2. Specify query                                                          | The panel runs one SQL query in the Time series format, which returns a date and then an average number of open issues weekly |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | We use the **Organize fields by name** transformation to convert database specific product names into user-friendly names     |
-| 4. Extracted data review                                                  |                                                                                                                               |
-| 5. Select a visualization panel from a list                               | [Time series](https://www.youtube.com/watch?v=YpOazX67GSo&t=3s)                                                               |
-| 6. Configure panel properties                                             | Use the panel parameter to configure the appearance                                                                           |
+| Step                                                  | Open issues over time panel configuration                                                                                     |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale                                                                                                                     |
+| 2. Specify query                                      | The panel runs one SQL query in the Time series format, which returns a date and then an average number of open issues weekly |
+| 3. Apply [transformations](/grafana/transformations/) | We use the **Organize fields by name** transformation to convert database specific product names into user-friendly names     |
+| 4. Extracted data review                              |                                                                                                                               |
+| 5. Select a visualization panel from a list           | [Time series](https://www.youtube.com/watch?v=YpOazX67GSo&t=3s)                                                               |
+| 6. Configure panel properties                         | Use the panel parameter to configure the appearance                                                                           |
 
 <Image
   title="Open issues over time panel configuration."
@@ -617,14 +611,14 @@ On this panel, releases have been published in the calendar format. When a mouse
 
 Below is the Release Calendar panel configuration.
 
-| Step                                                                      | Release Calendar panel configuration                                                                       |
-| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| 1. Data source selection                                                  | Timescale                                                                                                  |
-| 2. Specify query                                                          | The panel runs one SQL query, which returns all data elements necessary to display an informative calendar |
-| 3. Apply [transformation](https://volkovlabs.io/grafana/transformations/) | No transformation needed                                                                                   |
-| 4. Extracted data review                                                  |                                                                                                            |
-| 5. Select a visualization panel from a list                               | [Business Calendar](/plugins/business-calendar/)                                                           |
-| 6. Configure panel properties                                             | Use the **Data** parameter category to map data frame columns with the Business Calendar data elements     |
+| Step                                                  | Release Calendar panel configuration                                                                       |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale                                                                                                  |
+| 2. Specify query                                      | The panel runs one SQL query, which returns all data elements necessary to display an informative calendar |
+| 3. Apply [transformations](/grafana/transformations/) | No transformation needed                                                                                   |
+| 4. Extracted data review                              |                                                                                                            |
+| 5. Select a visualization panel from a list           | [Business Calendar](/plugins/business-calendar/)                                                           |
+| 6. Configure panel properties                         | Use the **Data** parameter category to map data frame columns with the Business Calendar data elements     |
 
 <Image
   title="Release Calendar panel configuration."
