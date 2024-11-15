@@ -4,7 +4,6 @@ slug: gazetta-october-2024/
 tags: [Business Gazette]
 image: /img/blog/2024-11-14-gazette-october-2024/banner.png
 keywords: [Gazette, Newspaper, Monthly]
-draft: true
 ---
 
 import BlogPost from "@theme/BlogPost";
@@ -13,34 +12,39 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Gazette: Grafana 11.3, nested objects in the Business Table panel, and 3,600 YouTube subscribers
+# Business Gazette: Grafana 11.3, nested objects in the Business Table, and 3,600 YouTube subscribers
 
 In this October issue of the Business Gazette:
 
-- [Total Business Suite downloads](#total-business-suite-downloads) reached 26 millions
-- [3,600 YouTube subscribers](#youtube)
+- [Updates following the Grafana 11.3 release](#grafana-113)
+- [Total Business Suite downloads reached 26 millions](#total-business-suite-downloads)
+- [3,600 YouTube subscribers](#growing-youtube-following)
 - [Release news](#release-news)
 - [Releases and solution blogs posts](#blog)
-- [YouTube tutorials and releases](#youtube)
+- [YouTube tutorials and releases](#youtube-tutorials)
 
 Without further ado, let's summarize the October deliverables.
 
 ## Grafana 11.3
 
-- released
-- scenes dashboards with breaking changes
-- we were working with Grafana team to restore functionality
-- https://github.com/grafana/grafana/pull/93327 was solved by Grafana in the latest Grafana 11.3
-- https://github.com/grafana/grafana/issues/94479 was updated in our plugins
+The [Scenes powered dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins. We thank the Grafana Engineering team for the timely collaboration in solving all issues. Special thanks to Ivan Ortega who worked with us on [GitHub issue](https://github.com/grafana/grafana/pull/93327).
 
-Half of the plugins were updated to the latest Grafana 11.3 and half will be updated followwing their release cycle.
+Following the fix, we implemented [additional changes](https://github.com/grafana/grafana/issues/94479) to ensure our plugins are up and running in Grafana 11.3 and provide unmatched user experience.
+
+Currently, 6 of the Volkov Labs plugins have migrated to the latest Grafana 11.3 release. The rest will follow suit according to the individual release schedule and opened issues.
+
+<Image
+  title="Volkov Labs plugins Grafana version distribution."
+  src="/img/blog/2024-11-14-gazette-october-2024/slice.png"
+  width="60%"
+/>
 
 ## Total Business Suite downloads
 
-What can be better than 24 000 000 total downloads?? 26 000 000 downloads that we now reached! Way to go!
+What can be better than 24,000,000 total downloads?? 26,000,000 downloads that we now reached! Way to go!
 
 <Image
-  title="Jumping from 24M to 26M downloads."
+  title="Jumping from 24M to 26M downloads in a month."
   src="/img/blog/2024-11-14-gazette-october-2024/downloads.png"
 />
 
@@ -57,7 +61,7 @@ You are welcome to watch this breathtaking race with us using our [Release](http
 
 Usually, the summer months tend to be quieter months of the year, with general people activity picking up in all spheres starting from September. Cooler air signals to our brain that the vacation time is over, and we again need to roll up our sleeves.
 
-Even expecting better activity in September-October, we are hit by a surprise to get more than 3,600 subscribers in total on our YouTube channel. I am happy to share this fantastic news with our readers.
+Even expecting better activity in September-October, we are hit by a surprise to get more than 3,600 subscribers in total on our YouTube channel. I am happy to share this fantastic news with our community.
 
 <Image
   title="YouTube surprised us with more than 3,600 followers."
@@ -66,18 +70,18 @@ Even expecting better activity in September-October, we are hit by a surprise to
 
 ## Release news
 
-In October 2024, we published 9 plugin releases, three for our upcoming big celebrity, the [Business Table panel](/plugins/business-table/). This plugin arrived with a big bang and is here to stay as one of the most utilized panels.
+In October 2024, we published 9 plugin releases, three for our upcoming celebrity, the [Business Table panel](/plugins/business-table/). This plugin arrived with a big bang and is here to stay as one of the most utilized panels.
 
 <Image
   title="The Business Suite plugin collection releases in October 2024."
-  src="/img/blog/2024-11-02-gazette-october-2024/oct-calendar.png"
+  src="/img/blog/2024-11-14-gazette-october-2024/oct-calendar.png"
 />
 
-Just look at the number of open change requests. The Community is excited and wants more of the [Business Table panel](/plugins/business-table/).
+Just look at the number of open change requests. The Community is excited and wants more of the [Business Table panel](https://github.com/VolkovLabs/business-table/issues).
 
 <Image
   title="An overwhelming number of open change requests for the Business Table panel."
-  src="/img/blog/2024-11-02-gazette-october-2024/open.png"
+  src="/img/blog/2024-11-14-gazette-october-2024/open.png"
 />
 
 ## Blog
@@ -95,13 +99,7 @@ In October, the Business Table 1.5.0 got a thrilling experimental feature, **Nes
 - Access to each action is configured separately and can follow Grafana roles or backend configuration.
 - The card displaying nested objects/comments supports Markdown.
 
-<table>
-  <tr style={{ border: 0 }}>
-    <td style={{ border: 0 }}>
-      <BlogPost id="business-table-1.5.0" />
-    </td>
-  </tr>
-</table>
+<BlogPost id="business-table-1.5.0" />
 
 Every plugin goes hand in hand with the latest Grafana release to ensure version compatibility.
 
