@@ -75,7 +75,7 @@ const Main = () => {
             <a href="/blog/authors/daria/">
               <Image src="/img/team/daria.png" zoom={false} />
               <h3>Daria</h3>
-              <p>Creative Director and Grafana Champion</p>
+              <p>Co-Founder and Grafana Champion</p>
             </a>
           </div>
 
