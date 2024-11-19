@@ -12,7 +12,7 @@ import Feedback from "@site/blog/_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Create a Business Dashboard in Grafana for release management
+# Create a Business Dashboard in Grafana for release management (including data entry)
 
 We firmly believe that Grafana is not just about observability; Grafana can help build fully functional, user-ready web applications with the right tools, like the [Business Suite plugins](/plugins/).
 
@@ -35,6 +35,7 @@ You can jump into the specific panel configuration using the listing below:
 - [Total downloads weekly panel](#total-downloads-weekly-panel)
 - [Open issues over time panel](#open-issues-over-time-panel)
 - [Release Calendar panel](#release-calendar-panel)
+- [Manual Entry form (it is shown in the Data Flow section below)](#manual-entry-form)
 
 ## Data Flow
 
@@ -49,10 +50,10 @@ The data that we use in our [Release dashboard](https://release.volkovlabs.io) i
 
 - From `grafana.com` using Grafana API and hourly CRON script.
 - From `github.com` using GitHub API and hourly CRON script.
-- Manual entry. When the release is published, release manager manually enters all required information via the Grafana dashboard using the [Business Forms](/plugins/business-forms/) panel.
+- [Manual entry](#manual-entry-form). When the release is published, release manager manually enters all required information via the Grafana dashboard using the [Business Forms](/plugins/business-forms/) panel.
 
 <Image
-  title="The Grafana dashboard to enter release details into the data source."
+  title="The Grafana dashboard to manually enter release details into the data source."
   src="/img/blog/2024-11-13-release-dashboard/release-details.png"
 />
 
@@ -629,6 +630,142 @@ SELECT id, start_date AT TIME ZONE 'UTC' as start_date,
 end_date AT TIME ZONE 'UTC' as end_date, title,
 description, labels, color
 FROM releases;
+```
+
+## Manual Entry form
+
+The Business Forms provides unique functionality, allowing users to directly interact with the database by entering/editing/deleting data from it.
+
+<Image
+  title="Manual data entry form (Business Forms) panel."
+  src="/img/blog/2024-11-13-release-dashboard/manual-entry.png"
+  width="80%"
+/>
+
+The configuration of this panel could fit into the steps described above for any other visualization panel. Still, there is much to the panel parameter configuration where you specify JavaScript to define the Business Forms component's behavior. So, here it goes:
+
+| Step                                                  | Release Business Forms configuration                                                                       |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1. Data source selection                              | Timescale. This data source is used to retrieve the data to populate the two drop-downs on the form (**Grafana Toolkit** with Grafana 10.0, Grafana 10.1, etc. and **Plugin** with Business Charts, Business Forms, etc.|
+| 2. Specify query                                      | The panel runs two SQL queries. One fetches the listing of all supported Grafana versions (**Grafana Toolkit**) and the second one fetches the plugin name listing (**Plugin**)|
+| 3. Apply [transformations](/grafana/transformations/) | No transformation needed                                                                                   |
+| 4. Extracted data review                              |                                                                                                            |
+| 5. Select a visualization panel from a list           | [Business Forms](/plugins/business-forms/)                                                           |
+| 6. Configure panel properties                         | See the description of parameter configuration below|
+
+<Image
+  title="Manual data entry form (Business Forms) panel configuration."
+  src="/img/blog/2024-11-13-release-dashboard/business-forms.png"
+  width="80%"
+/>
+
+- Query A (to provide data for the **Grafana Toolkit** drop-down):
+
+```sql
+SELECT distinct labels 
+FROM releases 
+ORDER BY labels;
+```
+
+- Query B (to provide data for the **Plugin** drop-down):
+
+```sql
+SELECT id, title 
+FROM products 
+ORDER BY title;
+```
+
+The **products** table is the table containing information about all Volkov Labs products. 
+
+### Form elements
+
+- Title. **Type**->**String Input**. The rest is the default.
+- Grafana Toolkit. 
+   - **Type**->**Select with Custom options**. 
+   - Then specify how these options should be populated **Option source**->**Query**, which means they are from the specified queries on the left.
+   - Further, clarify which data frame columns. **Value Field**->**A:labels** and **Label field**->**A:labels** 
+   - The rest is the default.
+- Description. 
+   - **Type**->**Code Editor**. 
+   - To clarify the formatting rules **Language**->**HTML**.
+   - The rest is the default.
+- Plugin. 
+   - **Type**->**Select with Custom options**. 
+   - Then specify how these options should be populated **Option source**->**Query**, which means they are from the specified queries on the left.
+   - Further, clarify which data frame columns. **Value Field**->**B:id** and **Label field**->**B:title** 
+   - The rest is the default.
+
+<Image
+  title="Business Forms Form Elements configuration."
+  src="/img/blog/2024-11-13-release-dashboard/form-elements.png"
+  width="90%"
+/>
+
+### Initial request
+
+There is nothing to execute on the form initiation. We keep the default settings for the **Initial Request** parameter.
+
+<Image
+  title="Initial request default configuration."
+  src="/img/blog/2024-11-13-release-dashboard/initial.png"
+  width="70%"
+/>
+
+This code appears by default, there should not be a need for you to copy it. 
+
+```JavaScript
+console.log(context.panel.data, context.panel.response, context.panel.initial, context.panel.elements);
+
+return;
+
+/**
+ * Data Source
+ * Requires form elements to be defined
+ */
+const dataQuery = context.utils.toDataQueryResponse(context.panel.response);
+console.log(dataQuery);
+```
+
+### Update Request
+
+When user makes changes on the form (**Enable Update** is set to **If Changed**), the data should go into the **Update Action**->**Data Source**->**Timescale**.
+
+<Image
+  title="Update Request configuration."
+  src="/img/blog/2024-11-13-release-dashboard/update-request.png"
+  width="60%"
+/>
+
+The **Custom Code** is left with the default configuration. 
+
+```JavaScript
+if (context.panel.response) {
+  context.grafana.notifySuccess(['Update', 'Values updated successfully.']);
+  context.grafana.locationService.reload();
+} else {
+  context.grafana.notifyError(['Update', 'An error occurred updating values.']);
+}
+```
+
+### Update Request Payload
+
+The **Update Request Payload** parameter becomes availabe when the **Update Request**->**Update Action**->**Data Source** is selected.
+
+The query is specified in the **Code** mode (not **Builder**) which allows to enter the appropriate language to interact with the selected data source (SQL in this example).
+
+<Image
+  title="Update Request Payload configuration."
+  src="/img/blog/2024-11-13-release-dashboard/update-request-payload.png"
+  width="60%"
+/>
+
+```sql
+INSERT INTO releases 
+VALUES (
+  (SELECT max(id)+1 FROM releases), NOW(), NOW() + interval '100' day, 
+  ${payload.title:sqlstring}, ${payload.labels:sqlstring}, 
+  ${payload.color}, ${payload.description:sqlstring}
+  );
 ```
 
 ## To sum up
