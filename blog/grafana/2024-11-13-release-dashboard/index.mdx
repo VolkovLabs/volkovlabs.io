@@ -12,7 +12,7 @@ import Feedback from "@site/blog/_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Create a Business Dashboard in Grafana for release management (including data entry)
+# Create a Business Dashboard in Grafana for release management
 
 We firmly believe that Grafana is not just about observability; Grafana can help build fully functional, user-ready web applications with the right tools, like the [Business Suite plugins](/plugins/).
 
@@ -35,7 +35,7 @@ You can jump into the specific panel configuration using the listing below:
 - [Total downloads weekly panel](#total-downloads-weekly-panel)
 - [Open issues over time panel](#open-issues-over-time-panel)
 - [Release Calendar panel](#release-calendar-panel)
-- [Manual Entry form (it is shown in the Data Flow section below)](#manual-entry-form)
+- [Release Entry form panel](#release-entry-form)
 
 ## Data Flow
 
@@ -50,10 +50,10 @@ The data that we use in our [Release dashboard](https://release.volkovlabs.io) i
 
 - From `grafana.com` using Grafana API and hourly CRON script.
 - From `github.com` using GitHub API and hourly CRON script.
-- [Manual entry](#manual-entry-form). When the release is published, release manager manually enters all required information via the Grafana dashboard using the [Business Forms](/plugins/business-forms/) panel.
+- [Release entry](#release-entry-form). When the release is published, release manager enters all required information via the Grafana dashboard using the [Business Forms](/plugins/business-forms/) panel.
 
 <Image
-  title="The Grafana dashboard to manually enter release details into the data source."
+  title="The Grafana dashboard to enter release details into the data source."
   src="/img/blog/2024-11-13-release-dashboard/release-details.png"
 />
 
@@ -632,12 +632,12 @@ description, labels, color
 FROM releases;
 ```
 
-## Manual Entry form
+## Release Entry form
 
 The Business Forms provides unique functionality, allowing users to directly interact with the database by entering/editing/deleting data from it.
 
 <Image
-  title="Manual data entry form (Business Forms) panel."
+  title="Release data entry form (Business Forms) panel."
   src="/img/blog/2024-11-13-release-dashboard/manual-entry.png"
   width="80%"
 />
@@ -654,7 +654,7 @@ The configuration of this panel could fit into the steps described above for any
 | 6. Configure panel properties                         | See the description of parameter configuration below|
 
 <Image
-  title="Manual data entry form (Business Forms) panel configuration."
+  title="Release data entry form (Business Forms) panel configuration."
   src="/img/blog/2024-11-13-release-dashboard/business-forms.png"
   width="80%"
 />
