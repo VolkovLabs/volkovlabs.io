@@ -166,9 +166,7 @@ We simplified work with the payload creation. The Business Forms panel has a des
 
 ### Use nested objects in payload
 
-The ball is on the user side, and creating a payload for the request can be configured in a variety of ways. Keys may contain various values including nested objects.
-
-Here is a simple example
+Creating a payload for the request can be configured in a variety of ways. Keys may contain various values including nested objects. Here is a simple example:
 
 ```js
 const testMatchers = [
@@ -206,7 +204,7 @@ context.panel.elements.forEach((element) => {
 return payload;
 ```
 
-Payload example
+#### Payload example
 
 ```js
 {
@@ -217,18 +215,16 @@ Payload example
 }
 ```
 
-After calling the update request, you may get an error and in the body of the request you may see something like:
+After calling the update request, you may get an error. In the body of the request you may see something like:
 
-`\"matchers\": [object Object],[object Object],[object Object],[object Object]`
+```
+\"matchers\": [object Object],[object Object],[object Object],[object Object]
+```
 
-:::info Solution
+The code editor provides all required tools to use interpolation and value escaping for nested objects. Use `JSON.stringify` and `replaceAll('\"', '\\"')` for nested values in the payload object.
 
-Use `JSON.stringify` and `replaceAll('\"', '\\"')` for nested values in the payload object
-:::
 
-Since the code editor is complete user control, use interpolation and value escaping for nested objects
-
-Correct example:
+#### Updated example
 
 ```
 const testMatchers = [
