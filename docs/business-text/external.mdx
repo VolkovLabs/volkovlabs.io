@@ -23,11 +23,13 @@ You can import the external JavaScript libraries in both parameters: **Before co
   src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/before.png"
 />
 
-The Business Text panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network).
+The Business Text panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network). Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/business-text/code) editor.
 
-Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/business-text/code) editor.
+## Public folder
 
-To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on your Grafana instance. - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css` - Or on local Grafana instance `/public/grafanaCSS.css`
+To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on a Grafana instance.
+- To load from external Grafana instance use `https://GRAFANA-URL/public/grafanaCSS.css`.
+- From local Grafana instance use `/public/grafanaCSS.css`.
 
 ## External JavaScript resources
 
@@ -692,4 +694,24 @@ import("https://cdn.jsdelivr.net/npm/mapbox-gl@3.5.1/+esm").then(
     });
   }
 );
+```
+
+## TensorFlow
+
+[TensorFlow.js](https://www.tensorflow.org/js) is a library for machine learning in JavaScript.
+
+Use the following for the **JavaScript->Before Content Rendering**:
+
+```js
+console.log('Loading TensorFlow...');
+import("https://cdnjs.cloudflare.com/ajax/libs/tensorflow/4.22.0/tf.fesm.min.js").then(tf => {
+  console.log('Done loading TensorFlow');
+  console.log('Check if TensorFlow if ready');
+
+  tf.ready().then(() => {
+    console.log('TensorFlow is ready');
+    console.log('TensorFlow version: ', tf.version);
+    console.log('TensorFlow backend: ', tf.getBackend());
+  }
+})
 ```
