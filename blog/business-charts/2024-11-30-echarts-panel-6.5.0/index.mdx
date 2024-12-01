@@ -14,25 +14,196 @@ import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-charts/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Autosize Code Editor, Scatter, Box visual editor, and Grafana 11.3 Scenes updates in Business Charts 6.5.0
+# Improved Code Editor, included scatter and boxplot into Visual Editor, and Grafana 11.3 Scenes updates in Business Charts 6.5.0
 
 We are happy to announce the release of the Business Charts panel 6.5.0. This release includes the following updates:
 
-- Updated Autosize Code Editor.
-- Added Scatter and Boxplot in Visual Editor.
-- Added Promise libraries import.
-- Compatibility with Grafana 11.3 and Scenes powered dashboards.
+- [Improved Autosize Code Editor](#improved-autosize-code-editor).
+- [Included Scatter and Boxplot into the Visual Editor](#included-scatter-and-boxplot-into-the-visual-editor).
+- [Added Promise libraries import](#added-promise-libraries-import).
+- [Compatibility with Grafana 11.3 and Scenes powered dashboards](#compatibility-with-grafana-113-and-scenes-powered-dashboards).
 
 <Catalog date="November 26, 2024" />
 
 ## Downloads
 
-The Business Charts panel seems unstoppable with the number of its downloads worldwide.
+The Business Charts panel is another plugin from our [Business Suite plugin collection](/plugins/) reaching the dazzling milestone of 4 000 000 downloads.
 
 <Image
   title="The Business Charts panel has been downloaded more than 4,000,000 times."
-  src="/img/blog/2024-08-27-echarts-panel-6.3.0/downloads.png"
+  src="/img/blog/2024-11-30-echarts-panel-6.5.0/downloads.png"
 />
+
+## Improved Autosize Code Editor
+
+The Autosize Code Editor opens in a new window after a user clicks on the four-direction button.
+
+<Image
+  title="Expand the code area button."
+  src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/button.png"
+  width="20%"
+/>
+
+You can find this button at the top left corner of the **Code** parameter.
+
+<Image
+  title="Use the expand code area button to open your code in a separate window."
+  src="/img/blog/2024-08-27-echarts-panel-6.3.0/window.png"
+/>
+
+To improve the user experience further, we added the following four buttons:
+
+- **Copy code**. Copies the highlighted code in the memory buffer.
+- **Paste code**. Pastes the content of the memory buffer.
+- **Wrap code on new lines**. Fits the text into the visible area on the screen.
+- **Show/Hide mini map**. Shows/hides the far right area depicting the code at scale.
+
+<Image
+  title="More buttons to facilitate work with the code."
+  src="/img/blog/2024-11-30-echarts-panel-6.5.0/more-buttons.png"
+/>
+
+## Included scatter and boxplot into the Visual Editor
+
+We added the Visual Editor to simplify working with the Grafana data frames and facilitate intuitive data transmission into the [Charts function](/plugins/business-charts/options/).
+
+The Visual Editor should significantly help to work with datasets, but it does not eliminate the need for the [Charts function](/plugins/business-charts/options/).
+
+This feature is in the beta version. As of now, it should work for all charts enabled in the **Type** dropdown.
+
+<Image
+  title="The Type dropdown location."
+  src="/img/blog/2024-11-30-echarts-panel-6.5.0/type-location.png"
+/>
+
+*In development* means that this type is coming soon. All other types are available for selection.
+
+### Boxplot 
+
+The boxplot is a chart depicting a variable distribution in a compact way where you can compare it over time or between multiple entities.
+
+<Image
+  title="Using the Visual Editor to build a Boxplot chart type.."
+  src="/img/blog/2024-11-30-echarts-panel-6.5.0/boxplot-basic.png"
+/>
+
+1. Required dataframe. For each distribution, you provide the minimum, the first quartile (25% mark), the median, the third quartile (75% mark), and maximum values.
+
+| Category | min | q1  | median | q3  | maximum |
+| -------- | --- | --- | ------ | --- | ------- |
+| a        | 1   | 2   | 3      | 4   | 5       |
+| b        | 2   | 3   | 4      | 5   | 6       |
+| c        | 3   | 4   | 5      | 6   | 7       |
+| d        | 4   | 5   | 6      | 7   | 8       |
+
+2. Datasets. For the **Boxplot**, you need to add six datasets, where the first dataset should contain the category, then minimum values, first quartile, median, third quartile, and maximum. The order of the datasets is important.
+
+3. Chart Type. Set it to the **Boxplot**.
+
+4. Chart Type specific options. There are no specific options to specify with the latest plugin release.
+
+5. Charts Function.
+
+```javascript
+return {
+  tooltip: {},
+  dataset: context.editor.dataset,
+  series: context.editor.series,
+  xAxis: {
+    type: "category",
+  },
+  yAxis: {
+    type: "value",
+  },
+};
+```
+
+### Scatter
+
+The scatter (also known as scatter graph, scatter plot, scatergram) is a chart that uses Cartesian coordinates to depict a value for two variables.
+
+<Image
+  title="Using the Visual Editor to build a Scatter chart type."
+  src="/img/blog/2024-11-30-echarts-panel-6.5.0/scatter-basic.png"
+/>
+
+1. Required dataframe. One data frame should consist of three columns, X and Y coordinates and then a value to display. For instance:
+
+| Yaxis    | Xaxis | Size |
+| -------- | ----- | ---- |
+| 10       | 8.04  | 20   |
+| 8.07     | 6.95  | 21   |
+| 13.0     | 7.58  | 22   |
+| 9.05     | 8.81  | 23   |
+| 11       | 8.33  | 24   |
+
+2. Datasets. For the **Scatter**, you need to add three datasets.
+
+3. Chart Type. Set it to the **Scatter**.
+
+4. Chart Type specific options. Specify which dataset should play the role of X coordinates, Y coordinates, and the value associated with each (x,y) coordinate.
+
+5. Charts Function.
+
+```javascript
+return {
+  dataset: context.editor.dataset,
+  series: context.editor.series,
+  grid: {
+    bottom: "3%",
+    containLabel: true,
+    left: "3%",
+    right: "4%",
+    top: "4%"
+  },
+  /**
+   * Should be add to see tooltip
+   */
+  tooltip: {},
+  xAxis: {
+    type: "value"
+  },
+  yAxis: {
+    type: "value"
+  },
+}
+```
+
+## Added Promise libraries import
+
+We started decoupling its core part from the embedded libraries to make the Business Charts panel more flexible and lightweight. As of this release, all libraries are still part of the Business Charts panel. However, we are getting ready for a complete split. 
+
+Starting from this release, it is optional and will become mandatory in the upcoming releases to import an external library using the [Promises technology](https://www.promisejs.org).
+
+The syntax is identical to the [Business Text import functionality](https://volkovlabs.io/plugins/business-text/external/). 
+
+```javascript
+/**
+ * echarts-stat import
+ */
+import("https://esm.sh/echarts-stat@1.2.0").then(({ default: ecStatImport }) => {
+  context.echarts.registerTransform(ecStatImport.transform.regression);
+```
+
+You can review the above example in our [sandbox project](https://echarts.volkovlabs.io).
+
+The detailed steps are outlined below:
+
+1. Go to the [echarts.volkovlabs.io](https://echarts.volkovlabs.io)
+2. Open **Dashboards** -> **Imports**.
+3. Open any panel in the **Edit** mode, for instance, the [linear regression chart](https://echarts.volkovlabs.io/d/bdxgf42bbwphce/imports?from=now-6h&to=now&editPanel=10). 
+4. Scroll down in the **Code**->**Function** parameter almost to the end.
+
+<Image
+  title="Steps to find import of external libraries in the echarts.volkovlabs.io."
+  src="/img/blog/2024-11-30-echarts-panel-6.5.0/import.png"
+/>
+
+## Compatibility with Grafana 11.3 and Scenes powered dashboards
+
+The [Scenes powered dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins. 
+
+Starting from release 6.5.0, the Business Charts panel fully migrated to support Grafana 11.3.
 
 <GettingStarted />
 
