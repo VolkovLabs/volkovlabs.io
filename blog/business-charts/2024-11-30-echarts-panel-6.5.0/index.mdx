@@ -157,7 +157,7 @@ return {
     top: "4%",
   },
   /**
-   * Should be add to see tooltip
+   * Should be added to see tooltip
    */
   tooltip: {},
   xAxis: {
@@ -171,7 +171,7 @@ return {
 
 ## Added Promise libraries import
 
-We started decoupling its core part from the embedded libraries to make the Business Charts panel more flexible and lightweight. As of this release, all libraries are still part of the Business Charts panel. However, we are getting ready for a complete split.
+We started decoupling plugin's core from the embedded libraries to make the Business Charts panel more flexible and lightweight. As of this release, all libraries are still part of the Business Charts panel. However, we are getting ready for a complete split in v7.0.0.
 
 Starting from this release, it is optional and will become mandatory in the upcoming releases to import an external library using the [Promises technology](https://www.promisejs.org).
 
@@ -185,7 +185,7 @@ import("https://esm.sh/echarts-stat@1.2.0").then(({ default: ecStatImport }) => 
   context.echarts.registerTransform(ecStatImport.transform.regression);
 ```
 
-You can review the above example in our [sandbox project](https://echarts.volkovlabs.io).
+You can review the above example in our [sandbox project](https://echarts.volkovlabs.io/d/bdxgf42bbwphce/imports).
 
 The detailed steps are outlined below:
 
