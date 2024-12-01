@@ -27,7 +27,7 @@ We are happy to announce the release of the Business Charts panel 6.5.0. This re
 
 ## Downloads
 
-The Business Charts panel is another plugin from our [Business Suite plugin collection](/plugins/) reaching the dazzling milestone of 4 000 000 downloads.
+The Business Charts panel is another plugin from our [Business Suite plugin collection](/plugins/) reaching the dazzling milestone of 4,000,000 downloads.
 
 <Image
   title="The Business Charts panel has been downloaded more than 4,000,000 times."
@@ -76,9 +76,9 @@ This feature is in the beta version. As of now, it should work for all charts en
   src="/img/blog/2024-11-30-echarts-panel-6.5.0/type-location.png"
 />
 
-*In development* means that this type is coming soon. All other types are available for selection.
+_In development_ means that this type is coming soon. All other types are available for selection.
 
-### Boxplot 
+### Boxplot
 
 The boxplot is a chart depicting a variable distribution in a compact way where you can compare it over time or between multiple entities.
 
@@ -129,13 +129,13 @@ The scatter (also known as scatter graph, scatter plot, scatergram) is a chart t
 
 1. Required dataframe. One data frame should consist of three columns, X and Y coordinates and then a value to display. For instance:
 
-| Yaxis    | Xaxis | Size |
-| -------- | ----- | ---- |
-| 10       | 8.04  | 20   |
-| 8.07     | 6.95  | 21   |
-| 13.0     | 7.58  | 22   |
-| 9.05     | 8.81  | 23   |
-| 11       | 8.33  | 24   |
+| Yaxis | Xaxis | Size |
+| ----- | ----- | ---- |
+| 10    | 8.04  | 20   |
+| 8.07  | 6.95  | 21   |
+| 13.0  | 7.58  | 22   |
+| 9.05  | 8.81  | 23   |
+| 11    | 8.33  | 24   |
 
 2. Datasets. For the **Scatter**, you need to add three datasets.
 
@@ -154,28 +154,28 @@ return {
     containLabel: true,
     left: "3%",
     right: "4%",
-    top: "4%"
+    top: "4%",
   },
   /**
    * Should be add to see tooltip
    */
   tooltip: {},
   xAxis: {
-    type: "value"
+    type: "value",
   },
   yAxis: {
-    type: "value"
+    type: "value",
   },
-}
+};
 ```
 
 ## Added Promise libraries import
 
-We started decoupling its core part from the embedded libraries to make the Business Charts panel more flexible and lightweight. As of this release, all libraries are still part of the Business Charts panel. However, we are getting ready for a complete split. 
+We started decoupling its core part from the embedded libraries to make the Business Charts panel more flexible and lightweight. As of this release, all libraries are still part of the Business Charts panel. However, we are getting ready for a complete split.
 
 Starting from this release, it is optional and will become mandatory in the upcoming releases to import an external library using the [Promises technology](https://www.promisejs.org).
 
-The syntax is identical to the [Business Text import functionality](https://volkovlabs.io/plugins/business-text/external/). 
+The syntax is identical to the [Business Text import functionality](https://volkovlabs.io/plugins/business-text/external/).
 
 ```javascript
 /**
@@ -191,7 +191,7 @@ The detailed steps are outlined below:
 
 1. Go to the [echarts.volkovlabs.io](https://echarts.volkovlabs.io)
 2. Open **Dashboards** -> **Imports**.
-3. Open any panel in the **Edit** mode, for instance, the [linear regression chart](https://echarts.volkovlabs.io/d/bdxgf42bbwphce/imports?from=now-6h&to=now&editPanel=10). 
+3. Open any panel in the **Edit** mode, for instance, the [linear regression chart](https://echarts.volkovlabs.io/d/bdxgf42bbwphce/imports?from=now-6h&to=now&editPanel=10).
 4. Scroll down in the **Code**->**Function** parameter almost to the end.
 
 <Image
@@ -201,7 +201,7 @@ The detailed steps are outlined below:
 
 ## Compatibility with Grafana 11.3 and Scenes powered dashboards
 
-The [Scenes powered dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins. 
+The [Scenes powered dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins.
 
 Starting from release 6.5.0, the Business Charts panel fully migrated to support Grafana 11.3.
 
