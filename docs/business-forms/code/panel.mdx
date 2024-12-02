@@ -1,0 +1,315 @@
+---
+tags:
+  - Business Forms
+image: /img/plugins/business-forms/request.png
+---
+
+import Image from "@theme/Image";
+
+# Panel Parameters
+
+## Sections Utils
+
+### sectionsUtils.add(section)
+
+Add a new Section.
+
+_Added in: v4.9.0_
+
+:::info Refresh panel
+
+The `context.panel.sectionsUtils.add(section)` handler calls the refresh panel.
+
+If you use it in the initial request, don't forget to disable the Synchronize option.
+Enabling the Synchronize option and using it together with `context.panel.sectionsUtils.add(section)` in the Initial Request will cause the panel to reload constantly.
+
+:::
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.add(section);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.add({
+  name: "Section 1",
+  id: "id-s-1",
+  elements: [],
+});
+
+const newSection = {
+  name: "Section 2",
+  id: "id-s-2",
+  elements: ["elem-1", "elem-2"],
+};
+
+context.panel.sectionsUtils.add(newSection);
+```
+
+#### Arguments
+
+- `section` _Object_
+  <br />
+  Section. Each section include `name`, `id`, `elements`
+
+#### Common Section properties
+
+- `name` _string_. Section name.
+
+- `id` _string_. Section Id.
+
+- `elements` _Array_. Elements ids assign to section. Could Be empty array.
+
+### sectionsUtils.update(sections)
+
+Change Sections.
+
+_Added in: v4.9.0_
+
+:::info Refresh panel
+
+The `context.panel.sectionsUtils.update(sections)` handler calls the refresh panel.
+
+If you use it in the initial request, don't forget to disable the Synchronize option.
+Enabling the Synchronize option and using it together with `context.panel.sectionsUtils.update(sections)` in the Initial Request will cause the panel to reload constantly.
+
+:::
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.update(sections);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.update([{ name: "Section 1", id: "id-s-1" }]);
+```
+
+#### Arguments
+
+- `sections` _Array_
+  <br />
+  Sections. Each section include `name` and `id`
+
+### sectionsUtils.remove(id)
+
+Remove Section.
+
+_Added in: v4.9.0_
+
+:::info Refresh panel
+
+The `context.panel.sectionsUtils.remove(id)` handler calls the refresh panel.
+
+If you use it in the initial request, don't forget to disable the Synchronize option.
+Enabling the Synchronize option and using it together with `context.panel.sectionsUtils.remove(id)` in the Initial Request will cause the panel to reload constantly.
+
+:::
+
+#### Usage
+
+```javascript
+context.panel.removeSection(id);
+```
+
+#### Example
+
+```javascript
+context.panel.removeSection("id-s-1");
+```
+
+#### Arguments
+
+- `id` _string_. Section id.
+
+### sectionsUtils.assign(id,elements)
+
+Assign elements to Section.
+
+_Added in: v4.9.0_
+
+:::info Refresh panel
+
+The `context.panel.sectionsUtils.assign(id,elements)` handler calls the refresh panel.
+
+If you use it in the initial request, don't forget to disable the Synchronize option.
+Enabling the Synchronize option and using it together with `context.panel.sectionsUtils.assign(id,elements)` in the Initial Request will cause the panel to reload constantly.
+
+:::
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.assign(id, elements);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.assign("id-s-1", ["elem-1", "elem-2"]);
+```
+
+#### Arguments
+
+- `id` _string_. Section Id.
+- `elements` _Array_. Array of elements ids
+
+### sectionsUtils.unassign(elements)
+
+Unassign elements from Section.
+
+_Added in: v4.9.0_
+
+:::info Refresh panel
+
+The `context.panel.sectionsUtils.unassign(elements)` handler calls the refresh panel.
+
+If you use it in the initial request, don't forget to disable the Synchronize option.
+Enabling the Synchronize option and using it together with `context.panel.sectionsUtils.unassign(elements)` in the Initial Request will cause the panel to reload constantly.
+
+:::
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.unassign(elements);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.unassign(["elem-1", "elem-2"]);
+```
+
+#### Arguments
+
+- `elements` _Array_. Array of elements ids
+
+### sectionsUtils.get(id)
+
+Get Section by id. Return Section with elements assign to section.
+
+_Added in: v4.9.0_
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.get(id);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.get("section-id");
+```
+
+#### Arguments
+
+- `id` _string_. Section Id
+
+### sectionsUtils.getAll()
+
+Get All Sections. Return Sections with elements assign to each section.
+
+_Added in: v4.9.0_
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.getAll();
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.getAll();
+```
+
+### sectionsUtils.collapse(id)
+
+Collapse Section.
+
+_Updated in: v4.9.0_
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.collapse(id);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.collapse("section-id");
+```
+
+#### Arguments
+
+- `id` _string_. Section Id
+
+### sectionsUtils.expand(id)
+
+Expand Section.
+
+_Added in: v4.9.0_
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.expand(id);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.expand("section-id");
+```
+
+#### Arguments
+
+- `id` _string_. Section Id
+
+### sectionsUtils.toggle(id)
+
+Toggle (Collapse/Expand) Section.
+
+_Added in: v4.9.0_
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.toggle(id);
+```
+
+#### Example
+
+```javascript
+context.panel.sectionsUtils.toggle("section-id");
+```
+
+#### Arguments
+
+- `id` _string_. Section Id
+
+### sectionsUtils.expandedState
+
+Returns Expand/Collapse State for Sections.
+
+_Added in: v4.9.0_
+
+#### Usage
+
+```javascript
+context.panel.sectionsUtils.expandedState;
+```
+
+#### Example
+
+```javascript
+const sectionsExpandedState = context.panel.sectionsUtils.expandedState;
+```
