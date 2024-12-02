@@ -1,0 +1,86 @@
+---
+authors: [daria]
+slug: form-panel-4.9.0/
+tags: [Business Forms, Business Suite]
+image: /img/blog/2024-11-30-form-panel-4.9.0/banner.png
+keywords: [Data Manipulation, Forms, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-forms/_feedback.mdx";
+import GettingStarted from "@site/docs/business-forms/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Dynamic sections, improved form elements, and Grafana 11.3 Scenes updates in Business Forms 4.9.0
+
+We are happy to announce the release of the Business Forms panel 4.9.0. This release includes the following updates:
+
+- Added functionality for updating sections dynamically.
+- Added HTML, Markdown to supported Code Editor languages.
+- Added Date Form element.
+- Added custom input for Select, Multi select.
+- Added variable support in sections, labels and button titles.
+- Updated Autosize Code Editor toolbar.
+- Compatibility with Grafana 11.3 and Scenes powered dashboards.
+
+<Catalog date="November 25, 2024" />
+
+## Downloads
+
+The Business Forms plugin has been downloaded more than 1,500,000 times! We are excited to see the community's increased adaptation of the panel.
+
+<Image
+  title="The Business Forms plugin downloads hit 1,500,000."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/downloads.png"
+/>
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements in 4.9.0
+
+- Removed DatasourceResponseError moved to external Components (#535)
+- Added HTML, Markdown to supported Code Editor languages (#543)
+- Updated options to use datasource ID instead of name (#539)
+- Updated E2E tests (#538)
+- Updated refresh function in the Update Request (#547)
+- Added functionality for updating sections dynamically (#542)
+- Removed default payload from Update Request (#550)
+
+### Features / Enhancements in 4.8.0
+
+- Added Date Form element (#520)
+- Update refresh for dashboard scene (#522)
+- Updated Text area, Code editor elements to escape multi-lines (#520)
+- Updated refresh for dashboard scene using useDashboardRefresh hook (#528)
+- Added Handling Data Source Request Errors (#530)
+- Updated Grafana 11.3.0 and dependencies (#531)
+
+### Features / Enhancements in 4.7.0
+
+- Updated Autosize Code Editor toolbar (#506)
+- Added custom input for Select, Multi select (#507)
+- Added support for frames in initial fields support (#508)
+- Updated behavior for disabled text area element (#514)
+
+### Features / Enhancements in 4.6.0
+
+- Updated initial values for elements from data source (#490)
+- Added wrap button in the code editor (#491)
+- Updated loading bar for Initial Request (#492)
+- Added Label Background and Label Color for element with type Button (#502)
+
+### Features / Enhancements in 4.5.0
+
+- Updated date and time input timezone (#452)
+- Added dashboard variables support in button titles (#479)
+- Updated suggestions position in Code elements (#483)
+- Added variable support in sections and labels (#485)
+
+<Feedback />
