@@ -147,7 +147,15 @@ const sidebars: SidebarsConfig = {
         "business-forms/data-flow",
         "business-forms/form-elements",
         "business-forms/architecture",
-        "business-forms/code",
+        {
+          items: ["business-forms/code/panel"],
+          label: "Custom Code",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-forms/code/index",
+          },
+        },
         {
           items: [
             "business-forms/control",
