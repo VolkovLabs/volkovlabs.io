@@ -13,29 +13,144 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-forms/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
+import BlogPost from "@theme/BlogPost";
 
 # Dynamic sections, improved form elements, and Grafana 11.3 Scenes updates in Business Forms 4.9.0
 
 We are happy to announce the release of the Business Forms panel 4.9.0. This release includes the following updates:
 
-- Added functionality for updating sections dynamically.
-- Added HTML, Markdown to supported Code Editor languages.
-- Added Date Form element.
-- Added custom input for Select, Multi select.
-- Added variable support in sections, labels and button titles.
-- Updated Autosize Code Editor toolbar.
-- Compatibility with Grafana 11.3 and Scenes powered dashboards.
+- Added functionality to create sections dynamically.
+- Added **HTML** and **Markdown** languages to facilitate better formatting in the **Code Editor**.
+- Added a **Date** form element type.
+- Added custom input for **Select** and **Multi select** form element types.
+- Sections, labels, and button titles support variables.
+- Improved Autosize Code Editor.
+- Compatibility with Grafana 11.3 and Scenes-powered dashboards.
 
 <Catalog date="November 25, 2024" />
 
 ## Downloads
 
-The Business Forms plugin has been downloaded more than 1,500,000 times! We are excited to see the community's increased adaptation of the panel.
+The Business Forms plugin has been downloaded more than 1,500,000 times! We are excited to see the community's increased adaptation of this panel.
 
 <Image
   title="The Business Forms plugin downloads hit 1,500,000."
-  src="/img/blog/2024-08-29-form-panel-4.4.0/downloads.png"
+  src="/img/blog/2024-11-30-form-panel-4.9.0/downloads.png"
 />
+
+## Functionality to create sections dynamically
+
+The Business Forms can be created dynamically following the code-specified configuration. That functionality has been available for quite awhile. 
+
+A good example of a Business Form created dynamically, can be found in the following blog post. 
+
+<BlogPost id="form-panel-server-based-elements-20240428" />
+
+Starting from release 4.9.0, in addition to simple forms, you can create [sections](/plugins/business-forms/form-elements/#sections) dynamically as well. 
+
+In the example below, the data about the required sections comes from the data source. In this case, we use the [Business Input](/plugins/business-input/) data source to create a basic data frame containing section information, such as ID and name.
+
+Next, the **Sections** and **Form Elements** categories are shown as not configured. 
+
+In the **Initial Request** category, the **Initial Action** is set to **Code**. 
+
+<Image
+  title="Create sections dynamically. Example."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/dyn-sec-how.png"
+/>
+
+The JavaScript from the example above:
+
+```JavaScript
+const ids = context.panel.data.series[0].fields[0].values
+const names = context.panel.data.series[0].fields[1].values
+
+const sections = ids.map((item, index) => ({
+  id: item,
+  name: names[index]
+}))
+
+context.panel.sectionsUtils.add({ name: sections[0].name, id: sections[0].id, elements: [] })
+context.panel.sectionsUtils.add({ name: sections[1].name, id: sections[1].id, elements: [] })
+context.panel.sectionsUtils.add({ name: sections[2].name, id: sections[2].id, elements: [] })
+
+```
+
+Find more available commands and code snippets in the [Panel Parameters](/plugins/business-forms/code/panel/) sections of the Business Forms panel documentation.
+
+## Added HTML, Markdown languages to faciliate better formatting in the **Code Editor**
+
+We added two new choices into the **Language** parameter of the **Code Editor** form element type. They are **HTML** and **Markdown**.
+
+<Image
+  title="HTML and Markdown are two new types for the Language parameter of the Code Editor type."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/html-markdown.png"
+/>
+
+## Date form element type
+
+In addition to the existing **Date and time** form element type, we added the **Date** type.
+
+<Image
+  title="Date and Date and time types."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/date-type.png"
+/>
+
+## Added custom input for **Select** and **Multi select** form element types
+
+If allowed, users can enter custom values into the **Select** and **Multi select** form element types
+
+<Image
+  title="If allowed users can enter custom values into the Select and Multi select form element types."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/select-multi-custom-value.gif"
+/>
+
+## Sections, labels and button titles support variables
+
+You can use dashboard variables in the:
+ - Section names,
+ - Form elements labels, 
+ - All three buttons (**Submit**, **Reset**, **Save Default Button**) texts.
+
+<Image
+  title="Use dashboard variables in the sections, labels, and button texts."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/var-sections-labels-buttons.png"
+/>
+
+## Improved Autosize Code Editor
+
+The Autosize Code Editor opens in a new window after a user clicks on the four-direction button.
+
+<Image
+  title="Expand the code area button."
+  src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/button.png"
+  width="20%"
+/>
+
+You can find this button at the top left corner of the **Code** parameter.
+
+<Image
+  title="Use the expand code area button to open your code in a separate window."
+  src="/img/blog/2024-08-29-form-panel-4.4.0/window.png"
+/>
+
+To improve the user experience further, we added the following four buttons:
+
+- **Copy code**. Copies the highlighted code in the memory buffer.
+- **Paste code**. Pastes the content of the memory buffer.
+- **Wrap code on new lines**. Fits the text into the visible area on the screen.
+- **Show/Hide mini map**. Shows/hides the far right area depicting the code at scale.
+
+<Image
+  title="More buttons to facilitate work with the code."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/more-buttons.png"
+/>
+
+## Compatibility with Grafana 11.3 and Scenes powered dashboards
+
+The [Scenes powered dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins.
+
+Starting from release 4.9.0, the Business Forms panel fully migrated to support Grafana 11.3.
 
 <GettingStarted />
 
