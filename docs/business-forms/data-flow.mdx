@@ -164,6 +164,107 @@ We simplified work with the payload creation. The Business Forms panel has a des
   src="/img/blog/2024-07-02-form-panel-4.0.0/update-payload.png"
 />
 
+### Use nested objects in payload
+
+Creating a payload for the request can be configured in a variety of ways. Keys may contain various values including nested objects. Here is a simple example:
+
+```js
+const testMatchers = [
+  {
+    id: "1",
+    value: 1,
+  },
+  {
+    id: "2",
+    value: 2,
+  },
+];
+
+let payload = {
+  title: "",
+  body: "",
+  userId: 0,
+  matchers: testMatchers,
+};
+
+context.panel.elements.forEach((element) => {
+  if (element.id === "postTitle") {
+    payload.title = element.value;
+  }
+
+  if (element.id === "postBody") {
+    payload.body = element.value;
+  }
+
+  if (element.id === "postId") {
+    payload.userId = element.value;
+  }
+});
+
+return payload;
+```
+
+#### Payload example
+
+```js
+{
+  "title": "${payload.title}",
+  "body": "${payload.body}",
+  "userId": "${payload.userId}",
+  "matchers": ${payload.matchers}
+}
+```
+
+After calling the update request, you may get an error. In the body of the request you may see something like:
+
+```
+\"matchers\": [object Object],[object Object],[object Object],[object Object]
+```
+
+The code editor provides all required tools to use interpolation and value escaping for nested objects. Use `JSON.stringify` and `replaceAll('\"', '\\"')` for nested values in the payload object.
+
+
+#### Updated example
+
+```
+const testMatchers = [
+  {
+    id: "1",
+    value: 1,
+  },
+  {
+    id: "2",
+    value: 2,
+  },
+];
+
+let payload = {
+  title: "",
+  body: "",
+  userId: 0,
+  /**
+   * Nested value type
+   */
+  matchers: JSON.stringify(testMatchers).replaceAll('\"', '\\"'),
+};
+
+context.panel.elements.forEach((element) => {
+  if (element.id === "postTitle") {
+    payload.title = element.value;
+  }
+
+  if (element.id === "postBody") {
+    payload.body = element.value;
+  }
+
+  if (element.id === "postId") {
+    payload.userId = element.value;
+  }
+});
+
+return payload;
+```
+
 ### Use Text Area with multiple lines
 
 Text Area element allows you to create text with multiple lines:

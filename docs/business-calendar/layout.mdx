@@ -55,9 +55,24 @@ Displays a month.
 
 Displays 12 months at the same time. The purpose of this view is to help navigate throughout the calendar since it makes it easier to jump into any day and month of the year.
 
-If you need any particular information to be displayed in the Year view, please, let us know.
-
 <Image title="The Year layout." src="/img/plugins/business-calendar/year.png" />
+
+#### Events
+
+:::info Version
+
+Starting from version 3.8.0, the Business Calendar panel displays dots representing events for that day.
+
+:::
+
+In the **Year** view, the Business Calendar panel displays dots representing events that day. If there are more than 3 events, the plus symbol is shown.
+
+The multi-day events are displayed as one dot per day. For instance, if an event lasts from September 16 to September 17 (two day event), two dots are shown on the panel, one dot for September 16 and the other dot for September 17.
+
+<Image
+  title="Displaying events in a day on the Year view."
+  src="/img/blog/2024-11-28-calendar-panel-3.8.0/year.png"
+/>
 
 ### Agenda
 
@@ -108,6 +123,19 @@ All other options override the user profile settings.
   src="/img/plugins/business-calendar/language-extended.png"
 />
 
+:::info Version
+
+The panel specific language(datetime) format is supported starting from version 3.8.0
+
+:::
+
+The **Date and time format** parameter is specific to the particular Business Calendar panel.
+
+<Image
+  title="The Business Calendar panel allows panel-specific language(datetime) configuration."
+  src="/img/blog/2024-11-28-calendar-panel-3.8.0/languages.png"
+/>
+
 ## Month time
 
 :::info Version
@@ -129,8 +157,7 @@ Read about the **Colors** option in the [Coloring events](/plugins/business-cale
 
 ## Text Size
 
-Yu can control the font size in your Calendar panel.
-By default, the size is 12px.
+You can control the font size in your Calendar panel. By default, the size is 12px.
 
 <Image
   title="You can control the font size in your Calendar panel."

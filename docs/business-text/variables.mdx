@@ -47,13 +47,30 @@ book:
 {{/each}}
 ```
 
-## JavaScript code
+## JavaScript code 
+
+### Get variable value
 
 Use the `context.grafana.replaceVariables()` function to replace dashboard variables in the JavaScript Code.
 
 ```js
 const bonjour = context.grafana.replaceVariables("${variable}");
 console.log(bonjour.toUpperCase());
+```
+
+### Set variable value
+
+Prefix `var-` is required to set dashboard variable.
+
+```js
+context.grafana.locationService.partial({ "var-variableName": ".*" });
+```
+
+Time range values `from` and `to` should be set as is.
+
+```js
+context.grafana.locationService.partial({ from: start, to: end });
+
 ```
 
 ## CSS styles

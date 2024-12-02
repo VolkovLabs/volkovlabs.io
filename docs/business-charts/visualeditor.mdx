@@ -22,8 +22,10 @@ This feature is in the beta version. As of now, it should work for all charts en
 
 <Image
   title="The Type dropdown location."
-  src="/img/plugins/business-charts/type-location.png"
+  src="/img/blog/2024-11-30-echarts-panel-6.5.0/type-location.png"
 />
+
+_In development_ means that this type is coming soon. All other types are available for selection.
 
 If your use case requires complex logic, use the **Code** mode.
 
@@ -34,12 +36,6 @@ If your use case requires complex logic, use the **Code** mode.
 
 ## Types
 
-:::info Beta version
-
-The following is described using the Business Charts version 6.4.1.
-
-:::
-
 Below is a more detailed description of how the **Visual Editor** can be used for a particular series type.
 
 | Chart Type            | Description                                        |
@@ -49,6 +45,7 @@ Below is a more detailed description of how the **Visual Editor** can be used fo
 | [Radar](#radar)       | Provides examples for the **Radar** chart type.    |
 | [Sunburst](#sunburst) | Provides examples for the **Sunburst** chart type. |
 | [Boxplot](#boxplot)   | Provides examples for the **Boxplot** chart type.  |
+| [Scatter](#scatter)   | Provides examples for the **Scatter** chart type.  |
 
 ## Line
 
@@ -255,6 +252,57 @@ return {
   series: context.editor.series,
   xAxis: {
     type: "category",
+  },
+  yAxis: {
+    type: "value",
+  },
+};
+```
+
+## Scatter
+
+The scatter (also known as scatter graph, scatter plot, scatergram) is a chart that uses Cartesian coordinates to depict a value for two variables.
+
+<Image
+  title="Using the Visual Editor to build a Scatter chart type."
+  src="/img/plugins/business-charts/scatter-basic.png"
+/>
+
+1. Required dataframe. One data frame should consist of three columns, X and Y coordinates and then a value to display. For instance:
+
+| Yaxis | Xaxis | Size |
+| ----- | ----- | ---- |
+| 10    | 8.04  | 20   |
+| 8.07  | 6.95  | 21   |
+| 13.0  | 7.58  | 22   |
+| 9.05  | 8.81  | 23   |
+| 11    | 8.33  | 24   |
+
+2. Datasets. For the **Scatter**, you need to add three datasets.
+
+3. Chart Type. Set it to the **Scatter**.
+
+4. Chart Type specific options. Specify which dataset should play the role of X coordinates, Y coordinates, and the value associated with each (x,y) coordinate.
+
+5. Charts Function.
+
+```javascript
+return {
+  dataset: context.editor.dataset,
+  series: context.editor.series,
+  grid: {
+    bottom: "3%",
+    containLabel: true,
+    left: "3%",
+    right: "4%",
+    top: "4%",
+  },
+  /**
+   * Should be add to see tooltip
+   */
+  tooltip: {},
+  xAxis: {
+    type: "value",
   },
   yAxis: {
     type: "value",

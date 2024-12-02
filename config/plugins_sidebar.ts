@@ -83,8 +83,8 @@ const sidebars: SidebarsConfig = {
           items: [
             "business-charts/annotations",
             "business-charts/datasources",
-            "business-charts/events",
             "business-charts/instance",
+            "business-charts/events",
             "business-charts/imports",
             "business-charts/images",
             "business-charts/extended",
