@@ -55,11 +55,11 @@ Next, the **Sections** and **Form Elements** categories are shown as not configu
 In the **Initial Request** category, the **Initial Action** is set to **Code**.
 
 <Image
-  title="Create sections dynamically. Example."
+  title="Create sections dynamically using Business Input data source."
   src="/img/blog/2024-11-30-form-panel-4.9.0/dyn-sec-how.png"
 />
 
-The JavaScript from the example above:
+The JavaScript for the example above:
 
 ```JavaScript
 const ids = context.panel.data.series[0].fields[0].values
@@ -78,7 +78,7 @@ context.panel.sectionsUtils.add({ name: sections[2].name, id: sections[2].id, el
 
 Find more available commands and code snippets in the [Panel Parameters](/plugins/business-forms/code/panel/) sections of the Business Forms panel documentation.
 
-## Added HTML, Markdown languages to faciliate better formatting in the **Code Editor**
+## Added HTML, Markdown languages to the Code Editor
 
 We added two new choices into the **Language** parameter of the **Code Editor** form element type. They are **HTML** and **Markdown**.
 

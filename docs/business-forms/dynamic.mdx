@@ -114,12 +114,14 @@ if (feedback?.fields.length) {
 }
 ```
 
-## Dynamic Business Forms example
+## Dynamic Business Forms
 
 The Business Forms can be created dynamically following the code-specified configuration.
 You can find more details in the blog post below.
 
 <BlogPost id="form-panel-server-based-elements-20240428" />
+
+## Sections
 
 :::info Version
 
@@ -127,13 +129,13 @@ Starting from version 4.9.0, **Sections** can be created dynamically as well.
 
 :::
 
-In addition to simple forms, you can create [sections](/plugins/business-forms/form-elements/#sections) dynamically. 
+In addition to simple forms, you can create [sections](/plugins/business-forms/form-elements/#sections) dynamically.
 
 In the example below, the data about the required sections comes from the data source. In this case, we use the [Business Input](/plugins/business-input/) data source to create a basic data frame containing section information, such as ID and name.
 
-Next, the **Sections** and **Form Elements** categories are shown as not configured. 
+Next, the **Sections** and **Form Elements** categories are shown as not configured.
 
-In the **Initial Request** category, the **Initial Action** is set to **Code**. 
+In the **Initial Request** category, the **Initial Action** is set to **Code**.
 
 <Image
   title="Create sections dynamically. Example."
@@ -158,4 +160,3 @@ context.panel.sectionsUtils.add({ name: sections[2].name, id: sections[2].id, el
 ```
 
 Find more available commands and code snippets in the [Panel Parameters](/plugins/business-forms/code/panel/) sections of the Business Forms panel documentation.
-
