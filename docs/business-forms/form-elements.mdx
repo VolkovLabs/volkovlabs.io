@@ -10,7 +10,12 @@ import BlogPost from "@theme/BlogPost";
 
 # Form Elements
 
-The Business Forms plugin is equipped with a rich variety of element types to cover almost any imaginable requirements of a web application.
+The Business Forms plugin is equipped with a wide variety of element types to cover almost any imaginable web application requirements.
+
+:::info
+All form elements (starting from version 4.9.0, including [sections](/plugins/business-forms/form-elements/#sections)) can be created dynamically. 
+For more info, please refer to the [Dynamic Forms](/plugins/business-forms/dynamic/) page of the Business Forms panel documentation.
+:::
 
 ## Layout
 
@@ -149,7 +154,7 @@ To add an option click the 'Add option' button and then specify an option type (
 
 The **Code editor** highlights keywords and formats the entered text. Specific for this element are the following options:
 
-- Language. Select between JSON and JavaScript.
+- Language. You have a wide range of languages to select from (C, C++, C#, GO, HTML, Java, JavaScript, JSON, Markdown, MySQL, PHP, PostgreSQL, Python, Ruby, SQL, TypeScript).
 - Height. How high the entering window should be.
 
 <Image
@@ -189,6 +194,21 @@ The **Time Zone** option is available starting from version 4.0.0.
   title="New Time Zones option for Date and time elements."
   src="/img/blog/2024-07-02-form-panel-4.0.0/time-zone.png"
   width="30%"
+/>
+
+### Date
+
+:::info Version
+
+The **Date** type is available starting from version 4.9.0.
+
+:::
+
+If time is irrelevant to your scenario, instead of **Date and time**, you can select **Date** type.
+
+<Image
+  title="Date and Date and time types."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/date-type.png"
 />
 
 ### File
@@ -363,7 +383,7 @@ All three have some options in common.
   src="/img/plugins/business-forms/icons.png"
 />
 
-#### Custom color/background color for elements
+### Custom color/background color for elements
 
 :::info Version
 
@@ -382,7 +402,7 @@ You can play with **Form Elements** colors. Configurable are:
   src="/img/blog/2024-07-02-form-panel-4.0.0/colors.png"
 />
 
-#### Select Options from Query
+### Select Options from Query
 
 :::info Version
 
@@ -398,7 +418,7 @@ You can specify the **Label** and **Value** fields.
   src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-query.png"
 />
 
-#### Select Options from Get Options Code
+### Select Options from Get Options Code
 
 :::info Version
 
@@ -416,13 +436,13 @@ Below is supported starting from the version 3.5.0.
   src="/img/blog/2023-12-03-form-panel-3.3.0/options-from-code.png"
 />
 
-#### Set Options received asynchronously
+### Set Options received asynchronously
 
 The **Get Options Code** does not support asynchronous code. However, you still can work with options received asynchronously.
 
 It could be done in two steps:
 
-##### Step 1. **Initial Request**.
+#### Step 1. **Initial Request**.
 
 <Image
   title="Initial request to work with options received asynchronously."
@@ -466,7 +486,7 @@ async function fetchData() {
 return fetchData();
 ```
 
-##### Step 2. Create the GET Options Code
+#### Step 2. Create the GET Options Code
 
 Set options for your element from `context.panel.elements`.
 
@@ -484,6 +504,21 @@ if (element?.options) {
   return element?.options;
 }
 ```
+
+### Custom Values
+
+:::info Version
+
+Available starting from version 4.9.0.
+
+:::
+
+If allowed, users can enter custom values into the **Select** and **Multi select** form element types
+
+<Image
+  title="If allowed users can enter custom values into the Select and Multi select form element types."
+  src="/img/blog/2024-11-30-form-panel-4.9.0/select-multi-custom-value.gif"
+/>
 
 ## Conditional Visibility
 
