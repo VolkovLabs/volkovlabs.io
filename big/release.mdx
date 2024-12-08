@@ -3,140 +3,54 @@ image: /img/big/concept.png
 ---
 
 import BlogPost from "@theme/BlogPost";
-import Shorts from "@theme/Shorts";
 
 # Release Notes
 
-Release Notes for the Business Intelligence for Grafana.
+Release Notes for the Business Intelligence platform for Grafana.
 
-## 2.0.0 (2024-10-09)
+## Business Studio 2.0.0 (2024-12-08)
 
-### Features / Enhancements
+**This is a public preview release of Business Studio 2.0 compatible with Business Engine 2.0.0.**
 
-- Updated Business Intelligence 1.8.0 (#18)
-- Updated Business Intelligence 2.0.0 (#19)
-- Add E2E workflow (#20)
-- [Manager] Removed create annotations metric and replace calculation to execution (#131)
-- [Manager] Added evaluation apply mode (#132)
-- [Manager] Added percentage of values evaluation (#133)
-- [Manager] Added headers and message to actions (#134)
-- [Manager] Added EULA and updated to Business Manager (#136)
-- [Manager] Updated to Grafana 11 and dependencies (#137)
-- [Manager] Updated E2E tests (#138)
-- [Manager] Updated Engine token and images (#139)
-- [Manager] Added German, French, Spanish and Chinese (Simplified) translations (#140)
-- [Engine] Added Split alert execution and clean up dataFrame after (#164)
-- [Engine] Added applying evaluation on last value (#165)
-- [Engine] Added evaluation percentage of values (#167)
-- [Engine] Added headers and message to actions (#168)
-- [Engine] Updated to Grafana 11 and dependencies (#170)
-- [Engine] Updated Public Key (#171)
-- [Engine] Added json helper for action message (#174)
-- [Engine] Added E2E Tests (#158)
+### Highlights
 
-## 1.8.0 (UNRELEASED)
+- Developed using a tech stack based on Electron and Tailwind UI.
+- Allows to add and delete Business Engines connected to Grafana instances.
+- Allows to add, update and delete Actions and Alerts.
+- Supports for Light and Dark themes.
+- Provides installers for MacOS, Linux and Windows.
 
-### Features / Enhancements
+### Downloads
 
-- [Manager] Renamed webhooks to actions (#119)
-- [Manager] Increased Test Coverage (#120, #122, #123, #124)
-- [Manager] Updated dependencies, Grafana 10.3.1 (#121)
-- [Manager] Updated variable selection for All (#125)
-- [Manager] Updated not repeated variables are optional (#129)
-- [Manager] Updated overrides layout (#130)
-- [Engine] Increased test coverage to 87% (#148, #150, #154, #155, #156)
-- [Engine] Updated dependencies (#153)
-- [Engine] Renamed webhooks to actions (#157)
-- [Engine] Added postgres variable replace function and running with unset dependent variables (#160)
+- MacOS on ARM64 processors:
+  - [Apple Disk Image](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0-arm64.dmg)
+  - [ZIP file](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-darwin-arm64-2.0.0.zip)
+- MacOS on X64 processors:
+  - [Apple Disk Image](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0-x64.dmg)
+  - [ZIP file](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-darwin-x64-2.0.0.zip)
+- Linux on ARM64 processors:
+  - [RPM](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.arm64.rpm)
+  - [Debian](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_arm64.deb)
+- Linux on X64 processors:
+  - [RPM](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.x86_64.rpm)
+  - [Debian](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_amd64.deb)
+- Windows
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0.Setup.exe)
 
-## 1.7.0 (2023-01-21)
+## Business Engine 2.0.0 (2024-10-08)
 
-<BlogPost id="big-1.7.0-20240204" />
+**This is a public preview release of Business Engine 2.0.**
 
-### Features / Enhancements
+### Highlights
 
-- Updated Business Manager and Business Engine (#12)
-- [App] Added support dashboard refresh to alerting panel.
-- [App] Added filter rows from panel targets.
-- [App] Added enter custom variable values if unable to load options.
-- [App] Added cron validator to validate alert schedule.
-- [App] Added copy alert button.
-- [Engine] Added alerts assignment between engine nodes.
-- [Engine] Added Swagger REST API documentation.
+- Developed using a tech stack based on NestJS framework.
+- Supports Grafana 11 HTTP API.
+- Uses Timescale database to store configuration.
+- Uses Prometheus to store internal metrics.
+- Supports distributed High-Availability.
+- Allows to add, update and delete Alerts and Actions.
 
-## 1.6.0 (2023-01-16)]
+### Downloads
 
-<BlogPost id="big-1.6.0-20240117" />
-
-### Features / Enhancements
-
-- Updated Business Manager and Business Engine (#11)
-- [App] Updated Prometheus dashboard.
-- [App] Added make repeated variable is multi and add all option.
-- [App] Added Group Statuses.
-- [Engine] Added execution batching.
-- [Engine] Added running migrations only via server app.
-- [Engine] Added skip creating annotations for repeat variables without results.
-- [Engine] Updated Production scripts.
-
-## 1.5.0 (UNRELEASED)
-
-### Features / Enhancements
-
-- [App] Added Prometheus dashboard.
-- [App] Added showing load variables error.
-- [App] Added check for creating alerts without variable values.
-- [App] Updated to Grafana Utils 1.2.0.
-- [Engine] Added mapper service to convert entities.
-- [Engine] Added Prometheus middleware.
-- [Engine] Added failing load variables request if unable to query variable options.
-- [Engine] Added redirect support for Home dashboard.
-- [Engine] Added prometheus datasource for getting variable options.
-- [Engine] Updated the License Key.
-- [Engine] Updated to Node 20.
-
-## 1.4.0 (2023-12-31)
-
-### Features / Enhancements
-
-- Updated Business Manager and Business Engine.
-- [App] Added Variables support.
-- [App] Added Grafana proxy requests.
-- [App] Updated Dashboard annotation modes.
-- [App] Added License Info tab.
-- [App] Added Evaluation overrides.
-- [Engine] Added Alert State to created Annotations.
-- [Engine] Added Variables support.
-- [Engine] Updated modules structure.
-- [Engine] Added Grafana proxy for App requests.
-- [Engine] Updated alert checksum.
-- [Engine] Updated Dashboard annotations.
-- [Engine] Added Configurable grafana request timeout.
-- [Engine] Added License Info.
-- [Engine] Added Alert history.
-- [Engine] Added Evaluation overrides.
-
-## 1.3.0 (2023-12-06)
-
-<BlogPost id="big-1.3.0-20231206" />
-
-### Features / Enhancements
-
-- Updated Business Manager and Docker Compose configuration (#6)
-- [App] Added features access for Grafana user role.
-- [App] Updated ESLint configuration and refactor.
-- [App] Added Thresholds in range.
-- [App] Removed Docker container workflow.
-- [App] Updated Icons and Threshold Colors.
-- [Engine] Added calculation range thresholds.
-- [Engine] Added Transformations and Multi Frames.
-- [Engine] Added retry and timeout for grafana health check.
-- [Engine] Updated ESLint configuration and packages.
-
-## 1.2.0 (2023-11-17)
-
-<BlogPost id="big-1.2.0-20231127" />
-
-### Features / Enhancements
-
-- Proof of Concept (POC) release for testing.
+- Docker image
+  - `ghcr.io/volkovlabs/business-engine:2.0.0`
