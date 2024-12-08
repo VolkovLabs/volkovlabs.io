@@ -1,0 +1,320 @@
+---
+authors: [daria]
+slug: business-table-1.9.0/
+tags: [Business Table, Business Suite]
+image: /img/blog/2024-12-04-business-table-1.9.0/banner.png
+keywords: [Business Table, Data, Grafana]
+---
+
+import Catalog from "@site/blog/_catalog.mdx";
+import Feedback from "@site/docs/business-table/_feedback.mdx";
+import GettingStarted from "@site/docs/business-table/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Tutorial from "@site/docs/business-table/_tutorial.mdx";
+import Youtube from "@theme/Youtube";
+
+# Add and delete rows, new column and editor types, Grafana 11.3 Scenes updates in Business Table 1.9.0
+
+We are excited to announce the release of the Business Table panel 1.9.0. This feature release includes the following updates:
+
+- Ability to add and delete a row.
+- Option to hide the table header.
+- Support variables in the data sources for all data flow configurations.
+- Custom values in editable **select** type fields.
+- New column types:
+  - **Image**,
+  - **Preformatted**,
+  - **Boolean**,
+  - **Rich text**.
+- New editor types:
+  - **Text Area**,
+  - **Switch**.
+- New parameter **default pagination size**.
+- Compatibility with Grafana 11.3 and Scenes-powered dashboards.
+
+<Catalog date="December 2, 2024" />
+
+## Downloads
+
+The Business Table downloads number is a generous Community gift to us. We are thrilled with 6,000 downloads. Let's see what the latest release will do with this plugin adoption.
+
+<Image
+  title="The Business Table downloads reaches 6,000."
+  src="/img/blog/2024-12-04-business-table-1.9.0/downloads.png"
+/>
+
+## Ability to add and delete a row
+
+This is the most requested feature. Starting from this release, an end user of your Business Table panel can add and remove rows from Grafana dashboard!
+
+<Image
+  title="Add and delete rows from the Business Table directly from the Grafana dashboard."
+  src="/img/blog/2024-12-04-business-table-1.9.0/table-add-delete-row.gif"
+  width="70%"
+/>
+
+Below are details on how you can configure this new feature.
+
+Use **Add data** parameter category to configure:
+
+1.  Which tabs of your Business Table panel should allow to add a row.
+2.  What columns should a user specify while adding a new row. It is done by turning on the switch next to a column name.
+3.  The **Editor Type** is a UI element to enter a new value.
+4.  [Permission](/plugins/business-table/permission/) is a granular control of who is allowed to add a new row. It is configured per each tab individually.
+5.  **Add Request** consists of a data source and the query.
+
+Use **Delete data** parameter category to configure:
+
+6.  Which tabs of your Business Table panel should allow to delete a row.
+7.  [Permission](/plugins/business-table/permission/) is a granular control of who is allowed to delete a row. It is configured per each tab individually.
+8.  **Delete Request** consists of a data source and the query.
+
+<Image
+  title="Add and delete rows configuration details."
+  src="/img/blog/2024-12-04-business-table-1.9.0/table-add-delete-conf.png"
+  width="100%"
+/>
+
+## Option to hide the table header
+
+You can hide the Business Table header from the dashboard by turning off the **Layout**->**Show header** switch.
+
+<Image
+  title="Show or hide the table header."
+  src="/img/blog/2024-12-04-business-table-1.9.0/show-hide.png"
+  width="70%"
+/>
+
+## Support variables in the data sources for all data flow configurations
+
+All Business Table data flows are configurable separately, allowing unbeatable flexibility. Starting from this release, a data source in every flow can be specified as a variable.
+
+Let's say a Grafana dashboard has the following dashboard variable:
+
+- **Variable type**: Data source,
+- **Name**: DS,
+- **Type**: PostgreSQL.
+
+<Image
+  title="Dashboard variable example."
+  src="/img/blog/2024-12-04-business-table-1.9.0/dashboard-variable-ds.png"
+  width="60%"
+/>
+
+You can use this variable in every data flow that affects:
+
+- row,
+- [nested objects](/plugins/business-table/nested/) stored as a column value.
+
+### Row
+
+Rows has three possible data flows:
+
+- **Add data**. Executed:
+  - if the [add a row functionality](#ability-to-add-and-delete-a-row) is allowed,
+  - after a user clicks on a (+) icon to add a new row.
+- **Editable data**. Executed:
+  - if the [edit a row](/blog/business-table-1.3.0/#edit-data-and-impose-permission-protection) functionality is allowed,
+  - after a user clicks on the pencil icon to edit a row.
+- **Delete data**. Executed:
+  - if the [delete a row functionality](#ability-to-add-and-delete-a-row) is allowed,
+  - after a user clicks on a trash can icon to delete a row.
+
+<Image
+  title="Use a dashboard variable in the all three data flows for a single value column."
+  src="/img/blog/2024-12-04-business-table-1.9.0/single.png"
+/>
+
+### Nested objects
+
+Nested objects have four possible data flows:
+
+- **Get Options**. Executed:
+  - on the form load to populate the column from a data source.
+- **Add Options**. Executed:
+  - if the **Add Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the **Add** button.
+- **Update Options**. Executed:
+  - if the **Update Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the pencil button.
+- **Delete Options**. Executed:
+  - if the **Delete Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the trash can button.
+
+<Image
+  title="Use a dashboard variable in the all four data flows for a nested objects column."
+  src="/img/blog/2024-12-04-business-table-1.9.0/nested.png"
+/>
+
+## Custom values in editable **select** type fields.
+
+The **Select** is one of the types that you can use to add or edit a column value.
+
+<Image
+  title="The Select is one of the types that you can use to add or edit a column value."
+  src="/img/blog/2024-12-04-business-table-1.9.0/select.png"
+  width="40%"
+/>
+
+Starting from this release, in addition to selecting from a pre-populated drop-down list, a user can enter a custom value.
+
+<Image
+  title="If allowed, a user can enter a custom value in the prepopulated drop-down list while adding or editing a row."
+  src="/img/blog/2024-12-04-business-table-1.9.0/select-new-value.gif"
+/>
+
+To allow that, ensure to set **Allow custom value** to ON.
+
+<Image
+  title="Allow custom values parameter in the Add data and Editable data for the select type column."
+  src="/img/blog/2024-12-04-business-table-1.9.0/allow-custom-values.png"
+/>
+
+## New column types
+
+A column type is specified in the **Layout** category and determines what the data looks like when displaying for a user review.
+
+<Image
+  title="Four new column types."
+  src="/img/blog/2024-12-04-business-table-1.9.0/new-types.png"
+/>
+
+### Boolean
+
+The **Boolean** type displays a checkmark in a circle for a `true` value and an empty circle for a `false` value.
+
+<Image
+  title="An example of the Boolean type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/boolean-type.png"
+/>
+
+### Image
+
+The **Image** type interprets the image links and base64 formats.
+
+<Image
+  title="An example of the Image type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/image-type.png"
+/>
+
+### Preformatted
+
+The Preformatted type, which is similar to the `pre` HTML tag, is designed to display text with spaces and line breaks preserved. This means the text is shown exactly as it is written, without any formatting changes.
+
+If the **Preformatted style** switch is ON, the text is displayed in the fixed-width font.
+If the **Preformatted style** switch is off, the text is displayed in the font configured for the user's browser.
+
+<Image
+  title="An example of the Preformatted type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/pre-type.png"
+/>
+
+### Rich text
+
+The **Rich text** type interprets sanitized HTML and Markdown.
+
+<Image
+  title="An example of the Rich Text type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/rich-type.png"
+/>
+
+HTML from the example above:
+
+```html
+<h3>Features/ 2</h3>
+- Updated behavior <br />
+- Added All options<br />
+```
+
+Markdown from the example above
+
+```markdown
+This is the first line.\
+And this is the second line.
+```
+
+## New editor types
+
+An editor type is specified in the **Add Data** and **Editable Data** categories and determines what the data looks like when a user adds or edits the data, respectively.
+
+### Text Area
+
+The **Text Area** editor type is designed to add and edit multi-row text values.
+
+<Image
+  title="An example of the Text Area Editor type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/text-area-type.png"
+/>
+
+### Switch
+
+The **Switch** editor type makes the user's work with the Business Table panel more intuitive while transforming the boolean type data into a switch that can be turned on and off.
+
+<Image
+  title="An example of the Switch Editor type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/switch-editor-type.png"
+/>
+
+## Default pagination size
+
+With the **default pagination size** parameter, you configure how many rows per page are availabe when the dashboard loads for the first time. If a user changes that, it gets saved into the browser cookies for the user's convinience.
+
+<Image
+  title="A default pagination size parameter."
+  src="/img/blog/2024-12-04-business-table-1.9.0/page-size.png"
+/>
+
+## Compatibility with Grafana 11.3 and Scenes-powered dashboards
+
+The [Scenes powered dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins.
+
+Starting from release 1.9.0, the Business Table panel fully migrated to support Grafana 11.3.
+
+<GettingStarted />
+
+<Tutorial />
+
+## Release Notes
+
+### Features / Enhancements in 1.9.0
+
+- Added Image cell type (#177)
+- Updated Autosize Code Editor (#179)
+- Added default pagination size (#181)
+- Added preformatted cell type (#180)
+- Updated table cells border (#183)
+- Added functionality to add and delete row (#184)
+
+### Features / Enhancements in 1.8.0
+
+- Updated sort state on dashboard refresh (#163)
+- Added support variables in data sources for editable and nested objects (#167)
+- Updated group expand and collapse behavior (#161)
+- Added custom value to editable select field (#165)
+- Updated group expanding for empty cells (#169)
+- Added type check for text area (#172)
+- Updated behavior for edit process (error with TextArea initial value) (#176)
+
+### Features / Enhancements in 1.7.0
+
+- Updated useNestedObjects hook to display request errors and empty values (#158)
+- Added Sanitized HTML and Markdown column type (#154)
+- Updated rows heights when group collapse (#159)
+- Updated filter options to match exactly (#160)
+- Updated data source name to id (#156)
+- Added option to hide table header (#157)
+
+### Features / Enhancements in 1.6.0
+
+- Updated refresh and useRuntimeVariables for dashboard scene (#129)
+- Added replaceVariables to file name (#131)
+- Added Textarea column editor type (#133)
+- Added replaceVariables to column header (#134)
+- Updated to Grafana 11.3. and dependencies (#137)
+- Added colored Text and colored Background for aggregated rows (#136)
+- Added Handling Data Source Request Errors (#140)
+- Added customization for column header (#141)
+- Updated text wrap (#143)
+
+<Feedback />

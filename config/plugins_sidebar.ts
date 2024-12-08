@@ -341,7 +341,15 @@ const sidebars: SidebarsConfig = {
           id: "business-table/index",
           label: "Introduction",
         },
-        "business-table/edit",
+        {
+          items: ["business-table/add-delete", "business-table/permission"],
+          label: "Editable data",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-table/edit",
+          },
+        },
         {
           items: ["business-table/nested"],
           label: "Features",
