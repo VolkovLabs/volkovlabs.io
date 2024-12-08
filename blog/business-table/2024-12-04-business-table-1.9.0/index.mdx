@@ -40,7 +40,7 @@ We are excited to announce the release of the Business Table panel 1.9.0. This f
 The Business Table downloads number is a generous Community gift to us. We are thrilled with 6,000 downloads. Let's see what the latest release will do with this plugin adoption.
 
 <Image
-  title="The Business Table downloads reaches 6 000."
+  title="The Business Table downloads reaches 6,000."
   src="/img/blog/2024-12-04-business-table-1.9.0/downloads.png"
 />
 
@@ -92,9 +92,9 @@ All Business Table data flows are configurable separately, allowing unbeatable f
 
 Let's say a Grafana dashboard has the following dashboard variable:
 
-1.  **Variable type**: Data source,
-2.  **Name**: DS,
-3.  **Type**:PostgreSQL.
+- **Variable type**: Data source,
+- **Name**: DS,
+- **Type**: PostgreSQL.
 
 <Image
   title="Dashboard variable example."
@@ -104,12 +104,12 @@ Let's say a Grafana dashboard has the following dashboard variable:
 
 You can use this variable in every data flow that affects:
 
-- a single value column,
+- row,
 - [nested objects](/plugins/business-table/nested/) stored as a column value.
 
-### Single value column
+### Row
 
-A single value column has three possible data flows:
+Rows has three possible data flows:
 
 - **Add data**. Executed:
   - if the [add a row functionality](#ability-to-add-and-delete-a-row) is allowed,
@@ -230,7 +230,8 @@ HTML from the example above:
 Markdown from the example above
 
 ```markdown
-This is the first line. And this is the second line.
+This is the first line.\
+And this is the second line.
 ```
 
 ## New editor types
@@ -260,7 +261,7 @@ The **Switch** editor type makes the user's work with the Business Table panel m
 With the **default pagination size** parameter, you configure how many rows per page are availabe when the dashboard loads for the first time. If a user changes that, it gets saved into the browser cookies for the user's convinience.
 
 <Image
-  title="A default size parameter."
+  title="A default pagination size parameter."
   src="/img/blog/2024-12-04-business-table-1.9.0/page-size.png"
 />
 
