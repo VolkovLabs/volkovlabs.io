@@ -341,7 +341,9 @@ const sidebars: SidebarsConfig = {
           id: "business-table/index",
           label: "Introduction",
         },
+        "business-table/add-delete",
         "business-table/edit",
+        "business-table/permission",
         {
           items: ["business-table/nested"],
           label: "Features",
