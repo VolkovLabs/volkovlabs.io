@@ -13,7 +13,7 @@ Nested objects feature is supported starting from the Business table 1.5.0
 
 :::
 
-Simply put, this feature allows an end-user to add, edit, and delete rows associated with a table cell. Until we have a better name, we call it the **nested objects** or **comments**.
+Simply put, this feature allows an end-user to add, edit, and delete rows associated with a table cell. Sometimes this feature can be called **Comments**.
 
 Developed to meet the specific requirements of our sponsor, this feature, even in its current form, holds significant potential for the broader open-source community.
 
@@ -205,14 +205,14 @@ SELECT * FROM order_status WHERE order_status_id IN (${payload.ids:csv});
 
 ## Comment Card
 
-Configuring a comment card means identifying data frame column names for display. Starting from release 1.5.0, you can specify four column names. An end user can enter only top and bottom **title** and **description** when adding or editing objects. Fields in the middle can displays dates, user login who did changes, etc.
+Configuring a comment card means identifying data frame column names for display. Starting from release 1.5.0, you can specify four column names. An end user can enter only top and bottom **title** and **description** when adding or editing objects. Fields in the middle can display dates, user login who did changes, etc.
 
 <Image
   title="Configure fields to display on a comment card."
   src="/img/blog/2024-10-04-business-table-1.5.0/card.png"
 />
 
-## Actions and privileges
+## Actions and permission
 
 There are three actions you can allow users to perform on the nested objects/comments. All three actions are availabe in the pop-up window after a user clicks on the **Show All** link.
 
