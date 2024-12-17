@@ -31,7 +31,7 @@ const sidebars: SidebarsConfig = {
         {
           type: "link",
           href: "/big/api",
-          label: "REST API",
+          label: "Engine API",
         },
       ],
       label: "Business Engine",
