@@ -26,7 +26,9 @@ Without further ado, let's summarize the November deliverables.
 
 ## Master educator
 
-December was a truly festive month for us as we were honored with the Master Educator Grafana Champions Award. This award is a testament to the champions' consistent production of high-quality educational content, such as blog posts, tutorials, and video guides. These resources are instrumental in unlocking the full potential of Grafana. They provide valuable insights and accessible learning materials which is a key factor in fostering Grafana's growth and adoption.
+December was a truly festive month for us as we were honored with the Master Educator Grafana Champions Award. This award is a testament to the champions' consistent production of high-quality educational content, such as blog posts, tutorials, and video guides.
+
+These resources are instrumental in unlocking the full potential of Grafana. They provide valuable insights and accessible learning materials which is a key factor in fostering Grafana's growth and adoption.
 
 <Image
   title="Master educator award."
@@ -36,18 +38,18 @@ December was a truly festive month for us as we were honored with the Master Edu
 I wish you can watch the online ceremony, it was a blast.
 Two feelings I experienced right after:
 
-- Grafana is doing an outstanding job with the championship program.
+- Grafana is doing an outstanding job with the Championship program.
 - Community recognition feels special and, most importantly, inspiring. We already have a packed roadmap for the next year! Stay tuned for more products, ideas, solutions and tutorials from us!
 
 ## Release dashboard tutorial
 
 Our most popular Youtube video is ["Create your Business Grafana dashboard | Step by step for analysts | Grafana Tutorial"](https://www.youtube.com/watch?v=HNCKbGfAU0Q) with 34K views so far.
 
-Even though, the second popular video, ["JSON API and Infinity Data Source tutorial for Grafana | How to display the unemployment rate"](https://www.youtube.com/watch?v=B4Uj1n4Cr88) is very close in popularity, the fact still shows where the most uncertanties for Grafana community are. People want to start with Grafana dashboards right away to see the available functionality and be able to evaluate if Grafana fits their project needs.
+Even though, the second popular video, ["JSON API and Infinity Data Source tutorial for Grafana. How to display the unemployment rate"](https://www.youtube.com/watch?v=B4Uj1n4Cr88) is very close in popularity, the fact still shows where the most uncertanties for Grafana community are. People want to start with Grafana dashboards right away to see the available functionality and be able to evaluate if Grafana fits their project needs.
 
 We at Volkov Labs created myriads of various dashboards, overcoming hundreds of pitfalls and solving many production issues. Sharing the details behind one of our most utilized dashboards seems a natural continuation of our mission.
 
-We use the [Release dashboard](https://release.volkovlabs.io/) project on a daily basis to track our open-spource plugin development.
+We use the [Release dashboard](https://release.volkovlabs.io/) project on a daily basis to track our Business Suite plugins development.
 
 <Image
   title="Release dashboard sectioned."
@@ -57,12 +59,12 @@ We use the [Release dashboard](https://release.volkovlabs.io/) project on a dail
 The brilliant idea to share how this dashboard is configured took a while to appear, but when it arrived, it seemed so obvious for many reasons:
 
 - The dashboard features the most used Grafana core visualization, [Time Series](https://www.youtube.com/watch?v=YpOazX67GSo), in many different configurations.
-- In addition, it also has some variations of the [Business Charts](https://volkovlabs.io/plugins/business-charts/) panel, which serve as good samples for this multifaceted panel.
-- What is more, the [Business Calendar](https://volkovlabs.io/plugins/business-calendar/) is a nice final touch to illustrate another possible view of the data.
+- In addition, it also has some variations of the [Business Charts](/plugins/business-charts/) panel, which serve as good samples for this multifaceted panel.
+- What is more, the [Business Calendar](/plugins/business-calendar/) is a nice final touch to illustrate another possible view of the data.
 
 This dashboard combines many things we love about Grafana, among them the ability to follow the existing user requirements closely without unnecessary bundled features and, people's favorite, the simplicity of configuration.
 
-An honorable mention of this project goes to the [Business Forms](https://volkovlabs.io/plugins/business-forms/) panel, which provides an interface to our release manager to enter release specifics into the Timescale data source using the Grafana dashboard.
+An honorable mention of this project goes to the [Business Forms](/plugins/business-forms/) panel, which provides an interface to our release manager to enter release specifics into the Timescale data source using the Grafana dashboard.
 
 <Image
   title="The Grafana dashboard to enter release details into the data source."
@@ -71,19 +73,7 @@ An honorable mention of this project goes to the [Business Forms](https://volkov
 
 Feel free to spend a minute or two reviewing the [dashboard itself](https://release.volkovlabs.io/), reading the detailed blog post or watching the video.
 
-<table>
-  <tr style={{ border: 0 }}>
-    <td style={{ border: 0, width: "50%" }}>
-      <BlogPost id="release-dashboard-20241113" />
-    </td>
-    <td style={{ border: 0, width: "50%" }}>
-      <Youtube
-        id="tUGRQBBZoRQ"
-        title="How to create a business dashboard in Grafana | Plugin Release dashboard"
-      />
-    </td>
-  </tr>
-</table>
+### Blog post
 
 The blog post covers the following topics:
 
@@ -93,6 +83,10 @@ The blog post covers the following topics:
 - Configuration of all Release dashboard panels.
 - Configuration of all the Business Forms panel.
 
+<BlogPost id="release-dashboard-20241113" />
+
+### Tutorial
+
 The video has a bit more informaton than the blog post:
 
 - How the business dashboard (Grafana Release) has been configured.
@@ -100,9 +94,16 @@ The video has a bit more informaton than the blog post:
 - What type of data source can a panel have, how to share the same data source between panels.
 - How to use different data source for the same panel.
 - Business Forms user entry example.
-  Explained Grafana functionality:
+
+Explained Grafana functionality:
+
 - What is Grafana transformations.
 - Steps to configure any Grafana visualization panel.
+
+<Youtube
+  id="tUGRQBBZoRQ"
+  title="How to create a business dashboard in Grafana. Plugin Release dashboard."
+/>
 
 ## Total Business Suite downloads
 
@@ -171,7 +172,7 @@ The [Business Forms](/plugins/business-forms/) become even more dynamic with rel
 
 Keeping documentation up-to-date is the real challenge of fast-expanding plugin functionality, especially if not only simple features are added but the whole configuration approach changes
 
-In November, we found time to revamp the documentation(add the link here) for the [Business Table](/plugins/business-table) panel.
+In November, we found time to revamp the documentation for the [Business Table](/plugins/business-table) panel.
 
 Let us know if the schema below makes it easy to follow the configurational steps.
 
