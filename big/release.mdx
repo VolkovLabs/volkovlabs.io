@@ -8,11 +8,48 @@ import BlogPost from "@theme/BlogPost";
 
 Release Notes for the Business Intelligence platform for Grafana.
 
-## Business Studio 2.0.0 (2024-12-08)
+## Business Intelligence 2.1.0 (2024-12-17)
 
-**This is a public preview release of Business Studio 2.0 compatible with Business Engine 2.0.0.**
+**This is a public preview release of Business Studio 2.1.0 compatible with Business Engine 2.1.0.**
 
-### Highlights
+Business Studio is a visual tool of the Business Intelligence platform to manage Business Engines.
+
+## Business Studio 2.1.0
+
+- Major UI updates for engine, alert rules and action management.
+- Added JSON highlights for the latest event in alert rules.
+- Added auto application updater for MacOS and Windows.
+- Added minimum Business Engine version check.
+
+## Business Engine 2.1.0
+
+- Added Engine version for compatibility with Business Studio.
+- Added default values for environment variables to make them optional.
+- Added environment variable for custom database name.
+- Added API to get history events for Overview page.
+- Added API to get alert rules and actions by Id for updating in Business Studio.
+- Updated support time ranges in Scenes dashboards for Grafana 11.3+.
+
+### Downloads from GitHub
+
+- MacOS:
+  - [Apple Disk Image x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/Business.Studio-2.1.0-x64.dmg)
+  - [ZIP file x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/Business.Studio-darwin-x64-2.1.0.zip)
+- Linux:
+  - [RPM arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio-2.1.0-1.arm64.rpm)
+  - [Debian arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio_2.1.0_arm64.deb)
+  - [RPM x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio-2.1.0-1.x86_64.rpm)
+  - [Debian x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio_2.1.0_amd64.deb)
+- Windows
+  - [Executable x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/Business.Studio-2.1.0.Setup.exe)
+
+## Business Intelligence 2.0.0 (2024-12-08)
+
+**This is a public preview release of Business Studio 2.0.0 compatible with Business Engine 2.0.0.**
+
+Business Studio is a visual tool of the Business Intelligence platform to manage Business Engines.
+
+## Business Studio 2.0.0
 
 - Developed using a tech stack based on Electron and Tailwind UI.
 - Allows to add and delete Business Engines connected to Grafana instances.
@@ -20,28 +57,7 @@ Release Notes for the Business Intelligence platform for Grafana.
 - Supports for Light and Dark themes.
 - Provides installers for MacOS, Linux and Windows.
 
-### Downloads
-
-- MacOS on ARM64 processors:
-  - [Apple Disk Image](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0-arm64.dmg)
-  - [ZIP file](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-darwin-arm64-2.0.0.zip)
-- MacOS on X64 processors:
-  - [Apple Disk Image](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0-x64.dmg)
-  - [ZIP file](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-darwin-x64-2.0.0.zip)
-- Linux on ARM64 processors:
-  - [RPM](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.arm64.rpm)
-  - [Debian](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_arm64.deb)
-- Linux on X64 processors:
-  - [RPM](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.x86_64.rpm)
-  - [Debian](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_amd64.deb)
-- Windows
-  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0.Setup.exe)
-
-## Business Engine 2.0.0 (2024-10-08)
-
-**This is a public preview release of Business Engine 2.0.**
-
-### Highlights
+## Business Engine 2.0.0
 
 - Developed using a tech stack based on NestJS framework.
 - Supports Grafana 11 HTTP API.
@@ -50,7 +66,15 @@ Release Notes for the Business Intelligence platform for Grafana.
 - Supports distributed High-Availability.
 - Allows to add, update and delete Alerts and Actions.
 
-### Downloads
+### Downloads from GitHub
 
-- Docker image
-  - `ghcr.io/volkovlabs/business-engine:2.0.0`
+- MacOS:
+  - [Apple Disk Image x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0-x64.dmg)
+  - [ZIP file x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-darwin-x64-2.0.0.zip)
+- Linux:
+  - [RPM arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.arm64.rpm)
+  - [Debian arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_arm64.deb)
+  - [RPM x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.x86_64.rpm)
+  - [Debian x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_amd64.deb)
+- Windows
+  - [Executable x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0.Setup.exe)

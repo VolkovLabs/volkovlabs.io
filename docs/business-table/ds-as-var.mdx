@@ -1,0 +1,72 @@
+---
+tags:
+  - Business Table
+---
+
+import Image from "@theme/Image";
+
+# Data sources as variables
+
+:::info version
+
+The feature is supported starting from version 1.9.0
+:::
+
+All Business Table data flows are configurable separately, allowing unbeatable flexibility. Starting from this release, a data source in every flow can be specified as a variable.
+
+Let's say a Grafana dashboard has the following dashboard variable:
+
+- **Variable type**: Data source,
+- **Name**: DS,
+- **Type**: PostgreSQL.
+
+<Image
+  title="Dashboard variable example."
+  src="/img/blog/2024-12-04-business-table-1.9.0/dashboard-variable-ds.png"
+  width="60%"
+/>
+
+You can use this variable in every data flow that affects:
+
+- row,
+- [nested objects](/plugins/business-table/nested/) stored as a column value.
+
+### Row
+
+Rows has three possible data flows:
+
+- **Add data**. Executed:
+  - if the add a row functionality is allowed,
+  - after a user clicks on a (+) icon to add a new row.
+- **Editable data**. Executed:
+  - if the edit a row functionality is allowed,
+  - after a user clicks on the pencil icon to edit a row.
+- **Delete data**. Executed:
+  - if the delete a row functionality is allowed,
+  - after a user clicks on a trash can icon to delete a row.
+
+<Image
+  title="Use a dashboard variable in the all three data flows for a single value column."
+  src="/img/plugins/business-table/single.png"
+/>
+
+### Nested objects
+
+Nested objects have four possible data flows:
+
+- **Get Options**
+  - on the form load to populate the column from a data source.
+- **Add Options**
+  - if the **Add Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the **Add** button.
+- **Update Options**
+  - if the **Update Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the pencil button.
+- **Delete Options**
+  - if the **Delete Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the trash can button.
+
+<Image
+  title="Use a dashboard variable in the all four data flows for a nested objects column."
+  src="/img/blog/2024-12-04-business-table-1.9.0/nested.png"
+/>
