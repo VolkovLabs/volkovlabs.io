@@ -342,14 +342,15 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         {
-          items: ["business-table/layout",
-                  "business-table/add",
-                  "business-table/edit",
-                  "business-table/editor-types",
-                  "business-table/delete",
-                  "business-table/nested",
-                  "business-table/permission"
-                ],
+          items: [
+            "business-table/layout",
+            "business-table/add",
+            "business-table/edit",
+            "business-table/editor-types",
+            "business-table/delete",
+            "business-table/nested",
+            "business-table/permission",
+          ],
           label: "Editable data",
           type: "category",
           link: {
