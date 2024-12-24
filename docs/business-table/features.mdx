@@ -9,26 +9,25 @@ import Image from "@theme/Image";
 
 The Business Table panel has the following features.
 
-| Section                                                                     | Description                                        |
-| --------------------------------------------------------------------------- | -------------------------------------------------- |
-| [Row grouping](#row-grouping)                                               | Demonstrates row grouping                          |
-| [Multi tables as tabs](#multi-tables-as-tabs)                               | Demonstrates multi table as tabs                   |
-| [Auto-width columns](#auto-width-columns)                                   | Demonstrates auto-width columns                    |
-| [Colored Background using Thresholds](#colored-background-using-thresholds) | Demonstrates coloring thresholds                   |
-| [Table footer](#table-footer)                                               | Explains how the table footer works                |
-| [Filtering using client and query dashboard variables](#filtering)          | Demonstrates client and dashboard variable filters |
-| [Sorting](#sorting)                                                         | Demonstrates column sorting                        |
-| [Pagination](#pagination)                                                   | Explains pagination                                |
-| [Pin Columns](#pin-columns)                                                 | Demonstrates column pinning                        |
-| [Download button](#download-button)                                         | Demonstrates the Download button                   |
-| [Data links](#data-links)                                                   | Demonstrates data links                            |
-| [Show and hide columns](#show-and-hide-columns)                             | Demonstrates the show/hide column button           |
-| [Standard options support](#support-of-the-standard-options)                | Explains the Syandard options support              |
-| [Hide the table header](#option-to-hide-the-table-header)                   | Explains how to hide the table header              |
+| Section                                                            | Description                                        |
+| ------------------------------------------------------------------ | -------------------------------------------------- |
+| [Tree View/Row Grouping](#row-grouping)                            | Demonstrates tree view/row grouping                |
+| [Multi tables as tabs](#multi-tables-as-tabs)                      | Demonstrates multi table as tabs                   |
+| [Auto-width columns](#auto-width-columns)                          | Demonstrates auto-width columns                    |
+| [Table footer](#table-footer)                                      | Explains how the table footer works                |
+| [Filtering using client and query dashboard variables](#filtering) | Demonstrates client and dashboard variable filters |
+| [Sorting](#sorting)                                                | Demonstrates column sorting                        |
+| [Pagination](#pagination)                                          | Explains pagination                                |
+| [Pin Columns](#pin-columns)                                        | Demonstrates column pinning                        |
+| [Download button](#download-button)                                | Demonstrates the Download button                   |
+| [Data links](#data-links)                                          | Demonstrates data links                            |
+| [Show and hide columns](#show-and-hide-columns)                    | Demonstrates the show/hide column button           |
+| [Standard options support](#support-of-the-standard-options)       | Explains the Syandard options support              |
+| [Hide the table header](#option-to-hide-the-table-header)          | Explains how to hide the table header              |
 
 ## Row grouping
 
-This feature allows you to combine unique field values into groups and collapse/expanse using little arrows.
+This feature allows you to combine unique field values into groups and collapse/expanse using little arrows to create a layout similar to Tree View.
 
 <Image
   title="The Business Table panel row grouping."
@@ -54,15 +53,6 @@ The column width can be determined automatically within a specified range or exp
 <Image
   title="Auto-width column property."
   src="/img/blog/2024-09-05-business-table-1.2.0/auto-width.png"
-/>
-
-## Colored Background using Thresholds
-
-The Business Table panel supports the Grafana **Thresholds** feature.
-
-<Image
-  title="The Business Table panel supports the Grafana Thresholds feature."
-  src="/img/blog/2024-09-05-business-table-1.2.0/thresholds.png"
 />
 
 ## Table footer
@@ -161,6 +151,19 @@ In the example below, we use the Timescale data source, consequently SQL, to ret
   src="/img/blog/2024-09-26-business-table-1.3.0/query.png"
 />
 
+### Default pagination size
+
+:::info version
+Starting from version 1.9.0, the Business Table supports the **Default pagination size** parameter.
+:::
+
+With the **default pagination size** parameter, you configure how many rows per page are availabe when the dashboard loads for the first time. If a user changes that, it gets saved into the browser cookies for the user's convinience.
+
+<Image
+  title="A default pagination size parameter."
+  src="/img/blog/2024-12-04-business-table-1.9.0/page-size.png"
+/>
+
 ## Pin Columns
 
 It is a helpful feature for the wide tables. You can pin any column to always stay visible on the left or right.
@@ -243,3 +246,9 @@ You can hide the Business Table header from the dashboard by turning off the **L
   src="/img/blog/2024-12-04-business-table-1.9.0/show-hide.png"
   width="70%"
 />
+
+:::note
+
+The plus icon (the button to add a row) is also hidden if you hide a table header. That means if you need a user to have the ability to add a row, keep the table header visible.
+
+:::
