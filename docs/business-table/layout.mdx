@@ -1,0 +1,106 @@
+---
+tags:
+  - Business Table
+---
+
+import Image from "@theme/Image";
+
+# Layout
+
+The **Layout** parameter category determines the set of tabs and then the set of columns and their display types for each tab.
+
+<Image
+  title="The layout category of the Business Table panel."
+  src="/img/plugins/business-table/layout.png"
+/>
+
+## Column types to display data
+
+A column display type is specified in the **Layout**->**Format**->**Type** and determines what the data looks like when displaying for a user review. At this moment, there are 8 available types to choose from.
+
+<Image
+  title="The display data types of the Business Table panel."
+  src="/img/plugins/business-table/layout-types.png"
+/>
+
+### Auto
+
+Same as Colored text. Used by default.
+
+### Boolean
+
+The **Boolean** type displays a checkmark in a circle for a `true` value and an empty circle for a `false` value.
+
+<Image
+  title="An example of the Boolean type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/boolean-type.png"
+/>
+
+### Colored Background
+
+The **Colored background** types changes the cell background colors following the Grafana **Thresholds** configuration.
+
+Using the **Apply to Row** parameter, you can color the whole row(not shown) or only one cell (as shown).
+
+<Image
+  title="Colored background type uses Grafana Thresholds feature."
+  src="/img/plugins/business-table/colored-background.png"
+/>
+
+### Colored text
+
+The **Colored text** types changes the cell font colors following the Grafana **Thresholds** configuration.
+
+<Image
+  title="Colored text type uses Grafana Thresholds feature."
+  src="/img/plugins/business-table/colored-text.png"
+/>
+
+### Image
+
+The **Image** type interprets the image links and base64 formats.
+
+<Image
+  title="An example of the Image type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/image-type.png"
+/>
+
+### Nested objects
+
+See the [Nested Ojects](/plugins/business-table/nested/) section of this documentation.
+
+### Preformatted
+
+The **Preformatted type**, which is similar to the `pre` HTML tag, is designed to display text with spaces and line breaks preserved. This means the text is shown exactly as it is written, without any formatting changes.
+
+If the **Preformatted style** switch is On, the text is displayed in the fixed-width font.
+If the **Preformatted style** switch is Off, the text is displayed in the font configured for the user's browser.
+
+<Image
+  title="An example of the Preformatted type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/pre-type.png"
+/>
+
+### Rich text
+
+The **Rich text** type interprets sanitized HTML and Markdown.
+
+<Image
+  title="An example of the Rich Text type in the Business Table panel."
+  src="/img/blog/2024-12-04-business-table-1.9.0/rich-type.png"
+/>
+
+HTML from the example above:
+
+```html
+<h3>Features/ 2</h3>
+- Updated behavior <br />
+- Added All options<br />
+```
+
+Markdown from the example above:
+
+```markdown
+This is the first line.\
+And this is the second line.
+```
