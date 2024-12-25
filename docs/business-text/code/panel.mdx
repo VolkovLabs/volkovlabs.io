@@ -1,0 +1,283 @@
+---
+tags:
+  - Business Text
+image: /img/plugins/business-text/replace.png
+---
+
+import Image from "@theme/Image";
+
+# Panel Parameters
+
+### context.data
+
+Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data**.
+
+#### Usage
+
+```javascript
+context.data;
+```
+
+#### Example
+
+```javascript
+const data = context.data;
+```
+
+### context.element
+
+Current html element
+
+#### Usage
+
+```javascript
+context.element;
+```
+
+#### Example
+
+```javascript
+const element = context.element;
+```
+
+### context.dataFrame
+
+Selected Data Frame for **Every Row**, **All Rows** templates.
+
+#### Usage
+
+```javascript
+context.dataFrame;
+```
+
+#### Example
+
+```javascript
+const frame = context.dataFrame;
+```
+
+### panel.handlebars
+
+Handlebars library.
+
+#### Usage
+
+```javascript
+context.handlebars;
+```
+
+#### Example
+
+```javascript
+context.handlebars.registerHelper("unique", (context, key) => {
+  return [...new Set(context.map((item) => item[key]))];
+});
+```
+
+### panel.panelData
+
+Panel data.
+
+#### Usage
+
+```javascript
+context.panelData;
+```
+
+#### Example
+
+```javascript
+const dashboardTimeZone = context.panelData.timeZone;
+const dashboardTimeRange = context.panelData.timeRange;
+
+context.handlebars.registerHelper("tz", () => dashboardTimeZone);
+context.handlebars.registerHelper("range", () => dashboardTimeRange);
+context.handlebars.registerHelper(
+  "browser",
+  () => Intl.DateTimeFormat().resolvedOptions().timeZone
+);
+```
+
+## Grafana
+
+### grafana.eventBus
+
+Publish and subscribe to application events.
+
+#### Usage
+
+```javascript
+context.grafana.eventBus;
+```
+
+#### Example
+
+```javascript
+const subscriber = eventBus.getStream(RefreshEvent).subscribe(() => {
+  // to do
+});
+```
+
+### grafana.getLocale()
+
+Returns the user's locale: 'en', 'fr', 'es', and so on.
+
+#### Usage
+
+```javascript
+context.grafana.getLocale();
+```
+
+#### Example
+
+```javascript
+const messages = {
+  Hello: {
+    en: "Hello",
+    fr: "Salut",
+    es: "Hola",
+  },
+  Default: {
+    en: "The query didn't return any results.",
+    fr: "La requête n'a renvoyé aucun résultat.",
+    es: "La consulta no arrojó ningún resultado.",
+  },
+};
+
+const locale = getLocale();
+
+context.handlebars.registerHelper(
+  "translate",
+  (message) => messages[message][locale] ?? messages[message]["en"]
+);
+```
+
+### grafana.locationService
+
+The `locationService` works with the browser location and history.
+
+#### Usage
+
+```javascript
+context.grafana.locationService;
+```
+
+#### Example
+
+```javascript
+context.grafana.locationService.reload();
+
+//
+const history = context.grafana.locationService.history;
+```
+
+### grafana.replaceVariables()
+
+The `replaceVariables()` function to interpolate variables.
+
+#### Usage
+
+```javascript
+context.grafana.replaceVariables();
+```
+
+#### Example
+
+```javascript
+const bonjour = context.grafana.replaceVariables("${variable}");
+console.log(bonjour.toUpperCase());
+```
+
+### grafana.timeRange
+
+Time range of the current dashboard.
+
+#### Usage
+
+```javascript
+context.grafana.timeRange;
+```
+
+#### Example
+
+```javascript
+const timeRange = context.grafana.timeRange;
+console.log(timeRange);
+```
+
+### grafana.timeZone
+
+Time zone of the current dashboard.
+
+#### Usage
+
+```javascript
+context.grafana.timeZone;
+```
+
+#### Example
+
+```javascript
+const timeZone = context.grafana.timeZone;
+console.log(timeZone);
+```
+
+### grafana.notifyError([header, message])
+
+Displays an error.
+
+#### Usage
+
+```javascript
+context.grafana.notifyError([header, message]);
+```
+
+#### Example
+
+```javascript
+//
+context.grafana.notifyError(["Error Title", `Show error message`]);
+```
+
+#### Arguments
+
+- `header` _string_. Error title
+- `message` _string_. Error message
+
+### grafana.notifySuccess([header, message])
+
+Displays a success notification.
+
+#### Usage
+
+```javascript
+context.grafana.notifySuccess([header, message]);
+```
+
+#### Example
+
+```javascript
+context.grafana.notifySuccess(["Success Title", `Success message`]);
+```
+
+#### Arguments
+
+- `header` _string_. Success title
+- `message` _string_. Success message
+
+### grafana.theme
+
+Contains grafana theme object.
+
+#### Usage
+
+```javascript
+context.grafana.theme;
+```
+
+#### Example
+
+```javascript
+const theme = context.grafana.theme;
+console.log(theme);
+```

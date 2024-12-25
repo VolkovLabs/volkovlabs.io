@@ -76,7 +76,15 @@ const sidebars: SidebarsConfig = {
           id: "business-charts/index",
           label: "Introduction",
         },
-        "business-charts/options",
+        {
+          items: ["business-charts/code/panel"],
+          label: "Options & JavaScript Code",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-charts/code/index",
+          },
+        },
         "business-charts/visualeditor",
         "business-charts/examples",
         {
@@ -386,9 +394,17 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         {
+          items: ["business-text/code/panel"],
+          label: "JavaScript Code",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-text/code/index",
+          },
+        },
+        {
           items: [
             "business-text/rendering-content",
-            "business-text/code",
             "business-text/external",
             "business-text/styles",
           ],
