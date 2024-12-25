@@ -82,7 +82,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           link: {
             type: "doc",
-            id: "business-charts/code/index",
+            id: "business-charts/options",
           },
         },
         "business-charts/visualeditor",
