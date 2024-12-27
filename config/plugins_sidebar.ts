@@ -358,15 +358,7 @@ const sidebars: SidebarsConfig = {
             id: "business-table/editable",
           },
         },
-        {
-          items: ["business-table/ds-as-var"],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-table/features",
-          },
-        },
+        "business-table/features",
         {
           items: [],
           label: "Tutorials",

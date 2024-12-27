@@ -11,100 +11,11 @@ The Business Table panel has the following features.
 
 | Section                                                            | Description                                        |
 | ------------------------------------------------------------------ | -------------------------------------------------- |
-| [Tree View/Row Grouping](#row-grouping)                            | Demonstrates tree view/row grouping                |
-| [Multi tables as tabs](#multi-tables-as-tabs)                      | Demonstrates multi table as tabs                   |
-| [Auto-width columns](#auto-width-columns)                          | Demonstrates auto-width columns                    |
-| [Table footer](#table-footer)                                      | Explains how the table footer works                |
-| [Filtering using client and query dashboard variables](#filtering) | Demonstrates client and dashboard variable filters |
-| [Sorting](#sorting)                                                | Demonstrates column sorting                        |
 | [Pagination](#pagination)                                          | Explains pagination                                |
-| [Pin Columns](#pin-columns)                                        | Demonstrates column pinning                        |
 | [Download button](#download-button)                                | Demonstrates the Download button                   |
 | [Data links](#data-links)                                          | Demonstrates data links                            |
-| [Show and hide columns](#show-and-hide-columns)                    | Demonstrates the show/hide column button           |
-| [Standard options support](#support-of-the-standard-options)       | Explains the Syandard options support              |
-| [Hide the table header](#option-to-hide-the-table-header)          | Explains how to hide the table header              |
-
-## Row grouping
-
-This feature allows you to combine unique field values into groups and collapse/expanse using little arrows to create a layout similar to Tree View.
-
-<Image
-  title="The Business Table panel row grouping."
-  src="/img/blog/2024-09-05-business-table-1.2.0/row-grouping.png"
-/>
-
-## Multi tables as tabs
-
-The Business Table panel allows you to have a multi-tabs view and configure the fields of each view separately.
-
-To add a new tab, use the **New Table** parameter.
-To add a column to an existing tab, use the **New Column** parameter.
-
-<Image
-  title="The Business Table panel allows you have a multi tabs view."
-  src="/img/blog/2024-09-05-business-table-1.2.0/tabs.png"
-/>
-
-## Auto-width columns
-
-The column width can be determined automatically within a specified range or explicitly hardcoded by a user in pixels.
-
-<Image
-  title="Auto-width column property."
-  src="/img/blog/2024-09-05-business-table-1.2.0/auto-width.png"
-/>
-
-## Table footer
-
-Every column of the Business Table panel has the **Show in Footer** property.
-If at least one column has it set up, then the Footer will be shown.
-
-You can select the aggregation function separately for each column to be applied toward the value displayed in the Footer.
-
-<Image
-  title="The Business Table panel supports the Footer feature."
-  src="/img/blog/2024-09-05-business-table-1.2.0/footer.png"
-/>
-
-## Filtering
-
-The Business Table panel starts strong with the filtering feature offering two main options:
-
-- Client,
-- Query.
-
-### Client
-
-Every column of the Business Table panel offers the **Filter** feature. If set to **Yes**, the funnel icon will appear next to the column header.
-
-With the **Filter Mode**->**Client**, when a user clicks on the funnel icon, depends on the value type they see the two types for further filtering.
-
-- **Search**. It provides a form to type free text or enter a number value to use in the filtering.
-- **Options**. It provides a multi-select list of all existing values in the column.
-
-<Image
-  title="The Client filtering feature of the Business Table panel."
-  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-client.png"
-/>
-
-### Query
-
-This method of filtering allows panel interconnectivity or use in the data links. With the **Filter Mode**->**Query**, the displayed data is filtered according to the selected dashboard variables.
-
-<Image
-  title="The Query filtering feature of the Business Table panel."
-  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query.png"
-/>
-
-## Sorting
-
-Every column of the Business Table panel has the **Sort** property. If set to **Yes**, the ascending sorting icon appears next to the column header. After the user clicks on the icon, the order changes to descending.
-
-<Image
-  title="The Business Table panel supports the Sorting feature."
-  src="/img/blog/2024-09-05-business-table-1.2.0/sorting.png"
-/>
+| [Standard options support](#support-of-the-standard-options)       | Explains the Standard options support              |
+| [Data sources as variables](#data-sources-as-variables)           | Explains Data sources as variables                 |
 
 ## Pagination
 
@@ -164,23 +75,6 @@ With the **default pagination size** parameter, you configure how many rows per 
   src="/img/blog/2024-12-04-business-table-1.9.0/page-size.png"
 />
 
-## Pin Columns
-
-It is a helpful feature for the wide tables. You can pin any column to always stay visible on the left or right.
-
-<Image
-  title="Column pin parameter."
-  src="/img/blog/2024-09-26-business-table-1.3.0/pin.png"
-  width="50%"
-/>
-
-Below, the column **Country** is pinned to the left.
-
-<Image
-  title="The column Country is pinned to the left."
-  src="/img/blog/2024-09-26-business-table-1.3.0/pin.gif"
-  width="50%"
-/>
 
 ## Download button
 
@@ -202,22 +96,6 @@ You can use the Grafana **Overrides** feature to configure column links (not for
   src="/img/blog/2024-09-26-business-table-1.3.0/links.png"
 />
 
-## Show and hide columns
-
-:::info version
-The feature is supported starting from version 1.5.0
-:::
-
-This feature allows you to hide/show any column in your Business Table visualization. It is helpful when you need to experiment with the table's visual aspects without removing the column (and all its configuration) to get an idea of what the visualization would look like without it.
-
-Also, the column might be required for the underlying logic but not designed for the end user.
-
-<Image
-  title="Hide and show columns in the Business Table panel."
-  src="/img/blog/2024-10-04-business-table-1.5.0/hide-show.png"
-  width="60%"
-/>
-
 ## Support of the Standard options
 
 :::info version
@@ -231,24 +109,70 @@ The values displayed in the Business Table visualization can be formatted using 
   src="/img/blog/2024-10-04-business-table-1.5.0/standard.png"
 />
 
-## Option to hide the table header
+
+## Data sources as variables
 
 :::info version
 
-Option to hide the table header is supported starting from the Business table 1.9.0
-
+The feature is supported starting from version 1.9.0
 :::
 
-You can hide the Business Table header from the dashboard by turning off the **Layout**->**Show header** switch.
+All Business Table data flows are configurable separately, allowing unbeatable flexibility. Starting from this release, a data source in every flow can be specified as a variable.
+
+Let's say a Grafana dashboard has the following dashboard variable:
+
+- **Variable type**: Data source,
+- **Name**: DS,
+- **Type**: PostgreSQL.
 
 <Image
-  title="Show or hide the table header."
-  src="/img/blog/2024-12-04-business-table-1.9.0/show-hide.png"
-  width="70%"
+  title="Dashboard variable example."
+  src="/img/blog/2024-12-04-business-table-1.9.0/dashboard-variable-ds.png"
+  width="60%"
 />
 
-:::note
+You can use this variable in every data flow that affects:
 
-The plus icon (the button to add a row) is also hidden if you hide a table header. That means if you need a user to have the ability to add a row, keep the table header visible.
+- row,
+- [nested objects](/plugins/business-table/nested/) stored as a column value.
 
-:::
+### Row
+
+Rows has three possible data flows:
+
+- **Add data**. Executed:
+  - if the add a row functionality is allowed,
+  - after a user clicks on a (+) icon to add a new row.
+- **Editable data**. Executed:
+  - if the edit a row functionality is allowed,
+  - after a user clicks on the pencil icon to edit a row.
+- **Delete data**. Executed:
+  - if the delete a row functionality is allowed,
+  - after a user clicks on a trash can icon to delete a row.
+
+<Image
+  title="Use a dashboard variable in the all three data flows for a single value column."
+  src="/img/plugins/business-table/single.png"
+/>
+
+### Nested objects
+
+Nested objects have four possible data flows:
+
+- **Get Options**
+  - on the form load to populate the column from a data source.
+- **Add Options**
+  - if the **Add Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the **Add** button.
+- **Update Options**
+  - if the **Update Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the pencil button.
+- **Delete Options**
+  - if the **Delete Options** functionality is allowed,
+  - after a user opens **Show All comments** drawer and clicks on the trash can button.
+
+<Image
+  title="Use a dashboard variable in the all four data flows for a nested objects column."
+  src="/img/blog/2024-12-04-business-table-1.9.0/nested.png"
+/>
+
