@@ -8,7 +8,46 @@ import BlogPost from "@theme/BlogPost";
 
 Release Notes for the Business Intelligence platform for Grafana.
 
-## Business Intelligence 2.1.0 (2024-12-17)
+## 2.2.0 (2024-12-28)
+
+**This is a public preview release of Business Studio 2.2.0 compatible with Business Engine 2.2.0.**
+
+Business Studio is a visual tool of the Business Intelligence platform to manage Business Engines.
+
+## Business Studio 2.2.0
+
+- Added Getting Started messages for new installations.
+- Added descriptions to engines, alerts, and actions configuration.
+- Added Engine Settings page to update connection details and token.
+- Added Engine Environment page to display configuration.
+- Updated release workflow to sign and notarize MacOS and Windows installers.
+- Updated Overview pages to display alert statuses.
+- Minor UI updates for engine, alert rules and action management.
+
+## Business Engine 2.2.0
+
+- Added API to get environment info.
+- Added API to get timeline of alert statuses.
+- Added server and scheduler restart if database disconnected with fatal error.
+- Updated Grafana health check for Cloud instances.
+- Updated default log level to "log" to increase number of message for troubleshooting.
+
+### Downloads from GitHub
+
+- MacOS:
+  - [Apple Disk Image arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-2.2.0-arm64.dmg)
+  - [Apple Disk Image x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-2.2.0-x64.dmg)
+  - [ZIP file arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-darwin-arm64-2.2.0.zip)
+  - [ZIP file x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-darwin-x64-2.2.0.zip)
+- Linux:
+  - [RPM arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio-2.2.0-1.arm64.rpm)
+  - [RPM x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio-2.2.0-1.x86_64.rpm)
+  - [Debian arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio_2.2.0_arm64.deb)
+  - [Debian x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio_2.2.0_amd64.deb)
+- Windows
+  - [Executable x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-2.2.0.Setup.exe)
+
+## 2.1.0 (2024-12-17)
 
 **This is a public preview release of Business Studio 2.1.0 compatible with Business Engine 2.1.0.**
 
@@ -30,20 +69,7 @@ Business Studio is a visual tool of the Business Intelligence platform to manage
 - Added API to get alert rules and actions by Id for updating in Business Studio.
 - Updated support time ranges in Scenes dashboards for Grafana 11.3+.
 
-### Downloads from GitHub
-
-- MacOS:
-  - [Apple Disk Image x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/Business.Studio-2.1.0-x64.dmg)
-  - [ZIP file x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/Business.Studio-darwin-x64-2.1.0.zip)
-- Linux:
-  - [RPM arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio-2.1.0-1.arm64.rpm)
-  - [Debian arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio_2.1.0_arm64.deb)
-  - [RPM x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio-2.1.0-1.x86_64.rpm)
-  - [Debian x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/business-studio_2.1.0_amd64.deb)
-- Windows
-  - [Executable x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.1.0/Business.Studio-2.1.0.Setup.exe)
-
-## Business Intelligence 2.0.0 (2024-12-08)
+## 2.0.0 (2024-12-08)
 
 **This is a public preview release of Business Studio 2.0.0 compatible with Business Engine 2.0.0.**
 
@@ -65,16 +91,3 @@ Business Studio is a visual tool of the Business Intelligence platform to manage
 - Uses Prometheus to store internal metrics.
 - Supports distributed High-Availability.
 - Allows to add, update and delete Alerts and Actions.
-
-### Downloads from GitHub
-
-- MacOS:
-  - [Apple Disk Image x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0-x64.dmg)
-  - [ZIP file x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-darwin-x64-2.0.0.zip)
-- Linux:
-  - [RPM arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.arm64.rpm)
-  - [Debian arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_arm64.deb)
-  - [RPM x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio-2.0.0-1.x86_64.rpm)
-  - [Debian x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/business-studio_2.0.0_amd64.deb)
-- Windows
-  - [Executable x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.0.0/Business.Studio-2.0.0.Setup.exe)

@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
-import { Plugins, Components } from "../components";
+import { Plugins } from "../components";
 import Blogs from "../components/Blogs";
 import styles from "../css/index.module.css";
 
@@ -15,10 +15,10 @@ import styles from "../css/index.module.css";
 const Header = (siteConfig) => {
   return (
     <header>
-      <div className="container margin-vert--lg">
+      <div className="container margin-vert--xl">
         <div className="row">
-          <div className="col col--7 margin-vert--lg">
-            <p className="hero__subtitle margin-vert--md">
+          <div className="col col--7">
+            <p className="hero__subtitle">
               The Business Suite is a collection of open source plugins for
               Grafana created and actively maintained by Volkov Labs.
             </p>
@@ -44,7 +44,6 @@ const Header = (siteConfig) => {
           <div className="col col--5">
             <a href="/plugins/">
               <ThemedImage
-                className={clsx(styles.heroBannerLogo, "margin-vert--lg")}
                 sources={{
                   light: useBaseUrl("/img/index/main.svg"),
                   dark: useBaseUrl("/img/index/main.dark.svg"),
@@ -55,7 +54,7 @@ const Header = (siteConfig) => {
           </div>
         </div>
 
-        <div className="container margin-vert--md padding-vert--lg">
+        <div className="row margin-vert--xl">
           <Plugins />
         </div>
       </div>
@@ -69,15 +68,11 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Plugins" className="container margin-vert--md padding-vert--md">
+      <div id="Plugins" className="container margin-vert--lg">
         <h2 className={clsx(styles.header, "hero__title")} />
         <div className="container">
           <div className="row">
-            <div className="col col--8 margin-vert--lg">
-              <h1 className="hero__title margin-vert--lg">
-                {siteConfig.tagline}
-              </h1>
-
+            <div className="col col--12 margin-vert--lg">
               <p className="hero__subtitle margin-vert--md">
                 The Business Intelligence provides an accessible platform for
                 business users.
@@ -95,25 +90,21 @@ const Main = (siteConfig) => {
                 </a>
               </div>
             </div>
-            <div className="col col--4 margin-vert--md">
-              <ThemedImage
-                className={clsx(styles.heroBannerLogo)}
-                sources={{
-                  light: useBaseUrl("/img/index/intelligence.svg"),
-                  dark: useBaseUrl("/img/index/intelligence.dark.svg"),
-                }}
-                alt="Business Intelligence"
-              />
-            </div>
           </div>
-        </div>
-
-        <div className="container margin-vert--md padding-vert--lg">
-          <Components />
+          <div className="row">
+            <ThemedImage
+              className={clsx(styles.big)}
+              sources={{
+                light: useBaseUrl("/img/big/business-studio/engine.png"),
+                dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
+              }}
+              alt="Business Intelligence"
+            />
+          </div>
         </div>
       </div>
 
-      <div id="Blogs" className="container margin-vert--md padding-vert--md">
+      <div id="Blogs" className="container margin-vert--xl">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Blog</span>
         </h2>
