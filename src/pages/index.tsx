@@ -54,7 +54,7 @@ const Header = (siteConfig) => {
           </div>
         </div>
 
-        <div className="row margin-vert--xl">
+        <div className="container margin-vert--lg padding-vert--lg">
           <Plugins />
         </div>
       </div>
@@ -68,39 +68,38 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Plugins" className="container margin-vert--lg">
-        <h2 className={clsx(styles.header, "hero__title")} />
-        <div className="container">
-          <div className="row">
-            <div className="col col--12 margin-vert--lg">
-              <p className="hero__subtitle margin-vert--md">
-                The Business Intelligence provides an accessible platform for
-                business users.
-              </p>
+      <div id="Plugins" className="container">
+        <h2 className={clsx(styles.header, "hero__title")}>
+          <span>Business Intelligence</span>
+        </h2>
+        <div className="container margin-vert--lg padding-vert--md">
+          <p className="hero__subtitle margin-vert--md">
+            The Business Intelligence provides an accessible platform for
+            business users.
+          </p>
 
-              <div className="margin-vert--lg">
-                <a
-                  className={clsx(
-                    "button button--primary button--lg",
-                    styles.getStarted
-                  )}
-                  href="/big/"
-                >
-                  Learn More&nbsp;&nbsp;→
-                </a>
-              </div>
-            </div>
+          <div className="margin-vert--lg">
+            <a
+              className={clsx(
+                "button button--primary button--lg",
+                styles.getStarted
+              )}
+              href="/big/"
+            >
+              Learn More&nbsp;&nbsp;→
+            </a>
           </div>
-          <div className="row">
-            <ThemedImage
-              className={clsx(styles.big)}
-              sources={{
-                light: useBaseUrl("/img/big/business-studio/engine.png"),
-                dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
-              }}
-              alt="Business Intelligence"
-            />
-          </div>
+        </div>
+
+        <div className="container">
+          <ThemedImage
+            className={clsx(styles.big)}
+            sources={{
+              light: useBaseUrl("/img/big/business-studio/engine.png"),
+              dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
+            }}
+            alt="Business Intelligence"
+          />
         </div>
       </div>
 
@@ -109,7 +108,9 @@ const Main = (siteConfig) => {
           <span>Blog</span>
         </h2>
 
-        <div className="container margin-vert--md padding-vert--lg">
+        <div className="container">&nbsp;</div>
+
+        <div className="container">
           <Blogs />
         </div>
       </div>
