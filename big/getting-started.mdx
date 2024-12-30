@@ -1,24 +1,24 @@
 import Code from "@theme/Code";
+import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
 # Getting Started
 
-You can download the latest release from our [GitHub repository](https://github.com/volkovlabs/business-intelligence) and follow this hands-on tutorial.
+The Business Intelligence platform utilize Docker containers to be modular and scalable. The getting started configuration can be downloaded from [GitHub repository](https://github.com/volkovlabs/business-intelligence).
 
-<Youtube
-  id="8UaY916PPXc"
-  title="Metrics, Logs, CPU Usage with Business Alerting in Grafana."
-/>
+## Requirements
 
-## Docker Compose
+- Business Intelligence 2.X supports **Grafana 11**.
 
-The `docker-compose.yml` file consists of the following containers:
+## Docker containers
 
-- **Grafana** includes the provisioned Business Engine data source, a Business Alerting panel, and dashboards.
-- **Timescale** is required to store configuration, events, rules, etc.
-- **Business Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
+The `docker-compose.yml` file consists of the following containers and can be used to start the platform:
+
+- **Grafana** includes the provisioned dashboards and datasources.
+- **Timescale** is required to store Business Engine configuration.
+- **Business Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls actions when alert statuses change.
 - **Prometheus** collects and store performance metrics from Business Engine.
-- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
+- **JSON server** is an action example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
@@ -27,6 +27,11 @@ The `docker-compose.yml` file consists of the following containers:
 
 ## Environment file
 
+The Business Engine requires minimal configuration to start up:
+
+- Timescale database credentials.
+- Grafana URL and Token (Service Account).
+
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/.env"
   language="shell"
@@ -34,16 +39,58 @@ The `docker-compose.yml` file consists of the following containers:
 
 ## Start the platform
 
-When you run a docker-compose file, it launches Grafana, Timescale, Business Engine and Webhook containers:
+1. Start Grafana container
 
-```sh
-docker compose pull && docker compose up
+```
+docker compose --profile grafana up -d
 ```
 
-## Stop the platform
+2. Create Service Account and update `GRAFANA_TOKEN` in the `.env` file
 
-Stop and remove all containers:
+3. Start the Business Engine, Timescale database, and Prometheus containers
 
-```sh
-docker compose down
 ```
+docker compose --profile engine up -d
+```
+
+4. Start JSON Server to test Actions (optional)
+
+```
+docker compose --profile actions up -d
+```
+
+5. Download and start the Business Studio from [Releases](https://github.com/VolkovLabs/business-intelligence/releases)
+
+6. Configure Actions and Alert Rules
+
+- Use JSON server `http://json-server:3000` for HTTP Request Action to create event and message files when alert triggered if started.
+- Use provisioned `Test Dashboard` for adding Alert Rules based on thresholds and Regex pattern.
+
+<Image
+  title="Alert Rules configured in Business Engine running on localhost using Business Studio."
+  src="/img/big/business-studio/alerts.png"
+/>
+
+7. Check performance and Prometheus metrics using provisioned `Business Engine` dashboard
+
+<Image
+  title="Grafana dashboard displays Business Engine metrics stored in Prometheus."
+  src="/img/big/business-engine/prometheus.png"
+/>
+
+8. Stop the Business Intelligence platform
+
+```
+docker compose --profile engine down
+docker compose --profile actions down
+docker compose --profile grafana down
+```
+
+## Support
+
+You can create a Zendesk ticket to request assistance directly from the Business Studio:
+
+<Image
+  title="Create a Zendesk ticket to request assistance from Business Studio."
+  src="/img/big/business-studio/support.png"
+/>

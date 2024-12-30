@@ -74,8 +74,8 @@ const Main = (siteConfig) => {
         </h2>
         <div className="container margin-vert--lg padding-vert--md">
           <p className="hero__subtitle margin-vert--md">
-            The Business Intelligence provides an accessible platform for
-            business users.
+            Revolutionize Your Business Insights with High-Performance,
+            Scalable, and Alert-Driven Analytics!
           </p>
 
           <div className="margin-vert--lg">
