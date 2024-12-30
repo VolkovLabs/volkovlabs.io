@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
-import { Plugins } from "../components";
+import { Intelligence, Plugins } from "../components";
 import Blogs from "../components/Blogs";
 import styles from "../css/index.module.css";
 
@@ -68,7 +68,7 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Plugins" className="container">
+      <div className="container">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Business Intelligence</span>
         </h2>
@@ -84,22 +84,15 @@ const Main = (siteConfig) => {
                 "button button--primary button--lg",
                 styles.getStarted
               )}
-              href="/big/"
+              href="/big/getting-started"
             >
-              Learn More&nbsp;&nbsp;→
+              Getting Started&nbsp;&nbsp;→
             </a>
           </div>
         </div>
 
-        <div className="container">
-          <ThemedImage
-            className={clsx(styles.big)}
-            sources={{
-              light: useBaseUrl("/img/big/business-studio/engine.png"),
-              dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
-            }}
-            alt="Business Intelligence"
-          />
+        <div className="container margin-vert--lg">
+          <Intelligence />
         </div>
       </div>
 
