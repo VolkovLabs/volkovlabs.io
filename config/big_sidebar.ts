@@ -33,6 +33,16 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
+      items: [],
+      label: "Business Studio",
+      type: "category",
+      collapsible: false,
+      link: {
+        type: "doc",
+        id: "studio/index",
+      },
+    },
+    {
       items: ["alerting/panel", "alerting/variables", "alerting/thresholds"],
       label: "Business Alerting",
       type: "category",

@@ -18,7 +18,7 @@ npm start
 
 ## Always happy to hear from you
 
-- Ask a question, request a new feature, or report an issue at [GitHub issues](https://github.com/volkovlabs/volkovlabs.io/issues).
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs.io/issues).
 - Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs) and leave your comments.
 - Become a [Business Suite sponsor](https://github.com/sponsors/VolkovLabs).
 
