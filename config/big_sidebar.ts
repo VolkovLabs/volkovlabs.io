@@ -16,16 +16,6 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
-      items: ["alerting/panel", "alerting/variables", "alerting/thresholds"],
-      label: "Business Alerting",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "alerting/index",
-      },
-    },
-    {
       items: [
         "engine/health-checks",
         {
@@ -40,6 +30,16 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "doc",
         id: "engine/index",
+      },
+    },
+    {
+      items: ["alerting/panel", "alerting/variables", "alerting/thresholds"],
+      label: "Business Alerting",
+      type: "category",
+      collapsible: false,
+      link: {
+        type: "doc",
+        id: "alerting/index",
       },
     },
     "release",
