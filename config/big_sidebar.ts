@@ -17,7 +17,8 @@ const sidebars: SidebarsConfig = {
     },
     {
       items: [
-        "engine/health-checks",
+        "engine/configuration",
+        "engine/prometheus",
         {
           type: "link",
           href: "/big/api",
@@ -33,7 +34,7 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
-      items: [],
+      items: ["studio/support"],
       label: "Business Studio",
       type: "category",
       collapsible: false,
@@ -43,7 +44,8 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
-      items: ["alerting/panel", "alerting/variables", "alerting/thresholds"],
+      //      items: ["alerting/panel", "alerting/variables", "alerting/thresholds"],
+      items: [],
       label: "Business Alerting",
       type: "category",
       collapsible: false,

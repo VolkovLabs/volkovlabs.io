@@ -29,7 +29,7 @@ The `docker-compose.yml` file consists of the following containers and can be us
 
 The Business Engine requires minimal configuration to start up:
 
-- Timescale database credentials.
+- Timescale database connection details.
 - Grafana URL and Token (Service Account).
 
 <Code
@@ -39,6 +39,8 @@ The Business Engine requires minimal configuration to start up:
 
 ## Start the platform
 
+### Grafana
+
 1. Start Grafana container
 
 ```
@@ -46,6 +48,8 @@ docker compose --profile grafana up -d
 ```
 
 2. Create Service Account and update `GRAFANA_TOKEN` in the `.env` file
+
+### Business Engine
 
 3. Start the Business Engine, Timescale database, and Prometheus containers
 
@@ -59,6 +63,8 @@ docker compose --profile engine up -d
 docker compose --profile actions up -d
 ```
 
+### Business Studio
+
 5. Download and start the Business Studio from [Releases](https://github.com/VolkovLabs/business-intelligence/releases)
 
 6. Configure Actions and Alert Rules
@@ -71,26 +77,21 @@ docker compose --profile actions up -d
   src="/img/big/business-studio/alerts.png"
 />
 
-7. Check performance and Prometheus metrics using provisioned `Business Engine` dashboard
+### Prometheus
+
+Check performance and Prometheus metrics using provisioned `Business Engine` dashboard
 
 <Image
   title="Grafana dashboard displays Business Engine metrics stored in Prometheus."
   src="/img/big/business-engine/prometheus.png"
 />
 
-8. Stop the Business Intelligence platform
+## Stop the platform
+
+Stop and delete all Docker containers
 
 ```
 docker compose --profile engine down
 docker compose --profile actions down
 docker compose --profile grafana down
 ```
-
-## Support
-
-You can create a Zendesk ticket to request assistance directly from the Business Studio:
-
-<Image
-  title="Create a Zendesk ticket to request assistance from Business Studio."
-  src="/img/big/business-studio/support.png"
-/>
