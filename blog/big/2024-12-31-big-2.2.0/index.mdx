@@ -1,38 +1,33 @@
 ---
-image: /img/big/business-studio/engine.png
+authors: [daria]
+slug: business-intelligence-2.2.0/
+tags: [Business Intelligence]
+image: /img/blog/2024-12-31-big-2.2.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
 ---
 
-import BlogPost from "@theme/BlogPost";
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
 
-# Release Notes
+# Business Studio, Environment variables, and Engine API updates in Business Intelligence 2.2.0
 
-Release Notes for the Business Intelligence platform for Grafana.
+We are excited to announce the public preview release of the Business Intelligence 2.2.0. This release marks a significant milestone in Volkov Labs' mission to revolutionize Business Insights through high-performance, scalable, and alert-driven analytics. It includes the following updates:
 
-## 2.2.0 (2024-12-28)
+- Business Studio developed using a tech stack based on Electron and Tailwind UI.
+  - Allows to add and delete Business Engines connected to Grafana instances.
+  - Allows to add, update and delete Actions and Alerts.
+  - Supports for Light and Dark themes.
+  - Provides installers for MacOS, Linux and Windows with auto update functionality for MacOS and Windows.
+- Supports major Grafana 11 HTTP API.
+- Added default values for environment variables to make them optional.
+- Added Engine API to get environment info.
+- Added Engine API to get timeline of alert statuses.
 
-**This is a public preview release of Business Studio 2.2.0 compatible with Business Engine 2.2.0.**
-
-Business Studio is a visual tool of the Business Intelligence platform to manage Business Engines.
-
-### Business Studio 2.2.0
-
-- Added Getting Started messages for new installations.
-- Added descriptions to engines, alerts, and actions configuration.
-- Added Engine Settings page to update connection details and token.
-- Added Engine Environment page to display configuration.
-- Updated release workflow to sign and notarize MacOS and Windows installers.
-- Updated Overview pages to display alert statuses.
-- Minor UI updates for engine, alert rules and action management.
-
-### Business Engine 2.2.0
-
-- Added API to get environment info.
-- Added API to get timeline of alert statuses.
-- Added server and scheduler restart if database disconnected with fatal error.
-- Updated Grafana health check for Cloud instances.
-- Updated default log level to "log" to increase number of message for troubleshooting.
-
-### Downloads from GitHub
+## Business Studio Downloads
 
 :::info Security risks
 
@@ -53,11 +48,27 @@ MacOS and Windows installers are signed and notarized with encryption. End to en
 - Windows
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-2.2.0.Setup.exe)
 
-## 2.1.0 (2024-12-17)
+<GettingStarted />
 
-**This is a public preview release of Business Studio 2.1.0 compatible with Business Engine 2.1.0.**
+## Release Notes
 
-Business Studio is a visual tool of the Business Intelligence platform to manage Business Engines.
+### Business Studio 2.2.0
+
+- Added Getting Started messages for new installations.
+- Added descriptions to engines, alerts, and actions configuration.
+- Added Engine Settings page to update connection details and token.
+- Added Engine Environment page to display configuration.
+- Updated release workflow to sign and notarize MacOS and Windows installers.
+- Updated Overview pages to display alert statuses.
+- Minor UI updates for engine, alert rules and action management.
+
+### Business Engine 2.2.0
+
+- Added API to get environment info.
+- Added API to get timeline of alert statuses.
+- Added server and scheduler restart if database disconnected with fatal error.
+- Updated Grafana health check for Cloud instances.
+- Updated default log level to "log" to increase number of message for troubleshooting.
 
 ### Business Studio 2.1.0
 
@@ -75,12 +86,6 @@ Business Studio is a visual tool of the Business Intelligence platform to manage
 - Added API to get alert rules and actions by Id for updating in Business Studio.
 - Updated support time ranges in Scenes dashboards for Grafana 11.3+.
 
-## 2.0.0 (2024-12-08)
-
-**This is a public preview release of Business Studio 2.0.0 compatible with Business Engine 2.0.0.**
-
-Business Studio is a visual tool of the Business Intelligence platform to manage Business Engines.
-
 ### Business Studio 2.0.0
 
 - Developed using a tech stack based on Electron and Tailwind UI.
@@ -97,3 +102,5 @@ Business Studio is a visual tool of the Business Intelligence platform to manage
 - Uses Prometheus to store internal metrics.
 - Supports distributed High-Availability.
 - Allows to add, update and delete Alerts and Actions.
+
+<Feedback />
