@@ -29,16 +29,9 @@ We are excited to announce the public preview release of the Business Intelligen
 
 ## Business Studio
 
-The Business Studio is an application developed by Volkov Labs. It plays the role of the control panel for the whole observability system, providing a user-friendly interface and keeping all necessary configurations in one place.
+The Business Studio is an application developed by Volkov Labs. It plays the role of the control center for the whole observability system, providing a user-friendly interface and keeping all necessary configurations in one place.
 
-You start by connecting to as many Business Engines as needed, where each one is connected to a Grafana instance.
-
-From there, an authorized user can:
-
-- create and manage alert rules and alert actions,
-- conduct Grafana version management,
-- propagate new dashboard versions,
-- synchronize development, QA, and production environments.
+You start by connecting to as many Business Engines as needed, where each one is connected to a Grafana instance. From there, an authorized user can create and manage alert rules and actions.
 
 <Image
   title="Business Studio 2.2.0. A list of configured Business Engines."
@@ -62,21 +55,23 @@ To add a new Business Engine, click the **+ Add** button on the main screen and 
 2. Engine URL. A URL for this Business Engine.
 3. Token.
 
-If you need a token for more than 10 Business Engines, use the **Support** menu at the bottom left to request it.
+If you need a token for more than 10 Business Alerts, use the **Support** menu at the bottom left to request it.
 
 <Image
   title="New Business Engine configuration."
   src="/img/blog/2024-12-31-big-2.2.0/new-engine.png"
 />
 
-:::info limit 10 Business Engines
-Please note that the Community version of the Business Studio supports no more than 10 connected Business Engines.
+:::info Subscription
+Business Intelligence is offered as a subscription-based product, and there is also a Community version available.
+
+Community version is limited to 10 Business Alerts and a single cluster of Business Engines.
 :::
 
-Once the Business Engine is added, you can review the available engine configuration and actions by clicking on its name in the list.
+Once the Business Engine is added, you can review the available alert history, engine configuration, and actions by clicking on its name in the list.
 
 <Image
-  title="Business Engine configuration."
+  title="Business Engine Overview page with Alert History."
   src="/img/blog/2024-12-31-big-2.2.0/engine-overview.png"
 />
 
@@ -120,7 +115,7 @@ Below is a logical schema of alert rules statuses.
 <Image
   title="A logical schema of alert rules statuses."
   src="/img/blog/2024-12-31-big-2.2.0/alert-statuses.png"
-  width="40%"
+  width="50%"
 />
 
 The **Add a new rule** window looks as follows:
@@ -167,16 +162,16 @@ The **Add a new action** window looks as follows:
 
 The new alert action/edit mode has the following configuration elements to specify:
 
-- **Title**,
+- **Title** is an action name,
 - **Type** (HTTP or Logs),
 - **HTTP Request URL** and request **method**. You can add **header** (additional information) to a request if needed,
-- **Message**. It is customizable with Handlebars.
+- **Message** template customizable using Handlebars.
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
 
 ### Supports for Light and Dark themes
 
-The Business Studio follows your visual appearance preferences by supporting Light and Dark color themes.
+The Business Studio follows system visual appearance preferences by supporting Light and Dark color themes.
 
 <Image
   title="The Business Studio supports Light and Dark color themes."
@@ -185,20 +180,21 @@ The Business Studio follows your visual appearance preferences by supporting Lig
 
 ## Business Studio installers
 
-We ensured the installation could be done in one click for MacOS, Linux, and Windows.
-For MacOS and Windows, you can configure the auto-update functionality to stay up-to-date with the latest release features
+We ensured the installation could be done in one click for MacOS, Linux, and Windows. For MacOS and Windows, you can configure the auto-update functionality to stay up-to-date with the latest release features.
+
+### Changelog
 
 ## Support of major Grafana 11 HTTP API
 
-The Business Studio works with Grafana starting from version 11. It might work with Grafan 10 and prior, but we did not extensively test that compatibility. Use at your own risk.
+The Business Studio works with Grafana starting from version 11. It might work with Grafana 10.X, but we did not extensively test that compatibility. Use at your own risk.
 
 The Business Studio will always be compatible with the most current Grafana version.
 
 ## Default values for environment variables
 
-To simplify the initial Business studio setup, we configured many of the environment variables by giving them default values.
+To simplify the initial Business Engine setup, we configured many of the environment variables by giving them default values.
 
-There are only 7 environment variables that must be setup after the installation.
+There are only 7 environment variables that must be set during the installation.
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/.env"
@@ -207,20 +203,18 @@ There are only 7 environment variables that must be setup after the installation
 
 ## Added Engine API to get environment info
 
-The environment info is taken by using the [following operations](https://volkovlabs.io/big/api/#tag/Environment/operation/EnvironmentController_get).
+The environment info is taken by using the [following API endpoint](https://volkovlabs.io/big/api/#tag/Environment/operation/EnvironmentController_get).
 
 All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified.
 
 <Image
-  title="Environment variables for the Charlies Engine 1."
+  title="Environment variables for the Charlie Engine 1."
   src="/img/blog/2024-12-31-big-2.2.0/env.png"
 />
 
 ## Added Engine API to get timeline of alert statuses
 
-We added Engine API to [get timeline of alert statuses](https://volkovlabs.io/big/api/#tag/Alert-Rules/operation/AlertsController_getAllHistory).
-
-The timeline of alert statuses is a subset of all alert rule status records. It includes only instances where status changes.
+We added Engine API endpoint to [get timeline of alert statuses](https://volkovlabs.io/big/api/#tag/Alert-Rules/operation/AlertsController_getHistoryTimeline). The timeline of alert statuses is a subset of all alert rule status records. It includes only instances where status changes.
 
 For instance, below is the complete list of alert rule statuses.
 
