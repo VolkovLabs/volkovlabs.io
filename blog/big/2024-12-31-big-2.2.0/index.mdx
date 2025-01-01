@@ -27,28 +27,29 @@ We are excited to announce the public preview release of the Business Intelligen
 - Added Engine API to get environment info.
 - Added Engine API to get timeline of alert statuses.
 
-## Business Studio 
+## Business Studio
 
-The Business Studio is an application developed by Volkov Labs. It plays the role of the control panel for the whole observability system, providing a user-friendly interface and keeping all necessary configurations in one place. 
+The Business Studio is an application developed by Volkov Labs. It plays the role of the control panel for the whole observability system, providing a user-friendly interface and keeping all necessary configurations in one place.
 
-You start by connecting to as many Business Engines as needed, where each one is connected to a Grafana instance. 
+You start by connecting to as many Business Engines as needed, where each one is connected to a Grafana instance.
 
 From there, an authorized user can:
- - create and manage alert rules and alert actions,
- - conduct Grafana version management,
- - propagate new dashboard versions,
- - synchronize development, QA, and production environments. 
- 
+
+- create and manage alert rules and alert actions,
+- conduct Grafana version management,
+- propagate new dashboard versions,
+- synchronize development, QA, and production environments.
+
 <Image
   title="Business Studio 2.2.0. A list of configured Business Engines."
   src="/img/blog/2024-12-31-big-2.2.0/business-studio-220-engines.png"
 />
 
-The detailed documentation is coming in the beginning of 2025. Follow our [blog](/blog/) updates to be the first one to know when we publish it. 
+The detailed documentation is coming in the beginning of 2025. Follow our [blog](/blog/) updates to be the first one to know when we publish it.
 
 :::tip Business Studio downloads
 
-You can download the Business Studio following the links provided at the [end](#business-studio-downloads) of this article. 
+You can download the Business Studio following the links provided at the [end](#business-studio-downloads) of this article.
 :::
 
 ### Add and delete Business Engines
@@ -56,11 +57,12 @@ You can download the Business Studio following the links provided at the [end](#
 This feature allows to add as many Business Engines as needed to be in your system. Each of them should already be connected to a Grafana Instance. In the future, you can manage that connection from the Business Studio as well.
 
 To add a new Business Engine, click the **+ Add** button on the main screen and then specify the following:
-1. Engine name. It should be a unique name within the Business Studio. 
-2. Engine URL. A URL for this Business Engine. 
-3. Token. 
 
-If you need a token for more than 10 Business Engines, use the **Support** menu at the bottom left to request it. 
+1. Engine name. It should be a unique name within the Business Studio.
+2. Engine URL. A URL for this Business Engine.
+3. Token.
+
+If you need a token for more than 10 Business Engines, use the **Support** menu at the bottom left to request it.
 
 <Image
   title="New Business Engine configuration."
@@ -68,7 +70,7 @@ If you need a token for more than 10 Business Engines, use the **Support** menu 
 />
 
 :::info limit 10 Business Engines
-Please note that the Community version of the Business Studio supports no more than 10 connected Business Engines. 
+Please note that the Community version of the Business Studio supports no more than 10 connected Business Engines.
 :::
 
 Once the Business Engine is added, you can review the available engine configuration and actions by clicking on its name in the list.
@@ -79,25 +81,30 @@ Once the Business Engine is added, you can review the available engine configura
 />
 
 The Business Engine configuration has 5 tabs:
- - Overview,
- - Alert rules,
- - Actions,
- - Environment,
- - Settings.
+
+- Overview,
+- Alert rules,
+- Actions,
+- Environment,
+- Settings.
 
 ### Manage alert rules
 
 Use the **Alert rules** tab to manage alert rules. Here you can:
+
 1. Add a new alert rule.
 2. Review the alert rule states for each existing alert rule. There are two possible states:
-  - **Active**,
-  - **Paused**. 
+
+- **Active**,
+- **Paused**.
+
 3. Review the alert rule status for each existing alert rule. There are five possible statuses:
-  - **Scheduled**,
-  - **OK**,
-  - **Alerting**,
-  - **Error**.
-   
+
+- **Scheduled**,
+- **OK**,
+- **Alerting**,
+- **Error**.
+
 4. Pause/Start the alert rule.
 5. Delete the alert rule.
 
@@ -108,7 +115,7 @@ Use the **Alert rules** tab to manage alert rules. Here you can:
 
 In the future, the **Alert Rule** tab will provide an interface to work with hundreds of alert rules by allowing grouping, filtering, etc., to ensure easy navigation and control.
 
-Below is a logical schema of alert rules statuses. 
+Below is a logical schema of alert rules statuses.
 
 <Image
   title="A logical schema of alert rules statuses."
@@ -141,6 +148,7 @@ The new alert rule/edit window has the following configuration elements to speci
 ### Manage alert actions
 
 Use the **Actions** tab to manage alert actions. Here you can:
+
 1. Add a new alert action.
 2. Delete an existing alert action.
 3. There must be at least one alert action configured. That is the reason why there has to be a **default** alert action without a trash can icon (not possible to delete).
@@ -159,10 +167,10 @@ The **Add a new action** window looks as follows:
 
 The new alert action/edit mode has the following configuration elements to specify:
 
- - **Title**, 
- - **Type** (HTTP or Logs),
- - **HTTP Request URL** and request **method**. You can add **header** (additional information) to a request if needed,
- - **Message**. It is customizable with Handlebars.
+- **Title**,
+- **Type** (HTTP or Logs),
+- **HTTP Request URL** and request **method**. You can add **header** (additional information) to a request if needed,
+- **Message**. It is customizable with Handlebars.
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
 
@@ -177,18 +185,18 @@ The Business Studio follows your visual appearance preferences by supporting Lig
 
 ## Business Studio installers
 
-We ensured the installation could be done in one click for MacOS, Linux, and Windows. 
+We ensured the installation could be done in one click for MacOS, Linux, and Windows.
 For MacOS and Windows, you can configure the auto-update functionality to stay up-to-date with the latest release features
 
 ## Support of major Grafana 11 HTTP API
 
 The Business Studio works with Grafana starting from version 11. It might work with Grafan 10 and prior, but we did not extensively test that compatibility. Use at your own risk.
 
-The Business Studio will always be compatible with the most current Grafana version. 
+The Business Studio will always be compatible with the most current Grafana version.
 
 ## Default values for environment variables
 
-To simplify the initial Business studio setup, we configured many of the environment variables by giving them default values. 
+To simplify the initial Business studio setup, we configured many of the environment variables by giving them default values.
 
 There are only 7 environment variables that must be setup after the installation.
 
@@ -201,7 +209,7 @@ There are only 7 environment variables that must be setup after the installation
 
 The environment info is taken by using the [following operations](https://volkovlabs.io/big/api/#tag/Environment/operation/EnvironmentController_get).
 
-All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified. 
+All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified.
 
 <Image
   title="Environment variables for the Charlies Engine 1."
@@ -210,11 +218,12 @@ All environment variables are displayed on the **Environment** tab. In the futur
 
 ## Added Engine API to get timeline of alert statuses
 
-We added Engine API to [get timeline of alert statuses](https://volkovlabs.io/big/api/#tag/Alert-Rules/operation/AlertsController_getAllHistory). 
+We added Engine API to [get timeline of alert statuses](https://volkovlabs.io/big/api/#tag/Alert-Rules/operation/AlertsController_getAllHistory).
 
 The timeline of alert statuses is a subset of all alert rule status records. It includes only instances where status changes.
 
-For instance, below is the complete list of alert rule statuses. 
+For instance, below is the complete list of alert rule statuses.
+
 ```text
 date                      Previous            New
 1/1/25, 10:29:01 AM       OK                  Alerting
@@ -224,6 +233,7 @@ date                      Previous            New
 1/1/25, 10:25:01 AM       OK                  OK
 1/1/25, 10:24:01 AM       OK                  OK
 ```
+
 And here is the timeline. It consists of only the records where the status changes.
 
 ```text
