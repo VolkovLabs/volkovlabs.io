@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
-import { ComponentList } from "../constants";
+import { IntelligenceList } from "../constants";
 import styles from "../css/index.module.css";
 import { PluginItem } from "../types";
 
@@ -46,14 +46,14 @@ export const Component = ({
 };
 
 /**
- * Components
+ * Business Intelligence
  */
-export const Components = (): JSX.Element => {
+export const Intelligence = (): JSX.Element => {
   return (
     <section>
       <div className="container text--center">
         <div className="row">
-          {ComponentList.map((props, idx) => (
+          {IntelligenceList.map((props, idx) => (
             <Component key={idx} {...props} />
           ))}
         </div>
@@ -62,4 +62,4 @@ export const Components = (): JSX.Element => {
   );
 };
 
-export default Components;
+export default Intelligence;

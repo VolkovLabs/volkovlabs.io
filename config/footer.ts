@@ -43,14 +43,19 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-big-link",
         },
         {
-          label: "Business Alerting",
-          href: "/big/alerting/",
-          className: "volkovlabs-footer-link icon-big-alerting-link",
-        },
-        {
           label: "Business Engine",
           href: "/big/engine/",
           className: "volkovlabs-footer-link icon-big-engine-link",
+        },
+        {
+          label: "Business Studio",
+          href: "/big/studio/",
+          className: "volkovlabs-footer-link icon-big-studio-link",
+        },
+        {
+          label: "Business Alerting",
+          href: "/big/alerting/",
+          className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
           label: "EULA",

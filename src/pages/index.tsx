@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
-import { Plugins, Components } from "../components";
+import { Intelligence, Plugins } from "../components";
 import Blogs from "../components/Blogs";
 import styles from "../css/index.module.css";
 
@@ -15,10 +15,10 @@ import styles from "../css/index.module.css";
 const Header = (siteConfig) => {
   return (
     <header>
-      <div className="container margin-vert--lg">
+      <div className="container margin-vert--xl">
         <div className="row">
-          <div className="col col--7 margin-vert--lg">
-            <p className="hero__subtitle margin-vert--md">
+          <div className="col col--7">
+            <p className="hero__subtitle">
               The Business Suite is a collection of open source plugins for
               Grafana created and actively maintained by Volkov Labs.
             </p>
@@ -44,7 +44,6 @@ const Header = (siteConfig) => {
           <div className="col col--5">
             <a href="/plugins/">
               <ThemedImage
-                className={clsx(styles.heroBannerLogo, "margin-vert--lg")}
                 sources={{
                   light: useBaseUrl("/img/index/main.svg"),
                   dark: useBaseUrl("/img/index/main.dark.svg"),
@@ -55,7 +54,7 @@ const Header = (siteConfig) => {
           </div>
         </div>
 
-        <div className="container margin-vert--md padding-vert--lg">
+        <div className="container margin-vert--lg padding-vert--lg">
           <Plugins />
         </div>
       </div>
@@ -69,56 +68,42 @@ const Header = (siteConfig) => {
 const Main = (siteConfig) => {
   return (
     <main>
-      <div id="Plugins" className="container margin-vert--md padding-vert--md">
-        <h2 className={clsx(styles.header, "hero__title")} />
-        <div className="container">
-          <div className="row">
-            <div className="col col--8 margin-vert--lg">
-              <h1 className="hero__title margin-vert--lg">
-                {siteConfig.tagline}
-              </h1>
+      <div className="container">
+        <h2 className={clsx(styles.header, "hero__title")}>
+          <span>Business Intelligence</span>
+        </h2>
+        <div className="container margin-vert--lg padding-vert--md">
+          <p className="hero__subtitle margin-vert--md">
+            Revolutionize Your Business Insights with High-Performance,
+            Scalable, and Alert-Driven Analytics!
+          </p>
 
-              <p className="hero__subtitle margin-vert--md">
-                The Business Intelligence provides an accessible platform for
-                business users.
-              </p>
-
-              <div className="margin-vert--lg">
-                <a
-                  className={clsx(
-                    "button button--primary button--lg",
-                    styles.getStarted
-                  )}
-                  href="/big/"
-                >
-                  Learn More&nbsp;&nbsp;→
-                </a>
-              </div>
-            </div>
-            <div className="col col--4 margin-vert--md">
-              <ThemedImage
-                className={clsx(styles.heroBannerLogo)}
-                sources={{
-                  light: useBaseUrl("/img/index/intelligence.svg"),
-                  dark: useBaseUrl("/img/index/intelligence.dark.svg"),
-                }}
-                alt="Business Intelligence"
-              />
-            </div>
+          <div className="margin-vert--lg">
+            <a
+              className={clsx(
+                "button button--primary button--lg",
+                styles.getStarted
+              )}
+              href="/big/getting-started"
+            >
+              Getting Started&nbsp;&nbsp;→
+            </a>
           </div>
         </div>
 
-        <div className="container margin-vert--md padding-vert--lg">
-          <Components />
+        <div className="container margin-vert--lg">
+          <Intelligence />
         </div>
       </div>
 
-      <div id="Blogs" className="container margin-vert--md padding-vert--md">
+      <div id="Blogs" className="container margin-vert--xl">
         <h2 className={clsx(styles.header, "hero__title")}>
           <span>Blog</span>
         </h2>
 
-        <div className="container margin-vert--md padding-vert--lg">
+        <div className="container">&nbsp;</div>
+
+        <div className="container">
           <Blogs />
         </div>
       </div>

@@ -19,7 +19,11 @@ The three main alerting components:
 
 3. **An alert action**. It is an action triggered by an alert record.
 
-<Image title="Alerting basics." src="/img/big/basics.png" width="50%" />
+<Image
+  title="Alerting basics."
+  src="/img/big/business-alerting/basics.png"
+  width="50%"
+/>
 
 To summarize the schema from above, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created.
 
@@ -31,7 +35,7 @@ The schema below depicts the Alerting as it is side-by-side with the Business Al
 
 <Image
   title="Grafana and Business Alerting comparison."
-  src="/img/big/alerting-vs-big.png"
+  src="/img/big/business-alerting/alerting-vs-big.png"
 />
 
 ## Grafana Alerting
@@ -47,17 +51,3 @@ Webhooks, which are 3rd party APIs, can also be added as triggered by an alert r
 ## Business Alerting
 
 In the Business Alerting, we reimaged all three modules.
-
-The video below provides an overview of the Business Alerting. However, the code has been updated and some features have been added since the video release date.
-
-<Youtube id="vky-7-DfvXE" title="Business Alerting announcement." />
-
-## Features
-
-Here you can find more information about the following topics:
-
-| Section                          | Description                                               |
-| -------------------------------- | --------------------------------------------------------- |
-| [Business Alerting panel](panel) | Demonstrates how to Manage alerts based on panel queries. |
-| [Variables](variables)           | Explains using variables in alert rules.                  |
-| [Thresholds](thresholds)         | Explains using color ranges in Thresholds.                |
