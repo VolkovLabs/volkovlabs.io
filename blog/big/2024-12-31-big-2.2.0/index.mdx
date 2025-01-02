@@ -1,0 +1,322 @@
+---
+authors: [daria]
+slug: business-intelligence-2.2.0/
+tags: [Business Intelligence]
+image: /img/blog/2024-12-31-big-2.2.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Business Studio, Environment variables, and Engine API updates in Business Intelligence 2.2.0
+
+We are excited to announce the public preview release of the Business Intelligence 2.2.0. This release marks a significant milestone in Volkov Labs' mission to revolutionize Business Insights through high-performance, scalable, and alert-driven analytics. It includes the following updates:
+
+- Business Studio developed using a tech stack based on Electron and Tailwind UI.
+  - Allows to add and delete Business Engines connected to Grafana instances.
+  - Allows to add, update and delete alert rules and alerts actions.
+  - Supports for Light and Dark themes.
+  - Provides installers for MacOS, Linux and Windows with auto update functionality for MacOS and Windows.
+- Supports major Grafana 11 HTTP API.
+- Added default values for environment variables to make them optional.
+- Added Engine API to get environment info.
+- Added Engine API to get timeline of alert statuses.
+
+## Business Studio
+
+The Business Studio is an application developed by Volkov Labs. It plays the role of the control center for the Business Intelligence platform, providing a user-friendly interface and keeping all necessary configurations in one place.
+
+You start by connecting to as many Business Engines as needed, where each one is connected to a Grafana instance. From there, an authorized user can create and manage alert rules and actions.
+
+<Image
+  title="Business Studio 2.2.0. A list of configured Business Engines."
+  src="/img/blog/2024-12-31-big-2.2.0/business-studio-220-engines.png"
+/>
+
+The detailed documentation is coming in the beginning of 2025. Follow our [blog](/blog/) updates to be the first one to know when we publish it.
+
+:::tip Business Studio downloads
+
+You can download the Business Studio following the links provided at the [end](#business-studio-downloads) of this article or [Release Notes](/big/release/).
+:::
+
+### Add and delete Business Engines
+
+This feature allows to add as many Business Engines as needed to be in your system. Each of them should already be connected to a Grafana Instance. In the future, you can manage that connection from the Business Studio as well.
+
+To add a new Business Engine, click the **+ Add** button on the main screen and then specify the following:
+
+1. Engine name. It should be a unique name within the Business Studio.
+2. Engine URL. A URL for this Business Engine.
+3. Token.
+
+If you need a token for more than 10 Business Alerts, use the **Support** menu at the bottom left to request it.
+
+<Image
+  title="New Business Engine configuration."
+  src="/img/blog/2024-12-31-big-2.2.0/new-engine.png"
+/>
+
+:::info Subscription
+Business Intelligence is offered as a subscription-based product, and there is also a Community version available.
+
+Community version is limited to 10 Business Alerts and a single cluster of Business Engines.
+:::
+
+Once the Business Engine is added, you can review the available alert history, engine configuration, and actions by clicking on its name in the list.
+
+<Image
+  title="Business Engine Overview page with Alert History."
+  src="/img/blog/2024-12-31-big-2.2.0/engine-overview.png"
+/>
+
+The Business Engine configuration has 5 tabs:
+
+- Overview,
+- Alert rules,
+- Actions,
+- Environment,
+- Settings.
+
+### Manage alert rules
+
+Use the **Alert rules** tab to manage alert rules. Here you can:
+
+1. Add a new alert rule.
+2. Review the alert rule running states for each existing alert rule. There are two possible states:
+
+- **Active**,
+- **Paused**.
+
+3. Review the alert rule alerting state for each existing alert rule. There are five possible statuses:
+
+- **Scheduled**,
+- **OK**,
+- **Alerting**,
+- **Error**.
+
+4. Pause/Start the alert rule.
+5. Delete the alert rule.
+
+<Image
+  title="Use the Alert Rules tab to manage alert rules."
+  src="/img/blog/2024-12-31-big-2.2.0/tab-alert-rules.png"
+/>
+
+In the future, the **Alert Rule** tab will provide an interface to work with hundreds of alert rules by allowing grouping, filtering, etc., to ensure easy navigation and control.
+
+Below is a logical schema of alert rules statuses.
+
+<Image
+  title="A logical schema of alert rules statuses."
+  src="/img/blog/2024-12-31-big-2.2.0/alert-statuses.png"
+  width="50%"
+/>
+
+The **Add a new rule** window looks as follows:
+
+<Image
+  title="The Add a new rule window."
+  src="/img/blog/2024-12-31-big-2.2.0/new-rule.png"
+/>
+
+The new alert rule/edit window has the following configuration elements to specify:
+
+- **Title** is an alert name.
+- **Schedule** is a frequency of how often the rule should run. With CRON expressions your schedule can be as complex as needed.
+- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones. The alert rule will take queries and thresholds from there automatically.
+- **Time Range** could be either taken from the dashboard or specified custom.
+- The alert **evaluation** could be set to **Thresholds** or **Regex Pattern**.
+  - For the **Thresholds**, the alert examines the data against thresholds set in the panel options.
+  - For the **Regex Pattern**, the alert examines the specified fields (optional) and searches the specified pattern.
+- For the alert **action**, select from the drop-down list of the existing, pre-configured action APIs.
+- **Add Annotation** option.
+  - specify **Panel** to create and attach an annotation to a panel,
+  - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
+  - specify **Disabled** to disable the creation of any annotation following the alert rule breach.
+
+### Manage alert actions
+
+Use the **Actions** tab to manage alert actions. Here you can:
+
+1. Add a new alert action.
+2. Delete an existing alert action.
+3. There must be at least one alert action configured. That is the reason why there has to be a **default** alert action without a trash can icon (not possible to delete).
+
+<Image
+  title="The Actions tab to manage alert actions."
+  src="/img/blog/2024-12-31-big-2.2.0/tab-actions.png"
+/>
+
+The **Add a new action** window looks as follows:
+
+<Image
+  title="The Add a new action window."
+  src="/img/blog/2024-12-31-big-2.2.0/new-action.png"
+/>
+
+The new alert action/edit mode has the following configuration elements to specify:
+
+- **Title** is an action name,
+- **Type** (HTTP or Logs),
+- **HTTP Request URL** and request **method**. You can add **Headers** (additional information) to a request if needed,
+- **Message** template customizable using Handlebars.
+
+You can use the **Test Connectivity** button to check REST API endpoint availability.
+
+### Supports for Light and Dark themes
+
+The Business Studio follows system visual appearance preferences by supporting Light and Dark color themes.
+
+<Image
+  title="The Business Studio supports Light and Dark color themes."
+  src="/img/blog/2024-12-31-big-2.2.0/theme.png"
+/>
+
+## Business Studio installers
+
+We ensured the installation could be done in one click for MacOS, Linux, and Windows. For MacOS and Windows, you can configure the auto-update functionality to stay up-to-date with the latest release features.
+
+### Changelog
+
+To help users follow the new features, we provide access to the **Change log** at the bottom left corner.
+
+<Image
+  title="Changelog menu in the Business Studio."
+  src="/img/blog/2024-12-31-big-2.2.0/changelog.png"
+/>
+
+## Support of major Grafana 11 HTTP API
+
+The Business Studio works with Grafana starting from version 11. It might work with Grafana 10.X, but we did not extensively test that compatibility. Use at your own risk.
+
+The Business Intelligence platform will always be compatible with the most current Grafana version.
+
+## Default values for environment variables
+
+To simplify the initial Business Engine setup, we configured many of the environment variables by giving them default values.
+
+There are only 7 environment variables that must be set during the installation:
+
+- Timescale database connection details.
+- Grafana URL and Token (Service Account).
+
+<Code
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/.env"
+  language="shell"
+/>
+
+## Added Engine API to get environment info
+
+All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified. The environment info is taken by using the [GET /environment endpoint](https://volkovlabs.io/big/api/#tag/Environment/operation/EnvironmentController_get).
+
+<Image
+  title="Environment variables for the Charlie Engine 1."
+  src="/img/blog/2024-12-31-big-2.2.0/env.png"
+/>
+
+## Added Engine API to get timeline of alert statuses
+
+The timeline of alerting states is a subset of all alert rule records and includes only instances where alerting state changes. We added Engine API endpoint to [get timeline of alerting states](https://volkovlabs.io/big/api/#tag/Alert-Rules/operation/AlertsController_getHistoryTimeline).
+
+For instance, below is the complete list of alert rule states.
+
+```text
+date                      Previous            New
+1/1/25, 10:29:01 AM       OK                  Alerting
+1/1/25, 10:28:01 AM       OK                  OK
+1/1/25, 10:27:01 AM       OK                  OK
+1/1/25, 10:26:01 AM       OK                  OK
+1/1/25, 10:25:01 AM       OK                  OK
+1/1/25, 10:24:01 AM       OK                  OK
+```
+
+And here is the timeline. It consists of only the records where the alerting state changes.
+
+```text
+date                      Previous            New
+1/1/25, 10:29:01 AM       OK                  Alerting
+```
+
+## Business Studio Downloads
+
+:::info Security risks
+
+MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
+
+:::
+
+- MacOS:
+  - [Apple Disk Image for arm64 (Apple Mx processor)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-2.2.0-arm64.dmg)
+  - [Apple Disk Image for x86 (Intel)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-2.2.0-x64.dmg)
+  - [ZIP file for arm64 (Apple Mx processor)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-darwin-arm64-2.2.0.zip)
+  - [ZIP file for x86 (Intel)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-darwin-x64-2.2.0.zip)
+- Linux:
+  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio-2.2.0-1.arm64.rpm)
+  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio-2.2.0-1.x86_64.rpm)
+  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio_2.2.0_arm64.deb)
+  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/business-studio_2.2.0_amd64.deb)
+- Windows
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.2.0/Business.Studio-2.2.0.Setup.exe)
+
+<GettingStarted />
+
+## Release Notes
+
+### Business Studio 2.2.0
+
+- Added Getting Started messages for new installations.
+- Added descriptions to engines, alerts, and actions configuration.
+- Added Engine Settings page to update connection details and token.
+- Added Engine Environment page to display configuration.
+- Updated release workflow to sign and notarize MacOS and Windows installers.
+- Updated Overview pages to display alerting states.
+- Minor UI updates for engine, alert rules and action management.
+
+### Business Engine 2.2.0
+
+- Added API to get environment info.
+- Added API to get timeline of alerting states.
+- Added server and scheduler restart if database disconnected with fatal error.
+- Updated Grafana health check for Cloud instances.
+- Updated default log level to "log" to increase number of message for troubleshooting.
+
+### Business Studio 2.1.0
+
+- Major UI updates for engine, alert rules and action management.
+- Added JSON highlights for the latest event in alert rules.
+- Added auto application updater for MacOS and Windows.
+- Added minimum Business Engine version check.
+
+### Business Engine 2.1.0
+
+- Added Engine version for compatibility with Business Studio.
+- Added default values for environment variables to make them optional.
+- Added environment variable for custom database name.
+- Added API to get history events for Overview page.
+- Added API to get alert rules and actions by Id for updating in Business Studio.
+- Updated support time ranges in Scenes dashboards for Grafana 11.3+.
+
+### Business Studio 2.0.0
+
+- Developed using a tech stack based on Electron and Tailwind UI.
+- Allows to add and delete Business Engines connected to Grafana instances.
+- Allows to add, update and delete Actions and Alerts.
+- Supports for Light and Dark themes.
+- Provides installers for MacOS, Linux and Windows.
+
+### Business Engine 2.0.0
+
+- Developed using a tech stack based on NestJS framework.
+- Supports Grafana 11 HTTP API.
+- Uses Timescale database to store configuration.
+- Uses Prometheus to store internal metrics.
+- Supports distributed High-Availability.
+- Allows to add, update and delete Alerts and Actions.
+
+<Feedback />
