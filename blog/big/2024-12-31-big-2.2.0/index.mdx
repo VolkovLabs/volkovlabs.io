@@ -29,7 +29,7 @@ We are excited to announce the public preview release of the Business Intelligen
 
 ## Business Studio
 
-The Business Studio is an application developed by Volkov Labs. It plays the role of the control center for the whole observability system, providing a user-friendly interface and keeping all necessary configurations in one place.
+The Business Studio is an application developed by Volkov Labs. It plays the role of the control center for the Business Intelligence platform, providing a user-friendly interface and keeping all necessary configurations in one place.
 
 You start by connecting to as many Business Engines as needed, where each one is connected to a Grafana instance. From there, an authorized user can create and manage alert rules and actions.
 
@@ -42,7 +42,7 @@ The detailed documentation is coming in the beginning of 2025. Follow our [blog]
 
 :::tip Business Studio downloads
 
-You can download the Business Studio following the links provided at the [end](#business-studio-downloads) of this article.
+You can download the Business Studio following the links provided at the [end](#business-studio-downloads) of this article or [Release Notes](/big/release/).
 :::
 
 ### Add and delete Business Engines
@@ -88,12 +88,12 @@ The Business Engine configuration has 5 tabs:
 Use the **Alert rules** tab to manage alert rules. Here you can:
 
 1. Add a new alert rule.
-2. Review the alert rule states for each existing alert rule. There are two possible states:
+2. Review the alert rule running states for each existing alert rule. There are two possible states:
 
 - **Active**,
 - **Paused**.
 
-3. Review the alert rule status for each existing alert rule. There are five possible statuses:
+3. Review the alert rule alerting state for each existing alert rule. There are five possible statuses:
 
 - **Scheduled**,
 - **OK**,
@@ -164,7 +164,7 @@ The new alert action/edit mode has the following configuration elements to speci
 
 - **Title** is an action name,
 - **Type** (HTTP or Logs),
-- **HTTP Request URL** and request **method**. You can add **header** (additional information) to a request if needed,
+- **HTTP Request URL** and request **method**. You can add **Headers** (additional information) to a request if needed,
 - **Message** template customizable using Handlebars.
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
@@ -195,13 +195,16 @@ To help users follow the new features, we provide access to the **Change log** a
 
 The Business Studio works with Grafana starting from version 11. It might work with Grafana 10.X, but we did not extensively test that compatibility. Use at your own risk.
 
-The Business Studio will always be compatible with the most current Grafana version.
+The Business Intelligence platform will always be compatible with the most current Grafana version.
 
 ## Default values for environment variables
 
 To simplify the initial Business Engine setup, we configured many of the environment variables by giving them default values.
 
-There are only 7 environment variables that must be set during the installation.
+There are only 7 environment variables that must be set during the installation:
+
+- Timescale database connection details.
+- Grafana URL and Token (Service Account).
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/.env"
@@ -210,9 +213,7 @@ There are only 7 environment variables that must be set during the installation.
 
 ## Added Engine API to get environment info
 
-The environment info is taken by using the [following API endpoint](https://volkovlabs.io/big/api/#tag/Environment/operation/EnvironmentController_get).
-
-All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified.
+All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified. The environment info is taken by using the [GET /environment endpoint](https://volkovlabs.io/big/api/#tag/Environment/operation/EnvironmentController_get).
 
 <Image
   title="Environment variables for the Charlie Engine 1."
@@ -221,9 +222,9 @@ All environment variables are displayed on the **Environment** tab. In the futur
 
 ## Added Engine API to get timeline of alert statuses
 
-We added Engine API endpoint to [get timeline of alert statuses](https://volkovlabs.io/big/api/#tag/Alert-Rules/operation/AlertsController_getHistoryTimeline). The timeline of alert statuses is a subset of all alert rule status records. It includes only instances where status changes.
+The timeline of alerting states is a subset of all alert rule records and includes only instances where alerting state changes. We added Engine API endpoint to [get timeline of alerting states](https://volkovlabs.io/big/api/#tag/Alert-Rules/operation/AlertsController_getHistoryTimeline).
 
-For instance, below is the complete list of alert rule statuses.
+For instance, below is the complete list of alert rule states.
 
 ```text
 date                      Previous            New
@@ -235,7 +236,7 @@ date                      Previous            New
 1/1/25, 10:24:01 AM       OK                  OK
 ```
 
-And here is the timeline. It consists of only the records where the status changes.
+And here is the timeline. It consists of only the records where the alerting state changes.
 
 ```text
 date                      Previous            New
@@ -274,13 +275,13 @@ MacOS and Windows installers are signed and notarized with encryption. End to en
 - Added Engine Settings page to update connection details and token.
 - Added Engine Environment page to display configuration.
 - Updated release workflow to sign and notarize MacOS and Windows installers.
-- Updated Overview pages to display alert statuses.
+- Updated Overview pages to display alerting states.
 - Minor UI updates for engine, alert rules and action management.
 
 ### Business Engine 2.2.0
 
 - Added API to get environment info.
-- Added API to get timeline of alert statuses.
+- Added API to get timeline of alerting states.
 - Added server and scheduler restart if database disconnected with fatal error.
 - Updated Grafana health check for Cloud instances.
 - Updated default log level to "log" to increase number of message for troubleshooting.
