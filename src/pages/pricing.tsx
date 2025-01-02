@@ -23,7 +23,7 @@ const Header = () => {
             <p className="hero__subtitle">
               You can contact us via Zendesk, receive priority in feature
               requests and bug fixes, meet with us for in-person consultation,
-              and get access to the Business Intelligence.
+              and get access to the <a href="/big">Business Intelligence</a>.
             </p>
 
             <div className="margin-vert--lg">
