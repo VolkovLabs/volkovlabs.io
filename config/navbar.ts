@@ -122,14 +122,14 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-big-link",
         },
         {
-          label: "Grafana Crash Course",
-          to: "/blog/tags/grafana-crash-course",
-          className: "volkovlabs-link icon-grafana-link",
-        },
-        {
           label: "Business Gazette",
           to: "/blog/tags/business-gazette",
           className: "volkovlabs-link icon-gazette-link",
+        },
+        {
+          label: "Grafana Crash Course",
+          to: "/blog/tags/grafana-crash-course",
+          className: "volkovlabs-link icon-grafana-link",
         },
         {
           label: "Solutions",

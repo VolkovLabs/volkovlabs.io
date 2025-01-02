@@ -73,6 +73,11 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-blog-link",
         },
         {
+          label: "Business Gazette",
+          to: "/blog/tags/business-gazette",
+          className: "volkovlabs-link icon-gazette-link",
+        },
+        {
           label: "Grafana Crash Course",
           href: "/grafana/",
           className: "volkovlabs-footer-link icon-grafana-link",
@@ -81,11 +86,6 @@ export const FOOTER = {
           label: "Environment data source",
           to: "/grafana/environment/",
           className: "volkovlabs-footer-link icon-plugins-env-link",
-        },
-        {
-          label: "GitHub",
-          href: "https://github.com/VolkovLabs",
-          className: "volkovlabs-footer-link icon-github-link",
         },
         {
           label: "YouTube Channel",
@@ -116,6 +116,11 @@ export const FOOTER = {
           label: "Disclaimer",
           to: "/disclaimer/",
           className: "volkovlabs-footer-link icon-disclaimer-link",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/VolkovLabs",
+          className: "volkovlabs-footer-link icon-github-link",
         },
         {
           label: "LinkedIn",
