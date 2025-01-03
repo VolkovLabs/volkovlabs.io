@@ -107,18 +107,17 @@ And this is the second line.
 
 ## Other Layout parameters
 
-
-| Section                                                            | Description                                        |
-| ------------------------------------------------------------------ | -------------------------------------------------- |
-| [Multi tables as tabs](#multi-tables-as-tabs)                      | Demonstrates multi table as tabs                   |
-| [Tree View/Row Grouping](#tree-viewrow-grouping)                   | Demonstrates tree view/row grouping                |
-| [Auto-width columns](#auto-width-columns)                          | Demonstrates auto-width columns                    |
-| [Table footer](#table-footer)                                      | Explains how the table footer works                |
-| [Filtering in the **Client** and **Query** modes](#filtering)       | Demonstrates the **Client** and **Query** filtering             |
-| [Sorting](#sorting)                                                | Demonstrates column sorting                        |
-| [Pin Columns](#pin-columns)                                        | Demonstrates column pinning                        |
-| [Show and hide columns](#show-and-hide-columns)                    | Demonstrates the show/hide column button           |
-| [Hide the table header](#option-to-hide-the-table-header)          | Explains how to hide the table header              |
+| Section                                                       | Description                                         |
+| ------------------------------------------------------------- | --------------------------------------------------- |
+| [Multi tables as tabs](#multi-tables-as-tabs)                 | Demonstrates multi table as tabs                    |
+| [Tree View/Row Grouping](#tree-viewrow-grouping)              | Demonstrates tree view/row grouping                 |
+| [Auto-width columns](#auto-width-columns)                     | Demonstrates auto-width columns                     |
+| [Table footer](#table-footer)                                 | Explains how the table footer works                 |
+| [Filtering in the **Client** and **Query** modes](#filtering) | Demonstrates the **Client** and **Query** filtering |
+| [Sorting](#sorting)                                           | Demonstrates column sorting                         |
+| [Pin Columns](#pin-columns)                                   | Demonstrates column pinning                         |
+| [Show and hide columns](#show-and-hide-columns)               | Demonstrates the show/hide column button            |
+| [Hide the table header](#option-to-hide-the-table-header)     | Explains how to hide the table header               |
 
 ### Multi tables as tabs
 
@@ -181,31 +180,31 @@ The Business Table panel starts strong with the filtering feature offering two m
 
 Every column of the Business Table panel offers the **Filter** feature. If set to **Yes**, the funnel icon will appear next to the column header.
 
-With the **Filter Mode**->**Client**, when a user clicks on the funnel icon further filterimg options appear. 
+With the **Filter Mode**->**Client**, when a user clicks on the funnel icon further filterimg options appear.
 
 What those options are depends on the column data type:
 
- - **String**
-    - **Search** (step 5 from the image below). It provides a form to type free text or enter a number value to use in the filtering.
-    - **Options** (step 6 from the image below). It provides a multi-select list of all existing values in the column.
+- **String**
+  - **Search** (step 5 from the image below). It provides a form to type free text or enter a number value to use in the filtering.
+  - **Options** (step 6 from the image below). It provides a multi-select list of all existing values in the column.
 
 <Image
   title="The Client filtering feature of the Business Table panel for the String data type."
   src="/img/plugins/business-table/filtering-client-string.png"
 />
 
- - **Number**
+- **Number**
 
-  Select from a list of mathematical operations and specify a number to apply it towards.
+Select from a list of mathematical operations and specify a number to apply it towards.
 
 <Image
   title="The Client filtering feature of the Business Table panel for the Number data type."
   src="/img/plugins/business-table/filtering-client-number.png"
 />
 
- - **Time**
+- **Time**
 
- Select a time range using a standard Grafana range picker.
+Select a time range using a standard Grafana range picker.
 
 <Image
   title="The Client filtering feature of the Business Table panel for the Time data type."
@@ -216,7 +215,7 @@ What those options are depends on the column data type:
 
 This method of filtering allows panel interconnectivity or use in the data links. With the **Filter Mode**->**Query**, the displayed data is filtered according to the selected dashboard variables.
 
-Below is how you can configure the **Query** filtering method. 
+Below is how you can configure the **Query** filtering method.
 
 <Image
   title="The Query filtering feature of the Business Table panel."
