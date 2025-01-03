@@ -1,3 +1,3 @@
 export * from "./Blogs";
-export * from "./Components";
+export * from "./Intelligence";
 export * from "./Plugins";

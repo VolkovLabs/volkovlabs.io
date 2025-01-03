@@ -79,14 +79,19 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-big-link",
         },
         {
-          label: "Business Alerting",
-          to: "/big/alerting/",
-          className: "volkovlabs-link icon-big-alerting-link",
+          label: "Business Studio",
+          to: "/big/studio/",
+          className: "volkovlabs-link icon-big-studio-link",
         },
         {
           label: "Business Engine",
           to: "/big/engine/",
           className: "volkovlabs-link icon-big-engine-link",
+        },
+        {
+          label: "Business Alerting",
+          to: "/big/alerting/",
+          className: "volkovlabs-link icon-big-alerting-link",
         },
         {
           label: "EULA",
@@ -117,14 +122,14 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-big-link",
         },
         {
-          label: "Grafana Crash Course",
-          to: "/blog/tags/grafana-crash-course",
-          className: "volkovlabs-link icon-grafana-link",
-        },
-        {
           label: "Business Gazette",
           to: "/blog/tags/business-gazette",
           className: "volkovlabs-link icon-gazette-link",
+        },
+        {
+          label: "Grafana Crash Course",
+          to: "/blog/tags/grafana-crash-course",
+          className: "volkovlabs-link icon-grafana-link",
         },
         {
           label: "Solutions",
