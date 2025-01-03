@@ -16,6 +16,16 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
+      items: ["studio/support"],
+      label: "Business Studio",
+      type: "category",
+      collapsible: false,
+      link: {
+        type: "doc",
+        id: "studio/index",
+      },
+    },
+    {
       items: [
         "engine/configuration",
         "engine/prometheus",
@@ -31,16 +41,6 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "doc",
         id: "engine/index",
-      },
-    },
-    {
-      items: ["studio/support"],
-      label: "Business Studio",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "studio/index",
       },
     },
     {
