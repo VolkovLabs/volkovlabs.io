@@ -75,7 +75,7 @@ export const FOOTER = {
         {
           label: "Business Gazette",
           to: "/blog/tags/business-gazette",
-          className: "volkovlabs-link icon-gazette-link",
+          className: "volkovlabs-footer-link icon-gazette-link",
         },
         {
           label: "Grafana Crash Course",
