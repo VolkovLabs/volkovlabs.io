@@ -6,7 +6,7 @@ image: /img/plugins/business-charts/schema.png
 
 import Image from "@theme/Image";
 
-# Panel Parameters
+# Code Parameters
 
 ### context.echarts
 
@@ -40,11 +40,11 @@ context.ecStat;
 context.echarts.registerTransform(context.ecStat.transform.regression);
 ```
 
-## Editor
+## Visual Editor
 
 ### editor.dataset
 
-ECharts dataset. Visual mode
+ECharts dataset in Visual mode.
 
 #### Usage
 
@@ -85,7 +85,7 @@ return {
 
 ### editor.series
 
-ECharts series. Visual mode
+ECharts series in Visual mode.
 
 #### Usage
 
@@ -216,7 +216,6 @@ context.grafana.locationService;
 ```javascript
 context.grafana.locationService.reload();
 
-//
 const history = context.grafana.locationService.history;
 ```
 
@@ -239,7 +238,7 @@ console.log(variable.toUpperCase());
 
 ### grafana.notifyError([header, message])
 
-Displays an error.
+Displays an error notification.
 
 #### Usage
 
@@ -282,7 +281,7 @@ context.grafana.notifySuccess(["Success Title", `Success message`]);
 
 ### grafana.theme
 
-Contains grafana theme object.
+Contains grafana Theme object.
 
 #### Usage
 

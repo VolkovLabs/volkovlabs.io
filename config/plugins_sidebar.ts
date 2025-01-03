@@ -78,7 +78,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           items: ["business-charts/code/panel"],
-          label: "Options & JavaScript Code",
+          label: "Charts Function",
           type: "category",
           link: {
             type: "doc",
