@@ -6,9 +6,9 @@ image: /img/plugins/business-text/replace.png
 
 import Image from "@theme/Image";
 
-# Panel Parameters
+# Context Parameters
 
-### context.data
+## context.data
 
 Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data**.
 
@@ -24,9 +24,9 @@ context.data;
 const data = context.data;
 ```
 
-### context.element
+## context.element
 
-Current html element
+Current HTML element.
 
 #### Usage
 
@@ -40,7 +40,7 @@ context.element;
 const element = context.element;
 ```
 
-### context.dataFrame
+## context.dataFrame
 
 Selected Data Frame for **Every Row**, **All Rows** templates.
 
@@ -55,6 +55,8 @@ context.dataFrame;
 ```javascript
 const frame = context.dataFrame;
 ```
+
+## Panel
 
 ### panel.handlebars
 
@@ -167,7 +169,6 @@ context.grafana.locationService;
 ```javascript
 context.grafana.locationService.reload();
 
-//
 const history = context.grafana.locationService.history;
 ```
 
@@ -224,7 +225,7 @@ console.log(timeZone);
 
 ### grafana.notifyError([header, message])
 
-Displays an error.
+Displays an error notification.
 
 #### Usage
 
@@ -235,7 +236,6 @@ context.grafana.notifyError([header, message]);
 #### Example
 
 ```javascript
-//
 context.grafana.notifyError(["Error Title", `Show error message`]);
 ```
 
@@ -267,7 +267,7 @@ context.grafana.notifySuccess(["Success Title", `Success message`]);
 
 ### grafana.theme
 
-Contains grafana theme object.
+Contains grafana Theme object.
 
 #### Usage
 
