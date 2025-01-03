@@ -117,3 +117,19 @@
 [data-theme="dark"] .plugin {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
 }
+
+/**
+ * Business Intelligence Image
+ */
+.big {
+  display: block;
+  border-radius: 10px;
+}
+
+[data-theme="light"] .big {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
+}
+
+[data-theme="dark"] .big {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
+}

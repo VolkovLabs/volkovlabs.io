@@ -255,6 +255,19 @@
   background: url("/static/img/big/business-engine/logo.dark.svg") no-repeat;
 }
 
+.icon-big-studio-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/big/business-studio/logo.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-big-studio-link::before {
+  background: url("/static/img/big/business-studio/logo.dark.svg") no-repeat;
+}
+
 .icon-big-link::before {
   content: "";
   width: 24px;

@@ -1,0 +1,184 @@
+---
+authors: [daria, mikhail]
+slug: gazetta-november-2024/
+tags: [Business Gazette]
+image: /img/blog/2024-12-16-gazette-november-2024/banner.png
+keywords: [Gazette, Newspaper, Monthly]
+---
+
+import BlogPost from "@theme/BlogPost";
+import Feedback from "@site/docs/_feedback.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Master educators award, Release dashboard tutorial and 28 millions downloads
+
+In this November issue of the Business Gazette:
+
+- [Master Educator award](#master-educator)
+- [Release dashboard tutorial](#release-dashboard-tutorial)
+- [Total Business Suite downloads reached 28 millions](#total-business-suite-downloads)
+- [Release news](#release-news)
+- [Massive documentation improvement](#massive-documentation-improvement)
+
+Without further ado, let's summarize the November deliverables.
+
+## Master educator
+
+December was a truly festive month for us as we were honored with the Master Educator Grafana Champions Award. This award is a testament to the champions' consistent production of high-quality educational content, such as blog posts, tutorials, and video guides.
+
+These resources are instrumental in unlocking the full potential of Grafana. They provide valuable insights and accessible learning materials which is a key factor in fostering Grafana's growth and adoption.
+
+<Image
+  title="Master educator award."
+  src="/img/blog/2024-12-16-gazette-november-2024/award.png"
+/>
+
+I wish you can watch the online ceremony, it was a blast.
+Two feelings I experienced right after:
+
+- Grafana is doing an outstanding job with the Championship program.
+- Community recognition feels special and, most importantly, inspiring. We already have a packed roadmap for the next year! Stay tuned for more products, ideas, solutions and tutorials from us!
+
+## Release dashboard tutorial
+
+Our most popular Youtube video is ["Create your Business Grafana dashboard | Step by step for analysts | Grafana Tutorial"](https://www.youtube.com/watch?v=HNCKbGfAU0Q) with 34K views so far.
+
+Even though, the second popular video, ["JSON API and Infinity Data Source tutorial for Grafana. How to display the unemployment rate"](https://www.youtube.com/watch?v=B4Uj1n4Cr88) is very close in popularity, the fact still shows where the most uncertanties for Grafana community are. People want to start with Grafana dashboards right away to see the available functionality and be able to evaluate if Grafana fits their project needs.
+
+We at Volkov Labs created myriads of various dashboards, overcoming hundreds of pitfalls and solving many production issues. Sharing the details behind one of our most utilized dashboards seems a natural continuation of our mission.
+
+We use the [Release dashboard](https://release.volkovlabs.io/) project on a daily basis to track our Business Suite plugins development.
+
+<Image
+  title="Release dashboard sectioned."
+  src="/img/blog/2024-11-13-release-dashboard/release-dashboard.png"
+/>
+
+The brilliant idea to share how this dashboard is configured took a while to appear, but when it arrived, it seemed so obvious for many reasons:
+
+- The dashboard features the most used Grafana core visualization, [Time Series](https://www.youtube.com/watch?v=YpOazX67GSo), in many different configurations.
+- In addition, it also has some variations of the [Business Charts](/plugins/business-charts/) panel, which serve as good samples for this multifaceted panel.
+- What is more, the [Business Calendar](/plugins/business-calendar/) is a nice final touch to illustrate another possible view of the data.
+
+This dashboard combines many things we love about Grafana, among them the ability to follow the existing user requirements closely without unnecessary bundled features and, people's favorite, the simplicity of configuration.
+
+An honorable mention of this project goes to the [Business Forms](/plugins/business-forms/) panel, which provides an interface to our release manager to enter release specifics into the Timescale data source using the Grafana dashboard.
+
+<Image
+  title="The Grafana dashboard to enter release details into the data source."
+  src="/img/blog/2024-11-13-release-dashboard/release-details.png"
+/>
+
+Feel free to spend a minute or two reviewing the [dashboard itself](https://release.volkovlabs.io/), reading the detailed blog post or watching the video.
+
+### Blog post
+
+The blog post covers the following topics:
+
+- How the business dashboard (Grafana Release) has been configured.
+- Detailed TimeScale data base structure.
+- Steps to configure any Grafana visualization panel.
+- Configuration of all Release dashboard panels.
+- Configuration of all the Business Forms panel.
+
+<BlogPost id="release-dashboard-20241113" />
+
+### Tutorial
+
+The video has a bit more informaton than the blog post:
+
+- How the business dashboard (Grafana Release) has been configured.
+- What visualization panels used.
+- What type of data source can a panel have, how to share the same data source between panels.
+- How to use different data source for the same panel.
+- Business Forms user entry example.
+
+Explained Grafana functionality:
+
+- What is Grafana transformations.
+- Steps to configure any Grafana visualization panel.
+
+<Youtube
+  id="tUGRQBBZoRQ"
+  title="How to create a business dashboard in Grafana. Plugin Release dashboard."
+/>
+
+## Total Business Suite downloads
+
+The total downloads are rushing towards the 30,000,000 mark. I wonder if we can reach it before the end of the year.
+
+<Image
+  title="The total downloads are rushing towards the 30,000,000 mark."
+  src="/img/blog/2024-12-16-gazette-november-2024/28m.png"
+  width="50%"
+/>
+
+## Release news
+
+:::tip FYI
+Every updated plugin is compatible with Grafana 11.3 scenes-powered dashboards.
+:::
+
+In November 2024, we published six plugin releases, focusing on our rising star, the [Business Table](/plugins/business-table/) panel. This plugin keeps staggering users with its functionality. We are happy to see the unstoppable demand from the community.
+
+<Image
+  title="The Business Suite plugin collection releases in November 2024."
+  src="/img/blog/2024-12-16-gazette-november-2024/calendar-nov-2024.png"
+/>
+
+One of the most requested features for the [Business Table](/plugins/business-table/) was [add and delete a row](/blog/business-table-1.9.0/#ability-to-add-and-delete-a-row). It became available starting from version 1.9.0
+
+<Image
+  title="Add and delete rows from the Business Table directly from the Grafana dashboard."
+  src="/img/blog/2024-12-04-business-table-1.9.0/table-add-delete-row.gif"
+  width="70%"
+/>
+
+This feature also means that the [Business Table](/plugins/business-table/) becomes the second out of the [Business Suite](/plugins/) collection after the [Business Forms](/plugins/business-forms/), to allow transmitting data back into the connected data source.
+
+In addition, we spiced up the Business Table with many new [display column types](/blog/business-table-1.9.0/#new-column-types) and [editable types](/blog/business-table-1.9.0/#new-editor-types).
+
+The [Visual Editor](/plugins/business-charts/visualeditor) of the [Business Charts](/plugins/business-charts/) 6.5.0, in addition to all existing, also supports [scatter](/blog/echarts-panel-6.5.0/#scatter) and [boxplot](/blog/echarts-panel-6.5.0/#boxplot) types.
+
+<table>
+  <tr style={{ border: 0 }}>
+    <td style={{ border: 0, width: "50%" }}>
+      <BlogPost id="business-table-1.9.0" />
+    </td>
+    <td style={{ border: 0 }}>
+      <BlogPost id="echarts-panel-6.5.0" />
+    </td>
+  </tr>
+</table>
+
+In November, the [Business Calendar](/plugins/business-calendar/) 3.8.0 got a improved [**Year**](/blog/calendar-panel-3.8.0/#year-view) layout as well as [panel-specific language(datetime) format](/blog/calendar-panel-3.8.0/#panel-specific-languagedatetime-format). The second means that one dashboard can simultaneously contain many different languages (formats).
+
+The [Business Forms](/plugins/business-forms/) become even more dynamic with release 4.9.0 because now, besides all visual elements, sections can be generated dynamically as well.
+
+<table>
+  <tr style={{ border: 0 }}>
+    <td style={{ border: 0, width: "50%" }}>
+      <BlogPost id="calendar-panel-3.8.0" />
+    </td>
+    <td style={{ border: 0 }}>
+      <BlogPost id="form-panel-4.9.0" />
+    </td>
+  </tr>
+</table>
+
+## Massive documentation improvement
+
+Keeping documentation up-to-date is the real challenge of fast-expanding plugin functionality, especially if not only simple features are added but the whole configuration approach changes
+
+In November, we found time to revamp the documentation for the [Business Table](/plugins/business-table) panel.
+
+Let us know if the schema below makes it easy to follow the configurational steps.
+
+<Image
+  title="The Business Table configuration steps."
+  src="/img/blog/2024-12-16-gazette-november-2024/table-data-flow.png"
+/>
+
+<Feedback />

@@ -350,23 +350,23 @@ const sidebars: SidebarsConfig = {
           label: "Introduction",
         },
         {
-          items: ["business-table/add-delete", "business-table/permission"],
+          items: [
+            "business-table/layout",
+            "business-table/add",
+            "business-table/edit",
+            "business-table/editor-types",
+            "business-table/delete",
+            "business-table/nested",
+            "business-table/permission",
+          ],
           label: "Editable data",
           type: "category",
           link: {
             type: "doc",
-            id: "business-table/edit",
+            id: "business-table/editable",
           },
         },
-        {
-          items: ["business-table/nested"],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-table/features",
-          },
-        },
+        "business-table/features",
         {
           items: [],
           label: "Tutorials",

@@ -1,0 +1,34 @@
+---
+tags:
+  - Business Engine
+---
+
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+
+# Prometheus
+
+Business Engine provides Prometheus metrics for performance monitoring using provisioned `Business Engine` dashboard.
+
+<Image
+  title="Grafana dashboard displays Business Engine metrics stored in Prometheus."
+  src="/img/big/business-engine/prometheus.png"
+/>
+
+## Configuration
+
+Sample configuration to collect metrics from Server API and Scheduler processes.
+
+<Code
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/prometheus.yml"
+  language="yaml"
+/>
+
+## Dashboard
+
+The [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) can be downloaded from the Business Intelligence repository.
+
+<Code
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json"
+  language="json"
+/>
