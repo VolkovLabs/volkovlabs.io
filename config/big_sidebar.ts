@@ -16,7 +16,10 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
-      items: ["studio/support"],
+      items: [       
+        "studio/manage-business-engines",
+        "studio/manage-alert-actions",
+        "studio/support"],
       label: "Business Studio",
       type: "category",
       collapsible: false,
@@ -30,9 +33,19 @@ const sidebars: SidebarsConfig = {
         "engine/configuration",
         "engine/prometheus",
         {
-          type: "link",
-          href: "/big/api",
-          label: "Engine API",
+          items: [
+            {
+            type: "link",
+            href: "/big/api",
+            label: "OpenAPI Specification",
+          },
+          ],
+          label: "Business Engine API",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "engine/api",
+          },
         },
       ],
       label: "Business Engine",
@@ -44,8 +57,13 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
-      //      items: ["alerting/panel", "alerting/variables", "alerting/thresholds"],
-      items: [],
+      items: [
+         // "alerting/panel", 
+          "alerting/manage-alert-rules",
+        //  "alerting/variables", 
+        //  "alerting/thresholds",
+          ],
+      //items: [],
       label: "Business Alerting",
       type: "category",
       collapsible: false,

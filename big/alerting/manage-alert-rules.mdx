@@ -1,0 +1,63 @@
+---
+tags:
+  - Business Studio
+---
+
+import Image from "@theme/Image";
+
+# Alert rules
+
+Use the **Alert rules** tab to manage alert rules. Here you can:
+
+1. Add a new alert rule.
+2. Review the alert rule running states for each existing alert rule. There are two possible states:
+
+- **Active**,
+- **Paused**.
+
+3. Review the alert rule alerting state for each existing alert rule. There are five possible statuses:
+
+- **Scheduled**,
+- **OK**,
+- **Alerting**,
+- **Error**.
+
+4. Pause/Start the alert rule.
+5. Delete the alert rule.
+
+<Image
+  title="Use the Alert Rules tab to manage alert rules."
+  src="/img/blog/2024-12-31-big-2.2.0/tab-alert-rules.png"
+/>
+
+In the future, the **Alert Rule** tab will provide an interface to work with hundreds of alert rules by allowing grouping, filtering, etc., to ensure easy navigation and control.
+
+Below is a logical schema of alert rules statuses.
+
+<Image
+  title="A logical schema of alert rules statuses."
+  src="/img/blog/2024-12-31-big-2.2.0/alert-statuses.png"
+  width="50%"
+/>
+
+The **Add a new rule** window looks as follows:
+
+<Image
+  title="The Add a new rule window."
+  src="/img/blog/2024-12-31-big-2.2.0/new-rule.png"
+/>
+
+The new alert rule/edit window has the following configuration elements to specify:
+
+- **Title** is an alert name.
+- **Schedule** is a frequency of how often the rule should run. With CRON expressions your schedule can be as complex as needed.
+- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones. The alert rule will take queries and thresholds from there automatically.
+- **Time Range** could be either taken from the dashboard or specified custom.
+- The alert **evaluation** could be set to **Thresholds** or **Regex Pattern**.
+  - For the **Thresholds**, the alert examines the data against thresholds set in the panel options.
+  - For the **Regex Pattern**, the alert examines the specified fields (optional) and searches the specified pattern.
+- For the alert **action**, select from the drop-down list of the existing, pre-configured action APIs.
+- **Add Annotation** option.
+  - specify **Panel** to create and attach an annotation to a panel,
+  - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
+  - specify **Disabled** to disable the creation of any annotation following the alert rule breach.

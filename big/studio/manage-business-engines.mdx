@@ -1,0 +1,87 @@
+---
+tags:
+  - Business Studio
+---
+
+import Image from "@theme/Image";
+
+# Business Engines
+
+In this part of the documentation, we assume that, conceptually, you know what a Business Engine is. If not, please refer to the [schema](/big/#overview) and its description, following by the [Business Engine](/big/engine/) section.
+
+## Add and delete Business Engines
+
+This feature allows to add as many Business Engines as needed to be in your system. Each of them should already be connected to a Grafana Instance. In the future, you can manage that connection from the Business Studio as well.
+
+<Image
+  title="Add a new Business Engine in the Business Studio."
+  src="/img/big/business-engine/add-engine.png"
+/>
+
+To add a new Business Engine, click the **+ Add** button on the main screen and then specify the following:
+
+1. Engine name. It should be a unique name within the Business Studio.
+2. Engine URL. A URL for this Business Engine.
+3. Token.
+
+If you need a token for more than 10 Business Alerts, use the **Support** menu at the bottom left to request it.
+
+<Image
+  title="New Business Engine configuration."
+  src="/img/blog/2024-12-31-big-2.2.0/new-engine.png"
+/>
+
+:::info Subscription
+Business Intelligence is offered as a subscription-based product, and there is also a Community version available.
+
+Community version is limited to 10 Business Alerts and a single cluster of Business Engines.
+:::
+
+Once the Business Engine is added, you can review the configuration settings by clicking on its name in the list.
+
+## 5 tabs of the Business Engine configuration
+
+- [Overview](#overview),
+- [Alert rules](#alert-rules),
+- [Actions](#actions),
+- [Environment](#environment),
+- [Settings](#settings).
+
+### Overview
+
+The **Overview** tab, in addition to the basic engine statistics such as version, status (ok/error), a number of alert rules and actions, features the Alert History.
+
+<Image
+  title="A Business Engine Overview tab with Alert History."
+  src="/img/big/business-engine/tab-overview.png"
+/>
+
+### Alert rules
+
+The **Alert rules** tab is a part of the [Business Alerting](/big/alerting/) feature available in all Business Engines. 
+
+To learn more about alert rules, please refer to this documentation's [**Alert rules**](/big/alerting/manage-alert-rules/) section.
+
+### Actions
+
+The **Actions** tab helps to configure actions, which are the set of steps that are triggered by an expected event. The most common scenario is when an action is triggered after an alert rule is broken, but it is just one of the possible scenarios. 
+
+To learn more about actions, please refer to this documentation's [**Actions**](/big/studio/manage-alert-actions/) section.
+
+### Environment
+
+All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified. The environment info is taken by using the [GET /environment endpoint](https://volkovlabs.io/big/api/#tag/Environment/operation/EnvironmentController_get).
+
+<Image
+  title="Environment variables for the Charlie Engine 1."
+  src="/img/big/business-studio/tab-env.png"
+/>
+
+### Settings
+
+The **Settings** tab contains all the information you provided when creating the Business Engine.
+
+<Image
+  title="Tab Settings for the Charlie Engine 1."
+  src="/img/big/business-studio/tab-settings.png"
+/>
