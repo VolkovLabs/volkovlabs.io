@@ -15,8 +15,8 @@ type Props = {
   src: string;
   title?: string;
   width?: string;
-  zoom: boolean;
-  lazy: boolean;
+  zoom?: boolean;
+  lazy?: boolean;
 };
 
 /**

@@ -32,6 +32,11 @@ export const FOOTER = {
           href: "https://release.volkovlabs.io",
           className: "volkovlabs-footer-link icon-release-link",
         },
+        {
+          label: "GitHub",
+          href: "https://github.com/VolkovLabs",
+          className: "volkovlabs-footer-link icon-github-link",
+        },
       ],
     },
     {
@@ -116,11 +121,6 @@ export const FOOTER = {
           label: "Disclaimer",
           to: "/disclaimer/",
           className: "volkovlabs-footer-link icon-disclaimer-link",
-        },
-        {
-          label: "GitHub",
-          href: "https://github.com/VolkovLabs",
-          className: "volkovlabs-footer-link icon-github-link",
         },
         {
           label: "LinkedIn",
