@@ -567,6 +567,7 @@
 table {
   display: table;
   width: 100%;
+  font-size: 14px;
 }
 
 .questionsDiv {
