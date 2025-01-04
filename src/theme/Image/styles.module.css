@@ -10,11 +10,11 @@
   max-height: 400px;
 }
 
-[data-theme='light'] .image {
+[data-theme="light"] .image {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
 }
 
-[data-theme='dark'] .image {
+[data-theme="dark"] .image {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
 }
 

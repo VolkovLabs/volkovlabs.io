@@ -6,7 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
 import styles from "../css/index.module.css";
-import Image from "../theme/Image";
+import Image from "@theme/Image";
 
 /**
  * Header
@@ -141,8 +141,8 @@ const Home = () => {
           src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
         ></script>
       </Head>
-      <Header siteConfig={siteConfig}></Header>
-      <Main siteConfig={siteConfig}></Main>
+      <Header />
+      <Main />
     </Layout>
   );
 };
