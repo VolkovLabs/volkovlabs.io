@@ -8,7 +8,7 @@ import Image from "@theme/Image";
 
 # Context Parameters
 
-### context.element
+## context.element
 
 Return a current element.
 
@@ -23,6 +23,8 @@ context.element;
 ```javascript
 const currentElement = context.element;
 ```
+
+## Panel
 
 ### panel.data
 
@@ -42,7 +44,7 @@ const data = context.panel.data;
 
 ### panel.elements
 
-Return form elements
+Return form elements.
 
 #### Usage
 
@@ -98,7 +100,7 @@ if (context.panel.response && context.panel.response.ok) {
 
 ### panel.options
 
-Return panel`s options.
+Return panel's options.
 
 #### Usage
 
@@ -261,7 +263,7 @@ const payload = context.panel.formValue;
 // return { name: 'Alex', isAdmin: true }
 ```
 
-### panel.response()
+### panel.response
 
 Contains a current Request's response.
 
@@ -381,7 +383,6 @@ if (condition) {
   context.panel.enableSubmit();
 }
 
-//
 context.panel.enableSubmit();
 ```
 
@@ -424,8 +425,6 @@ if (condition) {
   context.panel.enableReset();
 }
 
-//
-
 context.panel.disableSubmit();
 ```
 
@@ -445,8 +444,6 @@ context.panel.disableReset();
 if (condition) {
   context.panel.disableReset();
 }
-
-//
 
 context.panel.disableReset();
 ```
@@ -468,8 +465,6 @@ if (condition) {
   context.panel.enableSaveDefault();
 }
 
-//
-
 context.panel.enableSaveDefault();
 ```
 
@@ -489,8 +484,6 @@ context.panel.disableSaveDefault();
 if (condition) {
   context.panel.disableSaveDefault();
 }
-
-//
 
 context.panel.disableSaveDefault();
 ```
@@ -818,7 +811,6 @@ context.grafana.locationService;
 ```javascript
 context.grafana.locationService.reload();
 
-//
 const history = context.grafana.locationService.history;
 ```
 
@@ -856,7 +848,6 @@ context.grafana.notifyError([
   `An error occurred updating values: ${context.panel.response.status}`,
 ]);
 
-//
 context.grafana.notifyError(["Error Title", `Show error message`]);
 ```
 
