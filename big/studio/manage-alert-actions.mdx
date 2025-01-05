@@ -11,12 +11,14 @@ Use the [**Actions**](/big/studio/manage-business-engines/#5-tabs-os-the-busines
 
 1. Add a new action.
 2. Delete an existing action.
-3. There must be at least one action configured. That is the reason why there has to be a **default** action without a trash can icon (not possible to delete).
+3. There must be at least one action configured.
 
 <Image
   title="The Actions tab to manage actions."
   src="/img/blog/2024-12-31-big-2.2.0/tab-actions.png"
 />
+
+## Add a new action
 
 The **Add a new action** window looks as follows:
 
@@ -34,3 +36,18 @@ The new action/edit mode has the following configuration elements to specify:
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
 
+## Message template
+
+Based on the JSON event payload you can create a customized message using Handlebars.
+
+```Handlebars
+{{event.alert.title}} ({{event.alert.state}})
+```
+
+### JSON helper
+
+Presents an object (JSON) or an array as a formatted string.
+
+```Handlebars
+{{json event}}
+```

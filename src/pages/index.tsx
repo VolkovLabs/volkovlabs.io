@@ -91,6 +91,19 @@ const Main = (siteConfig) => {
           </div>
         </div>
 
+        <div className="container margin-vert--lg padding-horiz--xl">
+          <a href="/big/">
+            <ThemedImage
+              className={styles.big}
+              sources={{
+                light: useBaseUrl("/img/big/business-studio/engine.png"),
+                dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
+              }}
+              alt={siteConfig.tagline}
+            />
+          </a>
+        </div>
+
         <div className="container margin-vert--lg">
           <Intelligence />
         </div>

@@ -8,33 +8,35 @@ import Feedback from "./_feedback.mdx";
 
 # Business Intelligence
 
-## Overview 
-
 While working closely with the Community and helping to solve production use cases, we have accumulated quite a list of wishes for reimagined alerting functioning in Grafana.
 
 Most asks were related to simplifying user interaction by having all controls in one UI place. Many users were eager to incorporate anomaly detection with reporting for self-hosted Grafana.
 
-This is how the idea of the Business Intelligence platform was born. With time, going through a lot of brainstorming and Community feedback, we came up with a design that is easy to maintain for users and can advance in many directions. 
+This is how the idea of the Business Intelligence platform was born. With time, going through a lot of brainstorming and Community feedback, we came up with a design that is easy to maintain for users and can advance in many directions.
+
+## Architecture
 
 <Image
-  title="Business Intelligence platform basic architecture."
+  title="Business Intelligence platform architecture."
   src="/img/big/business-intelligence-platform.png"
 />
 
 The Grafana Business Intelligence platform consists of the following:
- - Business Studio. It is your control panel. It features a user-friendly interface with an overview of the whole system. Users only need one Business Studio to work with the rest of the platform.
- - Business Engine. One Business Engines serves one Grafana instance. It does all the heavy lifting and all the necessary computing for all setup tasks. 
- - Business Alerting. It is the first part of the Busines Engine that is available. It features alert systems based on Grafana panel queries, with support for customizable thresholds and variables, ensuring timely and relevant notifications for business metrics.
-- Business Reporting. It is a Busines Engine part that is coming soon. 
-- More Business modules will be added after that. One of them is anomaly detection.  
+
+- Business Studio. It is your control panel. It features a user-friendly interface with an overview of the whole system. Users only need one Business Studio to work with the rest of the platform.
+- Business Engine. One Business Engines serves one Grafana instance. It does all the heavy lifting and all the necessary computing for all setup tasks.
+- Business Alerting. It is the first part of the Busines Engine that is available. It features alert systems based on Grafana panel queries, with support for customizable thresholds and variables, ensuring timely and relevant notifications for business metrics.
+- Business Reporting. It is a Busines Engine part that is coming soon.
+- More Business modules will be added after that. One of them is anomaly detection.
 - Grafana is not part of the Business Intelligence. You can work with any Grafana instance type, such as OSS, Enterprise, or Cloud.
 
 Such architecture allows users:
- - to supervise as many Grafana instances as needed in one place (Business Studio), 
- - take advantage of the user-friendly interface,
- - seamlessly integrate with new upcoming Business Engine parts.
- 
-There is a possibility of facilitating all Grafana instances version control, new Grafana dashboard propagation (for instance, from the DEV to QA to production), etc.  
+
+- to supervise as many Grafana instances as needed from central location (Business Studio),
+- take advantage of the user-friendly interface,
+- seamlessly integrate with new upcoming Business Engine features.
+
+There is a possibility of facilitating all Grafana instances version control, new Grafana dashboard propagation (for instance, from the DEV to QA to production), etc.
 
 ## More information
 

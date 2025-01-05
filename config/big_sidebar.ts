@@ -16,10 +16,11 @@ const sidebars: SidebarsConfig = {
       },
     },
     {
-      items: [       
+      items: [
         "studio/manage-business-engines",
         "studio/manage-alert-actions",
-        "studio/support"],
+        "studio/support",
+      ],
       label: "Business Studio",
       type: "category",
       collapsible: false,
@@ -35,10 +36,10 @@ const sidebars: SidebarsConfig = {
         {
           items: [
             {
-            type: "link",
-            href: "/big/api",
-            label: "OpenAPI Specification",
-          },
+              type: "link",
+              href: "/big/api",
+              label: "OpenAPI Specification",
+            },
           ],
           label: "Business Engine API",
           type: "category",
@@ -58,11 +59,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       items: [
-         // "alerting/panel", 
-          "alerting/manage-alert-rules",
-        //  "alerting/variables", 
+        // "alerting/panel",
+        "alerting/manage-alert-rules",
+        //  "alerting/variables",
         //  "alerting/thresholds",
-          ],
+      ],
       //items: [],
       label: "Business Alerting",
       type: "category",
