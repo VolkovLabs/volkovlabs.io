@@ -204,8 +204,8 @@ const Home = () => {
           src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
         ></script>
       </Head>
-      <Header siteConfig={siteConfig}></Header>
-      <Main siteConfig={siteConfig}></Main>
+      <Header />
+      <Main />
     </Layout>
   );
 };

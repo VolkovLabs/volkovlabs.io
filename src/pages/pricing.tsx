@@ -69,8 +69,8 @@ const Main = (siteConfig) => {
         <div className="row">
           <div className="col col--12 margin-vert--md">
             <p className="hero__subtitle margin-vert--md">
-              Click on <b>Support</b> to send us a message. We are eager to
-              start a conversation.
+              Click on <b>Support</b> to get in touch with us. We're excited to
+              begin a dialogue.
             </p>
           </div>
         </div>
@@ -95,8 +95,8 @@ const Home = () => {
           src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
         ></script>
       </Head>
-      <Header siteConfig={siteConfig}></Header>
-      <Main siteConfig={siteConfig}></Main>
+      <Header />
+      <Main />
     </Layout>
   );
 };

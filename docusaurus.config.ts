@@ -13,7 +13,8 @@ const config: Config = {
   plugins: PLUGINS,
   presets: PRESETS,
   projectName: "volkovlabs.io",
-  tagline: "Business Suite for Grafana",
+  tagline:
+    "Revolutionize Your Business Insights with High-Performance, Scalable, and Alert-Driven Analytics!",
   themeConfig: THEME_CONFIG,
   themes: [],
   title: "Volkov Labs",
