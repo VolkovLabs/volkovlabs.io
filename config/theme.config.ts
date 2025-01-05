@@ -38,6 +38,8 @@ export const THEME_CONFIG: ThemeConfig = {
       "yaml",
       "java",
       "scala",
+      "handlebars",
+      "markup-templating",
     ],
   },
 };

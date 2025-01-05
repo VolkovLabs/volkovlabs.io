@@ -16,7 +16,7 @@ We thoroughly explained these three types of variables in our [Grafana Crash Cou
 
 To access nested variables, use curly brackets.
 
-```handlebars
+```Handlebars
 {{#if (contains (variable "{__user.login}") "admin")}}
   User is an admin
 {{else}}
@@ -28,7 +28,7 @@ To access nested variables, use curly brackets.
 
 Create a list from the multi select variable.
 
-```
+```Handlebars
 {{#each (variable "hostname")}}
   - {{this}}
 {{/each}}
@@ -40,14 +40,14 @@ Use the `lookup` helper to create dynamic templates based on dashboard variables
 
 The following template creates a key-value pair from every selected value in the `props` dashboard variable.
 
-```
+```Handlebars
 book:
 {{#each (variable "props")}}
   {{this}}: {{lookup @root this}}
 {{/each}}
 ```
 
-## JavaScript code 
+## JavaScript code
 
 ### Get variable value
 
@@ -70,7 +70,6 @@ Time range values `from` and `to` should be set as is.
 
 ```js
 context.grafana.locationService.partial({ from: start, to: end });
-
 ```
 
 ## CSS styles

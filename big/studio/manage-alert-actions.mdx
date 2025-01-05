@@ -1,0 +1,53 @@
+---
+tags:
+  - Business Studio
+---
+
+import Image from "@theme/Image";
+
+# Actions
+
+Use the [**Actions**](/big/studio/manage-business-engines/#5-tabs-os-the-business-engine-configuration) tab to manage actions. Here you can:
+
+1. Add a new action.
+2. Delete an existing action.
+3. There must be at least one action configured.
+
+<Image
+  title="The Actions tab to manage actions."
+  src="/img/blog/2024-12-31-big-2.2.0/tab-actions.png"
+/>
+
+## Add a new action
+
+The **Add a new action** window looks as follows:
+
+<Image
+  title="The Add a new action window."
+  src="/img/blog/2024-12-31-big-2.2.0/new-action.png"
+/>
+
+The new action/edit mode has the following configuration elements to specify:
+
+- **Title** is an action name,
+- **Type** (HTTP or Logs),
+- **HTTP Request URL** and request **method**. You can add **Headers** (additional information) to a request if needed,
+- **Message** template customizable using Handlebars.
+
+You can use the **Test Connectivity** button to check REST API endpoint availability.
+
+## Message template
+
+Based on the JSON event payload you can create a customized message using Handlebars.
+
+```Handlebars
+{{event.alert.title}} ({{event.alert.state}})
+```
+
+### JSON helper
+
+Presents an object (JSON) or an array as a formatted string.
+
+```Handlebars
+{{json event}}
+```
