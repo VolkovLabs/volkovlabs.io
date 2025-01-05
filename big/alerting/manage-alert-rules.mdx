@@ -15,7 +15,7 @@ Use the **Alert rules** tab to manage alert rules. Here you can:
 - **Active**,
 - **Paused**.
 
-3. Review the alert rule alerting state for each existing alert rule. There are five possible statuses:
+3. Review the alert rule alerting state for each existing alert rule. There are four possible statuses:
 
 - **Scheduled**,
 - **OK**,
@@ -37,7 +37,14 @@ In the future, the **Alert Rule** tab will provide an interface to work with hun
 
 ## Alert rules statuses
 
-Below is a logical schema of alert rules statuses.
+Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any modification, the alert status changes to **Scheduled**.
+
+- **Scheduled**. The alert is scheduled, but never run yet. This status is assigned right after the alert is created or modified by the user and API.
+- **OK**. The alert has been run and the thresholds are NOT breached and the Regex pattern is NOT found.
+- **Alerting**. The alert has been run and the thresholds are being breached or the Regex pattern is found.
+- **Error**. Something is wrong which could be the query, annotation or action.
+
+Reference the flow schema to get a better understanding of how statuses change in the Business Engine.
 
 <Image
   title="A logical schema of alert rules statuses."
