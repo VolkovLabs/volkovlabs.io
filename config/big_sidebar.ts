@@ -60,8 +60,8 @@ const sidebars: SidebarsConfig = {
     {
       items: [
         "alerting/manage-alert-rules",
-                "alerting/variables",
-        //        "alerting/thresholds",
+        "alerting/variables",
+        "alerting/thresholds",
       ],
       label: "Business Alerting",
       type: "category",
