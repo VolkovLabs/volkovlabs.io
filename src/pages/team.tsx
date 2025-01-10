@@ -25,7 +25,7 @@ const Header = () => {
             <p className="hero__subtitle">
               Over the past three years, we have spearheaded a significant
               open-source initiative, developing ten plugins for Grafana with a
-              staggering 25 millions total downloads. Our commitment to this
+              staggering 30 millions total downloads. Our commitment to this
               cause is evident in our best-in-class documentation, a dedicated
               YouTube channel, and a robust mechanism for addressing community
               queries.
@@ -53,7 +53,7 @@ const Main = () => {
     <main>
       <div id="Team" className="container margin-vert--md">
         <div className="row margin-vert--lg text--center">
-          <div className="col col--6">
+          <div className="col col--4">
             <a href="/blog/authors/mikhail/">
               <Image src="/img/team/mikhail.png" zoom={false} />
               <h3>Mikhail</h3>
@@ -61,30 +61,35 @@ const Main = () => {
             </a>
           </div>
 
-          <div className="col col--6">
+          <div className="col col--4">
             <a href="/blog/authors/alex/">
               <Image src="/img/team/alex.png" zoom={false} />
               <h3>Alex</h3>
               <p>Director of Engineering</p>
             </a>
           </div>
-        </div>
-
-        <div className="row margin-vert--lg text--center">
-          <div className="col col--6">
+          <div className="col col--4">
             <a href="/blog/authors/daria/">
               <Image src="/img/team/daria.png" zoom={false} />
               <h3>Daria</h3>
               <p>Co-Founder and Grafana Champion</p>
             </a>
           </div>
+        </div>
 
-          <div className="col col--6">
+        <div className="row margin-vert--lg text--center">
+          <div className="col col--4">
             <a href="/blog/authors/vitali/">
               <Image src="/img/team/vitali.png" zoom={false} />
               <h3>Vitali</h3>
               <p>Community Engineer</p>
             </a>
+          </div>
+
+          <div className="col col--4">
+            <Image src="/img/team/mikhail-ulasevich.png" zoom={false} />
+            <h3>Mikhail Ulasevich</h3>
+            <p>Senior Engineer</p>
           </div>
         </div>
       </div>
