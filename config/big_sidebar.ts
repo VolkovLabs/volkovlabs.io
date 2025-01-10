@@ -32,6 +32,7 @@ const sidebars: SidebarsConfig = {
     {
       items: [
         "engine/configuration",
+        "engine/database",
         "engine/prometheus",
         {
           items: [
