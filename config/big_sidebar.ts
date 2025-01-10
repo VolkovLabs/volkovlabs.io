@@ -45,6 +45,7 @@ const sidebars: SidebarsConfig = {
     {
       items: [
         "engine/configuration",
+        "engine/database",
         "engine/prometheus",
         {
           items: [
@@ -73,8 +74,8 @@ const sidebars: SidebarsConfig = {
     {
       items: [
         "alerting/manage-alert-rules",
-        //        "alerting/variables",
-        //        "alerting/thresholds",
+        "alerting/variables",
+        "alerting/thresholds",
         {
           items: [
             "alerting/datasources/postgresql",
