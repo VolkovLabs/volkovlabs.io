@@ -88,7 +88,7 @@ const Main = () => {
 
           <div className="col col--4">
             <Image src="/img/team/mikhail-ulasevich.png" zoom={false} />
-            <h3>Mikhail Ulasevich</h3>
+            <h3>Mikhail</h3>
             <p>Senior Engineer</p>
           </div>
         </div>
