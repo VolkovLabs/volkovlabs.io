@@ -30,7 +30,9 @@ The **Add a new action** window looks as follows:
 The new action/edit mode has the following configuration elements to specify:
 
 - **Title** is an action name
-- **Type** (HTTP or Logs)
+- **Type** options
+  - **HTTP Request** will call URL and send JSON payload with event and applied message template.
+  - If **Logs** selected, JSON payload will be printed in the Docker container output.
 - **HTTP Request URL** and request **method**
   - Add **Headers** (additional information) to a request if needed.
 - **Message** template customizable using Handlebars.

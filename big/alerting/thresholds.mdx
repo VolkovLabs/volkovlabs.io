@@ -29,7 +29,7 @@ The alert rule configuration in the Business Studio looks as follows.
   src="/img/big/business-alerting/thresh-conf.png"
 />
 
-All devices, except the Tampa South 124, have all ranges of metrics allowed. The Tampa South 124 device generates an annotation when a metric value is above 30.
+All devices, except the `Tampa South 124`, have all ranges of metrics allowed. The `Tampa South 124` device generates an annotation when a metric value is above `30`.
 
 ## Annotations
 
@@ -41,5 +41,11 @@ They highlight all time ranges when the data values (here, it is temperature) we
 
 Please note that no values (no registered temperature data) exist between the highest peak and the lowest deep on the graph. The temperature changes abruptly from max to min.
 
-- The temperature for all four alerts goes above 30,
-- For the second alert, it goes up to 90.5 degrees (illustrated with a tooltip).
+- The temperature for all four alerts goes above `30`,
+- For the second alert, it goes up to `90.5` degrees (illustrated with a tooltip).
+
+## Annotations ranges
+
+Depends on the **Apply to** evaluation parameters annotations will be created as a range or a single line.
+
+Evaluating using **All value** or **Percentage** will create an annotations range.

@@ -10,18 +10,8 @@ import Image from "@theme/Image";
 Use the **Alert rules** tab to manage alert rules. Here you can:
 
 1. Add a new alert rule.
-2. Review the alert rule running states for each existing alert rule. There are two possible states:
-
-- **Active**,
-- **Paused**.
-
-3. Review the alert rule alerting state for each existing alert rule. There are four possible statuses:
-
-- **Scheduled**,
-- **OK**,
-- **Alerting**,
-- **Error**.
-
+2. Review the alert rule running states for each existing alert rule.
+3. Review the alert rule alerting state for each existing alert rule.
 4. Pause/Start the alert rule.
 5. Delete the alert rule.
 
@@ -30,19 +20,20 @@ Use the **Alert rules** tab to manage alert rules. Here you can:
   src="/img/blog/2024-12-31-big-2.2.0/tab-alert-rules.png"
 />
 
-:::note Future releases
+## Alert rules states
 
-In the future, the **Alert Rule** tab will provide an interface to work with hundreds of alert rules by allowing grouping, filtering, etc., to ensure easy navigation and control.
-:::
+To temporate pause alert execution click on **Pause** icon for the specific alert rule. Alert can be started anytime to resume execution.
 
 ## Alert rules statuses
 
-Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any modification, the alert status changes to **Scheduled**.
+Right after an alert is created it becomes **Active** and **Scheduled**. After modification, the alert status changes to **Scheduled** if it requires reexecution with a new set of parameters.
 
-- **Scheduled**. The alert is scheduled, but never run yet. This status is assigned right after the alert is created or modified by the user and API.
+- **Scheduled**. The alert is scheduled, but never run yet with a current set of parameters. This status is assigned right after the alert is created or modified by the user and API.
 - **OK**. The alert has been run and the thresholds are NOT breached and the Regex pattern is NOT found.
 - **Alerting**. The alert has been run and the thresholds are being breached or the Regex pattern is found.
 - **Error**. Something is wrong which could be the query, annotation or action.
+
+### Flow schema
 
 Reference the flow schema to get a better understanding of how statuses change in the Business Engine.
 
@@ -64,8 +55,10 @@ The **Add a new rule** window looks as follows:
 The new alert rule/edit window has the following configuration elements to specify:
 
 - **Title** is an alert name.
-- **Schedule** is a frequency of how often the rule should run. With CRON expressions your schedule can be as complex as needed.
-- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones. The alert rule will take queries and thresholds from there automatically.
+- **Schedule** is a frequency of how often the rule should run.
+  - With CRON expressions your schedule can be as complex as needed.
+- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones.
+  - The alert rule will take queries and thresholds from there automatically.
 - **Time Range** could be either taken from the dashboard or specified custom.
 - The alert **evaluation** could be set to **Thresholds** or **Regex Pattern**.
   - For the **Thresholds**, the alert examines the data against thresholds set in the panel options.
@@ -75,3 +68,21 @@ The new alert rule/edit window has the following configuration elements to speci
   - specify **Panel** to create and attach an annotation to a panel,
   - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
   - specify **Disabled** to disable the creation of any annotation following the alert rule breach.
+
+## Multi-frames
+
+The Business Engine supports multi-frame data sets. That means that the alert rule assigned to a dashboard and panel will be applied to all data frames fetched from the connected data source.
+
+<Image
+  title="Dashboard and panel are mandatory parameters for an alert rule."
+  src="/img/big/business-engine/multi-frames.png"
+/>
+
+## Transformations
+
+:::note BETA
+
+Support of Grafana transformation is in beta state. This is due to the number of existing transformations.
+:::
+
+Grafana transformations are supported. However, please, note, that Grafana offers a large number of transformations, hence, there is a chance that some of them will not work correctly.

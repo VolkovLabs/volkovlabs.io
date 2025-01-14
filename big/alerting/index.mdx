@@ -25,13 +25,18 @@ The three main alerting components:
   width="50%"
 />
 
-To summarize the schema from above, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created.
+To summarize the schema from above:
 
-Following the created alert records, alert actions are initiated.
+- Describe WHAT to observe
+- Specify the rules of HOW exactly.
+- Every time the rule is broken, a detailed record with specifics is created.
+- Following the created alert records, alert actions are initiated.
 
 ## Similarities and differences with Grafana Alerting
 
-The schema below depicts the Alerting as it is side-by-side with the Business Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
+The schema below depicts the Alerting as it is side-by-side with the Business Alerting, so you can see the similarities and differences.
+
+Each of the main alerting components (rule, record, and action) has a corresponding software module.
 
 <Image
   title="Grafana and Business Alerting comparison."
@@ -52,4 +57,4 @@ Webhooks, which are 3rd party APIs, can also be added as triggered by an alert r
 
 In the Business Alerting, use Business Studio to manage alert rules and alert actions.
 
-The Business Engine is resposible for executing the configuration you specified in the Business Studio.
+The [Business Engine](../engine/) is resposible for executing the configuration you specified in the Business Studio.
