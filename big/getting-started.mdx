@@ -14,11 +14,12 @@ The Business Intelligence platform utilize Docker containers to be modular and s
 
 The `docker-compose.yml` file consists of the following containers and can be used to start the platform:
 
-- **Grafana** includes the provisioned dashboards and datasources.
+- **Grafana** includes the provisioned dashboards and data sources.
 - **Timescale** is required to store Business Engine configuration.
 - **Business Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls actions when alert statuses change.
 - **Prometheus** collects and store performance metrics from Business Engine.
 - **JSON server** is an action example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
+- **Data Emulator** is a NodeJS scripts to populate data to Timescale database and demonstrate variables functionality.
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
