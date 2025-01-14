@@ -72,6 +72,15 @@ const sidebars: SidebarsConfig = {
         id: "alerting/index",
       },
     },
+    {
+      items: [],
+      label: "Tutorials",
+      type: "category",
+      link: {
+        type: "doc",
+        id: "tutorials/index",
+      },
+    },
     "release",
   ],
 };

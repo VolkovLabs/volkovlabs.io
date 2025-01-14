@@ -28,6 +28,8 @@ Here is an example of the Time Series visualization where one data series trigge
 
 To access the alert rule configuration in the Business Studio, select the Business Engines from the main screen, then switch to the **Alert rules** tab.
 
+### Configuration
+
 From there, either use the existing alert rule from the list to reconfigure or create a new rule by clicking on the **+ Add** button.
 
 <Image
@@ -41,3 +43,13 @@ Below is what the configuration of the alert rule using dashboard variables migh
   title="With variables, the same alert rule can have multiple thresholds."
   src="/img/big/business-alerting/var-3.png"
 />
+
+## Data sources
+
+At this stage, we ensured that the Business Engine supports the variables in Prometheus and PostgreSQL data sources. Some data source has unique support for the variables and we plan to support the most popular of them in the future.
+
+### Custom variable values
+
+Grafana supports a wide range of data sources. From the beginning, we ensured the compatibility between the BI Engine and SQL and Prometheus data sources. We are actively working on ensuring many other data sources are compatible.
+
+However, in the case when variables for your particular data source are not yet supported, we allow to specify variable values directly.

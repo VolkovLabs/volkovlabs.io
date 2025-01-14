@@ -7,7 +7,7 @@ import Image from "@theme/Image";
 
 # Business Engine
 
-We reimagined the native Alerting in Grafana and came up with the Business Engine:
+We reimagined the native Alerting in Grafana and came up with the Business Engine with Alerting module:
 
 - It uses dashboards as configuration which means it retrieves dashboard queries and thresholds and uses them as alert rule parameters. That eliminates the duplicative work when users have to enter and update the same specifics twice.
 - It is installed as a separate container which makes the system architecture flexible.
@@ -16,3 +16,10 @@ We reimagined the native Alerting in Grafana and came up with the Business Engin
   title="Conceptual workflow from the user POV."
   src="/img/big/business-engine/workflow.png"
 />
+
+:::note Grafana 11
+
+The Business Engine works with Grafana starting from version 11. It might work with Grafana 10.X, but we did not extensively test that compatibility. Use at your own risk.
+
+The Business Intelligence platform will always be compatible with the most current Grafana version.
+:::
