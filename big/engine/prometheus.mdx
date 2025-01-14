@@ -8,12 +8,21 @@ import Image from "@theme/Image";
 
 # Prometheus
 
-Business Engine provides Prometheus metrics for performance monitoring using provisioned `Business Engine` dashboard.
+Business Engine provides Prometheus metrics for performance monitoring using ready-to-use, out-of-the-box Business Engine dashboard with all necessary metrics for kick-off the successful monitoring.
+
+Having Prometheus monitoring built-in in the Business Engine allows you to monitor the Business Intelligence platform itself.
 
 <Image
   title="Grafana dashboard displays Business Engine metrics stored in Prometheus."
   src="/img/big/business-engine/prometheus.png"
 />
+
+## Endpoints
+
+The Business Engine consists of two endpoints which provides metrics:
+
+- API Server - `engine:3001/metrics`
+- Scheduler - `engine:3002/metrics`
 
 ## Configuration
 

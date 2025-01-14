@@ -32,12 +32,11 @@ Business Intelligence is a proof-of-concept project with an expected launch in 2
 - High performance Business Engine,
 - Business Studio,
 - Business Reporting,
-- Dashboard management,
-- Forecasting.
+- Dashboard management.
 
 <Image
-  title="Business Intelligence for Grafana. Our Business Intelligence project."
-  src="/img/big/concept.png"
+  title="Business Intelligence platform for Grafana."
+  src="/img/big/platform.png"
 />
 
 ## Alerting panel improvements
@@ -107,38 +106,6 @@ You can set any webhook to be assigned by default, meaning, when a webhook is no
 />
 
 <GettingStarted />
-
-### Docker Compose
-
-The `docker-compose.yml` file consists of the following containers:
-
-- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and a demo dashboard.
-- **Timescale** is required to store configuration, events, rules, etc.
-- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
-- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
-- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
-- **Data Generator** generates test data for threshold evaluation in the demo dashboard.
-
-<Code
-  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
-  language="yaml"
-/>
-
-### Start
-
-When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers:
-
-```sh
-docker compose pull && docker compose up
-```
-
-### Stop
-
-Stop and remove all containers:
-
-```sh
-docker compose down
-```
 
 ## Release Notes
 

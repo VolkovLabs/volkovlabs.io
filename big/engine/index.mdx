@@ -7,9 +7,9 @@ import Image from "@theme/Image";
 
 # Business Engine
 
-We reimagined the Alert Manager and came up with the Business Engine:
+We reimagined the native Alerting in Grafana and came up with the Business Engine with Alerting module:
 
-- It uses dashboards as configuration which means it retrieves dashboard queries and thresholds and uses them as alert rule parameters. That eliminates the duplicative work when users have to enter the same specifics twice.
+- It uses dashboards as configuration which means it retrieves dashboard queries and thresholds and uses them as alert rule parameters. That eliminates the duplicative work when users have to enter and update the same specifics twice.
 - It is installed as a separate container which makes the system architecture flexible.
 
 <Image
@@ -17,22 +17,7 @@ We reimagined the Alert Manager and came up with the Business Engine:
   src="/img/big/business-engine/workflow.png"
 />
 
-## Multi-frames
+:::note Grafana 11
 
-As you know, an alert rule is created for a particular panel on a particular dashboard.
-
-<Image
-  title="Dashboard and panel are mandatory parameters for an alert rule."
-  src="/img/big/business-engine/multi-frames.png"
-/>
-
-The Business Engine supports multi-frame data sets. That means that the alert rule assigned to a dashboard and panel will be applied to all data frames fetched from the connected data source.
-
-## Transformations
-
-:::note BETA
-
-Support of Grafana transformation is in beta state. This is due to the number of existing transformations.
+The Business Engine requires Grafana 11. The Business Intelligence platform will always be compatible with the most current Grafana version.
 :::
-
-Grafana transformations are supported. However, please, note, that Grafana offers a large number of transformations, hence, there is a chance that some of them will not work correctly.

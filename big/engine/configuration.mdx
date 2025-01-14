@@ -5,16 +5,16 @@ tags:
 
 # Configuration
 
-Business Engine is configured using environment variables.
+Business Engine supports environment variables to update default configuration.
 
 :::note Future releases
 
-In the future release, the **Environent** tab in Business Studio will allow to configure them in real-time.
+In the future release, the **Environent** tab in Business Studio will allow to update configuration in real-time.
 :::
 
 ## Timescale database
 
-Timescale (PostgreSQL) database is used to store Business Engine database and required for start-up. We selected Timescale database because it can be used to store Grafana configuration for High Availability setup.
+Timescale (PostgreSQL) database is used to store Business Engine database and required for start-up. We selected Timescale database because it can be used to store Grafana configuration for [High Availability](../high-availability.mdx) setup.
 
 ```shell
 ########################### Database Configuration #############################################
@@ -64,7 +64,7 @@ GRAFANA_TOKEN=SERVICE-ACCOUNT-TOKEN
 
 ### Health Check
 
-Depends on the configuration, Grafana might take longer time to respond to the requests from Business Engine. This scenario may lead to the failure of the startup health check. Simply put, if the Business Engine can't verify that Grafana is responding, it shuts itself down.
+Depends on the configuration, Grafana might take longer time to respond to the requests from Business Engine. This scenario may lead to the failure of the startup health check.
 
 To avoid this false health check failure, we added timing parameters that determine how long the Business Engine waits before checking Grafana's active status using Grafana token and URL to connect to.
 
@@ -85,7 +85,7 @@ GRAFANA_HEALTH_CHECK_RETRY=2
 
 ### GRAFANA_REQUEST_TIMEOUT
 
-Data Source requests timeout can be increased for slow requests. By default, the waiting is 10 seconds.
+Data Source requests timeout can be increased for slow requests. By default, the wait time is 10 seconds.
 
 ```shell
 ##
@@ -96,7 +96,7 @@ GRAFANA_REQUEST_TIMEOUT=10000
 
 ## Business Engine
 
-API Server and Scheduler starts on port 3001 and 3002 by default. They can be changed to start in `Host` mode, otherwise use port mapping to assign different ports.
+API Server and Scheduler starts on port 3001 and 3002 by default. They can be changed to start in the `Host` network mode, otherwise use port mapping to assign different ports.
 
 ```shell
 ##
@@ -108,18 +108,6 @@ ENGINE_SERVER_PORT=3001
 ## Scheduler Port for Prometheus Metrics
 ##
 ENGINE_SCHEDULER_PORT=3002
-```
-
-### ENGINE_NODE_ID
-
-Node Id is required for high availability and load balancing cluster configuration. Should be unique for each Engine.
-
-```Shell
-##
-## Unique Node Id for distributed alert scheduling
-## Should be unique for each Engine
-##
-ENGINE_NODE_ID=1
 ```
 
 ### ENGINE_API_DOCUMENTATION
@@ -136,7 +124,7 @@ ENGINE_API_DOCUMENTATION=false
 
 ### ENGINE_ALERT_BATCH_SIZE
 
-You can increase batch size to increase performance for alerts with multiple variable executions. It may increase load on the data source for heavy queries and limited resources.
+You can increase batch size to improve performance for alerts with multiple variable executions. It may create additional load on the data source for heavy queries and limited resources.
 
 ```shell
 ##

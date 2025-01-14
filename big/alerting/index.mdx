@@ -8,9 +8,11 @@ import Youtube from "@theme/Youtube";
 
 # Business Alerting
 
-**Alerting** is a system to observe how your data changes and act when a change occurs.
+Business Alerting is a module of Business Engine configured using Business Studio. The [Business Engine](../engine/) is responsible for executing the configuration you specified in the Business Studio.
 
-The three main alerting components:
+## Alert components
+
+**Alerting** is a system to observe how your data changes and act when a change occurs. The three main alerting components:
 
 1. **An alert rule**. It is an instruction to evaluate the observable data.
    Most alert rules have parameters like time frame to check, how often, query to run (SQL and PromQL, etc.), and thresholds.
@@ -25,13 +27,18 @@ The three main alerting components:
   width="50%"
 />
 
-To summarize the schema from above, you describe WHAT to observe and specify the rules of HOW exactly. Then every time the rule is broken, a detailed record with specifics is created.
+To summarize the schema from above:
 
-Following the created alert records, alert actions are initiated.
+- Describe WHAT to observe.
+- Specify the rules of HOW exactly.
+- Every time the rule is broken, a detailed record with specifics is created.
+- Following the created alert records, alert actions are initiated.
 
 ## Similarities and differences with Grafana Alerting
 
-The schema below depicts the Alerting as it is side-by-side with the Business Alerting, so you can see the similarities and differences. Each of the main alerting components (rule, record, and action) has a corresponding software module.
+The schema below depicts the Alerting as it is side-by-side with the Business Alerting, so you can see the similarities and differences.
+
+Each of the main alerting components (rule, record, and action) has a corresponding software module.
 
 <Image
   title="Grafana and Business Alerting comparison."
@@ -47,9 +54,3 @@ The alerting records are created by the Alert Manager. Every time a rule is brok
 For the alert actions, Grafana has an extensive notification alerting channel system. Based on the amount of questions we received and came across, it has a steep learning curve. It allows you to set the channels to configure sending text, Slack messages, emails and OnCall.
 
 Webhooks, which are 3rd party APIs, can also be added as triggered by an alert rule record. However, even if the possibility exists the implementation might be foggy for many.
-
-## Business Alerting
-
-In the Business Alerting, use Business Studio to manage alert rules and alert actions.
-
-The Business Engine is resposible for executing the configuration you specified in the Business Studio.
