@@ -27,29 +27,17 @@ The `docker-compose.yml` file consists of the following containers and can be us
   language="yaml"
 />
 
-## Environment file
-
-The Business Engine requires minimal configuration to start up:
-
-- Timescale database connection details.
-- Grafana URL and Token (Service Account).
-
-<Code
-  url="https://github.com/VolkovLabs/business-intelligence/blob/main/.env"
-  language="shell"
-/>
-
 ## Start the platform
 
 ### Grafana
 
-1. Start Grafana container
+1. Start Grafana container and login as admin with `admin` password
 
 ```
 docker compose --profile grafana up -d
 ```
 
-2. Create Service Account and update `GRAFANA_TOKEN` in the `.env` file
+2. Create Service Account and update `GRAFANA_TOKEN` in the `docker-compose.yml` file
 
 ### Business Engine
 
