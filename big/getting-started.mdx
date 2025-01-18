@@ -23,7 +23,7 @@ The Business Engine requires Grafana 11. The Business Intelligence platform will
 /> 
 
 Once all parts of the suggested solution are installed and configured, end-users will work with the Business Studio to manage business engines, alert rules and actions, and other configurations. They also will have a Grafana instance where we preconfigured three dashboards:
- - one dashboard to display the business engine performance data,
+ - one dashboard to display the business engine performance data(metrics),
  - two dashboards to display production data.
 
 ## Docker containers
@@ -44,7 +44,7 @@ In the downloaded package, you can find `docker-compose.yml` file with the follo
 - **JSON server** is an action example based on NodeJS. It accepts alert payload and saves it to the files when the Business Engine executes actions.
 - **Business Engine** has a service account key to access Grafana HTTP APIs to extract necessary configurations. It evaluates alert rules and calls actions.
 
-Below is `docker-compose.yml` file just for FYI. You do not need to copy it. It is a part of the package you download from the GitHub repository.
+Below is the `docker-compose.yml` file just for FYI. You do not need to copy it. It is a part of the package you download from the GitHub repository.
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
@@ -78,7 +78,7 @@ and login as 'admin' with 'admin' password.
 3. Create a service account with the 'Admin' role. 
 
 <Image
-  title="Create Service Account with the 'Admin' role."
+  title="Create service account with the 'Admin' role."
   src="/img/big/sa.png"
 /> 
 
@@ -98,7 +98,7 @@ and login as 'admin' with 'admin' password.
 
 ### Business Engine, Timescale, Prometheus
 
-6. Start the Business Engine, Timescale database, and Prometheus containers. You can start all three using only one command since all three containers have the same profile, 'engine'.
+6. Start the Business Engine, Timescale database, and Prometheus containers. You can start all three using only one command since all three containers have the same profile, `engine`.
 
 ```
 docker compose --profile engine up -d
@@ -106,7 +106,7 @@ docker compose --profile engine up -d
 
 ### JSON Server (optional)
 
-7. We recommend starting a JSON Server to have an opportunity to experiment with it as well, but it is optional. Further, we will review how to configure JSON server calls after alert rule breaches. This call will write into the text log files. 
+7. We recommend starting the JSON Server to have an opportunity to experiment with it as well, but it is optional. Further, we will review how to configure JSON server calls to be triggered by alert rule breaches. These calls will write into the text log files. 
 
 ```
 docker compose --profile actions up -d
@@ -114,16 +114,16 @@ docker compose --profile actions up -d
 
 ### Business Studio
 
-8. Download and start the Business Studio from [Release Notes](../release)
+8. Download the Business Studio from [Release Notes](../release). Then, install and launch it.
 
 ## Work with the platform
 
 ### Business Studio
 
-9. Configure Actions and Alert Rules
+Configure Actions and Alert Rules
 
-- Use JSON server `http://json-server:3000` for HTTP Request Action to create event and message files when alert triggered if started.
-- Use provisioned `Test Dashboard` for adding Alert Rules based on thresholds and Regex pattern.
+- Use JSON server `http://json-server:3000` for HTTP Request Action to create event and message files when the alert is triggered if started.
+- Use the provisioned `Test Dashboard` to add alert rules based on thresholds and Regex patterns.
 
 <Image
   title="Alert Rules configured in Business Engine running on localhost using Business Studio."
@@ -136,14 +136,74 @@ You will find three provisioned dashboards in Grafana.
 
 <Image
   title="Three provisioned dashboards in Grafana."
-  src="/img/big/3-dashdboards.png"
+  src="/img/big/3-dashboards.png"
 />
 
-- **Business Engine** dashboard. It containes business engine metrics collected by Prometheus.
+#### **Business Engine** dashboard
+
+It contains Business Engine metrics collected by Prometheus.
+
+At the top left, there are two dashboard variables. Using them, you can filter the analytics below by **instance** and **alert rule**.
 
 <Image
-  title="Grafana dashboard displays Business Engine metrics collected by and stored in Prometheus."
-  src="/img/big/business-engine/prometheus.png"
+  title="Two dashboard variables on the Business Engine dashboard."
+  src="/img/big/instance-alert.png"
+/>
+
+The **Business Engine** dashboard has three rows of analytics. 
+
+1. The first row **Alerts** contains:
+  - **Alert Results**,
+  - **Alert Latency**.
+
+<Image
+  title="Alerts analysis."
+  src="/img/big/alerts.png"
+/>
+
+2. The second row **Requests** contains:
+ - **Business Engine API Requests**,
+ - **Business Engine Latency**,
+ - **Grafana API requests**, 
+ - **Grafana Latency**.
+
+<Image
+  title="Requests analysis."
+  src="/img/big/requests.png"
+/>
+
+3. The third row **Processes** contains:
+ - **CPU Usage**, 
+ - **Event Loop Lag**,
+ - **Memory Usage**,
+ - **Active Handlers/Requests Total**.
+
+<Image
+  title="Processes analysis."
+  src="/img/big/processes.png"
+/>
+
+#### **Production data** dashboard
+
+The **Production data** dashboard contains one time-series chart. It displays many devices' temperatures generated by the Data Emulator NodeJS script.
+
+You can switch devices using the **metric** dashboard variable at the top left of the dashboard.
+
+Thick blue lines indicate the time when alerts were fired and, consequently, the configured action was called. 
+In this solution, the configured action is executed by the JSON server. It saves incoming payload and messages to text files.
+
+<Image
+  title="Production data - device emperature."
+  src="/img/big/prod-data.png"
+/>
+
+#### **Test dashboard**
+
+The **Test dashboard** contains one time-series chart and one log chart.
+
+<Image
+  title="Test dashboard."
+  src="/img/big/test-dash.png"
 />
 
 ## Stop the platform
