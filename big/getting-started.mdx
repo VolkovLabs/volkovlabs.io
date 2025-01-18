@@ -114,9 +114,13 @@ docker compose --profile actions up -d
 
 ### Business Studio
 
-5. Download and start the Business Studio from [Release Notes](../release)
+8. Download and start the Business Studio from [Release Notes](../release)
 
-6. Configure Actions and Alert Rules
+## Work with the platform
+
+### Business Studio
+
+9. Configure Actions and Alert Rules
 
 - Use JSON server `http://json-server:3000` for HTTP Request Action to create event and message files when alert triggered if started.
 - Use provisioned `Test Dashboard` for adding Alert Rules based on thresholds and Regex pattern.
@@ -126,12 +130,19 @@ docker compose --profile actions up -d
   src="/img/big/business-studio/alerts.png"
 />
 
-### Prometheus
+### Grafana
 
-Check performance and Prometheus metrics using provisioned `Business Engine` dashboard
+You will find three provisioned dashboards in Grafana. 
 
 <Image
-  title="Grafana dashboard displays Business Engine metrics stored in Prometheus."
+  title="Three provisioned dashboards in Grafana."
+  src="/img/big/3-dashdboards.png"
+/>
+
+- **Business Engine** dashboard. It containes business engine metrics collected by Prometheus.
+
+<Image
+  title="Grafana dashboard displays Business Engine metrics collected by and stored in Prometheus."
   src="/img/big/business-engine/prometheus.png"
 />
 
