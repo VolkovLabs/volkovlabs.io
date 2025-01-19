@@ -19,7 +19,7 @@ The Business Engine requires Grafana 11. The Business Intelligence platform will
 
 <Image
   title="The getting started solution overview."
-  src="/img/big/bi-getting-started.png"
+  src="/img/big/getting-started/overview.png"
 />
 
 Once all parts of the suggested solution are installed and configured, end-users will work with the Business Studio to manage business engines, alert rules and actions, and other configurations. They also will have a Grafana instance where we preconfigured three dashboards:
@@ -33,7 +33,7 @@ All necessary docker containers can be downloaded from [GitHub repository](https
 
 <Image
   title="Download the configuration for the described solution."
-  src="/img/big/github-where-download.png"
+  src="/img/big/getting-started/github-where-download.png"
 />
 
 In the downloaded package, you can find `docker-compose.yml` file with the following containers:
@@ -66,7 +66,7 @@ docker compose --profile grafana up -d
 
 <Image
   title="Grafana container installed."
-  src="/img/big/grafana-container-installed.png"
+  src="/img/big/getting-started/grafana-container-installed.png"
 />
 
 2. Open the URL
@@ -81,18 +81,18 @@ and login as 'admin' with 'admin' password.
 
 <Image
   title="Create service account with the 'Admin' role."
-  src="/img/big/sa.png"
+  src="/img/big/getting-started/sa.png"
 />
 
 4. Create a token.
 
-<Image title="Create a token." src="/img/big/token.png" />
+<Image title="Create a token." src="/img/big/getting-started/token.png" />
 
 5. Update `GRAFANA_TOKEN` in the `docker-compose.yml` file
 
 <Image
   title="Update GRAFANA_TOKEN in the docker-compose.yml file."
-  src="/img/big/token-yml.png"
+  src="/img/big/getting-started/token-yml.png"
 />
 
 ### Business Engine, Timescale, Prometheus
@@ -135,7 +135,7 @@ You will find three provisioned dashboards in Grafana.
 
 <Image
   title="Three provisioned dashboards in Grafana."
-  src="/img/big/3-dashboards.png"
+  src="/img/big/getting-started/3-dashboards.png"
 />
 
 ### Business Engine dashboard
@@ -146,7 +146,7 @@ At the top left, there are two dashboard variables. Using them, you can filter t
 
 <Image
   title="Two dashboard variables on the Business Engine dashboard."
-  src="/img/big/instance-alert.png"
+  src="/img/big/getting-started/instance-alert.png"
 />
 
 The **Business Engine** dashboard has three rows of analytics.
@@ -156,7 +156,7 @@ The **Business Engine** dashboard has three rows of analytics.
 - **Alert Results**,
 - **Alert Latency**.
 
-<Image title="Alerts analysis." src="/img/big/alerts.png" />
+<Image title="Alerts analysis." src="/img/big/getting-started/alerts.png" />
 
 2. The second row **Requests** contains:
 
@@ -165,7 +165,7 @@ The **Business Engine** dashboard has three rows of analytics.
 - **Grafana API requests**,
 - **Grafana Latency**.
 
-<Image title="Requests analysis." src="/img/big/requests.png" />
+<Image title="Requests analysis." src="/img/big/getting-started/requests.png" />
 
 3. The third row **Processes** contains:
 
@@ -174,7 +174,10 @@ The **Business Engine** dashboard has three rows of analytics.
 - **Memory Usage**,
 - **Active Handlers/Requests Total**.
 
-<Image title="Processes analysis." src="/img/big/processes.png" />
+<Image
+  title="Processes analysis."
+  src="/img/big/getting-started/processes.png"
+/>
 
 ### Production data dashboard
 
@@ -187,14 +190,14 @@ In this solution, the configured action is executed by the JSON server. It saves
 
 <Image
   title="Production data - device emperature."
-  src="/img/big/prod-data.png"
+  src="/img/big/getting-started/prod-data.png"
 />
 
 ### Test dashboard
 
 The **Test dashboard** contains one time-series chart and one log chart.
 
-<Image title="Test dashboard." src="/img/big/test-dash.png" />
+<Image title="Test dashboard." src="/img/big/getting-started/test-dash.png" />
 
 ## Stop the platform
 
