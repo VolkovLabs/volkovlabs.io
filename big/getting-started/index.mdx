@@ -43,7 +43,7 @@ In the downloaded package, you can find `docker-compose.yml` file with the follo
 - **Data Emulator** is a NodeJS script that emulates production data. Also, it is needed to demonstrate variable functionality.
 - **Prometheus** collects and stores performance metrics from the Business Engine.
 - **JSON server** is an action example based on NodeJS. It accepts alert payload and saves it to the files when the Business Engine executes actions.
-- **Business Engine** has a service account key to access Grafana HTTP APIs to extract necessary configurations. It evaluates alert rules and calls actions.
+- **Business Engine** uses a service account key to access Grafana HTTP APIs to extract necessary configurations. It evaluates alert rules and calls actions.
 
 Below is the `docker-compose.yml` file just for demonstration. You do not need to copy it. It is a part of the package you download from the GitHub repository.
 
@@ -77,10 +77,10 @@ http://localhost:3000
 
 and login as 'admin' with 'admin' password.
 
-3. Create a service account with the 'Admin' role.
+3. Create a service account with the `Viewer` or `Editor` role. Editor role will allow to create annotations.
 
 <Image
-  title="Create service account with the 'Admin' role."
+  title="Create service account with the required role."
   src="/img/big/getting-started/sa.png"
 />
 
