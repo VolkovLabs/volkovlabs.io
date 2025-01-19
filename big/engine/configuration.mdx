@@ -3,9 +3,21 @@ tags:
   - Business Engine
 ---
 
+import Code from "@theme/Code";
+
 # Configuration
 
-Business Engine supports environment variables to update default configuration.
+The Business Engine requires minimal number of environment variables to start up:
+
+- Timescale database connection details.
+- Grafana URL and Token (Service Account).
+
+Additional variables can be added to override default values.
+
+<Code
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/.env"
+  language="shell"
+/>
 
 :::note Future releases
 
@@ -133,7 +145,7 @@ You can increase batch size to improve performance for alerts with multiple vari
 ENGINE_ALERT_BATCH_SIZE=2
 ```
 
-### ENGINE_ALERT_BATCH_SIZE
+### ENGINE_ALERT_ANNOTATIONS_BATCH_SIZE
 
 After evaluating alert across the big time range for all values Business Engine will create annotations for each out of threshold value. It may increase load on the Grafana instance with limited resources.
 
