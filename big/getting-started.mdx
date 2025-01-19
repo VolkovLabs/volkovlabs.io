@@ -8,7 +8,7 @@ The Business Intelligence platform utilizes Docker containers to be modular and 
 
 It is a comprehensive solution that combines the Business Intelligence with other tools that we added to emulate a close-to-real-world scenario.
 
-Feel free to follow the steps to arrive at the same results in your environment. From there, you can adjust as needed. 
+Feel free to follow the steps to arrive at the same results in your environment. From there, you can adjust as needed.
 
 :::tip Grafana 11
 
@@ -20,11 +20,12 @@ The Business Engine requires Grafana 11. The Business Intelligence platform will
 <Image
   title="The getting started solution overview."
   src="/img/big/bi-getting-started.png"
-/> 
+/>
 
 Once all parts of the suggested solution are installed and configured, end-users will work with the Business Studio to manage business engines, alert rules and actions, and other configurations. They also will have a Grafana instance where we preconfigured three dashboards:
- - one dashboard to display the business engine performance data(metrics),
- - two dashboards to display production data.
+
+- one dashboard to display the Business Engine performance data (metrics),
+- two dashboards to display production data.
 
 ## Docker containers
 
@@ -33,7 +34,7 @@ All necessary docker containers can be downloaded from [GitHub repository](https
 <Image
   title="Download the configuration for the described solution."
   src="/img/big/github-where-download.png"
-/> 
+/>
 
 In the downloaded package, you can find `docker-compose.yml` file with the following containers:
 
@@ -66,35 +67,33 @@ docker compose --profile grafana up -d
 <Image
   title="Grafana container installed."
   src="/img/big/grafana-container-installed.png"
-/> 
+/>
 
-2. Open the URL 
+2. Open the URL
 
 ```
-http://localhost:3000 
+http://localhost:3000
 ```
+
 and login as 'admin' with 'admin' password.
 
-3. Create a service account with the 'Admin' role. 
+3. Create a service account with the 'Admin' role.
 
 <Image
   title="Create service account with the 'Admin' role."
   src="/img/big/sa.png"
-/> 
+/>
 
 4. Create a token.
 
-<Image
-  title="Create a token."
-  src="/img/big/token.png"
-/> 
+<Image title="Create a token." src="/img/big/token.png" />
 
 5. Update `GRAFANA_TOKEN` in the `docker-compose.yml` file
 
 <Image
   title="Update GRAFANA_TOKEN in the docker-compose.yml file."
   src="/img/big/token-yml.png"
-/> 
+/>
 
 ### Business Engine, Timescale, Prometheus
 
@@ -106,7 +105,7 @@ docker compose --profile engine up -d
 
 ### JSON Server (optional)
 
-7. We recommend starting the JSON Server to have an opportunity to experiment with it as well, but it is optional. Further, we will review how to configure JSON server calls to be triggered by alert rule breaches. These calls will write into the text log files. 
+7. We recommend starting the JSON Server to have an opportunity to experiment with it as well, but it is optional. Further, we will review how to configure JSON server calls to be triggered by alert rule breaches. These calls will write into the text log files.
 
 ```
 docker compose --profile actions up -d
@@ -132,7 +131,7 @@ Configure Actions and Alert Rules
 
 ### Grafana
 
-You will find three provisioned dashboards in Grafana. 
+You will find three provisioned dashboards in Grafana.
 
 <Image
   title="Three provisioned dashboards in Grafana."
@@ -150,38 +149,32 @@ At the top left, there are two dashboard variables. Using them, you can filter t
   src="/img/big/instance-alert.png"
 />
 
-The **Business Engine** dashboard has three rows of analytics. 
+The **Business Engine** dashboard has three rows of analytics.
 
 1. The first row **Alerts** contains:
-  - **Alert Results**,
-  - **Alert Latency**.
 
-<Image
-  title="Alerts analysis."
-  src="/img/big/alerts.png"
-/>
+- **Alert Results**,
+- **Alert Latency**.
+
+<Image title="Alerts analysis." src="/img/big/alerts.png" />
 
 2. The second row **Requests** contains:
- - **Business Engine API Requests**,
- - **Business Engine Latency**,
- - **Grafana API requests**, 
- - **Grafana Latency**.
 
-<Image
-  title="Requests analysis."
-  src="/img/big/requests.png"
-/>
+- **Business Engine API Requests**,
+- **Business Engine Latency**,
+- **Grafana API requests**,
+- **Grafana Latency**.
+
+<Image title="Requests analysis." src="/img/big/requests.png" />
 
 3. The third row **Processes** contains:
- - **CPU Usage**, 
- - **Event Loop Lag**,
- - **Memory Usage**,
- - **Active Handlers/Requests Total**.
 
-<Image
-  title="Processes analysis."
-  src="/img/big/processes.png"
-/>
+- **CPU Usage**,
+- **Event Loop Lag**,
+- **Memory Usage**,
+- **Active Handlers/Requests Total**.
+
+<Image title="Processes analysis." src="/img/big/processes.png" />
 
 #### **Production data** dashboard
 
@@ -189,7 +182,7 @@ The **Production data** dashboard contains one time-series chart. It displays ma
 
 You can switch devices using the **metric** dashboard variable at the top left of the dashboard.
 
-Thick blue lines indicate the time when alerts were fired and, consequently, the configured action was called. 
+Thick blue lines indicate the time when alerts were fired and, consequently, the configured action was called.
 In this solution, the configured action is executed by the JSON server. It saves incoming payload and messages to text files.
 
 <Image
@@ -201,10 +194,7 @@ In this solution, the configured action is executed by the JSON server. It saves
 
 The **Test dashboard** contains one time-series chart and one log chart.
 
-<Image
-  title="Test dashboard."
-  src="/img/big/test-dash.png"
-/>
+<Image title="Test dashboard." src="/img/big/test-dash.png" />
 
 ## Stop the platform
 
