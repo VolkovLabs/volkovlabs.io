@@ -4,7 +4,12 @@ import Youtube from "@theme/Youtube";
 
 # Quick Start
 
-Quick Start guide provides minimum number of steps to start Business Intelligence platform using existing Grafana LGTM stack.
+Quick Start guide provides minimum number of steps to start Business Intelligence platform using existing Grafana LGTM stack and production data.
+
+<Image
+  title="The quick start overview."
+  src="/img/big/quick-start/quick-start.png"
+/>
 
 :::tip Grafana 11
 
@@ -54,7 +59,7 @@ services:
 
 <Image
   title="Update GRAFANA_TOKEN in the docker-compose.yml file."
-  src="/img/big/getting-started/token-yml.png"
+  src="/img/big/quick-start/token-yml.png"
 />
 
 4. Start the Business Engine and Timescale database.
@@ -70,7 +75,7 @@ docker compose up -d
   title="Alert Rules configured in Business Engine running on localhost using Business Studio."
   src="/img/big/business-studio/alerts.png"
 />
-
+ 
 ## Stop the platform
 
 Stop and delete all Docker containers
