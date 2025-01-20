@@ -34,7 +34,11 @@ Logically, these 8 tables can be be categorized into two groups: Business Engine
   - Connects alert rules with alert actions.
   - The same alert rule might trigger multiple actions, and vice versa; the same action might be triggered by multiple action rules.
 - `alert_conditions`
-  - Define evaluation rules for the alert. One row for one alert rule.
+  - Define evaluation rules for the alert.
+  - One row for one alert rule.
+- `alert_condition_overrides`
+  - Define overrides for alert rules based on dashboard variables.
+  - Many rows for one alert rule.
 - `alert_events`
   - Grows with every alert rule execution, which makes it the biggest table.
   - One row per an executed alert rule.

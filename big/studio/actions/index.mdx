@@ -29,27 +29,41 @@ The **Add a new action** window looks as follows:
 
 The new action/edit mode has the following configuration elements to specify:
 
-- **Title** is an action name,
-- **Type** (HTTP or Logs),
-- **HTTP Request URL** and request **method**. You can add **Headers** (additional information) to a request if needed,
+- **Title** is an action name
+- **Type** options
+  - **HTTP Request** will call URL and send JSON payload with event and applied message template.
+  - If **Logs** selected, JSON payload will be printed in the Docker container output.
+- **HTTP Request URL** and request **method**
+  - Add **Headers** (additional information) to a request if needed.
 - **Message** template customizable using Handlebars.
 
-Any action could be configured as a default one by setting the **Use by Default** parameter to **Enabled**.
+## Use by default
+
+Any action could be configured as a default one for new Alert Rules by setting the **Use by Default** parameter to **Enabled**.
+
+## Test Connectivity
 
 You can use the **Test Connectivity** button to check REST API endpoint availability.
 
 ## Message template
 
-Based on the JSON event payload you can create a customized message using Handlebars.
+Based on the event's JSON payload you can create a customized message using Handlebars.
 
 ```Handlebars
-{{event.alert.title}} ({{event.alert.state}})
+Alert Id ({{ event.alert.id }}) PanelId ({{ event.alert.panelId }})
+Title: {{ event.alert.title }}
+Time range from: {{ event.alert.timeRange.from }}
+{{#each event.conditions}}
+  {{#if triggered}}
+    Successfully Triggered!
+  {{/if}}
+{{/each}}
 ```
 
 ### JSON helper
 
-Presents an object (JSON) or an array as a formatted string.
+Presents an object (JSON) or an array as a formatted string. Useful to see the structure of the event.
 
 ```Handlebars
-{{json event}}
+{{{json event}}}
 ```

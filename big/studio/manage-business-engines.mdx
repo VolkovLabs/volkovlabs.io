@@ -22,22 +22,22 @@ This feature allows to add as many Business Engines as needed to be in your syst
 
 To add a new Business Engine, click the **+ Add** button on the main screen and then specify the following:
 
-1. Engine name. It should be a unique name within the Business Studio.
-2. Engine URL. A URL for this Business Engine.
-3. Token.
-
-If you need a token for more than 10 Business Alerts, use the **Support** menu at the bottom left to request it.
+- Engine name
+  - Should be a unique name within the Business Studio.
+- Engine URL
+  - A URL to access Business Engine API.
+- Production or Community token
+  - Unique for each Business Engine Cluster.
+  - Use the **Support** menu at the bottom left to request a new or additional Production tokens.
 
 <Image
   title="New Business Engine configuration."
   src="/img/blog/2024-12-31-big-2.2.0/new-engine.png"
 />
 
-## Business Engine
-
 Once the Business Engine is added, you can review the configuration settings by clicking on its name in the list.
 
-### Overview
+## Business Engine
 
 The **Overview** tab, in addition to the basic engine statistics such as version, status (ok/error), a number of alert rules and actions, features the Alert History.
 
@@ -60,7 +60,7 @@ To learn more about actions, please refer to this documentation's [**Actions**](
 
 ### Environment
 
-All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified. The environment info is taken by using the [GET /environment endpoint](/big/api/).
+All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified.
 
 <Image
   title="Environment variables for the Charlie Engine 1."

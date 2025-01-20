@@ -16,16 +16,17 @@ All Business Intelligence components could exist in clusters, where a cluster is
 - Business Engine Cluster:
   - Requests to Server API are distributed behind the Load Balancer.
   - Schedulers distribute execution of alert rules automatically.
-- Grafana Cluster visualizes data and provides Grafana API for Business Engine to retrieve configuration and data.
+- Grafana Cluster visualizes data and provides Grafana API for Business Engine.
 - Prometheus Cluster stores Business Engine performance data.
+  - May store Production metrics.
 - PostgreSQL (Timescale) Cluster stores:
   - Business Engine database.
   - Grafana configuration database.
-  - Production data.
+  - May store Production data.
 
 Below is the picture to illustrate the current High Availability setup.
 
 <Image
   title="Distributed High Availability Deployment of Business Intelligence platform."
-  src="/img/big/high-availability.png"
+  src="/img/big/high-availability/overview.png"
 />

@@ -18,7 +18,7 @@ import Youtube from "@theme/Youtube";
 We are excited to announce the release of the Business Intelligence, version 1.3.0. At this early stage, it is a proof-of-concept product, meaning a product created as a starter to vastly extend its functionality in the future. This release includes the following updates:
 
 - Enriched the Alerting panel with Grafana user roles.
-- Made the BI Alert Engine follow color configuration (specified in the **Thresholds** category).
+- Made the BI Engine follow color configuration (specified in the **Thresholds** category).
 - Added support for transformations (beta) and multi-frames.
 - Added retry and timeout parameters for Grafana health check.
 
@@ -142,38 +142,6 @@ GRAFANA_HEALTH_CHECK_RETRY=5
 ```
 
 <GettingStarted />
-
-### Docker Compose
-
-The `docker-compose.yml` file consists of the following containers:
-
-- **Grafana** includes the provisioned BI Engine data source, an Alerting panel, and a demo dashboard.
-- **Timescale** is required to store configuration, events, rules, etc.
-- **BI Engine** has a service account key to access Grafana HTTP APIs. It evaluates alert rules and calls webhooks when alert statuses change.
-- **JSON webhook** is a webhook example based on NodeJS, which accepts alert payload and saves it to the files for testing purposes.
-- **Node-RED** provides an HTTP POST endpoint and sends a Slack notification with alert details.
-- **Data Generator** generates test data for threshold evaluation in the demo dashboard.
-
-<Code
-  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
-  language="yaml"
-/>
-
-### Start
-
-When you run a docker-compose file, it launches the Grafana, Timescale, BI Engine and Webhook containers:
-
-```sh
-docker compose pull && docker compose up
-```
-
-### Stop
-
-Stop and remove all containers:
-
-```sh
-docker compose down
-```
 
 ## Release Notes
 

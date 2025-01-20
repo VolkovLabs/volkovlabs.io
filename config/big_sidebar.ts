@@ -6,7 +6,11 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 const sidebars: SidebarsConfig = {
   big: [
     {
-      items: ["getting-started", "high-availability"],
+      items: [
+        "getting-started/index",
+        "quick-start/index",
+        "high-availability/index",
+      ],
       label: "Business Intelligence",
       type: "category",
       collapsible: false,
@@ -96,6 +100,15 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "doc",
         id: "alerting/index",
+      },
+    },
+    {
+      items: [],
+      label: "Tutorials",
+      type: "category",
+      link: {
+        type: "doc",
+        id: "tutorials/index",
       },
     },
     "release",
