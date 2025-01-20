@@ -13,7 +13,7 @@ Quick Start guide provides minimum number of steps to start Business Intelligenc
 
 :::tip Grafana 11
 
-The Business Engine requires Grafana 11. The Business Intelligence platform will always be compatible with the most current Grafana version.
+The Business Engine requires Grafana 11. The Business Intelligence platform will always be compatible with the current Grafana version.
 :::
 
 ## Docker Compose configuration
@@ -75,13 +75,11 @@ docker compose up -d
   title="Alert Rules configured in Business Engine running on localhost using Business Studio."
   src="/img/big/business-studio/alerts.png"
 />
- 
+
 ## Stop the platform
 
-Stop and delete all Docker containers
+Stop and delete all Docker containers.
 
 ```
-docker compose --profile engine down
-docker compose --profile actions down
-docker compose --profile grafana down
+docker compose down
 ```
