@@ -9,38 +9,6 @@ import Image from "@theme/Image";
 
 Business Engine API is available to use in 3rd-party applications to integrate with Business Intelligence platform.
 
-## Get environment info
+## OpenAPI Specification
 
-All environment variables are displayed on the **Environment** tab in Business Studio. In the future, we plan to allow them to be modified.
-
-The environment info is taken by using the [GET `/environment` endpoint](/big/api/).
-
-<Image
-  title="Environment variables for the Charlie Engine 1."
-  src="/img/blog/2024-12-31-big-2.2.0/env.png"
-/>
-
-## Get timeline of alert statuses
-
-The timeline of alerting states is a subset of all alert rule records and includes only instances where alerting state changes.
-
-We added [GET `/alerts/history/timeline` endpoint](/big/api/) to get timeline of alerting states.
-
-For instance, below is the complete list of alert rule states.
-
-```text
-date                      Previous            New
-1/1/25, 10:29:01 AM       OK                  Alerting
-1/1/25, 10:28:01 AM       OK                  OK
-1/1/25, 10:27:01 AM       OK                  OK
-1/1/25, 10:26:01 AM       OK                  OK
-1/1/25, 10:25:01 AM       OK                  OK
-1/1/25, 10:24:01 AM       OK                  OK
-```
-
-And here is the timeline. It consists of only the records where the alerting state changes.
-
-```text
-date                      Previous            New
-1/1/25, 10:29:01 AM       OK                  Alerting
-```
+[OpenAPI Specification](/big/api) generates automatically for each new release.
