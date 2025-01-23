@@ -23,11 +23,6 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-security-link",
         },
         {
-          label: "Enterprise Support",
-          to: "/pricing/",
-          className: "volkovlabs-footer-link icon-support-link",
-        },
-        {
           label: "Release Dashboard",
           href: "https://release.volkovlabs.io",
           className: "volkovlabs-footer-link icon-release-link",
@@ -88,9 +83,9 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-grafana-link",
         },
         {
-          label: "Environment data source",
-          to: "/grafana/environment/",
-          className: "volkovlabs-footer-link icon-plugins-env-link",
+          label: "Support Portal",
+          href: "https://support.volkovlabs.io",
+          className: "volkovlabs-footer-link icon-support-link",
         },
         {
           label: "YouTube Channel",

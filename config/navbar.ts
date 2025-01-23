@@ -93,11 +93,6 @@ export const NAVBAR = {
           to: "/big/alerting/",
           className: "volkovlabs-link icon-big-alerting-link",
         },
-        {
-          label: "EULA",
-          to: "/eula",
-          className: "volkovlabs-link icon-eula-link",
-        },
       ],
     },
     {

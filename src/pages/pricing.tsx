@@ -21,10 +21,11 @@ const Header = () => {
               designated support team ready to tackle any issues.
             </p>
             <p className="hero__subtitle">
-              You can contact us via Zendesk, receive priority in feature
-              requests and bug fixes, meet with us for in-person consultation,
-              and get access to the <a href="/big/">Business Intelligence</a>{" "}
-              platform.
+              You can{" "}
+              <a href="https://support.volkovlabs.io">contact us via Zendesk</a>
+              , receive priority in feature requests and bug fixes, meet with us
+              for in-person consultation, and get access to the{" "}
+              <a href="/big/">Business Intelligence</a> platform.
             </p>
 
             <div className="margin-vert--lg">
