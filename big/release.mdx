@@ -8,6 +8,53 @@ import BlogPost from "@theme/BlogPost";
 
 Release Notes for the Business Intelligence platform for Grafana.
 
+## 2.4.0 (2025-02-04)
+
+**This is a public preview release of Business Studio 2.4.0 compatible with Business Engine 2.4.0.**
+
+### Breaking Changes in Engine API
+
+- Updated data routes from /grafana to /grafana-data.
+
+### Business Studio 2.4.0
+
+- Added Engine environment management to update Grafana connection details.
+- Added alert event details to review conditions and view as a code to troubleshoot issues.
+- Added verification process for backend query operations in panels.
+- Added high availability state in engines overview.
+- Added enhanced scheduler for alerts to streamline the setting of alert rules.
+- Added alert data preview for reviewing data frames in Grafana.
+- Updated user interface messages and forms to include more context and specifics.
+
+### Business Engine 2.4.0
+
+- Added API to update Grafana configuration in real-time.
+- Added API to get alert event details.
+- Added API to get high availability state.
+- Added API to get alert data preview.
+- Updated alert event structure for consistency.
+
+### Downloads from GitHub
+
+:::info Security risks
+
+MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
+
+:::
+
+- MacOS:
+  - [Apple Disk Image for arm64 (Apple Mx processor)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-arm64.dmg)
+  - [Apple Disk Image for x86 (Intel)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-x64.dmg)
+  - [ZIP file for arm64 (Apple Mx processor)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-arm64-2.4.0.zip)
+  - [ZIP file for x86 (Intel)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-x64-2.4.0.zip)
+- Linux:
+  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.arm64.rpm)
+  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.x86_64.rpm)
+  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_arm64.deb)
+  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_amd64.deb)
+- Windows
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0.Setup.exe)
+
 ## 2.3.0 (2025-01-17)
 
 **This is a public preview release of Business Studio 2.3.0 compatible with Business Engine 2.3.0.**
