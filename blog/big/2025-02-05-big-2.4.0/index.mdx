@@ -1,0 +1,74 @@
+---
+authors: [daria]
+slug: business-intelligence-2.4.0/
+tags: [Business Intelligence]
+image: /img/blog/2025-02-05-big-2.4.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Grafana connection updates, alert event details, and enhanced scheduler in Business Intelligence 2.4.0
+
+We are excited to announce the public preview release of the Business Intelligence 2.4.0. It includes the following updates:
+
+- Added Engine environment management to update Grafana connection details.
+- Added alert event details to review conditions and view as a code to troubleshoot issues.
+- Added high availability state in engines overview.
+- Added enhanced scheduler for alerts to streamline the setting of alert rules.
+- Added alert data preview for reviewing data frames in Grafana.
+- Updated user interface messages and forms to include more context and specifics.
+- Updated Engine API to support new functionality in Business Studio.
+
+## Business Studio Downloads
+
+:::info Security risks
+
+MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
+
+:::
+
+- MacOS:
+  - [Apple Disk Image for arm64 (Apple Mx processor)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-arm64.dmg)
+  - [Apple Disk Image for x86 (Intel)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-x64.dmg)
+  - [ZIP file for arm64 (Apple Mx processor)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-arm64-2.4.0.zip)
+  - [ZIP file for x86 (Intel)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-x64-2.4.0.zip)
+- Linux:
+  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.arm64.rpm)
+  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.x86_64.rpm)
+  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_arm64.deb)
+  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_amd64.deb)
+- Windows
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0.Setup.exe)
+
+## Release Notes
+
+:::warning Breaking Changes in Engine API
+
+Updated data routes from /grafana to /grafana-data.
+
+:::
+
+### Business Studio 2.4.0
+
+- Added Engine environment management to update Grafana connection details.
+- Added alert event details to review conditions and view as a code to troubleshoot issues.
+- Added verification process for backend query operations in panels.
+- Added high availability state in engines overview.
+- Added enhanced scheduler for alerts to streamline the setting of alert rules.
+- Added alert data preview for reviewing data frames in Grafana.
+- Updated user interface messages and forms to include more context and specifics.
+
+### Business Engine 2.4.0
+
+- Added API to update Grafana configuration in real-time.
+- Added API to get alert event details.
+- Added API to get high availability state.
+- Added API to get alert data preview.
+- Updated alert event structure for consistency.
+
+<Feedback />
