@@ -21,14 +21,14 @@ We are excited to announce the public preview release of the Business Intelligen
 - Added high availability(HA) state in the Business Engine overview.
 - Simplified schedule entry for creating alert rules.
 - Added Grafana data frames review in the Business Studio.
-- Enhanced user prompts to improve configuration clarity. 
+- Enhanced user prompts to improve configuration clarity.
 - Updated Business Engine API documentation.
 
 ## Connect a Business Engine to Grafana instance via Business Studio
 
-Previously, the connection between the Business Engine and the Grafana instance had to be made manually, updating the `GRAFANA_TOKEN` environment variable in the configuration file. 
+Previously, the connection between the Business Engine and the Grafana instance had to be made manually, updating the `GRAFANA_TOKEN` environment variable in the configuration file.
 
-Starting from this release, the Business Studio allows you to establish that connection in the comfort of a user-friendly interface. 
+Starting from this release, the Business Studio allows you to establish that connection in the comfort of a user-friendly interface.
 
 To accomplish that, follow the steps:
 
@@ -36,14 +36,14 @@ To accomplish that, follow the steps:
 2. Scroll to the **Grafana** section.
 3. Click the **Edit** button.
 4. Provide Grafana instance URL.
-5. Provide Service account token. 
+5. Provide Service account token.
 
 <Image
   title="Connect a Business Engine to Grafana instance via Business Studio."
   src="/img/blog/2025-02-05-big-2.4.0/token.png"
 />
 
-With this user action, the `grafana_token` column of the `environments` table is updated. That means if multiple business engines are connected to the same Grafana instance (HA scenario), then with updating the settings only for one business engine, all others are automatically updated since they all point to the same database field. 
+With this user action, the `grafana_token` column of the `environments` table is updated. That means if multiple business engines are connected to the same Grafana instance (HA scenario), then with updating the settings only for one business engine, all others are automatically updated since they all point to the same database field.
 
 :::info Multiple engine update
 
@@ -54,15 +54,16 @@ If multiple Business Engines are connected to the same Grafana instance (HA scen
 ## Improved the alert event details
 
 :::info terminology
- An alert event is an alternative term for an [alert record](/big/alerting/#alert-components). Technically, it is a record in a database about the alert breach event. 
+An alert event is an alternative term for an [alert record](/big/alerting/#alert-components). Technically, it is a record in a database about the alert breach event.
 :::
 
 In the Business Studio, you can review:
 
 - all alert events in one listing. For that:
- 1. Open a Business Engine of your interest. 
- 2. Open the **Overview** tab. 
- 3. Review the **Alert history** of all alert records generated for the selected Business Engine.
+
+1.  Open a Business Engine of your interest.
+2.  Open the **Overview** tab.
+3.  Review the **Alert history** of all alert records generated for the selected Business Engine.
 
 <Image
   title="Review all alert events in one listing."
@@ -70,19 +71,20 @@ In the Business Studio, you can review:
 />
 
 - one alert event history. It is better for analyzing state changes for one alert rule.
- 1. Open a Business Engine of your interest. 
- 2. Open the **Alert rules** tab. 
- 3. Click on the alert rule of interest. 
- 4. Review the **Alert history** of the selected alert rule.
+
+1.  Open a Business Engine of your interest.
+2.  Open the **Alert rules** tab.
+3.  Click on the alert rule of interest.
+4.  Review the **Alert history** of the selected alert rule.
 
 <Image
   title="Review one alert event history."
   src="/img/blog/2025-02-05-big-2.4.0/one-alert.png"
 />
 
-You can click on any alert record to review details. 
+You can click on any alert record to review details.
 
-If the latest alert state (**New state**) is **Alerting**, the **Alert evaluations** section shows the values that triggered the alert action. You always can review the payload by clicking on the **View as code** button. 
+If the latest alert state (**New state**) is **Alerting**, the **Alert evaluations** section shows the values that triggered the alert action. You always can review the payload by clicking on the **View as code** button.
 
 <Image
   title="Alert evaluations show the values that triggered the alert action. You can review the complete payload by clicking on the View as code button."
@@ -99,8 +101,9 @@ In the case of any other alert state (**New state**), the alert rule payload is 
 ## High availability(HA) state in the Business Engine overview
 
 High availability can be:
- - **Disabled**. If a Business Engine is the only one in the cluster (only one Business Engine is connected to a Grafana instance).
- - **Enabled**. If there are multiple (more than one) Business Engines in the cluster (more than one Business Engine are connected to a Grafana instance).
+
+- **Disabled**. If a Business Engine is the only one in the cluster (only one Business Engine is connected to a Grafana instance).
+- **Enabled**. If there are multiple (more than one) Business Engines in the cluster (more than one Business Engine are connected to a Grafana instance).
 
 <Image
   title="High availability characteristic for a Business Engine."
@@ -121,14 +124,16 @@ In addition to a Cron expression, for simplicity, you can choose one of the easy
 To make the interaction between the Business Engine and Grafana more transparent, the Business Studio displays the Grafana data frames participating in the alert rule evaluation.
 
 To review the Grafana data frame in the Business Studio:
- 1. Open the alert rule of interest. 
- 2. Optionally, on the **Alert settings** tab confirm the alert rule is assigned to the dashboard(2.1) and panel(2.2) of interest. 
- 3. Open the **Data preview** tab.
- 4. Optionally, verify the dashboard variable (data frame filter) is set up to the necessary value. 
- 5. Review the Grafana data frame in the Business Studio. 
- 6. Optionally, review the same data frame in Grafana. Open the panel in the Edit mode and switch to the **Table view**.
-   - Verify the dashboard variable (data frame filter) is set up to the necessary value.
-   - Review the data frame in Grafana.
+
+1.  Open the alert rule of interest.
+2.  Optionally, on the **Alert settings** tab confirm the alert rule is assigned to the dashboard(2.1) and panel(2.2) of interest.
+3.  Open the **Data preview** tab.
+4.  Optionally, verify the dashboard variable (data frame filter) is set up to the necessary value.
+5.  Review the Grafana data frame in the Business Studio.
+6.  Optionally, review the same data frame in Grafana. Open the panel in the Edit mode and switch to the **Table view**.
+
+- Verify the dashboard variable (data frame filter) is set up to the necessary value.
+- Review the data frame in Grafana.
 
 <Image
   title="Data preview tab to review Grafana data frames in the Business Studio."
@@ -137,13 +142,13 @@ To review the Grafana data frame in the Business Studio:
 
 A Grafana data frame can be reviewed as a code by clicking on the **View as code** button.
 
-## Enchanced user prompts to improve configuration clarity. 
+## Enchanced user prompts to improve configuration clarity.
 
 This is done throughout the Business Studio UI to eliminate ambiguity and uncertainty about the parameters' meaning.
 
 ## Updated Business Engine API documentation.
 
-We maintain the ease of the 3rd party Business Engine integration by timely updating the [API documentation](/big/api/). 
+We maintain the ease of the 3rd party Business Engine integration by timely updating the [API documentation](/big/api/).
 
 ## Business Studio Downloads
 
