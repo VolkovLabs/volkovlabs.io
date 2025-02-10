@@ -49,25 +49,38 @@ The **Add a new rule** window looks as follows:
 
 <Image
   title="The Add a new rule window."
-  src="/img/blog/2024-12-31-big-2.2.0/new-rule.png"
+  src="/img/big/business-alerting/new-rule.png"
 />
 
 The new alert rule/edit window has the following configuration elements to specify:
 
-- **Title** is an alert name.
-- **Schedule** is a frequency of how often the rule should run.
-  - With CRON expressions your schedule can be as complex as needed.
-- **Target Dashboard** and **Target Panel** are drop-downs to select from the existing ones.
-  - The alert rule will take queries and thresholds from there automatically.
-- **Time Range** could be either taken from the dashboard or specified custom.
-- The alert **evaluation** could be set to **Thresholds** or **Regex Pattern**.
-  - For the **Thresholds**, the alert examines the data against thresholds set in the panel options.
-  - For the **Regex Pattern**, the alert examines the specified fields (optional) and searches the specified pattern.
-- For the alert **action**, select from the drop-down list of the existing, pre-configured action APIs.
-- **Add Annotation** option.
-  - specify **Panel** to create and attach an annotation to a panel,
-  - specify **Dashboard** to create and attach an annotation to a dashboard (i.e. all panels of this dashboard),
-  - specify **Disabled** to disable the creation of any annotation following the alert rule breach.
+- **Details**
+   - **Title** is an alert name.
+   - **Schedule** is a frequency of how often the rule should run. Here you can select from the ready-to-use templates and adjust if needed. Alternatively, use a CRON expression to make your schedule as complex as needed.
+- **Target**
+   - **Dashboard** is a drop-down populated from the connected Grafana dashboard listing. 
+   - **Panel** is a drop-down populated from the selected dashboard.
+ The alert rule will take queries and thresholds from there automatically.
+- **Time Range**
+   - **Source** could be either from the specified **Dashboard** or **Custom**.
+- **Evaluation**. It could be set to:
+    - **Thresholds**. The alert examines the data against thresholds set in the panel options.
+    - **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.
+- **Event**
+    - **Result sample size**. This parameter lets you specify how many rows in an alert result should be randomly picked up for saving and your analysis. The choice is between:
+      - **All Values** and **Percentage**. 
+      - The **Results sample size** parameter is not applicable for the **Last value**.
+- **Action**
+    - **Actions**. Select from the drop-down list of the existing, pre-configured action APIs.
+    - **Add Annotation**:
+        - **Panel** to create and attach an annotation to a panel.
+        - **Dashboard** to create and attach an annotation to a dashboard (i.e., all panels of this dashboard),
+    - **Disabled** to disable the creation of any annotation following the alert rule breach.
+
+<Image
+  title="Select from the templates and adjust if needed. OR specify a CRON expression to make your schedule as complex as needed."
+  src="/img/big/business-alerting/scheduler.png"
+/>
 
 ## Multi-frames
 

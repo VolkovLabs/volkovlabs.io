@@ -1,0 +1,76 @@
+---
+tags:
+  - Business Studio
+---
+
+import Image from "@theme/Image";
+
+# Analyze alert rules
+
+You can analyze the alert event details by utilizing the following interface elements.
+
+:::info terminology
+An alert event is an alternative term for an [alert record](/big/alerting/#alert-components). Technically, it is a record in a database about the alert event.
+:::
+
+## All alert rules
+
+1.  Open a Business Engine of your interest.
+2.  Open the **Overview** tab.
+3.  Review the **Alert history** of all alert records generated for the selected Business Engine.
+
+<Image
+  title="Review all alert rules events in one listing."
+  src="/img/blog/2025-02-05-big-2.4.0/all-alerts.png"
+/>
+
+## One alert rule
+
+1.  Open a Business Engine of your interest.
+2.  Open the **Alert rules** tab.
+3.  Click on the alert rule of interest.
+4.  Review the **Alert history** of the selected alert rule.
+
+<Image
+  title="Review one alert rule event history."
+  src="/img/blog/2025-02-05-big-2.4.0/one-alert.png"
+/>
+
+You can click on any alert record to review details. If the latest alert state (**New state**) is **Alerting**, the **Alert evaluations** section shows the values that triggered the alert action.
+
+You can always review the payload by clicking on the **View as code** button.
+
+<Image
+  title="Alert evaluations show the values that triggered the alert action. You can review the complete payload by clicking on the View as code button."
+  src="/img/blog/2025-02-05-big-2.4.0/alerting-state.png"
+/>
+
+In the case of any other alert state (**New state**), the alert rule payload is displayed right away.
+
+<Image
+  title="Review the alert action payload in the Alert evaluation section for all other states but Alerting."
+  src="/img/blog/2025-02-05-big-2.4.0/other-states.png"
+/>
+
+## Review Grafana data frames in the Business Studio
+
+To make the interaction between the Business Engine and Grafana more transparent, the Business Studio displays the Grafana data frames participating in the alert rule evaluation.
+
+To review the Grafana data frame in the Business Studio:
+
+1.  Open the alert rule of interest.
+2.  Optionally, on the **Alert settings** tab confirm the alert rule is assigned to the dashboard(2.1) and panel(2.2) of interest.
+3.  Open the **Data preview** tab.
+4.  Optionally, verify the dashboard variable (data frame filter) is set up to the necessary value.
+5.  Review the Grafana data frame in the Business Studio.
+6.  Optionally, review the same data frame in Grafana. Open the panel in the Edit mode and switch to the **Table view**.
+
+- Verify the dashboard variable (data frame filter) is set up to the necessary value.
+- Review the data frame in Grafana.
+
+<Image
+  title="Data preview tab to review Grafana data frames in the Business Studio."
+  src="/img/blog/2025-02-05-big-2.4.0/data-preview.png"
+/>
+
+A Grafana data frame can be reviewed as a code by clicking on the **View as code** button.
