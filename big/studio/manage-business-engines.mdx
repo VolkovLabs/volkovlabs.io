@@ -39,9 +39,7 @@ Once the Business Engine is added, you can review the configuration settings by 
 
 ## Business Engine
 
-### Overview
-
-The **Overview** tab, in addition to the basic engine statistics such as version, status (ok/error), a number of alert rules and actions, features the Alert History and high availability marker.
+The **Overview** tab, in addition to the basic engine statistics such as version, status (ok/error), a number of alert rules and actions, features the Alert History and high availability state.
 
 <Image
   title="A Business Engine Overview tab"
@@ -53,19 +51,19 @@ High availability can be:
 - **Disabled**. If a Business Engine is the only one in the cluster.
 - **Enabled**. If there are multiple (more than one) Business Engines in the cluster.
 
-### Alert rules
+## Alert rules
 
 The **Alert rules** tab is a part of the [Business Alerting](/big/alerting/) feature available in all Business Engines.
 
 To learn more about alert rules, please refer to this documentation's [**Alert rules**](/big/alerting/manage-alert-rules/) section.
 
-### Actions
+## Actions
 
 The **Actions** tab helps to configure actions, which are the set of steps that are triggered by an expected event. The most common scenario is when an action is triggered after an alert rule is broken, but it is just one of the possible scenarios.
 
 To learn more about actions, please refer to this documentation's [**Actions**](/big/studio/manage-alert-actions/) section.
 
-### Environment
+## Environment
 
 All environment variables are displayed on the **Environment** tab.
 
@@ -73,6 +71,8 @@ All environment variables are displayed on the **Environment** tab.
   title="Environment variables for the Charlie Engine 1."
   src="/img/big/business-studio/tab-env.png"
 />
+
+### Grafana connection
 
 The Business Studio allows you to establish that connection in the comfort of a user-friendly interface.
 
@@ -96,7 +96,7 @@ If multiple Business Engines are connected to the same Grafana instance, then up
 
 :::
 
-### Settings
+## Settings
 
 The **Settings** tab contains all the information you provided while creating the Business Engine plus one extra parameter - **Update Engine license**.
 
