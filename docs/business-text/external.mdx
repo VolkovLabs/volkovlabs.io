@@ -28,6 +28,7 @@ The Business Text panel enables the loading of additional JavaScript using exter
 ## Public folder
 
 To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on a Grafana instance.
+
 - To load from external Grafana instance use `https://GRAFANA-URL/public/grafanaCSS.css`.
 - From local Grafana instance use `/public/grafanaCSS.css`.
 
@@ -72,6 +73,12 @@ Into the **Content** or **Default Content**:
 
 Into the **JavaScript**->**After Content Ready**:
 
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+:::
+
 <details>
   <summary>JavaScript code for Plotly example</summary>
 
@@ -99,7 +106,7 @@ const csvToJson = (data, delimiter = ",") => {
 /**
  * Load plotly
  */
-import("https://esm.sh/plotly.js-dist-min").then(
+import("https://esm.sh/plotly.js-dist-min@2.35.2").then(
   async ({ default: Plotly }) => {
     let url =
       "https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv";
@@ -162,6 +169,18 @@ import("https://esm.sh/plotly.js-dist-min").then(
 
 </details>
 
+### Example with different versions
+
+For example, the link `https://esm.sh/plotly.js-dist-min` returns the latest stable version.
+The code was written when the module returns version 2.35.2. Changing the module version caused an error.
+
+<Image
+  title="Example of console error on version difference."
+  src="/img/plugins/business-text/v-function-error.png"
+/>
+
+You should change the version to `https://esm.sh/plotly.js-dist-min@2.35.2`, or check the new version of the module and update the code.
+
 ## Mermaid
 
 Mermaid is a popular JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams using Markdown-defined text definitions.
@@ -191,6 +210,14 @@ https://esm.sh/mermaid
 ```
 
 ### Code to copy
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
 
 Use the following for the **Content** (when your data source is set to return something) or in the **Default Content** (when your data source returns nothing):
 
@@ -239,6 +266,14 @@ https://esm.sh/chart.js
 ```
 
 ### Code to copy
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
 
 Use the following for the **Content**:
 
@@ -308,6 +343,14 @@ https://esm.sh/raphael
 
 ### Content to copy
 
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
+
 ```html
 <div id="flowchart" />
 ```
@@ -364,6 +407,14 @@ https://youtube.com/iframe_api
 
 ### Content to copy
 
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
+
 ```html
 <h1>Volkov Labs Latest videos</h1>
 <div id="player"></div>
@@ -400,6 +451,14 @@ The map on the dashboard from this example looks like in the illustration below.
 />
 
 ### Data to copy
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
 
 In this example, we use the [Business Input Data Source](/plugins/business-input/).
 
@@ -621,6 +680,14 @@ Follow the below outlined steps to display [Mapbox GL JS](https://docs.mapbox.co
 
 ### Content
 
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
+
 ```html
 <div id="map" />
 ```
@@ -701,6 +768,14 @@ import("https://cdn.jsdelivr.net/npm/mapbox-gl@3.5.1/+esm").then(
 [TensorFlow.js](https://www.tensorflow.org/js) is a library for machine learning in JavaScript.
 
 Use the following for the **JavaScript->Before Content Rendering**:
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
 
 ```js
 console.log('Loading TensorFlow...');

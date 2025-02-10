@@ -27,6 +27,15 @@ Once all parts of the suggested solution are installed and configured, end-users
 - one dashboard to display the Business Engine performance data (metrics),
 - two dashboards to display production data.
 
+## Tutorial
+
+In this introductory video, Daria provides a detailed walk-through of the installation process. Following that, she demonstrates how to create your first alert actions and assign it to the alert rule.
+
+<Youtube
+  id="KM5a2qzlOak"
+  title="How to get started with Business Intelligence Platform for Grafana 2.3.0."
+/>
+
 ## Docker containers
 
 All necessary docker containers can be downloaded from [GitHub repository](https://github.com/volkovlabs/business-intelligence).
@@ -89,6 +98,12 @@ and login as 'admin' with 'admin' password.
 <Image title="Create a token." src="/img/big/getting-started/token.png" />
 
 5. Update `GRAFANA_TOKEN` in the `docker-compose.yml` file
+
+:::note Version 2.4.0
+
+Grafana token and URL can be set using Business Studio to avoid changing environment variables.
+
+:::
 
 <Image
   title="Update GRAFANA_TOKEN in the docker-compose.yml file."

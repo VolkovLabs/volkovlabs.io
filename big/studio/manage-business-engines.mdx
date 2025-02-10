@@ -39,39 +39,72 @@ Once the Business Engine is added, you can review the configuration settings by 
 
 ## Business Engine
 
-The **Overview** tab, in addition to the basic engine statistics such as version, status (ok/error), a number of alert rules and actions, features the Alert History.
+The **Overview** tab, in addition to the basic engine statistics such as version, status (ok/error), a number of alert rules and actions, features the Alert History and high availability state.
 
 <Image
-  title="A Business Engine Overview tab with Alert History."
+  title="A Business Engine Overview tab"
   src="/img/big/business-engine/tab-overview.png"
 />
 
-### Alert rules
+High availability can be:
+
+- **Disabled**. If a Business Engine is the only one in the cluster.
+- **Enabled**. If there are multiple (more than one) Business Engines in the cluster.
+
+## Alert rules
 
 The **Alert rules** tab is a part of the [Business Alerting](/big/alerting/) feature available in all Business Engines.
 
 To learn more about alert rules, please refer to this documentation's [**Alert rules**](/big/alerting/manage-alert-rules/) section.
 
-### Actions
+## Actions
 
 The **Actions** tab helps to configure actions, which are the set of steps that are triggered by an expected event. The most common scenario is when an action is triggered after an alert rule is broken, but it is just one of the possible scenarios.
 
 To learn more about actions, please refer to this documentation's [**Actions**](/big/studio/actions/) section.
 
-### Environment
+## Environment
 
-All environment variables are displayed on the **Environment** tab. In the future, we plan to allow them to be modified.
+All environment variables are displayed on the **Environment** tab.
 
 <Image
   title="Environment variables for the Charlie Engine 1."
   src="/img/big/business-studio/tab-env.png"
 />
 
-### Settings
+### Grafana connection
 
-The **Settings** tab contains all the information you provided when creating the Business Engine.
+The Business Studio allows you to establish that connection in the comfort of a user-friendly interface.
+
+To accomplish that, follow the steps:
+
+1. Scroll to the **Grafana** section.
+2. Click the **Edit** button.
+3. Provide Grafana instance URL.
+4. Provide Service account token.
 
 <Image
-  title="Settings for the Charlie Engine 1."
-  src="/img/big/business-studio/tab-settings.png"
+  title="Connect a Business Engine to Grafana instance via Business Studio."
+  src="/img/big/business-studio/token.png"
+/>
+
+With this user action, the `grafana_token` column of the `environments` table is updated. That means if multiple business engines are connected to the same Grafana instance (HA scenario), then with updating the settings only for one business engine, all others are automatically updated since they all point to the same database field.
+
+:::info High Availability
+
+If multiple Business Engines are connected to the same Grafana instance, then updating ONLY one Business Engine is required. The rest of the connected business engines will be updated automatically.
+
+:::
+
+## Settings
+
+The **Settings** tab contains all the information you provided while creating the Business Engine plus one extra parameter - **Update Engine license**.
+
+Initially Business Engine starts with the Community license.
+
+When the **Update Engine license** parameter is checked, the Business Engine license token updates simultaneously with the Business Studio license token. This happens after you copy and paste a new token in the **Token** parameter and click the **Save** button.
+
+<Image
+  title="Settings for the Charlie Engine 1 and Update Engine License parameter."
+  src="/img/big/business-studio/update-engine-license.png"
 />
