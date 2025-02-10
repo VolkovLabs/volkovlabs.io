@@ -55,27 +55,27 @@ The **Add a new rule** window looks as follows:
 The new alert rule/edit window has the following configuration elements to specify:
 
 - **Details**
-   - **Title** is an alert name.
-   - **Schedule** is a frequency of how often the rule should run. Here you can select from the ready-to-use templates and adjust if needed. Alternatively, use a CRON expression to make your schedule as complex as needed.
+  - **Title** is an alert name.
+  - **Schedule** is a frequency of how often the rule should run. Here you can select from the ready-to-use templates and adjust if needed. Alternatively, use a CRON expression to make your schedule as complex as needed.
 - **Target**
-   - **Dashboard** is a drop-down populated from the connected Grafana dashboard listing. 
-   - **Panel** is a drop-down populated from the selected dashboard.
- The alert rule will take queries and thresholds from there automatically.
+  - **Dashboard** is a drop-down populated from the connected Grafana dashboard listing.
+  - **Panel** is a drop-down populated from the selected dashboard.
+    The alert rule will take queries and thresholds from there automatically.
 - **Time Range**
-   - **Source** could be either from the specified **Dashboard** or **Custom**.
+  - **Source** could be either from the specified **Dashboard** or **Custom**.
 - **Evaluation**. It could be set to:
-    - **Thresholds**. The alert examines the data against thresholds set in the panel options.
-    - **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.
+  - **Thresholds**. The alert examines the data against thresholds set in the panel options.
+  - **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.
 - **Event**
-    - **Result sample size**. This parameter lets you specify how many rows in an alert result should be randomly picked up for saving and your analysis. The choice is between:
-      - **All Values** and **Percentage**. 
-      - The **Results sample size** parameter is not applicable for the **Last value**.
+  - **Result sample size**. This parameter lets you specify how many rows in an alert result should be randomly picked up for saving and your analysis. The choice is between:
+    - **All Values** and **Percentage**.
+    - The **Results sample size** parameter is not applicable for the **Last value**.
 - **Action**
-    - **Actions**. Select from the drop-down list of the existing, pre-configured action APIs.
-    - **Add Annotation**:
-        - **Panel** to create and attach an annotation to a panel.
-        - **Dashboard** to create and attach an annotation to a dashboard (i.e., all panels of this dashboard),
-    - **Disabled** to disable the creation of any annotation following the alert rule breach.
+  - **Actions**. Select from the drop-down list of the existing, pre-configured action APIs.
+  - **Add Annotation**:
+    - **Panel** to create and attach an annotation to a panel.
+    - **Dashboard** to create and attach an annotation to a dashboard (i.e., all panels of this dashboard),
+  - **Disabled** to disable the creation of any annotation following the alert rule breach.
 
 <Image
   title="Select from the templates and adjust if needed. OR specify a CRON expression to make your schedule as complex as needed."
