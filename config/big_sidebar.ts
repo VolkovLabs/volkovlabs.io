@@ -65,6 +65,7 @@ const sidebars: SidebarsConfig = {
     {
       items: [
         "alerting/manage-alert-rules",
+        "alerting/analyze-alert-rules",
         "alerting/variables",
         "alerting/thresholds",
       ],
