@@ -42,25 +42,28 @@ Use **All rows** or **All data** template to execute template only once. With **
 
 :::
 
-## Plotly 3D Scatter
+## D3 Hexbin
 
 Thanks to our community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
 
-Use the following external Plotly's 3D Scatter chart library:
+Use the following external D3 libraries:
 
 ```md
-https://esm.sh/plotly.js-dist-min
+https://esm.sh/d3@7.9.0
+
+https://esm.sh/d3-hexbin
+
 ```
 
 :::info
 
-Grafana's edit mode might prevent displaying Plotly charts. Save and check the result on the dashboard.
+Grafana's edit mode might prevent displaying D3 charts. Save and check the result on the dashboard.
 
 :::
 
 <Image
-  title="Plotly chart displayed using the Business Text panel."
-  src="/img/plugins/business-text/plotly.png"
+  title="D3 hexbin chart displayed using the Business Text panel."
+  src="/img/plugins/business-text/d3-hexbin.png"
 />
 
 ### Code to copy
@@ -68,7 +71,7 @@ Grafana's edit mode might prevent displaying Plotly charts. Save and check the r
 Into the **Content** or **Default Content**:
 
 ```html
-<div id="plotly-chart" />
+<svg id="hexbin-container" width="800" height="600"></svg>
 ```
 
 Into the **JavaScript**->**After Content Ready**:
@@ -80,106 +83,56 @@ Plug-in libraries may change their versions and the code in the example may not 
 :::
 
 <details>
-  <summary>JavaScript code for Plotly example</summary>
+  <summary>JavaScript code for D3 example</summary>
 
 ```js
-const unpack = (rows, key) => {
-  return rows.map(function (row) {
-    return row[key];
-  });
-};
+import("https://esm.sh/d3@7.9.0").then(async (d3) => {
 
-const csvToJson = (data, delimiter = ",") => {
-  const titles = data.slice(0, data.indexOf("\r\n")).split(delimiter);
-  return data
-    .slice(data.indexOf("\n") + 1)
-    .split("\r\n")
-    .map((v) => {
-      const values = v.split(delimiter);
-      return titles.reduce(
-        (obj, title, index) => ((obj[title] = values[index]), obj),
-        {}
-      );
-    });
-};
+  await import("https://esm.sh/d3-hexbin").then(async (d3Hexbin) => {
+    // Set up dimensions
+    const width = 800;
+    const height = 600;
 
-/**
- * Load plotly
- */
-import("https://esm.sh/plotly.js-dist-min@2.35.2").then(
-  async ({ default: Plotly }) => {
-    let url =
-      "https://raw.githubusercontent.com/plotly/datasets/master/3d-scatter.csv";
 
-    let fetchData = await fetch(url);
-    let csvData = await fetchData.text();
-    let rows = csvToJson(csvData);
+    // Create the SVG container
+    const svg = d3.select("#hexbin-container")
+      .attr("width", width)
+      .attr("height", height);
+    console.log('svg', svg)
 
-    var trace1 = {
-      x: unpack(rows, "x1"),
-      y: unpack(rows, "y1"),
-      z: unpack(rows, "z1"),
-      mode: "markers",
-      marker: {
-        size: 12,
-        line: {
-          color: "rgba(217, 217, 217, 0.14)",
-          width: 0.5,
-        },
-        opacity: 0.8,
-      },
-      type: "scatter3d",
-    };
+    // Generate random data for demonstration (e.g., random points)
+    const points = d3.range(1000).map(() => [Math.random() * width, Math.random() * height]);
 
-    var trace2 = {
-      x: unpack(rows, "x2"),
-      y: unpack(rows, "y2"),
-      z: unpack(rows, "z2"),
-      mode: "markers",
-      marker: {
-        color: "rgb(127, 127, 127)",
-        size: 12,
-        symbol: "circle",
-        line: {
-          color: "rgb(204, 204, 204)",
-          width: 1,
-        },
-        opacity: 0.8,
-      },
-      type: "scatter3d",
-    };
+    // Create a hexbin layout
+    const hexbin = d3Hexbin.hexbin()
+      .radius(20)  // Size of the hexagon
+      .x(d => d[0])  // X-coordinate of the point
+      .y(d => d[1]);  // Y-coordinate of the point
 
-    var data = [trace1, trace2];
+    // Compute the hexbin clusters
+    const hexbins = hexbin(points);
 
-    var layout = {
-      margin: {
-        l: 0,
-        r: 0,
-        b: 0,
-        t: 0,
-      },
-    };
+    // Create a color scale for the hexagons based on the number of points in each bin
+    const color = d3.scaleSequential(d3.interpolateBlues)
+      .domain([0, d3.max(hexbins, d => d.length)]);
 
-    var config = { responsive: true };
+    // Create the hexbin path and append it to the SVG
+    svg.selectAll(".hexbin")
+      .data(hexbins)
+      .enter().append("path")
+      .attr("class", "hexbin")
+      .attr("d", hexbin.hexagon())
+      .attr("transform", d => `translate(${d.x},${d.y})`)
+      .style("fill", d => color(d.length))
+      .style("stroke", "#fff")
+      .style("stroke-width", "1px");
 
-    Plotly.newPlot("plotly-chart", data, layout, config);
-  }
-);
+  })
+
+})
 ```
 
 </details>
-
-### Example with different versions
-
-For example, the link `https://esm.sh/plotly.js-dist-min` returns the latest stable version.
-The code was written when the module returns version 2.35.2. Changing the module version caused an error.
-
-<Image
-  title="Example of console error on version difference."
-  src="/img/plugins/business-text/v-function-error.png"
-/>
-
-You should change the version to `https://esm.sh/plotly.js-dist-min@2.35.2`, or check the new version of the module and update the code.
 
 ## Mermaid
 
