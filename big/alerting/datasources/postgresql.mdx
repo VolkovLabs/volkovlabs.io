@@ -7,9 +7,13 @@ import Image from "@theme/Image";
 
 # PostgreSQL
 
-The following example demonstrates configuring a Grafana-Business Studio-PostgreSQL cluster to work with alerts.
+The following example demonstrates configuring a Grafana, Business Studio, and PostgreSQL cluster to work with alerts.
 
-## Grafana Time Series visualization panel configuration
+## Grafana
+
+Follow provided instruction to configure Time Series panel with dashboard variable.
+
+### Time Series panel
 
 <Image
   title="Grafana Time Series visualization panel configuration."
@@ -47,7 +51,7 @@ The Grafana data frame looks as follows (those are not exact values that represe
    - Horizontal color areas are the threshold sections.
    - Vertical blue lines are the annotations created by Grafana as was instructed by the Business Studio.
 
-## Grafana dashboard variable configuration
+### Dashboard variable
 
 <Image
   title="Grafana dashboard variable configuration."
@@ -65,11 +69,15 @@ select distinct name from metrics
 
 5. In the **Preview of values**, all fetched values are shown. Further in the example, we use one value **Tampe South 124**.
 
-## Business Studio alert rule configuration
+## Business Studio
+
+Open Business Studio and add an alert rule. To follow up on the triggered event check alert history and data preview.
+
+### Alert rule configuration
 
 To add an alert rule, you can follow the [general instructions](/big/alerting/manage-alert-rules/#add-a-new-rule) or review the suggested example below.
 
-After an alert rule is added, you can open the **Alert settings** tab to review its configuration.
+After an alert rule is added, you can open the **Alert settings** page to review its configuration.
 
 <Image
   title="Business Studio alert rule configuration, part1."
@@ -96,200 +104,27 @@ After an alert rule is added, you can open the **Alert settings** tab to review 
   - **Type** is set to **Thresholds** to instruct the Business Studio to get configured thresholds from the specified Grafana dashboard.
   - **Allowed range** is set to from below 30 up to 70. The top boundary is not specified; it comes from the lower boundary of the next range.
   - **Apply to**. Applying to one (the last value) is enough for this example.
-- **Overrides**. When the **Execution** -> **Variable** is populated with a dashboard variable name, the **Overrides** section appears. In this example, the **Tampa Sount 124** device has a specific allowed range below 30. Anything above 30 breaches the alert rule.
+- **Overrides**. When the **Execution** -> **Variable** is populated with a dashboard variable name, the **Overrides** section appears. In this example, the **Tampa Sount 124** device has a specific allowed range below 30. Anything above 30 triggers the alert rule.
 - **Action**
-  - **Actions**. In the case of a breached alert rule, two actions are triggered - writing into the Business Engine container logs and creating a file on a designated server/location with the details of the breach.
-  - **Add Annotation**. With every alert rule breach, an annotation is created and displayed on the Grafana dashboard (a light blue vertical line on the time series visualization).
-
-## Business Studio analysis review
-
-To follow up on the breach event, the Business Studio offers the following information:
+  - **Actions**. In the case of a triggered alert rule, two actions are triggered - writing into the Business Engine container logs and creating a file on a designated server/location with the details of the triggered event.
+  - **Add Annotation**. With every triggered alert event, an annotation is created and displayed on the Grafana dashboard (a light blue vertical line on the time series visualization).
 
 ### Alert history
 
-On the **Alert history** tab, the Business Studio displays the alert rule status changes.
+On the **Alert history** page, the Business Studio displays the alert rule status changes.
 
 <Image
-  title="The Alert history tab."
+  title="The Alert history page."
   src="/img/big/business-alerting/history.png"
 />
 
 ### Data preview
 
-On the **data preview** you have a Grafana data frame. Specify a dashbaord variable in the provided drop-down if needed.
+On the **data preview** page you have a Grafana data frame. Specify a dashboard variable in the provided drop-down if needed.
 
 <Image
-  title="The data preview tab to review the Grafana data frame."
+  title="The data preview page to review the Grafana data frame."
   src="/img/big/business-alerting/preview.png"
 />
 
-### View as code
-
-You can also review the payload submitted into the alert action "as-is". In this example, the payload looks like this.
-
-```json
-{
-"error":false
-"query":{
-"from":"1739205090864"
-"queries":[
-{
-"datasource":{
-"type":"grafana-postgresql-datasource"
-"uid":"fe96h6tyv2rr4f"
-}
-"editorMode":"code"
-"format":"table"
-"intervalMs":1000
-"maxDataPoints":1320
-"rawQuery":true
-"rawSql":"SELECT\n time,\n value\nFROM metrics\nWHERE\n name='Tampa South 124'\n and $__timeFilter(time)\nORDER BY 1"
-"refId":"A"
-"sql":{
-"columns":[
-{
-"parameters":[]
-"type":"function"
-}
-]
-"groupBy":[
-{
-"property":{
-"type":"string"
-}
-"type":"groupBy"
-}
-]
-"limit":50
-}
-}
-]
-"to":"1739206890864"
-}
-"repeat":"metric"
-"series":[
-{
-"fields":[
-{
-"config":{}
-"entities":{}
-"name":"time"
-"nanos":
-[0 - 100]
-[100 - 173]
-"type":"time"
-"typeInfo":{
-"frame":"time.Time"
-"nullable":true
-}
-"values":
-[0 - 100]
-[100 - 173]
-}
-{
-"config":{}
-"entities":{}
-"name":"value"
-"state":{
-"calcs":{
-"allIsNull":false
-"allIsZero":false
-"count":173
-"delta":101.7814707542907
-"diff":14.984451752627216
-"diffperc":73.03977924808665
-"first":20.515466923484368
-"firstNotNull":20.515466923484368
-"last":35.499918676111584
-"lastNotNull":35.499918676111584
-"logmin":20.515466923484368
-"max":86.79701900166343
-"mean":48.0960021893805
-"min":20.515466923484368
-"nonNullCount":173
-"previousDeltaUp":true
-"range":66.28155207817906
-"step":-66.20711237128522
-"sum":8320.608378762827
-}
-"displayName":"value"
-"multipleFrames":false
-}
-"type":"number"
-"typeInfo":{
-"frame":"float64"
-"nullable":true
-}
-"values":
-[0 - 100]
-[100 - 173]
-}
-]
-"length":173
-"meta":{
-"executedQueryString":"SELECT\n time,\n value\nFROM metrics\nWHERE\n name='Tampa South 124'\n and time BETWEEN '2025-02-10T16:31:30.864Z' AND '2025-02-10T17:01:30.864Z'\nORDER BY 1"
-"typeVersion":[
-0
-0
-]
-}
-"refId":"A"
-}
-]
-"variables":[
-{
-"allowCustomValue":false
-"label":"metric"
-"multi":true
-"name":"metric"
-"order":0
-"value":"Tampa South 124"
-}
-{
-"multi":false
-"name":"__dashboard"
-"value":"Metrics"
-}
-{
-"multi":false
-"name":"__from"
-"value":"1739205090864"
-}
-{
-"multi":false
-"name":"__to"
-"value":"1739206890864"
-}
-{
-"multi":false
-"name":"__interval"
-"value":"1s"
-}
-{
-"multi":false
-"name":"__interval_ms"
-"value":"1000"
-}
-{
-"multi":false
-"name":"__range"
-"value":"1800s"
-}
-{
-"multi":false
-"name":"__range_s"
-"value":"1800"
-}
-{
-"multi":false
-"name":"__range_ms"
-"value":"1800000"
-}
-{
-"multi":false
-"name":"__timezone"
-"value":"browser"
-}
-]
-}
-```
+You can also review the payload submitted into the alert action "as-is".
