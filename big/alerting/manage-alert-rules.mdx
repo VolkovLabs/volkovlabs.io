@@ -1,6 +1,6 @@
 ---
 tags:
-  - Business Studio
+ - Business Studio
 ---
 
 import Image from "@theme/Image";
@@ -22,16 +22,16 @@ Use the **Alert rules** tab to manage alert rules. Here you can:
 
 ## Alert rules states
 
-To temporate pause alert execution click on **Pause** icon for the specific alert rule. Alert can be started anytime to resume execution.
+To temporate pause alert execution, click on the **Pause** icon for the specific alert rule. Alert can be started anytime to resume execution.
 
 ## Alert rules statuses
 
 Right after an alert is created it becomes **Active** and **Scheduled**. After modification, the alert status changes to **Scheduled** if it requires reexecution with a new set of parameters.
 
-- **Scheduled**. The alert is scheduled, but never run yet with a current set of parameters. This status is assigned right after the alert is created or modified by the user and API.
-- **OK**. The alert has been run and the thresholds are NOT breached and the Regex pattern is NOT found.
-- **Alerting**. The alert has been run and the thresholds are being breached or the Regex pattern is found.
-- **Error**. Something is wrong which could be the query, annotation or action.
+- **Scheduled**. The alert is scheduled but has never run with a current set of parameters. This status is assigned right after the user and API create or modify the alert.
+- **OK**. The alert has been run, the thresholds are NOT breached, and the Regex pattern is NOT found.
+- **Alerting**. The alert has been run, the thresholds are breached, or the Regex pattern is found.
+- **Error**. Something is wrong, such as the query, annotation, or action.
 
 ### Flow schema
 
@@ -52,39 +52,73 @@ The **Add a new rule** window looks as follows:
   src="/img/big/business-alerting/new-rule.png"
 />
 
+<Image
+  title="Sections Execution and Variable values appear when the selected dashboard has Grafana's dashboard variables."
+  src="/img/big/business-alerting/exec.png"
+/>
+
 The new alert rule/edit window has the following configuration elements to specify:
 
 - **Details**
   - **Title** is an alert name.
-  - **Schedule** is a frequency of how often the rule should run. Here you can select from the ready-to-use templates and adjust if needed. Alternatively, use a CRON expression to make your schedule as complex as needed.
+  - **Schedule** is a frequency of how often the rule should run. Here, you can select from the ready-to-use templates and adjust if needed. Alternatively, use a Cron expression to make your schedule as complex as needed.
 - **Target**
   - **Dashboard** is a drop-down populated from the connected Grafana dashboard listing.
   - **Panel** is a drop-down populated from the selected dashboard.
-    The alert rule will take queries and thresholds from there automatically.
+ The alert rule will take queries and thresholds from there automatically.
 - **Time Range**
   - **Source** could be either from the specified **Dashboard** or **Custom**.
 - **Evaluation**. It could be set to:
   - **Thresholds**. The alert examines the data against thresholds set in the panel options.
   - **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.
-- **Event**
-  - **Result sample size**. This parameter lets you specify how many rows in an alert result should be randomly picked up for saving and your analysis. The choice is between:
-    - **All Values** and **Percentage**.
-    - The **Results sample size** parameter is not applicable for the **Last value**.
+- **Execution**. This section appears if the selected dashboard has configured Grafana dashboard variables. You can specify a variable name to be taken into account with each query. 
+- **Variable values**. This section appears at the same time as the **Execution**. Here, you can specify the exact dashboard variable values for the query. This parameter is useful when you do not want to use all variable values. 
+- **Event**. This section appears when the **Evaluation**->**Apply to** is set to **All values** or **Maximum Allowed**. 
+  - **Result sample size**. It lets you specify how many rows in an alert result should be randomly picked up for saving and your analysis.
 - **Action**
   - **Actions**. Select from the drop-down list of the existing, pre-configured action APIs.
   - **Add Annotation**:
     - **Panel** to create and attach an annotation to a panel.
-    - **Dashboard** to create and attach an annotation to a dashboard (i.e., all panels of this dashboard),
-  - **Disabled** to disable the creation of any annotation following the alert rule breach.
+    - **Dashboard** to create and attach an annotation to a dashboard (i.e., all panels of this dashboard).
+    - **Disabled** to disable the creation of any annotation following the alert rule breach.
 
 ### Schedule
 
-Select from the templates and adjust if needed or specify a CRON expression to make your schedule as complex as needed.
+Select from the templates and adjust if needed, or specify a CRON expression to make your schedule as complex as required.
 
 <Image
-  title="Custom made Schedule editor with suggestions."
+  title="Custom-made Schedule editor with suggestions."
   src="/img/big/business-alerting/scheduler.png"
+  width = "70%"
 />
+
+### Grafana dashboard variables
+
+The Business Studio alert rules can incorporate Grafana dashboard variables and be specific for certain conditions. 
+
+For instance, you can create the same alert rule for all your devices but make it distinctive for the actual threshold values. 
+
+Below is the general description of such a configuration. You can find the detailed [PostgreSQL](/big/alerting/datasources/postgresql/) and [Prometheuse](/big/alerting/datasources/prometheus/) examples in other parts of our documentation. 
+
+When in the **Target**->**Dashboard** parameter, you specify a dashboard containing dashboard variables, two more sections appear:
+ - **Execution**. Here, you can specify a dashboard variable to use in each alert rule query.
+ - **Variable values**. Here, you can specify the subset of dashboard variable values that should be used in the alert rule execution. 
+
+<Image
+  title="The Execution and Variable values sections appear if the specified Target->Dashboard contains dashboard variables."
+  src="/img/big/business-alerting/execution-var-values.png"
+/>
+
+When a dashboard variable is specified in the **Execution**->**Variable** parameter, the **Overrides** section appears. Here, you can identify specific thresholds for each dashboard variable value individually. 
+
+<Image
+  title="The Overrides section appears if a dashboard variable is selected in the Execution-Variable section."
+  src="/img/big/business-alerting/overrides.png"
+/>
+
+In the described example, the alert rules should be triggered when the observable data is above 70. (values in the ranges from below 30, above 30, above 60, and below 70 are allowed).
+
+For only one device with the name **Tampe South 124**, the allowed range is below 30. Any value above 30 breaches the alert rule.
 
 ## Multi-frames
 
@@ -102,4 +136,5 @@ The Business Engine supports multi-frame data sets. That means that the alert ru
 Support of Grafana transformation is in beta state. This is due to the number of existing transformations.
 :::
 
-Grafana transformations are supported. However, please, note, that Grafana offers a large number of transformations, hence, there is a chance that some of them will not work correctly.
+Grafana transformations are supported. However, please note that Grafana offers many transformations; hence, there is a chance that some of them will not work correctly.
+
