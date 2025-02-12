@@ -22,7 +22,20 @@ const sidebars: SidebarsConfig = {
     {
       items: [
         "studio/manage-business-engines",
-        "studio/manage-alert-actions",
+        {
+          items: [
+            //            "studio/actions/logs",
+            //            "studio/actions/json",
+            //            "studio/actions/node-red",
+          ],
+          label: "Actions",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "studio/actions/index",
+          },
+        },
+
         "studio/support",
       ],
       label: "Business Studio",
@@ -68,6 +81,19 @@ const sidebars: SidebarsConfig = {
         "alerting/analyze-alert-rules",
         "alerting/variables",
         "alerting/thresholds",
+        {
+          items: [
+            "alerting/datasources/postgresql",
+            //            "alerting/datasources/prometheus",
+            //            "alerting/datasources/loki",
+          ],
+          label: "Data Sources",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "alerting/datasources/index",
+          },
+        },
       ],
       label: "Business Alerting",
       type: "category",

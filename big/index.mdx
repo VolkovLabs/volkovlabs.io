@@ -48,9 +48,17 @@ Such architecture allows users:
 
 There is a possibility of facilitating all Grafana instances version control, new Grafana dashboard propagation (for instance, from the DEV to QA to production), etc.
 
+## Users
+
+The Business Studio interface accommodates two types of users - **Business** and **Technical**. You can always switch between them in profile settings (the feature is coming soon).
+
+- Business users have sleeker interfaces; those can be internal company users as well as customers. They can focus on creating alert rules and actions, provide a quick analysis and signal about critical errors if necessary.
+- Technical users have more functionality available for deeper troubleshooting, such as payloads, Grafana data frame views, etc. Those users are not shy about working with clusters and docker containers.
+
 ## Some features at a glance
 
-- [Monaco Code editor to create sophisticated alert messages](/big/studio/manage-alert-actions/#add-a-new-action)
+- [Use Grafana dashboard variables and overrides in the alert rule configuration](/big/alerting/manage-alert-rules/#grafana-dashboard-variables)
+- [Monaco Code editor to create sophisticated alert messages](/big/studio/actions/#add-a-new-action)
 - [Simplified schedule configuration](/big/alerting/manage-alert-rules/#add-a-new-rule)
 - [Simplified connection configuration](/big/studio/manage-business-engines/#environment)
 - [Review Grafana data frames in the Business Studio](/big/alerting/analyze-alert-rules/#review-grafana-data-frames-in-the-business-studio)
