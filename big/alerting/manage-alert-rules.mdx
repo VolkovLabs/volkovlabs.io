@@ -98,7 +98,7 @@ The Business Studio alert rules can incorporate Grafana dashboard variables and 
 
 For instance, you can create the same alert rule for all your devices but make it distinctive for the actual threshold values.
 
-Below is the general description of such a configuration. You can find the detailed [PostgreSQL](/big/alerting/datasources/postgresql/) and [Prometheuse](/big/alerting/datasources/prometheus/) examples in other parts of our documentation.
+Below is the general description of such a configuration. You can find the detailed data sources examples in dedicated parts of this documentation.
 
 When in the **Target**->**Dashboard** parameter, you specify a dashboard containing dashboard variables, two more sections appear:
 
@@ -119,7 +119,7 @@ When a dashboard variable is specified in the **Execution**->**Variable** parame
 
 In the described example, the alert rules should be triggered when the observable data is above 70. (values in the ranges from below 30, above 30, above 60, and below 70 are allowed).
 
-For only one device with the name **Tampe South 124**, the allowed range is below 30. Any value above 30 triggers the alert rule.
+For only one device with the name **Tampa South 124**, the allowed range is below 30. Any value above 30 triggers the alert rule.
 
 ## Multi-frames
 
