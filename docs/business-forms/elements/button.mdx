@@ -48,9 +48,8 @@ With the **Button place** option, the custom button element can be placed among 
   title="Available options for the Button Form Elements type."
   src="/img/blog/2024-08-29-form-panel-4.4.0/buttons-options.png"
 />
-## Element parameters
 
-### Element Model (context.panel.onChangeElements([]))
+## Change Elements Model
 
 <InfoUseChangeElements />
 
@@ -129,22 +128,22 @@ context.panel.onChangeElements(elementsForUI);
 
 <BaseChangeElements />
 
-### Parameters
+## Element Parameters
 
 - ### `value`
 
-_string_. Optional.  
- Current element value. Doesn`t support for custom button.
+  _string_. Optional.  
+  Current element value. Not supported for custom button.
 
 - ### `type`
 
-_string_. Required.  
- Element type: 'button'.
+  _string_. Required.  
+  Element type: 'button'.
 
 - ### `customCode`
 
-_string_. Required.  
- Code to execute on button click.
+  _string_. Required.  
+  Code to execute on button click.
 
 ```js
 {
@@ -154,45 +153,46 @@ _string_. Required.
 
 - ### `buttonLabel`
 
-_string_. Required.  
- Button label. Keep empty string do not show label.
+  _string_. Required.  
+  Button label. Keep empty string do not show label.
 
 - ### `icon`
 
-_string_. Required.  
- Button icon name. Keep empty string do not show icon. All available icons: [`Grafana Icon`](https://developers.grafana.com/ui/latest/index.html?path=/story/docs-overview-icon--icons-overview)
+  _string_. Required.  
+  Button icon name. Keep empty string do not show icon. All available icons: [`Grafana Icons`](https://developers.grafana.com/ui/latest/index.html?path=/story/docs-overview-icon--icons-overview)
 
 - ### `size`
 
-_string_. Required.  
- Button size. 'sm' | 'md' | 'lg'
+  _string_. Required.  
+  Button size: 'sm' | 'md' | 'lg'
 
 - ### `variant`
 
-_string_. Required.  
- Button display variant. 'destructive' | 'hidden' | 'primary' | 'secondary' | 'custom'
-If `custom` is selected, set custom colors for the button.
+  _string_. Required.  
+  Button display variant: 'destructive' | 'hidden' | 'primary' | 'secondary' | 'custom'.
+
+  If `custom` is selected, set custom colors for the button.
 
 - ### `foregroundColor`
 
-_string_. Required.  
- Label button color in hex format.
+  _string_. Required.  
+  Label button color in hex format.
 
 - ### `backgroundColor`
 
-_string_. Required.  
- Button main color in hex format.
+  _string_. Required.  
+  Button main color in hex format.
 
 - ### `show`
 
-_string_. Required.  
- Show button in form or show button in buttons after form. 'bottom' | 'form'
+  _string_. Required.  
+  Show button in form or show button in buttons after form. 'bottom' | 'form'.
 
 <BaseParameters />
 
 The code-editor element does not support options for selection. However, they must be specified in the element object
 
-### Element Model (context.panel.onOptionsChange(options))
+## Change Options Model
 
 <InfoUseOptionsChange />
 
@@ -250,18 +250,18 @@ context.panel.onOptionsChange({
 
 - ### `value`
 
-_string_. Optional.  
- Current element value. Doesn`t support for custom button.
+  _string_. Optional.  
+  Current element value. Not supported for custom button.
 
 - ### `type`
 
-_string_. Required.  
- Element type: 'button'.
+  _string_. Required.  
+  Element type: 'button'.
 
 - ### `customCode`
 
-_string_. Required.  
- Code to execute on button click.
+  _string_. Required.  
+  Code to execute on button click.
 
 ```js
 {
@@ -271,42 +271,41 @@ _string_. Required.
 
 - ### `buttonLabel`
 
-_string_. Required.  
- Button label. Keep empty string do not show label.
+  _string_. Required.  
+  Button label. Keep empty string do not show label.
 
 - ### `icon`
 
-_string_. Required.  
- Button icon name. Keep empty string do not show icon. All available icons: [`Grafana Icon`](https://developers.grafana.com/ui/latest/index.html?path=/story/docs-overview-icon--icons-overview)
+  _string_. Required.  
+  Button icon name. Keep empty string do not show icon. All available icons: [`Grafana Icon`](https://developers.grafana.com/ui/latest/index.html?path=/story/docs-overview-icon--icons-overview)
 
 - ### `size`
 
-_string_. Required.  
- Button size. 'sm' | 'md' | 'lg'
+  _string_. Required.  
+  Button size. 'sm' | 'md' | 'lg'
 
 - ### `variant`
 
-_string_. Required.  
- Button display variant. 'destructive' | 'hidden' | 'primary' | 'secondary' | 'custom'
-If `custom` is selected, set custom colors for the button.
+  _string_. Required.  
+  Button display variant. 'destructive' | 'hidden' | 'primary' | 'secondary' | 'custom'. If `custom` is selected, set custom colors for the button.
 
 - ### `foregroundColor`
 
-_string_. Required.  
- Label button color in hex format.
+  _string_. Required.  
+  Label button color in hex format.
 
 - ### `backgroundColor`
 
-_string_. Required.  
- Button main color in hex format.
+  _string_. Required.  
+  Button main color in hex format.
 
 - ### `show`
 
-_string_. Required.  
- Show button in form or show button in buttons after form. 'bottom' | 'form'
+  _string_. Required.  
+  Show button in form or show button in buttons after form. 'bottom' | 'form'
 
 <BaseOptionsParameters />
 
 ### Note
 
-**fieldName** , **queryField**, **value** don`t supported with custom button - use customCode instead it.
+**fieldName** , **queryField**, **value** not supported with custom button - use custom code instead.
