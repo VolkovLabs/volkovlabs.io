@@ -24,9 +24,9 @@ const sidebars: SidebarsConfig = {
         "studio/manage-business-engines",
         {
           items: [
-            "studio/actions/logs",
-            "studio/actions/json",
-            "studio/actions/node-red",
+            //            "studio/actions/logs",
+            //            "studio/actions/json",
+            //            "studio/actions/node-red",
           ],
           label: "Actions",
           type: "category",
@@ -84,8 +84,8 @@ const sidebars: SidebarsConfig = {
         {
           items: [
             "alerting/datasources/postgresql",
-            "alerting/datasources/prometheus",
-            "alerting/datasources/loki",
+            //            "alerting/datasources/prometheus",
+            //            "alerting/datasources/loki",
           ],
           label: "Data Sources",
           type: "category",
