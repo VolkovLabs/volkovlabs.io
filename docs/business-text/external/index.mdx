@@ -1,0 +1,57 @@
+---
+tags:
+  - Business Text
+image: /img/plugins/business-text/external.png
+---
+
+import Image from "@theme/Image";
+
+# Use cases
+
+:::info Version
+
+Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
+
+The Business Text panel supports the JavaScript libraries import in the **Before content rendering** starting from version 5.3.0.
+
+:::
+
+You can import the external JavaScript libraries in both parameters: **Before content rendering** and **After content ready**.
+
+<Image
+  title="Use import in the Before content rendering option."
+  src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/before.png"
+/>
+
+The Business Text panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network). Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/business-text/code) editor.
+
+## Public folder
+
+To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on a Grafana instance.
+
+- To load from external Grafana instance use `https://GRAFANA-URL/public/grafanaCSS.css`.
+- From local Grafana instance use `/public/grafanaCSS.css`.
+
+## External JavaScript resources
+
+Below, you can find a collection of breathtaking use cases, the perfect examples of using external JavaScript libraries in the Business Text plugin.
+
+:::info Render template parameter
+
+Use **All rows** or **All data** template to execute template only once. With **Every row**, the **Content** will be applied to every row of retrieved data. Even though the data frames of the specified data source are not used, still the plugin runs the code as many times as the number of rows is retrieved.
+
+:::
+
+| Solution                                                 | Description                                                                                   |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [Bootstrap](/plugins/business-text/external/bootstrap)   | The most popular HTML, CSS, and JS library in the world                                       |
+| [Chart.js](/plugins/business-text/external/chart-js)     | Chart.js is one of the popular open source charting libraries                                 |
+| [D3](/plugins/business-text/external/d3)                 | D3 is a free, open-source JavaScript library for visualizing data                             |
+| [Flowchart](/plugins/business-text/external/flowchart)   | Draws simple SVG flow chart diagrams from textual representation of the diagram               |
+| [Leaflet.js](/plugins/business-text/external/leaflet)    | A JavaScript library for interactive maps                                                     |
+| [MapBox GL](/plugins/business-text/external/mapbox-gl)   | JavaScript library for building web maps and applications with Mapbox's mapping technology    |
+| [Mermaid](/plugins/business-text/external/mermaid)       | JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams |
+| [Plotly](/plugins/business-text/external/plotly)         | Open Source Graphing Libraries                                                                |
+| [Tailwind CSS](/plugins/business-text/external/tailwind) | A utility-first CSS framework                                                                 |
+| [TensorFlow](/plugins/business-text/external/tensorflow) | Library for machine learning in JavaScript                                                    |
+| [Youtube Video](/plugins/business-text/external/youtube) | YouTube player component                                                                      |

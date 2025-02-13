@@ -434,7 +434,7 @@ const sidebars: SidebarsConfig = {
         {
           items: [
             "business-text/rendering-content",
-            "business-text/external",
+            "business-text/recipes",
             "business-text/styles",
           ],
           label: "Rendering",
@@ -444,7 +444,6 @@ const sidebars: SidebarsConfig = {
             id: "business-text/content",
           },
         },
-        "business-text/recipes",
         {
           items: [
             "business-text/helpers",
@@ -460,6 +459,27 @@ const sidebars: SidebarsConfig = {
           link: {
             type: "doc",
             id: "business-text/features",
+          },
+        },
+        {
+          items: [
+            "business-text/external/bootstrap",
+            "business-text/external/chart-js",
+            "business-text/external/d3",
+            "business-text/external/flowchart",
+            "business-text/external/leaflet",
+            "business-text/external/mapbox-gl",
+            "business-text/external/mermaid",
+            "business-text/external/plotly",
+            "business-text/external/tailwind",
+            "business-text/external/tensorflow",
+            "business-text/external/youtube",
+          ],
+          label: "Use cases",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-text/external/index",
           },
         },
         {
