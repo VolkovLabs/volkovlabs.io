@@ -30,14 +30,6 @@ https://esm.sh/mermaid
 
 ## Code to copy
 
-:::warning Version mismatch
-
-Plug-in libraries may change their versions and the code in the example may not work or cause an error.
-
-[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
-
-:::
-
 Use the following for the **Content** (when your data source is set to return something) or in the **Default Content** (when your data source returns nothing):
 
 ```diagram
@@ -48,6 +40,14 @@ Use the following for the **Content** (when your data source is set to return so
     B-->D(fa:fa-spinner);
 </pre>
 ```
+
+## After Content Ready
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+:::
 
 Use the following for the **JavaScript**->**After Content Ready**:
 
@@ -61,4 +61,3 @@ import("https://esm.sh/mermaid").then(({ default: mermaid }) => {
   });
 });
 ```
-

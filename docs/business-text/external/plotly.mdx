@@ -4,8 +4,7 @@ import Image from "@theme/Image";
 
 Thanks to our community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
 
-## Plotly 3D Scatter
-Use the following external Plotly's 3D Scatter chart library:
+Use the following external Plotly's chart library:
 
 ```md
 https://esm.sh/plotly.js-dist-min
@@ -30,7 +29,7 @@ Into the **Content** or **Default Content**:
 <div id="plotly-chart" />
 ```
 
-Into the **JavaScript**->**After Content Ready**:
+## After Content Ready
 
 :::warning Version mismatch
 
@@ -38,8 +37,7 @@ Plug-in libraries may change their versions and the code in the example may not 
 
 :::
 
-<details>
-  <summary>JavaScript code for Plotly example</summary>
+Into the **JavaScript**->**After Content Ready**:
 
 ```js
 const unpack = (rows, key) => {
@@ -126,8 +124,6 @@ import("https://esm.sh/plotly.js-dist-min@2.35.2").then(
 );
 ```
 
-</details>
-
 ## Example with different versions
 
 For example, the link `https://esm.sh/plotly.js-dist-min` returns the latest stable version.
@@ -139,4 +135,3 @@ The code was written when the module returns version 2.35.2. Changing the module
 />
 
 You should change the version to `https://esm.sh/plotly.js-dist-min@2.35.2`, or check the new version of the module and update the code.
-

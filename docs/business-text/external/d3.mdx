@@ -4,7 +4,6 @@ import Image from "@theme/Image";
 
 Thanks to our community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
 
-## D3 Hexbin
 Use the following external D3 libraries:
 
 ```md
@@ -32,7 +31,7 @@ Into the **Content** or **Default Content**:
 <svg id="hexbin-container" width="800" height="600"></svg>
 ```
 
-Into the **JavaScript**->**After Content Ready**:
+## After Content Ready
 
 :::warning Version mismatch
 
@@ -40,8 +39,7 @@ Plug-in libraries may change their versions and the code in the example may not 
 
 :::
 
-<details>
-  <summary>JavaScript code for D3 example</summary>
+Into the **JavaScript**->**After Content Ready**:
 
 ```js
 import("https://esm.sh/d3@7.9.0").then(async (d3) => {
@@ -92,5 +90,3 @@ import("https://esm.sh/d3@7.9.0").then(async (d3) => {
   });
 });
 ```
-
-</details>

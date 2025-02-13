@@ -2,7 +2,9 @@ import Image from "@theme/Image";
 
 # Leaflet.js
 
-This is another great example of external resource usage in the Business Text Plugin. The idea comes from [BlinderMiri](https://github.com/BlinderMiri) and [Josiah Solomon](https://github.com/yosiasz). Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
+This is another great example of external resource usage in the Business Text Plugin. The idea comes from [BlinderMiri](https://github.com/BlinderMiri) and [Josiah Solomon](https://github.com/yosiasz).
+
+Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
 
 <Image
   title="How to configure the Business Text plugin to display Leaflet.js maps."
@@ -18,14 +20,6 @@ The map on the dashboard from this example looks like in the illustration below.
 
 ## Data to copy
 
-:::warning Version mismatch
-
-Plug-in libraries may change their versions and the code in the example may not work or cause an error.
-
-[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
-
-:::
-
 In this example, we use the [Business Input Data Source](/plugins/business-input/).
 
 ```js
@@ -37,6 +31,14 @@ In this example, we use the [Business Input Data Source](/plugins/business-input
 ```html
 <div id="leaflet" />
 ```
+
+## After Content Ready
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+:::
 
 Use the following for the **JavaScript**->**After Content Ready**:
 
