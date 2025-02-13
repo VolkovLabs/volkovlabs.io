@@ -1,0 +1,72 @@
+import Image from "@theme/Image";
+
+# Flowchart
+
+Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic [Flowchart](https://flowchart.js.org) return to Grafana! We are happy to share your example with the world.
+
+Below you can find how the beloved by many Flowchart libraries can be implemented using the Business Text plugin.
+
+Simply, import two external libraries and then write your code addressing the Flowchart libraries directly.
+
+## Example
+
+<Image
+  title="Delivering Flowchart libraries to a Grafana dashboard using the Business Text plugin."
+  src="/img/plugins/business-text/flow.png"
+/>
+
+Use the following external library
+
+```
+https://esm.sh/flowchart.js
+https://esm.sh/raphael
+```
+
+## Content to copy
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
+
+```html
+<div id="flowchart" />
+```
+
+Use the following for the **JavaScript**->**After Content Ready**:
+
+```js
+import("https://esm.sh/flowchart.js").then(async (flowchart) => {
+  await import("https://esm.sh/raphael");
+
+  /**
+   * Cleanup
+   */
+  document.getElementById("flowchart").innerHTML = "";
+
+  const flow = `
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+para=>parallel: parallel tasks
+in=>input: some in
+out=>output: some out
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->para
+para(path1, bottom)->sub1(right)->op1
+para(path2, top)->op1
+para(path3, right)->in->out->e`;
+
+  const diagram = flowchart.parse(flow);
+  diagram.drawSVG("flowchart");
+});
+```

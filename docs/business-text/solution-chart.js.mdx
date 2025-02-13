@@ -1,0 +1,77 @@
+import Image from "@theme/Image";
+
+# Chart.js
+
+Chart.js is one of the popular open source charting libraries. The Business Text plugin makes using chart.js in Grafana possible!
+
+<Image
+  title="Chart.js diagrams displayed using the Business Text panel."
+  src="/img/plugins/business-text/chartjs-examples.png"
+/>
+
+## Example
+
+<Image
+  title="Chart.js diagram example."
+  src="/img/plugins/business-text/chartjs.png"
+/>
+
+Use the following external library
+
+```md
+https://esm.sh/chart.js
+```
+
+## Code to copy
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
+
+Use the following for the **Content**:
+
+```js
+<canvas id="myChart" />
+```
+
+Use the following for the **JavaScript**->**After Content Ready**:
+
+```js
+import("https://esm.sh/chart.js").then(({ Chart, registerables }) => {
+  Chart.register(...registerables);
+
+  /**
+   * Cleanup
+   */
+  if (this.chartInstance) {
+    this.chartInstance.destroy();
+  }
+
+  const ctx = document.getElementById("myChart");
+
+  this.chartInstance = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [
+        {
+          label: "# of Votes",
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+});
+```

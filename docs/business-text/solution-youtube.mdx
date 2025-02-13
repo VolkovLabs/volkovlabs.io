@@ -1,0 +1,45 @@
+import Image from "@theme/Image";
+
+# Youtube video
+
+This idea comes from the [GitHub issue](https://github.com/VolkovLabs/business-text/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Business Text plugin can be used to display YouTube videos on your Grafana dashboard.
+
+<Image
+  title="How to configure the Business Text plugin to display a YouTube video."
+  src="/img/plugins/business-text/yt-edit.png"
+/>
+
+Use the following external library
+
+```
+https://youtube.com/iframe_api
+```
+
+## Content to copy
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+[Example with different versions](/plugins/business-text/external/#example-with-different-versions)
+
+:::
+
+```html
+<h1>Volkov Labs Latest videos</h1>
+<div id="player"></div>
+```
+
+Use the following for the **JavaScript**->**After Content Ready**:
+
+```js
+import("https://esm.sh/youtube-player").then(({ default: YouTubePlayer }) => {
+  const player = YouTubePlayer("player");
+
+  const videoList = ["AcQi-6GCrNU", "1ogv2jstrlI", "vky-7-DfvXE"];
+
+  const randomVideoId = videoList[Math.floor(Math.random() * videoList.length)];
+
+  player.loadVideoById(randomVideoId);
+});
+```
