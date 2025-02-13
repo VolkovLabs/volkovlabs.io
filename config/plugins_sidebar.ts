@@ -432,12 +432,33 @@ const sidebars: SidebarsConfig = {
           },
         },
         {
-          items: ["business-text/rendering-content", "business-text/styles"],
+          items: [
+            "business-text/rendering-content",
+            "business-text/recipes",
+            "business-text/styles",
+          ],
           label: "Rendering",
           type: "category",
           link: {
             type: "doc",
             id: "business-text/content",
+          },
+        },
+        {
+          items: [
+            "business-text/helpers",
+            "business-text/eventbus",
+            "business-text/standard",
+            "business-text/status",
+            "business-text/variables",
+            "business-text/wrap",
+            "business-text/expandable",
+          ],
+          label: "Features",
+          type: "category",
+          link: {
+            type: "doc",
+            id: "business-text/features",
           },
         },
         {
@@ -459,24 +480,6 @@ const sidebars: SidebarsConfig = {
           link: {
             type: "doc",
             id: "business-text/external/index",
-          },
-        },
-        "business-text/recipes",
-        {
-          items: [
-            "business-text/helpers",
-            "business-text/eventbus",
-            "business-text/standard",
-            "business-text/status",
-            "business-text/variables",
-            "business-text/wrap",
-            "business-text/expandable",
-          ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-text/features",
           },
         },
         {
