@@ -16,16 +16,19 @@ const Header = () => {
         <div className="row">
           <div className="col col--7 margin-vert--lg">
             <p className="hero__subtitle margin-vert--md">
-              With the Business Suite Enterprise, you're not just getting a
-              product, you're getting a complete support system. You'll have a
-              designated support team ready to tackle any issues.
+              With Business Suite Enterprise, you gain more than just a product.
+              Enjoy the peace of mind that comes with a dedicated support team,
+              poised to resolve any challenges you encounter.
             </p>
             <p className="hero__subtitle">
-              You can{" "}
-              <a href="https://support.volkovlabs.io">contact us via Zendesk</a>
-              , receive priority in feature requests and bug fixes, meet with us
-              for in-person consultation, and get access to the{" "}
-              <a href="/big/">Business Intelligence</a> platform.
+              Connect with us effortlessly through{" "}
+              <a target="_blank" href="https://support.volkovlabs.io">
+                Zendesk
+              </a>
+              , benefit from prioritized feature requests and swift bug fixes,
+              schedule in-person consultations, and tap into the power of our{" "}
+              <a href="/big/">Business Intelligence</a> platform. Your success
+              is our priority.
             </p>
 
             <div className="margin-vert--lg">
@@ -70,8 +73,9 @@ const Main = (siteConfig) => {
         <div className="row">
           <div className="col col--12 margin-vert--md">
             <p className="hero__subtitle margin-vert--md">
-              Click on <b>Support</b> to get in touch with us. We're excited to
-              begin a dialogue.
+              Ready to connect? Simply click on Support to start the
+              conversation. We’re eager to hear from you and kick off a
+              meaningful dialogue.
             </p>
           </div>
         </div>
