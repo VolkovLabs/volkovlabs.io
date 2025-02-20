@@ -97,7 +97,7 @@ export const NAVBAR = {
     },
     {
       to: "/blog/",
-      position: "right",
+      position: "left",
       label: "Blog",
       "aria-label": "Blog",
       items: [
@@ -135,7 +135,7 @@ export const NAVBAR = {
     },
     {
       to: "/grafana/",
-      position: "right",
+      position: "left",
       label: "Grafana Crash Course",
       "aria-label": "Grafana",
       items: [
@@ -169,20 +169,8 @@ export const NAVBAR = {
     {
       to: "/pricing/",
       position: "right",
-      label: "Pricing",
-      "aria-label": "Pricing",
-    },
-    {
-      href: "https://youtube.com/@volkovlabs",
-      position: "right",
-      className: "header-youtube-link",
-      "aria-label": "YouTube Channel",
-    },
-    {
-      href: "https://github.com/VolkovLabs",
-      position: "right",
-      className: "header-github-link",
-      "aria-label": "GitHub Organization",
+      label: "Enterprise plan",
+      "aria-label": "Enterprise plan",
     },
   ],
 };

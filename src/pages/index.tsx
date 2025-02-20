@@ -19,14 +19,14 @@ const Header = (siteConfig) => {
         <div className="row">
           <div className="col col--7">
             <p className="hero__subtitle">
-              The Business Suite is a collection of open source plugins for
-              Grafana created and actively maintained by Volkov Labs.
+              Business Suite is a curated set of open-source Grafana plugins,
+              crafted and diligently maintained by Volkov Labs.
             </p>
 
             <p className="hero__subtitle">
-              The collection aims to solve the most frequent business tasks by
-              providing an intuitive interface with detailed written
-              documentation, examples, and video tutorials.
+              Designed to tackle common business challenges, this collection
+              offers an easy-to-use interface, complemented by comprehensive
+              documentation, practical examples, and engaging video tutorials.
             </p>
 
             <div className="margin-vert--lg">
