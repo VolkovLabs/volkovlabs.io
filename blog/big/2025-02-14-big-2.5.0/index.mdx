@@ -12,12 +12,53 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Load balancing for alerting rules, Grafana version checks and UI updates in Business Intelligence 2.5.0
+# Cluster functionality, Grafana version checks, and UI updates in Business Intelligence 2.5.0
 
 We are excited to announce the public preview release of the Business Intelligence platform 2.5.0. It includes the following updates:
 
-- Added Grafana version on environment page and version checks.
-- Added cluster functionality and load balancing page to show scheduled alert rules.
+- Added cluster functionality with load balancing page to show scheduled alert rules.
+- Improved work with Grafana versions.
+- General UI improvements and usability updates. 
+- Updated Business Engine OpenAPI specification.
+
+## Cluster functionality
+
+A cluster in the Business Studio is a group of business engines with the same token connected to the same configuration database and Grafana instance.
+
+Clusters are displayed in the left-hand side menu. Each cluster has two pages:
+ - **Load balancing**.
+
+ <Image
+  title="Load balancing page for the Alpha cluster."
+  src="/img/blog/2025-02-14-big-2.5.0/cluster-lb.png"
+/>
+
+Here, you can see the number of business engines in the cluster and the number of scheduled alerts. Then, down below, you have a list of business engines with Grafana dashboards they serve. Each dashboard is displayed with a list of created alerts. 
+
+ - **Settings**.
+
+  <Image
+  title="Settings page for the Alpha cluster."
+  src="/img/blog/2025-02-14-big-2.5.0/cluster-settings.png"
+/>
+
+Here, you can specify the cluster's name, review the token details and the listing of connected business engines, their version, and their status. 
+
+## Improved work with Grafana versions
+
+A new informational detail makes the work with Grafana version compatibility more transparent. 
+
+<Image
+  title="You can see the connected Grafana version on the Environment page."
+  src="/img/blog/2025-02-14-big-2.5.0/grafana-version.png"
+/>
+
+Behind the scenes, we added version compatibility checks. The Business Studio will notify you of any potential problems.
+
+## General UI improvements and usability updates
+
+These changes make the Business Studio more intuitive. 
+
 - Updated panel selection to display panel type in description.
 - Updated display colors in thresholds to match Grafana naming conventions.
 - Updated in alerting since date to match alert history.
