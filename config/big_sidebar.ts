@@ -84,7 +84,7 @@ const sidebars: SidebarsConfig = {
         {
           items: [
             "alerting/datasources/postgresql",
-            //            "alerting/datasources/prometheus",
+             "alerting/datasources/prometheus",
             //            "alerting/datasources/loki",
           ],
           label: "Data Sources",
