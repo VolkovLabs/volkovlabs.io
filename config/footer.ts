@@ -58,9 +58,9 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
-          label: "EULA",
-          to: "/eula/",
-          className: "volkovlabs-footer-link icon-eula-link",
+          label: "Support Portal",
+          href: "https://support.volkovlabs.io",
+          className: "volkovlabs-footer-link icon-support-link",
         },
       ],
     },
@@ -83,14 +83,14 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-grafana-link",
         },
         {
-          label: "Support Portal",
-          href: "https://support.volkovlabs.io",
-          className: "volkovlabs-footer-link icon-support-link",
-        },
-        {
           label: "YouTube Channel",
           href: "https://youtube.com/@volkovlabs",
           className: "volkovlabs-footer-link icon-youtube-link",
+        },
+        {
+          label: "LinkedIn",
+          href: "https://linkedin.com/company/volkovlabs",
+          className: "volkovlabs-footer-link icon-linkedin-link",
         },
       ],
     },
@@ -113,14 +113,14 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-terms-link",
         },
         {
+          label: "EULA",
+          to: "/eula/",
+          className: "volkovlabs-footer-link icon-eula-link",
+        },
+        {
           label: "Disclaimer",
           to: "/disclaimer/",
           className: "volkovlabs-footer-link icon-disclaimer-link",
-        },
-        {
-          label: "LinkedIn",
-          href: "https://linkedin.com/company/volkovlabs",
-          className: "volkovlabs-footer-link icon-linkedin-link",
         },
       ],
     },

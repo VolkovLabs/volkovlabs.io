@@ -7,26 +7,35 @@ import Image from "@theme/Image";
 
 # High Availability
 
-One of the most requested capabilities is the High Availability(HA) and Load Balancing setup. We designed the Business Intelligence platform specifically keeping that in mind.
+One of the most requested capabilities is the High Availability(HA) and Load Balancing setup. We designed the Business Intelligence platform specifically with that in mind.
 
-All Business Intelligence components could exist in clusters, where a cluster is a set of mirrored servers. It is done to primarily facilitate uninterrupted service by distributing the load most efficiently.
+All Business Intelligence components could exist in clusters, where a cluster is a set of mirrored servers. It primarily facilitates uninterrupted service by distributing the load most efficiently.
 
 ## Deployment
 
-- Business Engine Cluster:
-  - Requests to Server API are distributed behind the Load Balancer.
-  - Schedulers distribute execution of alert rules automatically.
-- Grafana Cluster visualizes data and provides Grafana API for Business Engine.
-- Prometheus Cluster stores Business Engine performance data.
-  - May store Production metrics.
-- PostgreSQL (Timescale) Cluster stores:
-  - Business Engine database.
-  - Grafana configuration database.
-  - May store Production data.
-
-Below is the picture to illustrate the current High Availability setup.
+- The load balancer allows efficient request distribution to facilitate uninterrupted user experience in very busy environments.
+  - It expertly steers requests between mirrored business engines and Grafana instances.
+- Business Engine Cluster
+  - You can have as many identical Business Engines as required.
+- Grafana Cluster
+  - You can have as many identical Grafanas as required.
 
 <Image
   title="Distributed High Availability Deployment of Business Intelligence platform."
   src="/img/big/high-availability/overview.png"
 />
+
+### Data storage
+
+You can use any solution for your data storage. Our choices are:
+
+- PostgreSQL (Timescale)
+  - For production, configuration, and business engine data storage.
+- Prometheus
+  - For metrics collection and storage.
+
+These are the best solutions to go hand in hand with Grafana.
+
+## Prometheus
+
+One of the examples we provide for [Prometheus](/big/alerting/datasources/prometheus/) describes the possible High Availability setups in detail.
