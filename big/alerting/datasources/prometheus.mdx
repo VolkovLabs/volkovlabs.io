@@ -5,39 +5,51 @@ tags:
 
 import Image from "@theme/Image";
 
-# Prometheus and high availability(HA)
+# Prometheus with High Availability
 
 The following example demonstrates configuring a Grafana, Business Studio, and Prometheus trio to work with alerts.
 
-As you know, Prometheus is a free and open-source core technology for monitoring and observability of systems. That means we need a high-availability use case (HA) to show it in bright and shiny armor. Before diving into the step-by-step configuration, let's review the system setup we will monitor and create alerts for in this example.
+As you know, Prometheus is a free and open-source core technology for monitoring and observability of systems. That means we need a high-availability use case (HA) to show it in bright and shiny armor.
 
 ## System setup
 
-The system in this example consists of two environments - Alpha and Charlie.
+Before diving into the step-by-step configuration, let's review the system setup we will monitor and create alerts for. The system consists of two environments - Alpha and Charlie.
+
+### Alpha cluster
+
+In the Alpha environment, there are two mirrored business engines: `engine1.alpha` and `engine2.alpha`. They are connected with the Grafana cluster, which has two mirrored Grafana instances `Grafana1` and `Grafana2`.
 
 <Image title="Alpha environment." src="/img/big/business-alerting/alpha.png" />
 
-In the Alpha environment, there are two mirrored business engines: `engine1.alpha` and `engine2.alpha`. They are connected with the Grafana cluster, which has two mirrored Grafana instances, `Grafana1` and `Grafana2`. To store the business engine and Grafana configuration, we employ PostgreSQL (not mirrored). Prometheus is here to collect metrics from the business engine and Grafana.
+To store the business engine and Grafana configuration, we employ PostgreSQL (can be configured as master-slave or HA). Prometheus is here to collect metrics from the business engine and Grafana.
+
+### Charlie cluster
+
+In the Charlie environment, there are three business engines:`engine1.charlie`, `engine2.charlie`, and `engine3.charlie`. They serve one Grafana cloud instance.
 
 <Image
   title="Charlie environment."
   src="/img/big/business-alerting/charlie.png"
 />
 
-In the Charlie environment, there are three business engines:`engine1.charlie`, `engine2.charlie`, and `engine3.charlie`. They serve one Grafana cloud instance. PostgreSQL stores the business engine configuration. Prometheus collects performance metrics from all three business engines.
+PostgreSQL stores the business engine configuration. Prometheus collects performance metrics from all three business engines.
 
-Every business engine host two services:
+## Business Engine metrics endpoints
 
-- port 3001. API server
-- port 3002. Scheduler
+Every business engine provides two metrics endpoints to collect performance data:
 
-## What to monitor
+- Port 3001 for API server
+- Port 3002 for Scheduler
+
+## Use case
 
 We want to monitor the CPU usage by all five business engines distinctively for each provided service (meaning 10 instances to monitor). In the event of either of them exceeding 2%:
 
 - Create a Grafana anotation.
-- Write into the WHICH???? logs.
+- Write logs with alert payload.
 - Create a file on the designated JSON server with all the details of the CPU exceeding event.
+
+## Grafana
 
 In Grafana, we want to have a [time series](https://youtu.be/YpOazX67GSo?si=JI0c0V4eocKAvy2S) visualization where exceeding 2% CPU usage would be visually noticeable immediately.
 
@@ -46,13 +58,13 @@ In Grafana, we want to have a [time series](https://youtu.be/YpOazX67GSo?si=JI0c
   src="/img/big/business-alerting/time-series-look.png"
 />
 
-### Note about dashboard variables
+### Dashboard variables
 
-It is important to note that our use case requires firing an alert only for a particular business engine/service. In all alert messages (in the log records and JSON file notes), we want to know which specific business engine/service causes the problem. To make it possible, all the observable metrics need to contain this details - business engine/service.
+It is important to note that our use case requires firing an alert only for a particular business engine/service. In all alert messages (in the log records and JSON file notes), we want to know which specific business engine/service causes the problem.
 
-To make the distinctive firing possible, we use Grafana dashboard variables.
+To make it possible, all the observable metrics need to contain this details - business engine/service. To make the distinctive firing possible, we use Grafana dashboard variables.
 
-## Grafana dashboard variable configuration
+### Dashboard variable configuration
 
 <Image
   title="Grafana dashboard variable configuration."
@@ -65,13 +77,13 @@ Create a dashboard variable:
 2. Name **instance**.
 3. Data source **prometheus**:
 
-- Query **Label values**,
-- Label **instance**,
-- Metric **nodejs_version_info**.
+   - Query **Label values**,
+   - Label **instance**,
+   - Metric **nodejs_version_info**.
 
 4. In the **Preview of values**, all 10 services that are needed to be monitored are displayed.
 
-## Grafana time series configuration
+### Time Series panel configuration
 
 <Image
   title="Grafana time series panel configuration."
@@ -83,11 +95,11 @@ Create a dashboard variable:
 3. Specify a query to extract the system CPU usage.
 4. Dashboard variable with all 10 services to monitor.
 5. Select the time series panel.
-6. Set up the threshold where values above 2 are beyond the allowable range.
+6. Set up the threshold where values above 2 are out of the allowable range.
 
 ## Business Studio
 
-The business performace metrics is colected in one Prometheus database. So, in the Business Studio, having one business engine, let's say Alpha Engine 1, is enough.
+Business Studio can be connected to one or all business engines within a cluster to configure alert rules, check data preview and evaluate alert history.
 
 ### Alert history
 
