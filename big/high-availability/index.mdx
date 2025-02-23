@@ -11,9 +11,7 @@ One of the most requested capabilities is the High Availability(HA) and Load Bal
 
 All Business Intelligence components could exist in clusters, where a cluster is a set of mirrored servers. It primarily facilitates uninterrupted service by distributing the load most efficiently.
 
-One of the examples we provide for [Prometheus](/big/alerting/datasources/prometheus/) describes one of the possible High Availability setups in detail. 
-
-Below is the high-level High Availability development schema.
+One of the examples we provide for [Prometheus](/big/alerting/datasources/prometheus/) describes one of the possible High Availability setups in detail.
 
 ## Deployment
 
@@ -22,12 +20,13 @@ Below is the high-level High Availability development schema.
 - Grafana Cluster. You can have as many identical Grafanas as required.
 
 You can use any solution for your data storage. Our choices are:
-  - PostgreSQL (Timescale) for production, configuration, and business engine data storage.
-  - Prometheus. For metrics collection and storage.
 
-These are the best solutions to go hand in hand with Grafana.
+- PostgreSQL (Timescale) for production, configuration, and business engine data storage.
+- Prometheus. For metrics collection and storage.
 
 <Image
   title="Distributed High Availability Deployment of Business Intelligence platform."
   src="/img/big/high-availability/overview.png"
 />
+
+These are the best solutions to go hand in hand with Grafana.
