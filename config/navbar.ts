@@ -169,8 +169,8 @@ export const NAVBAR = {
     {
       to: "/pricing/",
       position: "right",
-      label: "Enterprise plan",
-      "aria-label": "Enterprise plan",
+      label: "Business Suite Enterprise",
+      "aria-label": "Business Suite Enterprise",
     },
   ],
 };
