@@ -95,6 +95,30 @@ You can use the Grafana **Overrides** feature to configure column links (not for
   src="/img/blog/2024-09-26-business-table-1.3.0/links.png"
 />
 
+### Update variables using data links
+
+Data links help expose additional functionality of the Business Table. Changing a variable through the table can be implemented as follows.
+
+Configure the Data Links option
+
+```
+/d/${__dashboard.uid}?${__url_time_range}&var-Test=${__data.fields.device}
+```
+
+where `__data.fields.device` uses the value from the `device` field in the current row when the cell is clicked. This is how the variable will be changed. In string `var-Test` the substring `Test` is the variable to be replaced.
+
+<Image
+  title="Configure the Data Links option to update dashboard variable."
+  src="/img/plugins/business-table/data-links-variable-config.png"
+/>
+
+Clicking on a cell with the value `device10` will change the value of the Text variable.
+
+<Image
+  title="Click on cell to change variable."
+  src="/img/plugins/business-table/click-variable-change.png"
+/>
+
 ## Support of the Standard options
 
 :::info version
