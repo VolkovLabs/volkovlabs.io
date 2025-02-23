@@ -1,0 +1,63 @@
+import Image from "@theme/Image";
+
+# Mermaid
+
+Mermaid is a popular JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams using Markdown-defined text definitions.
+
+:::info
+Previously we maintained two Business text (old name Dynamic Text) plugin builds. One with embedded Mermaid Library and the other without.
+
+The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply import it as an external resource.
+:::
+
+<Image
+  title="Mermaid diagrams displayed using the Business Text panel."
+  src="/img/plugins/business-text/diagram.png"
+/>
+
+## Example
+
+<Image
+  title="Mermaid diagrams example."
+  src="/img/plugins/business-text/mer.png"
+/>
+
+Use the following external library
+
+```md
+https://esm.sh/mermaid
+```
+
+## Code to copy
+
+Use the following for the **Content** (when your data source is set to return something) or in the **Default Content** (when your data source returns nothing):
+
+```diagram
+<pre class="mermaid">
+    graph LR
+    A --- B
+    B-->C[fa:fa-ban {{data.0.test}}]
+    B-->D(fa:fa-spinner);
+</pre>
+```
+
+## After Content Ready
+
+:::warning Version mismatch
+
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+
+:::
+
+Use the following for the **JavaScript**->**After Content Ready**:
+
+```js
+import("https://esm.sh/mermaid").then(({ default: mermaid }) => {
+  mermaid.initialize({ startOnLoad: true });
+
+  mermaid.run({
+    querySelector: ".mermaid",
+    suppressErrors: false,
+  });
+});
+```
