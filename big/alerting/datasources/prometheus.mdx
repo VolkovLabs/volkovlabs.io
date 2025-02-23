@@ -7,7 +7,7 @@ import Image from "@theme/Image";
 
 # Prometheus and high availability(HA)
 
-The following example demonstrates configuring a Grafana, Business Studio, and Prometheus trio to work with alerts. 
+The following example demonstrates configuring a Grafana, Business Studio, and Prometheus trio to work with alerts.
 
 As you know, Prometheus is a free and open-source core technology for monitoring and observability of systems. That means we need a high-availability use case (HA) to show it in bright and shiny armor. Before diving into the step-by-step configuration, let's review the system setup we will monitor and create alerts for in this example.
 
@@ -15,10 +15,7 @@ As you know, Prometheus is a free and open-source core technology for monitoring
 
 The system in this example consists of two environments - Alpha and Charlie.
 
-<Image
-  title="Alpha environment."
-  src="/img/big/business-alerting/alpha.png"
-/>
+<Image title="Alpha environment." src="/img/big/business-alerting/alpha.png" />
 
 In the Alpha environment, there are two mirrored business engines: `engine1.alpha` and `engine2.alpha`. They are connected with the Grafana cluster, which has two mirrored Grafana instances, `Grafana1` and `Grafana2`. To store the business engine and Grafana configuration, we employ PostgreSQL (not mirrored). Prometheus is here to collect metrics from the business engine and Grafana.
 
@@ -30,15 +27,17 @@ In the Alpha environment, there are two mirrored business engines: `engine1.alph
 In the Charlie environment, there are three business engines:`engine1.charlie`, `engine2.charlie`, and `engine3.charlie`. They serve one Grafana cloud instance. PostgreSQL stores the business engine configuration. Prometheus collects performance metrics from all three business engines.
 
 Every business engine host two services:
-  - port 3001. API server
-  - port 3002. Scheduler
+
+- port 3001. API server
+- port 3002. Scheduler
 
 ## What to monitor
 
 We want to monitor the CPU usage by all five business engines distinctively for each provided service (meaning 10 instances to monitor). In the event of either of them exceeding 2%:
- - Create a Grafana anotation.
- - Write into the WHICH???? logs.
- - Create a file on the designated JSON server with all the details of the CPU exceeding event.
+
+- Create a Grafana anotation.
+- Write into the WHICH???? logs.
+- Create a file on the designated JSON server with all the details of the CPU exceeding event.
 
 In Grafana, we want to have a [time series](https://youtu.be/YpOazX67GSo?si=JI0c0V4eocKAvy2S) visualization where exceeding 2% CPU usage would be visually noticeable immediately.
 
@@ -49,7 +48,7 @@ In Grafana, we want to have a [time series](https://youtu.be/YpOazX67GSo?si=JI0c
 
 ### Note about dashboard variables
 
-It is important to note that our use case requires firing an alert only for a particular business engine/service. In all alert messages (in the log records and JSON file notes), we want to know which specific business engine/service causes the problem. To make it possible, all the observable metrics need to contain this details - business engine/service. 
+It is important to note that our use case requires firing an alert only for a particular business engine/service. In all alert messages (in the log records and JSON file notes), we want to know which specific business engine/service causes the problem. To make it possible, all the observable metrics need to contain this details - business engine/service.
 
 To make the distinctive firing possible, we use Grafana dashboard variables.
 
@@ -61,12 +60,15 @@ To make the distinctive firing possible, we use Grafana dashboard variables.
 />
 
 Create a dashboard variable:
+
 1. Type **Query**.
 2. Name **instance**.
 3. Data source **prometheus**:
-  - Query **Label values**, 
-  - Label **instance**,
-  - Metric **nodejs_version_info**.
+
+- Query **Label values**,
+- Label **instance**,
+- Metric **nodejs_version_info**.
+
 4. In the **Preview of values**, all 10 services that are needed to be monitored are displayed.
 
 ## Grafana time series configuration
@@ -85,7 +87,7 @@ Create a dashboard variable:
 
 ## Business Studio
 
-The business performace metrics is colected in one Prometheus database. So, in the Business Studio, having one business engine, let's say Alpha Engine 1, is enough. 
+The business performace metrics is colected in one Prometheus database. So, in the Business Studio, having one business engine, let's say Alpha Engine 1, is enough.
 
 ### Alert history
 
