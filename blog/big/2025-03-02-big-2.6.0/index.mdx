@@ -1,0 +1,69 @@
+---
+authors: [daria]
+slug: business-intelligence-2.6.0/
+tags: [Business Intelligence]
+image: /img/blog/2025-03-02-big-2.6.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Clusters alerting, action history, and event page updates in Business Intelligence 2.6.0
+
+We are excited to announce the public preview release of the Business Intelligence platform 2.6.0. It includes the following updates:
+
+- Integrated an alerting page to present events across high availability clusters.
+- Added action history to track messages that have been sent.
+- Included the display of data frame fields on the alert event page.
+- Modified Grafana utilities to incorporate transformations compatible with Grafana 11.5.2.
+- Enhanced the build procedure and reduced the size of the engine's Docker image.
+
+## Updated Business Engine OpenAPI specification
+
+We maintain the ease of the 3rd party Business Engine integration by timely updating the [OpenAPI specification](/big/api/).
+
+## Business Studio Downloads
+
+### Downloads from GitHub
+
+:::info Signed releases
+
+MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
+
+:::
+
+- MacOS:
+  - [Apple Disk Image for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-2.6.0-arm64.dmg)
+  - [Apple Disk Image for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/2.6.0/Business.Studio-2.6.0-x64.dmg)
+  - [ZIP file for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-darwin-arm64-2.6.0.zip)
+  - [ZIP file for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-darwin-x64-2.6.0.zip)
+- Linux:
+  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio-2.6.0-1.arm64.rpm)
+  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio-2.6.0-1.x86_64.rpm)
+  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio_2.6.0_arm64.deb)
+  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio_2.6.0_amd64.deb)
+- Windows
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-2.6.0.Setup.exe)
+
+<GettingStarted />
+
+## Release Notes
+
+## Business Studio 2.6.0
+
+- Integrated an alerting view to present events across high availability clusters.
+- Added action history to track messages that have been sent.
+- Included the display of data frame fields on the alert event page.
+
+## Business Engine 2.6.0
+
+- Implemented an API to retrieve the most recent events for the engine.
+- Modified Grafana utilities to incorporate transformations compatible with Grafana 11.5.2.
+- Enhanced the build procedure and reduced the size of the engine's Docker image.
+
+<Feedback />
