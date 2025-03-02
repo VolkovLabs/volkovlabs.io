@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
     {
       items: [
         "studio/manage-business-engines",
+        "studio/manage-clusters",
         {
           items: [
             //            "studio/actions/logs",
