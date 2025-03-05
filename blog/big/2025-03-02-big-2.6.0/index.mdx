@@ -24,16 +24,23 @@ We are excited to announce the public preview release of the Business Intelligen
 - Enhanced the build procedure and reduced the size of the Business Engine's docke image.
 - Updated Business Engine OpenAPI specification.
 
-Below, Mikhail walks you through the newest features of the Business Intelligence platform. 
+Below, Mikhail walks you through the newest features of the Business Intelligence platform.
 
 <Youtube
   id="IOYyfIkNwJ4"
   title="Business alerting, action history, and event page updates in Business Intelligence 2.6.0."
 />
 
+## Mastering Business Alerting using dashboard variables in Grafana Cloud
+
+<Youtube
+  id="ey0ZSbSDxtI"
+  title="Mastering Business Alerting: Dashboard Variables in Grafana Cloud."
+/>
+
 ## Alerting page
 
-The **Alerting** page displays all cluster alerts combined. It is convenient when you work with multiple clusters and need to review all alert states simultaneously. 
+The **Alerting** page displays all cluster alerts combined. It is convenient when you work with multiple clusters and need to review all alert states simultaneously.
 
 We plan to add filtering and sorting features in the upcoming releases for better analysis.
 
@@ -42,18 +49,18 @@ We plan to add filtering and sorting features in the upcoming releases for bette
   src="/img/blog/2025-03-02-big-2.6.0/page-alerting.png"
 />
 
-## Action history page 
+## Action history page
 
-The **Action history** page overviews all submitted messages triggered by the selected alert action. 
+The **Action history** page overviews all submitted messages triggered by the selected alert action.
 
 <Image
   title="Action history page."
   src="/img/blog/2025-03-02-big-2.6.0/action-history.png"
 />
 
-1. Select Business Engine, then the **Actions** tab, followed by the specific alert action. 
+1. Select Business Engine, then the **Actions** tab, followed by the specific alert action.
 2. Select the **Action history** page.
-3. If a message includes a variable, the Business Studio displays the specific variable value that was submitted. 
+3. If a message includes a variable, the Business Studio displays the specific variable value that was submitted.
 
 ## Data frame fields on the alert event details page
 
@@ -66,12 +73,12 @@ For the alerts in the **Alerting** state, we display column headers for a more i
 
 ## Grafana transformation compatibility
 
-We work diligently to ensure Business Intelligence compatibility with all Grafana transformations. 
-However, there are some nuances worth pointing out. 
+We work diligently to ensure Business Intelligence compatibility with all Grafana transformations.
+However, there are some nuances worth pointing out.
 
 Most existing transformations are part of the core Grafana, written following the general transformation concept. These are always compatible with the Business Intelligence.
 
-Yet, some of the Grafana transformations are created for specific data sources or particular data scenarios. These are outside the general transformation approach, so there could be some hiccups while working with them. 
+Yet, some of the Grafana transformations are created for specific data sources or particular data scenarios. These are outside the general transformation approach, so there could be some hiccups while working with them.
 
 :::info transformations compatibilities
 
@@ -114,13 +121,13 @@ MacOS and Windows installers are signed and notarized with encryption. End to en
 
 ## Release Notes
 
-## Business Studio 2.6.0
+### Business Studio 2.6.0
 
 - Integrated an alerting view to present events across high availability clusters.
 - Added action history to track messages that have been sent.
 - Included the display of data frame fields on the alert event page.
 
-## Business Engine 2.6.0
+### Business Engine 2.6.0
 
 - Implemented an API to retrieve the most recent events for the engine.
 - Modified Grafana utilities to incorporate transformations compatible with Grafana 11.5.2.
