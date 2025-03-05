@@ -13,20 +13,75 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business alerting, action history, and event page updates in Business Intelligence 2.6.0
+# Alerting page, action history, and event details updates in Business Intelligence 2.6.0
 
 We are excited to announce the public preview release of the Business Intelligence platform 2.6.0. It includes the following updates:
 
-- Integrated an alerting page to present events across high availability clusters of business engines.
-- Added action history to track messages that have been sent.
-- Included the display of data frame fields on the alert event page.
+- Integrated the **Alerting** page to present events across [high availability clusters](/big/studio/manage-clusters/) of business engines.
+- Added **Action history** page to track the submitted messages.
+- Included the display of data frame fields on the alert **Event details** page.
 - Modified Grafana utilities to incorporate transformations compatible with Grafana 11.5.2.
-- Enhanced the build procedure and reduced the size of the engine's Docker image.
+- Enhanced the build procedure and reduced the size of the Business Engine's docke image.
+- Updated Business Engine OpenAPI specification.
+
+Below, Mikhail walks you through the newest features of the Business Intelligence platform. 
 
 <Youtube
   id="IOYyfIkNwJ4"
   title="Business alerting, action history, and event page updates in Business Intelligence 2.6.0."
 />
+
+## Alerting page
+
+The **Alerting** page displays all cluster alerts combined. It is convenient when you work with multiple clusters and need to review all alert states simultaneously. 
+
+We plan to add filtering and sorting features in the upcoming releases for better analysis.
+
+<Image
+  title="Alerting page in the Business Studio."
+  src="/img/blog/2025-03-02-big-2.6.0/page-alerting.png"
+/>
+
+## Action history page 
+
+The **Action history** page overviews all submitted messages triggered by the selected alert action. 
+
+<Image
+  title="Action history page."
+  src="/img/blog/2025-03-02-big-2.6.0/action-history.png"
+/>
+
+1. Select Business Engine, then the **Actions** tab, followed by the specific alert action. 
+2. Select the **Action history** page.
+3. If a message includes a variable, the Business Studio displays the specific variable value that was submitted. 
+
+## Data frame fields on the alert event details page
+
+For the alerts in the **Alerting** state, we display column headers for a more intuitive visual representation.
+
+<Image
+  title="Data frame headers to help with better data understanding."
+  src="/img/blog/2025-03-02-big-2.6.0/frame.png"
+/>
+
+## Grafana transformation compatibility
+
+We work diligently to ensure Business Intelligence compatibility with all Grafana transformations. 
+However, there are some nuances worth pointing out. 
+
+Most existing transformations are part of the core Grafana, written following the general transformation concept. These are always compatible with the Business Intelligence.
+
+Yet, some of the Grafana transformations are created for specific data sources or particular data scenarios. These are outside the general transformation approach, so there could be some hiccups while working with them. 
+
+:::info transformations compatibilities
+
+Due to their unique implementation, some rare and specific Grafana transformations might not work correctly. Contact us if you encounter one, and we will find a solution
+
+:::
+
+## Size of the Business Engine's docker image
+
+Though this change is not immediately visible to end-users, it is essential to mention it since it transforms our internal build process, allowing for more efficient development, testing, and deployment.
 
 ## Updated Business Engine OpenAPI specification
 
