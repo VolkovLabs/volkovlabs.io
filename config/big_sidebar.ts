@@ -9,6 +9,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "getting-started/index",
         "quick-start/index",
+        "personas",
         "high-availability/index",
       ],
       label: "Business Intelligence",
@@ -85,7 +86,7 @@ const sidebars: SidebarsConfig = {
         {
           items: [
             "alerting/datasources/postgresql",
-             "alerting/datasources/prometheus",
+            "alerting/datasources/prometheus",
             //            "alerting/datasources/loki",
           ],
           label: "Data Sources",
