@@ -17,7 +17,7 @@ import Youtube from "@theme/Youtube";
 
 In the world of modern business, data isn't just power—it's the pulse. Knowing _what's happening_ in real time and _acting on it_ can mean the difference between seizing an opportunity and missing the mark. Enter [Grafana](https://grafana.com), a leading observability and analytics platform that doubles as a formidable tool for business intelligence (BI).
 
-At the heart of its flexibility lies a feature often overlooked: dashboard variables. When paired with Business Alerting from Business Intelligence platform, these variables transform static dashboards into dynamic, responsive tools for monitoring and decision-making. Here's how to master business alerting with dashboard variables in Grafana —and why it's a game-changer for your BI strategy.
+At the heart of its flexibility lies a feature often overlooked: dashboard variables. When paired with [Business Alerting](/big/alerting/) from Business Intelligence platform, these variables transform static dashboards into dynamic, responsive tools for monitoring and decision-making. Here's how to master business alerting with dashboard variables in Grafana —and why it's a game-changer for your BI strategy.
 
 <Youtube
   id="ey0ZSbSDxtI"
@@ -40,6 +40,11 @@ While variables make dashboards interactive, their true potential shines when in
 
 This flexibility turns Grafana into more than just a visualization tool—it becomes a proactive BI platform that keeps your business ahead of the curve.
 
+<Image
+  title="An example of the Time Series visualization where one data series triggers an alert and another does not."
+  src="/img/big/business-alerting/var-1.png"
+/>
+
 ## How to set up dashboard variables for alerting
 
 Let’s walk through a practical example of setting up variables and alerts in Grafana to monitor a business metric—say, order fulfillment rates across multiple warehouses.
@@ -59,10 +64,15 @@ Let’s walk through a practical example of setting up variables and alerts in G
 
 3. **Configure an Alert**
 
-   - Open Business Studio.
+   - Open [Business Studio](/big/studio/).
    - Select a specific business engine, navigate to the “Alert rules” tab and click “Add Alert Rule”.
    - Specify dashboard, panel, execution based on configured variable and thresholds.
-   - Select action to execute on the threshold is breached.
+   - Select [actions](/big/studio/actions/) to execute on the threshold is breached.
+
+<Image
+  title="The Execution and Variable values sections appear if the specified Target->Dashboard contains dashboard variables."
+  src="/img/big/business-alerting/execution-var-values.png"
+/>
 
 4. **Test and Refine**
    - Simulate a drop in fulfillment rate (or use historical data) to ensure the alert fires correctly.
@@ -78,10 +88,14 @@ The beauty of this setup lies in its versatility. Here are a few ways businesses
 
 ## Why Grafana stands out for BI
 
-Grafana isn't just for DevOps—it's a Swiss Army knife for business intelligence. Its cloud, self-hosted scalability and integrations with diverse data sources (from SQL databases to Prometheus metrics) make it ideal for organizations juggling complex operations. Dashboard variables amplify this by letting you ask _and answer_ the right questions without drowning in dashboards or manual tweaks.
+Grafana isn't just for DevOps—it's a Swiss Army knife for business intelligence. Its cloud, self-hosted scalability and integrations with diverse data sources (from SQL databases to Prometheus metrics) make it ideal for organizations juggling complex operations.
+
+Dashboard variables amplify this by letting you ask _and answer_ the right questions without drowning in dashboards or manual tweaks.
 
 ## Take control of your data
 
-Mastering Business Alerting with dashboard variables in Grafana is about more than just staying informed—it's about staying agile. By building dashboards that adapt and alerts that act, you're not just reacting to data; you're using it to drive smarter decisions. Ready to transform your BI approach? Start experimenting with variables today, and watch your business intelligence evolve from reactive reporting to proactive power.
+Mastering Business Alerting with dashboard variables in Grafana is about more than just staying informed—it's about staying agile. By building dashboards that adapt and alerts that act, you're not just reacting to data; you're using it to drive smarter decisions.
+
+Ready to transform your BI approach? Start experimenting with variables today, and watch your [business intelligence](/big) evolve from reactive reporting to proactive power.
 
 <Feedback />
