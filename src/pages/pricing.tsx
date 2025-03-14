@@ -74,7 +74,7 @@ const Main = (siteConfig) => {
           <div className="col col--12 margin-vert--md">
             <p className="hero__subtitle margin-vert--md">
               Ready to connect? Simply click on Support to start the
-              conversation. We’re eager to hear from you and kick off a
+              conversation. We're eager to hear from you and kick off a
               meaningful dialogue.
             </p>
           </div>
