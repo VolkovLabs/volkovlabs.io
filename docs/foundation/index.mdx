@@ -6,43 +6,62 @@ import BlogPost from "@theme/BlogPost";
 import Feedback from "../_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Foundation
 
-The Business Suite has garnered praise from hundreds of users who are thrilled with its ability to go beyond observability and solve complex business tasks, making it a trusted choice for companies aiming to create cost-effective applications in-house and meet aggressive delivery schedules.
+The Business Suite empowers hundreds of users to transcend traditional observability, tackling complex business challenges with ease. It’s a trusted solution for companies looking to build cost-effective, in-house applications while meeting tight delivery deadlines.
 
 <BlogPost id="business-suite-20240802" />
 
-## Business Input, Media, and Variable
+## Getting Started
 
-In this video, Daria covers the Business Input data source, Business Media panel, and Business Variable panel, explaining what those plugins do and the best way to start with them.
+New to the Business Suite? This guide breaks down the essentials and provides a quick, beginner-friendly cheat sheet to get you up and running.
 
-<Youtube
-  id="K1NHBV5e6VE"
-  title="Business Input data source, Media panel, Variable panel."
-/>
+<BlogPost id="howto-start-20241022" />
 
-## Business Text, News, and Satellite
+## Key Insights
 
-Daria reviews Business Text, Business News data source, and the Business Satellite data source in this video.
+### Building an Open-Source Business Suite
 
-<Youtube
-  id="Go6tdEh96JQ"
-  title="Business Text panel, News data source, Satellite data source."
-/>
+Discover what we’ve learned about creating an open-source Business Suite for Grafana and how it’s shaping the future of dashboard-driven applications.
 
-## Business Forms
+<BlogPost id="open-source-suite" />
 
-In this video, Daria reviews Business Forms panel.
+### Core Plugins Overview
 
-<Youtube
-  id="dk8ht8G67JY"
-  title="Business Forms panel for Grafana. Send data back into your data source."
-/>
+<Tabs>
+  <TabItem value="input" label="Input, Media, Variable" default>
+    Daria introduces the Business Input data source, Business Media panel, and
+    Business Variable panel—explaining their roles and how to kickstart your
+    journey with them.
+    <Youtube
+      id="K1NHBV5e6VE"
+      title="Business Input data source, Media panel, Variable panel."
+    />
+  </TabItem>
+  <TabItem value="text" label="Text, News, Satellite">
+    Explore the Business Text panel, Business News data source, and Business
+    Satellite data source with Daria’s detailed review.
+    <Youtube
+      id="Go6tdEh96JQ"
+      title="Business Text panel, News data source, Satellite data source."
+    />
+  </TabItem>
+  <TabItem value="forms" label="Forms">
+    Learn how the Business Forms panel enables seamless data submission back to
+    your data source in this video by Daria.
+    <Youtube
+      id="dk8ht8G67JY"
+      title="Business Forms panel for Grafana. Send data back into your data source."
+    />
+  </TabItem>
+</Tabs>
 
-## Convert your dashboards into comprehensive web applications with the Business Suite for Grafana
+## Transform Dashboards into Web Apps
 
-This blog post on grafana.com provides details, examples, and short tutorials. You'll learn what each plugin does, how others are using them, and the best way to get started.
+Turn your Grafana dashboards into fully functional web applications with the Business Suite. This grafana.com blog post dives into plugin details, real-world examples, and concise tutorials to help you get started.
 
 <a href="https://grafana.com/blog/2024/09/27/convert-your-dashboards-into-comprehensive-web-applications-with-the-business-suite-for-grafana/">
   <Image
@@ -51,3 +70,9 @@ This blog post on grafana.com provides details, examples, and short tutorials. Y
     zoom={false}
   />
 </a>
+
+:::info
+The Business Suite integrates seamlessly with Grafana core components, making it ideal for rapid application development.
+:::
+
+<Feedback />
