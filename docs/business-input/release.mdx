@@ -9,111 +9,107 @@ import BlogPost from "@theme/BlogPost";
 
 # Release Notes
 
-Release Notes for the Business Input data source.
+Follow the development of the Business Input data source with these release notes, outlining new features, enhancements, fixes, and breaking changes across all versions.
 
 ## 4.5.0 (2024-12-23)
 
 ### Features / Enhancements
 
 - Added editor for boolean values (#97)
-- Updated e2e test (#98)
-- Updated to Grafana 11.4 and dependencies (#99)
+- Enhanced E2E tests (#98)
+- Updated to Grafana 11.4 with latest dependencies (#99)
 
 ## 4.4.0 (2024-11-18)
 
 ### Features / Enhancements
 
-- Updated Autosize Code Editor toolbar (#91)
-- Updated to Grafana 11.3 and dependencies (#95)
+- Improved Autosize Code Editor toolbar (#91)
+- Updated to Grafana 11.3 with latest dependencies (#95)
 
 ## 4.3.0 (2024-09-13)
 
 ### Features / Enhancements
 
-- Updated "Add a row" below the rows list (#83, #84)
-- Added toDataFrame helper to code parameters (#86)
-- Updated to Grafana 11.2 and dependencies (#87)
-- Updated code editor from business components (#89)
+- Repositioned "Add a row" below rows list (#83, #84)
+- Added `toDataFrame` helper to code parameters (#86)
+- Updated to Grafana 11.2 with latest dependencies (#87)
+- Enhanced Code Editor with Business Components (#89)
 
 ## 4.2.0 (2024-07-24)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Requires Grafana 10.2 and Grafana 11
-
+Requires Grafana 10.2 or 11
 :::
 
 ### Features / Enhancements
 
-- Updated variable support in Scenes dashboard (#79)
-- Updated to Grafana 11.1 and dependencies (#80)
+- Improved variable support in Scenes dashboards (#79)
+- Updated to Grafana 11.1 with latest dependencies (#80)
 
 ## 4.1.0 (2024-06-25)
 
 ### Features / Enhancements
 
-- Added supporting OpenAI completions (#73)
-- Updated E2E workflow to use Docker (#75, #77)
+- Added support for OpenAI completions (#73)
+- Optimized E2E workflow with Docker (#75, #77)
 - Updated plugin logo (#76)
 
 ## 4.0.0 (2024-06-12)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Requires Grafana 10 and Grafana 11
-
+Requires Grafana 10 or 11
 :::
 
 ### Features / Enhancements
 
-- Updated name to Business Input Data Source (#268)
-- Add plugin e2e tests and remove cypress (#66)
-- Prepare for Grafana 11 (#67)
-- Update to Grafana 11 and dependencies (#69)
-- Add supporting variables in code editor (#70)
+- Renamed to Business Input Data Source (#268)
+- Added plugin E2E tests and removed Cypress (#66)
+- Prepared for Grafana 11 (#67)
+- Updated to Grafana 11 with latest dependencies (#69)
+- Supported variables in Code Editor (#70)
 
 ## 3.1.1 (2024-03-03)
 
-### Bug fixes
+### Bug Fixes
 
-- Fix read property of undefined for empty fields (#63)
+- Fixed reading property of undefined for empty fields (#63)
 
 ## 3.1.0 (2024-02-21)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Requires Grafana 9.2 and Grafana 10
-
+Requires Grafana 9.2 or 10
 :::
 
 ### Features / Enhancements
 
-- Increase tests coverage (#47)
-- Update ESLint configuration and refactoring (#53)
-- Add drag-and-drop for rows and fields (#54)
-- Update custom code when switching the value editor from manual to JS (#59)
-- Add Variable Editor with Fields and Java Script (#58)
-- Add Collapse/Expand All for Fields and Values (#57)
-- Update to Grafana 10.3.3 (#60)
+- Increased test coverage (#47)
+- Updated ESLint configuration and refactored (#53)
+- Added drag-and-drop for rows and fields (#54)
+- Updated custom code on switching from manual to JavaScript Value Editor (#59)
+- Introduced Variable Editor with Fields and JavaScript (#58)
+- Added Collapse/Expand All for Fields and Values (#57)
+- Updated to Grafana 10.3.3 (#60)
 
 ## 3.0.0 (2023-06-28)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Requires Grafana 9 and Grafana 10
-
+Requires Grafana 9 or 10
 :::
 
 ### Features / Enhancements
 
-- Refactor Types and Fields Editor (#37)
-- Update tests with testing-library/react (#40)
-- Update to Grafana 10.0.0 (#41, #46)
-- Migrate to Plugin Tools 1.5.2 (#42)
-- Update to Node 18 and npm (#42)
-- Add E2E Cypress testing (#43)
-- Add JavaScript Values Editor (#44)
-- Remove Grafana 8.5 support (#46)
+- Refactored Types and Fields Editor (#37)
+- Updated tests with `testing-library/react` (#40)
+- Updated to Grafana 10.0.0 (#41, #46)
+- Migrated to Plugin Tools 1.5.2 (#42)
+- Updated to Node 18 and npm (#42)
+- Integrated E2E Cypress testing (#43)
+- Added JavaScript Values Editor (#44)
+- Removed support for Grafana 8.5 (#46)
 
 ## 2.2.0 (2023-03-27)
 
@@ -121,38 +117,37 @@ Release Notes for the Business Input data source.
 
 ### Features / Enhancements
 
-- Update CI and Release workflows (#33)
-- Update to Grafana 9.4.7 (#34)
-- Update README with Documentation (#35)
-- Add Scoped Variables for Variables replacement (#35)
+- Updated CI and release workflows (#33)
+- Updated to Grafana 9.4.7 (#34)
+- Enhanced README with documentation (#35)
+- Added Scoped Variables for variable replacement (#35)
 
 ## 2.1.0 (2022-12-29)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-Refactoring may introduce breaking changes. Please test before upgrading in Production.
-
+Refactoring may introduce breaking changes; test before upgrading in production
 :::
 
 <BlogPost id="static-datasource-2.1.0-20221229" />
 
 ### Features / Enhancements
 
-- Update CI to upload signed artifacts (#23)
-- Add "Static data source for Grafana | Mimic any data source | Tutorial and examples" video in README (#23)
-- Update to Grafana 9.3.2 (#24)
-- Refactoring and improving Test Coverage for data source (#25)
-- Update Field and Values Editors to labels and fields structure (#27)
-- Remove Frame Reducer to simplify code (#28)
-- Refactoring frame, field utilities (#29)
-- Add Date Time Picker, Number and Text Area Inputs (#30)
+- Updated CI to upload signed artifacts (#23)
+- Added "Static data source for Grafana | Mimic any data source | Tutorial and examples" video to README (#23)
+- Updated to Grafana 9.3.2 (#24)
+- Refactored and improved test coverage for data source (#25)
+- Updated Field and Values Editors to labels and fields structure (#27)
+- Removed Frame Reducer to simplify code (#28)
+- Refactored frame and field utilities (#29)
+- Added Date Time Picker, Number, and Text Area inputs (#30)
 
 ## 2.0.0 (2022-11-01)
 
 ### Features / Enhancements
 
-- Maintained by Volkov Labs (#19)
-- Updated based on Volkov Labs panel Template (#19)
-- Update CI to Node 16 and Synchronize with Release workflow (#20)
-- Update to Grafana 9.2.2 (#21)
-- Refactor Components and update Theme (#22)
+- Transferred maintenance to Volkov Labs (#19)
+- Updated based on Volkov Labs panel template (#19)
+- Updated CI to Node 16 and synced with release workflow (#20)
+- Updated to Grafana 9.2.2 (#21)
+- Refactored components and updated theme (#22)
