@@ -10,93 +10,88 @@ import BlogPost from "@theme/BlogPost";
 import Feedback from "@site/docs/business-text/_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Why the Business Text Panel for Grafana is Your Business Powerhouse
 
-At Volkov Labs, we've always believed that Grafana's true power lies in its flexibility — its ability to adapt to virtually any use case, from observability to business intelligence and beyond. That's why we're so proud of our [Business Text panel](/plugins/business-text/), a plugin that's earned a reputation as the "Business Powerhouse" of Grafana visualizations.
+At Volkov Labs, we see Grafana’s strength in its adaptability—bridging observability, business intelligence, and more. Our [Business Text panel](/plugins/business-text/) embodies this vision, earning its title as the "Business Powerhouse" of Grafana visualizations. With over 9.5 million downloads, it’s a cornerstone of our [Business Suite](/plugins/), turning raw data into dynamic, actionable dashboards. What makes it so special? Let’s explore.
 
-With over 9.5 million downloads and counting, this panel has become a cornerstone of our [Business Suite](/plugins/), empowering users to transform raw data into dynamic, actionable, and visually compelling dashboards. But what makes it so versatile? Let's dive into the reasons why the Business Text panel is the multi-faceted tool you didn't know you needed in your Grafana toolkit.
+## A Swiss Army Knife for Business
 
-## A Tool for Every Business Need
+The Business Text panel isn’t just one tool—it’s a versatile kit. It transforms plain text or tables into polished information cards, but its capabilities go far beyond. Here’s what it brings to the table:
 
-Much like a business powerhouse, the Business Text panel isn't just one solution — it's a suite of capabilities, ready to tackle a variety of challenges. At its core, it's designed to take plain text or table data and turn it into polished, easy-to-read information cards. But that's just the starting point. Here's what's in its arsenal.
-
-### Markdown and Handlebars Support
-
-Need to format text with bold headings, lists, or dynamic variables? The panel renders Markdown and uses Handlebars templating to inject live data into your visualizations, making it perfect for creating custom layouts or reports.
-
-### JavaScript Flexibility
-
-Want to go beyond static displays? With the ability to add custom JavaScript — executed either before or after rendering—you can manipulate data, query APIs, or even integrate external libraries. It's like having a mini development framework right inside Grafana.
-
-### CSS Styling
-
-Style matters. With support for custom CSS and Grafana dashboard variables, you can tailor the look and feel of your text to match your brand or use case, ensuring your dashboards are as beautiful as they are functional.
-
-### Global Variables and Helpers
-
-Display time ranges like `__from` and `__to` in your preferred format, or leverage built-in Handlebars helpers for nested objects and internationalization. It's all about giving you control.
+<Tabs>
+  <TabItem value="markdown" label="Markdown & Handlebars" default>
+    Craft rich layouts with Markdown and inject live data using Handlebars
+    templating—ideal for reports or custom displays.
+  </TabItem>
+  <TabItem value="javascript" label="JavaScript">
+    Add custom JavaScript (pre- or post-render) to manipulate data, query APIs,
+    or integrate libraries, unlocking endless possibilities.
+  </TabItem>
+  <TabItem value="css" label="CSS">
+    Style your text with custom CSS and Grafana variables for a branded,
+    professional look.
+  </TabItem>
+  <TabItem value="globals" label="Global Helpers">
+    Format time ranges like `__from` and `__to`, or use built-in helpers for
+    nested objects and localization.
+  </TabItem>
+</Tabs>
 
 <Youtube
   id="UVMysEjouNo"
   title="The Business Text panel for Grafana. Main features overview in 5.0.0"
 />
 
-This combination of features means the Business Text panel isn't limited to one job — it can shape, refine, and deliver your data however your business requires.
+This blend of features makes it a chameleon—adapting to any business need with ease.
 
-## Streamlining Complex Operations
+## Simplifying the Complex
 
-One of the standout qualities of a business powerhouse is its ability to simplify tasks that might otherwise require specialized tools. The Business Text panel does just that for Grafana users. Imagine you're building a dashboard that needs to display a news feed, a custom status report, or even an interactive form. Traditionally, you'd be stuck with rigid time-series panels or tables that don't quite fit the bill.
+A true powerhouse simplifies what’s tough. Business Text does this by breaking the mold of rigid Grafana panels. Need a news feed, status report, or interactive form? It’s got you covered:
 
-With Business Text, you can:
-
-- Pull in RSS feeds (pair it with our [Business News](/plugins/business-news/) data source!) and format them into a sleek, readable layout.
-- Create dynamic status cards that update based on real-time data from any source.
-- Embed external JavaScript libraries like [D3.js](/plugins/business-text/external/d3/) to craft bespoke visualizations that Grafana's core panels can't handle.
+- Pair it with [Business News](/plugins/business-news/) to style RSS feeds into sleek layouts.
+- Build dynamic status cards with real-time data from any source.
+- Use [D3.js](/plugins/business-text/external/d3/) for custom visualizations beyond core Grafana capabilities.
 
 <BlogPost id="dynamic-text-d3-community-20240121" />
 
-A community member once called it a “mini development framework within Grafana,” and we couldn't agree more. By letting you write arbitrary JavaScript and load external resources, it streamlines the limitations of traditional panels, giving you the freedom to dream up — and build — whatever your business demands.
+A community member dubbed it a “mini development framework within Grafana”—a perfect description. Its JavaScript and external library support dissolve traditional limits, letting you create exactly what your business needs.
 
-## Honed by Community Insights
+## Shaped by the Community
 
-The Business Text panel didn't start as a business powerhouse — it evolved into one, thanks to the Grafana community. What began as the Dynamic Text plugin, a simple tool for prettifying news feeds, grew into a robust solution as users pushed its boundaries.
+From its origins as the Dynamic Text plugin—a simple news feed enhancer—Business Text evolved into a powerhouse thanks to Grafana’s community. Adding JavaScript and library support was a game-changer, fueling its rise.
 
-:::info Transform what I'm doing with Grafana dashboards
-When we added JavaScript functionality and external library support, the plugin's adaptability soared. Today, it's used for everything from home dashboards to enterprise-grade applications, with users praising its ability to “transform what I'm doing with Grafana dashboards” (as one Redditor put it).
+:::info Community Praise
+Users say it “transforms what I’m doing with Grafana dashboards” (Reddit). From home setups to enterprise apps, it’s a game-changer.
 :::
 
-Take, for example, its role in reviving beloved plugins like [Flowchart](/plugins/business-text/external/). By integrating external libraries, Business Text breathes new life into legacy tools, proving its worth as a bridge between Grafana's past and future.
+It even revives classics like [Flowchart](/plugins/business-text/external/), blending Grafana’s past with its future. This adaptability drives its 9+ million downloads and cements its status as our most cherished plugin.
 
-It's this adaptability that's driven its popularity — over 9 million downloads and counting—and earned it a spot as our most beloved plugin.
+## Built for Everyone
 
-## A Solution for Every Professional
+Hobbyist or enterprise pro, Business Text fits. It’s open-source within our Business Suite, backed by tutorials, docs, and a thriving community. For Grafana Enterprise or Cloud users, it integrates seamlessly with [Business Suite Enterprise](/pricing/) support.
 
-Whether you're a hobbyist tweaking a home dashboard or an enterprise team solving complex business problems, the Business Text panel fits the bill. It's part of our open-source Business Suite, meaning it's free to use and backed by detailed documentation, video tutorials, and a vibrant community.
-
-And for those on Grafana Enterprise or Grafana Cloud, it slots seamlessly into your workflows with our Enterprise grade support as a part of the [Business Suite Enterprise](/pricing/).
-
-Need to display a custom datepicker? Extend it with D3.js. Want to anonymize data for a demo? Use JavaScript to mask it on the fly. Building a real-time status board? Combine Markdown, CSS, and live data for a polished result.
+- Custom datepicker? Extend with D3.js.
+- Demo-ready data? Anonymize it with JavaScript.
+- Status board? Merge Markdown, CSS, and live data.
 
 <BlogPost id="anonymizer-20240302" />
 
-The possibilities are endless because the Business Text panel doesn't dictate how you use it — it empowers you to decide.
+It doesn’t box you in—it sets you free to innovate.
 
-## The Strongest Asset in the Suite
+## The Suite’s MVP
 
-As we've said before, the Business Suite is all about solving real-world problems with intuitive, powerful tools. The Business Text panel embodies that mission.
+The Business Suite solves real-world problems with intuitive tools, and Business Text is its star. More than a visualization plugin, it’s a platform for creativity and business success. Pair it with [Business Forms](/plugins/business-forms/) or [Business Charts](/plugins/business-charts/) to turn Grafana into an app-building powerhouse.
 
-It's not just a visualization plugin — it's a platform for innovation, a hub for customization, and a cornerstone for business success. Paired with other Suite plugins like [Business Forms](/plugins/business-forms/) or [Business Charts](/plugins/business-charts/), it turns Grafana into a full-fledged application platform.
-
-So, why is the Business Text panel a business powerhouse? Because it's compact, versatile, and ready for anything your organization throws at it. Whether you're refining data, assembling a quick solution, or unlocking a new use case, it's the one tool you'll rely on time and again.
-
-Ready to harness its potential? Install it from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins//marcusolsson-dynamictext-panel/), check out our tutorials, and let us know how you're using it.
+Why a business powerhouse? It’s compact, adaptable, and unstoppable—your go-to for any challenge. Install it from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/), explore our tutorials, and share your creations.
 
 <Youtube
   id="1qYzHfPXJF8"
   title="Install Business Suite plugins in Cloud, OSS, Enterprise. Getting started with the Business Suite."
 />
 
-We're always excited to see what the community builds next. Happy dashboarding!
+We can’t wait to see what you build. Happy dashboarding!
 
 <Feedback />
