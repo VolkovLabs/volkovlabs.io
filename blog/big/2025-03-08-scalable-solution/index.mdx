@@ -1,0 +1,150 @@
+---
+authors: [mikhail]
+slug: scalable-solution-20250308/
+tags: [Business Intelligence]
+image: /img/blog/2025-03-08-scalable-solution/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Building a scalable BI solution with Grafana: Managing hundreds of alerts
+
+In today's data-driven landscape, delivering actionable insights to clients is paramount. Picture Alex Carter, a Data Analyst tasked with deploying a Business Intelligence (BI) platform using Grafana, where each external client gets their own instance to monitor key performance indicators (KPIs).
+
+This blog dives into Alex's project, the personas involved, the challenges of managing hundreds of alerts, and how [Business Studio](/big/studio/) from [Business Intelligence platform](/big/) enhances this setup with high-performance alerting and load balancing.
+
+## The project: one Grafana per client
+
+Alex, a seasoned BI Developer at a mid-sized tech firm, is spearheading a project to provide external clients—e-commerce retailers, logistics companies, and more—with tailored dashboards. Each client has a dedicated Grafana instance to track KPIs like sales, delivery times, or app uptime.
+
+This multi-instance design ensures data isolation and customization but complicates scaling and alert management as the client base grows.
+
+## Meet the Personas
+
+- **Alex Carter (Data Analyst/BI Developer)**
+  - With 5+ years of experience in Grafana, SQL, and Python, Alex aims to deliver scalable dashboards and alerts with minimal overhead.
+  - Challenges include juggling multiple instances, handling large datasets, and supporting non-technical clients.
+- **Sarah Mitchell (Business Operations Manager)**
+  - An internal user, Sarah uses Grafana for operational KPIs and wants to set alerts (e.g., “inventory < 100 units”).
+  - Grafana's technical nature often leaves her dependent on Alex.
+- **Raj Patel (Regional Sales Manager)**
+  - An external client, Raj relies on Sarah's dashboards for sales KPIs and seeks custom alerts (e.g., “sales < $5K”).
+  - As a non-technical user, he finds Grafana's alert setup intimidating.
+
+Discover more about these personas by exploring the [documentation](/big/personas/).
+
+## The Challenge: Managing hundreds of alerts
+
+Alex's setup includes:
+
+- **Dashboards:** Custom-crafted for each client (e.g., sales trends for Client A, uptime for Client B) using Grafana's templating and panels.
+- **Data Sources:** Diverse—SQL databases, Prometheus, BigQuery—tied to each instance.
+- **Alerts:** Client-specific (e.g., “revenue < $10K” for Client A), delivered via Slack, SMS, or email.
+- **Scale:** Dozens of instances, with hundreds of alerts as clients multiply.
+
+Key obstacles are:
+
+- **Scalability:** Managing hundreds of alerts across multiple instances is a logistical nightmare—configuring, monitoring, and maintaining them individually.
+- **Performance:** Large datasets (e.g., 10M rows) strain resources, slowing dashboards and alert processing.
+- **Client Autonomy:** Non-technical users like Raj want to manage their own alerts but lack the expertise for Grafana's query-based system.
+
+## Enter Business Studio
+
+Business Studio, paired with the Business Engine, turns Alex's project into a high-performance BI solution capable of handling hundreds of alerts. Developed by Volkov Labs, this platform integrates with Grafana to offer advanced alerting, load balancing, and an intuitive interface. As of its latest release ([Business Intelligence 2.6.0](/big/release/)), it's a perfect fit for Alex's needs.
+
+<Image
+  title="Alerting page in the Business Studio."
+  src="/img/blog/2025-03-02-big-2.6.0/page-alerting.png"
+/>
+
+### How Business Studio helps Alex
+
+1. **Scalability with Load Balancing**
+
+   - _Feature:_ Business Studio's cluster of [Business Engines](/big/studio/manage-business-engines/) distributes hundreds of alert rules across engines, managed via a load balancing page.
+   - _Impact:_ Alex effortlessly oversees 50+ clients with hundreds of alerts, each engine handling a subset (e.g., ~20 alerts). Scaling to 10+ instances is seamless with load balancing.
+
+<Image
+  title="Load balancing page for the Alpha cluster."
+  src="/img/blog/2025-02-14-big-2.5.0/cluster-lb.png"
+/>
+
+2. **Efficient Management of Hundreds of Alerts**
+
+   - _Feature:_ The Business Engine cluster processes hundreds of alerts concurrently, optimized for high volume rather than individual speed.
+   - _Impact:_ Alert rules processed reliably only once across the cluster without overwhelming Grafana data sources.
+
+3. **Reliability via High Availability**
+
+   - _Feature:_ HA clusters and action history ensure hundreds of alerts run smoothly, even if an engine fails.
+   - _Impact:_ Client's uptime alert fires consistently amidst hundreds of rules, reaching Slack without fail, boosting client trust.
+
+<Image
+  title="Distributed High Availability Deployment of Business Intelligence platform."
+  src="/img/big/high-availability/overview.png"
+/>
+
+4. **Simplified Management**
+
+   - _Feature:_ A centralized UI and API let Alex manage hundreds of alerts from one hub, with reusable templates.
+   - _Impact:_ Alex deploys a “low sales” alert for all clients in minutes, adjusting thresholds ($10K for Client A, $5K for Client B) across hundreds of rules via a script.
+
+<Image
+  title="Business Intelligence platform architecture."
+  src="/img/big/platform.png"
+/>
+
+5. **Empowering Clients**
+
+   - _Feature:_ An intuitive alerting UI with dropdowns and data previews simplifies setup for non-technical users.
+   - _Impact:_ Raj configures a “sales < $5K” alert independently, cutting Alex's workload by 80% for basic alert requests.
+
+<Image
+  title="The Add a new rule window."
+  src="/img/big/business-alerting/new-rule.png"
+/>
+
+<Image
+  title="Sections Execution and Variable values appear when the selected dashboard has Grafana's dashboard variables."
+  src="/img/big/business-alerting/exec.png"
+/>
+
+6. **Flexible Notifications**
+   - _Feature:_ Multi-channel delivery (e.g., Slack, SMS) with customizable templates.
+   - _Impact:_ Alex manages hundreds of alerts with varied channels—Slack for Client A, SMS for Client C—all from one interface.
+
+### Implementation snapshot
+
+- **Setup:** Alex deploys a 5-engine cluster via Docker, linking each to a client's Grafana instance.
+- **Workflow:** Builds dashboards in Grafana, defines hundreds of alerts in Business Studio, and monitors load via the balancing page.
+- **Client Access:** Raj gets viewer-level access to tweak alerts, while HA ensures uptime.
+
+## Real-world example
+
+- **Need:** Alert for “delivery time > 4 hours” among hundreds of rules across 1M records.
+- **Before:** Managing hundreds of alerts in Grafana bogged down individual instances.
+- **After:** Business Studio's cluster handles it alongside hundreds of others, sending an SMS reliably. Raj adds a “fleet idle > 10%” alert via the UI—no assistance required.
+
+## Measurable wins
+
+- **Time:** Alert setup drops 60% with centralized management.
+- **Capacity:** Handles hundreds of alerts without strain.
+- **Autonomy:** 80% of clients manage basic alerts themselves.
+- **Reliability:** 99.99% uptime with HA.
+- **Scale:** Supports 10x growth effortlessly.
+
+## A game-changer for BI
+
+Business Studio by Volkov Labs transforms Alex's multi-instance Grafana project into a scalable BI solution adept at managing hundreds of alerts. Load-balanced, high-performance alerting meets client demands, streamlines Alex's efforts, and empowers users like Sarah and Raj.
+
+Whether you're a BI expert like Alex or a business user like Raj, this platform proves Grafana's prowess as a client-facing BI tool.
+
+_Ready to manage hundreds of alerts? Explore [Business Intelligence](/big/) platform and see how load balancing can elevate your Grafana setup._
+
+<Feedback />

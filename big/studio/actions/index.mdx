@@ -60,14 +60,10 @@ You can use the **Test Connectivity** button to check REST API endpoint availabi
 Based on the event's JSON payload you can create a customized message using Handlebars.
 
 ```Handlebars
-Alert Id ({{ event.alert.id }}) PanelId ({{ event.alert.panelId }})
-Title: {{ event.alert.title }}
-Time range from: {{ event.alert.timeRange.from }}
-{{#each event.conditions}}
-  {{#if triggered}}
-    Successfully Triggered!
-  {{/if}}
-{{/each}}
+{{ event.alert.title }} [{{ event.alert.state }}]
+{{#if event.condition.repeatValue}}
+Value: {{event.condition.repeatValue}}
+{{/if}}
 ```
 
 ### JSON helper

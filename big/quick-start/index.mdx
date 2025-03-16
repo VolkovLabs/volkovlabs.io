@@ -36,7 +36,7 @@ services:
   engine:
     depends_on:
       - timescale
-    image: ghcr.io/volkovlabs/business-engine:2.3.0
+    image: ghcr.io/volkovlabs/business-engine:2.5.1
     #env_file: .env
     environment:
       DATABASE_HOST: timescale
@@ -44,8 +44,8 @@ services:
       DATABASE_DB: postgres
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgres
-      GRAFANA_URL: https://MY-ACCOUNT.grafana.net
-      GRAFANA_TOKEN: SERVICE-ACCOUNT-TOKEN
+      #GRAFANA_URL: https://MY-ACCOUNT.grafana.net
+      #GRAFANA_TOKEN: SERVICE-ACCOUNT-TOKEN
     ports:
       - 3001:3001
       - 3002:3002
@@ -55,10 +55,10 @@ services:
 
 1. Login to your Grafana Cloud, OSS or Enterprise instance.
 2. Create a service account with the `Viewer` or `Editor` role.
-3. Update `GRAFANA_URL` and `GRAFANA_TOKEN` in the `docker-compose.yml` file
+3. (optional) Update `GRAFANA_URL` and `GRAFANA_TOKEN` in the `docker-compose.yml` file
 
 <Image
-  title="Update GRAFANA_TOKEN in the docker-compose.yml file."
+  title="Update GRAFANA_URL and GRAFANA_TOKEN in the docker-compose.yml file."
   src="/img/big/quick-start/token-yml.png"
 />
 
@@ -69,7 +69,7 @@ docker compose up -d
 ```
 
 5. Download the Business Studio from [Release Notes](../release). Then, install and launch it.
-6. Add Business Engine in Business Studio to configure Actions and Alert Rules.
+6. Add Business Engine in Business Studio to configure Grafana instance, actions and alert rules.
 
 <Image
   title="Alert Rules configured in Business Engine running on localhost using Business Studio."
