@@ -5,64 +5,73 @@ image: /img/suite.png
 import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Security Guidelines
 
-This section addresses many general questions we received on the matter. At the bottom, find some of the plugins solely related notes in the corresponding sections.
+This guide answers common security questions about the Business Suite and provides best practices for safe usage. Plugin-specific notes are included at the end.
 
-## JavaScript enriched
+## JavaScript-Enhanced Plugins
 
-Our plugins are enriched with JavaScript, providing you with unparalleled customization options.
+Our plugins leverage JavaScript to offer unmatched customization, a top-requested feature that supercharges Grafana’s capabilities. With great power comes great responsibility—here’s how to use it safely.
 
-The ability to use JavaScript is one of the most demanded features in community plugins since it expands the Grafana possibilities even further. However, as with any mighty force, this one also has to be wielded with caution.
-
-:::note Know your Risks
-JavaScript code can be modified in Edit mode by any Editor and Admin users.
+:::caution Know the Risks
+JavaScript code can be edited in Edit mode by Admin and Editor users, potentially introducing vulnerabilities if not managed properly.
 :::
 
-Grafana executes JavaScript code in a Sandbox environment, which significantly reduces security risks.
+Grafana runs JavaScript in a sandboxed environment, minimizing risks. To further secure your JavaScript-enriched plugins, we recommend:
 
-To facilitate the safe usage of our JavaScript-enriched plugins we suggest the following approaches:
-
-- Provisioning
-- Access restrictions
+- **Provisioning**: Lock dashboards to prevent unauthorized changes.
+- **Access Restrictions**: Limit who can edit panels.
 
 ## Provisioning
 
-In the provisioned dashboard, an end user is not able to save any changes they make. We explained the mechanics of provisioning in great detail in the following video:
+Provisioning ensures end users can’t save dashboard modifications. Learn the ins and outs of this approach in our detailed video tutorial:
 
 <Youtube
   id="sGHKY0VmbLw"
   title="Provisioning in Grafana. Basics and pitfalls. File examples. Windows and Docker Demo."
 />
 
-Also, you can look at the blog post that covers a similar scope.
+For more, check out our companion blog post:
 
 <BlogPost id="provisioning-grafana-20230509" />
 
-## Access restriction
+:::note
+Provisioning is ideal for production environments where stability is key.
+:::
 
-Access restriction ensures that only trusted users are allotted Admin and Editor privileges.
+## Access Restrictions
 
-Users with a Viewer role are not able to open panels in edit mode, hence, their ability to even accidentally create a hazard is decapitated.
+Restrict Admin and Editor roles to trusted users only. Viewers can’t access Edit mode, eliminating accidental or malicious changes.
 
-## Specific notes to some plugins
+## Plugin-Specific Recommendations
 
-Above we discussed the general safety suggestions. Below you find recommendations solely related to specified plugins.
+The following tips address security considerations for specific Business Suite plugins.
 
-### Business Text
-
-You can set the default setting `disable_sanitize_html = false` to keep security restrictions in place. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
+<Tabs>
+  <TabItem value="text" label="Business Text" default>
+    You can set the default setting `disable_sanitize_html = false` to keep security restrictions in place. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
 
 ```sh
 disable_sanitize_html = true
 ```
 
-### Business Input
+  </TabItem>
+  <TabItem value="input" label="Business Input">
+    The [Business Input data source](/plugins/business-input/) includes a
+    JavaScript Value Editor, which can be disabled in the data source options
+    for added safety:
+    <Image
+      title="Disable the JavaScript Value Editor in the data source options."
+      src="/img/plugins/security/static-java.png"
+    />
+  </TabItem>
+</Tabs>
 
-The [Business Input data source](/plugins/business-input/) allows to set values using JavaScript Value Editor, which can be disabled in the data source options.
+:::info Questions?
+Have security concerns or need clarification? Reach out via [GitHub](https://github.com/VolkovLabs) or our [YouTube channel](https://youtube.com/@volkovlabs)!
 
-<Image
-  title="Disable the JavaScript Value Editor in the data source options."
-  src="/img/plugins/security/static-java.png"
-/>
+Business Suite Enterprise users please open [Zendesk](https://support.volkovlabs.io) ticket for fast response.
+:::
