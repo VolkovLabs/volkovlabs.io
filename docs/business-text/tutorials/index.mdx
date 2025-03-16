@@ -4,72 +4,113 @@ tags:
 ---
 
 import BlogPost from "@theme/BlogPost";
-import Youtube from "@theme/Youtube";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
 import Tutorials from "../../_tutorials.mdx";
+import Youtube from "@theme/Youtube";
 
-# Tutorials
+# Business Text tutorials
+
+The Business Text panel for Grafana is a versatile plugin that transforms your data visualizations using HTML, Markdown, JavaScript, and CSS. This documentation section covers its key features, use cases, and implementation guides.
 
 <Tutorials />
 
-## Features overview of the Business Text 5.0.0
+## Why Choose Business Text?
 
-The video reviews the major latest release including the data flow, predefined helpers and numerous examples of the external JavaScript libraries.
+Discover why the Business Text panel is a powerhouse for your business dashboards with its flexibility and robust feature set.
+
+<BlogPost id="business-text-powerhouse" />
+
+## Key Features
+
+### Version 5.0.0 Highlights
+
+The latest major release introduces enhanced data flow, predefined helpers, and integration with external JavaScript libraries.
 
 <Youtube
   id="UVMysEjouNo"
   title="The Business Text panel for Grafana. Main features overview in 5.0.0"
 />
 
-## Streamline demos with Dynamic Text
+### Supported Technologies
 
-Initially, we created the Anonymizer for our internal use, as we share many other things on our blog. It proved itself during multiple successful presentations as reliable, easy and quick to configure. Thus, we decide to share it with the world.
+<Tabs>
+  <TabItem value="html" label="HTML" default>
+    Structure your content with standard HTML tags for maximum flexibility.
+  </TabItem>
+  <TabItem value="markdown" label="Markdown">
+    Use Markdown for simple, readable text formatting.
+  </TabItem>
+  <TabItem value="javascript" label="JavaScript">
+    Add dynamic functionality with custom JavaScript code.
+  </TabItem>
+  <TabItem value="css" label="CSS">
+    Style your visualizations with custom CSS.
+  </TabItem>
+</Tabs>
+
+## Tutorials and Use Cases
+
+### Streamline Demos with Dynamic Text
+
+Simplify your demo dashboards with the Anonymizer feature, designed for quick and reliable configuration.
 
 <Youtube
   id="FMSEGGFbJy0"
   title="Convert dashboard values on the fly for demo purposes."
 />
 
-You can find implementation details in the blog post.
-
 <BlogPost id="anonymizer-20240302" />
 
-## Custom Datepicker to set time range in Grafana
+:::info
+The Anonymizer was originally built for internal use and proven effective in multiple presentations.
+:::
+
+### Custom Datepicker for Time Ranges
+
+Enhance time range selection in Grafana with a custom Datepicker.
 
 <BlogPost id="datapicker-20240905" />
 
-## Extend visualization capabilities with D3.js
+### Extend Visualizations with D3.js
 
-Since we added the external libraries feature along with the JavaScript functionality, the Business Text plugin can not stop surprising us with its applicability. This article outlines the steps and demonstrates an example of how D3.js library can be incorporated into your Grafana dashboard.
+Integrate the D3.js library to unlock advanced visualization capabilities.
 
 <BlogPost id="dynamic-text-d3-community-20240121" />
 
-## Magic JavaScript trio for Grafana
+:::info
+External library support was added to expand the plugin’s versatility.
+:::
 
-Three plugins that make Grafana complete. Business Text, Business Forms, and Business Charts are all you need to create functional real-world web applications.
+### The Magic JavaScript Trio
+
+Combine Business Text, Business Forms, and Business Charts for a complete Grafana solution.
 
 <Youtube
   id="wPr4gZYzUVA"
   title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
 />
 
-## Use HTML, Markdown, JavaScript and CSS
+## Historical Guides
 
-In this video, Daria touched upon the main features and panel options of the Business Text 2.0.0 along with demonstrating community use cases.
+### Version 2.0.0 Features
+
+Explore the core features of Business Text 2.0.0 with community use cases.
 
 <Youtube
   id="AcQi-6GCrNU"
   title="Use HTML, Markdown, JavaScript and CSS. Community use cases."
 />
 
-## Grafana functionality explodes
+### JavaScript in Dynamic Text
 
-This video outlines all the new features we implemented, including the most asked-for JavaScript area code.
+See how JavaScript integration revolutionized the plugin.
 
 <Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text panel." />
 
-## Markdown, HTML and Handlebars to transform data visualizations
+### Getting Started with Version 1.9.0
 
-This is the first guide we created for the Dynamic Text plugin 1.9.0 for Grafana. The plugin does a fantastic job by transforming bland table data into vibrant, readable visualization emphasizing critical tidbits.
+The original guide for transforming table data into vibrant visualizations.
 
 <Youtube
   id="MpNZ4Yl-p0U"

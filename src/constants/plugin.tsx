@@ -10,8 +10,8 @@ export const PluginList: PluginItem[] = [
     name: "business-calendar",
     description: (
       <>
-        Displays events in a stylish calendar format. The data can come from
-        various data sources.
+        Showcases events in an elegant calendar view, sourced from various data
+        inputs.
       </>
     ),
     href: "/plugins/business-calendar/",
@@ -21,8 +21,8 @@ export const PluginList: PluginItem[] = [
     name: "business-charts",
     description: (
       <>
-        Integrates charts and graphs created by the Apache ECharts library into
-        your Grafana dashboard.
+        Brings Apache ECharts' dynamic charts and graphs to your Grafana
+        dashboards.
       </>
     ),
     href: "/plugins/business-charts/",
@@ -32,8 +32,8 @@ export const PluginList: PluginItem[] = [
     name: "business-forms",
     description: (
       <>
-        Allows inserting and updating application data, as well as modifying
-        configuration directly from your Grafana dashboard.
+        Enables data entry, updates, and configuration changes directly within
+        Grafana.
       </>
     ),
     href: "/plugins/business-forms/",
@@ -42,7 +42,10 @@ export const PluginList: PluginItem[] = [
     title: "Business Input",
     name: "business-input",
     description: (
-      <>Allows storing and emulating your data using JavaScript and LLM.</>
+      <>
+        Emulates and stores data using JavaScript and LLM for flexible data
+        management.
+      </>
     ),
     href: "/plugins/business-input/",
   },
@@ -51,8 +54,8 @@ export const PluginList: PluginItem[] = [
     name: "business-media",
     description: (
       <>
-        Allows to create the desired visual experience by mixing and matching
-        any supported formats for multimedia file visualizations.
+        Combines multimedia formats for a customized visual experience in
+        Grafana.
       </>
     ),
     href: "/plugins/business-media/",
@@ -62,8 +65,8 @@ export const PluginList: PluginItem[] = [
     name: "business-news",
     description: (
       <>
-        Retrieves RSS and Atom feeds and allows visualizing them using Business
-        Text and other panels.
+        Fetches RSS and Atom feeds for visualization with Business Text and
+        other panels.
       </>
     ),
     href: "/plugins/business-news/",
@@ -72,17 +75,16 @@ export const PluginList: PluginItem[] = [
     title: "Business Satellite",
     name: "business-satellite",
     description: (
-      <>
-        Allows to retrieve data from local and remote Grafana instances via HTTP
-        API.
-      </>
+      <>Retrieves data from local or remote Grafana instances via HTTP API.</>
     ),
     href: "/plugins/business-satellite/",
   },
   {
     title: "Business Table",
     name: "business-table",
-    description: <>Allows to simplify data visualization in table format.</>,
+    description: (
+      <>Simplifies data presentation with intuitive table layouts.</>
+    ),
     href: "/plugins/business-table/",
   },
   {
@@ -90,8 +92,8 @@ export const PluginList: PluginItem[] = [
     name: "business-text",
     description: (
       <>
-        Allows to convert plain text and table data into visually appealing,
-        easy-to-read information cards.
+        Transforms plain text and tables into visually engaging information
+        cards.
       </>
     ),
     href: "/plugins/business-text/",
@@ -100,10 +102,7 @@ export const PluginList: PluginItem[] = [
     title: "Business Variable",
     name: "business-variable",
     description: (
-      <>
-        Allows you to have dashboard filters in a separate panel to place
-        anywhere on the dashboard.
-      </>
+      <>Adds flexible dashboard filters in a movable, standalone panel.</>
     ),
     href: "/plugins/business-variable/",
   },
