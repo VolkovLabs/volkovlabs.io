@@ -13,95 +13,98 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Alerting panel, regex patters, and webhook updates in Business Intelligence 1.2.0
+# Business Intelligence 1.2.0: Alerting Panel, Regex, and Webhooks Enhanced
 
-We are excited to announce the release of the Business Intelligence, version 1.2.0. At this early stage, it is a proof-of-concept, meaning a product created as a starter to vastly extend its functionality in the future.
-This release includes the following updates:
+We’re thrilled to unveil Business Intelligence 1.2.0, a proof-of-concept release from Volkov Labs setting the stage for expansive growth in the [Business Intelligence platform](/big/). This update delivers:
 
-- Improved the Alerting panel.
-- Added regex patterns for alerts.
-- New for webhooks: added test connectivity and a new **Use by Default** parameter.
+- A revamped **Alerting panel** for streamlined control.
+- **Regex pattern** evaluation for alerts.
+- **Webhook upgrades**: Test connectivity and a **Use by Default** option.
 
-<Shorts id="X2An_gbxX5k" title="Business Intelligence 1.2.0 for Grafana." />
+Check it out:
 
-## Proof of Concept
+<Shorts id="X2An_gbxX5k" title="Business Intelligence 1.2.0 for Grafana" />
 
-Business Intelligence is a proof-of-concept project with an expected launch in 2024. It will include the following components:
+## Proof of Concept Vision
 
-- Business Alerting,
-- High performance Business Engine,
-- Business Studio,
-- Business Reporting,
-- Dashboard management.
+Business Intelligence is a POC with a full launch planned for 2024-2025, featuring:
+
+- Business Alerting
+- High-performance Business Engine
+- Business Studio
+- Business Reporting
+- Dashboard Management
 
 <Image
-  title="Business Intelligence platform for Grafana."
+  title="Future vision of the Business Intelligence platform."
   src="/img/big/platform.png"
 />
 
-## Alerting panel improvements
+## Revamped Alerting Panel
 
-The latest version of the Alerting panel is depicted below. This panel is designed to simplify work with alerts by having all controls in one place and having an intuitive order of configuration settings.
+The updated Alerting panel centralizes alert management with an intuitive layout, aligned with Grafana’s [alerting basics](/big/alerting/).
 
-The creation logic follows the Grafana [alerting basics](/big/alerting/).
+### Alert Card
 
-### Alert card
+Each alert gets a sleek card displaying:
 
-Every alert on the Alerting panel has a sleek card with the title, the panel name it evaluates, schedule details, statuses and action buttons.
+- Title and evaluated panel name.
+- Schedule details.
+- Status indicators and action buttons.
 
 <Image
-  title="Alert card components."
+  title="Components of an alert card."
   src="/img/blog/2023-11-27-big-1.2.0/alert-card.png"
 />
 
 ### Statuses
 
-There are two statuses for each alert. One indicates whether the alert is **Active** or has been **Paused**.
+Two statuses track each alert:
 
-And the other status might be one of the four values:
+- **Active/Paused**: Is it running or on hold?
+- **Run State**:
+  - **Scheduled**: Queued but not yet run.
+  - **OK**: No breaches or patterns detected.
+  - **Alerting**: Thresholds breached or pattern found.
+  - **Error**: Issue with query, annotation, or webhook.
 
-- **Scheduled**. The alert is scheduled, but never run yet.
-- **OK**. The alert has been run and the thresholds are NOT breached or the regex pattern is NOT found.
-- **Alerting**. The alert has been run and the thresholds are being breached or the regex pattern is found.
-- **Error**. Something is wrong, which could be the query, annotation or webhook.
+New alerts start as **Active** and **Scheduled**. Pausing or editing resets them to **Scheduled**.
 
-Right after an alert is created it becomes **Active** and **Scheduled**. Any active alert could be paused. After any change, the alert status changes to **Scheduled**.
+### Action Buttons
 
-### Action buttons
+Four options empower control:
 
-Four action buttons are available:
-
-- **Info**. Open the drawer with the alert details.
-- **Pause/Active**. Set the alert to pause or active mode.
-- **Edit**. Opens the Edit drawer. When you click in the Edit drawer, the alert status changes to Scheduled.
-- **Delete**. Delete the alert after the user's confirmation.
+- **Info**: View alert details.
+- **Pause/Active**: Toggle the alert’s state.
+- **Edit**: Open the edit drawer (resets to **Scheduled** on save).
+- **Delete**: Remove the alert with confirmation.
 
 <Image
-  title="The Alerting panel and the Edit alert rule drawer."
+  title="Alerting panel with Edit drawer."
   src="/img/blog/2023-11-27-big-1.2.0/alerting-panel.png"
 />
 
-## Regex Pattern
+## Regex Pattern Evaluation
 
-The regex pattern evaluation is a new evaluation option. The alert evaluation could be set to Thresholds or a Regex Pattern:
+A new **Regex Pattern** option joins **Thresholds** in alert evaluations:
 
-- **Thresholds**. The alert examines data against the specified thresholds in the panel options.
-- **Regex Pattern**. The alert examines the specified fields (optional) and searches the specified pattern.
+- **Thresholds**: Checks data against panel-defined limits.
+- **Regex Pattern**: Scans specified fields (optional) for a defined pattern.
 
-The Evaluation category is shown in the picture above.
+See it in the **Evaluation** category above.
 
-## Webhook updates
+## Webhook Enhancements
 
-### Test connectivity
+### Test Connectivity
 
-You can test connectivity in the Edit Webhook drawer using the red button at the bottom.
+Verify webhook endpoints with a **Test Connectivity** button in the Edit Webhook drawer.
 
 ### Use by Default
 
-You can set any webhook to be assigned by default, meaning, when a webhook is not specified, the default one is executed.
+Set a webhook as the default—automatically used when none is specified—for seamless alerting.
 
 <Image
-  title="New features for a webhook - connectivity test and use by default."
+  title="Webhook updates: Test connectivity and Use by Default."
   src="/img/blog/2023-11-27-big-1.2.0/webhook.png"
 />
 
@@ -109,7 +112,7 @@ You can set any webhook to be assigned by default, meaning, when a webhook is no
 
 ## Release Notes
 
-### Features / Enhancements
+### Features & Enhancements
 
 - Initial Proof of Concept (POC) release for testing.
 
