@@ -13,24 +13,26 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Cluster functionality, Grafana version checks, and UI updates in Business Intelligence 2.5.0
+# Business Intelligence 2.5.0: Clusters, Grafana Checks, and UI Upgrades
 
-We are excited to announce the public preview release of the Business Intelligence platform 2.5.0. It includes the following updates:
+We’re thrilled to launch the public preview of Business Intelligence 2.5.0, a release from Volkov Labs that enhances the [Business Intelligence platform](/big/) with:
 
-- Added cluster functionality with load balancing page to show scheduled alert rules.
-- Improved work with Grafana versions.
-- General UI improvements and usability updates.
-- Updated Business Engine OpenAPI specification.
+- **Cluster functionality**, featuring a load balancing page for scheduled alerts.
+- Improved **Grafana version compatibility** checks.
+- Refined **UI updates** for better usability.
+- An updated Business Engine OpenAPI specification.
 
-## Cluster functionality
+Explore how these updates streamline alerting and management below.
 
-A cluster in the Business Studio is a group of business engines with the same token connected to the same configuration database and Grafana instance.
+## Cluster Functionality: Power in Unity
 
-Clusters are displayed in the left-hand side menu. Each cluster has two pages.
+In Business Studio, a **cluster** is a group of Business Engines sharing a token, configuration database, and Grafana instance. Clusters now appear in the sidebar, each with two dedicated pages:
 
-### Load balancing
+### Load Balancing
 
-Here, you can see the number of business engines in the cluster and the number of scheduled alerts. Then, down below, you have a list of business engines with Grafana dashboards they serve. Each dashboard is displayed with a list of created alerts.
+- View the number of engines and scheduled alerts in a cluster.
+- Review a list of engines, their linked Grafana dashboards, and associated alerts.
+- Benefit: Optimize alert distribution for performance across dozens or hundreds of rules.
 
 <Image
   title="Load balancing page for the Alpha cluster."
@@ -39,55 +41,59 @@ Here, you can see the number of business engines in the cluster and the number o
 
 ### Settings
 
-Here, you can specify the cluster's name, review the token details and the listing of connected business engines, their version, and their status.
+- Edit the cluster name, inspect token details, and monitor connected engines’ versions and statuses.
+- Benefit: Centralize cluster oversight for seamless management.
 
 <Image
   title="Settings page for the Alpha cluster."
   src="/img/blog/2025-02-14-big-2.5.0/cluster-settings.png"
 />
 
-## Improved work with Grafana versions
+## Enhanced Grafana Version Compatibility
 
-A new informational detail makes the work with Grafana version compatibility more transparent.
+Transparency meets reliability with new Grafana version checks:
+
+- The **Environment page** now displays the connected Grafana version.
+- Behind-the-scenes compatibility checks alert you to potential issues.
+
+This ensures Business Intelligence aligns smoothly with your Grafana setup.
 
 <Image
-  title="You can see the connected Grafana version on the Environment page."
+  title="Grafana version visible on the Environment page."
   src="/img/blog/2025-02-14-big-2.5.0/grafana-version.png"
 />
 
-Behind the scenes, we added version compatibility checks. The Business Studio will notify you of any potential problems.
+## UI Upgrades for Intuition
 
-## General UI improvements and usability updates
+Business Studio’s interface gets a polish with:
 
-These changes make the Business Studio more intuitive.
+- **Panel Selection:** Now shows panel type in descriptions for easier setup.
+- **Threshold Colors:** Updated to match Grafana’s naming conventions.
+- **Alert Timing:** “In alerting since” dates sync with alert history for accuracy.
 
-- Updated panel selection to display panel type in description.
-- Updated display colors in thresholds to match Grafana naming conventions.
-- Updated in alerting since date to match alert history.
+These tweaks make navigation and configuration more intuitive.
 
-## Updated Business Engine OpenAPI specification
+## Updated OpenAPI Specification
 
-We maintain the ease of the 3rd party Business Engine integration by timely updating the [OpenAPI specification](/big/api/).
+The Business Engine’s [OpenAPI specification](/big/api/) is refreshed, ensuring third-party integrations stay effortless and current with 2.5.0 features.
 
-## Business Studio Downloads
+## Downloads: Business Studio 2.5.0
 
-:::info Signed releases
-
-MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
-
+:::info Signed Releases  
+MacOS and Windows installers are signed, notarized, and built end-to-end via automated GitHub workflows for maximum security.  
 :::
 
-- MacOS:
-  - [Apple Disk Image for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-2.5.0-arm64.dmg)
-  - [Apple Disk Image for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-2.5.0-x64.dmg)
-  - [ZIP file for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-darwin-arm64-2.5.0.zip)
-  - [ZIP file for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-darwin-x64-2.5.0.zip)
-- Linux:
-  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio-2.5.0-1.arm64.rpm)
-  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio-2.5.0-1.x86_64.rpm)
-  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio_2.5.0_arm64.deb)
-  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio_2.5.0_amd64.deb)
-- Windows
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-2.5.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-2.5.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-darwin-arm64-2.5.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-darwin-x64-2.5.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio-2.5.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio-2.5.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio_2.5.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/business-studio_2.5.0_amd64.deb)
+- **Windows**:
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.0/Business.Studio-2.5.0.Setup.exe)
 
 <GettingStarted />
@@ -96,17 +102,17 @@ MacOS and Windows installers are signed and notarized with encryption. End to en
 
 ### Business Studio 2.5.0
 
-- Added Grafana version on environment page.
-- Added cluster functionality and display cluster names on the sidebar.
-- Added cluster load balancing page to show scheduled alert rules.
-- Updated display colors in thresholds to match Grafana naming conventions.
-- Updated in alerting since date to match alert history.
-- Updated panel selection to display panel type in description.
+- Added Grafana version display on the Environment page.
+- Introduced cluster functionality with sidebar names.
+- Added load balancing page for scheduled alert rules.
+- Updated threshold colors to align with Grafana conventions.
+- Synced “in alerting since” dates with alert history.
+- Enhanced panel selection with type descriptions.
 
 ### Business Engine 2.5.0
 
-- Added Grafana version check on every interaction and health check.
-- Added API to update cluster name in environment settings.
-- Added API to return load balancing configuration for cluster.
+- Implemented Grafana version checks on interactions and health status.
+- Added API to update cluster names in settings.
+- Added API for load balancing configuration retrieval.
 
 <Feedback />
