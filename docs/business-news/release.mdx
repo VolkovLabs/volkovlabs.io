@@ -9,78 +9,76 @@ import BlogPost from "@theme/BlogPost";
 
 # Release Notes
 
-Release Notes for the Business News data source.
+Stay informed about the Business News data source’s development with these release notes, covering new features, enhancements, fixes, and breaking changes across all versions.
 
 ## 4.3.0 (2024-12-23)
 
 ### Features / Enhancements
 
-- Updated E2E tests (#86)
-- Updated to Grafana 11.4 and dependencies (#87)
+- Enhanced E2E tests (#86)
+- Updated to Grafana 11.4 with latest dependencies (#87)
 
 ## 4.2.0 (2024-09-17)
 
 ### Features / Enhancements
 
-- Updated E2E tests to use Docker (#80)
-- Updated to Grafana 11.2 and dependencies (#81)
+- Optimized E2E tests with Docker (#80)
+- Updated to Grafana 11.2 with latest dependencies (#81)
 
 ## 4.1.0 (2024-06-07)
 
 ### Features / Enhancements
 
 - Added tooltip to Feed URL (#73)
-- Added XML Server (#75)
-- Updated to Grafana 11.0 and dependencies (#72)
-- Update fields in items getting mixed up (#76)
-- Remove Alerting support in Plugin configuration (#77)
+- Introduced XML Server (#75)
+- Updated to Grafana 11.0 with latest dependencies (#72)
+- Fixed mixed-up fields in items retrieval (#76)
+- Removed Alerting support from Plugin configuration (#77)
 
 ## 4.0.0 (2024-05-09)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Plugin rebranding, the new name is the Business News Data Source.
-- Requires Grafana 10 and Grafana 11
-
-:::
+- Rebranded to Business News Data Source
+- Requires Grafana 10 or 11
+  :::
 
 ### Features / Enhancements
 
-- Added plugin e2e tests and remove cypress (#68)
+- Added plugin E2E tests and removed Cypress (#68)
 - Prepared for Grafana 11 (#71)
-- Updated to Grafana 10.4.2 and dependencies (#72)
+- Updated to Grafana 10.4.2 with latest dependencies (#72)
 
 ## 3.1.0 (2024-02-12)
 
 ### Features / Enhancements
 
 - Added application type in Headers (#61)
-- Updated ESLint configuration and refactoring (#62)
+- Updated ESLint configuration and refactored (#62)
 - Updated to Grafana 10.3.1 (#63)
 
 ## 3.0.1 (2023-08-02)
 
-### Bugfix
+### Bug Fixes
 
-- Remove root URL http://localhost:3000 added during migration to Plugin Tools
+- Removed root URL `http://localhost:3000` added during Plugin Tools migration
 
 ## 3.0.0 (2023-07-26)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Requires Grafana 9 and Grafana 10
-
+Requires Grafana 9 or 10
 :::
 
 ### Features / Enhancements
 
-- Update tests with testing-library/react (#50)
-- Migrate to Plugin Tools 1.5.2 (#51)
-- Update to Node 18 and npm (#51)
-- Update to Grafana 10.0.0 (#51)
-- Add E2E Cypress testing (#52)
-- Remove Grafana 8.5 support (#56)
-- Update ESLint configuration (#56)
+- Updated tests with `testing-library/react` (#50)
+- Migrated to Plugin Tools 1.5.2 (#51)
+- Updated to Node 18 and npm (#51)
+- Updated to Grafana 10.0.0 (#51)
+- Integrated E2E Cypress testing (#52)
+- Removed support for Grafana 8.5 (#56)
+- Refined ESLint configuration (#56)
 
 ## 2.4.0 (2023-04-08)
 
@@ -88,134 +86,129 @@ Release Notes for the Business News data source.
 
 ### Features / Enhancements
 
-- Update to Grafana 9.4.7 (#44)
-- Update CI and Release workflows (#45)
-- Update Documentation, Provisioning (#46)
-- Add URL parameters with variables support (#47, #48)
+- Updated to Grafana 9.4.7 (#44)
+- Enhanced CI and release workflows (#45)
+- Updated documentation and provisioning (#46)
+- Added URL parameters with variables support (#47, #48)
 
 ## 2.3.0 (2022-11-16)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.1.4 (#36)
-- Add Compatibility Check Workflow (#37)
-- Update CI to Node 16 and Synchronize with Release workflow (#39)
-- Update to Grafana 9.2.2 (#40)
-- Update CI to upload signed artifacts (#41)
+- Updated to Grafana 9.1.4 (#36)
+- Added Compatibility Check Workflow (#37)
+- Updated CI to Node 16 and synced with release workflow (#39)
+- Updated to Grafana 9.2.2 (#40)
+- Updated CI to upload signed artifacts (#41)
 
 ## 2.2.0 (2022-08-25)
 
 ### Features / Enhancements
 
-- Add YouTube video in README (#32)
-- Rebuild based on 9.1.1 (#35)
+- Added YouTube video to README (#32)
+- Rebuilt based on Grafana 9.1.1 (#35)
 
 ## 2.1.0 (2022-06-23)
 
 ### Features / Enhancements
 
-- Add YouTube fields parsing and refactoring (#31)
+- Enhanced YouTube fields parsing and refactored (#31)
 
 ## 2.0.0 (2022-06-17)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Requires Grafana 8.5+ and 9.0+
-
+Requires Grafana 8.5+ or 9.0+
 :::
 
 ### Features / Enhancements
 
-- Rebuild based on 9.0.0 (#30)
+- Rebuilt based on Grafana 9.0.0 (#30)
 
 ## 1.7.0 (2022-05-21)
 
 ### Features / Enhancements
 
-- Support Feed URL with query parameters (#28)
+- Supported Feed URL with query parameters (#28)
 
 ## 1.6.2 (2022-05-13)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Requires Grafana 8.3.0 or newer.
-
+Requires Grafana 8.3.0 or newer
 :::
 
 ## 1.6.1 (2022-05-13)
 
 ### Features / Enhancements
 
-- Clarify Breaking change introduced in 1.6.0 (#24)
-- Refactor API tests and set parsing `rss.channel.item` as array always (#25)
-- Improve test coverage (#26)
+- Clarified breaking change from 1.6.0 (#24)
+- Refactored API tests and ensured `rss.channel.item` is always an array (#25)
+- Improved test coverage (#26)
 
 ## 1.6.0 (2022-05-12)
 
-:::warning Breaking changes
+:::warning Breaking Changes
 
-- Automatic parsing of `author.name` and `media:thumbnail.url` fields break templates who uses them.
-
-To fix it, just replace it with `author` and `media:thumbnail`. Thanks to @vfauth for testing.
-
+Automatic parsing of `author.name` and `media:thumbnail.url` fields may break templates; replace with `author` and `media:thumbnail` (thanks to @vfauth for testing)
 :::
 
 ### Features / Enhancements
 
-- Rebuild based on 8.5.2 (#23)
+- Rebuilt based on Grafana 8.5.2 (#23)
 
-### Bug fixes
+### Bug Fixes
 
-- Can't parse GitHub releases feed (#21)
+- Fixed parsing of GitHub releases feed (#21)
 
 ## 1.5.0 (2022-04-25)
 
 ### Features / Enhancements
 
-- Add Provisioning instructions to README (#16)
-- Rebuild using 8.4.3 (#17)
-- Adding RSS 1.0 support (#19)
-- Rebuild based on 8.5.0 (#20)
+- Added provisioning instructions to README (#16)
+- Rebuilt using Grafana 8.4.3 (#17)
+- Added RSS 1.0 support (#19)
+- Rebuilt based on Grafana 8.5.0 (#20)
 
 ## 1.4.0 (2022-02-18)
 
 ### Features / Enhancements
 
-- Rebuild using 8.3.6 (#13)
-- Rebuild using 8.4.0 and use PluginCheck v2 (#14)
-- Select items/entries based on the selected Time Range (#3)
+- Rebuilt using Grafana 8.3.6 (#13)
+- Rebuilt using Grafana 8.4.0 with PluginCheck v2 (#14)
+- Enabled item/entry selection based on selected Time Range (#3)
 
 ## 1.3.1 (2022-02-02)
 
-### Bug fixes
+### Bug Fixes
 
-- Google Workspace Atom feed failed #11
+- Fixed parsing of Google Workspace Atom feed (#11)
 
 ## 1.3.0 (2022-01-24)
 
 ### Features / Enhancements
 
-- Update README with link to the Grafana Catalog (#8)
-- Rebuild using 8.3.4 (#6)
+- Updated README with Grafana Catalog link (#8)
+- Rebuilt using Grafana 8.3.4 (#6)
 
 ## 1.2.0 (2022-01-11)
 
 ### Features / Enhancements
 
-- Signed as Community datasource plugin (#7).
+- Signed as Community datasource plugin (#7)
 
 ## 1.1.0 (2021-12-27)
 
 ### Features / Enhancements
 
-- Extract image source from the `figure` (#5)
-- Extract Guid's text from the `guid` (#5)
-- Update dashboards layout
+- Extracted image source from `figure` (#5)
+- Extracted Guid's text from `guid` (#5)
+- Updated dashboards layout
 
 ## 1.0.0 (2021-12-26)
 
 ### Features / Enhancements
 
-- Supports RSS 2.0 and Atom.
-- Works great with Business Text panel by Marcus Olsson (marcusolsson-dynamictext-panel).
-- Initial release based on the Volkov Labs Data source template.
+- Initial release based on Volkov Labs Data source template
+- Supported RSS 2.0 and Atom
+- Optimized for use with Business Text panel by Marcus Olsson (marcusolsson-dynamictext-panel)
