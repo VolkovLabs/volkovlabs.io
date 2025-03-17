@@ -107,9 +107,9 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-blog-link",
         },
         {
-          label: "Business Suite",
-          to: "/blog/tags/business-suite",
-          className: "volkovlabs-link icon-suite-link",
+          label: "Business Gazette",
+          to: "/blog/tags/business-gazette",
+          className: "volkovlabs-link icon-gazette-link",
         },
         {
           label: "Business Intelligence",
@@ -117,9 +117,9 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-big-link",
         },
         {
-          label: "Business Gazette",
-          to: "/blog/tags/business-gazette",
-          className: "volkovlabs-link icon-gazette-link",
+          label: "Business Suite",
+          to: "/blog/tags/business-suite",
+          className: "volkovlabs-link icon-suite-link",
         },
         {
           label: "Grafana Crash Course",
