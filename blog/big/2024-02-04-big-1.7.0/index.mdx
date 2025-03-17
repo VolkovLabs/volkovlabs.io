@@ -13,86 +13,80 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Distributed High Availability, Swagger REST API, UI enhancements in Business Intelligence 1.7.0
+# Business Intelligence 1.7.0: HA Clusters, REST API, and UI Boosts
 
-We are excited to announce the release of the Business Intelligence, version 1.7.0. It includes the following updates:
+We’re excited to launch Business Intelligence 1.7.0, a release from Volkov Labs that elevates the [Business Intelligence platform](/big/) with:
 
-- Added Distributed High Availability (HA).
-- Added Swagger REST API functionality.
-- UI enhancements:
-  - Added a new **Duplicate** alert button.
-  - Improved dashboard refresh functionality.
-  - Extended CRON validator rule set.
-  - Enabled the use of custom variable values in alert rule configuration.
+- **Distributed High Availability (HA)** for uninterrupted service.
+- **Swagger REST API** for automation and data access.
+- **UI enhancements**:
+  - New **Duplicate** alert button.
+  - Persistent dashboard refresh.
+  - Enhanced CRON validation.
+  - Custom variable value input.
 
-<Shorts id="FY1W0B3Pxog" title="Business Intelligence 1.7.0 for Grafana." />
+Check out the overview below:
 
-## Distributed High Availability
+<Shorts id="FY1W0B3Pxog" title="Business Intelligence 1.7.0 for Grafana" />
 
-One of the most requested capabilities is the High Availability (HA) setup. We designed the BI App specifically keeping that in mind.
+## Distributed High Availability (HA)
 
-All BI App system components could exist in clusters, where a cluster is a set of mirrored servers. It is done to primarily facilitate uninterrupted service by distributing the load most efficiently.
+High Availability tops the wishlist, and 1.7.0 delivers. Designed with HA in mind, the BI platform now supports clustered components—mirrored servers that distribute workloads for seamless operation:
 
-- BI Engine Cluster:
-  - Requests to Server API are distributed behind the Load Balancer.
-  - Schedulers distribute alert rules automatically.
-- Grafana Cluster visualizes data and provides HTTP API for BI Engine to retrieve configuration and data.
-- Prometheus Cluster stores BI Engine performance data.
-- PostgreSQL Cluster stores:
-  - BI Engine database.
-  - Grafana configuration database.
-  - Production data.
+- **BI Engine Cluster**:
+  - Load-balanced Server API requests.
+  - Auto-distributed alert rule scheduling.
+- **Grafana Cluster**: Visualizes data and serves HTTP API for BI Engine.
+- **Prometheus Cluster**: Stores BI Engine performance metrics.
+- **PostgreSQL Cluster**: Hosts BI Engine, Grafana config, and production data.
 
-Below is the picture to illustrate the current HA setup.
+Here’s the HA setup in action:
 
 <Image
-  title="Distributed High Availability Deployment of BI(G)."
+  title="Distributed High Availability deployment."
   src="/img/blog/2024-01-17-big-1.6.0/high-availability.png"
 />
 
 ## Swagger REST API
 
-Starting from this release, you can use the Swagger REST API to automate configuration and get data from BI Engine. The detailed instructions are available in the [REST API](/big/api/) section of our documentation.
+Automate configurations and fetch data with the new Swagger REST API. Dive into the details in our [REST API documentation](/big/api/).
 
-## UI Updates
+## UI Enhancements
 
 ### Duplicate Alert
 
-We added one more action button. Now you can create a new alert using a previously created one as a template.
+Clone existing alerts with the new **Duplicate** button—perfect for quick setup based on prior rules.
 
 <Image
-  title="New action button - duplicate an existing alert."
+  title="Duplicate an alert with one click."
   src="/img/blog/2024-02-04-big-1.7.0/copy-button.png"
   width="60%"
 />
 
-### Dashboard Refresh
+### Persistent Dashboard Refresh
 
-Until this release, with every dashboard refresh, the add/edit drawer was automatically closing. That imposed challenges with adding/editing an alert rule when the refresh time was less than 2-3 minutes.
-With this update, the add/edit window stays up regardless of the dashboard refresh periodicity.
+No more interruptions. The add/edit alert drawer now stays open during dashboard refreshes, even with intervals under 2-3 minutes.
 
 <Image
-  title="The dashboard refresh periodicity does not close the Add/Edit alert drawer."
+  title="Add/Edit drawer persists through dashboard refreshes."
   src="/img/blog/2024-02-04-big-1.7.0/refresh.png"
 />
 
-### CRON Validator
+### Enhanced CRON Validation
 
-We improved the CRON format validation. After this change, you will always see an error if the format you entered is erroneous.
+CRON scheduling is now foolproof. Enter an invalid format, and you’ll see an error instantly—no guesswork needed.
 
 <Image
-  title="CRON format validation is improved."
+  title="Improved CRON format validation."
   src="/img/blog/2024-02-04-big-1.7.0/cron.png"
 />
 
-### Custom variable values
+### Custom Variable Values
 
-Grafana supports a wide range of data sources. From the beginning, we ensured the compatibility between the BI Engine and SQL and Prometheus data sources. We are actively working on ensuring many other data sources are compatible.
-
-However, in the case when variables for your particular data source are not yet supported, we allow to specify variable values directly on the Add/Edit alert drawer.
+We support SQL and Prometheus data sources out of the box and are expanding compatibility. For unsupported sources, manually enter variable values in the add/edit drawer to keep your alerts flowing.
 
 <Image
-  title="Manual variable values entering feature."
+  title="Manually input variable values for flexibility."
   src="/img/blog/2024-02-04-big-1.7.0/manual.png"
 />
 
@@ -100,15 +94,15 @@ However, in the case when variables for your particular data source are not yet 
 
 ## Release Notes
 
-### Features / Enhancements
+### Features & Enhancements
 
-- Updated BI App and BI Engine (#12)
-- [App] Added support dashboard refresh to alerting panel.
-- [App] Added filter rows from panel targets.
-- [App] Added enter custom variable values if unable to load options.
-- [App] Added cron validator to validate alert schedule.
-- [App] Added copy alert button.
-- [Engine] Added alerts assignment between engine nodes.
-- [Engine] Added Swagger REST API documentation.
+- Updated BI App and BI Engine (#12).
+- **[App]** Added dashboard refresh support to alerting panel.
+- **[App]** Enabled row filtering from panel targets.
+- **[App]** Allowed custom variable values when options fail to load.
+- **[App]** Improved CRON validator for alert schedules.
+- **[App]** Added **Duplicate** alert button.
+- **[Engine]** Enabled alert assignment across engine nodes.
+- **[Engine]** Introduced Swagger REST API documentation.
 
 <Feedback />

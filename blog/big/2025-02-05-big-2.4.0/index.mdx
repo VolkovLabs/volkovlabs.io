@@ -13,189 +13,167 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Streamlined connection to Grafana, improved alert details, simplified scheduler, and more in Business Intelligence 2.4.0
+# Business Intelligence 2.4.0: Easier Grafana Connect, Alert Insights, and More
 
-We are excited to announce the public preview release of the Business Intelligence platform 2.4.0. It includes the following updates:
+We’re thrilled to unveil the public preview of Business Intelligence 2.4.0, a release from Volkov Labs that enhances the [Business Intelligence platform](/big/) with:
 
-- Possibility to connect a Business Engine to Grafana instance via Business Studio.
-- Improved the alert event details for better troubleshooting.
-- Added high availability (HA) state in the Business Engine overview.
-- Simplified schedule entry for creating alert rules.
-- Added Grafana data frames review in the Business Studio.
-- Enhanced user prompts to improve configuration clarity.
-- Updated Business Engine API documentation.
+- Seamless **Grafana connection** via Business Studio.
+- Richer **alert event details** for troubleshooting.
+- **High Availability (HA)** status in the Business Engine overview.
+- A simplified **scheduler** for alert rules.
+- **Data frame previews** within Business Studio.
+- Clearer **user prompts** for configuration.
+- An updated Business Engine API.
 
-## Connect a Business Engine to Grafana instance via Business Studio
+Discover how these updates streamline your BI experience below.
 
-Previously, the connection between the Business Engine and the Grafana instance had to be made manually, updating the `GRAFANA_TOKEN` environment variable in the configuration file.
+## Connect Grafana via Business Studio
 
-Starting from this release, the Business Studio allows you to establish that connection in the comfort of a user-friendly interface.
+Gone are the days of manually tweaking the `GRAFANA_TOKEN` in config files. Now, Business Studio offers a user-friendly interface to link a Business Engine to a Grafana instance:
 
-To accomplish that, follow the steps:
-
-1. Open Business Engine -> **Environment** page.
-2. Scroll to the **Grafana** section.
-3. Click the **Edit** button.
-4. Provide Grafana instance URL.
-5. Provide Service account token.
+1. Go to Business Engine > **Environment** page.
+2. Scroll to the **Grafana** section and click **Edit**.
+3. Enter the Grafana URL and Service Account token.
 
 <Image
-  title="Connect a Business Engine to Grafana instance via Business Studio."
+  title="Link a Business Engine to Grafana directly in Business Studio."
   src="/img/blog/2025-02-05-big-2.4.0/token.png"
 />
 
-With this user action, the `grafana_token` column of the `environments` table is updated. That means if multiple business engines are connected to the same Grafana instance (HA scenario), then with updating the settings only for one business engine, all others are automatically updated since they all point to the same database field.
+This updates the `grafana_token` in the `environments` table. In an HA setup, editing one engine syncs all others connected to the same database—no redundant tweaks needed.
 
-:::info High Availability
-
-If multiple Business Engines are connected to the same Grafana instance, then updating ONLY one Business Engine is required. The rest of the connected business engines will be updated automatically.
-
+:::info High Availability Tip  
+Update one Business Engine, and all others in the cluster follow automatically.  
 :::
 
-## Improved the alert event details
+## Deeper Alert Event Insights
 
-:::info terminology
-An alert event is an alternative term for an [alert record](/big/alerting/#alert-components). Technically, it is a record in a database about the alert event.
+:::info Terminology  
+An “alert event” is a database record of an [alert](/big/alerting/#alert-components), also called an alert record.  
 :::
 
-### All alert rules
+### All Alert Rules
 
-1.  Open a Business Engine of your interest.
-2.  Open the **Overview** page.
-3.  Review the **Alert history** of all alert records generated for the selected Business Engine.
+- Navigate to a Business Engine’s **Overview** page.
+- Check the **Alert History** for a unified view of all alert events.
 
 <Image
-  title="Review all alert rules events in one listing."
+  title="See all alert events in one place."
   src="/img/blog/2025-02-05-big-2.4.0/all-alerts.png"
 />
 
-### One alert rule
+### Single Alert Rule
 
-1.  Open a Business Engine of your interest.
-2.  Open the **Alert rules** page.
-3.  Click on the alert rule of interest.
-4.  Review the **Alert history** of the selected alert rule.
+- Go to the **Alert Rules** page, select a rule, and review its **Alert History**.
+- Click an event to dive into details.
+  - **Alerting State**: The **Alert Evaluations** section highlights triggering values. Use **View as Code** for the full payload.
+  - **Other States**: Payloads display directly in **Alert Evaluations**.
 
 <Image
-  title="Review one alert rule event history."
+  title="Alert history for a single rule."
   src="/img/blog/2025-02-05-big-2.4.0/one-alert.png"
 />
 
-You can click on any alert record to review details. If the latest alert state (**New state**) is **Alerting**, the **Alert evaluations** section shows the values that triggered the alert action.
-
-You can always review the payload by clicking on the **View as code** button.
-
 <Image
-  title="Alert evaluations show the values that triggered the alert action. You can review the complete payload by clicking on the View as code button."
+  title="Alerting state shows triggering values; view full payload with 'View as Code'."
   src="/img/blog/2025-02-05-big-2.4.0/alerting-state.png"
 />
 
-In the case of any other alert state (**New state**), the alert rule payload is displayed right away.
-
 <Image
-  title="Review the alert action payload in the Alert evaluation section for all other states but Alerting."
+  title="Other states display payloads directly."
   src="/img/blog/2025-02-05-big-2.4.0/other-states.png"
 />
 
-## High availability (HA) state in the Business Engine overview
+These enhancements make troubleshooting faster and more precise.
 
-High availability can be:
+## High Availability (HA) Status
 
-- **Disabled**. If a Business Engine is the only one in the cluster.
-- **Enabled**. If there are multiple (more than one) Business Engines in the cluster.
+The Business Engine **Overview** now flags HA status:
+
+- **Disabled**: Solo engine in the cluster.
+- **Enabled**: Multiple engines detected.
 
 <Image
-  title="High availability state for a Business Engine."
+  title="HA status at a glance."
   src="/img/blog/2025-02-05-big-2.4.0/enabled-disabled.png"
 />
 
-## Simplified schedule entry for creating alert rules
+## Simplified Alert Scheduling
 
-In addition to a Cron expression, for simplicity, you can choose one of the easy-to-use templates and then adjust if needed.
+Creating alert rules is now easier with preset templates alongside Cron expressions. Pick a template and tweak as needed—no Cron expertise required.
 
 <Image
-  title="Simplified schedule entry for an alert rules creation."
+  title="Simplified scheduling with templates."
   src="/img/blog/2025-02-05-big-2.4.0/cron.png"
 />
 
-## Review Grafana data frames in the Business Studio
+## Preview Grafana Data Frames
 
-To make the interaction between the Business Engine and Grafana more transparent, the Business Studio displays the Grafana data frames participating in the alert rule evaluation.
+See the data behind your alerts directly in Business Studio:
 
-To review the Grafana data frame in the Business Studio:
-
-1.  Open the alert rule of interest.
-2.  Optionally, on the **Alert settings** page confirm the alert rule is assigned to the dashboard(2.1) and panel(2.2) of interest.
-3.  Open the **Data preview** page.
-4.  Optionally, verify the dashboard variable (data frame filter) is set up to the necessary value.
-5.  Review the Grafana data frame in the Business Studio.
-6.  Optionally, review the same data frame in Grafana. Open the panel in the Edit mode and switch to the **Table view**.
-
-- Verify the dashboard variable (data frame filter) is set up to the necessary value.
-- Review the data frame in Grafana.
+1. Open an alert rule.
+2. (Optional) Confirm dashboard and panel on **Alert Settings**.
+3. Switch to **Data Preview** and adjust variables if needed.
+4. Review the data frame—or click **View as Code** for raw details.
+5. (Optional) Cross-check in Grafana’s **Table View** under panel edit mode.
 
 <Image
-  title="Data preview page to review Grafana data frames in the Business Studio."
+  title="Preview Grafana data frames in Business Studio."
   src="/img/blog/2025-02-05-big-2.4.0/data-preview.png"
 />
 
-A Grafana data frame can be reviewed as a code by clicking on the **View as code** button.
+This transparency bridges Business Studio and Grafana seamlessly.
 
-## Enchanced user prompts to improve configuration clarity
+## Clearer User Prompts
 
-This is done throughout the Business Studio UI to eliminate ambiguity and uncertainty about the parameters' meaning.
+Enhanced prompts across the UI clarify parameter meanings, reducing setup confusion and boosting confidence.
 
-## Updated Business Engine API documentation
+## Updated Business Engine API
 
-We maintain the ease of the 3rd party Business Engine integration by timely updating the [OpenAPI specification](/big/api/).
+The [OpenAPI specification](/big/api/) is refreshed, keeping third-party integrations smooth and aligned with 2.4.0’s features.
 
-## Business Studio Downloads
+## Downloads: Business Studio 2.4.0
 
-:::info Signed releases
-
-MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
-
+:::info Signed Releases  
+MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top security.  
 :::
 
-- MacOS:
-  - [Apple Disk Image for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-arm64.dmg)
-  - [Apple Disk Image for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-x64.dmg)
-  - [ZIP file for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-arm64-2.4.0.zip)
-  - [ZIP file for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-x64-2.4.0.zip)
-- Linux:
-  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.arm64.rpm)
-  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.x86_64.rpm)
-  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_arm64.deb)
-  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_amd64.deb)
-- Windows
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-arm64-2.4.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-darwin-x64-2.4.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio-2.4.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/business-studio_2.4.0_amd64.deb)
+- **Windows**:
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.4.0/Business.Studio-2.4.0.Setup.exe)
 
 <GettingStarted />
 
 ## Release Notes
 
-:::warning Breaking Changes in Engine API
-
-Updated data routes from /grafana to /grafana-data.
-
+:::warning Breaking Changes in Engine API  
+Data routes updated from `/grafana` to `/grafana-data`.  
 :::
 
 ### Business Studio 2.4.0
 
-- Added Engine environment management to update Grafana connection details.
-- Added alert event details to review conditions and view as a code to troubleshoot issues.
-- Added verification process for backend query operations in panels.
-- Added high availability state in engines overview.
-- Added enhanced scheduler for alerts to streamline the setting of alert rules.
-- Added alert data preview for reviewing data frames in Grafana.
-- Updated user interface messages and forms to include more context and specifics.
+- Added Grafana connection management in Engine Environment.
+- Enhanced alert event details with conditions and code view.
+- Included backend query verification for panels.
+- Added HA state to Engine Overview.
+- Simplified alert scheduling with templates.
+- Enabled data frame previews for alerts.
+- Improved UI prompts for clearer configuration.
 
 ### Business Engine 2.4.0
 
-- Added API to update Grafana configuration in real-time.
-- Added API to get alert event details.
-- Added API to get high availability state.
-- Added API to get alert data preview.
+- Added API for real-time Grafana config updates.
+- Added API for alert event details and HA state.
+- Added API for alert data previews.
 - Updated alert event structure for consistency.
 
 <Feedback />

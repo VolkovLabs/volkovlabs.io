@@ -13,112 +13,100 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Variables support, Prometheus data source, and alert history in Business Intelligence 1.6.0
+# Business Intelligence 1.6.0: Variables, Prometheus, and Alert History
 
-We are excited to announce the release of the Business Intelligence, version 1.6.0. It accumulates massive functionality enhancements and, thus, marks an important milestone in transitioning from a POC (proof of concept) to a development type of release.
+We’re thrilled to announce Business Intelligence 1.6.0, a pivotal release from Volkov Labs that evolves the [Business Intelligence platform](/big/) from proof-of-concept to a robust development milestone. Key updates include:
 
-The Business Intelligence, version 1.6.0 includes the following updates:
+- **Dashboard variables** support for streamlined alerting.
+- **Prometheus data source** integration.
+- Built-in **Prometheus monitoring**.
+- Expanded **UI functionality**.
+- New **Alert History** visualization.
 
-- Allowed Variables support.
-- Added Support for Prometheus data source.
-- Enabled Prometheus monitoring.
-- Extended UI functionality.
-- Added Alert History.
+Watch the overview:
 
-<Shorts id="NG8eg1F5nX4" title="Business Intelligence 1.6.0 for Grafana." />
+<Shorts id="NG8eg1F5nX4" title="Business Intelligence 1.6.0 for Grafana" />
 
-## Variables Support
+## Dashboard Variables Support
 
-Supporting dashboard variables greatly simplifies work with configuring the alerting in general. Let's say, you have two very similar devices and your task is to monitor their technical health by creating alerts in the event of an alert rule breach.
+Variables transform alert configuration. Imagine monitoring two similar devices with slightly different CPU thresholds (e.g., 0-2% vs. over 2%). Without variables, you’d need separate rules for each—manageable for a few, but a nightmare for hundreds.
 
-Your alert rules are almost identical for both devices with only thresholds being slightly different. For instance, the CPU usage of one device must stay within the 0 to 2 percent range and the other CPU usage can go over 2%.
-
-Without dashboard variables, you have to create two separate alert rules. For a small number of devices, this approach is reasonable. However, it turns into a severe headache once instead of two devices you need to maintain hundreds. For every device, you will have to create and maintain a separate alert rule containing an identical query.
-
-With dashboard variables enabled, creating one alert rule is enough. The thresholds could be configured in the **Overrides**.
-
-Here is an example of the Time Series visualization where one data series triggers an alert and another does not.
+Now, one alert rule with variable-driven **Overrides** handles it all. Here’s how it looks in a Time Series panel:
 
 <Image
-  title="An example of the Time Series visualization where one data series triggers an alert and another does not."
+  title="Time Series with one series triggering an alert."
   src="/img/blog/2024-01-17-big-1.6.0/var-1.png"
 />
 
-Below is what the configuration of the alert rule using dashboard variables looks like.
+And the rule setup with variables:
 
 <Image
-  title="With variables, the same alert rule can have multiple thresholds."
+  title="Single alert rule with multiple thresholds via variables."
   src="/img/blog/2024-01-17-big-1.6.0/var-2.png"
 />
 
 ### Prometheus Data Source
 
-At this stage, we ensured that the BI App supports the variables in Prometheus Data Source. Some data source has unique support for the variables and we plan to support the most popular of them in the future.
+This release ensures variable support for Prometheus, with plans to expand to other popular data sources soon.
 
-## Enabled Prometheus Monitoring
+## Built-In Prometheus Monitoring
 
-In this release, we added a Prometheus middleware and container to allow the collection of the BI Engine system health statistics. Having Prometheus monitoring built-in in the BI App allows you to monitor the alerting system itself. Being an outside system, the BI App is an excellent choice for observing the observability system while using the familiar interface.
-
-Following the enabling of the Prometheus monitoring, we crafted a [ready-to-use, out-of-the-box dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/provisioning/dashboards/engine.json) with all necessary metrics for kick-off the successful monitoring.
+Monitor the BI Engine itself with new Prometheus middleware and a dedicated container. This built-in solution collects system health stats, viewable in a [pre-built dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/provisioning/dashboards/engine.json)—perfect for observing your observability system.
 
 <Image
-  title="Built-in BI Engine monitoring dashboard. Data collected and stored via Prometheus."
+  title="BI Engine monitoring dashboard powered by Prometheus."
   src="/img/blog/2024-01-17-big-1.6.0/prom.png"
 />
 
-The BI Engine consists of two components which provides metrics:
+The BI Engine’s two components provide metrics:
 
-- API Server - **Instance** `engine:3001`
-- Scheduler - **Instance** `engine:3002`
+- **API Server**: `engine:3001`
+- **Scheduler**: `engine:3002`
 
 <Image
-  title="API Server and Scheduler are two components of the BI App."
+  title="API Server and Scheduler components of BI Engine."
   src="/img/blog/2024-01-17-big-1.6.0/bi-app.png"
 />
 
-## Alert rules workflow
+## Alert Rules Workflow
 
-The below schema illustrates the conceptual workflow from the user point of view. Prometheus serves to collect all system health-related and other data to ensure troubleshooting and reporting on system behavior.
+Here’s the user-facing workflow, with Prometheus enabling troubleshooting and system reporting:
 
 <Image
-  title="Conceptual workflow from the user POV."
+  title="Conceptual alert workflow from the user’s perspective."
   src="/img/blog/2024-01-17-big-1.6.0/workflow.png"
 />
 
-## Extended UI functionality
+## UI Enhancements
 
-### Actions
+### Actions Page
 
-To align with the alerting basics terminology [Alert rule-Alert record-Alert action](/big/alerting/), we renamed the **Webhooks** page into the **Actions** page.
+Renamed from **Webhooks** to **Actions** to align with alerting terminology ([Alert rule-Alert record-Alert action](/big/alerting/)).
 
 ### Annotations
 
-In the Edit mode->**Action category**->**Add annotations** parameter, now you can specify whether you need to attach them to a panel or a dashboard (i.e. all panels of the specified dashboard).
+In Edit mode > **Action** category, the **Add Annotations** option now lets you attach annotations to a specific panel or the entire dashboard.
 
 <Image
-  title="The Alerting panel and the Edit alert drawer."
+  title="Alerting panel with Edit alert drawer."
   src="/img/blog/2024-01-17-big-1.6.0/alerting-panel.png"
 />
 
-### Alert details
+### Event Details
 
-For the alert rules in the **Alerting** and **Error** statuses, we added the **Event Details** category.
-
-To review, click the **Details** button on an alert card, then **Event Details** header.
+For rules in **Alerting** or **Error** states, click **Details** on an alert card, then the **Event Details** header to inspect specifics.
 
 <Image
-  title="Event details for the alert rules in the Alerting and Error statuses."
+  title="Event Details for Alerting and Error states."
   src="/img/blog/2024-01-17-big-1.6.0/event-details.png"
 />
 
-## Alert History
+## Alert History Visualization
 
-We added a new option to the **Request** parameter of the Business Intelligence Engine data source. It allows you to display alert history in a visualization panel of your choice.
-
-In the example below, the alert history is displayed in the Table visualization panel.
+A new **Alerts History** option in the BI Engine data source’s **Request** parameter lets you display alert history in any visualization panel—like this Table view:
 
 <Image
-  title="New request type, Alerts History, allows to display."
+  title="Alert History in a Table visualization."
   src="/img/blog/2024-01-17-big-1.6.0/alert-history.png"
 />
 
@@ -126,48 +114,39 @@ In the example below, the alert history is displayed in the Table visualization 
 
 ## Release Notes
 
-### Features / Enhancements in 1.6.0
+### Features & Enhancements in 1.6.0
 
-- Update BI App and BI Engine (#11)
-- [App] Update Prometheus dashboard.
-- [App] Make repeated variable is multi and add all option.
-- [App] Add Group Statuses.
-- [Engine] Add execution batching.
-- [Engine] Add running migrations only via server app.
-- [Engine] Skip creating annotations for repeat variables without results.
-- [Engine] Update Production scripts.
+- Updated BI App and BI Engine (#11).
+- **[App]** Refreshed Prometheus dashboard.
+- **[App]** Made repeated variables multi-select with an “all” option.
+- **[App]** Added grouped statuses.
+- **[Engine]** Implemented execution batching.
+- **[Engine]** Limited migrations to server app.
+- **[Engine]** Skipped annotations for repeat variables without results.
+- **[Engine]** Updated production scripts.
 
-### Features / Enhancements in 1.5.0
+### Features & Enhancements in 1.5.0
 
-- [App] Add Prometheus dashboard.
-- [App] Add showing load variables error.
-- [App] Add check for creating alerts without variable values.
-- [App] Update to Grafana Utils 1.2.0.
-- [Engine] Create mapper service to convert entities.
-- [Engine] Add Prometheus middleware.
-- [Engine] Add failing load variables request if unable to query variable options.
-- [Engine] Add redirect support for Home dashboard.
-- [Engine] Add prometheus datasource for getting variable options.
-- [Engine] Update the License Key.
-- [Engine] Update to Node 20.
+- **[App]** Added Prometheus dashboard.
+- **[App]** Showed variable load errors.
+- **[App]** Blocked alert creation without variable values.
+- **[App]** Upgraded to Grafana Utils 1.2.0.
+- **[Engine]** Added mapper service for entity conversion.
+- **[Engine]** Integrated Prometheus middleware.
+- **[Engine]** Failed variable loads if options can’t be queried.
+- **[Engine]** Added redirect support for Home dashboard.
+- **[Engine]** Supported Prometheus for variable options.
+- **[Engine]** Updated License Key and Node to 20.
 
-### Features / Enhancements in 1.4.0
+### Features & Enhancements in 1.4.0
 
-- Update BI App and BI Engine (#10)
-- [App] Add Variables support.
-- [App] Add Grafana proxy requests.
-- [App] Update Dashboard annotation modes.
-- [App] Add License Info tab.
-- [App] Add Evaluation overrides.
-- [Engine] Add Alert State to created Annotations.
-- [Engine] Add Variables support.
-- [Engine] Modules refactoring.
-- [Engine] Add Grafana proxy for App requests.
-- [Engine] Update alert checksum.
-- [Engine] Update Dashboard annotations.
-- [Engine] Add Configurable grafana request timeout.
-- [Engine] Add License Info.
-- [Engine] Add Alert history.
-- [Engine] Add Evaluation overrides.
+- Updated BI App and BI Engine (#10).
+- **[App]** Added variables support.
+- **[App]** Enabled Grafana proxy requests.
+- **[App]** Updated dashboard annotation modes.
+- **[App]** Added License Info tab and evaluation overrides.
+- **[Engine]** Added alert state to annotations.
+- **[Engine]** Supported variables and refactored modules.
+- **[Engine]** Added Grafana proxy, alert checksum, configurable timeouts, License Info, alert history, and evaluation overrides.
 
 <Feedback />

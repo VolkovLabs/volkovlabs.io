@@ -13,62 +13,62 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Thresholds ranges, cluster load balancing, and UI updates in Business Intelligence 2.5.1
+# Business Intelligence 2.5.1: Threshold Ranges, Load Balancing, and UI Enhancements
 
-We are excited to announce the public preview release of the Business Intelligence platform 2.5.1. It includes the following updates:
+We’re excited to unveil the public preview of Business Intelligence 2.5.1, a release from Volkov Labs that refines the [Business Intelligence platform](/big/) with:
 
-- Improved the usability of the colored ranges in the alert rule settings.
-- Revised cluster load balancing.
-- General UI improvements and usability updates.
+- Clearer **threshold ranges** in alert rule settings.
+- Optimized **cluster load balancing** for better performance.
+- Polished **UI enhancements** for a smoother experience.
 
-## Usability of the colored ranges in the alert rule settings
+Dive into the details below to see how these updates elevate your alerting and management capabilities.
 
-Sometimes, a miniature UI change leads to substantial usability improvements. This is precisely what happened here. Instead of the legacy Grafana representation of a range where only the lower boundary is shown, we added the high boundary.
+## Clearer Threshold Ranges in Alert Rules
 
-No more guessing games of what the range exactly is.
+Small UI tweaks can yield big wins. In 2.5.1, we’ve upgraded the threshold range display in alert rule settings. Previously, Grafana showed only the lower boundary, leaving the upper limit unclear. Now, both low and high boundaries are visible—eliminating guesswork and making alert thresholds intuitive at a glance.
 
 <Image
-  title="Low and high boundaries of ranges for better usability."
+  title="Low and high boundaries now clarify threshold ranges."
   src="/img/blog/2025-02-23-big-2.5.1/range.png"
 />
 
-## Revised cluster load balancing
+## Optimized Cluster Load Balancing
 
-We strive to achieve a high performance in business intelligence. The revised approach to cluster load balancing is one of the things that helps the cause. In this release, we worked on better alert balancing between connected Business engines.
+Performance is a cornerstone of Business Intelligence, and this release refines **cluster load balancing** to deliver just that. We’ve enhanced how alerts are distributed across connected Business Engines, ensuring efficient workload management.
+
+The architecture now better assigns specific queries to specific engines, avoiding duplication and boosting reliability—whether you’re handling dozens or hundreds of alerts.
 
 <Image
   title="Load balancing page for the Alpha cluster."
   src="/img/blog/2025-02-14-big-2.5.0/cluster-lb.png"
 />
 
-The existing architecture allows for running specific queries on specific business engines and completely avoids unnecessary duplication.
+## UI Enhancements for a Smoother Experience
 
-## General UI improvements and usability updates
+Business Studio’s user experience gets a lift with these updates:
 
-These updates enhance the user experience in Business Studio.
+- **Dashboard Variables:** Improved support within target panels for more flexible alerting.
+- **Evaluation Sorting:** Consistent ordering of results for easier analysis.
 
-- Enhanced support for dashboard variables within the target panel.
-- Enhanced sorting of evaluation results to maintain consistent ordering.
+These refinements streamline navigation and interaction, making your workflow more efficient.
 
-## Business Studio Downloads
+## Downloads: Business Studio 2.5.1
 
-:::info Signed releases
-
-MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
-
+:::info Signed Releases  
+MacOS and Windows installers are signed, notarized, and built end-to-end via automated GitHub workflows for top-tier security.  
 :::
 
-- MacOS:
-  - [Apple Disk Image for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1-arm64.dmg)
-  - [Apple Disk Image for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1-x64.dmg)
-  - [ZIP file for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-darwin-arm64-2.5.1.zip)
-  - [ZIP file for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-darwin-x64-2.5.1.zip)
-- Linux:
-  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio-2.5.1-1.arm64.rpm)
-  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio-2.5.1-1.x86_64.rpm)
-  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio_2.5.1_arm64.deb)
-  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio_2.5.1_amd64.deb)
-- Windows
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-darwin-arm64-2.5.1.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-darwin-x64-2.5.1.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio-2.5.1-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio-2.5.1-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio_2.5.1_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio_2.5.1_amd64.deb)
+- **Windows**:
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1.Setup.exe)
 
 <GettingStarted />
@@ -77,13 +77,13 @@ MacOS and Windows installers are signed and notarized with encryption. End to en
 
 ### Business Studio 2.5.1
 
-- Enhanced support for dashboard variables within the check panel.
-- Enhanced sorting of evaluation results to maintain consistent ordering.
-- Modified threshold color number to a colored range.
+- Improved dashboard variable support in check panels.
+- Enhanced sorting of evaluation results for consistency.
+- Upgraded threshold display from single values to colored ranges.
 
 ### Business Engine 2.5.1
 
-- Enhanced verification of alert rules to detect and handle invalid configurations.
-- Revised cluster load balancing support to show active nodes.
+- Strengthened alert rule verification to catch invalid configurations.
+- Optimized cluster load balancing to highlight active nodes.
 
 <Feedback />
