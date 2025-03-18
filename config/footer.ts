@@ -1,13 +1,20 @@
 /**
- * Footer
+ * Footer Configuration
+ * Defines the layout, logo, links, and copyright for the Volkov Labs footer
  */
 export const FOOTER = {
+  // Logo settings with light/dark mode support
   logo: {
-    alt: "Volkov Labs",
+    alt: "Volkov Labs Logo",
     src: "img/logo.svg",
     srcDark: "img/logo.dark.svg",
+    width: 150, // Optional: Adds consistent sizing; adjust as needed
   },
+
+  // Theme style: 'light', 'dark', or 'auto' (Docusaurus default)
   style: "light",
+
+  // Link columns for navigation
   links: [
     {
       title: "Business Suite for Grafana",
@@ -38,23 +45,23 @@ export const FOOTER = {
       title: "Business Intelligence",
       items: [
         {
-          label: "Getting started",
-          href: "/big/getting-started/",
+          label: "Getting Started",
+          to: "/big/getting-started/",
           className: "volkovlabs-footer-link icon-big-link",
         },
         {
           label: "Business Studio",
-          href: "/big/studio/",
+          to: "/big/studio/",
           className: "volkovlabs-footer-link icon-big-studio-link",
         },
         {
           label: "Business Engine",
-          href: "/big/engine/",
+          to: "/big/engine/",
           className: "volkovlabs-footer-link icon-big-engine-link",
         },
         {
           label: "Business Alerting",
-          href: "/big/alerting/",
+          to: "/big/alerting/",
           className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
@@ -69,7 +76,7 @@ export const FOOTER = {
       items: [
         {
           label: "Blog",
-          href: "/blog/",
+          to: "/blog/",
           className: "volkovlabs-footer-link icon-blog-link",
         },
         {
@@ -79,7 +86,7 @@ export const FOOTER = {
         },
         {
           label: "Grafana Crash Course",
-          href: "/grafana/",
+          to: "/grafana/",
           className: "volkovlabs-footer-link icon-grafana-link",
         },
         {
@@ -98,8 +105,8 @@ export const FOOTER = {
       title: "The Company",
       items: [
         {
-          label: "About",
-          href: "/team/",
+          label: "About Us",
+          to: "/team/",
           className: "volkovlabs-footer-link icon-team-link",
         },
         {
@@ -125,5 +132,7 @@ export const FOOTER = {
       ],
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs based in Tampa, Florida, USA. All rights reserved.`,
+
+  // Dynamic copyright with company details
+  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs, Tampa, FL, USA. All rights reserved.`,
 };
