@@ -1,26 +1,34 @@
 # Blog, Documentation, and Grafana Crash Course
 
-This documentation is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This documentation is powered by [Docusaurus](https://docusaurus.io/), a modern static site generator built for effortless content creation.
+
+## Getting Started
 
 ### Installation
 
-```sh
+To install dependencies and prepare your local environment, use:
+
+```bash
 npm install
 ```
 
 ### Local Development
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Run this command to launch a local development server with live reloading—changes reflect instantly:
 
-```sh
+```bash
 npm start
 ```
 
-## Always happy to hear from you
+This opens your site in a browser at `http://localhost:3100`.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs.io/issues).
-- Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs) and leave your comments.
+## Always Happy to Hear From You
+
+We love connecting with our community! Here’s how:
+
+- **Questions or Ideas:** Ask a question, suggest a feature, or report a bug via [GitHub Issues](https://github.com/volkovlabs/volkovlabs.io/issues).
+- **Join Us Online:** Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs) and share your thoughts in the comments.
 
 ## License
 
-Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs.io/blob/main/LICENSE).
+Licensed under the Apache License Version 2.0. See the full details in [LICENSE](https://github.com/volkovlabs/volkovlabs.io/blob/main/LICENSE).

@@ -5,332 +5,267 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
 /**
- * Header
+ * Header Component
+ * Introduces the Terms and Conditions and last updated date
  */
-const Header = () => {
-  return (
-    <header>
-      <div className="container margin-vert--md">
-        <div className="row">
-          <div className="col col--12 margin-vert--md">
-            <p className="hero__subtitle margin-vert--md">
-              Please read these terms and conditions carefully before using Our
-              Service.
-            </p>
-
-            <p className="hero__subtitle">Last updated: September 23, 2024</p>
-          </div>
+const Header = () => (
+  <header className="hero hero--primary">
+    <div className="container margin-vert--md">
+      <div className="row">
+        <div className="col col--12 margin-vert--md">
+          <p className="hero__subtitle margin-vert--md">
+            <strong>Terms and Conditions:</strong> Please review these terms
+            carefully before using our Service.
+          </p>
+          <p className="hero__subtitle">
+            <em>Last Updated: March 18, 2025</em>
+          </p>
         </div>
       </div>
-    </header>
-  );
-};
+    </div>
+  </header>
+);
 
 /**
- * Main
+ * Main Component
+ * Contains the Terms and Conditions sections and contact information
  */
-const Main = () => {
-  return (
-    <main>
-      <div id="Terms" className="container margin-vert--md">
+const Main = () => (
+  <main>
+    <div id="Terms" className="container margin-vert--md">
+      <section>
         <h2>Interpretation and Definitions</h2>
         <h3>Interpretation</h3>
         <p>
-          The words of which the initial letter is capitalized have meanings
-          defined under the following conditions. The following definitions
-          shall have the same meaning regardless of whether they appear in
-          singular or in plural.
+          Capitalized terms have specific meanings defined below, applicable in
+          both singular and plural forms.
         </p>
+
         <h3>Definitions</h3>
-        <p>For the purposes of these Terms and Conditions:</p>
+        <p>For these Terms and Conditions:</p>
         <ul>
           <li>
-            <p>
-              <strong>Affiliate</strong> means an entity that controls, is
-              controlled by or is under common control with a party, where
-              &quot;control&quot; means ownership of 50% or more of the shares,
-              equity interest or other securities entitled to vote for election
-              of directors or other managing authority.
-            </p>
+            <strong>Affiliate:</strong> An entity controlling, controlled by, or
+            under common control with a party, where "control" means owning 50%
+            or more of voting shares or securities.
           </li>
           <li>
-            <p>
-              <strong>Country</strong> refers to: Florida, United States
-            </p>
+            <strong>Country:</strong> Florida, United States.
           </li>
           <li>
-            <p>
-              <strong>Company</strong> (referred to as either &quot;the
-              Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot;
-              in this Agreement) refers to Volkov Labs LLC, 7901 4TH ST N., STE
-              300 ST PETERSBURG, FL 33702.
-            </p>
+            <strong>Company:</strong> (also "We," "Us," or "Our") Volkov Labs
+            LLC, 7901 4th St N., Ste 300, St. Petersburg, FL 33702.
           </li>
           <li>
-            <p>
-              <strong>Device</strong> means any device that can access the
-              Service such as a computer, a cellphone or a digital tablet.
-            </p>
+            <strong>Device:</strong> Any tool (e.g., computer, cellphone,
+            tablet) used to access the Service.
           </li>
           <li>
-            <p>
-              <strong>Service</strong> refers to the Website.
-            </p>
+            <strong>Service:</strong> The Website.
           </li>
           <li>
-            <p>
-              <strong>Terms and Conditions</strong> (also referred as
-              &quot;Terms&quot;) mean these Terms and Conditions that form the
-              entire agreement between You and the Company regarding the use of
-              the Service.
-            </p>
+            <strong>Terms and Conditions:</strong> (or "Terms") This agreement
+            between you and the Company governing Service use.
           </li>
           <li>
-            <p>
-              <strong>Third-party Social Media Service</strong> means any
-              services or content (including data, information, products or
-              services) provided by a third-party that may be displayed,
-              included or made available by the Service.
-            </p>
+            <strong>Third-party Social Media Service:</strong> Content or
+            services from third parties displayed or available via the Service.
           </li>
           <li>
-            <p>
-              <strong>Website</strong> refers to Volkov Labs, accessible from{" "}
-              <a
-                href="https://volkovlabs.io"
-                rel="external nofollow noopener"
-                target="_blank"
-              >
-                https://volkovlabs.io
-              </a>
-            </p>
+            <strong>Website:</strong> Volkov Labs, accessible at{" "}
+            <a
+              href="https://volkovlabs.io"
+              rel="external nofollow noopener"
+              target="_blank"
+            >
+              https://volkovlabs.io
+            </a>
+            .
           </li>
           <li>
-            <p>
-              <strong>You</strong> means the individual accessing or using the
-              Service, or the company, or other legal entity on behalf of which
-              such individual is accessing or using the Service, as applicable.
-            </p>
+            <strong>You:</strong> The individual, company, or entity accessing
+            or using the Service.
           </li>
         </ul>
+      </section>
+
+      <section>
         <h2>Acknowledgment</h2>
         <p>
-          These are the Terms and Conditions governing the use of this Service
-          and the agreement that operates between You and the Company. These
-          Terms and Conditions set out the rights and obligations of all users
-          regarding the use of the Service.
+          These Terms and Conditions govern your use of the Service and form the
+          agreement between you and Volkov Labs LLC. They define the rights and
+          obligations of all users.
         </p>
         <p>
-          Your access to and use of the Service is conditioned on Your
-          acceptance of and compliance with these Terms and Conditions. These
-          Terms and Conditions apply to all visitors, users and others who
-          access or use the Service.
+          Your access and use of the Service require your acceptance and
+          compliance with these Terms. They apply to all visitors and users. By
+          using the Service, you agree to be bound by them. If you disagree, do
+          not access the Service.
         </p>
         <p>
-          By accessing or using the Service You agree to be bound by these Terms
-          and Conditions. If You disagree with any part of these Terms and
-          Conditions then You may not access the Service.
+          You must be over 18 to use the Service—we do not permit use by those
+          under 18.
         </p>
         <p>
-          You represent that you are over the age of 18. The Company does not
-          permit those under 18 to use the Service.
+          Your use also depends on accepting our{" "}
+          <a href="/privacy/">Privacy Policy</a>, which details how we collect,
+          use, and protect your personal information. Review it before using the
+          Service.
         </p>
-        <p>
-          Your access to and use of the Service is also conditioned on Your
-          acceptance of and compliance with the Privacy Policy of the Company.
-          Our Privacy Policy describes Our policies and procedures on the
-          collection, use and disclosure of Your personal information when You
-          use the Application or the Website and tells You about Your privacy
-          rights and how the law protects You. Please read Our Privacy Policy
-          carefully before using Our Service.
-        </p>
+      </section>
+
+      <section>
         <h2>Links to Other Websites</h2>
         <p>
-          Our Service may contain links to third-party web sites or services
-          that are not owned or controlled by the Company.
+          Our Service may link to third-party websites or services not owned or
+          controlled by us. We are not responsible for their content, policies,
+          or practices, nor liable for any resulting damage or loss.
         </p>
         <p>
-          The Company has no control over, and assumes no responsibility for,
-          the content, privacy policies, or practices of any third party web
-          sites or services. You further acknowledge and agree that the Company
-          shall not be responsible or liable, directly or indirectly, for any
-          damage or loss caused or alleged to be caused by or in connection with
-          the use of or reliance on any such content, goods or services
-          available on or through any such web sites or services.
+          We recommend reviewing the terms and privacy policies of any
+          third-party sites you visit.
         </p>
-        <p>
-          We strongly advise You to read the terms and conditions and privacy
-          policies of any third-party web sites or services that You visit.
-        </p>
+      </section>
+
+      <section>
         <h2>Termination</h2>
         <p>
-          We may terminate or suspend Your access immediately, without prior
-          notice or liability, for any reason whatsoever, including without
-          limitation if You breach these Terms and Conditions.
+          We may terminate or suspend your access immediately, without notice or
+          liability, for any reason, including if you breach these Terms. Your
+          right to use the Service ends upon termination.
         </p>
-        <p>
-          Upon termination, Your right to use the Service will cease
-          immediately.
-        </p>
+      </section>
+
+      <section>
         <h2>Limitation of Liability</h2>
         <p>
-          Notwithstanding any damages that You might incur, the entire liability
-          of the Company and any of its suppliers under any provision of this
-          Terms and Your exclusive remedy for all of the foregoing shall be
-          limited to the amount actually paid by You through the Service or 100
-          USD if You haven't purchased anything through the Service.
+          Our liability, and that of our suppliers, is limited to the amount you
+          paid through the Service, or $100 USD if you paid nothing, regardless
+          of any damages you may incur.
         </p>
         <p>
-          To the maximum extent permitted by applicable law, in no event shall
-          the Company or its suppliers be liable for any special, incidental,
-          indirect, or consequential damages whatsoever (including, but not
-          limited to, damages for loss of profits, loss of data or other
-          information, for business interruption, for personal injury, loss of
-          privacy arising out of or in any way related to the use of or
-          inability to use the Service, third-party software and/or third-party
-          hardware used with the Service, or otherwise in connection with any
-          provision of this Terms), even if the Company or any supplier has been
-          advised of the possibility of such damages and even if the remedy
-          fails of its essential purpose.
+          To the fullest extent allowed by law, we are not liable for special,
+          incidental, indirect, or consequential damages (e.g., loss of profits,
+          data, or privacy) related to the Service, third-party
+          software/hardware, or these Terms, even if advised of such
+          possibilities.
         </p>
         <p>
-          Some states do not allow the exclusion of implied warranties or
-          limitation of liability for incidental or consequential damages, which
-          means that some of the above limitations may not apply. In these
-          states, each party's liability will be limited to the greatest extent
-          permitted by law.
+          Some states may not allow these limitations, so they will apply to the
+          maximum extent permitted by local law.
         </p>
-        <h2>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h2>
+      </section>
+
+      <section>
+        <h2>"AS IS" and "AS AVAILABLE" Disclaimer</h2>
         <p>
-          The Service is provided to You &quot;AS IS&quot; and &quot;AS
-          AVAILABLE&quot; and with all faults and defects without warranty of
-          any kind. To the maximum extent permitted under applicable law, the
-          Company, on its own behalf and on behalf of its Affiliates and its and
-          their respective licensors and service providers, expressly disclaims
-          all warranties, whether express, implied, statutory or otherwise, with
-          respect to the Service, including all implied warranties of
-          merchantability, fitness for a particular purpose, title and
-          non-infringement, and warranties that may arise out of course of
-          dealing, course of performance, usage or trade practice. Without
-          limitation to the foregoing, the Company provides no warranty or
-          undertaking, and makes no representation of any kind that the Service
-          will meet Your requirements, achieve any intended results, be
-          compatible or work with any other software, applications, systems or
-          services, operate without interruption, meet any performance or
-          reliability standards or be error free or that any errors or defects
-          can or will be corrected.
+          The Service is provided "AS IS" and "AS AVAILABLE," with all faults
+          and no warranties. We disclaim all implied or statutory warranties
+          (e.g., merchantability, fitness for a purpose) to the fullest extent
+          allowed by law.
         </p>
         <p>
-          Without limiting the foregoing, neither the Company nor any of the
-          company's provider makes any representation or warranty of any kind,
-          express or implied: (i) as to the operation or availability of the
-          Service, or the information, content, and materials or products
-          included thereon; (ii) that the Service will be uninterrupted or
-          error-free; (iii) as to the accuracy, reliability, or currency of any
-          information or content provided through the Service; or (iv) that the
-          Service, its servers, the content, or e-mails sent from or on behalf
-          of the Company are free of viruses, scripts, trojan horses, worms,
-          malware, timebombs or other harmful components.
+          We do not guarantee the Service will meet your needs, operate
+          uninterrupted, or be error-free, nor that it’s free of viruses or
+          harmful components. Some jurisdictions may not allow these exclusions,
+          so they’ll apply to the greatest enforceable extent.
         </p>
-        <p>
-          Some jurisdictions do not allow the exclusion of certain types of
-          warranties or limitations on applicable statutory rights of a
-          consumer, so some or all of the above exclusions and limitations may
-          not apply to You. But in such a case the exclusions and limitations
-          set forth in this section shall be applied to the greatest extent
-          enforceable under applicable law.
-        </p>
+      </section>
+
+      <section>
         <h2>Governing Law</h2>
         <p>
-          The laws of the Country, excluding its conflicts of law rules, shall
-          govern this Terms and Your use of the Service. Your use of the
-          Application may also be subject to other local, state, national, or
-          international laws.
+          These Terms and your use of the Service are governed by Florida, U.S.
+          law, excluding its conflict of law rules. Other local, state,
+          national, or international laws may also apply.
         </p>
+      </section>
+
+      <section>
         <h2>Disputes Resolution</h2>
         <p>
-          If You have any concern or dispute about the Service, You agree to
-          first try to resolve the dispute informally by contacting the Company.
+          For any concerns or disputes about the Service, please first attempt
+          an informal resolution by contacting us.
         </p>
+      </section>
+
+      <section>
         <h2>For European Union (EU) Users</h2>
         <p>
-          If You are a European Union consumer, you will benefit from any
-          mandatory provisions of the law of the country in which You are
-          resident.
+          EU consumers benefit from mandatory provisions of their resident
+          country’s law.
         </p>
+      </section>
+
+      <section>
         <h2>United States Legal Compliance</h2>
         <p>
-          You represent and warrant that (i) You are not located in a country
-          that is subject to the United States government embargo, or that has
-          been designated by the United States government as a &quot;terrorist
-          supporting&quot; country, and (ii) You are not listed on any United
-          States government list of prohibited or restricted parties.
+          You confirm you are not in a U.S.-embargoed country or on any U.S.
+          prohibited/restricted parties list.
         </p>
+      </section>
+
+      <section>
         <h2>Severability and Waiver</h2>
         <h3>Severability</h3>
         <p>
-          If any provision of these Terms is held to be unenforceable or
-          invalid, such provision will be changed and interpreted to accomplish
-          the objectives of such provision to the greatest extent possible under
-          applicable law and the remaining provisions will continue in full
-          force and effect.
+          If any Term is unenforceable, it will be adjusted to meet its intent
+          as legally possible, with remaining Terms unaffected.
         </p>
         <h3>Waiver</h3>
         <p>
-          Except as provided herein, the failure to exercise a right or to
-          require performance of an obligation under these Terms shall not
-          affect a party's ability to exercise such right or require such
-          performance at any time thereafter nor shall the waiver of a breach
-          constitute a waiver of any subsequent breach.
+          Failing to enforce a right or obligation does not waive it for the
+          future, nor does waiving a breach waive subsequent breaches.
         </p>
+      </section>
+
+      <section>
         <h2>Translation Interpretation</h2>
         <p>
-          These Terms and Conditions may have been translated if We have made
-          them available to You on our Service. You agree that the original
-          English text shall prevail in the case of a dispute.
+          If translated, the English version of these Terms prevails in
+          disputes.
         </p>
+      </section>
+
+      <section>
         <h2>Changes to These Terms and Conditions</h2>
         <p>
-          We reserve the right, at Our sole discretion, to modify or replace
-          these Terms at any time. If a revision is material We will make
-          reasonable efforts to provide at least 30 days' notice prior to any
-          new terms taking effect. What constitutes a material change will be
-          determined at Our sole discretion.
+          We may update these Terms at our discretion. Material changes will
+          include at least 30 days’ notice. Continued use after changes implies
+          acceptance; otherwise, stop using the Service.
         </p>
-        <p>
-          By continuing to access or use Our Service after those revisions
-          become effective, You agree to be bound by the revised terms. If You
-          do not agree to the new terms, in whole or in part, please stop using
-          the website and the Service.
-        </p>
+      </section>
+
+      <section>
         <h2>Contact Us</h2>
         <p>
-          If you have any questions about these Terms and Conditions, You can
-          contact us:
+          Questions about this Disclaimer? Reach out via our{" "}
+          <a href="https://support.volkovlabs.io">Support Portal</a>.
         </p>
-        <ul>
-          <li>By email: support at volkovlabs.io</li>
-        </ul>
-      </div>
-      <div className={clsx("container margin-vert--xl")} />
-    </main>
-  );
-};
+      </section>
+    </div>
+    <div className={clsx("container margin-vert--xl")} />
+  </main>
+);
 
 /**
- * Home
+ * Home Component
+ * Renders the full Terms and Conditions page
  */
 const Home = () => {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
+    <Layout
+      title="Terms and Conditions | Volkov Labs"
+      description="Review the terms governing your use of Volkov Labs’ Service."
+    >
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />
         <script
           id="ze-snippet"
           src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
-        ></script>
+        />
       </Head>
       <Header />
       <Main />

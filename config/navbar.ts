@@ -1,19 +1,26 @@
 /**
- * Navigation Bar
+ * Navigation Bar Configuration
+ * Defines the logo, behavior, and menu items for the Volkov Labs navbar
  */
 export const NAVBAR = {
+  // Hides navbar on scroll for a cleaner UI
   hideOnScroll: true,
+
+  // Logo with light/dark mode support
   logo: {
-    alt: "Volkov Labs",
+    alt: "Volkov Labs Logo",
     src: "img/suite.svg",
     srcDark: "img/suite.dark.svg",
+    width: 120, // Optional: Ensures consistent size; adjust as needed
   },
+
+  // Menu items with dropdowns
   items: [
     {
       to: "/plugins/",
       position: "left",
-      label: "Business Suite for Grafana",
-      "aria-label": "Plugins",
+      label: "Business Suite",
+      "aria-label": "Business Suite Plugins",
       items: [
         {
           label: "Business Calendar",
@@ -71,11 +78,11 @@ export const NAVBAR = {
       to: "/big/",
       position: "left",
       label: "Business Intelligence",
-      "aria-label": "Business Intelligence",
+      "aria-label": "Business Intelligence Platform",
       items: [
         {
           label: "Getting Started",
-          to: "/big/getting-started",
+          to: "/big/getting-started/",
           className: "volkovlabs-link icon-big-link",
         },
         {
@@ -99,36 +106,36 @@ export const NAVBAR = {
       to: "/blog/",
       position: "left",
       label: "Blog",
-      "aria-label": "Blog",
+      "aria-label": "Blog Posts",
       items: [
         {
-          label: "All",
+          label: "All Posts",
           to: "/blog/",
           className: "volkovlabs-link icon-blog-link",
         },
         {
           label: "Business Gazette",
-          to: "/blog/tags/business-gazette",
+          to: "/blog/tags/business-gazette/",
           className: "volkovlabs-link icon-gazette-link",
         },
         {
           label: "Business Intelligence",
-          to: "/blog/tags/business-intelligence",
+          to: "/blog/tags/business-intelligence/",
           className: "volkovlabs-link icon-big-link",
         },
         {
           label: "Business Suite",
-          to: "/blog/tags/business-suite",
+          to: "/blog/tags/business-suite/",
           className: "volkovlabs-link icon-suite-link",
         },
         {
           label: "Grafana Crash Course",
-          to: "/blog/tags/grafana-crash-course",
+          to: "/blog/tags/grafana-crash-course/",
           className: "volkovlabs-link icon-grafana-link",
         },
         {
           label: "Solutions",
-          to: "/blog/tags/solution",
+          to: "/blog/tags/solution/",
           className: "volkovlabs-link icon-solutions-link",
         },
       ],
@@ -137,7 +144,7 @@ export const NAVBAR = {
       to: "/grafana/",
       position: "left",
       label: "Grafana Crash Course",
-      "aria-label": "Grafana",
+      "aria-label": "Grafana Learning Resources",
       items: [
         {
           label: "Introduction",
@@ -146,21 +153,21 @@ export const NAVBAR = {
         },
         {
           label: "Getting Started",
-          to: "/grafana/started",
+          to: "/grafana/started/",
           className: "volkovlabs-link icon-grafana-started-link",
         },
         {
-          label: "Advanced",
-          to: "/grafana/advanced",
+          label: "Advanced Topics",
+          to: "/grafana/advanced/",
           className: "volkovlabs-link icon-grafana-advanced-link",
         },
         {
-          label: "Developer",
-          to: "/grafana/developer",
+          label: "Developer Guide",
+          to: "/grafana/developer/",
           className: "volkovlabs-link icon-grafana-developer-link",
         },
         {
-          label: "Environment data source",
+          label: "Environment Data Source",
           to: "/grafana/environment/",
           className: "volkovlabs-link icon-plugins-env-link",
         },
@@ -169,8 +176,8 @@ export const NAVBAR = {
     {
       to: "/pricing/",
       position: "right",
-      label: "Business Suite Enterprise",
-      "aria-label": "Business Suite Enterprise",
+      label: "Enterprise",
+      "aria-label": "Business Suite Enterprise Pricing",
     },
   ],
 };

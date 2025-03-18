@@ -2,7 +2,8 @@ import React from "react";
 import { PluginItem } from "../types";
 
 /**
- * Intelligence List
+ * IntelligenceList
+ * A collection of Business Intelligence plugins for Grafana by Volkov Labs.
  */
 export const IntelligenceList: PluginItem[] = [
   {
@@ -10,39 +11,37 @@ export const IntelligenceList: PluginItem[] = [
     name: "business-engine",
     description: (
       <>
-        Delivers robust performance with distributed load balancing and high
-        availability, integrating seamlessly with Grafana.
+        Provides robust performance with distributed load balancing and high
+        availability, seamlessly integrating with Grafana for efficient data
+        processing.
       </>
     ),
     href: "/big/engine/",
+    isActive: true, // Optional: Indicates active status
   },
   {
     title: "User-Friendly Business Studio",
     name: "business-studio",
     description: (
       <>
-        Simplifies management of Business Engines, allowing non-technical users
-        to configure, monitor, and maintain data workflows.
+        Simplifies Business Engine management, empowering non-technical users to
+        configure, monitor, and maintain data workflows effortlessly.
       </>
     ),
-    href: "/big/studio",
+    href: "/big/studio/",
+    isActive: true,
   },
   {
     title: "Advanced Business Alerts",
     name: "business-alerting",
     description: (
       <>
-        Features alert systems based on Grafana panel queries, with support for
-        customizable thresholds and variables, ensuring timely and relevant
-        notifications for business metrics.
+        Offers customizable alert systems tied to Grafana panel queries, with
+        support for thresholds and variables to deliver timely, relevant
+        business metric notifications.
       </>
     ),
     href: "/big/alerting/",
+    isActive: true,
   },
-  //  {
-  //    title: "Business Reporting",
-  //    name: "business-reporting",
-  //    description: <>Coming soon</>,
-  //    href: "/big/",
-  //  },
 ];

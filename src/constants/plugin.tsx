@@ -2,7 +2,8 @@ import React from "react";
 import { PluginItem } from "../types";
 
 /**
- * Plugin List
+ * PluginList
+ * A collection of Business Suite plugins for Grafana by Volkov Labs, enhancing data visualization and management.
  */
 export const PluginList: PluginItem[] = [
   {
@@ -10,74 +11,84 @@ export const PluginList: PluginItem[] = [
     name: "business-calendar",
     description: (
       <>
-        Showcases events in an elegant calendar view, sourced from various data
-        inputs.
+        Displays events in a sleek calendar view, pulling from diverse data
+        sources for seamless integration.
       </>
     ),
     href: "/plugins/business-calendar/",
+    isActive: true,
   },
   {
     title: "Business Charts",
     name: "business-charts",
     description: (
       <>
-        Brings Apache ECharts' dynamic charts and graphs to your Grafana
-        dashboards.
+        Integrates Apache ECharts to deliver dynamic, interactive charts and
+        graphs within Grafana dashboards.
       </>
     ),
     href: "/plugins/business-charts/",
+    isActive: true,
   },
   {
     title: "Business Forms",
     name: "business-forms",
     description: (
       <>
-        Enables data entry, updates, and configuration changes directly within
-        Grafana.
+        Enables direct data entry, updates, and configuration adjustments right
+        inside Grafana.
       </>
     ),
     href: "/plugins/business-forms/",
+    isActive: true,
   },
   {
     title: "Business Input",
     name: "business-input",
     description: (
       <>
-        Emulates and stores data using JavaScript and LLM for flexible data
-        management.
+        Simulates and manages data with JavaScript and LLM, offering flexible
+        control within Grafana.
       </>
     ),
     href: "/plugins/business-input/",
+    isActive: true,
   },
   {
     title: "Business Media",
     name: "business-media",
     description: (
       <>
-        Combines multimedia formats for a customized visual experience in
-        Grafana.
+        Blends multimedia elements for a tailored, rich visual experience in
+        Grafana dashboards.
       </>
     ),
     href: "/plugins/business-media/",
+    isActive: true,
   },
   {
     title: "Business News",
     name: "business-news",
     description: (
       <>
-        Fetches RSS and Atom feeds for visualization with Business Text and
+        Pulls RSS and Atom feeds, enhancing visualization with Business Text and
         other panels.
       </>
     ),
     href: "/plugins/business-news/",
+    isActive: true,
   },
   {
     title: "Business Satellite",
     name: "business-satellite",
     description: (
-      <>Retrieves data from local or remote Grafana instances via HTTP API.</>
+      <>
+        Fetches data from local or remote Grafana instances via HTTP API for
+        centralized access.
+      </>
     ),
     href: "/plugins/business-satellite/",
+    isActive: true,
   },
   {
     title: "Business Table",
@@ -86,35 +97,42 @@ export const PluginList: PluginItem[] = [
       <>Simplifies data presentation with intuitive table layouts.</>
     ),
     href: "/plugins/business-table/",
+    isActive: true,
   },
   {
     title: "Business Text",
     name: "business-text",
     description: (
       <>
-        Transforms plain text and tables into visually engaging information
+        Turns plain text and tables into compelling, visually rich information
         cards.
       </>
     ),
     href: "/plugins/business-text/",
+    isActive: true,
   },
   {
     title: "Business Variable",
     name: "business-variable",
     description: (
-      <>Adds flexible dashboard filters in a movable, standalone panel.</>
+      <>
+        Enhances dashboards with movable, standalone filter panels for dynamic
+        control.
+      </>
     ),
     href: "/plugins/business-variable/",
+    isActive: true,
   },
   {
     title: "Enterprise Support",
     name: "support",
     description: (
       <>
-        Contact us via Zendesk, receive priority in feature requests and bug
-        fixes, meet with us for in-person consultation.
+        Reach us via Zendesk, enjoy priority feature requests and bug fixes, and
+        schedule in-person consultations.
       </>
     ),
     href: "/pricing/",
+    isActive: true,
   },
 ];
