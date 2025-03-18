@@ -11,7 +11,6 @@ import { PluginItem } from "../types";
  */
 export const Component = ({
   title,
-  subTitle,
   name,
   badge,
   badge2,
@@ -32,7 +31,6 @@ export const Component = ({
         />
         <div>
           <h3>{title}</h3>
-          {subTitle && <h4>{subTitle}</h4>}
           <p>{description}</p>
           <p>
             {badge && <img className={styles.badge} src={badge} />}
