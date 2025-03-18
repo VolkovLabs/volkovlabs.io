@@ -5,63 +5,61 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
 /**
- * Header
+ * Header Component
+ * Displays the disclaimer notice and last updated date
  */
-const Header = () => {
-  return (
-    <header>
-      <div className="container margin-vert--md">
-        <div className="row">
-          <div className="col col--12 margin-vert--md">
-            <p className="hero__subtitle margin-vert--md">
-              Disclaimer. The information contained on the Service is for
-              general information purposes only. The Company assumes no
-              responsibility for errors or omissions in the contents of the
-              Service.
-            </p>
-
-            <p className="hero__subtitle">Last updated: September 23, 2024</p>
-          </div>
+const Header = () => (
+  <header className="hero hero--primary">
+    <div className="container margin-vert--md">
+      <div className="row">
+        <div className="col col--12 margin-vert--md">
+          <p className="hero__subtitle margin-vert--md">
+            <strong>Disclaimer:</strong> The information on this Service is for
+            general purposes only. Volkov Labs LLC assumes no responsibility for
+            errors or omissions in the content.
+          </p>
+          <p className="hero__subtitle">
+            <em>Last Updated: March 18, 2025</em>
+          </p>
         </div>
       </div>
-    </header>
-  );
-};
+    </div>
+  </header>
+);
 
 /**
- * Main
+ * Main Component
+ * Contains the disclaimer sections and contact information
  */
-const Main = () => {
-  return (
-    <main>
-      <div id="Disclaimer" className="container margin-vert--md">
+const Main = () => (
+  <main>
+    <div id="Disclaimer" className="container margin-vert--md">
+      <section>
         <h2>Interpretation and Definitions</h2>
+
         <h3>Interpretation</h3>
         <p>
-          The words of which the initial letter is capitalized have meanings
-          defined under the following conditions. The following definitions
-          shall have the same meaning regardless of whether they appear in
-          singular or in plural.
+          Capitalized terms have specific meanings as defined below. These
+          definitions apply whether used in singular or plural form.
         </p>
+
         <h3>Definitions</h3>
         <p>For the purposes of this Disclaimer:</p>
         <ul>
           <li>
-            <strong>Company</strong> (referred to as either &quot;the
-            Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-            this Disclaimer) refers to Volkov Labs LLC, 7901 4TH ST N., STE 300
-            ST PETERSBURG, FL 33702.
+            <strong>Company</strong> (also "We," "Us," or "Our") refers to
+            Volkov Labs LLC, located at 7901 4th St N., Ste 300, St. Petersburg,
+            FL 33702.
           </li>
           <li>
-            <strong>Service</strong> refers to the Website.
+            <strong>Service</strong> means the Website.
           </li>
           <li>
-            <strong>You</strong> means the individual accessing the Service, or
-            the company, or other legal entity on behalf of which such
-            individual is accessing or using the Service, as applicable.
+            <strong>You</strong> refers to the individual, company, or legal
+            entity accessing or using the Service.
           </li>
           <li>
-            <strong>Website</strong> refers to Volkov Labs, accessible from{" "}
+            <strong>Website</strong> refers to Volkov Labs, accessible at{" "}
             <a
               href="https://volkovlabs.io"
               rel="external nofollow noopener"
@@ -69,140 +67,131 @@ const Main = () => {
             >
               https://volkovlabs.io
             </a>
+            .
           </li>
         </ul>
+      </section>
+
+      <section>
         <h2>Disclaimer</h2>
         <p>
-          The information contained on the Service is for general information
-          purposes only.
+          The Service provides information for general use only. We do not
+          guarantee its accuracy or completeness and are not responsible for any
+          errors or omissions.
         </p>
         <p>
-          The Company assumes no responsibility for errors or omissions in the
-          contents of the Service.
+          The Company is not liable for any damages—special, direct, indirect,
+          consequential, or incidental—arising from the use of the Service or
+          its content, whether in contract, negligence, or other tort. We may
+          update, remove, or alter content at any time without notice.
         </p>
         <p>
-          In no event shall the Company be liable for any special, direct,
-          indirect, consequential, or incidental damages or any damages
-          whatsoever, whether in an action of contract, negligence or other
-          tort, arising out of or in connection with the use of the Service or
-          the contents of the Service. The Company reserves the right to make
-          additions, deletions, or modifications to the contents on the Service
-          at any time without prior notice.
+          The Service is not guaranteed to be free of viruses or harmful
+          components.
+        </p>
+      </section>
+
+      <section>
+        <h2>External Links</h2>
+        <p>
+          The Service may link to external websites not controlled or maintained
+          by us. We do not endorse or guarantee the accuracy, relevance, or
+          timeliness of information on these sites.
+        </p>
+      </section>
+
+      <section>
+        <h2>Errors and Omissions</h2>
+        <p>
+          Content on the Service offers general guidance only. Despite our
+          efforts to keep it accurate and current, errors may occur. Laws,
+          rules, and regulations evolve, potentially leading to delays or
+          inaccuracies.
         </p>
         <p>
-          The Company does not warrant that the Service is free of viruses or
-          other harmful components.
+          We are not liable for errors, omissions, or outcomes from using this
+          information.
         </p>
-        <h2>External Links Disclaimer</h2>
+      </section>
+
+      <section>
+        <h2>Fair Use</h2>
         <p>
-          The Service may contain links to external websites that are not
-          provided or maintained by or in any way affiliated with the Company.
-        </p>
-        <p>
-          Please note that the Company does not guarantee the accuracy,
-          relevance, timeliness, or completeness of any information on these
-          external websites.
-        </p>
-        <h2>Errors and Omissions Disclaimer</h2>
-        <p>
-          The information given by the Service is for general guidance on
-          matters of interest only. Even if the Company takes every precaution
-          to ensure that the content of the Service is both current and
-          accurate, errors can occur. Plus, given the changing nature of laws,
-          rules and regulations, there may be delays, omissions or inaccuracies
-          in the information contained on the Service.
+          We may use copyrighted material for criticism, comment, news
+          reporting, teaching, scholarship, or research, without specific
+          authorization from the owner. We believe this qualifies as "fair use"
+          under Section 107 of U.S. Copyright Law.
         </p>
         <p>
-          The Company is not responsible for any errors or omissions, or for the
-          results obtained from the use of this information.
-        </p>
-        <h2>Fair Use Disclaimer</h2>
-        <p>
-          The Company may use copyrighted material which has not always been
-          specifically authorized by the copyright owner. The Company is making
-          such material available for criticism, comment, news reporting,
-          teaching, scholarship, or research.
-        </p>
-        <p>
-          The Company believes this constitutes a &quot;fair use&quot; of any
-          such copyrighted material as provided for in section 107 of the United
-          States Copyright law.
-        </p>
-        <p>
-          If You wish to use copyrighted material from the Service for your own
-          purposes that go beyond fair use, You must obtain permission from the
+          For uses beyond fair use, you must obtain permission from the
           copyright owner.
         </p>
-        <h2>Views Expressed Disclaimer</h2>
+      </section>
+
+      <section>
+        <h2>Views Expressed</h2>
         <p>
-          The Service may contain views and opinions which are those of the
-          authors and do not necessarily reflect the official policy or position
-          of any other author, agency, organization, employer or company,
-          including the Company.
+          Opinions on the Service are those of the authors and do not
+          necessarily reflect our official stance or that of any other entity.
         </p>
         <p>
-          Comments published by users are their sole responsibility and the
-          users will take full responsibility, liability and blame for any libel
-          or litigation that results from something written in or as a direct
-          result of something written in a comment. The Company is not liable
-          for any comment published by users and reserves the right to delete
-          any comment for any reason whatsoever.
+          User comments are their sole responsibility. We are not liable for
+          them and may remove any comment at our discretion.
         </p>
-        <h2>No Responsibility Disclaimer</h2>
+      </section>
+
+      <section>
+        <h2>No Professional Advice</h2>
         <p>
-          The information on the Service is provided with the understanding that
-          the Company is not herein engaged in rendering legal, accounting, tax,
-          or other professional advice and services. As such, it should not be
-          used as a substitute for consultation with professional accounting,
-          tax, legal or other competent advisers.
+          The Service does not provide legal, accounting, tax, or other
+          professional advice. Consult qualified professionals for such needs.
         </p>
         <p>
-          In no event shall the Company or its suppliers be liable for any
-          special, incidental, indirect, or consequential damages whatsoever
-          arising out of or in connection with your access or use or inability
-          to access or use the Service.
+          We are not liable for damages arising from your use or inability to
+          use the Service.
         </p>
-        <h2>&quot;Use at Your Own Risk&quot; Disclaimer</h2>
+      </section>
+
+      <section>
+        <h2>Use at Your Own Risk</h2>
         <p>
-          All information in the Service is provided &quot;as is&quot;, with no
-          guarantee of completeness, accuracy, timeliness or of the results
-          obtained from the use of this information, and without warranty of any
-          kind, express or implied, including, but not limited to warranties of
-          performance, merchantability and fitness for a particular purpose.
+          All content is provided "as is," without guarantees of accuracy,
+          completeness, or results. No warranties—express or implied—are
+          offered, including for performance or fitness for a purpose.
         </p>
         <p>
-          The Company will not be liable to You or anyone else for any decision
-          made or action taken in reliance on the information given by the
-          Service or for any consequential, special or similar damages, even if
-          advised of the possibility of such damages.
+          We are not liable for decisions or actions based on this information,
+          even if advised of potential damages.
         </p>
+      </section>
+
+      <section>
         <h2>Contact Us</h2>
         <p>
-          If you have any questions about this Disclaimer, You can contact Us:
+          Questions about this Disclaimer? Reach out via our{" "}
+          <a href="https://support.volkovlabs.io">Support Portal</a>.
         </p>
-        <ul>
-          <li>By email: support at volkovlabs.io</li>
-        </ul>
-      </div>
-      <div className={clsx("container margin-vert--xl")} />
-    </main>
-  );
-};
+      </section>
+    </div>
+    <div className={clsx("container margin-vert--xl")} />
+  </main>
+);
 
 /**
- * Home
+ * Home Component
+ * Renders the full disclaimer page
  */
 const Home = () => {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
+    <Layout title="Disclaimer" description={siteConfig.tagline}>
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />
         <script
           id="ze-snippet"
           src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
-        ></script>
+        />
       </Head>
       <Header />
       <Main />
