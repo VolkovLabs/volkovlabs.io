@@ -1,0 +1,104 @@
+---
+authors: [daria]
+slug: business-intelligence-2.7.0/
+tags: [Business Intelligence]
+image: /img/blog/2025-03-17-big-2.7.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Business Intelligence 2.7.0: Tailored Profiles, Enhanced Previews, and Data Transfer
+
+We’re thrilled to announce the public preview of Business Intelligence 2.7.0, a release from Volkov Labs that elevates the [Business Intelligence platform](/big/) with:
+
+- **User profiles** for business and technical users.
+- **Alert data previews** with visible thresholds.
+- **Refresh buttons** with 10-second auto-refetch.
+- **JSON export/import** for engine configurations.
+- **Alert condition drawers** accessible via action events.
+- **Infinite scroll** for alert and action history.
+- **Performance boosts** with database indexing.
+
+Dive into the details below to see how these updates streamline your BI experience.
+
+## Updated OpenAPI Specification
+
+The Business Engine’s [OpenAPI specification](/big/api/) is refreshed, ensuring seamless integration for third-party developers and keeping your workflows aligned with the latest capabilities.
+
+## Key Features
+
+### Tailored User Profiles
+
+New business-oriented and technical profiles customize the experience—simplified for decision-makers, detailed for engineers—making BI accessible to all.
+
+### Enhanced Alert Data Previews
+
+The alert preview page now displays thresholds, offering clearer insights into trigger conditions at a glance.
+
+### Auto-Refresh Buttons
+
+New **Refresh** buttons trigger a 10-second data refetch, keeping your view current without manual effort.
+
+### JSON Configuration Management
+
+Export and import engine setups via JSON, simplifying migrations and backups across environments.
+
+### Alert Condition Drawers
+
+Click an action event to open a drawer revealing alert conditions—quick access to the “why” behind triggers.
+
+### Infinite Scroll History
+
+Scroll endlessly through alert and action messages—no pagination hassles, just fluid history browsing.
+
+### Optimized Performance
+
+Database indexes speed up historical data retrieval, ensuring snappy performance even with large datasets.
+
+## Downloads: Business Studio 2.7.0
+
+:::info Signed Releases  
+MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top security.  
+:::
+
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-darwin-arm64-2.7.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-darwin-x64-2.7.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio-2.7.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio-2.7.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio_2.7.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio_2.7.0_amd64.deb)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0.Setup.exe)
+
+<GettingStarted />
+
+## Release Notes
+
+### Business Studio 2.7.0
+
+- Added visible thresholds to alert data preview page.
+- Required Grafana instance connection for alert rule creation.
+- Enabled alert condition viewing via action event drawers.
+- Introduced **Refresh** buttons with 10-second auto-refetch.
+- Supported JSON export/import for engine configurations.
+- Launched business and technical user profiles.
+- Implemented infinite scroll for alert/action history.
+- Simplified “All” variable selection in alert rule setup.
+
+### Business Engine 2.7.0
+
+- Added API endpoints for JSON config export/import.
+- Updated API to handle infinite scrolling efficiently.
+- Boosted performance with database indexes for historical data.
+
+<Feedback />

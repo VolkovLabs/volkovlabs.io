@@ -6,200 +6,227 @@ import BlogPost from "@theme/BlogPost";
 
 # Release Notes
 
-Release Notes for the Business Intelligence platform for Grafana.
+Welcome to the release notes for the Business Intelligence platform for Grafana, crafted by Volkov Labs to enhance your analytics experience.
 
-:::info Public Preview
-
-The Business Intelligence platform is currently under active development. Public Preview releases are available exclusively for testing purposes.
-
+:::info Public Preview  
+The Business Intelligence platform is under active development. Public Preview releases are for testing purposes only.  
 :::
+
+## 2.7.0 (2025-03-17)
+
+### Business Studio 2.7.0
+
+- Added visible thresholds to alert data previews for clearer insights.
+- Required Grafana instance connection for alert rule creation.
+- Enabled alert condition viewing via action event drawers.
+- Introduced **Refresh** buttons with 10-second auto-refetch.
+- Supported JSON export/import for engine configurations.
+- Launched business and technical user profiles for tailored experiences.
+- Implemented infinite scroll for alert/action history.
+- Simplified “All” variable selection in alert rule setup.
+
+### Business Engine 2.7.0
+
+- Added API endpoints for JSON config export/import.
+- Updated API for efficient infinite scrolling.
+- Boosted performance with database indexes for historical data.
+
+<BlogPost id="business-intelligence-2.7.0" />
+
+### Downloads
+
+:::info Signed Releases  
+MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top security.  
+:::
+
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-darwin-arm64-2.7.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-darwin-x64-2.7.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio-2.7.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio-2.7.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio_2.7.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio_2.7.0_amd64.deb)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0.Setup.exe)
 
 ## 2.6.0 (2025-02-28)
 
 ### Business Studio 2.6.0
 
-- Integrated an alerting view to present events across high availability clusters.
-- Added action history to track messages that have been sent.
-- Included the display of data frame fields on the alert event page.
+- Integrated an alerting view for events across HA clusters.
+- Added action history to track sent messages.
+- Included data frame fields on the alert event page.
 
 ### Business Engine 2.6.0
 
-- Implemented an API to retrieve the most recent events for the engine.
-- Modified Grafana utilities to incorporate transformations compatible with Grafana 11.5.2.
-- Enhanced the build procedure and reduced the size of the engine's Docker image.
+- Added API for retrieving recent engine events.
+- Updated Grafana utilities for transformations in Grafana 11.5.2.
+- Optimized build process, shrinking the engine’s Docker image.
 
 <BlogPost id="business-intelligence-2.6.0" />
 
-### Downloads from GitHub
+### Downloads
 
-:::info Signed releases
-
-MacOS and Windows installers are signed and notarized with encryption. End to end build process are fully automated using GitHub workflows to avoid any security risks.
-
+:::info Signed Releases  
+MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top security.  
 :::
 
-- MacOS:
-  - [Apple Disk Image for Apple silicon](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-2.6.0-arm64.dmg)
-  - [Apple Disk Image for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/2.6.0/Business.Studio-2.6.0-x64.dmg)
-  - [ZIP file for Apple M](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-darwin-arm64-2.6.0.zip)
-  - [ZIP file for Intel x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-darwin-x64-2.6.0.zip)
-- Linux:
-  - [RPM for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio-2.6.0-1.arm64.rpm)
-  - [RPM for x64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio-2.6.0-1.x86_64.rpm)
-  - [Debian for arm64](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio_2.6.0_arm64.deb)
-  - [Debian for x86](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio_2.6.0_amd64.deb)
-- Windows
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-2.6.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-2.6.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-darwin-arm64-2.6.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-darwin-x64-2.6.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio-2.6.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio-2.6.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio_2.6.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/business-studio_2.6.0_amd64.deb)
+- **Windows**:
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.6.0/Business.Studio-2.6.0.Setup.exe)
 
 ## 2.5.1 (2025-02-19)
 
-**This is a public preview release of Business Studio 2.5.1 compatible with Business Engine 2.5.1.**
+**Public preview release of Business Studio 2.5.1, compatible with Business Engine 2.5.1.**
 
 ### Business Studio 2.5.1
 
-- Enhanced support for dashboard variables within the check panel.
-- Enhanced sorting of evaluation results to maintain consistent ordering.
-- Modified threshold color number to a colored range.
+- Enhanced dashboard variable support in the check panel.
+- Improved evaluation result sorting for consistency.
+- Switched threshold color numbers to colored ranges.
 
 ### Business Engine 2.5.1
 
-- Enhanced verification of alert rules to detect and handle invalid configurations.
-- Revised cluster load balancing support to show active nodes.
+- Strengthened alert rule verification for invalid configs.
+- Updated cluster load balancing to display active nodes.
 
 <BlogPost id="business-intelligence-2.5.1" />
 
 ## 2.5.0 (2025-02-14)
 
-**This is a public preview release of Business Studio 2.5.0 compatible with Business Engine 2.5.0.**
+**Public preview release of Business Studio 2.5.0, compatible with Business Engine 2.5.0.**
 
 ### Business Studio 2.5.0
 
-- Added Grafana version on environment page.
-- Added cluster functionality and display cluster names on the sidebar.
-- Added cluster load balancing page to show scheduled alert rules.
-- Updated display colors in thresholds to match Grafana naming conventions.
-- Updated in alerting since date to match alert history.
-- Updated panel selection to display panel type in description.
+- Added Grafana version display on the environment page.
+- Introduced cluster functionality with sidebar names.
+- Added a cluster load balancing page for scheduled rules.
+- Aligned threshold display colors with Grafana naming.
+- Synced “alerting since” date with alert history.
+- Enhanced panel selection with type descriptions.
 
 ### Business Engine 2.5.0
 
-- Added Grafana version check on every interaction and health check.
-- Added API to update cluster name in environment settings.
-- Added API to return load balancing configuration for cluster.
+- Added Grafana version checks for interactions and health.
+- Included API to update cluster names in settings.
+- Added API for load balancing config retrieval.
 
 <BlogPost id="business-intelligence-2.5.0" />
 
 ## 2.4.0 (2025-02-04)
 
-**This is a public preview release of Business Studio 2.4.0 compatible with Business Engine 2.4.0.**
+**Public preview release of Business Studio 2.4.0, compatible with Business Engine 2.4.0.**
 
-:::warning Breaking Changes in Engine API
-
-Updated data routes from /grafana to /grafana-data.
-
+:::warning Breaking Changes  
+Engine API data routes updated from `/grafana` to `/grafana-data`.  
 :::
 
 ### Business Studio 2.4.0
 
-- Added Engine environment management to update Grafana connection details.
-- Added alert event details to review conditions and view as a code to troubleshoot issues.
-- Added verification process for backend query operations in panels.
-- Added high availability state in engines overview.
-- Added enhanced scheduler for alerts to streamline the setting of alert rules.
-- Added alert data preview for reviewing data frames in Grafana.
-- Updated user interface messages and forms to include more context and specifics.
+- Enabled engine environment management for Grafana updates.
+- Added alert event details with code view for troubleshooting.
+- Included backend query verification for panels.
+- Displayed high availability state in engine overview.
+- Enhanced scheduler for streamlined alert rule setup.
+- Added alert data preview for Grafana data frames.
+- Improved UI messages and forms with more context.
 
 ### Business Engine 2.4.0
 
-- Added API to update Grafana configuration in real-time.
-- Added API to get alert event details.
-- Added API to get high availability state.
-- Added API to get alert data preview.
-- Updated alert event structure for consistency.
+- Added API for real-time Grafana config updates.
+- Included API for alert event details and HA state.
+- Added API for alert data previews.
+- Standardized alert event structure.
 
 <BlogPost id="business-intelligence-2.4.0" />
 
 ## 2.3.0 (2025-01-17)
 
-**This is a public preview release of Business Studio 2.3.0 compatible with Business Engine 2.3.0.**
+**Public preview release of Business Studio 2.3.0, compatible with Business Engine 2.3.0.**
 
 ### Business Studio 2.3.0
 
-- Added Engine Settings to update license token.
-- Added results sample size to limit number of alerting rows.
-- Added Code Editor to edit Action message template.
-- Updated Alert conditions overrides.
+- Added Engine Settings for license token updates.
+- Included results sample size limit for alerting rows.
+- Added Code Editor for action message templates.
+- Updated alert condition overrides.
 
 ### Business Engine 2.3.0
 
-- Added API to update license token.
-- Added dynamic node identifier for high availability and load balancing.
-- Added Alert rule parameter to limit number of evaluation results.
+- Added API for license token updates.
+- Introduced dynamic node IDs for HA and load balancing.
+- Added rule parameter to cap evaluation results.
 - Updated alert condition overrides.
 
 <BlogPost id="business-intelligence-2.3.0" />
 
 ## 2.2.0 (2024-12-28)
 
-**This is a public preview release of Business Studio 2.2.0 compatible with Business Engine 2.2.0.**
+**Public preview release of Business Studio 2.2.0, compatible with Business Engine 2.2.0.**
 
 ### Business Studio 2.2.0
 
-- Added Getting Started messages for new installations.
-- Added descriptions to engines, alerts, and actions configuration.
-- Added Engine Settings page to update connection details and token.
-- Added Engine Environment page to display configuration.
-- Updated release workflow to sign and notarize MacOS and Windows installers.
-- Updated Overview pages to display alert statuses.
-- Minor UI updates for engine, alert rules and action management.
+- Added Getting Started messages for new installs.
+- Included descriptions for engines, alerts, and actions.
+- Added Engine Settings and Environment pages.
+- Signed and notarized MacOS/Windows installers.
+- Updated Overview pages with alert statuses.
+- Minor UI tweaks for management tasks.
 
 ### Business Engine 2.2.0
 
-- Added API to get environment info.
-- Added API to get timeline of alert statuses.
-- Added server and scheduler restart if database disconnected with fatal error.
-- Updated Grafana health check for Cloud instances.
-- Updated default log level to "log" to increase number of message for troubleshooting.
+- Added APIs for environment info and alert timelines.
+- Enabled server/scheduler restarts on DB errors.
+- Updated Grafana health checks for Cloud.
+- Set default log level to “log” for troubleshooting.
 
 <BlogPost id="business-intelligence-2.2.0" />
 
 ## 2.1.0 (2024-12-17)
 
-**This is a public preview release of Business Studio 2.1.0 compatible with Business Engine 2.1.0.**
+**Public preview release of Business Studio 2.1.0, compatible with Business Engine 2.1.0.**
 
 ### Business Studio 2.1.0
 
-- Major UI updates for engine, alert rules and action management.
-- Added JSON highlights for the latest event in alert rules.
-- Added auto application updater for MacOS and Windows.
-- Added minimum Business Engine version check.
+- Major UI updates for management tasks.
+- Added JSON highlights for alert events.
+- Enabled auto-updater for MacOS/Windows.
+- Added minimum Engine version check.
 
 ### Business Engine 2.1.0
 
-- Added Engine version for compatibility with Business Studio.
-- Added default values for environment variables to make them optional.
-- Added environment variable for custom database name.
-- Added API to get history events for Overview page.
-- Added API to get alert rules and actions by Id for updating in Business Studio.
-- Updated support time ranges in Scenes dashboards for Grafana 11.3+.
+- Added version tracking for Studio compatibility.
+- Set optional environment variable defaults.
+- Added custom database name variable.
+- Included APIs for history and rule/action updates.
+- Updated time ranges for Grafana 11.3+.
 
 ## 2.0.0 (2024-12-08)
 
-**This is a public preview release of Business Studio 2.0.0 compatible with Business Engine 2.0.0.**
+**Public preview release of Business Studio 2.0.0, compatible with Business Engine 2.0.0.**
 
 ### Business Studio 2.0.0
 
-- Developed using a tech stack based on Electron and Tailwind UI.
-- Allows to add and delete Business Engines connected to Grafana instances.
-- Allows to add, update and delete Actions and Alerts.
-- Supports for Light and Dark themes.
-- Provides installers for MacOS, Linux and Windows.
+- Built with Electron and Tailwind UI.
+- Enabled engine and alert/action management.
+- Supported Light/Dark themes.
+- Provided multi-platform installers.
 
 ### Business Engine 2.0.0
 
-- Developed using a tech stack based on NestJS framework.
-- Supports Grafana 11 HTTP API.
-- Uses Timescale database to store configuration.
-- Uses Prometheus to store internal metrics.
-- Supports distributed High-Availability.
-- Allows to add, update and delete Alerts and Actions.
+- Built with NestJS.
+- Supported Grafana 11 HTTP API.
+- Used Timescale for config and Prometheus for metrics.
+- Enabled HA and alert/action management.
