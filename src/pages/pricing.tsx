@@ -11,16 +11,16 @@ import styles from "../css/index.module.css";
  * Introduces Business Suite Enterprise benefits and video
  */
 const Header = () => (
-  <header className="hero--primary">
+  <header className="hero">
     <div className="container margin-vert--lg">
       <div className="row align-items-center">
-        <div className="col col--7 margin-vert--lg">
+        <div className="col col--7">
           <h1 className="hero__title margin-bottom--md">
             Business Suite Enterprise
           </h1>
           <p className="hero__subtitle margin-vert--md">
-            Beyond a product—gain peace of mind with a dedicated support team
-            ready to tackle your challenges.
+            Partner with us and enjoy peace of mind with a dedicated support
+            team prepared to address your challenges effectively.
           </p>
           <p className="hero__subtitle">
             Connect via{" "}
