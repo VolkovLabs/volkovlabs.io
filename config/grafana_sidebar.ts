@@ -1,12 +1,20 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 /**
- * Sidebars
+ * Sidebar configuration for Docusaurus.
+ * Defines the navigation structure for the 'grafana' documentation section.
  */
 const sidebars: SidebarsConfig = {
   grafana: [
+    // Standalone root page
     "index",
+
+    // Getting Started section
     {
+      type: "category",
+      label: "Getting Started",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "started" }, // Links to main Getting Started doc
       items: [
         "installation",
         "business",
@@ -15,15 +23,14 @@ const sidebars: SidebarsConfig = {
         "timeseries",
         "annotations",
       ],
-      label: "Getting Started",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "started",
-      },
     },
+
+    // Advanced section
     {
+      type: "category",
+      label: "Advanced",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "advanced/index" }, // Links to main Advanced doc
       items: [
         "customize",
         "datasources/json",
@@ -34,30 +41,29 @@ const sidebars: SidebarsConfig = {
         "advanced/canvas",
         "advanced/analytics",
       ],
-      label: "Advanced",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "advanced/index",
-      },
     },
+
+    // Developer section
     {
+      type: "category",
+      label: "Developer",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "developer/index" }, // Links to main Developer doc
       items: [
         "developer/overview",
         "developer/thinkbig",
         "developer/panel",
         "developer/eventbus",
       ],
-      label: "Developer",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "developer/index",
-      },
     },
+
+    // Environment Data Source section
     {
+      type: "category",
+      label: "Environment Data Source",
+      description: "Environment variables on your dashboard",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "environment/index" }, // Links to main Environment doc
       items: [
         {
           type: "doc",
@@ -67,23 +73,13 @@ const sidebars: SidebarsConfig = {
         "environment/deployment",
         "environment/provisioning",
         {
-          items: ["environment/variables"],
-          label: "Features",
           type: "category",
-          link: {
-            type: "doc",
-            id: "environment/features",
-          },
+          label: "Features",
+          link: { type: "doc", id: "environment/features" }, // Links to Features overview
+          items: ["environment/variables"],
         },
         "environment/release",
       ],
-      label: "Environment data source",
-      type: "category",
-      description: "Environment variables on your dashboard.",
-      link: {
-        type: "doc",
-        id: "environment/index",
-      },
     },
   ],
 };

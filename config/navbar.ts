@@ -104,7 +104,7 @@ export const NAVBAR = {
     },
     {
       to: "/blog/",
-      position: "left",
+      position: "right",
       label: "Blog",
       "aria-label": "Blog Posts",
       items: [
@@ -142,7 +142,7 @@ export const NAVBAR = {
     },
     {
       to: "/grafana/",
-      position: "left",
+      position: "right",
       label: "Grafana Crash Course",
       "aria-label": "Grafana Learning Resources",
       items: [
@@ -175,8 +175,8 @@ export const NAVBAR = {
     },
     {
       to: "/pricing/",
-      position: "right",
-      label: "Enterprise",
+      position: "left",
+      label: "Business Suite Enterprise",
       "aria-label": "Business Suite Enterprise Pricing",
     },
   ],

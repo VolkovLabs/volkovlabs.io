@@ -1,119 +1,108 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 /**
- * Sidebars
+ * Sidebar configuration for Docusaurus.
+ * Defines the navigation structure for the 'big' documentation section.
  */
 const sidebars: SidebarsConfig = {
   big: [
+    // Business Intelligence section
     {
+      type: "category",
+      label: "Business Intelligence",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "index" }, // Links to main BI doc
       items: [
         "getting-started/index",
         "quick-start/index",
         "personas",
         "high-availability/index",
       ],
-      label: "Business Intelligence",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "index",
-      },
     },
+
+    // Business Studio section
     {
+      type: "category",
+      label: "Business Studio",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "studio/index" }, // Links to main Studio doc
       items: [
         "studio/manage-business-engines",
         "studio/manage-clusters",
         {
-          items: [
-            //            "studio/actions/logs",
-            //            "studio/actions/json",
-            //            "studio/actions/node-red",
-          ],
-          label: "Actions",
           type: "category",
-          link: {
-            type: "doc",
-            id: "studio/actions/index",
-          },
+          label: "Actions",
+          link: { type: "doc", id: "studio/actions/index" }, // Links to Actions overview
+          items: [
+            // Uncomment and add as needed:
+            // 'studio/actions/logs',
+            // 'studio/actions/json',
+            // 'studio/actions/node-red',
+          ],
         },
-
         "studio/support",
       ],
-      label: "Business Studio",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "studio/index",
-      },
     },
+
+    // Business Engine section
     {
+      type: "category",
+      label: "Business Engine",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "engine/index" }, // Links to main Engine doc
       items: [
         "engine/configuration",
         "engine/database",
         "engine/prometheus",
         {
+          type: "category",
+          label: "Business Engine API",
+          link: { type: "doc", id: "engine/api" }, // Links to API overview
           items: [
             {
               type: "link",
               href: "/big/api",
-              label: "OpenAPI Specification",
+              label: "OpenAPI Specification", // External link to API spec
             },
           ],
-          label: "Business Engine API",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "engine/api",
-          },
         },
       ],
-      label: "Business Engine",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "engine/index",
-      },
     },
+
+    // Business Alerting section
     {
+      type: "category",
+      label: "Business Alerting",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "alerting/index" }, // Links to main Alerting doc
       items: [
         "alerting/manage-alert-rules",
         "alerting/analyze-alert-rules",
         "alerting/variables",
         "alerting/thresholds",
         {
+          type: "category",
+          label: "Data Sources",
+          link: { type: "doc", id: "alerting/datasources/index" }, // Links to Data Sources overview
           items: [
             "alerting/datasources/postgresql",
             "alerting/datasources/prometheus",
-            //            "alerting/datasources/loki",
+            // Uncomment and add as needed:
+            // 'alerting/datasources/loki',
           ],
-          label: "Data Sources",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "alerting/datasources/index",
-          },
         },
       ],
-      label: "Business Alerting",
-      type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "alerting/index",
-      },
     },
+
+    // Tutorials section
     {
-      items: [],
-      label: "Tutorials",
       type: "category",
-      link: {
-        type: "doc",
-        id: "tutorials/index",
-      },
+      label: "Tutorials",
+      link: { type: "doc", id: "tutorials/index" }, // Links to Tutorials overview
+      items: [], // Placeholder for future tutorial docs
     },
+
+    // Standalone Release page
     "release",
   ],
 };
