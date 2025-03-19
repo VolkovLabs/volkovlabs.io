@@ -4,26 +4,25 @@ import Youtube from "@theme/Youtube";
 
 # Quick Start
 
-Quick Start guide provides minimum number of steps to start Business Intelligence platform using existing Grafana LGTM stack and production data.
+This Quick Start guide outlines the minimal steps to launch the Business Intelligence platform using an existing Grafana LGTM stack and production data.
 
 <Image
-  title="The quick start overview."
+  title="Quick Start overview"
   src="/img/big/quick-start/quick-start.png"
 />
 
 :::info Grafana 11
-
-The Business Engine requires Grafana 11. The Business Intelligence platform will always be compatible with the current Grafana version.
+The Business Engine requires Grafana 11. The platform is designed to stay compatible with the latest Grafana version.
 :::
 
-## Docker Compose configuration
+## Docker Compose Configuration
 
-Create `docker-compose.yml` file with the following containers:
+Set up a `docker-compose.yml` file with these containers:
 
-- **Timescale** database stores Business Engine configuration data. If you have existing Timescale database or Timescale Cloud instance you can use them to store Business Engine configuration.
-- **Business Engine** uses a service account key to access Grafana HTTP APIs to extract necessary configurations. It evaluates alert rules and calls actions.
+- **Timescale**: Stores Business Engine configuration data. Use an existing Timescale database or Timescale Cloud instance if available.
+- **Business Engine**: Connects to Grafana via a service account key, accessing HTTP APIs to retrieve configurations, evaluate alert rules, and trigger actions.
 
-```yml
+```yaml
 services:
   timescale:
     image: timescale/timescaledb:latest-pg14
@@ -37,49 +36,51 @@ services:
     depends_on:
       - timescale
     image: ghcr.io/volkovlabs/business-engine:2.6.0
-    #env_file: .env
+    #env_file: .env  # Uncomment to use an external .env file
     environment:
       DATABASE_HOST: timescale
       DATABASE_PORT: 5432
       DATABASE_DB: postgres
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgres
-      #GRAFANA_URL: https://MY-ACCOUNT.grafana.net
-      #GRAFANA_TOKEN: SERVICE-ACCOUNT-TOKEN
+      #GRAFANA_URL: https://MY-ACCOUNT.grafana.net  # Replace with your Grafana URL
+      #GRAFANA_TOKEN: SERVICE-ACCOUNT-TOKEN  # Replace with your service account token
     ports:
-      - 3001:3001
-      - 3002:3002
+      - 3001:3001 # Business Engine API
+      - 3002:3002 # Business Engine Scheduler
 ```
 
-## Start the platform
+## Starting the Platform
 
-1. Login to your Grafana Cloud, OSS or Enterprise instance.
-2. Create a service account with the `Viewer` or `Editor` role.
-3. (optional) Update `GRAFANA_URL` and `GRAFANA_TOKEN` in the `docker-compose.yml` file
+Follow these steps to get up and running:
 
-<Image
-  title="Update GRAFANA_URL and GRAFANA_TOKEN in the docker-compose.yml file."
-  src="/img/big/quick-start/token-yml.png"
-/>
+1. Log in to your Grafana instance (Cloud, OSS, or Enterprise).
+2. Create a service account with `Viewer` or `Editor` permissions.
+3. (Optional) Update `GRAFANA_URL` and `GRAFANA_TOKEN` in `docker-compose.yml`.
 
-4. Start the Business Engine and Timescale database.
+   <Image
+     title="Updating GRAFANA_URL and GRAFANA_TOKEN in docker-compose.yml"
+     src="/img/big/quick-start/token-yml.png"
+   />
 
-```
-docker compose up -d
-```
+4. Launch the Business Engine and Timescale database:
 
-5. Download the Business Studio from [Release Notes](../release). Then, install and launch it.
-6. Add Business Engine in Business Studio to configure Grafana instance, actions and alert rules.
+   ```sh
+   docker compose up -d
+   ```
 
-<Image
-  title="Alert Rules configured in Business Engine running on localhost using Business Studio."
-  src="/img/big/business-studio/alerts.png"
-/>
+5. Download Business Studio from the [Release Notes](../release), then install and open it.
+6. Add the Business Engine in Business Studio to configure your Grafana instance, actions, and alert rules.
 
-## Stop the platform
+   <Image
+     title="Alert rules configured in Business Engine via Business Studio"
+     src="/img/big/business-studio/alerts.png"
+   />
 
-Stop and delete all Docker containers.
+## Stopping the Platform
 
-```
+To stop and remove all Docker containers:
+
+```sh
 docker compose down
 ```
