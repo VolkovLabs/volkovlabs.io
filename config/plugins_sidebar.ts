@@ -1,93 +1,82 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 /**
- * Sidebars
+ * Sidebar configuration for Docusaurus.
+ * Defines the navigation structure for the 'plugins' documentation section.
  */
 const sidebars: SidebarsConfig = {
   plugins: [
+    // Business Suite section
     {
-      items: ["foundation/index", "security/index"],
-      label: "Business Suite",
       type: "category",
-      collapsible: false,
-      link: {
-        type: "doc",
-        id: "index",
-      },
+      label: "Business Suite",
+      collapsible: false, // Always expanded
+      link: { type: "doc", id: "index" }, // Links to main Suite doc
+      items: ["foundation/index", "security/index"],
     },
+
+    // Business Calendar section
     {
+      type: "category",
+      label: "Business Calendar",
+      description: "Display events and set time ranges", // Adjusted for conciseness
+      collapsible: true,
+      link: { type: "doc", id: "business-calendar/index" }, // Links to main Calendar doc
       items: [
-        {
-          type: "doc",
-          id: "business-calendar/index",
-          label: "Introduction",
-        },
+        { type: "doc", id: "business-calendar/index", label: "Introduction" },
         "business-calendar/basic-config",
         {
+          type: "category",
+          label: "Configuration",
+          link: { type: "doc", id: "business-calendar/sections" },
           items: [
             "business-calendar/main",
             "business-calendar/layout",
             "business-calendar/events",
             "business-calendar/annotations",
           ],
-          label: "Configuration",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-calendar/sections",
-          },
         },
         {
+          type: "category",
+          label: "Features",
+          link: { type: "doc", id: "business-calendar/features" },
           items: [
             "business-calendar/internationalization",
             "business-calendar/dashboard-timezones",
             "business-calendar/color",
           ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-calendar/features",
-          },
         },
         {
-          items: [],
-          label: "Tutorials",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-calendar/tutorials/index",
-          },
+          label: "Tutorials",
+          link: { type: "doc", id: "business-calendar/tutorials/index" },
+          items: [], // Placeholder for future tutorials
         },
         "business-calendar/release",
       ],
-      label: "Business Calendar",
-      type: "category",
-      description: "Display events and set time range.",
-      link: {
-        type: "doc",
-        id: "business-calendar/index",
-      },
     },
+
+    // Business Charts section
     {
+      type: "category",
+      label: "Business Charts",
+      description: "Powerful visualizations powered by Apache ECharts",
+      collapsible: true,
+      link: { type: "doc", id: "business-charts/index" },
       items: [
+        { type: "doc", id: "business-charts/index", label: "Introduction" },
         {
-          type: "doc",
-          id: "business-charts/index",
-          label: "Introduction",
-        },
-        {
-          items: ["business-charts/code/panel"],
-          label: "Charts Function",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-charts/options",
-          },
+          label: "Charts Function",
+          link: { type: "doc", id: "business-charts/options" },
+          items: ["business-charts/code/panel"],
         },
         "business-charts/visualeditor",
         "business-charts/examples",
         {
+          type: "category",
+          label: "Features",
+          link: { type: "doc", id: "business-charts/features" },
           items: [
             "business-charts/annotations",
             "business-charts/datasources",
@@ -104,56 +93,42 @@ const sidebars: SidebarsConfig = {
             "business-charts/wordcloud",
             "business-charts/expandable",
           ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-charts/features",
-          },
         },
         {
+          type: "category",
+          label: "Maps",
+          link: { type: "doc", id: "business-charts/maps/index" },
           items: [
             "business-charts/maps/geojson",
             "business-charts/maps/baidu",
             "business-charts/maps/gaode",
             "business-charts/maps/google",
           ],
-          label: "Maps",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-charts/maps/index",
-          },
         },
         {
-          items: [],
-          label: "Tutorials",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-charts/tutorials/index",
-          },
+          label: "Tutorials",
+          link: { type: "doc", id: "business-charts/tutorials/index" },
+          items: [], // Placeholder for future tutorials
         },
         "business-charts/release",
       ],
-      label: "Business Charts",
-      type: "category",
-      description:
-        "Powerful visualizations for Grafana powered by Apache ECharts.",
-      link: {
-        type: "doc",
-        id: "business-charts/index",
-      },
     },
+
+    // Business Forms section
     {
+      type: "category",
+      label: "Business Forms",
+      description: "Insert, update, and configure application data",
+      collapsible: true,
+      link: { type: "doc", id: "business-forms/index" },
       items: [
-        {
-          type: "doc",
-          id: "business-forms/index",
-          label: "Introduction",
-        },
+        { type: "doc", id: "business-forms/index", label: "Introduction" },
         "business-forms/data-flow",
         {
+          type: "category",
+          label: "Form Elements",
+          link: { type: "doc", id: "business-forms/form-elements" },
           items: [
             "business-forms/elements/button",
             "business-forms/elements/checkbox-list",
@@ -176,24 +151,18 @@ const sidebars: SidebarsConfig = {
             "business-forms/elements/text-area",
             "business-forms/elements/time",
           ],
-          label: "Form Elements",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-forms/form-elements",
-          },
         },
         "business-forms/architecture",
         {
-          items: ["business-forms/code/panel"],
-          label: "Custom Code",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-forms/code/index",
-          },
+          label: "Custom Code",
+          link: { type: "doc", id: "business-forms/code/index" },
+          items: ["business-forms/code/panel"],
         },
         {
+          type: "category",
+          label: "Features",
+          link: { type: "doc", id: "business-forms/features" },
           items: [
             "business-forms/control",
             "business-forms/request",
@@ -203,14 +172,11 @@ const sidebars: SidebarsConfig = {
             "business-forms/confirm-window",
             "business-forms/expandable",
           ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-forms/features",
-          },
         },
         {
+          type: "category",
+          label: "Servers",
+          link: { type: "doc", id: "business-forms/servers/index" },
           items: [
             "business-forms/servers/influx",
             "business-forms/servers/json",
@@ -218,51 +184,38 @@ const sidebars: SidebarsConfig = {
             "business-forms/servers/nodered",
             "business-forms/servers/postgresql",
           ],
-          label: "Servers",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-forms/servers/index",
-          },
         },
         {
-          items: [],
-          label: "Tutorials",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-forms/tutorials/index",
-          },
+          label: "Tutorials",
+          link: { type: "doc", id: "business-forms/tutorials/index" },
+          items: [], // Placeholder for future tutorials
         },
         "business-forms/release",
       ],
-      label: "Business Forms",
-      type: "category",
-      description: "Insert, update application data, and modify configuration.",
-      link: {
-        type: "doc",
-        id: "business-forms/index",
-      },
     },
+
+    // Business Input section
     {
+      type: "category",
+      label: "Business Input",
+      description: "Store and create your data",
+      collapsible: true,
+      link: { type: "doc", id: "business-input/index" },
       items: [
-        {
-          type: "doc",
-          id: "business-input/index",
-          label: "Introduction",
-        },
+        { type: "doc", id: "business-input/index", label: "Introduction" },
         "business-input/provisioning",
         "business-input/variables",
         {
-          items: ["business-input/code", "business-input/llm-app"],
-          label: "Features",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-input/features",
-          },
+          label: "Features",
+          link: { type: "doc", id: "business-input/features" },
+          items: ["business-input/code", "business-input/llm-app"],
         },
         {
+          type: "category",
+          label: "Panels",
+          link: { type: "doc", id: "business-input/panels" },
           items: [
             "business-input/panels/business-charts",
             "business-input/panels/image",
@@ -270,115 +223,87 @@ const sidebars: SidebarsConfig = {
             "business-input/panels/graph",
             "business-input/panels/pie",
           ],
-          label: "Panels",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-input/panels",
-          },
         },
         "business-input/release",
       ],
-      label: "Business Input",
-      type: "category",
-      description: "Store and create your data.",
-      link: {
-        type: "doc",
-        id: "business-input/index",
-      },
     },
+
+    // Business Media section
     {
+      type: "category",
+      label: "Business Media",
+      description: "Display Base64-encoded media files",
+      collapsible: true,
+      link: { type: "doc", id: "business-media/index" },
       items: [
-        {
-          type: "doc",
-          id: "business-media/index",
-          label: "Introduction",
-        },
+        { type: "doc", id: "business-media/index", label: "Introduction" },
         "business-media/formats",
         "business-media/options",
         {
-          items: ["business-media/datasources", "business-media/variables"],
-          label: "Features",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-media/features",
-          },
+          label: "Features",
+          link: { type: "doc", id: "business-media/features" },
+          items: ["business-media/datasources", "business-media/variables"],
         },
         {
-          items: [],
-          label: "Tutorials",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-media/tutorials/index",
-          },
+          label: "Tutorials",
+          link: { type: "doc", id: "business-media/tutorials/index" },
+          items: [], // Placeholder for future tutorials
         },
         "business-media/release",
       ],
-      label: "Business Media",
-      type: "category",
-      description: "Display Base64 encoded media files.",
-      link: {
-        type: "doc",
-        id: "business-media/index",
-      },
     },
+
+    // Business News section
     {
+      type: "category",
+      label: "Business News",
+      description: "Visualize RSS and Atom feeds using Business Text",
+      collapsible: true,
+      link: { type: "doc", id: "business-news/index" },
       items: [
-        {
-          type: "doc",
-          id: "business-news/index",
-          label: "Introduction",
-        },
+        { type: "doc", id: "business-news/index", label: "Introduction" },
         "business-news/text",
         "business-news/provisioning",
         "business-news/release",
       ],
-      label: "Business News",
-      type: "category",
-      description: "Visualize RSS and Atom feeds using Business Text.",
-      link: {
-        type: "doc",
-        id: "business-news/index",
-      },
     },
+
+    // Business Satellite section
     {
+      type: "category",
+      label: "Business Satellite",
+      description: "Connect to local and remote Grafana instances",
+      collapsible: true,
+      link: { type: "doc", id: "business-satellite/index" },
       items: [
-        {
-          type: "doc",
-          id: "business-satellite/index",
-          label: "Introduction",
-        },
+        { type: "doc", id: "business-satellite/index", label: "Introduction" },
         "business-satellite/configuration",
         "business-satellite/provisioning",
         {
-          items: ["business-satellite/annotations"],
-          label: "Features",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-satellite/features",
-          },
+          label: "Features",
+          link: { type: "doc", id: "business-satellite/features" },
+          items: ["business-satellite/annotations"],
         },
         "business-satellite/release",
       ],
-      label: "Business Satellite",
-      type: "category",
-      description: "Connect to Local and Remote Grafana instances.",
-      link: {
-        type: "doc",
-        id: "business-satellite/index",
-      },
     },
+
+    // Business Table section
     {
+      type: "category",
+      label: "Business Table",
+      description: "Simplify data visualization in table format",
+      collapsible: true,
+      link: { type: "doc", id: "business-table/index" },
       items: [
+        { type: "doc", id: "business-table/index", label: "Introduction" },
         {
-          type: "doc",
-          id: "business-table/index",
-          label: "Introduction",
-        },
-        {
+          type: "category",
+          label: "Editable Data",
+          link: { type: "doc", id: "business-table/editable" },
           items: [
             "business-table/layout",
             "business-table/add",
@@ -388,63 +313,47 @@ const sidebars: SidebarsConfig = {
             "business-table/nested",
             "business-table/permission",
           ],
-          label: "Editable data",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-table/editable",
-          },
         },
         "business-table/features",
         {
-          items: [],
-          label: "Tutorials",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-table/tutorials/index",
-          },
+          label: "Tutorials",
+          link: { type: "doc", id: "business-table/tutorials/index" },
+          items: [], // Placeholder for future tutorials
         },
         "business-table/release",
       ],
-      label: "Business Table",
-      type: "category",
-      description: "Simplify data visualization in table format.",
-      link: {
-        type: "doc",
-        id: "business-table/index",
-      },
     },
+
+    // Business Text section
     {
+      type: "category",
+      label: "Business Text",
+      description: "Dynamic, data-driven text",
+      collapsible: true,
+      link: { type: "doc", id: "business-text/index" },
       items: [
+        { type: "doc", id: "business-text/index", label: "Introduction" },
         {
-          type: "doc",
-          id: "business-text/index",
-          label: "Introduction",
-        },
-        {
-          items: ["business-text/code/panel"],
-          label: "JavaScript Code",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-text/code/index",
-          },
+          label: "JavaScript Code",
+          link: { type: "doc", id: "business-text/code/index" },
+          items: ["business-text/code/panel"],
         },
         {
+          type: "category",
+          label: "Rendering",
+          link: { type: "doc", id: "business-text/content" },
           items: [
             "business-text/rendering-content",
             "business-text/recipes",
             "business-text/styles",
           ],
-          label: "Rendering",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-text/content",
-          },
         },
         {
+          type: "category",
+          label: "Features",
+          link: { type: "doc", id: "business-text/features" },
           items: [
             "business-text/helpers",
             "business-text/eventbus",
@@ -454,14 +363,11 @@ const sidebars: SidebarsConfig = {
             "business-text/wrap",
             "business-text/expandable",
           ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-text/features",
-          },
         },
         {
+          type: "category",
+          label: "Use Cases",
+          link: { type: "doc", id: "business-text/external/index" },
           items: [
             "business-text/external/bootstrap",
             "business-text/external/chart-js",
@@ -475,63 +381,47 @@ const sidebars: SidebarsConfig = {
             "business-text/external/tensorflow",
             "business-text/external/youtube",
           ],
-          label: "Use cases",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-text/external/index",
-          },
         },
         {
-          items: [],
-          label: "Tutorials",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-text/tutorials/index",
-          },
+          label: "Tutorials",
+          link: { type: "doc", id: "business-text/tutorials/index" },
+          items: [], // Placeholder for future tutorials
         },
         "business-text/release",
       ],
-      label: "Business Text",
-      type: "category",
-      description: "Dynamic, data-driven text.",
-      link: {
-        type: "doc",
-        id: "business-text/index",
-      },
     },
+
+    // Business Variable section
     {
+      type: "category",
+      label: "Business Variable",
+      description: "Update dashboard variables",
+      collapsible: true,
+      link: { type: "doc", id: "business-variable/index" },
       items: [
+        { type: "doc", id: "business-variable/index", label: "Introduction" },
         {
-          type: "doc",
-          id: "business-variable/index",
-          label: "Introduction",
-        },
-        {
-          items: [],
-          label: "Data Flow",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-variable/data-flow",
-          },
+          label: "Data Flow",
+          link: { type: "doc", id: "business-variable/data-flow" },
+          items: [], // Placeholder for future items
         },
         {
+          type: "category",
+          label: "Display Mode",
+          link: { type: "doc", id: "business-variable/layout" },
           items: [
             "business-variable/table",
             "business-variable/minimize",
             "business-variable/button",
             "business-variable/slider",
           ],
-          label: "Display Mode",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-variable/layout",
-          },
         },
         {
+          type: "category",
+          label: "Features",
+          link: { type: "doc", id: "business-variable/features" },
           items: [
             "business-variable/sort",
             "business-variable/key",
@@ -540,31 +430,15 @@ const sidebars: SidebarsConfig = {
             "business-variable/redirect",
             "business-variable/input",
           ],
-          label: "Features",
-          type: "category",
-          link: {
-            type: "doc",
-            id: "business-variable/features",
-          },
         },
         {
-          items: [],
-          label: "Tutorials",
           type: "category",
-          link: {
-            type: "doc",
-            id: "business-variable/tutorials/index",
-          },
+          label: "Tutorials",
+          link: { type: "doc", id: "business-variable/tutorials/index" },
+          items: [], // Placeholder for future tutorials
         },
         "business-variable/release",
       ],
-      label: "Business Variable",
-      type: "category",
-      description: "Update dashboard variables.",
-      link: {
-        type: "doc",
-        id: "business-variable/index",
-      },
     },
   ],
 };
