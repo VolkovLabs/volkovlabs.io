@@ -9,78 +9,70 @@ import Feedback from "./_feedback.mdx";
 # Business Intelligence
 
 :::info Public Preview
-
-The Business Intelligence platform is currently under active development. Public Preview releases are available exclusively for testing purposes.
-
+The Business Intelligence platform is under active development. Public Preview releases are available exclusively for testing purposes.
 :::
 
-While working closely with the Community and helping to solve production use cases, we have accumulated quite a list of wishes for reimagined alerting functioning in Grafana.
+Born from close collaboration with the Grafana Community and real-world production challenges, the Business Intelligence platform reimagines alerting and analytics in Grafana.
 
-Most asks were related to simplifying user interaction by having all controls in one UI place. Many users were eager to incorporate anomaly detection with reporting for self-hosted Grafana.
-
-This is how the idea of the Business Intelligence platform was born. With time, going through a lot of brainstorming and Community feedback, we came up with a design that is easy to maintain for users and can advance in many directions.
+Users sought simpler interactions, centralized controls, and advanced features like anomaly detection and reporting for self-hosted Grafana instances. After extensive brainstorming and feedback, we’ve designed a modular, user-friendly solution that’s easy to maintain and poised for future growth.
 
 ## Architecture
 
 <Image
-  title="Business Intelligence platform architecture."
+  title="Business Intelligence platform architecture"
   src="/img/big/platform.png"
 />
 
-The Grafana Business Intelligence platform consists of the following:
+The Business Intelligence platform comprises:
 
-- Business Studio
-  - It is your control panel.
-  - Features a user-friendly interface with an overview of the whole system.
-  - Users only need one Business Studio to work with the rest of the platform.
-- Business Engine
-  - One Business Engines serves one Grafana instance.
-  - Does all the heavy lifting and all the necessary computing for all setup tasks.
-- Business Alerting
-  - It is the first part of the Business Engine that is available.
-  - Features alert systems based on Grafana panel queries, with support for customizable thresholds and variables, ensuring timely and relevant notifications for business metrics.
-- Business Reporting
-  - It is a Business Engine part that is coming soon.
-- More Business modules will be added
-  - One of them is anomaly detection.
-- Grafana is not part of the Business Intelligence
-  - You can work with any Grafana instance type, such as OSS, Enterprise, or Cloud.
+- **Business Studio**
 
-Such architecture allows users:
+  - Your central control panel.
+  - Offers a user-friendly interface with a system-wide overview.
+  - Requires only one instance to manage the entire platform.
 
-- to supervise as many Grafana instances as needed from central location (Business Studio),
-- take advantage of the user-friendly interface,
-- seamlessly integrate with new upcoming Business Engine features.
+- **Business Engine**
 
-There is a possibility of facilitating all Grafana instances version control, new Grafana dashboard propagation (for instance, from the DEV to QA to production), etc.
+  - Powers one Grafana instance per engine.
+  - Handles heavy computation and task execution.
 
-## User experience
+- **Business Alerting**
 
-The Business Studio interface accommodates two types of users - **Business** and **Technical**. You can always switch between them in profile settings (the feature is coming soon).
+  - The first available Business Engine module.
+  - Provides alert systems driven by Grafana panel queries, supporting customizable thresholds and variables for timely business metric notifications.
 
-- Business users have sleeker interfaces; those can be internal company users as well as customers. They can focus on creating alert rules and actions, provide a quick analysis and signal about critical errors if necessary.
-- Technical users have more functionality available for deeper troubleshooting, such as payloads, Grafana data frame views, etc. Those users are not shy about working with clusters and docker containers.
+- **Business Reporting**
 
-## Some features at a glance
+  - An upcoming Business Engine module (stay tuned!).
 
-- [Use Grafana dashboard variables and overrides in the alert rule configuration](/big/alerting/manage-alert-rules/#grafana-dashboard-variables)
-- [Monaco Code editor to create sophisticated alert messages](/big/studio/actions/#add-a-new-action)
-- [Simplified schedule configuration](/big/alerting/manage-alert-rules/#add-a-new-rule)
-- [Simplified connection configuration](/big/studio/manage-business-engines/#environment)
-- [Review Grafana data frames in the Business Studio](/big/alerting/analyze-alert-rules/#review-grafana-data-frames-in-the-business-studio)
-- [Auto-update](/big/studio/#auto-update)
-- [Changelog](/big/studio/#changelog)
+- **Future Modules**
 
-## More information
+  - Includes anomaly detection and more in development.
 
-- **[User-Friendly Business Studio](studio)**: Simplifies management of Business Engines, allowing non-technical users to configure, monitor, and maintain data workflows.
-- **[High-Performance Business Engine](engine)**: Delivers robust performance with distributed load balancing and high availability, integrating seamlessly with Grafana.
-- **[Advanced Business Alerts](alerting)**: Features alert systems based on Grafana panel queries, with support for customizable thresholds and variables, ensuring timely and relevant notifications for business metrics.
+- **Grafana Integration**
+  - Works with any Grafana type (OSS, Enterprise, or Cloud)—Grafana itself is not included.
+
+This architecture empowers users to:
+
+- Manage multiple Grafana instances from a single Business Studio.
+- Enjoy an intuitive interface.
+- Integrate seamlessly with upcoming Business Engine features, like version control and dashboard propagation.
+
+## User Experience
+
+Business Studio caters to two user types—**Business** and **Technical**:
+
+- **Business Users**: Sleek, simplified interfaces for internal teams or customers. Focus on creating alert rules, actions, and quick analysis to flag critical issues.
+- **Technical Users**: Advanced tools for troubleshooting, including payloads and Grafana data frames. Ideal for users comfortable with clusters and Grafana internals.
+
+## Learn More
+
+- **[User-Friendly Business Studio](/big/studio)**: Simplifies managing Business Engines for non-technical users, streamlining configuration and monitoring.
+- **[High-Performance Business Engine](/big/engine)**: Ensures robust performance with distributed load balancing and high availability, fully integrated with Grafana.
+- **[Advanced Business Alerts](/big/alerting)**: Delivers customizable, query-based alerts with threshold and variable support for actionable insights.
 
 ## Subscription
 
-We offer the Business Intelligence as a [subscription-based product](/pricing/). Community version is available for small projects.
-
-The Community version is limited to 10 Business Alerts and a single cluster of Business Engines.
+Business Intelligence is a [subscription-based product](/pricing/). A Community version is available for small projects, limited to 10 Business Alerts and a single Business Engine cluster.
 
 <Feedback />

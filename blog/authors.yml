@@ -1,3 +1,6 @@
+# Team members configuration for Volkov Labs and affiliates
+# Each entry includes name, title, image, page flag, and social media links
+
 mikhail:
   name: Mikhail Volkov
   title: Founder at Volkov Labs, Grafana Champion
@@ -36,8 +39,8 @@ vitali:
 
 chris_field:
   name: Christopher Field
-  image_url: https://avatars.githubusercontent.com/u/1915469?v=4
   title: President at Theia Scientific, LLC
+  image_url: https://avatars.githubusercontent.com/u/1915469?v=4
   page: true
   socials:
     web: https://theiascientific.com

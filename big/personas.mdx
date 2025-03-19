@@ -4,128 +4,128 @@ image: /img/big/business-studio/engine.png
 
 # Personas
 
-Below are the key personas involved in the Business Intelligence platform. Each persona reflects distinct roles, goals, and challenges in this multi-instance setup designed for external clients.
+The Business Intelligence platform supports a multi-instance setup tailored for external clients. Below are the key personas, each with distinct roles, goals, and challenges, illustrating how the platform bridges technical and business needs.
 
 ## Alex Carter: Data Analyst / BI Developer
 
 ### Overview
 
-- **Role:** Lead BI Developer for Client Dashboards
-- **Age:** 32
-- **Experience Level:** Intermediate to Advanced (5+ years in data analysis and visualization)
-- **Industry:** Technology / E-commerce / Finance
-- **Location:** Remote, works for a mid-sized company with a distributed team
+- **Role**: Lead BI Developer for Client Dashboards
+- **Age**: 32
+- **Experience**: Intermediate to Advanced (5+ years in data analysis and visualization)
+- **Industry**: Technology, E-commerce, Finance
+- **Location**: Remote, mid-sized company with a distributed team
 
 ### Background and Skills
 
-- **Education:** Bachelor's in Computer Science or Statistics
-- **Technical Proficiency:**
-  - _Grafana Expertise:_ Skilled in creating dashboards, writing SQL/PromQL queries, and using plugins (e.g., MySQL, BigQuery connectors). Adept with templating and variables.
-  - _Data Querying:_ Strong SQL skills; some NoSQL experience (e.g., MongoDB); familiar with time-series databases (Prometheus, InfluxDB).
-  - _ETL Knowledge:_ Intermediate skills with tools like dbt or Python for data preprocessing.
-  - _Programming:_ Basic Python/JavaScript for API integrations and plugin customization.
-  - _Other Tools:_ Knows Tableau/Power BI but prefers Grafana's open-source flexibility.
-- **Soft Skills:** Analytical, detail-oriented, communicates insights to non-technical stakeholders.
+- **Education**: Bachelor’s in Computer Science or Statistics
+- **Technical Skills**:
+  - _Grafana_: Skilled in dashboards, SQL/PromQL queries, and plugins (e.g., MySQL, BigQuery). Proficient with templating and variables.
+  - _Data Querying_: Strong SQL; some NoSQL (e.g., MongoDB); familiar with Prometheus, InfluxDB.
+  - _ETL_: Intermediate with Python for preprocessing.
+  - _Programming_: Basic Python/JavaScript for APIs and customization.
+  - _Other Tools_: Knows Tableau/Power BI, prefers Grafana’s flexibility.
+- **Soft Skills**: Analytical, detail-oriented, communicates insights effectively.
 
 ### Goals
 
-- Deliver real-time dashboards and manage hundreds of alerts across multiple Grafana instances for clients.
-- Ensure scalability to support dozens or hundreds of clients without performance issues.
-- Simplify management of alerts and dashboards using tools like Business Studio.
-- Maintain data security and isolation per client instance.
+- Deliver real-time dashboards and manage hundreds of alerts across Grafana instances.
+- Ensure scalability for dozens or hundreds of clients.
+- Simplify alert and dashboard management via Business Studio.
+- Maintain per-client data security and isolation.
 
 ### Challenges
 
-- Managing multiple Grafana instances is time-consuming and complex.
-- Optimizing performance for large datasets (e.g., 10M rows) across hundreds of alerts.
-- Supporting non-technical clients who want autonomy over alerts.
+- Complexity of managing multiple Grafana instances.
+- Optimizing performance for large datasets (e.g., 10M rows) with hundreds of alerts.
+- Supporting non-technical clients seeking alert autonomy.
 
-### Interaction with Business Intelligence Platform
+### Interaction with Business Intelligence
 
-- Deploys a cluster of Business Engines via Business Studio to manage hundreds of alerts with load balancing.
-- Uses Business Studio's centralized UI to configure and monitor alerts across all instances, cutting setup time by 60%.
-- Leverages API automation to scale alert deployment as clients grow.
+- Deploys Business Engine clusters via Business Studio for load-balanced alert management.
+- Cuts setup time by 60% using Business Studio’s centralized UI for alert configuration and monitoring.
+- Scales alert deployment with API automation as client base grows.
 
 ## Sarah Mitchell: Business Operations Manager
 
 ### Overview
 
-- **Role:** Business Operations Manager
-- **Age:** 38
-- **Experience Level:** Beginner to Intermediate (2-3 years with BI tools, new to Grafana)
-- **Industry:** Retail / E-commerce / Logistics
-- **Location:** Hybrid, works in a mid-sized company with a small analytics team
+- **Role**: Business Operations Manager
+- **Age**: 38
+- **Experience**: Beginner to Intermediate (2-3 years with BI tools, new to Grafana)
+- **Industry**: Retail, E-commerce, Logistics
+- **Location**: Hybrid, mid-sized company with a small analytics team
 
 ### Background and Skills
 
-- **Education:** Bachelor's in Business Administration or Marketing
-- **Technical Proficiency:**
-  - _Grafana Experience:_ Beginner; can use prebuilt dashboards but struggles with advanced features like alert configuration.
-  - _Data Skills:_ Proficient in Excel (pivot tables, charts); has used Power BI/Tableau for simple visuals; minimal SQL knowledge.
-  - _Alerting Interest:_ Wants to configure alerts (e.g., “inventory < 100 units”) but finds Grafana's query editor technical.
-  - _Other Tools:_ Familiar with CRM systems; prefers drag-and-drop interfaces.
-- **Soft Skills:** Strong communicator, focused on efficiency, translates business needs to technical teams.
+- **Education**: Bachelor’s in Business Administration or Marketing
+- **Technical Skills**:
+  - _Grafana_: Beginner; uses prebuilt dashboards, struggles with alerts.
+  - _Data Skills_: Proficient in Excel (pivot tables, charts); basic Power BI/Tableau; minimal SQL.
+  - _Alerting_: Wants simple alerts (e.g., “inventory < 100 units”), finds query editors technical.
+  - _Other Tools_: Familiar with CRMs; prefers drag-and-drop UIs.
+- **Soft Skills**: Strong communicator, efficiency-focused, bridges business and tech teams.
 
 ### Goals
 
-- Monitor operational KPIs (e.g., inventory levels, sales) via Grafana dashboards.
-- Set up proactive alerts to stay ahead of issues without relying on Alex.
-- Create intuitive dashboards for her team with minimal technical effort.
+- Monitor operational KPIs (e.g., inventory, sales) via dashboards.
+- Set proactive alerts independently of technical staff.
+- Create intuitive dashboards with minimal effort.
 
 ### Challenges
 
-- Grafana's technical interface (e.g., query-based alerts) is a barrier to independence.
-- Limited time to learn complex tools amidst operational duties.
-- Fear of misconfiguring alerts, disrupting workflows.
+- Grafana’s technical interface hinders independence.
+- Limited time to learn complex tools.
+- Risk of misconfiguring alerts and disrupting workflows.
 
-### Interaction with Business Intelligence Platform
+### Interaction with Business Intelligence
 
-- Uses Business Studio's simplified alerting UI to set alerts via dropdowns (e.g., “inventory < 100 units”).
-- Relies on data previews in Business Studio to verify alert conditions, boosting confidence.
-- Shares dashboards with her team via Business Studio's viewer access, reducing dependence on Alex.
+- Configures alerts (e.g., “inventory < 100 units”) using Business Studio’s dropdown-based UI.
+- Verifies conditions with data previews in Business Studio, reducing errors.
+- Shares dashboards via Business Studio’s viewer access, minimizing reliance on developers.
 
 ## Raj Patel: Regional Sales Manager
 
 ### Overview
 
-- **Role:** Regional Sales Manager
-- **Age:** 45
-- **Experience Level:** Beginner (1-2 years with BI tools, very new to Grafana)
-- **Industry:** Retail / E-commerce
-- **Location:** Remote, oversees Asia-Pacific sales from Singapore
+- **Role**: Regional Sales Manager
+- **Age**: 45
+- **Experience**: Beginner (1-2 years with BI tools, new to Grafana)
+- **Industry**: Retail, E-commerce
+- **Location**: Remote, oversees Asia-Pacific sales from Singapore
 
 ### Background and Skills
 
-- **Education:** Bachelor's in Business Management
-- **Technical Proficiency:**
-  - _Grafana Experience:_ Minimal; views dashboards shared by Sarah but hasn't created any.
-  - _Data Skills:_ Comfortable with Excel for reporting; has used Google Data Studio for static visuals; no coding/SQL knowledge.
-  - _Alerting Interest:_ Wants personalized alerts (e.g., “sales < $5K”) but finds Grafana's setup confusing.
-  - _Other Tools:_ Uses Salesforce for sales tracking; prefers simple interfaces.
-- **Soft Skills:** Goal-oriented, assertive, impatient with technical hurdles.
+- **Education**: Bachelor’s in Business Management
+- **Technical Skills**:
+  - _Grafana_: Minimal; views dashboards, hasn’t created any.
+  - _Data Skills_: Comfortable with Excel; basic Google Data Studio; no coding/SQL.
+  - _Alerting_: Wants custom alerts (e.g., “sales < $5K”), finds Grafana setup confusing.
+  - _Other Tools_: Uses Salesforce; prefers simple UIs.
+- **Soft Skills**: Goal-driven, assertive, impatient with tech barriers.
 
 ### Goals
 
-- Track regional sales KPIs (e.g., daily sales, order volumes) via dashboards.
-- Configure custom alerts to respond quickly to issues (e.g., sales drops).
-- Access insights efficiently without sifting through irrelevant data.
+- Track sales KPIs (e.g., daily sales, order volumes) via dashboards.
+- Set custom alerts for quick issue response.
+- Access insights without irrelevant data.
 
 ### Challenges
 
-- Grafana's technical alert setup (e.g., query editor) is inaccessible without help.
-- Limited permissions as an external user restrict editing capabilities.
-- Busy schedule leaves little time to learn complex tools.
+- Grafana’s alert setup is inaccessible without assistance.
+- Limited permissions as an external user.
+- Busy schedule leaves little time for learning.
 
-### Interaction with Business Intelligence Platform
+### Interaction with Business Intelligence
 
-- Accesses Business Studio's to configure alerts (e.g., “sales < $5K”) using dropdowns, no coding needed.
-- Uses Business Studio's data previews to ensure alerts match his region's data.
-- Receives notifications (e.g., Slack) from hundreds of managed alerts, set up by Alex, with 99.99% reliability.
+- Configures alerts (e.g., “sales < $5K”) in Business Studio with no coding required.
+- Previews data in Business Studio to ensure region-specific accuracy.
+- Receives reliable notifications (e.g., via Slack) from alerts managed by developers.
 
-## How They Work Together
+## How They Collaborate
 
-- **Alex** leverages the Business Intelligence platform to deploy and manage hundreds of alerts across client instances, ensuring scalability and performance.
-- **Sarah** uses Business Studio's intuitive tools to monitor internal KPIs and set alerts, collaborating with Alex for initial dashboard setup.
-- **Raj** taps into Business Studio's viewer access to personalize alerts from Sarah's dashboards, gaining autonomy while relying on Alex's infrastructure.
+- **Alex**: Deploys and scales hundreds of alerts across client instances, ensuring performance and reliability.
+- **Sarah**: Monitors KPIs and sets alerts via Business Studio, collaborating with Alex for initial setups.
+- **Raj**: Personalizes alerts from Sarah’s dashboards using Business Studio’s viewer access, relying on Alex’s infrastructure.
 
-Together, these personas showcase the power of the Business Intelligence platform in bridging technical and business needs, making Grafana a robust client-facing BI solution.
+Together, these personas highlight how the Business Intelligence platform empowers both technical and business users, transforming Grafana into a robust, client-facing BI solution.

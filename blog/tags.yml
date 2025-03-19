@@ -1,53 +1,56 @@
+# Product and section descriptions for Volkov Labs offerings
+# Each entry provides a concise summary of its purpose or functionality
+
 Business Suite:
-  description: The Business Suite is a collection of open source plugins for Grafana created and actively maintained by Volkov Labs.
+  description: A collection of open-source Grafana plugins created and maintained by Volkov Labs
 
 Business Intelligence:
-  description: Business Intelligence for Grafana revolutionize Your Business Insights with High-Performance, Scalable, and Alert-Driven Analytics!
+  description: Revolutionize your business insights with high-performance, scalable, and alert-driven analytics in Grafana
 
 Business Calendar:
-  description: Display events and set time range.
+  description: Visualize events and manage time ranges in Grafana
 
 Business Charts:
-  description: Powerful visualizations powered by Apache ECharts.
+  description: Create powerful visualizations using Apache ECharts within Grafana
 
 Business Forms:
-  description: Insert, update application data, and modify configuration.
+  description: Insert, update, and configure application data seamlessly
 
 Business Input:
-  description: Store and create your data.
+  description: Capture and store your data efficiently
 
 Business Media:
-  description: Display Base64 encoded and URL media files.
+  description: Display Base64-encoded and URL-based media files
 
 Business News:
-  description: Visualize RSS and Atom feeds using Business Text.
+  description: Render RSS and Atom feeds with Business Text integration
 
 Business Satellite:
-  description: Connect to Local and Remote Grafana instances.
+  description: Connect to local and remote Grafana instances effortlessly
 
 Business Table:
-  description: Simplify data visualization in table format.
+  description: Simplify data visualization with interactive tables
 
 Business Text:
-  description: Dynamic, data-driven text.
+  description: Generate dynamic, data-driven text content
 
 Business Variable:
-  description: Update dashboard variables.
+  description: Dynamically update dashboard variables
 
 Grafana Crash Course:
-  description: Grafana Crash Course is a collection of tutorials for Grafana created by Volkov Labs.
+  description: A curated set of Grafana tutorials by Volkov Labs
 
 Community:
-  description: Contributions from the Grafana Community.
+  description: Showcasing contributions from the Grafana community
 
 Solution:
-  description: Discover groundbreaking solutions from Volkov Labs.
+  description: Explore innovative solutions from Volkov Labs
 
 Development:
-  description: Development related.
+  description: Resources and guides for development
 
 Environment Data Source:
-  description: Returns environment variables.
+  description: Retrieve environment variables for use in Grafana
 
 Business Gazette:
-  description: A lot is happening at Volkov Labs. The easiest way to stay on top of the news is to read the Business Gazette.
+  description: Stay updated with the latest news from Volkov Labs through the Business Gazette

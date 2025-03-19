@@ -46,7 +46,7 @@ const Header = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              Customer Portal →
+              Partner Portal →
             </a>
           </div>
         </div>
