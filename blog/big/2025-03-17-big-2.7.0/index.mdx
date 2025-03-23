@@ -3,7 +3,8 @@ authors: [daria]
 slug: business-intelligence-2.7.0/
 tags: [Business Intelligence]
 image: /img/blog/2025-03-17-big-2.7.0/banner.png
-keywords: [Business Intelligence, Alerting, Grafana]
+keywords:
+  [Business Intelligence, Alerting, Grafana, User Profiles, Data Transfer]
 ---
 
 import Code from "@theme/Code";
@@ -13,143 +14,125 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 2.7.0: Tailored Profiles, Enhanced Previews, and Data Transfer
+# Business Intelligence 2.7.0: Smarter Profiles, Richer Previews, and Seamless Data Flow
 
-We’re thrilled to announce the public preview of Business Intelligence 2.7.0, a release from Volkov Labs that elevates the [Business Intelligence platform](/big/) with:
+We’re excited to unveil the public preview of Business Intelligence 2.7.0, brought to you by Volkov Labs. This release supercharges the [Business Intelligence platform](/big/) with powerful new features designed to simplify workflows and boost efficiency:
 
-- **User profiles** for business and technical users.
-- **Alert data previews** with visible thresholds.
+- **Tailored user profiles** for business and technical users.
+- **Enhanced alert previews** with visible thresholds.
 - **Refresh buttons** with 10-second auto-refetch.
-- **JSON export/import** for engine configurations.
-- **Alert condition drawers** accessible via action events.
-- **Infinite scroll** for alert and action history.
-- **Performance boosts** with database indexing.
+- **JSON export/import** for effortless engine configuration.
+- **Alert condition drawers** triggered by action events.
+- **Infinite scroll** for smooth alert and action history.
+- **Performance gains** through optimized database indexing.
 
-Dive into the details below to see how these updates streamline your BI experience.
+Read on to explore how these updates transform your BI experience—and try them out today!
 
-## Spotlight: Building a Scalable BI Solution with Grafana: Managing Hundreds of Alerts
+## Spotlight: Scaling BI with Grafana—Hundreds of Alerts, Zero Hassle
 
-Discover how the Business Intelligence platform scales Grafana, managing hundreds of alerts effortlessly in a high-availability environment.
+See the Business Intelligence platform in action, managing hundreds of alerts with ease in a high-availability Grafana setup. Watch the video below for a deep dive.
 
 <Youtube
   id="aOFfKYsZ9XM"
-  title="Building a Scalable BI Solution with Grafana: Managing Hundreds of Alerts."
+  title="Building a Scalable BI Solution with Grafana: Managing Hundreds of Alerts"
 />
 
 ## Updated OpenAPI Specification
 
-The Business Engine’s [OpenAPI specification](/big/api/) is refreshed, ensuring seamless integration for third-party developers and keeping your workflows aligned with the latest capabilities.
+The Business Engine’s [OpenAPI specification](/big/api/) has been revamped, ensuring smooth integration for developers and keeping your workflows in sync with the latest features.
 
-## Key Features
+## What’s New in 2.7.0
 
-### Tailored User Profiles
+### Custom User Profiles
 
-New business-oriented and technical profiles customize the experience—simplified for decision-makers, detailed for engineers—making BI accessible to all.
+Whether you’re a decision-maker or a hands-on engineer, new **business-oriented** and **technical** profiles tailor the platform to your needs—simplified views for executives, detailed controls for tech experts.
 
-Configure user profiles using the icon located in the top right corner.
-Specify a user name, email (which will be used when a user creates a ticket for our support team), and one of the two roles: **Business-oriented** or **Technical**.
+Set up your profile via the icon in the top-right corner. Add your name, email (for support tickets), and choose your role.
 
 <Image
-  title="User profile configuration."
+  title="Configure your user profile with ease."
   src="/img/blog/2025-03-17-big-2.7.0/profile-conf.png"
   width="100%"
 />
 
-When a user creates a ticket for our support team, the Business Studio automatically fills out the name and email. The user needs to write a message and optionally attach files that further outline or better demonstrate the problem/idea.
+When submitting a support ticket, your name and email auto-fill—simply add your message and any attachments to get help fast.
 
 <Image
-  title="Open a ticket screen."
+  title="Streamlined support ticket creation."
   src="/img/blog/2025-03-17-big-2.7.0/profile-support.png"
   width="100%"
 />
 
-### Enhanced Alert Data Previews
+### Alert Previews with Thresholds
 
-The alert **Data preview** page now displays thresholds, offering clearer insights into trigger conditions at a glance.
+The **Data Preview** page now highlights thresholds with Grafana’s color-coded clarity, making it easier to spot trigger conditions at a glance. To check it out:
 
-To access:
-
-1. Open any alert rule.
-2. Switch to the **Data preview** page.
-3. All values are displayed with Grafana threshold colors on the background.
-4. The image below show the Grafana thresholds for reference.
+1. Open an alert rule.
+2. Navigate to the **Data Preview** tab.
+3. View values with threshold colors applied (see reference below).
 
 <Image
-  title="Data preview page now displays thresholds."
+  title="Alert data previews now show thresholds clearly."
   src="/img/blog/2025-03-17-big-2.7.0/thresholds.png"
   width="100%"
 />
 
-### Auto-Refresh Buttons
+### Stay Fresh with Auto-Refresh
 
-New **Refresh** buttons trigger a 10-second data refetch, keeping your view current without manual effort.
-
-The button is located on almost every Business Suite application screen. The image below illustrates one location.
+New **Refresh** buttons deliver a 10-second data refetch across nearly every screen, keeping your insights up-to-date without lifting a finger. Look for it in action below.
 
 <Image
-  title="Refresh button location."
+  title="Refresh button keeps your data current."
   src="/img/blog/2025-03-17-big-2.7.0/auto-refresh.png"
   width="100%"
 />
 
-### JSON Configuration Management
+### JSON-Powered Configuration
 
 :::info
-This feature available only for technical users.
+Available exclusively for technical users.
 :::
 
-Export and import engine setups via JSON, simplifying migrations and backups across environments.
-Find the feature on the **Transfer data** page for any configured Business Engine.
+Migrate or back up your Business Engine setups effortlessly with JSON export/import. Find this feature on the **Transfer Data** tab of any configured engine.
 
 <Image
-  title="Transfer data tab for Business Engines."
+  title="Export or import engine configs via JSON."
   src="/img/blog/2025-03-17-big-2.7.0/transfer.png"
   width="100%"
 />
 
-### Alert Condition Drawers
+### Peek Inside Alerts with Condition Drawers
 
-:::info
-This feature available only for technical users.
-:::
+Curious why an alert fired? Click any action event to open a drawer showing alert conditions as they were—no digging required. Here’s how:
 
-Click an action event to open a drawer revealing alert conditions—quick access to the “why” behind triggers.
-
-To access:
-
-1. Open any action details.
-2. Switch to the **Action history** page.
-3. Click on an action event of your choice.
-4. The drawer with all alert conditions opens "as-is."
+1. Open action details.
+2. Go to the **Action History** tab.
+3. Click an event to reveal its conditions.
 
 <Image
-  title="Alert condition drawer."
+  title="Alert condition drawer offers instant insight."
   src="/img/blog/2025-03-17-big-2.7.0/alert-drawer.png"
   width="100%"
 />
 
-### Infinite Scroll History
+### Infinite Scroll Through History
 
-Scroll endlessly through alert and action messages—no pagination hassles, just fluid history browsing.
-
-Below, one screen with endless history is shown. The feature is implemented throughout all history screens, including action history, alert history, and engine history.
+Say goodbye to pagination. Alerts, actions, and engine history now flow seamlessly with infinite scroll. Check out one example below.
 
 <Image
-  title="Action history endless scrolling."
+  title="Endless scrolling through action history."
   src="/img/blog/2025-03-17-big-2.7.0/endless.png"
   width="100%"
 />
 
-### Optimized Performance
+### Faster Performance
 
-Database indexes speed up historical data retrieval, ensuring snappy performance even with large datasets.
+Database indexing accelerates historical data retrieval, delivering a snappy experience even with massive datasets. We’ve fine-tuned performance so you don’t have to wait.
 
-We vigilantly add extra indexes where necessary to improve work with a big number of alerts.
-
-## Downloads: Business Studio 2.7.0
+## Get Business Studio 2.7.0 Now
 
 :::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top security.  
+MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for maximum security.  
 :::
 
 - **MacOS**:
@@ -171,19 +154,19 @@ MacOS and Windows installers are signed, notarized, and built via automated GitH
 
 ### Business Studio 2.7.0
 
-- Added visible thresholds to alert data preview page.
-- Required Grafana instance connection for alert rule creation.
-- Enabled alert condition viewing via action event drawers.
+- Added threshold visibility to alert data previews.
+- Mandated Grafana instance connection for alert rules.
+- Enabled alert condition drawers via action events.
 - Introduced **Refresh** buttons with 10-second auto-refetch.
-- Supported JSON export/import for engine configurations.
+- Added JSON export/import for engine configurations.
 - Launched business and technical user profiles.
 - Implemented infinite scroll for alert/action history.
-- Simplified “All” variable selection in alert rule setup.
+- Streamlined “All” variable selection in alert setup.
 
 ### Business Engine 2.7.0
 
 - Added API endpoints for JSON config export/import.
-- Updated API to handle infinite scrolling efficiently.
-- Boosted performance with database indexes for historical data.
+- Optimized API for infinite scrolling performance.
+- Enhanced speed with database indexes for historical data.
 
 <Feedback />
