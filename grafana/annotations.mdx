@@ -8,78 +8,71 @@ import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Annotations
+# Exploring Annotations in Grafana
 
-Annotations is an umbrella term that includes three Grafana artifacts:
+Annotations in Grafana bring your dashboards to life by highlighting key events. They encompass three core elements:
 
 - Native annotations
 - Alerts
 - Annotation queries
 
-The schema below gives a comparative overview of these three.
+Curious about how they stack up? The schema below breaks it down.
 
 <Image
-  title="Annotations, Alerts, and Annotation queries in Grafana."
+  title="Comparing Annotations, Alerts, and Annotation Queries in Grafana."
   src="/img/grafana/annotations.png"
 />
 
-:::info
-
-The difference between annotations queries and the other two:
-
-- Native annotations and Alerts are records in the Grafana configuration database.
-- Annotation queries are configured requests to retrieve native annotation and alerts to display them on the Grafana dashboard.
-
+:::info Key Distinction
+Native annotations and Alerts are stored as records in Grafana’s configuration database, while Annotation queries are custom requests to fetch and display them on your dashboard.
 :::
 
-## Annotation Query
+## Understanding Annotation Queries
 
-The annotation queries could be further divided into two types:
+Annotation queries come in two flavors:
 
-- Built-in annotation queries.
-- User-defined annotation queries.
+- **Built-in**: Basic functionality out of the box.
+- **User-defined**: Flexible queries that can tap into any database—or even Grafana’s own storage with the [Business Satellite](/plugins/business-satellite/) data source.
 
-Built-ins provide quite a limited functionality, while user-defined ones can work with a database of your choice or even with Grafana configuration storage. For the latter, you would need Business Satellite data source.
+Check out the dataflow schema below for a closer look.
 
 <Image
-  title="Annotations, Alerts, and Annotation queries dataflow schema."
+  title="Dataflow of Annotations, Alerts, and Annotation Queries."
   src="/img/grafana/alerts-schema.png"
 />
 
-The name of native annotations might imply they are a different kind of animal than Alerts. However, under the hood, they are very similar.
+Despite their names, native annotations and Alerts share a lot under the hood. With the [Business Satellite data source](/plugins/business-satellite), you can manage both seamlessly.
 
-With a bit of help from the [Business Satellite data source](/plugins/business-satellite), you can easily work with both simultaneously.
+## Annotation Types Explained
 
-## Annotation Types
-
-In the video below, I go over the comparative schema from above.
+Dive into the video below for a walkthrough of the comparative schema.
 
 <Youtube
   id="4asWJ_Dhcmw"
-  title="Annotations, Alerts, and Annotation queries in Grafana explained."
+  title="Annotations, Alerts, and Annotation Queries in Grafana Explained."
 />
 
-## Annotations and Alerts tutorial with Timescale
+## Hands-On Tutorial: Annotations and Alerts with Timescale
 
-I think this is the best tutorial about Grafana annotations. I go over the data flow schema while providing step-by-step instructions. You can follow my steps and learn as you go.
+This is hands-down the best way to master Grafana annotations. Follow along as I guide you through the dataflow schema with step-by-step instructions—learn by doing!
 
 <Youtube
   id="bmOkirtC65w"
-  title="Annotations and Alerts tutorial for Grafana with Timescale."
+  title="Annotations and Alerts Tutorial with Timescale in Grafana."
 />
 
-## Business Satellite data source
+## Power Up with Business Satellite
 
-We created this data source to solve one of the production problems. The idea is that [Business Satellite data source](/plugins/business-satellite) supports retrieving annotations (native and alerts) to display them from local and remote Grafana instances. Various filters could be applied. The video above demonstrates it all.
+We built the [Business Satellite data source](/plugins/business-satellite) to tackle a real-world production challenge. It lets you pull native annotations and Alerts from local or remote Grafana instances, with flexible filtering options. See it in action in the tutorial above.
 
 <Image
-  title="A time-series visualization can display the results of built-in and user-defined annotation queries."
+  title="Visualizing built-in and user-defined annotation queries on a time-series graph."
   src="/img/grafana/alerts.png"
   width="100%"
 />
 
-## Annotations, Alerts and Annotation Queries in Grafana
+## Prefer Reading? Check the Blog Post
 
-For those who prefer reading to watching videos, we prepared the blog post. It reiterates the same information from a slightly different angle.
+If videos aren’t your thing, our blog post covers the same ground from a fresh perspective. Dig in!
 
 <BlogPost id="annotations-grafana-api-20230401" />

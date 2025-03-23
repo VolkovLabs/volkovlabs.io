@@ -8,57 +8,53 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Customization
+# Customizing Grafana Your Way
 
-If you ever wondered how to update icons and other style elements in the Grafana application, you came to the right corner of the Internet to find answers.
+Want to tweak Grafana’s look and feel—icons, styles, and more—to match your vision? You’re in the right place! This page unveils a treasure trove of customization tricks to transform Grafana into your own tailored application.
 
-To make the Grafana dashboard look more like your homegrown application, you can use one or all of the commands from our customization collection.
-
-Over three years, we were able to determine so many ways to customize Grafana that we have to categorize them. Our four categories are outlined in the schema below.
+Over three years, we’ve uncovered so many ways to personalize Grafana that we’ve grouped them into four categories, outlined in the schema below.
 
 <Image
-  title="Configuration, cleaning, visual and hands-on categories to Customize Grafana."
+  title="Four ways to customize Grafana: Configuration, Cleaning, Visual, and Hands-On."
   src="/img/grafana/customization.png"
 />
 
-The next important piece of information is the list of actual commands. Just scroll down a bit to find a Docker file. We keep it up to date with our latest findings.
+Scroll down for our latest `Dockerfile`—packed with commands to get you started. Let’s dive into the details!
 
-### Grafana 11
+## Customize Grafana 11
 
-Are you excited to explore the possibilities of customization in Grafana 11?
+Excited to see what’s possible in Grafana 11? This video explores the customization landscape.
 
-<Youtube id="8ArQ0vlWA88" title="What can you customize in Grafana 11?" />
+<Youtube id="8ArQ0vlWA88" title="What Can You Customize in Grafana 11?" />
 
-In this post, you will find a vast collection of various commands that intend to help you adjust Grafana as an application according to your style and requirements.
+For a deep dive, this blog post offers a hefty collection of commands to bend Grafana 11 to your will.
 
 <BlogPost id="how-to-customize-grafana-11.1.0" />
 
-### Grafana 10
+## Tailor Grafana 10 (and Earlier)
 
-If the cheat-sheet above and the actual Dockerfile are not enough, you can watch the video below. I go over the topic in greater detail and demonstrate what elements exactly are customizable.
+Need more? This video dives into Grafana 9.4 customization, showcasing tweakable elements with a handy cheat-sheet for Docker and Windows.
 
 <Youtube
   id="ChI78v4UZc0"
-  title="How to customize Grafana 9.4. A cheat-sheet for Docker container and Windows."
+  title="How to Customize Grafana 9.4: A Cheat-Sheet for Docker and Windows"
 />
 
-This article collects various commands to help you play with the Grafana in your style. It was updated multiple times with the latest version of Grafana 10.
+Updated for Grafana 10, this post gathers commands to style Grafana your way—perfect for experimentation.
 
 <BlogPost id="how-to-customize-the-grafana-user-interface-8d70a42dc2b6" />
 
-## Spring cleaning
+## Spring Cleaning: Trim the Fat
 
-In the "Spring cleaning" we go into details of the 'Cleaning' category. The idea that unnecessary parts can be removed from the Grafana installation package seemed worthy of a separate article.
+Our “Cleaning” category deserves its own spotlight. Learn how to strip away unneeded parts from Grafana’s installation package in this detailed post.
 
 <BlogPost id="native-grafana-plugins-20230409" />
 
-## Docker file
+## Your Customization Toolkit: The Dockerfile
 
-Our customization is done in the Docker file and it can be easily replicated for host installation. Tough, as I explain in the video, it will not be as easy as a walk in the park.
+Our go-to customization happens in this `Dockerfile`. It’s built for Docker but adaptable to host setups—though, as the video explains, it’s not always a breeze on hosts like Windows.
 
-If you ever collect commands for the Windows host installation, feel free to share them with us and we add this list to the crash course. You will have full credit for it.
-
-We constantly update our Docker builds based on the latest version of Grafana.
+Got Windows-specific commands? Share them with us! We’ll add them to this crash course with full credit to you. We keep this `Dockerfile` fresh with the latest Grafana updates.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile"
