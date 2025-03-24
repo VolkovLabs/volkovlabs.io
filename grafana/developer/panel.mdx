@@ -7,112 +7,107 @@ import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Build a panel plugin
+# Build a Panel Plugin
 
-We are not here to lecture you on the basics of programming. If you are already looking to build a plugin for Grafana, you most likely know a thing or two about software development.
+This guide assumes you’re already familiar with software development fundamentals—no basic programming lectures here. If you’re ready to build a Grafana plugin, our step-by-step video tutorial, led by Daria, is designed to get you started quickly.
 
-We thought that the "follow-me, step-by-step tutorial" format, where Daria demonstrates the steps, might be the fastest to get you up to speed.
+We’ve split the tutorial into three parts. If you find this format helpful, please show your support by liking the videos on YouTube and leaving a comment!
 
-To this day, we have created three parts of the tutorial. If you like our format, please indicate that by liking the videos on YouTube and leaving a comment.
+## Part 1: Getting Started
 
-## Part 1
+Relax and watch Daria create a panel plugin from scratch—or follow along to build your own, complete with version control setup by the end.
 
-Lean back on your chair and watch how Daria creates a panel plugin for Grafana.
+**Steps Covered:**
 
-Alternatively, follow every step and in the end have your first-ever panel plugin created and provisioned with configured version control!
-
-In this part, Daria walks you through the following 10 steps:
-
-- Step 1. Prerequisites.
-- Step 2. Scaffolding.
-- Step 3. VS Code.
-- Step 4. Install dependencies.
-- Step 5. Build a plugin.
-- Step 6. Start Grafana instance.
-- Step 7. Login into Grafana UI.
-- Step 8. Create a dashboard.
-- Step 9. Provisioning.
-- Step 10. Rebuild the Grafana container.
+- Step 1: Prerequisites
+- Step 2: Scaffolding
+- Step 3: Setting up VS Code
+- Step 4: Installing dependencies
+- Step 5: Building the plugin
+- Step 6: Starting a Grafana instance
+- Step 7: Logging into the Grafana UI
+- Step 8: Creating a dashboard
+- Step 9: Provisioning
+- Step 10: Rebuilding the Grafana container
 
 <Youtube
   id="KnaPBKoXuEw"
-  title="Part 1. Build a panel plugin tutorial for Grafana."
+  title="Part 1: Build a Panel Plugin Tutorial for Grafana"
 />
 
-## Part 2
+## Part 2: Enhancing Your Plugin
 
-Daria walks you through the following 10 steps:
+Daria continues with the next phase, guiding you through additional development and version control steps.
 
-- Step 11. Version Control.
-- Step 12. Update Grafana Version.
-- Step 13. Update Dependencies.
-- Step 14. GitHub Commit.
-- Step 15. Plugin.json file.
-- Step 16. Plugin Options and Types.
-- Step 17. Update component.
-- Step 18. Commit to GitHub.
-- Step 19. Update Styles.
-- Step 20. Add Data Source.
+**Steps Covered:**
+
+- Step 11: Setting up version control
+- Step 12: Updating Grafana version
+- Step 13: Updating dependencies
+- Step 14: Committing to GitHub
+- Step 15: Configuring the plugin.json file
+- Step 16: Adding plugin options and types
+- Step 17: Updating the component
+- Step 18: Committing changes to GitHub
+- Step 19: Updating styles
+- Step 20: Adding a data source
 
 <Youtube
   id="9xz_wvFz2ts"
-  title="Part 2. Build a panel plugin tutorial for Grafana."
+  title="Part 2: Build a Panel Plugin Tutorial for Grafana"
 />
 
-## Part 3
+## Part 3: Testing and Publishing
 
-This part is a heavy-loaded one with insights and guidance. Daria covers the unit and end-to-end tests, demonstrates how GitHub actions work, and walks you through the plugin signing process with further submission for review.
+This in-depth part dives into testing, automation, and the plugin submission process—packed with practical insights.
 
-- Step 21. Unit tests and GitHub Continuous Integration.
-- Step 22. End-to-end tests.
-- Step 23. Signing a plugin.
-- Step 24. Release Workflow.
-- Step 25. Submit Plugin for Review.
-- Step 26. Change a private plugin to a community plugin.
+**Steps Covered:**
+
+- Step 21: Unit tests and GitHub Continuous Integration
+- Step 22: End-to-end (E2E) tests
+- Step 23: Signing the plugin
+- Step 24: Setting up a release workflow
+- Step 25: Submitting the plugin for review
+- Step 26: Converting a private plugin to a community plugin
 
 <Youtube
   id="ga5Ik32vqIw"
-  title="Part 3. Build a panel plugin tutorial for Grafana."
+  title="Part 3: Build a Panel Plugin Tutorial for Grafana"
 />
 
-Here are some highlights of the video.
+### Highlights from Part 3
 
-### Unit tests
+#### Unit Tests
 
 <Image
-  title="Some developers praise unit tests, others consider them worthless."
+  title="Some developers swear by unit tests; others see them as optional"
   src="/img/grafana/unit-y-n.png"
 />
 
-We use Unit tests in our projects and strive to achieve a least 90% of coverage.
-
-Grafana tools provide two ready-to-use test scripts.
-One is called `test` and the other one is `test:ci`.
-
-The two schemas below highlight the difference.
+We rely on unit tests in our projects, targeting at least 90% coverage. Grafana’s plugin tools include two built-in test scripts: `test` and `test:ci`. The diagrams below illustrate their differences.
 
 <table>
   <tr style={{ border: "none" }}>
     <td width="50%" style={{ border: "none" }}>
       <Image
-        title="Conceptual View of the Test Script."
+        title="Conceptual View of the Test Script"
         src="/img/grafana/test.png"
       />
     </td>
     <td width="*" style={{ border: "none" }}>
       <Image
-        title="Conceptual View of Test CI (Continuous Integration) script."
+        title="Conceptual View of the Test CI (Continuous Integration) Script"
         src="/img/grafana/testci.png"
       />
     </td>
   </tr>
 </table>
 
-### End-to-end (E2E) tests
+#### End-to-End (E2E) Tests
 
-End-to-end tests offer to QA your application as if it is done by a human. There are a lot of challenges and false positive alarms, yet, we consider E2E to be helpful and recommend utilizing them for your plugin development needs.
+E2E tests simulate human interaction with your application. While they can be challenging and prone to false positives, we find them valuable and recommend incorporating them into your plugin development workflow.
 
 <Image
-  title="How I explain E2E to my 6-year-old."
+  title="How I explain E2E tests to my 6-year-old"
   src="/img/grafana/e2e-overview.png"
 />

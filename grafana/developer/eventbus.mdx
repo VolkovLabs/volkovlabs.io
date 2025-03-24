@@ -6,13 +6,15 @@ tags:
 import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 
-# Grafana events (EventBus)
+# Grafana Events (EventBus)
 
-Grafana uses an event bus to publish application events to notify different parts of Grafana when the user acts.
+Grafana leverages an **EventBus** to broadcast application events, enabling different parts of the system to respond when a user interacts with the interface. This mechanism facilitates real-time communication across components.
+
+Here’s a simple example of subscribing to an event:
 
 ```js
 const subscription = eventBus.subscribe({ type: "data-hover" }, () => {
-  console.log("Data hovered.");
+  console.log("Data hovered");
 });
 
 return () => {
@@ -22,33 +24,41 @@ return () => {
 
 ## Predefined Events
 
-| Event                             | Description                                                                                         |
-| --------------------------------- | --------------------------------------------------------------------------------------------------- |
-| absolute-time                     | Called when the user selects an absolute time range on the dashboard.                               |
-| annotation-event                  | Called when an annotation event occurs, such as when an annotation is created, updated, or deleted. |
-| annotation-query-finished         | Called when an annotation query has finished executing.                                             |
-| annotation-query-started          | Called when an annotation query has started executing.                                              |
-| copy-panel                        | Called to copy a panel JSON into local storage.                                                     |
-| dashboard-loaded                  | Called when a dashboard is loaded.                                                                  |
-| dashboard-saved                   | Called when a dashboard is saved.                                                                   |
-| data-hover                        | Hovering over Legend and data point when shared crosshair enabled.                                  |
-| data-hover-clear                  | Called when the user stops hovering over a data point on a panel when shared crosshair enabled.     |
-| data-select                       | Called when the user selects a data point on a panel.                                               |
-| datasource-updated-successfully   | Called when a datasource is successfully updated.                                                   |
-| panel-edit-finished               | Called when the user finishes editing a panel.                                                      |
-| panel-edit-started                | Called When the user starts editing a panel.                                                        |
-| refresh                           | Called when a dashboard is refreshed.                                                               |
-| render                            | Called when a dashboard is rendered.                                                                |
-| shift-time                        | Called when the time shifts range on the dashboard.                                                 |
-| theme-changed                     | Called when the theme settings change.                                                              |
-| time-range-updated                | Called when time range is updated.                                                                  |
-| variables-changed                 | Called when the variable values on the dashboard are changed.                                       |
-| variables-changed-in-url          | Called when the variable values in the URL are changed.                                             |
-| variables-time-range-process-done | Called when the time range for variables in the dashboard is processed.                             |
-| zoom-out                          | Called when use time range zoom out.                                                                |
+The EventBus supports a variety of predefined events. Below is a list of key events and their purposes:
 
-## Panels interconnectivity in Grafana via EventBus
+| Event                             | Description                                                                        |
+| --------------------------------- | ---------------------------------------------------------------------------------- |
+| absolute-time                     | Triggered when a user selects an absolute time range on the dashboard              |
+| annotation-event                  | Fired when an annotation is created, updated, or deleted                           |
+| annotation-query-finished         | Occurs after an annotation query completes                                         |
+| annotation-query-started          | Occurs when an annotation query begins                                             |
+| copy-panel                        | Initiated to copy a panel’s JSON to local storage                                  |
+| dashboard-loaded                  | Fired when a dashboard finishes loading                                            |
+| dashboard-saved                   | Triggered after a dashboard is saved                                               |
+| data-hover                        | Occurs when hovering over a legend or data point with shared crosshair enabled     |
+| data-hover-clear                  | Fired when the user stops hovering over a data point with shared crosshair enabled |
+| data-select                       | Triggered when a user selects a data point on a panel                              |
+| datasource-updated-successfully   | Fired when a datasource update succeeds                                            |
+| panel-edit-finished               | Occurs when a user finishes editing a panel                                        |
+| panel-edit-started                | Triggered when a user begins editing a panel                                       |
+| refresh                           | Fired when a dashboard is refreshed                                                |
+| render                            | Occurs when a dashboard is rendered                                                |
+| shift-time                        | Triggered when the dashboard’s time range shifts                                   |
+| theme-changed                     | Fired when the theme settings are modified                                         |
+| time-range-updated                | Occurs when the time range is updated                                              |
+| variables-changed                 | Triggered when dashboard variable values change                                    |
+| variables-changed-in-url          | Fired when variable values in the URL are updated                                  |
+| variables-time-range-process-done | Occurs when the time range processing for variables completes                      |
+| zoom-out                          | Triggered when the user zooms out the time range                                   |
 
-This article describes the possibility of using Business Charts, Grafana Events, and Extended Result for panel communication by sending and receiving events in Grafana.
+## Panel Interconnectivity via EventBus
+
+You can harness the EventBus to enable communication between panels in Grafana. For a practical example, the article below explores how to use [Business Charts](/plugins/business-charts/), **Grafana Events**, and **Extended Result** to send and receive events, enhancing panel interactivity.
 
 <BlogPost id="echarts-shared-crosshair-and-eventbus-20240520" />
+
+## Conclusion
+
+The Grafana EventBus is a powerful tool for developers looking to create dynamic, responsive plugins. By subscribing to predefined events—or even defining your own—you can build interconnected dashboards that react instantly to user actions.
+
+Whether you’re enhancing visualizations or enabling cross-panel communication, mastering the EventBus unlocks a new level of flexibility and control in Grafana development. Dive in, experiment, and see how far you can push the boundaries!

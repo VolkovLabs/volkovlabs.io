@@ -3,33 +3,37 @@ tags:
   - Advanced
 ---
 
-# Unsigned plugins
+# Unsigned Plugins Made Simple
 
-To allow unsigned plugins, enter a comma-separated list of plugin identifiers to load even if they are unsigned.
+To allow unsigned plugins in Grafana, just add a comma-separated list of plugin identifiers to load them without signatures. Here’s how to configure it for Docker or a host installation.
 
-## Docker
+## Docker Configuration
 
-Update environment variable in the Docker container.
+Update the environment variable in your Docker container like this:
 
 ```sh
 GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=PLUGIN-ID
 ```
 
-## Host installation
+Replace `PLUGIN-ID` with your plugin identifiers (e.g., `my-plugin, another-plugin`).
 
-Update `grafana.ini` for Host installation.
+## Host Installation
+
+For a host setup, edit the `grafana.ini` file with:
 
 ```sh
 allow_loading_unsigned_plugins=PLUGIN-ID
 ```
 
-## Manifest file
+Swap `PLUGIN-ID` with the identifiers of your unsigned plugins.
 
-Signed plugins store checksum for all included files in the `MANIFEST.txt` file. Delete the `MANIFEST.txt` file if
+## Manifest File Tweaks
 
-- Need to modify `plugin.json` or any other plugin files.
-- The plugin was signed for a specific URL and it does not match your Grafana's URL.
+Signed plugins use a `MANIFEST.txt` file to store checksums. Delete it if you need to:
 
-## Plugin Management
+- Modify `plugin.json` or other plugin files.
+- Use a plugin signed for a URL that doesn’t match your Grafana instance.
 
-If you are not familiar with Plugin Management in Grafana, take a look at the [Plugin management](https://grafana.com/docs/grafana/latest/administration/plugin-management/) in the documentation.
+## Learn More About Plugins
+
+Not sure about plugin management? Check out Grafana’s [Plugin Management documentation](https://grafana.com/docs/grafana/latest/administration/plugin-management/) for a detailed guide.

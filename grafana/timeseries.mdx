@@ -8,106 +8,98 @@ import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Time series
+# Diving into Time Series
 
-Time Series is one of the first Grafana visualization panels. Some people still argue about what came first: Grafana or Time Series. With that being said, this panel is tightly embedded into the Grafana core and plays a giant role in Grafana's identity.
+The Time Series panel is a cornerstone of Grafana—some even joke it’s hard to say which came first: Grafana or Time Series! Deeply woven into Grafana’s core, this panel defines much of its identity and power. Let’s explore what makes it tick.
 
-## Data frames
+## Understanding Data Frames
 
-In Grafana's realm, a data frame is a specific concept. In the picture below, you can see the fundamental basics of Grafana. A data source works with data storage to retrieve data according to the retrieval queries. A visualization panel expects data in a particular format to be able to display it.
+In Grafana, "data frames" are the bridge between your data source and visualization panels. A data source pulls data from storage based on queries, and panels like Time Series expect it in a specific format. The image below lays out the basics.
 
 <Image
-  title="Data frames is a common denominator between a data source and panel."
+  title="Data frames connect data sources to panels."
   src="/img/grafana/grafana-basics.png"
   width="80%"
 />
 
-The common denominator in this process is a data frame, meaning data in a specific format that a data source retrieves and the visualization panel expects as input. A data frame format is a table layout with typified columns.
+A data frame is essentially a table with typed columns, acting as the common language between retrieval and display. If your data source doesn’t deliver the right format, Grafana’s transformations (since v7.0) can step in—check out our [Transformations section](/grafana/transformations) for more.
 
-For all instances when a data source cannot return a required format, Grafana, starting from v7.0, introduced transformations. Please refer to a separate [section in our course](/grafana/transformations) to learn about transformations.
-
-:::info Time Data
-One column must be in a time data format for the Time Series panel to work correctly.
+:::info Time Requirement
+For Time Series to work its magic, at least one column must be in a time data format.
 :::
 
-Time Series accepts the following formats.
+Here’s how Time Series likes its data frames:
 
 <Image
-  title="Time Series accepted data frames."
+  title="Supported data frame formats for Time Series."
   src="/img/grafana/ts-dataformats.png"
   width="80%"
 />
 
-### Simple
+### Simple Format
 
-The simple format consists of two columns. One column must be in a time format, and the other must contain metric values for display. Metric values should be numeric. Time Series treats a metric column as a data series.
+Two columns: one for time, one for numeric metric values. Each metric column becomes a data series on the chart.
 
-### Wide
+### Wide Format
 
-The wide format is similar to the simple, but you can have multiple columns instead of one. Every column will be treated as a data series.
+Like Simple, but with multiple metric columns—each treated as its own data series.
 
-### Multi-dimensional
+### Multi-Dimensional Format
 
-The multi-dimensional data format is when a data source returns multiple simple or wide formats. Every single simple or wide, in that event, is called a dimension. You can switch between dimensions in the drop-down located between the visualization preview and the data source query area.
+When a data source returns several Simple or Wide frames, each is a “dimension”. Switch between them using the dropdown above the query area.
 
 <Image
-  title="Switch between dimensions in this drop-down."
+  title="Select dimensions from this dropdown."
   src="/img/grafana/dimension-select.png"
 />
 
-## Display options
+## Styling Your Time Series
 
-Time Series builds lines, bars, dots and any combination of those.
+Time Series can render lines, bars, dots—or mix them up however you like. Check out some styling examples below.
 
 <Image
-  title="Some examples of Time Series styling."
+  title="Variety in Time Series visualizations."
   src="/img/grafana/variety.png"
 />
 
-### Override options
+### Overrides: Fine-Tune Your Series
 
-The override options feature is one of the powerful Grafana concepts. For Time Series, in particular, you might need it when working with either wide or multi-dimensional data frames.
+With Wide or Multi-Dimensional data, the override feature shines. It lets you customize each data series individually—say, bars for one, a filled line for another. It’s a powerful way to highlight what matters.
 
-Both of these data layouts are meant to contain data for multiple data series. The override functionality allows you to configure the visualization of each data series separately.
+## Streaming Live Data
 
-For instance, one data series could be a bar visualization and the other one - a line with a colored area underneath.
+Time Series excels at showing live, streaming data—perfect for real-time insights. Your data source needs to support streaming, though. For examples, peek at our [Business Charts plugin docs](/plugins/business-charts/streaming)—they’re not Time Series-specific, but they’re the closest we’ve got for now!
 
-## Streaming
+## Annotations and Alerts
 
-Time Series visualization is ideal for displaying live data, or, in other words, streaming. Your data source must support streaming. You can find some profound examples of streaming in our [Business Charts plugin documentation](/plugins/business-charts/streaming).
-
-Yes, the materials are created for a different plugin, but it is as close as we could get to documenting streaming in Grafana at this moment.
-
-## Annotations and alerts
-
-Time Series supports annotations and alerts natively. In edit mode, you can find the Alerts tab to create an alert rule for this particular visualization. All queries will be copied into the alert creation form, saving you time and patience.
+Time Series natively supports annotations and alerts. In edit mode, hit the Alerts tab to craft an alert rule—your queries auto-populate, saving you time.
 
 <Image
-  title="Alert rule is prepopulated if created from Edit mode."
+  title="Alerts prepopulate from Edit mode for quick setup."
   src="/img/grafana/alert-tab.png"
   width="80%"
 />
 
-For more information about annotation and alerts, please, refer to a specific [section of our Grafana crash course](/grafana/annotations).
+Want more on this? Head to our [Annotations section](/grafana/annotations).
 
-## Grafana's most popular plugin
+## Video Walkthrough: Time Series Basics
 
-If you like to reiterate the materials you just read in a video form, with examples and some step-by-step guidance, please, watch our YouTube video where I walk over the Time Series and demo along the way.
+Prefer seeing it in action? This video walks through Time Series with demos and step-by-step guidance—perfect for visual learners.
 
 <Youtube
   id="YpOazX67GSo"
-  title="Time Series panel is the Grafana most popular plugin."
+  title="Exploring the Time Series Panel: Grafana’s Most Popular Visualization"
 />
 
-## Monitoring Linux servers with Prometheus, Node Exporter and Grafana Time Series
+## Monitor Linux Servers with Time Series
 
-Join me in this short tutorial to quickly learn how to create monitoring dashboards in Grafana, without spending hours reading through the documentation!
+Need a quick win? Join me in this short tutorial to build a monitoring dashboard for Linux servers using Prometheus, Node Exporter, and Time Series—no manual slog required!
 
 <Youtube
   id="zhWStcxU4Uw"
-  title="Create Grafana dashboard to monitor Linux servers using Prometheus data source."
+  title="Monitor Linux Servers with Grafana, Prometheus, and Time Series"
 />
 
-Both, the video and this article, are complementing each other since some of the materials are better in a motion picture format and some shine brighter in the written word.
+This page and the videos pair perfectly—some concepts shine on screen, others in text. For more, check out the blog below.
 
 <BlogPost id="timeseries-dashboard-20230926" />
