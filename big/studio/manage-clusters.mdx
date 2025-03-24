@@ -4,40 +4,48 @@ tags:
 ---
 
 import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
 
 # Clusters
 
-A cluster in the Business Studio is a group of business engines with the same token connected to the same configuration database and Grafana instance.
+In Business Studio, a cluster is a group of Business Engines sharing the same token, configuration database, and Grafana instance. Clusters appear in the left-hand sidebar, each with two dedicated pages:
 
-Clusters are displayed in the left-hand side menu. Each cluster has two pages.
+- **Load Balancing**
+- **Settings**
 
-- **Load balancing**,
-- **Settings**.
-
-We strive to achieve a high performance in business intelligence. Our approach to cluster load balancing is one of the things that helps the cause. We work to ensure better alert balancing between connected Business engines.
-
-The existing architecture allows for running specific queries on specific business engines and completely avoids unnecessary duplication.
+High performance is a cornerstone of the Business Intelligence platform. Our cluster load balancing approach enhances efficiency by distributing alerts optimally across connected Business Engines. The architecture ensures specific queries run on designated engines, eliminating redundant query execution.
 
 :::info
-
-The current architecture prevents query duplication by executing all queries on specific business engines, thereby avoiding unnecessary run of the same queries.
-
+The current design prevents duplication by executing queries on assigned Business Engines, avoiding unnecessary repetition.
 :::
 
-### Load balancing
+<Youtube
+  id="aOFfKYsZ9XM"
+  title="Building a Scalable BI Solution with Grafana: Managing Hundreds of Alerts"
+/>
 
-Here, you can see the number of business engines in the cluster and the number of scheduled alerts. Then, down below, you have a list of business engines with Grafana dashboards they serve. Each dashboard is displayed with a list of created alerts.
+## Load Balancing
+
+The **Load Balancing** page displays:
+
+- The number of Business Engines in the cluster
+- The total scheduled alerts
+- A list of Business Engines, their associated Grafana dashboards, and the alerts tied to each dashboard
 
 <Image
-  title="Load balancing page for the Alpha cluster."
+  title="Load Balancing Page for the Alpha Cluster"
   src="/img/blog/2025-02-14-big-2.5.0/cluster-lb.png"
 />
 
-### Settings
+## Settings
 
-Here, you can specify the cluster's name, review the token details and the listing of connected business engines, their version, and their status.
+The **Settings** page allows you to:
+
+- Define the cluster name
+- Review token details
+- View a list of connected Business Engines, including their versions and statuses
 
 <Image
-  title="Settings page for the Alpha cluster."
+  title="Settings Page for the Alpha Cluster"
   src="/img/blog/2025-02-14-big-2.5.0/cluster-settings.png"
 />

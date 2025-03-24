@@ -4,23 +4,23 @@ import Youtube from "@theme/Youtube";
 
 # Quick Start
 
-This Quick Start guide outlines the minimal steps to launch the Business Intelligence platform using an existing Grafana LGTM stack and production data.
+This Quick Start guide provides the essential steps to deploy the Business Intelligence platform using an existing Grafana LGTM (Loki, Grafana, Tempo, Mimir) stack and production data.
 
 <Image
-  title="Quick Start overview"
+  title="Quick Start Overview"
   src="/img/big/quick-start/quick-start.png"
 />
 
 :::info Grafana 11
-The Business Engine requires Grafana 11. The platform is designed to stay compatible with the latest Grafana version.
+The Business Engine requires Grafana 11 and maintains compatibility with the latest Grafana version.
 :::
 
 ## Docker Compose Configuration
 
-Set up a `docker-compose.yml` file with these containers:
+Configure a `docker-compose.yml` file with the following containers:
 
-- **Timescale**: Stores Business Engine configuration data. Use an existing Timescale database or Timescale Cloud instance if available.
-- **Business Engine**: Connects to Grafana via a service account key, accessing HTTP APIs to retrieve configurations, evaluate alert rules, and trigger actions.
+- **Timescale**: Manages Business Engine configuration data (use an existing Timescale database or Timescale Cloud if available)
+- **Business Engine**: Connects to Grafana via a service account token, leveraging HTTP APIs to fetch configurations, evaluate alert rules, and execute actions
 
 ```yaml
 services:
@@ -36,15 +36,15 @@ services:
     depends_on:
       - timescale
     image: ghcr.io/volkovlabs/business-engine:2.6.0
-    #env_file: .env  # Uncomment to use an external .env file
+    # env_file: .env  # Uncomment to use an external .env file
     environment:
       DATABASE_HOST: timescale
       DATABASE_PORT: 5432
       DATABASE_DB: postgres
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgres
-      #GRAFANA_URL: https://MY-ACCOUNT.grafana.net  # Replace with your Grafana URL
-      #GRAFANA_TOKEN: SERVICE-ACCOUNT-TOKEN  # Replace with your service account token
+      # GRAFANA_URL: https://MY-ACCOUNT.grafana.net  # Replace with your Grafana URL
+      # GRAFANA_TOKEN: SERVICE-ACCOUNT-TOKEN  # Replace with your service account token
     ports:
       - 3001:3001 # Business Engine API
       - 3002:3002 # Business Engine Scheduler
@@ -52,34 +52,29 @@ services:
 
 ## Starting the Platform
 
-Follow these steps to get up and running:
+Follow these steps to launch the platform:
 
-1. Log in to your Grafana instance (Cloud, OSS, or Enterprise).
-2. Create a service account with `Viewer` or `Editor` permissions.
-3. (Optional) Update `GRAFANA_URL` and `GRAFANA_TOKEN` in `docker-compose.yml`.
-
+1. Log in to your Grafana instance (Cloud, OSS, or Enterprise)
+2. Create a service account with `Viewer` or `Editor` permissions
+3. (Optional) Update `GRAFANA_URL` and `GRAFANA_TOKEN` in `docker-compose.yml`:
    <Image
-     title="Updating GRAFANA_URL and GRAFANA_TOKEN in docker-compose.yml"
+     title="Update GRAFANA_URL and GRAFANA_TOKEN in docker-compose.yml"
      src="/img/big/quick-start/token-yml.png"
    />
-
-4. Launch the Business Engine and Timescale database:
-
+4. Start the Business Engine and Timescale containers:
    ```sh
    docker compose up -d
    ```
-
-5. Download Business Studio from the [Release Notes](../release), then install and open it.
-6. Add the Business Engine in Business Studio to configure your Grafana instance, actions, and alert rules.
-
+5. Download Business Studio from the [Release Notes](../release), then install and launch it
+6. In Business Studio, add the Business Engine to configure your Grafana instance, actions, and alert rules:
    <Image
-     title="Alert rules configured in Business Engine via Business Studio"
+     title="Alert Rules Configured via Business Studio"
      src="/img/big/business-studio/alerts.png"
    />
 
 ## Stopping the Platform
 
-To stop and remove all Docker containers:
+To stop and remove all containers:
 
 ```sh
 docker compose down
