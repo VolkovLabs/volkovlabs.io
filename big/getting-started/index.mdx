@@ -4,221 +4,213 @@ import Youtube from "@theme/Youtube";
 
 # Getting Started
 
-The Business Intelligence platform utilizes Docker containers to be modular and scalable. This section describes one possible solution to demonstrate how you can get started.
+The Business Intelligence platform leverages Docker containers for modularity and scalability. This guide presents a comprehensive setup that integrates the platform with additional tools to simulate a near-real-world scenario. For a simpler introduction, refer to the [Quick Start](/big/quick-start/) section.
 
-It is a comprehensive solution that combines the Business Intelligence with other tools that we added to emulate a close-to-real-world scenario. If you are interested in a lighter example, please use the [Quick Start](/big/quick-start/) section.
-
-Feel free to follow the steps to arrive at the same results in your environment. From there, you can adjust as needed.
+Follow these steps to replicate this setup in your environment, then adapt as needed.
 
 :::info Grafana 11
-
-The Business Engine requires Grafana 11. The Business Intelligence platform will always be compatible with the current Grafana version.
+The Business Engine requires Grafana 11. The platform maintains compatibility with the latest Grafana version.
 :::
 
-## Getting started solution overview
+## Solution Overview
 
 <Image
-  title="The getting started solution overview."
+  title="Overview of the Getting Started Solution"
   src="/img/big/getting-started/overview.png"
 />
 
-Once all parts of the suggested solution are installed and configured, end-users will work with the Business Studio to manage business engines, alert rules and actions, and other configurations. They also will have a Grafana instance where we preconfigured three dashboards:
+Once configured, this solution provides:
 
-- one dashboard to display the Business Engine performance data (metrics),
-- two dashboards to display production data.
+- **Business Studio**: A central interface to manage Business Engines, alert rules, actions, and configurations
+- **Grafana Instance**: Preconfigured with three dashboards:
+  - Business Engine performance metrics
+  - Two dashboards for production data
 
-## Tutorial
+## Tutorial Video
 
-In this introductory video, Daria provides a detailed walk-through of the installation process. Following that, she demonstrates how to create your first alert actions and assign it to the alert rule.
+Daria walks through the installation process and demonstrates creating your first alert action and linking it to an alert rule.
 
 <Youtube
   id="KM5a2qzlOak"
-  title="How to get started with Business Intelligence Platform for Grafana 2.3.0."
+  title="Getting Started with Business Intelligence Platform for Grafana 2.3.0"
 />
 
-## Docker containers
+## Docker Containers
 
-All necessary docker containers can be downloaded from [GitHub repository](https://github.com/volkovlabs/business-intelligence).
+Download all required Docker containers configuration from the [GitHub repository](https://github.com/volkovlabs/business-intelligence).
 
 <Image
-  title="Download the configuration for the described solution."
+  title="Download Configuration from GitHub"
   src="/img/big/getting-started/github-where-download.png"
 />
 
-In the downloaded package, you can find `docker-compose.yml` file with the following containers:
+The downloaded package includes a `docker-compose.yml` file with these containers:
 
-- **Grafana** includes provisioned dashboards and data sources.
-- **Timescale** database stores Business Engine configuration data and production data.
-- **Data Emulator** is a NodeJS script that emulates production data. Also, it is needed to demonstrate variable functionality.
-- **Prometheus** collects and stores performance metrics from the Business Engine.
-- **JSON server** is an action example based on NodeJS. It accepts alert payload and saves it to the files when the Business Engine executes actions.
-- **Business Engine** uses a service account key to access Grafana HTTP APIs to extract necessary configurations. It evaluates alert rules and calls actions.
+- **Grafana**: Preprovisioned with dashboards and data sources
+- **Timescale**: Stores Business Engine configuration and production data
+- **Data Emulator**: Node.js script generating sample production data, also demonstrating variable functionality
+- **Prometheus**: Collects and stores Business Engine performance metrics
+- **JSON Server**: Node.js-based action example, saving alert payloads to files
+- **Business Engine**: Uses a service account token to access Grafana HTTP APIs, evaluate alert rules, and trigger actions
 
-Below is the `docker-compose.yml` file just for demonstration. You do not need to copy it. It is a part of the package you download from the GitHub repository.
+Here’s the `docker-compose.yml` file for reference (no need to copy—it’s in the downloaded package):
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
   language="yaml"
 />
 
-## Start the platform
+## Starting the Platform
 
-Once you download the solution package, navigate to its folder and execute the following commands.
+After downloading the package, navigate to its directory and follow these steps.
 
 ### Grafana
 
-1. Start Grafana container.
-
-```
-docker compose --profile grafana up -d
-```
+1. Launch the Grafana container:
+   ```bash
+   docker compose --profile grafana up -d
+   ```
 
 <Image
-  title="Grafana container installed."
+  title="Grafana Container Running"
   src="/img/big/getting-started/grafana-container-installed.png"
 />
 
-2. Open the URL
+2. Access Grafana at:
 
-```
-http://localhost:3000
-```
+   ```
+   http://localhost:3000
+   ```
 
-and login as 'admin' with 'admin' password.
+   Log in with username `admin` and password `admin`.
 
-3. Create a service account with the `Viewer` or `Editor` role. Editor role will allow to create annotations.
+3. Create a service account with `Viewer` or `Editor` role (`Editor` enables annotations):
 
-<Image
-  title="Create service account with the required role."
-  src="/img/big/getting-started/sa.png"
-/>
+   <Image
+     title="Create a Service Account"
+     src="/img/big/getting-started/sa.png"
+   />
 
-4. Create a token.
+4. Generate a token:
 
-<Image title="Create a token." src="/img/big/getting-started/token.png" />
+   <Image
+     title="Generate a Service Account Token"
+     src="/img/big/getting-started/token.png"
+   />
 
-5. Update `GRAFANA_TOKEN` in the `docker-compose.yml` file
+5. Update the `GRAFANA_TOKEN` in `docker-compose.yml`:
+   <Image
+     title="Update GRAFANA_TOKEN in docker-compose.yml"
+     src="/img/big/getting-started/token-yml.png"
+   />
 
 :::note Version 2.4.0
-
-Grafana token and URL can be set using Business Studio to avoid changing environment variables.
-
+Starting with version 2.4.0, configure Grafana token and
+URL directly in Business Studio, bypassing environment variable edits.
 :::
 
-<Image
-  title="Update GRAFANA_TOKEN in the docker-compose.yml file."
-  src="/img/big/getting-started/token-yml.png"
-/>
+### Business Engine, Timescale, and Prometheus
 
-### Business Engine, Timescale, Prometheus
+6. Start these containers using the `engine` profile:
+   ```bash
+   docker compose --profile engine up -d
+   ```
 
-6. Start the Business Engine, Timescale database, and Prometheus containers. You can start all three using only one command since all three containers have the same profile, `engine`.
+### JSON Server (Optional)
 
-```
-docker compose --profile engine up -d
-```
-
-### JSON Server (optional)
-
-7. We recommend starting the JSON Server to have an opportunity to experiment with it as well, but it is optional. Further, we will review how to configure JSON server calls to be triggered by alert rule breaches. These calls will write into the text log files.
-
-```
-docker compose --profile actions up -d
-```
+7. Launch the JSON Server to test action triggers (optional, but recommended):
+   ```bash
+   docker compose --profile actions up -d
+   ```
+   This enables saving alert payloads to log files, explored later.
 
 ### Business Studio
 
-8. Download the Business Studio from [Release Notes](../release). Then, install and launch it.
+8. Download Business Studio from the [Release Notes](../release), then install and open it.
 
-## Work with the platform
+## Working with the Platform
 
 ### Business Studio
 
-Configure Actions and Alert Rules
+Configure actions and alert rules:
 
-- Use JSON server `http://json-server:3000` for HTTP Request Action to create event and message files when the alert is triggered if started.
-- Use the provisioned `Test Dashboard` to add alert rules based on thresholds and Regex patterns.
+- Set up an HTTP Request Action using `http://json-server:3000` (if started) to log events and messages
+- Use the preprovisioned `Test Dashboard` to create alert rules with thresholds and regex patterns
+  <Image
+    title="Alert Rules Configured via Business Studio"
+    src="/img/big/business-studio/alerts.png"
+  />
+
+### Grafana Dashboards
+
+Access three preprovisioned dashboards in Grafana:
 
 <Image
-  title="Alert Rules configured in Business Engine running on localhost using Business Studio."
-  src="/img/big/business-studio/alerts.png"
-/>
-
-### Grafana
-
-You will find three provisioned dashboards in Grafana.
-
-<Image
-  title="Three provisioned dashboards in Grafana."
+  title="Three Preprovisioned Dashboards in Grafana"
   src="/img/big/getting-started/3-dashboards.png"
 />
 
-### Business Engine dashboard
+### Business Engine Dashboard
 
-It contains Business Engine metrics collected by Prometheus.
-
-At the top left, there are two dashboard variables. Using them, you can filter the analytics below by **instance** and **alert rule**.
+Displays metrics collected by Prometheus, filterable by **instance** and **alert rule** variables:
 
 <Image
-  title="Two dashboard variables on the Business Engine dashboard."
+  title="Dashboard Variables for Filtering"
   src="/img/big/getting-started/instance-alert.png"
 />
 
-The **Business Engine** dashboard has three rows of analytics.
+#### Rows of Analytics:
 
-1. The first row **Alerts** contains:
+1. **Alerts**:
 
-- **Alert Results**,
-- **Alert Latency**.
+   - Alert Results
+   - Alert Latency
+     <Image
+       title="Alerts Analytics"
+       src="/img/big/getting-started/alerts.png"
+     />
 
-<Image title="Alerts analysis." src="/img/big/getting-started/alerts.png" />
+2. **Requests**:
 
-2. The second row **Requests** contains:
+   - Business Engine API Requests
+   - Business Engine Latency
+   - Grafana API Requests
+   - Grafana Latency
+     <Image
+       title="Requests Analytics"
+       src="/img/big/getting-started/requests.png"
+     />
 
-- **Business Engine API Requests**,
-- **Business Engine Latency**,
-- **Grafana API requests**,
-- **Grafana Latency**.
+3. **Processes**:
+   - CPU Usage
+   - Event Loop Lag
+   - Memory Usage
+   - Active Handlers/Requests Total
+     <Image
+       title="Processes Analytics"
+       src="/img/big/getting-started/processes.png"
+     />
 
-<Image title="Requests analysis." src="/img/big/getting-started/requests.png" />
+### Production Data Dashboard
 
-3. The third row **Processes** contains:
-
-- **CPU Usage**,
-- **Event Loop Lag**,
-- **Memory Usage**,
-- **Active Handlers/Requests Total**.
-
-<Image
-  title="Processes analysis."
-  src="/img/big/getting-started/processes.png"
-/>
-
-### Production data dashboard
-
-The **Production data** dashboard contains one time-series chart. It displays many devices' temperatures generated by the Data Emulator NodeJS script.
-
-You can switch devices using the **metric** dashboard variable at the top left of the dashboard.
-
-Thick blue lines indicate the time when alerts were fired and, consequently, the configured action was called.
-In this solution, the configured action is executed by the JSON server. It saves incoming payload and messages to text files.
+Features a time-series chart of device temperatures from the Data Emulator, switchable via the **metric** variable. Thick blue lines mark alert triggers, with actions logged by the JSON Server.
 
 <Image
-  title="Production data - device emperature."
+  title="Production Data: Device Temperatures"
   src="/img/big/getting-started/prod-data.png"
 />
 
-### Test dashboard
+### Test Dashboard
 
-The **Test dashboard** contains one time-series chart and one log chart.
+Includes a time-series chart and a log chart:
 
-<Image title="Test dashboard." src="/img/big/getting-started/test-dash.png" />
+<Image title="Test Dashboard" src="/img/big/getting-started/test-dash.png" />
 
-## Stop the platform
+## Stopping the Platform
 
-Stop and delete all Docker containers.
+To stop and remove all containers:
 
-```
+```bash
 docker compose --profile engine down
 docker compose --profile actions down
 docker compose --profile grafana down
