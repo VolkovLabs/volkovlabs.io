@@ -1,27 +1,25 @@
 import Image from "@theme/Image";
 import BlogPost from "@theme/BlogPost";
 
-# High availability
+# High Availability
 
-Logically, this architecture should have at least two separate Grafana UI.
+Scaling Grafana for relentless 24/7 traffic and hordes of users starts with a smart setup: at least two Grafana UI instances working in tandem. Here’s how it comes together.
 
 <Image
-  title="High Availability setup to support the heavy 24/7 load with many users."
+  title="High Availability architecture for heavy, round-the-clock loads."
   src="/img/blog/2023-01-22-grafana-setup/high-availability.png"
   height="600px"
 />
 
-A load balancer will redirect the traffic between multiple Grafana UI depending on the load or other parameters.
+A load balancer steps in to juggle traffic across these Grafana UIs, adapting to load or other factors. The [High Availability configuration](https://grafana.com/docs/grafana/latest/setup-grafana/set-up-for-high-availability/) powers this setup by:
 
-The [High Availability configuration](https://grafana.com/docs/grafana/latest/setup-grafana/set-up-for-high-availability/):
+- Linking multiple Grafana UIs to a single configuration storage for a seamless, unified experience.
+- Simplifying maintenance with just one config database, no matter how many UIs you’re running.
 
-- Allows connecting many Grafana UI to the same configuration storage. Therefore, to have a matching experience across all of Grafana UI.
-- Requires maintaining only one configuration database instance, regardless of the Grafana UI number.
+To keep this beast humming under high upstream and downstream pressure, you’ll want a solid team of tech wizards on deck.
 
-It would be best to have a whole team of tech pros to support the web application with high upstream/downstream traffic and unstoppable 24/7 user requests.
+## Leveling Up from Default Grafana
 
-## From default Grafana setup to the real deal
-
-For those who would want to take the next step to an actual application, what direction should it be, or in other words, what should be modified in the default Grafana installation package to convert it into the real deal?
+Ready to turn the default Grafana install into a production-ready powerhouse? This post explores what to tweak and why—your roadmap to the real deal.
 
 <BlogPost id="grafana-setup-20230122" />

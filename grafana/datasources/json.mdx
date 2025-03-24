@@ -1,5 +1,4 @@
 ---
-title: JSON API
 tags:
   - Advanced
   - Data Source
@@ -12,50 +11,50 @@ import Youtube from "@theme/Youtube";
 
 # JSON API Data Sources
 
-API data source in Grafana is a plugin that downloads a file via a provided link and then, following the given instructions reads the file and converts it into a Grafana data frame.
+Need to pull external data into Grafana? JSON API data sources are your go-to plugins—they fetch files via a link, parse them per your instructions, and shape them into Grafana data frames. Let’s dive into how they work and why they matter.
 
 <Image
-  title="API Data Source uses GET/POST request to retrieve data from external systems."
+  title="Fetching data with GET/POST requests from external systems."
   src="/img/grafana/api-concept.png"
 />
 
-## Popular data sources
+## Top JSON API Data Sources
 
-The most popular API data sources are
+Here are the heavy hitters among Grafana’s API data sources:
 
 - [JSON API](https://grafana.com/grafana/plugins/marcusolsson-json-datasource/)
 - [Infinity](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/)
 - [SimPod](https://grafana.com/grafana/plugins/simpod-json-datasource/)
 
-### Comparative analysis
+### Comparing the Trio
 
-The schema below summarizes the comparative analysis of three of the most popular API Grafana data sources. Colors highlight scenarios for each data source. Red is for JSON API, yellow is for Infinity, blue is for any specific data source, and green is for Simpod.
+The schema below breaks down these three popular options. Colors flag their strengths: Red for JSON API, Yellow for Infinity, Blue for any specialized source, and Green for SimPod.
 
 <Image
-  title="JSON API Data Sources schema summarizes the comparative analysis."
+  title="Comparing JSON API, Infinity, and SimPod."
   src="/img/grafana/json-api-schema.png"
 />
 
-## JSON API, Infinity, Simpod compared
+## JSON API vs. Infinity vs. SimPod
 
-In this video, we compared the three most popular ones and outlined use cases for each.
+This video pits JSON API, Infinity, and SimPod against each other, spotlighting use cases to help you pick the right tool.
 
-<Youtube id="h1Mx4UvtKGY" title="JSON API, Infinity, Simpod compared." />
+<Youtube id="h1Mx4UvtKGY" title="JSON API, Infinity, and SimPod Compared" />
 
-## Display the unemployment rate
+## Tutorial: Display Unemployment Rates
 
-Watch this video for a detailed tutorial on displaying data on your Grafana dashboard using JSON API and Infinity data sources.
+Ready to see it in action? This video walks you through a detailed setup, using JSON API and Infinity to display unemployment data on your Grafana dashboard.
 
-<Youtube id="B4Uj1n4Cr88" title="How to use JSON Data Sources for Grafana." />
+<Youtube id="B4Uj1n4Cr88" title="Using JSON Data Sources in Grafana" />
 
-## JSON API Data sources in Grafana
+## Deep Dive into JSON API Data Sources
 
-To complement the above video, we published this blog post that discusses the specifics of each data source.
+For more specifics on each data source, this blog post pairs perfectly with the video above—unpacking their quirks and capabilities.
 
 <BlogPost id="json-api-data-sources-in-grafana-20230104" />
 
-## How to combine Infinity Data Source with the Business Forms
+## Pairing Infinity with Business Forms
 
-This article provides an example of how the Infinity data source can be integrated with the Business Forms plugin on the Grafana dashboard.
+Curious how Infinity plays with other plugins? This post shows you how to blend it with [Business Forms](/plugins/business-forms/) for a slick Grafana dashboard integration.
 
 <BlogPost id="infinity-data-source-2024720" />

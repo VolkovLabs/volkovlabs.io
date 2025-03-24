@@ -9,65 +9,59 @@ import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Variables
+# Exploring Variables
 
-The topic of variables in Grafana has generated a myriad of questions lately. In short, there are three types of variables.
-
-- Dashboard
-- Global
-- Environment
+Variables in Grafana can spark a lot of questions—especially for newcomers. Simply put, they come in three flavors: Dashboard, Global, and Environment. Let’s break them down and see how they fit into Grafana’s world.
 
 <Image
-  title="Three logical layers and their corresponding variable."
+  title="Three layers of variables in Grafana."
   src="/img/grafana/variables.png"
 />
 
-## Dashboard, Global and Environment variables
+## Your Video Guide to Variables
 
-We created this video to structure the subject and speed up the learning curve for Grafana enthusiasts.
+Want to fast-track your understanding? This video sorts out Dashboard, Global, and Environment variables with a clear, step-by-step rundown—perfect for Grafana fans eager to learn.
 
 <Youtube
   id="sczRq2lI3e4"
-  title="Dashboard, Global and Environment variables."
+  title="Dashboard, Global, and Environment Variables in Grafana"
 />
 
-## Dashboard variables
+## Dashboard Variables
 
-Dashboard variables capture the values within one dashboard. They are usually used for filter functionality.
+Dashboard variables live within a single dashboard, powering filters and dynamic controls. They’re your go-to for tailoring what users see.
 
 <Image
-  title="Types of Grafana dashboard variables."
+  title="Different types of dashboard variables."
   src="/img/grafana/variables-edit.png"
 />
 
-## Global variables
+## Global Variables
 
-Global variables are Grafana settings you can retrieve and use on your dashboards.
+Global variables tap into Grafana-wide settings, ready to use across your dashboards. Here’s a quick look at some handy ones:
 
-| Variable          | Description                               |
-| ----------------- | ----------------------------------------- |
-| `${__dashboard}`  | Name of the current dashboard.            |
-| `${__from}`       | From of Time Range in epoch milliseconds. |
-| `${__interval}`   | Parameter to group by time.               |
-| `${__org.name}`   | Name of the current organization.         |
-| `${__org}`        | Id of the current organization.           |
-| `${__to}`         | To of Time Range in epoch milliseconds.   |
-| `${__user.email}` | Email for the current user.               |
-| `${__user.id}`    | Id of the current user.                   |
-| `${__user.login}` | Login handle of the current user.         |
+| Variable          | Description                        |
+| ----------------- | ---------------------------------- |
+| `${__dashboard}`  | Name of the current dashboard      |
+| `${__from}`       | Start of the time range (epoch ms) |
+| `${__interval}`   | Time grouping parameter            |
+| `${__org.name}`   | Name of the current organization   |
+| `${__org}`        | ID of the current organization     |
+| `${__to}`         | End of the time range (epoch ms)   |
+| `${__user.email}` | Email of the current user          |
+| `${__user.id}`    | ID of the current user             |
+| `${__user.login}` | Login handle of the current user   |
 
-You can find [all the global built-in variables](https://grafana.com/docs/grafana/latest/variables/variable-types/global-variables/) in the Grafana documentation.
+For the full lineup, check out [Grafana’s global variables docs](https://grafana.com/docs/grafana/latest/dashboards/variables/add-template-variables/#global-variables).
 
-## Environment variables
+## Environment Variables
 
-Environment variables are the variables from the Grafana environment (operating system and/or device) where Grafana is installed.
-
-Conventionally those variables are off-limits, but with the [Environment data source](/grafana/environment/), access to the environment variables is possible!
+Environment variables pull from the system where Grafana runs—think operating system or device settings. Normally out of reach, they’re unlocked with the [Environment data source](/grafana/environment/). Learn how in this post.
 
 <BlogPost id="using-environment-variables-for-configuration-provisioning-and-dashboards-in-grafana-279661733416" />
 
-## Grafana variables at a glance, Environment data source explained
+## Variables at a Glance
 
-The following blog post provides more information about variable types with examples.
+Need more examples? This blog post dives deeper into all three variable types and spotlights the Environment data source—your cheat sheet to mastering variables.
 
 <BlogPost id="grafana-variables-at-a-glance-environment-data-source-explained-102b8e05e1a5" />
