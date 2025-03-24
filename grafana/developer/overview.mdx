@@ -5,72 +5,72 @@ tags:
 
 import Image from "@theme/Image";
 
-# Plugins overview
+# Plugins Overview
 
-Grafana architecture allows you to create the following plugins:
+Grafana’s architecture supports the creation of three distinct plugin types:
 
-- Visualization panel
-- Data source
+- Visualization Panel
+- Data Source
 - Application
 
 <Image
-  title="You can build three types of Grafana plugins."
+  title="You can build three types of Grafana plugins"
   src="/img/grafana/plugin-types.png"
 />
 
-The materials in this section cover:
+This section covers:
 
-- All plugin types code composition.
-- Grafana Plugin Tools.
-- Where to get basic and real-world examples.
+- Code composition for all plugin types
+- Introduction to Grafana Plugin Tools
+- Sources for basic and real-world examples
 
-## Visualization panel code composition
+## Visualization Panel Code Composition
 
-From a developer's point of view, a panel plugin consists of two major parts:
+A visualization panel plugin, from a developer’s perspective, consists of two core components:
 
-- One is the actual visualization. Take it and make it completely your own.
-- The other one is the panel options. It is where Grafana has your user's voice heard.
+- **Visualization**: The graphical element you design and customize to meet your needs
+- **Panel Options**: The settings interface where users configure the visualization
 
 <Image
-  title="Visualization panel parts."
+  title="Visualization panel components"
   src="/img/grafana/details-panel.png"
 />
 
-### Panel options
+### Panel Options
 
-Panel options are the parameters that you, as a developer, let users configure for your visualization panel. For better organization, they could be split into categories.
+Panel options are customizable parameters you define, allowing users to tailor the visualization panel. For better organization, these options can be grouped into categories.
 
-:::info
-There might be some confusion related to the "Panel Options" name. From the developer's point of view (in the code) all categories are called "Panel options". Whereas on Grafana UI only one category has this name.
-
-I like to think of the "Panel Options" category as general options (options given by default to any panel) and all other categories are specific to the panel. Where specific means declared by a developer.
+:::info  
+The term "Panel Options" can be confusing. In the code, all categories fall under "Panel Options," but in the Grafana UI, only one category is labeled as such. I find it helpful to think of the "Panel Options" category as general settings (provided by default for any panel), while other categories are specific to your plugin, defined by you as the developer.  
 :::
 
-Every category can include any number of parameters. Usually, the parameters are a simple text value. You have a choice of many data entering types like text box, drop-down box, toggle, etc. All of those play a role in helping your user to choose one value or the array(s) of values as your panel options.
+Each category can contain multiple parameters, typically simple values like text. You can offer various input types—text boxes, dropdowns, toggles, and more—to help users select single values or arrays.
 
-Another alternative is a Monaco code editor. It can be used to specify the panel configuration in a JSON format or incorporate a JavaScript box and allow your users to place JavaScript scripts right into the parameter category.
+For advanced use cases, you can integrate a Monaco code editor. This allows users to configure the panel using JSON or even embed JavaScript directly within a parameter category.
 
 <Image
-  title="Examples of panel option types in the Business Text panel."
+  title="Examples of panel option types in the Business Text panel"
   src="/img/grafana/details-dt.png"
 />
 
 ### Examples
 
-It is always better to see with your own eyes rather than read someone's description, right?
+Seeing is believing, so why not explore a real example?
 
-Panel Options on the Business Text visualization panel contain all three types.
-This plugin is signed by Grafana, which means you can install it in one click from the Grafana catalog, then select it from the visualization panel drop-down box to check out the panel option category firsthand.
+The Business Text visualization panel showcases all three option types. Signed by Grafana, this plugin is available for one-click installation from the Grafana catalog. Once installed, select it from the visualization dropdown to explore its panel options firsthand.
 
-By default, the JavaScript box parameter is not turned on. Specify 'JavaScript Code' in the 'Dynamic Text' category.
+By default, the JavaScript box isn’t enabled. To activate it, set 'JavaScript Code' in the 'Dynamic Text' category.
 
 <Image
-  title="To review a JavaScript box in the Business Text panel options, ensure to make it visible."
+  title="Enable the JavaScript box in the Business Text panel options to explore it"
   src="/img/grafana/dynamictext.png"
 />
 
 ## Grafana Plugin Tools
 
-[Grafana Plugin Tools](https://grafana.com/developers/plugin-tools) consists of two packages that the Grafana team put together as a blow of strong wind in your development sail.
+[Grafana Plugin Tools](https://grafana.com/developers/plugin-tools) is a powerful resource from the Grafana team, designed to accelerate your development process. It includes two key packages that:
 
-The essential function of the Grafana Plugin Tools is to create the folder structure along with some basic and minimally required configuration files. In the [Build a panel plugin](../../developer/panel/) section, I share my video with a detailed step-by-step demo of using Grafana Plugin Tools.
+- Generate a plugin’s folder structure
+- Provide essential configuration files with minimal setup
+
+For a hands-on demonstration, check out my video in the [Build a Panel Plugin](../../developer/panel/) section, where I walk through using Grafana Plugin Tools step-by-step.
