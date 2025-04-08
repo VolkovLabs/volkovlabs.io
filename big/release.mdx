@@ -12,6 +12,54 @@ Welcome to the release notes for the Business Intelligence platform for Grafana,
 The Business Intelligence platform is under active development. Public Preview releases are intended for testing and evaluation only.
 :::
 
+## 3.0.0 (2025-03-31)
+
+**This is the General Availability (GA) release of Business Studio 3.0.0, fully compatible with Business Engine 3.0.0.**
+
+:::warning Breaking Changes
+
+- Refreshed Community Token for this major release.
+- Updated Engine API endpoints for alert and action history. Refer to the OpenAPI specification for detailed changes.
+
+:::
+
+### Business Studio 3.0.0
+
+- Removed the default action to streamline alert rule configuration.
+- Added configuration options for handling "no data" states in alert rules.
+- Enhanced actions with additional details for better usability.
+- Improved the actions configuration preview for clearer insights.
+- Introduced a back button and enhanced navigation with breadcrumb trails.
+- Refined UI messages and optimized configuration layouts for a better user experience.
+- Added the ability to disable alerting within condition overrides.
+
+### Business Engine 3.0.0
+
+- Implemented a cleanup process for alert and action event history.
+- Greatly expanded test coverage for improved reliability.
+- Added new API endpoints to retrieve detailed action information.
+
+<BlogPost id="business-intelligence-3.0.0" />
+
+### Downloads
+
+:::info Signed Releases
+MacOS and Windows installers are signed, notarized, and built using automated GitHub workflows to ensure maximum security.
+:::
+
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-3.0.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-3.0.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-darwin-arm64-3.0.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-darwin-x64-3.0.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio-3.0.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio-3.0.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio_3.0.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio_3.0.0_amd64.deb)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-3.0.0.Setup.exe)
+
 ## 2.7.0 (2025-03-17)
 
 ### Business Studio 2.7.0
