@@ -13,10 +13,10 @@ const Header = () => (
     <div className="container margin-vert--md">
       <div className="row">
         <div className="col col--12 margin-vert--md">
+          <h1 className="hero__title">End-User License Agreement (EULA)</h1>
           <p className="hero__subtitle margin-vert--md">
-            <strong>End-User License Agreement (EULA):</strong> Please review
-            this agreement carefully before downloading or using Business
-            Intelligence for Grafana.
+            Please review this agreement carefully before downloading or using
+            Business Intelligence for Grafana.
           </p>
           <p className="hero__subtitle">
             <em>Last Updated: March 18, 2025</em>
