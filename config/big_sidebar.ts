@@ -29,6 +29,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "studio/manage-business-engines",
         "studio/manage-clusters",
+        "studio/userprofiles",
         {
           type: "category",
           label: "Actions",
