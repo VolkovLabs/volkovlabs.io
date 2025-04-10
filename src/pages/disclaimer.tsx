@@ -13,10 +13,11 @@ const Header = () => (
     <div className="container margin-vert--md">
       <div className="row">
         <div className="col col--12 margin-vert--md">
+          <h1 className="hero__title">Disclaimer</h1>
           <p className="hero__subtitle margin-vert--md">
-            <strong>Disclaimer:</strong> The information on this Service is for
-            general purposes only. Volkov Labs LLC assumes no responsibility for
-            errors or omissions in the content.
+            The information on this Service is for general purposes only. Volkov
+            Labs LLC assumes no responsibility for errors or omissions in the
+            content.
           </p>
           <p className="hero__subtitle">
             <em>Last Updated: March 18, 2025</em>
