@@ -29,6 +29,7 @@ const sidebars: SidebarsConfig = {
       items: [
         "studio/manage-business-engines",
         "studio/manage-clusters",
+        "studio/user-profiles",
         {
           type: "category",
           label: "Actions",
@@ -87,6 +88,7 @@ const sidebars: SidebarsConfig = {
           items: [
             "alerting/datasources/postgresql",
             "alerting/datasources/prometheus",
+            "alerting/datasources/infinity",
             // Uncomment and add as needed:
             // 'alerting/datasources/loki',
           ],
