@@ -452,6 +452,19 @@
   background: url("/static/img/index/terms.dark.svg") no-repeat;
 }
 
+.icon-style-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/style.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-style-link::before {
+  background: url("/static/img/index/style.dark.svg") no-repeat;
+}
+
 .icon-disclaimer-link::before {
   content: "";
   width: 24px;

@@ -48,6 +48,20 @@ In the case of any other alert state (**New state**), the alert rule payload is 
   src="/img/blog/2025-02-05-big-2.4.0/other-states.png"
 />
 
+### Alert Previews with Thresholds
+
+The **Data Preview** page highlights thresholds with Grafana’s color-coded clarity, making it easier to spot trigger conditions at a glance. To check it out:
+
+1. Open an alert rule.
+2. Navigate to the **Data Preview** tab.
+3. View values with threshold colors applied (see reference below).
+
+<Image
+  title="Alert data previews now show thresholds clearly."
+  src="/img/blog/2025-03-17-big-2.7.0/thresholds.png"
+  width="100%"
+/>
+
 ## Review Grafana data frames in the Business Studio
 
 To make the interaction between the Business Engine and Grafana more transparent, the Business Studio displays the Grafana data frames participating in the alert rule evaluation.
@@ -70,3 +84,17 @@ To review the Grafana data frame in the Business Studio:
 />
 
 A Grafana data frame can be reviewed as a code by clicking on the **View as code** button.
+
+## Peek Inside Alerts with Condition Drawers
+
+Curious why an alert fired? Click any action event to open a drawer showing alert conditions as they were—no digging required. Here’s how:
+
+1. Open action details.
+2. Go to the **Action History** tab.
+3. Click an event to reveal its conditions.
+
+<Image
+  title="Alert condition drawer offers instant insight."
+  src="/img/blog/2025-03-17-big-2.7.0/alert-drawer.png"
+  width="100%"
+/>

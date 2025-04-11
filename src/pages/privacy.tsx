@@ -13,11 +13,11 @@ const Header = () => (
     <div className="container margin-vert--md">
       <div className="row">
         <div className="col col--12 margin-vert--md">
+          <h1 className="hero__title">Privacy Policy</h1>
           <p className="hero__subtitle margin-vert--md">
-            <strong>Privacy Policy:</strong> This policy outlines how Volkov
-            Labs LLC collects, uses, and discloses your information when you use
-            our Service. It also explains your privacy rights and legal
-            protections.
+            This policy outlines how Volkov Labs LLC collects, uses, and
+            discloses your information when you use our Service. It also
+            explains your privacy rights and legal protections.
           </p>
           <p className="hero__subtitle">
             <em>Last Updated: March 18, 2025</em>

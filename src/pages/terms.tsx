@@ -13,9 +13,9 @@ const Header = () => (
     <div className="container margin-vert--md">
       <div className="row">
         <div className="col col--12 margin-vert--md">
+          <h1 className="hero__title">Terms and Conditions</h1>
           <p className="hero__subtitle margin-vert--md">
-            <strong>Terms and Conditions:</strong> Please review these terms
-            carefully before using our Service.
+            Please review these terms carefully before using our Service.
           </p>
           <p className="hero__subtitle">
             <em>Last Updated: March 18, 2025</em>
