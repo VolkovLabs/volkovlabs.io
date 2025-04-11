@@ -1,0 +1,80 @@
+---
+authors: [daria]
+slug: business-intelligence-3.0.0/
+tags: [Business Intelligence]
+image: /img/blog/2025-03-31-big-3.0.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Business Intelligence 3.0.0
+
+We’re excited to unveil the public preview of Business Intelligence 3.0.0, brought to you by Volkov Labs. This release supercharges the [Business Intelligence platform](/big/) with powerful new features designed to simplify workflows and boost efficiency:
+
+- **Tailored user profiles** for business and technical users.
+- **Enhanced alert previews** with visible thresholds.
+- **Refresh buttons** with 10-second auto-refetch.
+- **JSON export/import** for effortless engine configuration.
+- **Alert condition drawers** triggered by action events.
+- **Infinite scroll** for smooth alert and action history.
+- **Performance gains** through optimized database indexing.
+
+## Updated OpenAPI Specification
+
+The Business Engine’s [OpenAPI specification](/big/api/) has been revamped, ensuring smooth integration for developers and keeping your workflows in sync with the latest features.
+
+## Get Business Studio 3.0.0 Now
+
+:::info Signed Releases  
+MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for maximum security.  
+:::
+
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-3.0.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-3.0.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-darwin-arm64-3.0.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-darwin-x64-3.0.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio-3.0.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio-3.0.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio_3.0.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/business-studio_3.0.0_amd64.deb)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.0.0/Business.Studio-3.0.0.Setup.exe)
+
+<GettingStarted />
+
+## Release Notes
+
+**This is the General Availability (GA) release of Business Studio 3.0.0, fully compatible with Business Engine 3.0.0.**
+
+:::warning Breaking Changes
+
+- Refreshed Community Token for this major release.
+- Updated Engine API endpoints for alert and action history. Refer to the OpenAPI specification for detailed changes.
+
+:::
+
+### Business Studio 3.0.0
+
+- Removed the default action to streamline alert rule configuration.
+- Added configuration options for handling "no data" states in alert rules.
+- Enhanced actions with additional details for better usability.
+- Improved the actions configuration preview for clearer insights.
+- Introduced a back button and enhanced navigation with breadcrumb trails.
+- Refined UI messages and optimized configuration layouts for a better user experience.
+- Added the ability to disable alerting within condition overrides.
+
+### Business Engine 3.0.0
+
+- Implemented a cleanup process for alert and action event history.
+- Greatly expanded test coverage for improved reliability.
+- Added new API endpoints to retrieve detailed action information.
+
+<Feedback />
