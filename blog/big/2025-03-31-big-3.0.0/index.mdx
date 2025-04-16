@@ -1,9 +1,9 @@
 ---
 authors: [daria]
 slug: business-intelligence-3.0.0/
-tags: [Business Intelligence]
+tags: [Business Intelligence, Alerting, Grafana]
 image: /img/blog/2025-03-31-big-3.0.0/banner.png
-keywords: [Business Intelligence, Alerting, Grafana]
+keywords: [Business Intelligence, Alerting, Grafana, Workflow, Automation]
 ---
 
 import Code from "@theme/Code";
@@ -13,26 +13,59 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 3.0.0
+# Business Intelligence 3.0.0: Streamlined, Smarter, and Ready for Action
 
-We’re excited to unveil the public preview of Business Intelligence 3.0.0, brought to you by Volkov Labs. This release supercharges the [Business Intelligence platform](/big/) with powerful new features designed to simplify workflows and boost efficiency:
+We’re thrilled to announce the General Availability (GA) release of Business Intelligence 3.0.0 from Volkov Labs! This milestone supercharges the [Business Intelligence platform](/big/) with features that make your workflows smoother, your insights sharper, and your experience better than ever:
 
-- **Tailored user profiles** for business and technical users.
-- **Enhanced alert previews** with visible thresholds.
-- **Refresh buttons** with 10-second auto-refetch.
-- **JSON export/import** for effortless engine configuration.
-- **Alert condition drawers** triggered by action events.
-- **Infinite scroll** for smooth alert and action history.
-- **Performance gains** through optimized database indexing.
+- **Simplified alert rules** by removing the default action.
+- **New options** to handle "no data" scenarios in alerts.
+- **Clearer action configuration previews** for instant understanding.
+- **Smarter navigation** with a back button and breadcrumb trails.
+- **Polished UI messages** and layouts for a seamless feel.
+- **Flexible alerting** with condition override disablement.
+- **Automated cleanup** for alert and action history.
+- **Rock-solid reliability** thanks to expanded test coverage.
 
-## Updated OpenAPI Specification
+Dive in to see how these upgrades transform your Grafana experience—try it today!
 
-The Business Engine’s [OpenAPI specification](/big/api/) has been revamped, ensuring smooth integration for developers and keeping your workflows in sync with the latest features.
+## Revamped OpenAPI Specification
+
+The Business Engine’s [OpenAPI specification](/big/api/) got a major refresh, paving the way for effortless developer integrations and keeping your tools in sync with the latest capabilities.
+
+## What’s New in 3.0.0
+
+### Streamlined Alert Rules
+
+Say goodbye to clutter—removing the default action makes setting up alert rules faster and more intuitive, putting you in full control from the start.
+
+### Handle "No Data" Like a Pro
+
+New configuration options let you decide how alerts behave when data’s missing—customize it to fit your needs without breaking a sweat.
+
+### Crystal-Clear Action Previews
+
+The revamped action configuration preview shows exactly what’s happening, making it easier to fine-tune your setup with confidence.
+
+### Navigate with Ease
+
+A new back button and breadcrumb trails keep you oriented, letting you zip through configurations without losing your place.
+
+### Polished UI Experience
+
+From sharper messages to optimized layouts, every interaction feels smoother—because your time deserves a great experience.
+
+### Flexible Alerting Control
+
+Disable alerting within condition overrides for ultimate flexibility, tailoring notifications to exactly when and where you need them.
+
+### Clean History, Lean System
+
+An automated cleanup process for alert and action event history keeps your system tidy and efficient, no manual fuss required.
 
 ## Get Business Studio 3.0.0 Now
 
-:::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for maximum security.  
+:::info Signed Releases
+MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top-notch security.
 :::
 
 - **MacOS**:
@@ -52,29 +85,28 @@ MacOS and Windows installers are signed, notarized, and built via automated GitH
 
 ## Release Notes
 
-**This is the General Availability (GA) release of Business Studio 3.0.0, fully compatible with Business Engine 3.0.0.**
+**Business Studio 3.0.0 is a General Availability (GA) release, fully compatible with Business Engine 3.0.0.**
 
 :::warning Breaking Changes
 
 - Refreshed Community Token for this major release.
-- Updated Engine API endpoints for alert and action history. Refer to the OpenAPI specification for detailed changes.
-
-:::
+- Updated Engine API endpoints for alert and action history—check the [OpenAPI specification](/big/api/) for details.
+  :::
 
 ### Business Studio 3.0.0
 
-- Removed the default action to streamline alert rule configuration.
-- Added configuration options for handling "no data" states in alert rules.
-- Enhanced actions with additional details for better usability.
-- Improved the actions configuration preview for clearer insights.
-- Introduced a back button and enhanced navigation with breadcrumb trails.
-- Refined UI messages and optimized configuration layouts for a better user experience.
-- Added the ability to disable alerting within condition overrides.
+- Removed default action for cleaner alert rule setup.
+- Added "no data" handling options for alert rules.
+- Enhanced action details for improved usability.
+- Upgraded action configuration previews for clarity.
+- Added back button and breadcrumb trails for smoother navigation.
+- Refined UI messages and layouts for a polished experience.
+- Enabled disabling alerts in condition overrides.
 
 ### Business Engine 3.0.0
 
-- Implemented a cleanup process for alert and action event history.
-- Greatly expanded test coverage for improved reliability.
-- Added new API endpoints to retrieve detailed action information.
+- Introduced automated cleanup for alert and action event history.
+- Boosted reliability with extensive test coverage.
+- Added API endpoints for detailed action insights.
 
 <Feedback />
