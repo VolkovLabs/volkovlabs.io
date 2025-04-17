@@ -14,15 +14,15 @@ import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
 # Business Intelligence 3.0.0: Streamlined, Smarter, and Ready for Action 🚀
- 
+
 We’re thrilled to announce the General Availability (GA) release of Business Intelligence 3.0.0 from Volkov Labs! This milestone supercharges the [Business Intelligence platform](/big/) with features that make your workflows smoother, your insights sharper, and your experience better than ever:
 
-- **No data state**, new option to handle "no data" scenarios in alerts.
+- No data state, new option to handle "no data" scenarios in alerts.
 - Clearer action configuration **previews** for instant understanding.
 - Smarter navigation with a **back** button and **breadcrumb trails**.
 - Automated cleanup for alert and action history.
 - Flexible alerting with condition override disablement.
-- Improved user experience: 
+- Improved user experience:
   - Simplified alert rules by removing the default action.
   - Polished UI messages and layouts for a seamless feel.
 - Rock-solid reliability thanks to expanded test coverage.
@@ -39,16 +39,17 @@ The Business Engine’s [OpenAPI specification](/big/api/) got a major refresh, 
 
 New configuration options let you decide how alerts behave when data’s missing—customize it to fit your needs without breaking a sweat.
 
-If no data is returned, specify what [status](https://volkovlabs.io/big/alerting/manage-alert-rules/#flow-schema) the alert should change into. The choices are:
+If no data is returned, specify what [status](/big/alerting/manage-alert-rules/#flow-schema) the alert should change into. The choices are:
 
-- **Alerting**, 
+- **Alerting**,
 - **OK**,
-- **Error**. 
+- **Error**.
 
 To access:
- 1. Open any alert rule configuration. 
- 2. Scroll down to the **Event** section and configure the **No data state** parameter.
- 
+
+1.  Open any alert rule configuration.
+2.  Scroll down to the **Event** section and configure the **No data state** parameter.
+
 <Image
   title="Specify the alert rule behavior in case no data is returned."
   src="/img/blog/2025-03-31-big-3.0.0/no-data.png"
@@ -59,7 +60,7 @@ To access:
 
 The revamped action configuration preview shows exactly what’s happening, making it easier to fine-tune your setup with confidence.
 
-When you alter the action message template, it is often uncertain what the actual message will look like in all scenarios. The **Preview** section allows you to see that actual message using the messages from the action history. 
+When you alter the action message template, it is often uncertain what the actual message will look like in all scenarios. The **Preview** section allows you to see that actual message using the messages from the action history.
 
 <Image
   title="Preview as many actual messages as needed to ensure all scenarios look clear."
@@ -99,13 +100,11 @@ For instance, you know that a particular device is out of order and will be fixe
   width="100%"
 />
 
-### Improved user experience 
-
-- Streamlined Alert Rules
+### Streamlined Alert Rules
 
 Say goodbye to clutter—removing the default action makes setting up alert rules faster and more intuitive, putting you in full control from the start.
 
--  Polished UI Experience
+### Polished UI Experience
 
 From sharper messages to optimized layouts, every interaction feels smoother—because your time deserves a great experience.
 
