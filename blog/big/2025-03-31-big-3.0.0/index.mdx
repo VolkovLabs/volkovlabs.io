@@ -1,9 +1,19 @@
 ---
 authors: [daria]
-slug: business-intelligence-3.0.0/
-tags: [Business Intelligence, Alerting, Grafana]
+slug: business-intelligence-3.0.0
+title: Business Intelligence 3.0.0 - Streamlined, Smarter, and Ready for Action 🚀
+tags: [Business Intelligence]
 image: /img/blog/2025-03-31-big-3.0.0/banner.png
-keywords: [Business Intelligence, Alerting, Grafana, Workflow, Automation]
+keywords:
+  [
+    Business Intelligence,
+    Alerting,
+    Grafana,
+    Workflow,
+    Automation,
+    OpenAPI,
+    User Experience,
+  ]
 ---
 
 import Code from "@theme/Code";
@@ -15,107 +25,101 @@ import Youtube from "@theme/Youtube";
 
 # Business Intelligence 3.0.0: Streamlined, Smarter, and Ready for Action 🚀
 
-We’re thrilled to announce the General Availability (GA) release of Business Intelligence 3.0.0 from Volkov Labs! This milestone supercharges the [Business Intelligence platform](/big/) with features that make your workflows smoother, your insights sharper, and your experience better than ever:
+We’re excited to unveil **Business Intelligence 3.0.0**, now Generally Available (GA) from Volkov Labs! This release turbocharges the [Business Intelligence platform](/big/) with powerful features designed to streamline workflows, enhance insights, and elevate your Grafana experience. Here’s what’s new:
 
-- No data state, new option to handle "no data" scenarios in alerts.
-- Clearer action configuration **previews** for instant understanding.
-- Smarter navigation with a **back** button and **breadcrumb trails**.
-- Automated cleanup for alert and action history.
-- Flexible alerting with condition override disablement.
-- Improved user experience:
-  - Simplified alert rules by removing the default action.
-  - Polished UI messages and layouts for a seamless feel.
-- Rock-solid reliability thanks to expanded test coverage.
+- **No-data handling**: Customizable alert behavior for missing data.
+- **Action previews**: Clear, real-time configuration previews.
+- **Intuitive navigation**: Back button and breadcrumb trails for seamless exploration.
+- **Automated cleanup**: Keep alert and action history lean and efficient.
+- **Flexible alerting**: Disable condition overrides for tailored notifications.
+- **Simplified alert rules**: No default action for faster setup.
+- **Polished UI**: Refined messages and layouts for a smoother experience.
+- **Robust reliability**: Expanded test coverage for rock-solid performance.
 
-Dive in to see how these upgrades transform your Grafana experience—try it today!
+Ready to transform your Grafana workflows? Dive into Business Intelligence 3.0.0 today!
 
-## Revamped OpenAPI Specification
+## Enhanced OpenAPI Specification
 
-The Business Engine’s [OpenAPI specification](/big/api/) got a major refresh, paving the way for effortless developer integrations and keeping your tools in sync with the latest capabilities.
+The Business Engine’s [OpenAPI specification](/big/api/) has been overhauled, enabling seamless integrations and ensuring developers can leverage the latest platform capabilities effortlessly.
 
 ## What’s New in 3.0.0
 
-### Handle "No Data" Like a Pro
+### Master "No Data" Scenarios
 
-New configuration options let you decide how alerts behave when data’s missing—customize it to fit your needs without breaking a sweat.
+Easily configure how alerts respond when data is unavailable. Choose from three statuses to suit your workflow:
 
-If no data is returned, specify what [status](/big/alerting/manage-alert-rules/#flow-schema) the alert should change into. The choices are:
+- **Alerting**: Trigger an alert.
+- **OK**: Mark as resolved.
+- **Error**: Flag an issue.
 
-- **Alerting**,
-- **OK**,
-- **Error**.
+**How to configure**:
 
-To access:
-
-1.  Open any alert rule configuration.
-2.  Scroll down to the **Event** section and configure the **No data state** parameter.
+1. Open an alert rule in the Business Studio.
+2. Navigate to the **Event** section.
+3. Set the **No data state** parameter.
 
 <Image
-  title="Specify the alert rule behavior in case no data is returned."
+  title="Customize alert behavior for scenarios with no data."
   src="/img/blog/2025-03-31-big-3.0.0/no-data.png"
   width="100%"
 />
 
-### Crystal-Clear Action Previews
+### Action Previews with Clarity
 
-The revamped action configuration preview shows exactly what’s happening, making it easier to fine-tune your setup with confidence.
-
-When you alter the action message template, it is often uncertain what the actual message will look like in all scenarios. The **Preview** section allows you to see that actual message using the messages from the action history.
+The revamped action configuration preview lets you see exactly how your messages will appear. Test multiple scenarios using action history to ensure your setup is spot-on.
 
 <Image
-  title="Preview as many actual messages as needed to ensure all scenarios look clear."
+  title="Preview action messages to validate all scenarios."
   src="/img/blog/2025-03-31-big-3.0.0/preview.png"
   width="100%"
 />
 
-### Navigate with Ease
+### Navigate Effortlessly
 
-A back button and breadcrumb trails keep you oriented, letting you zip through configurations without losing your place. This design saves a lot of screen real estate for a better user experience.
+A new back button and breadcrumb trails simplify navigation, saving screen space and keeping you oriented as you manage configurations.
 
 <Image
-  title="A back button and breadcrumb trails."
+  title="Back button and breadcrumbs for intuitive navigation."
   src="/img/blog/2025-03-31-big-3.0.0/breadcrumbs.png"
   width="100%"
 />
 
-### Clean History, Lean System
+### Automated History Cleanup
 
-An automated cleanup process for alert and action event history keeps your system tidy and efficient, no manual fuss required.
+Keep your system lean with automated cleanup of alert and action event history. Set retention periods to maintain performance without manual intervention.
 
 <Image
-  title="Specify for how long alert events and action events should be stored."
+  title="Configure retention for alert and action event history."
   src="/img/blog/2025-03-31-big-3.0.0/processing.png"
   width="100%"
 />
 
-### Flexible Alerting Control
+### Flexible Alert Overrides
 
-Disable alerting within condition overrides for ultimate flexibility, tailoring notifications to exactly when and where you need them.
-
-For instance, you know that a particular device is out of order and will be fixed in a month. To avoid receiving unnecessary alerts and to keep the setting, instead of removing it, you can temporarily disable it.
+Gain granular control by disabling alerts within condition overrides. For example, temporarily disable notifications for a device under maintenance without deleting its settings.
 
 <Image
-  title="Disable alert override."
+  title="Temporarily disable alerts in condition overrides."
   src="/img/blog/2025-03-31-big-3.0.0/override.png"
   width="100%"
 />
 
 ### Streamlined Alert Rules
 
-Say goodbye to clutter—removing the default action makes setting up alert rules faster and more intuitive, putting you in full control from the start.
+We’ve removed the default action from alert rules, making setup faster and more intuitive. Focus on what matters most—your custom configurations.
 
-### Polished UI Experience
+### Refined User Experience
 
-From sharper messages to optimized layouts, every interaction feels smoother—because your time deserves a great experience.
+Enjoy a polished interface with clearer messages and optimized layouts, ensuring every interaction is smooth and efficient.
 
-### Expanded test coverage
+### Enhanced Reliability
 
-Extensive test coverage to ensure better performance and an uninterrupted user experience.
+Expanded test coverage guarantees robust performance, so you can rely on Business Intelligence 3.0.0 for mission-critical workflows.
 
-## Get Business Studio 3.0.0 Now
+## Download Business Studio 3.0.0
 
-:::info Signed Releases
-MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top-notch security.
+:::info Signed and Secure
+MacOS and Windows installers are signed, notarized, and built using automated GitHub workflows for maximum security and reliability.
 :::
 
 - **MacOS**:
@@ -135,28 +139,27 @@ MacOS and Windows installers are signed, notarized, and built via automated GitH
 
 ## Release Notes
 
-**Business Studio 3.0.0 is a General Availability (GA) release, fully compatible with Business Engine 3.0.0.**
+**Business Studio 3.0.0** is a GA release, fully compatible with **Business Engine 3.0.0**.
 
 :::warning Breaking Changes
 
 - Refreshed Community Token for this major release.
-- Updated Engine API endpoints for alert and action history—check the [OpenAPI specification](/big/api/) for details.
+- Updated Engine API endpoints for alert and action history. Refer to the [OpenAPI specification](/big/api/) for details.
   :::
 
 ### Business Studio 3.0.0
 
-- Removed default action for cleaner alert rule setup.
-- Added "no data" handling options for alert rules.
-- Enhanced action details for improved usability.
-- Upgraded action configuration previews for clarity.
-- Added back button and breadcrumb trails for smoother navigation.
-- Refined UI messages and layouts for a polished experience.
-- Enabled disabling alerts in condition overrides.
+- Removed default action for streamlined alert rule setup.
+- Added configurable "no data" handling for alerts.
+- Improved action configuration previews for clarity.
+- Introduced back button and breadcrumb trails for navigation.
+- Enhanced UI with refined messages and layouts.
+- Added option to disable alerts in condition overrides.
 
 ### Business Engine 3.0.0
 
-- Introduced automated cleanup for alert and action event history.
-- Boosted reliability with extensive test coverage.
+- Implemented automated cleanup for alert and action history.
+- Increased reliability with comprehensive test coverage.
 - Added API endpoints for detailed action insights.
 
 <Feedback />
