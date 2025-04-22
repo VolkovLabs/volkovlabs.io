@@ -228,6 +228,20 @@ const sidebars: SidebarsConfig = {
       ],
     },
 
+    // Business Links section
+    {
+      type: "category",
+      label: "Business Links",
+      description:
+        "Streamlines navigation with external links, dashboards, and dropdowns.",
+      collapsible: true,
+      link: { type: "doc", id: "business-links/index" },
+      items: [
+        { type: "doc", id: "business-links/index", label: "Introduction" },
+        "business-links/release",
+      ],
+    },
+
     // Business Media section
     {
       type: "category",

@@ -43,9 +43,14 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-plugins-static-link",
         },
         {
+          label: "Business Links",
+          to: "/plugins/business-links/",
+          className: "volkovlabs-link icon-plugins-links-link",
+        },
+        {
           label: "Business Media",
           to: "/plugins/business-media/",
-          className: "volkovlabs-link icon-plugins-base64-link",
+          className: "volkovlabs-link icon-plugins-media-link",
         },
         {
           label: "Business News",

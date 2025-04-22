@@ -94,7 +94,7 @@
   background: url("/static/img/plugins/business-charts/logo.dark.svg") no-repeat;
 }
 
-.icon-plugins-base64-link::before {
+.icon-plugins-media-link::before {
   content: "";
   width: 24px;
   height: 24px;
@@ -103,7 +103,7 @@
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-plugins-base64-link::before {
+[data-theme="dark"] .icon-plugins-media-link::before {
   background: url("/static/img/plugins/business-media/logo.dark.svg") no-repeat;
 }
 
@@ -145,6 +145,19 @@
 
 [data-theme="dark"] .icon-plugins-table-link::before {
   background: url("/static/img/plugins/business-table/logo.dark.svg") no-repeat;
+}
+
+.icon-plugins-links-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/plugins/business-links/logo.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-plugins-links-link::before {
+  background: url("/static/img/plugins/business-links/logo.dark.svg") no-repeat;
 }
 
 .icon-plugins-form-link::before {
