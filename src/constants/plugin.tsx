@@ -55,6 +55,17 @@ export const PluginList: PluginItem[] = [
     isActive: true,
   },
   {
+    title: "Business Links",
+    name: "business-links",
+    description: (
+      <>
+        Streamlines navigation with external links, dashboards, and dropdowns.
+      </>
+    ),
+    href: "/plugins/business-links/",
+    isActive: true,
+  },
+  {
     title: "Business Media",
     name: "business-media",
     description: (
