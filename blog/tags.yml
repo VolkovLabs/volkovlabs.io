@@ -2,55 +2,76 @@
 # Each entry provides a concise summary of its purpose or functionality
 
 Business Suite:
-  description: A collection of open-source Grafana plugins created and maintained by Volkov Labs
+  description: A curated collection of open-source Grafana plugins, crafted by Volkov Labs to solve everyday business challenges.
 
 Business Intelligence:
-  description: Revolutionize your business insights with high-performance, scalable, and alert-driven analytics in Grafana
+  description: Transform your insights with high-performance, scalable, and alert-driven analytics.
 
 Business Calendar:
-  description: Visualize events and manage time ranges in Grafana
+  description:
+    Displays events in a sleek calendar view, pulling from diverse data
+    sources for seamless integration.
 
 Business Charts:
-  description: Create powerful visualizations using Apache ECharts within Grafana
+  description:
+    Integrates Apache ECharts to deliver dynamic, interactive charts and
+    graphs within Grafana dashboards.
 
 Business Forms:
-  description: Insert, update, and configure application data seamlessly
+  description:
+    Enables direct data entry, updates, and configuration adjustments right
+    inside Grafana.
 
 Business Input:
-  description: Capture and store your data efficiently
+  description:
+    Simulates and manages data with JavaScript and LLM, offering flexible
+    control within Grafana.
+
+Business Links:
+  description: Streamlines navigation with external links, dashboards, and dropdowns.
 
 Business Media:
-  description: Display Base64-encoded and URL-based media files
+  description:
+    Blends multimedia elements for a tailored, rich visual experience in
+    Grafana dashboards.
 
 Business News:
-  description: Render RSS and Atom feeds with Business Text integration
+  description:
+    Pulls RSS and Atom feeds, enhancing visualization with Business Text and
+    other panels.
 
 Business Satellite:
-  description: Connect to local and remote Grafana instances effortlessly
+  description:
+    Fetches data from local or remote Grafana instances via HTTP API for
+    centralized access.
 
 Business Table:
-  description: Simplify data visualization with interactive tables
+  description: Simplifies data presentation with intuitive table layouts.
 
 Business Text:
-  description: Generate dynamic, data-driven text content
+  description:
+    Turns plain text and tables into compelling, visually rich information
+    cards.
 
 Business Variable:
-  description: Dynamically update dashboard variables
+  description:
+    Enhances dashboards with movable, standalone filter panels for dynamic
+    control.
 
 Grafana Crash Course:
-  description: A curated set of Grafana tutorials by Volkov Labs
+  description: A curated set of Grafana tutorials by Volkov Labs.
 
 Community:
-  description: Showcasing contributions from the Grafana community
+  description: Showcasing contributions from the Grafana community.
 
 Solution:
-  description: Explore innovative solutions from Volkov Labs
+  description: Explore innovative solutions from Volkov Labs.
 
 Development:
-  description: Resources and guides for development
+  description: Resources and guides for development.
 
 Environment Data Source:
-  description: Retrieve environment variables for use in Grafana
+  description: Retrieve environment variables for use in Grafana.
 
 Business Gazette:
-  description: Stay updated with the latest news from Volkov Labs through the Business Gazette
+  description: Stay updated with the latest news from Volkov Labs through the Business Gazette.
