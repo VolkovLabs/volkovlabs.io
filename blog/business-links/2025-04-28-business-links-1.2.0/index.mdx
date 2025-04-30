@@ -12,30 +12,83 @@ import GettingStarted from "@site/docs/business-links/_getting_started.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Business Links 1.2.0: Enhanced Navigation for Grafana Dashboards
+# Business Links 1.2.1: Enhanced Navigation for Grafana Dashboards
 
-We’re thrilled to unveil **Business Links 1.2.0**, the latest update to our powerful navigation panel for Grafana. Designed to streamline access to dashboards and external resources, this release introduces exciting new features and improvements to enhance user experience and customization.
+We’re thrilled to unveil **Business Links 1.2.1**, the latest update to our powerful navigation panel for Grafana.
+
+The Business Links panel builds on top of the regular Grafana links functionality, making it more flexible and customizable. It is designed to streamline access to dashboards and external resources.
 
 Whether you're managing complex data visualizations or linking to critical business tools, Business Links 1.2.0 has you covered.
+
+You can find examples of the Business Links panel in the image below.
 
 <Image
   title="The Business Links panel supports groups, dropdown and external links in Grafana."
   src="/img/blog/2025-04-28-business-links-1.2.0/panel.png"
 />
 
-Here’s a quick overview of what’s new in this release:
+Here’s a quick overview of what’s coming in this release:
 
-- **Custom Menu Positioning**: Place navigation menus exactly where you need them.
+- **Custom Menu Positioning**: Place the Business Links panels exactly where you need them.
 - **Community Signature**: Officially signed as a trusted Grafana Community plugin.
-- **Grafana 11.6 Compatibility**: Updated dependencies for seamless integration.
 - **Enhanced Tab Sorting**: Prioritize selected tabs for quicker access.
 - **Highlighting Options**: Easily identify the current dashboard or active link.
 - **Hover-Based Dropdowns**: Access menus faster with hover functionality.
 - **Built on Volkov Labs Templates**: A robust foundation for reliability and scalability.
+- **Grafana 11.6 Compatibility**: Updated dependencies for seamless integration.
 
-## Why Business Links 1.2.0 Matters
+## Custom Menu Positioning
 
-Business Links is all about making navigation intuitive and efficient within Grafana. With version 1.2.0, we’ve focused on giving users more control over how they organize and interact with their dashboards and external links.
+Since the Business links is a Grafana panel, you can place it anywhere on your Grafana dashboard using drag and drop feature.
+
+<Image
+  title="Place Business links panel anywhere on your dashboard."
+  src="/img/blog/2025-04-28-business-links-1.2.0/links.gif"
+  width="60%"
+/>
+
+## Community Signature
+
+Find the Business Links panel in the official Grafana catalog.
+
+<Image
+  title="Officially signed as a trusted Grafana Community plugin."
+  src="/img/blog/2025-04-28-business-links-1.2.0/catalog.png"
+/>
+
+## Enhanced Tab Sorting
+
+Optionally, you can request that the selected tab always be on the panel's left side.
+
+<Image
+  title="Parameter to make the selected tab to be displayed first."
+  src="/img/blog/2025-04-28-business-links-1.2.0/sort.png"
+  width="90%"
+/>
+
+## Highlighting Options
+
+When the **highlight the current link** is set to on, the selected link has a differential color to indicate which link has been selected instantly.
+
+<Image
+  title="The Highlight the current link parameter."
+  src="/img/blog/2025-04-28-business-links-1.2.0/highlight.png"
+  width="90%"
+/>
+
+## Hover-Based Dropdowns
+
+Use the **dropdown** type to convert any link into a dropdown menu. Customize where the menu should appear for a better user experience.
+
+<Image
+  title="Dropdown type."
+  src="/img/blog/2025-04-28-business-links-1.2.0/dropdown.png"
+  width="90%"
+/>
+
+## Why Business Links Matters
+
+Business Links is all about making navigation intuitive and efficient within Grafana. With version 1.2.1, we’ve focused on giving users more control over how they organize and interact with their dashboards and external links.
 
 These updates empower teams to tailor their Grafana experience to their unique workflows, saving time and improving productivity.
 
@@ -59,13 +112,6 @@ These updates empower teams to tailor their Grafana experience to their unique w
 ### Initial Release (1.0.0)
 
 - **Foundation**: Launched the Business Links panel using Volkov Labs templates for a solid, scalable base.
-
-## See It in Action
-
-Check out this quick demo to see how Business Links 1.2.0 can transform your Grafana navigation.
-
-:::note Coming Soon
-:::
 
 <GettingStarted />
 
