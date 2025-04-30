@@ -1,0 +1,83 @@
+---
+authors: [mikhail, daria]
+slug: business-links-power/
+tags: [Business Links, Business Gazette]
+image: /img/blog/2025-04-29-business-links-power/banner.png
+keywords: [Business Links, Data, Grafana]
+---
+
+import Feedback from "@site/docs/business-links/_feedback.mdx";
+import GettingStarted from "@site/docs/business-links/_getting_started.mdx";
+import Image from "@theme/Image";
+
+# Unlocking the Power of Business Links Panel for Grafana: Overcoming Native Grafana Links Limitations
+
+Grafana has become a cornerstone for organizations looking to visualize and analyze their data through customizable dashboards. While Grafana offers a robust set of features out of the box, some limitations in its native functionality can hinder the user experience, particularly when it comes to linking and navigation.
+
+This is where the [Business Links panel](/plugins/business-links/) by Volkov Labs steps in, providing a powerful solution to enhance dashboard interactivity and overcome the constraints of Grafana's native links. In this blog post, we'll explore the benefits of the Business Links panel and how it addresses the shortcomings of Grafana's built-in linking capabilities.
+
+## The Limitations of Native Grafana Links
+
+Grafana's native linking system allows users to create links between dashboards and external resources. While useful, it comes with several limitations that can frustrate users and limit the potential of dashboards:
+
+1. **Static and Rigid Links**: Native Grafana links are often static and lack the flexibility to adapt dynamically based on user context or data. For instance, links cannot easily incorporate data from the current panel to create context-aware navigation.
+
+2. **Limited Customization**: The appearance and behavior of links in Grafana are not highly customizable. Users are restricted to basic URL links or dashboard navigation, with little control over styling or interaction.
+
+3. **No Support for Complex Workflows**: Grafana's native links do not support advanced workflows, such as triggering actions, opening links in specific frames, or integrating with business logic to guide users through a process.
+
+4. **Lack of Visual Appeal**: Links in Grafana are often presented as plain text or buttons without much room for branding or visual hierarchy, which can make dashboards feel less intuitive or engaging.
+
+These limitations can result in a suboptimal user experience, especially for organizations that rely on Grafana for business-critical dashboards and need more tailored navigation and interactivity.
+
+## Introducing the Business Links Panel by Volkov Labs
+
+The [Business Links panel](/plugins/business-links/) is a custom Grafana plugin designed to address these challenges and unlock new possibilities for dashboard navigation. This panel allows users to create dynamic, visually appealing, and highly functional links that go beyond what native Grafana links can offer.
+
+Let’s dive into the key benefits of the Business Links panel and how it solves the limitations mentioned above. Please note that while some of the advanced features described below are planned for future releases, the current version already provides significant improvements over native Grafana links, with more enhancements on the way.
+
+### 1. Dynamic and Context-Aware Links
+
+One of the planned features of the Business Links panel is its ability to create dynamic links that adapt based on data, variables, and user context. Unlike static native links, the Business Links panel can pull values from queries, dashboard variables, or panel data to construct URLs or navigation paths. For example, you can create a link that directs users to a specific customer record in a CRM system by dynamically inserting a customer ID from your data source into the URL.
+
+This capability ensures that users are always directed to the most relevant information, improving efficiency and reducing manual effort.
+
+### 2. Enhanced Customization and Styling
+
+The Business Links panel offers extensive customization options for the appearance and behavior of links. You can style links as buttons, icons, or custom HTML elements, and apply branding elements such as colors, fonts, and logos to match your organization’s visual identity. Additionally, you can define hover effects, tooltips, and other interactive elements to make navigation more intuitive. While some of these styling options are still in development and will be fully available in upcoming releases, the current version already provides a noticeable improvement over native links.
+
+This level of customization transforms links from mere functional elements into visually engaging components of your dashboard, enhancing the overall user experience.
+
+### 3. Support for Complex Business Workflows
+
+The Business Links panel is designed with business use cases in mind. It aims to support advanced workflows by allowing links to trigger actions, open in specific targets (e.g., new tabs, iframes, or modals), and integrate with external systems. For instance, you can create a link that not only navigates to a different dashboard but also passes parameters to pre-filter the data displayed, ensuring a seamless transition for the user. Some of these advanced workflow features are on our roadmap for future updates, but the foundation for such integrations is already in place.
+
+This flexibility is invaluable for organizations that need to guide users through multi-step processes or integrate Grafana dashboards with other business tools like ticketing systems, ERPs, or custom applications.
+
+### 4. Improved Usability with Visual Hierarchy
+
+Unlike native Grafana links, which often blend into the dashboard without much distinction, the Business Links panel allows you to create a clear visual hierarchy. You can group related links, use icons or images to represent different actions, and organize links into categories or menus. This makes it easier for users to find and interact with the most relevant navigation options, especially in complex dashboards with multiple panels and data sources. We are continuously working on expanding these visual hierarchy features, with more options planned for future releases.
+
+### 5. Seamless Integration with Grafana Ecosystem
+
+The Business Links panel is built to work seamlessly within the Grafana ecosystem. It supports Grafana’s variables, data sources, and permissions, ensuring that links respect user roles and access levels. This means you can create personalized navigation experiences for different user groups without compromising security or data integrity. Full integration with all Grafana features is a priority, and any remaining enhancements will be rolled out in upcoming versions.
+
+## Real-World Use Cases
+
+To illustrate the power of the Business Links panel, let’s look at a few real-world scenarios where it shines, keeping in mind that some of the described functionalities are part of our vision for future updates:
+
+- **Customer Support Dashboards**: A support team uses Grafana to monitor ticket statuses. With the Business Links panel, they can create dynamic links that take agents directly to a specific ticket in their CRM system, pre-populated with the ticket ID from the dashboard data.
+- **Sales Analytics**: A sales team tracks performance metrics in Grafana. The Business Links panel allows them to link to detailed reports in an external BI tool, passing relevant filters like region or product category to ensure the report is contextually relevant.
+- **IT Operations**: An IT team monitors system health in Grafana. Using the Business Links panel, they can create visually distinct buttons to trigger automated scripts (e.g., restarting a server) or navigate to detailed logs in a separate tool, all from within the same dashboard. Some of these advanced triggering capabilities are planned for future iterations.
+
+<GettingStarted />
+
+## Conclusion
+
+The Business Links panel by Volkov Labs is a game-changer for Grafana users who need more flexibility, customization, and interactivity in their dashboards.
+
+By addressing the limitations of native Grafana links, this plugin empowers organizations to create dynamic, user-friendly navigation experiences that align with their business workflows and branding. While some of the advanced features mentioned in this post are still in development and will be introduced in future updates, the current version already offers significant improvements, with a clear roadmap for even more powerful capabilities. Whether you’re in customer support, sales, IT, or any other domain, the Business Links panel can help you unlock the full potential of your Grafana dashboards.
+
+Ready to enhance your Grafana experience? Install the Business Links panel today and start building smarter, more connected dashboards, with exciting new features to look forward to in upcoming releases!
+
+<Feedback />
