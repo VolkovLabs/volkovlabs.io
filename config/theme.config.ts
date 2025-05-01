@@ -1,7 +1,8 @@
-import { themes } from "prism-react-renderer";
 import { ALGOLIA } from "./algolia";
-import { NAVBAR } from "./navbar";
+import { ANNOUNCEMENT_BAR } from "./announcement";
 import { FOOTER } from "./footer";
+import { NAVBAR } from "./navbar";
+import { PRISM } from "./prism";
 import type { ThemeConfig } from "@docusaurus/types";
 
 /**
@@ -41,26 +42,8 @@ export const THEME_CONFIG: ThemeConfig = {
   footer: FOOTER,
 
   // Prism code highlighting configuration
-  prism: {
-    theme: themes.github, // Light theme for code blocks
-    darkTheme: themes.dracula, // Dark theme for code blocks
-    additionalLanguages: [
-      "docker", // Dockerfiles
-      "nginx", // NGINX configs
-      "bash", // Shell scripts
-      "json", // JSON data
-      "yaml", // YAML configs
-      "java", // Java code
-      "scala", // Scala code
-      "handlebars", // Handlebars templates
-      "markup-templating", // Markup templating (e.g., HTML)
-    ],
-  },
+  prism: PRISM,
 
   // Announcement banner
-  announcementBar: {
-    id: "business_intelligence_3_0",
-    content:
-      '<a href="/blog/business-intelligence-3.0.0">Business Intelligence 3.0.0</a> is out 🚀',
-  },
+  announcementBar: ANNOUNCEMENT_BAR,
 };
