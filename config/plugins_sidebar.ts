@@ -238,6 +238,12 @@ const sidebars: SidebarsConfig = {
       link: { type: "doc", id: "business-links/index" },
       items: [
         { type: "doc", id: "business-links/index", label: "Introduction" },
+        {
+          type: "category",
+          label: "Tutorials",
+          link: { type: "doc", id: "business-links/tutorials/index" },
+          items: [], // Placeholder for future tutorials
+        },
         "business-links/release",
       ],
     },
