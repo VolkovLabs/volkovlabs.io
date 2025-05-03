@@ -14,7 +14,7 @@ import styles from "../css/index.module.css";
  */
 const Header = ({ siteConfig }) => (
   <header className="hero">
-    <div className="container margin-vert--lg">
+    <div className="container margin-vert--md">
       <div className="row align-items-center">
         <div className="col col--7">
           <h1 className="hero__title margin-bottom--md">
