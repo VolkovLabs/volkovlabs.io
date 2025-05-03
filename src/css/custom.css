@@ -353,12 +353,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/team/feature-1.svg") no-repeat;
+  background: url("/static/img/team/logo.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
 [data-theme="dark"] .icon-team-link::before {
-  background: url("/static/img/team/feature-1.dark.svg") no-repeat;
+  background: url("/static/img/team/logo.dark.svg") no-repeat;
 }
 
 .icon-blog-link::before {
