@@ -3,7 +3,9 @@ authors: [mikhail]
 slug: calendar-panel-1.3.0-20230311/
 tags: [Business Calendar, Business Suite]
 image: /img/blog/2023-03-11-calendar-panel-1.3.0/banner.png
-keywords: [Calendar, Events, Time Range, Grafana]
+keywords:
+  [Calendar, Events, Time Range, Grafana, Business Calendar, Visualization]
+description: Discover the new features in Business Calendar 1.3.0 for Grafana, including color options, annotations, and multi-day event support.
 ---
 
 import Feedback from "@site/docs/business-calendar/_feedback.mdx";
@@ -13,66 +15,79 @@ import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
 import Youtube from "@theme/Youtube";
 
-# Color options, annotations, and multi-day events in Business Calendar 1.3.0
+# Business Calendar 1.3.0: Color Options, Annotations, and Multi-Day Events
 
-We are happy to announce the release of the Business Calendar panel 1.3.0. This release includes the following updates:
+We’re thrilled to announce the release of **Business Calendar 1.3.0** for Grafana! This update brings exciting new features and enhancements to help you visualize events more effectively. Whether you're managing releases, tracking schedules, or monitoring annotations, this version has something for everyone.
 
-- Added an option to display colors based on Event ID or Frame ID if the Color field is not specified.
-- Added support for color schemes.
-- Added the splitting of labels when showing in the drawer.
-- Added display of annotation tags as labels.
-- Updated multi-day intervals to automatically align events throughout the week.
+Here’s what’s new in this release:
 
-## Configuration
+- **Enhanced Color Options**: Display event colors based on Event ID or Frame ID when no Color field is specified.
+- **Color Schemes**: Choose from various palettes, including the classic scheme, for better customization.
+- **Improved Label Display**: Labels are now split in the event drawer for better readability.
+- **Annotation Tags as Labels**: Easily view annotation tags alongside event details.
+- **Multi-Day Event Alignment**: Events spanning multiple days are now aligned by week for a seamless view.
 
-Our latest video tutorial explains how to configure the Business Calendar panel plugin in Grafana. We store our events in the PostgreSQL database, but you can use any supported storage.
+:::info Ready to Upgrade
+Check out our [Getting Started Guide](#getting-started) below to install or update to Business Calendar 1.3.0 and explore these new features!
+:::
 
-<Youtube id="6WGmm5y4fs4" title="How to display events from PostgreSQL." />
+## Watch the Configuration Tutorial
 
-### Events Duration
+Learn how to configure the Business Calendar panel in Grafana with our latest video tutorial. We demonstrate using a PostgreSQL database for event storage, but the plugin supports any Grafana-compatible data source.
 
-Events are categorized into four types:
-
-1. **instantaneous**: an event having only the start time.
-2. **continuing**: an event having the start and end time.
-3. **multi-day**: an event having the start and end time and lasting for two days or more.
-4. **ongoing**: an event having the start time without the end time.
-
-<Image
-  title="Schema explains how events are classified depending on the End Time field."
-  src="/img/blog/2023-03-11-calendar-panel-1.3.0/schema.png"
+<Youtube
+  id="6WGmm5y4fs4"
+  title="How to Display Events from PostgreSQL in Grafana"
 />
 
-## Multi-day events
+## Understanding Event Types and Duration
 
-We improved the aligning of multi-day events. In the latest version, events are aligned by week, which prevents in-between gaps for events spanning for more than one week.
+Events in Business Calendar are classified into four distinct types based on their duration and time fields:
 
-Events are displayed in chronological order, with the earliest events appearing at the top.
+1. **Instantaneous**: Events with only a start time (e.g., a quick alert or notification).
+2. **Continuing**: Events with both start and end times within the same day.
+3. **Multi-Day**: Events spanning two or more days with defined start and end times.
+4. **Ongoing**: Events with a start time but no defined end time (e.g., an open task).
+
+<Image
+  title="Schema explaining event classification based on the End Time field."
+  src="/img/blog/2023-03-11-calendar-panel-1.3.0/schema.png"
+  alt="Event duration schema for Business Calendar"
+/>
+
+## Multi-Day Events: Seamless Weekly Alignment
+
+We’ve refined how multi-day events are displayed. In version 1.3.0, events spanning multiple days are aligned by week, eliminating awkward gaps even for events lasting over a week. Events are also ordered chronologically, with the earliest at the top for intuitive navigation.
 
 <Image
   title="Release Management dashboard using Business Calendar panel for Grafana."
   src="/img/blog/2023-03-11-calendar-panel-1.3.0/release.png"
+  alt="Multi-day events aligned in Business Calendar"
 />
 
-## Event colors
+## Flexible Event Coloring
 
-We improved the coloring options for events. If the Color field is not specified, events can be colored based on Frame ID or Event ID. In the plugin preferences, you can also select the classic palette.
+Color customization has been significantly improved. If no Color field is specified in your data, you can now color events based on their **Event ID** or **Frame ID**. Additionally, you can select the **classic palette** in the plugin settings for a familiar look and feel.
 
 <Image
   title="Releases colored based on Event ID using the classic palette."
   src="/img/blog/2023-03-11-calendar-panel-1.3.0/colors.png"
+  alt="Event coloring options in Business Calendar"
 />
 
-## Event details
+## Enhanced Event Details
 
-The splitting of comma-separated values in the Labels field has been added into event details. The Description field supports the HTML elements that you can use for formatting event descriptions.
+Event details are now more user-friendly:
+
+- **Label Splitting**: Comma-separated values in the Labels field are split for clarity in the event drawer.
+- **HTML Support**: Format event descriptions using HTML in the Description field for richer content.
+- **Annotation Tags**: Tags from annotations are displayed as labels for quick reference.
 
 <Image
   title="Event details with HTML-formatted description and labels."
   src="/img/blog/2023-03-11-calendar-panel-1.3.0/drawer.png"
+  alt="Event drawer with formatted details in Business Calendar"
 />
-
-Annotation tags are also displayed as labels.
 
 <GettingStarted />
 
@@ -80,18 +95,18 @@ Annotation tags are also displayed as labels.
 
 ## Release Notes
 
-### Features / Enhancements
+### Features & Enhancements
 
 - Added compatibility with Grafana 9.4.3 (#87).
-- Added the splitting of labels when showing them in the Drawer component (#88).
-- Added annotation tags as labels (#88).
-- Refactored the multi-day interval (#89).
-- Added the event coloring based on Event ID or Frame ID if the Color field is not specified (#90).
-- Added support for color schemes (#91).
-- Added the video configuration tutorial (#92).
+- Improved label splitting in the Drawer component (#88).
+- Displayed annotation tags as labels (#88).
+- Refactored multi-day event intervals for better alignment (#89).
+- Enabled event coloring based on Event ID or Frame ID if no Color field is specified (#90).
+- Added support for customizable color schemes (#91).
+- Included a new video configuration tutorial (#92).
 
-### Bug fixes
+### Bug Fixes
 
-- Fixed the content scrolling in the Day drawer (#93).
+- Fixed content scrolling issue in the Day drawer (#93).
 
 <Feedback />

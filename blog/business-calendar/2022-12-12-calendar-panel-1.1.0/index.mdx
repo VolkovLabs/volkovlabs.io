@@ -1,9 +1,11 @@
 ---
 authors: [mikhail]
+title: "Business Calendar 1.1.0: Annotations, Refactoring, and Enhanced Testing"
 slug: calendar-panel-1.1.0-20221212/
 tags: [Business Calendar, Business Suite]
 image: /img/blog/2022-12-12-calendar-panel-1.1.0/banner.png
-keywords: [Calendar, Events, Grafana]
+keywords: [Calendar, Events, Grafana, Annotations, Plugin Update]
+description: "Discover the latest updates in Business Calendar 1.1.0, including Grafana 9.3.1 compatibility, annotation support, and improved test coverage."
 ---
 
 import Feedback from "@site/docs/business-calendar/_feedback.mdx";
@@ -12,20 +14,25 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
 
-# Annotations, refactoring, and increased test coverage in Business Calendar 1.1.0
+# Business Calendar 1.1.0: Annotations, Refactoring, and Enhanced Testing
 
-We are happy to announce the release of the Business Calendar panel 1.1.0. This release includes the following updates:
+We’re thrilled to announce the release of **Business Calendar 1.1.0**, a significant update to our Grafana plugin designed to help you visualize events and schedules with ease. This release brings exciting new features, improved compatibility, and a stronger foundation for future enhancements. Here's what’s new:
 
-- Added compatibility with Grafana 9.3.1.
-- Added support for annotations.
-- Refactored the legacy code and increased the test coverage for the plugin's functionality.
+- **Grafana 9.3.1 Compatibility**: Seamlessly integrate with the latest Grafana version.
+- **Annotation Support**: Highlight key events and milestones directly on your calendar.
+- **Code Refactoring & Testing**: Improved stability and reliability with extensive refactoring and increased test coverage.
 
-We've already started working on the next version to complete the code refactoring and address the remained issues. We're looking forward to receiving your feedback.
+We’ve already begun working on the next version to finalize the refactoring and address remaining issues. Your feedback is invaluable to us—let us know how we can make Business Calendar even better!
 
 <Image
-  title="Business Calendar panel displays the latest updates in the Grafana Plugins catalog."
+  title="Business Calendar panel showcasing the latest updates in the Grafana Plugins catalog."
   src="/img/blog/2022-12-12-calendar-panel-1.1.0/panel.png"
+  alt="Business Calendar panel in Grafana"
 />
+
+## Why Upgrade to Business Calendar 1.1.0?
+
+This release focuses on enhancing user experience and ensuring long-term maintainability. Whether you're managing project timelines, tracking events, or visualizing schedules, the new annotation feature allows you to mark critical points directly on the calendar. Combined with compatibility for Grafana 9.3.1, this update ensures your dashboards remain cutting-edge.
 
 <GettingStarted />
 
@@ -33,24 +40,21 @@ We've already started working on the next version to complete the code refactori
 
 ## Release Notes
 
-:::warning Breaking changes
-
-Refactoring may introduce breaking changes. Please test before upgrading the plugin on production Grafana instances.
-
+:::warning Breaking Changes
+Refactoring in this release may introduce breaking changes. We strongly
+recommend testing the plugin in a non-production environment before upgrading
+on live Grafana instances.
 :::
 
-### Features / Enhancements
+### Features & Enhancements
 
-- Updated the plugin's options in the README file (#53).
-- Added a YouTube tutorial for Calendar panel explaining how to display events from the JSON API data source (#54).
-- Updated CI to Node.js 16 and synchronized it with the release workflow (#56).
-- Added compatibility with Grafana 9.2.2 (#57).
-- Refactored the program code (#58).
-- Added compatibility with Grafana 9.3.1 (#59).
-- Updated CI to upload signed artifacts (#60).
-- Refactored the plugin options and increased the test coverage (#61).
-- Added support for annotations (#8).
-- Refactored the program code and removed the legacy code (#62).
-- Refactored the plugin options and added the annotation options (#63).
+- **Documentation Updates**: Updated plugin options in the README file (#53).
+- **Educational Content**: Added a YouTube tutorial for displaying events from a JSON API data source (#54).
+- **CI Improvements**: Updated CI to Node.js 16 and synchronized with the release workflow (#56).
+- **Grafana Compatibility**: Added support for Grafana 9.2.2 (#57) and 9.3.1 (#59).
+- **Code Quality**: Extensive refactoring of program code (#58, #62) and plugin options (#61, #63).
+- **Testing**: Increased test coverage for improved reliability (#61).
+- **Annotations**: Added support for annotations to highlight key events (#8, #63).
+- **Artifact Management**: Updated CI to upload signed artifacts (#60).
 
 <Feedback />
