@@ -11,130 +11,63 @@ import BlogPost from "@theme/BlogPost";
 
 Track the progress of the Business Forms panel with these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions.
 
-## 5.1.0 (2024-02-26)
+## 5.1.0 (2025-02-26)
 
-### Features / Enhancements
-
-- Added `isEscaping` option for TextArea and CodeEditor elements (#581)
-- Supported streaming state for data (#577)
-- Refactored form elements (#576)
-- Updated to Grafana 11.5 with latest dependencies (#582)
-- Included attestation in release workflow (#582)
+This release introduces new features like the `isEscaping` option for text elements and streaming state support for data, alongside refactoring of form elements and updates to Grafana 11.5 with the latest dependencies.
 
 ## 5.0.0 (2024-12-23)
 
 :::warning Breaking Changes
-
 Dashboard variables in `Show If`, `Disabled`, and `Options` are now replaced automatically; `replaceVariables` function removed
 :::
 
-### Features / Enhancements
-
-- Improved change value behavior for custom options (#562)
-- Added form element type `color` (#561)
-- Enhanced new line handling in Text Area and Code Editor (#563)
-- Supported variables in data sources (#564)
-- Updated packages for Code Editor (#569)
-- Refined element helpers (#570)
-- Updated to Grafana 11.4.0 with latest dependencies (#571)
+Version 5.0.0 brings significant updates including automatic replacement of dashboard variables, a new `color` form element, and enhancements to text handling and data source support, while updating to Grafana 11.4.0.
 
 ## 4.9.0 (2024-11-16)
 
-### Features / Enhancements
-
-- Removed `DatasourceResponseError`, moved to external Components (#535)
-- Added HTML and Markdown to Code Editor languages (#543)
-- Updated options to use datasource ID instead of name (#539)
-- Enhanced E2E tests (#538)
-- Improved refresh function in Update Request (#547)
-- Enabled dynamic section updates (#542)
-- Removed default payload from Update Request (#550)
+This release focuses on improving functionality with new Code Editor languages, enhanced testing, and dynamic updates, while removing outdated components and updating data source handling.
 
 <BlogPost id="form-panel-4.9.0" />
 
 ## 4.8.0 (2024-10-25)
 
-### Features / Enhancements
-
-- Added Date Form element (#520)
-- Improved refresh for dashboard scenes (#522)
-- Updated Text Area and Code Editor to escape multi-lines (#520)
-- Enhanced refresh using `useDashboardRefresh` hook (#528)
-- Added handling for Data Source Request Errors (#530)
-- Updated to Grafana 11.3.0 with latest dependencies (#531)
+Version 4.8.0 introduces a new Date form element, improves refresh mechanisms, and enhances error handling, alongside updates to Grafana 11.3.0.
 
 ## 4.7.0 (2024-10-08)
 
-### Features / Enhancements
-
-- Improved Autosize Code Editor toolbar (#506)
-- Added custom input for Select and Multi-Select (#507)
-- Supported frames in initial fields (#508)
-- Refined behavior for disabled Text Area element (#514)
+This update enhances form elements with custom input options, improved toolbar features, and better handling of initial fields and disabled elements.
 
 ## 4.6.0 (2024-09-28)
 
-### Features / Enhancements
-
-- Updated initial values from data sources (#490)
-- Added wrap button in Code Editor (#491)
-- Improved loading bar for Initial Request (#492)
-- Added Label Background and Label Color for Button elements (#502)
+Version 4.6.0 improves initial value handling, adds usability features to the Code Editor, and enhances button customization options.
 
 ## 4.5.0 (2024-09-06)
 
-### Features / Enhancements
-
-- Adjusted Date and Time input timezone (#452)
-- Supported dashboard variables in button titles (#479)
-- Repositioned suggestions in Code elements (#483)
-- Added variable support in sections and labels (#485)
+This release focuses on improving timezone handling for date/time inputs and expanding variable support across various form components.
 
 ## 4.4.0 (2024-08-29)
 
-### Features / Enhancements
-
-- Introduced Expandable Editors (#472)
-- Enhanced pre-selection for multi-selection elements (#474)
-- Improved data source query error display (#477)
+Version 4.4.0 introduces expandable editors, enhances multi-selection capabilities, and improves error display for data source queries.
 
 <BlogPost id="form-panel-4.4.0-20240829" />
 
 ## 4.3.1 (2024-08-16)
 
-### Bugfixes
-
-- Fixed migration helper for undefined nested object properties (#468)
+A minor update addressing a specific bug related to migration of nested object properties.
 
 ## 4.3.0 (2024-08-12)
 
-### Features / Enhancements
-
-- Added helpers for form elements (#460)
-- Improved payload options migration (#464)
-- Introduced custom button element (#463)
+This release adds new helpers for form elements, improves migration processes, and introduces a custom button element.
 
 ## 4.2.0 (2024-07-18)
 
-### Features / Enhancements
-
-- Updated Docker Compose and E2E pipeline (#446, #447)
-- Enhanced unit tests (#447)
-- Updated Business Forms tutorial (#451)
-- Improved logic for comparing values with initial values (#454)
-- Adjusted Query fields position for initial values (#455)
+Version 4.2.0 enhances testing pipelines, updates tutorials, and refines logic for handling initial and changed values in forms.
 
 ## 4.1.0 (2024-07-09)
 
+This update improves migration processes, enhances checkbox functionality, and optimizes testing workflows with Docker.
+
 <BlogPost id="form-panel-4.0.0-20240702" />
-
-### Features / Enhancements
-
-- Improved context parameters migration (#433)
-- Updated provisioning files (#433)
-- Enhanced Checkbox list with custom options (#435)
-- Adjusted code defaults to use context properties (#438)
-- Optimized E2E workflow with Docker (#441)
 
 ## 4.0.0 (2024-07-01)
 
@@ -145,7 +78,9 @@ Dashboard variables in `Show If`, `Disabled`, and `Options` are now replaced aut
 - Removed non-context code parameters; update to use `context`
   :::
 
-### Code Parameters Migration Guide
+A major release renaming the plugin to Business Forms, adding support for frontend data sources, and introducing significant enhancements like collapsible sections, while requiring Grafana 10 or 11.
+
+### Migration Guide
 
 - `data` → `context.panel.data`
 - `elements` → `context.panel.elements`
@@ -164,156 +99,53 @@ Dashboard variables in `Show If`, `Disabled`, and `Options` are now replaced aut
 - `templateService` → `context.grafana.templateService`
 - `toDataQueryResponse` → `context.utils.toDataQueryResponse`
 
-### Features / Enhancements
-
-- Renamed to Business Forms panel (#361)
-- Added support for frontend data sources (#361)
-- Improved selection type for new options (#402)
-- Prepared for Grafana 11 (#399)
-- Enhanced Reset button handler (#422)
-- Updated Confirmation Window (#420)
-- Improved error handling in `showIf`, `disableIf`, `getOptions` code editors (#410)
-- Updated description for Get Options Code (#404)
-- Added custom color/background for elements (#386)
-- Introduced Collapsible Sections (#409)
-- Updated to Grafana 11.1 with latest dependencies (#426)
-- Enhanced Date Time query field (#429)
-
 ## 3.8.0 (2024-05-30)
 
-### Features / Enhancements
-
-- Added Checkbox List element (#382)
-- Improved syntax support in Code Editor (#383)
-- Added plugin E2E tests and removed Cypress (#390)
-- Included server-based form elements example (#392)
-- Added input type `time` (#385)
-- Updated hiding/showing of multi-select elements (#389)
-- Adjusted allowed files for file type (#388)
-- Added Form validation provisioning dashboard (#411)
+This release adds new form elements like Checkbox List, improves Code Editor functionality, and introduces comprehensive testing and provisioning examples.
 
 ## 3.7.0 (2024-03-10)
 
-:::warning Breaking Changes
+Version 3.7.0 focuses on compatibility with newer Grafana versions, enhances file upload capabilities, and refines custom code integration.
 
+:::warning Breaking Changes
 Requires Grafana 9.2 or 10
 :::
 
-### Features / Enhancements
-
-- Added update enabled option and variables examples; fixed sync option (#356)
-- Included file upload examples and fixed form data header (#357)
-- Added code parameters with builder and included initial request in element value changed code (#358)
-- Enabled disabling columns in confirmation modal (#360)
-- Updated dependencies and Actions (#368)
-- Skipped hidden elements (via `Show If`) from update payload (#369)
-- Added multiple files option (#375)
-
 ## 3.6.0 (2024-01-10)
 
-### Features / Enhancements
-
-- Added backend service to custom code (#331)
-- Supported file base64 encoding in payload (#331)
-- Included Context parameter in Payload (#331)
-
-### Bugfixes
-
-- Fixed element custom options source (#334)
+This update introduces backend service integration for custom code, enhances file encoding in payloads, and fixes issues with custom options.
 
 ## 3.5.0 (2024-01-04)
 
-### Features / Enhancements
-
-- Added `disableIf` code (#321)
-- Updated reset request visibility when reset button is hidden (#322)
-- Included code options source for select element (#323)
-- Added value changed code (#324)
-- Updated to Node 20 (#326)
-- Added suggestions for code editors (#327)
-- Introduced reset button confirmation (#328)
+Version 3.5.0 adds new code-driven features like `disableIf`, enhances reset functionality, and improves code editor usability with suggestions.
 
 ## 3.4.0 (2023-12-14)
 
+This release enhances customization with new code and payload options, improves panel syncing, and updates to Grafana 10.2.2.
+
 <BlogPost id="form-panel-3.4.0-20240105" />
-
-### Features / Enhancements
-
-- Enabled disabling panel syncing (#298)
-- Updated ESLint configuration and refactored (#299)
-- Updated Collapse from `@volkovlabs/components` (#299)
-- Added `EventBus` and `AppEvents` to Context (#307)
-- Supported replacing variables in Payload functions (#309)
-- Updated to Grafana 10.2.2 with Volkov Labs packages (#313)
-- Added options migration (#315)
-
-### Bugfixes
-
-- Fixed draggable control for upcoming Grafana changes (#314)
 
 ## 3.3.0 (2023-11-21)
 
+Version 3.3.0 introduces new form elements, enhances custom code integration, and updates to Grafana 10.2.1 with improved editor features.
+
 <BlogPost id="form-panel-3.3.0-20231203" />
-
-### Features / Enhancements
-
-- Added Disabled Text Area element type (#243)
-- Included Confirmation Window options (#242)
-- Added context object to custom code (#255)
-- Supported Select Options from Query (#254)
-- Added NumberInput component for decimals (#291)
-- Updated to Plugin Tools 2.1.1 (#292)
-- Signed plugin with Grafana Access Policy (#292)
-- Updated to Grafana 10.2.1 (#292)
-- Refined ESLint configuration (#294)
-- Introduced Autosize Code Editor (#295)
-- Added Data Source option for Reset button (#296)
-- Included Link Element (#297)
-
-### Bugfixes
-
-- Allowed entering zero in number field (#288)
 
 ## 3.2.1 (2023-09-07)
 
+A minor update ensuring backward compatibility for option identifiers.
+
 <BlogPost id="form-panel-3.2.1-20231010" />
-
-### Features / Enhancements
-
-- Added backward compatibility for option identifiers (#244)
 
 ## 3.2.0 (2023-09-06)
 
-### Features / Enhancements
-
-- Added min/max date for Date Time element (#225)
-- Supported mapping data source values to form elements (#224)
-- Updated `Show If` element to support variables (#230)
-- Cleared errors before initial and update requests (#232)
-- Added URL encoding for variables (#231)
-- Allowed empty section names (#228)
-- Included query field picker for initial request (#227)
-- Added file element type for uploads (#229)
-- Converted option values to string/number based on type (#233)
-- Added loading states for initial request and Update/Reset actions (#234)
-- Supported asynchronous custom code execution (#234)
-- Updated initial request for Query and Data Source (#237)
-- Added icons for radio buttons and select boxes (#238)
+This release enhances form elements with new features like file uploads, data source mapping, and asynchronous code execution, alongside UI improvements.
 
 ## 3.1.0 (2023-08-13)
 
+Version 3.1.0 introduces multi-select elements, conditional visibility, and enhanced custom code capabilities for payloads and resets.
+
 <BlogPost id="form-panel-3.1.0-20230823" />
-
-### Features / Enhancements
-
-- Updated `jest` selectors to use `npm` package (#209)
-- Added `onChange` function for local state updates in custom code (#214)
-- Refined ESLint configuration (#215)
-- Introduced multi-select element (#217)
-- Added conditional element visibility (#219)
-- Included code editor for Custom Payload section (#220)
-- Added code editor for Custom Reset section (#221)
-- Supported Data Source requests (#222)
 
 ## 3.0.0 (2023-07-15)
 
@@ -324,188 +156,74 @@ Requires Grafana 9.2 or 10
 - Refactoring of local states and elements may introduce breaking changes; test before production upgrade
   :::
 
-### Features / Enhancements
-
-- Updated documentation for API Servers (#149)
-- Added compatibility with Grafana 10.0.0 (#165, #172, #184, #200)
-- Included Hidden option for string element (#171)
-- Integrated E2E Cypress testing (#180)
-- Increased test coverage and updated test library (#181, #183, #185)
-- Delayed saving of form element changes with auto-save (#186)
-- Migrated to Plugin Tools 1.5.2 (#187, #192)
-- Updated to Node.js 18 (#188)
-- Refined constants and E2E tests (#190)
-- Updated form elements to use local state (#191)
-- Added `notifyWarning()` function (#201)
-- Enabled drag-and-drop for elements editor (#202)
-- Dropped support for Grafana 8.5 (#203)
-- Executed initial request on initial updates (#205)
-- Added landscape orientation for layout (#206)
+A major update introducing local state for form elements, compatibility with Grafana 10, and new features like drag-and-drop editing, with breaking changes.
 
 <BlogPost id="form-panel-3.0.0-20230715" />
 
 ## 2.8.0 (2023-03-16)
 
+This release enhances form layouts, adds compatibility with Grafana 9.4.3, and introduces new request options and server API integrations.
+
 <BlogPost id="form-panel-2.8.0-20230316" />
-
-### Features / Enhancements
-
-- Supported string and number types for select boxes and radio buttons (#120)
-- Added lookup options for disabled elements (#121)
-- Included Server API with MySQL for feedback dashboard (#125)
-- Added compatibility with Grafana 9.3.1 (#129)
-- Supported `DELETE` request options (#130)
-- Introduced Buttons-only layout for `GET`/`POST`/`DELETE` requests (#131)
-- Updated README and moved documentation to docs.volkovlabs.io (#132)
-- Enhanced README and product documentation (#134)
-- Refactored API servers (#128)
-- Updated CI and release workflows (#145)
-- Added compatibility with Grafana 9.4.3 (#146)
-- Included `NoPadding` parameter to configure padding (#146)
-- Updated README and product documentation (#147)
-
-### Bug Fixes
-
-- Fixed password and Boolean elements confirmation (#120)
 
 ## 2.7.0 (2022-11-10)
 
+Version 2.7.0 improves compatibility with Grafana 9.2.2, enhances payload flexibility, and adds status notifications for form submissions.
+
 <BlogPost id="form-panel-2.7.0-20221110" />
-
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.2.2 (#113)
-- Updated CI to upload signed artifacts (#116)
-- Allowed passing all or updated-only values in payload (#116)
-- Included Initial values parameter in Update Request (#117)
-- Added status notifications after form submission (#98)
-- Provided suggestions in Monaco Code Editor for parameters (#88)
 
 ## 2.6.0 (2022-10-23)
 
-### Features / Enhancements
-
-- Added compatibility check workflow (#92)
-- Ensured compatibility with Grafana 9.1.6 (#92)
-- Included custom code to update variables post-update request (#106)
-- Added validation for number input and slider with min/max values (#95)
-- Initialized element values from Data Source queries (#105)
-- Updated CI to Node.js 16 and synced with release workflow (#109)
-
-### Bug Fixes
-
-- Fixed initial GET request date-time formatting (#99)
+This update ensures compatibility with Grafana 9.1.6, adds data source initialization for elements, and introduces custom code for variable updates.
 
 ## 2.5.0 (2022-09-10)
 
-### Features / Enhancements
-
-- Validated request headers (#85)
-- Exposed `initialRequest()` method in custom code to reload panel (#89)
-- Set `json` as default response format for initial request (#90)
-- Added compatibility with Grafana 9.1.4 (#91)
+Version 2.5.0 focuses on request header validation, panel reload capabilities, and compatibility with Grafana 9.1.4.
 
 ## 2.4.0 (2022-08-31)
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.1.1 (#72)
-- Explained dashboard variables usage in README (#73)
-- Included `onOptionsChange` event in examples to update panel (#75)
-- Supported variables in URL calls from form elements (#78)
-- Added custom update request description in README (#79)
-- Introduced Deno Deploy Playground server and dashboard (#80)
-- Added "How to Manipulate Data using Grafana dashboard" video to README (#80)
-- Displayed title instead of identifier in confirmation dialog (#81)
-- Disabled confirmation for disabled elements (#77)
-- Increased test coverage for plugin functionality (#21)
+This release enhances usability with variable support in URLs, introduces a playground server, and ensures compatibility with Grafana 9.1.1.
 
 ## 2.3.0 (2022-08-11)
 
 :::warning Breaking Changes
-
 Signed as a community plugin
 :::
 
-### Features / Enhancements
-
-- Updated sample code in README (#67)
-- Enabled exposure in Grafana Plugins catalog (#68)
+A minor update signing the plugin as a community plugin and enhancing documentation.
 
 ## 2.2.0 (2022-08-09)
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.0.6 (#63)
-- Allowed retrieval of element initial value and config from data source (#22)
-- Updated alert for undefined elements (#66)
-
-### Bug Fixes
-
-- Fixed number slider (#18)
+This release adds compatibility with Grafana 9.0.6 and introduces data source integration for initial values and configurations.
 
 ## 2.1.0 (2022-07-17)
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.0.3 (#58)
-- Enabled automatic formatting in code editor (#59)
-- Explained custom code usage in README (#60)
-- Updated YouTube tutorial link in README (#61)
+Version 2.1.0 enhances code editor functionality and updates documentation with tutorials for Grafana 9.0.3 compatibility.
 
 ## 2.0.0 (2022-06-17)
 
 :::warning Breaking Changes
-
-Requires Grafana 8.3+ or 9.0+
+Requires Grafana 8.3 or 9
 :::
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.0.0 (#53)
+A major update ensuring compatibility with Grafana 8.3 and 9, with breaking changes for older versions.
 
 ## 1.4.0 (2022-05-30)
 
-### Features / Enhancements
-
-- Enabled updating element width (#50)
-- Highlighted changed values (#51)
-- Added confirmation dialog before form submission (#52)
+This release introduces usability features like element width updates, value change highlighting, and form submission confirmations.
 
 ## 1.3.0 (2022-05-22)
 
-### Features / Enhancements
-
-- Updated architecture diagram (#44)
-- Fixed color change during form submission (#43)
-- Added sections layout for form elements (#47)
-- Included `None Request` option for initial and update requests (#48)
-- Added code editor for form configuration (#23)
+Version 1.3.0 enhances form layouts with sections, adds code editor support for configurations, and improves UI feedback.
 
 ## 1.2.0 (2022-05-19)
 
-### Features / Enhancements
-
-- Added label width and tooltip (#39)
-- Supported Server API with PostgreSQL for feedback dashboard (#36)
-- Updated input parameters for form elements (#41)
+This update improves form element customization with label widths, tooltips, and server API integration for feedback dashboards.
 
 ## 1.1.0 (2022-05-12)
 
-### Features / Enhancements
-
-- Enabled display of disabled elements (#24)
-- Added capability to reorder form elements (#19)
-- Split disabled layout for Input/Output (#27)
-- Supported variable interpolation (#28)
-- Included min/max fields for number element (#29)
-- Added Unit label (#31)
-- Supported header parameters (#32)
-- Introduced password input element (#33)
-- Subscribed to refresh events (#30)
+Version 1.1.0 introduces new form element types, variable support, and enhanced customization options for headers and layouts.
 
 ## 1.0.0 (2022-05-11)
 
-### Features / Enhancements
-
-- Initial release based on Volkov Labs panel template 1.5.0
+The initial release of the Business Forms panel, based on the Volkov Labs panel template, marking the foundation for future enhancements.
