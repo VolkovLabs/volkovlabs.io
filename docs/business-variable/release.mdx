@@ -13,283 +13,126 @@ Follow the development of the Business Variable panel with these release notes, 
 
 ## 3.9.0 (2025-04-08)
 
-### Features & Enhancements
-
-- Added a custom message for the 'no data' and 'variable not selected' cases (#262)
-- Added minimized view for Tree View layout (#263)
-- Upgraded to Grafana 11.6.0 with updated dependencies (#265)
+This release focuses on improving user experience with custom messages for edge cases, a minimized view for Tree View layout, and compatibility with Grafana 11.6.0.
 
 ## 3.8.0 (2025-03-26)
 
-### Features & Enhancements
-
-- Added attestation to release workflow (#246)
-- Removed `@volkovlabs/grafana-utils` dependency (#247)
-- Introduced resize behavior for panels with sticky headers (#253)
+This version introduces enhancements to the release workflow, removes outdated dependencies, and improves panel usability with resize behavior for sticky headers.
 
 ## 3.7.0 (2025-02-13)
 
-### Features & Enhancements
-
-- Updated to use datasource ID instead of name, with variable support (#229)
-- Enhanced sticky header for Scenes dashboards (#230)
-- Improved favorites icon visibility (#234)
-- Excluded Alert Message variable type from support (#235)
-- Added Date Picker component (#237)
-- Upgraded to Grafana 11.4.0 with updated dependencies (#241)
-- Added advanced option to modify browser tab title (#243)
+A significant update with improvements to variable handling, UI enhancements for sticky headers and favorites, and support for Grafana 11.4.0, along with new components like the Date Picker.
 
 ## 3.6.0 (2024-10-24)
 
-### Features / Enhancements
-
-- Improved behavior in Table view for Textbox variable type (#211)
-- Added Date Time Selector (#209)
-- Supported "All" options in Scenes dashboards (#213)
-- Enhanced E2E tests (#216)
-- Fixed Slider view display error (#220)
-- Updated to Grafana 11.3.0 with latest dependencies (#222)
-- Improved sticky position in Scenes dashboards (#221)
+This release enhances usability with new components like Date Time Selector, improved Table view behavior, and compatibility updates to Grafana 11.3.0.
 
 ## 3.5.0 (2024-10-02)
 
-### Features / Enhancements
-
-- Enhanced select variable in Minimize view (#197)
-- Updated `@tanstack/virtual` to latest version (#207)
-- Updated to Grafana 11.2.2 with latest dependencies (#207)
+Focused on refining the Minimize view for select variables and ensuring compatibility with Grafana 11.2.2 through dependency updates.
 
 ## 3.4.0 (2024-08-23)
 
-### Features / Enhancements
-
-- Added panel options for reordering tabs (#193)
-- Updated local storage key for favorites (#194)
-- Updated to Grafana 11.1.4 (#195)
+This update introduces options for reordering tabs and updates local storage for favorites, alongside compatibility with Grafana 11.1.4.
 
 <BlogPost id="variable-panel-3.4.0-20240823" />
 
 ## 3.3.0 (2024-08-14)
 
-### Features / Enhancements
-
-- Supported data source for favorites (#184)
-- Updated documentation (#185)
-- Added scrollbar for Button view (#187)
+Enhancements include support for data source favorites and UI improvements like scrollbars for Button view.
 
 ## 3.2.0 (2024-07-09)
 
-### Features / Enhancements
-
-- Updated video tutorial (#166)
-- Optimized E2E workflow with Docker (#173)
-- Added image threshold style for status display in Table view (#170)
+This release focuses on user education with updated tutorials and performance optimizations through Docker workflows and new styling options in Table view.
 
 ## 3.1.0 (2024-06-06)
 
-### Features / Enhancements
-
-- Added collapse/expand rows option on initial load (#159)
-- Improved selection behavior using Ctrl key (#160)
-- Updated to Grafana 11.0.0 with latest dependencies (#161)
-- Added Reset button for Button view (#162)
-- Enhanced selection for key/value pair variables (#165)
+Improvements to user interaction with collapse/expand options, enhanced selection behaviors, and compatibility with Grafana 11.0.0.
 
 ## 3.0.0 (2024-05-09)
 
 :::warning Breaking Changes
-
 Requires Grafana 10 or 11
 :::
 
+A major release with breaking changes requiring Grafana 10 or 11, introducing new views like Slider View, performance enhancements, and extensive UI improvements.
+
 <BlogPost id="variable-panel-3.0.0-20240601" />
-
-### Features / Enhancements
-
-- Improved multi-level selecting and deselecting (#139)
-- Updated Auto/Static Minimize label width (#144)
-- Added show/hide Minimize label option (#144)
-- Introduced maximum visible values option in Minimize view (#147)
-- Added plugin E2E tests and removed Cypress (#149)
-- Included row count in Table view (#148)
-- Enhanced AutoScroll behavior (#152)
-- Added Slider View (#154)
-- Prepared for Grafana 11 (#155)
-- Updated to Grafana 10.4.2 with latest dependencies (#158)
 
 ## 2.5.0 (2024-04-01)
 
-### Features / Enhancements
-
-- Added indeterminate state to checkboxes (#127)
-- Improved Tree View scrolling (#128)
-- Introduced responsive tabs (#130)
-- Supported new items in Variable (Minimize mode) (#134)
-- Added preservation of group selection across dashboards (#135)
-- Enhanced Tree View display and scrolling (#136)
-- Added reset for dependent variables on value selection (#138)
+This version enhances usability with responsive tabs, improved Tree View scrolling, and better group selection preservation across dashboards.
 
 ## 2.4.0 (2024-03-17)
 
 :::warning Breaking Changes
-
 Requires Grafana 9.2 or 10
 :::
 
-### Features / Enhancements
-
-- Updated video tutorial in README (#111)
-- Enhanced timescale data (#119)
-- Updated dependencies and Actions (#120)
-- Adjusted default color contrast (#122)
-- Added preserve selected group option (#124)
-- Included label for Button view (#125)
+A release with breaking changes for Grafana compatibility, focusing on UI enhancements and updated documentation.
 
 ## 2.3.1 (2023-12-14)
 
+A minor release addressing a specific UI bug for Grafana 10.3 compatibility.
+
 <BlogPost id="variable-panel-2.3.1-20231214" />
-
-### Bugfixes
-
-- Fixed draggable icon for Grafana 10.3 (#107)
 
 ## 2.3.0 (2023-12-13)
 
-### Features / Enhancements
-
-- Cleared table state on tab change (#101)
-- Updated ESLint configuration and refactored (#102)
-- Added persistent mode (#103)
-- Updated to Grafana 10.2.2 with Volkov Labs packages (#104)
+This update introduces persistent mode and compatibility with Grafana 10.2.2, along with code quality improvements.
 
 ## 2.2.0 (2023-11-20)
 
+Focused on enhancing navigation with dashboard redirects and improving usability across different browsers.
+
 <BlogPost id="variable-panel-2.2.0-20231130" />
-
-### Features / Enhancements
-
-- Added dashboard redirect option (#92)
-- Updated ESLint configuration and sorted imports (#93)
-- Improved Safari layout for favorites (#97)
-- Updated to Grafana 10.2.1 (#98)
-- Added clear filter value button (#99)
 
 ## 2.1.0 (2023-11-08)
 
-### Features / Enhancements
-
-- Added always-visible search filter option (#83)
-- Introduced group rename functionality (#84)
-- Supported selecting fields from data frames without RefId (#85)
-- Enabled toggling expanded row state by label click (#86)
-
-### Bugfixes
-
-- Fixed deselection of "All" variable value not in URL (#87)
-- Removed ability to add group to favorites (#88)
+This release improves search functionality, group management, and fixes specific bugs related to variable deselection.
 
 ## 2.0.0 (2023-10-16)
 
+A major update with performance optimizations through table virtualization and compatibility with Grafana 10.1.5.
+
 <BlogPost id="variable-panel-2.0.0-20231019" />
-
-### Features / Enhancements
-
-- Updated variable option label for parent items in Tree View (#62)
-- Added Enter and Escape key handling for Text Variable (#69)
-- Implemented table virtualization for performance (#64, #74)
-- Cleared value for multi-choice variables (#66)
-- Updated to Plugin Tools 2.1.1 (#72)
-- Signed plugin with Grafana Access Policy (#72)
-- Updated to Grafana 10.1.5 (#73)
-
-### Bugfixes
-
-- Fixed key:value option selection in Minimize and Button views (#75)
 
 ## 1.7.0 (2023-08-08)
 
+This version introduces new views like Button View and enhances variable display in Table/Tree View.
+
 <BlogPost id="variable-panel-1.7.0-20230810" />
-
-### Features / Enhancements
-
-- Supported variables with text and value in Table/Tree View (#57)
-- Added Button View (#59)
-- Included group selection (#58)
-- Updated dependencies to Grafana 10.0.3 (#60)
 
 ## 1.6.0 (2023-07-26)
 
+Focused on refining code quality and adding usability features like status sort buttons and Minimize mode.
+
 <BlogPost id="variable-panel-1.6.0-20230726" />
-
-### Features / Enhancements
-
-- Refined ESLint configuration (#47)
-- Added status sort button (#49, #51)
-- Introduced Minimize mode similar to native select for Query and Custom (#50)
-- Added input for Textbox variable (#53)
 
 ## 1.5.0 (2023-07-11)
 
+Enhancements to variable selection and UI interactions like sticky headers and drag-and-drop for groups.
+
 <BlogPost id="variable-panel-1.5.0-20230711" />
-
-### Features / Enhancements
-
-- Updated single-select variable with "All" enabled (#41)
-- Added sticky header and auto-scroll on multi-group selection (#38)
-- Enabled drag-and-drop for Groups (#42)
-- Included expand/collapse all in header (#46)
 
 ## 1.4.0 (2023-07-06)
 
+This release adds educational content, new Tree View groups, and usability features like auto-scrolling.
+
 <BlogPost id="variable-panel-1.4.0-20230708" />
-
-### Features / Enhancements
-
-- Added tutorial (#21)
-- Updated new Level addition to last position (#22)
-- Hid unselectable items (#24)
-- Used main view scroll element for Grafana 9 support (#26)
-- Added Favorite icon to filter selected favorites (#25)
-- Introduced Tree View groups (requires configuration update) (#20)
-- Added option to display variable name before value (#30)
-- Increased test coverage (#31)
-- Enabled auto-scroll to selected value (#32)
-- Signed as community release (#37)
 
 ## 1.3.0 (2023-06-30)
 
-### Features / Enhancements
-
-- Added Display Header option (#15)
-- Enabled collapsing parent rows (#16)
-- Introduced Sticky option for scrolling (#17)
-- Added Table Filter (#18)
-- Supported selecting favorites (#19)
-- Updated documentation (#20)
+Focused on improving UI with sticky scrolling, table filters, and enhanced row interactions.
 
 ## 1.2.0 (2023-06-26)
 
-### Features / Enhancements
-
-- Introduced Tree View (#12, #13)
-- Updated README and screenshot (#14)
+Introduction of Tree View as a major feature, along with updated documentation.
 
 ## 1.1.0 (2023-06-21)
 
-### Features / Enhancements
-
-- Added variable statuses based on Threshold (#6)
-- Replaced Table with `react-table v8` (#8)
-- Included Field options for variable values and statuses (#9)
-- Updated Provisioning and README (#10)
-- Supported Grafana 8.5.0 (#11)
+This release enhances variable visualization with threshold-based statuses and modernizes the table component.
 
 ## 1.0.0 (2023-06-19)
 
-### Features / Enhancements
-
-- Initial release based on Volkov Labs panel template
-- Updated README and configuration (#1)
-- Refactored legacy code (#2, #4)
-- Updated to Grafana 10.0.0 (#3)
-- Enhanced Provisioning and README (#5)
+The initial release of the Business Variable panel, setting the foundation with basic functionality and Grafana 10.0.0 compatibility.

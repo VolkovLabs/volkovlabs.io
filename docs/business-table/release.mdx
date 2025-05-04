@@ -13,197 +13,80 @@ Discover the updates to the Business Table panel through these release notes, de
 
 ## 2.6.0 (2025-04-22)
 
-### Features & Enhancements
-
-- Added sorting by user preferences in UI (#302)
-- Added image preview and update downloadable cells (#306)
-- Upgraded to Grafana 11.6 with dependency updates (#307)
+This release focuses on enhancing user experience with sorting preferences, improved image handling, and compatibility updates for Grafana 11.6.
 
 ## 2.5.0 (2025-03-30)
 
-### Features & Enhancements
-
-- Added export format options (#290)
-- Introduced file download cell type (#291)
-- Added user preferences and UI manager (#283)
-- Updated download data in XLS and CSV (#294)
+Introduces new export options, downloadable file cell types, and user preference management for a more customizable table experience.
 
 ## 2.4.0 (2025-03-10)
 
-### Features & Enhancements
-
-- Added file upload editor (#270)
-- Enabled row background color from hidden fields (#273)
-- Introduced date format editor (#275)
+Enhances data interaction with file upload capabilities, background color options, and improved date formatting.
 
 ## 2.3.0 (2025-02-26)
 
-### Features / Enhancements
-
-- Improved highlighted row behavior (#250)
-- Adjusted align icons in panel options (#261)
-- Added tooltip option for columns (#260)
-- Enhanced contrast color for cell text with data links (#253)
-- Updated to Grafana 11.5 with latest dependencies (#262, #265)
-- Included attestation in release workflow (#262)
-- Added custom scrollbar from Grafana UI (#251)
+Improves usability with better row highlighting, tooltip options, and compatibility with Grafana 11.5, alongside UI refinements.
 
 ## 2.2.0 (2025-02-10)
 
-### Features / Enhancements
-
-- Updated gauge values for Grafana 10.3.0 (#241)
-- Fixed unexpected error in "Data links" dashboard (#241)
-- Added row highlight with background and auto-scroll (#243)
+Focuses on compatibility fixes for Grafana 10.3.0 and introduces row highlighting with auto-scroll functionality.
 
 ## 2.1.0 (2025-02-04)
 
-### Features / Enhancements
-
-- Added download settings for Excel format (#227, #233)
-- Updated data links to prevent dashboard page reload (#232)
-- Introduced JSON cell type with inspector (#224)
-- Added column configuration for actions (#231)
-- Included Gauge cell type (#238)
+Enhances data export options, introduces new cell types like JSON and Gauge, and improves data link behavior.
 
 ## 2.0.0 (2025-01-07)
 
-### Features / Enhancements
-
-- Enhanced word wrapping for column text (#195)
-- Updated packages for Code Editor (#194)
-- Added normalization for boolean type (#198)
-- Displayed number of rows inside groups (#199)
-- Added error message for data source requests (#213)
-- Updated to Grafana 11.4 with latest dependencies (#214)
+Brings significant UI improvements, better data handling, and compatibility with Grafana 11.4 for a more robust table panel.
 
 ## 1.9.0 (2024-12-01)
 
-### Features / Enhancements
-
-- Added Image cell type (#177)
-- Improved Autosize Code Editor (#179)
-- Set default pagination size (#181)
-- Introduced preformatted cell type (#180)
-- Updated table cells border (#183)
-- Enabled adding and deleting rows (#184)
+Introduces new cell types like Image, enhances editing capabilities, and improves table layout and data management.
 
 <BlogPost id="business-table-1.9.0" />
 
 ## 1.8.0 (2024-11-21)
 
-### Features / Enhancements
-
-- Updated sort state on dashboard refresh (#163)
-- Supported variables in data sources for editable and nested objects (#167)
-- Improved group expand and collapse behavior (#161)
-- Added custom value to editable select field (#165)
-- Enhanced group expanding for empty cells (#169)
-- Included type check for text area (#172)
-- Refined edit process behavior (fixed TextArea initial value error) (#176)
+Focuses on refining data handling with better sorting, variable support, and improved group behavior for a smoother user experience.
 
 ## 1.7.0 (2024-11-16)
 
-### Features / Enhancements
-
-- Enhanced `useNestedObjects` hook to display request errors and empty values (#158)
-- Added Sanitized HTML and Markdown column type (#154)
-- Adjusted row heights on group collapse (#159)
-- Updated filter options for exact matches (#160)
-- Switched data source reference from name to ID (#156)
-- Added option to hide table header (#157)
+Enhances content display with HTML and Markdown support, improves error handling, and adds UI customization options.
 
 ## 1.6.0 (2024-10-29)
 
-### Features / Enhancements
-
-- Improved refresh and `useRuntimeVariables` for dashboard scenes (#129)
-- Supported `replaceVariables` in file names (#131)
-- Added Textarea column editor type (#133)
-- Enabled `replaceVariables` in column headers (#134)
-- Updated to Grafana 11.3 with latest dependencies (#137)
-- Introduced colored text and background for aggregated rows (#136)
-- Added handling for Data Source Request Errors (#140)
-- Enabled customization for column headers (#141)
-- Enhanced text wrapping (#143)
+Improves integration with Grafana 11.3, enhances variable usage, and introduces advanced column customization features.
 
 ## 1.5.0 (2024-10-08)
 
-### Features / Enhancements
-
-- Improved Autosize Code Editor toolbar (#99)
-- Added sanitizing for HTML content (#110)
-- Included data from hidden columns in payload (#112)
-
-### Bugfixes
-
-- Fixed escaping new lines for content editing (#111)
+Focuses on improving content editing and security with HTML sanitization, alongside UI enhancements for the code editor.
 
 <BlogPost id="business-table-1.5.0" />
 
 ## 1.4.0 (2024-10-02)
 
-### Features / Enhancements
-
-- Updated aggregated cells to support Standard Options (#79)
-- Introduced nested objects cell type (#80)
-- Enhanced E2E tests (#81)
-- Moved pagination options to a separate category (#87)
-- Adjusted nested objects display to show first or last object (#92)
-- Updated row data handling for accessor keys with dots (#90)
-- Added YouTube tutorial (#93)
-- Enabled show/hide columns functionality (#94)
-- Fixed query pagination error with client column filtering enabled (#95)
-- Updated E2E tests to support panel edit in dashboard scenes (#96)
+Introduces nested object support, enhances testing, and improves pagination and column visibility options.
 
 ## 1.3.0 (2024-09-20)
 
 :::warning Breaking Changes
-
 Requires Grafana 10.3 or 11
 :::
 
-### Features / Enhancements
-
-- Added editable data with permission checks (#40, #76)
-- Included edit permission based on query (#47)
-- Supported client and query pagination (#50)
-- Enabled column pinning (#53, #65)
-- Added table data download as CSV (#61)
-- Adjusted Page size button to prevent overflow (#62)
-- Reset table state on tab change (#67)
-- Improved Table Editor UI/UX (#66)
-- Enhanced sorting options (#69)
-- Added DataLinks support (#75)
+Major update with editable data features, pagination options, and DataLinks support, requiring Grafana 10.3 or 11.
 
 <BlogPost id="business-table-1.3.0" />
 
 ## 1.2.0 (2023-09-05)
 
-### Features / Enhancements
-
-- Introduced Colored Background Column type (#33)
-- Added column width and wrap options (#34)
-- Included table Footer (#36)
-- Updated to Grafana 11.2.0 (#37)
+Adds visual customization with colored backgrounds, column width options, and compatibility with Grafana 11.2.0.
 
 <BlogPost id="business-table-1.2.0" />
 
 ## 1.1.0 (2024-08-22)
 
-### Features / Enhancements
-
-- Signed as Community plugin (#23)
-- Added Column Filtering (#21)
-- Renamed groups to tables (#27)
-- Updated options to show aggregation if at least one column is grouped (#28)
-- Included tabs sorting option (#29)
-- Updated to Grafana 11.1.4 (#31)
+Enhances functionality with column filtering, plugin signing, and UI improvements for better data organization.
 
 ## 1.0.0 (2024-08-04)
 
-### Features / Enhancements
-
-- Initial release based on Grafana 11.1.0
-- Added basic columns editor (#1)
-- Introduced groups and tabs (#17)
+Initial release of the Business Table panel with core features and compatibility with Grafana 11.1.0.

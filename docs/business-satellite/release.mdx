@@ -13,44 +13,27 @@ Keep track of the Business Satellite data source’s advancements with these rel
 
 ## 3.5.0 (2025-04-03)
 
-### Features & Enhancements
-
-- Added starred filtering to dashboard search request type (#88)
-- Enabled filtering of annotation results using tags (#89)
-- Upgraded to Grafana 11.5 and updated dependencies (#91)
+This release introduces new filtering capabilities for dashboard search and annotations, alongside an upgrade to Grafana 11.5 with updated dependencies for improved compatibility and performance.
 
 ## 3.4.0 (2024-12-25)
 
-### Features / Enhancements
-
-- Enhanced E2E tests (#83)
-- Updated to Grafana 11.4 with latest dependencies (#84)
+Focused on enhancing end-to-end testing and ensuring compatibility with Grafana 11.4 through updated dependencies.
 
 ## 3.3.0 (2024-11-17)
 
-### Features / Enhancements
-
-- Updated to Grafana 11.3 with latest dependencies (#80)
+A maintenance release aligning the plugin with Grafana 11.3 and incorporating the latest dependency updates.
 
 ## 3.2.0 (2024-07-29)
 
 :::warning Breaking Changes
-
 Requires Grafana 10.2 or 11
 :::
 
-### Features / Enhancements
-
-- Added variables support in Dashboard Scenes (#75)
-- Included Grafana alerts with states (#76)
+Introduces support for variables in Dashboard Scenes and Grafana alerts, with a breaking change requiring Grafana 10.2 or 11.
 
 ## 3.1.0 (2024-07-16)
 
-### Features / Enhancements
-
-- Set minimum Grafana version to 10.1.0 (#72)
-- Added request for dashboards metadata (#70)
-- Implemented data source health check (#71, #73)
+Enhances functionality with dashboards metadata requests and health checks, setting a minimum Grafana version of 10.1.0.
 
 ## 3.0.0 (2024-07-11)
 
@@ -59,95 +42,42 @@ Requires Grafana 10.2 or 11
 Requires Grafana 10.1 or 11
 :::
 
-### Features / Enhancements
-
-- Updated tutorial in README (#57)
-- Refined ESLint configuration and refactored (#61)
-- Added plugin E2E tests and removed Cypress (#64)
-- Prepared for Grafana 11 (#66)
-- Optimized E2E tests with Docker (#68)
-- Updated to Grafana 11.1.0 with latest dependencies (#60, #69)
+A major update preparing for Grafana 11 compatibility, optimizing testing with Docker, and introducing breaking changes requiring Grafana 10.1 or 11.
 
 ## 2.2.0 (2023-09-19)
 
+Expands compatibility across Grafana versions with feature flags and improves annotation handling with new options and fields.
+
 <BlogPost id="grapi-datasource-2.2.0-20231027" />
-
-### Features / Enhancements
-
-- Moved API methods under feature flag for broader Grafana version support (#53)
-- Added option to disable Alert Rules in Annotations (#55)
-- Included values field from annotation text (#30)
 
 ## 2.1.0 (2023-09-10)
 
-### Features / Enhancements
-
-- Refactored API and increased test coverage (#50)
-- Updated ESLint configuration (#50)
-- Added Local mode for accessing local instance (#51)
-- Included Organization Users (#52)
+Focuses on code quality with API refactoring, increased test coverage, and new features like Local mode and Organization Users support.
 
 ## 2.0.0 (2023-07-17)
 
 :::warning Breaking Changes
-
 Requires Grafana 9 or 10
 :::
 
+A significant update to support Grafana 9 or 10, with extensive testing improvements, new tutorials, and breaking changes for compatibility.
+
 <BlogPost id="grapi-datasource-2.0.0-20230718" />
-
-### Features / Enhancements
-
-- Updated to Grafana 10.0.2 (#31, #40, #45, #47)
-- Added Annotations tutorial to README (#33)
-- Included Authentication in Getting Started (#36)
-- Added exception handling for Alert Rules in Annotations (#39)
-- Updated tests with `testing-library/react` (#42)
-- Added tests for Components and datasource (#44)
-- Migrated to Plugin Tools 1.5.2 (#45)
-- Updated to Node 18 and npm (#45)
-- Integrated E2E Cypress testing (#48)
 
 ## 1.2.0 (2023-03-30)
 
+Enhances annotation capabilities with formatted labels, variable support, and improved testing for alerts.
+
 <BlogPost id="grapi-datasource-1.2.0-20230331" />
-
-### Features / Enhancements
-
-- Added formatted Annotation labels for Alerts (#19)
-- Set Annotation Limit to 100 by default (#19)
-- Included Alert Rules and UID for Alerts Annotations (#20)
-- Updated Scoped Variables for Annotations (#21)
-- Added variable support (#25)
-- Enhanced provisioning for testing Alerts (#26, #28)
-- Added Annotations tutorial (#29)
 
 ## 1.1.0 (2023-03-15)
 
+Updates compatibility to Grafana 9.4.3, improves plugin configuration, and achieves community plugin status.
+
 <BlogPost id="grapi-datasource-1.1.0-20230315" />
-
-### Features / Enhancements
-
-- Updated to Grafana 9.4.3 (#13)
-- Enhanced Bearer token plugin configuration (#13)
-- Signed as community plugin (#14)
-- Updated Grafana types and description (#15)
 
 ## 1.0.0 (2023-03-02)
 
+Initial release of the Business Satellite data source (originally Grafana API - GrAPI), featuring core functionalities like annotations, alerting, and health checks.
+
 <BlogPost id="grapi-datasource-1.0.0-20230302" />
-
-### Features / Enhancements
-
-- Initial release based on Volkov Labs Data source template
-- Updated README and configuration (#1)
-- Added Postgres support for Alerting (#2)
-- Implemented Annotations (#3)
-- Renamed to Grafana API (GrAPI) (#4)
-- Improved Annotations and updated to Timescale (#5)
-- Enhanced Data Source to check Organization (#6)
-- Added Notifications and increased test coverage (#7)
-- Included Annotation filters (#8)
-- Added Annotation Alert States filter (#9)
-- Supported Health and Data Sources (#10)
-- Updated README for release preparation (#11, #12)
