@@ -13,62 +13,33 @@ Track the evolution of the Business Text panel with these release notes, highlig
 
 ## 5.7.0 (2025-03-05)
 
-### Features / Enhancements
-
-- Added `context.grafana.refresh` (#387)
-- Improved external resources usage (#384)
-- Updated to Grafana 11.5 with latest dependencies (#402)
-- Included attestation in release workflow (#402)
+This release introduces new context refresh functionality, improves external resource handling, and updates to Grafana 11.5 with the latest dependencies and attestation in the release workflow.
 
 ## 5.6.0 (2024-12-15)
 
-### Features / Enhancements
-
-- Updated packages for Code Editor (#380)
+This update focuses on enhancing the Code Editor with updated packages for improved functionality.
 
 ## 5.5.0 (2024-12-09)
 
-### Features / Enhancements
-
-- Enhanced Autosize Code Editor toolbar (#362)
-- Added `statusColor` helper from specific field (#375)
-- Improved E2E tests (#377)
-- Updated to Grafana 11.4 with latest dependencies (#378)
-- Supported variable replacement in URLs (#376)
+Enhancements to the Autosize Code Editor toolbar, new helper functions, and support for variable replacement in URLs, alongside updates to Grafana 11.4.
 
 ## 5.4.0 (2024-09-12)
 
-### Features / Enhancements
-
-- Improved panel rendering when first data source lacks data (#353)
-- Added wrap button in Code Editor (#359)
-- Enhanced partials loading (#358)
-- Updated hyperlinks styling (#358)
+Improved panel rendering for data source issues, added new Code Editor features, and enhanced styling and partials loading.
 
 ## 5.3.0 (2024-08-22)
 
-### Features / Enhancements
-
-- Updated Provisioning Dashboard (#346)
-- Introduced partials for loading external HTML (#345)
-- Added Expandable Editors (#348)
+Introduced partials for external HTML loading, added expandable editors, and updated the provisioning dashboard.
 
 <BlogPost id="dynamictext-panel-5.3.0-20240826" />
 
 ## 5.2.0 (2024-07-25)
 
-### Features / Enhancements
-
-- Improved helpers migration (#338)
-- Updated to Grafana 11.1 with latest dependencies (#339)
+Focused on improving helpers migration and updating to Grafana 11.1 with the latest dependencies.
 
 ## 5.1.0 (2024-07-01)
 
-### Features / Enhancements
-
-- Made `before render` code asynchronous and passed markdown instance (#322)
-- Enabled running E2E tests in Docker (#323)
-- Updated video tutorial (#330)
+Enhanced asynchronous code execution, added E2E testing in Docker, and updated video tutorials.
 
 ## 5.0.0 (2024-06-06)
 
@@ -79,7 +50,11 @@ Track the evolution of the Business Text panel with these release notes, highlig
 - Removed non-context code parameters; update to use `context`
   :::
 
-### Code Parameters Migration Guide
+Major update with breaking changes for Grafana 10/11 compatibility, rebranding to Business Text panel, and significant enhancements like ES6 module support and new panel settings.
+
+<BlogPost id="dynamictext-panel-5.0.0-20240619" />
+
+### Migration Guide
 
 - `data` → `context.data`
 - `dataFrame` → `context.dataFrame`
@@ -92,24 +67,9 @@ Track the evolution of the Business Text panel with these release notes, highlig
 - `timeRange` → `context.grafana.timeRange`
 - `timezone` → `context.grafana.timezone`
 
-### Features / Enhancements
-
-- Added plugin E2E tests and removed Cypress (#301)
-- Renamed to Business Text panel (#304)
-- Prepared for Grafana 11 (#304)
-- Supported ES6 Modules (#312)
-- Added Units and Decimal options in panel settings (#311)
-- Updated to Grafana 11.0 with latest dependencies (#315)
-
-<BlogPost id="dynamictext-panel-5.0.0-20240619" />
-
 ## 4.5.0 (2024-03-13)
 
-### Features / Enhancements
-
-- Added info message when sanitization is enabled (#290)
-- Improved CSS styles for responsiveness and theme support (#281)
-- Updated to Grafana 10.4.0 (#291)
+Added user feedback on sanitization, improved CSS for responsiveness, and updated to Grafana 10.4.0.
 
 ## 4.4.0 (2024-03-06)
 
@@ -118,63 +78,25 @@ Track the evolution of the Business Text panel with these release notes, highlig
 Requires Grafana 9.2 or 10
 :::
 
-### Features / Enhancements
-
-- Enhanced context parameter (#270)
-- Added `theme` object, `notifySuccess`, and `notifyError` (#270)
-- Updated dependencies and Actions (#271)
-- Replaced custom code parameters with Code Parameters Builder (#285)
-- Updated CSS class to target panel instead of Row (#272)
-- Adjusted Editor to auto-height from fixed value (#278)
-- Disabled `unitScale` and `fieldMinMax` standard panel options (#286)
-
-### Bug Fixes
-
-- Fixed `statusColor` for Row (#280)
+Introduced breaking changes for Grafana compatibility, enhanced context parameters, and replaced custom code parameters with a builder.
 
 ## 4.3.0 (2023-12-25)
 
+Focused on code quality with updated ESLint, introduced new data render modes, and added compatibility with Grafana 10.2.2.
+
 <BlogPost id="dynamictext-panel-4.3.0-20240108" />
-
-### Features / Enhancements
-
-- Updated ESLint configuration and refactored (#239)
-- Updated Collapse from `@volkovlabs/components` (#239)
-- Updated Introduction video in README (#240)
-- Added data render mode and selected data frame passing (#246)
-- Updated to Grafana 10.2.2 with Volkov Labs packages (#247)
-- Introduced `variableValue` helper (#252)
-- Enabled re-render on dashboard refresh (#252)
-
-### Bug Fixes
-
-- Fixed draggable icon in Grafana 10.3 (#249)
 
 ## 4.2.0 (2023-11-20)
 
+Enhanced Handlebars functionality, added custom code options, and updated to Grafana 10.2.1 with signed plugins.
+
 <BlogPost id="dynamictext-panel-4.2.0-20231121" />
-
-### Features / Enhancements
-
-- Added ESLint deprecation check (#203)
-- Introduced custom code option after content preparation (#231)
-- Added option to enable/disable wrapping for empty lines in HTML (#235)
-- Enhanced Handlebars with `startsWith`, `endsWith`, and `match` (#211)
-- Updated ESLint configuration and sorted imports (#236)
-- Updated to Plugin Tools 2.1.1 (#236)
-- Signed plugin with Grafana Access Policy (#236)
-- Updated to Grafana 10.2.1 (#237)
 
 ## 4.1.0 (2023-07-16)
 
+Improved code quality, added support for external resources, and introduced status field functionality.
+
 <BlogPost id="dynamictext-panel-4.1.0-20230731" />
-
-### Features / Enhancements
-
-- Refined ESLint configuration (#192)
-- Increased test coverage for plugin functionality (#194)
-- Added status field (#196)
-- Supported external JavaScript and CSS resources (#197)
 
 ## 4.0.0 (2023-06-26)
 
@@ -183,30 +105,15 @@ Requires Grafana 9.2 or 10
 Requires Grafana 9 or 10
 :::
 
+Major release with breaking changes for Grafana 9/10 compatibility, added E2E testing, and support for custom styles.
+
 <BlogPost id="dynamictext-panel-4.0.0-20230709" />
-
-### Features / Enhancements
-
-- Increased test coverage and updated React testing library (#177)
-- Added Event Bus object to JavaScript function (#179)
-- Migrated to Plugin Tools 1.5.2 (#183)
-- Ensured compatibility with Grafana 10.0.0 (#166, #178, #183)
-- Updated to Node.js 18 and npm (#183)
-- Dropped support for Grafana 8.5 (#183)
-- Integrated E2E Cypress testing (#184)
-- Supported variables in CSS styles editor (#185)
 
 ## 3.1.0 (2023-03-12)
 
+Added support for time-related parameters in JavaScript code and enhanced variable replacement functionality.
+
 <BlogPost id="dynamictext-panel-3.1.0-20230312" />
-
-### Features / Enhancements
-
-- Supported Time Zone and Time Range parameters in JavaScript code (#155)
-- Added compatibility with Grafana 9.4.3 (#156)
-- Included Magic (JavaScript) Trio tutorial in README (#157)
-- Enhanced `replaceVariables` with scoped function (#160)
-- Added Replace Variables and Location Service parameters to JavaScript code (#160)
 
 ## 3.0.0 (2023-02-19)
 
@@ -215,34 +122,15 @@ Requires Grafana 9 or 10
 Default Content and JavaScript editors hidden unless modified; select required editors (including new Styles) from list to display
 :::
 
+Introduced breaking changes for editor visibility, added custom styles, and enhanced compatibility with Grafana 9.3.6.
+
 <BlogPost id="dynamictext-panel-3.0.0-20230219" />
-
-### Features / Enhancements
-
-- Updated features section in README with JavaScript code editor tutorial (#141)
-- Added compatibility with Grafana 9.3.6 (#147)
-- Enhanced CI and release workflows (#147)
-- Added JavaScript usage tutorial to README (#148)
-- Introduced custom styles (#149)
-- Added option to display optional editors (#149)
-- Removed panel padding (#150)
-- Enabled code syntax highlighting (#151)
 
 ## 2.2.0 (2023-01-09)
 
+Enhanced Handlebars helpers, added JavaScript code capabilities, and improved compatibility with Grafana 9.3.1.
+
 <BlogPost id="dynamictext-panel-2.2.0-20230110" />
-
-### Features / Enhancements
-
-- Added `JSON` helper for objects and arrays (#121)
-- Ensured compatibility with Grafana 9.3.1 (#122)
-- Updated documentation links (#130, #131)
-- Introduced `Split` helper (#132)
-- Refactored text component and styles (#133)
-- Enabled JavaScript code for adding Handlebars helpers and event handlers (#134)
-- Updated default content to `{{json @root}}` and set code editor height to 200px (#134)
-- Adjusted CSS to fit images to screen area (#135)
-- Added `getLocale()` parameter to JavaScript code (#137)
 
 ## 2.1.0 (2022-11-27)
 
@@ -251,19 +139,9 @@ Default Content and JavaScript editors hidden unless modified; select required e
 Code refactoring may introduce breaking changes; test before upgrading in production
 :::
 
+Focused on code refactoring with potential breaking changes, improved data rendering, and added Monaco Code Editor.
+
 <BlogPost id="dynamictext-panel-2.1.0-20221127" />
-
-### Features / Enhancements
-
-- Fixed broken link in README (#111)
-- Updated CI to upload signed artifacts (#113)
-- Added time formatting syntax parsing (#86)
-- Improved data rendering with transformations (#98)
-- Updated panel options to use Monaco Code Editor (#114)
-- Increased test coverage for plugin functionality (#114)
-- Refactored and updated images (#116)
-- Enhanced alert messages and text options (#117)
-- Supported parameter for HTML sanitization in Grafana (#118)
 
 ## 2.0.0 (2022-11-02)
 
@@ -272,12 +150,4 @@ Code refactoring may introduce breaking changes; test before upgrading in produc
 Requires Grafana 8.5 or newer
 :::
 
-### Features / Enhancements
-
-- Transferred maintenance to Volkov Labs (#100)
-- Updated based on Volkov Labs panel template (#100)
-- Added compatibility with Grafana 9.1.6 (#104)
-- Included "Dynamic Text Plugin for Grafana" video in README (#106)
-- Updated CI to Node.js 16 and synced with release workflow (#107)
-- Ensured compatibility with Grafana 9.2.2 (#108)
-- Updated screenshots and plugin provisioning (#109)
+Major update requiring Grafana 8.5 or newer, transferred maintenance to Volkov Labs, and added compatibility with Grafana 9.2.2.
