@@ -9,24 +9,15 @@ import BlogPost from "@theme/BlogPost";
 
 # Release Notes
 
-Explore the evolution of the Business Media panel through these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions.
+Explore the evolution of the Business Media panel through these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions. Each release includes a summary to provide a quick overview of the key updates.
 
 ## 6.2.0 (2024-12-03)
 
-### Features / Enhancements
-
-- Enhanced data state handling for timeouts and errors (#145)
-- Improved E2E tests (#150)
-- Updated to Grafana 11.3 with latest dependencies (#151)
+This release focuses on improving data handling and testing, with updates to support Grafana 11.3 and enhanced error management.
 
 ## 6.1.0 (2024-09-05)
 
-### Features / Enhancements
-
-- Improved media sources state management (#137)
-- Added WebSocket server for streaming (#140)
-- Updated to Grafana 11.2 with latest dependencies (#141)
-- Introduced Scroll option for images (#142)
+This version enhances media source management and introduces WebSocket streaming, alongside updates for Grafana 11.2 compatibility and new image scrolling options.
 
 <BlogPost id="business-media-6.1.0" />
 
@@ -38,245 +29,128 @@ Explore the evolution of the Business Media panel through these release notes, d
 - PDF fields require updating the media source type to PDF
   :::
 
-### Features / Enhancements
-
-- Added poster support for videos (#120)
-- Updated current index on data series decrease (#121)
-- Transitioned Image URL to data links (#122)
-- Enabled slideshow for mixed media (#123)
-- Refactored Media panel (#124)
-- Supported multiple queries in Media Field and Poster Image (#127)
-- Updated to Grafana 11.1 with latest dependencies (#128)
-- Documented PDF breaking change for 6.0.0 (#132)
+A major update with breaking changes for image links and PDF fields, alongside significant enhancements like video poster support and mixed media slideshows, updated for Grafana 11.1.
 
 ## 5.1.0 (2024-06-23)
 
-### Features / Enhancements
-
-- Updated video overview (#100)
-- Added plugin E2E tests and removed Cypress (#101, #102, #103, #105)
-- Enabled loading images and videos from URLs with video toolbar (#111, #116)
-- Updated to Grafana 11 with latest dependencies (#114)
-- Utilized frame utils from packages (#115)
-- Optimized E2E workflow with Docker (#117)
+This release improves video and image loading capabilities, introduces Docker-optimized E2E testing, and ensures compatibility with Grafana 11.
 
 ## 5.0.0 (2024-03-25)
 
 :::warning Breaking Changes
-
 Requires Grafana 10 or 11
 :::
 
+A significant update requiring Grafana 10 or 11, with new customization options and compatibility enhancements for Grafana 10.4.1 and 11.
+
 <BlogPost id="image-panel-5.0.0-20240326" />
-
-### Features / Enhancements
-
-- Added customizable alert message option (#96)
-- Updated to Grafana 10.4.1 (#97)
-- Removed deprecated ArrayVector in Grafana 11 (#99)
 
 ## 4.2.0 (2024-02-22)
 
-### Features / Enhancements
-
-- Updated ESLint configuration and refactored (#92)
-- Updated dependencies and Actions (#94)
-- Added infinity play option (#93)
+This release focuses on code quality improvements and introduces an infinity play option for media, alongside updated dependencies.
 
 ## 4.1.0 (2023-10-29)
 
+Enhancements in this version include refined code linting, new image scaling options, and compatibility with Grafana 10.1.5.
+
 <BlogPost id="image-panel-4.1.0-20231029" />
-
-### Features / Enhancements
-
-- Refined ESLint configuration (#84)
-- Introduced Image Scale Algorithm option (#89)
-- Updated to Plugin Tools 2.1.1 (#90)
-- Signed plugin with Grafana Access Policy (#90)
-- Updated to Grafana 10.1.5 (#90)
 
 ## 4.0.0 (2023-06-26)
 
 :::warning Breaking Changes
-
 Requires Grafana 9 or 10
 :::
 
+A major update requiring Grafana 9 or 10, with new image toolbar features and compatibility for Grafana 10.0.0.
+
 <BlogPost id="image-panel-4.0.0-20230709" />
-
-### Features / Enhancements
-
-- Added zoom in/out actions to image toolbar (#78)
-- Relocated zoom buttons to image toolbar (#79)
-- Ensured compatibility with Grafana 10.0.0 (#80)
-- Added captions for images and media files (#82)
-- Dropped support for Grafana 8.5 (#83)
 
 ## 3.6.0 (2023-06-06)
 
+This release adds a media toolbar for enhanced navigation and ensures compatibility with Grafana 9.5.2 and 10 Preview.
+
 <BlogPost id="image-panel-3.6.0-20230606" />
-
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.5.2 (#70)
-- Integrated E2E Cypress tests into testing cycle (#71)
-- Migrated to Plugin Tools 1.5.2 (#72, #73)
-- Updated to Node.js 18 (#72)
-- Increased test coverage for plugin functionality (#72)
-- Tested on Grafana 10 Preview (#74)
-- Added toolbar for download, zoom, and image navigation (#75, #76, #77)
 
 ## 3.5.0 (2023-03-07)
 
+Focuses on compatibility with Grafana 9.4.3 and workflow updates for continuous integration and release processes.
+
 <BlogPost id="image-panel-3.5.0-20230307" />
 
-### Features / Enhancements
+## 3.4.0 (2023-01-08)
 
-- Updated CI and release workflows (#64)
-- Added compatibility with Grafana 9.4.3 (#65)
-- Set `NoPadding` parameter to utilize full panel area (#66)
-
-## 3.4.0 (2023-01-08) "New Year" Edition
+Introduces compatibility with Grafana 9.3.2 and enhances documentation for better user guidance.
 
 <BlogPost id="image-panel-3.4.0-20230108" />
 
-### Features / Enhancements
+## 3.3.0 (2022-10-30)
 
-- Added compatibility with Grafana 9.3.2 (#60)
-- Included documentation links (#61)
-- Updated README and product documentation (#62)
-
-## 3.3.0 (2022-10-30) "Halloween" Edition
-
-### Features / Enhancements
-
-- Supported sanitized variables in URL field (#53)
-- Updated CI to Node.js 16 and synced with release workflow (#55)
-- Added compatibility with Grafana 9.2.2 (#56)
+Enhances variable support in URLs and updates CI to Node.js 16 for compatibility with Grafana 9.2.2.
 
 ## 3.2.0 (2022-10-05)
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.1.4 (#47)
-- Introduced workflow to check plugin compatibility (#48)
-- Added option to disable PDF Toolbar (#50)
-- Ensured compatibility with Grafana 9.1.7 (#51)
+Focuses on compatibility with Grafana 9.1.x and introduces options for PDF toolbar customization.
 
 ## 3.1.0 (2022-08-13)
 
-### Features / Enhancements
-
-- Updated README and provisioning dashboards (#43)
-- Added YouTube video tutorials to README (#44)
-- Ensured compatibility with Grafana 9.0.7 (#45)
-- Updated image for Grafana Plugins catalog (#46)
+Improves documentation and tutorials, ensuring compatibility with Grafana 9.0.7.
 
 ## 3.0.0 (2022-06-16)
 
 :::warning Breaking Changes
-
 Requires Grafana 8.5+ or 9.0+
 :::
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 9.0.0-beta3 (#36)
-- Improved PDF loader to start in Docker (#38)
-- Supported short videos in Base64 format (#39)
-- Added playback for MP3 and OGG audio files in Base64 format (#40)
-- Included video/audio playback controls and Auto Play function (#41)
-- Ensured compatibility with Grafana 9.0.0 (#42)
+A major update requiring Grafana 8.5+ or 9.0+, with support for audio/video playback and enhanced PDF handling.
 
 ## 2.6.0 (2022-04-26)
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 8.3.6 (#32)
-- Ensured compatibility with Grafana 8.4.0 using PluginCheck v2 (#33)
-- Added compatibility with Grafana 8.4.3 (#34)
-- Ensured compatibility with Grafana 8.5.0 (#35)
+Ensures broad compatibility with Grafana 8.3.6 to 8.5.0 through multiple updates.
 
 ## 2.5.0 (2022-01-24)
 
-### Features / Enhancements
-
-- Updated README for Grafana Plugins catalog inclusion (#29)
-- Added compatibility with Grafana 8.3.4 (#28)
+Focuses on documentation updates and compatibility with Grafana 8.3.4.
 
 ## 2.4.0 (2021-12-16)
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 8.2.5 (#22)
-- Ensured compatibility with Grafana 8.3.0 (#23)
-- Added compatibility with Grafana 8.3.2 (#24)
-- Updated naming of plugin components (#25)
-- Supported PDF documents larger than 2 MB (#26)
+Enhances compatibility across Grafana 8.2.5 to 8.3.2 and improves PDF handling for larger files.
 
 ## 2.3.1 (2021-11-09)
 
-### Features / Enhancements
-
-- Added `display:block` parameter for proper `href` display (#21)
+A minor update to improve display formatting for links.
 
 ## 2.3.0 (2021-11-08)
 
-### Features / Enhancements
-
-- Enabled dashboard transitions via image click (#19)
-- Added compatibility with Grafana 8.2.3 (#20)
+Introduces dashboard transitions via image clicks and compatibility with Grafana 8.2.3.
 
 ## 2.2.0 (2021-11-02)
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 8.1.5 (#16)
-- Ensured compatibility with Grafana 8.2.0 (#17)
-- Added compatibility with Grafana 8.2.2 (#18)
+Focuses on compatibility updates for Grafana 8.1.5 to 8.2.2.
 
 ## 2.1.1 (2021-08-18)
 
-### Features / Enhancements
-
-- Added radio button to select image size mode (#14)
+Adds a user interface improvement for selecting image size modes.
 
 ## 2.1.0 (2021-08-12)
 
-### Features / Enhancements
-
-- Updated README (#10)
-- Added compatibility with Grafana 8.1.1 (#12)
-- Included options and fields to resize images (#13)
+Enhances image resizing options and ensures compatibility with Grafana 8.1.1.
 
 ## 2.0.0 (2021-06-19)
 
 :::warning Breaking Changes
-
 Supports Grafana 8.0+; use version 1.0.1 or 1.1.0 for Grafana 7.x
 :::
 
-### Features / Enhancements
-
-- Added compatibility with Grafana 8.0.2 (#9)
+A major update with breaking changes, supporting Grafana 8.0+.
 
 ## 1.1.0 (2021-06-19)
 
-### Features / Enhancements
-
-- Supported Base64 image display with headers (#7)
-- Enabled Base64 image display from InfluxDB (#6)
-- Increased test coverage for plugin functionality (#4)
+Improves Base64 image support and increases test coverage for plugin functionality.
 
 ## 1.0.1 (2021-06-07)
 
-### Features / Enhancements
-
-- Added screenshots for static and Redis data sources (#5)
+A minor update adding visual documentation for data sources.
 
 ## 1.0.0 (2021-06-07)
 
-### Features / Enhancements
-
-- Initial release for Grafana 7.5.7
-- Supported rendering of PNG, JPG, GIF, and PDF files
+The initial release of the Business Media panel for Grafana 7.5.7, supporting various media formats.
