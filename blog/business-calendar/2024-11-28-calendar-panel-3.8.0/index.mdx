@@ -3,7 +3,18 @@ authors: [daria]
 slug: calendar-panel-3.8.0/
 tags: [Business Calendar, Business Suite]
 image: /img/blog/2024-11-28-calendar-panel-3.8.0/banner.png
-keywords: [Calendar, Events, Time Range, Grafana]
+keywords:
+  [
+    Calendar,
+    Events,
+    Time Range,
+    Grafana,
+    Business Calendar,
+    Year View,
+    Internationalization,
+    Grafana 11.3,
+  ]
+description: Discover the latest updates in Business Calendar 3.8.0, including Year view for events, panel-specific language formats, and compatibility with Grafana 11.3 Scenes dashboards.
 ---
 
 import Feedback from "@site/docs/business-calendar/_feedback.mdx";
@@ -11,58 +22,66 @@ import GettingStarted from "@site/docs/business-calendar/_getting_started.mdx";
 import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
+import Admonition from "@theme/Admonition";
 
-# Year view, improved internationalization and Grafana 11.3 Scenes updates in Business Calendar 3.8.0
+# Year View, Improved Internationalization, and Grafana 11.3 Scenes Updates in Business Calendar 3.8.0
 
-We are happy to announce the release of the Business Calendar panel 3.8.0. This release includes the following updates:
+We’re thrilled to announce the release of **Business Calendar 3.8.0**! This update brings exciting new features and enhancements to help you visualize and manage events more effectively in Grafana. Here’s what’s new:
 
-- Single and multi-day events are displayed in the **Year** view.
-- Panel-specific language(datetime) format is now supported.
-- Compatibility with Grafana 11.3 and Scenes-powered dashboards.
+- **Year View**: Display single and multi-day events with ease.
+- **Panel-Specific Language (Date/Time) Format**: Customize formats for individual panels.
+- **Grafana 11.3 Compatibility**: Full support for Scenes-powered dashboards.
 
-## Downloads
+<Admonition type="tip" title="Quick Tip">
+  New to Business Calendar? Check out the [Getting Started](#getting-started)
+  section below to set up your first panel!
+</Admonition>
 
-The Community interest to the Business Calendar plugin has doubled since the end of October 2024. Half of the million downloads in November compared to a quarter million in September. The total downloads are getting closer to 4,000,000.
+## Unprecedented Growth: Downloads Surge
 
-This plugin has intriguing statistics. The documentation and videos spark little interest while downloads skyrocket. I conclude that the plugin is in huge demand while being mostly self-explanatory in how to configure it.
+The Business Calendar plugin has seen incredible growth, with community interest doubling since October 2024. In November alone, downloads reached **half a million**, compared to 250,000 in September. We’re approaching **4 million total downloads** on the Grafana Catalog!
+
+What’s fascinating is that while documentation and tutorial videos see moderate engagement, downloads continue to skyrocket. This suggests that Business Calendar is not only in high demand but also intuitive and easy to configure.
 
 <Image
-  title="The Business Calendar plugin downloads from Grafana Catalog."
+  title="Business Calendar plugin downloads from the Grafana Catalog."
   src="/img/blog/2024-11-28-calendar-panel-3.8.0/downloads.png"
+  alt="Graph showing the surge in Business Calendar plugin downloads."
 />
 
-## Year view
+## New Feature: Year View for Events
 
-In the **Year** view, the Business Calendar panel displays dots representing events that day. If there are more than 3 events, the plus symbol is shown.
+The **Year View** is a game-changer for visualizing events over a longer time frame. In this view, events are represented as dots for each day they occur. If a day has more than three events, a "+" symbol appears to indicate additional events.
 
-The multi-day events are displayed as one dot per day. For instance, if an event lasts from September 16 to September 17 (two day event), two dots are shown on the panel, one dot for September 16 and the other dot for September 17.
+For **multi-day events**, a dot is displayed for each day of the event. For example, an event spanning September 16 to 17 will show a dot on both days, making it easy to track duration at a glance.
 
 <Image
-  title="Displaying events in a day on the Year view."
+  title="Events displayed in Year View."
   src="/img/blog/2024-11-28-calendar-panel-3.8.0/year.png"
+  alt="Year View in Business Calendar showing event dots for single and multi-day events."
 />
 
-## Panel-specific language(datetime) format
+## Enhanced Internationalization: Panel-Specific Date/Time Formats
 
-As previously was described for the prior versions, the Business Calendar panel has the ability to override the Grafana's **User**->**Profile**->**Preferences**->**Language** setting in the **Layout**->**Date and time format** parameter. In addition to all existing options, a user of the Business Calendar panel can choose **English 24** and **ISO 8601**.
+Previously, the Business Calendar panel allowed users to override Grafana’s global language settings (found in **User > Profile > Preferences > Language**) via the **Layout > Date and Time Format** option. With version 3.8.0, this customization is now **panel-specific**, meaning each Business Calendar panel on a dashboard can have its own unique format.
 
-<Image
-  title="The Business Calendar panel can override the Grafana user profile language/datetime setting."
-  src="/img/blog/2024-11-28-calendar-panel-3.8.0/date-time-setting.png"
-/>
-
-Starting from this release, the **Date and time format** parameter is specific to the particualr Business Calendar panel, not to all Business Calendar panels on the dashboard at once.
+New format options include **English 24** and **ISO 8601**, giving you even more flexibility to tailor the display to your needs.
 
 <Image
-  title="The Business Calendar panel allows panel-specific language(datetime) configuration."
+  title="Panel-specific language and date/time format settings."
   src="/img/blog/2024-11-28-calendar-panel-3.8.0/languages.png"
+  alt="Configuration options for panel-specific date and time formats in Business Calendar."
 />
 
-## Compatibility with Grafana 11.3 and Scenes-powered dashboards
+<Admonition type="note" title="Why This Matters">
+  Panel-specific formats are ideal for dashboards used by international teams,
+  allowing each panel to cater to different regional preferences without
+  affecting others.
+</Admonition>
 
-The [Scenes powered dashboards in Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced some breaking changes for our plugins.
+## Full Compatibility with Grafana 11.3 and Scenes Dashboards
 
-Starting from release 3.8.0, the Business Calendar panel fully migrated to support Grafana 11.3.
+Grafana’s [Scenes-powered dashboards in version 11.3](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced breaking changes for many plugins. We’ve fully migrated Business Calendar 3.8.0 to ensure seamless compatibility with Grafana 11.3 and Scenes dashboards, so you can continue using the plugin without interruption.
 
 <GettingStarted />
 
@@ -70,22 +89,26 @@ Starting from release 3.8.0, the Business Calendar panel fully migrated to suppo
 
 ## Release Notes
 
-### Features / Enhancements in 3.8.0
+### Features & Enhancements in 3.8.0
 
-- Added Multi Day Events in Yearly View (#243)
-- Updated Migration for thresholds color filter (#248)
-- Updated useRuntimeVariables hook for Scenes dashboards (#247)
-- Updated to Grafana 11.3 and dependencies (#248)
+- Added support for multi-day events in Yearly View (#243)
+- Updated migration for thresholds color filter (#248)
+- Enhanced `useRuntimeVariables` hook for Scenes dashboards (#247)
+- Upgraded to Grafana 11.3 with updated dependencies (#248)
 
-### Features / Enhancements in 3.7.0
+### Features & Enhancements in 3.7.0
 
-- Updated yearly view to display events (#240)
-- Updated to Grafana 11.2 and dependencies (#241)
+- Added event display in Yearly View (#240)
+- Updated to Grafana 11.2 with dependency updates (#241)
 
-### Features / Enhancements in 3.6.0
+### Features & Enhancements in 3.6.0
 
-- Update tooltip to prevent opening drawer when selecting text (#235)
-- Update Date time format for different languages (#236)
-- Update event details to hide actions when no actions available (#238)
+- Improved tooltip to prevent drawer opening during text selection (#235)
+- Enhanced date/time format support for multiple languages (#236)
+- Updated event details to hide actions when none are available (#238)
+
+## Share Your Feedback
+
+We’d love to hear your thoughts on Business Calendar 3.8.0! Whether it’s a feature request, bug report, or success story, your feedback helps us improve.
 
 <Feedback />
