@@ -3,7 +3,9 @@ authors: [daria]
 slug: calendar-panel-2.3.0-20231101/
 tags: [Business Calendar, Business Suite]
 image: /img/blog/2023-11-01-calendar-panel-2.3.0/banner.png
-keywords: [Calendar, Events, Time Range, Grafana]
+keywords:
+  [Calendar, Events, Time Range, Grafana, Internationalization, Big Calendar]
+description: Discover the latest features in Business Calendar 2.3.1 for Grafana, including internationalization, yearly view, default view options, and scroll-to-time functionality.
 ---
 
 import Feedback from "@site/docs/business-calendar/_feedback.mdx";
@@ -12,60 +14,71 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
 
-# Internationalization, yearly view, and scroll to time in Business Calendar 2.3.1
+# Internationalization, Yearly View, and More in Business Calendar 2.3.1
 
-We are happy to announce the release of the Business Calendar panel 2.3.1. This release includes the following updates.
+We’re thrilled to announce the release of **Business Calendar 2.3.1** for Grafana! This update brings exciting new features and enhancements to help you visualize and manage events more effectively. Here's what's new:
 
-- Added Internationalization(i18n), supported languages include English, Spanish, French, German, and Chinese.
+- **Internationalization (i18n)**: Support for English, Spanish, French, German, and Chinese.
+- **Big Calendar Enhancements**:
+  - New **Yearly View** for a comprehensive annual overview.
+  - **Default View** option to set your preferred calendar layout.
+  - **Scroll to Time** feature for better navigation in Day and Week views.
 
-For the **Big Calendar** type:
+Let’s dive into the details of these updates and see how they can improve your workflow.
 
-- Added the **Year** view.
-- Added **Default View** option.
-- Added **Scroll To Time** option.
+## Internationalization (i18n)
 
-## Internationalization
-
-The language you specify in the user profile menu will be used throughout the Business Calendar panel on the dashboard as well as in the edit mode for panel options.
+With Business Calendar 2.3.1, language barriers are a thing of the past. The panel now supports multiple languages, including English, Spanish, French, German, and Chinese. The language is automatically detected from your Grafana user profile and applied across the dashboard and panel options in edit mode.
 
 <Image
-  title="UI Internationalization on the Business Calendar panel."
+  title="UI Internationalization in Business Calendar panel."
   src="/img/blog/2023-11-01-calendar-panel-2.3.0/i18n.png"
+  alt="Business Calendar panel showing UI internationalization in multiple languages."
 />
 
-## Year for Big Calendar
+:::info Language
+Have a language you'd like to see supported? Let us know in the feedback
+section below!
+:::
 
-For the Big Calendar type, we added one more View option **Year**. It displays 12 months at the same time. The purpose of this view is to help navigate throughout the calendar since it makes it easier to jump into any day and month of the year.
+## Yearly View for Big Calendar
 
-If you need any particular information to be displayed in the Year view, please, let us know.
+We’ve added a **Yearly View** to the Big Calendar type, displaying all 12 months at once. This view is perfect for high-level planning and quick navigation to any day or month of the year.
 
 <Image
-  title="The Year view of the Calendar panel."
+  title="Yearly View in Business Calendar panel."
   src="/img/blog/2023-11-01-calendar-panel-2.3.0/year.png"
+  alt="Yearly view displaying 12 months in the Business Calendar panel."
 />
 
-## Default view for Big Calendar
+:::tip Yearly View
+Need specific data or customizations in the Yearly View? Share your ideas with
+us!
+:::
 
-With this setting, you can control what your calendar will look like after a page refresh. Any of the calendar views can be selected as a default view.
+## Default View for Big Calendar
+
+Set your preferred calendar layout with the new **Default View** option. Whether you prefer Day, Week, Month, or Year, your calendar will load in your chosen view after every page refresh.
 
 <Image
-  title="The default view of the Business Calendar panel is a new option."
+  title="Default View option in Business Calendar panel."
   src="/img/blog/2023-11-01-calendar-panel-2.3.0/default.png"
+  alt="Setting the default view in the Business Calendar panel."
 />
 
-## Scroll to Time option for Big Calendar
+## Scroll to Time Option for Big Calendar
 
-This setting applies to the Day and Week views. The Calendar panel ensures that the specified in this option time is always visible.
+Navigating Day and Week views is now easier with the **Scroll to Time** feature. Specify a time, and the calendar will ensure it’s always visible, whether you’re scrolling within the panel or the browser window.
 
-Please, note, that there could be two visibility scenarios.
+There are two scenarios to consider:
 
-One is when the Calendar panel itself is stretched out to a bigger size than your browser window. In that case, the panel might consider the specified time visible when it is not visible to you. The scrolling in that scenario scrolls a browser window. Scenario 1 is in the picture below.
-
-Another scenario is when the Calendar panel itself is fully visible in your browser window, but the calendar has to be scrolled within the panel. In that event, the Scroll to Time option takes effect. Scenario 2 is in the picture below.
+1. **Browser Window Scrolling**: If the panel is larger than your browser window, the specified time may be considered "visible" by the panel but not in your viewport.
+2. **Panel Scrolling**: If the panel fits within your browser window, the calendar scrolls internally to display the specified time.
 
 <Image
-  title="The new Scroll to Time option explained."
+  title="Scroll to Time option explained."
   src="/img/blog/2023-11-01-calendar-panel-2.3.0/scroll.png"
+  alt="Scroll to Time feature in Day and Week views of Business Calendar."
 />
 
 <GettingStarted />
@@ -74,15 +87,15 @@ Another scenario is when the Calendar panel itself is fully visible in your brow
 
 ## Release Notes
 
-### Bugfixes in 2.3.1
+### Bug Fixes in 2.3.1
 
-- Fix import order for default big-calendar styles and their overrides (#143)
+- Fixed import order for default Big Calendar styles and their overrides (#143).
 
-### Features / Enhancements in 2.3.0
+### Features & Enhancements in 2.3.0
 
-- Added yearly view (#134)
-- Added internationalization(Spanish, French, German, and Chinese) i18n (#135, #138)
-- Added default view option (#137)
-- Added scroll to Time option for BigCalendar (#140, #141)
+- Added Yearly View for Big Calendar (#134).
+- Introduced Internationalization (i18n) with support for Spanish, French, German, and Chinese (#135, #138).
+- Added Default View option for personalized calendar layouts (#137).
+- Implemented Scroll to Time feature for Day and Week views (#140, #141).
 
 <Feedback />
