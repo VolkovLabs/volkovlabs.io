@@ -24,8 +24,8 @@ const Header = () => (
           </p>
           <p className="hero__subtitle">
             Over the past three years, we’ve led a major open-source effort,
-            crafting 10 Grafana plugins with over{" "}
-            <strong>30 million downloads</strong>. Our dedication shines through
+            crafting 11 Grafana plugins with over{" "}
+            <strong>35 million downloads</strong>. Our dedication shines through
             in top-tier documentation, a vibrant YouTube channel, and robust
             community support.
           </p>
@@ -108,39 +108,6 @@ const Main = () => (
         </div>
       </div>
     </section>
-
-    <section
-      id="Why"
-      className={clsx(styles.whyBox, "container margin-vert--xl")}
-    >
-      <div className="row align-items-center">
-        <div className="col col--3">
-          <ThemedImage
-            sources={{
-              light: useBaseUrl("/img/team/left.svg"),
-              dark: useBaseUrl("/img/team/left.dark.svg"),
-            }}
-            alt="Left decorative graphic"
-          />
-        </div>
-        <div className="col col--6 text--center">
-          <h2 className="hero__title margin-vert--lg">Business Gazette</h2>
-          <p className="hero__subtitle margin-vert--lg">
-            Stay updated on Volkov Labs’ latest news with the{" "}
-            <a href="/blog/tags/business-gazette/">Business Gazette</a>.
-          </p>
-        </div>
-        <div className="col col--3">
-          <ThemedImage
-            sources={{
-              light: useBaseUrl("/img/team/right.svg"),
-              dark: useBaseUrl("/img/team/right.dark.svg"),
-            }}
-            alt="Right decorative graphic"
-          />
-        </div>
-      </div>
-    </section>
   </main>
 );
 
@@ -154,7 +121,7 @@ const Home = () => {
   return (
     <Layout
       title="Our Team | Volkov Labs"
-      description="Meet the Volkov Labs team behind 30M+ Grafana plugin downloads."
+      description="Meet the Volkov Labs team behind 35M+ Grafana plugin downloads."
     >
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />

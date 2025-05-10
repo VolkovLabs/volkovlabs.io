@@ -53,9 +53,6 @@ const Header = ({ siteConfig }) => (
           </a>
         </div>
       </div>
-      <div className="margin-vert--lg padding-vert--lg">
-        <Plugins />
-      </div>
     </div>
   </header>
 );
@@ -67,38 +64,47 @@ const Header = ({ siteConfig }) => (
 const Main = ({ siteConfig }) => (
   <main>
     <section className="container margin-vert--xl">
-      <div className="row align-items-center margin-vert--lg padding-vert--md">
-        <div className="col col--6">
-          <h2 className={clsx("hero__title")}>Business Intelligence</h2>
-          <p className="hero__subtitle margin-vert--md">
-            Transform your insights with high-performance, scalable, and
-            alert-driven analytics.
-          </p>
-          <div className="margin-vert--lg">
-            <a
-              className={clsx(
-                "button button--primary button--lg",
-                styles.getStarted
-              )}
-              href="/big/getting-started"
-            >
-              Get Started →
+      <div className="margin-vert--lg">
+        <Plugins />
+      </div>
+    </section>
+    <section className="hero">
+      <div className="container margin-vert--md">
+        <div className="row align-items-center">
+          <div className="col col--7">
+            <h2 className={clsx("hero__title")}>Business Intelligence</h2>
+            <p className="hero__subtitle margin-vert--md">
+              Transform your insights with high-performance, scalable, and
+              alert-driven analytics.
+            </p>
+            <div className="margin-vert--lg">
+              <a
+                className={clsx(
+                  "button button--primary button--lg",
+                  styles.getStarted
+                )}
+                href="/big/getting-started"
+              >
+                Get Started →
+              </a>
+            </div>
+          </div>
+          <div className="col col--5 text--center">
+            <a href="/big/">
+              <ThemedImage
+                sources={{
+                  light: useBaseUrl("/img/big/business-studio/engine.png"),
+                  dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
+                }}
+                alt={siteConfig.tagline}
+                className={styles.big}
+              />
             </a>
           </div>
         </div>
-        <div className="col col--6 text--center">
-          <a href="/big/">
-            <ThemedImage
-              sources={{
-                light: useBaseUrl("/img/big/business-studio/engine.png"),
-                dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
-              }}
-              alt={siteConfig.tagline}
-              className={styles.big}
-            />
-          </a>
-        </div>
       </div>
+    </section>
+    <section className="container margin-vert--xl">
       <div className="margin-vert--lg">
         <Intelligence />
       </div>
