@@ -32,11 +32,11 @@ export const IntelligenceList: PluginItem[] = [
     isActive: true,
   },
   {
-    title: "Advanced Business Alerts",
+    title: "Advanced Business Alerting",
     name: "business-alerting",
     description: (
       <>
-        Offers customizable alert systems tied to Grafana panel queries, with
+        Offers customizable alert rules tied to Grafana panel queries, with
         support for thresholds and variables to deliver timely, relevant
         business metric notifications.
       </>

@@ -36,25 +36,9 @@ const Header = () => (
             <a href="/big/">Business Intelligence</a> platform. Your success
             drives us.
           </p>
-          <div className="margin-vert--lg">
-            <a
-              className={clsx(
-                "button button--primary button--lg",
-                styles.getStarted
-              )}
-              href="https://pay.volkovlabs.io/p/login/6oEaGicwRgZ8gko144"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Partner Portal →
-            </a>
-          </div>
         </div>
         <div className="col col--5 margin-vert--lg text--center">
-          <Youtube
-            id="XDhyEXqa6KA"
-            title="Business Suite Enterprise Overview"
-          />
+          <Youtube id="XDhyEXqa6KA" />
         </div>
       </div>
     </div>
@@ -67,18 +51,6 @@ const Header = () => (
  */
 const Main = () => (
   <main>
-    <section id="Plans" className="container margin-vert--xl">
-      <h2 className="hero__title margin-vert--md">Pricing Plans</h2>
-      <div className="row">
-        <div className="col col--12">
-          <stripe-pricing-table
-            pricing-table-id="prctbl_1Q1uoCEiej5nUsoj5F4znGwo"
-            publishable-key="pk_live_51Q1pMcEiej5nUsojvz6cu1k1QH1R5mAHwWz1OotLIAh9qaQiXa70MjggtWr2bsmPqmUIZ6x5b7W9I6VD8QCE4ZxK00GBzofXYZ"
-          />
-        </div>
-      </div>
-    </section>
-
     <section id="Contact" className="container margin-vert--xl text--center">
       <h2 className="hero__title margin-vert--md">Get in Touch</h2>
       <p className="hero__subtitle margin-vert--md">
