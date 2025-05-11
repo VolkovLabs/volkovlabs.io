@@ -173,19 +173,6 @@
   background: url("/static/img/plugins/business-forms/logo.dark.svg") no-repeat;
 }
 
-.icon-plugins-env-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/grafana/environment/logo.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-plugins-env-link::before {
-  background: url("/static/img/grafana/environment/logo.dark.svg") no-repeat;
-}
-
 .icon-plugins-grapi-link::before {
   content: "";
   width: 24px;

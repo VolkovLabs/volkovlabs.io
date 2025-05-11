@@ -75,7 +75,7 @@ export const FOOTER = {
       title: "Discover",
       items: [
         {
-          label: "Blog",
+          label: "Blog Posts",
           to: "/blog/",
           className: "volkovlabs-footer-link icon-blog-link",
         },

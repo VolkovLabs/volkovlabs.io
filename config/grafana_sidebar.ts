@@ -56,31 +56,6 @@ const sidebars: SidebarsConfig = {
         "developer/eventbus",
       ],
     },
-
-    // Environment Data Source section
-    {
-      type: "category",
-      label: "Environment Data Source",
-      description: "Environment variables on your dashboard",
-      collapsible: false, // Always expanded
-      link: { type: "doc", id: "environment/index" }, // Links to main Environment doc
-      items: [
-        {
-          type: "doc",
-          id: "environment/index",
-          label: "Introduction",
-        },
-        "environment/deployment",
-        "environment/provisioning",
-        {
-          type: "category",
-          label: "Features",
-          link: { type: "doc", id: "environment/features" }, // Links to Features overview
-          items: ["environment/variables"],
-        },
-        "environment/release",
-      ],
-    },
   ],
 };
 
