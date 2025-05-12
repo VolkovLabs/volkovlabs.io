@@ -17,7 +17,7 @@ export const FOOTER = {
   // Link columns for navigation
   links: [
     {
-      title: "Business Suite",
+      title: "Business Suite for Grafana",
       items: [
         {
           label: "Documentation",
