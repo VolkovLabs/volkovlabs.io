@@ -16,7 +16,7 @@ const Header = () => (
   <header className="hero">
     <div className="container margin-vert--md">
       <div className="row">
-        <div className="col col--12 margin-vert--md">
+        <div className="col margin-vert--md">
           <h1 className="hero__title margin-bottom--md">About Volkov Labs</h1>
           <p className="hero__subtitle margin-vert--md">
             Open source is our core. At Volkov Labs, we’re driven by the freedom

@@ -141,17 +141,6 @@ const Main = () => (
             Use blockquotes for emphasis:
             <blockquote>Consistency is key to great content.</blockquote>
           </li>
-          <li>
-            Leverage Docusaurus tabs for options:
-            <Tabs>
-              <TabItem value="npm" label="NPM">
-                <pre>npm install @volkovlabs/plugin</pre>
-              </TabItem>
-              <TabItem value="yarn" label="Yarn">
-                <pre>yarn add @volkovlabs/plugin</pre>
-              </TabItem>
-            </Tabs>
-          </li>
         </ul>
 
         <h3>Language</h3>
