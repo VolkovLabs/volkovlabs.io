@@ -86,8 +86,8 @@ export const NAVBAR = {
       "aria-label": "Business Intelligence Platform",
       items: [
         {
-          label: "Getting Started",
-          to: "/big/getting-started/",
+          label: "Quick Start",
+          to: "/big/quick-start/",
           className: "volkovlabs-link icon-big-link",
         },
         {

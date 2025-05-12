@@ -33,11 +33,39 @@ Sample configuration to collect metrics from Server API and Scheduler processes.
   language="yaml"
 />
 
-## Dashboard
+## Grafana Dashboard
 
-The [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) can be downloaded from the Business Intelligence repository.
+The [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) displays metrics collected by Prometheus, filterable by **instance** and **alert rule** variables and can be downloaded from the Business Intelligence repository.
 
-<Code
-  url="https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json"
-  language="json"
+<Image
+  title="Dashboard Variables for Filtering"
+  src="/img/big/business-engine/instance-alert.png"
 />
+
+### Alerts
+
+- Alert Results
+- Alert Latency
+  <Image title="Alerts Analytics" src="/img/big/business-engine/alerts.png" />
+
+### Requests
+
+- Business Engine API Requests
+- Business Engine Latency
+- Grafana API Requests
+- Grafana Latency
+  <Image
+    title="Requests Analytics"
+    src="/img/big/business-engine/requests.png"
+  />
+
+### Processes
+
+- CPU Usage
+- Event Loop Lag
+- Memory Usage
+- Active Handlers/Requests Total
+  <Image
+    title="Processes Analytics"
+    src="/img/big/business-engine/processes.png"
+  />
