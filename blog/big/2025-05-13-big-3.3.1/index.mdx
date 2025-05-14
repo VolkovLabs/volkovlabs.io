@@ -40,6 +40,52 @@ We’re thrilled to announce the release of **Business Intelligence 3.3.1**, a g
 
 Ready to transform your Grafana workflows? Explore Business Intelligence 3.3.1 today!
 
+## Enhanced Alerting Page
+
+The alerting page has been revamped to address user feedback regarding navigation challenges and alert management inefficiencies in previous versions. The improved user interface (UI) offers a more intuitive layout, making it easier to locate and manage alerts.
+
+Advanced filtering options allow users to sort and filter alerts based on specific criteria, reducing the time spent on manual searches and improving operational efficiency for teams monitoring large-scale systems in Grafana.
+
+## Data Preview Feature
+
+Configuring alerts often requires users to ensure that the underlying data meets their expectations before activation. The new Data Preview feature, integrated directly into the Alert Settings page, enables users to view a snapshot of the data associated with an alert rule without navigating away or running separate queries.
+
+This saves time, reduces errors in alert setup, and ensures that alerts are based on accurate and relevant data, enhancing trust in the system’s monitoring capabilities.
+
+## Alert Notification History
+
+Transparency and accountability are critical in environments where alerts drive critical decision-making. The Alert Notification History feature provides a detailed log of past notifications, including when they were triggered, and the associated alert conditions.
+
+This historical data is invaluable for auditing, troubleshooting false positives, and ensuring compliance with organizational or regulatory requirements, particularly for teams managing high-stakes operations.
+
+## Enhanced Clustering
+
+Clustering is essential for scaling Business Intelligence deployments in distributed environments. The updated clustering pages now include support for displaying latest alerts and list of engines.
+
+## Localization Support
+
+To make the platform more accessible to a global user base, Business Intelligence 3.3.1 introduces Spanish language support. This localization effort caters to Spanish-speaking users and organizations, reducing language barriers and improving user adoption in regions where Spanish is the primary language.
+
+It reflects a commitment to inclusivity and ensures that non-English-speaking teams can fully leverage the platform’s capabilities in their native language.
+
+## Personalization
+
+User experience is a priority in this release, with the addition of theme customization through profile settings. Users can now tailor the visual appearance of the platform (e.g., light or dark mode) to suit their preferences or reduce eye strain during long monitoring sessions.
+
+This personalization fosters a more comfortable and engaging interaction with the platform, especially for users who spend extended periods working within Grafana dashboards.
+
+## New Data Source
+
+The integration of Loki as a new data source expands the platform’s logging capabilities, complementing existing support for metrics and visualizations in Grafana. Loki, a log aggregation system designed for scalability, allows users to query and analyze logs alongside their metrics, providing a unified view of system health.
+
+This is particularly useful for debugging issues, correlating events across logs and metrics, and gaining deeper insights into application performance in complex environments.
+
+## Faster Alert Processing
+
+Performance optimization is a key focus in high-volume monitoring scenarios where delays in alert processing can lead to missed critical events. The ability to customize batch sizes for alerts and annotations in Engine settings allows administrators to balance throughput and resource usage, ensuring faster alert delivery without overloading the system.
+
+This feature is especially beneficial for organizations with large datasets or frequent alert triggers, as it minimizes latency and improves responsiveness in Grafana workflows.
+
 ## Enhanced OpenAPI Specification
 
 The Business Engine’s [OpenAPI specification](/big/api/) has been overhauled, enabling seamless integrations and ensuring developers can leverage the latest platform capabilities effortlessly.
