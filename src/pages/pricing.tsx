@@ -11,8 +11,8 @@ import styles from "../css/index.module.css";
  * Introduces Business Suite Enterprise benefits and video
  */
 const Header = () => (
-  <header className="hero">
-    <div className="container margin-vert--lg">
+  <header className="hero hero--primary">
+    <div className="container margin-vert--md">
       <div className="row align-items-center">
         <div className="col">
           <h1 className="hero__title margin-bottom--md">
@@ -25,15 +25,8 @@ const Header = () => (
           <p className="hero__subtitle">
             <ul>
               <li>
-                <b>Dedicated support</b>: Access our expert team via{" "}
-                <a
-                  href="https://support.volkovlabs.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Zendesk
-                </a>{" "}
-                for fast issue resolution.
+                <b>Dedicated support</b>: Access our expert team via Zendesk for
+                fast issue resolution.
               </li>
               <li>
                 <b>Priority Features</b>: Enjoy prioritized feature requests and
@@ -44,8 +37,8 @@ const Header = () => (
                 optimize your workflows.
               </li>
               <li>
-                <b>Business Intelligence</b>: Unlock advanced insights with our{" "}
-                <a href="/big/">Business Intelligence</a> platform.
+                <b>Business Intelligence</b>: Unlock advanced insights with our
+                Business Intelligence platform.
               </li>
             </ul>
             Your success drives us—let’s build something extraordinary together.

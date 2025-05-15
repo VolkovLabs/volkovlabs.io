@@ -13,7 +13,7 @@ import styles from "../css/index.module.css";
  * Showcases Business Suite intro and plugins
  */
 const Header = ({ siteConfig }) => (
-  <header className="hero">
+  <header className="hero hero--primary">
     <div className="container margin-vert--md">
       <div className="row align-items-center">
         <div className="col col--7">
@@ -68,7 +68,7 @@ const Main = ({ siteConfig }) => (
         <Plugins />
       </div>
     </section>
-    <section className="hero">
+    <section className="hero hero--primary">
       <div className="container margin-vert--md">
         <div className="row align-items-center">
           <div className="col col--7">
