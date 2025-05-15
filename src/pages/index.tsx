@@ -44,8 +44,8 @@ const Header = ({ siteConfig }) => (
           <a href="/plugins/">
             <ThemedImage
               sources={{
-                light: useBaseUrl("/img/index/main.svg"),
-                dark: useBaseUrl("/img/index/main.dark.svg"),
+                light: useBaseUrl("/img/index/plugins/main.svg"),
+                dark: useBaseUrl("/img/index/plugins/main.dark.svg"),
               }}
               alt={siteConfig.tagline}
               className={styles.headerImage}
