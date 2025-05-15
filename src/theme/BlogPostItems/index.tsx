@@ -33,13 +33,12 @@ const Header = ({ items }) => {
   /**
    * Tags not to index
    */
-  if (items.length < 20) {
+  if (items.length < 100) {
     return (
       <>
         <Head>
           <meta name="robots" content="noindex" />
         </Head>
-        <Hero />
       </>
     );
   }

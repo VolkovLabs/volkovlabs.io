@@ -9,8 +9,8 @@ export const NAVBAR = {
   // Logo with light/dark mode support
   logo: {
     alt: "Volkov Labs Logo",
-    src: "img/suite.svg",
-    srcDark: "img/suite.dark.svg",
+    src: "img/plugins/logo.svg",
+    srcDark: "img/plugins/logo.dark.svg",
     width: 120, // Optional: Ensures consistent size; adjust as needed
   },
 
@@ -105,6 +105,11 @@ export const NAVBAR = {
           to: "/big/alerting/",
           className: "volkovlabs-link icon-big-alerting-link",
         },
+        {
+          label: "Release Notes",
+          to: "/big/release/",
+          className: "volkovlabs-link icon-big-release-link",
+        },
       ],
     },
     {
@@ -172,6 +177,11 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-grafana-developer-link",
         },
       ],
+    },
+    {
+      to: "https://github.com/VolkovLabs",
+      position: "right",
+      className: "volkovlabs-link header-github-link",
     },
     {
       to: "/pricing/",
