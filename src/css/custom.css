@@ -16,6 +16,16 @@
   --ifm-font-size-base: 18px;
 }
 
+[data-theme="light"] .hero--primary {
+  --ifm-hero-background-color: var(--ifm-color-emphasis-100);
+  color: #111;
+}
+
+[data-theme="dark"] .hero--primary {
+  --ifm-hero-background-color: var(--ifm-color-emphasis-100);
+  color: #eee;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;

@@ -13,7 +13,7 @@ import styles from "../css/index.module.css";
  * Introduces Volkov Labs’ open-source mission and achievements
  */
 const Header = () => (
-  <header className="hero">
+  <header className="hero hero--primary">
     <div className="container margin-vert--md">
       <div className="row">
         <div className="col margin-vert--md">

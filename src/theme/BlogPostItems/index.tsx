@@ -5,6 +5,28 @@ import BlogPostCard from "../BlogPostCard";
 import styles from "./styles.module.css";
 
 /**
+ * Hero Component
+ */
+const Hero = () => (
+  <header className="hero hero--primary">
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h1 className="hero__title margin-bottom--md">
+            Data Visualization & Grafana Insights
+          </h1>
+          <p className="hero__subtitle margin-vert--md">
+            Explore the Volkov Labs Blog for expert insights, tutorials, and
+            updates on data visualization, Grafana plugins, and open-source
+            solutions. Stay informed with our latest tips and innovations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+);
+
+/**
  * Header
  */
 const Header = ({ items }) => {
@@ -17,7 +39,7 @@ const Header = ({ items }) => {
         <Head>
           <meta name="robots" content="noindex" />
         </Head>
-        <h2>Blog Posts</h2>
+        <Hero />
       </>
     );
   }
@@ -30,7 +52,7 @@ const Header = ({ items }) => {
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />
       </Head>
-      <h1>Blog Posts</h1>
+      <Hero />
     </>
   );
 };
