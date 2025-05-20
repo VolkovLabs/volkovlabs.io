@@ -2,8 +2,6 @@ import React from "react";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 
 /**
  * Header Component

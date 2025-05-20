@@ -4,7 +4,6 @@ import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Youtube from "@theme/Youtube";
-import styles from "../css/index.module.css";
 
 /**
  * Header Component
