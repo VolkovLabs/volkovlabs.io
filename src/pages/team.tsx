@@ -1,12 +1,8 @@
-import clsx from "clsx";
 import React from "react";
 import Head from "@docusaurus/Head";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import ThemedImage from "@theme/ThemedImage";
 import Image from "@theme/Image";
-import styles from "../css/index.module.css";
 
 /**
  * Header Component
@@ -99,12 +95,21 @@ const Main = () => (
         </div>
         <div className="col col--4">
           <Image
-            src="/img/team/mikhail-ulasevich.png"
-            alt="Mikhail, Senior Engineer"
+            src="/img/team/mulasevich.png"
+            alt="Mikhail, Enterprise Engineer"
             zoom={false}
           />
           <h3>Mikhail</h3>
-          <p>Senior Engineer</p>
+          <p>Enterprise Engineer</p>
+        </div>
+        <div className="col col--4">
+          <Image
+            src="/img/team/nikita.png"
+            alt="Nikita, Enterprise Engineer"
+            zoom={false}
+          />
+          <h3>Nikita</h3>
+          <p>Enterprise Engineer</p>
         </div>
       </div>
     </section>
