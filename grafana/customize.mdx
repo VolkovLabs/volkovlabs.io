@@ -1,4 +1,6 @@
 ---
+title: "Customizing Grafana Your Way"
+description: "Learn how to personalize Grafana with advanced customization tricks for icons, styles, and more. Explore tips for Grafana 10, 11, and beyond."
 tags:
   - Advanced
 ---
@@ -7,42 +9,55 @@ import BlogPost from "@theme/BlogPost";
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Customizing Grafana Your Way
 
-Want to tweak Grafana’s look and feel—icons, styles, and more—to match your vision? You’re in the right place! This page unveils a treasure trove of customization tricks to transform Grafana into your own tailored application.
+Want to tweak Grafana’s look and feel—icons, styles, and more—to match your vision? You’re in the right place! This guide unveils a treasure trove of customization tricks to transform Grafana into your own tailored application.
 
-Over three years, we’ve uncovered so many ways to personalize Grafana that we’ve grouped them into four categories, outlined in the schema below.
+Over three years, we’ve uncovered numerous ways to personalize Grafana. We’ve grouped them into four key categories, as illustrated in the schema below.
 
 <Image
   title="Four ways to customize Grafana: Configuration, Cleaning, Visual, and Hands-On."
   src="/img/grafana/advanced/customization.png"
+  alt="Diagram showing four customization categories for Grafana"
 />
 
-Scroll down for our latest Dockerfile—packed with commands to get you started. Let’s dive into the details!
+Ready to dive in? Scroll down for our latest Dockerfile packed with commands to get you started, or explore the sections below for detailed guides and resources.
 
-## Customize Grafana 11
+## Explore Customization by Grafana Version
 
-Excited to see what’s possible in Grafana 11? This video explores the customization landscape.
+We’ve tailored resources for different Grafana versions to ensure you get the most relevant tips and tricks. Use the tabs below to navigate between versions.
 
-<Youtube id="8ArQ0vlWA88" title="What Can You Customize in Grafana 11?" />
-
-For a deep dive, this blog post offers a hefty collection of commands to bend Grafana 11 to your will.
-
-<BlogPost id="how-to-customize-grafana-11.1.0" />
-
-## Tailor Grafana 10 (and Earlier)
-
-Need more? This video dives into Grafana 9.4 customization, showcasing tweakable elements with a handy cheat-sheet for Docker and Windows.
-
-<Youtube
-  id="ChI78v4UZc0"
-  title="How to Customize Grafana 9.4: A Cheat-Sheet for Docker and Windows"
-/>
-
-Updated for Grafana 10, this post gathers commands to style Grafana your way—perfect for experimentation.
-
-<BlogPost id="how-to-customize-the-grafana-user-interface-8d70a42dc2b6" />
+<Tabs
+  defaultValue="grafana11"
+  values={[
+    { label: "Grafana 11", value: "grafana11" },
+    { label: "Grafana 10 & Earlier", value: "grafana10" },
+  ]}
+>
+  <TabItem value="grafana11">
+    Customize Grafana 11 Excited to see what’s possible in Grafana 11? This
+    video explores the customization landscape.
+    <Youtube id="8ArQ0vlWA88" title="What Can You Customize in Grafana 11?" />
+    For a deep dive, this blog post offers a hefty collection of commands to
+    bend Grafana 11 to your will.
+    <BlogPost id="how-to-customize-grafana-11.1.0" />
+  </TabItem>
+  <TabItem value="grafana10">
+    Tailor Grafana 10 (and Earlier) Need more? This video dives into Grafana 9.4
+    customization, showcasing tweakable elements with a handy cheat-sheet for
+    Docker and Windows.
+    <Youtube
+      id="ChI78v4UZc0"
+      title="How to Customize Grafana 9.4: A Cheat-Sheet for Docker and Windows"
+    />
+    Updated for Grafana 10, this post gathers commands to style Grafana your
+    way—perfect for experimentation.
+    <BlogPost id="how-to-customize-the-grafana-user-interface-8d70a42dc2b6" />
+  </TabItem>
+</Tabs>
 
 ## Spring Cleaning: Trim the Fat
 
@@ -54,9 +69,13 @@ Our “Cleaning” category deserves its own spotlight. Learn how to strip away 
 
 Our go-to customization happens in this Dockerfile. It’s built for Docker but adaptable to host setups—though, as the video explains, it’s not always a breeze on hosts like Windows.
 
-Got Windows-specific commands? Share them with us! We’ll add them to this crash course with full credit to you. We keep this Dockerfile fresh with the latest Grafana updates.
+> **Note:** Got Windows-specific commands? Share them with us! We’ll add them to this crash course with full credit to you. We keep this Dockerfile fresh with the latest Grafana updates.
 
 <Code
   url="https://github.com/VolkovLabs/volkovlabs-app/blob/main/Dockerfile"
   language="docker"
 />
+
+## Get Involved
+
+Have a customization tip or a unique setup? Join the conversation! Contribute to this guide by sharing your insights or asking questions in the YouTube comments. Let’s build a richer Grafana experience together.
