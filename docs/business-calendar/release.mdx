@@ -6,11 +6,22 @@ image: /img/suite.png
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Stay informed about the Business Calendar panel’s updates with these release notes, summarizing new features, enhancements, and fixes across all versions.
 
+<Tabs
+  defaultValue="v3"
+  values={[
+    { label: "Version 3", value: "v3" },
+    { label: "Version 2", value: "v2" },
+    { label: "Version 1", value: "v1" },
+  ]}
+>
+  <TabItem value="v3">
 ## 3.9.1 (2025-03-18)
 
 This release focuses on improving the user experience with an updated "no events" message, a more stable Yearly view layout for smaller panel sizes, and the ability to display events from previous years.
@@ -68,6 +79,8 @@ Marks a major update with rebranding to Business Calendar panel, a transition to
 
 <BlogPost id="calendar-panel-3.0.0-20240514" />
 
+  </TabItem>
+  <TabItem value="v2">
 ## 2.5.0 (2024-03-20)
 
 Updates event details tag styles, ensures compatibility with Grafana 10.4, and fixes location display issues in month and work week views.
@@ -110,6 +123,8 @@ Requires Grafana 9.2 or 10
 
 A significant update with increased test coverage, introduction of the Big Calendar component, compatibility with Grafana 10.0, and various UI improvements including quick links, navigation buttons, and calendar resizing.
 
+  </TabItem>
+  <TabItem value="v1">
 ## 1.4.0 (2023-06-10)
 
 Adds compatibility with Grafana 9.5.2, supports text formatting and overrides, enhances test coverage, migrates to Plugin Tools 1.5.2, updates to Node.js 18, integrates E2E Cypress testing, and fixes event spacing issues.
@@ -145,3 +160,6 @@ Updates plugin options documentation, adds a YouTube tutorial for JSON API event
 ## 1.0.0 (2022-10-02)
 
 Initial release under Volkov Labs maintenance, updated based on their panel template, with compatibility for Grafana 9.1.6.
+
+  </TabItem>
+</Tabs>
