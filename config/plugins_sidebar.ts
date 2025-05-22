@@ -334,7 +334,15 @@ const sidebars: SidebarsConfig = {
             "business-table/permission",
           ],
         },
-        "business-table/features",
+        {
+          type: "category",
+          label: "Features",
+          link: { type: "doc", id: "business-table/features" },
+          items: [
+            "business-table/download-button",
+            "business-table/external-export",
+          ],
+        },
         {
           type: "category",
           label: "Tutorials",
