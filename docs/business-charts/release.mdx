@@ -3,6 +3,7 @@ tags:
   - Business Charts
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
@@ -63,9 +64,7 @@ Added plugin E2E tests, updated context parameters in Examples, included video t
 - Removed non-context code parameters; update to use `context`
   :::
 
-Renamed to Business Charts panel, added Apache acknowledgment, updated to Grafana 10.4.1, removed deprecated ArrayVector, and addressed ECharts deprecation warnings.
-
-### Code Parameters Migration Guide
+:::info Code Parameters Migration Guide
 
 - `data` → `context.panel.data`
 - `theme` → `context.grafana.theme`
@@ -77,6 +76,9 @@ Renamed to Business Charts panel, added Apache acknowledgment, updated to Grafan
 - `locationService` → `context.grafana.locationService`
 - `notifySuccess` → `context.grafana.notifySuccess`
 - `notifyError` → `context.grafana.notifyError`
+  :::
+
+Renamed to Business Charts panel, added Apache acknowledgment, updated to Grafana 10.4.1, removed deprecated ArrayVector, and addressed ECharts deprecation warnings.
 
 <BlogPost id="echarts-panel-6.0.0-20240406" />
   </TabItem>

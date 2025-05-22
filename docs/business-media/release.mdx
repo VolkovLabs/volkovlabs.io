@@ -3,14 +3,29 @@ tags:
   - Business Media
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Explore the evolution of the Business Media panel through these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions. Each release includes a summary to provide a quick overview of the key updates.
 
+<Tabs
+  defaultValue="v6"
+  values={[
+    { label: "Version 6", value: "v6" },
+    { label: "Version 5", value: "v5" },
+    { label: "Version 4", value: "v4" },
+    { label: "Version 3", value: "v3" },
+    { label: "Version 2", value: "v2" },
+    { label: "Version 1", value: "v1" },
+  ]}
+>
+  <TabItem value="v6">
 ## 6.2.0 (2024-12-03)
 
 This release focuses on improving data handling and testing, with updates to support Grafana 11.3 and enhanced error management.
@@ -31,6 +46,8 @@ This version enhances media source management and introduces WebSocket streaming
 
 A major update with breaking changes for image links and PDF fields, alongside significant enhancements like video poster support and mixed media slideshows, updated for Grafana 11.1.
 
+</TabItem>
+  <TabItem value="v5">
 ## 5.1.0 (2024-06-23)
 
 This release improves video and image loading capabilities, introduces Docker-optimized E2E testing, and ensures compatibility with Grafana 11.
@@ -45,6 +62,8 @@ A significant update requiring Grafana 10 or 11, with new customization options 
 
 <BlogPost id="image-panel-5.0.0-20240326" />
 
+  </TabItem>
+  <TabItem value="v4">
 ## 4.2.0 (2024-02-22)
 
 This release focuses on code quality improvements and introduces an infinity play option for media, alongside updated dependencies.
@@ -65,6 +84,8 @@ A major update requiring Grafana 9 or 10, with new image toolbar features and co
 
 <BlogPost id="image-panel-4.0.0-20230709" />
 
+  </TabItem>
+  <TabItem value="v3">
 ## 3.6.0 (2023-06-06)
 
 This release adds a media toolbar for enhanced navigation and ensures compatibility with Grafana 9.5.2 and 10 Preview.
@@ -103,6 +124,8 @@ Requires Grafana 8.5+ or 9.0+
 
 A major update requiring Grafana 8.5+ or 9.0+, with support for audio/video playback and enhanced PDF handling.
 
+  </TabItem>
+  <TabItem value="v2">
 ## 2.6.0 (2022-04-26)
 
 Ensures broad compatibility with Grafana 8.3.6 to 8.5.0 through multiple updates.
@@ -143,6 +166,8 @@ Supports Grafana 8.0+; use version 1.0.1 or 1.1.0 for Grafana 7.x
 
 A major update with breaking changes, supporting Grafana 8.0+.
 
+  </TabItem>
+  <TabItem value="v1">
 ## 1.1.0 (2021-06-19)
 
 Improves Base64 image support and increases test coverage for plugin functionality.
@@ -154,3 +179,6 @@ A minor update adding visual documentation for data sources.
 ## 1.0.0 (2021-06-07)
 
 The initial release of the Business Media panel for Grafana 7.5.7, supporting various media formats.
+
+  </TabItem>
+</Tabs>
