@@ -5,214 +5,217 @@ tags:
 
 import Image from "@theme/Image";
 
-# External export
+# External Export
 
-The Business Table panel now includes the ability to export table data to an external source by sending an HTTP request. The table data is represented as a two-dimensional array ([][]) and is accessible via the `${payload}` variable, which is escaped as a string for inclusion in the request body.
+The Business Table panel now supports exporting table data to external sources by sending an HTTP request. The data is represented as a two-dimensional array (`[][]`) and is accessible via the `${payload}` variable, which is escaped as a string for inclusion in the request body.
 
 <Image
-  title="The Export button."
+  title="The Export Button"
   src="/img/plugins/business-table/export/export-button.png"
 />
 
-This feature enables seamless integration with external services, allowing users to export table data to platforms like Google Sheets, databases, or other APIs. The export is triggered by a user action, such as clicking a button, and can be configured to work with various data sources.
+This feature enables seamless integration with external services, allowing users to export table data to platforms like Google Sheets, databases, or other APIs. The export is triggered by a user action, such as clicking a button, and can be customized to work with various data sources.
 
 <Image
-  title="The Export body configuration in Infinity DS."
+  title="Export Body Configuration in Infinity Data Source"
   src="/img/plugins/business-table/export/payload-in-body.png"
 />
 
-## Export to Google Sheets
+## Overview of External Export
 
-The Business Table panel can export table data directly to Google Sheets using the Google Sheets API through the Infinity data source. Below is an example of configuring this integration via Google Cloud Console.
+External export allows you to:
 
-### Prepare Google Spreadsheet
+- Send table data to external systems via HTTP requests.
+- Integrate with platforms like Google Sheets using APIs.
+- Customize the export process through the Infinity data source in Grafana.
 
-Before exporting table data from the Business Table panel to Google Sheets, you need to prepare the target spreadsheet to receive the data. This involves creating a spreadsheet and configuring its structure to align with the table data.
+:::info
+This guide focuses on exporting data to Google Sheets, but the principles can be applied to other external systems with appropriate API configurations.
+:::
 
-- Go to `https://docs.google.com/spreadsheets` and create a new spreadsheet.
-- Name the spreadsheet for easy identification (e.g., "Business Table Export").
-- Identify the sheet and range where the data will be appended (e.g., Sheet1!A1).
+## Exporting to Google Sheets
+
+You can export table data directly to Google Sheets using the Google Sheets API through the Infinity data source. Follow the steps below to set up and configure this integration.
+
+### Step 1: Prepare Your Google Spreadsheet
+
+Before exporting data, prepare the target spreadsheet to receive the data:
+
+1. Go to [Google Sheets](https://docs.google.com/spreadsheets) and create a new spreadsheet.
+2. Name the spreadsheet for easy identification (e.g., "Business Table Export").
+3. Identify the sheet and range where the data will be appended (e.g., `Sheet1!A1`).
 
 <Image
-  title="Example spreadsheet."
+  title="Example Spreadsheet"
   src="/img/plugins/business-table/export/example-spreadsheet.png"
 />
 
-### Set Up Google Cloud Console:
+### Step 2: Set Up Google Cloud Console
 
-To be able to put data into our remote table we must create a service account with access keys and give it permission to edit our table
+To enable data export to Google Sheets, create a service account with the necessary permissions:
 
-#### Set Up Google Cloud Console:
+1. Navigate to [Google Cloud Console](https://console.cloud.google.com).
+2. Create a new project or select an existing one.
 
-- Navigate to https://console.cloud.google.com.
-- Create a new project or select an existing one.
+   <Image
+     title="Select Project in Google Cloud"
+     src="/img/plugins/business-table/export/google-cloud.png"
+   />
 
-<Image
-  title="Select project in the Google Cloud."
-  src="/img/plugins/business-table/export/google-cloud.png"
-/>
+3. Go to **APIs & Services** > **Enable APIs and Services**.
+4. Search for `Google Sheets API` and enable it for your project.
 
-- Select APIs & Services
-- Select `Enable APIs and services`
-- Find `Google sheets api` via search
-- Select Google sheets api. Enable the Google Sheets API for your project.
+   <Image
+     title="Enabled API for Google Cloud Project"
+     src="/img/plugins/business-table/export/enabled-sheets-api.png"
+   />
 
-<Image
-  title="Enabled API for Google Cloud project."
-  src="/img/plugins/business-table/export/enabled-sheets-api.png"
-/>
+5. Click **Manage this API** > **Credentials** > **Manage Service Accounts**.
+6. Click **Create Service Account**, provide a name, and set the role to `Editor`.
 
-- After that click on Manage this API
-- Go to credentials and Select `Manage service accounts`
-- Click Create service account
-- Fill Service account name
-- Select role as `Editor`
+   <Image
+     title="Select Role as Editor"
+     src="/img/plugins/business-table/export/permission-role.png"
+   />
 
-  <Image
-    title="Select Role"
-    src="/img/plugins/business-table/export/permission-role.png"
-  />
+7. Go to the **Credentials** menu, edit the service account, and navigate to the **Keys** section.
+8. Click **Add Key**, select `JSON` as the key type, and save the file.
 
-- Go to credentials menu. Now we can see our service account
+   <Image
+     title="Select Key Type as JSON"
+     src="/img/plugins/business-table/export/key-type.png"
+   />
 
-  <Image
-    title="Service Accounts in Google Cloud project."
-    src="/img/plugins/business-table/export/service-accounts.png"
-  />
+9. Open your Google Spreadsheet, go to **Share**, and add the service account email (e.g., `test-account@test-spreadsheets...`) with `Editor` rights.
 
-- Click on `Edit` for account and go to keys section
-- Click on Add key and create an key
-- Select key type `JSON`
+### Step 3: Configure Infinity Data Source in Grafana
 
-  <Image
-    title="Select Key Type `JSON`."
-    src="/img/plugins/business-table/export/key-type.png"
-  />
+Set up the Infinity data source to authenticate with Google Sheets:
 
-- After creating and saving the key, the Save File window will appear and save the file.
-- Go to your prepared `docs.google.com/spreadsheets/` and under access settings add the created `test-account@test-spreadsheets.....` account to your file and provide editor rights.
+1. In Grafana, create or open an Infinity data source.
+2. Go to the **Authentication** tab.
+3. Select **Other Authentication** > **Provider: Google JWT**.
+4. Upload the JSON key file downloaded from Google Cloud Console.
+5. Set the `Scopes` field to `https://www.googleapis.com/auth/spreadsheets`.
+6. Add the following allowed hosts: `https://docs.google.com`, `https://sheets.googleapis.com`, `docs.google.com`, `sheets.googleapis.com`.
+7. Click **Save and Test** to verify the configuration.
 
-### Configure Infinity data source
+   <Image
+     title="Infinity Data Source Authentication Configuration"
+     src="/img/plugins/business-table/export/auth-config-infinity.png"
+   />
 
-- Create and open Infinity data source.
-- Click on Authentication
-- Select Other Authentication -> Provider: Google JWT -> Upload the JSON file that was received when adding the key to the service account
-- Fill `Scopes` field: `https://www.googleapis.com/auth/spreadsheets` and click Update
-- After that you will see the OAuth2.0 fields filled in
-- Fill allowed hosts: `https://docs.google.com`, `https://sheets.googleapis.com`, `docs.google.com`, `sheets.googleapis.com`
-- Click `Save and test`
+8. Go to **URL, Headers & Params** > **URL Settings** and set `Allow Dangerous HTTP Methods` to `true`.
 
-  <Image
-    title="Infinity DS Authentication config."
-    src="/img/plugins/business-table/export/auth-config-infinity.png"
-  />
+### Step 4: Configure Export Request in Business Table Panel
 
-- Go to `URL, Headers & Params` section and in `URL setting` -> `Allow dangerous HTTP methods` -> select to true
+Configure the Business Table panel to send data to Google Sheets:
 
-We're done with setting up access to https://docs.google.com/spreadsheets. Good job. Now create a Business Table panel with the test data.
+1. Create or edit a Business Table panel with your data.
 
-### Configure Export request for panel
+   <Image
+     title="Configured Business Table Panel"
+     src="/img/plugins/business-table/export/configured-panel.png"
+   />
 
-<Image
-  title="Configured Business Table panel."
-  src="/img/plugins/business-table/export/configured-panel.png"
-/>
+2. In the panel settings, go to **Advanced Options** > **External Export** and enable it.
+3. Select your configured Infinity data source.
+4. Set the following options:
 
-- Select in `Advanced options` - `External export` - `Enable` and set to true
-- In the data source, select your customized Infinity DS
-- Type: `JSON`
-- Parser: `backend`
-- Source: `URL`
-- Method: `PUT`
-- URL: `https://sheets.googleapis.com/v4/spreadsheets/<spreadsheetID>/values/<sheetName>!<startCell>?valueInputOption=RAW`
+   - **Type**: `JSON`
+   - **Parser**: `backend`
+   - **Source**: `URL`
+   - **Method**: `PUT`
+   - **URL**: `https://sheets.googleapis.com/v4/spreadsheets/<spreadsheetID>/values/<sheetName>!<startCell>?valueInputOption=RAW`
+     - Replace `<spreadsheetID>`, `<sheetName>`, and `<startCell>` with your spreadsheet details.
+     - Example: `https://sheets.googleapis.com/v4/spreadsheets/1fHQaArXS9qR4Ie65i_8fp47jAJACOlqHGZ35AFl0hf2wqM/values/Sheet1!A1?valueInputOption=RAW`
+   - **URL Option**: `Body Type` - `Raw`
+   - **Body Content Type**: `JSON`
+   - **Body Content**:
+     ```json
+     {
+       "range": "Sheet1!A1",
+       "majorDimension": "ROWS",
+       "values": ${payload}
+     }
+     ```
 
-  - `spreadsheetID` - Spread sheet ID
-  - `sheetName` - Sheet name
-  - `startCell` - starting point of the range where the table will be placed
-  - Example: `https://sheets.googleapis.com/v4/spreadsheets/1fHQaArXS9qR4Ie65i_8fp47jAJACOlqHGZ35AFl0hf2wqM/values/Sheet1!A1?valueInputOption=RAW`
+5. (Optional) Test with hardcoded data:
 
-- URL option: `Body Type` - `Raw`
-- Body Content Type: `JSON`
-- Body content:
+   ```json
+   {
+     "range": "Sheet1!A1",
+     "majorDimension": "ROWS",
+     "values": [
+       ["value", "device", "status"],
+       ["100", "sensor A", "ok"],
+       ["200", "sensor B", "error"]
+     ]
+   }
+   ```
 
-```json
- {
-  "range": "Sheet1!A1",
-  "majorDimension": "ROWS",
-  "values":${payload}
-  }
-```
+   <Image
+     title="Request Configuration for Infinity Data Source"
+     src="/img/plugins/business-table/export/put-configuration.png"
+   />
 
-- Hardcoded data for test
+6. Save the dashboard and click the **Export** button to send data to Google Sheets.
 
-```json
-{
-  "range": "Sheet1!A1",
-  "majorDimension": "ROWS",
-  "values": [
-    ["value", "device", "status"],
-    ["100", "sensor A", "ok"],
-    ["200", "sensor B", "error"]
-  ]
-}
-```
-
-<Image
-  title="Request configuration for Infinity data source."
-  src="/img/plugins/business-table/export/put-configuration.png"
-/>
-
-Don't forget to save the dashboard and dashboard.
-
-Now if you click Export and if everything is configured correctly you can see the message about successful export.
-
-:::info Status
-Infinity DS sends status ok even if there is an error. It may be worth checking the Network tab if something went wrong.
+:::warning
+Infinity data source may return a "status OK" even if there is an error. Check the **Network** tab in your browser's developer tools if the export fails.
 :::
 
 <Image
-  title="Google Sheets data added after successful export."
+  title="Google Sheets Data After Successful Export"
   src="/img/plugins/business-table/export/filled-table.png"
 />
 
-## Import from Google Spreadsheet as JSON
+## Importing Data from Google Sheets
 
-Use the configured data source and create the following configuration to get your spreadsheet data in JSON format
+You can also retrieve data from Google Sheets into the Business Table panel in JSON or CSV format using the Infinity data source.
 
-- Type: `JSON`
-- Parser: `backend`
-- Source: `URL`
-- Method: `GET`
+### Import as JSON
 
-- URL: `https://sheets.googleapis.com/v4/spreadsheets/<spreadsheetID>/values/<sheetName>!<range>`
+To retrieve spreadsheet data in JSON format:
 
-  - `spreadsheetID` - Spread sheet ID
-  - `sheetName` - Sheet name
-  - `range` - range with data
-
-  - Example: `https://sheets.googleapis.com/v4/spreadsheets/1fHQaArXSA9qR4Ie65i12XA_8fp47jAJACOlqHGAFl0hf2wqM/values/Sheet1!A1:D7`
+1. In the Business Table panel, configure the Infinity data source with:
+   - **Type**: `JSON`
+   - **Parser**: `backend`
+   - **Source**: `URL`
+   - **Method**: `GET`
+   - **URL**: `https://sheets.googleapis.com/v4/spreadsheets/<spreadsheetID>/values/<sheetName>!<range>`
+     - Replace `<spreadsheetID>`, `<sheetName>`, and `<range>` with your spreadsheet details.
+     - Example: `https://sheets.googleapis.com/v4/spreadsheets/1fHQaArXSA9qR4Ie65i12XA_8fp47jAJACOlqHGAFl0hf2wqM/values/Sheet1!A1:D7`
 
 <Image
-  title="Retrieve daa in JSON format"
+  title="Retrieve Data in JSON Format"
   src="/img/plugins/business-table/export/json-import.png"
 />
 
-## Import from Google Spreadsheet as CSV
+### Import as CSV
 
-Use the configured data source and create the following configuration to get your spreadsheet data in JSON format
+To retrieve spreadsheet data in CSV format:
 
-- Type: `CSV`
-- Parser: `backend`
-- Source: `URL`
-- Method: `GET`
-
-- URL: `https://docs.google.com/spreadsheets/d/<spreadsheetID>/export?format=csv&gid=0`
-
-  - `spreadsheetID` - Spread sheet ID
-
-  - Example: `https://docs.google.com/spreadsheets/d/1fVQOrLSKqO4Ve65i_LfA4BjSJACOlqHGAFl0hf2wqM/export?format=csv&gid=0`
+1. In the Business Table panel, configure the Infinity data source with:
+   - **Type**: `CSV`
+   - **Parser**: `backend`
+   - **Source**: `URL`
+   - **Method**: `GET`
+   - **URL**: `https://docs.google.com/spreadsheets/d/<spreadsheetID>/export?format=csv&gid=0`
+     - Replace `<spreadsheetID>` with your spreadsheet ID.
+     - Example: `https://docs.google.com/spreadsheets/d/1fVQOrLSKqO4Ve65i_LfA4BjSJACOlqHGAFl0hf2wqM/export?format=csv&gid=0`
 
 <Image
-  title="Retrieve data in CSV format"
+  title="Retrieve Data in CSV Format"
   src="/img/plugins/business-table/export/csv-import.png"
 />
+
+## Troubleshooting
+
+- **Export Fails**: Check the **Network** tab in your browser's developer tools for detailed error messages.
+- **Authentication Issues**: Ensure the service account has the correct permissions and the JSON key file is uploaded correctly in Infinity.
+- **Data Not Updating**: Verify the range and sheet name in the export URL match your Google Spreadsheet configuration.
+
+:::note
+If you encounter issues not covered in this guide, reach out to the community or support channels for assistance.
+:::
