@@ -3,14 +3,26 @@ tags:
   - Business Satellite
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Keep track of the Business Satellite data source’s advancements with these release notes, highlighting new features, enhancements, and breaking changes across all versions.
 
+<Tabs
+  defaultValue="v3"
+  values={[
+    { label: "Version 3", value: "v3" },
+    { label: "Version 2", value: "v2" },
+    { label: "Version 1", value: "v1" },
+  ]}
+>
+  <TabItem value="v3">
 ## 3.5.0 (2025-04-03)
 
 This release introduces new filtering capabilities for dashboard search and annotations, alongside an upgrade to Grafana 11.5 with updated dependencies for improved compatibility and performance.
@@ -44,6 +56,9 @@ Requires Grafana 10.1 or 11
 
 A major update preparing for Grafana 11 compatibility, optimizing testing with Docker, and introducing breaking changes requiring Grafana 10.1 or 11.
 
+  </TabItem>
+
+  <TabItem value="v2">
 ## 2.2.0 (2023-09-19)
 
 Expands compatibility across Grafana versions with feature flags and improves annotation handling with new options and fields.
@@ -63,7 +78,9 @@ Requires Grafana 9 or 10
 A significant update to support Grafana 9 or 10, with extensive testing improvements, new tutorials, and breaking changes for compatibility.
 
 <BlogPost id="grapi-datasource-2.0.0-20230718" />
+  </TabItem>
 
+  <TabItem value="v1">
 ## 1.2.0 (2023-03-30)
 
 Enhances annotation capabilities with formatted labels, variable support, and improved testing for alerts.
@@ -81,3 +98,7 @@ Updates compatibility to Grafana 9.4.3, improves plugin configuration, and achie
 Initial release of the Business Satellite data source (originally Grafana API - GrAPI), featuring core functionalities like annotations, alerting, and health checks.
 
 <BlogPost id="grapi-datasource-1.0.0-20230302" />
+
+  </TabItem>
+
+</Tabs>

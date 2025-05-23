@@ -68,7 +68,7 @@ const Main = () => (
           </li>
           <li>Use numbered steps for tutorials or procedures.</li>
           <li>
-            Include prerequisites in a <code>:::note</code> admonition.
+            Include prerequisites in a <code>:::info</code> admonition.
           </li>
         </ul>
 

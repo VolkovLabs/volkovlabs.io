@@ -3,14 +3,27 @@ tags:
   - Business Charts
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Stay updated with the Business Charts panel’s evolution through these release notes, highlighting key updates, new features, enhancements, and fixes across all versions.
 
+<Tabs
+  defaultValue="v6"
+  values={[
+    { label: "Version 6", value: "v6" },
+    { label: "Version 5", value: "v5" },
+    { label: "Version 4", value: "v4" },
+    { label: "Version 3", value: "v3" },
+  ]}
+>
+  <TabItem value="v6">
 ## 6.6.0 (2025-02-20)
 
 Introduced end-to-end (E2E) testing, updated Code Editor packages, upgraded to Apache ECharts 5.6.0, and aligned with Grafana 11.5. Added attestation to release workflow.
@@ -51,9 +64,7 @@ Added plugin E2E tests, updated context parameters in Examples, included video t
 - Removed non-context code parameters; update to use `context`
   :::
 
-Renamed to Business Charts panel, added Apache acknowledgment, updated to Grafana 10.4.1, removed deprecated ArrayVector, and addressed ECharts deprecation warnings.
-
-### Code Parameters Migration Guide
+:::info Code Parameters Migration Guide
 
 - `data` → `context.panel.data`
 - `theme` → `context.grafana.theme`
@@ -65,9 +76,13 @@ Renamed to Business Charts panel, added Apache acknowledgment, updated to Grafan
 - `locationService` → `context.grafana.locationService`
 - `notifySuccess` → `context.grafana.notifySuccess`
 - `notifyError` → `context.grafana.notifyError`
+  :::
+
+Renamed to Business Charts panel, added Apache acknowledgment, updated to Grafana 10.4.1, removed deprecated ArrayVector, and addressed ECharts deprecation warnings.
 
 <BlogPost id="echarts-panel-6.0.0-20240406" />
-
+  </TabItem>
+  <TabItem value="v5">
 ## 5.3.0 (2024-03-06)
 
 Upgraded to Apache ECharts 5.5.0, enhanced code parameters with a builder, and improved autosize Code Editor.
@@ -94,6 +109,8 @@ Requires Grafana 9 or 10
 
 Refreshed examples for Grafana 10, enhanced streaming support, updated to Grafana 10.0.2, integrated Wordcloud extension, upgraded to Apache ECharts 5.4.3, and dropped support for Grafana 8.5.
 
+  </TabItem>
+  <TabItem value="v4">
 ## 4.5.0 (2023-06-03)
 
 Migrated to Plugin Tools 1.5.2, updated to Node 18, added theme parsing error alerts, and tested compatibility with Grafana 10 Preview.
@@ -140,6 +157,8 @@ Updated ECharts Examples and Calendar examples on echarts.volkovlabs.io, moved d
 
 <BlogPost id="echarts-panel-4.0.0-20221220" />
 
+  </TabItem>
+  <TabItem value="v3">
 ## 3.8.0 (2022-12-10)
 
 Enhanced event handling documentation, added tutorials for Histograms and Clustering, provisioned dashboards for examples, supported Gaode and Google Maps, and upgraded to Apache ECharts 5.4.1.
@@ -187,3 +206,6 @@ Enhanced documentation, added map registration, supported `replaceVariables` and
   :::
 
 Initial release based on bilibala-echarts-panel 2.2.4, updated with Volkov Labs panel Template 2.0.0, refactored code, and introduced Monaco Code Editor.
+
+  </TabItem>
+</Tabs>
