@@ -341,6 +341,7 @@ const sidebars: SidebarsConfig = {
           items: [
             "business-table/features/download-button",
             "business-table/features/external-export",
+            "business-table/features/infinity",
           ],
         },
         {
