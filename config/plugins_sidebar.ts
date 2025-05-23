@@ -337,10 +337,10 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "Features",
-          link: { type: "doc", id: "business-table/features" },
+          link: { type: "doc", id: "business-table/features/index" },
           items: [
-            "business-table/download-button",
-            "business-table/external-export",
+            "business-table/features/download-button",
+            "business-table/features/external-export",
           ],
         },
         {
