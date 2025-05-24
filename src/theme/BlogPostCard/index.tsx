@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "@docusaurus/Link";
 import { Chip } from "../Chip";
 import styles from "./styles.module.css";
 
