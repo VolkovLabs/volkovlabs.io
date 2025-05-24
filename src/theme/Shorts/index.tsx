@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
  * Properties
  */
 type Props = {
+  id: string;
   src: string;
   title?: string;
   height: number;
