@@ -1,76 +1,76 @@
 ---
+title: Business Intelligence Platform
+description: Discover the Business Intelligence platform for Grafana, offering advanced alerting, analytics, and centralized management.
 image: /img/big/business-studio/engine.png
+keywords:
+  [
+    Business Intelligence,
+    Grafana,
+    alerting,
+    analytics,
+    Business Studio,
+    Business Engine,
+  ]
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 import Feedback from "./_feedback.mdx";
 
-# Business Intelligence
+# Business Intelligence Platform
 
-Developed in collaboration with the Grafana Community and shaped by real-world production needs, the Business Intelligence platform redefines alerting and analytics within Grafana.
+Welcome to the **Business Intelligence (BI) Platform**, a powerful solution developed in collaboration with the Grafana Community. Designed to meet real-world production needs, this platform transforms alerting and analytics within Grafana by offering streamlined interactions, centralized management, and advanced features like anomaly detection and reporting.
 
-Users expressed a need for streamlined interactions, centralized management, and advanced capabilities like anomaly detection and reporting in self-hosted Grafana environments. Through iterative design and community input, we’ve crafted a modular, intuitive solution that’s both maintainable and scalable.
+Whether you're a business user seeking simplicity or a technical expert needing robust tools, our modular and scalable platform integrates seamlessly with all Grafana variants (OSS, Enterprise, Cloud). Ready to redefine your Grafana experience? Let's dive in!
 
-## Architecture
+## Why Choose Our BI Platform?
+
+Users of self-hosted Grafana environments often face challenges with fragmented tools and limited advanced capabilities. Through iterative design and community feedback, we've built a solution that addresses these pain points with:
+
+- **Unified Management**: Oversee multiple Grafana instances from a single hub.
+- **Intuitive Design**: User-friendly interfaces for all skill levels.
+- **Scalable Architecture**: Modular components that grow with your needs.
+
+## Platform Architecture
 
 <Image
   title="Business Intelligence Platform Architecture"
   src="/img/big/platform.png"
+  width="80%"
+  alt="Diagram of the Business Intelligence Platform architecture showing interconnected components"
 />
 
-The Business Intelligence platform consists of the following components:
+Our platform is composed of modular components designed for flexibility and performance:
 
-- **Business Studio**
+- [**Business Studio**](studio/): A centralized management hub with a user-friendly interface for system-wide oversight. Only one instance is needed to manage the entire platform.
 
-  - Centralized management hub
-  - Provides a user-friendly interface with a comprehensive system overview
-  - Requires only one instance to oversee the entire platform
+- [**Business Engine**](engine/): Powers performance for individual Grafana instances, handling computationally intensive tasks. Each engine supports a single Grafana instance.
 
-- **Business Engine**
+- [**Business Alerting**](alerting/): The first module for the Business Engine, enabling query-driven alerts from Grafana panels with customizable thresholds and variables for timely notifications.
 
-  - Drives performance for a single Grafana instance per engine
-  - Executes computationally intensive tasks and processes
+- **Business Reporting**: An upcoming module (in development) to enhance data insights and reporting capabilities.
 
-- **Business Alerting**
+- **Future Modules**: Planned features include anomaly detection and more innovative tools to expand functionality.
 
-  - Initial module for the Business Engine
-  - Enables query-driven alerts from Grafana panels with customizable thresholds and variables for timely metric notifications
+- **Grafana Integration**: Fully compatible with all Grafana variants (OSS, Enterprise, Cloud). Note that Grafana itself is not bundled with the platform.
 
-- **Business Reporting**
+## Tailored User Experiences
 
-  - Upcoming module for the Business Engine (in development)
+The Business Studio is designed to cater to two distinct user personas with specialized interfaces and tools:
 
-- **Future Modules**
+### Business Users
 
-  - Planned features include anomaly detection and additional capabilities
+- **Simplified Interfaces**: Elegant dashboards tailored for internal teams or clients.
+- **Key Focus**: Create alert rules, define actions, and perform rapid analysis to identify critical issues.
 
-- **Grafana Integration**
-  - Compatible with all Grafana variants (OSS, Enterprise, Cloud)—Grafana itself is not bundled
+### Technical Users
 
-This architecture delivers:
+- **Advanced Tools**: In-depth troubleshooting with access to payloads and Grafana data frames.
+- **Target Audience**: Ideal for users familiar with clusters and Grafana’s technical architecture.
 
-- Unified management of multiple Grafana instances via a single Business Studio
-- An accessible, intuitive interface
-- Seamless integration with future Business Engine enhancements, such as version control and dashboard synchronization
+## Get Started Today
 
-## User Experience
-
-Business Studio supports two distinct user personas:
-
-- **Business Users**
-
-  - Simplified, elegant interfaces tailored for internal teams or clients
-  - Emphasis on creating alert rules, defining actions, and performing rapid analysis to highlight critical issues
-
-- **Technical Users**
-  - Robust tools for in-depth troubleshooting, including access to payloads and Grafana data frames
-  - Suited for users familiar with clusters and Grafana’s technical underpinnings
-
-## Learn More
-
-- **[User-Friendly Business Studio](/big/studio)**: Simplifies Business Engine management for non-technical users, enhancing configuration and monitoring efficiency.
-- **[High-Performance Business Engine](/big/engine)**: Ensures reliable performance through distributed load balancing and high availability, tightly integrated with Grafana.
-- **[Advanced Business Alerts](/big/alerting)**: Offers customizable, query-based alerts with threshold and variable support for actionable insights.
+Ready to transform your Grafana experience with advanced alerting and analytics? Explore our documentation, try the platform in your environment following [Quick Start](quick-start/) guide, or join the Grafana Community to share feedback and ideas.
 
 <Feedback />
