@@ -39,6 +39,11 @@ export const FOOTER = {
           href: "https://github.com/VolkovLabs",
           className: "volkovlabs-footer-link icon-github-link",
         },
+        {
+          label: "Support Portal",
+          href: "https://support.volkovlabs.io",
+          className: "volkovlabs-footer-link icon-support-link",
+        },
       ],
     },
     {
@@ -65,9 +70,9 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
-          label: "Support Portal",
-          href: "https://support.volkovlabs.io",
-          className: "volkovlabs-footer-link icon-support-link",
+          label: "EULA",
+          to: "/eula/",
+          className: "volkovlabs-footer-link icon-eula-link",
         },
       ],
     },
@@ -118,11 +123,6 @@ export const FOOTER = {
           label: "Terms and Conditions",
           to: "/terms/",
           className: "volkovlabs-footer-link icon-terms-link",
-        },
-        {
-          label: "EULA",
-          to: "/eula/",
-          className: "volkovlabs-footer-link icon-eula-link",
         },
         {
           label: "Disclaimer",
