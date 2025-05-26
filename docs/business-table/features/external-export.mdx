@@ -29,7 +29,7 @@ External export allows you to:
 - Integrate with platforms like Google Sheets using APIs.
 - Customize the export process through the Infinity data source in Grafana.
 
-:::info
+:::info Google Sheets
 This guide focuses on exporting data to Google Sheets, but the principles can be applied to other external systems with appropriate API configurations.
 :::
 
@@ -79,7 +79,21 @@ To enable data export to Google Sheets, create a service account with the necess
      src="/img/plugins/business-table/export/key-type.png"
    />
 
-9. Open your Google Spreadsheet, go to **Share**, and add the service account email (e.g., `test-account@test-spreadsheets...`) with `Editor` rights.
+9. Download JSON key file and use it to configure Infinity data source.
+
+## Update Google Spreadsheet Permissions
+
+To grant access to your Google Spreadsheet for the created service account, follow these steps:
+
+1. Open your Google Spreadsheet.
+2. Click the **Share** button in the top-right corner of the screen.
+3. In the "Share with people and groups" field, enter the service account email address (e.g., `test-account@test-spreadsheets.iam.gserviceaccount.com`).
+4. Set the permission level to **Editor** to allow the service account to modify the spreadsheet.
+5. Click **Send** or **Done** to save the changes.
+
+:::info Service account
+Ensure that the service account email is correctly copied from your Google Cloud Console. If the email is incorrect or the service account lacks necessary permissions at the project level, access will be denied.
+:::
 
 ## Configure Infinity Data Source
 
