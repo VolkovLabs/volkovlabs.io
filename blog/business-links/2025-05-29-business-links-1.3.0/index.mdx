@@ -10,77 +10,81 @@ import Feedback from "@site/docs/business-links/_feedback.mdx";
 import GettingStarted from "@site/docs/business-links/_getting_started.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Business Links 1.3.0: Enhanced Features and Grafana 12.0 Compatibility
 
-We’re thrilled to unveil **Business Links 1.3.0**, the latest update to our powerful navigation panel for Grafana. The Business Links panel builds on top of the regular Grafana links functionality, making it more flexible and customizable. It is designed to streamline access to dashboards and external resources.
+We’re excited to announce **Business Links 1.3.0**, the latest update to our powerful navigation panel for Grafana. Built on top of Grafana's native link functionality, Business Links offers unmatched flexibility and customization, making it easier than ever to access dashboards and external resources.
 
 ## What's New in Business Links 1.3.0?
 
-This release brings a host of new features, usability improvements, and compatibility updates to elevate your Grafana experience. Here's a quick overview of the key enhancements:
+This release introduces exciting features, usability enhancements, and full compatibility with Grafana 12.0. Here's what you can expect:
 
-- **Editor Icons**: Added visual icons in the editor for better feedback and ease of use.
-- **Layout Options**: Introduced horizontal and vertical layouts for greater customization.
-- **Time-Picker Input**: Added support for time-based interactions with a new input type.
-- **HTML Delimiter**: Implemented a new delimiter type for improved content formatting.
-- **Time Picker Highlight**: Added an option to highlight the current time picker for better visibility.
-- **Button Row for Dropdowns**: Enhanced user interaction with a new button row type in dropdown menus.
-- **Freeze on Scroll**: Added a feature to keep the panel fixed while scrolling through long dashboards.
-- **End-to-End Testing**: Implemented E2E testing to ensure reliability and stability.
-- **Grafana 12.0 Compatibility**: Upgraded dependencies for seamless integration with Grafana 12.0.
+- **Editor Icons**: Visual icons in the editor for intuitive navigation.
+- **Layout Options**: Choose between horizontal and vertical grid layouts for a tailored look.
+- **Time-Picker Input**: Seamlessly interact with time-based data.
+- **HTML Delimiter**: Format content with improved structure.
+- **Time Picker Highlight**: Easily spot the active time picker.
+- **Button Row for Dropdowns**: Enhance interaction with dropdown menus.
+- **Freeze on Scroll**: Keep the panel visible on long dashboards.
+- **End-to-End Testing**: Ensure reliability with rigorous testing.
+- **Grafana 12.0 Compatibility**: Stay up-to-date with the latest Grafana version.
 
-### Editor Icons for Enhanced Visual Feedback
+Dive into the details below to learn more about each feature!
 
-We've added visual icons to the editor component to provide better feedback and improve ease of use. This update makes the experience more intuitive, helping users quickly identify tools and options within the Business Links panel.
+### Editor Icons for Intuitive Feedback
 
-### Horizontal and Vertical Layout Options
+We've added visual icons to the editor interface, making it easier to identify tools and options. This small but impactful update enhances usability, especially for new users.
 
-To offer greater customization, Business Links 1.3.0 introduces new horizontal and vertical layout options. These layouts allow users to tailor the panel's appearance to better fit their dashboard design and workflow preferences.
+### Horizontal and Vertical Layouts
 
-### Time-Picker Input for Time-Based Interactions
+Customize the look of your Business Links panel with new horizontal and vertical grid layout options. Whether you prefer a compact or expansive design, these layouts adapt to your dashboard needs.
 
-A new Time-Picker input type has been added to support time-based interactions. This feature enables users to interact with time-specific data or settings directly from the Business Links panel, streamlining time-related tasks.
+### Time-Picker Input for Seamless Interactions
 
-### HTML Delimiter for Improved Content Formatting
+Interact with time-specific data directly from the Business Links panel using the new Time-Picker input type. This feature simplifies time-based tasks, saving you valuable clicks.
 
-We've implemented a new HTML delimiter type to enhance content formatting and separation. This addition allows for cleaner and more structured presentation of links and resources within the panel.
+### HTML Delimiter for Cleaner Formatting
+
+Organize your content with the new HTML delimiter type. This addition ensures a polished and structured presentation of links and resources within the panel.
 
 ### Time Picker Highlight for Better Visibility
 
-To improve user experience, an option to highlight the current time picker has been added. This feature ensures that the active time picker stands out, making it easier to spot at a glance.
+Never lose track of your active time picker! The new highlight option makes it stand out, improving visibility and user experience.
 
 ### Button Row for Dropdown Menus
 
-A new button row type for dropdown menus has been introduced to enhance user interaction and accessibility. This update provides a more interactive and user-friendly way to navigate options within dropdowns.
+Dropdown menus are now more interactive with the addition of a button row type. This update makes navigation smoother and more accessible.
 
 ### Freeze on Scroll for Long Dashboards
 
-For better usability in long dashboards, we've added a feature to freeze the Business Links panel on scroll. This ensures that the panel remains accessible at all times, even when navigating through extensive content.
+Navigating long dashboards? The new "Freeze on Scroll" feature keeps the Business Links panel fixed in place, ensuring constant access no matter where you are on the page.
 
 ### End-to-End Testing for Reliability
 
-To ensure the stability and reliability of Business Links, we've implemented end-to-end (E2E) testing. This rigorous testing process helps us deliver a robust and dependable experience for all users.
+We've implemented comprehensive end-to-end (E2E) testing to guarantee the stability and reliability of Business Links. Rest assured, this update is built to perform.
 
-### Compatibility with Grafana 12.0
+### Full Compatibility with Grafana 12.0
 
-Business Links 1.3.0 has been upgraded to support Grafana 12.0, with updated dependencies to ensure seamless integration and improved performance. This update guarantees that the panel works flawlessly with the latest Grafana version.
+Business Links 1.3.0 is fully compatible with Grafana 12.0. With updated dependencies, you can enjoy seamless integration and enhanced performance on the latest Grafana version.
 
 ## Release Notes
 
 ### Added
 
-- Added icons to the editor component for enhanced visual feedback ([#19](https://github.com/VolkovLabs/business-links/issues/19)).
-- Introduced horizontal and vertical layout options for improved customization and flexibility ([#21](https://github.com/VolkovLabs/business-links/issues/21)).
-- Added support for a Time-Picker input type to facilitate time-based interactions ([#23](https://github.com/VolkovLabs/business-links/issues/23)).
-- Implemented an HTML delimiter type for better content formatting and separation ([#28](https://github.com/VolkovLabs/business-links/issues/28)).
-- Added an option to highlight the current time picker for improved visibility and user experience ([#29](https://github.com/VolkovLabs/business-links/issues/29)).
-- Introduced a button row type for dropdown menus to enhance user interaction and accessibility ([#30](https://github.com/VolkovLabs/business-links/issues/30)).
-- Added a feature to freeze the panel on scroll for better usability in long dashboards ([#31](https://github.com/VolkovLabs/business-links/issues/31)).
-- Implemented end-to-end (E2E) testing to ensure reliability and stability ([#35](https://github.com/VolkovLabs/business-links/issues/35)).
+- Icons in the editor for better visual feedback ([#19](https://github.com/VolkovLabs/business-links/issues/19)).
+- Horizontal and vertical layout options for customization ([#21](https://github.com/VolkovLabs/business-links/issues/21)).
+- Time-Picker input type for time-based interactions ([#23](https://github.com/VolkovLabs/business-links/issues/23)).
+- HTML delimiter for improved content formatting ([#28](https://github.com/VolkovLabs/business-links/issues/28)).
+- Highlight option for the current time picker ([#29](https://github.com/VolkovLabs/business-links/issues/29)).
+- Button row type for dropdown menus ([#30](https://github.com/VolkovLabs/business-links/issues/30)).
+- Freeze on Scroll feature for long dashboards ([#31](https://github.com/VolkovLabs/business-links/issues/31)).
+- End-to-End (E2E) testing for reliability ([#35](https://github.com/VolkovLabs/business-links/issues/35)).
 
 ### Changed
 
-- Upgraded to Grafana 12.0 with updated dependencies for improved compatibility and performance ([#24](https://github.com/VolkovLabs/business-links/issues/24)).
+- Upgraded to Grafana 12.0 with updated dependencies ([#24](https://github.com/VolkovLabs/business-links/issues/24)).
 
 <GettingStarted />
 
