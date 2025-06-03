@@ -89,8 +89,8 @@ const body = {}; //this is an empty object called body
 /**
  * The following code gets each element ant if it has changed then updates the values and passes them to "body" object
  */
-options.elements.forEach((element) => {
-  if (!options.update.updatedOnly) {
+context.panel.options.elements.forEach((element) => {
+  if (!context.panel.options.update.updatedOnly) {
     body[element.id] = element.value;
     return;
   }
