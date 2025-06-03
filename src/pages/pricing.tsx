@@ -24,8 +24,10 @@ const Header = () => (
           <p className="hero__subtitle">
             <ul>
               <li>
-                <b>Dedicated support</b>: Access our expert team via Zendesk for
-                fast issue resolution.
+                <a href="/team">
+                  <b>Dedicated support</b>
+                </a>
+                : Access our expert team via Zendesk for fast issue resolution.
               </li>
               <li>
                 <b>Priority Features</b>: Enjoy prioritized feature requests and
@@ -36,8 +38,11 @@ const Header = () => (
                 optimize your workflows.
               </li>
               <li>
-                <b>Business Intelligence</b>: Unlock advanced insights with our
-                Business Intelligence platform.
+                <a href="/big">
+                  <b>Business Intelligence</b>
+                </a>
+                : Unlock advanced insights with our Business Intelligence
+                platform.
               </li>
             </ul>
             Your success drives us—let’s build something extraordinary together.
