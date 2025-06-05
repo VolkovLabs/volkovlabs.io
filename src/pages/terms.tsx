@@ -239,7 +239,7 @@ const Main = () => (
       <section>
         <h2>Contact Us</h2>
         <p>
-          Questions about this Disclaimer? Reach out via our{" "}
+          Questions about these Terms and Conditions? Reach out via our{" "}
           <a href="https://support.volkovlabs.io">Support Portal</a>.
         </p>
       </section>
