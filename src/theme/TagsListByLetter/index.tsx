@@ -1,8 +1,8 @@
-import React from 'react';
-import Head from '@docusaurus/Head';
-import { listTagsByLetters } from '@docusaurus/theme-common';
-import { Chip } from '../Chip';
-import styles from './styles.module.css';
+import React from "react";
+import Head from "@docusaurus/Head";
+import { listTagsByLetters } from "@docusaurus/theme-common";
+import { Chip } from "../Chip";
+import styles from "./styles.module.css";
 
 /**
  * Tags List

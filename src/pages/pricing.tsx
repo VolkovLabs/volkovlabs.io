@@ -4,17 +4,16 @@ import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Youtube from "@theme/Youtube";
-import styles from "../css/index.module.css";
 
 /**
  * Header Component
  * Introduces Business Suite Enterprise benefits and video
  */
 const Header = () => (
-  <header className="hero">
-    <div className="container margin-vert--lg">
+  <header className="hero hero--primary">
+    <div className="container margin-vert--md">
       <div className="row align-items-center">
-        <div className="col col--7">
+        <div className="col">
           <h1 className="hero__title margin-bottom--md">
             Business Suite Enterprise
           </h1>
@@ -23,38 +22,31 @@ const Header = () => (
             team prepared to address your challenges effectively.
           </p>
           <p className="hero__subtitle">
-            Connect via{" "}
-            <a
-              href="https://support.volkovlabs.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Zendesk
-            </a>
-            , enjoy prioritized feature requests and bug fixes, schedule
-            in-person consultations, and leverage our{" "}
-            <a href="/big/">Business Intelligence</a> platform. Your success
-            drives us.
+            <ul>
+              <li>
+                <a href="/team">
+                  <b>Dedicated support</b>
+                </a>
+                : Access our expert team via Zendesk for fast issue resolution.
+              </li>
+              <li>
+                <b>Priority Features</b>: Enjoy prioritized feature requests and
+                rapid bug fixes tailored to your needs.
+              </li>
+              <li>
+                <b>Consulting</b>: Schedule personalized consultations to
+                optimize your workflows.
+              </li>
+              <li>
+                <a href="/big">
+                  <b>Business Intelligence</b>
+                </a>
+                : Unlock advanced insights with our Business Intelligence
+                platform.
+              </li>
+            </ul>
+            Your success drives us—let’s build something extraordinary together.
           </p>
-          <div className="margin-vert--lg">
-            <a
-              className={clsx(
-                "button button--primary button--lg",
-                styles.getStarted
-              )}
-              href="https://pay.volkovlabs.io/p/login/6oEaGicwRgZ8gko144"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Partner Portal →
-            </a>
-          </div>
-        </div>
-        <div className="col col--5 margin-vert--lg text--center">
-          <Youtube
-            id="XDhyEXqa6KA"
-            title="Business Suite Enterprise Overview"
-          />
         </div>
       </div>
     </div>
@@ -67,18 +59,11 @@ const Header = () => (
  */
 const Main = () => (
   <main>
-    <section id="Plans" className="container margin-vert--xl">
-      <h2 className="hero__title margin-vert--md">Pricing Plans</h2>
-      <div className="row">
-        <div className="col col--12">
-          <stripe-pricing-table
-            pricing-table-id="prctbl_1Q1uoCEiej5nUsoj5F4znGwo"
-            publishable-key="pk_live_51Q1pMcEiej5nUsojvz6cu1k1QH1R5mAHwWz1OotLIAh9qaQiXa70MjggtWr2bsmPqmUIZ6x5b7W9I6VD8QCE4ZxK00GBzofXYZ"
-          />
-        </div>
+    <section id="Team" className="container margin-vert--xl">
+      <div className="col margin-vert--md text--center">
+        <Youtube id="XDhyEXqa6KA" />
       </div>
     </section>
-
     <section id="Contact" className="container margin-vert--xl text--center">
       <h2 className="hero__title margin-vert--md">Get in Touch</h2>
       <p className="hero__subtitle margin-vert--md">

@@ -1,22 +1,18 @@
-import clsx from "clsx";
 import React from "react";
 import Head from "@docusaurus/Head";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import ThemedImage from "@theme/ThemedImage";
 import Image from "@theme/Image";
-import styles from "../css/index.module.css";
 
 /**
  * Header Component
  * Introduces Volkov Labs’ open-source mission and achievements
  */
 const Header = () => (
-  <header className="hero">
+  <header className="hero hero--primary">
     <div className="container margin-vert--md">
       <div className="row">
-        <div className="col col--12 margin-vert--md">
+        <div className="col margin-vert--md">
           <h1 className="hero__title margin-bottom--md">About Volkov Labs</h1>
           <p className="hero__subtitle margin-vert--md">
             Open source is our core. At Volkov Labs, we’re driven by the freedom
@@ -24,8 +20,8 @@ const Header = () => (
           </p>
           <p className="hero__subtitle">
             Over the past three years, we’ve led a major open-source effort,
-            crafting 10 Grafana plugins with over{" "}
-            <strong>30 million downloads</strong>. Our dedication shines through
+            crafting 11 Grafana plugins with over{" "}
+            <strong>35 million downloads</strong>. Our dedication shines through
             in top-tier documentation, a vibrant YouTube channel, and robust
             community support.
           </p>
@@ -87,57 +83,37 @@ const Main = () => (
       </div>
       <div className="row margin-vert--lg text--center">
         <div className="col col--4">
-          <a href="/blog/authors/vitali/">
+          <a href="/blog/authors/vitaliy/">
             <Image
-              src="/img/team/vitali.png"
-              alt="Vitali, Community Engineer"
+              src="/img/team/vitaliy.png"
+              alt="Vitaliy, Community Engineer"
               zoom={false}
             />
-            <h3>Vitali</h3>
+            <h3>Vitaliy</h3>
             <p>Community Engineer</p>
           </a>
         </div>
         <div className="col col--4">
-          <Image
-            src="/img/team/mikhail-ulasevich.png"
-            alt="Mikhail, Senior Engineer"
-            zoom={false}
-          />
-          <h3>Mikhail</h3>
-          <p>Senior Engineer</p>
+          <a href="/blog/authors/mulasevich/">
+            <Image
+              src="/img/team/mulasevich.png"
+              alt="Mikhail, Enterprise Engineer"
+              zoom={false}
+            />
+            <h3>Mikhail</h3>
+            <p>Enterprise Engineer</p>
+          </a>
         </div>
-      </div>
-    </section>
-
-    <section
-      id="Why"
-      className={clsx(styles.whyBox, "container margin-vert--xl")}
-    >
-      <div className="row align-items-center">
-        <div className="col col--3">
-          <ThemedImage
-            sources={{
-              light: useBaseUrl("/img/team/left.svg"),
-              dark: useBaseUrl("/img/team/left.dark.svg"),
-            }}
-            alt="Left decorative graphic"
-          />
-        </div>
-        <div className="col col--6 text--center">
-          <h2 className="hero__title margin-vert--lg">Business Gazette</h2>
-          <p className="hero__subtitle margin-vert--lg">
-            Stay updated on Volkov Labs’ latest news with the{" "}
-            <a href="/blog/tags/business-gazette/">Business Gazette</a>.
-          </p>
-        </div>
-        <div className="col col--3">
-          <ThemedImage
-            sources={{
-              light: useBaseUrl("/img/team/right.svg"),
-              dark: useBaseUrl("/img/team/right.dark.svg"),
-            }}
-            alt="Right decorative graphic"
-          />
+        <div className="col col--4">
+          <a href="/blog/authors/nikita/">
+            <Image
+              src="/img/team/nikita.png"
+              alt="Nikita, Enterprise Engineer"
+              zoom={false}
+            />
+            <h3>Nikita</h3>
+            <p>Enterprise Engineer</p>
+          </a>
         </div>
       </div>
     </section>
@@ -154,7 +130,7 @@ const Home = () => {
   return (
     <Layout
       title="Our Team | Volkov Labs"
-      description="Meet the Volkov Labs team behind 30M+ Grafana plugin downloads."
+      description="Meet the Volkov Labs team behind 35M+ Grafana plugin downloads."
     >
       <Head>
         <meta property="og:image" content="/img/honeycomb.png" />

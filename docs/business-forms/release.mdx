@@ -3,14 +3,28 @@ tags:
   - Business Forms
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Track the progress of the Business Forms panel with these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions.
 
+<Tabs
+  defaultValue="v5"
+  values={[
+    { label: "Version 5", value: "v5" },
+    { label: "Version 4", value: "v4" },
+    { label: "Version 3", value: "v3" },
+    { label: "Version 2", value: "v2" },
+    { label: "Version 1", value: "v1" },
+  ]}
+>
+  <TabItem value="v5">
 ## 5.1.0 (2025-02-26)
 
 This release introduces new features like the `isEscaping` option for text elements and streaming state support for data, alongside refactoring of form elements and updates to Grafana 11.5 with the latest dependencies.
@@ -23,6 +37,8 @@ Dashboard variables in `Show If`, `Disabled`, and `Options` are now replaced aut
 
 Version 5.0.0 brings significant updates including automatic replacement of dashboard variables, a new `color` form element, and enhancements to text handling and data source support, while updating to Grafana 11.4.0.
 
+  </TabItem>
+  <TabItem value="v4">
 ## 4.9.0 (2024-11-16)
 
 This release focuses on improving functionality with new Code Editor languages, enhanced testing, and dynamic updates, while removing outdated components and updating data source handling.
@@ -78,9 +94,7 @@ This update improves migration processes, enhances checkbox functionality, and o
 - Removed non-context code parameters; update to use `context`
   :::
 
-A major release renaming the plugin to Business Forms, adding support for frontend data sources, and introducing significant enhancements like collapsible sections, while requiring Grafana 10 or 11.
-
-### Migration Guide
+:::info Migration Guide
 
 - `data` → `context.panel.data`
 - `elements` → `context.panel.elements`
@@ -98,7 +112,13 @@ A major release renaming the plugin to Business Forms, adding support for fronte
 - `setInitial` → `context.panel.setInitial`
 - `templateService` → `context.grafana.templateService`
 - `toDataQueryResponse` → `context.utils.toDataQueryResponse`
+  :::
 
+A major release renaming the plugin to Business Forms, adding support for frontend data sources, and introducing significant enhancements like collapsible sections, while requiring Grafana 10 or 11.
+
+    </TabItem>
+
+  <TabItem value="v3">
 ## 3.8.0 (2024-05-30)
 
 This release adds new form elements like Checkbox List, improves Code Editor functionality, and introduces comprehensive testing and provisioning examples.
@@ -160,6 +180,8 @@ A major update introducing local state for form elements, compatibility with Gra
 
 <BlogPost id="form-panel-3.0.0-20230715" />
 
+  </TabItem>
+  <TabItem value="v2">
 ## 2.8.0 (2023-03-16)
 
 This release enhances form layouts, adds compatibility with Grafana 9.4.3, and introduces new request options and server API integrations.
@@ -208,6 +230,8 @@ Requires Grafana 8.3 or 9
 
 A major update ensuring compatibility with Grafana 8.3 and 9, with breaking changes for older versions.
 
+  </TabItem>
+  <TabItem value="v1">
 ## 1.4.0 (2022-05-30)
 
 This release introduces usability features like element width updates, value change highlighting, and form submission confirmations.
@@ -227,3 +251,6 @@ Version 1.1.0 introduces new form element types, variable support, and enhanced 
 ## 1.0.0 (2022-05-11)
 
 The initial release of the Business Forms panel, based on the Volkov Labs panel template, marking the foundation for future enhancements.
+
+  </TabItem>
+</Tabs>

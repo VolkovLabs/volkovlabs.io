@@ -12,64 +12,65 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
 
-# Big Calendar, multi-language, and annotations filtering in Business Calendar 2.1.0
+# Big Calendar, Multi-Language Support, and Annotations Filtering in Business Calendar 2.1.0
 
-We are happy to announce the release of the Business Calendar panel 2.1.0. This release includes the following updates:
+We’re thrilled to announce the release of **Business Calendar panel 2.1.0**! This update brings exciting new features and enhancements to help you visualize and manage events in Grafana more effectively. Here's what's new:
 
-- Added an updated version of the calendar, Big Calendar, a React library-based calendar that allows users to switch between month, week, and day views.
-- Added multi-language support into Big Calendar: Spanish, French, German, and simplified Chinese.
-- Added the filtering of annotations by type and maximum limit.
-- Requires Grafana 9.2+ or Grafana 10.
-- Added compatibility with Grafana 10.0.3 and deprecated support for Grafana 8.5.
+- **Big Calendar**: A modern, React-based calendar with support for month, week, and day views.
+- **Multi-Language Support**: Now available in Spanish, French, German, and Simplified Chinese.
+- **Annotations Filtering**: Filter annotations by type and set a maximum display limit.
+- **Grafana Compatibility**: Requires Grafana 9.2+ or Grafana 10, with full support for Grafana 10.0.3.
+- **Deprecated Support**: Grafana 8.5 is no longer supported.
 
-<Shorts id="DV3HLdHMz5Y" title="Business Calendar panel 2.1.0 for Grafana." />
+<Shorts id="DV3HLdHMz5Y" title="Business Calendar panel 2.1.0 for Grafana" />
 
-## Big Calendar
+## Introducing Big Calendar
 
-Big Calendar is a new version of the calendar panel based on a powerful React library.
+Say hello to **Big Calendar**, a powerful React library-based implementation of the calendar panel. This modern upgrade offers a sleek interface and enhanced functionality, including:
 
-It adds a multi-language toolbar that allows you to:
-
-1. Switch between month, week, and day views.
-2. Switch back to the current day (today).
-3. Display events from the previous and subsequent time ranges.
+- **Flexible Views**: Easily switch between month, week, and day views.
+- **Navigation Tools**: Jump to the current day or browse previous and subsequent time ranges with a user-friendly toolbar.
+- **Improved Event Display**: Visualize events with clarity and precision.
 
 <Image
-  title="Calendar panel displays Volkov Labs' releases in July 2023."
+  title="Big Calendar displaying Volkov Labs' releases for July 2023."
   src="/img/blog/2023-08-15-calendar-panel-2.1.0/big.png"
 />
 
-## Legacy calendar
+## Legacy Calendar: Still an Option
 
-The legacy calendar is a native implementation of the calendar based on custom components. Unlike Big Calendar, it does not provide a toolbar and has limited support for week and day views.
-
-The legacy calendar allows you to display events from several months and scroll through them.
+For those who prefer the original experience, the **Legacy Calendar** remains available. Built with custom components, it offers a simpler interface with support for multi-month event displays and scrolling. However, it lacks the advanced toolbar and detailed week/day views of Big Calendar.
 
 <Image
-  title="Business Calendar panel displays Grafana plugins updated in July 2023."
+  title="Legacy Calendar showing Grafana plugins updated in July 2023."
   src="/img/blog/2023-08-15-calendar-panel-2.1.0/legacy.png"
 />
 
-## Multi-language support
+## Multi-Language Support for Global Users
 
-The legacy calendar and Big Calendar support dates in four native Grafana languages: Spanish, French, German, and simplified Chinese. Big Calendar also provides a multi-language toolbar.
+Both Big Calendar and Legacy Calendar now support multiple languages, aligning with Grafana’s native language options. Display dates and interfaces in:
+
+- Spanish
+- French
+- German
+- Simplified Chinese
+
+Big Calendar also includes a fully localized toolbar for a seamless user experience.
 
 <Image
-  title="Big Calendar displays Grafana plugins updated in July 2023 ."
+  title="Big Calendar in Spanish, showcasing Grafana plugins updated in July 2023."
   src="/img/blog/2023-08-15-calendar-panel-2.1.0/spanish.png"
 />
 
-## Annotations
+## Enhanced Annotations Management
 
-The Business Calendar panel plugin allows you to display and filter annotations in Grafana.
+The Business Calendar panel now offers greater control over annotations in Grafana. Customize your view with these new settings:
 
-In the plugin settings, you can do the following:
-
-- Select what to display: both alerts and annotations, alerts only, or annotations only.
-- Set the maximum limit of returned annotations.
+- **Filter by Type**: Choose to display alerts only, annotations only, or both.
+- **Set Limits**: Define a maximum number of annotations to keep your calendar uncluttered.
 
 <Image
-  title="Options to select an annotation type and set the limit."
+  title="Annotation filtering options and display limit settings."
   src="/img/blog/2023-08-15-calendar-panel-2.1.0/annotations.png"
 />
 
@@ -79,33 +80,30 @@ In the plugin settings, you can do the following:
 
 ## Release Notes
 
-:::warning Breaking changes in 2.0.0
-
-- Requires Grafana 9.2 or Grafana 10.
-
+:::warning Breaking Changes in 2.0.0
+This release requires **Grafana 9.2 or Grafana 10**. Support for Grafana 8.5 has been deprecated.
 :::
 
-### Features / Enhancements in 2.1.0
+### Features & Enhancements in 2.1.0
 
-- Added annotation types and display limits (#121).
-- Added compatibility with Grafana 10.0.3 (#122).
-- Added language messages for Big Calendar (#123).
+- Added filtering for annotation types and display limits (#121).
+- Ensured compatibility with Grafana 10.0.3 (#122).
+- Introduced multi-language support for Big Calendar (#123).
 
-### Bugfixes in 2.0.1
+### Bug Fixes in 2.0.1
 
-- Fixed the options regulating the display of annotations (#119).
+- Resolved issues with annotation display options (#119).
 
-### Features / Enhancements in 2.0.0
+### Features & Enhancements in 2.0.0
 
-- Increased the test coverage for the plugin's functionality (#105).
-- Added the Big Calendar component for rendering calendars (#106).
-- Updated the ESLint configuration (#106).
-- Deprecated support for Grafana 8.5 (#110).
-- Added compatibility with Grafana 10.0 (#110).
-- Updated the event display mechanism to correctly show events in Big Calendar when their start date equals the end date (#112).
+- Expanded test coverage for plugin functionality (#105).
+- Introduced Big Calendar for advanced rendering (#106).
+- Updated ESLint configuration for better code quality (#106).
+- Deprecated Grafana 8.5 support and added compatibility with Grafana 10.0 (#110).
+- Fixed event rendering in Big Calendar for same-day start and end dates (#112).
 - Added quick links for Big Calendar (#113).
-- Updated the back and next buttons for weekly and daily views in the Big Calendar component (#114).
-- Updated button styles in the Big Calendar component (#115).
-- Updated the calendar resizing in the Big Calendar component (#116).
+- Improved navigation buttons for weekly and daily views in Big Calendar (#114).
+- Refined button styles in Big Calendar (#115).
+- Enhanced calendar resizing in Big Calendar (#116).
 
 <Feedback />

@@ -3,13 +3,26 @@ tags:
   - Business Input
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Follow the development of the Business Input data source with these release notes, outlining new features, enhancements, fixes, and breaking changes across all versions.
+
+<Tabs
+  defaultValue="v4"
+  values={[
+    { label: "Version 4", value: "v4" },
+    { label: "Version 3", value: "v3" },
+    { label: "Version 2", value: "v2" },
+  ]}
+>
+  <TabItem value="v4">
 
 ## 4.5.0 (2024-12-23)
 
@@ -43,6 +56,8 @@ Requires Grafana 10 or 11
 
 A major update renaming the plugin to Business Input Data Source, with significant testing improvements and Grafana 11 preparation.
 
+  </TabItem>
+  <TabItem value="v3">
 ## 3.1.1 (2024-03-03)
 
 A minor update addressing a specific bug related to undefined properties in empty fields.
@@ -63,6 +78,8 @@ Requires Grafana 9 or 10
 
 A major overhaul with refactoring, new editors, and updated compatibility for Grafana 9 or 10.
 
+  </TabItem>
+  <TabItem value="v2">
 ## 2.2.0 (2023-03-27)
 
 This release focuses on documentation, variable enhancements, and compatibility with Grafana 9.4.7.
@@ -82,3 +99,6 @@ A significant update with refactoring, new input types, and improved documentati
 ## 2.0.0 (2022-11-01)
 
 A foundational update transferring maintenance to Volkov Labs and aligning with Grafana 9.2.2.
+
+  </TabItem>
+</Tabs>

@@ -38,9 +38,7 @@ For more, check out our companion blog post:
 
 <BlogPost id="provisioning-grafana-20230509" />
 
-:::note
 Provisioning is ideal for production environments where stability is key.
-:::
 
 ## Access Restrictions
 
@@ -50,28 +48,25 @@ Restrict Admin and Editor roles to trusted users only. Viewers can’t access Ed
 
 The following tips address security considerations for specific Business Suite plugins.
 
-<Tabs>
-  <TabItem value="text" label="Business Text" default>
-    You can set the default setting `disable_sanitize_html = false` to keep security restrictions in place. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
+### Business Text
+
+You can set the default setting `disable_sanitize_html = false` to keep security restrictions in place. However, with that many action tags will be disabled. For instance, your panels will not display HTML elements like buttons.
 
 ```sh
 disable_sanitize_html = true
 ```
 
-  </TabItem>
-  <TabItem value="input" label="Business Input">
-    The [Business Input data source](/plugins/business-input/) includes a
-    JavaScript Value Editor, which can be disabled in the data source options
-    for added safety:
-    <Image
-      title="Disable the JavaScript Value Editor in the data source options."
-      src="/img/plugins/security/static-java.png"
-    />
-  </TabItem>
-</Tabs>
+### Business Input
 
-:::info Questions?
+The [Business Input data source](/plugins/business-input/) includes a JavaScript Value Editor, which can be disabled in the data source options for added safety:
+
+<Image
+  title="Disable the JavaScript Value Editor in the data source options."
+  src="/img/plugins/security/static-java.png"
+/>
+
+## Questions?
+
 Have security concerns or need clarification? Reach out via [GitHub](https://github.com/VolkovLabs) or our [YouTube channel](https://youtube.com/@volkovlabs)!
 
-Business Suite Enterprise users please open [Zendesk](https://support.volkovlabs.io) ticket for fast response.
-:::
+Business Suite Enterprise partners please open [Zendesk](https://support.volkovlabs.io) ticket for fast response.

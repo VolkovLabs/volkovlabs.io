@@ -45,8 +45,8 @@ export const FOOTER = {
       title: "Business Intelligence",
       items: [
         {
-          label: "Getting Started",
-          to: "/big/getting-started/",
+          label: "Quick Start",
+          to: "/big/quick-start/",
           className: "volkovlabs-footer-link icon-big-link",
         },
         {
@@ -75,7 +75,7 @@ export const FOOTER = {
       title: "Discover",
       items: [
         {
-          label: "Blog",
+          label: "Blog Posts",
           to: "/blog/",
           className: "volkovlabs-footer-link icon-blog-link",
         },
@@ -118,11 +118,6 @@ export const FOOTER = {
           label: "Terms and Conditions",
           to: "/terms/",
           className: "volkovlabs-footer-link icon-terms-link",
-        },
-        {
-          label: "EULA",
-          to: "/eula/",
-          className: "volkovlabs-footer-link icon-eula-link",
         },
         {
           label: "Disclaimer",

@@ -3,7 +3,17 @@ authors: [daria]
 slug: calendar-panel-3.5.0-20240815/
 tags: [Business Calendar, Business Suite]
 image: /img/blog/2024-08-15-calendar-panel-3.5.0/banner.png
-keywords: [Calendar, Events, Time Range, Grafana]
+keywords:
+  [
+    Calendar,
+    Events,
+    Time Range,
+    Grafana,
+    Business Calendar,
+    Agenda View,
+    Tooltip,
+  ]
+description: Discover the latest features in Business Calendar 3.5.0 for Grafana, including Agenda View, Portuguese language support, and enhanced event details with tooltips.
 ---
 
 import Feedback from "@site/docs/business-calendar/_feedback.mdx";
@@ -12,112 +22,114 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
 
-# Agenda view, Portuguese, and tooltip in Business Calendar 3.5.0
+# Agenda View, Portuguese Support, and Tooltips in Business Calendar 3.5.0
 
-We are happy to announce the release of the Business Calendar panel 3.5.0. This release includes the following updates.
+We’re thrilled to announce the release of **Business Calendar 3.5.0** for Grafana! This update brings exciting new features and enhancements to help you visualize and manage events more effectively. Whether you're scheduling, tracking, or analyzing data, this release has something for everyone.
 
-- Allowed event details configuration.
-- Multiple fields are allowed in the event description.
-- Added the **Description format** option.
-- Added an option to turn off event time for the **Month** layout.
-- Added the **Text Size** configuration.
-- Added Portuguese language in Grafana 11.
-- Added Agenda (List) View.
+Here’s a quick overview of what’s new:
 
-## Event details configuration
+- **Event Details Configuration**: Customize the information displayed in event overlays.
+- **Multiple Fields in Descriptions**: Include more context in event descriptions.
+- **Description Formatting Options**: Choose between inline or preformatted text for better readability.
+- **Hide Event Time in Month Layout**: Simplify the Month view by hiding time details.
+- **Text Size Customization**: Adjust font sizes to suit your preferences.
+- **Portuguese Language Support**: Now available in Grafana 11.
+- **Agenda (List) View**: A compact layout to display events across multiple days.
+- **Tooltip on Hover**: Quickly view event details without clicking.
 
-The **Event details** is an overlay window containing all event details.
+Let’s dive into the details of these updates!
 
-<Image
-  title="An event details window example."
-  src="/img/blog/2024-08-15-calendar-panel-3.5.0/drawer-dissect.png"
-/>
+## Event Details Configuration
 
-You can configure which elements will be a part of the event details in the **Events**->**Details info** option.
+The **Event Details** overlay provides a comprehensive view of your events in a sleek window. You can now customize which elements appear in this overlay using the **Events** > **Details Info** settings in the panel editor.
 
 <Image
-  title="Specify elements to be displayed in the Event details window."
+  title="Customizing elements in the Event Details window."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/event-details.png"
-  width="50%"
+  width="60%"
 />
 
-The Event details window could appear:
+The Event Details window can be triggered in two ways:
 
-- after a mouse click if the **On click** is set to **Show details**,
+- **On Click**: Set **On Click** to **Show Details** to open a side drawer with full event information.
+- **On Hover**: Enable the new **Tooltip** feature to display details when hovering over an event.
 
 <Image
-  title="A side-drawer when On click set to Show details."
+  title="Event Details side drawer when 'On Click' is set to 'Show Details'."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/drawer-location.png"
 />
-- when a mouse hovers if the **Tooltip** is set to **Enabled** (new in this plugin
-release).
+
+:::info New Feature
+The **Tooltip** functionality is a brand-new addition in 3.5.0, making it
+easier to preview event details without extra clicks!
+:::
 
 <Image
-  title="The tooltip is a new feature."
+  title="Tooltip displaying event details on hover."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/tooltip.png"
 />
 
-## Multiple fields in the description
+## Multiple Fields in Event Descriptions
 
-You can specify multiple fields to be displayed in the event description.
+Enhance your event descriptions by including multiple fields. This allows for richer context and better organization of information directly within the calendar view.
 
 <Image
-  title="Multiple fields in the description."
+  title="Displaying multiple fields in event descriptions."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/multiple.png"
 />
 
-## The Description format option
+## Description Formatting Options
 
-You might want to apply formatting for better visual display when your event descriptions contain comprehensive details.
+For events with detailed descriptions, formatting is key to readability. Business Calendar 3.5.0 introduces two formatting options:
 
-Your options for the description formatting are:
-
-- **Inline**. You can use simple HTML formatting tags to have different font sizes, colors, etc.
-- **Preformatted** is very similar to the HTML tag `<pre>`. Text is displayed in a fixed-width font, with spaces and line breaks preserved. The text is displayed "as is".
-
-The illustration below shows how the same description text is interpreted depending on the selected **Description format** option.
+- **Inline**: Use basic HTML tags for custom styling like font sizes and colors.
+- **Preformatted**: Similar to the HTML `<pre>` tag, this preserves spaces and line breaks for a "as-is" display.
 
 <Image
-  title="The description formatting options."
+  title="Comparison of Inline vs. Preformatted description formatting."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/details-formatting.png"
 />
 
-## Disable event time for the Month layout
+## Hide Event Time in Month Layout
 
-For the **Month** layout, you can turn off the displaying of the event times.
+Simplify your **Month** layout by disabling the display of event times. This is perfect for calendars where the exact timing isn’t critical.
 
 <Image
-  title="You can hide event time for the Month layout."
+  title="Month layout with event time hidden."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/month-time.png"
 />
 
-## Text Size configuration
+## Text Size Customization
 
-Now, you can control the font size in your Calendar panel.
-By default, the size is 12px.
+Take control of your calendar’s readability with the new **Text Size** configuration. The default font size is 12px, but you can adjust it to fit your dashboard’s design.
 
 <Image
-  title="You can control the font size in your Calendar panel."
+  title="Adjusting text size in the Business Calendar panel."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/text-size.png"
 />
 
-## Portuguese language in Grafana 11
+## Portuguese Language Support in Grafana 11
 
-Starting from version 11, Grafana supports the Portuguese language. The Business Calendar follows suit and now also supports it.
+With Grafana 11 introducing Portuguese language support, Business Calendar 3.5.0 now fully supports it as well, ensuring a localized experience for Portuguese-speaking users.
 
 <Image
-  title="The Business Calendar supports Portuguese language."
+  title="Business Calendar interface in Portuguese."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/portugues.png"
 />
 
-## Added Agenda (List) View
+## Agenda (List) View
 
-The **Agenda** layout displays only busy spots, combining many days at once. You can use the Grafana **Thresholds** to set the background color according to the specified numeric field.
+The new **Agenda** layout offers a compact, list-based view of your events, ideal for displaying busy periods across multiple days. Pair it with Grafana’s **Thresholds** to apply background colors based on numeric fields for quick visual insights.
 
 <Image
-  title="The Business Calendar panel in the Agenda layout with Grafana Thresholds background colors."
+  title="Agenda layout with color-coded thresholds."
   src="/img/blog/2024-08-15-calendar-panel-3.5.0/agenda.png"
 />
+
+:::info Did You Know?
+The Agenda View is perfect for dashboards where you need to focus on event
+density rather than a traditional calendar grid.
+:::
 
 <GettingStarted />
 
@@ -125,46 +137,46 @@ The **Agenda** layout displays only busy spots, combining many days at once. You
 
 ## Release Notes
 
-### Features / Enhancements in 3.5.0
+### Features & Enhancements in 3.5.0
 
-- Added event details in tooltip by hover (#217, #221)
-- Added option to Disable Event Time (#223)
-- Updated daily calendar view if timeRange changed (#229)
-- Updated description to follow fields order (#230)
-- Updated date using timeZone option (#227)
+- Added event details tooltip on hover (#217, #221)
+- Added option to disable event time display (#223)
+- Updated daily calendar view on time range changes (#229)
+- Ensured description fields follow specified order (#230)
+- Applied timezone settings to date displays (#227)
 
-### Features / Enhancements in 3.4.0
+### Features & Enhancements in 3.4.0
 
-- Updated E2E workflow using Docker (#211)
-- Added Font size configuration (#213)
+- Updated E2E workflow with Docker (#211)
+- Added font size configuration (#213)
 - Updated to Grafana 11.1 dependencies (#214)
 
-### Features / Enhancements in 3.3.0
+### Features & Enhancements in 3.3.0
 
-- Updated variables with static datasource for time range source dashboard (#205)
-- Added multiple description fields (#206)
-- Added Threshold option for Colors (#208)
-- Added Portuguese language in Grafana 11 (#209)
+- Updated variables with static datasource for time range dashboards (#205)
+- Added support for multiple description fields (#206)
+- Introduced threshold-based color options (#208)
+- Added Portuguese language support for Grafana 11 (#209)
 
-### Features / Enhancements in 3.2.0
+### Features & Enhancements in 3.2.0
 
 - Updated tutorial video (#190)
-- Added Formatting for event description (#182)
-- Updated Details drawer layout (#192)
-- Added support for additional Time Range sources (#179)
-- Updated event format (#188)
-- Updated Time Range in Agenda view (#196)
-- Updated mouse cursor for Agenda view (#200)
+- Added formatting options for event descriptions (#182)
+- Improved details drawer layout (#192)
+- Added support for additional time range sources (#179)
+- Enhanced event formatting (#188)
+- Updated time range handling in Agenda view (#196)
+- Adjusted mouse cursor behavior in Agenda view (#200)
 - Updated dependencies (#200)
-- Added display dashboard annotations (#194)
-- Added Portuguese language (#201)
-- Updated toolbar and messages to the selected language (#203)
+- Added support for dashboard annotations (#194)
+- Introduced Portuguese language (#201)
+- Localized toolbar and messages to selected language (#203)
 
-### Features / Enhancements in 3.1.0
+### Features & Enhancements in 3.1.0
 
-- Added Agenda (List) View (#177)
-- Updated customization for Event Bubble (#178)
-- Updated multi-day window (#183)
+- Introduced Agenda (List) View (#177)
+- Enhanced customization for event bubbles (#178)
+- Improved multi-day event display (#183)
 - Updated to Grafana 11 (#184)
 
 <Feedback />

@@ -3,9 +3,9 @@ authors:
   - name: Orosolido
     image_url: https://avatars.discourse-cdn.com/v4/letter/o/bbce88/288.png
     title: Community member.
-  - vitali
+  - vitaliy
 slug: datapicker-20240905/
-tags: [Business Text, Solution, Community]
+tags: [Business Text, Business Gazette, Community]
 image: /img/blog/2024-09-05-datepicker/banner.png
 keywords: [Business Text, Dynamic Text, Date, DateTime picker]
 ---
@@ -20,7 +20,7 @@ Thank you **orosolido** for sharing incredible solutions for a Datepicker on Gra
 :::
 
 :::info Grafana 11 and the latest version of Business Text
-Shoutout to Vitali Pinchuk for updating the original post for Grafana 11 and the latest version of Business Text plugin.
+Shoutout to Vitaliy Pinchuk for updating the original post for Grafana 11 and the latest version of Business Text plugin.
 :::
 
 ## Greetings
@@ -286,7 +286,7 @@ As specified in the header, this approach does not use the actual dates like '20
   (range would be `From:now-2d/d To: now-2d/d`).
 - etc.
 
-:::note extra date field
+:::info Extra date field
 Because of relative time indication I added an extra **date** field to see what date you actually have selected above the Datepicker.
 :::
 
@@ -476,7 +476,7 @@ As specified in the header this approach does not use the actual dates like '202
   (range would be `From:now-2w/w To: now-2w/w`).
 - etc.
 
-:::note extra date field
+:::info Extra date field
 Because of relative time use/indication I added an extra **date** field to see what date/week you selected above the Datepicker.
 :::
 
@@ -680,7 +680,7 @@ The principle behind this method is as follow.
 
 3. **Mapping!** Extract elements like (DAY (DD) - MONTH (MM) - YEAR (YYYY) - WEEKDAY - WEEKNR - ETC..) from '**\_time**' as a `string` and map them to seperate columns (using [_strings.substring()_](https://docs.influxdata.com/flux/v0/stdlib/strings/substring/#Copyright) function).
 
-:::note Additional benefits
+:::info Additional benefits
 Adding these extra mapped fields in general allows you to easily filter and sort by specific days of the week, week numbers, months, and more.
 :::
 

@@ -35,7 +35,7 @@ services:
   engine:
     depends_on:
       - timescale
-    image: ghcr.io/volkovlabs/business-engine:2.6.0
+    image: ghcr.io/volkovlabs/business-engine:3.3.0
     # env_file: .env  # Uncomment to use an external .env file
     environment:
       DATABASE_HOST: timescale
@@ -65,7 +65,7 @@ Follow these steps to launch the platform:
    ```sh
    docker compose up -d
    ```
-5. Download Business Studio from the [Release Notes](../release), then install and launch it
+5. Download Business Studio from the [Release Notes](https://github.com/VolkovLabs/business-intelligence/releases), then install and launch it
 6. In Business Studio, add the Business Engine to configure your Grafana instance, actions, and alert rules:
    <Image
      title="Alert Rules Configured via Business Studio"

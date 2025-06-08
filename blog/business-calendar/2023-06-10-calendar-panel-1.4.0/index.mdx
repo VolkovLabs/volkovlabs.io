@@ -12,25 +12,40 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
 
-# Grafana 10, increased test coverage, and options updates in Business Calendar 1.4.0
+# Grafana 10 Compatibility and Exciting Updates in Business Calendar 1.4.0
 
-We are happy to announce the release of the Business Calendar panel 1.4.0. This release includes the following updates:
+We're thrilled to unveil **Business Calendar 1.4.0**, a significant update to our popular Grafana plugin. This release brings compatibility with Grafana 10, enhanced features, and improved stability to help you visualize events and time ranges like never before. Let's dive into what's new!
 
-- Tested the plugin on Grafana 10 Preview.
-- Added the text formatting, mappings, and overrides.
-- Removed the unused standard options.
-- Increased the event spacing to prevent overlapping.
-- Increased the test coverage and added the end-to-end test workflow.
-- Migrated the plugin to Plugin Tools 1.5.2 with Node.js 18 and npm.
+## What's New in Business Calendar 1.4.0?
 
-## Standard Options
+This release is packed with improvements and optimizations. Here's a quick overview of the key updates:
 
-Units, value mappings, and overrides are all supported in the Event text field. All unnecessary standard options, such as minimal and maximal values, were deprecated.
+- **Grafana 10 Preview Compatibility**: Tested and ready for the latest Grafana version.
+- **Enhanced Text Formatting**: Added support for units, value mappings, and overrides in event text.
+- **Streamlined Options**: Removed unused standard options for a cleaner user experience.
+- **Improved Event Spacing**: Adjusted spacing to prevent event overlap in the calendar view.
+- **Robust Testing**: Increased test coverage and introduced end-to-end (E2E) testing workflows.
+- **Modernized Development**: Migrated to Plugin Tools 1.5.2, Node.js 18, and npm for better performance.
 
 <Image
-  title="Units, value mappings, and overrides are supported in Business Calendar panel."
+  title="Units, value mappings, and overrides in action with Business Calendar 1.4.0."
   src="/img/blog/2023-06-10-calendar-panel-1.4.0/calendar.png"
+  alt="Business Calendar panel showcasing text formatting and overrides in Grafana."
 />
+
+## Deep Dive into Key Features
+
+### Standard Options Simplified
+
+We've refined the **Event Text Field** to support units, value mappings, and overrides, making it easier to customize how events are displayed. To keep things intuitive, we've also deprecated unnecessary options like minimal and maximal values, focusing on what truly matters for your calendar visualizations.
+
+### Compatibility and Performance
+
+Business Calendar 1.4.0 has been rigorously tested with **Grafana 9.5.2** and the **Grafana 10 Preview**, ensuring a seamless experience across versions. Additionally, our migration to **Plugin Tools 1.5.2** and **Node.js 18** guarantees better performance and maintainability.
+
+### Enhanced Testing for Reliability
+
+Quality is at the heart of this release. We've boosted test coverage, updated our testing libraries, and integrated **Cypress E2E testing** into our workflow to catch issues before they reach you.
 
 <GettingStarted />
 
@@ -38,18 +53,21 @@ Units, value mappings, and overrides are all supported in the Event text field. 
 
 ## Release Notes
 
-### Features / Enhancements
+### Features & Enhancements
 
-- Added compatibility with Grafana 9.5.2 (#96, #101).
-- Added the text formatting, mappings, and overrides (#97).
-- Remove the unused standard options (#97).
-- Increased the test coverage and updated the testing library (#100, #103).
-- Migrated to Plugin Tools 1.5.2 (#101).
-- Updated the plugin to Node.js 18 (#101).
-- Integrated E2E Cypress into the testing cycle (#102).
+- Added compatibility with Grafana 9.5.2 and 10 Preview (#96, #101).
+- Introduced text formatting, value mappings, and overrides for event text (#97).
+- Removed unused standard options for a cleaner interface (#97).
+- Increased test coverage and modernized testing libraries (#100, #103).
+- Migrated to Plugin Tools 1.5.2 and Node.js 18 (#101).
+- Integrated Cypress E2E testing into the development cycle (#102).
 
-### Bug fixes
+### Bug Fixes
 
-- Increased the event spacing to prevent the overlapping (#96).
+- Adjusted event spacing to prevent overlap in the calendar view (#96).
+
+## Join the Conversation
+
+Have questions or ideas about Business Calendar 1.4.0? We'd love to hear from you! Check out the feedback section below to share your thoughts or connect with our community.
 
 <Feedback />

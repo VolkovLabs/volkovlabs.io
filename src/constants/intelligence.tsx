@@ -7,6 +7,18 @@ import { PluginItem } from "../types";
  */
 export const IntelligenceList: PluginItem[] = [
   {
+    title: "User-Friendly Business Studio",
+    name: "business-studio",
+    description: (
+      <>
+        Simplifies Business Engine management, empowering non-technical users to
+        configure, monitor, and maintain data workflows effortlessly.
+      </>
+    ),
+    href: "/big/studio/",
+    isActive: true,
+  },
+  {
     title: "High-Performance Business Engine",
     name: "business-engine",
     description: (
@@ -20,23 +32,11 @@ export const IntelligenceList: PluginItem[] = [
     isActive: true, // Optional: Indicates active status
   },
   {
-    title: "User-Friendly Business Studio",
-    name: "business-studio",
-    description: (
-      <>
-        Simplifies Business Engine management, empowering non-technical users to
-        configure, monitor, and maintain data workflows effortlessly.
-      </>
-    ),
-    href: "/big/studio/",
-    isActive: true,
-  },
-  {
-    title: "Advanced Business Alerts",
+    title: "Advanced Business Alerting",
     name: "business-alerting",
     description: (
       <>
-        Offers customizable alert systems tied to Grafana panel queries, with
+        Offers customizable alert rules tied to Grafana panel queries, with
         support for thresholds and variables to deliver timely, relevant
         business metric notifications.
       </>

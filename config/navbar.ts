@@ -9,8 +9,8 @@ export const NAVBAR = {
   // Logo with light/dark mode support
   logo: {
     alt: "Volkov Labs Logo",
-    src: "img/suite.svg",
-    srcDark: "img/suite.dark.svg",
+    src: "img/plugins/logo.svg",
+    srcDark: "img/plugins/logo.dark.svg",
     width: 120, // Optional: Ensures consistent size; adjust as needed
   },
 
@@ -19,7 +19,7 @@ export const NAVBAR = {
     {
       to: "/plugins/",
       position: "left",
-      label: "Business Suite",
+      label: "Business Suite for Grafana",
       "aria-label": "Business Suite Plugins",
       items: [
         {
@@ -86,8 +86,8 @@ export const NAVBAR = {
       "aria-label": "Business Intelligence Platform",
       items: [
         {
-          label: "Getting Started",
-          to: "/big/getting-started/",
+          label: "Quick Start",
+          to: "/big/quick-start/",
           className: "volkovlabs-link icon-big-link",
         },
         {
@@ -104,6 +104,34 @@ export const NAVBAR = {
           label: "Business Alerting",
           to: "/big/alerting/",
           className: "volkovlabs-link icon-big-alerting-link",
+        },
+        {
+          label: "Release Notes",
+          to: "/big/release/",
+          className: "volkovlabs-link icon-big-release-link",
+        },
+      ],
+    },
+    {
+      to: "/pricing/",
+      position: "left",
+      label: "Business Suite Enterprise",
+      "aria-label": "Business Suite Enterprise",
+      items: [
+        {
+          label: "Partnership",
+          to: "/pricing/",
+          className: "volkovlabs-link icon-partner-link",
+        },
+        {
+          label: "Team",
+          to: "/team/",
+          className: "volkovlabs-link icon-team-link",
+        },
+        {
+          label: "Support Portal",
+          href: "https://support.volkovlabs.io",
+          className: "volkovlabs-link icon-support-link",
         },
       ],
     },
@@ -138,11 +166,6 @@ export const NAVBAR = {
           to: "/blog/tags/grafana-crash-course/",
           className: "volkovlabs-link icon-grafana-link",
         },
-        {
-          label: "Solutions",
-          to: "/blog/tags/solution/",
-          className: "volkovlabs-link icon-solutions-link",
-        },
       ],
     },
     {
@@ -171,18 +194,12 @@ export const NAVBAR = {
           to: "/grafana/developer/",
           className: "volkovlabs-link icon-grafana-developer-link",
         },
-        {
-          label: "Environment Data Source",
-          to: "/grafana/environment/",
-          className: "volkovlabs-link icon-plugins-env-link",
-        },
       ],
     },
     {
-      to: "/pricing/",
-      position: "left",
-      label: "Business Suite Enterprise",
-      "aria-label": "Business Suite Enterprise Pricing",
+      to: "https://github.com/VolkovLabs",
+      position: "right",
+      className: "volkovlabs-link header-github-link",
     },
   ],
 };

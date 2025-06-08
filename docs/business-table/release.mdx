@@ -3,14 +3,25 @@ tags:
   - Business Table
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Discover the updates to the Business Table panel through these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions.
 
+<Tabs
+  defaultValue="v2"
+  values={[
+    { label: "Version 2", value: "v2" },
+    { label: "Version 1", value: "v1" },
+  ]}
+>
+  <TabItem value="v2">
 ## 2.6.0 (2025-04-22)
 
 This release focuses on enhancing user experience with sorting preferences, improved image handling, and compatibility updates for Grafana 11.6.
@@ -39,6 +50,8 @@ Enhances data export options, introduces new cell types like JSON and Gauge, and
 
 Brings significant UI improvements, better data handling, and compatibility with Grafana 11.4 for a more robust table panel.
 
+  </TabItem>
+  <TabItem value="v1">
 ## 1.9.0 (2024-12-01)
 
 Introduces new cell types like Image, enhances editing capabilities, and improves table layout and data management.
@@ -90,3 +103,6 @@ Enhances functionality with column filtering, plugin signing, and UI improvement
 ## 1.0.0 (2024-08-04)
 
 Initial release of the Business Table panel with core features and compatibility with Grafana 11.1.0.
+
+  </TabItem>
+</Tabs>

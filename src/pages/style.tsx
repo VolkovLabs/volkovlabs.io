@@ -2,8 +2,6 @@ import React from "react";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 
 /**
  * Header Component
@@ -70,7 +68,7 @@ const Main = () => (
           </li>
           <li>Use numbered steps for tutorials or procedures.</li>
           <li>
-            Include prerequisites in a <code>:::note</code> admonition.
+            Include prerequisites in a <code>:::info</code> admonition.
           </li>
         </ul>
 
@@ -140,17 +138,6 @@ const Main = () => (
           <li>
             Use blockquotes for emphasis:
             <blockquote>Consistency is key to great content.</blockquote>
-          </li>
-          <li>
-            Leverage Docusaurus tabs for options:
-            <Tabs>
-              <TabItem value="npm" label="NPM">
-                <pre>npm install @volkovlabs/plugin</pre>
-              </TabItem>
-              <TabItem value="yarn" label="Yarn">
-                <pre>yarn add @volkovlabs/plugin</pre>
-              </TabItem>
-            </Tabs>
           </li>
         </ul>
 

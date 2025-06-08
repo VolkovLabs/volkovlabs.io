@@ -3,14 +3,27 @@ tags:
   - Business Text
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Track the evolution of the Business Text panel with these release notes, highlighting new features, enhancements, fixes, and breaking changes across all versions.
 
+<Tabs
+  defaultValue="v5"
+  values={[
+    { label: "Version 5", value: "v5" },
+    { label: "Version 4", value: "v4" },
+    { label: "Version 3", value: "v3" },
+    { label: "Version 2", value: "v2" },
+  ]}
+>
+  <TabItem value="v5">
 ## 5.7.0 (2025-03-05)
 
 This release introduces new context refresh functionality, improves external resource handling, and updates to Grafana 11.5 with the latest dependencies and attestation in the release workflow.
@@ -50,11 +63,7 @@ Enhanced asynchronous code execution, added E2E testing in Docker, and updated v
 - Removed non-context code parameters; update to use `context`
   :::
 
-Major update with breaking changes for Grafana 10/11 compatibility, rebranding to Business Text panel, and significant enhancements like ES6 module support and new panel settings.
-
-<BlogPost id="dynamictext-panel-5.0.0-20240619" />
-
-### Migration Guide
+:::info Migration Guide
 
 - `data` → `context.data`
 - `dataFrame` → `context.dataFrame`
@@ -66,7 +75,15 @@ Major update with breaking changes for Grafana 10/11 compatibility, rebranding t
 - `replaceVariables` → `context.grafana.replaceVariables`
 - `timeRange` → `context.grafana.timeRange`
 - `timezone` → `context.grafana.timezone`
+  :::
 
+Major update with breaking changes for Grafana 10/11 compatibility, rebranding to Business Text panel, and significant enhancements like ES6 module support and new panel settings.
+
+<BlogPost id="dynamictext-panel-5.0.0-20240619" />
+
+  </TabItem>
+
+  <TabItem value="v4">
 ## 4.5.0 (2024-03-13)
 
 Added user feedback on sanitization, improved CSS for responsiveness, and updated to Grafana 10.4.0.
@@ -108,7 +125,9 @@ Requires Grafana 9 or 10
 Major release with breaking changes for Grafana 9/10 compatibility, added E2E testing, and support for custom styles.
 
 <BlogPost id="dynamictext-panel-4.0.0-20230709" />
-
+  
+  </TabItem>
+  <TabItem value="v3">
 ## 3.1.0 (2023-03-12)
 
 Added support for time-related parameters in JavaScript code and enhanced variable replacement functionality.
@@ -126,6 +145,8 @@ Introduced breaking changes for editor visibility, added custom styles, and enha
 
 <BlogPost id="dynamictext-panel-3.0.0-20230219" />
 
+  </TabItem>
+  <TabItem value="v2">
 ## 2.2.0 (2023-01-09)
 
 Enhanced Handlebars helpers, added JavaScript code capabilities, and improved compatibility with Grafana 9.3.1.
@@ -151,3 +172,6 @@ Requires Grafana 8.5 or newer
 :::
 
 Major update requiring Grafana 8.5 or newer, transferred maintenance to Volkov Labs, and added compatibility with Grafana 9.2.2.
+
+  </TabItem>
+</Tabs>

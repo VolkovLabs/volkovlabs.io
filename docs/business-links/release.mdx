@@ -3,13 +3,29 @@ tags:
   - Business Links
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Explore the evolution of the Business Links panel through these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions.
+
+<Tabs defaultValue="v1" values={[{ label: "Version 1", value: "v1" }]}>
+  <TabItem value="v1">
+
+## 1.4.0 (2025-06-02)
+
+Enhanced user experience with customizable link alignment, dynamic font sizing, and custom icons for personalized dashboards.
+
+## 1.3.0 (2025-05-28)
+
+This release enhances the editor with icons, layout options, Time-Picker support, HTML delimiters, time highlighting, dropdowns, panel freeze, E2E testing, and upgrades to Grafana 12.0 for improved compatibility and performance.
+
+<BlogPost id="business-links-1.3.0" />
 
 ## 1.2.1 (2025-04-29)
 
@@ -28,3 +44,6 @@ Enhanced user experience with new sorting, highlighting, and interaction options
 ## 1.0.0 (2025-04-17)
 
 Initial launch of the Business Links panel with core functionality.
+
+  </TabItem>
+</Tabs>

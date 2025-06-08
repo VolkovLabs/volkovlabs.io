@@ -3,14 +3,37 @@ tags:
   - Business Variable
   - Release Notes
 image: /img/suite.png
+hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Release Notes
 
 Follow the development of the Business Variable panel with these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions.
 
+<Tabs
+  defaultValue="v4"
+  values={[
+    { label: "Version 4", value: "v4" },
+    { label: "Version 3", value: "v3" },
+    { label: "Version 2", value: "v2" },
+    { label: "Version 1", value: "v1" },
+  ]}
+>
+  <TabItem value="v4">
+## 4.0.0 (2025-06-03)
+
+A major update with Grafana 12 compatibility and new filtering features.
+
+:::warning Breaking Changes
+Requires Grafana 11 or 12
+:::
+
+  </TabItem>
+  <TabItem value="v3">
 ## 3.9.0 (2025-04-08)
 
 This release focuses on improving user experience with custom messages for edge cases, a minimized view for Tree View layout, and compatibility with Grafana 11.6.0.
@@ -59,6 +82,8 @@ A major release with breaking changes requiring Grafana 10 or 11, introducing ne
 
 <BlogPost id="variable-panel-3.0.0-20240601" />
 
+  </TabItem>
+  <TabItem value="v2">
 ## 2.5.0 (2024-04-01)
 
 This version enhances usability with responsive tabs, improved Tree View scrolling, and better group selection preservation across dashboards.
@@ -97,6 +122,8 @@ A major update with performance optimizations through table virtualization and c
 
 <BlogPost id="variable-panel-2.0.0-20231019" />
 
+  </TabItem>
+  <TabItem value="v1">
 ## 1.7.0 (2023-08-08)
 
 This version introduces new views like Button View and enhances variable display in Table/Tree View.
@@ -136,3 +163,6 @@ This release enhances variable visualization with threshold-based statuses and m
 ## 1.0.0 (2023-06-19)
 
 The initial release of the Business Variable panel, setting the foundation with basic functionality and Grafana 10.0.0 compatibility.
+
+  </TabItem>
+</Tabs>

@@ -1,9 +1,10 @@
 ---
 authors: [daria]
 slug: calendar-panel-2.2.0-20231006/
+description: "Discover the latest updates in Business Calendar 2.2.0 for Grafana, including event location, text contrast, custom views, and dashboard timezone support."
 tags: [Business Calendar, Business Suite]
 image: /img/blog/2023-10-06-calendar-panel-2.2.0/banner.png
-keywords: [Calendar, Events, Time Range, Grafana]
+keywords: [Calendar, Events, Time Range, Grafana, Business Calendar]
 ---
 
 import Feedback from "@site/docs/business-calendar/_feedback.mdx";
@@ -12,73 +13,80 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Tutorial from "@site/docs/business-calendar/_tutorial.mdx";
 
-# Text contrast, location, and select views in Business Calendar 2.2.0
+# Text Contrast, Location, and Custom Views in Business Calendar 2.2.0
 
-We are happy to announce the release of the Business Calendar panel 2.2.0. This release includes the following updates.
+We’re thrilled to announce the release of **Business Calendar panel 2.2.0**! This update brings exciting new features and enhancements to improve your experience with Grafana. Whether you're using the Legacy or Big Calendar, there’s something new for everyone. Let’s dive into the key updates.
 
-Only for the Big Calendar.
+## What’s New in Business Calendar 2.2.0?
 
-- New option parameter: event location.
-- Text color auto adjustment to ensure a readable contrast with the background.
-- New ability to select views: day, week, work week, and month.
+### Exclusive Features for Big Calendar
 
-For the Legacy and Big Calendar.
+- **Event Location**: Add location details to your events, displayed alongside event text and in event details popups.
+- **Text Contrast Adjustment**: Automatically adjust text color for better readability against event background colors.
+- **Custom View Selection**: Choose from day, week, work week, and month views to tailor the calendar to your needs.
 
-- Added support for dashboard timezone in Start and End time.
-- Added compatibility with Grafana 10.1.4.
+### Updates for Both Legacy and Big Calendar
+
+- **Dashboard Timezone Support**: Sync calendar events with your Grafana dashboard’s timezone instead of the browser’s.
+- **Grafana 10.1.4 Compatibility**: Seamlessly integrate with the latest Grafana version.
 
 <Image
-  title="Business Calendar panel supports Legacy and Big Calendar types."
+  title="Business Calendar panel supports both Legacy and Big Calendar types."
   src="/img/blog/2023-10-06-calendar-panel-2.2.0/calendar-type.png"
-  width="30%"
+  width="50%"
+  lazy={true}
 />
 
-<Shorts id="bshA7hVVYpY" title="Business Calendar panel 2.2.0 for Grafana." />
+<Shorts id="bshA7hVVYpY" title="Business Calendar panel 2.2.0 for Grafana" />
 
-## 2 million downloads
+## Celebrating 2 Million Downloads!
 
-The Business Calendar panel inevitably targets the 2 million downloads mark towards the end of this year! Thank you for your trust and support.
+We’re on track to hit **2 million downloads** for the Business Calendar panel by the end of 2023! A huge thank you to our community for your trust and support. Your feedback drives us to keep improving.
 
 <Image
-  title="Calendar panel is on the way to 2 million downloads."
+  title="Business Calendar panel is on the way to 2 million downloads."
   src="/img/blog/2023-10-06-calendar-panel-2.2.0/downloads.png"
+  width="60%"
+  lazy={true}
 />
 
-## Event Location
+## Feature Highlights
 
-In the Event category, a new <b>Location</b> parameter is available for Big Calendar type only.
+### Event Location (Big Calendar Only)
 
-It is displayed in two places. First is following the <b>Text</b>, separated by a colon character(:). The second is in the Event Details, a popup window appearing after you click on the event in the calendar panel.
+A new **Location** parameter in the Event category lets you specify where an event takes place. It appears next to the event text (separated by a colon) and in the Event Details popup when you click an event.
 
 <Image
-  title="Location is a new parameter available for Big Calendar type only."
+  title="Event Location is a new parameter for Big Calendar."
   src="/img/blog/2023-10-06-calendar-panel-2.2.0/location.png"
+  width="60%"
+  lazy={true}
 />
 
-## Contrast Text
+### Text Contrast (Big Calendar Only)
 
-This feature ensures that a text color always contrasts well with the background color. It is available for Big Calendar type only.
+Ensure your event text is always readable with automatic color adjustments. This feature dynamically contrasts text against background colors for better visibility.
 
-## Work Week and select views
+### Work Week and Custom Views (Big Calendar Only)
 
-In the Calendar category, for the Views parameter, we added a new option <b>work week</b>. The setting is similar to a week view, but instead of seven days, it displays 5 days and hides Saturdays and Sundays.
-
-In addition, now you can configure which views out of four (day, week, month, work week) will be available for an end-user.
-
-The feature is available for Big Calendar type only.
+We’ve added a **Work Week** view to the Calendar category, displaying only Monday to Friday and hiding weekends. Additionally, you can now configure which views (day, week, work week, month) are available to end-users for a personalized experience.
 
 <Image
-  title="Work week is a new view for the Calendar panel available for Big Calendar type only"
+  title="Work Week view is now available for Big Calendar."
   src="/img/blog/2023-10-06-calendar-panel-2.2.0/work-week.png"
+  width="60%"
+  lazy={true}
 />
 
-## Dashboard time zones
+### Dashboard Timezone Support
 
-Starting from this release, the Business Calendar panel supports dashboard time zones. Previously, it synched with the Browser time zone.
+Say goodbye to timezone mismatches! The Business Calendar panel now syncs with your Grafana dashboard’s timezone for accurate event start and end times.
 
 <Image
-  title="The Business Calendar panel automatically syncs with the selected dashboard time zone."
+  title="Business Calendar panel syncs with dashboard timezone."
   src="/img/blog/2023-10-06-calendar-panel-2.2.0/timezone.png"
+  width="60%"
+  lazy={true}
 />
 
 <GettingStarted />
@@ -87,14 +95,18 @@ Starting from this release, the Business Calendar panel supports dashboard time 
 
 ## Release Notes
 
-### Features / Enhancements
+### Features & Enhancements
 
 - Added Event Location for Big Calendar (#127)
-- Added contrast text color for events (#129)
-- Added compatibility with Grafana 10.1.4 (#132)
-- Updated with Plugin Tools 2.0.2 (#132)
-- Updated to use Grafana Access Policy to sign plugin (#132)
-- Added support for dashboard timezone in Start and End time (#128)
-- Added ability to select views: day, week, work week and month (#133)
+- Implemented text contrast for better readability in events (#129)
+- Ensured compatibility with Grafana 10.1.4 (#132)
+- Updated to Plugin Tools 2.0.2 (#132)
+- Adopted Grafana Access Policy for plugin signing (#132)
+- Added dashboard timezone support for Start and End times (#128)
+- Introduced custom view selection: day, week, work week, and month (#133)
+
+## Share Your Feedback
+
+We’d love to hear your thoughts on this release! Let us know how these updates work for you or if there’s anything else you’d like to see in future versions.
 
 <Feedback />

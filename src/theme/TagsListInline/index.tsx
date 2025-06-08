@@ -1,6 +1,6 @@
-import React from 'react';
-import { Chip } from '../Chip';
-import styles from './styles.module.css';
+import React from "react";
+import { Chip } from "../Chip";
+import styles from "./styles.module.css";
 
 /**
  * Display Tags for Blog and Documentation

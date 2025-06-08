@@ -12,12 +12,7 @@ const sidebars: SidebarsConfig = {
       label: "Business Intelligence",
       collapsible: false, // Always expanded
       link: { type: "doc", id: "index" }, // Links to main BI doc
-      items: [
-        "getting-started/index",
-        "quick-start/index",
-        "personas",
-        "high-availability/index",
-      ],
+      items: ["quick-start/index", "personas", "high-availability/index"],
     },
 
     // Business Studio section
@@ -59,13 +54,7 @@ const sidebars: SidebarsConfig = {
           type: "category",
           label: "Business Engine API",
           link: { type: "doc", id: "engine/api" }, // Links to API overview
-          items: [
-            {
-              type: "link",
-              href: "/big/api",
-              label: "OpenAPI Specification", // External link to API spec
-            },
-          ],
+          items: [],
         },
       ],
     },
@@ -106,6 +95,13 @@ const sidebars: SidebarsConfig = {
 
     // Standalone Release page
     "release",
+
+    // End-User License Agreement
+    {
+      type: "link",
+      label: "End-User License Agreement",
+      href: "/eula/",
+    },
   ],
 };
 
