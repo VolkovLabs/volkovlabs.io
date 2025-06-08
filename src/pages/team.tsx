@@ -83,13 +83,13 @@ const Main = () => (
       </div>
       <div className="row margin-vert--lg text--center">
         <div className="col col--4">
-          <a href="/blog/authors/vitali/">
+          <a href="/blog/authors/vitaliy/">
             <Image
-              src="/img/team/vitali.png"
-              alt="Vitali, Community Engineer"
+              src="/img/team/vitaliy.png"
+              alt="Vitaliy, Community Engineer"
               zoom={false}
             />
-            <h3>Vitali</h3>
+            <h3>Vitaliy</h3>
             <p>Community Engineer</p>
           </a>
         </div>
@@ -105,13 +105,15 @@ const Main = () => (
           </a>
         </div>
         <div className="col col--4">
-          <Image
-            src="/img/team/nikita.png"
-            alt="Nikita, Enterprise Engineer"
-            zoom={false}
-          />
-          <h3>Nikita</h3>
-          <p>Enterprise Engineer</p>
+          <a href="/blog/authors/nikita/">
+            <Image
+              src="/img/team/nikita.png"
+              alt="Nikita, Enterprise Engineer"
+              zoom={false}
+            />
+            <h3>Nikita</h3>
+            <p>Enterprise Engineer</p>
+          </a>
         </div>
       </div>
     </section>
