@@ -113,6 +113,29 @@ export const NAVBAR = {
       ],
     },
     {
+      to: "/pricing/",
+      position: "left",
+      label: "Business Suite Enterprise",
+      "aria-label": "Business Suite Enterprise",
+      items: [
+        {
+          label: "Partnership",
+          to: "/pricing/",
+          className: "volkovlabs-link icon-partner-link",
+        },
+        {
+          label: "Team",
+          to: "/team/",
+          className: "volkovlabs-link icon-team-link",
+        },
+        {
+          label: "Support Portal",
+          href: "https://support.volkovlabs.io",
+          className: "volkovlabs-link icon-support-link",
+        },
+      ],
+    },
+    {
       to: "/blog/",
       position: "right",
       label: "Blog",
@@ -142,11 +165,6 @@ export const NAVBAR = {
           label: "Grafana Crash Course",
           to: "/blog/tags/grafana-crash-course/",
           className: "volkovlabs-link icon-grafana-link",
-        },
-        {
-          label: "Solutions",
-          to: "/blog/tags/solution/",
-          className: "volkovlabs-link icon-solutions-link",
         },
       ],
     },
@@ -182,12 +200,6 @@ export const NAVBAR = {
       to: "https://github.com/VolkovLabs",
       position: "right",
       className: "volkovlabs-link header-github-link",
-    },
-    {
-      to: "/pricing/",
-      position: "left",
-      label: "Business Suite Enterprise",
-      "aria-label": "Business Suite Enterprise Pricing",
     },
   ],
 };

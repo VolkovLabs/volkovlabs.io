@@ -95,6 +95,13 @@ const sidebars: SidebarsConfig = {
 
     // Standalone Release page
     "release",
+
+    // End-User License Agreement
+    {
+      type: "link",
+      label: "End-User License Agreement",
+      href: "/eula/",
+    },
   ],
 };
 

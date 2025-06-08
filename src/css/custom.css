@@ -363,6 +363,19 @@
   background: url("/static/img/team/logo.dark.svg") no-repeat;
 }
 
+.icon-partner-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/partner.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-partner-link::before {
+  background: url("/static/img/index/partner.dark.svg") no-repeat;
+}
+
 .icon-blog-link::before {
   content: "";
   width: 24px;
@@ -387,19 +400,6 @@
 
 [data-theme="dark"] .icon-support-link::before {
   background: url("/static/img/plugins/support/logo.dark.svg") no-repeat;
-}
-
-.icon-solutions-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/index/blog/solutions.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-solutions-link::before {
-  background: url("/static/img/index/blog/solutions.dark.svg") no-repeat;
 }
 
 .icon-gazette-link::before {
