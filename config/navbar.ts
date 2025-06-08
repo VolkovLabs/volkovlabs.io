@@ -143,11 +143,6 @@ export const NAVBAR = {
           to: "/blog/tags/grafana-crash-course/",
           className: "volkovlabs-link icon-grafana-link",
         },
-        {
-          label: "Solutions",
-          to: "/blog/tags/solution/",
-          className: "volkovlabs-link icon-solutions-link",
-        },
       ],
     },
     {
