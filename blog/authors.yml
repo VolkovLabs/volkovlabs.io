@@ -29,10 +29,10 @@ alex:
   socials:
     github: asimonok
 
-vitali:
-  name: Vitali Pinchuk
+vitaliy:
+  name: Vitaliy Pinchuk
   title: Community Engineer at Volkov Labs
-  image_url: /img/team/vitali.png
+  image_url: /img/team/vitaliy.png
   page: true
   socials:
     github: vitPinchuk
@@ -52,3 +52,11 @@ mulasevich:
   page: true
   socials:
     github: Mikenginee
+
+nikita:
+  name: Nikita Prudnik
+  title: Enterprise Engineer at Volkov Labs
+  image_url: /img/team/nikita.png
+  page: true
+  socials:
+    github: nickprudnik
