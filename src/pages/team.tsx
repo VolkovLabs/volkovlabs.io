@@ -94,13 +94,15 @@ const Main = () => (
           </a>
         </div>
         <div className="col col--4">
-          <Image
-            src="/img/team/mulasevich.png"
-            alt="Mikhail, Enterprise Engineer"
-            zoom={false}
-          />
-          <h3>Mikhail</h3>
-          <p>Enterprise Engineer</p>
+          <a href="/blog/authors/mulasevich/">
+            <Image
+              src="/img/team/mulasevich.png"
+              alt="Mikhail, Enterprise Engineer"
+              zoom={false}
+            />
+            <h3>Mikhail</h3>
+            <p>Enterprise Engineer</p>
+          </a>
         </div>
         <div className="col col--4">
           <Image

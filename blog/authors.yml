@@ -44,3 +44,11 @@ chris_field:
   page: true
   socials:
     web: https://theiascientific.com
+
+mulasevich:
+  name: Mikhail Ulasevich
+  title: Enterprise Engineer at Volkov Labs
+  image_url: /img/team/mulasevich.png
+  page: true
+  socials:
+    github: Mikenginee
