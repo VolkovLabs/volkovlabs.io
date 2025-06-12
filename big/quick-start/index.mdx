@@ -22,33 +22,10 @@ Configure a `docker-compose.yml` file with the following containers:
 - **Timescale**: Manages Business Engine configuration data (use an existing Timescale database or Timescale Cloud if available)
 - **Business Engine**: Connects to Grafana via a service account token, leveraging HTTP APIs to fetch configurations, evaluate alert rules, and execute actions
 
-```yaml
-services:
-  timescale:
-    image: timescale/timescaledb:latest-pg14
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - 5432:5432
-
-  engine:
-    depends_on:
-      - timescale
-    image: ghcr.io/volkovlabs/business-engine:3.3.0
-    # env_file: .env  # Uncomment to use an external .env file
-    environment:
-      DATABASE_HOST: timescale
-      DATABASE_PORT: 5432
-      DATABASE_DB: postgres
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: postgres
-      # GRAFANA_URL: https://MY-ACCOUNT.grafana.net  # Replace with your Grafana URL
-      # GRAFANA_TOKEN: SERVICE-ACCOUNT-TOKEN  # Replace with your service account token
-    ports:
-      - 3001:3001 # Business Engine API
-      - 3002:3002 # Business Engine Scheduler
-```
+<Code
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
+  language="yaml"
+/>
 
 ## Starting the Platform
 
@@ -56,19 +33,15 @@ Follow these steps to launch the platform:
 
 1. Log in to your Grafana instance (Cloud, OSS, or Enterprise)
 2. Create a service account with `Viewer` or `Editor` permissions
-3. (Optional) Update `GRAFANA_URL` and `GRAFANA_TOKEN` in `docker-compose.yml`:
-   <Image
-     title="Update GRAFANA_URL and GRAFANA_TOKEN in docker-compose.yml"
-     src="/img/big/quick-start/token-yml.png"
-   />
-4. Start the Business Engine and Timescale containers:
+3. Start the Business Engine and Postgres containers:
    ```sh
    docker compose up -d
    ```
-5. Download Business Studio from the [Release Notes](https://github.com/VolkovLabs/business-intelligence/releases), then install and launch it
+4. Download Business Studio from the [Release Notes](https://github.com/VolkovLabs/business-intelligence/releases), then install and launch it
+5. Connect to Grafana OSS, Enterprise or Cloud updating Environment page.
 6. In Business Studio, add the Business Engine to configure your Grafana instance, actions, and alert rules:
    <Image
-     title="Alert Rules Configured via Business Studio"
+     title="Alert Rules Configured via Business Studio."
      src="/img/big/business-studio/alerts.png"
    />
 
