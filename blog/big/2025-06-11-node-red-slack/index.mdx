@@ -143,6 +143,11 @@ msg.payload = {
 return msg;
 ```
 
+<Image
+  title="Action Settings using Handlebars and Preview in Business Studio with Spanish language."
+  src="/img/blog/2025-06-11-node-red-slack/action-settings.png"
+/>
+
 ### Uploading Rendered Images to Slack
 
 For alerts with images, the flow processes the rendered content (a Grafana panel screenshot) through several steps:
@@ -176,6 +181,11 @@ To implement this BI-focused workflow with the Image Render microservice, follow
 4. **Set Up Image Render Microservice**: Ensure the BI platform 3.4.0 is installed and the Image Render microservice is configured.
 5. **Configure Actions and Alerts**: Set up actions in the Business Engine to send alerts to the Node-RED `/slack` endpoint, including dashboard variables for dynamic rendering.
 6. **Deploy and Test**: Deploy the flow and test using Inject nodes to verify text and image notifications in Slack.
+
+<Image
+  title="Set Grafana User Login and Password for Image Render microservice."
+  src="/img/blog/2025-06-11-node-red-slack/grafana-environment.png"
+/>
 
 ## Conclusion
 
