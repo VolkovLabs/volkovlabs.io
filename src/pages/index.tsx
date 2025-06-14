@@ -83,7 +83,7 @@ const Main = ({ siteConfig }) => (
                   "button button--primary button--lg",
                   styles.getStarted
                 )}
-                href="/big/quick-start"
+                href="/big/"
               >
                 Get Started →
               </a>

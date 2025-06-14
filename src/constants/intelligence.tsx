@@ -11,7 +11,7 @@ export const IntelligenceList: PluginItem[] = [
     name: "business-studio",
     description: (
       <>
-        Simplifies Business Engine management, empowering non-technical users to
+        Simplifies Business Engine management, enabling non-technical users to
         configure, monitor, and maintain data workflows effortlessly.
       </>
     ),
@@ -32,7 +32,7 @@ export const IntelligenceList: PluginItem[] = [
     isActive: true, // Optional: Indicates active status
   },
   {
-    title: "Advanced Business Alerting",
+    title: "Load-Balanced Business Alerting",
     name: "business-alerting",
     description: (
       <>
