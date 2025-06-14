@@ -64,14 +64,11 @@ Grafana Crash Course:
 Community:
   description: Showcasing contributions from the Grafana community.
 
-Solution:
-  description: Explore innovative solutions from Volkov Labs.
-
 Development:
   description: Resources and guides for development.
 
 Environment Data Source:
   description: Retrieve environment variables for use in Grafana.
 
-Business Gazette:
-  description: Stay updated with the latest news from Volkov Labs through the Business Gazette.
+Company News:
+  description: Stay updated with the latest news from Volkov Labs.

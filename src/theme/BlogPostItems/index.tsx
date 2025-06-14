@@ -12,13 +12,12 @@ const Hero = () => (
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1 className="hero__title margin-bottom--md">
-            Data Visualization & Grafana Insights
-          </h1>
+          <h1 className="hero__title margin-bottom--md">Business Gazette</h1>
           <p className="hero__subtitle margin-vert--md">
             Explore the Volkov Labs Blog for expert insights, tutorials, and
-            updates on data visualization, Grafana plugins, and open-source
-            solutions. Stay informed with our latest tips and innovations.
+            updates on data visualization, Grafana, Business Intelligence and
+            open-source solutions. Stay informed with our latest tips and
+            innovations.
           </p>
         </div>
       </div>

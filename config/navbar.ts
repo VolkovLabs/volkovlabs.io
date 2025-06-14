@@ -138,7 +138,7 @@ export const NAVBAR = {
     {
       to: "/blog/",
       position: "right",
-      label: "Blog",
+      label: "Business Gazette",
       "aria-label": "Blog Posts",
       items: [
         {
@@ -147,9 +147,9 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-blog-link",
         },
         {
-          label: "Business Gazette",
-          to: "/blog/tags/business-gazette/",
-          className: "volkovlabs-link icon-gazette-link",
+          label: "Company News",
+          to: "/blog/tags/company-news/",
+          className: "volkovlabs-link icon-news-link",
         },
         {
           label: "Business Intelligence",

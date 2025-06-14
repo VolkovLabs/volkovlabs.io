@@ -1,0 +1,207 @@
+---
+authors: [daria, mikhail]
+slug: howto-start-20241022/
+tags: [Business Suite, Grafana Crash Course]
+image: /img/blog/2024-10-22-howto-start/banner.png
+keywords: [Business Suite, Data, Grafana]
+---
+
+import BlogPost from "@theme/BlogPost";
+import Feedback from "@site/docs/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Getting started with Business Suite
+
+Over time, the [Business Suite for Grafana](/plugins) might seem like it became a massive, multi-faceted entity with diverse functionality and plenty of nuances. This article is due to clarify the basics and give a quick cheat sheet with clear and easy steps on how to start. Hint: it is easier than you might think!
+
+I will walk you through the following phases of working with the Business Suite collection:
+
+- [Install](#install)
+- [Configure](#configure)
+- [Combine](#combine)
+- [Follow release schedule](#follow-release-schedule)
+- [Request changes](#request-changes)
+
+## Install
+
+The Business Suite is a collection of open-source plugins for Grafana. Therefore, the installation is identical to any other open-source Grafana plugin. In this article, you can find all possible approaches to installation. I use some of the Business Suite plugins as an example, but it could be any other plugin.
+
+<Youtube
+  id="1qYzHfPXJF8"
+  title="Install Business Suite plugins in Cloud, OSS, Enterprise. Getting started with the Business Suite."
+/>
+
+Let me start with the schema summarizing the installation scenarios. I categorized them for a Grafana Cloud account and OSS/Enterprise instances.
+
+<Image
+  title="Grafana plugin installation options."
+  src="/img/blog/2024-10-22-howto-start/installation-options.png"
+  width="80%"
+/>
+
+### Cloud Web UI
+
+This method is the most flexible. A user can choose any plugin version which means, they can upgrage or downgrade any plugin from the [Grafana catalog](https://grafana.com/grafana/plugins/).
+
+1. Sign into your account on the https://grafana.com/
+2. Go into the **Products** menu at the top of the screen and select the **Plugins** category.
+3. Optionally, enter the plugin name(or partial name) into the **Search** box. The word _Business_ filters all ten plugins of the Business Suite plugin (as shown).
+4. Click on the plugin card of your choice.
+5. Select a plugin version you would like to install.
+6. Switch to the **Installation** tab.
+7. Select an organization (in case you have multiple).
+8. Use the action buttons to upgrade/downgrade/delete the selected plugin.
+
+<Image
+  title="Plugin installation in the Grafana cloud account through the Grafana web-site."
+  src="/img/blog/2024-10-22-howto-start/web-ui.png"
+/>
+
+### Cloud Grafana UI
+
+With this method, a specific version selection is not possible. Only installation/upgrade to the latest compatible version with the installed Grafana is available.
+
+1. Sign in to your account at the https://grafana.com/
+2. Select your organization from the drop-down located in the top-left corner and launch the available stack.
+3. Open the **Administration**->**Plugins** menu.
+4. Optionally, enter the plugin name(or partial name) into the **Search** box. The word _Business_ filters all ten plugins of the Business Suite plugin (as shown). Click on the plugin card of your choice.
+5. Note the version of the plugin and Grafana version requirement.
+6. Click the **Install** button.
+7. Review documentation and the plugin GitHub repository.
+8. The YouTube tutorial video enriches every Business Suite collection plugin. Feel free to watch it to learn about the plugin quickly.
+
+<Image
+  title="Plugin installation in the Grafana cloud account through the Grafana UI."
+  src="/img/blog/2024-10-22-howto-start/cloud-ui.png"
+/>
+
+### OSS/Enterprise Grafana UI
+
+With this method, version selection is not possible. Only installation/upgrade to the latest compatible version with the installed Grafana is available.
+
+1. Sign in to your OSS/Enterprise Grafana.
+2. Open the hamburger menu on the left and then **Administration**->**Plugins** category.
+3. Optionally, enter the plugin name(or partial name) into the **Search** box. The word _Business_ filters all ten plugins of the Business Suite plugin (as shown).
+4. Click on the plugin card of your choice.
+5. Note the version of the plugin and Grafana version requirement.
+6. Click the **Install** button.
+7. Review documentation and the plugin GitHub repository.
+8. The YouTube tutorial video enriches every Business Suite collection plugin. Feel free to watch it to learn about the plugin quickly.
+
+<Image
+  title="Installation for OSS/Enterprise Grafana UI."
+  src="/img/blog/2024-10-22-howto-start/oss-ui.png"
+/>
+
+### OSS/Enterprise manual download
+
+This approach is irreplaceable for air-gapped environments (networks not connected to the Internet due to various security rules).
+In that event, you manually download the plugin installation package (zip file) from the appropriate GitHub repository or Grafana website.
+
+1. Open [Grafana web-site](https://grafana.com/). No need to sign-in.
+2. Go into the **Products** menu at the top of the screen and select the **Plugins** category.
+3. Optionally, enter the plugin name (or partial name) into the **Search** box. The word _Business_ filters all 10 plugins of the Business Suite plugin (as shown).
+4. Click on the plugin card of your choice.
+5. Select a plugin version you would like to download.
+6. Switch to the **Installation** tab and scroll down.
+7. Click the **download** link.
+
+<Image
+  title="OSS/Enterprise Manual download."
+  src="/img/blog/2024-10-22-howto-start/manual.png"
+/>
+
+### OSS/Enterprise CLI
+
+Usually, you use the [CLI](https://grafana.com/docs/grafana/latest/cli/) (command line Grafana tool) to install any open-source plugins available in the Grafana catalog. In addition, with CLI, you can install Grafana plugins that are NOT in the Grafana catalog.
+
+To get more information on how to use the Grafana CLI to install plugins from the private repository, please refer to the following blog posts where Mikhail provided installation details.
+
+<BlogPost id="installing-grafana-plugins-from-a-private-repository-805b54a1add3" />
+
+## Configure
+
+The Business Suite collection consists of 10 plugins: 3 data sources and 7 visualization panels.
+Configuration is a bit different for each type.
+
+### Data Source
+
+After a data source plugin is installed, you need to add a data source instance to your Grafana.
+
+1. Open the hamburger menu on the left and then **Connection**->**Data Sources** menu. That will open the listing of all installed and configured data sources.
+2. Click the **Add new data source** button.
+3. Select your data source from the list. That list includes all installed plugins that have the data source type. You can limit the displayed data sources by using the **Search** field.
+4. Populate the configuration parameters. Make sure to have a distinct name to simplify recognizing that particular configured data source further down the line.
+5. Add a new visualization panel to a dashboard and open it in the edit mode.
+6. The newly configured data source should appear on the left-hand side drop-down for your selection.
+7. Specify appropriate queries.
+8. Switch to the **Table View** to observe what data frame is fetched from the data source utilizing the specified query.
+
+<Image
+  title="A data source configuration in Grafana."
+  src="/img/blog/2024-10-22-howto-start/ds.png"
+/>
+
+### Visualization panel
+
+1. After installing a visualization panel plugin, you can immidietly select it on the right-hand side drop-down for a visualization panel in the edit mode.
+2. Every visualization panel expects a specific data frame to work with. You can fine-tune a provided data frame by the connected data source in the **Transform data** tab if needed.
+3. All configuration parameters are located on the left-hand side — Configure plugin-specific parameters.
+4. Configure Grafana core parameters. These are common among most other Grafana plugins, such as **Thresholds**, **Standard options**, **Data links**, etcetera.
+5. **All** specified parameters impact all rows/columns of the fetched data frame.
+   **Overrides** Here, you can specify to apply the parameters following specific conditions. For instance, highlight only a cell instead of the whole row.
+
+<Image
+  title="A visualization panel configuration in Grafana."
+  src="/img/blog/2024-10-22-howto-start/vp.png"
+  width="65%"
+/>
+
+To go deeper into the Grafana transformation subject, read the blog post from Grafana Crash Course.
+
+<BlogPost id="transformations-grafana-20230519" />
+
+## Combine
+
+Grafana's core design allows you to create web applications using the Grafana plugins as building blocks. Some combinations of the Business Suite plugins are an excellent illustration of this approach. Below are examples of how our plugins complement each other, resulting in almost ready-of-the-box solutions.
+
+### Business News plus Business Text
+
+The [Business News](/plugins/business-news/) data source converts the RSS/Atom news feeds into the Grafana data frames. Combining it with the [Business Text](/plugins/business-text/) panel lets you visualize web resource updates on your Grafana dashboard in any CSS/HTML style.
+
+Below is an example where the Business News reads from the [national vulnerability database](https://nvd.nist.gov) feed and the Business Text displays it using simple HTML formatting.
+
+<Image
+  title="Example of Business News and Business Text working together."
+  src="/img/blog/2024-10-22-howto-start/news-text.png"
+/>
+
+### Business Variable plus Business Table
+
+Even though both plugins (the [Business Variable](/plugins/business-variable/) and [Business Table](/plugins/business-table/)) are visualization panels, they can work together in creating beautiful workflow for your users.
+
+<Image
+  title="Example of Business Variable and Business Table working together."
+  src="/img/blog/2024-10-22-howto-start/var-table.gif"
+/>
+
+### Business Media plus Business Forms
+
+Uploading a file from a computer via the Grafana dashboard into the connected data source is one of the most common tasks. Using the [Business Media](/plugins/business-media/) panel along with the [Business Forms](/plugins/business-forms/) makes it possible in minutes. To simplify this method and help its adoption, we posted an article walking through all the necessary steps.
+
+<BlogPost id="form-panel-file-upload-20240310" />
+
+## Follow release schedule
+
+We use the [Release dashboard](https://release.volkovlabs.io) to track the Business Suite collection plugin releases. The project is open to the public, so anyone can join us in monitoring the number of plugin downloads, open issues, daily downloads, days until the next release, and many other illustrative metrics.
+
+We target a new release for each plugin at least every 100 days, allowing all our plugins to be compatible with the latest Grafana releases and all necessary change request incorporation.
+
+## Request changes
+
+If you notice something that can be improved in our plugins or believe you need a particular change, you can request it in the related GitHub repository.
+
+We prioritize topics that could benefit a broad audience. If you have anything specific or need an answer quickly, feel free to join our partnership program [Business Suite Enterprise](/pricing/).
+
+<Feedback />

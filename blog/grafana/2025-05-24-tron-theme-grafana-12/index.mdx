@@ -1,0 +1,111 @@
+---
+authors: [mikhail, daria]
+slug: tron-themes-grafana-12/
+tags: [Grafana Crash Course]
+image: /img/blog/2025-05-24-tron-theme-grafana-12/banner.png
+keywords: [Grafana, Themes, Customization, Tron, Data Visualization]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/docs/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Unleashing Futuristic Dashboards with Tron Theme in Grafana 12
+
+We’re thrilled to explore Grafana 12’s experimental themes, with a special focus on the **Tron theme**, launched to celebrate this major release! At Volkov Labs, we’re passionate about transforming data visualization, and the Tron theme’s neon-drenched, futuristic aesthetic offers a bold new way to elevate your dashboards.
+
+In this post, we’ll dive into the Tron theme’s unique features, demonstrate how it integrates with our Business Suite plugins, and provide actionable steps to customize your Grafana experience.
+
+## Introducing Grafana 12’s Experimental Themes
+
+Grafana 12 brings a fresh set of experimental themes to personalize your dashboards, including **Sapphire Dusk**, **Tron**, **Gilded Grove**, **Gloom**, and **Desert Bloom**. These themes let you tailor the Grafana UI to match your style or use case, creating a more immersive experience. The **Tron theme**, inspired by the iconic sci-fi franchise, delivers glowing neon colors and a sleek, high-tech look ideal for modern, tech-focused environments.
+
+To preview the Tron theme, click the user icon in the top-right corner of Grafana, select **Change theme**, and explore the options in the theme drawer.
+
+<Image
+  title="Preview and select the Tron theme in the theme drawer."
+  src="/img/blog/2025-05-24-tron-theme-grafana-12/change-theme.png"
+/>
+
+## Why the Tron Theme Shines Bright
+
+The Tron theme isn’t just a cosmetic update—it’s a game-changer for dashboard design. With vibrant neon blues and purples set against a dark background, it offers striking contrast that boosts readability and highlights critical data. Here’s why it stands out:
+
+- **Tech and Gaming Dashboards**: Its futuristic vibe is a perfect match for tech industries or gaming analytics.
+- **Nighttime Monitoring**: The dark, high-contrast design minimizes eye strain during extended sessions.
+- **Branding Potential**: Pair it with custom logos and backgrounds for a unified, professional look.
+
+We’ve tested the Tron theme extensively with our Business Suite plugins—such as **Business Table**, **Business Charts**, and **Business Calendar**—and the results are visually stunning. The neon accents amplify interactive elements like charts and event markers, blending functionality with eye-catching design.
+
+<Image
+  title="A release dashboard transformed by the Tron theme."
+  src="/img/blog/2025-05-24-tron-theme-grafana-12/release-dashboard.png"
+/>
+
+## Supercharge Your Dashboards with Tron Theme and Volkov Labs Plugins
+
+Combine the Tron theme with our Business Suite plugins to create dashboards that are as powerful as they are beautiful. Here’s how each plugin enhances the Tron experience:
+
+### Business Table: Dynamic Data in Neon
+
+The [**Business Table**](/plugins/business-table/) plugin supports advanced features like add/delete rows and diverse column types. Under the Tron theme, dynamic tables come alive with neon highlights, ensuring clarity for nested objects and markdown-supported comments.
+
+### Business Charts: Visualizations That Pop
+
+With the [**Business Charts**](/plugins/business-charts/) plugin, powered by Apache ECharts, you can create dynamic visualizations like scatter and boxplot charts. The Tron theme’s bold palette makes trends and outliers stand out, enhancing both aesthetics and insight.
+
+### Business Calendar: Events in High-Tech Style
+
+The [**Business Calendar**](/plugins/business-calendar/) plugin offers multi-language support and yearly views for event-driven analytics. Paired with the Tron theme, event bubbles and tooltips glow against the dark backdrop, delivering an intuitive experience for tracking schedules or alerts. [Check the latest release](/plugins/business-calendar/release/).
+
+<Image
+  title="Theia Scientific dashboard featuring the Business Table panel with Tron theme."
+  src="/img/blog/2025-05-24-tron-theme-grafana-12/theia-table.png"
+/>
+
+## Step-by-Step: Enabling and Customizing the Tron Theme
+
+Ready to transform your Grafana dashboards? Follow these steps to enable the Tron theme and customize it with Volkov Labs plugins:
+
+1. **Enable the Tron Theme**:
+
+   - Go to the user profile icon in the top-right corner, click **Change theme**, and select **Tron** from the theme drawer.
+
+2. **Install Business Suite Plugins**:
+
+   - Add our plugins via the [Grafana Plugins Catalog](https://grafana.com/grafana/plugins/).
+   - Configure your dashboards using our plugins to maximize the Tron theme’s visual impact. Refer to our [documentation](/plugins/) for setup guides.
+
+3. **Advanced Docker Customization**:
+   - Replace the default Grafana logo and background to match the Tron aesthetic:
+     ```dockerfile
+     COPY img/tron-logo.svg /usr/share/grafana/public/img/grafana_icon.svg
+     COPY img/tron-background.svg /usr/share/grafana/public/img/g8_login_dark.svg
+     ```
+   - Update the application title for a branded touch:
+     ```dockerfile
+     RUN find /usr/share/grafana/public/build/ -name *.js -exec sed -i 's|"AppTitle","Grafana")|"AppTitle","Tron Analytics")|g' {} \;
+     ```
+   - For more customization tips, read [How to Customize the Grafana User Interface](/blog/how-to-customize-the-grafana-user-interface-8d70a42dc2b6/).
+
+## The Impact on Business Intelligence
+
+Pairing the Tron theme with Volkov Labs’ Business Suite plugins takes your Grafana dashboards to the next level. Whether you’re tracking real-time metrics, managing schedules, or analyzing complex datasets, the Tron theme’s striking design boosts user engagement and supports faster decision-making.
+
+<Image
+  title="Prometheus Metrics with Tron theme."
+  src="/img/blog/2025-05-24-tron-theme-grafana-12/engine.png"
+/>
+
+Our plugins are fully compatible with Grafana 12’s latest features, ensuring seamless and efficient workflows. [Discover Grafana 12’s new capabilities](https://grafana.com/blog/2025/05/07/grafana-12-release-all-the-new-features/).
+
+## Start Building Neon-Powered Dashboards Today
+
+Ready to energize your Grafana dashboards with the Tron theme? Upgrade to Grafana 12, install our Business Suite plugins, and create visually stunning, high-performance dashboards. Dive into our [Grafana Crash Course](/grafana/) or watch our YouTube tutorials for detailed guidance.
+
+We can’t wait to see your Tron-inspired dashboards! Share your designs with us and tell us how the Business Suite is enhancing your analytics journey.
+
+<Feedback />

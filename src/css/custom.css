@@ -402,17 +402,17 @@
   background: url("/static/img/plugins/support/logo.dark.svg") no-repeat;
 }
 
-.icon-gazette-link::before {
+.icon-news-link::before {
   content: "";
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/img/index/blog/gazette.svg") no-repeat;
+  background: url("/static/img/index/blog/news.svg") no-repeat;
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-gazette-link::before {
-  background: url("/static/img/index/blog/gazette.dark.svg") no-repeat;
+[data-theme="dark"] .icon-news-link::before {
+  background: url("/static/img/index/blog/news.dark.svg") no-repeat;
 }
 
 .icon-security-link::before {

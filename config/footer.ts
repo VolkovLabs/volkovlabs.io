@@ -75,14 +75,14 @@ export const FOOTER = {
       title: "Discover",
       items: [
         {
-          label: "Blog Posts",
+          label: "Business Gazette",
           to: "/blog/",
           className: "volkovlabs-footer-link icon-blog-link",
         },
         {
-          label: "Business Gazette",
-          to: "/blog/tags/business-gazette",
-          className: "volkovlabs-footer-link icon-gazette-link",
+          label: "Company News",
+          to: "/blog/tags/company-news",
+          className: "volkovlabs-footer-link icon-news-link",
         },
         {
           label: "Grafana Crash Course",

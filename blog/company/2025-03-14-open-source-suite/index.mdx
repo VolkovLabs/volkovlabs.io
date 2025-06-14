@@ -1,0 +1,120 @@
+---
+authors: [daria, mikhail]
+slug: open-source-suite/
+tags: [Company News, Business Suite]
+image: /img/blog/2025-03-14-open-source-suite/banner.png
+keywords: [Business Suite]
+---
+
+import BlogPost from "@theme/BlogPost";
+import Feedback from "@site/docs/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+import Shorts from "@theme/Shorts";
+
+# What we're learning about building an open-source Business Suite for Grafana
+
+Here at Volkov Labs, we've been on an incredible journey crafting the [Business Suite](/plugins/) — a collection of open-source plugins designed to transform Grafana from an observability powerhouse into a platform for fully functional, business-ready web applications. Building an open-source project isn't just about code — it's about community, adaptability, and pushing boundaries.
+
+In this blog post we're reflecting on the lessons we've learned along the way. Here's what we've discovered while developing the Business Suite, and how it's shaping our path forward.
+
+## Community feedback is the compass
+
+When we started, our goal was simple: close functionality gaps for Grafana users tackling business challenges. But what we quickly learned is that we don't define success — the community does.
+
+Every GitHub issue, YouTube comment, and question we receive is a signal guiding us toward what matters most. For instance, the [Business Text](/plugins/business-text/) panel — now a fan favorite — evolved from a basic dynamic text tool into a "Swiss army knife" for Grafana because users asked for more: custom JavaScript, external libraries, and creative visualizations. Listening isn't just polite; it's the heartbeat of open-source innovation.
+
+:::info Takeaway
+
+Build what you think is useful, but let the community steer the ship. Their real-world use cases reveal gaps you'd never spot in isolation.
+:::
+
+## Simplicity scales better than complexity
+
+Grafana's beauty lies in its flexibility, but that can also be a trap. Early on, we were tempted to pack every plugin with features—why not make [Business Charts](/plugins/business-charts/) handle every chart type imaginable? But we learned that simplicity wins.
+
+A plugin like [Business Forms](/plugins/business-forms/), which lets users insert and update data directly in Grafana, doesn't need to do everything — it just needs to do one thing _really well_. By keeping interfaces intuitive and setup straightforward (hint: it's easier than you think!), we've seen adoption soar. Complexity might impress, but simplicity empowers.
+
+We like to complement our plugins with real-world use cases that have already graced someone's production environment for an even better illustration of possibilities.
+
+<Shorts
+  id="n4xsVrSesy0"
+  title="Synchronize dashboard variables with Business Forms in Grafana | Shorts."
+/>
+
+Find one astonishing example briefly described in one of our YouTube shorts and the full explanation in the following blog post.
+
+<BlogPost id="form-panel-server-based-elements-20240428" />
+
+:::info Takeaway
+
+Focus on solving specific problems elegantly. Users will combine the pieces into something extraordinary — we just need to give them the right building blocks.
+:::
+
+## Compatibility is a moving target
+
+Grafana evolves fast, and so must we. With every new release (we're looking at you, Grafana 11.5 adopters!), we've had to ensure our plugins stay in sync.
+
+This taught us to prioritize compatibility testing and release cycles — sometimes as tight as 100 days — to keep the Business Suite humming alongside Grafana's latest features. It's a marathon, not a sprint, but seeing plugins like [Business Calendar](/plugins/business-calendar/) and [Business Media](/plugins/business-media/) work seamlessly across versions makes it worth it.
+
+Below is the Business Calendar panel showing the frequency of Business Suite plugin releases in 2024. Every dot is one plugin release. A plus symbol next to two dots (as on November 16, 2024) means Volkov Labs published more than three releases that day.
+
+<Image
+  title="Business Calendar in the year layout. Every dot is a plugin release."
+  src="/img/blog/2025-03-14-open-source-suite/year.png"
+/>
+
+:::info Takeaway
+
+In open-source, you're not just building for today's platform—you're anticipating tomorrow's. Stay agile and test relentlessly.
+
+:::
+
+## Documentation is as critical as code
+
+We'll admit it: early on, we underestimated this. Code might get the job done, but without clear docs, examples, and tutorials, it's like handing someone a puzzle with no picture. The Business Suite's growth exploded when we doubled down on detailed guides, release blog posts, and YouTube tutorials.
+
+Users don't just want tools—they want to know _how_ to wield them. Watching someone use [Business Variable](/plugins/business-variable/) to redirect dashboards or [Business News](/plugins/business-news/) to style RSS feeds in five minutes beats a thousand lines of README every time.
+
+In addition to the detailed documentation, we share a collection of tutorials, some with plugin overviews and some with step-by-step instructions to create solutions for the production tasks we came across.
+
+You can find them under the **Tutorials** menu.
+
+<Image
+  title="A collection of tutorials for every plugin is under the Tutorials menu."
+  src="/img/blog/2025-03-14-open-source-suite/tutorials.png"
+/>
+
+:::info Takeaway
+
+Great documentation turns users into power users. Invest in it early and often.
+:::
+
+## Collaboration unlocks creativity
+
+The Business Suite isn't a solo act — it's a community remix. Plugins like Business Media and Business Charts shine brightest when paired together, thanks to users sharing clever combinations. A file upload dashboard using Business Forms and Business Variable? That came from _you_, not us.
+
+<BlogPost id="form-panel-file-upload-20240310" />
+
+Open-source thrives when everyone's invited to the party — whether it's forking a repo, suggesting a feature, or writing a guest blog post. We've learned to embrace this chaos and celebrate every contribution.
+
+Shoutout to [Josiah Solomon](https://github.com/yosiasz) for his [Business Text use cases](/plugins/business-text/external/).
+:::info Takeaway
+
+Build tools that play well together, then step back and watch the magic happen. Collaboration isn't a byproduct — it's the goal.
+:::
+
+## Where we're headed
+
+So, what's next? We're taking these lessons to heart as we expand the Business Suite. Expect more plugins that tackle niche business needs, tighter integration with Grafana's evolving ecosystem, and—yes—more YouTube videos to show you how it's done. We're also exploring ways to make contributing even easier, because this suite belongs to all of us.
+
+If you're new to the Business Suite, dive in — it's easier than you might think! Check out our [Foundation series](/plugins/foundation/), install a plugin from the Grafana catalog, and let us know what you think.
+
+<Youtube
+  id="1qYzHfPXJF8"
+  title="Install Business Suite plugins in Cloud, OSS, Enterprise. Getting started with the Business Suite."
+/>
+
+Have a use case, a question, or an idea? Drop us a line on [GitHub](https://github.com/volkovlabs) or [YouTube comments](https://www.youtube.com/@volkovlabs). Together, we're not just building plugins — we're reimagining what Grafana can do.
+
+<Feedback />
