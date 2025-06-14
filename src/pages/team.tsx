@@ -20,8 +20,8 @@ const Header = () => (
           </p>
           <p className="hero__subtitle">
             Over the past three years, we’ve led a major open-source effort,
-            crafting 11 Grafana plugins with over{" "}
-            <strong>35 million downloads</strong>. Our dedication shines through
+            crafting 10+ Grafana plugins with over{" "}
+            <strong>36 million downloads</strong>. Our dedication shines through
             in top-tier documentation, a vibrant YouTube channel, and robust
             community support.
           </p>

@@ -48,13 +48,11 @@
   color: var(--ifm-color-white);
   border-color: #ff5656;
   background-color: #ff5656;
+  transition: transform 0.3s ease-in-out;
 }
 
-.enterprise {
-  border-radius: 10px 10px 10px 10px;
-  color: var(--ifm-color-white);
-  border-color: var(--ifm-color-primary);
-  background-color: var(--ifm-color-primary);
+.getStarted:hover {
+  transform: scale(1.05);
 }
 
 /**
@@ -132,4 +130,17 @@
 
 [data-theme="dark"] .big {
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
+}
+
+.headerImage,
+.big {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Business Studio",
-      collapsible: false, // Always expanded
+      collapsible: false,
       link: { type: "doc", id: "studio/index" }, // Links to main Studio doc
       items: [
         "studio/manage-business-engines",
@@ -44,7 +44,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Business Engine",
-      collapsible: false, // Always expanded
+      collapsible: true,
       link: { type: "doc", id: "engine/index" }, // Links to main Engine doc
       items: [
         "engine/configuration",
@@ -63,7 +63,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Business Alerting",
-      collapsible: false, // Always expanded
+      collapsible: true,
       link: { type: "doc", id: "alerting/index" }, // Links to main Alerting doc
       items: [
         "alerting/manage-alert-rules",
@@ -95,13 +95,7 @@ const sidebars: SidebarsConfig = {
 
     // Standalone Release page
     "release",
-
-    // End-User License Agreement
-    {
-      type: "link",
-      label: "End-User License Agreement",
-      href: "/eula/",
-    },
+    "eula",
   ],
 };
 
