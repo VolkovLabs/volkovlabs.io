@@ -34,6 +34,7 @@ const Header = ({ siteConfig }) => (
                 "button button--primary button--lg",
                 styles.getStarted
               )}
+              aria-label="Explore Volkov Labs Grafana Plugins"
               href="/plugins/"
             >
               Explore Plugins →
@@ -68,14 +69,38 @@ const Main = ({ siteConfig }) => (
         <Plugins />
       </div>
     </section>
+
+    <section className="container margin-vert--xl text--center">
+      <h2 className="hero__title">Trusted by Grafana Community</h2>
+      <div className="row margin-vert--lg">
+        <div className="col col--4">
+          <h3>36M+</h3>
+          <p>Downloads</p>
+        </div>
+        <div className="col col--4">
+          <h3>100K+</h3>
+          <p>Installations</p>
+        </div>
+        <div className="col col--4">
+          <h3>1000+</h3>
+          <p>Active Users</p>
+        </div>
+      </div>
+    </section>
+
     <section className="hero hero--primary">
       <div className="container margin-vert--md">
         <div className="row align-items-center">
           <div className="col col--7">
             <h2 className={clsx("hero__title")}>Business Intelligence</h2>
             <p className="hero__subtitle margin-vert--md">
-              Transform your insights with high-performance, scalable, and
-              alert-driven analytics.
+              Tailored to address real-world production demands, this platform
+              revolutionizes alerting and analytics in Grafana.
+            </p>
+            <p className="hero__subtitle">
+              Business Alerting module offers streamlined interactions,
+              centralized management, and advanced features like high
+              availability and load balancing.
             </p>
             <div className="margin-vert--lg">
               <a
@@ -104,9 +129,44 @@ const Main = ({ siteConfig }) => (
         </div>
       </div>
     </section>
+
     <section className="container margin-vert--xl">
       <div className="margin-vert--lg">
         <Intelligence />
+      </div>
+    </section>
+
+    <section className="container margin-vert--xl">
+      <div className="text--center margin-vert--lg">
+        <h2 className="hero__title">Join Our Community</h2>
+        <p className="hero__subtitle">
+          Stay updated with the latest news, tutorials, and releases from Volkov
+          Labs.
+        </p>
+        <div className="margin-vert--md">
+          <a
+            className={clsx(
+              "button button--primary button--lg",
+              styles.getStarted
+            )}
+            href="/blog/tags/business-gazette/"
+            aria-label="Read Business Gazette"
+          >
+            Business Gazette
+          </a>
+          <a
+            className={clsx(
+              "button button--secondary button--lg margin-left--md",
+              styles.getStarted
+            )}
+            href="https://youtube.com/@volkovlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Volkov Labs on youTube"
+          >
+            Subscribe to YouTube Channel
+          </a>
+        </div>
       </div>
     </section>
   </main>
