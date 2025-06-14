@@ -98,9 +98,9 @@ const Main = ({ siteConfig }) => (
               revolutionizes alerting and analytics in Grafana.
             </p>
             <p className="hero__subtitle">
-              Business Alerting module offers streamlined interactions,
-              centralized management, and advanced features like high
-              availability and load balancing.
+              Business Alerting offers streamlined interactions, centralized
+              management, and advanced features like high availability and load
+              balancing.
             </p>
             <div className="margin-vert--lg">
               <a
@@ -149,7 +149,7 @@ const Main = ({ siteConfig }) => (
               "button button--primary button--lg",
               styles.getStarted
             )}
-            href="/blog/tags/business-gazette/"
+            href="/blog/"
             aria-label="Read Business Gazette"
           >
             Business Gazette
