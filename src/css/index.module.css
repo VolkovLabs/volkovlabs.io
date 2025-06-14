@@ -55,13 +55,6 @@
   transform: scale(1.05);
 }
 
-.enterprise {
-  border-radius: 10px 10px 10px 10px;
-  color: var(--ifm-color-white);
-  border-color: var(--ifm-color-primary);
-  background-color: var(--ifm-color-primary);
-}
-
 /**
  * Why inside the Box
  */
