@@ -15,8 +15,8 @@ const Header = () => (
         <div className="col margin-vert--md">
           <h1 className="hero__title margin-bottom--md">About Volkov Labs</h1>
           <p className="hero__subtitle margin-vert--md">
-            Open source is our core. At Volkov Labs, we’re driven by the freedom
-            to share and collaborate without limits.
+            At Volkov Labs, we’re driven by the freedom to share and collaborate
+            without limits.
           </p>
           <p className="hero__subtitle">
             Over the past three years, we’ve led a major open-source effort,
