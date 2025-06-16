@@ -46,17 +46,7 @@ const sidebars: SidebarsConfig = {
       label: "Business Engine",
       collapsible: true,
       link: { type: "doc", id: "engine/index" }, // Links to main Engine doc
-      items: [
-        "engine/configuration",
-        "engine/database",
-        "engine/prometheus",
-        {
-          type: "category",
-          label: "Business Engine API",
-          link: { type: "doc", id: "engine/api" }, // Links to API overview
-          items: [],
-        },
-      ],
+      items: ["engine/configuration", "engine/database", "engine/prometheus"],
     },
 
     // Business Alerting section
