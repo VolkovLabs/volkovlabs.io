@@ -22,6 +22,38 @@ In this guide, we'll explore the Prometheus metrics exposed by the Business Engi
 
 The Business Engine exposes Prometheus metrics for all microservices via the Service API at `engine:3001/metrics`. This endpoint provides a comprehensive set of metrics to monitor alert execution, HTTP request performance, and system health.
 
+:::warning Security risk
+Exposing the `/metrics` endpoint to the public internet can pose a security risk, as it may reveal sensitive information about the Business Engine's performance and internal operations. To prevent unauthorized access, you can configure a reverse proxy like NGINX to restrict access to the metrics endpoint based on IP addresses, authentication, or other criteria.
+:::
+
+Below is an example of how to configure NGINX to block access to the `/metrics` endpoint from external networks while allowing access from specific internal IP ranges.
+
+### NGINX Configuration
+
+This configuration assumes that the Business Engine's Service API is running behind an NGINX reverse proxy.
+
+```nginx
+server {
+    listen 80;
+    server_name engine.business.io;
+
+    location / {
+        proxy_pass http://engine:3001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Deny access from external networks
+    location /metrics {
+        # Allow access from specific IP addresses or ranges (e.g., internal network or monitoring tool)
+        allow 127.0.0.1;       # Example: Localhost
+        deny all;              # Deny all other access
+    }
+}
+```
+
 ## Available Metrics
 
 The following table lists the key Prometheus metrics provided by the Business Engine, categorized into alert execution, alert calculation, and HTTP request performance:
