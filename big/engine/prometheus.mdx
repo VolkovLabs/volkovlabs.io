@@ -6,66 +6,126 @@ tags:
 import Code from "@theme/Code";
 import Image from "@theme/Image";
 
-# Prometheus
+# Monitoring Business Engine with Prometheus
 
-Business Engine provides Prometheus metrics for performance monitoring using ready-to-use, out-of-the-box Business Engine dashboard with all necessary metrics for kick-off the successful monitoring.
+Effective monitoring is critical for maintaining the performance and reliability of any business intelligence platform. The Business Engine integrates seamlessly with Prometheus to provide out-of-the-box metrics for monitoring system health, latency, and resource usage. Paired with a pre-configured Grafana dashboard, these metrics enable teams to quickly identify and resolve issues, ensuring optimal performance of the Business Engine.
 
-Having Prometheus monitoring built-in in the Business Engine allows you to monitor the Business Intelligence platform itself.
+In this guide, we'll explore the Prometheus metrics exposed by the Business Engine, how to configure metric collection, and how to leverage the provided Grafana dashboard for actionable insights.
 
 <Image
-  title="Grafana dashboard displays Business Engine metrics stored in Prometheus."
+  title="Grafana dashboard displaying Business Engine metrics stored in Prometheus."
   src="/img/big/business-engine/prometheus.png"
+  alt="Grafana dashboard for Business Engine metrics"
 />
 
-## Endpoints
+## Metrics Endpoint
 
-The Business Engine consists of two endpoints which provides metrics:
+The Business Engine exposes Prometheus metrics for all microservices via the Service API at `engine:3001/metrics`. This endpoint provides a comprehensive set of metrics to monitor alert execution, HTTP request performance, and system health.
 
-- API Server - `engine:3001/metrics`
-- Scheduler - `engine:3002/metrics`
+## Available Metrics
+
+The following table lists the key Prometheus metrics provided by the Business Engine, categorized into alert execution, alert calculation, and HTTP request performance:
+
+| **Metric**                                  | **Type**  | **Description**                                  |
+| ------------------------------------------- | --------- | ------------------------------------------------ |
+| `alert_calculation_duration_seconds`        | Histogram | Duration of alert calculation in seconds         |
+| `alert_count_in_the_execution_queue`        | Gauge     | Number of alerts in the execution queue          |
+| `alert_create_annotations_duration_seconds` | Histogram | Duration of alert annotation creation in seconds |
+| `alert_execution_duration_seconds`          | Histogram | Duration of alert execution in seconds           |
+| `grafana_http_request_duration_seconds`     | Histogram | Duration of HTTP requests to Grafana in seconds  |
+| `http_all_client_error_total`               | Counter   | Total count of client-side errors                |
+| `http_all_errors_total`                     | Counter   | Total count of error requests                    |
+| `http_all_request_total`                    | Counter   | Total count of all received requests             |
+| `http_all_server_error_total`               | Counter   | Total count of server-side errors                |
+| `http_all_success_total`                    | Counter   | Total count of successful requests               |
+| `http_request_duration_seconds`             | Histogram | Duration of HTTP requests in seconds             |
+| `http_request_size_bytes`                   | Histogram | Size of HTTP requests in bytes                   |
+| `http_request_total`                        | Counter   | Total count of HTTP requests                     |
+| `http_response_size_bytes`                  | Histogram | Size of HTTP responses in bytes                  |
+| `internal_request_duration_seconds`         | Histogram | Duration of internal requests in seconds         |
+| `internal_request_total`                    | Counter   | Total count of internal requests                 |
+
+These metrics provide deep visibility into the performance and behavior of the Business Engine, enabling teams to detect bottlenecks, high latency, or resource constraints.
 
 ## Configuration
 
-Sample configuration to collect metrics from Server API and Scheduler processes.
+To start collecting metrics from Business Engine microservices, configure Prometheus using the sample configuration file below. This setup ensures that metrics are scraped from the designated endpoint.
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/prometheus.yml"
   language="yaml"
+  title="Prometheus Configuration for Business Engine"
 />
 
-## Grafana Dashboard
+## Grafana Dashboard for Business Engine
 
-The [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) displays metrics collected by Prometheus, filterable by **instance** and **alert rule** variables and can be downloaded from the Business Intelligence repository.
+The [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) is a pre-built Grafana dashboard designed to visualize the collected Prometheus metrics. It includes filters for **instance**, **app**, and **alert rule** variables, allowing you to drill down into specific components or issues.
+
+You can download the dashboard JSON file and configuration directly from the [Business Intelligence repository](https://github.com/volkovlabs/business-intelligence).
+
+### Dashboard Sections
+
+The dashboard is organized into several sections for comprehensive monitoring:
+
+#### 1. Alerts
+
+- **Alert Results**: Overview of alert outcomes and statuses.
+- **Alert Latency**: Metrics on alert calculation and execution durations.
 
 <Image
-  title="Dashboard Variables for Filtering"
-  src="/img/big/business-engine/instance-alert.png"
+  title="Alerts analytics in the Business Engine dashboard."
+  src="/img/big/business-engine/prometheus-alerts.png"
+  alt="Alerts analytics"
 />
 
-### Alerts
+#### 2. Requests
 
-- Alert Results
-- Alert Latency
-  <Image title="Alerts Analytics" src="/img/big/business-engine/alerts.png" />
+- **Business Engine API Requests**: Total requests and error rates.
+- **Business Engine Latency**: Request and response durations.
+- **Grafana API Requests**: Metrics for Grafana API interactions.
+- **Grafana Latency**: Latency of Grafana API calls.
+- **Scheduler Queue**: Alerts queued for execution.
+- **Internal Requests**: Performance of internal communications.
 
-### Requests
+<Image
+  title="Requests analytics in the Business Engine dashboard."
+  src="/img/big/business-engine/prometheus.png"
+  alt="Requests analytics"
+/>
 
-- Business Engine API Requests
-- Business Engine Latency
-- Grafana API Requests
-- Grafana Latency
-  <Image
-    title="Requests Analytics"
-    src="/img/big/business-engine/requests.png"
-  />
+#### 3. Processes
 
-### Processes
+- **CPU Usage**: CPU consumption by Business Engine processes.
+- **Event Loop Lag**: Delays in the event loop affecting performance.
+- **Memory Usage**: Memory consumption trends.
+- **Active Handlers/Requests Total**: Count of active handlers and requests.
 
-- CPU Usage
-- Event Loop Lag
-- Memory Usage
-- Active Handlers/Requests Total
-  <Image
-    title="Processes Analytics"
-    src="/img/big/business-engine/processes.png"
-  />
+<Image
+  title="Processes analytics in the Business Engine dashboard."
+  src="/img/big/business-engine/prometheus-processes.png"
+  alt="Processes analytics"
+/>
+
+## Why Monitor with Prometheus?
+
+The Business Engine's Prometheus metrics offer detailed insights into system performance, enabling proactive monitoring and troubleshooting. By tracking alert execution times, HTTP request latencies, and resource usage, teams can:
+
+- Identify and resolve high-latency issues before they impact users.
+- Optimize resource allocation based on CPU and memory usage trends.
+- Detect and address errors in API requests or internal communications.
+
+Use the provided Grafana dashboard as a starting point, and customize queries or visualizations to meet your specific monitoring needs.
+
+## Get Started
+
+1. Configure Prometheus to scrape metrics from the Business Engine endpoint (`engine:3001/metrics`) using the sample configuration.
+2. Import the [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) into your Grafana instance.
+3. Explore the metrics and set up alerts for critical thresholds (e.g., high latency or error rates).
+
+<Image
+  title="Alert rules configured in Business Suite to monitor Business Engines performance."
+  src="/img/big/business-engine/prometheus-rules.png"
+  alt="Alert rules"
+/>
+
+With these tools, you'll have a robust monitoring setup to ensure the Business Engine operates at peak performance.
