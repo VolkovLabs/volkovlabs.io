@@ -2,9 +2,9 @@
  * Announcement configuration.
  */
 export const ANNOUNCEMENT_BAR = {
-  id: "business_intelligence_3_4_0_slack",
+  id: "business_intelligence_3_4_0",
   content:
-    '<a href="/blog/node-red-slack">Enhanced Business Intelligence Alerting with Node-RED, Slack, and Image Render Microservice</a> 🚀',
+    '<a href="/blog/business-intelligence-3.4.0/">Business Intelligence 3.4.0: Elevating Grafana Workflows with Visual Insights and Collaboration</a> is out 🚀',
   backgroundColor: "#6133bc",
   textColor: "#FFFFFF",
 };
