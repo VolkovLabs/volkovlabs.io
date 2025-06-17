@@ -1,0 +1,69 @@
+---
+authors: [mikhail, alex]
+slug: business-intelligence-3.4.0/
+tags: [Business Intelligence]
+image: /img/blog/2025-06-17-big-3.4.0/banner.png
+keywords: [Business Intelligence, Alerting, Grafana, Workflow, Automation]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Business Intelligence 3.4.0: Elevate Your Grafana Workflows with Alert-driven Analytics
+
+We’re thrilled to announce the release of **Business Intelligence 3.4.0**, a game-changing update to the [Business Intelligence platform](/big/). This release introduces significant enhancements in collaboration, alerting, and performance for both Business Studio and Business Engine, focusing on user experience and integration.
+
+## What’s New in Business Intelligence 3.4.0
+
+- Panel Screenshots for Alerting: View screenshots of panels during alerting events for quick data previews.
+- Google Login Integration: Connect to Google Firebase for seamless access to organization engines, enabling collaboration and teamwork.
+- Enhanced Engine Management: Updated sorting for engine lists and added support for shared organization engines.
+- Alerting Event Details: New dedicated page to view detailed notification information for alerting events.
+- Renderer Microservice: New service to generate panel previews, paving the way for future reporting capabilities.
+- Prometheus Metrics Update: Exposed metrics for microservices via Server API on port 3001.
+
+Ready to transform your Grafana workflows? Explore Business Intelligence 3.4.0 today!
+
+## Download Business Studio 3.4.0
+
+:::info Signed and Secure
+MacOS and Windows installers are signed, notarized, and built using automated GitHub workflows for maximum security and reliability.
+:::
+
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/Business.Studio-3.4.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/Business.Studio-3.4.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/Business.Studio-darwin-arm64-3.4.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/Business.Studio-darwin-x64-3.4.0.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/business-studio-3.4.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/business-studio-3.4.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/business-studio_3.4.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.31.1/business-studio_3.4.0_amd64.deb)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/Business.Studio-3.4.0.Setup.exe)
+
+<GettingStarted />
+
+## Release Notes
+
+### Business Studio 3.4.0
+
+- **Google Login Integration:** Connect to Google Firebase for seamless access to organization engines, enabling collaboration and teamwork.
+- **Panel Screenshots for Alerting:** View screenshots of panels during alerting events for quick data previews.
+- **Enhanced Engine Management:** Updated sorting for engine lists and added support for shared organization engines.
+- **Improved UI Experience:** Added animations and refined the refresh mechanism for a smoother interface.
+- **Alerting Event Details:** New dedicated page to view detailed notification information for alerting events.
+
+### Business Engine 3.4.0
+
+- **Google Firebase Authentication:** Authenticate users and store shared engine configurations securely.
+- **Renderer Microservice:** New service to generate panel previews, paving the way for future reporting capabilities.
+- **Prometheus Metrics Update:** Exposed metrics for microservices via Server API on port 3001.
+- **Testing Improvements:** Enhanced E2E and unit tests for alert rules and actions to ensure reliability.
+
+<Feedback />
