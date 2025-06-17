@@ -6,6 +6,7 @@ image: /img/blog/2025-06-17-big-3.4.0/banner.png
 keywords: [Business Intelligence, Alerting, Grafana, Workflow, Automation]
 ---
 
+import BlogPost from "@theme/BlogPost";
 import Code from "@theme/Code";
 import Feedback from "@site/big/_feedback.mdx";
 import GettingStarted from "@site/big/_getting_started.mdx";
@@ -13,7 +14,7 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 3.4.0: ???
+# Business Intelligence 3.4.0: Elevating Grafana Workflows with Visual Insights and Collaboration
 
 We’re excited to unveil **Business Intelligence 3.4.0**, a transformative update to the [Business Intelligence platform](/big/). This release brings powerful new features and enhancements to both **Business Studio** and **Business Engine**, designed to streamline collaboration, supercharge alerting, and boost performance. Whether you're a data analyst, DevOps engineer, or business leader, this update will take your Grafana workflows to the next level.
 
@@ -29,6 +30,105 @@ This release is packed with innovations to enhance user experience and integrati
 - **Enhanced Engine Management**: Enjoy improved sorting for engine lists and support for shared organization engines.
 
 Ready to revolutionize your Grafana workflows? Dive into Business Intelligence 3.4.0 today!
+
+### Instant Visual Insights with Panel Screenshots in Alerting
+
+Stay ahead of critical issues with the new Panel Screenshots feature in alerting. When an alert is triggered, you can now instantly view a visual snapshot of the relevant Grafana panel directly within the notification. This eliminates the need to navigate through dashboards manually, saving valuable time during incident response.
+
+<Image
+  title="Event Notification History with panel screenshots using Dashboard Variables."
+  src="/img/blog/2025-06-17-big-3.4.0/event-notification.png"
+  width="100%"
+/>
+
+Whether you're a DevOps engineer monitoring system health or a business analyst tracking KPIs, this feature enables you to assess and act on data insights at a glance.
+
+<Image
+  title="Slack Notification with Rendered Image for High Latency in Business Engines."
+  src="/img/blog/2025-06-11-node-red-slack/slack-message.png"
+  alt="Slack notification showing a rendered image of high latency in business engines"
+/>
+
+When **Image Render Microservice** paired with **Node-RED** for workflow automation and **Slack** for team communication, this setup delivers a seamless, real-time alerting pipeline tailored for BI workflows.
+
+<BlogPost id="node-red-slack" />
+
+### Next-Gen Reporting with the Renderer Microservice
+
+Introducing the Renderer Microservice—a powerful new component designed to generate high-quality panel previews on demand. This service lays the foundation for advanced reporting capabilities, ensuring that visual data representations are always accurate and accessible.
+
+<Image
+  title="Render Panel preview using new Microservice on demand."
+  src="/img/blog/2025-06-17-big-3.4.0/panel-render.gif"
+  width="100%"
+/>
+
+As we continue to build on this feature, expect seamless integration into automated reports and dashboards in the upcoming release, making it easier than ever to share actionable insights with stakeholders across your organization.
+
+<Image
+  title="Image Render Microservice requires User Name and Password to access Grafana instance."
+  src="/img/blog/2025-06-17-big-3.4.0/grafana-configuration.png"
+  width="100%"
+/>
+
+### Dive Deeper with Dedicated Alerting Event Details
+
+Gain full visibility into alerting events with a dedicated details page for each notification. This feature provides comprehensive information about the alert, including triggering conditions, affected panels, and historical context.
+
+<Image
+  title="Alert Evaluations and view as code allows to check event details."
+  src="/img/blog/2025-06-17-big-3.4.0/event-evaluations.png"
+/>
+
+Designed for data analysts and IT teams, this enhancement ensures you have all the context needed to troubleshoot issues, refine alert rules, and prevent future disruptions—all from a single, intuitive interface.
+
+### Enhanced Monitoring with Prometheus Metrics via Server API
+
+Take control of your microservices monitoring with the updated Prometheus Metrics integration. Now accessible via the Server API on port 3001, these metrics provide deeper insights into the performance and health of Business Intelligence components.
+
+<Image
+  title="Grafana dashboard displaying Business Engine metrics stored in Prometheus."
+  src="/img/big/business-engine/prometheus.png"
+  alt="Grafana dashboard for Business Engine metrics"
+/>
+
+For DevOps teams and system administrators, this means better observability, faster debugging, and the ability to proactively optimize your Grafana ecosystem with real-time data.
+
+You can also configure Business Intelligence platform to monitor its Business Engines using predefined dashboard and configuration, which you can find in the [documentation](/big/engine/prometheus/).
+
+<Image
+  title="Alert rules configured in Business Suite to monitor Business Engines performance."
+  src="/img/big/business-engine/prometheus-rules.png"
+  alt="Alert rules"
+/>
+
+### Seamless Collaboration with Google Login Integration
+
+Collaboration just got easier with Google Login Integration powered by Firebase. This feature allows users to authenticate effortlessly and access shared organization engines, breaking down silos and fostering teamwork across departments.
+
+<Image
+  title="Welcome screen allows to use Google Firebase Authentication to get access to shared engines within organization."
+  src="/img/blog/2025-06-17-big-3.4.0/welcome-screen.png"
+/>
+
+Whether you're onboarding new team members or managing multi-team projects, this secure and user-friendly login option ensures everyone can contribute to and benefit from a unified Business Intelligence platform.
+
+### Streamlined Operations with Enhanced Engine Management
+
+Managing your Business Intelligence engines is now more intuitive than ever. With improved sorting capabilities for engine lists and full support for shared organization engines, you can organize and access resources with minimal effort.
+
+<Image
+  title="Business Engines confuguration shared within Organiation using Google Firebase integration."
+  src="/img/blog/2025-06-17-big-3.4.0/shared-engines.png"
+/>
+
+This update is perfect for business leaders and IT managers who need to oversee complex environments, ensuring smooth operations and efficient resource allocation across teams.
+
+## Why Upgrade to 3.4.0?
+
+Business Intelligence 3.4.0 isn’t just an update—it’s a leap forward in making Grafana workflows more intuitive, collaborative, and actionable. From alert-driven analytics to seamless integrations, this release enables teams to make data-driven decisions faster and more effectively.
+
+Download Business Intelligence 3.4.0 today and experience the future of Grafana workflows.
 
 ## Download Business Studio 3.4.0
 
@@ -69,11 +169,5 @@ Choose the right installer for your system:
 - **Renderer Microservice**: Generate panel previews with a new service, paving the way for future reporting tools.
 - **Prometheus Metrics Update**: Access microservice metrics via Server API on port 3001 for better monitoring.
 - **Testing Improvements**: Enhanced E2E and unit tests for alert rules and actions ensure rock-solid reliability.
-
-## Why Upgrade to 3.4.0?
-
-Business Intelligence 3.4.0 isn’t just an update—it’s a leap forward in making Grafana workflows more intuitive, collaborative, and actionable. From alert-driven analytics to seamless integrations, this release enables teams to make data-driven decisions faster and more effectively.
-
-Download Business Intelligence 3.4.0 today and experience the future of Grafana workflows.
 
 <Feedback />
