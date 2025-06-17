@@ -12,7 +12,7 @@ const sidebars: SidebarsConfig = {
       label: "Business Intelligence",
       collapsible: false, // Always expanded
       link: { type: "doc", id: "index" }, // Links to main BI doc
-      items: ["quick-start/index", "personas", "high-availability/index"],
+      items: ["high-availability/index", "quick-start/index", "personas"],
     },
 
     // Business Studio section

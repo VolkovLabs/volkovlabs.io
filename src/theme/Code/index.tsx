@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import CodeBlock from "@theme/CodeBlock";
 import { codeReducer, fetchCode, initialFetchResultState } from "./utils";
+import styles from "./styles.module.css";
 
 /**
  * Properties
@@ -45,7 +46,11 @@ const Code = ({ url, language, title }: Props) => {
   }
 
   return (
-    <CodeBlock language={language} title={title ? title : content.title}>
+    <CodeBlock
+      className={styles.code}
+      language={language}
+      title={title ? title : content.title}
+    >
       {fetchResultState.code}
     </CodeBlock>
   );

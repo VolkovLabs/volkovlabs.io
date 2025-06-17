@@ -1,0 +1,15 @@
+.code {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+[data-theme="light"] .code {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-600);
+}
+
+[data-theme="dark"] .code {
+  box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
+}
