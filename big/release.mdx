@@ -19,6 +19,26 @@ Welcome to the release notes for the Business Intelligence platform for Grafana,
   ]}
 >
   <TabItem value="v3">
+## 3.5.0 (2025-06-20)
+
+:::info Summary
+This release brings powerful new features, significant performance optimizations, and critical bug fixes to both Business Studio and Business Engine, aimed at improving user experience, system reliability, and operational efficiency.
+:::
+
+## Business Studio 3.5.0
+
+- **No Data Tag for Alert Evaluation:** Added a dedicated "No Data" tag to alert evaluations, providing clearer visibility into data availability issues during alerting events.
+- **Modernized Menu Icons and UI Updates:** Introduced refreshed menu icons and subtle UI enhancements to streamline navigation and improve accessibility across the platform.
+- **Studio Runtime Error Handler:** Implemented a robust error handling mechanism to gracefully manage unexpected runtime issues, ensuring a smoother user experience with minimal disruptions.
+
+## Business Engine 3.5.0
+
+- **Renderer Microservice Enhancements:** Introduced a reusable rendering process, added support for opening new pages during rendering, and achieved a _2x performance boost_ for faster and more efficient operations.
+- **Alert Event Stability:** Fixed critical race conditions in alert event processing to ensure consistent and reliable event handling under high load.
+- **Interval Calculation Alignment:** Updated interval calculation logic to adhere to Grafana consistency standards, ensuring accurate and predictable scheduling.
+- **End-to-End Testing for Prometheus:** Added comprehensive E2E tests to validate user selection of variable values in Prometheus, enhancing data accuracy and user confidence.
+- **Testing Improvements:** Expanded E2E and unit test coverage for alert rules and actions, ensuring greater reliability and robustness across various use cases.
+
 ## 3.4.0 (2025-06-09)
 
 :::info Summary
