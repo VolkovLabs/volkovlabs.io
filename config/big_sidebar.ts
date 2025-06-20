@@ -44,7 +44,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Business Engine",
-      collapsible: true,
+      collapsible: false,
       link: { type: "doc", id: "engine/index" }, // Links to main Engine doc
       items: ["engine/configuration", "engine/database", "engine/prometheus"],
     },
@@ -53,7 +53,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Business Alerting",
-      collapsible: true,
+      collapsible: false,
       link: { type: "doc", id: "alerting/index" }, // Links to main Alerting doc
       items: [
         "alerting/manage-alert-rules",
