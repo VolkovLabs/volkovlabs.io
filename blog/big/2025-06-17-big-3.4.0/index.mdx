@@ -14,9 +14,11 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 3.4.0: Elevating Grafana Workflows with Visual Insights and Collaboration
+# Business Intelligence 3.4.0: Panel Screenshots, Alerting Details, and Google Login to boost collaboration
 
-We’re thrilled to announce **Business Intelligence 3.4.0**, a game-changing update to the [Business Intelligence platform](/big/). This release introduces powerful features and enhancements to both **Business Studio** and **Business Engine**, designed to streamline collaboration, enhance alerting capabilities, and optimize performance. Whether you're a data analyst, DevOps engineer, or business leader, this update enables you to elevate your Grafana workflows like never before.
+We’re thrilled to announce **Business Intelligence 3.4.0**, a game-changing update to the [Business Intelligence platform](/big/). This release introduces powerful features and enhancements to both **Business Studio** and **Business Engine**, designed to streamline collaboration, enhance alerting capabilities, and optimize performance.
+
+Whether you're a data analyst, DevOps engineer, or business leader, this update enables you to elevate your Grafana workflows like never before.
 
 ## What’s New in Business Intelligence 3.4.0?
 
@@ -38,7 +40,6 @@ Respond to critical issues faster with the new Panel Screenshots feature. When a
 <Image
   title="Event Notification History with panel screenshots using Dashboard Variables."
   src="/img/blog/2025-06-17-big-3.4.0/event-notification.png"
-  width="100%"
 />
 
 Whether you're a DevOps engineer monitoring system health or a business analyst tracking KPIs, this feature lets you assess and act on data insights instantly.
@@ -60,7 +61,6 @@ Meet the Renderer Microservice—a powerful new tool designed to generate high-q
 <Image
   title="Render Panel preview using the new Microservice on demand."
   src="/img/blog/2025-06-17-big-3.4.0/panel-render.gif"
-  width="100%"
 />
 
 As we expand this feature in future updates, expect seamless integration into automated reports and dashboards, making it effortless to share actionable insights with stakeholders across your organization.
@@ -68,7 +68,6 @@ As we expand this feature in future updates, expect seamless integration into au
 <Image
   title="Image Render Microservice requires User Name and Password to access Grafana instance."
   src="/img/blog/2025-06-17-big-3.4.0/grafana-configuration.png"
-  width="100%"
 />
 
 ## Dive Deeper with Dedicated Alerting Event Details
@@ -152,22 +151,5 @@ Choose the installer for your system:
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.4.0/Business.Studio-3.4.0.Setup.exe)
 
 <GettingStarted />
-
-## Release Notes
-
-### Business Studio 3.4.0
-
-- **Google Login Integration**: Authenticate effortlessly with Google Firebase to access organization engines and enhance teamwork.
-- **Panel Screenshots for Alerting**: View visual previews of panels during alerting events for faster insights.
-- **Enhanced Engine Management**: Enjoy improved sorting and support for shared organization engines.
-- **Improved UI Experience**: Experience smoother interactions with added animations and a refined refresh mechanism.
-- **Alerting Event Details**: Access detailed notification information on a dedicated page for each alerting event.
-
-### Business Engine 3.4.0
-
-- **Google Firebase Authentication**: Securely authenticate users and manage shared engine configurations.
-- **Renderer Microservice**: Generate panel previews with a new service, setting the stage for future reporting tools.
-- **Prometheus Metrics Update**: Monitor microservices with metrics accessible via Server API on port 3001.
-- **Testing Improvements**: Enhanced E2E and unit tests for alert rules and actions ensure robust reliability.
 
 <Feedback />
