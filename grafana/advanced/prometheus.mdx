@@ -1,7 +1,19 @@
+---
+tags:
+  - Advanced
+hide_table_of_contents: true
+---
+
 import Image from "@theme/Image";
 import BlogPost from "@theme/BlogPost";
 
-# Prometheus metrics for Grafana 12
+# Prometheus metrics in Grafana 12
+
+In this section, we dive into the extensive set of Prometheus metrics exposed by Grafana 12.0.2. These metrics are crucial for monitoring and understanding the performance, health, and behavior of your Grafana instance.
+
+By leveraging these metrics, you can gain insights into various aspects such as alerting, API usage, database performance, and more. Whether you're a system administrator or a data enthusiast, understanding these metrics will empower you to optimize and troubleshoot your Grafana environment effectively.
+
+Below is a comprehensive list of Prometheus metrics available in Grafana 12, complete with their types and descriptions.
 
 | **Metric Name**                                                                  | **Type**  | **Description**                                                                                                      |
 | -------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -272,3 +284,7 @@ import BlogPost from "@theme/BlogPost";
 | `prometheus_template_text_expansions_total`                                      | Counter   | The total number of template text expansions.                                                                        |
 | `promhttp_metric_handler_requests_in_flight`                                     | Gauge     | Current number of scrapes being served.                                                                              |
 | `promhttp_metric_handler_requests_total`                                         | Counter   | Total number of scrapes by HTTP status code.                                                                         |
+
+By integrating these metrics into your monitoring setup with Prometheus, you can create powerful dashboards and alerts to maintain the health and efficiency of your Grafana instance.
+
+We encourage you to experiment with these metrics, set up custom queries, and tailor your monitoring strategy to meet your specific needs.
