@@ -3,7 +3,16 @@ authors: [mikhail, mulasevich]
 slug: business-intelligence-3.5.0/
 tags: [Business Intelligence]
 image: /img/blog/2025-06-20-big-3.5.0/banner.png
-keywords: [Business Intelligence, Alerting, Grafana, Workflow, Automation]
+keywords:
+  [
+    Business Intelligence,
+    Alerting,
+    Grafana,
+    Workflow,
+    Automation,
+    Renderer Performance,
+    UI Improvements,
+  ]
 ---
 
 import BlogPost from "@theme/BlogPost";
@@ -14,84 +23,86 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 3.5.0: Elevating Grafana Workflows with Power and Precision
+# Business Intelligence 3.5.0: 2x Faster Rendering, Enhanced Alerting, and UI Upgrades
 
 We’re excited to unveil **Business Intelligence 3.5.0**, a transformative update to the [Business Intelligence platform](/big/). This release delivers features, substantial performance improvements, and essential bug fixes across both **Business Studio** and **Business Engine**.
 
-Designed to enhance user experience, system reliability, and operational efficiency, this update enables you to take your Grafana workflows to the next level.
+From a **2x faster rendering engine** to smarter alerting capabilities and a sleek, user-friendly interface, Business Intelligence 3.5.0 is designed to boost efficiency, reliability, and user experience. Ready to elevate your monitoring and automation game? Let’s dive into the highlights!
 
 ## What’s New in Business Intelligence 3.5.0
 
+Here’s a snapshot of the powerful updates in this release:
+
 - **Renderer Microservice Overhaul:** A reusable rendering process, support for opening new pages during rendering, and a **2x performance boost** for faster operations.
-- **Enhanced Alerting with No Data Tag:** A dedicated "No Data" tag for alert evaluations, offering better visibility into data availability issues.
-- **Alert Event Stability Fix:** Resolved critical race conditions in alert event processing, ensuring reliable handling during high-load scenarios.
-- **Refreshed UI and Menu Icons:** Modernized icons and subtle UI improvements for intuitive navigation and improved accessibility.
-- **Robust Error Handling in Studio:** A new runtime error handler to manage unexpected issues seamlessly, minimizing disruptions.
-- **Expanded Testing Coverage:** Comprehensive E2E and unit tests for alert rules and actions, ensuring rock-solid reliability.
+- **Enhanced Alerting with No Data Tag:** A new "No Data" tag for alert evaluations, providing crystal-clear visibility into data availability issues.
+- **Alert Event Stability Fix:** Fixed critical race conditions in alert event processing for dependable performance under high-load conditions.
+- **Refreshed UI and Menu Icons:** Updated icons and subtle UI enhancements for seamless navigation and improved accessibility.
+- **Robust Error Handling in Studio:** A new runtime error handler to catch and resolve issues effortlessly, reducing workflow interruptions.
+- **Expanded Testing Coverage:** Extensive E2E and unit tests for alert rules and actions, ensuring unmatched reliability.
 
-Ready to revolutionize your monitoring and automation workflows? Let’s explore the highlights of Business Intelligence 3.5.0!
+Let’s explore how these updates can transform your Grafana experience!
 
-## Renderer Microservice Overhaul
+## Renderer Microservice Overhaul: 2x Faster Performance
 
 One of the standout improvements in Business Intelligence 3.5.0 is the complete overhaul of the Renderer Microservice. This update introduces a reusable rendering process that significantly reduces overhead by optimizing resource usage.
 
 <Image
-  title="Rendered Panel Screenshot for the Alerting Event can be viewed in the Notification History."
+  title="Rendered Panel Screenshot for Alerting Events, viewable in Notification History."
   src="/img/blog/2025-06-20-big-3.5.0/image-render.png"
 />
 
 Most notably, these enhancements deliver a **2x performance boost**, meaning your rendering tasks complete faster, enabling quicker insights and more efficient operations. Whether you're generating complex dashboards or processing large datasets, this upgrade ensures a smoother and more responsive experience.
 
-## Enhanced Alerting with No Data Tag
+## Enhanced Alerting with No Data Tag for Better Insights
 
-Alerting is a critical component of any monitoring system, and in Business Intelligence 3.5.0, we've enhanced it with the introduction of a dedicated "No Data" tag for alert evaluations. This feature provides better visibility into data availability issues by clearly marking alerts triggered due to missing data.
+Effective alerting is the backbone of monitoring, and Business Intelligence 3.5.0 takes it up a notch with a dedicated "No Data" tag for alert evaluations. This feature flags alerts triggered by missing data, helping you quickly pinpoint and resolve gaps in your data streams.
 
 <Image
   title="Alert in Error state with multiple No Data Alert Evaluations."
   src="/img/blog/2025-06-20-big-3.5.0/no-data.png"
 />
 
-With this improvement, you can quickly identify and address gaps in your data streams, ensuring that your monitoring workflows remain accurate and actionable. This added clarity helps teams focus on real issues rather than spending time troubleshooting false positives caused by absent data.
+With this added transparency, you can focus on actionable issues rather than chasing false positives. It’s a small change with a big impact, ensuring your alerting workflows are precise and reliable.
 
-## Alert Event Stability Fix
+## Alert Event Stability Fix for High-Load Reliability
 
-Reliability under pressure is key to effective alerting, and we've addressed this in Business Intelligence 3.5.0 by resolving critical race conditions in alert event processing. Previously, high-load scenarios could lead to inconsistent handling of alert events, potentially causing missed notifications or delayed responses.
+In high-pressure environments, alert reliability is non-negotiable. We’ve tackled this in Business Intelligence 3.5.0 by resolving critical race conditions in alert event processing. This fix guarantees consistent handling of alerts, even during peak loads, preventing missed notifications or delays.
 
 <Image
-  title="Recent alerting events for Alpha cluster with the current states."
+  title="Recent alerting events for Alpha cluster with current states."
   src="/img/blog/2025-06-20-big-3.5.0/alpha-cluster.png"
 />
 
 This fix ensures stable and reliable processing, even during peak usage, so you can trust that your alerts will be handled accurately and in a timely manner. This improvement is crucial for maintaining operational continuity in demanding environments.
 
-## Refreshed UI and Menu Icons
+## Refreshed UI and Menu Icons for Seamless Navigation
 
-User experience matters, and in this release, we've modernized the user interface with refreshed menu icons and subtle design improvements. These updates enhance intuitive navigation, making it easier to access key features and workflows. We've also focused on improving accessibility, ensuring that the platform is more user-friendly for individuals with diverse needs.
+A great user experience starts with intuitive design. In this release, we’ve modernized the interface with updated menu icons and subtle UI enhancements. These changes streamline navigation, making it easier to access critical features and workflows.
 
 <Image
-  title="Business Suite UI experience constantly improving."
+  title="Business Suite UI experience, continuously evolving for better usability."
   src="/img/blog/2025-06-20-big-3.5.0/alert-settings.png"
 />
 
-These changes may seem small, but they contribute to a more polished and efficient interaction with Business Intelligence, saving time and reducing friction in daily tasks.
+We’ve also prioritized accessibility, ensuring the platform is inclusive and user-friendly for all. These refinements save time and reduce friction, letting you focus on what matters—driving insights from your data.
 
-## Robust Error Handling in Studio
+## Robust Error Handling in Studio for Uninterrupted Workflows
 
-Unexpected issues can disrupt workflows, but Business Intelligence 3.5.0 introduces a new runtime error handler in Business Studio to tackle this challenge. This feature is designed to manage errors seamlessly, providing clear feedback and minimizing disruptions when something goes wrong.
+Unexpected errors shouldn’t derail your day. Business Intelligence 3.5.0 introduces a powerful runtime error handler in Business Studio, designed to manage issues smoothly. With clear feedback and actionable steps, it minimizes disruptions and keeps your workflows on track.
 
 <Image
-  title="New Error Handling page in Studio allows to Restart Applications and Open Support ticket."
+  title="New Error Handling page in Studio allows Restarting Applications and Opening Support Tickets."
   src="/img/blog/2025-06-20-big-3.5.0/error.png"
 />
 
-Whether it's a configuration issue or an unexpected system glitch, the improved error handling ensures that you can quickly identify and resolve problems without derailing your operations using our dedicated support team. This addition makes the platform more resilient and user-friendly, especially for complex setups.
+Whether it’s a misconfiguration or a system glitch, you can resolve issues quickly with the help of our dedicated support team. This feature makes the platform more robust, especially for complex environments.
 
-## Expanded Testing Coverage
+## Expanded Testing Coverage for Rock-Solid Reliability
 
-Quality and reliability are at the core of Business Intelligence 3.5.0, and we've significantly expanded our testing coverage to achieve this. This release includes comprehensive end-to-end (E2E) and unit tests specifically targeting alert rules and actions.
+Quality is at the heart of Business Intelligence 3.5.0. We’ve expanded our testing framework with comprehensive end-to-end (E2E) and unit tests, focusing on alert rules and actions. This rigorous approach ensures consistent performance and fewer bugs across diverse use cases.
 
 <Image
-  title="We keep test coverage steadily at 70% in the last 3 month constantly adding new features and improving our code base."
+  title="Test coverage remains steady at 70% over the last 3 months, even as we add new features and refine our codebase."
   src="/img/blog/2025-06-20-big-3.5.0/coverage.png"
 />
 
@@ -99,17 +110,24 @@ By rigorously testing these critical components, we ensure rock-solid reliabilit
 
 ## Why Upgrade to Business Intelligence 3.5.0?
 
-This release isn’t just about new features—it’s about empowering you to work smarter. Whether you’re managing critical alerts, rendering complex dashboards, or optimizing Grafana workflows, Business Intelligence 3.5.0 provides the tools and performance you need to succeed.
+This release is more than just new features—it’s about empowering you to achieve more. Whether you’re optimizing Grafana workflows, managing critical alerts, or rendering complex dashboards, Business Intelligence 3.5.0 delivers the speed, clarity, and tools you need to excel.
 
-The combination of a **2x rendering speed increase**, enhanced alerting clarity, and a polished user interface makes this update a must-have for any user.
+Key reasons to upgrade:
+
+- **2x faster rendering** for quicker insights.
+- **Smarter alerting** with enhanced visibility into data issues.
+- **Polished UI** for a seamless user experience.
+- **Unmatched reliability** with improved stability and testing.
+
+Don’t miss out—upgrade today and transform the way you work!
 
 ## Download Business Studio 3.5.0
 
 :::info Signed and Secure
-Our installers for MacOS and Windows are digitally signed, notarized, and built using automated GitHub workflows to guarantee the highest levels of security and trust.
+Our installers for MacOS and Windows are digitally signed, notarized, and built using automated GitHub workflows to ensure the highest levels of security and trust.
 :::
 
-Select the installer for your operating system:
+Choose the installer for your operating system:
 
 - **MacOS**:
   - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.5.0/Business.Studio-3.5.0-arm64.dmg)
