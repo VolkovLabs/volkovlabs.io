@@ -37,6 +37,7 @@ const sidebars: SidebarsConfig = {
         "storage",
         "provisioning",
         "advanced/high-availability",
+        "advanced/prometheus",
         "allow-unsigned",
         "advanced/canvas",
         "advanced/analytics",
