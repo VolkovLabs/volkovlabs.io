@@ -7,13 +7,26 @@ hide_table_of_contents: true
 import Image from "@theme/Image";
 import BlogPost from "@theme/BlogPost";
 
-# Prometheus metrics in Grafana 12
+# Monitoring Grafana 12 with Prometheus Metrics
 
-In this section, we dive into the extensive set of Prometheus metrics exposed by Grafana 12.0.2. These metrics are crucial for monitoring and understanding the performance, health, and behavior of your Grafana instance.
+In this guide, we explore the extensive set of Prometheus metrics exposed by Grafana 12.0.2. These metrics provide deep insights into the performance, health, and behavior of your Grafana instance, enabling effective monitoring and troubleshooting.
 
-By leveraging these metrics, you can gain insights into various aspects such as alerting, API usage, database performance, and more. Whether you're a system administrator or a data enthusiast, understanding these metrics will empower you to optimize and troubleshoot your Grafana environment effectively.
+By leveraging these metrics, you can track critical aspects of your Grafana environment, including alerting, API usage, database performance, and user interactions. Whether you're a system administrator, DevOps engineer, or data enthusiast, understanding and utilizing these metrics will help you optimize your Grafana setup and ensure its reliability.
 
-Below is a comprehensive list of Prometheus metrics available in Grafana 12, complete with their types and descriptions.
+This article provides a comprehensive list of Prometheus metrics available in Grafana 12, along with their types and detailed descriptions. We also offer guidance on integrating these metrics into your monitoring strategy to build powerful dashboards and alerts.
+
+## Why Monitor Grafana with Prometheus?
+
+Monitoring Grafana using Prometheus metrics allows you to:
+
+- **Detect Issues Early**: Identify performance bottlenecks or system failures before they impact users.
+- **Optimize Resources**: Understand resource usage patterns to allocate CPU, memory, and database capacity effectively.
+- **Improve User Experience**: Monitor API response times and user interactions to ensure a seamless experience.
+- **Enhance Alerting**: Track alerting system health to ensure timely notifications for critical events.
+
+## Prometheus Metrics in Grafana 12
+
+Below is a detailed list of Prometheus metrics exposed by Grafana 12.0.2.
 
 | **Metric Name**                                                                  | **Type**  | **Description**                                                                                                      |
 | -------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -270,7 +283,7 @@ Below is a comprehensive list of Prometheus metrics available in Grafana 12, com
 | `openfga_shared_iterator_count`                                                  | Gauge     | The current number of items of shared iterator.                                                                      |
 | `openfga_shared_iterator_watchdog_timer_triggered`                               | Counter   | Total number of times watchdog timer is triggered.                                                                   |
 | `plugins_active_instances`                                                       | Gauge     | The number of active plugin instances.                                                                               |
-| `plugins_datasource_instances_total`                                             | Counter   | The total number of data source instances created.                                                                   |
+| `plugins_datasource_instances_total`                                             | Counter   | The to tal number of data source instances created.                                                                  |
 | `process_cpu_seconds_total`                                                      | Counter   | Total user and system CPU time spent in seconds.                                                                     |
 | `process_max_fds`                                                                | Gauge     | Maximum number of open file descriptors.                                                                             |
 | `process_network_receive_bytes_total`                                            | Counter   | Number of bytes received by the process over the network.                                                            |
@@ -285,6 +298,37 @@ Below is a comprehensive list of Prometheus metrics available in Grafana 12, com
 | `promhttp_metric_handler_requests_in_flight`                                     | Gauge     | Current number of scrapes being served.                                                                              |
 | `promhttp_metric_handler_requests_total`                                         | Counter   | Total number of scrapes by HTTP status code.                                                                         |
 
-By integrating these metrics into your monitoring setup with Prometheus, you can create powerful dashboards and alerts to maintain the health and efficiency of your Grafana instance.
+## Setting Up Monitoring with Prometheus
 
-We encourage you to experiment with these metrics, set up custom queries, and tailor your monitoring strategy to meet your specific needs.
+To effectively monitor Grafana using these metrics, follow these steps:
+
+1. **Enable Metrics in Grafana**: Ensure that the Prometheus metrics endpoint is enabled in your Grafana configuration. By default, metrics are available at `/metrics` on the Grafana server.
+
+   - Edit the `grafana.ini` file and set `metrics.enabled = true` under the `[metrics]` section.
+   - Restart Grafana to apply the changes.
+
+2. **Configure Prometheus**: Add a scrape target in your Prometheus configuration to collect metrics from Grafana.
+
+   ```yaml
+   scrape_configs:
+     - job_name: "grafana"
+       static_configs:
+         - targets: ["<grafana-host>:<grafana-port>"]
+   ```
+
+3. **Create Dashboards**: Use Grafana's built-in Prometheus data source to create dashboards visualizing key metrics such as `grafana_http_request_duration_seconds`, `grafana_alerting_active_alerts`, and `grafana_process_resident_memory_bytes`.
+
+4. **Set Up Alerts**: Define alerting rules in Prometheus to notify you of critical conditions, such as high API latency or a spike in invalid alerts.
+
+## Practical Use Cases
+
+- **Performance Monitoring**: Use metrics like `grafana_http_request_duration_seconds` and `grafana_database_conn_wait_count_total` to identify slow API responses or database bottlenecks.
+- **Alerting Health**: Track `grafana_alerting_notification_latency_seconds` to ensure timely alert notifications.
+- **Resource Utilization**: Monitor `grafana_process_cpu_seconds_total` and `grafana_process_resident_memory_bytes` to optimize server resources.
+- **User Activity**: Analyze `grafana_stat_active_users` and `grafana_authentication_attempts` to understand user engagement and detect potential security issues.
+
+## Conclusion
+
+Integrating Grafana's Prometheus metrics into your monitoring setup enables you to maintain the health, performance, and reliability of your Grafana instance. By creating custom dashboards and alerts tailored to your environment, you can proactively address issues and optimize your system.
+
+We encourage you to explore these metrics, experiment with custom PromQL queries, and adapt your monitoring strategy to meet your organization's specific needs.
