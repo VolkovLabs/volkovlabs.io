@@ -13,7 +13,7 @@ import Youtube from "@theme/Youtube";
 
 # Enhanced Business Intelligence Alerting with Node-RED, Slack, and Image Render Microservice
 
-At Volkov Labs, we’re passionate about pushing the boundaries of Business Intelligence (BI) through innovative tools and integrations. With the release of our **Business Intelligence Platform 3.4.0**, we’ve introduced the **Image Render Microservice**, a powerful feature that leverages **Grafana dashboard variables** to create dynamic visual content for alerts. When paired with **Node-RED** for workflow automation and **Slack** for team communication, this setup delivers a seamless, real-time alerting pipeline tailored for BI workflows.
+At Volkov Labs, we’re passionate about pushing the boundaries of Business Intelligence (BI) through innovative tools and integrations. With the release of our **[Business Intelligence Platform 3.4.0](/blog/business-intelligence-3.4.0/)**, we’ve introduced the **Image Render Microservice**, a powerful feature that leverages **Grafana dashboard variables** to create dynamic visual content for alerts. When paired with **Node-RED** for workflow automation and **Slack** for team communication, this setup delivers a seamless, real-time alerting pipeline tailored for BI workflows.
 
 In this blog post, we’ll dive into how the Image Render Microservice transforms BI alerting by generating contextual visual content, such as Grafana panel screenshots. We’ll also walk through a Node-RED workflow that integrates with Slack to deliver customized notifications, ensuring your team stays informed about critical business metrics and events.
 
@@ -192,6 +192,13 @@ Ready to implement this powerful BI alerting workflow? Follow these steps to get
   src="/img/blog/2025-06-11-node-red-slack/grafana-environment.png"
   alt="Grafana user login and password configuration for Image Render Microservice"
 />
+
+## Alert Rules
+
+To quickly set up predefined alert rules in **Business Studio** for monitoring the Business Engine, you can import a ready-to-use configuration file:
+
+- Download the [alert rules JSON file](https://github.com/VolkovLabs/business-intelligence/blob/main/alerts/engine.json) from Business Intelligence repository.
+- Use **Business Studio** connected to **Business Engines** to transfer and apply these alert rules.
 
 ## Conclusion
 
