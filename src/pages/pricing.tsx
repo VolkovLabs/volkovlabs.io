@@ -4,6 +4,7 @@ import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Youtube from "@theme/Youtube";
+import styles from "../css/index.module.css";
 
 /**
  * Header Component
@@ -49,6 +50,19 @@ const Header = () => (
           </p>
         </div>
       </div>
+      <div className="margin-vert--lg">
+        <a
+          className={clsx(
+            "button button--primary button--lg",
+            styles.getStarted
+          )}
+          href="https://pay.volkovlabs.io/p/login/6oEaGicwRgZ8gko144"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Partner Portal →
+        </a>
+      </div>
     </div>
   </header>
 );
@@ -64,6 +78,32 @@ const Main = () => (
         <Youtube id="XDhyEXqa6KA" />
       </div>
     </section>
+
+    <section className="hero hero--primary">
+      <div className="container margin-vert--md">
+        <div className="row align-items-center">
+          <div className="col">
+            <h2 className={clsx("hero__title")}>Core Business Tools</h2>
+            <p className="hero__subtitle margin-vert--md">
+              Streamline data visualization, capture user inputs, display
+              dynamic text, and manage variables effortlessly, enabling your
+              business workflows with seamless customization and efficiency.
+            </p>
+            <div className="margin-vert--lg">
+              <script
+                async
+                src="https://js.stripe.com/v3/pricing-table.js"
+              ></script>
+              <stripe-pricing-table
+                pricing-table-id="prctbl_1RczjtEiej5nUsojPKciPqXH"
+                publishable-key="pk_live_51Q1pMcEiej5nUsojvz6cu1k1QH1R5mAHwWz1OotLIAh9qaQiXa70MjggtWr2bsmPqmUIZ6x5b7W9I6VD8QCE4ZxK00GBzofXYZ"
+              ></stripe-pricing-table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="Contact" className="container margin-vert--xl text--center">
       <h2 className="hero__title margin-vert--md">Get in Touch</h2>
       <p className="hero__subtitle margin-vert--md">
