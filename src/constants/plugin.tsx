@@ -78,30 +78,6 @@ export const PluginList: PluginItem[] = [
     isActive: true,
   },
   {
-    title: "Business News",
-    name: "business-news",
-    description: (
-      <>
-        Pulls RSS and Atom feeds, enhancing visualization with Business Text and
-        other panels.
-      </>
-    ),
-    href: "/plugins/business-news/",
-    isActive: true,
-  },
-  {
-    title: "Business Satellite",
-    name: "business-satellite",
-    description: (
-      <>
-        Fetches data from local or remote Grafana instances via HTTP API for
-        centralized access.
-      </>
-    ),
-    href: "/plugins/business-satellite/",
-    isActive: true,
-  },
-  {
     title: "Business Table",
     name: "business-table",
     description: (
@@ -132,18 +108,6 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/business-variable/",
-    isActive: true,
-  },
-  {
-    title: "Enterprise Support",
-    name: "support",
-    description: (
-      <>
-        Reach us via Zendesk, enjoy priority feature requests and bug fixes, and
-        schedule in-person consultations.
-      </>
-    ),
-    href: "/pricing/",
     isActive: true,
   },
 ];
