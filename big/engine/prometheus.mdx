@@ -83,15 +83,19 @@ These metrics provide deep visibility into the performance and behavior of the B
 
 To start collecting metrics from Business Engine microservices, configure Prometheus using the sample configuration file below. This setup ensures that metrics are scraped from the designated endpoint.
 
-<Code
-  url="https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/prometheus.yml"
-  language="yaml"
-  title="Prometheus Configuration for Business Engine"
-/>
+```yaml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "business-engine"
+    static_configs:
+      - targets: ["business-engine:3001"]
+```
 
 ## Grafana Dashboard for Business Engine
 
-The [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) is a pre-built Grafana dashboard designed to visualize the collected Prometheus metrics. It includes filters for **instance**, **app**, and **alert rule** variables, allowing you to drill down into specific components or issues.
+The [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/grafana/business-engine-metrics.json) is a pre-built Grafana dashboard designed to visualize the collected Prometheus metrics. It includes filters for **instance**, **app**, and **alert rule** variables, allowing you to drill down into specific components or issues.
 
 You can download the dashboard JSON file and configuration directly from the [Business Intelligence repository](https://github.com/volkovlabs/business-intelligence).
 
@@ -151,7 +155,7 @@ Use the provided Grafana dashboard as a starting point, and customize queries or
 ## Get Started
 
 1. Configure Prometheus to scrape metrics from the Business Engine endpoint (`engine:3001/metrics`) using the sample configuration.
-2. Import the [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/prometheus/engine.json) into your Grafana instance.
+2. Import the [Business Engine Dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/grafana/business-engine-metrics.json) into your Grafana instance.
 3. Explore the metrics and set up alerts for critical thresholds (e.g., high latency or error rates).
 
 <Image
@@ -164,7 +168,7 @@ Use the provided Grafana dashboard as a starting point, and customize queries or
 
 To quickly set up predefined alert rules in **Business Studio** for monitoring the Business Engine, you can import a ready-to-use configuration file:
 
-- Download the [alert rules JSON file](https://github.com/VolkovLabs/business-intelligence/blob/main/alerts/engine.json) from Business Intelligence repository.
+- Download the [alert rules JSON file](https://github.com/VolkovLabs/business-intelligence/blob/main/alerts/business-engine.json) from Business Intelligence repository.
 - Use **Business Studio** connected to **Business Engines** to transfer and apply these alert rules.
 
 ### Benefits of This Setup
