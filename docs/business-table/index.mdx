@@ -1,6 +1,7 @@
 ---
 tags:
   - Business Table
+hide_table_of_contents: true
 ---
 
 import Feedback from "./_feedback.mdx";
@@ -10,34 +11,27 @@ import Tutorial from "./_tutorial.mdx";
 
 # Business Table
 
-The Business Table panel allows you to simplify data visualization in table format.
-
-In addition to the all-around columns/rows visualization functionality, the Business Table effortlessly combines with all other plugins from the Business Suite. For instance, below is an example where the Business Variable and Business Table work together to facilitate user-intuitive filtering via dashboard variables.
-
-<Image
-  title="The Query filtering feature of the Business Table panel combined with the Business Variable panel."
-  src="/img/blog/2024-09-05-business-table-1.2.0/filtering-query-w-var.gif"
-/>
+The **Business Table Panel** is a powerful and flexible Grafana plugin designed to elevate data visualization in table format. Tailored for business analytics and reporting dashboards, it offers advanced features like tree views, custom cell rendering, data editing, and export capabilities.
 
 ## Requirements
 
 The Business Table panel version requirements for Grafana are as follows:
 
-- Business Table panel 1.X requires **Grafana 10.3** or **Grafana 11**.
+- **Business Table Panel 3.x** requires **Grafana 11** or **Grafana 12**.
+- **Business Table Panel 1.x, 2.x** requires **Grafana 10.3** or **Grafana 11**.
 
 <GettingStarted />
 
 ## Highlights
 
-- Nested object (ability to store multiple rows of data in one cell).
-- Extensive work with the data direcly on the panel (add/edit/delete rows, add/edit/delete nested objects).
-- Tree View with expandable and collapsible elements.
-- Plentiful data types to display and add/edit data.
-- Supporting tabs for multiple data frame views.
-- Filtering data using dashboard variables.
-- Using a data source as a variable in all 7 data flows.
-- Server-side pagination.
-- Grafana's Thresholds are incorporated.
+- **Tree View**: Display hierarchical data with expandable and collapsible rows.
+- **Tabbed Views**: Switch between multiple data frames within a single panel.
+- **Dynamic Filtering**: Filter table data using dashboard variables.
+- **Pagination**: Support for client-side and server-side pagination for large datasets.
+- **Thresholds**: Apply Grafana’s threshold styling for visual data insights.
+- **Custom Cell Types**: Render cells as JSON, Gauge, Image, HTML/Markdown, and more.
+- **Data Editing**: Enable permission-based editing with query integration.
+- **Export Options**: Download table data as CSV or Excel files.
 
 <Image
   title="Tabs and grouped columns in the Business Table panel."
