@@ -23,37 +23,97 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 3.6.0: ?
+# Business Intelligence 3.6.0: Reporting, Smarter Alerts, Faster Insights
 
-We’re excited to unveil **Business Intelligence 3.6.0**, a transformative update to the [Business Intelligence platform](/big/). This release boosts Business Intelligence with enhanced alerting, reporting, performance, scheduled dashboard screenshots, improved Firestore security, advanced action templates, GPU-supported rendering, refined alert logic, and subtle UI enhancements for a seamless, accessible experience.
+We’re thrilled to announce **Business Intelligence 3.6.0**, a game-changing update to the [Business Intelligence platform](/big/). This release supercharges your Grafana experience with cutting-edge features like enhanced alerting, GPU-accelerated rendering, scheduled dashboard screenshots, improved Firestore security, advanced action templates, refined alert logic, and subtle yet impactful UI enhancements for a seamless and accessible user experience.
 
 ## What’s New in Business Intelligence 3.6.0
 
-Here’s a snapshot of the powerful updates in this release:
+This release is packed with powerful updates designed to streamline workflows, boost performance, and elevate usability. Here’s a quick overview of what’s new:
 
-- **Scheduled Dashboard Screenshots:** Added functionality to create scheduled dashboard screenshots and trigger automated actions for streamlined reporting workflows.
-- **Optimized Rendering Performance:** Enhanced rendering with GPU support and added logic to wait for full page loads, resulting in a _significant performance boost_.
-- **Alert State Transition:** Introduced grouping of related events for better clarity and management of alert states, improving user comprehension during critical events.
-- **Refined Alerting Logic:** Configured alerting to ignore "No Data" states when disabled, ensuring more accurate and relevant notifications.
-- **Action Template Updates:** Enhanced support for separate templates in Alerting and Reporting workflows, enabling more flexible and tailored configurations.
-- **UI and Accessibility Improvements:** Introduced refreshed loading states (Shimmer) and subtle design updates for improved navigation, _performance_, and accessibility across the platform.
-- **Enhanced Firestore Security Rules:** Improved data protection with updated security rules for better control and safety across organizations.
-- **Comprehensive E2E Testing:** Implemented robust end-to-end tests to validate Alerting, Reporting, and Actions workflows, ensuring reliability and accuracy.
+- **Scheduled Dashboard Screenshots** for automated reporting.
+- **Optimized Rendering Performance** with GPU support.
+- **Alert State Transition** for clearer event management.
+- **Refined Alerting Logic** to filter irrelevant notifications.
+- **Action Template Updates** for flexible configurations.
+- **UI and Accessibility Improvements** for a polished experience.
+- **Enhanced Firestore Security Rules** for robust data protection.
+- **Comprehensive E2E Testing** for unmatched reliability.
 
-Let’s explore how these updates can transform your Grafana experience!
+Let’s dive into each feature to see how they can transform your Grafana workflows!
+
+## Feature Highlights
+
+### Scheduled Dashboard Screenshots: Automate Reporting Workflows
+
+Say goodbye to manual dashboard captures. With **Scheduled Dashboard Screenshots**, you can now automate the process of taking snapshots of your dashboards at predefined intervals. This feature integrates seamlessly with automated actions, enabling streamlined reporting workflows.
+
+Whether you’re sharing updates with stakeholders or archiving data for compliance, this tool saves time and ensures consistency.
+
+- **Key Benefit:** Automate repetitive tasks and focus on insights rather than manual processes.
+- **Use Case:** Schedule daily screenshots of critical dashboards for executive summaries or audits.
+
+### Optimized Rendering Performance: Speed with GPU Support
+
+Rendering complex dashboards just got faster. Business Intelligence 3.6.0 introduces **GPU-supported rendering** and intelligent logic to wait for full page loads before capturing data. The result? A **2x performance boost** in rendering speed, allowing you to access insights quicker than ever.
+
+- **Key Benefit:** Faster rendering means quicker decision-making.
+- **Use Case:** Render large, data-heavy dashboards without delays during peak analysis periods.
+
+### Alert State Transition: Clarity in Critical Moments
+
+Managing alerts is now more intuitive with **Alert State Transition**. This feature groups related events together, providing better clarity and context during critical incidents. Instead of sifting through isolated notifications, you’ll see a cohesive picture of alert states, making it easier to respond effectively.
+
+- **Key Benefit:** Improved visibility into alert progression and resolution.
+- **Use Case:** Track the lifecycle of an alert during system outages for faster troubleshooting.
+
+### Refined Alerting Logic: Smarter Notifications
+
+We’ve fine-tuned our alerting system to be smarter. With **Refined Alerting Logic**, Business Intelligence 3.6.0 ignores "No Data" states when disabled, ensuring you only receive notifications that matter. This reduces noise and helps you focus on actionable insights.
+
+- **Key Benefit:** Fewer false positives for a more focused alerting experience.
+- **Use Case:** Avoid unnecessary alerts during maintenance windows or data gaps.
+
+### Action Template Updates: Tailored Flexibility
+
+Customization is key to effective workflows. The updated **Action Templates** in 3.6.0 offer enhanced support for separate templates in Alerting and Reporting workflows. This allows for more granular control and tailored configurations to suit your specific needs.
+
+- **Key Benefit:** Create workflows that align perfectly with your operational goals.
+- **Use Case:** Design distinct alerting templates for different teams or reporting schedules.
+
+### UI and Accessibility Improvements: A Polished Experience
+
+We’ve refreshed the user interface with subtle yet impactful changes. **UI and Accessibility Improvements** include new loading states (Shimmer effects), refined navigation, and design updates that enhance performance and accessibility. These changes ensure a seamless experience for all users, regardless of ability or device.
+
+- **Key Benefit:** A more intuitive and inclusive platform for every user.
+- **Use Case:** Navigate dashboards effortlessly during high-pressure monitoring scenarios.
+
+### Enhanced Firestore Security Rules: Robust Data Protection
+
+Data security remains a top priority. With **Enhanced Firestore Security Rules**, Business Intelligence 3.6.0 introduces stricter controls and improved safety measures across organizations. These updates provide better protection for your data while maintaining ease of access for authorized users.
+
+- **Key Benefit:** Safeguard sensitive information with confidence.
+- **Use Case:** Ensure compliance with organizational data policies in multi-team environments.
+
+### Comprehensive E2E Testing: Unmatched Reliability
+
+Reliability is at the core of this release. We’ve implemented **Comprehensive End-to-End (E2E) Testing** to validate Alerting, Reporting, and Actions workflows. This rigorous testing ensures that every feature works as intended, delivering a stable and dependable platform.
+
+- **Key Benefit:** Trust in a platform that’s been thoroughly tested for real-world scenarios.
+- **Use Case:** Deploy updates with confidence, knowing critical workflows are validated.
 
 ## Why Upgrade to Business Intelligence 3.6.0?
 
-This release is more than just new features—it’s about empowering you to achieve more. Whether you’re optimizing Grafana workflows, managing critical alerts, or rendering complex dashboards, Business Intelligence 3.6.0 delivers the speed, clarity, and tools you need to excel.
+This release isn’t just about new features—it’s about enabling you to achieve more with less effort. Whether you’re optimizing Grafana workflows, managing critical alerts, or rendering complex dashboards, Business Intelligence 3.6.0 delivers the speed, clarity, and tools you need to succeed.
 
 Key reasons to upgrade:
 
-- **2x faster rendering** for quicker insights.
-- **Smarter alerting** with enhanced visibility into data issues.
-- **Polished UI** for a seamless user experience.
-- **Unmatched reliability** with improved stability and testing.
+- **2x Faster Rendering** for quicker insights and decision-making.
+- **Smarter Alerting** with enhanced visibility into data issues.
+- **Polished UI** for a seamless and accessible user experience.
+- **Unmatched Reliability** with improved stability and comprehensive testing.
 
-Don’t miss out—upgrade today and transform the way you work!
+Don’t wait—upgrade today and transform the way you work with Grafana!
 
 ## Download Business Studio 3.6.0
 
