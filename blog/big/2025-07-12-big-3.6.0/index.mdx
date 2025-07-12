@@ -42,60 +42,97 @@ This release is packed with powerful updates designed to streamline workflows, b
 
 Let’s dive into each feature to see how they can transform your Grafana workflows!
 
-## Feature Highlights
-
-### Scheduled Dashboard Screenshots: Automate Reporting Workflows
+## Scheduled Dashboard Screenshots: Automate Reporting Workflows
 
 Say goodbye to manual dashboard captures. With **Scheduled Dashboard Screenshots**, you can now automate the process of taking snapshots of your dashboards at predefined intervals. This feature integrates seamlessly with automated actions, enabling streamlined reporting workflows.
+
+<Image
+  title="Report Screenshot supports Dashboard Variables."
+  src="/img/blog/2025-07-12-big-3.6.0/report-settings.gif"
+/>
 
 Whether you’re sharing updates with stakeholders or archiving data for compliance, this tool saves time and ensures consistency.
 
 - **Key Benefit:** Automate repetitive tasks and focus on insights rather than manual processes.
 - **Use Case:** Schedule daily screenshots of critical dashboards for executive summaries or audits.
 
-### Optimized Rendering Performance: Speed with GPU Support
+## Optimized Rendering Performance: Speed with GPU Support
 
 Rendering complex dashboards just got faster. Business Intelligence 3.6.0 introduces **GPU-supported rendering** and intelligent logic to wait for full page loads before capturing data. The result? A **2x performance boost** in rendering speed, allowing you to access insights quicker than ever.
+
+<Image
+  title="Reports are delivered on schedule and saved in the database to review within retention period."
+  src="/img/blog/2025-07-12-big-3.6.0/report-screenshot.png"
+/>
 
 - **Key Benefit:** Faster rendering means quicker decision-making.
 - **Use Case:** Render large, data-heavy dashboards without delays during peak analysis periods.
 
-### Alert State Transition: Clarity in Critical Moments
+## Alert State Transition: Clarity in Critical Moments
 
 Managing alerts is now more intuitive with **Alert State Transition**. This feature groups related events together, providing better clarity and context during critical incidents. Instead of sifting through isolated notifications, you’ll see a cohesive picture of alert states, making it easier to respond effectively.
+
+<Image
+  title="Alert states allow to group same state events and display the latest event information when selected."
+  src="/img/blog/2025-07-12-big-3.6.0/alert-states.png"
+/>
 
 - **Key Benefit:** Improved visibility into alert progression and resolution.
 - **Use Case:** Track the lifecycle of an alert during system outages for faster troubleshooting.
 
-### Refined Alerting Logic: Smarter Notifications
+## Refined Alerting Logic: Smarter Notifications
 
 We’ve fine-tuned our alerting system to be smarter. With **Refined Alerting Logic**, Business Intelligence 3.6.0 ignores "No Data" states when disabled, ensuring you only receive notifications that matter. This reduces noise and helps you focus on actionable insights.
+
+<Image
+  title="Disabled No Data states won't trigger selected alerting or error state change."
+  src="/img/blog/2025-07-12-big-3.6.0/alert-nodata.png"
+/>
 
 - **Key Benefit:** Fewer false positives for a more focused alerting experience.
 - **Use Case:** Avoid unnecessary alerts during maintenance windows or data gaps.
 
-### Action Template Updates: Tailored Flexibility
+## Action Template Updates: Tailored Flexibility
 
 Customization is key to effective workflows. The updated **Action Templates** in 3.6.0 offer enhanced support for separate templates in Alerting and Reporting workflows. This allows for more granular control and tailored configurations to suit your specific needs.
+
+<Image
+  title="Reporting Actions has it's own template and allows to preview based on the latest events."
+  src="/img/blog/2025-07-12-big-3.6.0/action-report.png"
+/>
 
 - **Key Benefit:** Create workflows that align perfectly with your operational goals.
 - **Use Case:** Design distinct alerting templates for different teams or reporting schedules.
 
-### UI and Accessibility Improvements: A Polished Experience
+## UI and Accessibility Improvements: A Polished Experience
 
 We’ve refreshed the user interface with subtle yet impactful changes. **UI and Accessibility Improvements** include new loading states (Shimmer effects), refined navigation, and design updates that enhance performance and accessibility. These changes ensure a seamless experience for all users, regardless of ability or device.
+
+<Image
+  title="Loading states and design updates enhance performance and accessibility."
+  src="/img/blog/2025-07-12-big-3.6.0/alerting-loading.gif"
+/>
 
 - **Key Benefit:** A more intuitive and inclusive platform for every user.
 - **Use Case:** Navigate dashboards effortlessly during high-pressure monitoring scenarios.
 
-### Enhanced Firestore Security Rules: Robust Data Protection
+## Enhanced Firestore Security Rules: Robust Data Protection
 
 Data security remains a top priority. With **Enhanced Firestore Security Rules**, Business Intelligence 3.6.0 introduces stricter controls and improved safety measures across organizations. These updates provide better protection for your data while maintaining ease of access for authorized users.
+
+:::info Shared Engines
+Sharing Engines using Firestore within organization is optional.
+:::
+
+<Image
+  title="Shared engines within organization improves team work and easy access for team members."
+  src="/img/blog/2025-07-12-big-3.6.0/organization-engine.png"
+/>
 
 - **Key Benefit:** Safeguard sensitive information with confidence.
 - **Use Case:** Ensure compliance with organizational data policies in multi-team environments.
 
-### Comprehensive E2E Testing: Unmatched Reliability
+## Comprehensive E2E Testing: Unmatched Reliability
 
 Reliability is at the core of this release. We’ve implemented **Comprehensive End-to-End (E2E) Testing** to validate Alerting, Reporting, and Actions workflows. This rigorous testing ensures that every feature works as intended, delivering a stable and dependable platform.
 
