@@ -275,42 +275,6 @@ const sidebars: SidebarsConfig = {
       ],
     },
 
-    // Business News section
-    {
-      type: "category",
-      label: "Business News",
-      description: "Visualize RSS and Atom feeds using Business Text",
-      collapsible: true,
-      link: { type: "doc", id: "business-news/index" },
-      items: [
-        { type: "doc", id: "business-news/index", label: "Introduction" },
-        "business-news/text",
-        "business-news/provisioning",
-        "business-news/release",
-      ],
-    },
-
-    // Business Satellite section
-    {
-      type: "category",
-      label: "Business Satellite",
-      description: "Connect to local and remote Grafana instances",
-      collapsible: true,
-      link: { type: "doc", id: "business-satellite/index" },
-      items: [
-        { type: "doc", id: "business-satellite/index", label: "Introduction" },
-        "business-satellite/configuration",
-        "business-satellite/provisioning",
-        {
-          type: "category",
-          label: "Features",
-          link: { type: "doc", id: "business-satellite/features" },
-          items: ["business-satellite/annotations"],
-        },
-        "business-satellite/release",
-      ],
-    },
-
     // Business Table section
     {
       type: "category",
@@ -467,6 +431,56 @@ const sidebars: SidebarsConfig = {
           items: [], // Placeholder for future tutorials
         },
         "business-variable/release",
+      ],
+    },
+
+    // Retired section
+    {
+      type: "category",
+      label: "Retired Plugins",
+      description: "Retired plugins",
+      collapsible: true,
+      link: { type: "doc", id: "retired" },
+      items: [
+        // Business News section
+        {
+          type: "category",
+          label: "Business News",
+          description: "Visualize RSS and Atom feeds using Business Text",
+          collapsible: true,
+          link: { type: "doc", id: "business-news/index" },
+          items: [
+            { type: "doc", id: "business-news/index", label: "Introduction" },
+            "business-news/text",
+            "business-news/provisioning",
+            "business-news/release",
+          ],
+        },
+
+        // Business Satellite section
+        {
+          type: "category",
+          label: "Business Satellite",
+          description: "Connect to local and remote Grafana instances",
+          collapsible: true,
+          link: { type: "doc", id: "business-satellite/index" },
+          items: [
+            {
+              type: "doc",
+              id: "business-satellite/index",
+              label: "Introduction",
+            },
+            "business-satellite/configuration",
+            "business-satellite/provisioning",
+            {
+              type: "category",
+              label: "Features",
+              link: { type: "doc", id: "business-satellite/features" },
+              items: ["business-satellite/annotations"],
+            },
+            "business-satellite/release",
+          ],
+        },
       ],
     },
   ],

@@ -1,0 +1,59 @@
+---
+image: /img/suite.png
+---
+
+import BlogPost from "@theme/BlogPost";
+import Feedback from "./_feedback.mdx";
+import Image from "@theme/Image";
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Youtube from "@theme/Youtube";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Retired Plugins
+
+This page details plugins that have been discontinued to ensure our ecosystem remains aligned with the latest Grafana standards and industry best practices. Below, you’ll find information on retired plugins, reasons for retirement, and migration guidance to keep your dashboards running smoothly.
+
+## Why Plugins Are Retired
+
+Volkov Labs periodically retires plugins to:
+
+- Focus development on modern, scalable solutions.
+- Address evolving Grafana compatibility requirements.
+- Enhance security and performance based on community feedback.
+
+:::info Updates
+Retired plugins no longer receive updates, bug fixes, or support. We recommend migrating to recommended alternatives to maintain optimal functionality.
+:::
+
+## List of Retired Plugins
+
+### Business News Data Source
+
+- **Retirement Date**: July 12, 2025
+- **Last Supported Version**: 4.3.0 (compatible with Grafana 11 and earlier)
+- **Reason for Retirement**: Limited use. The Infinity data source offers a more robust replacement.
+- **Migration Path**: Transition to the Infinity data source (`grafana-infinity-datasource`) for continued news and data feed support.
+
+## Migration Guidance
+
+To ensure a seamless transition, follow these steps for each retired plugin:
+
+### Migrating from Business News Data Source to Infinity Data Source
+
+1. **Verify Compatibility**: Confirm your Grafana instance is updated to version 11 or 12.
+2. **Install Infinity Plugin**: Use the Grafana CLI or Plugins Catalog to install `grafana-infinity-datasource`.
+   ```
+   grafana cli plugins install grafana-infinity-datasource
+   ```
+3. **Reconfigure Dashboards**: Update data source settings in your dashboards, mapping Business News queries to Infinity-supported formats (e.g., JSON, CSV, or API endpoints).
+4. **Test Configuration**: Validate dashboards in a staging environment to ensure data integrity.
+5. **Decommission Old Source**: Remove the Business News data source from your setup post-migration.
+
+### General Tips
+
+- Backup your current dashboards before migration.
+- Test migrated dashboards thoroughly to avoid data discrepancies.
+
+<Feedback />
