@@ -12,7 +12,7 @@ export const FOOTER = {
   },
 
   // Theme style: 'light', 'dark', or 'auto' (Docusaurus default)
-  style: "light",
+  style: "auto",
 
   // Link columns for navigation
   links: [
