@@ -22,104 +22,110 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 3.3.1: Elevate Your Grafana Workflows with Alert-driven Analytics
+# Business Intelligence 3.3.1: Transform Your Grafana Workflows with Alert-Driven Analytics
 
-We’re thrilled to announce the release of **Business Intelligence 3.3.1**, a game-changing update to the [Business Intelligence platform](/big/). This version introduces powerful features to streamline workflows, deepen insights, and enhance your Grafana experience. Let’s dive into what’s new!
+We’re excited to unveil **Business Intelligence 3.3.1**, a significant update to the [Business Intelligence platform](/big/). This release brings powerful new features to streamline workflows, deliver deeper insights, and elevate your Grafana experience. Let’s explore the highlights!
 
 ## What’s New in Business Intelligence 3.3.1
 
-- **Enhanced Alerting Page**: Navigate and manage alerts effortlessly with an improved UI and advanced filtering options.
-- **Data Preview Feature**: Get a quick overview of data directly on the Alert Settings page before finalizing alerts.
-- **Alert Notification History**: Review past notifications for better transparency and accountability.
+- **Revamped Alerting Page**: Navigate and manage alerts with ease thanks to an intuitive UI and advanced filtering.
+- **Data Preview Feature**: Preview data directly on the Alert Settings page to ensure accuracy before activation.
+- **Alert Notification History**: Access past notifications for improved transparency and accountability.
 - **Enhanced Clustering**: Updated clustering pages now support alerting and engine configurations.
-- **Localization Support**: Spanish language support added to reach a wider audience.
-- **Personalization**: Customize themes through profile settings for a tailored experience.
-- **New Data Source**: Loki integration for enhanced logging capabilities.
-- **Faster Alert Processing**: Optimize performance by customizing batch sizes for alerts and annotations in Engine settings.
+- **Localization Support**: Spanish language added to broaden accessibility.
+- **Personalization Options**: Customize themes via profile settings for a tailored user experience.
+- **New Data Source**: Loki integration enhances logging and debugging capabilities.
+- **Faster Alert Processing**: Optimize performance with customizable batch sizes for alerts and annotations in Engine settings.
 
-Join Mikhail as he walks through these exciting updates:
+Join Mikhail for a detailed walkthrough of these exciting updates:
 
 <Youtube
   id="QLcjFLYxT8U"
   title="Business Intelligence 3.3.1: Elevate Your Grafana Workflows"
 />
 
-Ready to transform your Grafana workflows? Explore Business Intelligence 3.3.1 today!
+Ready to revolutionize your Grafana workflows? Dive into Business Intelligence 3.3.1 today!
 
-## Enhanced Alerting Page
+## Revamped Alerting Page
 
-The alerting page has been revamped to address user feedback regarding navigation challenges and alert management inefficiencies in previous versions. The improved user interface (UI) offers a more intuitive layout, making it easier to locate and manage alerts.
-
-Advanced filtering options allow users to sort and filter alerts based on specific criteria, reducing the time spent on manual searches and improving operational efficiency for teams monitoring large-scale systems in Grafana.
+Responding to user feedback about navigation and alert management challenges, we’ve redesigned the alerting page with a more intuitive interface. The updated layout simplifies locating and managing alerts, while advanced filtering options let you sort by specific criteria. This reduces manual search time and boosts efficiency, especially for teams monitoring large-scale systems in Grafana.
 
 <Image
-  title="Enhanced Alerting Page."
+  title="Revamped Alerting Page displays alerts from all connected Business Engine clusters."
   src="/img/blog/2025-05-13-big-3.3.1/alerting.png"
 />
 
 ## Data Preview Feature
 
-Configuring alerts often requires users to ensure that the underlying data meets their expectations before activation. The new Data Preview feature, integrated directly into the Alert Settings page, enables users to view a snapshot of the data associated with an alert rule without navigating away or running separate queries.
-
-This saves time, reduces errors in alert setup, and ensures that alerts are based on accurate and relevant data, enhancing trust in the system’s monitoring capabilities.
+Setting up alerts just got easier. The new Data Preview feature, embedded in the Alert Settings page, allows you to view a snapshot of relevant data without leaving the page or running separate queries. This saves time, minimizes setup errors, and ensures alerts are based on accurate data, building confidence in your monitoring system.
 
 <Image
-  title="Data Preview Feature."
+  title="Data Preview Feature allows you to view a snapshot of the latest data."
   src="/img/blog/2025-05-13-big-3.3.1/preview.png"
 />
 
 ## Alert Notification History
 
-Transparency and accountability are critical in environments where alerts drive critical decision-making. The Alert Notification History feature provides a detailed log of past notifications, including when they were triggered, and the associated alert conditions.
-
-This historical data is invaluable for auditing, troubleshooting false positives, and ensuring compliance with organizational or regulatory requirements, particularly for teams managing high-stakes operations.
+Transparency is key in critical decision-making environments. The Alert Notification History feature provides a comprehensive log of past notifications, including trigger times and conditions. This is essential for auditing, troubleshooting false positives, and meeting compliance requirements, especially in high-stakes operations.
 
 <Image
-  title="Alert Notification History."
+  title="Alert Notification History with sent status gives a glimpse of the latest events."
   src="/img/blog/2025-05-13-big-3.3.1/history.png"
 />
 
 ## Enhanced Clustering
 
-Clustering is essential for scaling Business Intelligence deployments in distributed environments. The updated clustering pages now include support for displaying latest alerts and list of engines.
+For distributed environments, clustering is vital to scaling Business Intelligence deployments. The updated clustering pages now display the latest alerts and engine lists, offering better visibility and control over your setup.
 
 <Image
-  title="Enhanced Clustering."
+  title="Enhanced Clustering pages allows to view alerts, load balanced configuration and joined engines."
   src="/img/blog/2025-05-13-big-3.3.1/clustering.png"
 />
 
 ## Localization Support
 
-To make the platform more accessible to a global user base, Business Intelligence 3.3.1 introduces Spanish language support. This localization effort caters to Spanish-speaking users and organizations, reducing language barriers and improving user adoption in regions where Spanish is the primary language.
-
-It reflects a commitment to inclusivity and ensures that non-English-speaking teams can fully leverage the platform’s capabilities in their native language.
+To serve a global audience, Business Intelligence 3.3.1 introduces Spanish language support. This update removes language barriers, making the platform more accessible and user-friendly for Spanish-speaking teams and organizations, fostering greater adoption worldwide.
 
 <Image
-  title="Localization Support."
+  title="Business Studio now includes Spanish UI."
   src="/img/blog/2025-05-13-big-3.3.1/spanish.png"
 />
 
-## Personalization
+## Personalization Options
 
-User experience is a priority in this release, with the addition of theme customization through profile settings. Users can now tailor the visual appearance of the platform (e.g., light or dark mode) to suit their preferences or reduce eye strain during long monitoring sessions.
+Enhancing user experience, this release lets you customize themes through profile settings. Whether you prefer light or dark mode, tailoring the platform’s appearance ensures comfort during long monitoring sessions and creates a more engaging interaction with Grafana dashboards.
 
-This personalization fosters a more comfortable and engaging interaction with the platform, especially for users who spend extended periods working within Grafana dashboards.
+<Image
+  title="Profile page allows you to select a user role, language and theme."
+  src="/img/blog/2025-05-13-big-3.3.1/profile.png"
+/>
 
 ## New Data Source
 
-The integration of Loki as a new data source expands the platform’s logging capabilities, complementing existing support for metrics and visualizations in Grafana. Loki, a log aggregation system designed for scalability, allows users to query and analyze logs alongside their metrics, providing a unified view of system health.
+With the addition of Loki as a data source, logging capabilities are significantly enhanced. Designed for scalability, Loki enables seamless log aggregation alongside metrics and visualizations in Grafana. This unified view is invaluable for debugging, event correlation, and gaining deeper insights into application performance in complex systems.
 
-This is particularly useful for debugging issues, correlating events across logs and metrics, and gaining deeper insights into application performance in complex environments.
+<Image
+  title="High Process Time alert based on collected NGINX log files stored in Loki."
+  src="/img/blog/2025-05-13-big-3.3.1/website-alert.png"
+/>
 
 ## Faster Alert Processing
 
-Performance optimization is a key focus in high-volume monitoring scenarios where delays in alert processing can lead to missed critical events. The ability to customize batch sizes for alerts and annotations in Engine settings allows administrators to balance throughput and resource usage, ensuring faster alert delivery without overloading the system.
+In high-volume monitoring scenarios, performance is critical. Customizable batch sizes for alerts and annotations in Engine settings allow administrators to fine-tune throughput and resource usage. This ensures faster alert delivery without system overload, ideal for organizations with large datasets or frequent alert triggers.
 
-This feature is especially beneficial for organizations with large datasets or frequent alert triggers, as it minimizes latency and improves responsiveness in Grafana workflows.
+<Image
+  title="Based on the CPU, Memory and disk space you can adjust performance and retention configuration."
+  src="/img/blog/2025-05-13-big-3.3.1/processing-configuration.png"
+/>
 
 ## Enhanced OpenAPI Specification
 
-The Business Engine’s [OpenAPI specification](/big/api/) has been overhauled, enabling seamless integrations and ensuring developers can leverage the latest platform capabilities effortlessly.
+The Business Engine’s [OpenAPI specification](/big/api/) has been fully updated, enabling seamless integrations and empowering developers to leverage the platform’s latest features with ease.
+
+<Image
+  title="Business Engine provides Swagger UI to check and try REST API endpoints."
+  src="/img/blog/2025-05-13-big-3.3.1/swagger.png"
+/>
 
 ## Download Business Studio 3.3.1
 
@@ -132,13 +138,13 @@ MacOS and Windows installers are signed, notarized, and built using automated Gi
   - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/Business.Studio-3.3.1-x64.dmg)
   - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/Business.Studio-darwin-arm64-3.3.1.zip)
   - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/Business.Studio-darwin-x64-3.3.1.zip)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/Business.Studio-3.3.1.Setup.exe)
 - **Linux**:
   - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/business-studio-3.3.1-1.arm64.rpm)
   - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/business-studio-3.3.1-1.x86_64.rpm)
   - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/business-studio_3.3.1_arm64.deb)
   - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/business-studio_3.3.1_amd64.deb)
-- **Windows**:
-  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.3.1/Business.Studio-3.3.1.Setup.exe)
 
 <GettingStarted />
 
