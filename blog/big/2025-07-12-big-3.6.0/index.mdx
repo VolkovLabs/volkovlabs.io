@@ -8,10 +8,10 @@ keywords:
     Business Intelligence,
     Alerting,
     Grafana,
-    Workflow,
-    Automation,
+    Workflow Automation,
+    Dashboard Reporting,
     Renderer Performance,
-    UI Improvements,
+    UI Enhancements,
   ]
 ---
 
@@ -23,142 +23,142 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 3.6.0: Reporting, Smarter Alerts, Faster Insights
+# Business Intelligence 3.6.0: Automated Reporting, Smarter Alerts, Faster Insights
 
-We’re thrilled to announce **Business Intelligence 3.6.0**, a game-changing update to the [Business Intelligence platform](/big/). This release supercharges your Grafana experience with cutting-edge features like enhanced alerting, GPU-accelerated rendering, scheduled dashboard screenshots, improved Firestore security, advanced action templates, refined alert logic, and subtle yet impactful UI enhancements for a seamless and accessible user experience.
+We’re excited to unveil **Business Intelligence 3.6.0**, a transformative update to the [Business Intelligence platform](/big/). This release turbocharges your Grafana experience with innovative features like advanced alerting, GPU-accelerated rendering, scheduled dashboard screenshots, enhanced Firestore security, customizable action templates, smarter alert logic, and refined UI for a seamless, accessible experience.
 
-## What’s New in Business Intelligence 3.6.0
+Ready to elevate your workflows? Let’s explore what’s new in this game-changing release!
 
-This release is packed with powerful updates designed to streamline workflows, boost performance, and elevate usability. Here’s a quick overview of what’s new:
+## What’s New in Business Intelligence 3.6.0?
 
-- **Scheduled Dashboard Screenshots** for automated reporting.
-- **Optimized Rendering Performance** with GPU support.
-- **Alert State Transition** for clearer event management.
-- **Refined Alerting Logic** to filter irrelevant notifications.
-- **Action Template Updates** for flexible configurations.
-- **UI and Accessibility Improvements** for a polished experience.
-- **Enhanced Firestore Security Rules** for robust data protection.
-- **Comprehensive E2E Testing** for unmatched reliability.
+This update is packed with features to streamline operations, boost performance, and enhance usability. Here’s what you’ll discover:
 
-Let’s dive into each feature to see how they can transform your Grafana workflows!
+- **Scheduled Dashboard Screenshots**: Automate reporting with ease.
+- **GPU-Accelerated Rendering**: Double the speed for faster insights.
+- **Alert State Transitions**: Gain clarity during critical events.
+- **Smarter Alerting Logic**: Filter out irrelevant notifications.
+- **Flexible Action Templates**: Tailor workflows to your needs.
+- **Refined UI & Accessibility**: Enjoy a polished, inclusive experience.
+- **Enhanced Firestore Security**: Protect data with stricter rules.
+- **Robust E2E Testing**: Rely on a thoroughly validated platform.
 
-## Scheduled Dashboard Screenshots: Automate Reporting Workflows
+Let’s dive deeper into how these features can revolutionize your Grafana workflows!
 
-Say goodbye to manual dashboard captures. With **Scheduled Dashboard Screenshots**, you can now automate the process of taking snapshots of your dashboards at predefined intervals. This feature integrates seamlessly with automated actions, enabling streamlined reporting workflows.
+## Automate Reporting with Scheduled Dashboard Screenshots
+
+No more manual dashboard captures! **Scheduled Dashboard Screenshots** let you automate snapshots at set intervals, integrating seamlessly with action workflows for effortless reporting.
 
 <Image
-  title="Report Screenshot supports Dashboard Variables."
+  title="Report Screenshots now support Dashboard Variables for dynamic updates."
   src="/img/blog/2025-07-12-big-3.6.0/report-settings.gif"
 />
 
-Whether you’re sharing updates with stakeholders or archiving data for compliance, this tool saves time and ensures consistency.
+- **Why It Matters**: Save time by automating repetitive tasks and focus on actionable insights.
+- **Perfect For**: Daily executive summaries or compliance archiving with consistent, scheduled reports.
 
-- **Key Benefit:** Automate repetitive tasks and focus on insights rather than manual processes.
-- **Use Case:** Schedule daily screenshots of critical dashboards for executive summaries or audits.
+## Boost Speed with GPU-Accelerated Rendering
 
-## Optimized Rendering Performance: Speed with GPU Support
-
-Rendering complex dashboards just got faster. Business Intelligence 3.6.0 introduces **GPU-supported rendering** and intelligent logic to wait for full page loads before capturing data. The result? A **2x performance boost** in rendering speed, allowing you to access insights quicker than ever.
+Experience lightning-fast dashboards with **GPU-Accelerated Rendering**. Combined with intelligent page-load detection, this update delivers a **2x performance boost**, ensuring you get insights without the wait.
 
 <Image
-  title="Reports are delivered on schedule and saved in the database to review within retention period."
+  title="Reports are delivered on time and stored in the database for review within the retention period."
   src="/img/blog/2025-07-12-big-3.6.0/report-screenshot.png"
 />
 
-- **Key Benefit:** Faster rendering means quicker decision-making.
-- **Use Case:** Render large, data-heavy dashboards without delays during peak analysis periods.
+- **Why It Matters**: Faster rendering speeds up decision-making.
+- **Perfect For**: Handling data-heavy dashboards during peak analysis times.
 
-## Alert State Transition: Clarity in Critical Moments
+## Gain Clarity with Alert State Transitions
 
-Managing alerts is now more intuitive with **Alert State Transition**. This feature groups related events together, providing better clarity and context during critical incidents. Instead of sifting through isolated notifications, you’ll see a cohesive picture of alert states, making it easier to respond effectively.
+Managing alerts is now simpler with **Alert State Transitions**. This feature groups related events, offering a clear, cohesive view of alert lifecycles so you can respond with precision during critical moments.
 
 <Image
-  title="Alert states allow to group same state events and display the latest event information when selected."
+  title="Alert states group similar events and display the latest details when selected."
   src="/img/blog/2025-07-12-big-3.6.0/alert-states.png"
 />
 
-- **Key Benefit:** Improved visibility into alert progression and resolution.
-- **Use Case:** Track the lifecycle of an alert during system outages for faster troubleshooting.
+- **Why It Matters**: Enhanced visibility into alert progression for quicker resolution.
+- **Perfect For**: Tracking system outages or incidents with full context.
 
-## Refined Alerting Logic: Smarter Notifications
+## Focus on What Matters with Smarter Alerting Logic
 
-We’ve fine-tuned our alerting system to be smarter. With **Refined Alerting Logic**, Business Intelligence 3.6.0 ignores "No Data" states when disabled, ensuring you only receive notifications that matter. This reduces noise and helps you focus on actionable insights.
+Say goodbye to alert fatigue. Our **Smarter Alerting Logic** ignores "No Data" states when disabled, ensuring you only get notifications that demand action, cutting through the noise.
 
 <Image
-  title="Disabled No Data states won't trigger selected alerting or error state change."
+  title="Disabled 'No Data' states won’t trigger alerts or error state changes."
   src="/img/blog/2025-07-12-big-3.6.0/alert-nodata.png"
 />
 
-- **Key Benefit:** Fewer false positives for a more focused alerting experience.
-- **Use Case:** Avoid unnecessary alerts during maintenance windows or data gaps.
+- **Why It Matters**: Fewer false positives keep your focus on critical issues.
+- **Perfect For**: Avoiding unnecessary alerts during maintenance or data gaps.
 
-## Action Template Updates: Tailored Flexibility
+## Customize Workflows with Flexible Action Templates
 
-Customization is key to effective workflows. The updated **Action Templates** in 3.6.0 offer enhanced support for separate templates in Alerting and Reporting workflows. This allows for more granular control and tailored configurations to suit your specific needs.
+Tailor your workflows like never before. Updated **Action Templates** in 3.6.0 support separate configurations for Alerting and Reporting, giving you granular control over every process.
 
 <Image
-  title="Reporting Actions has it's own template and allows to preview based on the latest events."
+  title="Reporting Actions now have dedicated templates with preview based on recent events."
   src="/img/blog/2025-07-12-big-3.6.0/action-report.png"
 />
 
-- **Key Benefit:** Create workflows that align perfectly with your operational goals.
-- **Use Case:** Design distinct alerting templates for different teams or reporting schedules.
+- **Why It Matters**: Align workflows precisely with your operational needs.
+- **Perfect For**: Creating unique alerting setups for different teams or reporting schedules.
 
-## UI and Accessibility Improvements: A Polished Experience
+## Enjoy a Polished Experience with UI & Accessibility Updates
 
-We’ve refreshed the user interface with subtle yet impactful changes. **UI and Accessibility Improvements** include new loading states (Shimmer effects), refined navigation, and design updates that enhance performance and accessibility. These changes ensure a seamless experience for all users, regardless of ability or device.
+We’ve enhanced the interface with subtle, impactful changes. **UI & Accessibility Updates** include Shimmer loading effects, smoother navigation, and design tweaks for better performance and inclusivity across all users and devices.
 
 <Image
-  title="Loading states and design updates enhance performance and accessibility."
+  title="Loading states and design updates improve performance and accessibility."
   src="/img/blog/2025-07-12-big-3.6.0/alerting-loading.gif"
 />
 
-- **Key Benefit:** A more intuitive and inclusive platform for every user.
-- **Use Case:** Navigate dashboards effortlessly during high-pressure monitoring scenarios.
+- **Why It Matters**: A more intuitive, accessible platform for everyone.
+- **Perfect For**: Seamless navigation during high-pressure monitoring tasks.
 
-## Enhanced Firestore Security Rules: Robust Data Protection
+## Secure Your Data with Enhanced Firestore Rules
 
-Data security remains a top priority. With **Enhanced Firestore Security Rules**, Business Intelligence 3.6.0 introduces stricter controls and improved safety measures across organizations. These updates provide better protection for your data while maintaining ease of access for authorized users.
+Data protection is paramount. **Enhanced Firestore Security Rules** in 3.6.0 introduce tighter controls and safety measures, safeguarding your information while ensuring easy access for authorized users.
 
 :::info Shared Engines
-Sharing Engines using Firestore within organization is optional.
+Sharing Engines via Firestore within your organization is optional for added flexibility.
 :::
 
 <Image
-  title="Shared engines within organization improves team work and easy access for team members."
+  title="Shared engines within organizations boost teamwork and simplify access for members."
   src="/img/blog/2025-07-12-big-3.6.0/organization-engine.png"
 />
 
-- **Key Benefit:** Safeguard sensitive information with confidence.
-- **Use Case:** Ensure compliance with organizational data policies in multi-team environments.
+- **Why It Matters**: Protect sensitive data with confidence.
+- **Perfect For**: Multi-team environments requiring strict compliance with data policies.
 
-## Comprehensive E2E Testing: Unmatched Reliability
+## Trust in Reliability with Comprehensive E2E Testing
 
-Reliability is at the core of this release. We’ve implemented **Comprehensive End-to-End (E2E) Testing** to validate Alerting, Reporting, and Actions workflows. This rigorous testing ensures that every feature works as intended, delivering a stable and dependable platform.
+Stability is key to this release. Our **Comprehensive End-to-End (E2E) Testing** validates Alerting, Reporting, and Action workflows, ensuring every feature performs flawlessly in real-world scenarios.
 
-- **Key Benefit:** Trust in a platform that’s been thoroughly tested for real-world scenarios.
-- **Use Case:** Deploy updates with confidence, knowing critical workflows are validated.
+- **Why It Matters**: Deploy with confidence on a rigorously tested platform.
+- **Perfect For**: Critical workflows where reliability is non-negotiable.
 
 ## Why Upgrade to Business Intelligence 3.6.0?
 
-This release isn’t just about new features—it’s about enabling you to achieve more with less effort. Whether you’re optimizing Grafana workflows, managing critical alerts, or rendering complex dashboards, Business Intelligence 3.6.0 delivers the speed, clarity, and tools you need to succeed.
+This isn’t just an update—it’s a leap forward. Whether you’re optimizing Grafana dashboards, managing alerts, or automating reports, Business Intelligence 3.6.0 equips you with the tools to work smarter, not harder.
 
-Key reasons to upgrade:
+**Top Reasons to Upgrade Now**:
 
-- **2x Faster Rendering** for quicker insights and decision-making.
-- **Smarter Alerting** with enhanced visibility into data issues.
-- **Polished UI** for a seamless and accessible user experience.
-- **Unmatched Reliability** with improved stability and comprehensive testing.
+- **2x Faster Rendering**: Get insights quicker for better decisions.
+- **Smarter Alerts**: Cut through noise with enhanced visibility.
+- **Sleek, Accessible UI**: Navigate effortlessly with a modern design.
+- **Rock-Solid Reliability**: Trust in a platform tested for real-world use.
 
-Don’t wait—upgrade today and transform the way you work with Grafana!
+Don’t miss out—upgrade to Business Intelligence 3.6.0 today and redefine your Grafana experience!
 
 ## Download Business Studio 3.6.0
 
-:::info Signed and Secure
-Our installers for MacOS and Windows are digitally signed, notarized, and built using automated GitHub workflows to ensure the highest levels of security and trust.
+:::info Signed & Secure
+Our MacOS and Windows installers are digitally signed, notarized, and built via automated GitHub workflows for maximum security and trust.
 :::
 
-Choose the installer for your operating system:
+Select the installer for your system:
 
 - **MacOS**:
   - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/Business.Studio-3.6.0-arm64.dmg)
