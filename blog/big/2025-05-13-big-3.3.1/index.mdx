@@ -24,106 +24,106 @@ import Youtube from "@theme/Youtube";
 
 # Business Intelligence 3.3.1: Transform Your Grafana Workflows with Alert-Driven Analytics
 
-We’re excited to unveil **Business Intelligence 3.3.1**, a significant update to the [Business Intelligence platform](/big/). This release brings powerful new features to streamline workflows, deliver deeper insights, and elevate your Grafana experience. Let’s explore the highlights!
+We’re thrilled to announce **Business Intelligence 3.3.1**, a major update to the [Business Intelligence platform](/big/). This release introduces powerful features to streamline workflows, uncover deeper insights, and enhance your Grafana experience. Let’s dive into what’s new!
 
 ## What’s New in Business Intelligence 3.3.1
 
-- **Revamped Alerting Page**: Navigate and manage alerts with ease thanks to an intuitive UI and advanced filtering.
+- **Revamped Alerting Page**: Navigate and manage alerts effortlessly with an intuitive UI and advanced filtering options.
 - **Data Preview Feature**: Preview data directly on the Alert Settings page to ensure accuracy before activation.
-- **Alert Notification History**: Access past notifications for improved transparency and accountability.
-- **Enhanced Clustering**: Updated clustering pages now support alerting and engine configurations.
-- **Localization Support**: Spanish language added to broaden accessibility.
+- **Alert Notification History**: Access a detailed log of past notifications for transparency and accountability.
+- **Enhanced Clustering**: Updated clustering pages now support alerting and engine configurations for better scalability.
+- **Localization Support**: Spanish language added to improve accessibility for global users.
 - **Personalization Options**: Customize themes via profile settings for a tailored user experience.
-- **New Data Source**: Loki integration enhances logging and debugging capabilities.
+- **New Data Source**: Loki integration enhances logging and debugging within Grafana.
 - **Faster Alert Processing**: Optimize performance with customizable batch sizes for alerts and annotations in Engine settings.
 
-Join Mikhail for a detailed walkthrough of these exciting updates:
+Join Mikhail for an in-depth look at these exciting updates:
 
 <Youtube
   id="QLcjFLYxT8U"
   title="Business Intelligence 3.3.1: Elevate Your Grafana Workflows"
 />
 
-Ready to revolutionize your Grafana workflows? Dive into Business Intelligence 3.3.1 today!
+Ready to transform your Grafana workflows? Explore Business Intelligence 3.3.1 today!
 
 ## Revamped Alerting Page
 
-Responding to user feedback about navigation and alert management challenges, we’ve redesigned the alerting page with a more intuitive interface. The updated layout simplifies locating and managing alerts, while advanced filtering options let you sort by specific criteria. This reduces manual search time and boosts efficiency, especially for teams monitoring large-scale systems in Grafana.
+Based on user feedback about navigation challenges, we’ve redesigned the alerting page with a user-friendly interface. The new layout simplifies finding and managing alerts, while advanced filtering options allow sorting by specific criteria. This saves time and boosts efficiency, especially for teams monitoring large-scale systems in Grafana.
 
 <Image
-  title="Revamped Alerting Page displays alerts from all connected Business Engine clusters."
+  title="Revamped Alerting Page showcasing alerts from all connected Business Engine clusters in a clear, organized layout."
   src="/img/blog/2025-05-13-big-3.3.1/alerting.png"
 />
 
 ## Data Preview Feature
 
-Setting up alerts just got easier. The new Data Preview feature, embedded in the Alert Settings page, allows you to view a snapshot of relevant data without leaving the page or running separate queries. This saves time, minimizes setup errors, and ensures alerts are based on accurate data, building confidence in your monitoring system.
+Setting up alerts is now simpler than ever. The Data Preview feature, integrated into the Alert Settings page, lets you view a snapshot of relevant data without switching tabs or running separate queries. This reduces setup errors and builds confidence in your monitoring system by ensuring alerts are based on accurate data.
 
 <Image
-  title="Data Preview Feature allows you to view a snapshot of the latest data."
+  title="Data Preview Feature displaying a snapshot of the latest data directly on the Alert Settings page."
   src="/img/blog/2025-05-13-big-3.3.1/preview.png"
 />
 
 ## Alert Notification History
 
-Transparency is key in critical decision-making environments. The Alert Notification History feature provides a comprehensive log of past notifications, including trigger times and conditions. This is essential for auditing, troubleshooting false positives, and meeting compliance requirements, especially in high-stakes operations.
+Transparency is crucial in critical environments. The Alert Notification History feature offers a comprehensive log of past notifications, including trigger times and conditions. This is invaluable for auditing, troubleshooting false positives, and meeting compliance requirements in high-stakes operations.
 
 <Image
-  title="Alert Notification History with sent status gives a glimpse of the latest events."
+  title="Alert Notification History showing recent events with sent status for quick reference and transparency."
   src="/img/blog/2025-05-13-big-3.3.1/history.png"
 />
 
 ## Enhanced Clustering
 
-For distributed environments, clustering is vital to scaling Business Intelligence deployments. The updated clustering pages now display the latest alerts and engine lists, offering better visibility and control over your setup.
+For distributed environments, clustering is essential for scaling Business Intelligence deployments. The updated clustering pages now display the latest alerts and engine lists, providing greater visibility and control over your infrastructure.
 
 <Image
-  title="Enhanced Clustering pages allows to view alerts, load balanced configuration and joined engines."
+  title="Enhanced Clustering pages displaying alerts, load-balanced configurations, and joined engines for seamless management."
   src="/img/blog/2025-05-13-big-3.3.1/clustering.png"
 />
 
 ## Localization Support
 
-To serve a global audience, Business Intelligence 3.3.1 introduces Spanish language support. This update removes language barriers, making the platform more accessible and user-friendly for Spanish-speaking teams and organizations, fostering greater adoption worldwide.
+To reach a global audience, Business Intelligence 3.3.1 introduces Spanish language support. This update breaks down language barriers, making the platform more accessible and user-friendly for Spanish-speaking teams and organizations.
 
 <Image
-  title="Business Studio now includes Spanish UI."
+  title="Business Studio interface now available in Spanish, enhancing accessibility for global users."
   src="/img/blog/2025-05-13-big-3.3.1/spanish.png"
 />
 
 ## Personalization Options
 
-Enhancing user experience, this release lets you customize themes through profile settings. Whether you prefer light or dark mode, tailoring the platform’s appearance ensures comfort during long monitoring sessions and creates a more engaging interaction with Grafana dashboards.
+Elevate your user experience with customizable themes in profile settings. Whether you prefer light or dark mode, tailoring the platform’s appearance ensures comfort during extended monitoring sessions and creates a more engaging interaction with Grafana dashboards.
 
 <Image
-  title="Profile page allows you to select a user role, language and theme."
+  title="Profile page allowing users to select role, language, and theme preferences for a personalized experience."
   src="/img/blog/2025-05-13-big-3.3.1/profile.png"
 />
 
 ## New Data Source
 
-With the addition of Loki as a data source, logging capabilities are significantly enhanced. Designed for scalability, Loki enables seamless log aggregation alongside metrics and visualizations in Grafana. This unified view is invaluable for debugging, event correlation, and gaining deeper insights into application performance in complex systems.
+The addition of Loki as a data source significantly boosts logging capabilities. Designed for scalability, Loki enables seamless log aggregation alongside metrics and visualizations in Grafana. This unified view is critical for debugging, event correlation, and gaining deeper insights into application performance.
 
 <Image
-  title="High Process Time alert based on collected NGINX log files stored in Loki."
+  title="High Process Time alert based on NGINX log files stored in Loki, integrated with Grafana for comprehensive monitoring."
   src="/img/blog/2025-05-13-big-3.3.1/website-alert.png"
 />
 
 ## Faster Alert Processing
 
-In high-volume monitoring scenarios, performance is critical. Customizable batch sizes for alerts and annotations in Engine settings allow administrators to fine-tune throughput and resource usage. This ensures faster alert delivery without system overload, ideal for organizations with large datasets or frequent alert triggers.
+Performance is paramount in high-volume monitoring scenarios. Customizable batch sizes for alerts and annotations in Engine settings allow administrators to fine-tune throughput and resource usage. This ensures faster alert delivery without overloading the system, ideal for organizations with large datasets or frequent triggers.
 
 <Image
-  title="Based on the CPU, Memory and disk space you can adjust performance and retention configuration."
+  title="Engine settings page for adjusting performance and retention configurations based on CPU, memory, and disk space."
   src="/img/blog/2025-05-13-big-3.3.1/processing-configuration.png"
 />
 
 ## Enhanced OpenAPI Specification
 
-The Business Engine’s [OpenAPI specification](/big/api/) has been fully updated, enabling seamless integrations and empowering developers to leverage the platform’s latest features with ease.
+The Business Engine’s [OpenAPI specification](/big/api/) has been fully updated, enabling seamless integrations and empowering developers to leverage the platform’s latest capabilities with ease.
 
 <Image
-  title="Business Engine provides Swagger UI to check and try REST API endpoints."
+  title="Business Engine Swagger UI displaying REST API endpoints for testing and integration purposes."
   src="/img/blog/2025-05-13-big-3.3.1/swagger.png"
 />
 
