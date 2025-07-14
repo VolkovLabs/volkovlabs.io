@@ -98,7 +98,7 @@ const Main = ({ siteConfig }) => (
               revolutionizes alerting and analytics in Grafana.
             </p>
             <p className="hero__subtitle">
-              Business Alerting offers streamlined interactions, centralized
+              BI Platform offers streamlined interactions, centralized
               management, and advanced features like high availability and load
               balancing.
             </p>
@@ -118,8 +118,8 @@ const Main = ({ siteConfig }) => (
             <a href="/big/">
               <ThemedImage
                 sources={{
-                  light: useBaseUrl("/img/big/business-studio/engine.png"),
-                  dark: useBaseUrl("/img/big/business-studio/engine.dark.png"),
+                  light: useBaseUrl("/img/big/business-studio.gif"),
+                  dark: useBaseUrl("/img/big/business-studio.dark.gif"),
                 }}
                 alt={siteConfig.tagline}
                 className={styles.big}
