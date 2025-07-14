@@ -2,52 +2,75 @@ import Code from "@theme/Code";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Quick Start
+# Quick Start Guide
 
-This Quick Start guide provides the essential steps to deploy the Business Intelligence platform using an existing Grafana LGTM (Loki, Grafana, Tempo, Mimir) stack and production data.
+This Quick Start Guide outlines the essential steps to deploy the Business Intelligence platform using an existing Grafana LGTM (Loki, Grafana, Tempo, Mimir) stack and production data.
 
 <Image
   title="Quick Start Overview"
   src="/img/big/quick-start/quick-start.png"
+  alt="Diagram illustrating the Quick Start process for the Business Intelligence platform"
 />
 
-:::info Grafana 11
-The Business Engine requires Grafana 11 and maintains compatibility with the latest Grafana version.
+:::info Grafana 11 and 12 Requirement
+The Business Engine requires Grafana version 11 or later and is compatible with the latest Grafana releases running in Grafana Cloud.
 :::
 
 ## Docker Compose Configuration
 
-Configure a `docker-compose.yml` file with the following containers:
+Set up a `docker-compose.yml` file to define the necessary services for the Business Intelligence platform. The configuration includes the following containers:
 
-- **Timescale**: Manages Business Engine configuration data (use an existing Timescale database or Timescale Cloud if available)
-- **Business Engine**: Connects to Grafana via a service account token, leveraging HTTP APIs to fetch configurations, evaluate alert rules, and execute actions
+- **PostgreSQL**: Stores Business Engine configuration data.
+- **Business Engine**: Connects to a single Grafana instance using a service account token.
+  - Utilizes HTTP APIs to retrieve configurations, evaluate alert rules, and execute actions.
+  - Requires username and password for Image Render Microservice to access Grafana UI.
+- **Node-RED (Optional)**: Provides workflow to send email, Slack notifications, open Grafana Incident, etc.
+- **Grafana Alloy (Optional)**: Allows to collect metrics and logs from Business Engine.
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
   language="yaml"
+  title="Quick Start Docker Compose Configuration"
 />
 
 ## Starting the Platform
 
-Follow these steps to launch the platform:
+Follow these steps to deploy and launch the Business Intelligence platform:
 
-1. Log in to your Grafana instance (Cloud, OSS, or Enterprise)
-2. Create a service account with `Viewer` or `Editor` permissions
-3. Start the Business Engine and Postgres containers:
+1. **Access Grafana**: Log in to your Grafana instance (Cloud, OSS, or Enterprise).
+
+2. **Create a Service Account**: Set up a service account in Grafana with **Viewer** or **Editor** permissions to allow the Business Engine to interact with Grafana APIs. **Editor** permission is required to create Annotations.
+
+   <Image
+     title="Add Business Engine using localhost port 3001 with Community License preconfigured by default"
+     src="/img/big/quick-start/grafana-account.png"
+   />
+
+3. **Start Containers**: Launch the Business Engine and PostgresSQL containers using Docker Compose. Node-RED and Grafana Alloy are optional for actions workflow and metrics, logs collection.
+
    ```sh
    docker compose up -d
    ```
-4. Download Business Studio from the [Release Notes](https://github.com/VolkovLabs/business-intelligence/releases), then install and launch it
-5. Connect to Grafana OSS, Enterprise or Cloud updating Environment page.
-6. In Business Studio, add the Business Engine to configure your Grafana instance, actions, and alert rules:
+
+4. **Install Business Studio**: Download the Business Studio application from the [GitHub repository](https://github.com/VolkovLabs/business-intelligence/releases), then install and open it.
+
+5. **Configure Business Engine**: Add the Business Engine in Business Studio to define actions, set up alert rules, and schedule reports:
+
    <Image
-     title="Alert Rules Configured via Business Studio."
-     src="/img/big/business-studio/alerts.png"
+     title="Add Business Engine using localhost port 3001 with Community License preconfigured by default"
+     src="/img/big/quick-start/add-engine.png"
+   />
+
+6. **Connect to Grafana**: In Business Studio, update the Environment settings to connect to your Grafana instance (OSS, Enterprise, or Cloud).
+
+   <Image
+     title="Provide Service Account token and username/password for Image Render Microservice to create screenshots"
+     src="/img/big/quick-start/connect-grafana.png"
    />
 
 ## Stopping the Platform
 
-To stop and remove all containers:
+To stop and remove all running containers, execute the following command:
 
 ```sh
 docker compose down
