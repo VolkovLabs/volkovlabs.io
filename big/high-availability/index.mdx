@@ -3,50 +3,54 @@ tags:
   - Business Engine
 ---
 
+import BlogPost from "@theme/BlogPost";
 import Image from "@theme/Image";
 
 # High Availability
 
-High Availability (HA) and load balancing are critical features for the Business Intelligence platform, consistently ranked among the most requested by users. We’ve engineered the platform from the ground up to deliver robust performance and uninterrupted service, even under demanding conditions.
+High Availability (HA) and load balancing are essential for ensuring the reliability and performance of the Business Intelligence platform. These features, consistently among the most requested by users, are built into the platform's core design to provide uninterrupted service and robust performance, even under heavy demand.
 
-Each component supports clustering—groups of mirrored servers—enabling efficient load distribution and scalability.
+Every component of the platform supports clustering—groups of mirrored servers—allowing for efficient load distribution and seamless scalability.
 
-## Deployment
+## Deployment Architecture
 
-The HA architecture uses clustering and load balancing to ensure seamless operation in high-traffic scenarios:
+The HA architecture leverages clustering and load balancing to maintain smooth operation during high-traffic scenarios:
 
 - **Load Balancer**
 
-  - Distributes requests across mirrored Business Engines and Grafana instances
-  - Maintains accessibility during peak loads
+  - Distributes incoming requests across mirrored Business Engines and Grafana instances.
+  - Ensures accessibility and performance during peak loads.
 
 - **Business Engine Cluster**
 
-  - Scales horizontally with multiple identical Business Engines based on workload needs
+  - Scales horizontally by adding multiple identical Business Engines to meet workload demands.
+  - Business Engines provides Load-Balancing using PostgreSQL database.
 
 - **Grafana Cluster**
-  - Supports multiple synchronized Grafana instances tailored to your requirements
+  - Supports multiple synchronized Grafana instances, customizable to your specific needs.
 
 <Image
   title="Distributed High Availability Deployment of the Business Intelligence Platform"
   src="/img/big/high-availability/overview.png"
 />
 
-### Data Storage
+## Data Storage Solutions
 
-Select a data storage solution that aligns with your environment. We recommend these options for optimal integration with Grafana:
+Choose a data storage solution that best fits your environment. For optimal integration with Grafana, we selected the following:
 
-- **PostgreSQL (Timescale)**
+- **PostgreSQL**
 
-  - Manages production data, configuration, and Business Engine metadata
+  - Handles production data, configuration, and Business Engine metadata efficiently.
 
 - **Prometheus**
-  - Collects and stores performance metrics
+  - Collects and stores performance metrics for monitoring and analysis.
 
-## Prometheus Configuration
+## Building a Scalable BI Solution with Grafana: Managing Hundreds of Alerts
 
-Our [Prometheus setup guide](/big/alerting/datasources/prometheus/) details HA configurations, including multi-node clustering and failover strategies.
+Discover how to scale Grafana for enterprise needs using the Business Intelligence platform. This tutorial walks you through managing hundreds of alerts efficiently in a high-availability environment.
+
+<BlogPost id="scalable-solution-20250308" />
 
 ## Ready to Deploy?
 
-Follow the setup instructions in our [Quick Start](/big/quick-start/) guide to get started.
+Get started with our [Quick Start Guide](/big/quick-start/) for step-by-step instructions on deploying the platform.
