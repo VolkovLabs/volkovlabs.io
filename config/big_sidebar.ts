@@ -12,7 +12,7 @@ const sidebars: SidebarsConfig = {
       label: "Business Intelligence",
       collapsible: false, // Always expanded
       link: { type: "doc", id: "index" }, // Links to main BI doc
-      items: ["high-availability/index", "quick-start/index", "personas"],
+      items: ["high-availability", "quick-start", "personas"],
     },
 
     // Business Studio section
@@ -79,7 +79,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Tutorials",
-      link: { type: "doc", id: "tutorials/index" }, // Links to Tutorials overview
+      link: { type: "doc", id: "tutorials" }, // Links to Tutorials overview
       items: [], // Placeholder for future tutorial docs
     },
 
