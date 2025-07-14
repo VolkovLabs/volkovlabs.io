@@ -16,28 +16,28 @@ import Youtube from "@theme/Youtube";
 
 # Business Intelligence 2.7.0: Smarter Profiles, Richer Previews, and Seamless Data Flow
 
-We’re excited to unveil the public preview of Business Intelligence 2.7.0, brought to you by Volkov Labs. This release supercharges the [Business Intelligence platform](/big/) with powerful new features designed to simplify workflows and boost efficiency:
+We’re thrilled to announce the public preview of **Business Intelligence 2.7.0**, crafted by Volkov Labs. This release elevates the [Business Intelligence platform](/big/) with innovative features designed to streamline workflows and enhance productivity:
 
-- **Tailored user profiles** for business and technical users.
+- **Personalized user profiles** for business and technical users.
 - **Enhanced alert previews** with visible thresholds.
-- **Refresh buttons** with 10-second auto-refetch.
+- **Refresh buttons** with 10-second auto-refetch for real-time updates.
 - **JSON export/import** for effortless engine configuration.
 - **Alert condition drawers** triggered by action events.
-- **Infinite scroll** for smooth alert and action history.
-- **Performance gains** through optimized database indexing.
+- **Infinite scroll** for seamless alert and action history navigation.
+- **Performance boosts** through optimized database indexing.
 
-Join Mikhail as he walks through these exciting updates:
+Join Mikhail as he showcases these game-changing updates:
 
 <Youtube
   id="uRSjwfQJ3ik"
   title="Business Intelligence 2.7.0: Smarter Profiles, Richer Previews, and Seamless Data Flow"
 />
 
-Read on to explore how these updates transform your BI experience—and try them out today!
+Dive into the details below to see how these enhancements can transform your BI experience—and try them out today!
 
 ## Spotlight: Scaling BI with Grafana—Hundreds of Alerts, Zero Hassle
 
-See the Business Intelligence platform in action, managing hundreds of alerts with ease in a high-availability Grafana setup. Watch the video below for a deep dive.
+Witness the Business Intelligence platform in action, effortlessly managing hundreds of alerts in a high-availability Grafana environment. Watch the video below for an in-depth look.
 
 <Youtube
   id="aOFfKYsZ9XM"
@@ -46,91 +46,91 @@ See the Business Intelligence platform in action, managing hundreds of alerts wi
 
 ## Updated OpenAPI Specification
 
-The Business Engine’s [OpenAPI specification](/big/api/) has been revamped, ensuring smooth integration for developers and keeping your workflows in sync with the latest features.
+The Business Engine’s [OpenAPI specification](/big/api/) has been fully updated, ensuring seamless integration for developers and keeping your workflows aligned with the latest capabilities.
 
-## Custom User Profiles
+## Tailored User Profiles Experience
 
-Whether you’re a decision-maker or a hands-on engineer, new **business-oriented** and **technical** profiles tailor the platform to your needs—simplified views for executives, detailed controls for tech experts.
+Whether you’re a business decision-maker or a technical engineer, the new **business-oriented** and **technical** profiles adapt the platform to your needs—offering simplified dashboards for executives and detailed controls for tech experts.
 
-Set up your profile via the icon in the top-right corner. Add your name, email (for support tickets), and choose your role.
+Configure your profile easily via the icon in the top-right corner. Add your name, email (for support tickets), and select your role.
 
 <Image
-  title="Configure your user profile with ease."
+  title="Configure your user profile effortlessly."
   src="/img/blog/2025-03-17-big-2.7.0/profile-conf.png"
 />
 
-When submitting a support ticket, your name and email auto-fill—simply add your message and any attachments to get help fast.
+When submitting a support ticket, your name and email are auto-populated—simply add your message and attachments to get assistance quickly.
 
 <Image
-  title="Streamlined support ticket creation."
+  title="Streamlined support ticket submission."
   src="/img/blog/2025-03-17-big-2.7.0/profile-support.png"
 />
 
-## Alert Previews with Thresholds
+## Alert Previews with Color-Coded Thresholds
 
-The **Data Preview** page now highlights thresholds with Grafana’s color-coded clarity, making it easier to spot trigger conditions at a glance. To check it out:
+The **Data Preview** page now displays thresholds with Grafana’s intuitive color-coding, making it simple to identify trigger conditions at a glance. To explore this feature:
 
 1. Open an alert rule.
 2. Navigate to the **Data Preview** tab.
-3. View values with threshold colors applied (see reference below).
+3. See values highlighted with threshold colors (as shown below).
 
 <Image
-  title="Alert data previews now show thresholds clearly."
+  title="Alert data previews with clear threshold indicators."
   src="/img/blog/2025-03-17-big-2.7.0/thresholds.png"
 />
 
-## Stay Fresh with Auto-Refresh
+## Real-Time Insights with Auto-Refresh
 
-New **Refresh** buttons deliver a 10-second data refetch across nearly every screen, keeping your insights up-to-date without lifting a finger. Look for it in action below.
+Keep your data current with new **Refresh** buttons, featuring a 10-second auto-refetch across nearly every screen. Stay updated effortlessly—see it in action below.
 
 <Image
-  title="Refresh button keeps your data current."
+  title="Refresh button ensures your data stays current."
   src="/img/blog/2025-03-17-big-2.7.0/auto-refresh.png"
 />
 
-## JSON-Powered Configuration
+## Seamless Configuration with JSON Export/Import
 
-:::info Profile
-Available exclusively for technical users.
+:::info Technical Users Only
+This feature is exclusive to technical user profiles.
 :::
 
-Migrate or back up your Business Engine setups effortlessly with JSON export/import. Find this feature on the **Transfer Data** tab of any configured engine.
+Effortlessly migrate or back up your Business Engine configurations using JSON export/import. Access this tool on the **Transfer Data** tab of any configured engine.
 
 <Image
-  title="Export or import engine configs via JSON."
+  title="Export or import engine configurations via JSON."
   src="/img/blog/2025-03-17-big-2.7.0/transfer.png"
 />
 
-## Peek Inside Alerts with Condition Drawers
+## Instant Insights with Alert Condition Drawers
 
-Curious why an alert fired? Click any action event to open a drawer showing alert conditions as they were—no digging required. Here’s how:
+Wondering why an alert triggered? Click any action event to open a drawer displaying the alert conditions at the time of firing—no extra steps needed. Here’s how:
 
 1. Open action details.
-2. Go to the **Action History** tab.
-3. Click an event to reveal its conditions.
+2. Navigate to the **Action History** tab.
+3. Click an event to view its conditions.
 
 <Image
-  title="Alert condition drawer offers instant insight."
+  title="Alert condition drawer provides instant clarity."
   src="/img/blog/2025-03-17-big-2.7.0/alert-drawer.png"
 />
 
-## Infinite Scroll Through History
+## Seamless Navigation with Infinite Scroll
 
-Say goodbye to pagination. Alerts, actions, and engine history now flow seamlessly with infinite scroll. Check out one example below.
+Forget pagination. Alerts, actions, and engine history now feature **infinite scroll** for a fluid browsing experience. See it in action below.
 
 <Image
   title="Endless scrolling through action history."
   src="/img/blog/2025-03-17-big-2.7.0/endless.png"
 />
 
-## Faster Performance
+## Optimized Performance for Speed
 
-Database indexing accelerates historical data retrieval, delivering a snappy experience even with massive datasets. We’ve fine-tuned performance so you don’t have to wait.
+With enhanced database indexing, historical data retrieval is faster than ever, ensuring a responsive experience even with large datasets. We’ve optimized performance so you can focus on insights, not wait times.
 
-## Get Business Studio 2.7.0 Now
+## Download Business Studio 2.7.0 Today
 
-:::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for maximum security.  
+:::info Signed Releases
+MacOS and Windows installers are signed, notarized, and built using automated GitHub workflows for maximum security.
 :::
 
 - **MacOS**:
@@ -138,13 +138,13 @@ MacOS and Windows installers are signed, notarized, and built via automated GitH
   - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0-x64.dmg)
   - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-darwin-arm64-2.7.0.zip)
   - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-darwin-x64-2.7.0.zip)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0.Setup.exe)
 - **Linux**:
   - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio-2.7.0-1.arm64.rpm)
   - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio-2.7.0-1.x86_64.rpm)
   - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio_2.7.0_arm64.deb)
   - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/business-studio_2.7.0_amd64.deb)
-- **Windows**:
-  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.7.0/Business.Studio-2.7.0.Setup.exe)
 
 <GettingStarted />
 
