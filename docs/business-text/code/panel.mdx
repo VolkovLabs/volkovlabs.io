@@ -293,3 +293,68 @@ _Added in: v5.7.0_
 ```javascript
 context.grafana.refresh();
 ```
+
+### grafana.getUserPreference(key)
+
+Get user preference value by key
+
+#### Usage
+
+```javascript
+context.grafana.getUserPreference("key");
+```
+
+#### Example
+
+```HTML
+<button onclick="myFuncGetValue()">Get Value and show message</button>
+```
+
+Before Content Rendering
+
+```javascript
+myFuncGetValue = () => {
+  context.grafana.getUserPreference("testKey").then((value) => {
+    context.grafana.notifySuccess(["USER STORAGE: ", JSON.stringify(value)]);
+  });
+};
+```
+
+#### Arguments
+
+- `key` _string_.
+
+### grafana.setUserPreference(key,data)
+
+Set user preference value by key
+
+#### Usage
+
+```javascript
+context.grafana.setUserPreference("key", {});
+```
+
+#### Example
+
+```html
+<button onclick="myFuncSetValue()">Set default Value and show message</button>
+```
+
+Before Content Rendering
+
+```javascript
+myFuncSetValue = () => {
+  context.grafana
+    .setUserPreference("testKey", { defaultData: "test message" })
+    .then(() => {
+      context.grafana.notifySuccess(["Data Added ", "Check Data"]);
+      context.grafana.refresh();
+    });
+};
+```
+
+#### Arguments
+
+- `key` _string_.
+
+- `data` _unknown_
