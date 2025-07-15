@@ -1,0 +1,217 @@
+---
+authors: [mikhail, alex]
+slug: node-red-slack/
+tags: [Business Intelligence]
+image: /img/blog/2025-06-11-node-red-slack/banner.png
+keywords:
+  [Business Intelligence, Alerting, Grafana, Workflow, Automation, Image Render]
+---
+
+import Feedback from "@site/big/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Enhanced Business Intelligence Alerting with Node-RED, Slack, and Image Render Microservice
+
+At Volkov Labs, we’re dedicated to advancing Business Intelligence (BI) through cutting-edge tools and integrations. With the release of our **[Business Intelligence Platform 3.4.0](/blog/business-intelligence-3.4.0/)**, we’ve unveiled the **Image Render Microservice**, a game-changing feature that uses **Grafana dashboard variables** to generate dynamic visual content for alerts. Combined with **Node-RED** for workflow automation and **Slack** for team communication, this setup creates a powerful, real-time alerting pipeline tailored for BI workflows.
+
+In this blog post, we’ll explore how the Image Render Microservice elevates BI alerting by producing contextual visuals, such as Grafana panel screenshots. We’ll also guide you through a Node-RED workflow that integrates with Slack to deliver customized notifications, ensuring your team stays informed about critical business metrics and events.
+
+## Why Business Intelligence Alerting Matters
+
+Business Intelligence transforms raw data into actionable insights, and effective alerting is key to this process. It enables teams to monitor vital metrics, detect anomalies, and act swiftly. Our latest BI platform release, paired with Grafana, Node-RED, and Slack, provides a robust solution for monitoring, alerting, and collaboration:
+
+- **Grafana**: A leading observability platform for creating dynamic, data-driven dashboards with customizable variables.
+- **Business Intelligence Platform**: Enhances alerting with dashboard variable support and introduces the Image Render Microservice for dynamic visuals.
+- **Node-RED**: A low-code automation tool that seamlessly connects BI alerts to platforms like Slack.
+- **Slack**: A centralized communication hub for real-time BI notifications and team collaboration.
+
+This powerful stack turns complex BI data into clear, actionable alerts—complete with visual context—delivered straight to your team.
+
+<Image
+  title="Slack Notification with Rendered Image for High Latency in Business Engines."
+  src="/img/blog/2025-06-11-node-red-slack/slack-message.png"
+  alt="Slack notification displaying a rendered image of high latency in business engines"
+/>
+
+## Introducing the Image Render Microservice
+
+The **Image Render Microservice**, a standout feature of our 3.4.0 release, redefines BI alerting by generating images based on real-time data. Leveraging **Grafana dashboard variables**, it creates visual content—like panel screenshots—that capture the exact state of your metrics when an alert triggers.
+
+<Image
+  title="Rendered Panel Screenshot for Alerting Events, viewable in Notification History."
+  src="/img/blog/2025-06-20-big-3.5.0/alert-history.gif"
+/>
+
+### Key Benefits for Business Intelligence
+
+- **Dynamic Visuals**: Create images tailored to specific alert conditions using real-time data and dashboard variables.
+- **Rich Context**: Embed Grafana panel screenshots in notifications for instant visual insights into issues like high latency or sales drops.
+- **Seamless Integration**: Combine with Node-RED workflows to send rendered images to Slack or other platforms effortlessly.
+
+This feature ensures alerts go beyond text, offering immediate visual context to help teams assess and respond to BI events faster.
+
+## Node-RED Workflow for BI Alerting: A Deep Dive
+
+We’ve crafted a Node-RED flow to process BI alerts from our platform, utilize the Image Render Microservice for visual content, and send formatted notifications to Slack. This workflow supports two scenarios:
+
+1. **Text-Only Alerts**: For quick updates on BI metrics.
+2. **Image-Enhanced Alerts**: For detailed insights with rendered visuals, like Grafana panel screenshots.
+
+The flow handles HTTP POST requests, processes payloads with dashboard variables, and includes error handling and debugging for reliability in BI environments.
+
+<Image
+  title="Node-RED Workflow for BI Alerting with Slack Integration."
+  src="/img/blog/2025-06-11-node-red-slack/workflow.png"
+  alt="Node-RED workflow for BI alerting with Slack integration"
+/>
+
+### Key Features of the Workflow
+
+- **HTTP Endpoint**: Listens for BI event notifications at `/slack`.
+- **Payload Processing**: Extracts Slack channel ID, message text, and image data (rendered via dashboard variables) from requests.
+- **Conditional Logic**: Routes alerts based on the presence of a rendered image.
+- **Slack API Integration**: Sends messages and images using Slack’s APIs (`chat.postMessage`, `files.getUploadURLExternal`, etc.).
+- **Error Handling**: Ensures reliability with built-in error-catching mechanisms.
+- **Debugging**: Features debug nodes for troubleshooting and optimizing BI workflows.
+
+## Breaking Down the Node-RED Workflow
+
+Let’s dissect the key components of this Node-RED flow and how it integrates with the Image Render Microservice to enhance BI alerting.
+
+### Triggering the Flow
+
+The workflow begins with an **HTTP In** node (`Slack Trigger /slack`) that receives POST requests from the Business Intelligence Platform. These requests include event data, such as dashboard variables for channel ID, message text, and image references.
+
+- **Input**: HTTP POST request with JSON payload.
+- **Output**: Routes data to debug nodes (`Show Payload`, `Show Headers`) and a processing node (`Prepare Payload`).
+
+<Image
+  title="Workflow from Trigger to Image Check Switch."
+  src="/img/blog/2025-06-11-node-red-slack/switch-workflow.png"
+  alt="Node-RED workflow segment from trigger to image check switch"
+/>
+
+### Preparing the Payload with Dashboard Variables
+
+The **Prepare Payload** function node formats incoming BI alert data, including:
+
+- Slack channel ID from request headers.
+- Alert message text.
+- Image data (if available), such as a Base64-encoded screenshot from the Image Render Microservice.
+
+```javascript
+/**
+ * Panel Screenshot via Image Render Microservice
+ */
+let image = msg.payload.event.condition?.panelScreenshot || "";
+let title = msg.payload.event.alert?.title || "BI Metric Snapshot";
+
+/**
+ * Payload with Dashboard Variables
+ */
+msg.payload = {
+  channel_id: msg.req.headers.channel_id,
+  text: msg.payload.message,
+  title,
+  image,
+};
+
+return msg;
+```
+
+### Routing Based on Image Availability
+
+The **Check Image** switch node evaluates `msg.payload.image` to decide the next steps:
+
+- **Image Present**: Routes to nodes for uploading the rendered image to Slack.
+- **No Image**: Routes to nodes for sending a text-only BI notification.
+
+### Sending Text-Only Alerts
+
+For text-only alerts, the **Set Message** function node formats the payload for Slack’s `chat.postMessage` API, including channel ID and message text. Responses return appropriate HTTP status codes (200 for success, 400 for failure).
+
+```javascript
+/**
+ * Payload for BI Text Alert
+ */
+msg.payload = {
+  channel: msg.payload.channel_id,
+  text: msg.payload.text,
+};
+
+return msg;
+```
+
+<Image
+  title="Action Settings with Handlebars and Preview in Business Studio (Spanish UI)."
+  src="/img/blog/2025-06-11-node-red-slack/action-settings.png"
+  alt="Action settings using Handlebars with a preview in Business Studio"
+/>
+
+### Uploading Rendered Images to Slack
+
+For alerts with images, the workflow processes rendered content through several steps:
+
+1. **Set Upload URL Payload**: Converts Base64-encoded image data to a Buffer and prepares metadata like filename and type.
+2. **Get Upload URL**: Retrieves a temporary upload URL from Slack’s `files.getUploadURLExternal` API.
+3. **Set Upload File Payload**: Formats the upload request.
+4. **Upload File to URL**: Sends the image data to Slack.
+5. **Complete Upload**: Finalizes the upload and shares the image in the Slack channel with a message.
+
+<Image
+  title="Workflow for Uploading Rendered Images to Slack."
+  src="/img/blog/2025-06-11-node-red-slack/upload-workflow.png"
+  alt="Node-RED workflow segment for uploading rendered images to Slack"
+/>
+
+### Error Handling and Debugging
+
+A **Catch** node (`Error Catch`) captures workflow errors, routing them to an error response node (`Error Response`) with a 400 status code. Debug nodes throughout the flow monitor payloads and API responses, ensuring smooth BI alerting operations.
+
+### Testing the Workflow
+
+Inject nodes (`Send Message`, `Send Image`) allow testing of text and image-based alerts without triggering real events, streamlining development and validation.
+
+<Image
+  title="Testing image-based alerts without triggering real events."
+  src="/img/blog/2025-06-11-node-red-slack/send-image.png"
+  alt="Node-RED workflow segment for uploading rendered images to Slack"
+/>
+
+## How to Set Up BI Alerting with Node-RED and Slack
+
+Ready to implement this powerful BI alerting workflow? Follow these steps:
+
+1. **Install Node-RED**: Use our [Docker Compose configuration](https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml) or the official [installation guide](https://nodered.org/docs/getting-started/).
+2. **Import the Flow**: Load the JSON configuration from [`slack.json`](https://github.com/VolkovLabs/business-intelligence/blob/main/node-red/slack.json) into Node-RED.
+3. **Configure Slack API Token**: Update HTTP Request nodes with your Slack Bot User OAuth Token.
+4. **Set Up Image Render Microservice**: Ensure Business Intelligence Platform 3.4.0 or later is installed and the Image Render Microservice is configured.
+5. **Configure Actions and Alerts**: Define actions in the Business Engine to send alerts to the Node-RED `/slack` endpoint, using dashboard variables for dynamic rendering.
+6. **Deploy and Test**: Deploy the flow and use Inject nodes to verify text and image notifications in Slack.
+
+<Image
+  title="Configure Grafana User Login and Password for Image Render Microservice."
+  src="/img/blog/2025-06-11-node-red-slack/renderer-setup.gif"
+  alt="Grafana user login and password setup for Image Render Microservice"
+/>
+
+## Alert Rules Setup
+
+To quickly configure predefined alert rules in **Business Studio** for monitoring the Business Engine, import our ready-to-use configuration:
+
+- Download the [alert rules JSON file](https://github.com/VolkovLabs/business-intelligence/blob/main/alerts/business-engine.json) from the Business Intelligence repository.
+- Use **Business Studio** connected to **Business Engines** to import and apply these alert rules.
+
+<Image
+  title="Predefined Alert Rules to monitor Business Engines performance."
+  src="/img/blog/2025-06-11-node-red-slack/engine-alerts.png"
+/>
+
+## Conclusion
+
+The **Business Intelligence Platform 3.4.0** release, with its **Image Render Microservice**, marks a significant advancement in BI alerting. By using **Grafana dashboard variables** to generate dynamic visuals like panel screenshots, it adds critical context to notifications. Paired with Node-RED for automation and Slack for communication, this integration empowers teams to respond to BI events with speed and precision.
+
+At Volkov Labs, we’re committed to evolving BI solutions that enhance data-driven decision-making. Have questions or want to explore integrating Grafana, Node-RED, and Slack into your workflows? Contact [our team](/team/). Stay tuned for more updates, tutorials, and innovations in Business Intelligence!
+
+<Feedback />

@@ -1,0 +1,185 @@
+---
+authors: [mikhail, alex]
+slug: business-intelligence-3.6.0/
+tags: [Business Intelligence]
+image: /img/blog/2025-07-12-big-3.6.0/banner.png
+keywords:
+  [
+    Business Intelligence,
+    Alerting,
+    Grafana,
+    Workflow Automation,
+    Dashboard Reporting,
+    Renderer Performance,
+    UI Enhancements,
+  ]
+---
+
+import BlogPost from "@theme/BlogPost";
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Business Intelligence 3.6.0: Automated Reporting, Smarter Alerts, Faster Insights
+
+We’re excited to unveil **Business Intelligence 3.6.0**, a transformative update to the [Business Intelligence platform](/big/). This release turbocharges your Grafana experience with innovative features like advanced alerting, GPU-accelerated rendering, scheduled dashboard screenshots, enhanced Firestore security, customizable action templates, smarter alert logic, and refined UI for a seamless, accessible experience.
+
+Ready to elevate your workflows? Let’s explore what’s new in this game-changing release!
+
+## What’s New in Business Intelligence 3.6.0?
+
+This update is packed with features to streamline operations, boost performance, and enhance usability. Here’s what you’ll discover:
+
+- **Scheduled Dashboard Screenshots**: Automate reporting with ease.
+- **GPU-Accelerated Rendering**: Double the speed for faster insights.
+- **Alert State Transitions**: Gain clarity during critical events.
+- **Smarter Alerting Logic**: Filter out irrelevant notifications.
+- **Flexible Action Templates**: Tailor workflows to your needs.
+- **Refined UI & Accessibility**: Enjoy a polished, inclusive experience.
+- **Enhanced Firestore Security**: Protect data with stricter rules.
+- **Robust E2E Testing**: Rely on a thoroughly validated platform.
+
+Join Mikhail for an in-depth look at these exciting updates:
+
+<Youtube
+  id="cE7fLoB0YSM"
+  title="Check out the highlights in this quick video and see how BI 3.6.0 can transform your dashboards!"
+/>
+
+Let’s dive deeper into how these features can revolutionize your Grafana workflows!
+
+## Automate Reporting with Scheduled Dashboard Screenshots
+
+No more manual dashboard captures! **Scheduled Dashboard Screenshots** let you automate snapshots at set intervals, integrating seamlessly with action workflows for effortless reporting.
+
+<Image
+  title="Report Screenshots now support Dashboard Variables for dynamic updates."
+  src="/img/blog/2025-07-12-big-3.6.0/report-settings.gif"
+/>
+
+- **Why It Matters**: Save time by automating repetitive tasks and focus on actionable insights.
+- **Perfect For**: Daily executive summaries or compliance archiving with consistent, scheduled reports.
+
+## Boost Speed with GPU-Accelerated Rendering
+
+Experience lightning-fast dashboards with **GPU-Accelerated Rendering**. Combined with intelligent page-load detection, this update delivers a **2x performance boost**, ensuring you get insights without the wait.
+
+<Image
+  title="Reports are delivered on time and stored in the database for review within the retention period."
+  src="/img/blog/2025-07-12-big-3.6.0/report-screenshot.png"
+/>
+
+- **Why It Matters**: Faster rendering speeds up decision-making.
+- **Perfect For**: Handling data-heavy dashboards during peak analysis times.
+
+## Gain Clarity with Alert State Transitions
+
+Managing alerts is now simpler with **Alert State Transitions**. This feature groups related events, offering a clear, cohesive view of alert lifecycles so you can respond with precision during critical moments.
+
+<Image
+  title="Alert states group similar events and display the latest details when selected."
+  src="/img/blog/2025-07-12-big-3.6.0/alert-states.png"
+/>
+
+- **Why It Matters**: Enhanced visibility into alert progression for quicker resolution.
+- **Perfect For**: Tracking system outages or incidents with full context.
+
+## Focus on What Matters with Smarter Alerting Logic
+
+Say goodbye to alert fatigue. Our **Smarter Alerting Logic** ignores "No Data" states when disabled, ensuring you only get notifications that demand action, cutting through the noise.
+
+<Image
+  title="Disabled 'No Data' states won’t trigger alerts or error state changes."
+  src="/img/blog/2025-07-12-big-3.6.0/alert-nodata.png"
+/>
+
+- **Why It Matters**: Fewer false positives keep your focus on critical issues.
+- **Perfect For**: Avoiding unnecessary alerts during maintenance or data gaps.
+
+## Customize Workflows with Flexible Action Templates
+
+Tailor your workflows like never before. Updated **Action Templates** in 3.6.0 support separate configurations for Alerting and Reporting, giving you granular control over every process.
+
+<Image
+  title="Reporting Actions now have dedicated templates with preview based on recent events."
+  src="/img/blog/2025-07-12-big-3.6.0/action-report.png"
+/>
+
+- **Why It Matters**: Align workflows precisely with your operational needs.
+- **Perfect For**: Creating unique alerting setups for different teams or reporting schedules.
+
+## Enjoy a Polished Experience with UI & Accessibility Updates
+
+We’ve enhanced the interface with subtle, impactful changes. **UI & Accessibility Updates** include Shimmer loading effects, smoother navigation, and design tweaks for better performance and inclusivity across all users and devices.
+
+<Image
+  title="Loading states and design updates improve performance and accessibility."
+  src="/img/blog/2025-07-12-big-3.6.0/alerting-loading.gif"
+/>
+
+- **Why It Matters**: A more intuitive, accessible platform for everyone.
+- **Perfect For**: Seamless navigation during high-pressure monitoring tasks.
+
+## Secure Your Data with Enhanced Firestore Rules
+
+Data protection is paramount. **Enhanced Firestore Security Rules** in 3.6.0 introduce tighter controls and safety measures, safeguarding your information while ensuring easy access for authorized users.
+
+:::info Shared Engines
+Sharing Engines via Firestore within your organization is optional for added flexibility.
+:::
+
+<Image
+  title="Shared engines within organizations boost teamwork and simplify access for members."
+  src="/img/blog/2025-07-12-big-3.6.0/organization-engine.png"
+/>
+
+- **Why It Matters**: Protect sensitive data with confidence.
+- **Perfect For**: Multi-team environments requiring strict compliance with data policies.
+
+## Trust in Reliability with Comprehensive E2E Testing
+
+Stability is key to this release. Our **Comprehensive End-to-End (E2E) Testing** validates Alerting, Reporting, and Action workflows, ensuring every feature performs flawlessly in real-world scenarios.
+
+- **Why It Matters**: Deploy with confidence on a rigorously tested platform.
+- **Perfect For**: Critical workflows where reliability is non-negotiable.
+
+## Why Upgrade to Business Intelligence 3.6.0?
+
+This isn’t just an update—it’s a leap forward. Whether you’re optimizing Grafana dashboards, managing alerts, or automating reports, Business Intelligence 3.6.0 equips you with the tools to work smarter, not harder.
+
+**Top Reasons to Upgrade Now**:
+
+- **2x Faster Rendering**: Get insights quicker for better decisions.
+- **Smarter Alerts**: Cut through noise with enhanced visibility.
+- **Sleek, Accessible UI**: Navigate effortlessly with a modern design.
+- **Rock-Solid Reliability**: Trust in a platform tested for real-world use.
+
+Don’t miss out—upgrade to Business Intelligence 3.6.0 today and redefine your Grafana experience!
+
+## Download Business Studio 3.6.0
+
+:::info Signed & Secure
+Our MacOS and Windows installers are digitally signed, notarized, and built via automated GitHub workflows for maximum security and trust.
+:::
+
+Select the installer for your system:
+
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/Business.Studio-3.6.0-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/Business.Studio-3.6.0-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/Business.Studio-darwin-arm64-3.6.0.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/Business.Studio-darwin-x64-3.6.0.zip)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/Business.Studio-3.6.0.Setup.exe)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/business-studio-3.6.0-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/business-studio-3.6.0-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/business-studio_3.6.0_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v3.6.0/business-studio_3.6.0_amd64.deb)
+
+<GettingStarted />
+
+<Feedback />

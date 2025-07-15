@@ -1,0 +1,80 @@
+---
+image: /img/suite.png
+---
+
+import BlogPost from "@theme/BlogPost";
+import Feedback from "./_feedback.mdx";
+import Image from "@theme/Image";
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Youtube from "@theme/Youtube";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Retired Plugins
+
+This page provides information about plugins that have been discontinued as part of our commitment to aligning with the latest Grafana standards and industry best practices.
+
+Below, you'll find details on retired plugins, the reasons for their retirement, and step-by-step migration guidance to ensure your dashboards continue to function seamlessly.
+
+## Why Plugins Are Retired
+
+Volkov Labs retires plugins periodically to:
+
+- Prioritize development of modern, scalable solutions.
+- Adapt to evolving Grafana compatibility and API requirements.
+- Improve security and performance based on user feedback and industry trends.
+
+:::info Important Note
+Retired plugins no longer receive updates, bug fixes, or technical support. We strongly recommend migrating to the suggested alternatives to ensure optimal functionality and security.
+:::
+
+## List of Retired Plugins
+
+### Business News
+
+- **Retirement Date**: July 12, 2025
+- **Last Supported Version**: 4.3.0 (compatible with Grafana 11 and earlier)
+- **Reason for Retirement**: Limited usage and overlap with more versatile alternatives. The Infinity Data Source provides a more robust and flexible solution for similar use cases.
+- **Recommended Alternative**: Migrate to the Infinity Data Source (`grafana-infinity-datasource`) for enhanced support of news feeds and other data sources.
+
+### Business Satellite
+
+- **Retirement Date**: July 12, 2025
+- **Last Supported Version**: 3.5.0 (compatible with Grafana 11 and earlier)
+- **Reason for Retirement**: Limited usage and overlap with more versatile alternatives. The Infinity Data Source provides a more robust and flexible solution for similar use cases.
+- **Recommended Alternative**: Migrate to the Infinity Data Source (`grafana-infinity-datasource`) for enhanced support of your data and other data sources.
+
+## Migration Guidance
+
+To ensure a smooth transition away from retired plugins, follow the detailed steps below for each plugin. These instructions are designed to minimize downtime and maintain dashboard functionality.
+
+### Migrating from Business News to Infinity Data Source
+
+1. **Check Compatibility**: Ensure your Grafana instance is running version 11 or 12 to support the Infinity Data Source.
+2. **Install the Infinity Plugin**: Install the `grafana-infinity-datasource` plugin via the Grafana CLI or the Plugins Catalog.
+   ```bash
+   grafana-cli plugins install grafana-infinity-datasource
+   ```
+3. **Update Dashboard Configurations**: Open your dashboards and update the data source settings. Map existing Business News queries to equivalent formats supported by Infinity, such as JSON, CSV, or direct API endpoints.
+4. **Test in a Staging Environment**: Validate the updated dashboards in a non-production environment to confirm data accuracy and visualization integrity.
+5. **Remove the Old Data Source**: Once migration is complete and verified, uninstall the Business News Data Source from your Grafana instance to avoid conflicts.
+
+### Migrating from Business Satellite to Infinity Data Source
+
+1. **Check Compatibility**: Ensure your Grafana instance is running version 11 or 12 to support the Infinity Data Source.
+2. **Install the Infinity Plugin**: Install the `grafana-infinity-datasource` plugin via the Grafana CLI or the Plugins Catalog.
+   ```bash
+   grafana-cli plugins install grafana-infinity-datasource
+   ```
+3. **Update Dashboard Configurations**: Open your dashboards and update the data source settings. Map existing Business Satellite queries to equivalent formats supported by Infinity, such as JSON, CSV, or direct API endpoints.
+4. **Test in a Staging Environment**: Validate the updated dashboards in a non-production environment to confirm data accuracy and visualization integrity.
+5. **Remove the Old Data Source**: Once migration is complete and verified, uninstall the Business Satellite Data Source from your Grafana instance to avoid conflicts.
+
+### General Migration Tips
+
+- **Backup Dashboards**: Always create a backup of your dashboards and configurations before starting the migration process.
+- **Test Thoroughly**: After migration, test all affected dashboards to identify and resolve any data or display issues.
+- **Consult Documentation**: Refer to the [Infinity Data Source documentation](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) for advanced configuration options and troubleshooting.
+
+<Feedback />

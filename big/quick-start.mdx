@@ -1,0 +1,121 @@
+import Code from "@theme/Code";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Quick Start Guide
+
+This Quick Start Guide provides a step-by-step process to deploy the Business Intelligence platform using an existing Grafana LGTM (Loki, Grafana, Tempo, Mimir) stack and production data. Whether you're using Grafana Cloud, OSS, or Enterprise, this guide will help you set up the platform efficiently.
+
+<Image
+  title="Quick Start Overview"
+  src="/img/big/quick-start/quick-start.png"
+  alt="Diagram illustrating the Quick Start process for the Business Intelligence platform"
+/>
+
+:::info Grafana 11 and 12 Requirement
+The Business Engine requires Grafana version 11 or later and is fully compatible with the latest Grafana releases running in Grafana Cloud.
+:::
+
+## Clone the GitHub Repository
+
+To get started, clone the official Business Intelligence repository from GitHub. This repository contains essential configuration files, sample workflows, dashboards, and more to streamline your setup.
+
+1. **Clone the Repository**: Use the following command to clone the repository to your local machine:
+
+   ```sh
+   git clone https://github.com/VolkovLabs/business-intelligence.git
+   ```
+
+2. **Navigate to the Directory**: Change to the project directory:
+
+   ```sh
+   cd business-intelligence
+   ```
+
+3. **Explore Included Resources**: The repository includes the following preconfigured resources to enhance your deployment:
+   - **Node-RED Workflows**: Sample workflows for sending email notifications, Slack messages, and opening Grafana Incidents. These can be customized in the Node-RED UI after starting the container.
+   - **Grafana Dashboards**: Prebuilt dashboards for monitoring the Business Engine's performance and alert status. Import these dashboards into your Grafana instance via the UI or provisioning.
+   - **Grafana Alloy Configuration**: A sample configuration file for collecting metrics and logs from the Business Engine. Update the `alloy-config.yaml` file with your environment details to enable observability.
+
+:::info Customization
+Review and customize the configuration files in the repository to match your environment before starting the containers. For example, update environment variables in `docker-compose.yml` or modify Node-RED flows to suit your notification needs.
+:::
+
+## Docker Compose Configuration
+
+Set up a `docker-compose.yml` file to define the necessary services for the Business Intelligence platform. The configuration includes the following containers:
+
+- **PostgreSQL**: Stores configuration data for the Business Engine.
+- **Business Engine**: Connects to a single Grafana instance using a service account token.
+  - Utilizes HTTP APIs to retrieve configurations, evaluate alert rules, and execute actions.
+  - Requires a username and password for the Image Render Microservice to access the Grafana UI for rendering screenshots.
+- **Node-RED (Optional)**: Provides workflows to send email, Slack notifications, open Grafana Incidents, and more.
+- **Grafana Alloy (Optional)**: Collects metrics and logs from the Business Engine for observability.
+
+<Code
+  url="https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml"
+  language="yaml"
+  title="Quick Start Docker Compose Configuration"
+/>
+
+## Starting the Platform
+
+Follow these steps to deploy and launch the Business Intelligence platform:
+
+1. **Access Grafana**: Log in to your Grafana instance (Cloud, OSS, or Enterprise) using an account with administrative privileges.
+
+   - The Native Grafana Alerting and Image Renderer plugin are optional and can be turned off via environment variables or a configuration file.
+
+2. **Create a Service Account**: Set up a service account in Grafana with **Viewer** or **Editor** permissions to allow the Business Engine to interact with Grafana APIs.
+
+   - **Editor** permission is necessary solely for creating annotations.
+
+   <Image
+     title="Grafana Service Account Setup"
+     src="/img/big/quick-start/grafana-account.png"
+     alt="Screenshot showing how to create a service account in Grafana"
+   />
+
+3. **Start Containers**: Launch the Business Engine, PostgreSQL, and optional containers (Node-RED and Grafana Alloy) using Docker Compose:
+
+   ```sh
+   docker compose up -d
+   ```
+
+   After starting the containers, use `docker compose ps` to ensure all services are running without errors.
+
+4. **Install Business Studio**: Download the Business Studio application from the [GitHub Releases page](https://github.com/VolkovLabs/business-intelligence/releases), then install and open it on your local machine.
+
+5. **Configure Business Engine**: Add the Business Engine in Business Studio to configure, define actions, set up alert rules, and schedule reports:
+
+   <Image
+     title="Add Business Engine in Business Studio"
+     src="/img/big/quick-start/add-engine.png"
+     alt="Screenshot of adding Business Engine using localhost port 3001 with Community License preconfigured by default"
+   />
+
+6. **Connect to Grafana**: In Business Studio, update the Environment settings to connect to your Grafana instance (OSS, Enterprise, or Cloud).
+
+   - Provide the service account token and username/password for the Image Render Microservice to create screenshots:
+
+   <Image
+     title="Connect Business Engine to Grafana"
+     src="/img/big/quick-start/connect-grafana.png"
+     alt="Screenshot showing how to provide Service Account token and credentials for Image Render Microservice"
+   />
+
+## Stopping the Platform
+
+To stop and remove all running containers, execute the following command:
+
+```sh
+docker compose down
+```
+
+## Conclusion
+
+Congratulations! You've successfully set up the Business Intelligence platform using this Quick Start Guide. By following the steps outlined, you've cloned the repository, configured the necessary services with Docker Compose, connected the Business Engine to your Grafana instance, and launched the platform. With Business Studio, you can now define alert rules, schedule reports, and customize actions to meet your organization's needs.
+
+As you continue to explore the platform, consider tailoring the Node-RED workflows and Grafana dashboards to align with your specific use cases. For more advanced configurations, troubleshooting, or additional features, continue exploring documentation and [tutorials](/big/tutorials/).
+
+Start leveraging the power of Business Intelligence to enhance your monitoring and decision-making processes today!
