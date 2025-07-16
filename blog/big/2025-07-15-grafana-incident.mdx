@@ -25,7 +25,7 @@ import Youtube from "@theme/Youtube";
 
 # Monitoring Grafana OSS Metrics with Grafana Alloy and Automating Alerts in a Business Intelligence Platform
 
-In this tutorial, we’ll walk you through a comprehensive setup for monitoring Grafana Open Source Software (OSS) metrics using Grafana Alloy, forwarding them to Grafana Cloud, and creating actionable alerts within our Business Intelligence platform. Additionally, we’ll demonstrate how to automate incident creation in Grafana Incident using a Node-RED workflow and enhance monitoring by integrating an BI platform for data validation.
+In this tutorial, we’ll walk you through a comprehensive setup for monitoring Grafana Open Source Software (OSS) metrics using Grafana Alloy, forwarding them to Grafana Cloud, and creating actionable alerts within our Business Intelligence platform. Additionally, we’ll demonstrate how to automate incident creation in Grafana Incident using a Node-RED workflow.
 
 This guide is based on a specific Grafana dashboard configuration available in the [Business Intelligence GitHub repository](https://github.com/volkovlabs/business-intelligence). Whether you're managing a single Grafana instance or a distributed environment, this end-to-end solution will help you ensure operational efficiency and rapid incident response.
 
@@ -35,7 +35,7 @@ Our objective is to establish a robust system for monitoring Grafana OSS metrics
 
 1. **Collect Metrics with Grafana Alloy**: Scrape metrics from Grafana OSS using [Grafana Alloy](https://grafana.com/docs/alloy/latest/).
 2. **Forward Metrics to Grafana Cloud**: Configure Alloy to send metrics to Grafana Cloud for centralized storage and analysis.
-3. **Visualize Metrics with a Custom Dashboard**: Use a [pre-configured dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/grafana/grafana-metrics.json) to monitor key performance indicators.
+3. **Visualize Metrics with a Custom Dashboard**: Use a [pre-configured dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/grafana/grafana-metrics.json) to monitor Grafana key performance indicators.
 4. **Create Alerts in a Business Intelligence Platform**: Set up alert rules based on dashboard metrics to detect anomalies or threshold breaches.
 5. **Automate Incident Creation with Node-RED**: Implement a [Node-RED workflow](https://github.com/VolkovLabs/business-intelligence/blob/main/node-red/grafana-incident.json) to automatically create incidents in [Grafana Incident](https://grafana.com/products/cloud/incident/) when alerts are triggered.
 
@@ -138,7 +138,9 @@ These alert rules align with the color-coded thresholds (green, orange, red) in 
   src="/img/blog/2025-07-15-grafana-incident/alert-thresholds.png"
 />
 
-_Note: In the upcoming version 3.7.0, thresholds will be determined automatically for even greater ease of use._
+:::info Automatic Thresholds
+In the upcoming version 3.7.0, thresholds will be determined automatically for even greater ease of use.
+:::
 
 ## Automating Incident Creation with Node-RED
 
@@ -178,9 +180,13 @@ By incorporating a BI platform, you create a resilient monitoring strategy that 
 
 ## Conclusion
 
-This guide has equipped you with a powerful end-to-end monitoring system for Grafana OSS. By leveraging Grafana Alloy and Grafana Cloud, you’ve enabled seamless metric collection and visualization through a custom dashboard. Proactive alerts in the Business Intelligence platform, combined with automated incident creation via Node-RED and Grafana Incident, ensure rapid detection and response to issues. Finally, integrating a BI platform adds a critical layer of data validation and cross-source monitoring, enhancing reliability and reducing operational risks.
+This guide has equipped you with a powerful end-to-end monitoring system for Grafana OSS. By leveraging Grafana Alloy and Grafana Cloud, you’ve enabled seamless metric collection and visualization through a custom dashboard. Proactive alerts in the Business Intelligence platform, combined with automated incident creation via Node-RED and Grafana Incident, ensure rapid detection and response to issues.
 
-This solution minimizes downtime, improves operational efficiency, and provides a scalable framework for monitoring complex environments. Whether managing a single Grafana instance or a distributed system, these tools and workflows enabl you to stay ahead of potential issues and maintain optimal performance.
+:::info BI Platform
+Integrating a BI platform adds a critical layer of data validation and cross-source monitoring, enhancing reliability and reducing operational risks.
+:::
+
+This solution minimizes downtime, improves operational efficiency, and provides a scalable framework for monitoring complex environments. Whether managing a single Grafana instance or a distributed system, these tools and workflows enable you to stay ahead of potential issues and maintain optimal performance.
 
 <GettingStarted />
 
