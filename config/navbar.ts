@@ -96,6 +96,11 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-big-alerting-link",
         },
         {
+          label: "Tutorials",
+          to: "/big/tutorials/",
+          className: "volkovlabs-link icon-big-tutorials-link",
+        },
+        {
           label: "Release Notes",
           to: "/big/release/",
           className: "volkovlabs-link icon-big-release-link",
