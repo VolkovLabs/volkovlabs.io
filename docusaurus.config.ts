@@ -35,8 +35,12 @@ const config: Config = {
   // Theme configuration (imported from ./config)
   themeConfig: THEME_CONFIG,
 
-  // Additional themes (none currently)
-  themes: [],
+  markdown: {
+    mermaid: true,
+  },
+
+  // Additional themes
+  themes: ["@docusaurus/theme-mermaid"],
 
   // Site title
   title: "Volkov Labs",
