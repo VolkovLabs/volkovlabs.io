@@ -2,34 +2,9 @@ import React from "react";
 import { PluginItem } from "../types";
 
 /**
- * PluginList
- * A collection of Business Suite plugins for Grafana by Volkov Labs, enhancing data visualization and management.
+ * Core Business Tools
  */
-export const PluginList: PluginItem[] = [
-  {
-    title: "Business Calendar",
-    name: "business-calendar",
-    description: (
-      <>
-        Displays events in a sleek calendar view, pulling from diverse data
-        sources for seamless integration.
-      </>
-    ),
-    href: "/plugins/business-calendar/",
-    isActive: true,
-  },
-  {
-    title: "Business Charts",
-    name: "business-charts",
-    description: (
-      <>
-        Integrates Apache ECharts to deliver dynamic, interactive charts and
-        graphs within Grafana dashboards.
-      </>
-    ),
-    href: "/plugins/business-charts/",
-    isActive: true,
-  },
+export const CoreList: PluginItem[] = [
   {
     title: "Business Forms",
     name: "business-forms",
@@ -40,41 +15,6 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/business-forms/",
-    isActive: true,
-  },
-  {
-    title: "Business Input",
-    name: "business-input",
-    description: (
-      <>
-        Simulates and manages data with JavaScript and LLM, offering flexible
-        control within Grafana.
-      </>
-    ),
-    href: "/plugins/business-input/",
-    isActive: true,
-  },
-  {
-    title: "Business Links",
-    name: "business-links",
-    description: (
-      <>
-        Streamlines navigation with external links, dashboards, and dropdowns.
-      </>
-    ),
-    href: "/plugins/business-links/",
-    isActive: true,
-  },
-  {
-    title: "Business Media",
-    name: "business-media",
-    description: (
-      <>
-        Blends multimedia elements for a tailored, rich visual experience in
-        Grafana dashboards.
-      </>
-    ),
-    href: "/plugins/business-media/",
     isActive: true,
   },
   {
@@ -108,6 +48,59 @@ export const PluginList: PluginItem[] = [
       </>
     ),
     href: "/plugins/business-variable/",
+    isActive: true,
+  },
+];
+
+/**
+ * Insight Business Tools
+ */
+export const InsightList: PluginItem[] = [
+  {
+    title: "Business Calendar",
+    name: "business-calendar",
+    description: (
+      <>
+        Displays events in a sleek calendar view, pulling from diverse data
+        sources for seamless integration.
+      </>
+    ),
+    href: "/plugins/business-calendar/",
+    isActive: true,
+  },
+  {
+    title: "Business Charts",
+    name: "business-charts",
+    description: (
+      <>
+        Integrates Apache ECharts to deliver dynamic, interactive charts and
+        graphs within Grafana dashboards.
+      </>
+    ),
+    href: "/plugins/business-charts/",
+    isActive: true,
+  },
+  {
+    title: "Business Links",
+    name: "business-links",
+    description: (
+      <>
+        Streamlines navigation with external links, dashboards, and dropdowns.
+      </>
+    ),
+    href: "/plugins/business-links/",
+    isActive: true,
+  },
+  {
+    title: "Business Media",
+    name: "business-media",
+    description: (
+      <>
+        Blends multimedia elements for a tailored, rich visual experience in
+        Grafana dashboards.
+      </>
+    ),
+    href: "/plugins/business-media/",
     isActive: true,
   },
 ];

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
-import { PluginList } from "../constants";
+import { CoreList, InsightList } from "../constants";
 import styles from "../css/index.module.css";
 import { PluginItem } from "../types";
 
@@ -19,7 +19,7 @@ export const Plugin = ({
   description,
 }: PluginItem) => {
   return (
-    <div className={clsx("col col--4", styles.featureItem)}>
+    <div className={clsx("col col--3", styles.featureItem)}>
       <a href={href} target={target}>
         <ThemedImage
           role="img"
@@ -44,14 +44,14 @@ export const Plugin = ({
 };
 
 /**
- * Plugins
+ * Core Plugins
  */
-export const Plugins = (): JSX.Element => {
+export const CorePlugins = (): JSX.Element => {
   return (
     <section>
       <div className="container text--center">
         <div className="row">
-          {PluginList.map((props, idx) => (
+          {CoreList.map((props, idx) => (
             <Plugin key={idx} {...props} />
           ))}
         </div>
@@ -60,4 +60,19 @@ export const Plugins = (): JSX.Element => {
   );
 };
 
-export default Plugins;
+/**
+ * Core Plugins
+ */
+export const InsightPlugins = (): JSX.Element => {
+  return (
+    <section>
+      <div className="container text--center">
+        <div className="row">
+          {InsightList.map((props, idx) => (
+            <Plugin key={idx} {...props} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
