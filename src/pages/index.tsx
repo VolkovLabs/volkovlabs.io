@@ -5,7 +5,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
-import { Intelligence, Plugins } from "../components";
+import { Intelligence, CorePlugins, InsightPlugins } from "../components";
 import styles from "../css/index.module.css";
 
 /**
@@ -64,9 +64,39 @@ const Header = ({ siteConfig }) => (
  */
 const Main = ({ siteConfig }) => (
   <main>
-    <section className="container margin-vert--xl">
-      <div className="margin-vert--lg">
-        <Plugins />
+    <section className="hero">
+      <div className="container margin-vert--md">
+        <div className="row align-items-center">
+          <div className="col">
+            <h2 className={clsx("hero__title")}>Core Business Tools</h2>
+            <p className="hero__subtitle margin-vert--md">
+              Streamline data visualization, capture user inputs, display
+              dynamic text, and manage variables effortlessly, enabling your
+              business workflows with seamless customization and efficiency.
+            </p>
+            <div className="margin-vert--lg">
+              <CorePlugins />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="hero hero--primary">
+      <div className="container margin-vert--md">
+        <div className="row align-items-center">
+          <div className="col">
+            <h2 className={clsx("hero__title")}>Insight Business Tools</h2>
+            <p className="hero__subtitle margin-vert--md">
+              Seamlessly manage schedules, visualize data with dynamic charts,
+              enhance navigation with smart links, and integrate rich media, all
+              tailored to boost your business workflows with stunning clarity.
+            </p>
+            <div className="margin-vert--lg">
+              <InsightPlugins />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
