@@ -15,86 +15,87 @@ import Youtube from "@theme/Youtube";
 
 # Business Intelligence 2.6.0: Alerting Page, Action History, and Event Details Unveiled
 
-We’re thrilled to announce the public preview of Business Intelligence 2.6.0, a release packed with enhancements to streamline alerting and event management. Developed by Volkov Labs, this update for the [Business Intelligence platform](/big/) brings:
+We’re excited to introduce the public preview of **Business Intelligence 2.6.0**, a significant update designed to elevate alerting and event management. Crafted by Volkov Labs, this release for the [Business Intelligence platform](/big/) delivers powerful new features, including:
 
-- A unified **Alerting page** to monitor events across [high availability clusters](/big/studio/manage-clusters/).
-- A new **Action History page** to track sent messages.
-- Enhanced **Event Details** with data frame field visibility.
-- Grafana 11.5.2-compatible transformations in utilities.
 - A leaner Business Engine Docker image via an optimized build process.
-- An updated Business Engine OpenAPI specification.
+- A centralized **Alerting Page** for monitoring events across [high availability clusters](/big/studio/manage-clusters/).
+- A dedicated **Action History Page** to track sent notifications.
+- Improved **Event Details** with visible data frame fields for better insights.
+- Compatibility with Grafana 11.5.2 transformations in utilities.
+- A streamlined Business Engine Docker image through an optimized build process.
+- An updated Business Engine OpenAPI specification for seamless integrations.
 
-Join Mikhail as he walks through these exciting updates:
+Join Mikhail as he showcases these game-changing updates in detail:
 
 <Youtube
   id="IOYyfIkNwJ4"
   title="Business Alerting, Action History, and Event Page Updates in Business Intelligence 2.6.0"
 />
 
-## Spotlight: Mastering Alerting with Dashboard Variables
+## Spotlight: Supercharge Alerting with Dashboard Variables
 
-Complementing this release, explore how dashboard variables supercharge Business Alerting in Grafana:
+Dive deeper into Business Alerting by learning how dashboard variables can transform your workflows in Grafana:
 
 <Youtube
   id="ey0ZSbSDxtI"
   title="Mastering Business Alerting: Dashboard Variables in Grafana Cloud"
 />
 
-## Alerting Page: Unified Cluster Insights
+## Alerting Page: Unified Insights Across Clusters
 
-The new **Alerting page** consolidates alerts from all clusters into a single view—ideal for managing multiple [high availability clusters](/big/studio/manage-clusters/) at once. Whether you’re tracking dozens or hundreds of alerts, this page offers a clear snapshot of their states.
+The new **Alerting Page** brings all alerts from multiple [high availability clusters](/big/studio/manage-clusters/) into a single, intuitive view. Whether you’re overseeing a handful or hundreds of alerts, this page provides a comprehensive overview of their current states, simplifying monitoring and response.
 
-Filtering and sorting are on the horizon for future releases to deepen your analysis.
+Stay tuned for upcoming filtering and sorting capabilities to further enhance your analysis.
 
 <Image
-  title="Alerting page in Business Studio."
+  title="Alerting Page in Business Studio for unified cluster monitoring."
   src="/img/blog/2025-03-02-big-2.6.0/page-alerting.png"
 />
 
-## Action History Page: Track Every Message
+## Action History Page: Full Visibility into Notifications
 
-The **Action History page** provides a detailed log of messages triggered by alert actions. Here’s how to access it:
+The **Action History Page** offers a detailed record of messages triggered by alert actions, ensuring complete transparency. Access it in just a few steps:
 
-1. Select a Business Engine, navigate to the **Actions** tab, and pick an alert action.
-2. Switch to the **Action History** page.
-3. View submitted messages, including resolved variable values where applicable.
+1. Select a Business Engine, go to the **Actions** tab, and choose an alert action.
+2. Navigate to the **Action History** page.
+3. Review submitted messages, including resolved variable values where applicable.
 
-This transparency ensures you never miss a notification’s journey.
+This feature guarantees you can trace every notification’s path with ease.
 
 <Image
-  title="Action History page showing submitted messages."
+  title="Action History Page displaying submitted messages."
   src="/img/blog/2025-03-02-big-2.6.0/action-history.png"
 />
 
-## Event Details: Data Frame Fields in Focus
+## Event Details: Enhanced Clarity with Data Frame Fields
 
-For alerts in the **Alerting** state, the **Event Details** page now displays data frame column headers. This visual upgrade makes it easier to interpret alert data at a glance, enhancing troubleshooting and decision-making.
+For alerts in the **Alerting** state, the **Event Details** page now highlights data frame column headers. This visual enhancement makes interpreting alert data faster and more intuitive, empowering quicker troubleshooting and informed decision-making.
 
 <Image
-  title="Data frame headers enhance clarity on the Event Details page."
+  title="Data frame headers bring clarity to the Event Details page."
   src="/img/blog/2025-03-02-big-2.6.0/frame.png"
 />
 
-## Grafana Transformation Compatibility
+## Seamless Grafana Transformation Compatibility
 
-Business Intelligence 2.6.0 aligns with Grafana 11.5.2 transformations, ensuring broad compatibility. Most core Grafana transformations—built on a general framework—work seamlessly. However, some niche transformations, tailored to specific data sources or scenarios, may deviate from this standard and could encounter issues.
+Business Intelligence 2.6.0 is fully aligned with Grafana 11.5.2 transformations, ensuring smooth integration. While most core Grafana transformations—built on a universal framework—function flawlessly, certain specialized transformations tied to specific data sources or use cases may exhibit inconsistencies.
 
-:::info Transformation Notes  
-Rare, source-specific transformations might not fully align. If you hit a snag, reach out—we’ll resolve it together!  
+:::info Transformation Note  
+If you encounter issues with niche, source-specific transformations, don’t hesitate to contact us. We’re here to help resolve any challenges!  
 :::
 
-## Leaner Business Engine Docker Image
+## Optimized Business Engine Docker Image
 
-We’ve optimized the build process, shrinking the Business Engine’s Docker image size. This behind-the-scenes improvement boosts efficiency in development, testing, and deployment, paving the way for faster iterations.
+We’ve refined the build process to significantly reduce the size of the Business Engine Docker image. This behind-the-scenes optimization enhances efficiency across development, testing, and deployment, enabling faster updates and smoother operations.
 
 ## Updated OpenAPI Specification
 
-The Business Engine’s [OpenAPI specification](/big/api/) has been refreshed, maintaining seamless integration for third-party developers. This ensures your custom workflows stay in sync with the latest features.
+The Business Engine’s [OpenAPI specification](/big/api/) has been updated to support the latest features, ensuring third-party developers can maintain seamless integrations and build custom workflows with confidence.
 
 ## Downloads: Business Studio 2.6.0
 
-:::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built end-to-end via automated GitHub workflows for maximum security.  
+:::info Secure Releases  
+All MacOS and Windows installers are signed, notarized, and built using automated GitHub workflows for maximum security and reliability.  
 :::
 
 - **MacOS**:
