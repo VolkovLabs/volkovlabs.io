@@ -12,120 +12,120 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 2.3.0: Simplified Start, License Updates, and Code Editing
+# Business Intelligence 2.3.0: Streamlined Onboarding, Licensing, and Code Editing
 
-We’re excited to launch the public preview of Business Intelligence 2.3.0, a release from Volkov Labs that enhances the [Business Intelligence platform](/big/) with:
+We’re thrilled to announce the public preview of **Business Intelligence 2.3.0**, a powerful update from Volkov Labs that elevates the [Business Intelligence platform](/big/). This release brings a host of enhancements designed to simplify workflows and boost productivity, including:
 
-- Two new **guides** for an easier start.
-- **Business Studio** updates:
-  - Simplified **license token updates**.
-  - Enabled **auto-updates**.
-  - Added **Results Sample Size** for alert row limits.
-  - Introduced the **Monaco code editor** for action messages.
-  - Refined **alert condition overrides**.
-- Improved **high-availability and load balancing**.
+- **Two new guides** for seamless onboarding.
+- **Business Studio improvements**:
+  - Hassle-free **license token updates**.
+  - Seamless **auto-updates**.
+  - New **Results Sample Size** for alert row management.
+  - Advanced **Monaco code editor** for crafting action messages.
+  - Optimized **alert condition overrides**.
+- Enhanced **high-availability and load balancing** for robust performance.
 
-Dive into the details below to see how these changes streamline your BI workflow.
+Read on to explore how these updates can transform your BI experience with Grafana.
 
-## Easier Onboarding with Two Guides
+## Kickstart Your Journey with Two New Guides
 
-New to Business Intelligence? We’ve added two guides to the documentation:
+Whether you're a beginner or a seasoned user, getting started with Business Intelligence has never been easier. We’ve introduced two comprehensive guides to help you hit the ground running.
 
-### Quick Start
+### Quick Start Guide
 
-- The [Quick Start](/big/quick-start/) offers a fast track using minimal steps.
-- Requires: Existing Grafana and production database.
-- Outcome: Business Studio up and running in minutes.
+- The [Quick Start](/big/quick-start/) guide provides a streamlined path with minimal steps.
+- **Prerequisites**: An existing Grafana instance and a production database.
+- **Result**: Have Business Studio operational in just minutes.
 
 <Image
-  title="Quick Start overview."
+  title="A glimpse of the Quick Start guide."
   src="/img/big/quick-start/quick-start.png"
   width="75%"
 />
 
-### Tutorial
+### Step-by-Step Tutorial
 
-Daria’s video walks you through installation, then demonstrates creating and assigning your first alert action to a rule.
+Join Daria in a detailed video tutorial that walks you through the installation process and shows you how to create and assign your first alert action to a rule.
 
 <Youtube
   id="KM5a2qzlOak"
   title="How to Get Started with Business Intelligence Platform for Grafana 2.3.0"
 />
 
-## Simplified License Token Updates
+## Effortless License Token Updates
 
-Switching from a Community to a Production license is now easier. Instead of tweaking environment variables, use Business Studio:
+Transitioning from a Community to a Production license is now a breeze. Forget about fiddling with environment variables—Business Studio makes it simple:
 
-- Check **Update Engine License** in the settings.
-- Paste a new token into the **Token** field and hit **Save**.
-- Result: Both Business Studio and Engine licenses update simultaneously.
+- Navigate to **Update Engine License** in the settings.
+- Enter your new token in the **Token** field and click **Save**.
+- **Outcome**: Both Business Studio and Engine licenses are updated in one go.
 
 <Image
-  title="Update Engine License in Business Studio."
+  title="Easily update your Engine License in Business Studio."
   src="/img/blog/2025-01-19-big-2.3.0/update-engine-license.png"
 />
 
-## Auto-Updates for Business Studio
+## Stay Current with Auto-Updates
 
-Business Studio now checks for updates hourly on GitHub (MacOS and Windows). When a new version is available, a dialog prompts you to restart and apply it—keeping you current effortlessly.
+Business Studio now automatically checks for updates on GitHub every hour (available for MacOS and Windows). When a new version is released, a convenient dialog prompts you to restart and apply the update, ensuring you’re always using the latest features without any manual effort.
 
 <Image
-  title="Auto-update dialog in Business Studio."
+  title="Auto-update prompt in Business Studio."
   src="/img/blog/2025-01-19-big-2.3.0/auto.png"
 />
 
-## Results Sample Size for Alerts
+## Fine-Tune Alerts with Results Sample Size
 
-Control how many alert rows are saved for analysis with the new **Results Sample Size** parameter:
+Take control of your alert data with the new **Results Sample Size** parameter, designed to manage how many alert rows are saved for analysis:
 
-1. Select an engine, go to **Alert Rules**, and pick a rule.
-2. On the **Settings** page, under **Evaluation**, choose **All Values** or **Percentage** (not applicable for **Last Value**).
-3. Set the sample size in the **Event** section.
+1. Select an engine, navigate to **Alert Rules**, and choose a rule.
+2. On the **Settings** page under **Evaluation**, select **All Values** or **Percentage** (note: not available for **Last Value**).
+3. Define the sample size in the **Event** section.
 
-This keeps your data manageable without sacrificing insight.
+This feature helps you balance data depth with manageability, ensuring actionable insights without overload.
 
 <Image
-  title="Set Results Sample Size for alert rules."
+  title="Configure Results Sample Size for alert rules."
   src="/img/blog/2025-01-19-big-2.3.0/sample-size.png"
 />
 
-## Monaco Code Editor for Action Messages
+## Craft Alert Messages with Monaco Code Editor
 
-Craft alert messages with ease using the [Monaco code editor](https://microsoft.github.io/monaco-editor/), now integrated at the bottom of the action edit window. Features include:
+Elevate your alert message creation with the [Monaco code editor](https://microsoft.github.io/monaco-editor/), now integrated into the action edit window. Key features include:
 
-- Handlebars syntax support.
-- Code suggestions (triggered by `.` after `event`).
-- Auto-formatting.
+- Full support for Handlebars syntax.
+- Intelligent code suggestions (triggered by typing `.` after `event`).
+- Automatic code formatting for clean, readable templates.
 
-Preview your message instantly on the **Preview** page.
+Instantly preview your messages on the **Preview** page to ensure they’re just right.
 
 <Image
-  title="Monaco code editor for alert message templates."
+  title="Monaco code editor for crafting alert message templates."
   src="/img/blog/2025-01-19-big-2.3.0/message.png"
 />
 
 <Image
-  title="Suggestions appear after typing 'event.' in Monaco."
+  title="Code suggestions appear after typing 'event.' in Monaco."
   src="/img/blog/2025-01-19-big-2.3.0/prompt.png"
 />
 
-## Refined Alert Condition Overrides
+## Optimized Alert Condition Overrides
 
-Alert overrides are now more efficient, with a dedicated table in the [Business Engine database schema](/big/engine/database/) among other performance tweaks. Check the updated schema for details.
+We’ve refined alert condition overrides for better efficiency. A dedicated table in the [Business Engine database schema](/big/engine/database/) and other performance enhancements ensure smoother operations. Explore the updated schema for a deeper look at these improvements.
 
 <Image
-  title="Business Engine database schema with overrides table."
+  title="Business Engine database schema featuring the overrides table."
   src="/img/big/business-engine/database-schema.png"
 />
 
-## Enhanced High-Availability & Load Balancing
+## Boosted High-Availability & Load Balancing
 
-Under-the-hood improvements boost reliability and performance for multi-engine setups handling numerous alerts.
+Behind-the-scenes upgrades enhance reliability and performance, especially for multi-engine setups managing high volumes of alerts. These improvements ensure your BI platform scales effortlessly with your needs.
 
-## Downloads: Business Studio 2.3.0
+## Download Business Studio 2.3.0 Today
 
-:::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top security.  
+:::info Secure & Signed Releases  
+Our MacOS and Windows installers are signed, notarized, and built using automated GitHub workflows to guarantee the highest security standards.  
 :::
 
 - **MacOS**:
@@ -140,5 +140,7 @@ MacOS and Windows installers are signed, notarized, and built via automated GitH
   - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.3.0/business-studio_2.3.0_amd64.deb)
 - **Windows**:
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.3.0/Business.Studio-2.3.0.Setup.exe)
+
+Ready to experience Business Intelligence 2.3.0? Download now and let us know how these updates work for you!
 
 <Feedback />
