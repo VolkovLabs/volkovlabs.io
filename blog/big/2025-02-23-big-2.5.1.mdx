@@ -1,0 +1,76 @@
+---
+authors: [daria, mulasevich]
+slug: business-intelligence-2.5.1/
+tags: [Business Intelligence]
+image: /img/blog/2025-02-23-big-2.5.1/banner.png
+keywords: [Business Intelligence, Alerting, Grafana]
+---
+
+import Code from "@theme/Code";
+import Feedback from "@site/big/_feedback.mdx";
+import GettingStarted from "@site/big/_getting_started.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Business Intelligence 2.5.1: Threshold Ranges, Load Balancing, and Refined UI
+
+We’re thrilled to announce the public preview of **Business Intelligence 2.5.1**, a release from Volkov Labs that enhances the [Business Intelligence platform](/big/) with key improvements:
+
+- **Threshold Ranges** for clearer alert rule configuration.
+- **Cluster Load Balancing** for optimized performance.
+- **UI Enhancements** for a seamless user experience.
+
+Read on to explore how these updates empower your alerting and management workflows.
+
+## Enhanced Threshold Ranges for Alert Rules
+
+Small changes can make a big difference. In version 2.5.1, we’ve improved the display of threshold ranges in alert rule settings. Previously, Grafana only showed the lower boundary, leaving the upper limit ambiguous. Now, both boundaries are clearly visible, removing guesswork and making alert configurations more intuitive.
+
+<Image
+  title="Threshold ranges now display both low and high boundaries for clarity."
+  src="/img/blog/2025-02-23-big-2.5.1/range.png"
+/>
+
+## Optimized Cluster Load Balancing
+
+Performance is at the heart of Business Intelligence. This release introduces refined **cluster load balancing** to ensure efficient workload distribution across connected Business Engines. Our updated architecture intelligently assigns queries to specific engines, minimizing duplication and enhancing reliability—whether you manage a handful of alerts or hundreds.
+
+<Image
+  title="Load balancing page for the Alpha cluster."
+  src="/img/blog/2025-02-14-big-2.5.0/cluster-lb.png"
+/>
+
+## Polished UI for a Better Experience
+
+We’ve also elevated the user experience in Business Studio with thoughtful updates:
+
+- **Dashboard Variables:** Enhanced support in target panels for more dynamic and flexible alerting.
+- **Evaluation Sorting:** Consistent ordering of evaluation results for streamlined analysis.
+
+These improvements simplify navigation and interaction, helping you work smarter, not harder.
+
+## Download Business Studio 2.5.1
+
+:::info Signed Releases  
+Our MacOS and Windows installers are signed, notarized, and built end-to-end using automated GitHub workflows to ensure maximum security.  
+:::
+
+- **MacOS**:
+  - [Apple Disk Image (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1-arm64.dmg)
+  - [Apple Disk Image (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1-x64.dmg)
+  - [ZIP (Apple Silicon)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-darwin-arm64-2.5.1.zip)
+  - [ZIP (Intel x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-darwin-x64-2.5.1.zip)
+- **Linux**:
+  - [RPM (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio-2.5.1-1.arm64.rpm)
+  - [RPM (x64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio-2.5.1-1.x86_64.rpm)
+  - [Debian (arm64)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio_2.5.1_arm64.deb)
+  - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio_2.5.1_amd64.deb)
+- **Windows**:
+  - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1.Setup.exe)
+
+Ready to get started? Follow the steps below to install and explore the new features.
+
+<GettingStarted />
+
+<Feedback />
