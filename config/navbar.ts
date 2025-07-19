@@ -133,7 +133,7 @@ export const NAVBAR = {
     {
       to: "/blog/",
       position: "right",
-      label: "Gazette",
+      label: "Business Gazette",
       "aria-label": "Blog Posts",
       items: [
         {

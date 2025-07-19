@@ -14,19 +14,19 @@ import Youtube from "@theme/Youtube";
 
 # Business Alerting: Reinventing Alerts in Grafana
 
-Working closely with the Grafana Community, we’ve gathered a wealth of feedback on enhancing alerting—simpler controls, unified UI, and anomaly detection with reporting for self-hosted setups. This inspired **Business Alerting**, a reimagined approach designed for business users.
+Through close collaboration with the Grafana Community, we've collected valuable feedback on improving alerting—calling for simpler controls, a unified interface, and anomaly detection with reporting for self-hosted environments. This led to the creation of **Business Alerting**, a reimagined solution tailored for business users.
 
-In this video, I cover alerting basics, native Grafana components, and our vision for Business Alerting. The article expands on these points with added depth:
+In this video, I introduce alerting fundamentals, explore native Grafana components, and share our vision for Business Alerting. The article below dives deeper into these topics:
 
 <Youtube id="vky-7-DfvXE" title="Business Alerting Announcement" />
 
 ## Alerting Basics
 
-Alerting tracks data changes and responds when rules are breached. Its three core components are:
+Alerting monitors data changes and triggers responses when predefined rules are violated. It consists of three core components:
 
-1. **Alert Rule**: Defines what to monitor—time frame, frequency, query (e.g., SQL, PromQL), and thresholds.
-2. **Alert Record**: Logs when data exceeds thresholds.
-3. **Alert Action**: Executes a response to the record.
+1. **Alert Rule**: Specifies what to monitor, including time frame, frequency, query (e.g., SQL, PromQL), and thresholds.
+2. **Alert Record**: Captures instances when data breaches thresholds.
+3. **Alert Action**: Executes a predefined response to the recorded breach.
 
 <Image
   title="Core components of alerting."
@@ -34,11 +34,11 @@ Alerting tracks data changes and responds when rules are breached. Its three cor
   width="50%"
 />
 
-You set the “what” and “how,” and when rules break, records trigger actions—simple yet powerful.
+You define the "what" and "how," and when a rule is breached, records trigger actions—a straightforward yet powerful mechanism.
 
 ## Native Alerting vs. Business Alerting
 
-This schema compares Grafana’s native alerting with our Business Alerting vision:
+The following diagram compares Grafana’s native alerting with our vision for Business Alerting:
 
 <Image
   title="Native Alerting vs. Business Alerting."
@@ -47,26 +47,26 @@ This schema compares Grafana’s native alerting with our Business Alerting visi
 
 ### Native Alerting
 
-- **Rules**: Created via the Alerting UI.
+- **Rules**: Configured through the Alerting UI.
 - **Records**: Managed by the Alert Manager, which logs breaches as annotations (vertical lines on Time Series) for backend data sources.
-- **Actions**: Handled by a robust notification system (text, Slack, email, OnCall) with a steep learning curve. Webhooks (3rd-party APIs) are possible but tricky to implement.
+- **Actions**: Supported by a powerful notification system (text, Slack, email, OnCall), though it has a steep learning curve. Webhooks for third-party APIs are possible but complex to set up.
 
 ### Business Alerting
 
-We’ve rethought all three:
+We’ve reimagined all three components for simplicity and accessibility:
 
 #### Business Alerting Panel
 
-A single, intuitive screen simplifies rule creation for business users. Key settings include:
+A unified, user-friendly interface streamlines rule creation for business users. Key features include:
 
-- **Title**: Name your alert.
-- **Schedule**: Set frequency with CRON expressions.
-- **Target Dashboard/Panel**: Auto-pull queries and thresholds from dropdowns.
-- **Time Range**: Use dashboard defaults or customize.
-- **Action**: Pick from pre-configured webhooks.
-- **Annotation**: Opt out to skip annotation records.
+- **Title**: Assign a name to your alert.
+- **Schedule**: Define frequency using CRON expressions.
+- **Target Dashboard/Panel**: Automatically pull queries and thresholds from dropdown menus.
+- **Time Range**: Use dashboard defaults or set custom ranges.
+- **Action**: Select from pre-configured webhooks.
+- **Annotation**: Optionally disable annotation records.
 
-Future enhancements will support hundreds of alerts with grouping and filtering.
+Future updates will support managing hundreds of alerts with advanced grouping and filtering capabilities.
 
 <Image
   title="Business Alerting panel interface."
@@ -75,13 +75,13 @@ Future enhancements will support hundreds of alerts with grouping and filtering.
 
 #### Business Engine
 
-Our Alert Manager replacement:
+Our alternative to the Alert Manager offers:
 
-- Leverages dashboard queries and thresholds, cutting redundant setup.
-- Runs in a separate container for flexible architecture.
-- Future-ready for AI-driven anomaly detection.
+- Seamless integration with dashboard queries and thresholds, eliminating redundant configuration.
+- Deployment in a separate container for a flexible, scalable architecture.
+- Future support for AI-driven anomaly detection.
 
-Connect via the Business Engine data source:
+Connect to it using the Business Engine data source:
 
 <Image
   title="Business Engine data source setup."
@@ -90,10 +90,10 @@ Connect via the Business Engine data source:
 
 #### Webhooks Configuration
 
-A dedicated panel lists webhooks, with edit mode offering:
+A dedicated panel simplifies webhook management, with edit mode providing:
 
 - Name and type (HTTP or Test).
-- Request URL and method (POST only, for now).
+- Request URL and method (currently limited to POST).
 
 <Image
   title="Webhook configuration panel."
@@ -102,7 +102,7 @@ A dedicated panel lists webhooks, with edit mode offering:
 
 ## Why Business Alerting?
 
-By consolidating controls, enhancing usability, and planning advanced features, we’re making alerting accessible beyond technical experts—enabling business teams in Grafana.
+By unifying controls, prioritizing usability, and planning cutting-edge features, Business Alerting makes Grafana’s alerting capabilities accessible to non-technical users, empowering business teams to act on data insights effectively.
 
 <GettingStarted />
 
