@@ -13,172 +13,176 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 2.2.0: Business Studio Debuts with API and UI Upgrades
+# Business Intelligence 2.2.0: Introducing Business Studio with Powerful API and UI Enhancements
 
-We’re thrilled to unveil the public preview of Business Intelligence 2.2.0, a milestone release from Volkov Labs advancing our mission to transform Business Insights with scalable, alert-driven analytics. Key updates include:
+We’re excited to announce the public preview of **Business Intelligence 2.2.0**, a transformative release from Volkov Labs. This update empowers organizations to harness scalable, alert-driven analytics like never before. With the debut of **Business Studio**, alongside major API and UI upgrades, this release marks a significant step forward in delivering actionable business insights.
 
-- **Business Studio**: A new control hub built with Electron and Tailwind UI, featuring:
-  - Add/delete Business Engines linked to Grafana.
-  - Manage alert rules and actions.
-  - Light/Dark theme support.
-  - Installers for MacOS, Linux, and Windows (auto-updates for MacOS/Windows).
-- Full support for **Grafana 11 HTTP API**.
-- **Optional environment variables** with defaults.
-- New **Business Engine APIs** for environment info and alert timelines.
+Here’s what’s new in version 2.2.0:
 
-Explore how these enhancements elevate your BI experience below.
+- **Business Studio**: A sleek control hub built with Electron and Tailwind UI, offering:
+  - Seamless management of Business Engines linked to Grafana.
+  - Easy configuration of alert rules and actions.
+  - Light/Dark theme support for a personalized experience.
+  - Installers for MacOS, Linux, and Windows (with auto-updates for MacOS/Windows).
+- Full compatibility with **Grafana 11 HTTP API**.
+- **Simplified environment variables** with sensible defaults.
+- New **Business Engine APIs** for environment details and alert timelines.
 
-## Business Studio: Your BI Command Center
+Dive into the details below to see how these features can elevate your BI workflows.
 
-Business Studio, crafted by Volkov Labs, centralizes control of the Business Intelligence platform with an intuitive interface. Connect multiple Business Engines—each tied to a Grafana instance—and manage alert rules and actions effortlessly.
+## Business Studio: Centralize Your BI Operations
+
+Business Studio is your new command center for the Business Intelligence platform. Designed by Volkov Labs, this intuitive desktop application lets you connect and manage multiple Business Engines—each linked to a Grafana instance—while streamlining alert rules and actions.
 
 <Image
-  title="Business Studio 2.2.0 showing configured Business Engines."
+  title="Business Studio 2.2.0 displaying configured Business Engines."
   src="/img/blog/2024-12-31-big-2.2.0/business-studio-220-engines.png"
 />
 
-Detailed documentation arrives in early 2025—stay tuned via our [blog](/blog/).
-
-:::info Downloads  
-Grab Business Studio from the links [below](#downloads-business-studio-220) or the [Release Notes](/big/release/).  
+:::info Stay Updated
+Detailed documentation is coming in early 2025. Follow our [blog](/blog/) for the latest updates.
 :::
 
-### Add and Delete Business Engines
+Ready to get started? Download Business Studio from the [links below](#downloads-business-studio-220) or check the [Release Notes](/big/release/).
 
-- Add engines via the **+ Add** button on the main screen:
-  1. Enter a unique **Engine Name**.
-  2. Provide the **Engine URL**.
-  3. Input a **Token**.
-- Need a token for over 10 alerts? Request one via the **Support** menu.
+### Effortlessly Add and Remove Business Engines
+
+Adding a Business Engine is simple with the **+ Add** button on the main screen:
+
+1. Enter a unique **Engine Name** for identification.
+2. Specify the **Engine URL** to connect to your Grafana instance.
+3. Provide a valid **Token** for authentication.
+
+> **Need a token for more than 10 alerts?** Reach out via the **Support** menu in Business Studio.
 
 <Image
-  title="Configure a new Business Engine."
+  title="Configuring a new Business Engine in Business Studio."
   src="/img/blog/2024-12-31-big-2.2.0/new-engine.png"
 />
 
-:::info Subscription  
-The Community version limits you to 10 alerts and one cluster. Upgrade with a subscription for more.  
+:::info Community Limits
+The Community version supports up to 10 alerts and one cluster. Unlock more with a [subscription](/pricing/).
 :::
 
-Once added, click an engine to access its **Overview**, **Alert Rules**, **Actions**, **Environment**, and **Settings** pages.
+Once added, select an engine to explore its **Overview**, **Alert Rules**, **Actions**, **Environment**, and **Settings** tabs.
 
 <Image
-  title="Engine Overview with Alert History."
+  title="Engine Overview displaying recent alert history."
   src="/img/blog/2024-12-31-big-2.2.0/engine-overview.png"
 />
 
-### Manage Alert Rules
+### Streamline Alert Rule Management
 
-The **Alert Rules** page lets you:
+The **Alert Rules** tab offers powerful tools to:
 
-- Add new rules.
-- Toggle between **Active** and **Paused** states.
-- Monitor statuses: **Scheduled**, **OK**, **Alerting**, **Error**.
-- Pause/start or delete rules.
+- Create new rules with custom settings.
+- Toggle rules between **Active** and **Paused** states.
+- Track rule statuses like **Scheduled**, **OK**, **Alerting**, or **Error**.
+- Pause, start, or delete rules as needed.
 
 <Image
-  title="Manage alert rules with ease."
+  title="Managing alert rules with intuitive controls."
   src="/img/blog/2024-12-31-big-2.2.0/tab-alert-rules.png"
 />
 
-Future updates will add grouping and filtering for handling hundreds of rules. See the status flow:
+Stay tuned for upcoming features like rule grouping and filtering to manage large sets of alerts effortlessly. For now, here’s how alert statuses flow:
 
 <Image
-  title="Logical schema of alert rule statuses."
+  title="Logical flow of alert rule statuses."
   src="/img/blog/2024-12-31-big-2.2.0/alert-statuses.png"
   width="50%"
 />
 
-The **Add a New Rule** window includes:
+When adding a new rule, configure:
 
-- **Title**: Rule name.
-- **Schedule**: CRON-based frequency.
-- **Target Dashboard/Panel**: Auto-pulls queries and thresholds.
-- **Time Range**: Dashboard-default or custom.
-- **Evaluation**: **Thresholds** (panel-based) or **Regex Pattern** (field/pattern search).
-- **Action**: Select from pre-configured APIs.
-- **Annotation**: Attach to **Panel**, **Dashboard**, or **Disabled**.
+- **Title**: A descriptive name for the rule.
+- **Schedule**: Frequency using CRON syntax (e.g., every minute or daily).
+- **Target Dashboard/Panel**: Automatically fetch queries and thresholds.
+- **Time Range**: Use dashboard defaults or set a custom range.
+- **Evaluation**: Choose **Thresholds** (based on panel data) or **Regex Pattern** (search specific fields).
+- **Action**: Link to a pre-configured API or action.
+- **Annotation**: Attach to **Panel**, **Dashboard**, or disable it.
 
 <Image
-  title="Add a new alert rule."
+  title="Creating a new alert rule with detailed options."
   src="/img/blog/2024-12-31-big-2.2.0/new-rule.png"
 />
 
-### Manage Alert Actions
+### Configure Alert Actions with Precision
 
-The **Actions** page allows:
+On the **Actions** tab, you can:
 
-- Adding new actions.
-- Deleting actions (except the non-deletable **default** action).
+- Add custom actions for alerts.
+- Remove actions (except the protected **default** action).
 
 <Image
-  title="Configure alert actions."
+  title="Setting up alert actions for automated responses."
   src="/img/blog/2024-12-31-big-2.2.0/tab-actions.png"
 />
 
-The **Add a New Action** window offers:
+When creating a new action, specify:
 
-- **Title**: Action name.
-- **Type**: HTTP or Logs.
-- **HTTP Details**: URL, method, optional headers.
-- **Message**: Handlebars-customizable template.
-- **Test Connectivity**: Verify API endpoint.
+- **Title**: Name of the action.
+- **Type**: Choose between HTTP or Logs.
+- **HTTP Details**: Define URL, method, and optional headers.
+- **Message**: Customize with Handlebars templates.
+- **Test Connectivity**: Validate the API endpoint before saving.
 
 <Image
-  title="Set up a new action."
+  title="Configuring a new action with connectivity testing."
   src="/img/blog/2024-12-31-big-2.2.0/new-action.png"
 />
 
-### Light and Dark Themes
+### Adaptive Light and Dark Themes
 
-Business Studio adapts to your system’s Light or Dark theme preferences for a seamless look.
+Business Studio automatically adjusts to your system’s Light or Dark theme, ensuring a comfortable user experience.
 
 <Image
-  title="Light and Dark themes supported."
+  title="Light and Dark theme options for Business Studio."
   src="/img/blog/2024-12-31-big-2.2.0/theme.png"
 />
 
-### Installers and Auto-Updates
+### Hassle-Free Installation and Updates
 
-One-click installers are available for MacOS, Linux, and Windows, with auto-updates for MacOS and Windows. Track changes via the **Changelog** in the bottom-left corner.
+Download one-click installers for MacOS, Linux, and Windows. Auto-updates are supported on MacOS and Windows, and you can view the latest changes via the **Changelog** in the app’s bottom-left corner.
 
 <Image
-  title="Access the Changelog in Business Studio."
+  title="Accessing the Changelog within Business Studio."
   src="/img/blog/2024-12-31-big-2.2.0/changelog.png"
 />
 
-## Grafana 11 HTTP API Support
+## Seamless Integration with Grafana 11 HTTP API
 
-Business Studio aligns with Grafana 11’s HTTP API (version 10.x may work but isn’t fully tested—use cautiously). We’ll keep pace with future Grafana releases.
+This release fully supports Grafana 11’s HTTP API. While compatibility with Grafana 10.x may work, it’s not officially tested—proceed with caution. Rest assured, we’ll continue to align with future Grafana updates for uninterrupted service.
 
-## Simplified Environment Variables
+## Simplified Setup with Environment Variables
 
-Setup is easier with default values for most environment variables. Only these seven are required:
+Configuring Business Intelligence is now easier with default values for most environment variables. Only these seven are mandatory:
 
-- Timescale database connection details.
-- Grafana URL and Token (Service Account).
+- Timescale database connection details (for data storage).
+- Grafana URL and Token (via Service Account for API access).
 
 <Code
   url="https://github.com/VolkovLabs/business-intelligence/blob/main/.env"
   language="shell"
 />
 
-## New Engine APIs
+## Powerful New Engine APIs
 
-### Environment Info
+### Access Environment Information
 
-View all environment variables on the **Environment** page via the [GET /environment endpoint](/big/api/). Editing is planned for future releases.
+Check all environment variables directly from the **Environment** tab using the [GET /environment endpoint](/big/api/). Editing capabilities are planned for a future update.
 
 <Image
-  title="Environment variables for Charlie Engine 1."
+  title="Viewing environment variables for Charlie Engine 1."
   src="/img/blog/2024-12-31-big-2.2.0/env.png"
 />
 
-### Alert Status Timeline
+### Track Alert Status Timelines
 
-The [GET timeline endpoint](/big/api/) returns a concise history of alert state changes, filtering out redundant records.
+The [GET timeline endpoint](/big/api/) provides a streamlined history of alert state changes, filtering out duplicate entries for clarity.
 
-For instance, below is the complete list of alert rule states.
+**Full Alert History Example:**
 
 ```csv
 date                      Previous            New
@@ -190,7 +194,7 @@ date                      Previous            New
 1/1/25, 10:24:01 AM       OK                  OK
 ```
 
-And here is the timeline. It consists of only the records where the alerting state changes.
+**Filtered Timeline Output:**
 
 ```csv
 date                      Previous            New
@@ -199,8 +203,8 @@ date                      Previous            New
 
 ## Downloads: Business Studio 2.2.0
 
-:::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built via automated GitHub workflows for top security.  
+:::info Secure and Verified
+All MacOS and Windows installers are signed, notarized, and built using automated GitHub workflows for maximum security.
 :::
 
 - **MacOS**:
