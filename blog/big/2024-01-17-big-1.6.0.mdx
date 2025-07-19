@@ -15,98 +15,98 @@ import Youtube from "@theme/Youtube";
 
 # Business Intelligence 1.6.0: Variables, Prometheus, and Alert History
 
-We’re thrilled to announce Business Intelligence 1.6.0, a pivotal release from Volkov Labs that evolves the [Business Intelligence platform](/big/) from proof-of-concept to a robust development milestone. Key updates include:
+We’re excited to unveil **Business Intelligence 1.6.0**, a significant release from Volkov Labs that marks a major step forward for the [Business Intelligence platform](/big/). Transitioning from a proof-of-concept to a robust development milestone, this update introduces powerful features and enhancements, including:
 
-- **Dashboard variables** support for streamlined alerting.
+- **Dashboard variables** for streamlined alerting.
 - **Prometheus data source** integration.
-- Built-in **Prometheus monitoring**.
-- Expanded **UI functionality**.
-- New **Alert History** visualization.
+- Built-in **Prometheus monitoring** for system health.
+- Enhanced **UI functionality** for better user experience.
+- New **Alert History** visualization for deeper insights.
 
-Watch the overview:
+Take a quick look at what’s new:
 
 <Shorts id="NG8eg1F5nX4" title="Business Intelligence 1.6.0 for Grafana" />
 
-## Dashboard Variables Support
+## Dashboard Variables for Flexible Alerting
 
-Variables transform alert configuration. Imagine monitoring two similar devices with slightly different CPU thresholds (e.g., 0-2% vs. over 2%). Without variables, you’d need separate rules for each—manageable for a few, but a nightmare for hundreds.
+Dashboard variables revolutionize alert configuration by enabling dynamic and scalable setups. Consider a scenario where you’re monitoring multiple devices with varying CPU thresholds (e.g., 0-2% for some, over 2% for others). Without variables, you’d need separate alert rules for each device—a manageable task for a few, but a daunting challenge for hundreds.
 
-Now, one alert rule with variable-driven **Overrides** handles it all. Here’s how it looks in a Time Series panel:
+With Business Intelligence 1.6.0, a single alert rule combined with variable-driven **Overrides** can handle diverse thresholds effortlessly. See it in action in a Time Series panel:
 
 <Image
-  title="Time Series with one series triggering an alert."
+  title="Time Series panel with one series triggering an alert."
   src="/img/blog/2024-01-17-big-1.6.0/var-1.png"
 />
 
-And the rule setup with variables:
+Here’s how the rule setup looks with variables:
 
 <Image
-  title="Single alert rule with multiple thresholds via variables."
+  title="Single alert rule with multiple thresholds using variables."
   src="/img/blog/2024-01-17-big-1.6.0/var-2.png"
 />
 
-### Prometheus Data Source
+### Prometheus Data Source Support
 
-This release ensures variable support for Prometheus, with plans to expand to other popular data sources soon.
+This release brings full variable support for the **Prometheus data source**, ensuring seamless integration. We’re actively working to extend this capability to other popular data sources in future updates.
 
 ## Built-In Prometheus Monitoring
 
-Monitor the BI Engine itself with new Prometheus middleware and a dedicated container. This built-in solution collects system health stats, viewable in a [pre-built dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/provisioning/dashboards/engine.json)—perfect for observing your observability system.
+Keep a close eye on the BI Engine itself with our new Prometheus middleware and a dedicated monitoring container. This built-in solution collects critical system health metrics, which you can visualize using a [pre-built dashboard](https://github.com/VolkovLabs/business-intelligence/blob/main/provisioning/dashboards/engine.json). It’s an ideal way to monitor the system that powers your observability.
 
 <Image
   title="BI Engine monitoring dashboard powered by Prometheus."
   src="/img/blog/2024-01-17-big-1.6.0/prom.png"
 />
 
-The BI Engine’s two components provide metrics:
+The BI Engine comprises two key components, each exposing metrics for monitoring:
 
-- **API Server**: `engine:3001`
-- **Scheduler**: `engine:3002`
+- **API Server**: Accessible at `engine:3001`
+- **Scheduler**: Accessible at `engine:3002`
 
 <Image
-  title="API Server and Scheduler components of BI Engine."
+  title="API Server and Scheduler components of the BI Engine."
   src="/img/blog/2024-01-17-big-1.6.0/bi-app.png"
 />
 
-## Alert Rules Workflow
+## Streamlined Alert Rules Workflow
 
-Here’s the user-facing workflow, with Prometheus enabling troubleshooting and system reporting:
+The user-facing alert workflow is now more intuitive, with Prometheus enabling detailed troubleshooting and system reporting behind the scenes:
 
 <Image
   title="Conceptual alert workflow from the user’s perspective."
   src="/img/blog/2024-01-17-big-1.6.0/workflow.png"
 />
 
-## UI Enhancements
+## Enhanced User Interface Features
 
 ### Actions Page
 
-Renamed from **Webhooks** to **Actions** to align with alerting terminology ([Alert rule-Alert record-Alert action](/big/alerting/)).
+We’ve renamed the **Webhooks** section to **Actions** to better reflect standard alerting terminology ([Alert rule → Alert record → Alert action](/big/alerting/)).
 
-### Annotations
+### Annotations Support
 
-In Edit mode > **Action** category, the **Add Annotations** option now lets you attach annotations to a specific panel or the entire dashboard.
+In Edit mode under the **Action** category, the new **Add Annotations** option allows you to attach annotations to a specific panel or the entire dashboard, providing greater flexibility in alert documentation.
 
 <Image
-  title="Alerting panel with Edit alert drawer."
+  title="Alerting panel with the Edit alert drawer."
   src="/img/blog/2024-01-17-big-1.6.0/alerting-panel.png"
 />
 
-### Event Details
+### Event Details View
 
-For rules in **Alerting** or **Error** states, click **Details** on an alert card, then the **Event Details** header to inspect specifics.
+For alert rules in **Alerting** or **Error** states, you can now click **Details** on an alert card and expand the **Event Details** section to dive into specific information about the event.
 
 <Image
-  title="Event Details for Alerting and Error states."
+  title="Event Details for alerts in Alerting and Error states."
   src="/img/blog/2024-01-17-big-1.6.0/event-details.png"
 />
 
 ## Alert History Visualization
 
-A new **Alerts History** option in the BI Engine data source’s **Request** parameter lets you display alert history in any visualization panel—like this Table view:
+A new **Alerts History** option in the BI Engine data source’s **Request** parameter allows you to retrieve and display alert history in any visualization panel. For example, here’s how it looks in a Table view:
 
 <Image
-  title="Alert History in a Table visualization."
+  title="Alert History displayed in a Table visualization."
   src="/img/blog/2024-01-17-big-1.6.0/alert-history.png"
 />
 
