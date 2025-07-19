@@ -13,49 +13,47 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 2.5.1: Threshold Ranges, Load Balancing, and UI Enhancements
+# Business Intelligence 2.5.1: Threshold Ranges, Load Balancing, and Refined UI
 
-We’re excited to unveil the public preview of Business Intelligence 2.5.1, a release from Volkov Labs that refines the [Business Intelligence platform](/big/) with:
+We’re thrilled to announce the public preview of **Business Intelligence 2.5.1**, a release from Volkov Labs that enhances the [Business Intelligence platform](/big/) with key improvements:
 
-- Clearer **threshold ranges** in alert rule settings.
-- Optimized **cluster load balancing** for better performance.
-- Polished **UI enhancements** for a smoother experience.
+- **Threshold Ranges** for clearer alert rule configuration.
+- **Cluster Load Balancing** for optimized performance.
+- **UI Enhancements** for a seamless user experience.
 
-Dive into the details below to see how these updates elevate your alerting and management capabilities.
+Read on to explore how these updates empower your alerting and management workflows.
 
-## Clearer Threshold Ranges in Alert Rules
+## Enhanced Threshold Ranges for Alert Rules
 
-Small UI tweaks can yield big wins. In 2.5.1, we’ve upgraded the threshold range display in alert rule settings. Previously, Grafana showed only the lower boundary, leaving the upper limit unclear. Now, both low and high boundaries are visible—eliminating guesswork and making alert thresholds intuitive at a glance.
+Small changes can make a big difference. In version 2.5.1, we’ve improved the display of threshold ranges in alert rule settings. Previously, Grafana only showed the lower boundary, leaving the upper limit ambiguous. Now, both boundaries are clearly visible, removing guesswork and making alert configurations more intuitive.
 
 <Image
-  title="Low and high boundaries now clarify threshold ranges."
+  title="Threshold ranges now display both low and high boundaries for clarity."
   src="/img/blog/2025-02-23-big-2.5.1/range.png"
 />
 
 ## Optimized Cluster Load Balancing
 
-Performance is a cornerstone of Business Intelligence, and this release refines **cluster load balancing** to deliver just that. We’ve enhanced how alerts are distributed across connected Business Engines, ensuring efficient workload management.
-
-The architecture now better assigns specific queries to specific engines, avoiding duplication and boosting reliability—whether you’re handling dozens or hundreds of alerts.
+Performance is at the heart of Business Intelligence. This release introduces refined **cluster load balancing** to ensure efficient workload distribution across connected Business Engines. Our updated architecture intelligently assigns queries to specific engines, minimizing duplication and enhancing reliability—whether you manage a handful of alerts or hundreds.
 
 <Image
   title="Load balancing page for the Alpha cluster."
   src="/img/blog/2025-02-14-big-2.5.0/cluster-lb.png"
 />
 
-## UI Enhancements for a Smoother Experience
+## Polished UI for a Better Experience
 
-Business Studio’s user experience gets a lift with these updates:
+We’ve also elevated the user experience in Business Studio with thoughtful updates:
 
-- **Dashboard Variables:** Improved support within target panels for more flexible alerting.
-- **Evaluation Sorting:** Consistent ordering of results for easier analysis.
+- **Dashboard Variables:** Enhanced support in target panels for more dynamic and flexible alerting.
+- **Evaluation Sorting:** Consistent ordering of evaluation results for streamlined analysis.
 
-These refinements streamline navigation and interaction, making your workflow more efficient.
+These improvements simplify navigation and interaction, helping you work smarter, not harder.
 
-## Downloads: Business Studio 2.5.1
+## Download Business Studio 2.5.1
 
 :::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built end-to-end via automated GitHub workflows for top-tier security.  
+Our MacOS and Windows installers are signed, notarized, and built end-to-end using automated GitHub workflows to ensure maximum security.  
 :::
 
 - **MacOS**:
@@ -70,6 +68,8 @@ MacOS and Windows installers are signed, notarized, and built end-to-end via aut
   - [Debian (x86)](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/business-studio_2.5.1_amd64.deb)
 - **Windows**:
   - [Executable](https://github.com/VolkovLabs/business-intelligence/releases/download/v2.5.1/Business.Studio-2.5.1.Setup.exe)
+
+Ready to get started? Follow the steps below to install and explore the new features.
 
 <GettingStarted />
 
