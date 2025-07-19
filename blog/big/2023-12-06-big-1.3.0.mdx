@@ -15,100 +15,102 @@ import Youtube from "@theme/Youtube";
 
 # Business Intelligence 1.3.0: Transformations, Thresholds, and Health Checks
 
-We’re excited to introduce Business Intelligence 1.3.0, a proof-of-concept release from Volkov Labs laying the groundwork for expansive future growth in the [Business Intelligence platform](/big/). This update brings:
+We are thrilled to announce the release of **Business Intelligence 1.3.0**, a proof-of-concept update from Volkov Labs that sets the stage for significant advancements in our [Business Intelligence platform](/big/). This release introduces powerful new features and enhancements, including:
 
-- **User role support** in the Alerting panel.
-- **Threshold color integration** for alert ranges.
-- Beta support for **transformations and multi-frames**.
-- Enhanced **Grafana health check** with retry and timeout options.
+- **User role support** in the Alerting panel for tailored access control.
+- **Threshold color integration** to visually define alert ranges.
+- Beta support for **transformations and multi-frame data sets**.
+- Improved **Grafana health checks** with configurable retry and timeout options.
 
-See it in action:
+Watch the highlights of this release in action:
 
 <Shorts id="mAdwQ32SmMc" title="Business Intelligence 1.3.0 for Grafana" />
 
-## User Roles in the Alerting Panel
+## User Role Support in the Alerting Panel
 
-The Alerting panel now respects Grafana user roles, tailoring access to actions:
+The Alerting panel now aligns with Grafana's user roles, ensuring that access to specific actions is appropriately restricted based on a user's permissions. This enhances security and usability across different user types.
 
-### Alert Rules Page
+### Alert Rules Page Permissions
 
-- **Admins/Editors**: Full access—**Info**, **Pause/Resume**, **Edit**, **Delete**.
-- **Viewers**: Limited to **Info** and **Pause/Resume**.
+- **Admins/Editors**: Full control with access to **Info**, **Pause/Resume**, **Edit**, and **Delete** actions.
+- **Viewers**: Restricted access, limited to **Info** and **Pause/Resume** actions.
 
 <Image
-  title="Action buttons vary by role on the Alert Rules page."
+  title="Action buttons on the Alert Rules page vary based on user role."
   src="/img/blog/2023-12-06-big-1.3.0/roles.png"
 />
 
-### Webhooks Page
+### Webhooks Page Permissions
 
-- **Admins/Editors**: All options—**Test**, **Edit**, **Delete**.
-- **Viewers**: Only **Test** available.
+- **Admins/Editors**: Complete access to **Test**, **Edit**, and **Delete** actions.
+- **Viewers**: Limited to the **Test** action only.
 
-:::info Note  
-A greyed-out **Delete** button means the webhook is tied to an active alert rule and can’t be removed.  
+:::info Note
+A greyed-out **Delete** button indicates that the webhook is associated with an active alert rule and cannot be deleted until the association is removed.
 :::
 
 <Image
-  title="Webhook actions differ by role."
+  title="Webhook actions are restricted based on user role."
   src="/img/blog/2023-12-06-big-1.3.0/roles-hooks.png"
 />
 
-## Threshold Colors for Alerts
+## Threshold Colors for Alert Triggers
 
-The BI Engine now uses **Thresholds** colors to define allowable data ranges, triggering alerts when values stray outside. Normal ranges require no action, keeping your focus where it matters.
+With Business Intelligence 1.3.0, the BI Engine leverages **Threshold Colors** to define acceptable data ranges visually. Alerts are triggered when values fall outside these ranges, allowing teams to focus on critical deviations while ignoring normal fluctuations.
 
-In this example (allowable range: 50-80), three alert records highlight breaches:
+**Example Scenario (Allowable Range: 50-80):**
 
-- Alert 1: Temperature drops below 40.
-- Alert 2: Spikes to 94.7, then dips to 20.4.
-- Alert 3: Hits 93.4, then falls to 21.1.
+- **Alert 1**: Triggered when the temperature drops below 40.
+- **Alert 2**: Triggered with a spike to 94.7, followed by a drop to 20.4.
+- **Alert 3**: Triggered at a high of 93.4, then a low of 21.1.
 
-Annotations (light blue areas) mark these events, with gaps reflecting abrupt data shifts. Alerts run periodically, so ongoing breaches extend annotations over time.
+Annotations (highlighted in light blue) visually mark these events on the dashboard. Gaps in annotations represent sudden data shifts, while continuous breaches extend the annotation duration as alerts are evaluated periodically.
 
 <Image
-  title="Threshold colors guide alert creation."
+  title="Threshold colors visually guide alert creation and monitoring."
   src="/img/blog/2023-12-06-big-1.3.0/thresh-color.png"
 />
 
-## Transformations and Multi-Frames (Beta)
+## Beta Support for Transformations and Multi-Frame Data Sets
 
-Alert rules tie to specific dashboards and panels:
+This release introduces beta support for advanced data handling, enabling more flexible and powerful alert configurations tied to specific dashboards and panels.
 
 <Image
-  title="Dashboard and panel selection for an alert rule."
+  title="Select dashboards and panels to configure alert rules."
   src="/img/blog/2023-12-06-big-1.3.0/dash-panel.png"
 />
 
-### Multi-Frames
+### Multi-Frame Data Support
 
-Now, BI supports multi-frame data sets—alerts apply across all frames from a data source. For example, monitoring three devices:
+Business Intelligence 1.3.0 now supports multi-frame data sets, allowing alerts to monitor multiple data frames from a single source. For instance, when monitoring three devices:
 
-- Alert triggers when any device (e.g., Device 2) exceeds the range.
-- Alert resolves when the last device (e.g., Device 3) returns to normal.
+- An alert is triggered if **any device** (e.g., Device 2) exceeds the defined range.
+- The alert resolves only when the **last device** (e.g., Device 3) returns to the normal range.
 
 <Image
-  title="Multi-frame alert example with three devices."
+  title="Multi-frame alert monitoring across three devices."
   src="/img/blog/2023-12-06-big-1.3.0/multi-frame.png"
 />
 
-### Transformations
+### Transformations (Beta)
 
-Grafana transformations are now in beta. While most should work, the variety means some may need further tuning—stay tuned for updates.
+Grafana transformations are now supported in beta. While most transformations should function as expected, the wide variety of options in Grafana means some may require additional refinement. We are actively working on full compatibility and will provide updates in future releases.
 
-:::info Beta Status  
-Transformation support is evolving due to Grafana’s extensive options.  
+:::info Beta Status
+Transformation support is still evolving due to the extensive range of Grafana transformation options. We appreciate your feedback during this beta phase.
 :::
 
-## Grafana Health Check Enhancements
+## Enhanced Grafana Health Check Options
 
-The BI Engine relies on Grafana, but startup timing can vary. If Grafana lags, the BI Engine might fail its health check and shut down. New retry and timeout parameters prevent this, with a default wait of 5 seconds—customizable as needed.
+The BI Engine depends on Grafana for its operations, but differences in startup timing can sometimes cause health check failures, leading to unexpected shutdowns. To address this, Business Intelligence 1.3.0 introduces configurable **retry** and **timeout** parameters for Grafana health checks. By default, the system waits up to 5 seconds, but these settings can be customized to suit your environment.
+
+Below is an example configuration for health check parameters:
 
 ```sh
 ##
 ## Service Account
-## - Viewer permission is required to access dashboards
-## - Editor permission is required to access dashboards and add Annotations
+## - Viewer permission is required to access dashboards.
+## - Editor permission is required to access dashboards and add annotations.
 ##
 GRAFANA_TOKEN=SERVICE-ACCOUNT-TOKEN
 
@@ -118,13 +120,13 @@ GRAFANA_TOKEN=SERVICE-ACCOUNT-TOKEN
 GRAFANA_URL=http://grafana:3000
 
 ##
-## Grafana Health-Check timeout, ms
-## Waiting for Grafana availability for (Timeout * Number of Retries / 1000 ) seconds
+## Grafana Health Check Timeout (in milliseconds)
+## Total wait time for Grafana availability is calculated as (Timeout * Number of Retries / 1000) seconds.
 ##
 GRAFANA_HEALTH_CHECK_TIMEOUT=1000
 
 ##
-## Grafana Health-Check number of retries
+## Grafana Health Check Number of Retries
 ##
 GRAFANA_HEALTH_CHECK_RETRY=5
 ```
