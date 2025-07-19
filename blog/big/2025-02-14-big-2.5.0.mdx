@@ -13,26 +13,26 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 2.5.0: Clusters, Grafana Checks, and UI Upgrades
+# Business Intelligence 2.5.0: Clusters, Grafana Checks, and UI Enhancements
 
-We’re thrilled to launch the public preview of Business Intelligence 2.5.0, a release from Volkov Labs that enhances the [Business Intelligence platform](/big/) with:
+We’re excited to announce the public preview of Business Intelligence 2.5.0, a significant update from Volkov Labs that elevates the [Business Intelligence platform](/big/) with powerful new features and improvements:
 
-- **Cluster functionality**, featuring a load balancing page for scheduled alerts.
-- Improved **Grafana version compatibility** checks.
-- Refined **UI updates** for better usability.
-- An updated Business Engine OpenAPI specification.
+- **Cluster functionality** with a dedicated load balancing page for scheduled alerts.
+- Enhanced **Grafana version compatibility** checks for seamless integration.
+- Intuitive **UI enhancements** for a smoother user experience.
+- An updated **Business Engine OpenAPI specification** for better integrations.
 
-Explore how these updates streamline alerting and management below.
+Dive into the details below to see how these updates can transform your alerting and management workflows.
 
-## Cluster Functionality: Power in Unity
+## Cluster Functionality: Strength in Collaboration
 
-In Business Studio, a **cluster** is a group of Business Engines sharing a token, configuration database, and Grafana instance. Clusters now appear in the sidebar, each with two dedicated pages:
+In Business Studio, a **cluster** refers to a group of Business Engines that share a common token, configuration database, and Grafana instance. This release introduces clusters in the sidebar, each accompanied by two dedicated pages for streamlined management:
 
 ### Load Balancing
 
-- View the number of engines and scheduled alerts in a cluster.
-- Review a list of engines, their linked Grafana dashboards, and associated alerts.
-- Benefit: Optimize alert distribution for performance across dozens or hundreds of rules.
+- Monitor the number of engines and scheduled alerts within a cluster.
+- Access a detailed list of engines, their associated Grafana dashboards, and linked alerts.
+- **Benefit:** Efficiently distribute alerts across dozens or hundreds of rules to optimize performance.
 
 <Image
   title="Load balancing page for the Alpha cluster."
@@ -41,46 +41,46 @@ In Business Studio, a **cluster** is a group of Business Engines sharing a token
 
 ### Settings
 
-- Edit the cluster name, inspect token details, and monitor connected engines’ versions and statuses.
-- Benefit: Centralize cluster oversight for seamless management.
+- Update cluster names, review token information, and track the version and status of connected engines.
+- **Benefit:** Gain centralized control and visibility for effortless cluster management.
 
 <Image
   title="Settings page for the Alpha cluster."
   src="/img/blog/2025-02-14-big-2.5.0/cluster-settings.png"
 />
 
-## Enhanced Grafana Version Compatibility
+## Improved Grafana Version Compatibility
 
-Transparency meets reliability with new Grafana version checks:
+This release prioritizes transparency and reliability with enhanced Grafana compatibility features:
 
-- The **Environment page** now displays the connected Grafana version.
-- Behind-the-scenes compatibility checks alert you to potential issues.
+- The **Environment page** now clearly displays the connected Grafana version.
+- Automated compatibility checks proactively identify potential issues in the background.
 
-This ensures Business Intelligence aligns smoothly with your Grafana setup.
+These updates ensure that Business Intelligence integrates seamlessly with your Grafana environment.
 
 <Image
-  title="Grafana version visible on the Environment page."
+  title="Grafana version displayed on the Environment page."
   src="/img/blog/2025-02-14-big-2.5.0/grafana-version.png"
 />
 
-## UI Upgrades for Intuition
+## UI Enhancements for Seamless Navigation
 
-Business Studio’s interface gets a polish with:
+Business Studio’s user interface has been refined for greater clarity and ease of use:
 
-- **Panel Selection:** Now shows panel type in descriptions for easier setup.
-- **Threshold Colors:** Updated to match Grafana’s naming conventions.
-- **Alert Timing:** “In alerting since” dates sync with alert history for accuracy.
+- **Panel Selection:** Panel descriptions now include type information for simpler configuration.
+- **Threshold Colors:** Color naming conventions are updated to align with Grafana’s standards.
+- **Alert Timing:** The “In alerting since” timestamp now matches alert history for improved accuracy.
 
-These tweaks make navigation and configuration more intuitive.
+These thoughtful updates make setup and navigation more intuitive than ever.
 
 ## Updated OpenAPI Specification
 
-The Business Engine’s [OpenAPI specification](/big/api/) is refreshed, ensuring third-party integrations stay effortless and current with 2.5.0 features.
+The Business Engine’s [OpenAPI specification](/big/api/) has been revised to reflect the latest 2.5.0 features, ensuring smooth and up-to-date third-party integrations.
 
-## Downloads: Business Studio 2.5.0
+## Download Business Studio 2.5.0
 
 :::info Signed Releases  
-MacOS and Windows installers are signed, notarized, and built end-to-end via automated GitHub workflows for maximum security.  
+Our MacOS and Windows installers are fully signed, notarized, and built using automated GitHub workflows to guarantee the highest level of security.  
 :::
 
 - **MacOS**:
