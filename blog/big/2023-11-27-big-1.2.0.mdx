@@ -13,98 +13,98 @@ import Image from "@theme/Image";
 import Shorts from "@theme/Shorts";
 import Youtube from "@theme/Youtube";
 
-# Business Intelligence 1.2.0: Alerting Panel, Regex, and Webhooks Enhanced
+# Business Intelligence 1.2.0: Enhanced Alerting Panel, Regex Support, and Webhook Improvements
 
-We’re thrilled to unveil Business Intelligence 1.2.0, a proof-of-concept release from Volkov Labs setting the stage for expansive growth in the [Business Intelligence platform](/big/). This update delivers:
+We’re excited to announce the release of Business Intelligence 1.2.0, a proof-of-concept (POC) update from Volkov Labs that paves the way for significant advancements in our [Business Intelligence platform](/big/). This release introduces key enhancements, including:
 
-- A revamped **Alerting panel** for streamlined control.
-- **Regex pattern** evaluation for alerts.
-- **Webhook upgrades**: Test connectivity and a **Use by Default** option.
+- A redesigned **Alerting Panel** for intuitive and centralized control.
+- Support for **Regex Pattern** evaluation in alerts.
+- Improved **Webhook functionality** with connectivity testing and a "Use by Default" option.
 
-Check it out:
+Take a closer look at what’s new:
 
 <Shorts id="X2An_gbxX5k" title="Business Intelligence 1.2.0 for Grafana" />
 
-## Proof of Concept Vision
+## Proof-of-Concept Vision
 
-Business Intelligence is a POC with a full launch planned for 2024-2025, featuring:
+Business Intelligence remains a POC, with a full launch targeted for 2024-2025. Our roadmap includes transformative features such as:
 
-- Business Alerting
-- High-performance Business Engine
+- Advanced Business Alerting
+- High-Performance Business Engine
 - Business Studio
-- Business Reporting
-- Dashboard Management
+- Comprehensive Business Reporting
+- Streamlined Dashboard Management
 
 <Image
-  title="Future vision of the Business Intelligence platform."
+  title="The future vision of the Business Intelligence platform."
   src="/img/big/platform.png"
 />
 
-## Revamped Alerting Panel
+## Redesigned Alerting Panel
 
-The updated Alerting panel centralizes alert management with an intuitive layout, aligned with Grafana’s [alerting basics](/big/alerting/).
+The updated Alerting Panel offers a centralized and user-friendly interface for managing alerts, aligning seamlessly with Grafana’s [alerting basics](/big/alerting/).
 
-### Alert Card
+### Alert Card Design
 
-Each alert gets a sleek card displaying:
+Each alert is represented by a modern, compact card that includes:
 
-- Title and evaluated panel name.
-- Schedule details.
-- Status indicators and action buttons.
+- The alert title and associated panel name.
+- Scheduling information.
+- Clear status indicators and actionable buttons.
 
 <Image
-  title="Components of an alert card."
+  title="Key components of an alert card."
   src="/img/blog/2023-11-27-big-1.2.0/alert-card.png"
 />
 
-### Statuses
+### Alert Statuses
 
-Two statuses track each alert:
+Alerts are tracked using two distinct status types:
 
-- **Active/Paused**: Is it running or on hold?
+- **Active/Paused**: Indicates whether the alert is running or temporarily disabled.
 - **Run State**:
-  - **Scheduled**: Queued but not yet run.
-  - **OK**: No breaches or patterns detected.
-  - **Alerting**: Thresholds breached or pattern found.
-  - **Error**: Issue with query, annotation, or webhook.
+  - **Scheduled**: The alert is queued and has not yet executed.
+  - **OK**: No breaches or patterns detected during evaluation.
+  - **Alerting**: Thresholds have been breached or a pattern has been matched.
+  - **Error**: An issue occurred with the query, annotation, or webhook.
 
-New alerts start as **Active** and **Scheduled**. Pausing or editing resets them to **Scheduled**.
+By default, new alerts are set to **Active** and **Scheduled**. Pausing or editing an alert resets its state to **Scheduled**.
 
 ### Action Buttons
 
-Four options enabling control:
+The Alerting Panel provides four intuitive action buttons for full control:
 
-- **Info**: View alert details.
-- **Pause/Active**: Toggle the alert’s state.
-- **Edit**: Open the edit drawer (resets to **Scheduled** on save).
-- **Delete**: Remove the alert with confirmation.
+- **Info**: Displays detailed information about the alert.
+- **Pause/Activate**: Toggles the alert between active and paused states.
+- **Edit**: Opens the edit drawer for modifications (resets to **Scheduled** upon saving).
+- **Delete**: Removes the alert after a confirmation prompt.
 
 <Image
-  title="Alerting panel with Edit drawer."
+  title="Alerting Panel with the Edit drawer open."
   src="/img/blog/2023-11-27-big-1.2.0/alerting-panel.png"
 />
 
 ## Regex Pattern Evaluation
 
-A new **Regex Pattern** option joins **Thresholds** in alert evaluations:
+In addition to **Thresholds**, alerts now support a powerful new **Regex Pattern** evaluation option:
 
-- **Thresholds**: Checks data against panel-defined limits.
-- **Regex Pattern**: Scans specified fields (optional) for a defined pattern.
+- **Thresholds**: Evaluates data against predefined limits set in the panel.
+- **Regex Pattern**: Searches for specific patterns within designated fields (optional).
 
-See it in the **Evaluation** category above.
+This feature is accessible in the **Evaluation** category of the alert settings.
 
 ## Webhook Enhancements
 
 ### Test Connectivity
 
-Verify webhook endpoints with a **Test Connectivity** button in the Edit Webhook drawer.
+A new **Test Connectivity** button in the Edit Webhook drawer allows you to verify the functionality of webhook endpoints before deployment.
 
-### Use by Default
+### Use by Default Option
 
-Set a webhook as the default—automatically used when none is specified—for seamless alerting.
+You can now designate a webhook as the default. When no specific webhook is selected for an alert, the default webhook is automatically applied, ensuring seamless integration.
 
 <Image
-  title="Webhook updates: Test connectivity and Use by Default."
+  title="Webhook updates: Test Connectivity and Use by Default options."
   src="/img/blog/2023-11-27-big-1.2.0/webhook.png"
 />
 
