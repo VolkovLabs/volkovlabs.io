@@ -11,147 +11,119 @@ import Feedback from "@site/docs/_feedback.mdx";
 import Image from "@theme/Image";
 import Youtube from "@theme/Youtube";
 
-# Grafana certified plugin partner, new team member and Business intelligence as a recalibrated focus for 2025
+# Grafana Certified Plugin Partner, New Team Member, and Business Intelligence Focus for 2025
 
-In this January issue of the Business Gazette:
+Welcome to the January 2025 edition of the Business Gazette! This month, we’re excited to share significant updates and milestones at Volkov Labs. Here’s what’s in store:
 
-- Grafana certified plugin partner
-- New team member
-- Development focus recalibration
-- Release news
-- 100 published videos
-- The Business table 1.9.0 review-tutorial video
+- **Becoming the First Grafana Certified Plugin Partner**: We are thrilled to announce our achievement as the inaugural certified partner for Grafana, marking a significant milestone in our commitment to delivering top-tier visualization solutions.
+- **Welcoming a New Team Member**: We’re excited to introduce the newest addition to our team, bringing fresh perspectives and expertise to enhance our innovative projects.
+- **Recalibrating Our Development Focus for 2025**: We are strategically realigning our priorities to ensure our development efforts align with future trends and customer needs for the upcoming year.
+- **Latest Release Highlights**: Check out the key features and improvements in our most recent update, designed to elevate user experience and functionality.
+- **Celebrating 100 Published YouTube Videos**: Join us in commemorating this milestone as we reach 100 videos, sharing insights, tutorials, and updates with our community.
+- **A Detailed Review-Tutorial of Business Table 1.9.0**: Dive into our comprehensive guide on the latest version of Business Table, exploring new features and offering step-by-step usage tips.
+  Let’s dive into the key highlights of January.
 
-Without further ado, let's summarize the January deliverables.
+## Grafana Certified Plugin Partner
 
-## Grafana certified plugin partner
+We’re thrilled to kick off 2025 with groundbreaking news: Volkov Labs is now officially the first Grafana Certified Plugin Partner! This prestigious recognition underscores our commitment to delivering top-tier solutions for the Grafana community. Keep an eye out for our shiny new badge, which will soon appear on our website and in our YouTube video intros.
 
-2025 kicks off with stellar news! We're thrilled to announce that Volkov Labs is now officially the first Grafana-certified plugin partner. Look out for our gleaming new badge, which will soon grace our website and YouTube video intros.
-
-Join the millions of users around the globe who have enhanced their Grafana experience with our open-source plugins from the [Business Suite collection](/plugins/), pushing the boundaries of what's possible with data visualization.
+Join millions of users worldwide who have transformed their Grafana experience with our open-source plugins from the [Business Suite collection](/plugins/). These tools continue to push the boundaries of data visualization and beyond.
 
 <Image
-  title="Volkov labs is the first Grafana certified plugin partner."
+  title="Volkov Labs is the first Grafana Certified Plugin Partner."
   src="/img/blog/2025-02-10-gazette-january-2025/partner-badge.png"
   width="50%"
 />
 
-## New team member
+## Welcoming a New Team Member
 
-In January 2025, we were thrilled to welcome a new team member, Mikhail, on board. Our team is expanding, and we are proud to provide an inspiring and challenging atmosphere for those who are passionate about cutting-edge technologies and eager to share their work with a broad audience.
+In January 2025, we were delighted to welcome Mikhail to the Volkov Labs team. As we grow, we remain dedicated to fostering an inspiring and innovative environment for passionate individuals eager to work with cutting-edge technologies and share their expertise with a global audience.
 
-Mikhail will focus on our new product, [Business Intelligence](/big/). His experience in business applications and e-commerce is exactly what this demanding project requires. Welcome to the team, Mikhail. Your impressive results in just a few days of working with us have left us in awe.
+Mikhail will play a pivotal role in the development of our new product, [Business Intelligence platform](/big/). With his extensive background in business applications and e-commerce, he brings the precise expertise needed for this ambitious project. Welcome aboard, Mikhail! Your remarkable contributions in just a few days have already impressed us.
 
 <Image
-  title="Welcome to the team, Mikhail."
+  title="Welcome to the team, Mikhail!"
   src="/img/blog/2025-02-10-gazette-january-2025/new-mikhail.gif"
 />
 
-## Development focus recalibration
+## Recalibrating Our Development Focus
 
-Our popular open-source [Business Suite plugin collection](/plugins/) delivers on its mission non-stop. We reached a point where the features offered covered most user requirements. We stopped feeling challenged. The collection of plugins performs astonishingly with many delighted users.
+Our widely adopted open-source [Business Suite plugin collection](/plugins/) has consistently met user needs, delivering robust features and earning the trust of a delighted user base. However, having covered most user requirements, we felt it was time to explore new challenges.
 
-For us, it is time to open new horizons and start something new. Of course, we will maintain the [Business Suite plugin collection](/plugins/) to add new, most requested features and ensure compatibility with the upcoming Grafana versions.
+While we will continue to maintain and enhance the Business Suite plugin collection—adding highly requested features and ensuring compatibility with future Grafana versions—our primary focus for 2025 is an exciting new venture: the [Business Intelligence platform](/big/) for Grafana.
 
-In 2025, we are excited to present a new product to the public - [Business Intelligence platform](/big/) for Grafana.
+Through close collaboration with the Grafana community and addressing real-world production use cases, we’ve identified a strong demand for reimagined alerting and reporting functionalities. Users frequently requested simplified interactions with all controls in a unified interface, as well as advanced features like anomaly detection for self-hosted Grafana instances.
 
-While working closely with the Community and helping to solve production use cases, we have accumulated quite a list of wishes for reimagined alerting functioning in Grafana.
+### Platform Architecture
 
-Most asks were related to simplifying user interaction by having all controls in one UI place. Many users were eager to incorporate anomaly detection with reporting for self-hosted Grafana.
-
-### Architecture
-
-This is how the idea of the Business Intelligence platform was born. With time, going through a lot of brainstorming and Community feedback, we came up with a design that is easy to maintain for users and can advance in many directions.
+The concept of the Business Intelligence platform emerged from extensive brainstorming and invaluable community feedback. We’ve designed a scalable, user-friendly system that can evolve in multiple directions while remaining easy to manage.
 
 <Image
-  title="Business Intelligence platform architecture."
-  src="/img/blog/2025-02-10-gazette-january-2025/platform.png"
+  title="Business Intelligence Platform Architecture."
+  src="/img/big/platform.png"
   width="80%"
 />
 
-The Grafana Business Intelligence platform consists of the following:
+This architecture empowers users to:
 
-- Business Studio
-  - It is your control panel.
-  - Features a user-friendly interface with an overview of the whole system.
-  - Users only need one Business Studio to work with the rest of the platform.
-- Business Engine
-  - One Business Engines serves one Grafana instance.
-  - Does all the heavy lifting and all the necessary computing for all setup tasks.
-- Business Alerting
-  - It is the first part of the Business Engine that is available.
-  - Features alert systems based on Grafana panel queries, with support for customizable thresholds and variables, ensuring timely and relevant notifications for business metrics.
-- Business Reporting
-  - It is a Business Engine part that is coming soon.
-- More Business modules will be added
-  - One of them is anomaly detection.
-- Grafana is not part of the Business Intelligence
-  - You can work with any Grafana instance type, such as OSS, Enterprise, or Cloud.
+- Manage multiple Grafana instances from a centralized [Business Studio](/big/studio/).
+- Benefit from an intuitive, streamlined interface.
+- Seamlessly integrate with upcoming Business Engine features.
 
-Such architecture allows users:
+Additionally, it opens possibilities for version control across Grafana instances, streamlined dashboard propagation (e.g., from DEV to QA to production), and more.
 
-- to supervise as many Grafana instances as needed from central location (Business Studio),
-- take advantage of the user-friendly interface,
-- seamlessly integrate with new upcoming Business Engine features.
+## Release Highlights
 
-There is a possibility of facilitating all Grafana instances version control, new Grafana dashboard propagation (for instance, from the DEV to QA to production), etc.
+Aligning with our new priorities, we’ve rolled out three consecutive releases of the Business Intelligence platform, each introducing significant improvements and enhancements.
 
-## Release news
+### Business Intelligence 2.2.0
 
-Following the new priority, we successfully published three consecutive business intelligence releases, each with significant improvements and enhancements.
+<BlogPost id="business-intelligence-2.2.0" />
 
-<table>
-  <tr style={{ border: 0 }}>
-    <td style={{ border: 0, width: "50%" }}>
-      <BlogPost id="business-intelligence-2.2.0" />
-    </td>
-    <td style={{ border: 0 }}>
-      <BlogPost id="business-intelligence-2.3.0" />
-    </td>
-  </tr>
-  <tr>
-    <td style={{ border: 0 }} colspan="2">
-      <BlogPost id="business-intelligence-2.4.0" />
-    </td>
-  </tr>
-</table>
+### Business Intelligence 2.3.0
 
-## YouTube videos
+<BlogPost id="business-intelligence-2.3.0" />
 
-### Business Intelligence
+### Business Intelligence 2.4.0
 
-We published a review tutorial video to support the new product introduction further. Many new features have been introduced since then. The Business Intelligence platform is developing fast. Make sure to check our blog and YouTube channel often to always know what is the latest available features.
+<BlogPost id="business-intelligence-2.4.0" />
+
+## Celebrating 100 YouTube Videos
+
+Just two weeks into 2025, Volkov Labs achieved a remarkable milestone: our 100th video on YouTube! From our early days, when producing a single video took weeks, we’ve refined our process to create high-quality content in just days.
+
+<Image
+  title="In January 2025, we released our 100th video on our YouTube channel."
+  src="/img/blog/2025-02-10-gazette-january-2025/youtube-header.png"
+  width="80%"
+/>
+
+Our mission with each video is to bring you closer to Grafana, highlighting its immense potential and elegance. Thank you for your unwavering support over the years. Being part of the Grafana community is a privilege, and we’re excited to continue this journey together!
+
+## YouTube Content Updates
+
+### Business Intelligence Platform Tutorial
+
+To support the launch of our new product, we’ve released a comprehensive review tutorial video. Since its publication, numerous features have been added as the Business Intelligence platform evolves rapidly. Stay updated by regularly visiting our blog and YouTube channel for the latest features and insights.
 
 <Youtube
   id="KM5a2qzlOak"
-  title="How to get started with Business Intelligence Platform for Grafana 2.3.0."
+  title="Getting Started with the Business Intelligence Platform for Grafana 2.3.0."
 />
 
-### Business Table
+### Business Table 1.9.0 Tutorial
 
-Another great video graced January month is the Business table 1.9.0 tutorial video. It contains information about:
+We also released an in-depth tutorial video for Business Table 1.9.0, covering:
 
-- New display data types (boolean, image, preformatted, rich text),
-- New editor types (switch, text area),
-- New parameter categories,
-- Configuration details for the following sections: Layout, Add data, Edit data, Delete data, Nested objects,
-- Good Business Table examples.
+- New display data types (boolean, image, preformatted, rich text).
+- New editor types (switch, text area).
+- Updated parameter categories.
+- Configuration details for Layout, Add Data, Edit Data, Delete Data, and Nested Objects.
+- Practical examples of Business Table in action.
 
 <Youtube
   id="tNa14EULUQo"
-  title="Add/Edit/Delete rows with Business table 1.9.0 in Grafana. Work with nested objects."
-/>
-
-## 100 published YouTube videos
-
-Just two weeks into 2025, we've reached a symbolic milestone at Volkov Labs: we've released our 100th video on our YouTube channel! Our journey began with videos that took weeks to produce, but we've since streamlined our process dramatically.
-
-Now, what once took weeks can be accomplished in just days. With each video, our goal is to bring you closer to Grafana, showcasing its vast potential and elegance. Thank you for your unwavering support over the years. Being part of the Grafana community is truly special!
-
-<Image
-  title="In january 2025, we've released our 100th video on our YouTube channel."
-  src="/img/blog/2025-02-10-gazette-january-2025/youtube-header.png"
-  width="80%"
+  title="Add, Edit, and Delete Rows with Business Table 1.9.0 in Grafana: Working with Nested Objects."
 />
 
 <Feedback />
