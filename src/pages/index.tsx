@@ -169,7 +169,7 @@ const Main = ({ siteConfig }) => (
     <section className="hero hero--primary">
       <div className="container margin-vert--md">
         <div className="row align-items-center">
-          <div className="col">
+          <div className="col col--7">
             <h2 className={clsx("hero__title")}>Join Our Community</h2>
             <p className="hero__subtitle margin-vert--md">
               Stay updated with the latest news, tutorials, and releases from
@@ -184,9 +184,22 @@ const Main = ({ siteConfig }) => (
                 href="/blog/"
                 aria-label="Read Business Gazette"
               >
-                Business Gazette
+                Business Gazette →
               </a>
             </div>
+          </div>
+          <div className="col col--5 text--center">
+            <a href="/blog/">
+              <ThemedImage
+                sources={{
+                  light: useBaseUrl("/img/index/gazette.svg"),
+                  dark: useBaseUrl("/img/index/gazette.dark.svg"),
+                }}
+                width="50%"
+                alt={siteConfig.tagline}
+                className={styles.headerImage}
+              />
+            </a>
           </div>
         </div>
       </div>
