@@ -1,0 +1,129 @@
+---
+authors: [daria, mikhail]
+slug: gazette-october-2024/
+tags: [Company News]
+image: /img/blog/2024-11-14-gazette-october-2024/banner.png
+keywords: [Gazette, Newspaper, Monthly]
+---
+
+import BlogPost from "@theme/BlogPost";
+import Feedback from "@site/docs/_feedback.mdx";
+import Image from "@theme/Image";
+import Shorts from "@theme/Shorts";
+import Youtube from "@theme/Youtube";
+
+# Grafana 11.3, Nested Objects in Business Table, and 3,600 YouTube Subscribers
+
+Welcome to the **October 2024** issue of the Business Gazette! This month, we’re excited to share key updates and milestones from Volkov Labs. Here’s what’s inside:
+
+- [Grafana 11.3 release updates](#grafana-113) - Discover the latest features and improvements in Grafana 11.3.
+- [Business Suite reaches 26 million downloads](#total-business-suite-downloads) - Celebrating a major milestone with 26 million downloads of our Business Suite.
+- [YouTube channel grows to 3,600 subscribers](#growing-youtube-following) - Our YouTube community continues to expand, reaching 3,600 subscribers.
+- [October release highlights](#release-news) - Key updates and enhancements from our October software releases.
+- [Latest blog posts](#blog) - Read our most recent articles and insights on industry trends.
+- [New YouTube tutorials](#youtube-tutorials) - Check out our newest video guides and tutorials for helpful tips.
+
+Let’s dive into the highlights of October!
+
+## Grafana 11.3
+
+The recent [Grafana 11.3 release](https://grafana.com/blog/2024/10/31/grafana-dashboards-are-now-powered-by-scenes-big-changes-same-ui/) introduced Scenes-powered dashboards, which brought some breaking changes for our plugins. We’re grateful to the Grafana Engineering team for their swift collaboration in resolving these issues. A special shout-out to Ivan Ortega for his support on [GitHub issue #93327](https://github.com/grafana/grafana/pull/93327).
+
+Following the initial fix, we implemented [additional updates](https://github.com/grafana/grafana/issues/94479) to ensure seamless compatibility with Grafana 11.3, maintaining the exceptional user experience our community expects.
+
+To date, six Volkov Labs plugins have been updated to support Grafana 11.3. The remaining plugins will follow according to their individual release schedules and pending issues.
+
+<Image
+  title="Distribution of Volkov Labs plugins by Grafana version compatibility."
+  src="/img/blog/2024-11-14-gazette-october-2024/slice.png"
+  width="60%"
+/>
+
+## Total Business Suite Downloads
+
+We’ve hit an incredible milestone: **26 million total downloads** for the Business Suite, up from 24 million just last month! This achievement is a testament to the trust and support of our community.
+
+<Image
+  title="Business Suite downloads jump from 24M to 26M in one month."
+  src="/img/blog/2024-11-14-gazette-october-2024/downloads.png"
+/>
+
+Leading the pack is the [Business Text](/plugins/business-text) plugin with over 8 million downloads, followed closely by [Business Calendar](/plugins/business-calendar/) and [Business Charts](/plugins/business-charts/), each nearing 4 million downloads.
+
+<Image
+  title="Business Text, Business Calendar, and Business Charts lead the Business Suite in downloads."
+  src="/img/blog/2024-11-14-gazette-october-2024/download-details.png"
+/>
+
+Track this exciting journey with us on our public [Release Dashboard](https://release.volkovlabs.io/).
+
+## Growing YouTube Following
+
+As activity picks up in the fall, we’re thrilled to announce that our YouTube channel has surpassed **3,600 subscribers**! This milestone reflects the growing interest in our content, and we’re excited to continue delivering valuable tutorials and updates to our community.
+
+<Image
+  title="Our YouTube channel now has over 3,600 subscribers."
+  src="/img/blog/2024-11-14-gazette-october-2024/yt.png"
+/>
+
+## Release News
+
+October 2024 was a busy month with **9 plugin releases**, including three updates for the highly anticipated [Business Table panel](/plugins/business-table/). This panel has quickly become a community favorite and a cornerstone of our offerings.
+
+<Image
+  title="Business Suite plugin releases in October 2024."
+  src="/img/blog/2024-11-14-gazette-october-2024/oct-calendar.png"
+/>
+
+The enthusiasm for the Business Table panel is evident with a surge of open change requests from the community. We’re eager to keep enhancing this powerful tool based on your feedback.
+
+## Blog Updates
+
+Our [release blogs](/blog/) provide a concise overview of key updates and changes in each plugin version. They include highlights, potential breaking changes, and detailed examples with code snippets and step-by-step instructions to help you make the most of new features.
+
+### Releases
+
+In October, we introduced an exciting experimental feature in **Business Table 1.5.0**: **Nested Objects/Comments**. Key features include:
+
+- Support for storing nested objects/comments in any data source, whether linked to the table or separate.
+- End-user capabilities to add, edit, and delete nested objects/comments.
+- Configurable access controls for each action, aligned with Grafana roles or backend settings.
+- Markdown support for displaying nested objects/comments in cards.
+
+<BlogPost id="business-table-1.5.0" />
+
+All plugin updates are aligned with the latest Grafana releases to ensure full compatibility.
+
+### Solutions
+
+:::info Share Your Expertise
+We deeply value the contributions of our community. If you have insights or solutions to share, we’d love to feature your work. Reach out to us!
+:::
+
+Our **Useful Solutions** blog category highlights practical guides for common challenges. This month, we published a comprehensive guide on installing Business Suite plugins across OSS, Enterprise, and Cloud Grafana environments. This resource equips users with detailed instructions to get started with the [Business Suite](/plugins/).
+
+<table>
+  <tr style={{ border: 0 }}>
+    <td style={{ border: 0, width: "50%" }}>
+      <BlogPost id="howto-start-20241022" />
+    </td>
+  </tr>
+</table>
+
+## YouTube Tutorials
+
+For many, watching a video is far more effective than reading lengthy documentation. Our YouTube channel offers visual demonstrations of the same topics covered in our blogs and docs, making complex concepts easier to grasp.
+
+This month, we released two new tutorials to help you get the most out of our plugins:
+
+<Youtube
+  id="1qYzHfPXJF8"
+  title="Install Business Suite Plugins in Cloud, OSS, and Enterprise | Open Source Community Plugins"
+/>
+
+<Youtube
+  id="wiy6bBJDdb0"
+  title="Editable Tables in Business Table 1.5.0 for Grafana | Step-by-Step Tutorial with Nested Objects"
+/>
+
+<Feedback />
