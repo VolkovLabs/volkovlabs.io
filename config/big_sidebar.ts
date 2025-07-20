@@ -12,7 +12,7 @@ const sidebars: SidebarsConfig = {
       label: "Business Intelligence",
       collapsible: false, // Always expanded
       link: { type: "doc", id: "index" }, // Links to main BI doc
-      items: ["quick-start"],
+      items: ["quick-start", "personas"],
     },
 
     // Business Studio section
@@ -24,8 +24,6 @@ const sidebars: SidebarsConfig = {
       items: [
         "studio/manage-business-engines",
         "studio/manage-clusters",
-        "studio/user-profiles",
-        "personas",
         {
           type: "category",
           label: "Actions",
@@ -37,7 +35,6 @@ const sidebars: SidebarsConfig = {
             // 'studio/actions/node-red',
           ],
         },
-        "studio/support",
       ],
     },
 

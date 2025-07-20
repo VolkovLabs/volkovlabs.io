@@ -4,56 +4,84 @@ tags:
 ---
 
 import Image from "@theme/Image";
+import ThemedImage from "@theme/ThemedImage";
+import styles from "../../src/theme/Image/styles.module.css";
 
 # Business Studio
 
-Business Studio is the central control hub for the Business Intelligence platform. It provides an intuitive interface that consolidates all essential configurations into a single, user-friendly application.
+Business Studio serves as the central control hub for the Business Intelligence platform, offering an intuitive and streamlined interface. It consolidates all critical configurations into a single, user-friendly application, empowering authorized users to manage their workflows efficiently.
 
-With Business Studio, authorized users can connect to multiple Business Engines—each associated with a Grafana instance—and efficiently create and manage alert rules, reports and actions.
+With Business Studio, users can connect to multiple Business Engines—each linked to a specific Grafana instance—and seamlessly create and manage alert rules, reports, and actions.
 
-<Image
-  title="Overview of the Business Studio functionality"
-  src="/img/big/business-studio/studio-overview.gif"
+<ThemedImage
+  sources={{
+    light: "/img/big/business-studio/studio-overview.png",
+    dark: "/img/big/business-studio/studio-overview.dark.png",
+  }}
+  className={styles.image}
 />
 
 ## Downloading Business Studio
 
 :::info Signed Releases
-MacOS and Windows installers are digitally signed, notarized, and encrypted. The entire build process is fully automated via GitHub workflows to ensure maximum security and integrity.
+MacOS and Windows installers are digitally signed, notarized, and encrypted. The entire build process is fully automated via GitHub workflows to ensure the highest levels of security and integrity.
 :::
 
-Business Studio is a native desktop application available for MacOS, Linux, and Windows. Download the latest version directly from [Release Notes](/big/release/) or the [GitHub repository](https://github.com/VolkovLabs/business-intelligence/releases).
+Business Studio is a native desktop application compatible with MacOS, Linux, and Windows. Download the latest version directly from the [Release Notes](/big/release/) page or the [GitHub repository](https://github.com/VolkovLabs/business-intelligence/releases).
 
 <Image
-  title="The latest version of the Business Studio available in the GitHub repository"
+  title="Latest Version of Business Studio Available in the GitHub Repository"
   src="/img/big/business-studio/download.png"
 />
 
 ## Auto-Update Feature
 
-Business Studio supports automatic updates on MacOS and Windows. The application checks for new versions hourly on the GitHub repository.
+Business Studio supports automatic updates on MacOS and Windows. The application checks for new versions hourly by querying the GitHub repository.
 
-When an update is available, a dialog box prompts users to restart the application and apply the update seamlessly.
+When an update is available, a dialog box appears, prompting users to restart the application and apply the update effortlessly.
 
 <Image
-  title="Auto-Update Dialog in Business Studio (Updating from version 2.7.0 to 3.0.0)"
+  title="Auto-Update Dialog in Business Studio (Updating from Version 2.7.0 to 3.0.0)"
   src="/img/big/business-studio/auto.png"
 />
 
-## Platform Updates
+### Platform Updates
 
-A **Platform Updates** is accessible from the top-left corner of the interface. This feature keeps users informed about the latest features, improvements, and updates.
+The **Platform Updates** section, accessible from the top-left corner of the interface, keeps users informed about the latest features, enhancements, and updates to the platform.
 
 <Image
-  title="Platform Updates in Business Studio version 3.7.0"
+  title="Platform Updates in Business Studio Version 3.7.0"
   src="/img/big/business-studio/changelog.png"
 />
 
-## Light and Dark Themes
+## User Profiles Configuration
 
-Business Studio automatically adapts to your system preferences, offering both Light and Dark color themes for a personalized and visually comfortable experience.
+Whether you're a decision-maker or a hands-on engineer, our platform offers **business-oriented** and **technical** user profiles to match your needs—streamlined views for executives and detailed controls for technical experts.
+
+Configure your profile by clicking the icon in the top-right corner. Enter your name, email (for support tickets), and select your role to personalize your experience.
 
 <Image
-  title="Light and Dark Themes in Business Studio can be switched in Profile"
+  title="Easily configure your user profile."
+  src="/img/big/business-studio/profile.png"
+/>
+
+### Light and Dark Themes
+
+Business Studio automatically adapts to your system preferences, providing both Light and Dark color themes for a personalized and visually comfortable user experience. Themes can also be manually adjusted in the Profile settings.
+
+<Image
+  title="Light and Dark Themes in Business Studio (Switchable in Profile)"
   src="/img/big/business-studio/studio-theme.gif"
 />
+
+## Request Assistance
+
+You can create a Zendesk ticket to request assistance directly from the Business Studio. Please provide as many details as possible and attach additional files and screenshots to investigate.
+
+## Streamline Operations
+
+By offering seamless integration with multiple Business Engines and Grafana instances, Business Studio enables users to efficiently create and manage alert rules, reports, and actions from a single, intuitive interface.
+
+With features like automatic updates, platform update notifications, and customizable themes, Business Studio ensures a modern, user-friendly experience tailored to diverse needs.
+
+Whether you're using MacOS, Linux, or Windows, Business Studio provides a secure and reliable solution to streamline your business intelligence operations.

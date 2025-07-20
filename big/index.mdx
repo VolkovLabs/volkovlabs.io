@@ -12,9 +12,10 @@ hide_table_of_contents: true
 ---
 
 import BlogPost from "@theme/BlogPost";
-import Image from "@theme/Image";
 import Feedback from "./_feedback.mdx";
+import Image from "@theme/Image";
 import ThemedImage from "@theme/ThemedImage";
+import styles from "../src/theme/Image/styles.module.css";
 
 # Business Intelligence Platform
 
@@ -59,6 +60,7 @@ The Business Studio is designed to cater to two distinct user personas, offering
     dark: "/img/big/business-studio.dark.gif",
   }}
   width="80%"
+  className={styles.image}
 />
 
 ### Business Users
