@@ -166,36 +166,28 @@ const Main = ({ siteConfig }) => (
       </div>
     </section>
 
-    <section className="container margin-vert--xl">
-      <div className="text--center margin-vert--lg">
-        <h2 className="hero__title">Join Our Community</h2>
-        <p className="hero__subtitle">
-          Stay updated with the latest news, tutorials, and releases from Volkov
-          Labs.
-        </p>
-        <div className="margin-vert--md">
-          <a
-            className={clsx(
-              "button button--primary button--lg",
-              styles.getStarted
-            )}
-            href="/blog/"
-            aria-label="Read Business Gazette"
-          >
-            Business Gazette
-          </a>
-          <a
-            className={clsx(
-              "button button--secondary button--lg margin-left--md",
-              styles.getStarted
-            )}
-            href="https://youtube.com/@volkovlabs"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Volkov Labs on youTube"
-          >
-            Subscribe to YouTube Channel
-          </a>
+    <section className="hero hero--primary">
+      <div className="container margin-vert--md">
+        <div className="row align-items-center">
+          <div className="col">
+            <h2 className={clsx("hero__title")}>Join Our Community</h2>
+            <p className="hero__subtitle margin-vert--md">
+              Stay updated with the latest news, tutorials, and releases from
+              Volkov Labs.
+            </p>
+            <div className="margin-vert--lg">
+              <a
+                className={clsx(
+                  "button button--primary button--lg",
+                  styles.getStarted
+                )}
+                href="/blog/"
+                aria-label="Read Business Gazette"
+              >
+                Business Gazette
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
