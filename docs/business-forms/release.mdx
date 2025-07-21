@@ -15,8 +15,9 @@ import TabItem from "@theme/TabItem";
 Track the progress of the Business Forms panel with these release notes, detailing new features, enhancements, fixes, and breaking changes across all versions.
 
 <Tabs
-  defaultValue="v5"
+  defaultValue="v6"
   values={[
+    { label: "Version 6", value: "v6" },
     { label: "Version 5", value: "v5" },
     { label: "Version 4", value: "v4" },
     { label: "Version 3", value: "v3" },
@@ -24,6 +25,15 @@ Track the progress of the Business Forms panel with these release notes, detaili
     { label: "Version 1", value: "v1" },
   ]}
 >
+  <TabItem value="v6">
+:::warning Breaking Changes
+Requires Grafana 11 and Grafana 12.
+:::
+
+This release includes TimeZone option for Date element and upgrade to Grafana 12.0 with dependency updates.
+
+</TabItem>
+
   <TabItem value="v5">
 ## 5.1.0 (2025-02-26)
 

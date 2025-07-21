@@ -3,8 +3,9 @@ import React from "react";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Youtube from "@theme/Youtube";
 import styles from "../css/index.module.css";
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 /**
  * Header Component
@@ -73,13 +74,7 @@ const Header = () => (
  */
 const Main = () => (
   <main>
-    <section id="Team" className="container margin-vert--xl">
-      <div className="col margin-vert--md text--center">
-        <Youtube id="XDhyEXqa6KA" />
-      </div>
-    </section>
-
-    <section className="hero hero--primary">
+    <section className="hero">
       <div className="container margin-vert--md">
         <div className="row align-items-center">
           <div className="col">
@@ -106,12 +101,28 @@ const Main = () => (
       </div>
     </section>
 
-    <section id="Contact" className="container margin-vert--xl text--center">
-      <h2 className="hero__title margin-vert--md">Get in Touch</h2>
-      <p className="hero__subtitle margin-vert--md">
-        Ready to start? Click on <b>Support</b> to begin the conversation—we’re
-        excited to connect!
-      </p>
+    <section className="hero hero--primary">
+      <div className="container margin-vert--md">
+        <div className="row align-items-center">
+          <div className="col col--7">
+            <h2 className={clsx("hero__title")}>Get in Touch</h2>
+            <p className="hero__subtitle margin-vert--md">
+              Ready to start? Click on <b>Support</b> to begin the
+              conversation—we’re excited to connect!
+            </p>
+          </div>
+          <div className="col col--5 text--center">
+            <ThemedImage
+              sources={{
+                light: useBaseUrl("/img/plugins/support/logo.svg"),
+                dark: useBaseUrl("/img/plugins/support/logo.dark.svg"),
+              }}
+              width="50%"
+              className={styles.headerImage}
+            />
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 );
