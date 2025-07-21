@@ -15,14 +15,26 @@ import TabItem from "@theme/TabItem";
 Stay updated with the Business Charts panel’s evolution through these release notes, highlighting key updates, new features, enhancements, and fixes across all versions.
 
 <Tabs
-  defaultValue="v6"
+  defaultValue="v7"
   values={[
+    { label: "Version 7", value: "v7" },
     { label: "Version 6", value: "v6" },
     { label: "Version 5", value: "v5" },
     { label: "Version 4", value: "v4" },
     { label: "Version 3", value: "v3" },
   ]}
 >
+  <TabItem value="v7">
+## 7.0.0 (2025-07-21)
+
+:::warning Breaking Changes
+Now requires **Grafana 11** or **Grafana 12**.
+:::
+
+Removed `@volkovlabs/grafana-utils` dependency and upgraded to **Grafana 12.0** with updated dependencies.
+
+</TabItem>
+
   <TabItem value="v6">
 ## 6.6.0 (2025-02-20)
 
