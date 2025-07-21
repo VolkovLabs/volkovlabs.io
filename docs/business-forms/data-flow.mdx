@@ -164,6 +164,16 @@ We simplified work with the payload creation. The Business Forms panel has a des
   src="/img/blog/2024-07-02-form-panel-4.0.0/update-payload.png"
 />
 
+Sometimes, when migrating to a new version, you may need to convert a large number of panels. This involves creating payloads and updating queries using the new payload format.
+
+To ensure a smoother transition, you can use a more seamless approach.
+For example, you can keep the old payload generation logic and simply return a static string in the query editor instead of relying on the new payload.
+
+<Image
+  title="Seamless Query Update Example"
+  src="/img/plugins/business-forms/seamless-update.png"
+/>
+
 ### Use nested objects in payload
 
 Creating a payload for the request can be configured in a variety of ways. Keys may contain various values including nested objects. Here is a simple example:
