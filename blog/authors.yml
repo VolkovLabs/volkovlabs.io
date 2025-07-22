@@ -52,11 +52,3 @@ mulasevich:
   page: true
   socials:
     github: Mikenginee
-
-nikita:
-  name: Nikita Prudnik
-  title: Enterprise Engineer at Volkov Labs
-  image_url: /img/team/nikita.png
-  page: true
-  socials:
-    github: nickprudnik
