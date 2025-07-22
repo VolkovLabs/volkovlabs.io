@@ -105,7 +105,7 @@ const Main = () => (
               zoom={false}
             />
             <h3>Vitaliy</h3>
-            <p>Community Engineer</p>
+            <p>Enterprise Engineer</p>
           </a>
         </div>
         <div className="col col--4">
@@ -116,17 +116,6 @@ const Main = () => (
               zoom={false}
             />
             <h3>Mikhail</h3>
-            <p>Enterprise Engineer</p>
-          </a>
-        </div>
-        <div className="col col--4">
-          <a href="/blog/authors/nikita/">
-            <Image
-              src="/img/team/nikita.png"
-              alt="Nikita, Enterprise Engineer"
-              zoom={false}
-            />
-            <h3>Nikita</h3>
             <p>Enterprise Engineer</p>
           </a>
         </div>

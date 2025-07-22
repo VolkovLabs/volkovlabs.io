@@ -170,7 +170,7 @@ const Main = ({ siteConfig }) => (
       <div className="container margin-vert--md">
         <div className="row align-items-center">
           <div className="col col--7">
-            <h2 className={clsx("hero__title")}>Join Our Community</h2>
+            <h2 className={clsx("hero__title")}>Business Gazette</h2>
             <p className="hero__subtitle margin-vert--md">
               Stay updated with the latest news, tutorials, and releases from
               Volkov Labs.
@@ -184,7 +184,7 @@ const Main = ({ siteConfig }) => (
                 href="/blog/"
                 aria-label="Read Business Gazette"
               >
-                Business Gazette →
+                Check out the freshest news, hot off the press!
               </a>
             </div>
           </div>
