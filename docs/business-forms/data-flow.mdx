@@ -135,6 +135,27 @@ For the Data Source type, start with the Data Source parameter. Then go to the U
   src="/img/plugins/business-forms/update-request-ds.png"
 />
 
+### Use Initial Request after Update Request
+
+You can trigger the `Initial Request` immediately after updating the data using Custom Code. In Initial Request mode, various types can be used — but there's one important point to consider if you're using `QUERY` as the initial request type.
+
+<Image
+  title="Code and logic after update request"
+  src="/img/plugins/business-forms/update-custom-code.png"
+/>
+
+If the type is `QUERY`, it accepts and sets values from data.
+
+If you're using it in combination with an update query of type DataSource, you need to call `context.grafana.refresh()` in the code that runs after a successful update.
+Since this may take some time, it's recommended to use it with `setTimeout` to ensure proper execution. In this case, the query will fetch the updated data from the data source.
+
+Another possible approach is to update the variables in the data source, which will trigger a second query and retrieve the new data.
+
+<Image
+  title="Custom code: setTimeout combine with context.grafana.refresh()"
+  src="/img/plugins/business-forms/code-after-update-with-timeout.png"
+/>
+
 ### Query editor and Frontend Data Source
 
 :::info Breaking change
