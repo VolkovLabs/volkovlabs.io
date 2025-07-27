@@ -124,11 +124,6 @@ export const FOOTER = {
           to: "/disclaimer/",
           className: "volkovlabs-footer-link icon-disclaimer-link",
         },
-        {
-          label: "Style Guide",
-          to: "/style/",
-          className: "volkovlabs-footer-link icon-style-link",
-        },
       ],
     },
   ],

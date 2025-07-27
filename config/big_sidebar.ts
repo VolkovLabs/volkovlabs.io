@@ -12,7 +12,7 @@ const sidebars: SidebarsConfig = {
       label: "Business Intelligence",
       collapsible: false, // Always expanded
       link: { type: "doc", id: "index" }, // Links to main BI doc
-      items: ["high-availability", "quick-start", "personas"],
+      items: ["quick-start", "personas"],
     },
 
     // Business Studio section
@@ -24,7 +24,6 @@ const sidebars: SidebarsConfig = {
       items: [
         "studio/manage-business-engines",
         "studio/manage-clusters",
-        "studio/user-profiles",
         {
           type: "category",
           label: "Actions",
@@ -36,7 +35,6 @@ const sidebars: SidebarsConfig = {
             // 'studio/actions/node-red',
           ],
         },
-        "studio/support",
       ],
     },
 
@@ -46,7 +44,12 @@ const sidebars: SidebarsConfig = {
       label: "Business Engine",
       collapsible: false,
       link: { type: "doc", id: "engine/index" }, // Links to main Engine doc
-      items: ["engine/configuration", "engine/database", "engine/prometheus"],
+      items: [
+        "engine/configuration",
+        "high-availability",
+        "engine/database",
+        "engine/prometheus",
+      ],
     },
 
     // Business Alerting section

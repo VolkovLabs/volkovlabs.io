@@ -1,0 +1,199 @@
+---
+authors: [daria, mikhail]
+slug: business-suite-20240802/
+tags: [Company News, Business Suite]
+image: /img/blog/2024-08-02-business-suite/banner.png
+keywords: [Business Suite, Grafana]
+---
+
+import Feedback from "@site/docs/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Business Suite for Grafana: How It All Came Together and Where We’re Headed
+
+The **Business Suite for Grafana** is a powerful collection of open-source plugins designed to transform Grafana into a platform for streamlined business application development. With over **24 million downloads** across all plugins, we’re proud to call it a resounding success.
+
+This suite has earned acclaim from hundreds of users for its ability to go beyond traditional observability, tackling complex business challenges and empowering companies to build cost-effective, in-house applications on tight schedules.
+
+<Image
+  title="The Business Suite for Grafana."
+  src="/img/blog/2024-08-02-business-suite/business-suite.png"
+  width="70%"
+/>
+
+At Volkov Labs, we’re committed to keeping our plugins up-to-date with the latest Grafana versions. You can track our [release schedule and plugin statistics](https://release.volkovlabs.io) on our public project page.
+
+Our focus is on showcasing Grafana’s full potential, providing detailed documentation, and offering step-by-step use cases to demonstrate how building with Grafana can save time and money while delivering tailored functionality.
+
+Whether you’re monitoring system performance or analyzing business data, the Business Suite ensures you get the answers you need—without unnecessary complexity.
+
+## Introducing the Business Suite Plugins
+
+The Business Suite currently includes **9+1 plugins**, each crafted for a specific niche of business and visualization tasks:
+
+- **Business Media Panel**: Display Base64-encoded media files like images, PDFs, and videos.
+- **Business News Data Source**: Visualize RSS and Atom feeds for real-time updates.
+- **Business Text Panel**: Create dynamic, data-driven text with custom JavaScript.
+- **Business Satellite Data Source**: Connect to local and remote Grafana instances for configuration access.
+- **Business Forms Panel**: Enable data input, updates, and configuration changes directly from dashboards.
+- **Business Charts Panel**: Build stunning visualizations with Apache ECharts.
+- **Business Calendar Panel**: Display events and manage time ranges.
+- **Business Input Data Source**: Create and store data manually or with AI assistance.
+- **Business Variable Panel**: Enhance dashboard variables with flexible layouts.
+
+We’re also excited to announce the upcoming release of the **Business Table Panel** by the end of August.
+
+## Business Media: Visualizing Real-Time Data
+
+Three years ago, we joined the vibrant Grafana community with a unique challenge: an AI image recognition project to count cars on a busy highway. To visualize Base64-encoded images in real-time on a Grafana dashboard, we created the **Business Media Panel**. Since its debut, it has expanded to support PDFs, videos, and audio files, amassing nearly **3 million downloads** worldwide.
+
+During GrafanaCon in Amsterdam, we were thrilled to learn that the Japan Aerospace Exploration Agency (JAXA) used this plugin in their historic [Moon landing project](https://global.jaxa.jp/press/2024/01/20240125-1_e.html) to monitor probe movements in real time.
+
+<Image
+  title="JAXA Moon landing probe monitoring dashboard featuring the Business Media plugin."
+  src="/img/blog/2024-08-02-business-suite/jaxa.jpg"
+  width="75%"
+/>
+
+Discover more about the [Business Media Panel](/plugins/business-media/) and see how it can elevate your dashboards.
+
+## Business News: Bringing Updates to Your Dashboard
+
+Inspired by the success of Business Media, we developed the **Business News Data Source** to integrate RSS and Atom feeds into Grafana dashboards. With nearly **800,000 downloads**, this plugin enables users to stay updated with the latest news from various web resources. It’s even referenced in the [Grafana documentation](https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/news/) as an alternative for displaying RSS feeds.
+
+Learn how the [Business News Data Source](/plugins/business-news/) can keep your team informed.
+
+## Business Text: A Swiss Army Knife for Grafana
+
+Originally adopted as the Dynamic Text Panel to enhance news feeds, the **Business Text Panel** has evolved into a mini-development framework within Grafana. With over **7 million downloads**, it’s our most popular plugin. By supporting custom JavaScript and external libraries, it offers unparalleled flexibility—reviving beloved panels like Flowchart and enabling endless customization.
+
+A community member recently shared their enthusiasm in a [forum post](https://community.grafana.com/t/recommendation-business-text-panel-for-javascript-shenanigans/125839):
+
+> _"While it’s designed for custom HTML with Handlebars, it’s also a fantastic place to run JavaScript that interacts with Grafana’s backend. It’s revolutionized how I get extra flexibility from Grafana when the default UI falls short."_
+
+Explore the [Business Text Panel](/plugins/business-text/) and unlock new possibilities for your dashboards.
+
+## Business Satellite: Access Grafana’s Core
+
+The **Business Satellite Data Source**, initially called the HTTP API Data Source, simplifies access to Grafana’s configuration database. It allows you to interact with public Grafana APIs for annotations, dashboards, data sources, alerts, and more, directly from visualization panels.
+
+<Image
+  title="The Business Satellite data source simplifies access to Grafana configuration storage."
+  src="/img/blog/2024-08-02-business-suite/business-satellite.png"
+  width="70%"
+/>
+
+Unique features include monitoring multiple Grafana instances from a single dashboard. Have a specific API need? [Submit a feature request](https://github.com/VolkovLabs/business-satellite/issues) to help us expand its capabilities.
+
+Check out the [Business Satellite Data Source](/plugins/business-satellite/) for seamless integration.
+
+## Business Forms: Interact with Data Directly
+
+Born from a client need in IoT device monitoring, the **Business Forms Panel** allows users to send data back to sources directly from Grafana dashboards. Initially supporting REST API requests, it now includes Data Source and Query options, with a detailed data flow schema to simplify configuration.
+
+<Image
+  title="The Business Forms panel data flow."
+  src="/img/blog/2024-08-02-business-suite/business-forms-data-flow.png"
+  width="70%"
+/>
+
+Our documentation includes ready-to-use code for [5 API servers](/plugins/business-forms/servers/), including InfluxDB, MySQL, and PostgreSQL, to kickstart your projects.
+
+Start building with the [Business Forms Panel](/plugins/business-forms/) today.
+
+## Business Charts: Visualize with Power
+
+Powered by the [Apache ECharts library](https://echarts.apache.org), the **Business Charts Panel** offers highly customizable visualizations—from simple bar charts to dynamic 3D simulations and animations. Explore our [Examples project](https://echarts.volkovlabs.io/) to see the code behind each chart type.
+
+<Image
+  title="Examples of the Business Charts panel in action."
+  src="/img/blog/2024-08-02-business-suite/business-charts.gif"
+  width="70%"
+/>
+
+Create stunning visuals with the [Business Charts Panel](/plugins/business-charts/).
+
+## Business Calendar: Organize and Filter Events
+
+The **Business Calendar Panel**, built on the Big Calendar library, integrates schedules, events, and release dates into your Grafana dashboards. Key features include multi-language support, event filtering by time range, and coloring based on Grafana thresholds.
+
+<Image
+  title="The Business Calendar in Week view."
+  src="/img/blog/2024-08-02-business-suite/business-calendar.png"
+  width="80%"
+/>
+
+<Youtube
+  id="CvLqyY2fQfo"
+  title="Overview and tutorial for Business Calendar 3.1.0."
+/>
+
+Stay organized with the [Business Calendar Panel](/plugins/business-calendar/).
+
+## Business Input: Create and Innovate with AI
+
+The **Business Input Data Source** began as a tool for testing visualization panels with manual data frames. Today, it supports JavaScript for data emulation and integrates with LLM models (like OpenAI) via Grafana’s LLM App for AI-driven data creation.
+
+<Image
+  title="The Business Input data source with embedded AI."
+  src="/img/blog/2024-08-02-business-suite/llm-app-message-box.png"
+  width="70%"
+/>
+
+Innovate with the [Business Input Data Source](/plugins/business-input/).
+
+## Business Variable: Flexible Dashboard Filters
+
+The **Business Variable Panel** enhances native dashboard variables with customizable layouts like TreeView, Slider, and Buttons. It also supports features like [dashboard redirects](/plugins/business-variable/redirect/) for seamless navigation.
+
+<Image
+  title="The Business Variable panel layouts: TreeView, Minimize, Slider, and Buttons."
+  src="/img/blog/2024-08-02-business-suite/variable-layouts.png"
+  width="80%"
+/>
+
+Enhance usability with the [Business Variable Panel](/plugins/business-variable/).
+
+## Business Table: Coming Soon
+
+Set for release by late August, the **Business Table Panel** will feature Tree View for expandable elements, tabbed data frame views, and tools for summarizing large datasets. Stay tuned for updates!
+
+## Mix and Match for Powerful Solutions
+
+After three years of refinement and achieving over **95% test coverage**, the Business Suite plugins work beautifully together. A standout example is our [file upload tutorial](/blog/form-panel-file-upload-20240310/), combining Business Forms, Business Variable, and Business Media for a seamless experience.
+
+<Youtube
+  id="V4Sza0uDQNs"
+  title="File Upload using Grafana with Business Forms, Media, and Variable panels."
+/>
+
+Explore more combinations and tutorials below:
+
+- **Business Input, Media, and Variable Panels**:
+
+  <Youtube
+    id="K1NHBV5e6VE"
+    title="Business Input Data Source, Media Panel, and Variable Panel Tutorial."
+  />
+
+- **Business Text, News, and Satellite**:
+
+  <Youtube
+    id="Go6tdEh96JQ"
+    title="Business Text Panel, News Data Source, and Satellite Data Source Overview."
+  />
+
+- **Business Forms Panel**:
+  <Youtube
+    id="dk8ht8G67JY"
+    title="Business Forms Panel: Send Data Back to Your Data Source."
+  />
+
+## What’s Next for the Business Suite?
+
+We’re dedicated to expanding and enhancing our plugins, guided by the incredible Grafana community. Your feedback on [GitHub](https://github.com/VolkovLabs) and [YouTube](https://www.youtube.com/@volkovlabs) inspires our roadmap. We’re also committed to ensuring compatibility with the latest Grafana releases, including **Grafana 11**.
+
+Grafana is a remarkable platform for web application development, and we’re excited to continue exploring its potential with you. Join us on this journey—let’s build something extraordinary together!
+
+<Feedback />

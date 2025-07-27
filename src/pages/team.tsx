@@ -3,16 +3,19 @@ import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Image from "@theme/Image";
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import styles from "../css/index.module.css";
 
 /**
  * Header Component
  * Introduces Volkov Labs’ open-source mission and achievements
  */
-const Header = () => (
+const Header = ({ siteConfig }) => (
   <header className="hero hero--primary">
     <div className="container margin-vert--md">
-      <div className="row">
-        <div className="col margin-vert--md">
+      <div className="row align-items-center">
+        <div className="col col--7">
           <h1 className="hero__title margin-bottom--md">About Volkov Labs</h1>
           <p className="hero__subtitle margin-vert--md">
             At Volkov Labs, we’re driven by the freedom to share and collaborate
@@ -30,6 +33,18 @@ const Header = () => (
             we’re proud of. This journey reflects our team’s unwavering
             commitment to open-source excellence.
           </p>
+        </div>
+        <div className="col col--5 text--center">
+          <a href="/plugins/">
+            <ThemedImage
+              sources={{
+                light: useBaseUrl("/img/index/partner-badge.png"),
+                dark: useBaseUrl("/img/index/partner-badge.png"),
+              }}
+              alt={siteConfig.tagline}
+              className={styles.headerImage}
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -90,7 +105,7 @@ const Main = () => (
               zoom={false}
             />
             <h3>Vitaliy</h3>
-            <p>Community Engineer</p>
+            <p>Enterprise Engineer</p>
           </a>
         </div>
         <div className="col col--4">
@@ -101,17 +116,6 @@ const Main = () => (
               zoom={false}
             />
             <h3>Mikhail</h3>
-            <p>Enterprise Engineer</p>
-          </a>
-        </div>
-        <div className="col col--4">
-          <a href="/blog/authors/nikita/">
-            <Image
-              src="/img/team/nikita.png"
-              alt="Nikita, Enterprise Engineer"
-              zoom={false}
-            />
-            <h3>Nikita</h3>
             <p>Enterprise Engineer</p>
           </a>
         </div>
@@ -139,7 +143,7 @@ const Home = () => {
           src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
         />
       </Head>
-      <Header />
+      <Header siteConfig={siteConfig} />
       <Main />
     </Layout>
   );
