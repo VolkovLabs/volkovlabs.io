@@ -104,7 +104,7 @@ const Main = ({ siteConfig }) => (
       <h2 className="hero__title">Trusted by Grafana Community</h2>
       <div className="row margin-vert--lg">
         <div className="col col--4">
-          <h3>38M+</h3>
+          <h3>40M+</h3>
           <p>Downloads</p>
         </div>
         <div className="col col--4">
