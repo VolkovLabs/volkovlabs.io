@@ -239,7 +239,7 @@ const Home = () => {
       description="Best practices for creating consistent, engaging documentation and blog posts for Volkov Labs."
     >
       <Head>
-        <meta property="og:image" content="/img/honeycomb.png" />
+        <meta property="og:image" content="/img/suite.png" />
         <meta
           name="keywords"
           content="Volkov Labs, documentation, blog, style guide, Docusaurus"

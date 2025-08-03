@@ -48,7 +48,7 @@ const Header = ({ items }) => {
   return (
     <>
       <Head>
-        <meta property="og:image" content="/img/honeycomb.png" />
+        <meta property="og:image" content="/img/suite.png" />
       </Head>
       <Hero />
     </>
