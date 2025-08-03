@@ -261,7 +261,7 @@ const Home = () => {
       description="Review the terms governing your use of Volkov Labs’ Service."
     >
       <Head>
-        <meta property="og:image" content="/img/honeycomb.png" />
+        <meta property="og:image" content="/img/suite.png" />
         <script
           id="ze-snippet"
           src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"

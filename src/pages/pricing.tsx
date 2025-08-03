@@ -140,7 +140,7 @@ const Home = () => {
       description="Enterprise support and Business Intelligence platform for Grafana by Volkov Labs"
     >
       <Head>
-        <meta property="og:image" content="/img/honeycomb.png" />
+        <meta property="og:image" content="/img/suite.png" />
         <script async src="https://js.stripe.com/v3/pricing-table.js" />
         <script
           id="ze-snippet"
