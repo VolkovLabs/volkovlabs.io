@@ -110,11 +110,11 @@ export const NAVBAR = {
     {
       to: "/pricing/",
       position: "left",
-      label: "Enterprise",
+      label: "Partnership",
       "aria-label": "Business Suite Enterprise",
       items: [
         {
-          label: "Partnership",
+          label: "Business Suite Enterprise",
           to: "/pricing/",
           className: "volkovlabs-link icon-partner-link",
         },

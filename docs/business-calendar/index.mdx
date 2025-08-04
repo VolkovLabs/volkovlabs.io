@@ -5,7 +5,7 @@ image: /img/plugins/business-calendar/dashboard.png
 hide_table_of_contents: true
 ---
 
-import Feedback from "./_feedback.mdx";
+import Feedback from "../_feedback.mdx";
 import GettingStarted from "./_getting_started.mdx";
 import Image from "@theme/Image";
 import Tutorial from "./_tutorial.mdx";
@@ -14,17 +14,6 @@ import Tutorial from "./_tutorial.mdx";
 
 The Business Calendar panel is a Grafana plugin that displays events in a stylish calendar format. The data can come from various data sources.
 
-:::info Big Calendar
-Starting from version 3.0.0, the Business Calendar panel is completely rebuilt based on the [Big Calendar library](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page). The previously existed Legacy mode has been retired.
-
-The users preferred this library over the Legacy so often that we do not see the need to support the Legacy library anymore.
-
-Starting from version 3.0.0 there will be only Big Calendar mode and the Legacy option disappears from the user choice.
-
-:::
-
-The [Big Calendar library](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page) is an open-source powerful React library with various features designed to make any calendar intuitive, modern and efficient.
-
 <Image
   title="The Business Calendar plugin displays events from Grafana plugins catalog in April 2024."
   src="/img/plugins/business-calendar/dashboard.png"
@@ -32,6 +21,7 @@ The [Big Calendar library](https://jquense.github.io/react-big-calendar/examples
 
 ## Requirements
 
+- The Business Calendar panel 4.X requires **Grafana 11** or **Grafana 12**.
 - The Business Calendar panel 3.X requires **Grafana 10** or **Grafana 11**.
 - Calendar panel 2.X requires **Grafana 9.2** or **Grafana 10**.
 - Calendar panel 1.X requires **Grafana 8.5** or **Grafana 9**.
