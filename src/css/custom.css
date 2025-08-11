@@ -372,10 +372,6 @@
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-team-link::before {
-  background: url("/static/img/team/logo.dark.svg") no-repeat;
-}
-
 .icon-partner-link::before {
   content: "";
   width: 24px;
@@ -428,19 +424,6 @@
   background: url("/static/img/index/blog/news.dark.svg") no-repeat;
 }
 
-.icon-security-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/index/plugins/security.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-security-link::before {
-  background: url("/static/img/index/plugins/security.dark.svg") no-repeat;
-}
-
 .icon-suite-link::before {
   content: "";
   width: 24px;
@@ -463,10 +446,6 @@
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-privacy-link::before {
-  background: url("/static/img/docs/privacy.dark.svg") no-repeat;
-}
-
 .icon-terms-link::before {
   content: "";
   width: 24px;
@@ -474,23 +453,6 @@
   display: flex;
   background: url("/static/img/docs/terms.svg") no-repeat;
   margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-terms-link::before {
-  background: url("/static/img/docs/terms.dark.svg") no-repeat;
-}
-
-.icon-style-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/docs/style.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-style-link::before {
-  background: url("/static/img/docs/style.dark.svg") no-repeat;
 }
 
 .icon-disclaimer-link::before {
@@ -502,10 +464,6 @@
   margin-right: 0.5rem;
 }
 
-[data-theme="dark"] .icon-disclaimer-link::before {
-  background: url("/static/img/docs/disclaimer.dark.svg") no-repeat;
-}
-
 .icon-release-link::before {
   content: "";
   width: 24px;
@@ -513,10 +471,6 @@
   display: flex;
   background: url("/static/img/index/plugins/release.svg") no-repeat;
   margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-release-link::before {
-  background: url("/static/img/index/plugins/release.dark.svg") no-repeat;
 }
 
 .icon-grafana-started-link::before {

@@ -32,37 +32,23 @@ const Header = () => (
                 : Access our expert team via Zendesk for fast issue resolution.
               </li>
               <li>
-                <b>Priority Features</b>: Enjoy prioritized feature requests and
-                rapid bug fixes tailored to your needs.
-              </li>
-              <li>
-                <b>Consulting</b>: Schedule personalized consultations to
-                optimize your workflows.
-              </li>
-              <li>
-                <a href="/big">
-                  <b>Business Intelligence</b>
+                <a href="https://support.volkovlabs.io">
+                  <b>Priority Features</b>
                 </a>
-                : Unlock advanced insights with our Business Intelligence
-                platform.
+                : Enjoy prioritized feature requests and rapid bug fixes
+                tailored to your needs.
+              </li>
+              <li>
+                <a href="https://pulsebi.studio">
+                  <b>PulseBI Platform</b>
+                </a>
+                : Tailored to address real-world production demands, this
+                platform revolutionizes alerting and analytics in Grafana..
               </li>
             </ul>
             Your success drives us—let’s build something extraordinary together.
           </p>
         </div>
-      </div>
-      <div className="margin-vert--lg">
-        <a
-          className={clsx(
-            "button button--primary button--lg",
-            styles.getStarted
-          )}
-          href="https://pay.volkovlabs.io/p/login/6oEaGicwRgZ8gko144"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Partner Portal →
-        </a>
       </div>
     </div>
   </header>
@@ -75,33 +61,6 @@ const Header = () => (
 const Main = () => (
   <main>
     <section className="hero">
-      <div className="container margin-vert--md">
-        <div className="row align-items-center">
-          <div className="col">
-            <h2 className={clsx("hero__title")}>
-              Business Intelligence platform
-            </h2>
-            <p className="hero__subtitle margin-vert--md">
-              Transform your analytics with the Business Intelligence platform
-              for high-performance, scalable, and alert-driven insights in
-              Grafana.
-            </p>
-            <div className="margin-vert--lg">
-              <script
-                async
-                src="https://js.stripe.com/v3/pricing-table.js"
-              ></script>
-              <stripe-pricing-table
-                pricing-table-id="prctbl_1RdhO9Eiej5nUsojctbZydKh"
-                publishable-key="pk_live_51Q1pMcEiej5nUsojvz6cu1k1QH1R5mAHwWz1OotLIAh9qaQiXa70MjggtWr2bsmPqmUIZ6x5b7W9I6VD8QCE4ZxK00GBzofXYZ"
-              ></stripe-pricing-table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="hero hero--primary">
       <div className="container margin-vert--md">
         <div className="row align-items-center">
           <div className="col col--7">

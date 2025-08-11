@@ -56,26 +56,6 @@
 }
 
 /**
- * Why inside the Box
- */
-.whyBox {
-  padding: 0;
-  border-radius: 10px 10px 10px 10px;
-}
-
-[data-theme="light"] .whyBox {
-  border: 2px solid var(--ifm-color-black);
-}
-
-[data-theme="dark"] .whyBox {
-  border: 2px solid var(--ifm-color-white);
-}
-
-.whyBox img {
-  height: 100%;
-}
-
-/**
  * Header with line
  */
 [data-theme="light"] .header {

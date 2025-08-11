@@ -122,54 +122,6 @@ const Main = ({ siteConfig }) => (
       <div className="container margin-vert--md">
         <div className="row align-items-center">
           <div className="col col--7">
-            <h2 className={clsx("hero__title")}>Business Intelligence</h2>
-            <p className="hero__subtitle margin-vert--md">
-              Tailored to address real-world production demands, this platform
-              revolutionizes alerting and analytics in Grafana.
-            </p>
-            <p className="hero__subtitle">
-              BI Platform offers streamlined interactions, centralized
-              management, and advanced features like high availability and load
-              balancing.
-            </p>
-            <div className="margin-vert--lg">
-              <a
-                className={clsx(
-                  "button button--primary button--lg",
-                  styles.getStarted
-                )}
-                href="/big/"
-              >
-                Get Started →
-              </a>
-            </div>
-          </div>
-          <div className="col col--5 text--center">
-            <a href="/big/">
-              <ThemedImage
-                sources={{
-                  light: useBaseUrl("/img/big/business-studio.gif"),
-                  dark: useBaseUrl("/img/big/business-studio.dark.gif"),
-                }}
-                alt={siteConfig.tagline}
-                className={styles.big}
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="container margin-vert--xl">
-      <div className="margin-vert--lg">
-        <Intelligence />
-      </div>
-    </section>
-
-    <section className="hero hero--primary">
-      <div className="container margin-vert--md">
-        <div className="row align-items-center">
-          <div className="col col--7">
             <h2 className={clsx("hero__title")}>Business Gazette</h2>
             <p className="hero__subtitle margin-vert--md">
               Stay updated with the latest news, tutorials, and releases from
