@@ -1,4 +1,4 @@
-# Blog, Documentation, and Grafana Crash Course
+# Business Suite and Grafana Crash Course
 
 This documentation is powered by [Docusaurus](https://docusaurus.io/), a modern static site generator built for effortless content creation.
 
