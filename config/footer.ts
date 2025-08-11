@@ -7,7 +7,7 @@ export const FOOTER = {
   logo: {
     alt: "Volkov Labs Logo",
     src: "img/logo.svg",
-    srcDark: "img/logo.dark.svg",
+    srcDark: "img/logo.svg",
     width: 150, // Optional: Adds consistent sizing; adjust as needed
   },
 
@@ -25,11 +25,6 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-suite-link",
         },
         {
-          label: "Security Guidelines",
-          to: "/plugins/security/",
-          className: "volkovlabs-footer-link icon-security-link",
-        },
-        {
           label: "Release Dashboard",
           href: "https://release.volkovlabs.io",
           className: "volkovlabs-footer-link icon-release-link",
@@ -38,31 +33,6 @@ export const FOOTER = {
           label: "GitHub",
           href: "https://github.com/VolkovLabs",
           className: "volkovlabs-footer-link icon-github-link",
-        },
-      ],
-    },
-    {
-      title: "Business Intelligence",
-      items: [
-        {
-          label: "Quick Start",
-          to: "/big/quick-start/",
-          className: "volkovlabs-footer-link icon-big-link",
-        },
-        {
-          label: "Business Studio",
-          to: "/big/studio/",
-          className: "volkovlabs-footer-link icon-big-studio-link",
-        },
-        {
-          label: "Business Engine",
-          to: "/big/engine/",
-          className: "volkovlabs-footer-link icon-big-engine-link",
-        },
-        {
-          label: "Business Alerting",
-          to: "/big/alerting/",
-          className: "volkovlabs-footer-link icon-big-alerting-link",
         },
         {
           label: "Support Portal",
@@ -78,11 +48,6 @@ export const FOOTER = {
           label: "Business Gazette",
           to: "/blog/",
           className: "volkovlabs-footer-link icon-blog-link",
-        },
-        {
-          label: "Company News",
-          to: "/blog/tags/company-news",
-          className: "volkovlabs-footer-link icon-news-link",
         },
         {
           label: "Grafana Crash Course",

@@ -70,65 +70,10 @@ export const NAVBAR = {
       ],
     },
     {
-      to: "/big/",
-      position: "left",
-      label: "Business Intelligence",
-      "aria-label": "Business Intelligence Platform",
-      items: [
-        {
-          label: "Quick Start",
-          to: "/big/quick-start/",
-          className: "volkovlabs-link icon-big-link",
-        },
-        {
-          label: "Business Studio",
-          to: "/big/studio/",
-          className: "volkovlabs-link icon-big-studio-link",
-        },
-        {
-          label: "Business Engine",
-          to: "/big/engine/",
-          className: "volkovlabs-link icon-big-engine-link",
-        },
-        {
-          label: "Business Alerting",
-          to: "/big/alerting/",
-          className: "volkovlabs-link icon-big-alerting-link",
-        },
-        {
-          label: "Tutorials",
-          to: "/big/tutorials/",
-          className: "volkovlabs-link icon-big-tutorials-link",
-        },
-        {
-          label: "Release Notes",
-          to: "/big/release/",
-          className: "volkovlabs-link icon-big-release-link",
-        },
-      ],
-    },
-    {
       to: "/pricing/",
       position: "left",
-      label: "Partnership",
+      label: "Business Suite Enterprise",
       "aria-label": "Business Suite Enterprise",
-      items: [
-        {
-          label: "Business Suite Enterprise",
-          to: "/pricing/",
-          className: "volkovlabs-link icon-partner-link",
-        },
-        {
-          label: "Team",
-          to: "/team/",
-          className: "volkovlabs-link icon-team-link",
-        },
-        {
-          label: "Support Portal",
-          href: "https://support.volkovlabs.io",
-          className: "volkovlabs-link icon-support-link",
-        },
-      ],
     },
     {
       to: "/blog/",
