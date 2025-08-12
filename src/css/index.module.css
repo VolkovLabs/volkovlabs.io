@@ -96,6 +96,12 @@
   box-shadow: 0 5px 15px 5px var(--ifm-color-gray-1000);
 }
 
+.headerImage {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;
