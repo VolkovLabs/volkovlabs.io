@@ -13,14 +13,4 @@ export const PLUGINS = [
       sidebarPath: require.resolve("./grafana_sidebar.ts"),
     },
   ],
-  // Big documentation plugin
-  [
-    "@docusaurus/plugin-content-docs",
-    {
-      id: "big",
-      path: "big",
-      routeBasePath: "big",
-      sidebarPath: require.resolve("./big_sidebar.ts"),
-    },
-  ],
 ];

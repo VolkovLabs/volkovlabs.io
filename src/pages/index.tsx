@@ -60,7 +60,6 @@ const Header = ({ siteConfig }) => (
 
 /**
  * Main Component
- * Highlights Business Intelligence and blog sections
  */
 const Main = ({ siteConfig }) => (
   <main>
@@ -169,7 +168,7 @@ const Home = () => {
   return (
     <Layout
       title="Business Suite by Volkov Labs"
-      description="Open-source Grafana plugins and Business Intelligence tools by Volkov Labs"
+      description="Open-source Grafana plugins by Volkov Labs"
     >
       <Head>
         <meta property="og:image" content="/img/suite.png" />

@@ -55,14 +55,14 @@ export const FOOTER = {
           className: "volkovlabs-footer-link icon-grafana-link",
         },
         {
+          label: "PulseBI Platform",
+          href: "https://pulsebi.studio",
+          className: "volkovlabs-footer-link icon-pulsebi-link",
+        },
+        {
           label: "YouTube Channel",
           href: "https://youtube.com/@volkovlabs",
           className: "volkovlabs-footer-link icon-youtube-link",
-        },
-        {
-          label: "LinkedIn",
-          href: "https://linkedin.com/company/volkovlabs",
-          className: "volkovlabs-footer-link icon-linkedin-link",
         },
       ],
     },
@@ -88,6 +88,11 @@ export const FOOTER = {
           label: "Disclaimer",
           to: "/disclaimer/",
           className: "volkovlabs-footer-link icon-disclaimer-link",
+        },
+        {
+          label: "LinkedIn",
+          href: "https://linkedin.com/company/volkovlabs",
+          className: "volkovlabs-footer-link icon-linkedin-link",
         },
       ],
     },

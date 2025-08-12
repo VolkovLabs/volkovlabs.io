@@ -4,9 +4,6 @@
 Business Suite:
   description: A curated collection of open-source Grafana plugins, crafted by Volkov Labs to solve everyday business challenges.
 
-Business Intelligence:
-  description: Transform your insights with high-performance, scalable, and alert-driven analytics.
-
 Business Calendar:
   description:
     Displays events in a sleek calendar view, pulling from diverse data

@@ -29,16 +29,4 @@ export const PRESETS: PresetConfig[] = [
       },
     },
   ],
-  // Redocusaurus preset for API documentation
-  [
-    "redocusaurus",
-    {
-      specs: [
-        {
-          spec: "big/engine-spec.json", // API specification file
-          route: "big/api/", // Base route for API docs
-        },
-      ],
-    },
-  ],
 ];

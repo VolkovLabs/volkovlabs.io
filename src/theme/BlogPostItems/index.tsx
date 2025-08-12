@@ -15,9 +15,8 @@ const Hero = () => (
           <h1 className="hero__title margin-bottom--md">Business Gazette</h1>
           <p className="hero__subtitle margin-vert--md">
             Explore the Volkov Labs Blog for expert insights, tutorials, and
-            updates on data visualization, Grafana, Business Intelligence and
-            open-source solutions. Stay informed with our latest tips and
-            innovations.
+            updates on data visualization, Grafana, and open-source solutions.
+            Stay informed with our latest tips and innovations.
           </p>
         </div>
       </div>
