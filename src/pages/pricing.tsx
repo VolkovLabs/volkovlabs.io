@@ -43,7 +43,7 @@ const Header = () => (
                   <b>PulseBI Platform</b>
                 </a>
                 : Tailored to address real-world production demands, this
-                platform revolutionizes alerting and analytics in Grafana..
+                platform revolutionizes alerting and analytics in Grafana.
               </li>
             </ul>
             Your success drives us—let’s build something extraordinary together.
@@ -96,7 +96,7 @@ const Home = () => {
   return (
     <Layout
       title="Business Suite Enterprise | Volkov Labs"
-      description="Enterprise support and Business Intelligence platform for Grafana by Volkov Labs"
+      description="Enterprise support for Business Suite by Volkov Labs"
     >
       <Head>
         <meta property="og:image" content="/img/suite.png" />

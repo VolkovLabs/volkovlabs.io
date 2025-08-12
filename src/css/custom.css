@@ -242,86 +242,6 @@
     no-repeat;
 }
 
-/* BI(G) */
-
-.icon-big-alerting-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/big/business-alerting/logo.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-big-alerting-link::before {
-  background: url("/static/img/big/business-alerting/logo.dark.svg") no-repeat;
-}
-
-.icon-big-engine-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/big/business-engine/logo.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-big-engine-link::before {
-  background: url("/static/img/big/business-engine/logo.dark.svg") no-repeat;
-}
-
-.icon-big-studio-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/big/business-studio/logo.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-big-studio-link::before {
-  background: url("/static/img/big/business-studio/logo.dark.svg") no-repeat;
-}
-
-.icon-big-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/big/logo.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-big-link::before {
-  background: url("/static/img/big/logo.dark.svg") no-repeat;
-}
-
-.icon-big-release-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/big/release/logo.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-big-release-link::before {
-  background: url("/static/img/big/release/logo.dark.svg") no-repeat;
-}
-
-.icon-big-tutorials-link::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: flex;
-  background: url("/static/img/big/tutorials/logo.svg") no-repeat;
-  margin-right: 0.5rem;
-}
-
-[data-theme="dark"] .icon-big-tutorials-link::before {
-  background: url("/static/img/big/tutorials/logo.dark.svg") no-repeat;
-}
-
 /* Platform */
 
 .icon-youtube-link::before {
@@ -383,6 +303,19 @@
 
 [data-theme="dark"] .icon-partner-link::before {
   background: url("/static/img/index/partner.dark.svg") no-repeat;
+}
+
+.icon-pulsebi-link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("/static/img/index/pulsebi.svg") no-repeat;
+  margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .icon-pulsebi-link::before {
+  background: url("/static/img/index/pulsebi.dark.svg") no-repeat;
 }
 
 .icon-blog-link::before {

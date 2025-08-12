@@ -92,11 +92,6 @@ export const NAVBAR = {
           className: "volkovlabs-link icon-news-link",
         },
         {
-          label: "Business Intelligence",
-          to: "/blog/tags/business-intelligence/",
-          className: "volkovlabs-link icon-big-link",
-        },
-        {
           label: "Business Suite",
           to: "/blog/tags/business-suite/",
           className: "volkovlabs-link icon-suite-link",
