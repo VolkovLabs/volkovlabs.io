@@ -19,7 +19,7 @@ export const NAVBAR = {
     {
       to: "/plugins/",
       position: "left",
-      label: "Business Suite",
+      label: "Business Suite for Grafana",
       "aria-label": "Business Suite Plugins",
       items: [
         {

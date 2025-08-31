@@ -99,5 +99,5 @@ export const FOOTER = {
   ],
 
   // Dynamic copyright with company details
-  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs, Tampa, FL, USA. All rights reserved.`,
+  copyright: `Copyright © ${new Date().getFullYear()} Volkov Labs. All rights reserved.`,
 };
