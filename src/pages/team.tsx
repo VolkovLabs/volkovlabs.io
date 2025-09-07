@@ -22,7 +22,7 @@ const Header = ({ siteConfig }) => (
             without limits.
           </p>
           <p className="hero__subtitle">
-            Over the past three years, we’ve led a major open-source effort,
+            Over the past four years, we’ve led a major open-source effort,
             crafting 10+ Grafana plugins with over{" "}
             <strong>40 million downloads</strong>. Our dedication shines through
             in top-tier documentation, a vibrant YouTube channel, and robust
