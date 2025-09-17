@@ -1,0 +1,128 @@
+---
+authors: [mikhail]
+slug: bring-your-own-workflow-20250718/
+tags: [Business Intelligence]
+image: /img/blog/2025-07-18-bring-your-own-workflow/banner.png
+keywords:
+  [
+    Business Intelligence,
+    Workflow Automation,
+    Node-RED,
+    n8n,
+    Twilio Studio,
+    AI Agents,
+    Notifications,
+    Grafana,
+  ]
+---
+
+import Feedback from "@site/big/_feedback.mdx";
+import Image from "@theme/Image";
+import Youtube from "@theme/Youtube";
+
+# Bring Your Own Workflow to the Business Intelligence Platform
+
+At Volkov Labs, we believe that Business Intelligence (BI) should enable organizations to work the way they want, without rigid constraints or predefined limitations. With the [**Business Intelligence Platform**](/big), we’ve created a flexible, extensible solution that seamlessly integrates with popular workflow automation tools like **Node-RED**, **n8n**, and **Twilio Studio**.
+
+:::info Freedom to bring your own workflow
+Whether you’re crafting custom notification pipelines, building AI agents, or automating complex business processes, our platform gives you the freedom to bring your own workflow and tailor it to your unique needs.
+:::
+
+In this blog post, we’ll explore how the Business Intelligence Platform supports custom workflows, highlight integrations with leading automation tools, and show how you can leverage resources from our **Business Intelligence repository** to get started. The possibilities are endless, and we’re here to help you unlock the full potential of your BI data.
+
+## Why Workflow Flexibility Matters in Business Intelligence
+
+Business Intelligence is all about transforming data into actionable insights, but the "action" part often requires tailored workflows that align with your team’s processes, tools, and goals. Traditional BI platforms can be restrictive, forcing users into predefined notification systems or limited integrations. At Volkov Labs, we take a different approach: we don’t limit what you can do with our platform. Instead, we provide the building blocks to create workflows that work for you.
+
+Whether you need to send real-time alerts to Slack, trigger automated responses via AI agents, or integrate with third-party systems for deeper automation, the Business Intelligence Platform is designed to adapt. By supporting integrations with tools like Node-RED, n8n, and Twilio Studio, we ensure that you can design workflows that fit seamlessly into your existing ecosystem.
+
+<Image
+  title="Custom Workflow Integration with Business Intelligence Platform."
+  src="/img/blog/2025-06-25-bring-your-own-workflow/workflow-integration.png"
+  alt="Diagram showing Business Intelligence Platform integrating with Node-RED, n8n, and Twilio Studio"
+/>
+
+## Seamless Integrations for Workflow Automation
+
+The Business Intelligence Platform is built to integrate effortlessly with a variety of workflow automation tools, giving you the flexibility to design notification systems, automate responses, and even build intelligent AI agents. Let’s dive into some of the key tools you can use to bring your own workflow to life.
+
+### Node-RED: Low-Code Automation for BI Alerts
+
+**Node-RED** is a powerful low-code platform for creating event-driven workflows. With the Business Intelligence Platform, you can send BI events—such as alerts triggered by critical metrics or anomalies—to a Node-RED endpoint. From there, you can design custom flows to process data, render visuals using our **Image Render Microservice**, and send notifications to platforms like Slack, Microsoft Teams, or email.
+
+For example, in our recent blog post on [Enhanced Business Intelligence Alerting with Node-RED and Slack](/blog/node-red-slack/), we demonstrated a Node-RED workflow that processes BI alerts, generates dynamic Grafana panel screenshots, and delivers them to Slack channels. This is just one of many possibilities—Node-RED’s extensive library of nodes lets you connect to virtually any system or API.
+
+### n8n: Open-Source Workflow Automation
+
+**n8n** is another fantastic open-source tool for automating workflows, offering a user-friendly interface and hundreds of pre-built integrations. With n8n, you can connect the Business Intelligence Platform to external services, automate repetitive tasks, and build complex multi-step processes. For instance, you could create a workflow that triggers an alert from a BI event, logs it in a CRM like HubSpot, and simultaneously notifies your team via WhatsApp.
+
+The flexibility of n8n allows you to incorporate AI agents into your workflows, such as using OpenAI’s API to analyze BI data and generate actionable summaries or recommendations. With the Business Intelligence Platform as the data source, n8n becomes a powerful bridge to endless automation possibilities.
+
+### Twilio Studio: Communication-Driven Workflows
+
+For organizations focused on communication-heavy workflows, **Twilio Studio** offers a visual drag-and-drop interface to build SMS, voice, and messaging automations. By integrating Twilio Studio with the Business Intelligence Platform, you can send real-time SMS alerts to stakeholders when critical BI thresholds are breached, or even set up interactive voice responses to guide users through urgent issues.
+
+Imagine a scenario where a sales metric drops below a target: the Business Intelligence Platform triggers an event, Twilio Studio sends an SMS to the sales manager with key details, and a follow-up call is scheduled automatically. This level of customization ensures that your BI insights reach the right people at the right time, in the format that suits them best.
+
+<Image
+  title="Twilio Studio Workflow for SMS Alerts from BI Events."
+  src="/img/blog/2025-06-25-bring-your-own-workflow/twilio-workflow.png"
+  alt="Twilio Studio workflow sending SMS alerts based on BI events"
+/>
+
+## Custom AI Agents for Intelligent Automation
+
+One of the most exciting aspects of bringing your own workflow to the Business Intelligence Platform is the ability to build **custom AI agents**. By integrating with APIs from providers like OpenAI, Anthropic, or custom machine learning models, you can create intelligent agents that analyze BI data, predict trends, and automate decision-making processes.
+
+For example, you could design a workflow in Node-RED or n8n that sends alert data to an AI agent. The agent could then evaluate the severity of the issue, suggest remediation steps, and even draft a response for your team to review—all without manual intervention. The Business Intelligence Platform acts as the data backbone, while your custom workflow and AI agent handle the intelligence and automation.
+
+## No Limits: Your Platform, Your Rules
+
+At Volkov Labs, we’re committed to giving you full control over your Business Intelligence workflows. Unlike platforms that lock you into specific tools or processes, we’ve designed the Business Intelligence Platform to be a versatile foundation for your creativity. Whether you’re a developer building intricate Node-RED flows, a business analyst using n8n for no-code automation, or a communications specialist leveraging Twilio Studio, our platform adapts to your needs.
+
+Key benefits of this open approach include:
+
+- **Endless Customization**: Build workflows that match your team’s unique processes and tools.
+- **Scalable Integrations**: Connect to any system or API supported by Node-RED, n8n, Twilio Studio, or custom scripts.
+- **Future-Proof Design**: As new tools and technologies emerge, you can integrate them without being constrained by platform limitations.
+
+## Get Started with Our Business Intelligence Repository
+
+To help you hit the ground running, we provide a wealth of resources in our **Business Intelligence repository** on GitHub. This repository includes pre-built workflows, configuration files, and examples to inspire your custom solutions. Here are a few highlights:
+
+- **Node-RED Flows**: Ready-to-use flows for alerting and notification, such as the Slack integration featured in our [recent blog post](/blog/node-red-slack/). Find the JSON configuration at [`slack.json`](https://github.com/VolkovLabs/business-intelligence/blob/main/node-red/slack.json).
+- **Alert Rules**: Predefined alert configurations for monitoring Business Engines, available at [`business-engine.json`](https://github.com/VolkovLabs/business-intelligence/blob/main/alerts/business-engine.json).
+- **Docker Compose Setup**: Simplified deployment configurations for Node-RED and other tools, accessible in our [Docker Compose file](https://github.com/VolkovLabs/business-intelligence/blob/main/docker-compose.yml).
+
+These resources are just a starting point. Clone the repository, modify the workflows to suit your needs, and build something truly unique for your organization.
+
+<Image
+  title="Business Intelligence Repository Resources on GitHub."
+  src="/img/blog/2025-06-25-bring-your-own-workflow/repository.png"
+  alt="Screenshot of the Business Intelligence repository on GitHub"
+/>
+
+## How to Bring Your Own Workflow to the Business Intelligence Platform
+
+Ready to create a custom workflow for your BI needs? Follow these steps to get started:
+
+1. **Set Up the Business Intelligence Platform**: Ensure you have the latest version (3.4.0 or higher) installed, with access to features like the Image Render Microservice for dynamic visuals.
+2. **Choose Your Workflow Tool**: Select Node-RED, n8n, Twilio Studio, or any other automation platform that fits your use case.
+3. **Configure BI Events and Actions**: Use Business Studio to define events and actions that send data to your workflow tool via HTTP endpoints or APIs.
+4. **Build Your Workflow**: Design custom flows to process BI data, integrate with external systems, and automate notifications or AI-driven responses.
+5. **Leverage Our Repository**: Download pre-built workflows and configurations from the [Business Intelligence repository](https://github.com/VolkovLabs/business-intelligence) to accelerate development.
+6. **Test and Deploy**: Validate your workflow with test events, deploy it to production, and monitor its performance using built-in debugging tools.
+
+<Image
+  title="Setting Up a Custom Workflow with Node-RED and Business Intelligence Platform."
+  src="/img/blog/2025-06-25-bring-your-own-workflow/setup-workflow.gif"
+  alt="Animation showing the setup of a custom workflow with Node-RED"
+/>
+
+## Conclusion
+
+The **Business Intelligence Platform** from Volkov Labs is more than just a tool for data visualization and alerting—it’s a canvas for your creativity. By supporting integrations with Node-RED, n8n, Twilio Studio, and beyond, we empower you to bring your own workflow and build solutions that perfectly match your business needs. From custom notifications to AI agents, there are no limits to what you can achieve.
+
+Explore the resources in our [Business Intelligence repository](https://github.com/VolkovLabs/business-intelligence), experiment with new workflows, and let us know how you’re using the platform to transform your BI processes. Have questions or need assistance with a specific integration? Reach out to [our team](/team/)—we’re here to help. Stay tuned for more updates and tutorials as we continue to push the boundaries of Business Intelligence!
+
+<Feedback />
