@@ -2,9 +2,9 @@
  * Announcement configuration.
  */
 export const ANNOUNCEMENT_BAR = {
-  id: "business_links_2_0_0",
+  id: "business_suite_2025",
   content:
-    '<a href="/blog/business-links-2.0.0/">Business Links 2.0.0: Unleashing Business AI and Enhanced Sticky Features</a> is out 🚀',
+    '<a href="/blog/business-suite-2025/">4 Years of Innovations at Volkov Labs: Transforming Grafana with the Business Suite Plugins</a> is out 🚀',
   backgroundColor: "#6133bc",
   textColor: "#FFFFFF",
 };
