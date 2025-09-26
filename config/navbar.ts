@@ -70,14 +70,8 @@ export const NAVBAR = {
       ],
     },
     {
-      to: "/pricing/",
-      position: "left",
-      label: "Business Suite Enterprise",
-      "aria-label": "Business Suite Enterprise",
-    },
-    {
       to: "/blog/",
-      position: "right",
+      position: "left",
       label: "Business Gazette",
       "aria-label": "Blog Posts",
       items: [
@@ -105,7 +99,7 @@ export const NAVBAR = {
     },
     {
       to: "/grafana/",
-      position: "right",
+      position: "left",
       label: "Grafana Crash Course",
       "aria-label": "Grafana Learning Resources",
       items: [

@@ -16,37 +16,32 @@ const Header = () => (
     <div className="container margin-vert--md">
       <div className="row align-items-center">
         <div className="col">
-          <h1 className="hero__title margin-bottom--md">
-            Business Suite Enterprise
-          </h1>
+          <h1 className="hero__title margin-bottom--md">Closed For Business</h1>
           <p className="hero__subtitle margin-vert--md">
-            Partner with us and enjoy peace of mind with a dedicated support
-            team prepared to address your challenges effectively.
+            What This Means for Our Community
           </p>
           <p className="hero__subtitle">
             <ul>
               <li>
-                <a href="/team">
-                  <b>Dedicated Support</b>
-                </a>
-                : Access our expert team via Zendesk for fast issue resolution.
+                <b>Development Freeze</b>: No new features, updates, or
+                compatibility releases for the Business Suite plugins will be
+                developed.
               </li>
               <li>
-                <a href="https://support.volkovlabs.io">
-                  <b>Priority Features</b>
-                </a>
-                : Enjoy prioritized feature requests and rapid bug fixes
-                tailored to your needs.
+                <b>End of Support</b>: As of September 26, 2025, we will no
+                longer provide technical support, bug fixes, or community
+                assistance for the Business Suite via GitHub, YouTube, or other
+                channels.
               </li>
               <li>
-                <a href="https://pulsebi.studio">
-                  <b>PulseBI Platform</b>
-                </a>
-                : Tailored to address real-world production demands, this
-                platform revolutionizes alerting and analytics in Grafana.
+                <b>Open-Source Access</b>: The Business Suite repositories will
+                remain accessible on GitHub under their current licenses, but we
+                encourage users to fork or archive them as needed, as no further
+                maintenance will occur.
               </li>
             </ul>
-            Your success drives us—let’s build something extraordinary together.
+            We wish you all the best in your Grafana journeys. Thank you for
+            being part of ours.
           </p>
         </div>
       </div>
@@ -58,33 +53,7 @@ const Header = () => (
  * Main Component
  * Displays pricing plans and contact section
  */
-const Main = () => (
-  <main>
-    <section className="hero">
-      <div className="container margin-vert--md">
-        <div className="row align-items-center">
-          <div className="col col--7">
-            <h2 className={clsx("hero__title")}>Get in Touch</h2>
-            <p className="hero__subtitle margin-vert--md">
-              Ready to start? Click on <b>Support</b> to begin the
-              conversation—we’re excited to connect!
-            </p>
-          </div>
-          <div className="col col--5 text--center">
-            <ThemedImage
-              sources={{
-                light: useBaseUrl("/img/plugins/support/logo.svg"),
-                dark: useBaseUrl("/img/plugins/support/logo.dark.svg"),
-              }}
-              width="50%"
-              className={styles.headerImage}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-);
+const Main = () => <main />;
 
 /**
  * Home Component
@@ -100,11 +69,6 @@ const Home = () => {
     >
       <Head>
         <meta property="og:image" content="/img/suite.png" />
-        <script async src="https://js.stripe.com/v3/pricing-table.js" />
-        <script
-          id="ze-snippet"
-          src="https://static.zdassets.com/ekr/snippet.js?key=3103acc1-cdc9-4af8-a87c-b9a5c1eaa54d"
-        />
       </Head>
       <Header />
       <Main />
