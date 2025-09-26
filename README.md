@@ -30,7 +30,7 @@ The **Business Suite for Grafana** is a curated collection of open-source plugin
 
 [![Business Suite for Grafana](https://raw.githubusercontent.com/VolkovLabs/.github/main/business.png)](https://volkovlabs.io/plugins/)
 
-Explore the full suite of plugins and learn more by visiting our [official plugin page](https://volkovlabs.io/plugins/).
+Explore the full suite of plugins and learn more by visiting our [official documentation](https://volkovlabs.io/plugins/).
 
 ## License
 
